@@ -21,6 +21,7 @@ Newest last. Owner = Luke. A Claude working choice is reversible and listed so i
 - **DEC-013 · 28 Sep 2026 · Owner (D-06).** "Carlos Sainz" in the independent check is Wikipedia's "Carlos Sainz Jr.": the only driver of that name among the 116 winners in either source, with the same four wins on the same dates (2022 British, 2023 Singapore, 2024 Australian, 2024 Mexico City GPs).
 - **DEC-014 · 28 Sep 2026 · Owner.** Branch `rtt-002-data` merged into `main` (pull request #1, merge commit `7cde5df`). The branch is kept for the record.
 
+- **DEC-015 · 28 Sep 2026 · Owner (D-07a).** Accept the RTT-002 top-20 career totals as checked without a full official F1/FIA table: Wikipedia season pages, Wikipedia's list of winners, the F1-archive reconstruction (independent check) and StatsF1 agree for every driver; official totals seen for Hamilton, Schumacher and Prost all match. With D-07(b) passed, **RTT-002 passes DATA_AUDIT**. Next: IQ-04 (RTT player) in a Claude Code cloud session.
+
 ## Open — need the owner
 - **D-05 RTT-002 publication risk (needed before release, not before the pilot).** Even using a CC BY-SA source, F1 asserts rights over results data. Choose: accept the residual risk for publication, or take legal advice first. Claude cannot certify this.
-- **D-07 RTT-002 audit gaps before DATA_AUDIT.** (a) Top-20 career totals agree with Wikipedia's list page and with the check (built from F1's race archive + StatsF1), but no official F1/FIA career table was consulted. (b) Top-ten entries: **closed 28 Sep** — Luke ran a second blind ChatGPT check; all 40 entry events and the top ten at the freeze agree (0 discrepancies). Still to decide (a): accept the top-20 totals as checked, or eyeball formula1.com for them (no scraping).

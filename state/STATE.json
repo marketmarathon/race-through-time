@@ -2,7 +2,7 @@
   "schema": "rtt-state/0.1",
   "updated": "2026-09-28",
   "updated_by": "Claude (Cowork cloud session linked to Luke's laptop; model id claude-opus-5-5)",
-  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT repo bootstrapped on main; RTT-002 independent check validated and FROZEN; RTT-002 dataset BUILT and MERGED to main (PR #1, 7cde5df; all scripted checks pass; 0 discrepancies vs the check); D-04 and D-06 resolved; second blind check (top-ten entries) PASSED with 0 discrepancies; DATA_AUDIT waits on D-07a",
+  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT repo bootstrapped; RTT-002 dataset merged to main and DATA_AUDIT PASSED (two blind independent checks, 0 discrepancies; DEC-015); NEXT: IQ-04 RTT player in a Claude Code cloud session",
   "canonical_queue": "state/ folder on main in marketmarathon/race-through-time (this file)",
   "repo_baseline": {
     "repo": "marketmarathon/bars",
@@ -37,10 +37,10 @@
     {
       "id": "RTT-002",
       "title": "F1 Grand Prix Wins",
-      "state": "DATA_BUILD",
+      "state": "DATA_AUDIT_PASSED",
       "check_level": "LIVE",
       "verdict": "FEASIBLE_VIA_OPEN_LICENCE_ROUTE",
-      "blocker": "D-07a: accept top-20 totals without a full official F1/FIA table, or eyeball formula1.com; D-05 before release",
+      "blocker": "D-05 before release only; pilot (IQ-05) needs IQ-04",
       "dataset": {
         "branch": "main (merged from rtt-002-data via PR #1)",
         "commit": "7cde5df",
@@ -178,7 +178,7 @@
       "depends": [
         "IQ-03 (merged)"
       ],
-      "status": "QUEUED"
+      "status": "NEXT - prompt ready: prompts/CODE_SESSION_IQ-04.md (Luke starts a Claude Code cloud session: repo race-through-time, environment \"Race Through Time\")"
     },
     {
       "id": "IQ-05",
@@ -209,7 +209,7 @@
       "id": "IQ-08",
       "task": "Close RTT-002 audit gaps (D-07): top-ten entries independent check; decide on official top-20 comparison",
       "owner": "Luke (decision) / Claude (prompt)",
-      "status": "(b) DONE 28 Sep 2026 - second check frozen (state/RTT-002_independent_check2_freeze.json) and compared: 0 discrepancies. (a) awaiting owner decision"
+      "status": "DONE 28 Sep 2026 - (b) second check 0 discrepancies; (a) accepted by Luke (DEC-015)"
     }
   ],
   "rtt_repo": {

@@ -22,12 +22,13 @@ Previous handover (27 Sep, session 1, claude.ai chat) is in this file's git hist
 ## Decisions
 - Resolved 28 Sep: merge done (DEC-014); follow the official F1 treatment, so the 11 Indy 500 wins count and shared drives credit each driver (DEC-012); "Carlos Sainz" = Carlos Sainz Jr. (DEC-013).
 - Done 28 Sep: **D-07(b)** second blind check (top-ten entries, top ten at freeze) frozen in `state/RTT-002_independent_check2_freeze.json` and compared: 0 discrepancies (`reports/RTT-002_topten_check_report.md`, `data/rtt-002/topten_entries.csv`).
-- Open: **D-07(a)** accept the top-20 totals as checked (Wikipedia list page + F1-archive reconstruction + StatsF1 agree; official totals seen for Hamilton, Schumacher, Prost only), or eyeball formula1.com for them.
+- Done 28 Sep: **D-07(a)** accepted by Luke (DEC-015). **RTT-002 passes DATA_AUDIT.**
 - Open: **D-05** publication risk (before release only).
 
 ## Next safe actions
-1. After merge: IQ-04 `player_rtt.html` (copy of C2-2; integer step-at-event display) in a Claude Code cloud session with environment "Race Through Time".
-2. IQ-06 live feasibility for RTT-001, 003–012.
+1. **IQ-04 RTT player** — Claude Code cloud session (repo `race-through-time`, environment "Race Through Time"), prompt `prompts/CODE_SESSION_IQ-04.md`. It opens a pull request; Luke reviews, then merge.
+2. Then IQ-05 design pilot (60–90 s RTT-002 passage, 1920 preview, phone-size review).
+3. IQ-06 live feasibility for RTT-001, 003–012.
 
 ## Rules for the next session
 Read `state/STATE.json`, this file, `state/DECISIONS.md` and `reference/metric_contract_RTT-002.md`. Never edit C2-2 files or anything in `marketmarathon/bars` for RTT. Follow DEC-006. The private check file never enters this repo. For bulk Wikipedia reads use Luke's Chrome; for repo writes from Cowork use the GitHub web upload and read every commit back.
