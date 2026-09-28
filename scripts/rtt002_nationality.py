@@ -204,7 +204,7 @@ def build(data_dir, report_dir):
          f"`data/rtt-002/source/README.md`), retrieved {wp_time}. Codes mapped to ISO 3166-1 alpha-3 with Luke's table (UK→GBR, GER→DEU, NED→NLD, SUI→CHE, MON→MCO; others unchanged).",
          f"- Cross-check: Wikidata P1532 (country for sport) on each driver's item; where an item has no P1532, P27 (country of citizenship). Retrieved {wd_time}.",
          "- Extraction: `scripts/extract_nationality.browser.js`, run in Luke's Chrome by Claude in Cowork, because Wikimedia answered this cloud environment with HTTP 429 "
-         "(Claude Code's own requests on 28 Sep 2026, 17:59–18:2x UTC: Wikipedia API 429 on every content request, Wikidata API 429 on every request; not worked around).", "",
+         "(Claude Code's own requests on 28 Sep 2026 between 17:59 and about 18:20 UTC: one small Wikipedia test request answered 200, every request for the page content answered 429, every Wikidata request answered 429; not worked around).", "",
          "## Checks", ""]
     L += [f"- {'PASS' if ok else 'FAIL'}: {n} — {dt}" for n, ok, dt in checks]
     L += ["", "## Result", "",

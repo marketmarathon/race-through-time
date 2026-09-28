@@ -4,7 +4,7 @@ Written by `python scripts/rtt002_nationality.py` (deterministic). Output: `data
 
 - Primary source: the flag in each driver's row of Wikipedia's "List of Formula One Grand Prix winners", revision 1376824402 (the revision recorded in `data/rtt-002/source/README.md`), retrieved 2026-09-28T18:10:25Z. Codes mapped to ISO 3166-1 alpha-3 with Luke's table (UK→GBR, GER→DEU, NED→NLD, SUI→CHE, MON→MCO; others unchanged).
 - Cross-check: Wikidata P1532 (country for sport) on each driver's item; where an item has no P1532, P27 (country of citizenship). Retrieved 2026-09-28T18:12:55Z.
-- Extraction: `scripts/extract_nationality.browser.js`, run in Luke's Chrome by Claude in Cowork, because Wikimedia answered this cloud environment with HTTP 429 (Claude Code's own requests on 28 Sep 2026, 17:59–18:2x UTC: Wikipedia API 429 on every content request, Wikidata API 429 on every request; not worked around).
+- Extraction: `scripts/extract_nationality.browser.js`, run in Luke's Chrome by Claude in Cowork, because Wikimedia answered this cloud environment with HTTP 429 (Claude Code's own requests on 28 Sep 2026 between 17:59 and about 18:20 UTC: one small Wikipedia test request answered 200, every request for the page content answered 429, every Wikidata request answered 429; not worked around).
 
 ## Checks
 

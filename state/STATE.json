@@ -1,8 +1,8 @@
 {
   "schema": "rtt-state/0.1",
   "updated": "2026-09-28",
-  "updated_by": "Claude (Claude Code cloud session, environment \"Race Through Time\")",
-  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); IQ-04 RTT player MERGED (PR #2); IQ-05 round 1 MERGED (PR #3); IQ-05 round 2 (two pilot variants) IN PULL REQUEST (branch claude/stoic-mccarthy-kmbv2a), awaiting Luke's review",
+  "updated_by": "Claude (Claude Code cloud session, environment \"Race Through Time\"), IQ-05 round 3",
+  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); IQ-04 MERGED (PR #2); IQ-05 rounds 1 and 2 MERGED (PR #3, #4); IQ-05 round 3 (top-20 pilot with flags, event label, time block, overlays) IN PULL REQUEST (branch claude/wizardly-darwin-iv7sgt), awaiting Luke",
   "canonical_queue": "state/ folder on main in marketmarathon/race-through-time (this file)",
   "repo_baseline": {
     "repo": "marketmarathon/bars",
@@ -23,7 +23,7 @@
     "schedules": [],
     "recurring_reports": [],
     "public_publishes": [],
-    "note": "nothing activated; nothing uploaded or published. IQ-04 and IQ-05 (rounds 1 and 2) test frames and phone stills rendered locally in the Claude Code container only (not committed, not uploaded)"
+    "note": "nothing activated; nothing uploaded or published. IQ-04 and IQ-05 (rounds 1-3) test frames and phone stills rendered locally in the Claude Code container only (not committed, not uploaded)"
   },
   "episodes": [
     {
@@ -51,7 +51,8 @@
         "drivers": 116,
         "scripted_checks": "13/13 PASS (data/rtt-002/CHECKS.md)",
         "independent_check_comparison": "0 discrepancies in A, B, E, F, G (reports/RTT-002_discrepancy_report.md)",
-        "second_independent_check": "top-ten entries (40) and top ten at freeze: 0 discrepancies (reports/RTT-002_topten_check_report.md)"
+        "second_independent_check": "top-ten entries (40) and top ten at freeze: 0 discrepancies (reports/RTT-002_topten_check_report.md)",
+        "nationality": "data/rtt-002/driver_nationality.csv (added 28 Sep 2026, IQ-05 round 3, after DATA_AUDIT; DEC-036): 116 drivers; primary Wikipedia list rev. 1376824402; Wikidata cross-check 113 agree, 3 disagree (Jim Clark, Phil Hill, Luigi Fagioli) - open for Luke; reports/RTT-002_nationality_comparison.md"
       }
     },
     {
@@ -200,7 +201,7 @@
         "IQ-03",
         "IQ-04"
       ],
-      "status": "ROUND 1 MERGED (pull request #3, merge commit 2aeabc1); ROUND 2 IN PULL REQUEST - branch claude/stoic-mccarthy-kmbv2a; not merged; waiting for Luke to compare the two variants (questions in the pull request)",
+      "status": "ROUNDS 1 AND 2 MERGED (pull requests #3, #4); ROUND 3 IN PULL REQUEST - branch claude/wizardly-darwin-iv7sgt; not merged; waiting for Luke",
       "result": {
         "decisions": "DEC-022 (owner) implemented; Claude working choices DEC-023..DEC-026",
         "colours": "one colour per driver for the whole video, assigned over all 1,164 races (rtt_timeline.js assignColours); 40 drivers reach the top ten, at most 12 on screen together (incl. rows fading out); 12 colours needed and used; palette replaced (IQ-04's closest pair CIEDE2000 9.6, new 18.5; white-name contrast >= 3.2)",
@@ -232,6 +233,16 @@
         "digits": "Archivo has tnum but canvas cannot enable it; every number drawn on fixed-pitch digits (checked)",
         "tests": "tests/player/RESULTS.md",
         "renders": "none committed or uploaded; pilots not rendered to video (no ffmpeg in the container); checked frame by frame"
+      },
+      "round_3": {
+        "prompt": "prompts/CODE_SESSION_IQ-05c.md (plus Luke's additional instructions DEC-035, DEC-036 and the nationality source package, given during the session)",
+        "decisions": "DEC-034 (Luke's feedback on round 2), DEC-035 and DEC-036 (owner, during the session); Claude working choices DEC-037..DEC-044",
+        "pilot": "config_pilot_2014_2021_top20.json only (variant B config deleted); FRAME_COUNT_ONLY 2502 frames = 83.4 s (round 2: 2472; the two record holds are 0.5 s longer each)",
+        "features": "nationality flags (flag-icons 7.5.0, MIT, today's designs, 45 x 34 px = 9.1 x 6.9 pt on a phone) in a column left of the bars; event label \"92 wins · Portuguese GP\"; bars to ~70% of the width; time block left-aligned at x 820 next to the lower bars; colour priority for top-ten drivers (Hamilton, Schumacher, Verstappen, Senna, Prost bright); record holds 2.0 s; reserved logo (124 x 124, top right) and car (440 x 200, bottom right) boxes, pictures only from git-ignored kits/rtt-002/local_assets/",
+        "nationality": "data/rtt-002/driver_nationality.csv built by scripts/rtt002_nationality.py from source files supplied by Luke (Claude Code's own Wikimedia requests: HTTP 429 all session); 3 disagreements open",
+        "rights": "reference/rights_ledger.md (new): Archivo OFL-1.1, flag-icons MIT; car picture licence NOT FOUND until supplied",
+        "tests": "tests/player/RESULTS.md; phone check PASS (thresholds unchanged)",
+        "renders": "none committed or uploaded; pilot not rendered to video (no ffmpeg in the container)"
       }
     },
     {
@@ -261,7 +272,7 @@
     "visibility": "public",
     "created": "2026-09-27",
     "created_by": "Claude via Luke's Chrome, on Luke's instruction",
-    "contents": "main @ 2aeabc1 (IQ-05 round 1 merged via pull request #3); branch rtt-002-data kept (7696344); branch claude/stoic-mccarthy-kmbv2a = IQ-05 round 2 (pull request, not merged)",
+    "contents": "main @ 1cba884 (IQ-05 round 2 merged via pull request #4); branch rtt-002-data kept; branch claude/wizardly-darwin-iv7sgt = IQ-05 round 3 (pull request, not merged)",
     "push_routes": {
       "cowork_cloud": "NOT AVAILABLE - GitHub proxy refuses: repo not in the session's authorised set; no way to attach it from Cowork found",
       "github_web_upload_via_chrome": "WORKS - used 28 Sep; one commit per folder; each commit read back byte-for-byte",
@@ -280,7 +291,8 @@
     "laptop_shell": "NOT AVAILABLE in Cowork session (file read/write in connected folders, Chrome and screen control only)",
     "wikipedia_from_cowork_cloud": "VERIFIED after owner added *.wikipedia.org, *.wikimedia.org, *.wikidata.org to claude.ai Settings > Capabilities > Additional allowed domains; but Wikimedia rate-limits the shared cloud IP (HTTP 429) - use Luke's Chrome for bulk reads",
     "wikipedia_from_chrome": "VERIFIED (MediaWiki API, 78 pages in ~90 s)",
-    "claude_code_cloud_environment": "\"Race Through Time\": Custom network = default package managers + *.wikipedia.org, *.wikimedia.org, *.wikidata.org; no variables or setup script"
+    "claude_code_cloud_environment": "\"Race Through Time\": Custom network = default package managers + *.wikipedia.org, *.wikimedia.org, *.wikidata.org; no variables or setup script",
+    "wikimedia_from_claude_code_cloud": "28 Sep 2026 17:59 to about 18:20 UTC: HTTP 429 on every Wikipedia content request and every Wikidata request (one small Wikipedia test request answered 200); use Luke's Chrome (DEC-011, DEC-043)"
   },
   "independent_checks": {
     "RTT-002": {
