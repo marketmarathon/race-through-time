@@ -34,11 +34,23 @@
          20 / 28 / 17 when the key is absent), enlarged for RTT so they read on a phone.
        - entering rows: a driver joining the board starts its slide just under the last row and
          glides in with glide.entry_sec, so it is clearly visible within 8 frames of its race.
+     Changed in IQ-05 round 2 (DEC-027 to DEC-033), all switched by config, so config.json draws
+     exactly as before:
+       - board: "board" {bar_gap, name_frac, value_frac} sets the gap between bars and how much
+         of a bar the name and value text may fill (C2-2's 22 px / 0.56 / 0.54 when absent), so a
+         20-row board can keep its text as large as the rows allow.
+       - winner highlight: "highlight" {enabled, sec, mix, glow}. On the first frame of a race each
+         credited winner whose bar is on the board is brightened towards white and given a soft
+         glow, fading out over highlight.sec. A driver who also wins the next race stays lit
+         through the streak rather than fading and re-lighting (no flicker).
+       - winner line: "winner_line" {enabled} adds "Won by <driver> · <n> wins" under the date
+         (every credited driver on a shared drive), and lifts the time label to make room.
      Removed as unused: the Format C / C2-1 picture column and story cards, the prototype
      driver block that followed </html> in the C2-2 file.
 
      Test hook: every text label drawn in a frame is recorded in window.__LABELS
-     ({kind, id, text, x, y, w, size, alpha}), each bar's row position and opacity in
+     ({kind, id, text, x, y, w, size, alpha, tab}; tab = drawn on fixed-pitch digits), each
+     bar's row position, opacity and highlight in
      window.__BARS and the target order in window.__RANK. Drawing
      does not depend on them.
      =========================================================================== -->
@@ -77,14 +89,15 @@ let NAMEMODE='bar', YEARSIZE=112;
 let RACE_SEC=0, RACE_FRAMES=0, INTRO_SEC=3.0;
 let NAME_PX=null, NAME_TRUNC=false;
 let SZ={axis:20, date:28, footer:17};
+let BOARD={bar_gap:22, name_frac:0.56, value_frac:0.54}, HL=null, WINLINE=null;
 const TOP=150, BOTTOM=1080-46;
 
 /* ---- the test hook: what text went on the frame ---- */
 window.__LABELS=[]; window.__RANK=[]; window.__EVENT=null; window.__BARS=[];
-function note(kind,id,text,x,y,align,w){
+function note(kind,id,text,x,y,align,w,tab){
   const x0 = align==='right' ? x-w : align==='center' ? x-w/2 : x;
   const m=/(\d+)px/.exec(ctx.font);
-  window.__LABELS.push({kind,id,text,x:x0,y,w,size:m?+m[1]:null,alpha:ctx.globalAlpha});
+  window.__LABELS.push({kind,id,text,x:x0,y,w,size:m?+m[1]:null,alpha:ctx.globalAlpha,tab:!!tab});
 }
 function text(kind,id,str,x,y,align){
   ctx.textAlign=align||'left'; ctx.fillText(str,x,y);
@@ -106,7 +119,10 @@ function setup(o){
      board lands on the same pixels as C2-2's. */
   RIGHT = BAREND ? 1920-250-BAREND : (CFG.right!=null ? CFG.right : 64);
   VALW = CFG.valw!=null ? CFG.valw : 250;
-  SZ=Object.assign({axis:20, date:28, footer:17}, CFG.sizes||{});
+  SZ=Object.assign({axis:20, date:28, footer:17, winner:34}, CFG.sizes||{});
+  BOARD=Object.assign({bar_gap:22, name_frac:0.56, value_frac:0.54}, CFG.board||{});
+  HL = CFG.highlight && CFG.highlight.enabled ? Object.assign({sec:0.4, mix:0.3, glow:22}, CFG.highlight) : null;
+  WINLINE = CFG.winner_line && CFG.winner_line.enabled ? CFG.winner_line : null;
   /* colours: one per driver for the whole dataset (rtt_timeline.js assignColours, computed on
      the whole race file, not the window), so a passage and the full video agree. */
   ENT={}; const pal=CFG.palette;
@@ -122,6 +138,11 @@ const ease=u=>u<=0?0:u>=1?1:u*u*(3-2*u);
    keeping its hue (C2-2's function, unchanged, now shared from rtt_timeline.js so the colour
    rule is judged on the colour actually drawn). */
 const darkenForWhite=h=>RTT_TIMELINE.drawnColour(h);
+/* the highlight: the bar's colour moved part of the way towards white */
+function mixWhite(hex,a){
+  const n=parseInt(hex.slice(1),16);
+  return 'rgb('+[(n>>16)&255,(n>>8)&255,n&255].map(v=>Math.round(v+(255-v)*a)).join(',')+')';
+}
 
 /* (a) whole numbers with a unit word. The count is an integer by construction (the adapter
    refuses anything else); Math.round here is a guard, and a non-integer is logged loudly. */
@@ -150,7 +171,7 @@ function tabText(str,x,y,align,kind,id){
     else { ctx.fillText(ch,cx,y); cx+=ctx.measureText(ch).width; }
   }
   ctx.textAlign=keep;
-  if(kind) note(kind,id,str,x0,y,'left',total);
+  if(kind) note(kind,id,str,x0,y,'left',total,true);
   return total;
 }
 function rr(x,y,w,h,r){r=Math.min(r,h/2,w/2);ctx.beginPath();ctx.moveTo(x+r,y);
@@ -158,8 +179,8 @@ function rr(x,y,w,h,r){r=Math.min(r,h/2,w/2);ctx.beginPath();ctx.moveTo(x+r,y);
 
 /* ---- geometry shared by the name sizing and the frame ---- */
 function geom(){
-  const ROWH=(BOTTOM-TOP-14)/NROWS, BARH=ROWH-(NAMEMODE==='above'?40:22);
-  const NAMEF=Math.round(Math.min(38,BARH*0.56)), VALF=Math.round(Math.min(36,BARH*0.54));
+  const ROWH=(BOTTOM-TOP-14)/NROWS, BARH=ROWH-(NAMEMODE==='above'?40:BOARD.bar_gap);
+  const NAMEF=Math.round(Math.min(38,BARH*BOARD.name_frac)), VALF=Math.round(Math.min(36,BARH*BOARD.value_frac));
   const x0=LEFT+GAPBAR, W=1920-RIGHT-VALW-x0;
   return {ROWH,BARH,NAMEF,VALF,x0,W};
 }
@@ -199,18 +220,28 @@ function dateText(iso){
   const [y,m,d]=iso.split('-').map(Number);
   return d+' '+CFG.time_label.months[m-1]+' '+y;
 }
+/* IQ-05b winner line: every credited driver of the race shown, with the career total the data
+   gives them after it ("Won by Daniel Ricciardo · 7 wins"; both drivers on a shared drive). */
+function winnerText(ev){
+  return 'Won by '+ev.credits.map(c=>ENT[c.id].label+' · '+fmt(c.total)).join(' & ');
+}
 function drawTime(ev){
   const R=1920-64;
   if(CFG.time_label.mode==='title' || !ev) return;
+  const lift = WINLINE ? SZ.winner+8 : 0;      // make room for the winner line under the date
   ctx.fillStyle=T.ink; ctx.font='700 '+YEARSIZE+'px '+FONT;
-  tabText((CFG.time_label.season_prefix||'')+ev.season, R, 1080-150, 'right', 'time_season', null);
+  tabText((CFG.time_label.season_prefix||'')+ev.season, R, 1080-150-lift, 'right', 'time_season', null);
   if(ev.grand_prix){
     ctx.fillStyle=T.cap||T.muted; ctx.font='600 34px '+FONT;
-    text('time_gp',null,ev.grand_prix,R,1080-102,'right');
+    text('time_gp',null,ev.grand_prix,R,1080-102-lift,'right');
   }
   if(ev.date){
     ctx.fillStyle=T.muted; ctx.font='500 '+SZ.date+'px '+FONT;
-    ctx.textAlign='right'; tabText(dateText(ev.date), R, 1080-62, 'right', 'time_date', null);
+    ctx.textAlign='right'; tabText(dateText(ev.date), R, 1080-62-lift, 'right', 'time_date', null);
+  }
+  if(WINLINE && ev.credits && ev.credits.length){
+    ctx.fillStyle=T.ink; ctx.font='600 '+SZ.winner+'px '+FONT;
+    tabText(winnerText(ev), R, 1080-62, 'right', 'winner', null);
   }
 }
 
@@ -309,16 +340,25 @@ function drawAt(t){
     c._y+=(tgt-c._y)*(entering?KE:K);});
 
   const nf=nameSize();
+  /* IQ-05b winner highlight: 1 on the first frame of the race, fading to 0 over HL.sec (eased);
+     held at 1 through a winning streak so a repeat winner never flickers. */
+  const hlOf={};
+  if(HL && k>=0) for(const h of TL.highlight[k])
+    hlOf[h.id] = h.streak ? 1 : 1-ease(since/Math.max(1,HL.sec*FPS));
   window.__BARS=[];
   ctx.save(); ctx.beginPath(); ctx.rect(0, TOP, 1920, BOTTOM-TOP); ctx.clip();
   top.forEach(r=>{
     const c=r.c, y=TOP+14+c._y*ROWH; if(y>BOTTOM-4) return;
     ctx.globalAlpha=c._y>NROWS-1?Math.max(0,1-(c._y-(NROWS-1))/0.75):1;
-    window.__BARS.push({id:c.id, y:c._y, alpha:ctx.globalAlpha, colour:darkenForWhite(c.colour)});
+    const hl=hlOf[c.id]||0;
+    window.__BARS.push({id:c.id, y:c._y, alpha:ctx.globalAlpha, colour:darkenForWhite(c.colour), hl});
     if(ctx.globalAlpha<=0){ ctx.globalAlpha=1; return; }
     const w=Math.max(3,W*r.len/smoothMax), colour=darkenForWhite(c.colour);
     const by=y+(ROWH-BARH)/2, mid=by+BARH/2;
-    ctx.fillStyle=colour; rr(x0,by,w,BARH,2); ctx.fill();
+    if(hl>0){
+      ctx.save(); ctx.shadowColor=mixWhite(colour,0.5); ctx.shadowBlur=HL.glow*hl*RASTER;
+      ctx.fillStyle=mixWhite(colour,HL.mix*hl); rr(x0,by,w,BARH,2); ctx.fill(); ctx.restore();
+    } else { ctx.fillStyle=colour; rr(x0,by,w,BARH,2); ctx.fill(); }
 
     ctx.font='600 '+nf+'px '+FONT;
     const nx=x0+18;

@@ -1,0 +1,16 @@
+{
+ "extends": "config_pilot_2014_2021_base.json",
+ "kit_version": "rtt002_pilot2_2014_2021_top20",
+ "out": "rtt002_pilot2_2014_2021_top20.mp4",
+ "rows": 20,
+ "board": { "bar_gap": 6, "name_frac": 0.78, "value_frac": 0.78 },
+ "namescale": 1.0,
+ "palette": ["#2E86DE", "#FB07F1", "#FF4F15", "#464AF9", "#FF4663", "#06A54E", "#C97A00", "#909600",
+             "#CC031B", "#A230AA", "#C4025C", "#367400", "#009CA2", "#97511A", "#007260", "#AC6F8C",
+             "#7D77B3", "#1E6C84", "#7A6F41", "#9E7C6D", "#7A8580", "#6A616A"],
+ "notes": [
+  "IQ-05 round 2, variant A (DEC-027): 20 visible rows. Everything else is config_pilot_2014_2021_base.json.",
+  "board: 6 px between bars (C2-2: 22) and name and value text up to 0.78 of the bar height (C2-2: 0.56 / 0.54), namescale 1.0 (config.json: 0.88), so the text is as large as 20 rows allow: 29 px names and values on the 1920 frame, against 32 px names in the top ten.",
+  "palette (DEC-029): up to 22 drivers can be on screen together on a 20-row board (20 rows plus rows still fading out), against 12 on the top ten. The colour rule is NOT weakened: 22 colours, every pair at least CIEDE2000 18.2 apart as drawn (rule: 18), white names at least 3.2:1 on every bar. Keeping the 12 top-ten colours and adding 10 would only reach 14.6, so this is a separate palette: a driver's colour in A differs from B and from the full video. Vivid colours first; the last few (olive, taupe, grey-green, grey) are used only when 20+ drivers need colours at once."
+ ]
+}
