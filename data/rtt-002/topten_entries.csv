@@ -1,0 +1,41 @@
+race_date,season,round,grand_prix,driver_id,driver_name,career_wins,position_entered,dropped_out_id,dropped_out
+1950-05-13,1950,1,British Grand Prix,wp342972,Giuseppe Farina,1,1,,NONE
+1950-05-21,1950,2,Monaco Grand Prix,wp48532,Juan Manuel Fangio,1,2,,NONE
+1950-05-30,1950,3,Indianapolis 500,wp1252116,Johnnie Parsons,1,3,,NONE
+1951-05-30,1951,2,Indianapolis 500,wp1252126,Lee Wallard,1,4,,NONE
+1951-07-01,1951,4,French Grand Prix,wp1212766,Luigi Fagioli,1,5,,NONE
+1951-07-14,1951,5,British Grand Prix,wp877639,José Froilán González,1,6,,NONE
+1951-07-29,1951,6,German Grand Prix,wp246121,Alberto Ascari,1,7,,NONE
+1952-05-18,1952,1,Swiss Grand Prix,wp1235869,Piero Taruffi,1,8,,NONE
+1952-05-30,1952,2,Indianapolis 500,wp1235879,Troy Ruttman,1,9,,NONE
+1953-05-30,1953,2,Indianapolis 500,wp1251950,Bill Vukovich,1,10,,NONE
+1954-10-24,1954,9,Spanish Grand Prix,wp128171,Mike Hawthorn,2,6,wp1235879,Troy Ruttman
+1956-05-13,1956,2,Monaco Grand Prix,wp247310,Stirling Moss,2,7,wp1235869,Piero Taruffi
+1956-07-01,1956,5,French Grand Prix,wp1226514,Peter Collins,2,8,wp1212766,Luigi Fagioli
+1958-05-18,1958,2,Monaco Grand Prix,wp423739,Maurice Trintignant,2,9,wp1252126,Lee Wallard
+1958-06-15,1958,5,Belgian Grand Prix,wp1226571,Tony Brooks,2,10,wp1252116,Johnnie Parsons
+1960-06-06,1960,4,Dutch Grand Prix,wp16564,Jack Brabham,3,8,wp423739,Maurice Trintignant
+1961-09-10,1961,7,Italian Grand Prix,wp341545,Phil Hill,3,9,wp877639,José Froilán González
+1962-06-03,1962,2,Monaco Grand Prix,wp475903,Bruce McLaren,3,10,wp1251950,Bill Vukovich
+1962-12-29,1962,9,South African Grand Prix,wp246186,Graham Hill,4,7,wp475903,Bruce McLaren
+1963-06-09,1963,2,Belgian Grand Prix,wp181892,Jim Clark,4,8,wp341545,Phil Hill
+1966-06-12,1966,2,Belgian Grand Prix,wp215196,John Surtees,4,9,wp1226514,Peter Collins
+1967-06-18,1967,4,Belgian Grand Prix,wp554522,Dan Gurney,4,10,wp128171,Mike Hawthorn
+1968-10-06,1968,11,United States Grand Prix,wp294240,Jackie Stewart,5,10,wp554522,Dan Gurney
+1970-08-02,1970,8,German Grand Prix,wp45388,Jochen Rindt,6,10,wp342972,Giuseppe Farina
+1971-06-20,1971,4,Dutch Grand Prix,wp159975,Jacky Ickx,7,8,wp45388,Jochen Rindt
+1973-01-28,1973,1,Argentine Grand Prix,wp241678,Emerson Fittipaldi,7,9,wp215196,John Surtees
+1973-06-17,1973,7,Swedish Grand Prix,wp262934,Denny Hulme,7,10,wp1226571,Tony Brooks
+1976-03-06,1976,2,South African Grand Prix,wp40486,Niki Lauda,9,9,wp262934,Denny Hulme
+1977-10-02,1977,15,United States Grand Prix,wp287740,James Hunt,9,10,wp159975,Jacky Ickx
+1978-07-30,1978,11,German Grand Prix,wp271425,Mario Andretti,11,10,wp287740,James Hunt
+1984-08-05,1984,11,German Grand Prix,wp36917,Alain Prost,13,10,wp271425,Mario Andretti
+1986-03-23,1986,1,Brazilian Grand Prix,wp204645,Nelson Piquet,14,10,wp246121,Alberto Ascari
+1989-04-23,1989,2,San Marino Grand Prix,wp146638,Ayrton Senna,15,8,wp241678,Emerson Fittipaldi
+1989-08-13,1989,10,Hungarian Grand Prix,wp228615,Nigel Mansell,15,9,wp16564,Jack Brabham
+1995-07-30,1995,9,German Grand Prix,wp20396,Michael Schumacher,15,10,wp246186,Graham Hill
+1996-05-05,1996,5,San Marino Grand Prix,wp78249,Damon Hill,17,10,wp247310,Stirling Moss
+2010-07-25,2010,11,German Grand Prix,wp240390,Fernando Alonso,23,10,wp78249,Damon Hill
+2012-10-07,2012,15,Japanese Grand Prix,wp6437759,Sebastian Vettel,24,10,wp204645,Nelson Piquet
+2014-04-20,2014,4,Chinese Grand Prix,wp675561,Lewis Hamilton,25,10,wp48532,Juan Manuel Fangio
+2022-06-19,2022,9,Canadian Grand Prix,wp41758713,Max Verstappen,26,9,wp40486,Niki Lauda

@@ -1,6 +1,6 @@
 # RTT-002 — F1 World Championship Grand Prix wins, 1950 → 2026 Azerbaijan GP
 
-Status: **DATA_BUILD complete, merged to `main`** (pull request #1). DATA_AUDIT still open: second independent check on top-ten entries in progress (D-07). Not greenlit for render.
+Status: **DATA_BUILD complete, merged to `main`** (pull request #1). Second independent check (top-ten entries) passed with 0 discrepancies; DATA_AUDIT waits only on D-07a (official top-20 comparison). Not greenlit for render.
 Contract: `reference/metric_contract_RTT-002.md` v0.2. Rules confirmed by Luke 28 Sep 2026 (DEC-012): follow the official Formula 1 treatment.
 Licence: CC BY-SA 4.0, derived from Wikipedia — see `ATTRIBUTION.md`.
 
@@ -16,6 +16,8 @@ Licence: CC BY-SA 4.0, derived from Wikipedia — see `ATTRIBUTION.md`.
 | `career_totals.csv` | Wins per driver at the freeze, ranked; ties ranked by who reached the total first |
 | `record_progression.csv` | 118 events: every time a driver became sole holder, equalled, or extended the all-time wins record |
 | `drivers.csv` | Stable driver IDs (`wp<Wikipedia page ID>`), Wikipedia title, display name |
+| `topten_entries.csv` | 40 moments a driver entered the all-time top ten: date, race, wins, position entered, driver displaced (`scripts/rtt002_topten.py`) |
+| `topten_at_freeze.csv` | The all-time top ten at the freeze |
 | `CHECKS.md`, `checks.json` | Scripted checks (all pass) |
 | `manifest.json` | Input and output SHA-256 hashes, every source revision |
 | `source/` | The raw extraction from Wikipedia, exactly as retrieved (see `source/README.md`) |
