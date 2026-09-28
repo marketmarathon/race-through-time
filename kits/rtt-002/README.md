@@ -1,6 +1,6 @@
-# RTT kit — RTT-002 (F1 Grand Prix wins) · player RTT-1 · IQ-04, IQ-05 pilot
+# RTT kit — RTT-002 (F1 Grand Prix wins) · player RTT-1 · IQ-04, IQ-05 pilots (round 2)
 
-The Race Through Time player, copied from Market Marathon's Format C2-2 renderer. **Not greenlit for render.** IQ-05 added the design-pilot changes (DEC-022 to DEC-025): one colour per driver with no two drivers on screen together in the same or a similar colour, larger axis numbers / date / footer for phones, a faster slide-in for drivers entering the top ten, and two pilot configs.
+The Race Through Time player, copied from Market Marathon's Format C2-2 renderer. **Not greenlit for render.** IQ-05 added the design-pilot changes (DEC-022 to DEC-025): one colour per driver with no two drivers on screen together in the same or a similar colour, larger axis numbers / date / footer for phones, a faster slide-in for drivers entering the top ten, and two pilot configs. IQ-05 round 2 (DEC-027 to DEC-033) replaced the pilots with two variants that differ only in the board (A: top 20; B: top ten plus a winner line), and added, all switched by config: a gentle winner highlight, record-moment holds, an opening on the board instead of a title card, an exact final-board hold, and a configurable board geometry. `config.json` draws exactly as before.
 
 Copied from `marketmarathon/bars` @ `2a10877695e83683c3caae651cad61fc686614eb` (22 Sep 2026), kit `MarketMarathon_RaceKit_RF_US_C2_v3.zip`: `player_formatc2.html` (sha256 `39e32a54…64b7`) → `player_rtt.html`, `formatc.js` (sha256 `4609799a…b7a`) → `rtt.js`. Nothing in `bars` was changed (DEC-002).
 
@@ -10,8 +10,9 @@ Copied from `marketmarathon/bars` @ `2a10877695e83683c3caae651cad61fc686614eb` (
 | `rtt_timeline.js` | Event rules: counts after each race, tie order, pacing, frame of every event. Loaded by both the page and the driver |
 | `rtt.js` | Driver. Same environment contract as `formatc.js` |
 | `config.json` | Everything RTT-specific: words, unit, palette and colour rule, pacing, window, sizes, layout tokens |
-| `config_pilot_2014_2021.json` | IQ-05 pilot: `config.json` + window 2014–2021, 0.5 s per race, no closing card (3 s hold on the final board) |
-| `config_pilot_2014_2021_fast.json` | Same pilot at 0.35 s per race |
+| `config_pilot_2014_2021_base.json` | What the round-2 pilots share: `config.json` + window 2014–2021, 0.5 s per race judged on the top ten, board from the first frame (no title card), record holds, winner highlight, final board 10 s, no closing card. Not rendered on its own |
+| `config_pilot_2014_2021_top20.json` | Pilot A: the base + 20 rows, tighter bars and larger text, its own 22-colour palette |
+| `config_pilot_2014_2021_top10_winner.json` | Pilot B: the base + the winner line under the date |
 | `race_rtt002.json` | Player input, written by `scripts/rtt_adapter.py` from `data/rtt-002/` (CC BY-SA 4.0, see `data/rtt-002/ATTRIBUTION.md`) |
 | `dataset_hashes.txt` | SHA-256 of the adapter's three inputs and its output |
 | `package.json`, `package-lock.json` | Playwright 1.56.1 and `@fontsource/archivo` 5.3.0 (Archivo, SIL OFL 1.1) |
@@ -27,13 +28,16 @@ SEG_START=0 SEG_END=300 SEG_OUT=seg.mp4 RASTER_W=3840 node rtt.js  # needs ffmpe
 ```
 `PW_CHROME=/path/to/chromium` picks the browser (as in `formatc.js`). `RTT_CONFIG=other.json` selects another config, e.g. a quieter variant or a short passage (`"window": {"from": "1984-01-01", "to": "1989-12-31"}`). A config can start from another with `"extends": "config.json"` and change only some keys (objects merge key by key; lists and values replace).
 
-Pilots (IQ-05):
+Pilots (IQ-05 round 2; identical timestamps, so they can be compared frame for frame):
 ```
-RTT_CONFIG=config_pilot_2014_2021.json      FRAME_COUNT_ONLY=1 node rtt.js   # FRAMES 2277 = 75.9 s
-RTT_CONFIG=config_pilot_2014_2021_fast.json FRAME_COUNT_ONLY=1 node rtt.js   # FRAMES 1657 = 55.2 s
+RTT_CONFIG=config_pilot_2014_2021_top20.json        FRAME_COUNT_ONLY=1 node rtt.js   # FRAMES 2472 = 82.4 s
+RTT_CONFIG=config_pilot_2014_2021_top10_winner.json FRAME_COUNT_ONLY=1 node rtt.js   # FRAMES 2472 = 82.4 s
 ```
+Config keys added in round 2 (all optional; absent = IQ-05 behaviour): `board` {bar_gap, name_frac, value_frac}; `highlight` {enabled, sec, mix, glow}; `winner_line` {enabled}; `record_hold` {enabled, sec, types}; `pacing.judge_rows`; `pacing.final_board_sec`; `sizes.winner`. With `intro_sec` 0 there is no title card and the board (title on it) is the first frame.
 
-Colours: `rtt_timeline.js` `assignColours()` gives each driver one palette colour over the WHOLE race file (never the window), so a pilot and the full video agree. Drivers who can be on screen together (the top ten after a race and the `colour_rule.fade_races` races before it, covering rows still fading out) never get the same colour or two colours closer than `colour_rule.min_delta_e` (CIEDE2000 on the colour as drawn). If the palette runs out the player refuses to render. RTT-002 needs 12 colours (at most 12 drivers can be on screen together); the 12 in `config.json` are all at least CIEDE2000 18.5 apart, and every driver's colour is listed in `tests/player/RESULTS.md`.
+Numbers: Archivo has tabular figures (`tnum`, checked in every weight with fontTools), but Chrome's canvas cannot switch OpenType features on, so every number (values, axis, season, date, winner line) is drawn digit by digit on the widest digit's width, as C2-2 did. The tests check this on every label.
+
+Colours: `rtt_timeline.js` `assignColours()` gives each driver one palette colour over the WHOLE race file (never the window), so a pilot and the full video agree. Drivers who can be on screen together (the top ten after a race and the `colour_rule.fade_races` races before it, covering rows still fading out) never get the same colour or two colours closer than `colour_rule.min_delta_e` (CIEDE2000 on the colour as drawn). If the palette runs out the player refuses to render. RTT-002 needs 12 colours on a top-ten board (at most 12 drivers can be on screen together); the 12 in `config.json` are all at least CIEDE2000 18.5 apart. A 20-row board needs 22 (up to 22 on screen together); `config_pilot_2014_2021_top20.json` has 22 at least 18.2 apart. Every driver's colour on each board is listed in `tests/player/RESULTS.md`.
 
 Rebuild the input (deterministic; compare with `dataset_hashes.txt`):
 ```

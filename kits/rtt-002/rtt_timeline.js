@@ -22,6 +22,12 @@
  * dataset, and no two drivers who can be on screen together get the same or a confusingly
  * similar colour. assignColours() below works on the WHOLE race file, never on the window, so
  * a passage and the full video give every driver the same colour.
+ *
+ * IQ-05 round 2 (DEC-027 to DEC-033): record events (BECOMES_JOINT / BECOMES_SOLE / EXTENDS_SOLE,
+ * as in data/rtt-002/record_progression.csv) and optional holds on them (record_hold); pacing
+ * judged on pacing.judge_rows; an exact final-board length (pacing.final_board_sec); and the
+ * winner-highlight plan (who is lit on each race, and whether they stay lit into the next).
+ * Without those keys every number is as before (config.json: 16,062 frames).
  */
 (function (root) {
   'use strict';
@@ -65,29 +71,41 @@
 
     const totals = {}, reached = {};
     let opening = snapshot(totals, reached), openingEvent = null;
-    const events = [], states = [];
+    const events = [], states = [], recordOf = [];
+    let record = 0, holders = new Set();
     for (const ev of race.events) {
       if (ev.date > to) break;
+      /* IQ-05b: the all-time record, credit by credit, with the same three outcomes as
+         data/rtt-002/record_progression.csv (scripts/build_rtt002_dataset.py): passing the record
+         is BECOMES_SOLE (EXTENDS_SOLE if the driver already held it alone), reaching it is
+         BECOMES_JOINT. The player tests check this against the CSV on every race. */
+      const rec = [];
       for (const c of ev.credits) {
         const now = (totals[c.id] || 0) + 1;
         if (now !== c.total) throw new Error('event ' + ev.race_index + ': ' + c.id + ' total ' + c.total + ' but counted ' + now);
         totals[c.id] = now;
         reached[c.id] = c.credit_index;          // when this driver reached this total
+        if (now > record) { rec.push({ id: c.id, total: now, type: holders.size === 1 && holders.has(c.id) ? 'EXTENDS_SOLE' : 'BECOMES_SOLE' }); record = now; holders = new Set([c.id]); }
+        else if (now === record) { holders.add(c.id); rec.push({ id: c.id, total: now, type: 'BECOMES_JOINT' }); }
       }
       const s = snapshot(totals, reached);
       if (ev.date < from) { opening = s; openingEvent = ev; continue; }
-      events.push(ev); states.push(s);
+      events.push(ev); states.push(s); recordOf.push(rec);
     }
     if (!events.length) throw new Error('no events inside the window ' + from + ' .. ' + to);
 
     /* Pacing. An event that reorders or changes who is on the visible board gets the long
        beat; one that only moves a visible bar gets the normal beat; one nobody can see, or
        the (settled_run_after+1)th visible-but-unchanged event in a row, gets the short beat.
-       That is what "quiet stretches compress" means here. */
+       That is what "quiet stretches compress" means here.
+       IQ-05b: pacing.judge_rows (default: rows) is the board the beat is judged on. The two
+       round-2 pilots both judge on the top ten, so the top-20 board and the top-ten board run on
+       identical timestamps and can be compared frame for frame (blueprint section 9). */
+    const JR = P.judge_rows || rows;
     const mult = [], kind = [];
     let prev = opening, settled = 0;
     for (let k = 0; k < events.length; k++) {
-      const a = prev.order.slice(0, rows), b = states[k].order.slice(0, rows);
+      const a = prev.order.slice(0, JR), b = states[k].order.slice(0, JR);
       const credited = events[k].credits.map(c => c.id);
       let kd;
       if (!sameList(a, b)) { kd = 'rank_change'; settled = 0; }
@@ -97,16 +115,38 @@
       prev = states[k];
     }
 
+    /* IQ-05b record moments (a switchable test, record_hold.enabled): a race on which a driver
+       reaches (BECOMES_JOINT) or takes (BECOMES_SOLE) the all-time record is held for
+       record_hold.sec instead of its normal beat, so the rank glide settles before the next
+       race lands. EXTENDS_SOLE is not held. Every other beat keeps the 0.8-1.4x bounds. */
+    const RH = cfg.record_hold || {};
+    const holdTypes = RH.types || ['BECOMES_JOINT', 'BECOMES_SOLE'];
+    const hold = events.map((ev, k) => !!RH.enabled && recordOf[k].some(r => holdTypes.includes(r.type)));
+    const records = [];
+    events.forEach((ev, k) => recordOf[k].forEach(r => records.push(Object.assign({ k, race_index: ev.race_index, date: ev.date, season: ev.season, grand_prix: ev.grand_prix, held: hold[k] }, r))));
+
     const startFrame = [];
     let sec = P.lead_in_sec;
     for (let k = 0; k < events.length; k++) {
       startFrame.push(Math.round(sec * fps));
-      sec += P.sec_per_event * mult[k];
+      if (k < events.length - 1) sec += hold[k] ? RH.sec : P.sec_per_event * mult[k];
     }
-    sec += P.end_hold_sec;
-    const raceFrames = Math.round(sec * fps);
+    /* The final board: pacing.final_board_sec (IQ-05b) puts it on screen for exactly that long
+       from the first frame of the last race. Without it, the last race keeps its beat and
+       end_hold_sec is added (IQ-04/IQ-05 behaviour, unchanged for config.json). */
+    const lastK = events.length - 1;
+    const raceFrames = P.final_board_sec != null
+      ? startFrame[lastK] + Math.round(P.final_board_sec * fps)
+      : Math.round((sec + (hold[lastK] ? RH.sec : P.sec_per_event * mult[lastK]) + P.end_hold_sec) * fps);
     for (let k = 1; k < startFrame.length; k++)
       if (startFrame[k] <= startFrame[k - 1]) throw new Error('two events share a frame; raise sec_per_event');
+
+    /* IQ-05b winner highlight plan: on each race, the credited winners whose bars are on the
+       board (top `rows` after the race). streak = the same driver also wins the next race on
+       the board, so the player keeps the highlight lit through the streak instead of fading and
+       re-lighting it (no flicker). */
+    const winners = events.map((ev, k) => ev.credits.map(c => c.id).filter(id => states[k].order.slice(0, rows).includes(id)));
+    const highlight = winners.map((ids, k) => ids.map(id => ({ id, streak: k + 1 < winners.length && winners[k + 1].includes(id) })));
 
     /* The colour rule assumes a driver who drops off the board has faded within
        colour_rule.fade_races races. A row leaving the last slot fades out in about
@@ -119,7 +159,7 @@
     if (startFrame.length > 1 && colours.fadeRaces * minSlot < fadeFrames)
       throw new Error('pace too fast for the colour rule: ' + colours.fadeRaces + ' races x ' + minSlot + ' frames < ' + fadeFrames + '-frame fade');
 
-    return { events, states, opening, openingEvent, startFrame, raceFrames, mult, kind, fps, rows, colours };
+    return { events, states, opening, openingEvent, startFrame, raceFrames, mult, kind, fps, rows, colours, hold, records, highlight };
   }
 
   /* Which event is showing at race frame f: the last event whose start frame is <= f, or -1

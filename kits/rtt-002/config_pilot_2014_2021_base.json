@@ -1,0 +1,22 @@
+{
+ "extends": "config.json",
+ "kit_version": "rtt002_pilot2_2014_2021_base",
+ "out": "rtt002_pilot2_2014_2021_base.mp4",
+ "window": { "from": "2014-01-01", "to": "2021-12-31" },
+ "range": "2014 – 2021",
+ "subtitle": "World Championship Grand Prix wins by driver, race by race, 2014 – 2021",
+ "intro_sec": 0,
+ "outro_sec": 0,
+ "pacing": { "sec_per_event": 0.5, "judge_rows": 10, "lead_in_sec": 2.0, "final_board_sec": 10.0 },
+ "record_hold": { "enabled": true, "sec": 1.5, "types": ["BECOMES_JOINT", "BECOMES_SOLE"] },
+ "highlight": { "enabled": true, "sec": 0.4, "mix": 0.3, "glow": 16 },
+ "notes": [
+  "IQ-05 round 2 (DEC-027): the settings the two round-2 pilots share. Not a pilot on its own: render config_pilot_2014_2021_top20.json (A) or config_pilot_2014_2021_top10_winner.json (B), which differ only in the board.",
+  "The 160 races of 2014-2021 at 0.5 s per race (Luke: the pace is fine). The board opens on the totals before the 2014 opener.",
+  "Opening (blueprint section 12): no title card (intro_sec 0). The board, with the title and subtitle on it, is on screen from the first frame for pacing.lead_in_sec before the first race.",
+  "Ending: the final board is on screen for exactly pacing.final_board_sec (10 s, blueprint 8-12 s) from the first frame of the last race; no closing card (outro_sec 0).",
+  "pacing.judge_rows 10: the beat of every race is judged on the top ten in both variants, so A and B run on identical timestamps and can be compared frame for frame (blueprint section 9).",
+  "record_hold (a switchable test, blueprint section 11): races on which a driver equals (BECOMES_JOINT) or takes (BECOMES_SOLE) the all-time record, as in data/rtt-002/record_progression.csv, are held 1.5 s so the rank glide settles. In 2014-2021: 2020 Eifel GP (Hamilton equals Schumacher's 91) and 2020 Portuguese GP (Hamilton 92, sole record). Set enabled to false to switch it off.",
+  "highlight (Luke: the winner's bar should flash; blueprint section 10: no flashes or strobing, one gentle highlight): the credited winner's bar, if it is on the board, is brightened 30% towards white with a soft glow on the first frame of the race and fades over 0.4 s; a driver who also wins the next race stays lit through the streak instead of fading and re-lighting."
+ ]
+}
