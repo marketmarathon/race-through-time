@@ -1,0 +1,362 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<!-- ===========================================================================
+     Race Through Time - the RTT player.  Format RTT-1, IQ-04, 28 Sep 2026.
+
+     COPIED from Market Marathon's player_formatc2.html (Format C2-2), as shipped in
+     MarketMarathon_RaceKit_RF_US_C2_v3.zip, marketmarathon/bars @ 2a10877
+     (sha256 39e32a54...64b7 in that kit's dataset_hashes.txt). The C2-2 file itself is
+     never edited for RTT (DEC-002); this is a separate copy.
+
+     Kept from C2-2: the 1920x1080 drawing space scaled by RASTER; the navy look and its
+     three neutral levels; Archivo; the board geometry (bars end at x 1150, names on the bars
+     and allowed to overflow, the value past whichever is longer, one name size for the whole
+     video); darkenForWhite(); tabular digits; the eased rank glide (0.55 s) with the fading
+     eleventh row; the name pad during overtakes; the intro and closing card beats.
+
+     Changed for RTT (prompts/CODE_SESSION_IQ-04.md step 3):
+       a. value labels are whole numbers with a unit word ("106 wins", "1 win"). No bn/tn,
+          no currency symbol, no decimals, no USD bracket. The axis steps by whole numbers.
+       b. a count STEPS at its event and never shows an in-between value. Only the bar's
+          LENGTH glides (glide.bar_sec) and its row glides (glide.rank_sec).
+       c. no country flags, no sub-sector icons, no merger lineage/rename rows, no year
+          plates. Colours come from the config palette, one per driver, in data order.
+       d. the time label is season + Grand Prix + date, drawn bottom-right of the board,
+          and the event timing comes from rtt_timeline.js (adaptive pacing, 0.8-1.4x).
+       e. ties: equal counts rank by who reached that count first (rtt_timeline.js).
+       f. every RTT word, colour and number comes from config.json through setup().
+     Removed as unused: the Format C / C2-1 picture column and story cards, the prototype
+     driver block that followed </html> in the C2-2 file.
+
+     Test hook: every text label drawn in a frame is recorded in window.__LABELS
+     ({kind, id, text, x, y, w, size, alpha}), each bar's row position and opacity in
+     window.__BARS and the target order in window.__RANK. Drawing
+     does not depend on them.
+     =========================================================================== -->
+<style>html,body{margin:0;background:#000}canvas{display:block}</style>
+<script src="rtt_timeline.js"></script>
+</head><body>
+<canvas id="c" width="1920" height="1080"></canvas>
+<script>
+const cv=document.getElementById('c');
+const ctx=cv.getContext('2d');
+/* Everything below draws in a 1920x1080 coordinate space. RASTER scales the real canvas up
+   so a 4K master is the same drawing at twice the device pixels (C2-2 unchanged). */
+let RASTER=1;
+function setRaster(r){ RASTER=r||1; cv.width=1920*RASTER; cv.height=1080*RASTER; }
+function baseTransform(){ ctx.setTransform(RASTER,0,0,RASTER,0,0); }
+
+/* The C2-2 looks, byte-for-byte in their values. RTT defaults to navy (config "look"); a
+   quieter variant can name another key or pass look_overrides in its own config. */
+const LOOKS = {
+  charcoal: { ground:'#0b0e14', panel:'#141922', ink:'#ffffff', muted:'#8d97a8', axis:'#69738a',
+              accent:'#ffc933', hairline:'rgba(255,255,255,0.16)', grid:'rgba(255,255,255,0.05)', foot:'#5c657a' },
+  navy:     { ground:'#0b1424', panel:'#152134', ink:'#F4F6FA', muted:'#8492A6', cap:'#AAB3C2',
+              axis:'#8492A6', accent:'#F4F6FA', rule:'#2FD0C8',
+              hairline:'rgba(244,246,250,0.14)', grid:'rgba(244,246,250,0.055)', foot:'#4A5563' },
+  espresso: { ground:'#14100c', panel:'#1f1a14', ink:'#f6efe3', muted:'#a39682', axis:'#8b7f6d',
+              accent:'#f0c987', hairline:'rgba(255,236,205,0.16)', grid:'rgba(255,236,205,0.05)', foot:'#7d7263' },
+  slate:    { ground:'#101820', panel:'#19242e', ink:'#f4f8fa', muted:'#93a3b0', axis:'#72848f',
+              accent:'#4fd1c5', hairline:'rgba(255,255,255,0.15)', grid:'rgba(255,255,255,0.05)', foot:'#647684' }
+};
+
+let FONT='"Archivo"';
+let T=LOOKS.navy, CFG=null, TL=null, FPS=30;
+let ENT={}, NROWS=10;
+let LEFT=64, RIGHT=64, GAPBAR=12, VALW=260, BAREND=0, NAMESCALE=1, VALOUT=false, NAMEOVERFLOW=false;
+let NAMEMODE='bar', YEARSIZE=112;
+let RACE_SEC=0, RACE_FRAMES=0, INTRO_SEC=3.0;
+let NAME_PX=null, NAME_TRUNC=false;
+const TOP=150, BOTTOM=1080-46;
+
+/* ---- the test hook: what text went on the frame ---- */
+window.__LABELS=[]; window.__RANK=[]; window.__EVENT=null; window.__BARS=[];
+function note(kind,id,text,x,y,align,w){
+  const x0 = align==='right' ? x-w : align==='center' ? x-w/2 : x;
+  const m=/(\d+)px/.exec(ctx.font);
+  window.__LABELS.push({kind,id,text,x:x0,y,w,size:m?+m[1]:null,alpha:ctx.globalAlpha});
+}
+function text(kind,id,str,x,y,align){
+  ctx.textAlign=align||'left'; ctx.fillText(str,x,y);
+  note(kind,id,str,x,y,align||'left',ctx.measureText(str).width);
+}
+
+function setup(o){
+  setRaster(o.raster||1);
+  CFG=o.cfg; FPS=CFG.fps; NROWS=CFG.rows||10; INTRO_SEC=CFG.intro_sec;
+  if(CFG.fonts && CFG.fonts.family) FONT='"'+CFG.fonts.family+'"';
+  TL=RTT_TIMELINE.build(o.data, CFG);
+  RACE_FRAMES=TL.raceFrames; RACE_SEC=RACE_FRAMES/FPS;
+  T=Object.assign({}, LOOKS[CFG.look]||LOOKS.navy, CFG.look_overrides||{});
+  NAMEMODE=CFG.namemode||'bar'; NAMESCALE=CFG.namescale||1; VALOUT=!!CFG.valout;
+  NAMEOVERFLOW=!!CFG.nameoverflow; YEARSIZE=CFG.yearsize||112; BAREND=CFG.barend||0;
+  LEFT = CFG.left!=null ? CFG.left : 64;
+  /* C2-2 sets the right margin from barend BEFORE it reads valw, so with the shipped tokens
+     (barend 1150, valw 260) its bars end at x 1140, not 1150. Kept exactly, so the default
+     board lands on the same pixels as C2-2's. */
+  RIGHT = BAREND ? 1920-250-BAREND : (CFG.right!=null ? CFG.right : 64);
+  VALW = CFG.valw!=null ? CFG.valw : 250;
+  /* colours: one per driver from the config palette, in the data's entrant order, so a driver
+     keeps the same colour in every passage cut from the same dataset. */
+  ENT={}; const pal=CFG.palette||['#2E86DE'];
+  o.data.entrants.forEach((e,i)=>{ ENT[e.id]={id:e.id,label:e.label,colour:pal[i%pal.length],_y:null}; });
+  NAME_PX=null; NAME_TRUNC=false;
+}
+window.setup=setup;
+
+const lerp=(a,b,f)=>a+(b-a)*f;
+const ease=u=>u<=0?0:u>=1?1:u*u*(3-2*u);
+
+/* Every label on a bar is white; a palette colour too light for white type is darkened,
+   keeping its hue (C2-2 unchanged). */
+const _ink={};
+function darkenForWhite(hex){
+  if(_ink[hex]) return _ink[hex];
+  const n=parseInt(hex.replace('#',''),16);
+  let r=(n>>16)&255, g=(n>>8)&255, b=n&255;
+  const L=(0.299*r+0.587*g+0.114*b)/255;
+  if(L>0.52){ const k=0.46/L; r=Math.round(r*k); g=Math.round(g*k); b=Math.round(b*k); }
+  return _ink[hex]='#'+[r,g,b].map(v=>v.toString(16).padStart(2,'0')).join('');
+}
+
+/* (a) whole numbers with a unit word. The count is an integer by construction (the adapter
+   refuses anything else); Math.round here is a guard, and a non-integer is logged loudly. */
+function fmt(n){
+  if(!Number.isInteger(n)) console.error('NON-INTEGER COUNT '+n);
+  const v=Math.round(n);
+  return v.toLocaleString('en-GB')+' '+(v===1 ? (CFG.unit_singular||CFG.unit) : CFG.unit);
+}
+/* The axis steps in whole units only: 1, 2, 5, 10, 20, 25, 50 ... never 0.5 or 2.5. */
+function niceStepInt(v){
+  if(v<=1) return 1;
+  const p=Math.pow(10,Math.floor(Math.log10(v)));
+  for(const m of [1,2,2.5,5,10]){ const s=m*p; if(v<=s && Number.isInteger(s)) return s; }
+  return 10*p;
+}
+/* Archivo's digits are not the same width, and canvas cannot switch on tabular figures, so
+   every digit is drawn on the width of the widest one (C2-2 unchanged). */
+function pitch(){ let w=0; for(const d of '0123456789') w=Math.max(w,ctx.measureText(d).width); return w; }
+function tabWidth(str,p){ let t=0; for(const ch of str) t+= (ch>='0'&&ch<='9')?p:ctx.measureText(ch).width; return t; }
+function tabText(str,x,y,align,kind,id){
+  const p=pitch(), total=tabWidth(str,p);
+  let cx = align==='right' ? x-total : align==='center' ? x-total/2 : x;
+  const x0=cx, keep=ctx.textAlign; ctx.textAlign='left';
+  for(const ch of str){
+    if(ch>='0'&&ch<='9'){ ctx.fillText(ch, cx+(p-ctx.measureText(ch).width)/2, y); cx+=p; }
+    else { ctx.fillText(ch,cx,y); cx+=ctx.measureText(ch).width; }
+  }
+  ctx.textAlign=keep;
+  if(kind) note(kind,id,str,x0,y,'left',total);
+  return total;
+}
+function rr(x,y,w,h,r){r=Math.min(r,h/2,w/2);ctx.beginPath();ctx.moveTo(x+r,y);
+  ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();}
+
+/* ---- geometry shared by the name sizing and the frame ---- */
+function geom(){
+  const ROWH=(BOTTOM-TOP-14)/NROWS, BARH=ROWH-(NAMEMODE==='above'?40:22);
+  const NAMEF=Math.round(Math.min(38,BARH*0.56)), VALF=Math.round(Math.min(36,BARH*0.54));
+  const x0=LEFT+GAPBAR, W=1920-RIGHT-VALW-x0;
+  return {ROWH,BARH,NAMEF,VALF,x0,W};
+}
+
+/* ONE name size for the whole video (C2-2's rule: two bars at different sizes reads as a
+   mistake). In C2-2 the name column never overflowed the frame because company names are
+   short; drivers can have long names, so the size is also stepped down until the longest name
+   that ever reaches the board, plus its value label, fits inside the frame's right margin.
+   Only if 20px is still too wide is a name shortened with an ellipsis, and that is logged. */
+function nameSize(){
+  if(NAME_PX!=null) return NAME_PX;
+  const g=geom(), base=Math.round(g.NAMEF*NAMESCALE);
+  const seen={};
+  const take=s=>{ s.order.slice(0,NROWS+1).forEach(id=>{ seen[id]=Math.max(seen[id]||0,s.totals[id]); }); };
+  take(TL.opening); TL.states.forEach(take);
+  const ids=Object.keys(seen);
+  ctx.font='600 '+g.VALF+'px '+FONT; const p=pitch();
+  const valOf=id=>tabWidth(fmt(seen[id]),p);
+  const nx=g.x0+18, limit=1920-64;
+  let f=base;
+  for(;f>=20;f--){
+    ctx.font='600 '+f+'px '+FONT;
+    if(ids.every(id=>nx+ctx.measureText(ENT[id].label).width+18+valOf(id)<=limit)) break;
+  }
+  if(f<20){ f=20; NAME_TRUNC=true; console.error('NAME TOO LONG even at 20px: shortened with an ellipsis. Shorten the display name in the dataset.'); }
+  if(f<base) console.log('NAME SIZE stepped down from '+base+'px to '+f+'px to fit the longest name on the frame');
+  return NAME_PX=f;
+}
+function fitName(nm,maxw){
+  if(!NAME_TRUNC || ctx.measureText(nm).width<=maxw) return nm;
+  let s=nm; while(s.length>1 && ctx.measureText(s+'…').width>maxw) s=s.slice(0,-1);
+  return s+'…';
+}
+
+/* ---- (d) the time label: season, Grand Prix, date ---- */
+function dateText(iso){
+  const [y,m,d]=iso.split('-').map(Number);
+  return d+' '+CFG.time_label.months[m-1]+' '+y;
+}
+function drawTime(ev){
+  const R=1920-64;
+  if(CFG.time_label.mode==='title' || !ev) return;
+  ctx.fillStyle=T.ink; ctx.font='700 '+YEARSIZE+'px '+FONT;
+  tabText((CFG.time_label.season_prefix||'')+ev.season, R, 1080-150, 'right', 'time_season', null);
+  if(ev.grand_prix){
+    ctx.fillStyle=T.cap||T.muted; ctx.font='600 34px '+FONT;
+    text('time_gp',null,ev.grand_prix,R,1080-102,'right');
+  }
+  if(ev.date){
+    ctx.fillStyle=T.muted; ctx.font='500 28px '+FONT;
+    ctx.textAlign='right'; tabText(dateText(ev.date), R, 1080-62, 'right', 'time_date', null);
+  }
+}
+
+/* ---- the opening card (C2-2's, without the flag or the Market Marathon logo) ---- */
+function spacedCentre(str,x,y,extra){
+  if('letterSpacing' in ctx){
+    const was=ctx.letterSpacing; ctx.letterSpacing=extra+'px';
+    ctx.fillText(str,x+extra/2,y); ctx.letterSpacing=was; return;
+  }
+  let w=0; for(const ch of str) w+=ctx.measureText(ch).width+extra;
+  w-=extra; let cx=x-w/2;
+  for(const ch of str){ ctx.fillText(ch,cx,y); cx+=ctx.measureText(ch).width+extra; }
+}
+function fitFont(weight,size,str,maxw){
+  while(size>28){ ctx.font=weight+' '+size+'px '+FONT;
+    if(ctx.measureText(str).width<=maxw) return size; size-=2; }
+  return size;
+}
+function drawIntro(u){
+  baseTransform(); window.__LABELS=[];
+  ctx.fillStyle=T.ground; ctx.fillRect(0,0,1920,1080);
+  const a=Math.min(1,u/0.65)*Math.max(0,Math.min(1,(INTRO_SEC-u)/0.65));
+  if(a<=0) return;
+  const CX=960;
+  ctx.globalAlpha=a; ctx.textBaseline='alphabetic'; ctx.textAlign='center';
+  ctx.fillStyle=T.muted; ctx.font='600 22px '+FONT;
+  spacedCentre(CFG.kicker||'',CX,430,6);
+  fitFont('700',92,CFG.title,1660);
+  ctx.fillStyle=T.ink; text('intro_title',null,CFG.title,CX,538,'center');
+  ctx.fillStyle=T.rule||T.accent; ctx.fillRect(CX-110,586,220,2);
+  ctx.fillStyle=T.ink; ctx.font='500 52px '+FONT;
+  text('intro_range',null,CFG.range||'',CX,672,'center');
+  ctx.fillStyle=T.muted; ctx.font='500 24px '+FONT;
+  text('intro_sub',null,CFG.subtitle||'',CX,734,'center');
+  ctx.globalAlpha=1; ctx.textAlign='left';
+}
+window.drawIntro=drawIntro;
+
+/* ---- one race frame. t is seconds into the race; the frame index is what matters ---- */
+function drawAt(t){
+  baseTransform(); window.__LABELS=[];
+  const f=Math.round(t*FPS);
+  const outroF=Math.max(0,f-RACE_FRAMES);
+  const fr=Math.min(f,RACE_FRAMES);
+  const k=RTT_TIMELINE.eventAt(TL,fr);
+  const cur = k>=0 ? TL.states[k] : TL.opening;
+  const prev= k>0 ? TL.states[k-1] : TL.opening;
+  const ev  = k>=0 ? TL.events[k] : (TL.openingEvent || {season:TL.events[0].season});
+  window.__EVENT = k>=0 ? {k, race_index:ev.race_index} : {k:-1, race_index: TL.openingEvent?TL.openingEvent.race_index:null};
+  window.__RANK = cur.order.slice(0,NROWS);
+
+  /* (b) the count steps at the event; only the bar's length moves, over glide.bar_sec */
+  const since = k>=0 ? fr-TL.startFrame[k] : 0;
+  const g = k>=0 ? ease(since/Math.max(1,CFG.glide.bar_sec*FPS)) : 1;
+  const rows = cur.order.map(id=>({c:ENT[id], n:cur.totals[id], len:lerp(prev.totals[id]||0, cur.totals[id], g)}));
+  const top = rows.slice(0,NROWS+3);
+
+  ctx.fillStyle=T.ground; ctx.fillRect(0,0,1920,1080);
+  ctx.textBaseline='alphabetic'; ctx.textAlign='left';
+  ctx.fillStyle=T.ink; ctx.font='700 50px '+FONT;
+  let titleTxt=CFG.title;
+  if(CFG.time_label.mode==='title') titleTxt+=' · '+ev.season+(ev.grand_prix?' · '+ev.grand_prix:'');
+  text('title',null,titleTxt,LEFT,74,'left');
+  const tsec=fr/FPS, subA=Math.max(0,Math.min(1,(CFG.subtitle_sec||0)-tsec));
+  if(subA>0){
+    ctx.globalAlpha=subA; ctx.fillStyle=T.muted; ctx.font='500 22px '+FONT;
+    text('subtitle',null,CFG.subtitle,LEFT,106,'left');
+    ctx.globalAlpha=1;
+  }
+
+  // the time label sits UNDER the bars, as C2-2's year did, so a long bar crosses in front
+  drawTime(ev);
+
+  // scale: follows the longest bar as drawn, so it glides with the bars
+  const G=geom(), x0=G.x0, W=G.W;
+  const lead=top.slice(0,NROWS).reduce((m,r)=>Math.max(m,r.len),0);
+  const smoothMax=Math.max(1,lead)*1.06;
+  const step=niceStepInt(smoothMax/4);
+  ctx.font='400 20px '+FONT;
+  for(let v=0;v<=smoothMax+1e-9;v+=step){
+    const x=x0+W*v/smoothMax; if(x>1920-RIGHT-VALW+20) break;
+    ctx.fillStyle=T.axis; tabText(Math.round(v).toLocaleString('en-GB'),x,TOP-6,'center','axis',null);
+    ctx.fillStyle=T.grid; ctx.fillRect(Math.round(x),TOP+8,1,BOTTOM-TOP-8);
+  }
+
+  const ROWH=G.ROWH, BARH=G.BARH, VALF=G.VALF;
+  const K=1-Math.exp(-1/(CFG.glide.rank_sec*FPS));
+  rows.forEach((r,i)=>{const c=r.c,tgt=Math.min(i,NROWS+2); if(c._y==null)c._y=tgt; c._y+=(tgt-c._y)*K;});
+
+  const nf=nameSize();
+  window.__BARS=[];
+  ctx.save(); ctx.beginPath(); ctx.rect(0, TOP, 1920, BOTTOM-TOP); ctx.clip();
+  top.forEach(r=>{
+    const c=r.c, y=TOP+14+c._y*ROWH; if(y>BOTTOM-4) return;
+    ctx.globalAlpha=c._y>NROWS-1?Math.max(0,1-(c._y-(NROWS-1))/0.75):1;
+    window.__BARS.push({id:c.id, y:c._y, alpha:ctx.globalAlpha});
+    if(ctx.globalAlpha<=0){ ctx.globalAlpha=1; return; }
+    const w=Math.max(3,W*r.len/smoothMax), colour=darkenForWhite(c.colour);
+    const by=y+(ROWH-BARH)/2, mid=by+BARH/2;
+    ctx.fillStyle=colour; rr(x0,by,w,BARH,2); ctx.fill();
+
+    ctx.font='600 '+nf+'px '+FONT;
+    const nx=x0+18;
+    const nm=fitName(c.label, 1920-64-nx-18-160);
+    let nameOut=0;
+    /* the pad under a name mid-overtake (C2-2's, applied to on-bar names too) */
+    if(top.some(o=>o.c!==c && Math.abs(o.c._y-c._y)<0.85)){
+      const pw=ctx.measureText(nm).width;
+      if(nx+pw>x0+w){ ctx.fillStyle=T.ground; ctx.fillRect(x0+w, mid-nf*0.78, nx+pw-(x0+w)+6, nf*1.5); }
+    }
+    ctx.fillStyle='#F4F6FA';
+    if(NAMEOVERFLOW){
+      text('name',c.id,nm,nx,mid+nf*0.35,'left');
+      nameOut=Math.max(0,(nx+ctx.measureText(nm).width)-(x0+w));
+    } else if(nx+ctx.measureText(nm).width+14<x0+w){ text('name',c.id,nm,nx,mid+nf*0.35,'left'); }
+    else { ctx.fillStyle=T.ink; text('name',c.id,nm,x0+w+18,mid+nf*0.35,'left'); nameOut=ctx.measureText(nm).width+30; }
+
+    ctx.font='600 '+VALF+'px '+FONT;
+    const txt=fmt(r.n), tw=tabWidth(txt,pitch());
+    if(!VALOUT && !nameOut && w>tw+40+ctx.measureText(nm).width+24){ ctx.fillStyle='#F4F6FA'; tabText(txt,x0+w-18,mid+VALF*0.35,'right','value',c.id); }
+    else { ctx.fillStyle=T.ink; tabText(txt,x0+w+18+nameOut,mid+VALF*0.35,'left','value',c.id); }
+    ctx.globalAlpha=1;
+  });
+  ctx.restore();
+
+  ctx.fillStyle=T.foot; ctx.font='400 17px '+FONT;
+  text('footer',null,CFG.footer||'',LEFT,1080-20,'left');
+
+  if(outroF>0) drawOutro(outroF/FPS);
+}
+window.drawAt=drawAt;
+
+function drawOutro(o){
+  const a=Math.min(1, o/1.2);
+  const BAND=1080-268;
+  ctx.globalAlpha=a;
+  let g=ctx.createLinearGradient(0,BAND-170,0,BAND-30);
+  g.addColorStop(0,'rgba(6,10,18,0)'); g.addColorStop(1,'rgba(6,10,18,0.97)');
+  ctx.fillStyle=g; ctx.fillRect(0,BAND-170,1920,140);
+  ctx.fillStyle='rgba(6,10,18,0.97)'; ctx.fillRect(0,BAND-30,1920,1080-BAND+30);
+  ctx.fillStyle=T.ink;   ctx.font='700 54px '+FONT;
+  text('outro_q',null,CFG.outro_q||'',960,BAND+18,'center');
+  ctx.fillStyle=T.cap||T.muted; ctx.font='500 34px '+FONT;
+  text('outro_sub',null,CFG.outro_sub||'',960,BAND+68,'center');
+  ctx.fillStyle=T.rule||T.accent; ctx.fillRect(0,BAND+104,1920,2);
+  ctx.fillStyle=T.ink;  ctx.font='700 68px '+FONT;
+  text('outro_cta',null,CFG.outro_cta||'',LEFT,BAND+186,'left');
+  ctx.fillStyle=T.muted; ctx.font='400 28px '+FONT;
+  text('outro_more',null,CFG.outro_more||'',LEFT,BAND+228,'left');
+  ctx.globalAlpha=1;
+}
+</script>
+</body></html>
