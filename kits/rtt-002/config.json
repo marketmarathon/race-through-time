@@ -1,0 +1,67 @@
+{
+ "series": "Race Through Time",
+ "episode": "RTT-002",
+ "kit_version": "rtt002_v0",
+ "format_version": "RTT-1 (copied from Market Marathon Format C2-2, bars @ 2a10877)",
+ "out": "rtt002_master.mp4",
+ "renderer_file": "player_rtt.html",
+ "race_file": "race_rtt002.json",
+ "fps": 30,
+ "intro_sec": 3.0,
+ "outro_sec": 8,
+ "crf": 4,
+ "preset": "slow",
+ "rows": 10,
+
+ "window": { "from": null, "to": null },
+
+ "pacing": {
+  "sec_per_event": 0.5,
+  "bounds": [0.8, 1.4],
+  "mult": { "rank_change": 1.4, "visible_change": 1.0, "quiet": 0.8 },
+  "settled_run_after": 3,
+  "lead_in_sec": 1.0,
+  "end_hold_sec": 3.0
+ },
+ "glide": { "bar_sec": 0.35, "rank_sec": 0.55 },
+
+ "unit": "wins",
+ "unit_singular": "win",
+ "title": "Most Formula 1 Grand Prix Wins",
+ "subtitle": "World Championship Grand Prix wins by driver, race by race",
+ "subtitle_sec": 12,
+ "kicker": "RACE THROUGH TIME",
+ "range": "1950 – 2026",
+ "footer": "Race Through Time · Data derived from Wikipedia (CC BY-SA 4.0)",
+ "outro_q": "Who will be next to reach the top ten?",
+ "outro_sub": "Share your prediction in the comments below",
+ "outro_cta": "SUBSCRIBE · LIKE · COMMENT",
+ "outro_more": "for more Race Through Time",
+
+ "time_label": {
+  "mode": "board",
+  "season_prefix": "",
+  "months": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+ },
+
+ "look": "navy",
+ "palette": ["#2E86DE", "#E4572E", "#17BEBB", "#F4A259", "#8E6CEF", "#5BBA6F", "#D1495B", "#EDAE49", "#3F88C5", "#C04ABC", "#44AF69", "#F28F3B"],
+
+ "barend": 1150,
+ "nameoverflow": true,
+ "namemode": "bar",
+ "namescale": 0.88,
+ "valout": true,
+ "valw": 260,
+ "yearsize": 112,
+
+ "fonts": { "family": "Archivo", "source": "npm:@fontsource/archivo" },
+
+ "notes": [
+  "Everything RTT-specific lives in this file. player_rtt.html holds the drawing; rtt_timeline.js holds the event and pacing rules; rtt.js is the driver. A quieter variant is a second config (RTT_CONFIG=config_quiet.json) - nothing in the player needs to change for it.",
+  "Layout tokens (barend 1150, namemode bar, nameoverflow, namescale 0.88, valout, valw 260, yearsize 112, look navy, 30 fps, crf 4) are the Format C2-2 values from MarketMarathon_RaceKit_RF_US_C2_v3 config.json, so the default look is C2-2's. There is no year plate (picmode/picw): RTT ships no pictures.",
+  "window.from / window.to (YYYY-MM-DD, inclusive) cut a passage out of the full history. Events before 'from' still count: the board opens on the totals they left. null = the whole dataset.",
+  "pacing: each event lasts sec_per_event x mult. mult must lie inside bounds, and the player refuses bounds outside 0.8-1.4 (blueprint). rank_change = the visible top-N order or membership changed; visible_change = a visible bar grew; quiet = nothing visible changed, or more than settled_run_after visible-but-unchanged events in a row.",
+  "At 0.5 s per event the full 1,164 races run roughly 9-10 minutes; the exact figure is printed by FRAME_COUNT_ONLY=1. Not a creative decision: IQ-05 sets the real pace."
+ ]
+}

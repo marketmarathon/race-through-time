@@ -1,0 +1,16 @@
+race_index,season,round,race_date,grand_prix,winner_driver_ids
+1,2001,1,2001-03-04,Test Grand Prix 1,L1
+2,2001,2,2001-03-18,Test Grand Prix 2,L1
+3,2001,3,2001-04-01,Test Grand Prix 3,L1
+4,2001,4,2001-04-15,Test Grand Prix 4,L1
+5,2001,5,2001-04-29,Test Grand Prix 5,L1
+6,2001,6,2001-05-13,Test Grand Prix 6,L1
+7,2001,7,2001-05-27,Test Grand Prix 7,L1
+8,2001,8,2001-06-10,Test Grand Prix 8,L1
+9,2001,9,2001-06-24,Test Grand Prix 9,L1
+10,2001,10,2001-07-08,Test Grand Prix 10,L2
+11,2001,11,2001-07-22,Test Grand Prix 11,L2
+12,2001,12,2001-08-05,Test Grand Prix 12,L3
+13,2001,13,2001-08-19,Test Grand Prix 13,L4
+14,2001,14,2001-09-02,Test Grand Prix 14,L1
+15,2001,15,2001-09-16,Test Grand Prix 15,L3

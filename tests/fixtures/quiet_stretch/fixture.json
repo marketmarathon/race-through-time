@@ -1,0 +1,11 @@
+{
+ "expect": {
+  "note": "races 21-40 are won by drivers who stay off a 10-row board; they and the later settled run take pacing.mult.quiet",
+  "quiet_from_race": 21,
+  "quiet_to_race": 40
+ },
+ "fictional": true,
+ "overrides": {
+  "rows": 10
+ }
+}

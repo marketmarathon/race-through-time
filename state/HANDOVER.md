@@ -1,34 +1,36 @@
-# HANDOVER — 28 Sep 2026 (session 2, Cowork cloud session linked to Luke's laptop)
+# HANDOVER — 28 Sep 2026 (session 3, Claude Code cloud session, environment "Race Through Time")
 
-Previous handover (27 Sep, session 1, claude.ai chat) is in this file's git history.
+Previous handover (session 2, Cowork: repo bootstrap, RTT-002 dataset, DATA_AUDIT) is in this file's git history.
 
-## Done (evidence = commits in marketmarathon/race-through-time)
-- **Repo bootstrapped on `main`** from `G:\My Drive\RTT_transfer\rtt_bootstrap` (byte-identical): README with DEC-006 public-repo rules `026bec2`, `state/` `5d6ac17`, `prompts/` `b681763`, `reference/` `b835861`. Four commits, not one: GitHub's web uploader cannot put several folders in one commit.
-- **Independent check validated and frozen** (step 4): `F1_Fact_Check_2026-09-28.zip`, SHA-256 `0ac44247…cddd2`, kept private on the laptop. Sections A–G present, a source_url on every row, all internal-consistency checks pass, 22 NOT FOUND cells (Indy 500 separate F1/FIA career-total table and inclusion rule). Frozen in `state/RTT-002_independent_check_freeze.json` `d9df1ae`; validator `scripts/validate_independent_check.py` `8b5bb8c`.
-- **RTT-002 dataset built** (IQ-03) on branch `rtt-002-data` @ `7696344` and **merged to `main`** on Luke's instruction (pull request #1, merge commit `7cde5df`): 1,164 races, 1,167 win credits, 116 drivers, freeze = 2026 Azerbaijan GP, 26 Sep 2026. Wikipedia (CC BY-SA 4.0) season pages 1950–2026 with page URL, revision ID and retrieval time on every row. Whole numbers only. 13/13 scripted checks pass, including career totals vs Wikipedia's separate "List of Formula One Grand Prix winners" page. Deterministic rebuild confirmed from the GitHub copy.
-- **Comparison with the frozen check: 0 discrepancies** in A, B, E, F and G (`reports/RTT-002_discrepancy_report.md`).
-- Every commit read back from GitHub and compared byte-for-byte with the local files.
-- Laptop copy written to `Claude Workspace\race-through-time` (plain files, no git).
-
-## How this session worked (capabilities found)
-- Cowork cloud can run commands but **cannot push**: the GitHub proxy says race-through-time is not in the session's authorised repositories, and Cowork offers no way to attach one. Pushes went through **GitHub's web upload in Luke's Chrome** (authorised scope only).
-- Luke added `*.wikipedia.org`, `*.wikimedia.org`, `*.wikidata.org` to claude.ai **Settings → Capabilities → Additional allowed domains**. This took effect in the running session, but Wikimedia rate-limits the shared cloud IP (HTTP 429), so the pages were read through the **MediaWiki API in Luke's Chrome**. Each transferred file was verified by SHA-256.
-- Luke created a **Claude Code cloud environment "Race Through Time"** (Custom network: defaults + the three Wikimedia domains). `race-through-time` appears in Claude Code's repository list. Not used yet; intended for code work (IQ-04).
+## Done: IQ-04, the RTT player (branch `claude/tender-pascal-cl21gl`, [pull request #2](https://github.com/marketmarathon/race-through-time/pull/2), **approved for merge by Luke**)
+- **Pull request #2** (https://github.com/marketmarathon/race-through-time/pull/2): independently reviewed by Claude in Cowork on 28 Sep 2026 (test suite re-run 7/7 PASS with identical RESULTS.md; every driver's count at all 1,164 races and the top-ten order after every race match data/rtt-002 with 0 mismatches; adapter output hash reproduced); approved by Luke for merge.
+- **Copied from** `marketmarathon/bars` @ `2a10877` (full `2a10877695e83683c3caae651cad61fc686614eb`; bars HEAD was still that commit), cloned read-only over HTTPS without checkout; only `MarketMarathon_RaceKit_RF_US_C2_v3.zip`, the USA C2-2 workflow, `package.json` and `README.md` were read. `player_formatc2.html` and `formatc.js` hashes match that kit's `dataset_hashes.txt`. Nothing was committed, pushed or opened in bars.
+- **Kit** `kits/rtt-002/`: `player_rtt.html` (copied player), `rtt.js` (copied driver, same env contract: FRAME_COUNT_ONLY, SEG_START/SEG_END/SEG_OUT, RASTER_W, NOMUX, REF_PNG_DIR; plus optional RTT_CONFIG), `rtt_timeline.js` (event, tie and pacing rules), `config.json` (all RTT words, unit, palette, pacing, passage window, C2-2 layout tokens). See `kits/rtt-002/README.md`.
+- **Changes from C2-2**: whole-number "N wins" labels and a whole-number axis; counts step at the race and never show in-between values (bars glide in length and position only); no flags, icons, lineage rows, plates, logo or music; time label = season + Grand Prix + date; adaptive pacing inside 0.8–1.4×; ties ranked by who reached the total first (credit order). C2-2 look kept as the default (navy, Archivo, bars end at 1140 px as C2-2 actually draws them, names on bars with overflow, values outside).
+- **Adapter** `scripts/rtt_adapter.py`: `data/rtt-002` → `kits/rtt-002/race_rtt002.json`, SHA-256 `13b8848b302fc14639d2e32b083954fdabed6c879007ee6e5a1bb875af0d0352`, deterministic (same hash on repeated runs); input and output hashes in `kits/rtt-002/dataset_hashes.txt`. It checks every running total and refuses gaps rather than filling them.
+- **Fixtures** `tests/fixtures/` (fictional, generated by `make_fixtures.py`): long names, three-way tie, shared drive, enter/leave top N, long quiet stretch, fewer entrants than rows.
+- **Tests** `node tests/player/run_tests.js`: 7/7 PASS at 1920 preview width in Playwright 1.56.1 Chromium — every race frame drawn and every drawn label checked against counts computed independently from `win_credits.csv`; event-boundary frames saved and their value labels read back by tesseract OCR, all matching. Results: `tests/player/RESULTS.md`.
+- **Driver contract checked**: FRAME_COUNT_ONLY (16,062 frames for the full run), REF_PNG_DIR at 1920 and 3840, an mp4 segment through ffmpeg (60 frames, 1920×1080 H.264), and refusal of RASTER_W 2000.
+- **Phone check** (`node tests/player/phone_check.js`, stills not committed): shown 390 pt wide (a phone held upright, 3× pixels), names (≈ 6.5 pt) and values (≈ 7.1 pt) are legible in the phone-scale image; the date (≈ 5.7 pt) is small; axis numbers (≈ 4.1 pt) and the footer (≈ 3.5 pt, the smallest label) are **not readable**. Held sideways (≈ 844 pt) sizes scale by 2.16× (footer ≈ 7.5 pt, axis ≈ 8.8 pt) — calculated, not rendered. Judged on screen images, not on a real phone.
 
 ## Not done / not run
-- No render, upload, publish or schedule.
-- Contract checks not covered: an official F1/FIA top-20 career table was not consulted, and top-ten entries were not independently reconstructed (D-07).
+- GitHub push: refused (403) at first; fixed by Luke 28 Sep 2026 (DEC-021), then pushed and pull request #2 opened.
+- No render beyond local test frames in the container; nothing uploaded, published or scheduled; no workflow added.
+- Shard joins: a shard starting mid-race (140-frame warm-up, as C2-2) is not pixel-identical to a longer render — 224–516 edge pixels differ on the frames checked. Inherited from C2-2; not visible as far as checked, not fixed.
+- The fonts are Archivo from npm (Google Fonts build), not byte-identical to the TTFs in the Market Marathon kit. Glyph widths may differ very slightly from C2-2 masters; not compared.
+- IQ-05 (design pilot) not started, as instructed.
 
-## Decisions
-- Resolved 28 Sep: merge done (DEC-014); follow the official F1 treatment, so the 11 Indy 500 wins count and shared drives credit each driver (DEC-012); "Carlos Sainz" = Carlos Sainz Jr. (DEC-013).
-- Done 28 Sep: **D-07(b)** second blind check (top-ten entries, top ten at freeze) frozen in `state/RTT-002_independent_check2_freeze.json` and compared: 0 discrepancies (`reports/RTT-002_topten_check_report.md`, `data/rtt-002/topten_entries.csv`).
-- Done 28 Sep: **D-07(a)** accepted by Luke (DEC-015). **RTT-002 passes DATA_AUDIT.**
-- Open: **D-05** publication risk (before release only).
+## Questions put to Luke in the pull request (answered for IQ-05 in DEC-022)
+1. Pace: 0.5 s per race gives ~8 min 55 s for all 1,164 races. Keep for the pilot, or choose a target length?
+2. Colours: 12 colours cycle, so e.g. Hamilton and Senna share orange. Acceptable, or one fixed colour for the top drivers?
+3. Phone: enlarge the axis numbers and footer (and date) for RTT, or keep the C2-2 sizes?
+4. A driver who leaps into the top ten slides up from below the board and becomes visible up to 0.7 s after the race. Keep C2-2's slide or make entrants appear at once?
+5. RTT logo / end-card branding: none exists (NOT FOUND); text only for now.
+- D-05 publication risk is still open (before release only).
 
 ## Next safe actions
-1. **IQ-04 RTT player** — Claude Code cloud session (repo `race-through-time`, environment "Race Through Time"), prompt `prompts/CODE_SESSION_IQ-04.md`. It opens a pull request; Luke reviews, then merge.
-2. Then IQ-05 design pilot (60–90 s RTT-002 passage, 1920 preview, phone-size review).
-3. IQ-06 live feasibility for RTT-001, 003–012.
+1. **IQ-05 design pilot**, following DEC-022: passage 2014–2021 (160 races), no two visible drivers sharing a colour, larger axis/date/footer until readable at phone size, shorter hidden time for top-ten entrants (slide-in kept), the current pace (0.5 s per race) plus one faster variant side by side, text only.
+2. IQ-06 live feasibility for RTT-001, 003–012.
 
 ## Rules for the next session
-Read `state/STATE.json`, this file, `state/DECISIONS.md` and `reference/metric_contract_RTT-002.md`. Never edit C2-2 files or anything in `marketmarathon/bars` for RTT. Follow DEC-006. The private check file never enters this repo. For bulk Wikipedia reads use Luke's Chrome; for repo writes from Cowork use the GitHub web upload and read every commit back.
+Read `state/STATE.json`, this file, `state/DECISIONS.md` and `reference/metric_contract_RTT-002.md`. Never edit C2-2 files or anything in `marketmarathon/bars` for RTT. Follow DEC-006: code and configs only; test frames and stills stay out of the repo.

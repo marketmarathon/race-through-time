@@ -1,0 +1,11 @@
+{
+ "expect": {
+  "enters": "E6",
+  "leaves": "E6",
+  "rows": 5
+ },
+ "fictional": true,
+ "overrides": {
+  "rows": 5
+ }
+}

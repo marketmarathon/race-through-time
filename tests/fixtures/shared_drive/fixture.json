@@ -1,0 +1,26 @@
+{
+ "expect": {
+  "after_race": {
+   "3": [
+    "SB",
+    "SC",
+    "SA"
+   ],
+   "4": [
+    "SB",
+    "SA",
+    "SC"
+   ],
+   "5": [
+    "SA",
+    "SB",
+    "SC"
+   ]
+  },
+  "same_frame_step": 3
+ },
+ "fictional": true,
+ "overrides": {
+  "rows": 10
+ }
+}

@@ -1,0 +1,32 @@
+{
+ "expect": {
+  "after_race": {
+   "10": [
+    "TD",
+    "TA",
+    "TC",
+    "TB"
+   ],
+   "3": [
+    "TC",
+    "TA",
+    "TB"
+   ],
+   "6": [
+    "TA",
+    "TC",
+    "TB"
+   ],
+   "9": [
+    "TD",
+    "TA",
+    "TC",
+    "TB"
+   ]
+  }
+ },
+ "fictional": true,
+ "overrides": {
+  "rows": 10
+ }
+}
