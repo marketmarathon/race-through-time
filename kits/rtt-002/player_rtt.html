@@ -45,14 +45,32 @@
          through the streak rather than fading and re-lighting (no flicker).
        - winner line: "winner_line" {enabled} adds "Won by <driver> · <n> wins" under the date
          (every credited driver on a shared drive), and lifts the time label to make room.
+     Changed in IQ-05 round 3 (DEC-034 to DEC-044), all switched by config, so config.json draws
+     exactly as before:
+       - flags: "flags" {enabled, column, height_frac, gap, csv}. Each driver's nationality flag
+         (data/rtt-002/driver_nationality.csv; flag-icons SVGs loaded by rtt.js, never committed)
+         in a narrow column just left of the bars, moving with its row. column true keeps the
+         column's space even while enabled is false, so the layout does not change when the
+         flags are switched on. A driver without a flag file gets none; the name is always drawn.
+       - event label: "event_label" {enabled, fade_sec}. A winner on the board gets
+         "· <Grand Prix>" (GP short form, rtt_timeline.js gpShort) after its value from the first
+         frame of the race; it stays until the next race lands, then fades over fade_sec.
+       - time block: time_label.mode "block" {x, date_y, align} draws the season, Grand Prix and
+         date at a fixed place next to the board instead of the bottom-right corner.
+       - overlays (DEC-035): "overlays" [{name, file, x, y, w, h}] reserves a box per picture (Luke's
+         logo top right, a generic car bottom right). rtt.js loads each file from the git-ignored
+         kits/rtt-002/local_assets/ if it is there; the picture is drawn fitted inside its box
+         (aspect kept, centred). A missing file draws nothing and the render goes on. The box is
+         reserved either way, and the tests check nothing else ever enters it.
      Removed as unused: the Format C / C2-1 picture column and story cards, the prototype
      driver block that followed </html> in the C2-2 file.
 
      Test hook: every text label drawn in a frame is recorded in window.__LABELS
-     ({kind, id, text, x, y, w, size, alpha, tab}; tab = drawn on fixed-pitch digits), each
-     bar's row position, opacity and highlight in
-     window.__BARS and the target order in window.__RANK. Drawing
-     does not depend on them.
+     ({kind, id, text, x, y, w, size, alpha, tab, asc, desc}; tab = drawn on fixed-pitch digits,
+     asc/desc = the ink's height above and below the baseline), each bar's row position,
+     opacity, highlight and drawn rectangle in window.__BARS, each flag drawn in window.__FLAGS
+     ({id, code, x, y, w, h, alpha}) and the target order in window.__RANK. Drawing does not
+     depend on them.
      =========================================================================== -->
 <style>html,body{margin:0;background:#000}canvas{display:block}</style>
 <script src="rtt_timeline.js"></script>
@@ -90,14 +108,16 @@ let RACE_SEC=0, RACE_FRAMES=0, INTRO_SEC=3.0;
 let NAME_PX=null, NAME_TRUNC=false;
 let SZ={axis:20, date:28, footer:17};
 let BOARD={bar_gap:22, name_frac:0.56, value_frac:0.54}, HL=null, WINLINE=null;
+let FLAGCOL=null, FLAGS=false, FLAGIMG={}, FLAGCODE={}, EVL=null, OVL=[];
 const TOP=150, BOTTOM=1080-46;
 
 /* ---- the test hook: what text went on the frame ---- */
-window.__LABELS=[]; window.__RANK=[]; window.__EVENT=null; window.__BARS=[];
+window.__LABELS=[]; window.__RANK=[]; window.__EVENT=null; window.__BARS=[]; window.__FLAGS=[];
 function note(kind,id,text,x,y,align,w,tab){
   const x0 = align==='right' ? x-w : align==='center' ? x-w/2 : x;
-  const m=/(\d+)px/.exec(ctx.font);
-  window.__LABELS.push({kind,id,text,x:x0,y,w,size:m?+m[1]:null,alpha:ctx.globalAlpha,tab:!!tab});
+  const m=/(\d+)px/.exec(ctx.font), mt=ctx.measureText(text);
+  window.__LABELS.push({kind,id,text,x:x0,y,w,size:m?+m[1]:null,alpha:ctx.globalAlpha,tab:!!tab,
+                        asc:mt.actualBoundingBoxAscent, desc:mt.actualBoundingBoxDescent});
 }
 function text(kind,id,str,x,y,align){
   ctx.textAlign=align||'left'; ctx.fillText(str,x,y);
@@ -123,6 +143,25 @@ function setup(o){
   BOARD=Object.assign({bar_gap:22, name_frac:0.56, value_frac:0.54}, CFG.board||{});
   HL = CFG.highlight && CFG.highlight.enabled ? Object.assign({sec:0.4, mix:0.3, glow:22}, CFG.highlight) : null;
   WINLINE = CFG.winner_line && CFG.winner_line.enabled ? CFG.winner_line : null;
+  /* IQ-05c: flags, event label */
+  const F=CFG.flags||{};
+  FLAGCOL = (F.enabled||F.column) ? Object.assign({height_frac:0.9, gap:10}, F) : null;
+  FLAGS = !!F.enabled; FLAGIMG={}; FLAGCODE={};
+  const loads=[];
+  if(FLAGS){
+    if(!o.flags) throw new Error('flags.enabled but no flag images were passed to setup()');
+    for(const [id,code] of Object.entries(o.flags.byId)){
+      FLAGCODE[id]=code;
+      if(!FLAGIMG[code]){ const im=new Image(); im.src=o.flags.svg[code]; FLAGIMG[code]=im; loads.push(im.decode()); }
+    }
+  }
+  OVL=(CFG.overlays||[]).map(b=>{
+    const src=o.overlays && o.overlays[b.name], im=src ? new Image() : null;
+    if(im){ im.src=src; loads.push(im.decode()); }
+    return Object.assign({}, b, {img:im});
+  });
+  window.__imagesReady=Promise.all(loads).then(()=>Object.keys(FLAGIMG).length);
+  EVL = CFG.event_label && CFG.event_label.enabled ? Object.assign({fade_sec:0.3}, CFG.event_label) : null;
   /* colours: one per driver for the whole dataset (rtt_timeline.js assignColours, computed on
      the whole race file, not the window), so a passage and the full video agree. */
   ENT={}; const pal=CFG.palette;
@@ -181,8 +220,11 @@ function rr(x,y,w,h,r){r=Math.min(r,h/2,w/2);ctx.beginPath();ctx.moveTo(x+r,y);
 function geom(){
   const ROWH=(BOTTOM-TOP-14)/NROWS, BARH=ROWH-(NAMEMODE==='above'?40:BOARD.bar_gap);
   const NAMEF=Math.round(Math.min(38,BARH*BOARD.name_frac)), VALF=Math.round(Math.min(36,BARH*BOARD.value_frac));
-  const x0=LEFT+GAPBAR, W=1920-RIGHT-VALW-x0;
-  return {ROWH,BARH,NAMEF,VALF,x0,W};
+  /* IQ-05c: the flag column (4:3, as flag-icons draws them) sits between the left margin and the
+     bars; the bars start after it. */
+  const FH = FLAGCOL ? Math.round(BARH*FLAGCOL.height_frac) : 0, FW = Math.round(FH*4/3);
+  const x0 = FLAGCOL ? LEFT+FW+FLAGCOL.gap : LEFT+GAPBAR, W=1920-RIGHT-VALW-x0;
+  return {ROWH,BARH,NAMEF,VALF,x0,W,FH,FW};
 }
 
 /* ONE name size for the whole video (C2-2's rule: two bars at different sizes reads as a
@@ -226,22 +268,28 @@ function winnerText(ev){
   return 'Won by '+ev.credits.map(c=>ENT[c.id].label+' · '+fmt(c.total)).join(' & ');
 }
 function drawTime(ev){
-  const R=1920-64;
-  if(CFG.time_label.mode==='title' || !ev) return;
+  const TLB=CFG.time_label;
+  if(TLB.mode==='title' || !ev) return;
+  /* "board" (C2-2's place): right-aligned at the frame's right margin, date on y 1018.
+     "block" (IQ-05c): anchored at time_label.x (align left or right) with the date on
+     time_label.date_y, so the block can sit next to the board. Same line spacing in both. */
+  const block = TLB.mode==='block';
+  const R = block ? TLB.x : 1920-64, AL = block ? (TLB.align||'left') : 'right';
   const lift = WINLINE ? SZ.winner+8 : 0;      // make room for the winner line under the date
+  const DY = (block ? TLB.date_y : 1080-62) - lift;
   ctx.fillStyle=T.ink; ctx.font='700 '+YEARSIZE+'px '+FONT;
-  tabText((CFG.time_label.season_prefix||'')+ev.season, R, 1080-150-lift, 'right', 'time_season', null);
+  tabText((TLB.season_prefix||'')+ev.season, R, DY-88, AL, 'time_season', null);
   if(ev.grand_prix){
     ctx.fillStyle=T.cap||T.muted; ctx.font='600 34px '+FONT;
-    text('time_gp',null,ev.grand_prix,R,1080-102-lift,'right');
+    text('time_gp',null,ev.grand_prix,R,DY-40,AL);
   }
   if(ev.date){
     ctx.fillStyle=T.muted; ctx.font='500 '+SZ.date+'px '+FONT;
-    ctx.textAlign='right'; tabText(dateText(ev.date), R, 1080-62-lift, 'right', 'time_date', null);
+    ctx.textAlign=AL; tabText(dateText(ev.date), R, DY, AL, 'time_date', null);
   }
   if(WINLINE && ev.credits && ev.credits.length){
     ctx.fillStyle=T.ink; ctx.font='600 '+SZ.winner+'px '+FONT;
-    tabText(winnerText(ev), R, 1080-62, 'right', 'winner', null);
+    tabText(winnerText(ev), R, DY+lift, AL, 'winner', null);
   }
 }
 
@@ -345,16 +393,34 @@ function drawAt(t){
   const hlOf={};
   if(HL && k>=0) for(const h of TL.highlight[k])
     hlOf[h.id] = h.streak ? 1 : 1-ease(since/Math.max(1,HL.sec*FPS));
-  window.__BARS=[];
+  /* IQ-05c event label: the race's winners on the board carry "· <GP>" after their value from the
+     first frame of the race; the previous race's label stays until this race lands and then fades
+     over EVL.fade_sec (a driver who wins again simply shows the new Grand Prix). */
+  const evOf={};
+  if(EVL && k>=0){
+    const cur=TL.highlight[k].map(h=>h.id), fadeF=Math.max(1,EVL.fade_sec*FPS);
+    if(k>0 && since<fadeF) for(const h of TL.highlight[k-1]) if(!cur.includes(h.id))
+      evOf[h.id]={text:RTT_TIMELINE.gpShort(TL.events[k-1].grand_prix), a:1-ease(since/fadeF), race_index:TL.events[k-1].race_index};
+    for(const id of cur) evOf[id]={text:RTT_TIMELINE.gpShort(ev.grand_prix), a:1, race_index:ev.race_index};
+  }
+  window.__BARS=[]; window.__FLAGS=[];
   ctx.save(); ctx.beginPath(); ctx.rect(0, TOP, 1920, BOTTOM-TOP); ctx.clip();
   top.forEach(r=>{
     const c=r.c, y=TOP+14+c._y*ROWH; if(y>BOTTOM-4) return;
     ctx.globalAlpha=c._y>NROWS-1?Math.max(0,1-(c._y-(NROWS-1))/0.75):1;
     const hl=hlOf[c.id]||0;
-    window.__BARS.push({id:c.id, y:c._y, alpha:ctx.globalAlpha, colour:darkenForWhite(c.colour), hl});
-    if(ctx.globalAlpha<=0){ ctx.globalAlpha=1; return; }
     const w=Math.max(3,W*r.len/smoothMax), colour=darkenForWhite(c.colour);
     const by=y+(ROWH-BARH)/2, mid=by+BARH/2;
+    window.__BARS.push({id:c.id, y:c._y, alpha:ctx.globalAlpha, colour, hl, rect:{x:x0,y:by,w,h:BARH}});
+    if(ctx.globalAlpha<=0){ ctx.globalAlpha=1; return; }
+    /* IQ-05c flag, in the column left of the bar, same row, same opacity */
+    const code=FLAGS && FLAGCODE[c.id];
+    if(code && FLAGIMG[code]){
+      const fy=mid-G.FH/2;
+      ctx.save(); rr(LEFT,fy,G.FW,G.FH,3); ctx.clip(); ctx.drawImage(FLAGIMG[code],LEFT,fy,G.FW,G.FH); ctx.restore();
+      ctx.save(); ctx.strokeStyle='rgba(244,246,250,0.35)'; ctx.lineWidth=1; rr(LEFT+0.5,fy+0.5,G.FW-1,G.FH-1,3); ctx.stroke(); ctx.restore();
+      window.__FLAGS.push({id:c.id, code, x:LEFT, y:fy, w:G.FW, h:G.FH, alpha:ctx.globalAlpha});
+    }
     if(hl>0){
       ctx.save(); ctx.shadowColor=mixWhite(colour,0.5); ctx.shadowBlur=HL.glow*hl*RASTER;
       ctx.fillStyle=mixWhite(colour,HL.mix*hl); rr(x0,by,w,BARH,2); ctx.fill(); ctx.restore();
@@ -378,14 +444,34 @@ function drawAt(t){
 
     ctx.font='600 '+VALF+'px '+FONT;
     const txt=fmt(r.n), tw=tabWidth(txt,pitch());
-    if(!VALOUT && !nameOut && w>tw+40+ctx.measureText(nm).width+24){ ctx.fillStyle='#F4F6FA'; tabText(txt,x0+w-18,mid+VALF*0.35,'right','value',c.id); }
-    else { ctx.fillStyle=T.ink; tabText(txt,x0+w+18+nameOut,mid+VALF*0.35,'left','value',c.id); }
+    let after;                                   // where anything after the value may start
+    if(!VALOUT && !nameOut && w>tw+40+ctx.measureText(nm).width+24){ ctx.fillStyle='#F4F6FA'; tabText(txt,x0+w-18,mid+VALF*0.35,'right','value',c.id); after=x0+w+18; }
+    else { ctx.fillStyle=T.ink; tabText(txt,x0+w+18+nameOut,mid+VALF*0.35,'left','value',c.id); after=x0+w+18+nameOut+tw+VALF*0.35; }
+    const el=evOf[c.id];
+    if(el && el.a>0){
+      const a0=ctx.globalAlpha; ctx.globalAlpha=a0*el.a;
+      ctx.fillStyle=T.cap||T.muted; ctx.font='500 '+VALF+'px '+FONT;
+      text('event',c.id,'· '+el.text,after,mid+VALF*0.35,'left');
+      window.__LABELS[window.__LABELS.length-1].race_index=el.race_index;
+      ctx.globalAlpha=a0;
+    }
     ctx.globalAlpha=1;
   });
   ctx.restore();
 
   ctx.fillStyle=T.foot; ctx.font='400 '+SZ.footer+'px '+FONT;
   text('footer',null,CFG.footer||'',LEFT,1080-20,'left');
+
+  /* IQ-05c overlays (DEC-035): each picture fitted inside its reserved box; none if absent */
+  window.__OVERLAYS=OVL.map(b=>{
+    let drawn=null;
+    if(b.img){
+      const s=Math.min(b.w/b.img.naturalWidth, b.h/b.img.naturalHeight), w=b.img.naturalWidth*s, h=b.img.naturalHeight*s;
+      drawn={x:b.x+(b.w-w)/2, y:b.y+(b.h-h)/2, w, h};
+      ctx.drawImage(b.img, drawn.x, drawn.y, w, h);
+    }
+    return {name:b.name, box:{x:b.x,y:b.y,w:b.w,h:b.h}, drawn};
+  });
 
   if(outroF>0 && CFG.outro_sec>0) drawOutro(outroF/FPS);   // outro_sec 0 = no closing card (pilots)
 }

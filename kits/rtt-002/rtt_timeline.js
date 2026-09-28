@@ -258,24 +258,83 @@
     const W = R.fade_races != null ? R.fade_races : 3, minDE = R.min_delta_e != null ? R.min_delta_e : 0;
     const rows = cfg.rows;
     const { adj, sets, first } = coVisible(race, rows, W);
-    const order = Object.keys(first).sort((a, b) => (first[a][0] - first[b][0]) || (first[a][1] - first[b][1]));
+    let order = Object.keys(first).sort((a, b) => (first[a][0] - first[b][0]) || (first[a][1] - first[b][1]));
+    /* IQ-05c (DEC-034 step 5), colour_rule.priority {rows, bright}: the drivers who ever reach the
+       top priority.rows (10) choose first, most career wins at the end of the race file first (ties:
+       who reached the top priority.rows first), and the palette's first priority.bright colours
+       (the bright, light ones) are kept for them: every other driver tries the rest of the palette
+       first and takes a bright colour only if nothing else fits. The DEC-023 rule itself (no two
+       drivers on screen together closer than min_delta_e) is unchanged. */
+    const P = R.priority, top = new Set();
+    let bright = 0;
+    if (P) {
+      const fin = {}, reached = {}, firstTop = {};
+      race.events.forEach((ev, k) => {
+        for (const c of ev.credits) { fin[c.id] = c.total; reached[c.id] = c.credit_index; }
+        rankOf(fin, reached).slice(0, P.rows).forEach((id, i) => { top.add(id); if (!(id in firstTop)) firstTop[id] = [k, i]; });
+      });
+      const pos = id => order.indexOf(id);
+      const tops = order.filter(id => top.has(id)).sort((a, b) => (fin[b] - fin[a]) || (firstTop[a][0] - firstTop[b][0]) || (firstTop[a][1] - firstTop[b][1]));
+      order = tops.concat(order.filter(id => !top.has(id)).sort((a, b) => pos(a) - pos(b)));
+      bright = P.bright || 0;
+    }
     const idx = {};
-    for (const id of order) {
-      let ci = 0;
-      for (; ci < pal.length; ci++) {
-        let ok = true;
-        for (const m of adj[id] || []) if (m in idx && (idx[m] === ci || deltaE(pal[idx[m]], pal[ci]) < minDE)) { ok = false; break; }
-        if (ok) break;
+    const tryOrderOf = id => {
+      const t = [];
+      if (P && !top.has(id)) { for (let i = bright; i < pal.length; i++) t.push(i); for (let i = 0; i < bright; i++) t.push(i); }
+      else for (let i = 0; i < pal.length; i++) t.push(i);
+      return t;
+    };
+    if (!P) {
+      /* IQ-05 greedy, unchanged: each driver takes the first colour that fits */
+      for (const id of order) {
+        let pick = -1;
+        for (const ci of tryOrderOf(id)) {
+          let ok = true;
+          for (const m of adj[id] || []) if (m in idx && (idx[m] === ci || deltaE(pal[idx[m]], pal[ci]) < minDE)) { ok = false; break; }
+          if (ok) { pick = ci; break; }
+        }
+        if (pick < 0) throw new Error('colour rule: the ' + pal.length + '-colour palette is not enough for ' + id + '; add a clearly distinct colour');
+        idx[id] = pick;
       }
-      if (ci === pal.length) throw new Error('colour rule: the ' + pal.length + '-colour palette is not enough for ' + id + '; add a clearly distinct colour');
-      idx[id] = ci;
+    } else {
+      /* IQ-05c: with a priority order the plain greedy can paint itself into a corner (the 22
+         top-20 colours are packed tightly), so this is a depth-first search in the same order:
+         each driver tries its colours in preference order, and when a later driver has none left
+         the search goes back to the most recent choice first. Earlier (higher-priority) drivers
+         therefore keep their first choice unless nothing else works. Forward check: no choice is
+         kept that leaves an uncoloured neighbour with no colour. Deterministic. */
+      const n = pal.length, fits = [];
+      for (let i = 0; i < n; i++) { fits.push([]); for (let j = 0; j < n; j++) fits[i].push(i !== j && deltaE(pal[i], pal[j]) >= minDE); }
+      const nb = order.map(id => [...(adj[id] || [])].map(m => order.indexOf(m)).filter(j => j >= 0));
+      const col = new Array(order.length).fill(-1), prefs = order.map(tryOrderOf);
+      const allowed = (v, ci) => nb[v].every(j => col[j] < 0 || fits[ci][col[j]]);
+      let steps = 0;
+      const dfs = v => {
+        if (v === order.length) return true;
+        if (++steps > 2e6) throw new Error('colour rule: search gave up after 2,000,000 steps');
+        for (const ci of prefs[v]) {
+          if (!allowed(v, ci)) continue;
+          col[v] = ci;
+          if (nb[v].every(j => col[j] >= 0 || j < v || prefs[j].some(cj => allowed(j, cj))) && dfs(v + 1)) return true;
+          col[v] = -1;
+        }
+        return false;
+      };
+      if (!dfs(0)) throw new Error('colour rule: the ' + pal.length + '-colour palette cannot colour every driver; add a clearly distinct colour');
+      order.forEach((id, v) => { idx[id] = col[v]; });
     }
     for (const e of race.entrants) if (!(e.id in idx)) idx[e.id] = 0;
-    const used = Math.max(...order.map(id => idx[id])) + 1;
-    return { index: idx, used, sets, fadeRaces: W, minDeltaE: minDE, rows };
+    const used = new Set(order.map(id => idx[id])).size;
+    return { index: idx, used, sets, fadeRaces: W, minDeltaE: minDE, rows, priorityTop: [...top], bright };
   }
 
-  const api = { build, eventAt, rankOf, assignColours, coVisible, drawnColour, deltaE };
+  /* IQ-05c event label: the Grand Prix as drawn next to a winner's value ("Portuguese GP").
+     "Grand Prix" -> "GP" wherever it appears; a race without those words (the Indianapolis 500)
+     keeps its name. Everything else is races.csv's grand_prix exactly. */
+  function gpShort(name) { return String(name).replace(/Grand Prix/g, 'GP'); }
+
+  const api = { build, eventAt, rankOf, assignColours, coVisible, drawnColour, deltaE, lab, gpShort };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   else root.RTT_TIMELINE = api;
 })(typeof window !== 'undefined' ? window : this);
