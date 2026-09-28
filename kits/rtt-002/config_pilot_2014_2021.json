@@ -1,0 +1,14 @@
+{
+ "extends": "config.json",
+ "kit_version": "rtt002_pilot_2014_2021",
+ "out": "rtt002_pilot_2014_2021.mp4",
+ "window": { "from": "2014-01-01", "to": "2021-12-31" },
+ "range": "2014 – 2021",
+ "outro_sec": 0,
+ "pacing": { "sec_per_event": 0.5, "end_hold_sec": 3.0 },
+ "notes": [
+  "IQ-05 design pilot (DEC-022): the 160 races of 2014-2021 at the current pace, 0.5 s per race. Everything else is config.json (extends), so colours, sizes and look are the full video's.",
+  "Opens with the normal title card (intro_sec 3, title from config.json; range shows the passage). The board opens on the totals before the 2014 opener. Ends with a 3 s hold on the final board (pacing.end_hold_sec) and no closing card (outro_sec 0).",
+  "The passage has Hamilton equalling Schumacher's 91 wins at the 2020 Eifel Grand Prix (Schumacher stays above: he reached 91 first) and passing him at the 2020 Portuguese Grand Prix."
+ ]
+}

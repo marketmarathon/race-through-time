@@ -1,0 +1,9 @@
+{
+ "extends": "config_pilot_2014_2021.json",
+ "kit_version": "rtt002_pilot_2014_2021_fast",
+ "out": "rtt002_pilot_2014_2021_fast.mp4",
+ "pacing": { "sec_per_event": 0.35 },
+ "notes": [
+  "IQ-05 design pilot, faster variant (DEC-022): identical to config_pilot_2014_2021.json except 0.35 s per race, for a side-by-side comparison of pace."
+ ]
+}

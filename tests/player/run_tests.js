@@ -1,4 +1,5 @@
-/* IQ-04 player tests: the six stress fixtures and an RTT-002 slice (1984-1989).
+/* Player tests: the six stress fixtures, an RTT-002 slice (1984-1989), the two IQ-05 pilots
+ * (2014-2021, normal and fast pace) and a colour check over the whole RTT-002 run.
  *
  * For each case:
  *   1. scripts/rtt_adapter.py turns the CSVs into the player's input (as production does)
@@ -20,6 +21,20 @@
  *      OCR, so the pixels are checked as well as the draw calls
  *   6. fixture-specific expectations from fixture.json
  *
+ * Added in IQ-05 (DEC-022):
+ *   7. entry visibility: every driver who joins the visible top N must be CLEARLY VISIBLE (row
+ *      opacity >= 0.8 with its name and value label drawn) within 8 frames of the first frame
+ *      of that race
+ *   8. colours, on every drawn frame: no two bars on screen (opacity > 0) share a colour or
+ *      are closer than colour_rule.min_delta_e; each driver has one colour, the same in every
+ *      case that draws RTT-002 (1984-89, both pilots, the full run)
+ *   9. colours, on every race of the full RTT-002 dataset, from win_credits.csv alone: the
+ *      drivers in the top N after that race and the fade_races races before it (so rows still
+ *      fading out are included) all have different, clearly distinct colours
+ *  10. milestones (pilots): Hamilton on 91 level with Schumacher at the 2020 Eifel GP, and
+ *      past him at the 2020 Portuguese GP, read from the drawn labels
+ *  11. pilots: no closing card, a hold of at least pacing.end_hold_sec on the final board
+ *
  * Usage: node tests/player/run_tests.js [case ...]     (needs `npm ci` in kits/rtt-002)
  * Output: tests/output/ (PNGs, gitignored) and tests/player/RESULTS.md
  */
@@ -33,6 +48,10 @@ const rtt = require(path.join(KITDIR, 'rtt.js'));
 const OUTDIR = path.join(ROOT, 'tests', 'output');
 const FIX = path.join(ROOT, 'tests', 'fixtures');
 const HAS_OCR = spawnSync('tesseract', ['--version']).status === 0;
+const TIMELINE = require(path.join(KITDIR, 'rtt_timeline.js'));
+const ENTRY_MAX_FRAMES = 8;          // DEC-022 (4): clearly visible within 8 frames (0.27 s at 30 fps)
+const CLEAR_ALPHA = 0.8;             // "clearly visible": row opacity at least this, labels drawn
+const COLOUR_OF = {};                // driver -> drawn colour, across every RTT-002 case
 
 /* ---- a small CSV reader (quoted fields allowed) ---- */
 function readCSV(file) {
@@ -73,8 +92,48 @@ function expected(dir) {
 function dateText(iso, months) { const [y, m, d] = iso.split('-').map(Number); return d + ' ' + months[m - 1] + ' ' + y; }
 
 function ocr(png) {
-  const r = spawnSync('tesseract', [png, 'stdout', '--psm', '7', '-l', 'eng'], { encoding: 'utf8' });
+  // one thread: tesseract's own threading only slows it down on crops this small
+  const r = spawnSync('tesseract', [png, 'stdout', '--psm', '7', '-l', 'eng'], { encoding: 'utf8', env: Object.assign({}, process.env, { OMP_THREAD_LIMIT: '1' }) });
   return (r.stdout || '').trim();
+}
+
+/* (9) The colour rule on every race of the full RTT-002 dataset, from win_credits.csv alone
+   (the boards are computed here, not taken from rtt_timeline.js). The colours are the kit's
+   assignment (rtt_timeline.js assignColours on the full race file); main() then checks that every
+   colour actually DRAWN for a driver in any RTT-002 case is that same colour. */
+function colourRuleFullDataset(dir) {
+  const cfg = rtt.loadConfig('config.json');
+  const data = JSON.parse(fs.readFileSync(path.join(KITDIR, cfg.race_file), 'utf8'));
+  const E = expected(dir);
+  const W = cfg.colour_rule.fade_races, minDE = cfg.colour_rule.min_delta_e;
+  const assigned = TIMELINE.assignColours(data, cfg).index;
+  const colour = id => TIMELINE.drawnColour(cfg.palette[assigned[id]]);
+  const res = { name: 'colour_rule_full_dataset', events: E.races.length, failures: [], notes: [], max_together: 0, closest: Infinity };
+  const fail = m => { if (res.failures.length < 40) res.failures.push(m); };
+  const tops = E.races.map(r => E.after[r.race_index].order.slice(0, cfg.rows));
+  const onBoard = new Set(tops.flat());
+  E.races.forEach((r, k) => {
+    const V = [...new Set(tops.slice(Math.max(0, k - W), k + 1).flat())];
+    res.max_together = Math.max(res.max_together, V.length);
+    for (const a of V) for (const b of V) if (a < b) {
+      const d = TIMELINE.deltaE(colour(a), colour(b));
+      if (d < res.closest) { res.closest = d; res.closest_pair = `${E.names[a]} / ${E.names[b]}`; }
+      if (colour(a) === colour(b)) fail(`race ${r.race_index} (${r.season} ${r.grand_prix}): ${E.names[a]} and ${E.names[b]} share ${colour(a)}`);
+      else if (d < minDE) fail(`race ${r.race_index}: ${E.names[a]} and ${E.names[b]} only ${d.toFixed(1)} apart`);
+    }
+  });
+  res.drivers = onBoard.size;
+  res.colours_used = new Set([...onBoard].map(colour)).size;
+  res.palette = cfg.palette.length;
+  res.pass = res.failures.length === 0;
+  res.notes.push(`${res.events} races; ${res.drivers} drivers ever reach the top ${cfg.rows}; at most ${res.max_together} can be on screen together (top ${cfg.rows} after a race and the ${W} before it, so rows still fading out count)`);
+  res.notes.push(`${res.colours_used} colours used of a ${res.palette}-colour palette; every pair that can be on screen together differs, the closest being ${res.closest_pair} at CIEDE2000 ${res.closest.toFixed(1)} (rule: at least ${minDE})`);
+  const byColour = {};
+  for (const id of [...onBoard].sort((a, b) => E.races.findIndex(r => E.after[r.race_index].order.slice(0, cfg.rows).includes(a)) - E.races.findIndex(r => E.after[r.race_index].order.slice(0, cfg.rows).includes(b))))
+    (byColour[colour(id)] = byColour[colour(id)] || []).push(E.names[id]);
+  res.by_colour = byColour;
+  res.colour_of = Object.fromEntries([...onBoard].map(id => [id, colour(id)]));
+  return res;
 }
 
 async function runCase(c) {
@@ -83,13 +142,14 @@ async function runCase(c) {
   const json = path.join(out, 'race.json');
   const adapter = execFileSync('python3', [path.join(ROOT, 'scripts', 'rtt_adapter.py'), c.dir, json], { encoding: 'utf8' }).trim();
   const data = JSON.parse(fs.readFileSync(json, 'utf8'));
-  const cfg = rtt.loadConfig('config.json', Object.assign({ window: c.window || { from: null, to: null } }, c.overrides || {}));
+  const cfg = c.config ? rtt.loadConfig(c.config, c.overrides) : rtt.loadConfig('config.json', Object.assign({ window: c.window || { from: null, to: null } }, c.overrides || {}));
   const E = expected(c.dir);
   const inWindow = E.races.filter(r => (!cfg.window.from || r.race_date >= cfg.window.from) && (!cfg.window.to || r.race_date <= cfg.window.to));
   const before = E.races.filter(r => cfg.window.from && r.race_date < cfg.window.from).pop();
 
   const res = { name: c.name, adapter_sha256: adapter.split(/\s+/)[0], events: inWindow.length, frames: 0,
-                boundary_frames: 0, labels_checked: 0, ocr_checked: 0, ocr_skipped_overlap: 0, ocr_mismatch: [], failures: [], notes: [] };
+                boundary_frames: 0, labels_checked: 0, ocr_checked: 0, ocr_skipped_overlap: 0, ocr_mismatch: [], failures: [], notes: [],
+                config: c.config || 'config.json', entries: 0, entry_frames_max: 0, colour_frames: 0 };
   const fail = m => { if (res.failures.length < 40) res.failures.push(m); };
 
   const { br, pg } = await rtt.openPlayer({ cfg, data, raster: 1, chrome: process.env.PW_CHROME || '/opt/pw-browsers/chromium' });
@@ -108,7 +168,11 @@ async function runCase(c) {
     const el = await pg.$('#c');
     let lastIdx = before ? before.race_index : null, seenRaces = [], prevVals = {}, lag = {};
     res.entry_lag_max = 0;
-    const outroFrames = Math.round(cfg.fps * 0.5);
+    const outroFrames = Math.round(cfg.fps * Math.min(0.5, cfg.outro_sec));
+    /* entries: drivers in the top N after race k but not after the race before it */
+    const prevTop = k => (k === 0 ? (before ? E.after[before.race_index].order : []) : E.after[inWindow[k - 1].race_index].order).slice(0, cfg.rows);
+    const entering = {};             // driver -> {k, start frame} while waiting to be clearly visible
+    const minDE = (cfg.colour_rule && cfg.colour_rule.min_delta_e) || 0;
     for (let f = 0; f < info.raceFrames + outroFrames; f++) {
       const L = await pg.evaluate(t => { drawAt(t); return { labels: window.__LABELS, rank: window.__RANK, ev: window.__EVENT, bars: window.__BARS }; }, f / cfg.fps);
       res.frames++;
@@ -122,6 +186,9 @@ async function runCase(c) {
         seenRaces.push(String(ri)); lastIdx = ri;
       }
       const exp = ri != null ? E.after[ri] : { order: [], totals: {} };
+      const k = L.ev.k;
+      if (k >= 0 && info.start[k] === f)
+        for (const id of exp.order.slice(0, cfg.rows)) if (!prevTop(k).includes(id)) { entering[id] = { k, s: f, race: ri }; res.entries++; }
       if (ri != null) {
         const r = exp.race;
         const tl = Object.fromEntries(L.labels.filter(x => x.kind.startsWith('time_')).map(x => [x.kind, x.text]));
@@ -157,12 +224,33 @@ async function runCase(c) {
         else { lag[id] = (lag[id] || 0) + 1; res.entry_lag_max = Math.max(res.entry_lag_max, lag[id]); }
       }
       for (const id in vals) if (id in prevVals && vals[id] !== prevVals[id] && !info.start.includes(f)) fail(`frame ${f}: ${id} changed ${prevVals[id]}->${vals[id]} between events`);
+      /* (7) entry visibility */
+      for (const [id, e] of Object.entries(entering)) {
+        const clear = bar[id] && bar[id].alpha >= CLEAR_ALPHA && L.labels.some(x => x.kind === 'name' && x.id === id) && (id in vals);
+        const late = f - e.s;
+        if (clear) { res.entry_frames_max = Math.max(res.entry_frames_max, late); delete entering[id]; }
+        else if (late >= ENTRY_MAX_FRAMES || !exp.order.slice(0, cfg.rows).includes(id)) {
+          fail(`race ${e.race}: ${id} entered the top ${cfg.rows} on frame ${e.s} but was not clearly visible within ${ENTRY_MAX_FRAMES} frames`);
+          delete entering[id];
+        }
+      }
+      /* (8) colours on screen */
+      const shown = L.bars.filter(b => b.alpha > 0);
+      for (const b of shown) {
+        if (c.rtt002) { if (!(b.id in COLOUR_OF)) COLOUR_OF[b.id] = { colour: b.colour, where: c.name };
+                        else if (COLOUR_OF[b.id].colour !== b.colour) fail(`frame ${f}: ${b.id} is ${b.colour} here but ${COLOUR_OF[b.id].colour} in ${COLOUR_OF[b.id].where}`); }
+        for (const o of shown) if (o.id < b.id) {
+          if (o.colour === b.colour) fail(`frame ${f}: ${o.id} and ${b.id} are both on screen in ${b.colour}`);
+          else if (TIMELINE.deltaE(o.colour, b.colour) < minDE) fail(`frame ${f}: ${o.id} ${o.colour} and ${b.id} ${b.colour} are on screen together and only ${TIMELINE.deltaE(o.colour, b.colour).toFixed(1)} apart`);
+        }
+      }
+      res.colour_frames++;
       prevVals = vals;
       /* fixture-specific */
       if (c.expect.max_visible != null && Object.keys(vals).length > c.expect.max_visible) fail(`frame ${f}: more than ${c.expect.max_visible} bars`);
 
       /* event boundaries: keep the frame, and read the value labels back from its pixels */
-      if (bounds.has(f)) {
+      if (bounds.has(f) && !c.light) {
         res.boundary_frames++;
         const k = info.start.indexOf(f) >= 0 ? 'first' : 'last';
         const png = path.join(out, `f${String(f).padStart(5, '0')}_race${ri}_${k}.png`);
@@ -181,6 +269,7 @@ async function runCase(c) {
         }
       }
     }
+    for (const [id, e] of Object.entries(entering)) fail(`race ${e.race}: ${id} entered but was never clearly visible`);
     const wantRaces = inWindow.map(r => r.race_index);
     if (JSON.stringify(seenRaces) !== JSON.stringify(wantRaces)) fail(`races shown ${seenRaces.length} != races in window ${wantRaces.length}`);
     for (const [ri, want] of Object.entries((c.expect.after_race) || {}))
@@ -209,6 +298,29 @@ async function runCase(c) {
       const base = inWindow.length * cfg.pacing.sec_per_event;
       res.notes.push(`quiet stretch paced at ${cfg.pacing.mult.quiet}x; events take ${((info.raceFrames / cfg.fps) - cfg.pacing.lead_in_sec - cfg.pacing.end_hold_sec).toFixed(2)} s against ${base.toFixed(2)} s unpaced`);
     }
+    /* (10) milestones, read from the drawn labels on the first frame of the race */
+    for (const m of (c.expect.milestones || [])) {
+      const k = inWindow.findIndex(r => r.season === m.season && r.grand_prix === m.grand_prix);
+      if (k < 0) { fail(`milestone: ${m.season} ${m.grand_prix} is not in the passage`); continue; }
+      const idOf = nm => Object.keys(E.names).find(id => E.names[id] === nm);
+      const got = await pg.evaluate(t => { drawAt(t); return { labels: window.__LABELS, rank: window.__RANK }; }, info.start[k] / cfg.fps);
+      const shows = nm => { const x = got.labels.find(l => l.kind === 'value' && l.id === idOf(nm)); return x ? parseInt(x.text.replace(/,/g, '')) : null; };
+      const pos = nm => got.rank.indexOf(idOf(nm)) + 1;
+      const said = m.show.map(([nm, n]) => `${nm} ${shows(nm)} (P${pos(nm)})`).join(', ');
+      if (m.show.some(([nm, n]) => shows(nm) !== n)) fail(`milestone ${m.season} ${m.grand_prix}: expected ${m.show.map(x => x.join(' ')).join(', ')}, drawn ${said}`);
+      if (m.order && m.order.some((nm, i) => i > 0 && pos(m.order[i - 1]) >= pos(nm))) fail(`milestone ${m.season} ${m.grand_prix}: order should be ${m.order.join(' ahead of ')}, drawn ${said}`);
+      res.notes.push(`${m.season} ${m.grand_prix} (frame ${info.start[k]}): ${said} — ${m.note}`);
+    }
+    /* (11) no closing card; the final board holds for end_hold_sec */
+    if (cfg.outro_sec === 0) {
+      const last = info.raceFrames - 1;
+      const out = await pg.evaluate(t => { drawAt(t); return window.__LABELS; }, last / cfg.fps);
+      if (out.some(x => x.kind.startsWith('outro_'))) fail('closing card drawn although outro_sec is 0');
+      const hold = (info.raceFrames - info.start[info.start.length - 1]) / cfg.fps;
+      if (hold < cfg.pacing.end_hold_sec) fail(`final board holds ${hold.toFixed(2)} s, less than ${cfg.pacing.end_hold_sec} s`);
+      const total = rtt.frameTotals(cfg, data).total;
+      res.notes.push(`no closing card; final board on screen ${hold.toFixed(2)} s (last race slot + ${cfg.pacing.end_hold_sec} s hold); FRAME_COUNT_ONLY total ${total} frames = ${(total / cfg.fps).toFixed(1)} s`);
+    }
     /* the intro card draws the config title */
     const intro = await pg.evaluate(t => { drawIntro(t); return window.__LABELS; }, 1.5);
     if (!intro.some(x => x.kind === 'intro_title' && x.text === cfg.title)) fail('intro card does not carry the config title');
@@ -224,11 +336,22 @@ async function main() {
     const fx = JSON.parse(fs.readFileSync(path.join(FIX, name, 'fixture.json'), 'utf8'));
     cases.push({ name, dir: path.join(FIX, name), overrides: fx.overrides, expect: fx.expect });
   }
-  cases.push({ name: 'rtt002_1984_1989', dir: path.join(ROOT, 'data', 'rtt-002'),
+  const RTT002 = path.join(ROOT, 'data', 'rtt-002');
+  cases.push({ name: 'rtt002_1984_1989', dir: RTT002, rtt002: true,
                window: { from: '1984-01-01', to: '1989-12-31' }, overrides: {}, expect: {} });
+  const milestones = [
+    { season: '2020', grand_prix: 'Eifel Grand Prix', show: [['Lewis Hamilton', 91], ['Michael Schumacher', 91]], order: ['Michael Schumacher', 'Lewis Hamilton'],
+      note: 'Hamilton equals Schumacher; Schumacher stays ahead on the tie rule (he reached 91 first)' },
+    { season: '2020', grand_prix: 'Portuguese Grand Prix', show: [['Lewis Hamilton', 92], ['Michael Schumacher', 91]], order: ['Lewis Hamilton', 'Michael Schumacher'],
+      note: 'Hamilton passes Schumacher' }];
+  cases.push({ name: 'rtt002_2014_2021_pilot', dir: RTT002, rtt002: true, config: 'config_pilot_2014_2021.json', expect: { milestones } });
+  cases.push({ name: 'rtt002_2014_2021_pilot_fast', dir: RTT002, rtt002: true, config: 'config_pilot_2014_2021_fast.json', expect: { milestones } });
+  /* the whole video, every frame, draw-call checks only (no PNGs or OCR: 16,000 frames) */
+  cases.push({ name: 'rtt002_full_run', dir: RTT002, rtt002: true, light: true, overrides: {}, expect: {} });
   const run = only.length ? cases.filter(c => only.includes(c.name)) : cases;
 
   const results = [];
+  if (!only.length || only.includes('colour_rule_full_dataset')) results.push(colourRuleFullDataset(path.join(ROOT, 'data', 'rtt-002')));
   for (const c of run) {
     const t0 = Date.now();
     const r = await runCase(c);
@@ -238,6 +361,16 @@ async function main() {
     for (const m of r.failures) console.log('   - ' + m);
     for (const m of r.ocr_mismatch.slice(0, 10)) console.log('   ocr: ' + m);
   }
+  const full = results.find(r => r.name === 'colour_rule_full_dataset');
+  if (full) for (const [id, v] of Object.entries(COLOUR_OF))
+    if (full.colour_of[id] !== v.colour) { full.failures.push(`${id} drawn ${v.colour} in ${v.where} but assigned ${full.colour_of[id]}`); full.pass = false; }
+  if (full) full.notes.push(`${Object.keys(COLOUR_OF).length} drivers drawn in the RTT-002 cases run; each drawn in its assigned colour in every case`);
+  if (results[0] && results[0].name === 'colour_rule_full_dataset') {
+    const r = results[0];
+    console.log(`${r.pass ? 'PASS' : 'FAIL'}  ${r.name}: ${r.events} races, ${r.drivers} drivers on the board, up to ${r.max_together} together, ${r.colours_used} colours, closest pair ${r.closest.toFixed(1)}`);
+    for (const m of r.failures) console.log('   - ' + m);
+  }
+  fs.mkdirSync(OUTDIR, { recursive: true });
   fs.writeFileSync(path.join(OUTDIR, 'results.json'), JSON.stringify(results, null, 1));
   if (!only.length) writeReport(results);
   process.exit(results.every(r => r.pass) ? 0 : 1);
@@ -246,15 +379,27 @@ async function main() {
 function writeReport(results) {
   const pw = require(require.resolve('playwright/package.json', { paths: [KITDIR] })).version;
   const L = [];
-  L.push('# IQ-04 player test results', '');
+  const cases = results.filter(r => r.frames != null), col = results.find(r => r.name === 'colour_rule_full_dataset');
+  L.push('# Player test results (IQ-05)', '');
   L.push('Written by `node tests/player/run_tests.js` (all cases). Frames are 1920x1080 (preview width), drawn headless in Playwright ' + pw + ' Chromium, every race frame in order.');
   L.push('OCR: ' + (HAS_OCR ? spawnSync('tesseract', ['--version'], { encoding: 'utf8' }).stdout.split('\n')[0] + ' on every value label of the first frame of every race.' : 'NOT AVAILABLE (tesseract not installed); draw-call checks only.'), '');
-  L.push('| Case | Result | Races | Frames | Race length | Value labels checked | Boundary frames | OCR read back (skipped: overlapping rows) | Longest entry slide (frames) | Name size | Pacing (rank / visible / quiet) | Adapter output SHA-256 |');
-  L.push('|---|---|---|---|---|---|---|---|---|---|---|---|');
-  for (const r of results)
-    L.push(`| ${r.name} | ${r.pass ? 'PASS' : 'FAIL'} | ${r.events} | ${r.frames} | ${r.race_sec.toFixed(2)} s | ${r.labels_checked} | ${r.boundary_frames} | ${r.ocr_checked - r.ocr_mismatch.length}/${r.ocr_checked} (${r.ocr_skipped_overlap}) | ${r.entry_lag_max} | ${r.name_px}px${r.name_truncated ? ' (truncated)' : ''} | ${r.pacing.rank_change} / ${r.pacing.visible_change} / ${r.pacing.quiet} | \`${r.adapter_sha256.slice(0, 16)}…\` |`);
+  L.push(`Overall: ${results.filter(r => r.pass).length}/${results.length} PASS.`, '');
+  L.push('| Case | Result | Config | Races | Frames | Race length | Value labels checked | Boundary frames | OCR read back (skipped: overlapping rows) | Top-ten entries | Slowest entry (frames to clearly visible) | Colour-checked frames | Name size | Pacing (rank / visible / quiet) | Adapter output SHA-256 |');
+  L.push('|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|');
+  for (const r of cases)
+    L.push(`| ${r.name} | ${r.pass ? 'PASS' : 'FAIL'} | \`${r.config}\` | ${r.events} | ${r.frames} | ${r.race_sec.toFixed(2)} s | ${r.labels_checked} | ${r.boundary_frames || 'not saved'} | ${r.boundary_frames ? `${r.ocr_checked - r.ocr_mismatch.length}/${r.ocr_checked} (${r.ocr_skipped_overlap})` : 'not run'} | ${r.entries} | ${r.entry_frames_max} | ${r.colour_frames} | ${r.name_px}px${r.name_truncated ? ' (truncated)' : ''} | ${r.pacing.rank_change} / ${r.pacing.visible_change} / ${r.pacing.quiet} | \`${r.adapter_sha256.slice(0, 16)}…\` |`);
   L.push('');
-  for (const r of results) {
+  L.push(`Entry rule: a driver joining the visible top N must be clearly visible (row opacity at least ${CLEAR_ALPHA}, name and value label drawn) within ${ENTRY_MAX_FRAMES} frames of the first frame of that race, i.e. on frame +0 to +${ENTRY_MAX_FRAMES - 1}. The column gives the slowest entry in the case (+N frames).`);
+  L.push('Colour rule on frames: on every frame drawn, no two bars on screen (opacity above 0) share a colour or are closer than CIEDE2000 ' + (col ? col.notes[1].match(/at least (\d+)/)[1] : '18') + ', and every driver is drawn in the same colour in every RTT-002 case.', '');
+  if (col) {
+    L.push(`**colour_rule_full_dataset — ${col.pass ? 'PASS' : 'FAIL'}** (every race of the full RTT-002 dataset, boards computed from win_credits.csv alone)`);
+    for (const n of col.notes) L.push('- ' + n);
+    for (const n of col.failures) L.push('- FAIL: ' + n);
+    L.push('', '| Colour (as drawn) | Drivers, in the order they first reach the top ten |', '|---|---|');
+    for (const [c, names] of Object.entries(col.by_colour)) L.push(`| \`${c}\` | ${names.join(', ')} |`);
+    L.push('');
+  }
+  for (const r of cases) {
     if (!r.notes.length && !r.failures.length && !r.ocr_mismatch.length) continue;
     L.push('**' + r.name + '**');
     for (const n of r.notes) L.push('- ' + n);
@@ -262,7 +407,7 @@ function writeReport(results) {
     for (const n of r.ocr_mismatch) L.push('- OCR differs: ' + n);
     L.push('');
   }
-  L.push('The draw-call checks are the pass/fail gate. OCR is an independent read of the pixels: any mismatch is listed above, not hidden (' + results.reduce((n, r) => n + r.ocr_mismatch.length, 0) + ' in this run). Labels on rows that overlap mid-overtake are not OCR-read (count in brackets).');
+  L.push('The draw-call checks are the pass/fail gate. OCR is an independent read of the pixels: any mismatch is listed above, not hidden (' + cases.reduce((n, r) => n + r.ocr_mismatch.length, 0) + ' in this run). Labels on rows that overlap mid-overtake are not OCR-read (count in brackets). The full run is checked on every frame by draw calls only (no PNGs, no OCR).');
   fs.writeFileSync(path.join(__dirname, 'RESULTS.md'), L.join('\n') + '\n');
 }
 

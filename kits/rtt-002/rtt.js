@@ -35,9 +35,26 @@ const TIMELINE = require('./rtt_timeline.js');
 
 const KIT = __dirname;
 
+/* A config may name a base config in "extends" (IQ-05): the pilot configs are config.json plus
+   a window, a pace and no closing card. Objects merge key by key (so "pacing":
+   {"sec_per_event": 0.35} changes only that key); arrays and plain values replace. */
+function merge(base, over) {
+  const out = Object.assign({}, base);
+  for (const [k, v] of Object.entries(over))
+    out[k] = v && typeof v === 'object' && !Array.isArray(v) && base[k] && typeof base[k] === 'object' && !Array.isArray(base[k]) ? merge(base[k], v) : v;
+  return out;
+}
+function readConfig(file, seen = []) {
+  const full = path.resolve(KIT, file);
+  if (seen.includes(full)) throw new Error('config "extends" loops: ' + seen.concat(full).join(' -> '));
+  const cfg = JSON.parse(fs.readFileSync(full, 'utf8'));
+  if (!cfg.extends) return cfg;
+  const base = readConfig(path.resolve(path.dirname(full), cfg.extends), seen.concat(full));
+  const own = Object.assign({}, cfg); delete own.extends;
+  return merge(base, own);
+}
 function loadConfig(file, overrides) {
-  const cfg = JSON.parse(fs.readFileSync(path.resolve(KIT, file || 'config.json'), 'utf8'));
-  return Object.assign(cfg, overrides || {});
+  return Object.assign(readConfig(file || 'config.json'), overrides || {});
 }
 
 function frameTotals(cfg, data) {

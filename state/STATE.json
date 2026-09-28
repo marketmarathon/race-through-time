@@ -2,7 +2,7 @@
   "schema": "rtt-state/0.1",
   "updated": "2026-09-28",
   "updated_by": "Claude (Claude Code cloud session, environment \"Race Through Time\")",
-  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); IQ-04 RTT player in pull request #2, independently reviewed and APPROVED by Luke for merge; NEXT: IQ-05 design pilot (decisions DEC-022)",
+  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); IQ-04 RTT player MERGED (PR #2); IQ-05 design pilot IN PULL REQUEST (branch claude/lucid-cannon-l1fo7a), awaiting Luke's review",
   "canonical_queue": "state/ folder on main in marketmarathon/race-through-time (this file)",
   "repo_baseline": {
     "repo": "marketmarathon/bars",
@@ -23,7 +23,7 @@
     "schedules": [],
     "recurring_reports": [],
     "public_publishes": [],
-    "note": "nothing activated; nothing uploaded or published. IQ-04 test frames rendered locally in the Claude Code container only (not committed, not uploaded)"
+    "note": "nothing activated; nothing uploaded or published. IQ-04 and IQ-05 test frames and phone stills rendered locally in the Claude Code container only (not committed, not uploaded)"
   },
   "episodes": [
     {
@@ -178,7 +178,7 @@
       "depends": [
         "IQ-03 (merged)"
       ],
-      "status": "APPROVED FOR MERGE 28 Sep 2026 - pull request #2 (https://github.com/marketmarathon/race-through-time/pull/2), branch claude/tender-pascal-cl21gl; independently reviewed by Claude in Cowork on 28 Sep 2026 (test suite re-run 7/7 PASS with identical RESULTS.md; every driver's count at all 1,164 races and the top-ten order after every race match data/rtt-002 with 0 mismatches; adapter output hash reproduced); approved by Luke for merge; 7/7 test cases PASS (tests/player/RESULTS.md)",
+      "status": "DONE and MERGED to main 28 Sep 2026 (pull request #2, merge commit 4f22b1a)",
       "result": {
         "copied_from": "marketmarathon/bars @ 2a10877695e83683c3caae651cad61fc686614eb, MarketMarathon_RaceKit_RF_US_C2_v3.zip (player_formatc2.html, formatc.js)",
         "kit": "kits/rtt-002/",
@@ -195,12 +195,30 @@
     {
       "id": "IQ-05",
       "task": "Design pilot: 60-90 s RTT-002 passage, C2-2 look vs quieter variant, 1920 preview, phone-size review",
-      "where": "CI + owner review",
+      "where": "Claude Code cloud session: repo race-through-time, environment \"Race Through Time\"; owner review",
       "depends": [
         "IQ-03",
         "IQ-04"
       ],
-      "status": "NEXT - owner decisions recorded in DEC-022 (passage 2014-2021, colours, phone sizes, slide-in, pace variants, text only)"
+      "status": "IN PULL REQUEST - branch claude/lucid-cannon-l1fo7a; not merged; waiting for Luke's review (questions in the pull request)",
+      "result": {
+        "decisions": "DEC-022 (owner) implemented; Claude working choices DEC-023..DEC-026",
+        "colours": "one colour per driver for the whole video, assigned over all 1,164 races (rtt_timeline.js assignColours); 40 drivers reach the top ten, at most 12 on screen together (incl. rows fading out); 12 colours needed and used; palette replaced (IQ-04's closest pair CIEDE2000 9.6, new 18.5; white-name contrast >= 3.2)",
+        "phone_sizes_px": {
+          "axis": "20 -> 34",
+          "date": "28 -> 34",
+          "footer": "17 -> 26"
+        },
+        "entry": "drivers entering the top ten slide in from just under the board with glide.entry_sec 0.1; clearly visible within 5 frames at worst in every case run (rule: within 8)",
+        "pilots": {
+          "config_pilot_2014_2021.json": "0.5 s per race; FRAME_COUNT_ONLY 2277 frames = 75.9 s (inside the 60-90 s target)",
+          "config_pilot_2014_2021_fast.json": "0.35 s per race; FRAME_COUNT_ONLY 1657 frames = 55.2 s"
+        },
+        "full_run_frames": 16062,
+        "milestones": "Hamilton 91 level with Schumacher (P2 on the tie rule) at the 2020 Eifel GP; 92 and P1 at the 2020 Portuguese GP - checked from drawn labels in both pilots",
+        "tests": "tests/player/RESULTS.md",
+        "renders": "none committed or uploaded; pilots not rendered to video (checked frame by frame by the tests instead)"
+      }
     },
     {
       "id": "IQ-06",
@@ -229,7 +247,7 @@
     "visibility": "public",
     "created": "2026-09-27",
     "created_by": "Claude via Luke's Chrome, on Luke's instruction",
-    "contents": "main @ 7cde5df + later state commits; branch rtt-002-data kept (7696344); branch claude/tender-pascal-cl21gl = IQ-04 (pull request #2, approved for merge)",
+    "contents": "main @ 4f22b1a (IQ-04 merged via pull request #2); branch rtt-002-data kept (7696344); branch claude/lucid-cannon-l1fo7a = IQ-05 design pilot (pull request, not merged)",
     "push_routes": {
       "cowork_cloud": "NOT AVAILABLE - GitHub proxy refuses: repo not in the session's authorised set; no way to attach it from Cowork found",
       "github_web_upload_via_chrome": "WORKS - used 28 Sep; one commit per folder; each commit read back byte-for-byte",
