@@ -33,3 +33,15 @@
 
 ## Claims this data cannot support
 "Greatest driver", "most dominant", win rate (unless computed and labelled), anything about Sprints, poles or titles.
+
+## Display attributes (added 28 Sep 2026, IQ-05 round 3; DEC-036)
+Every attribute the video displays, with its source. **Process lesson (DEC-036, Luke):** nationality should have been captured from the outset. It was added late, on 28 Sep 2026, after DATA_AUDIT had passed, when Luke asked for a flag next to each driver's name (DEC-034). Future metric contracts list every displayed attribute and its source before the data build (DEC-036).
+
+| Attribute shown | Source | File | Added |
+|---|---|---|---|
+| Driver name | Wikipedia season pages (display name = page title without disambiguation) | `data/rtt-002/drivers.csv` | data build, 28 Sep 2026 |
+| Win count after each race | Wikipedia season pages | `data/rtt-002/win_credits.csv` | data build |
+| Season, Grand Prix, date (time block; "GP" short form in the event label) | Wikipedia season pages | `data/rtt-002/races.csv` | data build |
+| Nationality (flag) | Primary: the flag in each driver's row of Wikipedia's "List of Formula One Grand Prix winners", revision 1376824402 (the revision already used as a cross-check), codes mapped to ISO 3166-1 alpha-3. Cross-check: Wikidata P1532 (country for sport), else P27 (citizenship). Disagreements listed for Luke, never resolved by guessing; the Wikipedia value is used. Flag drawn = today's design of that country's flag (DEC-035), from flag-icons (MIT) | `data/rtt-002/driver_nationality.csv`; `reports/RTT-002_nationality_comparison.md` | **late: 28 Sep 2026** (after DATA_AUDIT) |
+
+Nationality means the country the driver raced under (racing-licence nationality), following the official Formula 1 treatment (DEC-012). The nationality file is a new file; the audited dataset files were not changed.

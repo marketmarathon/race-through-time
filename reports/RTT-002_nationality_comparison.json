@@ -1,0 +1,130 @@
+{
+ "page": "List of Formula One Grand Prix winners",
+ "revision": "1376824402",
+ "wikipedia_retrieved_utc": "2026-09-28T18:10:25Z",
+ "wikidata_retrieved_utc": "2026-09-28T18:12:55Z",
+ "sources": {
+  "wikipedia_wikidata_nationality.psv": "e041cff55f059f1ece3e91afd84a52a551754eb96546f52dbe448027775e9fb8",
+  "wikidata_countries.psv": "083a9cd05d6e18edb62f06bed7905980a6b9aede57699f93a4a09ce8ab43bd5c"
+ },
+ "csv_sha256": "a41c3d4690db17fb71f177332330e71f9e14a6b2b05e2a932978562601fe4812",
+ "drivers": 116,
+ "checks": [
+  {
+   "check": "every drivers.csv driver has exactly one source row, matched by page ID",
+   "pass": true,
+   "detail": "116 rows, 116 drivers; missing none, extra none"
+  },
+  {
+   "check": "every Wikipedia wins value equals career_totals.csv",
+   "pass": true,
+   "detail": "116/116 equal; differences none"
+  },
+  {
+   "check": "every Wikipedia flag code maps to a known ISO 3166-1 alpha-3 code",
+   "pass": true,
+   "detail": "unknown: none"
+  }
+ ],
+ "comparison": {
+  "P1532 / AGREE": 34,
+  "P1532 / DISAGREE": 2,
+  "P27 (no P1532) / AGREE": 79,
+  "P27 (no P1532) / DISAGREE": 1
+ },
+ "disagreements_and_missing": [
+  {
+   "driver": "Luigi Fagioli",
+   "driver_id": "wp1212766",
+   "result": "DISAGREE",
+   "basis": "P27 (no P1532)",
+   "evidence": "Wikipedia flag ITA → ITA (Italy); Wikidata Q173038 (revision 2517179183): P1532 none; P27 Q172579 Kingdom of Italy"
+  },
+  {
+   "driver": "Phil Hill",
+   "driver_id": "wp341545",
+   "result": "DISAGREE",
+   "basis": "P1532",
+   "evidence": "Wikipedia flag USA → USA (United States); Wikidata Q3112 (revision 2544076670): P1532 Q786 Dominican Republic; P27 Q30 United States"
+  },
+  {
+   "driver": "Jim Clark",
+   "driver_id": "wp181892",
+   "result": "DISAGREE",
+   "basis": "P1532",
+   "evidence": "Wikipedia flag UK → GBR (United Kingdom); Wikidata Q3137 (revision 2530072898): P1532 Q22 Scotland; P27 Q145 United Kingdom"
+  }
+ ],
+ "wikipedia_flag_variants": [
+  {
+   "driver": "Johnnie Parsons",
+   "wikipedia_code": "USA",
+   "variant": "1912"
+  },
+  {
+   "driver": "Lee Wallard",
+   "wikipedia_code": "USA",
+   "variant": "1912"
+  },
+  {
+   "driver": "Troy Ruttman",
+   "wikipedia_code": "USA",
+   "variant": "1912"
+  },
+  {
+   "driver": "Bill Vukovich",
+   "wikipedia_code": "USA",
+   "variant": "1912"
+  },
+  {
+   "driver": "Bob Sweikert",
+   "wikipedia_code": "USA",
+   "variant": "1912"
+  },
+  {
+   "driver": "Pat Flaherty",
+   "wikipedia_code": "USA",
+   "variant": "1912"
+  },
+  {
+   "driver": "Sam Hanks",
+   "wikipedia_code": "USA",
+   "variant": "1912"
+  },
+  {
+   "driver": "Jimmy Bryan",
+   "wikipedia_code": "USA",
+   "variant": "1912"
+  },
+  {
+   "driver": "Rodger Ward",
+   "wikipedia_code": "USA",
+   "variant": "1912"
+  },
+  {
+   "driver": "Jim Rathmann",
+   "wikipedia_code": "USA",
+   "variant": "1959"
+  },
+  {
+   "driver": "Emerson Fittipaldi",
+   "wikipedia_code": "BRA",
+   "variant": "1968"
+  },
+  {
+   "driver": "Jody Scheckter",
+   "wikipedia_code": "ZAF",
+   "variant": "1928"
+  },
+  {
+   "driver": "Carlos Pace",
+   "wikipedia_code": "BRA",
+   "variant": "1968"
+  },
+  {
+   "driver": "Nelson Piquet",
+   "wikipedia_code": "BRA",
+   "variant": "1968"
+  }
+ ]
+}
