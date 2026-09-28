@@ -2,7 +2,7 @@
   "schema": "rtt-state/0.1",
   "updated": "2026-09-28",
   "updated_by": "Claude (Claude Code cloud session, environment \"Race Through Time\")",
-  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); IQ-04 RTT player MERGED (PR #2); IQ-05 design pilot IN PULL REQUEST (branch claude/lucid-cannon-l1fo7a), awaiting Luke's review",
+  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); IQ-04 RTT player MERGED (PR #2); IQ-05 round 1 MERGED (PR #3); IQ-05 round 2 (two pilot variants) IN PULL REQUEST (branch claude/stoic-mccarthy-kmbv2a), awaiting Luke's review",
   "canonical_queue": "state/ folder on main in marketmarathon/race-through-time (this file)",
   "repo_baseline": {
     "repo": "marketmarathon/bars",
@@ -23,7 +23,7 @@
     "schedules": [],
     "recurring_reports": [],
     "public_publishes": [],
-    "note": "nothing activated; nothing uploaded or published. IQ-04 and IQ-05 test frames and phone stills rendered locally in the Claude Code container only (not committed, not uploaded)"
+    "note": "nothing activated; nothing uploaded or published. IQ-04 and IQ-05 (rounds 1 and 2) test frames and phone stills rendered locally in the Claude Code container only (not committed, not uploaded)"
   },
   "episodes": [
     {
@@ -200,7 +200,7 @@
         "IQ-03",
         "IQ-04"
       ],
-      "status": "IN PULL REQUEST - branch claude/lucid-cannon-l1fo7a; not merged; waiting for Luke's review (questions in the pull request)",
+      "status": "ROUND 1 MERGED (pull request #3, merge commit 2aeabc1); ROUND 2 IN PULL REQUEST - branch claude/stoic-mccarthy-kmbv2a; not merged; waiting for Luke to compare the two variants (questions in the pull request)",
       "result": {
         "decisions": "DEC-022 (owner) implemented; Claude working choices DEC-023..DEC-026",
         "colours": "one colour per driver for the whole video, assigned over all 1,164 races (rtt_timeline.js assignColours); 40 drivers reach the top ten, at most 12 on screen together (incl. rows fading out); 12 colours needed and used; palette replaced (IQ-04's closest pair CIEDE2000 9.6, new 18.5; white-name contrast >= 3.2)",
@@ -211,13 +211,27 @@
         },
         "entry": "drivers entering the top ten slide in from just under the board with glide.entry_sec 0.1; clearly visible within 5 frames at worst in every case run (rule: within 8)",
         "pilots": {
-          "config_pilot_2014_2021.json": "0.5 s per race; FRAME_COUNT_ONLY 2277 frames = 75.9 s (inside the 60-90 s target)",
-          "config_pilot_2014_2021_fast.json": "0.35 s per race; FRAME_COUNT_ONLY 1657 frames = 55.2 s"
+          "round_1 (merged, superseded)": "config_pilot_2014_2021.json 2277 frames = 75.9 s; fast variant 1657 frames = 55.2 s (dropped by Luke, DEC-027)"
         },
         "full_run_frames": 16062,
         "milestones": "Hamilton 91 level with Schumacher (P2 on the tie rule) at the 2020 Eifel GP; 92 and P1 at the 2020 Portuguese GP - checked from drawn labels in both pilots",
         "tests": "tests/player/RESULTS.md",
         "renders": "none committed or uploaded; pilots not rendered to video (checked frame by frame by the tests instead)"
+      },
+      "round_2": {
+        "prompt": "prompts/CODE_SESSION_IQ-05b.md",
+        "decisions": "DEC-027 (Luke's feedback) implemented; Claude working choices DEC-028..DEC-033",
+        "pilots": {
+          "A config_pilot_2014_2021_top20.json": "20 rows; FRAME_COUNT_ONLY 2472 frames = 82.4 s",
+          "B config_pilot_2014_2021_top10_winner.json": "top ten + winner line; FRAME_COUNT_ONLY 2472 frames = 82.4 s",
+          "shared": "config_pilot_2014_2021_base.json: 0.5 s per race judged on the top ten (identical timestamps), board from frame 0 with title (no title card), record holds, winner highlight, final board 10 s, no closing card"
+        },
+        "record_moments_held": "2020-10-11 Eifel GP (Hamilton 91, BECOMES_JOINT), 2020-10-25 Portuguese GP (Hamilton 92, BECOMES_SOLE); 1.5 s each",
+        "colours": "top ten unchanged (12 colours, closest 18.5); top 20 needs 22 colours, own palette, closest pair CIEDE2000 18.2 (rule 18 kept)",
+        "phone": "both variants PASS the unchanged thresholds; A names/values 29 px = 5.9 pt (round 1 names 6.5 pt); B winner line 6.9 pt",
+        "digits": "Archivo has tnum but canvas cannot enable it; every number drawn on fixed-pitch digits (checked)",
+        "tests": "tests/player/RESULTS.md",
+        "renders": "none committed or uploaded; pilots not rendered to video (no ffmpeg in the container); checked frame by frame"
       }
     },
     {
@@ -247,7 +261,7 @@
     "visibility": "public",
     "created": "2026-09-27",
     "created_by": "Claude via Luke's Chrome, on Luke's instruction",
-    "contents": "main @ 4f22b1a (IQ-04 merged via pull request #2); branch rtt-002-data kept (7696344); branch claude/lucid-cannon-l1fo7a = IQ-05 design pilot (pull request, not merged)",
+    "contents": "main @ 2aeabc1 (IQ-05 round 1 merged via pull request #3); branch rtt-002-data kept (7696344); branch claude/stoic-mccarthy-kmbv2a = IQ-05 round 2 (pull request, not merged)",
     "push_routes": {
       "cowork_cloud": "NOT AVAILABLE - GitHub proxy refuses: repo not in the session's authorised set; no way to attach it from Cowork found",
       "github_web_upload_via_chrome": "WORKS - used 28 Sep; one commit per folder; each commit read back byte-for-byte",

@@ -1,7 +1,8 @@
-/* Phone check (IQ-04 step 7; thresholds added in IQ-05, DEC-022).
+/* Phone check (IQ-04 step 7; thresholds added in IQ-05, DEC-022; round-2 pilots IQ-05b).
  *
- * Three 1920x1080 stills: from the full RTT-002 run a crowded mid-history board (1988) and the
- * final board, and from the 2014-2021 pilot the 2020 Portuguese Grand Prix. Each is then shown
+ * 1920x1080 stills: from the full RTT-002 run a crowded mid-history board (1988) and the final
+ * board, and from EACH round-2 pilot (A: top 20, B: top ten + winner line) the 2020 Portuguese
+ * Grand Prix and the final board. Each is then shown
  * as a phone shows a landscape video held upright: the full frame 390 points wide
  * (iPhone 12-16 class) at 3 device pixels per point, plus a crop of the bottom left (footer) at
  * that same scale. Every label's size is measured on the frame and at phone scale.
@@ -10,6 +11,10 @@
  *   - axis numbers  >= driver names (points at phone scale)
  *   - date          >= driver names
  *   - footer        >= 5.0 pt
+ *   - winner line   >= driver names (variant B only; the same rule as the date it sits under)
+ * The thresholds are unchanged from IQ-05. Because they are relative to the driver names, a board
+ * with smaller names passes them more easily, so the names' own size is also printed against
+ * round 1's top-ten names (32 px = 6.5 pt) for information; that line is not a pass/fail gate.
  * Exit code 1 if any check fails.
  *
  * Usage: node tests/player/phone_check.js      Output: tests/output/phone/ (gitignored)
@@ -54,11 +59,13 @@ async function stills(configFile, pick) {
     const kA = info.races.indexOf(468);
     return [{ name: 'still_A_1988', frame: info.start[kA + 1] - 1 }, { name: 'still_B_final', frame: info.raceFrames - cfg.fps }];
   }));
-  // C: the pilot, last frame of the 2020 Portuguese Grand Prix slot (race index 1030), Hamilton past Schumacher
-  report.push(...await stills('config_pilot_2014_2021.json', info => {
-    const k = info.races.indexOf(1030);
-    return [{ name: 'still_C_pilot_2020_portugal', frame: info.start[k + 1] - 1 }];
-  }));
+  // C, D: each round-2 pilot, last frame of the 2020 Portuguese Grand Prix slot (race index 1030,
+  // Hamilton past Schumacher, end of the record hold) and one second before the end of the final board
+  for (const [file, tag] of [['config_pilot_2014_2021_top20.json', 'A_top20'], ['config_pilot_2014_2021_top10_winner.json', 'B_top10_winner']])
+    report.push(...await stills(file, (info, cfg) => {
+      const k = info.races.indexOf(1030);
+      return [{ name: `still_C_${tag}_2020_portugal`, frame: info.start[k + 1] - 1 }, { name: `still_D_${tag}_final`, frame: info.raceFrames - cfg.fps }];
+    }));
 
   // the phone view: the 1920 still displayed PHONE_PT points wide
   const { chromium } = require(require.resolve('playwright', { paths: [KITDIR] }));
@@ -93,7 +100,10 @@ async function stills(configFile, pick) {
     check(r.still, 'axis numbers', s.axis && pt(s.axis), name);
     check(r.still, 'date', s.time_date && pt(s.time_date), name);
     check(r.still, 'footer', s.footer && pt(s.footer), FOOTER_MIN_PT);
+    if (r.config.includes('winner')) check(r.still, 'winner line', s.winner && pt(s.winner), name);
   }
+  console.log('\nFor information (not a gate): driver names and value labels at phone scale, against round 1\'s top-ten names (32 px = ' + pt(32).toFixed(2) + ' pt)');
+  for (const r of report) console.log(`  ${r.still} (${r.config}): names ${r.sizes.name}px = ${pt(r.sizes.name).toFixed(2)} pt, values ${r.sizes.value}px = ${pt(r.sizes.value).toFixed(2)} pt${r.sizes.winner ? `, winner line ${r.sizes.winner}px = ${pt(r.sizes.winner).toFixed(2)} pt` : ''}`);
   console.log(ok ? '\nPHONE CHECK PASS' : '\nPHONE CHECK FAIL');
   process.exit(ok ? 0 : 1);
 })().catch(e => { console.error(e); process.exit(2); });

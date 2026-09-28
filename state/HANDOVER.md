@@ -1,33 +1,30 @@
-# HANDOVER — 28 Sep 2026 (session 4, Claude Code cloud session, environment "Race Through Time")
+# HANDOVER — 28 Sep 2026 (session 5, Claude Code cloud session, environment "Race Through Time")
 
-Previous handovers (session 2, Cowork: repo bootstrap, RTT-002 dataset, DATA_AUDIT; session 3: IQ-04) are in this file's git history. IQ-04 (pull request #2) was merged to main as `4f22b1a`.
+Previous handovers (session 2, Cowork: repo bootstrap, RTT-002 dataset, DATA_AUDIT; session 3: IQ-04; session 4: IQ-05 round 1) are in this file's git history. IQ-05 round 1 (pull request #3) was merged to main as `2aeabc1`.
 
-## Done: IQ-05, the RTT-002 design pilot (branch `claude/lucid-cannon-l1fo7a`, pull request open, **not merged**)
-Prompt saved as `prompts/CODE_SESSION_IQ-05.md`. Implements Luke's DEC-022; Claude working choices DEC-023 to DEC-026. `marketmarathon/bars` was not needed or touched.
-- **Colours (DEC-023)**: one colour per driver for the whole video, computed over all 1,164 races (`rtt_timeline.js` `assignColours()`), so the pilot and the full video match. 40 drivers ever reach the top ten; counting rows still fading out (3 races), at most 12 are on screen together, so 12 colours are needed. IQ-04's 12 were not clearly distinct once drawn (three purples, two greens, two blues; closest pair CIEDE2000 9.6), so the palette was replaced by 12 colours chosen to be as far apart as possible (closest pair 18.5) with white names still readable on every bar (contrast ≥ 3.2:1). Rule enforced: drivers on screen together never share a colour and are ≥ 18 apart. No team or nationality colours.
-- **Phone sizes (DEC-024)**: axis numbers 20 → 34 px, date 28 → 34 px, footer 17 → 26 px (config `sizes`). On a phone 390 pt wide: axis and date 6.9 pt (names 6.5 pt), footer 5.3 pt. `tests/player/phone_check.js` now prints PASS/FAIL per still (1988, final board, pilot 2020 Portuguese GP): all PASS.
-- **Top-ten entries (DEC-025)**: slide-in kept, but an entering row starts just under the board and glides in with `glide.entry_sec` 0.1 s. Clearly visible (opacity ≥ 0.8, name and value drawn) within 5 frames at worst in every case run; rule is < 8 frames. IQ-04's worst was 22 frames.
-- **Pilot configs (DEC-026)**: `kits/rtt-002/config_pilot_2014_2021.json` (0.5 s per race) and `config_pilot_2014_2021_fast.json` (0.35 s per race), both built on `config.json` through a new `"extends"` key. Normal title card (range "2014 – 2021"), 3 s hold on the final board, no closing card. FRAME_COUNT_ONLY: **2,277 frames = 75.9 s** (inside the 60–90 s target) and **1,657 frames = 55.2 s**. Full video unchanged at 16,062 frames.
-- **Milestones confirmed** from the drawn labels in both pilots: 2020 Eifel GP Hamilton 91, level with Schumacher (Schumacher stays P1: he reached 91 first); 2020 Portuguese GP Hamilton 92, P1.
-- **Tests** (`node tests/player/run_tests.js`, results in `tests/player/RESULTS.md`): **11/11 PASS** in 13 min (Playwright 1.56.1 Chromium, tesseract 5.3.4 installed from the Ubuntu archive). All IQ-04 cases still pass. New: both pilots (every value label equal to the data on every frame; OCR 785/785 and 842/842, 0 mismatches), the full RTT-002 run checked on every one of its frames by draw calls (156,008 value labels), top-ten entry visibility in every case, the colour rule on every drawn frame and on every race of the full dataset (computed from `win_credits.csv` alone). Baseline: the unchanged IQ-04 suite on main also passed 7/7 in this container before any change. OCR on the fixtures differs slightly from IQ-04 (e.g. enter_leave 85 read, 40 skipped vs 87/36) only because rows now move differently; labels on rows less than one row apart are not OCR-read, as in IQ-04.
-- **Environment contract** unchanged: FRAME_COUNT_ONLY, REF_PNG_DIR at 1920 and 3840 (pilot configs), RASTER_W 2000 refused. The mp4 path (SEG_OUT, ffmpeg) was **not run**: ffmpeg is not installed in this container; that code is unchanged from IQ-04.
+## Done: IQ-05 round 2, two pilot variants for RTT-002 (branch `claude/stoic-mccarthy-kmbv2a`, pull request open, **not merged**)
+Prompt saved as `prompts/CODE_SESSION_IQ-05b.md`. Luke's feedback recorded as DEC-027; Claude working choices DEC-028 to DEC-033. `marketmarathon/bars` was not needed or touched.
+- **Two pilots, identical except the board (DEC-028)**: A `kits/rtt-002/config_pilot_2014_2021_top20.json` (20 rows) and B `kits/rtt-002/config_pilot_2014_2021_top10_winner.json` (top ten + "Won by … · n wins" under the date). Both extend `config_pilot_2014_2021_base.json` (round 1's pilot config, renamed); the fast config is deleted. Pace 0.5 s per race, judged on the top ten in both so the timestamps are identical. FRAME_COUNT_ONLY: **A 2,472 frames = 82.4 s, B 2,472 frames = 82.4 s**. Full video unchanged at 16,062 frames.
+- **Winner highlight (DEC-030)**: winner's bar brightened 30% towards white with a soft glow, fading over 0.4 s; stays lit through a winning streak (no flicker); nothing for a winner off the board.
+- **Record holds (DEC-031)**: 1.5 s on races that equal or take the all-time record (record_progression.csv BECOMES_JOINT / BECOMES_SOLE). In the pilot: 11 Oct 2020 Eifel GP (Hamilton 91, joint) and 25 Oct 2020 Portuguese GP (Hamilton 92, sole).
+- **Opening and ending (DEC-032)**: no title card; board with title from frame 0 (2 s on the opening board); final board exactly 10 s, no closing card.
+- **Colours (DEC-029)**: top 20 needs 22 colours (up to 22 drivers on screen together); own 22-colour palette, closest pair CIEDE2000 18.2, rule of 18 kept. Top-ten colours unchanged.
+- **Sizes and digits (DEC-033)**: A names and values 29 px (5.9 pt on a phone; round 1 names 6.5 pt). B winner line 34 px (6.9 pt). Archivo has tabular figures but canvas cannot turn them on; every number is drawn on fixed-pitch digits (checked).
+- **Phone check**: PASS on all eight stills, both variants, thresholds unchanged. Note: the thresholds are relative to the driver names, so A passes partly because its names are smaller; the absolute sizes are reported next to the checks.
+- **Tests**: see `tests/player/RESULTS.md` and the pull request.
+- **Environment contract** unchanged (FRAME_COUNT_ONLY, SEG_START/SEG_END, REF_PNG_DIR, RASTER_W, NOMUX). With `intro_sec` 0 the driver plans no intro frames. ffmpeg is still not installed here, so no mp4 was made.
 - Nothing rendered to video, nothing committed except code, configs and written results; test frames and phone stills stayed in `tests/output/` (gitignored). Nothing uploaded or published.
 
 ## Not done / open
-- Pilot videos were not rendered: the tests draw and check every frame of both pilots, which was enough to verify them. Luke will need an mp4 of each to judge pace by eye (needs a render in an environment with ffmpeg; not uploaded anywhere without his say).
-- The "quieter look" variant from the original IQ-05 line in STATE.json was not made: DEC-022 did not ask for it.
+- Pilot videos not rendered (no ffmpeg in this container). Luke needs an mp4 of each to choose (blueprint: choose from rendered evidence); needs a render in an environment with ffmpeg, not uploaded anywhere without his say.
 - Shard-join edge pixels (inherited from C2-2, see IQ-04) not revisited.
 
 ## Questions put to Luke in the pull request
-1. Palette: the new 12 colours are clearly distinct but include some earthier shades (mustard, forest green, brown, khaki). Keep, or accept closer colours for a softer look?
-2. Pace: 75.9 s at 0.5 s per race sits in the target; the fast version is 55.2 s. Which one (after watching)?
-3. Key moments: the pacing rule gives the 2020 Eifel GP (Hamilton equals 91) the short "quiet" beat, because nobody changes place; and at the Portuguese GP the overtake is still gliding when the next race lands. Hold key milestones longer?
-4. D-05 publication risk is still open (before release only).
+See the pull request: top 20 vs top ten + winner line; the top-20 colours (Hamilton and Verstappen get dark colours there); whether the streak glow is right; keep the record holds; D-05 still open before release.
 
 ## Next safe actions
-1. Luke reviews the IQ-05 pull request and answers the questions; render the two pilots for viewing once he agrees where.
-2. IQ-06 live feasibility for RTT-001, 003–012 (not started, as instructed). IQ-07 not started.
+1. Luke reviews the round-2 pull request; render both pilots for viewing once he agrees where.
+2. IQ-06 live feasibility for RTT-001, 003–012 (not started). IQ-07 not started.
 
 ## Rules for the next session
 Read `state/STATE.json`, this file, `state/DECISIONS.md` and `reference/metric_contract_RTT-002.md`. Never edit C2-2 files or anything in `marketmarathon/bars` for RTT. Follow DEC-006: code, configs and written results only; test frames, stills and renders stay out of the repo.
-
