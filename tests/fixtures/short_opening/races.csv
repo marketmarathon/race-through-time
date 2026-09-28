@@ -1,0 +1,7 @@
+race_index,season,round,race_date,grand_prix,winner_driver_ids
+1,2006,1,2006-03-12,Test Grand Prix 1,F1x
+2,2006,2,2006-03-26,Test Grand Prix 2,F1x
+3,2006,3,2006-04-09,Test Grand Prix 3,F2x
+4,2006,4,2006-04-23,Test Grand Prix 4,F1x
+5,2006,5,2006-05-07,Test Grand Prix 5,F3x
+6,2006,6,2006-05-21,Test Grand Prix 6,F2x

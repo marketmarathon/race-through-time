@@ -1,0 +1,9 @@
+{
+ "expect": {
+  "max_visible": 3
+ },
+ "fictional": true,
+ "overrides": {
+  "rows": 10
+ }
+}

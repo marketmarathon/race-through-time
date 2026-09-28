@@ -1,0 +1,6 @@
+race_index,season,round,race_date,grand_prix,winner_driver_ids
+1,2003,1,2003-04-06,Test Grand Prix 1,SC
+2,2003,2,2003-04-20,Test Grand Prix 2,SB
+3,2003,3,2003-05-04,Test Grand Prix 3,SA;SB
+4,2003,4,2003-05-18,Test Grand Prix 4,SA
+5,2003,5,2003-06-01,Test Grand Prix 5,SC;SA

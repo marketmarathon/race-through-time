@@ -1,0 +1,9 @@
+{
+ "expect": {
+  "note": "the longest name must fit on the frame with its value label; one name size for the whole video"
+ },
+ "fictional": true,
+ "overrides": {
+  "rows": 10
+ }
+}
