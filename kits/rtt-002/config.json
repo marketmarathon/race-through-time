@@ -23,7 +23,7 @@
   "lead_in_sec": 1.0,
   "end_hold_sec": 3.0
  },
- "glide": { "bar_sec": 0.35, "rank_sec": 0.55 },
+ "glide": { "bar_sec": 0.35, "rank_sec": 0.55, "entry_sec": 0.1 },
 
  "unit": "wins",
  "unit_singular": "win",
@@ -45,7 +45,11 @@
  },
 
  "look": "navy",
- "palette": ["#2E86DE", "#E4572E", "#17BEBB", "#F4A259", "#8E6CEF", "#5BBA6F", "#D1495B", "#EDAE49", "#3F88C5", "#C04ABC", "#44AF69", "#F28F3B"],
+ "palette": ["#2E86DE", "#EE5F2F", "#12A18E", "#BD19E6", "#12A11B", "#D01137", "#EA3E8E", "#4953DF",
+             "#97900C", "#2D764A", "#96512C", "#76642D"],
+ "colour_rule": { "fade_races": 3, "min_delta_e": 18 },
+
+ "sizes": { "axis": 34, "date": 34, "footer": 26 },
 
  "barend": 1150,
  "nameoverflow": true,
@@ -62,6 +66,10 @@
   "Layout tokens (barend 1150, namemode bar, nameoverflow, namescale 0.88, valout, valw 260, yearsize 112, look navy, 30 fps, crf 4) are the Format C2-2 values from MarketMarathon_RaceKit_RF_US_C2_v3 config.json, so the default look is C2-2's. There is no year plate (picmode/picw): RTT ships no pictures.",
   "window.from / window.to (YYYY-MM-DD, inclusive) cut a passage out of the full history. Events before 'from' still count: the board opens on the totals they left. null = the whole dataset.",
   "pacing: each event lasts sec_per_event x mult. mult must lie inside bounds, and the player refuses bounds outside 0.8-1.4 (blueprint). rank_change = the visible top-N order or membership changed; visible_change = a visible bar grew; quiet = nothing visible changed, or more than settled_run_after visible-but-unchanged events in a row.",
+  "colour_rule (IQ-05, DEC-023): each driver keeps one palette colour for the whole dataset, assigned by rtt_timeline.js assignColours() over the WHOLE race file (never the window), so a passage and the full video match. Drivers who can be on screen together (the top rows after this race and the previous fade_races races, which covers rows still fading out) never share a colour, and their colours must be at least min_delta_e apart (CIEDE2000, on the colour as drawn). If the palette runs out the player refuses to render.",
+  "palette (IQ-05, DEC-023): RTT-002 needs 12 colours (at most 12 drivers can be on screen together). IQ-04's 12 had near-copies once drawn (CIEDE2000 9.6 at the closest). These 12 were chosen from a grid of candidates to be as far apart as possible (closest pair CIEDE2000 18.5) with white names still readable on every bar (contrast with white at least 3.2, no worse than IQ-04's weakest). #2E86DE (C2-2's first colour) was kept; vivid colours come first, so the earthier last four are used only when needed. No team or nationality colours.",
+  "sizes (IQ-05, DEC-024): axis numbers, date and footer in px on the 1920 frame, enlarged from C2-2's 20 / 28 / 17 so they read on a phone (tests/player/phone_check.js). Leave the key out to get C2-2's sizes.",
+  "glide.entry_sec (IQ-05, DEC-025): a driver entering the board starts its slide just under the last row and glides in with this time constant instead of rank_sec, so the row is clearly visible within 8 frames of its race.",
   "At 0.5 s per event the full 1,164 races run roughly 9-10 minutes; the exact figure is printed by FRAME_COUNT_ONLY=1. Not a creative decision: IQ-05 sets the real pace."
  ]
 }

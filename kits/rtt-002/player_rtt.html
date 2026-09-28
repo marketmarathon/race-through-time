@@ -25,6 +25,15 @@
           and the event timing comes from rtt_timeline.js (adaptive pacing, 0.8-1.4x).
        e. ties: equal counts rank by who reached that count first (rtt_timeline.js).
        f. every RTT word, colour and number comes from config.json through setup().
+
+     Changed in IQ-05 (DEC-022 to DEC-025):
+       - colours: one per driver for the whole dataset, from rtt_timeline.js assignColours()
+         (no two drivers who can be on screen together share a colour or get similar ones);
+         darkenForWhite() now lives there as drawnColour(), unchanged.
+       - sizes: the axis numbers, date and footer take their px from config "sizes" (C2-2's
+         20 / 28 / 17 when the key is absent), enlarged for RTT so they read on a phone.
+       - entering rows: a driver joining the board starts its slide just under the last row and
+         glides in with glide.entry_sec, so it is clearly visible within 8 frames of its race.
      Removed as unused: the Format C / C2-1 picture column and story cards, the prototype
      driver block that followed </html> in the C2-2 file.
 
@@ -67,6 +76,7 @@ let LEFT=64, RIGHT=64, GAPBAR=12, VALW=260, BAREND=0, NAMESCALE=1, VALOUT=false,
 let NAMEMODE='bar', YEARSIZE=112;
 let RACE_SEC=0, RACE_FRAMES=0, INTRO_SEC=3.0;
 let NAME_PX=null, NAME_TRUNC=false;
+let SZ={axis:20, date:28, footer:17};
 const TOP=150, BOTTOM=1080-46;
 
 /* ---- the test hook: what text went on the frame ---- */
@@ -96,10 +106,11 @@ function setup(o){
      board lands on the same pixels as C2-2's. */
   RIGHT = BAREND ? 1920-250-BAREND : (CFG.right!=null ? CFG.right : 64);
   VALW = CFG.valw!=null ? CFG.valw : 250;
-  /* colours: one per driver from the config palette, in the data's entrant order, so a driver
-     keeps the same colour in every passage cut from the same dataset. */
-  ENT={}; const pal=CFG.palette||['#2E86DE'];
-  o.data.entrants.forEach((e,i)=>{ ENT[e.id]={id:e.id,label:e.label,colour:pal[i%pal.length],_y:null}; });
+  SZ=Object.assign({axis:20, date:28, footer:17}, CFG.sizes||{});
+  /* colours: one per driver for the whole dataset (rtt_timeline.js assignColours, computed on
+     the whole race file, not the window), so a passage and the full video agree. */
+  ENT={}; const pal=CFG.palette;
+  o.data.entrants.forEach(e=>{ ENT[e.id]={id:e.id,label:e.label,colour:pal[TL.colours.index[e.id]],_y:null}; });
   NAME_PX=null; NAME_TRUNC=false;
 }
 window.setup=setup;
@@ -108,16 +119,9 @@ const lerp=(a,b,f)=>a+(b-a)*f;
 const ease=u=>u<=0?0:u>=1?1:u*u*(3-2*u);
 
 /* Every label on a bar is white; a palette colour too light for white type is darkened,
-   keeping its hue (C2-2 unchanged). */
-const _ink={};
-function darkenForWhite(hex){
-  if(_ink[hex]) return _ink[hex];
-  const n=parseInt(hex.replace('#',''),16);
-  let r=(n>>16)&255, g=(n>>8)&255, b=n&255;
-  const L=(0.299*r+0.587*g+0.114*b)/255;
-  if(L>0.52){ const k=0.46/L; r=Math.round(r*k); g=Math.round(g*k); b=Math.round(b*k); }
-  return _ink[hex]='#'+[r,g,b].map(v=>v.toString(16).padStart(2,'0')).join('');
-}
+   keeping its hue (C2-2's function, unchanged, now shared from rtt_timeline.js so the colour
+   rule is judged on the colour actually drawn). */
+const darkenForWhite=h=>RTT_TIMELINE.drawnColour(h);
 
 /* (a) whole numbers with a unit word. The count is an integer by construction (the adapter
    refuses anything else); Math.round here is a guard, and a non-integer is logged loudly. */
@@ -205,7 +209,7 @@ function drawTime(ev){
     text('time_gp',null,ev.grand_prix,R,1080-102,'right');
   }
   if(ev.date){
-    ctx.fillStyle=T.muted; ctx.font='500 28px '+FONT;
+    ctx.fillStyle=T.muted; ctx.font='500 '+SZ.date+'px '+FONT;
     ctx.textAlign='right'; tabText(dateText(ev.date), R, 1080-62, 'right', 'time_date', null);
   }
 }
@@ -285,7 +289,7 @@ function drawAt(t){
   const lead=top.slice(0,NROWS).reduce((m,r)=>Math.max(m,r.len),0);
   const smoothMax=Math.max(1,lead)*1.06;
   const step=niceStepInt(smoothMax/4);
-  ctx.font='400 20px '+FONT;
+  ctx.font='400 '+SZ.axis+'px '+FONT;
   for(let v=0;v<=smoothMax+1e-9;v+=step){
     const x=x0+W*v/smoothMax; if(x>1920-RIGHT-VALW+20) break;
     ctx.fillStyle=T.axis; tabText(Math.round(v).toLocaleString('en-GB'),x,TOP-6,'center','axis',null);
@@ -294,7 +298,15 @@ function drawAt(t){
 
   const ROWH=G.ROWH, BARH=G.BARH, VALF=G.VALF;
   const K=1-Math.exp(-1/(CFG.glide.rank_sec*FPS));
-  rows.forEach((r,i)=>{const c=r.c,tgt=Math.min(i,NROWS+2); if(c._y==null)c._y=tgt; c._y+=(tgt-c._y)*K;});
+  /* A row joining the board (target inside it, row still below the last slot) starts just
+     under the last row rather than from wherever it was waiting, and glides in with the
+     shorter glide.entry_sec, so it is clearly visible within a few frames of its race. Every
+     other move keeps C2-2's rank glide. */
+  const KE=CFG.glide.entry_sec ? 1-Math.exp(-1/(CFG.glide.entry_sec*FPS)) : K;
+  rows.forEach((r,i)=>{const c=r.c,tgt=Math.min(i,NROWS+2); if(c._y==null)c._y=tgt;
+    const entering = tgt<=NROWS-1 && c._y>NROWS-1;
+    if(entering && CFG.glide.entry_sec) c._y=Math.min(c._y,NROWS);
+    c._y+=(tgt-c._y)*(entering?KE:K);});
 
   const nf=nameSize();
   window.__BARS=[];
@@ -302,7 +314,7 @@ function drawAt(t){
   top.forEach(r=>{
     const c=r.c, y=TOP+14+c._y*ROWH; if(y>BOTTOM-4) return;
     ctx.globalAlpha=c._y>NROWS-1?Math.max(0,1-(c._y-(NROWS-1))/0.75):1;
-    window.__BARS.push({id:c.id, y:c._y, alpha:ctx.globalAlpha});
+    window.__BARS.push({id:c.id, y:c._y, alpha:ctx.globalAlpha, colour:darkenForWhite(c.colour)});
     if(ctx.globalAlpha<=0){ ctx.globalAlpha=1; return; }
     const w=Math.max(3,W*r.len/smoothMax), colour=darkenForWhite(c.colour);
     const by=y+(ROWH-BARH)/2, mid=by+BARH/2;
@@ -332,10 +344,10 @@ function drawAt(t){
   });
   ctx.restore();
 
-  ctx.fillStyle=T.foot; ctx.font='400 17px '+FONT;
+  ctx.fillStyle=T.foot; ctx.font='400 '+SZ.footer+'px '+FONT;
   text('footer',null,CFG.footer||'',LEFT,1080-20,'left');
 
-  if(outroF>0) drawOutro(outroF/FPS);
+  if(outroF>0 && CFG.outro_sec>0) drawOutro(outroF/FPS);   // outro_sec 0 = no closing card (pilots)
 }
 window.drawAt=drawAt;
 
