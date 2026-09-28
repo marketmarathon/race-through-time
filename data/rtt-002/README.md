@@ -1,7 +1,7 @@
 # RTT-002 — F1 World Championship Grand Prix wins, 1950 → 2026 Azerbaijan GP
 
-Status: **DATA_BUILD complete, awaiting owner review** (not greenlit for render). Branch `rtt-002-data`.
-Contract: `reference/metric_contract_RTT-002.md` v0.2 (defaults D-04 applied, see below).
+Status: **DATA_BUILD complete, merged to `main`** (pull request #1). DATA_AUDIT still open: second independent check on top-ten entries in progress (D-07). Not greenlit for render.
+Contract: `reference/metric_contract_RTT-002.md` v0.2. Rules confirmed by Luke 28 Sep 2026 (DEC-012): follow the official Formula 1 treatment.
 Licence: CC BY-SA 4.0, derived from Wikipedia — see `ATTRIBUTION.md`.
 
 **Data freeze:** last completed Grand Prix before 28 Sep 2026 = **2026 Azerbaijan Grand Prix, 26 Sep 2026** (15 of 23 rounds of 2026 completed).
@@ -27,11 +27,11 @@ python scripts/build_rtt002_dataset.py data/rtt-002
 ```
 Standard library only; the same `source/` files always give byte-identical outputs (hashes in `manifest.json`).
 
-## Contract defaults applied (D-04 — override if you disagree)
+## Rules (DEC-012: follow the official Formula 1 treatment)
 
-- **Indianapolis 500, 1950–1960:** included (11 races), because they were World Championship rounds and appear as such in the season results. State this in the video description.
+- **Indianapolis 500, 1950–1960:** included (11 races). They counted towards the World Championship, and formula1.com treats these wins as World Championship Grand Prix wins. State this in the video description.
 - **Shared drives:** each credited driver gets one full win (1951 French GP Fangio + Fagioli; 1956 Argentine GP Musso + Fangio; 1957 British GP Brooks + Moss). The season's race count is unchanged.
-- **Ties in rank:** the driver who reached the total first ranks higher.
+- **Ties in rank (display rule, no official rule exists):** the driver who reached the total first ranks higher.
 - **Identity:** one row per driver, keyed by Wikipedia page ID; redirect variants merged (Pedro Rodriguez → Pedro Rodríguez; Jim Rathmann (race car driver) → Jim Rathmann).
 
 ## What this data cannot support
