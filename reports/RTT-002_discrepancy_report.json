@@ -1,0 +1,34 @@
+{
+  "check_file_sha256": "0ac442475cc89f977ce927887cb019f85c2499c73e4709a024d5a21a027cddd2",
+  "hash_matches_frozen_record": true,
+  "sections_compared": [
+    "A",
+    "B",
+    "E",
+    "F",
+    "G"
+  ],
+  "counts": {
+    "B_seasons": 77,
+    "E_rows_theirs": 118,
+    "E_rows_ours": 118,
+    "F_rows": 36,
+    "G_rows": 127,
+    "G_seasons": [
+      1959,
+      1965,
+      1980,
+      1990,
+      2001,
+      2012,
+      2013,
+      2021
+    ]
+  },
+  "discrepancies": [],
+  "name_matches_needing_confirmation": {
+    "Carlos Sainz": "Carlos Sainz Jr. (Carlos_Sainz_Jr.)"
+  },
+  "unmatched_names": [],
+  "race_label_differences_G": 57
+}
