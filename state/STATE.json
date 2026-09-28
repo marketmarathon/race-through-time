@@ -2,7 +2,7 @@
   "schema": "rtt-state/0.1",
   "updated": "2026-09-28",
   "updated_by": "Claude (Cowork cloud session linked to Luke's laptop; model id claude-opus-5-5)",
-  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT repo bootstrapped on main; RTT-002 independent check validated and FROZEN; RTT-002 dataset BUILT and MERGED to main (PR #1, 7cde5df; all scripted checks pass; 0 discrepancies vs the check); D-04 and D-06 resolved; second blind check (top-ten entries) being run by Luke",
+  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT repo bootstrapped on main; RTT-002 independent check validated and FROZEN; RTT-002 dataset BUILT and MERGED to main (PR #1, 7cde5df; all scripted checks pass; 0 discrepancies vs the check); D-04 and D-06 resolved; second blind check (top-ten entries) PASSED with 0 discrepancies; DATA_AUDIT waits on D-07a",
   "canonical_queue": "state/ folder on main in marketmarathon/race-through-time (this file)",
   "repo_baseline": {
     "repo": "marketmarathon/bars",
@@ -40,7 +40,7 @@
       "state": "DATA_BUILD",
       "check_level": "LIVE",
       "verdict": "FEASIBLE_VIA_OPEN_LICENCE_ROUTE",
-      "blocker": "D-07 audit gaps before DATA_AUDIT (top-ten entry check in progress; official top-20 comparison undecided); D-05 before release",
+      "blocker": "D-07a: accept top-20 totals without a full official F1/FIA table, or eyeball formula1.com; D-05 before release",
       "dataset": {
         "branch": "main (merged from rtt-002-data via PR #1)",
         "commit": "7cde5df",
@@ -50,7 +50,8 @@
         "win_credits": 1167,
         "drivers": 116,
         "scripted_checks": "13/13 PASS (data/rtt-002/CHECKS.md)",
-        "independent_check_comparison": "0 discrepancies in A, B, E, F, G (reports/RTT-002_discrepancy_report.md)"
+        "independent_check_comparison": "0 discrepancies in A, B, E, F, G (reports/RTT-002_discrepancy_report.md)",
+        "second_independent_check": "top-ten entries (40) and top ten at freeze: 0 discrepancies (reports/RTT-002_topten_check_report.md)"
       }
     },
     {
@@ -208,7 +209,7 @@
       "id": "IQ-08",
       "task": "Close RTT-002 audit gaps (D-07): top-ten entries independent check; decide on official top-20 comparison",
       "owner": "Luke (decision) / Claude (prompt)",
-      "status": "IN PROGRESS - Luke running the second blind check (sections H, I) 28 Sep 2026; output to be saved in the laptop Data folder, then validated, hash-frozen and compared"
+      "status": "(b) DONE 28 Sep 2026 - second check frozen (state/RTT-002_independent_check2_freeze.json) and compared: 0 discrepancies. (a) awaiting owner decision"
     }
   ],
   "rtt_repo": {
@@ -243,6 +244,12 @@
       "sha256": "0ac442475cc89f977ce927887cb019f85c2499c73e4709a024d5a21a027cddd2",
       "frozen_commit": "d9df1ae",
       "validation": "all structural and consistency checks PASS; 22 NOT FOUND cells (Indy 500 separate F1/FIA career-total table and inclusion rule)"
+    },
+    "RTT-002_check2": {
+      "files": "F1_TopTen_Check_2026-09-28/ (private, laptop Data folder)",
+      "sha256_H": "3fcbc440d19876f6b3089b4902e7cb254d24b70ad658a3e9b026f9fba288f8a9",
+      "sha256_I": "13d5fa5b6de65c022aa0e6d3f17646e5c5198109633f62fc450a7aedf522fe8d",
+      "result": "0 discrepancies"
     }
   },
   "laptop_working_copy": {

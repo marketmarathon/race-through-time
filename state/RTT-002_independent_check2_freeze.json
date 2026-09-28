@@ -1,0 +1,34 @@
+{
+  "schema": "rtt-check-freeze/0.1",
+  "episode": "RTT-002",
+  "what": "Second independent check (ChatGPT deep research, run by Luke, blind to the build): H = every entry into the all-time top ten; I = top ten at the freeze",
+  "received": "pasted by Luke into the Cowork chat, 28 Sep 2026",
+  "hashed_before_comparison": true,
+  "frozen_by": "Claude (Cowork, model id claude-opus-5-5)",
+  "private_file_location": "Luke's laptop: Claude Workspace\\Race Through Time\\Data\\F1_TopTen_Check_2026-09-28\\ (private; never committed here)",
+  "files": {
+    "H_topten_entries.csv": {
+      "sha256": "3fcbc440d19876f6b3089b4902e7cb254d24b70ad658a3e9b026f9fba288f8a9",
+      "rows": 40
+    },
+    "I_topten_at_freeze.csv": {
+      "sha256": "13d5fa5b6de65c022aa0e6d3f17646e5c5198109633f62fc450a7aedf522fe8d",
+      "rows": 10
+    },
+    "NOTES.md": {
+      "sha256": "93c13be882d2275ad3de93b4cab902883b1dcb935798eb1ec19b0e331833738c"
+    }
+  },
+  "validation": {
+    "every_row_has_source": true,
+    "source_keys": "F1_RESULTS_<year> = formula1.com annual results archive; STATSF1_WIN_TOTALS = statsf1.com wins table",
+    "not_found_cells": 0,
+    "conflicts_reported_by_check": "none"
+  },
+  "comparison": {
+    "script": "scripts/rtt002_topten.py",
+    "result": "0 discrepancies: all 40 entry events agree on date, driver, career wins, position entered and driver displaced; top ten at freeze agrees on order and totals",
+    "report": "reports/RTT-002_topten_check_report.md"
+  },
+  "caution": "The check says a formula1.com article gives the official top-ten totals. When Claude read that article (20 Jun 2026) it stated totals only for Hamilton 106, Schumacher 91 and Prost 51 (all match the build). The other seven official totals are NOT FOUND in that article."
+}

@@ -21,7 +21,8 @@ Previous handover (27 Sep, session 1, claude.ai chat) is in this file's git hist
 
 ## Decisions
 - Resolved 28 Sep: merge done (DEC-014); follow the official F1 treatment, so the 11 Indy 500 wins count and shared drives credit each driver (DEC-012); "Carlos Sainz" = Carlos Sainz Jr. (DEC-013).
-- Open: **D-07** — Luke is running a second blind ChatGPT check on top-ten entries (sections H, I). When it is saved in the laptop Data folder: validate it, freeze its SHA-256 in `state/`, compare with `data/rtt-002/career_totals.csv` / `win_credits.csv`, list any disagreements. Still undecided: whether to eyeball formula1.com for the top-20 totals.
+- Done 28 Sep: **D-07(b)** second blind check (top-ten entries, top ten at freeze) frozen in `state/RTT-002_independent_check2_freeze.json` and compared: 0 discrepancies (`reports/RTT-002_topten_check_report.md`, `data/rtt-002/topten_entries.csv`).
+- Open: **D-07(a)** accept the top-20 totals as checked (Wikipedia list page + F1-archive reconstruction + StatsF1 agree; official totals seen for Hamilton, Schumacher, Prost only), or eyeball formula1.com for them.
 - Open: **D-05** publication risk (before release only).
 
 ## Next safe actions
