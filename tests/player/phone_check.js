@@ -1,5 +1,7 @@
 /* Phone check (IQ-04 step 7; thresholds added in IQ-05, DEC-022; round-2 pilots IQ-05b; round 3 IQ-05c:
- * variant A only, flags on, the event label, the time block and placeholder overlays).
+ * variant A only, flags on, the event label, the time block and placeholder overlays; round 4 IQ-05d:
+ * the small date line replaces the time block, the event label carries the date, and the placeholder
+ * overlays have the shapes of Luke's full logo (2.5 : 1) and the car photo (about 3.67 : 1)).
  *
  * 1920x1080 stills: from the full RTT-002 run a crowded mid-history board (1988) and the final
  * board, and from the round-3 pilot (A, top 20, flags on, with plain placeholder rectangles in the
@@ -10,7 +12,7 @@
  *
  * Pass/fail (DEC-022 (3)), on every still:
  *   - axis numbers  >= driver names (points at phone scale)
- *   - date          >= driver names
+ *   - date          >= driver names (the date line "25 October 2020 · Portuguese GP" in the round-4 pilot)
  *   - footer        >= 5.0 pt
  *   - winner line   >= driver names (where the winner line is on; the same rule as the date it sits under)
  * The thresholds are unchanged from IQ-05. Because they are relative to the driver names, a board
@@ -106,7 +108,8 @@ async function stills(configFile, pick) {
   for (const r of report) {
     const s = r.sizes, name = pt(s.name);
     check(r.still, 'axis numbers', s.axis && pt(s.axis), name);
-    check(r.still, 'date', s.time_date && pt(s.time_date), name);
+    const date = s.time_line || s.time_date;
+    check(r.still, s.time_line ? 'date line' : 'date', date && pt(date), name);
     check(r.still, 'footer', s.footer && pt(s.footer), FOOTER_MIN_PT);
     if (s.winner) check(r.still, 'winner line', s.winner && pt(s.winner), name);
   }
@@ -114,6 +117,8 @@ async function stills(configFile, pick) {
   for (const r of report) console.log(`  ${r.still} (${r.config}): names ${r.sizes.name}px = ${pt(r.sizes.name).toFixed(2)} pt, values ${r.sizes.value}px = ${pt(r.sizes.value).toFixed(2)} pt${r.sizes.winner ? `, winner line ${r.sizes.winner}px = ${pt(r.sizes.winner).toFixed(2)} pt` : ''}`);
   console.log('\nFor information (not a gate): flags and event labels at phone scale');
   for (const r of report) if (r.flag || r.sizes.event) console.log(`  ${r.still}: ${r.flag ? `${r.flag.n} flags, each ${r.flag.w} x ${r.flag.h} px = ${pt(r.flag.w).toFixed(1)} x ${pt(r.flag.h).toFixed(1)} pt (${(pt(r.flag.w) * DPR).toFixed(0)} x ${(pt(r.flag.h) * DPR).toFixed(0)} device pixels)` : 'no flags'}${r.sizes.event ? `; event label ${r.sizes.event}px = ${pt(r.sizes.event).toFixed(2)} pt` : ''}`);
+  console.log('\nFor information (not a gate): the date line (round 4) and the footer at phone scale');
+  for (const r of report) if (r.sizes.time_line) console.log(`  ${r.still}: date line ${r.sizes.time_line}px = ${pt(r.sizes.time_line).toFixed(2)} pt (${(pt(r.sizes.time_line) * DPR).toFixed(0)} device pixels), footer ${r.sizes.footer}px = ${pt(r.sizes.footer).toFixed(2)} pt`);
   console.log(ok ? '\nPHONE CHECK PASS' : '\nPHONE CHECK FAIL');
   process.exit(ok ? 0 : 1);
 })().catch(e => { console.error(e); process.exit(2); });
