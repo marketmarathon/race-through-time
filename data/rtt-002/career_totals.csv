@@ -1,0 +1,117 @@
+rank,driver_id,driver_name,wins,first_win,first_win_date,last_win,last_win_date
+1,wp675561,Lewis Hamilton,106,2007 Canadian Grand Prix,2007-06-10,2026 Barcelona-Catalunya Grand Prix,2026-06-14
+2,wp20396,Michael Schumacher,91,1992 Belgian Grand Prix,1992-08-30,2006 Chinese Grand Prix,2006-10-01
+3,wp41758713,Max Verstappen,71,2016 Spanish Grand Prix,2016-05-15,2025 Abu Dhabi Grand Prix,2025-12-07
+4,wp6437759,Sebastian Vettel,53,2008 Italian Grand Prix,2008-09-14,2019 Singapore Grand Prix,2019-09-22
+5,wp36917,Alain Prost,51,1981 French Grand Prix,1981-07-05,1993 German Grand Prix,1993-07-25
+6,wp146638,Ayrton Senna,41,1985 Portuguese Grand Prix,1985-04-21,1993 Australian Grand Prix,1993-11-07
+7,wp240390,Fernando Alonso,32,2003 Hungarian Grand Prix,2003-08-24,2013 Spanish Grand Prix,2013-05-12
+8,wp228615,Nigel Mansell,31,1985 European Grand Prix,1985-10-06,1994 Australian Grand Prix,1994-11-13
+9,wp294240,Jackie Stewart,27,1965 Italian Grand Prix,1965-09-12,1973 German Grand Prix,1973-08-05
+10,wp181892,Jim Clark,25,1962 Belgian Grand Prix,1962-06-17,1968 South African Grand Prix,1968-01-01
+11,wp40486,Niki Lauda,25,1974 Spanish Grand Prix,1974-04-28,1985 Dutch Grand Prix,1985-08-25
+12,wp48532,Juan Manuel Fangio,24,1950 Monaco Grand Prix,1950-05-21,1957 German Grand Prix,1957-08-04
+13,wp204645,Nelson Piquet,23,1980 United States Grand Prix West,1980-03-30,1991 Canadian Grand Prix,1991-06-02
+14,wp1628331,Nico Rosberg,23,2012 Chinese Grand Prix,2012-04-15,2016 Japanese Grand Prix,2016-10-09
+15,wp78249,Damon Hill,22,1993 Hungarian Grand Prix,1993-08-15,1998 Belgian Grand Prix,1998-08-30
+16,wp234756,Kimi Räikkönen,21,2003 Malaysian Grand Prix,2003-03-23,2018 United States Grand Prix,2018-10-21
+17,wp63073,Mika Häkkinen,20,1997 European Grand Prix,1997-10-26,2001 United States Grand Prix,2001-09-30
+18,wp247310,Stirling Moss,16,1955 British Grand Prix,1955-07-16,1961 German Grand Prix,1961-08-06
+19,wp548212,Jenson Button,15,2006 Hungarian Grand Prix,2006-08-06,2012 Brazilian Grand Prix,2012-11-25
+20,wp246186,Graham Hill,14,1962 Dutch Grand Prix,1962-05-20,1969 Monaco Grand Prix,1969-05-18
+21,wp16564,Jack Brabham,14,1959 Monaco Grand Prix,1959-05-10,1970 South African Grand Prix,1970-03-07
+22,wp241678,Emerson Fittipaldi,14,1970 United States Grand Prix,1970-10-04,1975 British Grand Prix,1975-07-19
+23,wp246121,Alberto Ascari,13,1951 German Grand Prix,1951-07-29,1953 Swiss Grand Prix,1953-08-23
+24,wp19636733,David Coulthard,13,1995 Portuguese Grand Prix,1995-09-24,2003 Australian Grand Prix,2003-03-09
+25,wp48978813,Lando Norris,13,2024 Miami Grand Prix,2024-05-05,2026 Dutch Grand Prix,2026-08-23
+26,wp271425,Mario Andretti,12,1971 South African Grand Prix,1971-03-06,1978 Dutch Grand Prix,1978-08-27
+27,wp7859379,Carlos Reutemann,12,1974 South African Grand Prix,1974-03-30,1981 Belgian Grand Prix,1981-05-17
+28,wp255129,Alan Jones,12,1977 Austrian Grand Prix,1977-08-14,1981 Caesars Palace Grand Prix,1981-10-17
+29,wp64258,Jacques Villeneuve,11,1996 European Grand Prix,1996-04-28,1997 Luxembourg Grand Prix,1997-09-28
+30,wp647263,Felipe Massa,11,2006 Turkish Grand Prix,2006-08-27,2008 Brazilian Grand Prix,2008-11-02
+31,wp252989,Rubens Barrichello,11,2000 German Grand Prix,2000-07-30,2009 Italian Grand Prix,2009-09-13
+32,wp287740,James Hunt,10,1975 Dutch Grand Prix,1975-06-22,1977 Japanese Grand Prix,1977-10-23
+33,wp387446,Ronnie Peterson,10,1973 French Grand Prix,1973-07-01,1978 Austrian Grand Prix,1978-08-13
+34,wp243054,Jody Scheckter,10,1974 Swedish Grand Prix,1974-06-09,1979 Italian Grand Prix,1979-09-09
+35,wp343833,Gerhard Berger,10,1986 Mexican Grand Prix,1986-10-12,1997 German Grand Prix,1997-07-27
+36,wp19846772,Valtteri Bottas,10,2017 Russian Grand Prix,2017-04-30,2021 Turkish Grand Prix,2021-10-10
+37,wp564161,Mark Webber,9,2009 German Grand Prix,2009-07-12,2012 British Grand Prix,2012-07-08
+38,wp59449712,Oscar Piastri,9,2024 Hungarian Grand Prix,2024-07-21,2025 Dutch Grand Prix,2025-08-31
+39,wp44924226,Charles Leclerc,9,2019 Belgian Grand Prix,2019-09-01,2026 British Grand Prix,2026-07-05
+40,wp159975,Jacky Ickx,8,1968 French Grand Prix,1968-07-07,1972 German Grand Prix,1972-07-30
+41,wp262934,Denny Hulme,8,1967 Monaco Grand Prix,1967-05-07,1974 Argentine Grand Prix,1974-01-13
+42,wp18334077,Daniel Ricciardo,8,2014 Canadian Grand Prix,2014-06-08,2021 Italian Grand Prix,2021-09-12
+43,wp70530918,Kimi Antonelli,8,2026 Chinese Grand Prix,2026-03-15,2026 Spanish Grand Prix,2026-09-13
+44,wp44641054,George Russell,8,2022 São Paulo Grand Prix,2022-11-13,2026 Azerbaijan Grand Prix,2026-09-26
+45,wp763767,René Arnoux,7,1980 Brazilian Grand Prix,1980-01-27,1983 Dutch Grand Prix,1983-08-28
+46,wp164992,Juan Pablo Montoya,7,2001 Italian Grand Prix,2001-09-16,2005 Brazilian Grand Prix,2005-09-25
+47,wp1226571,Tony Brooks,6,1957 British Grand Prix,1957-07-20,1959 German Grand Prix,1959-08-02
+48,wp215196,John Surtees,6,1963 German Grand Prix,1963-08-04,1967 Italian Grand Prix,1967-09-10
+49,wp45388,Jochen Rindt,6,1969 United States Grand Prix,1969-10-05,1970 German Grand Prix,1970-08-02
+50,wp86632,Gilles Villeneuve,6,1978 Canadian Grand Prix,1978-10-08,1981 Spanish Grand Prix,1981-06-21
+51,wp701324,Jacques Laffite,6,1977 Swedish Grand Prix,1977-06-19,1981 Canadian Grand Prix,1981-09-27
+52,wp38875,Riccardo Patrese,6,1982 Monaco Grand Prix,1982-05-23,1992 Japanese Grand Prix,1992-10-25
+53,wp315472,Ralf Schumacher,6,2001 San Marino Grand Prix,2001-04-15,2003 French Grand Prix,2003-07-06
+54,wp19801645,Sergio Pérez,6,2020 Sakhir Grand Prix,2020-12-06,2023 Azerbaijan Grand Prix,2023-04-30
+55,wp342972,Giuseppe Farina,5,1950 British Grand Prix,1950-05-13,1953 German Grand Prix,1953-08-02
+56,wp1172362,Clay Regazzoni,5,1970 Italian Grand Prix,1970-09-06,1979 British Grand Prix,1979-07-14
+57,wp30874971,John Watson,5,1976 Austrian Grand Prix,1976-08-15,1983 United States Grand Prix West,1983-03-27
+58,wp1018650,Michele Alboreto,5,1982 Caesars Palace Grand Prix,1982-09-25,1985 German Grand Prix,1985-08-04
+59,wp230197,Keke Rosberg,5,1982 Swiss Grand Prix,1982-08-29,1985 Australian Grand Prix,1985-11-03
+60,wp554522,Dan Gurney,4,1962 French Grand Prix,1962-07-08,1967 Belgian Grand Prix,1967-06-18
+61,wp475903,Bruce McLaren,4,1959 United States Grand Prix,1959-12-12,1968 Belgian Grand Prix,1968-06-09
+62,wp424417,Eddie Irvine,4,1999 Australian Grand Prix,1999-03-07,1999 Malaysian Grand Prix,1999-10-17
+63,wp25537408,Carlos Sainz Jr.,4,2022 British Grand Prix,2022-07-03,2024 Mexico City Grand Prix,2024-10-27
+64,wp128171,Mike Hawthorn,3,1953 French Grand Prix,1953-07-05,1958 French Grand Prix,1958-07-06
+65,wp1226514,Peter Collins,3,1956 Belgian Grand Prix,1956-06-03,1958 British Grand Prix,1958-07-19
+66,wp341545,Phil Hill,3,1960 Italian Grand Prix,1960-09-04,1961 Italian Grand Prix,1961-09-10
+67,wp1219767,Didier Pironi,3,1980 Belgian Grand Prix,1980-05-04,1982 Dutch Grand Prix,1982-07-03
+68,wp1114709,Thierry Boutsen,3,1989 Canadian Grand Prix,1989-06-18,1990 Hungarian Grand Prix,1990-08-12
+69,wp756775,Heinz-Harald Frentzen,3,1997 San Marino Grand Prix,1997-04-27,1999 Italian Grand Prix,1999-09-12
+70,wp342991,Johnny Herbert,3,1995 British Grand Prix,1995-07-16,1999 European Grand Prix,1999-09-26
+71,wp636954,Giancarlo Fisichella,3,2003 Brazilian Grand Prix,2003-04-06,2006 Malaysian Grand Prix,2006-03-19
+72,wp1251950,Bill Vukovich,2,1953 Indianapolis 500,1953-05-30,1954 Indianapolis 500,1954-05-31
+73,wp877639,José Froilán González,2,1951 British Grand Prix,1951-07-14,1954 British Grand Prix,1954-07-17
+74,wp423739,Maurice Trintignant,2,1955 Monaco Grand Prix,1955-05-22,1958 Monaco Grand Prix,1958-05-18
+75,wp1226439,Wolfgang von Trips,2,1961 Dutch Grand Prix,1961-05-22,1961 British Grand Prix,1961-07-15
+76,wp1156744,Pedro Rodríguez,2,1967 South African Grand Prix,1967-01-02,1970 Belgian Grand Prix,1970-06-07
+77,wp1202290,Jo Siffert,2,1968 British Grand Prix,1968-07-20,1971 Austrian Grand Prix,1971-08-15
+78,wp767674,Peter Revson,2,1973 British Grand Prix,1973-07-14,1973 Canadian Grand Prix,1973-09-23
+79,wp1226335,Patrick Depailler,2,1978 Monaco Grand Prix,1978-05-07,1979 Spanish Grand Prix,1979-04-29
+80,wp1226470,Jean-Pierre Jabouille,2,1979 French Grand Prix,1979-07-01,1980 Austrian Grand Prix,1980-08-17
+81,wp1223181,Patrick Tambay,2,1982 German Grand Prix,1982-08-08,1983 San Marino Grand Prix,1983-05-01
+82,wp1048978,Elio de Angelis,2,1982 Austrian Grand Prix,1982-08-15,1985 San Marino Grand Prix,1985-05-05
+83,wp1252116,Johnnie Parsons,1,1950 Indianapolis 500,1950-05-30,1950 Indianapolis 500,1950-05-30
+84,wp1252126,Lee Wallard,1,1951 Indianapolis 500,1951-05-30,1951 Indianapolis 500,1951-05-30
+85,wp1212766,Luigi Fagioli,1,1951 French Grand Prix,1951-07-01,1951 French Grand Prix,1951-07-01
+86,wp1235869,Piero Taruffi,1,1952 Swiss Grand Prix,1952-05-18,1952 Swiss Grand Prix,1952-05-18
+87,wp1235879,Troy Ruttman,1,1952 Indianapolis 500,1952-05-30,1952 Indianapolis 500,1952-05-30
+88,wp1251973,Bob Sweikert,1,1955 Indianapolis 500,1955-05-30,1955 Indianapolis 500,1955-05-30
+89,wp1226494,Luigi Musso,1,1956 Argentine Grand Prix,1956-01-22,1956 Argentine Grand Prix,1956-01-22
+90,wp1252141,Pat Flaherty,1,1956 Indianapolis 500,1956-05-30,1956 Indianapolis 500,1956-05-30
+91,wp1252148,Sam Hanks,1,1957 Indianapolis 500,1957-05-30,1957 Indianapolis 500,1957-05-30
+92,wp1252110,Jimmy Bryan,1,1958 Indianapolis 500,1958-05-30,1958 Indianapolis 500,1958-05-30
+93,wp786743,Rodger Ward,1,1959 Indianapolis 500,1959-05-30,1959 Indianapolis 500,1959-05-30
+94,wp1152185,Jo Bonnier,1,1959 Dutch Grand Prix,1959-05-31,1959 Dutch Grand Prix,1959-05-31
+95,wp1252109,Jim Rathmann,1,1960 Indianapolis 500,1960-05-30,1960 Indianapolis 500,1960-05-30
+96,wp1228416,Giancarlo Baghetti,1,1961 French Grand Prix,1961-07-02,1961 French Grand Prix,1961-07-02
+97,wp602101,Innes Ireland,1,1961 United States Grand Prix,1961-10-08,1961 United States Grand Prix,1961-10-08
+98,wp1226484,Lorenzo Bandini,1,1964 Austrian Grand Prix,1964-08-23,1964 Austrian Grand Prix,1964-08-23
+99,wp1226546,Richie Ginther,1,1965 Mexican Grand Prix,1965-10-24,1965 Mexican Grand Prix,1965-10-24
+100,wp1235774,Ludovico Scarfiotti,1,1966 Italian Grand Prix,1966-09-04,1966 Italian Grand Prix,1966-09-04
+101,wp1226516,Peter Gethin,1,1971 Italian Grand Prix,1971-09-05,1971 Italian Grand Prix,1971-09-05
+102,wp598118,François Cevert,1,1971 United States Grand Prix,1971-10-03,1971 United States Grand Prix,1971-10-03
+103,wp1226341,Jean-Pierre Beltoise,1,1972 Monaco Grand Prix,1972-05-14,1972 Monaco Grand Prix,1972-05-14
+104,wp1219709,Carlos Pace,1,1975 Brazilian Grand Prix,1975-01-26,1975 Brazilian Grand Prix,1975-01-26
+105,wp1226327,Jochen Mass,1,1975 Spanish Grand Prix,1975-04-27,1975 Spanish Grand Prix,1975-04-27
+106,wp1226579,Vittorio Brambilla,1,1975 Austrian Grand Prix,1975-08-17,1975 Austrian Grand Prix,1975-08-17
+107,wp1213859,Gunnar Nilsson,1,1977 Belgian Grand Prix,1977-06-05,1977 Belgian Grand Prix,1977-06-05
+108,wp1218385,Alessandro Nannini,1,1989 Japanese Grand Prix,1989-10-22,1989 Japanese Grand Prix,1989-10-22
+109,wp341553,Jean Alesi,1,1995 Canadian Grand Prix,1995-06-11,1995 Canadian Grand Prix,1995-06-11
+110,wp414513,Olivier Panis,1,1996 Monaco Grand Prix,1996-05-19,1996 Monaco Grand Prix,1996-05-19
+111,wp647260,Jarno Trulli,1,2004 Monaco Grand Prix,2004-05-23,2004 Monaco Grand Prix,2004-05-23
+112,wp1841727,Robert Kubica,1,2008 Canadian Grand Prix,2008-06-08,2008 Canadian Grand Prix,2008-06-08
+113,wp1527343,Heikki Kovalainen,1,2008 Hungarian Grand Prix,2008-08-03,2008 Hungarian Grand Prix,2008-08-03
+114,wp9255765,Pastor Maldonado,1,2012 Spanish Grand Prix,2012-05-13,2012 Spanish Grand Prix,2012-05-13
+115,wp40843850,Pierre Gasly,1,2020 Italian Grand Prix,2020-09-06,2020 Italian Grand Prix,2020-09-06
+116,wp40826055,Esteban Ocon,1,2021 Hungarian Grand Prix,2021-08-01,2021 Hungarian Grand Prix,2021-08-01

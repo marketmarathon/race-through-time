@@ -1,0 +1,657 @@
+{
+  "dataset": "RTT-002 F1 World Championship Grand Prix wins",
+  "build": "rtt002-build/1.0",
+  "metric_contract": "reference/metric_contract_RTT-002.md v0.2",
+  "licence": "CC BY-SA 4.0 (derived from English Wikipedia); see ATTRIBUTION.md",
+  "freeze": {
+    "race": "2026 Azerbaijan Grand Prix",
+    "date": "2026-09-26"
+  },
+  "inputs": {
+    "source/wikipedia_driver_ids.psv": "a160dabd7f86f44edb1e7a8615639821c0b115a1eab166e2e2c0034d461fe15c",
+    "source/wikipedia_list_of_gp_winners.psv": "383d8691af3cda78626c6814fca90f62cc16841d6b829ecf21007c7df0fed11a",
+    "source/wikipedia_season_extract.psv": "180fad720d91ad1b1bce5505de9d8f83e8a6c183625d535e2e25ec9d7f2559fa"
+  },
+  "wikipedia_pages": [
+    {
+      "season": 1950,
+      "title": "1950 Formula One season",
+      "revid": 1371248309,
+      "retrieved_utc": "2026-09-28T09:16:56Z",
+      "page_url": "https://en.wikipedia.org/wiki/1950_Formula_One_season",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1371248309"
+    },
+    {
+      "season": 1951,
+      "title": "1951 Formula One season",
+      "revid": 1370951381,
+      "retrieved_utc": "2026-09-28T09:16:57Z",
+      "page_url": "https://en.wikipedia.org/wiki/1951_Formula_One_season",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1370951381"
+    },
+    {
+      "season": 1952,
+      "title": "1952 Formula One season",
+      "revid": 1376485602,
+      "retrieved_utc": "2026-09-28T09:16:58Z",
+      "page_url": "https://en.wikipedia.org/wiki/1952_Formula_One_season",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1376485602"
+    },
+    {
+      "season": 1953,
+      "title": "1953 Formula One season",
+      "revid": 1370951539,
+      "retrieved_utc": "2026-09-28T09:16:59Z",
+      "page_url": "https://en.wikipedia.org/wiki/1953_Formula_One_season",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1370951539"
+    },
+    {
+      "season": 1954,
+      "title": "1954 Formula One season",
+      "revid": 1370910293,
+      "retrieved_utc": "2026-09-28T09:17:00Z",
+      "page_url": "https://en.wikipedia.org/wiki/1954_Formula_One_season",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1370910293"
+    },
+    {
+      "season": 1955,
+      "title": "1955 Formula One season",
+      "revid": 1376998541,
+      "retrieved_utc": "2026-09-28T09:17:03Z",
+      "page_url": "https://en.wikipedia.org/wiki/1955_Formula_One_season",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1376998541"
+    },
+    {
+      "season": 1956,
+      "title": "1956 Formula One season",
+      "revid": 1373791054,
+      "retrieved_utc": "2026-09-28T09:17:04Z",
+      "page_url": "https://en.wikipedia.org/wiki/1956_Formula_One_season",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1373791054"
+    },
+    {
+      "season": 1957,
+      "title": "1957 Formula One season",
+      "revid": 1373794853,
+      "retrieved_utc": "2026-09-28T09:17:05Z",
+      "page_url": "https://en.wikipedia.org/wiki/1957_Formula_One_season",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1373794853"
+    },
+    {
+      "season": 1958,
+      "title": "1958 Formula One season",
+      "revid": 1373795186,
+      "retrieved_utc": "2026-09-28T09:17:05Z",
+      "page_url": "https://en.wikipedia.org/wiki/1958_Formula_One_season",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1373795186"
+    },
+    {
+      "season": 1959,
+      "title": "1959 Formula One season",
+      "revid": 1370910364,
+      "retrieved_utc": "2026-09-28T09:17:06Z",
+      "page_url": "https://en.wikipedia.org/wiki/1959_Formula_One_season",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1370910364"
+    },
+    {
+      "season": 1960,
+      "title": "1960 Formula One season",
+      "revid": 1370951701,
+      "retrieved_utc": "2026-09-28T09:17:07Z",
+      "page_url": "https://en.wikipedia.org/wiki/1960_Formula_One_season",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1370951701"
+    },
+    {
+      "season": 1961,
+      "title": "1961 Formula One season",
+      "revid": 1370951708,
+      "retrieved_utc": "2026-09-28T09:17:08Z",
+      "page_url": "https://en.wikipedia.org/wiki/1961_Formula_One_season",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1370951708"
+    },
+    {
+      "season": 1962,
+      "title": "1962 Formula One season",
+      "revid": 1370951727,
+      "retrieved_utc": "2026-09-28T09:17:09Z",
+      "page_url": "https://en.wikipedia.org/wiki/1962_Formula_One_season",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1370951727"
+    },
+    {
+      "season": 1963,
+      "title": "1963 Formula One season",
+      "revid": 1370951737,
+      "retrieved_utc": "2026-09-28T09:17:10Z",
+      "page_url": "https://en.wikipedia.org/wiki/1963_Formula_One_season",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1370951737"
+    },
+    {
+      "season": 1964,
+      "title": "1964 Formula One season",
+      "revid": 1370951747,
+      "retrieved_utc": "2026-09-28T09:17:11Z",
+      "page_url": "https://en.wikipedia.org/wiki/1964_Formula_One_season",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1370951747"
+    },
+    {
+      "season": 1965,
+      "title": "1965 Formula One season",
+      "revid": 1370951769,
+      "retrieved_utc": "2026-09-28T09:17:12Z",
+      "page_url": "https://en.wikipedia.org/wiki/1965_Formula_One_season",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1370951769"
+    },
+    {
+      "season": 1966,
+      "title": "1966 Formula One season",
+      "revid": 1370951785,
+      "retrieved_utc": "2026-09-28T09:17:15Z",
+      "page_url": "https://en.wikipedia.org/wiki/1966_Formula_One_season",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1370951785"
+    },
+    {
+      "season": 1967,
+      "title": "1967 Formula One season",
+      "revid": 1376499876,
+      "retrieved_utc": "2026-09-28T09:17:16Z",
+      "page_url": "https://en.wikipedia.org/wiki/1967_Formula_One_season",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1376499876"
+    },
+    {
+      "season": 1968,
+      "title": "1968 Formula One season",
+      "revid": 1370951814,
+      "retrieved_utc": "2026-09-28T09:17:17Z",
+      "page_url": "https://en.wikipedia.org/wiki/1968_Formula_One_season",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1370951814"
+    },
+    {
+      "season": 1969,
+      "title": "1969 Formula One season",
+      "revid": 1370910371,
+      "retrieved_utc": "2026-09-28T09:17:18Z",
+      "page_url": "https://en.wikipedia.org/wiki/1969_Formula_One_season",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1370910371"
+    },
+    {
+      "season": 1970,
+      "title": "1970 Formula One season",
+      "revid": 1370951855,
+      "retrieved_utc": "2026-09-28T09:17:19Z",
+      "page_url": "https://en.wikipedia.org/wiki/1970_Formula_One_season",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1370951855"
+    },
+    {
+      "season": 1971,
+      "title": "1971 Formula One season",
+      "revid": 1374999515,
+      "retrieved_utc": "2026-09-28T09:17:20Z",
+      "page_url": "https://en.wikipedia.org/wiki/1971_Formula_One_season",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1374999515"
+    },
+    {
+      "season": 1972,
+      "title": "1972 Formula One season",
+      "revid": 1370966848,
+      "retrieved_utc": "2026-09-28T09:17:21Z",
+      "page_url": "https://en.wikipedia.org/wiki/1972_Formula_One_season",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1370966848"
+    },
+    {
+      "season": 1973,
+      "title": "1973 Formula One season",
+      "revid": 1373455736,
+      "retrieved_utc": "2026-09-28T09:17:21Z",
+      "page_url": "https://en.wikipedia.org/wiki/1973_Formula_One_season",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1373455736"
+    },
+    {
+      "season": 1974,
+      "title": "1974 Formula One season",
+      "revid": 1370966877,
+      "retrieved_utc": "2026-09-28T09:17:24Z",
+      "page_url": "https://en.wikipedia.org/wiki/1974_Formula_One_season",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1370966877"
+    },
+    {
+      "season": 1975,
+      "title": "1975 Formula One season",
+      "revid": 1372896265,
+      "retrieved_utc": "2026-09-28T09:17:25Z",
+      "page_url": "https://en.wikipedia.org/wiki/1975_Formula_One_season",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1372896265"
+    },
+    {
+      "season": 1976,
+      "title": "1976 Formula One season",
+      "revid": 1370951938,
+      "retrieved_utc": "2026-09-28T09:17:25Z",
+      "page_url": "https://en.wikipedia.org/wiki/1976_Formula_One_season",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1370951938"
+    },
+    {
+      "season": 1977,
+      "title": "1977 Formula One season",
+      "revid": 1375372664,
+      "retrieved_utc": "2026-09-28T09:17:27Z",
+      "page_url": "https://en.wikipedia.org/wiki/1977_Formula_One_season",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1375372664"
+    },
+    {
+      "season": 1978,
+      "title": "1978 Formula One season",
+      "revid": 1370964821,
+      "retrieved_utc": "2026-09-28T09:17:29Z",
+      "page_url": "https://en.wikipedia.org/wiki/1978_Formula_One_season",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1370964821"
+    },
+    {
+      "season": 1979,
+      "title": "1979 Formula One season",
+      "revid": 1370964929,
+      "retrieved_utc": "2026-09-28T09:17:30Z",
+      "page_url": "https://en.wikipedia.org/wiki/1979_Formula_One_season",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1370964929"
+    },
+    {
+      "season": 1980,
+      "title": "1980 Formula One season",
+      "revid": 1372906835,
+      "retrieved_utc": "2026-09-28T09:17:31Z",
+      "page_url": "https://en.wikipedia.org/wiki/1980_Formula_One_season",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1372906835"
+    },
+    {
+      "season": 1981,
+      "title": "1981 Formula One World Championship",
+      "revid": 1370911255,
+      "retrieved_utc": "2026-09-28T09:17:32Z",
+      "page_url": "https://en.wikipedia.org/wiki/1981_Formula_One_World_Championship",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1370911255"
+    },
+    {
+      "season": 1982,
+      "title": "1982 Formula One World Championship",
+      "revid": 1373508906,
+      "retrieved_utc": "2026-09-28T09:17:33Z",
+      "page_url": "https://en.wikipedia.org/wiki/1982_Formula_One_World_Championship",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1373508906"
+    },
+    {
+      "season": 1983,
+      "title": "1983 Formula One World Championship",
+      "revid": 1370965369,
+      "retrieved_utc": "2026-09-28T09:17:34Z",
+      "page_url": "https://en.wikipedia.org/wiki/1983_Formula_One_World_Championship",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1370965369"
+    },
+    {
+      "season": 1984,
+      "title": "1984 Formula One World Championship",
+      "revid": 1372986620,
+      "retrieved_utc": "2026-09-28T09:17:34Z",
+      "page_url": "https://en.wikipedia.org/wiki/1984_Formula_One_World_Championship",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1372986620"
+    },
+    {
+      "season": 1985,
+      "title": "1985 Formula One World Championship",
+      "revid": 1371261644,
+      "retrieved_utc": "2026-09-28T09:17:36Z",
+      "page_url": "https://en.wikipedia.org/wiki/1985_Formula_One_World_Championship",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1371261644"
+    },
+    {
+      "season": 1986,
+      "title": "1986 Formula One World Championship",
+      "revid": 1371098877,
+      "retrieved_utc": "2026-09-28T09:17:37Z",
+      "page_url": "https://en.wikipedia.org/wiki/1986_Formula_One_World_Championship",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1371098877"
+    },
+    {
+      "season": 1987,
+      "title": "1987 Formula One World Championship",
+      "revid": 1374543474,
+      "retrieved_utc": "2026-09-28T09:17:38Z",
+      "page_url": "https://en.wikipedia.org/wiki/1987_Formula_One_World_Championship",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1374543474"
+    },
+    {
+      "season": 1988,
+      "title": "1988 Formula One World Championship",
+      "revid": 1371162986,
+      "retrieved_utc": "2026-09-28T09:17:39Z",
+      "page_url": "https://en.wikipedia.org/wiki/1988_Formula_One_World_Championship",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1371162986"
+    },
+    {
+      "season": 1989,
+      "title": "1989 Formula One World Championship",
+      "revid": 1376825078,
+      "retrieved_utc": "2026-09-28T09:17:40Z",
+      "page_url": "https://en.wikipedia.org/wiki/1989_Formula_One_World_Championship",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1376825078"
+    },
+    {
+      "season": 1990,
+      "title": "1990 Formula One World Championship",
+      "revid": 1371101301,
+      "retrieved_utc": "2026-09-28T09:17:41Z",
+      "page_url": "https://en.wikipedia.org/wiki/1990_Formula_One_World_Championship",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1371101301"
+    },
+    {
+      "season": 1991,
+      "title": "1991 Formula One World Championship",
+      "revid": 1376394398,
+      "retrieved_utc": "2026-09-28T09:17:42Z",
+      "page_url": "https://en.wikipedia.org/wiki/1991_Formula_One_World_Championship",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1376394398"
+    },
+    {
+      "season": 1992,
+      "title": "1992 Formula One World Championship",
+      "revid": 1369228178,
+      "retrieved_utc": "2026-09-28T09:17:43Z",
+      "page_url": "https://en.wikipedia.org/wiki/1992_Formula_One_World_Championship",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1369228178"
+    },
+    {
+      "season": 1993,
+      "title": "1993 Formula One World Championship",
+      "revid": 1375412761,
+      "retrieved_utc": "2026-09-28T09:17:46Z",
+      "page_url": "https://en.wikipedia.org/wiki/1993_Formula_One_World_Championship",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1375412761"
+    },
+    {
+      "season": 1994,
+      "title": "1994 Formula One World Championship",
+      "revid": 1373068999,
+      "retrieved_utc": "2026-09-28T09:17:47Z",
+      "page_url": "https://en.wikipedia.org/wiki/1994_Formula_One_World_Championship",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1373068999"
+    },
+    {
+      "season": 1995,
+      "title": "1995 Formula One World Championship",
+      "revid": 1375309886,
+      "retrieved_utc": "2026-09-28T09:17:48Z",
+      "page_url": "https://en.wikipedia.org/wiki/1995_Formula_One_World_Championship",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1375309886"
+    },
+    {
+      "season": 1996,
+      "title": "1996 Formula One World Championship",
+      "revid": 1376170380,
+      "retrieved_utc": "2026-09-28T09:17:50Z",
+      "page_url": "https://en.wikipedia.org/wiki/1996_Formula_One_World_Championship",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1376170380"
+    },
+    {
+      "season": 1997,
+      "title": "1997 Formula One World Championship",
+      "revid": 1371597287,
+      "retrieved_utc": "2026-09-28T09:17:51Z",
+      "page_url": "https://en.wikipedia.org/wiki/1997_Formula_One_World_Championship",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1371597287"
+    },
+    {
+      "season": 1998,
+      "title": "1998 Formula One World Championship",
+      "revid": 1372421349,
+      "retrieved_utc": "2026-09-28T09:17:52Z",
+      "page_url": "https://en.wikipedia.org/wiki/1998_Formula_One_World_Championship",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1372421349"
+    },
+    {
+      "season": 1999,
+      "title": "1999 Formula One World Championship",
+      "revid": 1369387987,
+      "retrieved_utc": "2026-09-28T09:17:52Z",
+      "page_url": "https://en.wikipedia.org/wiki/1999_Formula_One_World_Championship",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1369387987"
+    },
+    {
+      "season": 2000,
+      "title": "2000 Formula One World Championship",
+      "revid": 1371597275,
+      "retrieved_utc": "2026-09-28T09:17:53Z",
+      "page_url": "https://en.wikipedia.org/wiki/2000_Formula_One_World_Championship",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1371597275"
+    },
+    {
+      "season": 2001,
+      "title": "2001 Formula One World Championship",
+      "revid": 1375812110,
+      "retrieved_utc": "2026-09-28T09:17:54Z",
+      "page_url": "https://en.wikipedia.org/wiki/2001_Formula_One_World_Championship",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1375812110"
+    },
+    {
+      "season": 2002,
+      "title": "2002 Formula One World Championship",
+      "revid": 1371249242,
+      "retrieved_utc": "2026-09-28T09:17:55Z",
+      "page_url": "https://en.wikipedia.org/wiki/2002_Formula_One_World_Championship",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1371249242"
+    },
+    {
+      "season": 2003,
+      "title": "2003 Formula One World Championship",
+      "revid": 1371597264,
+      "retrieved_utc": "2026-09-28T09:17:56Z",
+      "page_url": "https://en.wikipedia.org/wiki/2003_Formula_One_World_Championship",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1371597264"
+    },
+    {
+      "season": 2004,
+      "title": "2004 Formula One World Championship",
+      "revid": 1371252745,
+      "retrieved_utc": "2026-09-28T09:17:58Z",
+      "page_url": "https://en.wikipedia.org/wiki/2004_Formula_One_World_Championship",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1371252745"
+    },
+    {
+      "season": 2005,
+      "title": "2005 Formula One World Championship",
+      "revid": 1371249561,
+      "retrieved_utc": "2026-09-28T09:17:59Z",
+      "page_url": "https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1371249561"
+    },
+    {
+      "season": 2006,
+      "title": "2006 Formula One World Championship",
+      "revid": 1370957708,
+      "retrieved_utc": "2026-09-28T09:18:00Z",
+      "page_url": "https://en.wikipedia.org/wiki/2006_Formula_One_World_Championship",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1370957708"
+    },
+    {
+      "season": 2007,
+      "title": "2007 Formula One World Championship",
+      "revid": 1368924967,
+      "retrieved_utc": "2026-09-28T09:18:00Z",
+      "page_url": "https://en.wikipedia.org/wiki/2007_Formula_One_World_Championship",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1368924967"
+    },
+    {
+      "season": 2008,
+      "title": "2008 Formula One World Championship",
+      "revid": 1373003249,
+      "retrieved_utc": "2026-09-28T09:18:01Z",
+      "page_url": "https://en.wikipedia.org/wiki/2008_Formula_One_World_Championship",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1373003249"
+    },
+    {
+      "season": 2009,
+      "title": "2009 Formula One World Championship",
+      "revid": 1365999807,
+      "retrieved_utc": "2026-09-28T09:18:02Z",
+      "page_url": "https://en.wikipedia.org/wiki/2009_Formula_One_World_Championship",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1365999807"
+    },
+    {
+      "season": 2010,
+      "title": "2010 Formula One World Championship",
+      "revid": 1368835756,
+      "retrieved_utc": "2026-09-28T09:18:03Z",
+      "page_url": "https://en.wikipedia.org/wiki/2010_Formula_One_World_Championship",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1368835756"
+    },
+    {
+      "season": 2011,
+      "title": "2011 Formula One World Championship",
+      "revid": 1376563046,
+      "retrieved_utc": "2026-09-28T09:18:04Z",
+      "page_url": "https://en.wikipedia.org/wiki/2011_Formula_One_World_Championship",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1376563046"
+    },
+    {
+      "season": 2012,
+      "title": "2012 Formula One World Championship",
+      "revid": 1376317031,
+      "retrieved_utc": "2026-09-28T09:18:05Z",
+      "page_url": "https://en.wikipedia.org/wiki/2012_Formula_One_World_Championship",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1376317031"
+    },
+    {
+      "season": 2013,
+      "title": "2013 Formula One World Championship",
+      "revid": 1371491585,
+      "retrieved_utc": "2026-09-28T09:18:08Z",
+      "page_url": "https://en.wikipedia.org/wiki/2013_Formula_One_World_Championship",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1371491585"
+    },
+    {
+      "season": 2014,
+      "title": "2014 Formula One World Championship",
+      "revid": 1375076453,
+      "retrieved_utc": "2026-09-28T09:18:09Z",
+      "page_url": "https://en.wikipedia.org/wiki/2014_Formula_One_World_Championship",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1375076453"
+    },
+    {
+      "season": 2015,
+      "title": "2015 Formula One World Championship",
+      "revid": 1356326694,
+      "retrieved_utc": "2026-09-28T09:18:10Z",
+      "page_url": "https://en.wikipedia.org/wiki/2015_Formula_One_World_Championship",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1356326694"
+    },
+    {
+      "season": 2016,
+      "title": "2016 Formula One World Championship",
+      "revid": 1364682451,
+      "retrieved_utc": "2026-09-28T09:18:11Z",
+      "page_url": "https://en.wikipedia.org/wiki/2016_Formula_One_World_Championship",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1364682451"
+    },
+    {
+      "season": 2017,
+      "title": "2017 Formula One World Championship",
+      "revid": 1369222157,
+      "retrieved_utc": "2026-09-28T09:18:12Z",
+      "page_url": "https://en.wikipedia.org/wiki/2017_Formula_One_World_Championship",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1369222157"
+    },
+    {
+      "season": 2018,
+      "title": "2018 Formula One World Championship",
+      "revid": 1373884867,
+      "retrieved_utc": "2026-09-28T09:18:14Z",
+      "page_url": "https://en.wikipedia.org/wiki/2018_Formula_One_World_Championship",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1373884867"
+    },
+    {
+      "season": 2019,
+      "title": "2019 Formula One World Championship",
+      "revid": 1373925222,
+      "retrieved_utc": "2026-09-28T09:18:15Z",
+      "page_url": "https://en.wikipedia.org/wiki/2019_Formula_One_World_Championship",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1373925222"
+    },
+    {
+      "season": 2020,
+      "title": "2020 Formula One World Championship",
+      "revid": 1371601816,
+      "retrieved_utc": "2026-09-28T09:18:16Z",
+      "page_url": "https://en.wikipedia.org/wiki/2020_Formula_One_World_Championship",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1371601816"
+    },
+    {
+      "season": 2021,
+      "title": "2021 Formula One World Championship",
+      "revid": 1371413806,
+      "retrieved_utc": "2026-09-28T09:18:17Z",
+      "page_url": "https://en.wikipedia.org/wiki/2021_Formula_One_World_Championship",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1371413806"
+    },
+    {
+      "season": 2022,
+      "title": "2022 Formula One World Championship",
+      "revid": 1373708129,
+      "retrieved_utc": "2026-09-28T09:18:18Z",
+      "page_url": "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1373708129"
+    },
+    {
+      "season": 2023,
+      "title": "2023 Formula One World Championship",
+      "revid": 1376472167,
+      "retrieved_utc": "2026-09-28T09:18:19Z",
+      "page_url": "https://en.wikipedia.org/wiki/2023_Formula_One_World_Championship",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1376472167"
+    },
+    {
+      "season": 2024,
+      "title": "2024 Formula One World Championship",
+      "revid": 1376189329,
+      "retrieved_utc": "2026-09-28T09:18:20Z",
+      "page_url": "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1376189329"
+    },
+    {
+      "season": 2025,
+      "title": "2025 Formula One World Championship",
+      "revid": 1370436518,
+      "retrieved_utc": "2026-09-28T09:18:21Z",
+      "page_url": "https://en.wikipedia.org/wiki/2025_Formula_One_World_Championship",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1370436518"
+    },
+    {
+      "season": 2026,
+      "title": "2026 Formula One World Championship",
+      "revid": 1376997788,
+      "retrieved_utc": "2026-09-28T09:18:23Z",
+      "page_url": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship",
+      "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1376997788"
+    }
+  ],
+  "outputs": {
+    "races.csv": "38dee8ed5c0a7a3fe7b3ca9ae5b995c793c83d47d35c50e81c7da588ba557bb4",
+    "win_credits.csv": "0a54bfcb946b35aeb168d453a23729f0dddc145e5e2d43c94f014049bebb2943",
+    "cumulative_wins_wide.csv": "2c46e3a9888b2c8f9ed5dffd50846b3d1db660d1d5daf0d8209f49da49602133",
+    "career_totals.csv": "998b5541ce16342e85cc58ec3830e5ee781ca507165b5526d20dec58bc60ac95",
+    "record_progression.csv": "8dad8d9977415acda51e2de8b15e9d69280e96fa968fb339dd03ea7e0ad7abff",
+    "drivers.csv": "fe826470dfa198f111a294754110d98439b338628f1f10e0e49601787c9ead88",
+    "checks.json": "8f8627e3769f25f6c2559175dcb476b3bde6e59a3ca48e688cf9004750e77cc8",
+    "CHECKS.md": "5ba2af7b39c78d1a6f6e3ed1efd2fe104014fa42770e81f6010561f679796272"
+  },
+  "summary": {
+    "seasons": 77,
+    "championship_races_completed": 1164,
+    "win_credits": 1167,
+    "distinct_winners": 116,
+    "shared_wins": 3,
+    "drivers_10_plus": 36,
+    "record_events": 118,
+    "holder_change_events": 12,
+    "freeze_race": "2026 Azerbaijan Grand Prix",
+    "freeze_date": "2026-09-26",
+    "freeze_winner": "George Russell",
+    "completed_2026_rounds": 15
+  }
+}
