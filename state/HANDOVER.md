@@ -2,7 +2,8 @@
 
 Previous handover (session 2, Cowork: repo bootstrap, RTT-002 dataset, DATA_AUDIT) is in this file's git history.
 
-## Done: IQ-04, the RTT player (branch `claude/tender-pascal-cl21gl`, pull request open, **not merged**)
+## Done: IQ-04, the RTT player (branch `claude/tender-pascal-cl21gl`, [pull request #2](https://github.com/marketmarathon/race-through-time/pull/2), **approved for merge by Luke**)
+- **Pull request #2** (https://github.com/marketmarathon/race-through-time/pull/2): independently reviewed by Claude in Cowork on 28 Sep 2026 (test suite re-run 7/7 PASS with identical RESULTS.md; every driver's count at all 1,164 races and the top-ten order after every race match data/rtt-002 with 0 mismatches; adapter output hash reproduced); approved by Luke for merge.
 - **Copied from** `marketmarathon/bars` @ `2a10877` (full `2a10877695e83683c3caae651cad61fc686614eb`; bars HEAD was still that commit), cloned read-only over HTTPS without checkout; only `MarketMarathon_RaceKit_RF_US_C2_v3.zip`, the USA C2-2 workflow, `package.json` and `README.md` were read. `player_formatc2.html` and `formatc.js` hashes match that kit's `dataset_hashes.txt`. Nothing was committed, pushed or opened in bars.
 - **Kit** `kits/rtt-002/`: `player_rtt.html` (copied player), `rtt.js` (copied driver, same env contract: FRAME_COUNT_ONLY, SEG_START/SEG_END/SEG_OUT, RASTER_W, NOMUX, REF_PNG_DIR; plus optional RTT_CONFIG), `rtt_timeline.js` (event, tie and pacing rules), `config.json` (all RTT words, unit, palette, pacing, passage window, C2-2 layout tokens). See `kits/rtt-002/README.md`.
 - **Changes from C2-2**: whole-number "N wins" labels and a whole-number axis; counts step at the race and never show in-between values (bars glide in length and position only); no flags, icons, lineage rows, plates, logo or music; time label = season + Grand Prix + date; adaptive pacing inside 0.8–1.4×; ties ranked by who reached the total first (credit order). C2-2 look kept as the default (navy, Archivo, bars end at 1140 px as C2-2 actually draws them, names on bars with overflow, values outside).
@@ -13,12 +14,13 @@ Previous handover (session 2, Cowork: repo bootstrap, RTT-002 dataset, DATA_AUDI
 - **Phone check** (`node tests/player/phone_check.js`, stills not committed): shown 390 pt wide (a phone held upright, 3× pixels), names (≈ 6.5 pt) and values (≈ 7.1 pt) are legible in the phone-scale image; the date (≈ 5.7 pt) is small; axis numbers (≈ 4.1 pt) and the footer (≈ 3.5 pt, the smallest label) are **not readable**. Held sideways (≈ 844 pt) sizes scale by 2.16× (footer ≈ 7.5 pt, axis ≈ 8.8 pt) — calculated, not rendered. Judged on screen images, not on a real phone.
 
 ## Not done / not run
+- GitHub push: refused (403) at first; fixed by Luke 28 Sep 2026 (DEC-021), then pushed and pull request #2 opened.
 - No render beyond local test frames in the container; nothing uploaded, published or scheduled; no workflow added.
 - Shard joins: a shard starting mid-race (140-frame warm-up, as C2-2) is not pixel-identical to a longer render — 224–516 edge pixels differ on the frames checked. Inherited from C2-2; not visible as far as checked, not fixed.
 - The fonts are Archivo from npm (Google Fonts build), not byte-identical to the TTFs in the Market Marathon kit. Glyph widths may differ very slightly from C2-2 masters; not compared.
 - IQ-05 (design pilot) not started, as instructed.
 
-## Open — questions for Luke (also in the pull request)
+## Questions put to Luke in the pull request (answered for IQ-05 in DEC-022)
 1. Pace: 0.5 s per race gives ~8 min 55 s for all 1,164 races. Keep for the pilot, or choose a target length?
 2. Colours: 12 colours cycle, so e.g. Hamilton and Senna share orange. Acceptable, or one fixed colour for the top drivers?
 3. Phone: enlarge the axis numbers and footer (and date) for RTT, or keep the C2-2 sizes?
@@ -27,9 +29,8 @@ Previous handover (session 2, Cowork: repo bootstrap, RTT-002 dataset, DATA_AUDI
 - D-05 publication risk is still open (before release only).
 
 ## Next safe actions
-1. Luke reviews the IQ-04 pull request (it can be run with `npm ci` + `node tests/player/run_tests.js`); merge if happy.
-2. IQ-05 design pilot: a 60–90 s passage via `window` in a config (e.g. 1984–1989 is ~48 s at current pace), C2-2 look vs a quieter variant config, 1920 preview, phone review.
-3. IQ-06 live feasibility for RTT-001, 003–012.
+1. **IQ-05 design pilot**, following DEC-022: passage 2014–2021 (160 races), no two visible drivers sharing a colour, larger axis/date/footer until readable at phone size, shorter hidden time for top-ten entrants (slide-in kept), the current pace (0.5 s per race) plus one faster variant side by side, text only.
+2. IQ-06 live feasibility for RTT-001, 003–012.
 
 ## Rules for the next session
 Read `state/STATE.json`, this file, `state/DECISIONS.md` and `reference/metric_contract_RTT-002.md`. Never edit C2-2 files or anything in `marketmarathon/bars` for RTT. Follow DEC-006: code and configs only; test frames and stills stay out of the repo.

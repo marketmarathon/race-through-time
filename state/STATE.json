@@ -2,7 +2,7 @@
   "schema": "rtt-state/0.1",
   "updated": "2026-09-28",
   "updated_by": "Claude (Claude Code cloud session, environment \"Race Through Time\")",
-  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); IQ-04 RTT player BUILT on branch claude/tender-pascal-cl21gl, pull request open for Luke (not merged); NEXT: Luke reviews IQ-04, then IQ-05 design pilot",
+  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); IQ-04 RTT player in pull request #2, independently reviewed and APPROVED by Luke for merge; NEXT: IQ-05 design pilot (decisions DEC-022)",
   "canonical_queue": "state/ folder on main in marketmarathon/race-through-time (this file)",
   "repo_baseline": {
     "repo": "marketmarathon/bars",
@@ -178,7 +178,7 @@
       "depends": [
         "IQ-03 (merged)"
       ],
-      "status": "IN REVIEW 28 Sep 2026 - built in kits/rtt-002/ on branch claude/tender-pascal-cl21gl; pull request open, NOT merged; 7/7 test cases PASS (tests/player/RESULTS.md); phone check done (footer and axis too small on a phone held upright)",
+      "status": "APPROVED FOR MERGE 28 Sep 2026 - pull request #2 (https://github.com/marketmarathon/race-through-time/pull/2), branch claude/tender-pascal-cl21gl; independently reviewed by Claude in Cowork on 28 Sep 2026 (test suite re-run 7/7 PASS with identical RESULTS.md; every driver's count at all 1,164 races and the top-ten order after every race match data/rtt-002 with 0 mismatches; adapter output hash reproduced); approved by Luke for merge; 7/7 test cases PASS (tests/player/RESULTS.md)",
       "result": {
         "copied_from": "marketmarathon/bars @ 2a10877695e83683c3caae651cad61fc686614eb, MarketMarathon_RaceKit_RF_US_C2_v3.zip (player_formatc2.html, formatc.js)",
         "kit": "kits/rtt-002/",
@@ -187,7 +187,9 @@
         "full_run_frames": 16062,
         "tests": "tests/player/run_tests.js; fixtures tests/fixtures/ (6, fictional); RTT-002 slice 1984-1989",
         "left_out_for_licence": "Market Marathon fonts (Archivo TTFs: no licence file in the kit; Archivo taken from npm @fontsource/archivo, OFL-1.1, instead), logos, flags, sub-sector icons, year plates, music - none copied",
-        "decisions": "DEC-016..DEC-020"
+        "decisions": "DEC-016..DEC-020",
+        "pull_request": "https://github.com/marketmarathon/race-through-time/pull/2",
+        "independent_review": "independently reviewed by Claude in Cowork on 28 Sep 2026 (test suite re-run 7/7 PASS with identical RESULTS.md; every driver's count at all 1,164 races and the top-ten order after every race match data/rtt-002 with 0 mismatches; adapter output hash reproduced); approved by Luke for merge"
       }
     },
     {
@@ -198,7 +200,7 @@
         "IQ-03",
         "IQ-04"
       ],
-      "status": "QUEUED - waits for Luke to review/merge IQ-04"
+      "status": "NEXT - owner decisions recorded in DEC-022 (passage 2014-2021, colours, phone sizes, slide-in, pace variants, text only)"
     },
     {
       "id": "IQ-06",
@@ -227,11 +229,11 @@
     "visibility": "public",
     "created": "2026-09-27",
     "created_by": "Claude via Luke's Chrome, on Luke's instruction",
-    "contents": "main @ 7cde5df + later state commits; branch rtt-002-data kept (7696344); branch claude/tender-pascal-cl21gl = IQ-04 (pull request, not merged)",
+    "contents": "main @ 7cde5df + later state commits; branch rtt-002-data kept (7696344); branch claude/tender-pascal-cl21gl = IQ-04 (pull request #2, approved for merge)",
     "push_routes": {
       "cowork_cloud": "NOT AVAILABLE - GitHub proxy refuses: repo not in the session's authorised set; no way to attach it from Cowork found",
       "github_web_upload_via_chrome": "WORKS - used 28 Sep; one commit per folder; each commit read back byte-for-byte",
-      "claude_code_cloud": "AVAILABLE - repo listed in Claude Code; environment \"Race Through Time\" created by Luke 28 Sep (not yet used); pushes go to a session branch + pull request",
+      "claude_code_cloud": "WORKS - Claude GitHub App granted write access 28 Sep 2026 (DEC-021); IQ-04 pushed and pull request #2 opened",
       "laptop_git": "NOT CHECKED - no laptop shell in Cowork; git not installed as of 11 Sep"
     }
   },
