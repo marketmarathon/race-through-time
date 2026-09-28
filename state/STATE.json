@@ -1,8 +1,8 @@
 {
   "schema": "rtt-state/0.1",
   "updated": "2026-09-28",
-  "updated_by": "Claude (Cowork cloud session linked to Luke's laptop; model id claude-opus-5-5)",
-  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT repo bootstrapped; RTT-002 dataset merged to main and DATA_AUDIT PASSED (two blind independent checks, 0 discrepancies; DEC-015); NEXT: IQ-04 RTT player in a Claude Code cloud session",
+  "updated_by": "Claude (Claude Code cloud session, environment \"Race Through Time\")",
+  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); IQ-04 RTT player BUILT on branch claude/tender-pascal-cl21gl, pull request open for Luke (not merged); NEXT: Luke reviews IQ-04, then IQ-05 design pilot",
   "canonical_queue": "state/ folder on main in marketmarathon/race-through-time (this file)",
   "repo_baseline": {
     "repo": "marketmarathon/bars",
@@ -23,7 +23,7 @@
     "schedules": [],
     "recurring_reports": [],
     "public_publishes": [],
-    "note": "nothing activated; nothing rendered, uploaded or published"
+    "note": "nothing activated; nothing uploaded or published. IQ-04 test frames rendered locally in the Claude Code container only (not committed, not uploaded)"
   },
   "episodes": [
     {
@@ -178,7 +178,17 @@
       "depends": [
         "IQ-03 (merged)"
       ],
-      "status": "NEXT - prompt ready: prompts/CODE_SESSION_IQ-04.md (Luke starts a Claude Code cloud session: repo race-through-time, environment \"Race Through Time\")"
+      "status": "IN REVIEW 28 Sep 2026 - built in kits/rtt-002/ on branch claude/tender-pascal-cl21gl; pull request open, NOT merged; 7/7 test cases PASS (tests/player/RESULTS.md); phone check done (footer and axis too small on a phone held upright)",
+      "result": {
+        "copied_from": "marketmarathon/bars @ 2a10877695e83683c3caae651cad61fc686614eb, MarketMarathon_RaceKit_RF_US_C2_v3.zip (player_formatc2.html, formatc.js)",
+        "kit": "kits/rtt-002/",
+        "adapter": "scripts/rtt_adapter.py",
+        "player_input_sha256": "13b8848b302fc14639d2e32b083954fdabed6c879007ee6e5a1bb875af0d0352 (kits/rtt-002/race_rtt002.json)",
+        "full_run_frames": 16062,
+        "tests": "tests/player/run_tests.js; fixtures tests/fixtures/ (6, fictional); RTT-002 slice 1984-1989",
+        "left_out_for_licence": "Market Marathon fonts (Archivo TTFs: no licence file in the kit; Archivo taken from npm @fontsource/archivo, OFL-1.1, instead), logos, flags, sub-sector icons, year plates, music - none copied",
+        "decisions": "DEC-016..DEC-020"
+      }
     },
     {
       "id": "IQ-05",
@@ -188,7 +198,7 @@
         "IQ-03",
         "IQ-04"
       ],
-      "status": "QUEUED"
+      "status": "QUEUED - waits for Luke to review/merge IQ-04"
     },
     {
       "id": "IQ-06",
@@ -217,7 +227,7 @@
     "visibility": "public",
     "created": "2026-09-27",
     "created_by": "Claude via Luke's Chrome, on Luke's instruction",
-    "contents": "main @ merge commit 7cde5df + later state commits; branch rtt-002-data kept (7696344)",
+    "contents": "main @ 7cde5df + later state commits; branch rtt-002-data kept (7696344); branch claude/tender-pascal-cl21gl = IQ-04 (pull request, not merged)",
     "push_routes": {
       "cowork_cloud": "NOT AVAILABLE - GitHub proxy refuses: repo not in the session's authorised set; no way to attach it from Cowork found",
       "github_web_upload_via_chrome": "WORKS - used 28 Sep; one commit per folder; each commit read back byte-for-byte",
