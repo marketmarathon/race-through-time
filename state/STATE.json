@@ -2,7 +2,7 @@
   "schema": "rtt-state/0.1",
   "updated": "2026-09-28",
   "updated_by": "Claude (Cowork cloud session linked to Luke's laptop; model id claude-opus-5-5)",
-  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT repo bootstrapped on main; RTT-002 independent check validated and FROZEN; RTT-002 dataset BUILT on branch rtt-002-data (all scripted checks pass; 0 discrepancies vs the check); awaiting owner review",
+  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT repo bootstrapped on main; RTT-002 independent check validated and FROZEN; RTT-002 dataset BUILT and MERGED to main (PR #1, 7cde5df; all scripted checks pass; 0 discrepancies vs the check); D-04 and D-06 resolved; second blind check (top-ten entries) being run by Luke",
   "canonical_queue": "state/ folder on main in marketmarathon/race-through-time (this file)",
   "repo_baseline": {
     "repo": "marketmarathon/bars",
@@ -40,10 +40,10 @@
       "state": "DATA_BUILD",
       "check_level": "LIVE",
       "verdict": "FEASIBLE_VIA_OPEN_LICENCE_ROUTE",
-      "blocker": "Owner review of branch rtt-002-data; D-07 audit gaps before DATA_AUDIT; D-05 before release",
+      "blocker": "D-07 audit gaps before DATA_AUDIT (top-ten entry check in progress; official top-20 comparison undecided); D-05 before release",
       "dataset": {
-        "branch": "rtt-002-data",
-        "commit": "7696344",
+        "branch": "main (merged from rtt-002-data via PR #1)",
+        "commit": "7cde5df",
         "path": "data/rtt-002/",
         "freeze": "2026 Azerbaijan Grand Prix, 2026-09-26",
         "races": 1164,
@@ -168,14 +168,14 @@
       "depends": [
         "IQ-02"
       ],
-      "status": "DONE - branch rtt-002-data @ 7696344, awaiting owner review (not merged, no pull request opened)"
+      "status": "DONE and MERGED to main 28 Sep 2026 (PR #1, merge commit 7cde5df)"
     },
     {
       "id": "IQ-04",
       "task": "player_rtt.html copied from C2-2: integer formatter, step-at-event, no flag, unit label; stress fixtures; C2-2 reference frames unchanged",
       "where": "Claude Code cloud session: repo race-through-time, environment \"Race Through Time\"",
       "depends": [
-        "owner review of IQ-03"
+        "IQ-03 (merged)"
       ],
       "status": "QUEUED"
     },
@@ -208,7 +208,7 @@
       "id": "IQ-08",
       "task": "Close RTT-002 audit gaps (D-07): top-ten entries independent check; decide on official top-20 comparison",
       "owner": "Luke (decision) / Claude (prompt)",
-      "status": "QUEUED"
+      "status": "IN PROGRESS - Luke running the second blind check (sections H, I) 28 Sep 2026; output to be saved in the laptop Data folder, then validated, hash-frozen and compared"
     }
   ],
   "rtt_repo": {
@@ -216,7 +216,7 @@
     "visibility": "public",
     "created": "2026-09-27",
     "created_by": "Claude via Luke's Chrome, on Luke's instruction",
-    "contents": "main @ state commit after 8b5bb8c; branch rtt-002-data @ 7696344",
+    "contents": "main @ merge commit 7cde5df + later state commits; branch rtt-002-data kept (7696344)",
     "push_routes": {
       "cowork_cloud": "NOT AVAILABLE - GitHub proxy refuses: repo not in the session's authorised set; no way to attach it from Cowork found",
       "github_web_upload_via_chrome": "WORKS - used 28 Sep; one commit per folder; each commit read back byte-for-byte",
@@ -247,6 +247,6 @@
   },
   "laptop_working_copy": {
     "path": "C:\\Users\\luke\\Desktop\\Claude Workspace\\race-through-time",
-    "nature": "plain file copy (no .git) of branch rtt-002-data incl. updated state/; GitHub is the master copy"
+    "nature": "plain file copy (no .git) of main; GitHub is the master copy"
   }
 }
