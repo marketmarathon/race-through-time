@@ -1,21 +1,34 @@
-# HANDOVER — 27 Sep 2026 (session 1, claude.ai chat; updated after owner decisions)
+# HANDOVER — 28 Sep 2026 (session 2, Cowork cloud session linked to Luke's laptop)
 
-## Done
-- P0 read-only inspection of the pack and `marketmarathon/bars` @ 2a10877 (see environment_audit.md).
-- Owner decisions D-01..D-03 recorded (DECISIONS.md DEC-005..007).
-- Created `marketmarathon/race-through-time` (public, empty) via Luke's Chrome on his instruction; read back from the sandbox.
-- IQ-02 done: F1 official data carries asserted copyright/database rights; Jolpica non-commercial; RTT-002 route = Wikipedia (CC BY-SA 4.0) + blind ChatGPT deep-research check. Contract v0.2.
-- Independent-check prompt written with a seeded sample (seed 20260927).
+Previous handover (27 Sep, session 1, claude.ai chat) is in this file's git history.
+
+## Done (evidence = commits in marketmarathon/race-through-time)
+- **Repo bootstrapped on `main`** from `G:\My Drive\RTT_transfer\rtt_bootstrap` (byte-identical): README with DEC-006 public-repo rules `026bec2`, `state/` `5d6ac17`, `prompts/` `b681763`, `reference/` `b835861`. Four commits, not one: GitHub's web uploader cannot put several folders in one commit.
+- **Independent check validated and frozen** (step 4): `F1_Fact_Check_2026-09-28.zip`, SHA-256 `0ac44247…cddd2`, kept private on the laptop. Sections A–G present, a source_url on every row, all internal-consistency checks pass, 22 NOT FOUND cells (Indy 500 separate F1/FIA career-total table and inclusion rule). Frozen in `state/RTT-002_independent_check_freeze.json` `d9df1ae`; validator `scripts/validate_independent_check.py` `8b5bb8c`.
+- **RTT-002 dataset built** (IQ-03) on branch **`rtt-002-data` @ `7696344`** (not merged; no pull request opened): 1,164 races, 1,167 win credits, 116 drivers, freeze = 2026 Azerbaijan GP, 26 Sep 2026. Wikipedia (CC BY-SA 4.0) season pages 1950–2026 with page URL, revision ID and retrieval time on every row. Whole numbers only. 13/13 scripted checks pass, including career totals vs Wikipedia's separate "List of Formula One Grand Prix winners" page. Deterministic rebuild confirmed from the GitHub copy.
+- **Comparison with the frozen check: 0 discrepancies** in A, B, E, F and G (`reports/RTT-002_discrepancy_report.md`).
+- Every commit read back from GitHub and compared byte-for-byte with the local files.
+- Laptop copy written to `Claude Workspace\race-through-time` (plain files, no git).
+
+## How this session worked (capabilities found)
+- Cowork cloud can run commands but **cannot push**: the GitHub proxy says race-through-time is not in the session's authorised repositories, and Cowork offers no way to attach one. Pushes went through **GitHub's web upload in Luke's Chrome** (authorised scope only).
+- Luke added `*.wikipedia.org`, `*.wikimedia.org`, `*.wikidata.org` to claude.ai **Settings → Capabilities → Additional allowed domains**. This took effect in the running session, but Wikimedia rate-limits the shared cloud IP (HTTP 429), so the pages were read through the **MediaWiki API in Luke's Chrome**. Each transferred file was verified by SHA-256.
+- Luke created a **Claude Code cloud environment "Race Through Time"** (Custom network: defaults + the three Wikimedia domains). `race-through-time` appears in Claude Code's repository list. Not used yet; intended for code work (IQ-04).
 
 ## Not done / not run
-- Nothing committed to either repo. No uploads, schedules or renders.
-- RTT channel ID not read yet (handle `@racethroughtime`, confirmed by Luke).
-- 11 of 12 feasibility cards still desk-level.
+- No render, upload, publish, schedule or pull request. `main` does not contain the dataset.
+- Contract checks not covered: an official F1/FIA top-20 career table was not consulted, and top-ten entries were not independently reconstructed (D-07).
+
+## Decisions needed from Luke
+1. **Review and merge** `rtt-002-data` into `main`, or ask for changes.
+2. **D-04 defaults** applied: Indy 500 1950–60 included (11 races); shared drives credit each driver one win; ties go to whoever got there first. Confirm or override.
+3. **D-06** confirm "Carlos Sainz" in the check = "Carlos Sainz Jr." on Wikipedia.
+4. **D-07** audit gaps: accept, or run a short second ChatGPT check for top-ten entry dates and/or eyeball formula1.com for the top-20 totals.
+5. **D-05** publication risk (before release only).
 
 ## Next safe actions
-1. DONE 28 Sep: Luke ran the independent-check prompt; the output is in the laptop Data folder (not readable from claude.ai chat). The laptop session validates and hashes it.
-2. Laptop Claude Code session: clone `race-through-time`, commit these files under `state/` and `reference/` as the first commit, confirm push. Then IQ-03 (RTT-002 dataset from Wikipedia with scripted checks) on a branch. Stop for review.
-3. Afterwards: IQ-04 `player_rtt.html` (copy of C2-2, integer step-at-event display) and the pilot.
+1. After merge: IQ-04 `player_rtt.html` (copy of C2-2; integer step-at-event display) in a Claude Code cloud session with environment "Race Through Time".
+2. IQ-06 live feasibility for RTT-001, 003–012.
 
 ## Rules for the next session
-Read STATE.json, this file, DECISIONS.md, metric_contract_RTT-002.md. Never edit C2-2 files or anything in `marketmarathon/bars` for RTT. Follow the public-repo rules in DEC-006.
+Read `state/STATE.json`, this file, `state/DECISIONS.md` and `reference/metric_contract_RTT-002.md`. Never edit C2-2 files or anything in `marketmarathon/bars` for RTT. Follow DEC-006. The private check file never enters this repo. For bulk Wikipedia reads use Luke's Chrome; for repo writes from Cowork use the GitHub web upload and read every commit back.

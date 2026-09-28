@@ -1,9 +1,9 @@
 {
   "schema": "rtt-state/0.1",
   "updated": "2026-09-28",
-  "updated_by": "Claude (claude.ai chat, Opus 5.5)",
-  "phase": "P0 DONE; P1 decisions D-01..D-03 RESOLVED; RTT repo created; P2 feasibility pass 1 DONE; RTT-002 independent check prompt READY",
-  "canonical_queue": "Proposed: state/ folder in marketmarathon/race-through-time once first commit lands (this file moves there)",
+  "updated_by": "Claude (Cowork cloud session linked to Luke's laptop; model id claude-opus-5-5)",
+  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT repo bootstrapped on main; RTT-002 independent check validated and FROZEN; RTT-002 dataset BUILT on branch rtt-002-data (all scripted checks pass; 0 discrepancies vs the check); awaiting owner review",
+  "canonical_queue": "state/ folder on main in marketmarathon/race-through-time (this file)",
   "repo_baseline": {
     "repo": "marketmarathon/bars",
     "branch": "main",
@@ -23,7 +23,7 @@
     "schedules": [],
     "recurring_reports": [],
     "public_publishes": [],
-    "note": "nothing activated"
+    "note": "nothing activated; nothing rendered, uploaded or published"
   },
   "episodes": [
     {
@@ -37,10 +37,21 @@
     {
       "id": "RTT-002",
       "title": "F1 Grand Prix Wins",
-      "state": "FEASIBILITY",
+      "state": "DATA_BUILD",
       "check_level": "LIVE",
       "verdict": "FEASIBLE_VIA_OPEN_LICENCE_ROUTE",
-      "blocker": "D-05 publication risk (before release only); independent check pending"
+      "blocker": "Owner review of branch rtt-002-data; D-07 audit gaps before DATA_AUDIT; D-05 before release",
+      "dataset": {
+        "branch": "rtt-002-data",
+        "commit": "7696344",
+        "path": "data/rtt-002/",
+        "freeze": "2026 Azerbaijan Grand Prix, 2026-09-26",
+        "races": 1164,
+        "win_credits": 1167,
+        "drivers": 116,
+        "scripted_checks": "13/13 PASS (data/rtt-002/CHECKS.md)",
+        "independent_check_comparison": "0 discrepancies in A, B, E, F, G (reports/RTT-002_discrepancy_report.md)"
+      }
     },
     {
       "id": "RTT-003",
@@ -142,30 +153,29 @@
       "id": "IQ-02b",
       "task": "Luke runs RTT-002 independent-check prompt in ChatGPT deep research; returns answer",
       "owner": "Luke",
-      "status": "DONE — output saved by Luke in the laptop Data folder (28 Sep 2026); not yet validated or hashed"
+      "status": "DONE - output in laptop Data folder; validated and frozen 28 Sep 2026 (state/RTT-002_independent_check_freeze.json, commit d9df1ae)"
     },
     {
       "id": "IQ-02c",
       "task": "Laptop session: clone race-through-time, first commit (state/, reference/, prompts/, README), validate + hash the ChatGPT check file, then IQ-03 on branch rtt-002-data",
-      "where": "Claude Code on laptop",
-      "status": "NEXT"
+      "where": "Cowork cloud session + Luke's Chrome (no laptop shell; GitHub web upload)",
+      "status": "DONE 28 Sep 2026 - main bootstrapped in 4 commits (026bec2, 5d6ac17, b681763, b835861; web uploader cannot put several folders in one commit); check frozen d9df1ae; validator 8b5bb8c; all files read back byte-identical"
     },
     {
       "id": "IQ-03",
       "task": "RTT-002 adapter: race winners -> cumulative table with provenance; deterministic checks",
-      "where": "Code/Cowork with repo write",
+      "where": "Cowork cloud session; Wikipedia via Luke's Chrome; pushed via GitHub web upload",
       "depends": [
-        "IQ-02",
-        "laptop Code session with push access"
+        "IQ-02"
       ],
-      "status": "QUEUED"
+      "status": "DONE - branch rtt-002-data @ 7696344, awaiting owner review (not merged, no pull request opened)"
     },
     {
       "id": "IQ-04",
       "task": "player_rtt.html copied from C2-2: integer formatter, step-at-event, no flag, unit label; stress fixtures; C2-2 reference frames unchanged",
-      "where": "Code",
+      "where": "Claude Code cloud session: repo race-through-time, environment \"Race Through Time\"",
       "depends": [
-        "laptop Code session with push access"
+        "owner review of IQ-03"
       ],
       "status": "QUEUED"
     },
@@ -193,6 +203,12 @@
         "RTT channel ID from Studio"
       ],
       "status": "QUEUED"
+    },
+    {
+      "id": "IQ-08",
+      "task": "Close RTT-002 audit gaps (D-07): top-ten entries independent check; decide on official top-20 comparison",
+      "owner": "Luke (decision) / Claude (prompt)",
+      "status": "QUEUED"
     }
   ],
   "rtt_repo": {
@@ -200,12 +216,37 @@
     "visibility": "public",
     "created": "2026-09-27",
     "created_by": "Claude via Luke's Chrome, on Luke's instruction",
-    "contents": "empty (read back: no refs)"
+    "contents": "main @ state commit after 8b5bb8c; branch rtt-002-data @ 7696344",
+    "push_routes": {
+      "cowork_cloud": "NOT AVAILABLE - GitHub proxy refuses: repo not in the session's authorised set; no way to attach it from Cowork found",
+      "github_web_upload_via_chrome": "WORKS - used 28 Sep; one commit per folder; each commit read back byte-for-byte",
+      "claude_code_cloud": "AVAILABLE - repo listed in Claude Code; environment \"Race Through Time\" created by Luke 28 Sep (not yet used); pushes go to a session branch + pull request",
+      "laptop_git": "NOT CHECKED - no laptop shell in Cowork; git not installed as of 11 Sep"
+    }
   },
   "rtt_channel": {
     "handle": "@racethroughtime",
     "handle_source": "confirmed by Luke 27 Sep 2026",
     "google_account": "luke@marketmarathon.com (shared with Market Marathon)",
     "channel_id": "NOT FOUND — read from Studio at IQ-07"
+  },
+  "capabilities_2026_09_28": {
+    "cowork_cloud_commands": "VERIFIED (git 2.43.0, Python)",
+    "laptop_shell": "NOT AVAILABLE in Cowork session (file read/write in connected folders, Chrome and screen control only)",
+    "wikipedia_from_cowork_cloud": "VERIFIED after owner added *.wikipedia.org, *.wikimedia.org, *.wikidata.org to claude.ai Settings > Capabilities > Additional allowed domains; but Wikimedia rate-limits the shared cloud IP (HTTP 429) - use Luke's Chrome for bulk reads",
+    "wikipedia_from_chrome": "VERIFIED (MediaWiki API, 78 pages in ~90 s)",
+    "claude_code_cloud_environment": "\"Race Through Time\": Custom network = default package managers + *.wikipedia.org, *.wikimedia.org, *.wikidata.org; no variables or setup script"
+  },
+  "independent_checks": {
+    "RTT-002": {
+      "file": "F1_Fact_Check_2026-09-28.zip (private, laptop: Claude Workspace\\Race Through Time\\Data)",
+      "sha256": "0ac442475cc89f977ce927887cb019f85c2499c73e4709a024d5a21a027cddd2",
+      "frozen_commit": "d9df1ae",
+      "validation": "all structural and consistency checks PASS; 22 NOT FOUND cells (Indy 500 separate F1/FIA career-total table and inclusion rule)"
+    }
+  },
+  "laptop_working_copy": {
+    "path": "C:\\Users\\luke\\Desktop\\Claude Workspace\\race-through-time",
+    "nature": "plain file copy (no .git) of branch rtt-002-data incl. updated state/; GitHub is the master copy"
   }
 }
