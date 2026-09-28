@@ -1,7 +1,7 @@
 /* Phone check (IQ-04 step 7; thresholds added in IQ-05, DEC-022; round-2 pilots IQ-05b; round 3 IQ-05c:
  * variant A only, flags on, the event label, the time block and placeholder overlays; round 4 IQ-05d:
  * the small date line replaces the time block, the event label carries the date, and the placeholder
- * overlays have the shapes of Luke's full logo (2.5 : 1) and the car photo (about 3.67 : 1)).
+ * overlays have the shapes of Luke's round logo badge (1 : 1, DEC-051) and the car photo (about 3.67 : 1)).
  *
  * 1920x1080 stills: from the full RTT-002 run a crowded mid-history board (1988) and the final
  * board, and from the round-3 pilot (A, top 20, flags on, with plain placeholder rectangles in the

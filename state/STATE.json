@@ -246,9 +246,9 @@
       },
       "round_4": {
         "prompt": "prompts/CODE_SESSION_IQ-05d.md",
-        "decisions": "DEC-045 (Luke's feedback on round 3, owner); Claude working choices DEC-046..DEC-050",
+        "decisions": "DEC-045 (Luke's feedback on round 3, owner) and DEC-051 (Luke's follow-up: round logo badge, owner); Claude working choices DEC-046..DEC-050, DEC-052",
         "pilot": "config_pilot_2014_2021_top20.json; FRAME_COUNT_ONLY 2502 frames = 83.4 s (unchanged from round 3); full video 16062 frames (unchanged)",
-        "features": "full logo box 330 x 132 (2.5:1) at x 1526, y 18; event label with date \"92 wins · Portuguese GP · 25 October 2020\"; big season/GP/date block replaced by one date line \"25 October 2020 · Portuguese GP\" on the title baseline at x 860, 34 px; car photo box 600 x 163 (3.67:1) at x 1256, y 787 (bottom y 950); car credit in the footer; axis grid lines kept 12 px clear of both boxes",
+        "features": "logo box 154 x 154 (1:1, round badge 885 x 885 with RACE THROUGH TIME inside the globe, DEC-051/052) at x 1702, y 12 (round-4 first version: 330 x 132 banner logo, replaced); event label with date \"92 wins · Portuguese GP · 25 October 2020\"; big season/GP/date block replaced by one date line \"25 October 2020 · Portuguese GP\" on the title baseline at x 860, 34 px; car photo box 600 x 163 (3.67:1) at x 1256, y 787 (bottom y 950); car credit in the footer; axis grid lines kept 12 px clear of both boxes",
         "bars": "barend 1420 -> 1265 so the longest dated label fits inside the 64 px margin (furthest edge x 1853, limit 1856): bar area 12% shorter (1136 vs 1291 px), leader bar end 62% of the width (round 3: 70%) - question for Luke",
         "date_line": "every frame checked against races.csv; 49 of 160 races (31%) in 2014-2021 won by a driver off the 20-row board, their 588 frames still name the race; phone size 34 px = 6.9 pt",
         "car_photo": "Lewis Hamilton Ferrari SF-26 #44, 2026 Chinese GP qualifying, by Liauzh, CC BY 4.0, Wikimedia Commons, original SHA-1 cc6c19a2ba42a45c774b44c70c84beb86eb57721 (verified via Commons API 28 Sep 2026); background removed and cropped by Claude in Cowork; reference/rights_ledger.md; trademarks (Ferrari, HP, Shell and others) added to the D-05 pre-release check",
