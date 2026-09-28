@@ -1,6 +1,6 @@
-# RTT kit — RTT-002 (F1 Grand Prix wins) · player RTT-1 · IQ-04, IQ-05 pilots (round 2)
+# RTT kit — RTT-002 (F1 Grand Prix wins) · player RTT-1 · IQ-04, IQ-05 pilots (round 3)
 
-The Race Through Time player, copied from Market Marathon's Format C2-2 renderer. **Not greenlit for render.** IQ-05 added the design-pilot changes (DEC-022 to DEC-025): one colour per driver with no two drivers on screen together in the same or a similar colour, larger axis numbers / date / footer for phones, a faster slide-in for drivers entering the top ten, and two pilot configs. IQ-05 round 2 (DEC-027 to DEC-033) replaced the pilots with two variants that differ only in the board (A: top 20; B: top ten plus a winner line), and added, all switched by config: a gentle winner highlight, record-moment holds, an opening on the board instead of a title card, an exact final-board hold, and a configurable board geometry. `config.json` draws exactly as before.
+The Race Through Time player, copied from Market Marathon's Format C2-2 renderer. **Not greenlit for render.** IQ-05 added the design-pilot changes (DEC-022 to DEC-025): one colour per driver with no two drivers on screen together in the same or a similar colour, larger axis numbers / date / footer for phones, a faster slide-in for drivers entering the top ten, and two pilot configs. IQ-05 round 2 (DEC-027 to DEC-033) replaced the pilots with two variants that differ only in the board (A: top 20; B: top ten plus a winner line), and added, all switched by config: a gentle winner highlight, record-moment holds, an opening on the board instead of a title card, an exact final-board hold, and a configurable board geometry. `config.json` draws exactly as before. IQ-05 round 3 (DEC-034 to DEC-044): Luke chose A (top 20); variant B's config is deleted (the winner line stays a switch). Added, all switched by config: nationality flags in a column left of the bars, the Grand Prix after a winner's value ("92 wins · Portuguese GP"), wider bars, the season/Grand Prix/date block next to the board, colour priority for the drivers who reach the top ten, 2.0 s record holds, and reserved boxes for Luke's logo and a car picture (loaded only from the git-ignored `local_assets/`).
 
 Copied from `marketmarathon/bars` @ `2a10877695e83683c3caae651cad61fc686614eb` (22 Sep 2026), kit `MarketMarathon_RaceKit_RF_US_C2_v3.zip`: `player_formatc2.html` (sha256 `39e32a54…64b7`) → `player_rtt.html`, `formatc.js` (sha256 `4609799a…b7a`) → `rtt.js`. Nothing in `bars` was changed (DEC-002).
 
@@ -10,12 +10,12 @@ Copied from `marketmarathon/bars` @ `2a10877695e83683c3caae651cad61fc686614eb` (
 | `rtt_timeline.js` | Event rules: counts after each race, tie order, pacing, frame of every event. Loaded by both the page and the driver |
 | `rtt.js` | Driver. Same environment contract as `formatc.js` |
 | `config.json` | Everything RTT-specific: words, unit, palette and colour rule, pacing, window, sizes, layout tokens |
-| `config_pilot_2014_2021_base.json` | What the round-2 pilots share: `config.json` + window 2014–2021, 0.5 s per race judged on the top ten, board from the first frame (no title card), record holds, winner highlight, final board 10 s, no closing card. Not rendered on its own |
-| `config_pilot_2014_2021_top20.json` | Pilot A: the base + 20 rows, tighter bars and larger text, its own 22-colour palette |
-| `config_pilot_2014_2021_top10_winner.json` | Pilot B: the base + the winner line under the date |
+| `config_pilot_2014_2021_base.json` | Shared pilot settings: `config.json` + window 2014–2021, 0.5 s per race judged on the top ten, board from the first frame (no title card), record holds (2.0 s), winner highlight, final board 10 s, no closing card. Not rendered on its own |
+| `config_pilot_2014_2021_top20.json` | The pilot (round 3): the base + 20 rows, flags, event label, wider bars, time block next to the board, overlay boxes, its own 22-colour palette with colour priority |
+| `local_assets/` | **Git-ignored.** Private pictures for the overlays (`rtt_logo.png`, `rtt_car.png`), supplied at render time; never committed (DEC-006). Missing file = empty box, the render goes on |
 | `race_rtt002.json` | Player input, written by `scripts/rtt_adapter.py` from `data/rtt-002/` (CC BY-SA 4.0, see `data/rtt-002/ATTRIBUTION.md`) |
 | `dataset_hashes.txt` | SHA-256 of the adapter's three inputs and its output |
-| `package.json`, `package-lock.json` | Playwright 1.56.1 and `@fontsource/archivo` 5.3.0 (Archivo, SIL OFL 1.1) |
+| `package.json`, `package-lock.json` | Playwright 1.56.1, `@fontsource/archivo` 5.3.0 (Archivo, SIL OFL 1.1) and `flag-icons` 7.5.0 (MIT); licences in `reference/rights_ledger.md` |
 
 ## Run
 
@@ -28,12 +28,12 @@ SEG_START=0 SEG_END=300 SEG_OUT=seg.mp4 RASTER_W=3840 node rtt.js  # needs ffmpe
 ```
 `PW_CHROME=/path/to/chromium` picks the browser (as in `formatc.js`). `RTT_CONFIG=other.json` selects another config, e.g. a quieter variant or a short passage (`"window": {"from": "1984-01-01", "to": "1989-12-31"}`). A config can start from another with `"extends": "config.json"` and change only some keys (objects merge key by key; lists and values replace).
 
-Pilots (IQ-05 round 2; identical timestamps, so they can be compared frame for frame):
+Pilot (IQ-05 round 3):
 ```
-RTT_CONFIG=config_pilot_2014_2021_top20.json        FRAME_COUNT_ONLY=1 node rtt.js   # FRAMES 2472 = 82.4 s
-RTT_CONFIG=config_pilot_2014_2021_top10_winner.json FRAME_COUNT_ONLY=1 node rtt.js   # FRAMES 2472 = 82.4 s
+RTT_CONFIG=config_pilot_2014_2021_top20.json FRAME_COUNT_ONLY=1 node rtt.js   # FRAMES 2502 = 83.4 s
 ```
-Config keys added in round 2 (all optional; absent = IQ-05 behaviour): `board` {bar_gap, name_frac, value_frac}; `highlight` {enabled, sec, mix, glow}; `winner_line` {enabled}; `record_hold` {enabled, sec, types}; `pacing.judge_rows`; `pacing.final_board_sec`; `sizes.winner`. With `intro_sec` 0 there is no title card and the board (title on it) is the first frame.
+Put `rtt_logo.png` and `rtt_car.png` in `local_assets/` (or point `RTT_LOCAL_ASSETS` at a folder) before a real render; without them the boxes stay empty.
+Config keys added in round 2 (all optional; absent = IQ-05 behaviour): `board` {bar_gap, name_frac, value_frac}; `highlight` {enabled, sec, mix, glow}; `winner_line` {enabled}; `record_hold` {enabled, sec, types}; `pacing.judge_rows`; `pacing.final_board_sec`; `sizes.winner`. Round 3: `flags` {enabled, column, height_frac, gap, csv}; `event_label` {enabled, fade_sec}; `time_label.mode` "block" {x, date_y, align}; `overlays` [{name, file, x, y, w, h}]; `local_assets`; `colour_rule.priority` {rows, bright}. With `intro_sec` 0 there is no title card and the board (title on it) is the first frame.
 
 Numbers: Archivo has tabular figures (`tnum`, checked in every weight with fontTools), but Chrome's canvas cannot switch OpenType features on, so every number (values, axis, season, date, winner line) is drawn digit by digit on the widest digit's width, as C2-2 did. The tests check this on every label.
 
@@ -47,4 +47,4 @@ python scripts/rtt_adapter.py data/rtt-002 kits/rtt-002/race_rtt002.json --datas
 Tests: `node tests/player/run_tests.js` (results in `tests/player/RESULTS.md`), phone check `node tests/player/phone_check.js`.
 
 ## What is not in this kit
-No music, logo, flags, icons, pictures or Market Marathon fonts. RTT has no logo yet (NOT FOUND). There is no render workflow: none was asked for, and none may upload or publish.
+No music, logo, pictures, flag files or Market Marathon fonts are committed. Flags come from the npm package at install time; Luke's logo and the car picture live only in the git-ignored `local_assets/`. There is no render workflow: none was asked for, and none may upload or publish.

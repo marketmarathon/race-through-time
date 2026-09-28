@@ -55,6 +55,24 @@
  *  17. record_moments_full_dataset: the player's record events equal record_progression.csv on
  *      every row of the full dataset
  *
+ * Added in IQ-05 round 3 (DEC-034 to DEC-044; variant B's case removed with its config):
+ *  18. flags (when on): every flag drawn is the flag_code of that driver in the nationality file
+ *      (read here, independently of rtt.js), sits on its row, and every row on screen whose driver
+ *      has a flag code carries it; a driver without one (NOT FOUND) gets no flag
+ *  19. event label (when on): on every frame of a race, each credited winner whose bar is on
+ *      the board shows "· <Grand Prix, 'Grand Prix' written 'GP'>" from races.csv right after its
+ *      value, at full strength; the only other event labels allowed are the previous race's
+ *      winners, fading (never brightening) within event_label.fade_sec of the new race; nothing
+ *      for a winner off the board
+ *  20. time block (time_label.mode "block"): on every frame the season, Grand Prix and date (and
+ *      winner line) overlap no bar, flag, name, value, event label, axis number, title or footer
+ *  21. overlays: on every frame no text, bar or flag enters a reserved overlay box (logo, car);
+ *      with placeholder pictures (plain rectangles written at test time, never committed) each
+ *      is drawn inside its box; with the files absent nothing is drawn and the player still runs
+ *  22. colour priority (top-20 pilot): Hamilton, Schumacher, Verstappen, Senna and Prost get
+ *      bright colours (CIELAB L* and C* both at least 50 as drawn); the tiers of all drivers who
+ *      ever reach the top ten are reported
+ *
  * Usage: node tests/player/run_tests.js [case ...]     (needs `npm ci` in kits/rtt-002)
  * Output: tests/output/ (PNGs, gitignored) and tests/player/RESULTS.md
  */
@@ -75,6 +93,16 @@ const COLOUR_OF = {};                // rows -> driver -> drawn colour, across e
 const HOLD_SETTLE_ROWS = 0.1;        // "settled": every row within this many rows of its place
 const MAX_ONSETS_PER_SEC = 3;        // blueprint section 10: no strobing
 const TAB_KINDS = ['value', 'axis', 'time_season', 'time_date', 'winner'];
+const BRIGHT = 50;
+const YT_CONTROLS_PX = 130;          // DEC-042: bottom strip YouTube's player controls may cover (estimate, 12% of 1080)                   // "bright" colour: CIELAB L* and C* both at least this, as drawn
+const STARS = ['Lewis Hamilton', 'Michael Schumacher', 'Max Verstappen', 'Ayrton Senna', 'Alain Prost'];
+const gpShort = gp => gp.replace(/Grand Prix/g, 'GP');       // DEC-034: "GP" throughout
+
+const { placeholders: makePlaceholders } = require('./placeholders.js');
+const placeholders = cfg => makePlaceholders(cfg, path.join(OUTDIR, '_placeholders'));
+const rectOf = x => ({ l: x.x, r: x.x + x.w, t: x.y - (x.asc != null ? x.asc : x.size * 0.8), b: x.y + (x.desc != null ? x.desc : x.size * 0.25) });
+const gap = (a, b) => { const dx = Math.max(0, a.l - b.r, b.l - a.r), dy = Math.max(0, a.t - b.b, b.t - a.b); return Math.hypot(dx, dy); };
+const overlap = (a, b) => a.l < b.r && b.l < a.r && a.t < b.b && b.t < a.b;
 
 /* ---- a small CSV reader (quoted fields allowed) ---- */
 function readCSV(file) {
@@ -166,6 +194,20 @@ function colourRuleFullDataset(dir, configFile, name) {
     (byColour[colour(id)] = byColour[colour(id)] || []).push(E.names[id]);
   res.by_colour = byColour;
   res.colour_of = Object.fromEntries([...onBoard].map(id => [id, colour(id)]));
+  /* (22) colour priority: tiers of the drivers who ever reach the top ten */
+  if (cfg.colour_rule.priority) {
+    const tier = h => { const [L, a, b] = TIMELINE.lab(h), C = Math.hypot(a, b); return L >= BRIGHT && C >= BRIGHT ? 'bright' : C >= BRIGHT ? 'vivid, darker' : 'muted'; };
+    const top10 = new Set(E.races.flatMap(r => E.after[r.race_index].order.slice(0, cfg.colour_rule.priority.rows)));
+    const count = {}; for (const id of top10) count[tier(colour(id))] = (count[tier(colour(id))] || 0) + 1;
+    res.notes.push(`colour priority: ${top10.size} drivers ever reach the top ten; their colours: ${Object.entries(count).map(([k, v]) => `${v} ${k}`).join(', ')} (bright = CIELAB L* and C* both at least ${BRIGHT} as drawn)`);
+    const idOf = nm => Object.keys(E.names).find(id => E.names[id] === nm);
+    const stars = STARS.map(nm => { const h = colour(idOf(nm)), [L, a, b] = TIMELINE.lab(h); return { nm, h, L, C: Math.hypot(a, b), t: tier(h) }; });
+    res.notes.push('named drivers: ' + stars.map(x => `${x.nm} \`${x.h}\` (L* ${x.L.toFixed(0)}, C* ${x.C.toFixed(0)}, ${x.t})`).join('; '));
+    for (const x of stars) if (x.t !== 'bright') fail(`${x.nm} has a ${x.t} colour ${x.h}`);
+    const brightOthers = [...onBoard].filter(id => !top10.has(id) && tier(colour(id)) === 'bright').map(id => E.names[id]);
+    res.notes.push(`drivers who never reach the top ten but share a bright colour (only where nothing else fitted): ${brightOthers.join(', ') || 'none'}`);
+    res.pass = res.failures.length === 0;
+  }
   return res;
 }
 
@@ -200,10 +242,17 @@ async function runCase(c) {
   const res = { name: c.name, adapter_sha256: adapter.split(/\s+/)[0], events: inWindow.length, frames: 0,
                 boundary_frames: 0, labels_checked: 0, ocr_checked: 0, ocr_skipped_overlap: 0, ocr_mismatch: [], failures: [], notes: [],
                 config: c.config || 'config.json', entries: 0, entry_frames_max: 0, colour_frames: 0,
-                rows: cfg.rows, winner_lines: 0, onsets: 0, onsets_max_per_sec: 0, tab_labels: 0, holds: [] };
+                rows: cfg.rows, winner_lines: 0, onsets: 0, onsets_max_per_sec: 0, tab_labels: 0, holds: [],
+                event_labels: 0, event_fading: 0, flags_checked: 0, block_clear: null, overlay_clear: null, overlays_drawn: {} };
   const fail = m => { if (res.failures.length < 40) res.failures.push(m); };
 
+  if (cfg.overlays) process.env.RTT_LOCAL_ASSETS = placeholders(cfg);
+  /* (18) the nationality file, read here independently of rtt.js */
+  const FLAGON = !!(cfg.flags && cfg.flags.enabled), EVON = !!(cfg.event_label && cfg.event_label.enabled);
+  const natCode = {};
+  if (FLAGON) for (const r of readCSV(path.resolve(KITDIR, cfg.flags.csv))) natCode[r.driver_id] = /^[a-z]{2}(-[a-z]+)?$/.test(r.flag_code) ? r.flag_code : null;
   const { br, pg } = await rtt.openPlayer({ cfg, data, raster: 1, chrome: process.env.PW_CHROME || '/opt/pw-browsers/chromium' });
+  delete process.env.RTT_LOCAL_ASSETS;
   try {
     const info = await pg.evaluate(() => ({ raceFrames: RACE_FRAMES, start: TL.startFrame, kind: TL.kind, mult: TL.mult, hold: TL.hold, namePx: nameSize(), trunc: NAME_TRUNC }));
     const WL = !!(cfg.winner_line && cfg.winner_line.enabled), HLON = !!(cfg.highlight && cfg.highlight.enabled);
@@ -229,8 +278,10 @@ async function runCase(c) {
     const prevTop = k => (k === 0 ? (before ? E.after[before.race_index].order : []) : E.after[inWindow[k - 1].race_index].order).slice(0, cfg.rows);
     const entering = {};             // driver -> {k, start frame} while waiting to be clearly visible
     const minDE = (cfg.colour_rule && cfg.colour_rule.min_delta_e) || 0;
+    const fadeFrames = EVON ? Math.max(1, (cfg.event_label.fade_sec || 0.3) * cfg.fps) : 0;
+    let prevEv = {};
     for (let f = 0; f < info.raceFrames + outroFrames; f++) {
-      const L = await pg.evaluate(t => { drawAt(t); return { labels: window.__LABELS, rank: window.__RANK, ev: window.__EVENT, bars: window.__BARS }; }, f / cfg.fps);
+      const L = await pg.evaluate(t => { drawAt(t); return { labels: window.__LABELS, rank: window.__RANK, ev: window.__EVENT, bars: window.__BARS, flags: window.__FLAGS, overlays: window.__OVERLAYS || [] }; }, f / cfg.fps);
       res.frames++;
       const ri = L.ev.race_index == null ? null : String(L.ev.race_index);
       /* which race is showing, and does the time label say so */
@@ -323,6 +374,65 @@ async function runCase(c) {
         while (onsetFrames.length && onsetFrames[0] <= f - cfg.fps) onsetFrames.shift();
         res.onsets_max_per_sec = Math.max(res.onsets_max_per_sec, onsetFrames.length);
         if (onsetFrames.length > MAX_ONSETS_PER_SEC) fail(`frame ${f}: ${onsetFrames.length} highlight onsets in the last second (max ${MAX_ONSETS_PER_SEC})`);
+      }
+      /* (18) flags */
+      if (!FLAGON && L.flags.length) fail(`frame ${f}: flag drawn although flags are off`);
+      if (FLAGON) {
+        const drawnFlag = {};
+        for (const fl of L.flags) {
+          drawnFlag[fl.id] = fl; res.flags_checked++;
+          if (fl.code !== natCode[fl.id]) fail(`frame ${f}: ${fl.id} drawn with flag "${fl.code}", nationality file says "${natCode[fl.id]}"`);
+          const b = bar[fl.id];
+          if (!b || Math.abs((fl.y + fl.h / 2) - (b.rect.y + b.rect.h / 2)) > 0.5 || Math.abs(fl.alpha - b.alpha) > 1e-6) fail(`frame ${f}: ${fl.id}'s flag is not on its row`);
+          if (fl.x + fl.w > b.rect.x) fail(`frame ${f}: ${fl.id}'s flag runs into its bar`);
+        }
+        for (const b of L.bars) if (b.alpha > 0 && natCode[b.id] && !drawnFlag[b.id]) fail(`frame ${f}: ${b.id} is on screen without its flag`);
+      }
+      /* (19) event labels */
+      const evl = L.labels.filter(x => x.kind === 'event');
+      if (!EVON && evl.length) fail(`frame ${f}: event label drawn although event_label is off`);
+      if (EVON) {
+        const since = k >= 0 ? f - info.start[k] : null, cur = k >= 0 ? litOn(k) : [], now = {};
+        for (const x of evl) {
+          const vl = L.labels.find(v => v.kind === 'value' && v.id === x.id);
+          if (!vl || x.x < vl.x + vl.w || Math.abs(x.y - vl.y) > 0.5) fail(`frame ${f}: event label of ${x.id} is not right after its value`);
+          if (cur.includes(x.id)) {
+            const want = '· ' + gpShort(inWindow[k].grand_prix);
+            if (x.text !== want) fail(`frame ${f} (race ${ri}): ${x.id} event label "${x.text}" != "${want}"`);
+            if (Math.abs(x.alpha - bar[x.id].alpha) > 1e-6) fail(`frame ${f}: ${x.id} event label not at full strength`);
+            res.event_labels++;
+          } else if (k > 0 && litOn(k - 1).includes(x.id) && since < fadeFrames) {
+            const want = '· ' + gpShort(inWindow[k - 1].grand_prix);
+            if (x.text !== want) fail(`frame ${f}: fading label of ${x.id} "${x.text}" != "${want}"`);
+            if (prevEv[x.id] != null && x.alpha > prevEv[x.id] + 1e-6) fail(`frame ${f}: fading label of ${x.id} brightened`);
+            res.event_fading++;
+          } else fail(`frame ${f} (race ${ri}): unexpected event label "${x.text}" on ${x.id}`);
+          now[x.id] = x.alpha;
+        }
+        for (const id of cur) if (bar[id] && bar[id].alpha > 0 && !evl.some(x => x.id === id)) fail(`frame ${f} (race ${ri}): winner ${id} is on the board without its event label`);
+        prevEv = now;
+      }
+      /* (20) the time block overlaps nothing; (21) nothing enters an overlay box */
+      const clipBar = r => ({ l: r.x, r: r.x + r.w, t: Math.max(150, r.y), b: Math.min(1080 - 46, r.y + r.h) });
+      const others = [...L.bars.filter(b => b.alpha > 0).map(b => clipBar(b.rect)).filter(r => r.b > r.t),
+                      ...L.flags.filter(x => x.alpha > 0).map(x => ({ l: x.x, r: x.x + x.w, t: x.y, b: x.y + x.h })),
+                      ...L.labels.filter(x => x.alpha > 0 && ['name', 'value', 'event', 'axis', 'title', 'subtitle', 'footer'].includes(x.kind)).map(rectOf)];
+      const blockR = L.labels.filter(x => x.alpha > 0 && (x.kind.startsWith('time_') || x.kind === 'winner')).map(rectOf);
+      if (cfg.time_label.mode === 'block') for (const a of blockR) for (const o of others) {
+        if (overlap(a, o)) fail(`frame ${f} (race ${ri}): the time block overlaps something at x ${o.l.toFixed(0)}-${o.r.toFixed(0)}, y ${o.t.toFixed(0)}-${o.b.toFixed(0)}`);
+        const g = gap(a, o); if (res.block_clear == null || g < res.block_clear) res.block_clear = g;
+      }
+      for (const ov of L.overlays) {
+        const B = { l: ov.box.x, r: ov.box.x + ov.box.w, t: ov.box.y, b: ov.box.y + ov.box.h };
+        for (const o of others.concat(blockR)) {
+          if (overlap(B, o)) fail(`frame ${f}: something enters the ${ov.name} box at x ${o.l.toFixed(0)}-${o.r.toFixed(0)}, y ${o.t.toFixed(0)}-${o.b.toFixed(0)}`);
+          const g = gap(B, o); if (res.overlay_clear == null || g < res.overlay_clear) res.overlay_clear = g;
+        }
+        if (ov.drawn) {
+          res.overlays_drawn[ov.name] = ov.drawn;
+          if (ov.drawn.x < B.l - 0.01 || ov.drawn.x + ov.drawn.w > B.r + 0.01 || ov.drawn.y < B.t - 0.01 || ov.drawn.y + ov.drawn.h > B.b + 0.01) fail(`frame ${f}: ${ov.name} drawn outside its box`);
+        } else if (cfg.overlays) fail(`frame ${f}: ${ov.name} placeholder not drawn`);
+        if (B.b > 1080 - YT_CONTROLS_PX) fail(`${ov.name} box reaches into the bottom ${YT_CONTROLS_PX} px (YouTube controls)`);
       }
       /* (14) the rank glide has settled on the last frame of a held race */
       if (k >= 0 && info.hold[k] && k + 1 < info.start.length && f === info.start[k + 1] - 1) {
@@ -479,6 +589,16 @@ async function main() {
   const sd = JSON.parse(fs.readFileSync(path.join(FIX, 'shared_drive', 'fixture.json'), 'utf8'));
   cases.push({ name: 'shared_drive_winner_highlight', dir: path.join(FIX, 'shared_drive'),
                overrides: Object.assign({}, sd.overrides, { winner_line: { enabled: true }, highlight: { enabled: true, sec: 0.4, mix: 0.3, glow: 16 } }), expect: sd.expect });
+  /* IQ-05c: the round-3 board features on the (fictional) shared drive with the pilot's 20-row
+     geometry: flags from a fictional nationality file (one driver NOT FOUND), event labels on both
+     credited drivers, the time block with the winner line under it, and the overlay boxes */
+  const pilot = rtt.loadConfig('config_pilot_2014_2021_top20.json');
+  cases.push({ name: 'shared_drive_round3', dir: path.join(FIX, 'shared_drive'),
+               overrides: Object.assign({}, sd.overrides, { rows: 20, board: pilot.board, namescale: pilot.namescale, barend: pilot.barend,
+                 winner_line: { enabled: true }, highlight: { enabled: true, sec: 0.4, mix: 0.3, glow: 16 },
+                 flags: Object.assign({}, pilot.flags, { enabled: true, csv: path.join(FIX, 'shared_drive', 'driver_nationality.csv') }),
+                 event_label: pilot.event_label, time_label: Object.assign({}, pilot.time_label, { months: pilot.time_label.months }), overlays: pilot.overlays }),
+               expect: sd.expect });
   const RTT002 = path.join(ROOT, 'data', 'rtt-002');
   cases.push({ name: 'rtt002_1984_1989', dir: RTT002, rtt002: true,
                window: { from: '1984-01-01', to: '1989-12-31' }, overrides: {}, expect: {} });
@@ -488,7 +608,6 @@ async function main() {
     { season: '2020', grand_prix: 'Portuguese Grand Prix', show: [['Lewis Hamilton', 92], ['Michael Schumacher', 91]], order: ['Lewis Hamilton', 'Michael Schumacher'],
       note: 'Hamilton passes Schumacher' }];
   cases.push({ name: 'rtt002_2014_2021_A_top20', dir: RTT002, rtt002: true, config: 'config_pilot_2014_2021_top20.json', expect: { milestones } });
-  cases.push({ name: 'rtt002_2014_2021_B_top10_winner', dir: RTT002, rtt002: true, config: 'config_pilot_2014_2021_top10_winner.json', expect: { milestones } });
   /* the whole video, every frame, draw-call checks only (no PNGs or OCR: 16,000 frames) */
   cases.push({ name: 'rtt002_full_run', dir: RTT002, rtt002: true, light: true, overrides: {}, expect: {} });
   const run = only.length ? cases.filter(c => only.includes(c.name)) : cases;
@@ -529,18 +648,19 @@ function writeReport(results) {
   const L = [];
   const cases = results.filter(r => r.frames != null), cols = results.filter(r => r.name.startsWith('colour_rule_full_dataset'));
   const rec = results.find(r => r.name === 'record_moments_full_dataset');
-  L.push('# Player test results (IQ-05 round 2)', '');
+  L.push('# Player test results (IQ-05 round 3)', '');
   L.push('Written by `node tests/player/run_tests.js` (all cases). Frames are 1920x1080 (preview width), drawn headless in Playwright ' + pw + ' Chromium, every race frame in order.');
   L.push('OCR: ' + (HAS_OCR ? spawnSync('tesseract', ['--version'], { encoding: 'utf8' }).stdout.split('\n')[0] + ' on every value label of the first frame of every race.' : 'NOT AVAILABLE (tesseract not installed); draw-call checks only.'), '');
   L.push(`Overall: ${results.filter(r => r.pass).length}/${results.length} PASS.`, '');
-  L.push('| Case | Result | Config | Rows | Races | Frames | Race length | Value labels checked | Winner lines checked | Highlight onsets (most in 1 s) | Numbers checked on fixed-pitch digits | Beats outside holds | Boundary frames | OCR read back (skipped: overlapping rows) | Board entries | Slowest entry (frames to clearly visible) | Colour-checked frames | Name size | Pacing (rank / visible / quiet) | Adapter output SHA-256 |');
-  L.push('|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|');
+  L.push('| Case | Result | Config | Rows | Races | Frames | Race length | Value labels checked | Winner lines checked | Highlight onsets (most in 1 s) | Numbers checked on fixed-pitch digits | Beats outside holds | Boundary frames | OCR read back (skipped: overlapping rows) | Board entries | Slowest entry (frames to clearly visible) | Colour-checked frames | Name size | Pacing (rank / visible / quiet) | Event labels checked (fading) | Flags checked | Time block: closest item | Overlay boxes: closest item | Adapter output SHA-256 |');
+  L.push('|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|');
   for (const r of cases)
-    L.push(`| ${r.name} | ${r.pass ? 'PASS' : 'FAIL'} | \`${r.config}\` | ${r.rows} | ${r.events} | ${r.frames} | ${r.race_sec.toFixed(2)} s | ${r.labels_checked} | ${r.winner_lines || 'off'} | ${r.onsets ? `${r.onsets} (${r.onsets_max_per_sec})` : 'off'} | ${r.tab_labels} | ${r.slot_range} | ${r.boundary_frames || 'not saved'} | ${r.boundary_frames ? `${r.ocr_checked - r.ocr_mismatch.length}/${r.ocr_checked} (${r.ocr_skipped_overlap})` : 'not run'} | ${r.entries} | ${r.entry_frames_max} | ${r.colour_frames} | ${r.name_px}px${r.name_truncated ? ' (truncated)' : ''} | ${r.pacing.rank_change} / ${r.pacing.visible_change} / ${r.pacing.quiet} | \`${r.adapter_sha256.slice(0, 16)}…\` |`);
+    L.push(`| ${r.name} | ${r.pass ? 'PASS' : 'FAIL'} | \`${r.config}\` | ${r.rows} | ${r.events} | ${r.frames} | ${r.race_sec.toFixed(2)} s | ${r.labels_checked} | ${r.winner_lines || 'off'} | ${r.onsets ? `${r.onsets} (${r.onsets_max_per_sec})` : 'off'} | ${r.tab_labels} | ${r.slot_range} | ${r.boundary_frames || 'not saved'} | ${r.boundary_frames ? `${r.ocr_checked - r.ocr_mismatch.length}/${r.ocr_checked} (${r.ocr_skipped_overlap})` : 'not run'} | ${r.entries} | ${r.entry_frames_max} | ${r.colour_frames} | ${r.name_px}px${r.name_truncated ? ' (truncated)' : ''} | ${r.pacing.rank_change} / ${r.pacing.visible_change} / ${r.pacing.quiet} | ${r.event_labels ? `${r.event_labels} (${r.event_fading})` : 'off'} | ${r.flags_checked || 'off'} | ${r.block_clear != null ? r.block_clear.toFixed(0) + ' px' : 'n/a'} | ${r.overlay_clear != null ? r.overlay_clear.toFixed(0) + ' px' : 'n/a'} | \`${r.adapter_sha256.slice(0, 16)}…\` |`);
   L.push('');
   L.push(`Entry rule: a driver joining the visible board must be clearly visible (row opacity at least ${CLEAR_ALPHA}, name and value label drawn) within ${ENTRY_MAX_FRAMES} frames of the first frame of that race, i.e. on frame +0 to +${ENTRY_MAX_FRAMES - 1}. The column gives the slowest entry in the case (+N frames).`);
   L.push('Colour rule on frames: on every frame drawn, no two bars on screen (opacity above 0) share a colour or are closer than CIEDE2000 18, and every driver is drawn in the same colour in every RTT-002 case with the same board size.');
   L.push(`Winner highlight (where on): on the first frame of every race exactly the credited winners whose bars are on the board are lit, nothing else is ever lit, a highlight only rises from fully off on the first frame of a race that driver won (a repeat winner stays lit, so never flickers), at most ${MAX_ONSETS_PER_SEC} onsets in any second, and each fades out within highlight.sec.`);
+  L.push('Round 3 (where on): flags = every flag drawn equals the driver\'s flag_code in the nationality file and sits on its row; event labels = on every frame each winner on the board shows "· <GP>" from races.csv right after its value, and the only other event labels are the previous race\'s, fading; time block = on every frame no overlap with any bar, flag, name, value, event label, axis number, title or footer ("closest item" = the smallest gap on any frame); overlay boxes = nothing enters the reserved logo and car boxes on any frame, placeholders drawn inside them, and the boxes stay out of the bottom ' + YT_CONTROLS_PX + ' px.');
   L.push(`Record holds (where on): the held races are exactly the BECOMES_JOINT / BECOMES_SOLE rows of data/rtt-002/record_progression.csv inside the window; on the last frame of each hold every row is within ${HOLD_SETTLE_ROWS} row of its place; every other beat is within 0.8-1.4 x sec_per_event (to the nearest frame).`, '');
   if (rec) {
     L.push(`**record_moments_full_dataset — ${rec.pass ? 'PASS' : 'FAIL'}**`);

@@ -24,6 +24,11 @@
  *     periods x seconds_per_year. FRAME_COUNT_ONLY computes it in Node from the same file the
  *     page uses, so the plan job and the renderer cannot disagree; the page's figure is still
  *     checked against it, as formatc.js checks race_sec.
+ *   - IQ-05c: with "flags" {enabled: true, csv: <file>} the driver reads the nationality file
+ *     (data/rtt-002/driver_nationality.csv: driver_id, flag_code) and hands the page each needed
+ *     flag as an SVG from the npm package flag-icons (MIT, reference/rights_ledger.md). No flag
+ *     file is copied into the repo. A code with no flag-icons file refuses to render; a driver
+ *     whose flag_code is NOT FOUND / NOT AVAILABLE simply gets no flag (the name is always drawn).
  *   - Archivo is loaded from the npm package @fontsource/archivo (SIL OFL 1.1) instead of the
  *     TTFs in the Market Marathon kit, so no font file is copied into this public repo. The
  *     same measure-against-a-missing-family check refuses to render substituted type.
@@ -63,6 +68,50 @@ function frameTotals(cfg, data) {
   return { tl, intro, outro, total: intro + tl.raceFrames + outro };
 }
 
+/* IQ-05c: the nationality file -> {byId: {driver_id: code}, svg: {code: data URL}}. */
+function readCsvRows(file) {
+  const lines = fs.readFileSync(file, 'utf8').split(/\r?\n/).filter(Boolean);
+  const split = l => { const out = []; let f = '', q = false;
+    for (let i = 0; i < l.length; i++) { const ch = l[i];
+      if (q) { if (ch === '"') { if (l[i + 1] === '"') { f += '"'; i++; } else q = false; } else f += ch; }
+      else if (ch === '"') q = true; else if (ch === ',') { out.push(f); f = ''; } else f += ch; }
+    out.push(f); return out; };
+  const head = split(lines.shift());
+  return lines.map(l => Object.fromEntries(split(l).map((v, i) => [head[i], v])));
+}
+function loadFlags(cfg) {
+  const F = cfg.flags;
+  if (!F || !F.enabled) return null;
+  const file = path.resolve(KIT, F.csv);
+  if (!fs.existsSync(file)) throw new Error('flags.enabled but ' + F.csv + ' does not exist (switch flags off until the nationality data is built)');
+  const dir = path.join(path.dirname(require.resolve('flag-icons/package.json', { paths: [KIT] })), 'flags', '4x3');
+  const byId = {}, svg = {};
+  for (const r of readCsvRows(file)) {
+    const code = r.flag_code;
+    if (!/^[a-z]{2}(-[a-z]+)?$/.test(code || '')) continue;          // NOT FOUND / NOT AVAILABLE: no flag
+    const f = path.join(dir, code + '.svg');
+    if (!fs.existsSync(f)) throw new Error('flag-icons has no flag "' + code + '" (driver ' + r.driver_id + ')');
+    byId[r.driver_id] = code;
+    if (!svg[code]) svg[code] = 'data:image/svg+xml;base64,' + fs.readFileSync(f).toString('base64');
+  }
+  return { byId, svg };
+}
+
+/* IQ-05c overlays (DEC-035): Luke's logo and a generic car picture are private media and never
+   committed (DEC-006). Each overlay names a file in the git-ignored local_assets/ folder (or
+   cfg.local_assets / RTT_LOCAL_ASSETS); a missing file is reported and skipped, the render goes on. */
+function loadOverlays(cfg) {
+  const dir = path.resolve(KIT, process.env.RTT_LOCAL_ASSETS || cfg.local_assets || 'local_assets');
+  const out = {};
+  for (const b of cfg.overlays || []) {
+    const f = path.join(dir, b.file);
+    if (!fs.existsSync(f)) { console.log('overlay "' + b.name + '": ' + f + ' not found - box kept empty'); continue; }
+    const ext = path.extname(f).slice(1).toLowerCase(), mime = ext === 'svg' ? 'image/svg+xml' : ext === 'jpg' ? 'image/jpeg' : 'image/' + ext;
+    out[b.name] = 'data:' + mime + ';base64,' + fs.readFileSync(f).toString('base64');
+  }
+  return out;
+}
+
 /* Open Chromium on the player, fonts loaded and proven, setup() done. Used by the CLI below
    and by the tests (tests/player/run_tests.js), so both draw through exactly the same path. */
 async function openPlayer({ cfg, data, raster = 1, chrome }) {
@@ -93,7 +142,8 @@ async function openPlayer({ cfg, data, raster = 1, chrome }) {
   }, fam);
   if (!fontOK) { await br.close(); throw new Error(fam + ' did not resolve - refusing to render substituted type'); }
 
-  await pg.evaluate(o => window.setup(o), { data, cfg, raster });
+  await pg.evaluate(o => window.setup(o), { data, cfg, raster, flags: loadFlags(cfg), overlays: loadOverlays(cfg) });
+  await pg.evaluate(() => window.__imagesReady);
   return { br, pg };
 }
 
@@ -168,5 +218,5 @@ async function main() {
   console.log(`wrote ${OUT}: frames ${A} to ${B - 1} of ${TOTAL} at ${1920 * R}x${1080 * R}`);
 }
 
-module.exports = { loadConfig, frameTotals, openPlayer, drawFrame, KIT };
+module.exports = { loadConfig, frameTotals, openPlayer, drawFrame, loadFlags, loadOverlays, KIT };
 if (require.main === module) main().catch(e => { console.error('::error::' + e.message); process.exit(2); });
