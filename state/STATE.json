@@ -1,8 +1,8 @@
 {
   "schema": "rtt-state/0.1",
   "updated": "2026-09-29",
-  "updated_by": "Claude (Claude Code cloud session, environment \"Race Through Time\"), private asset store (DEC-060) and pilot render on GitHub (DEC-061)",
-  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); starts data audit PASSED (DEC-058/DEC-059, merged PR #8); IQ-04 MERGED (PR #2); IQ-05 rounds 1-5 MERGED (PR #3-#7); round-5 pilot RENDERED on GitHub into the private repo (DEC-061, branch claude/cool-mccarthy-kf9mow, pull request not merged)",
+  "updated_by": "Claude (Claude Code cloud session, environment \"Race Through Time\"), RTT-002 full film (DEC-062, DEC-063)",
+  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); starts data audit PASSED (DEC-058/DEC-059, merged PR #8); IQ-04 MERGED (PR #2); IQ-05 rounds 1-5 MERGED (PR #3-#7); round-5 pilot RENDERED and APPROVED by Luke (DEC-062, visual direction = milestone 3); pull request #9 MERGED (c378ea7); RTT-002 FULL FILM built and tested (DEC-063, branch claude/festive-wright-ljiwlo, pull request #10, not merged)",
   "canonical_queue": "state/ folder on main in marketmarathon/race-through-time (this file)",
   "repo_baseline": {
     "repo": "marketmarathon/bars",
@@ -23,7 +23,7 @@
     "schedules": [],
     "recurring_reports": [],
     "public_publishes": [],
-    "note": "nothing activated; nothing uploaded or published. The round-5 pilot was rendered by GitHub Actions on 29 Sep 2026 and saved ONLY as a pre-release in the PRIVATE repo marketmarathon/race-through-time-private (DEC-061); no workflow artifact, nothing public"
+    "note": "nothing activated; nothing uploaded or published. The round-5 pilot and the full RTT-002 film were rendered by GitHub Actions on 29 Sep 2026 and saved ONLY as pre-releases in the PRIVATE repo marketmarathon/race-through-time-private (DEC-061, DEC-063); no workflow artifact, nothing public"
   },
   "episodes": [
     {
@@ -37,7 +37,7 @@
     {
       "id": "RTT-002",
       "title": "F1 Grand Prix Wins",
-      "state": "DATA_AUDIT_PASSED",
+      "state": "FULL_FILM_RENDER_REVIEW",
       "check_level": "LIVE",
       "verdict": "FEASIBLE_VIA_OPEN_LICENCE_ROUTE",
       "blocker": "D-05 before release only (results-data rights; car photo trademarks added 28 Sep 2026)",
@@ -54,6 +54,18 @@
         "second_independent_check": "top-ten entries (40) and top ten at freeze: 0 discrepancies (reports/RTT-002_topten_check_report.md)",
         "nationality": "data/rtt-002/driver_nationality.csv (added 28 Sep 2026, IQ-05 round 3, after DATA_AUDIT; DEC-036): 116 drivers; primary Wikipedia list rev. 1376824402; Wikidata cross-check 113 agree, 3 disagree (Jim Clark, Phil Hill, Luigi Fagioli) - open for Luke; reports/RTT-002_nationality_comparison.md",
         "starts": "data/rtt-002/starts.csv (14,479 rows), career_starts.csv, starts_corrections.csv (DEC-058), STARTS_CHECKS.md, starts_checks.json, starts_manifest.json, STARTS_README.md (added 29 Sep 2026, DEC-053/DEC-055; new files, audited wins files unchanged): build rtt002-starts/1.1, 13/13 checks PASS; List of F1 drivers rev. 1377016608: 116 of 116 agree after the DEC-058 correction (Barrichello 2002 Spanish GP not a start: 323 -> 322); independent check 3 compared (reports/RTT-002_starts_check3_report.md); Wikipedia counting convention kept (DEC-059); starts data audit PASSED"
+      },
+      "film": {
+        "decisions": "DEC-062 (owner: pilot approved, visual direction approved), DEC-063 (Claude working choices)",
+        "config": "kits/rtt-002/config_rtt002_film.json (extends the approved config_pilot_2014_2021_top20.json)",
+        "span": "1,164 races: 1950 British GP (1950-05-13) to the data freeze, 2026 Azerbaijan GP (2026-09-26)",
+        "frames": "20033 at 30 fps = 667.8 s (11 min 8 s), final table 10 s",
+        "pacing": "smooth: 0.4-0.7 s per race (0.8-1.4 x 0.5 s), slew 0.1, 1.4x from 2 before to 3 after 59 emphasis races; story races held 2.5-3.0 s",
+        "story_moments": "30 (data/rtt-002/story_moments.csv; reports/RTT-002_story_moments.md): 1 first race, 8 leader changes, 8 records equalled, 2 milestones (50, 100), 10 top-ten entries, 1 freeze",
+        "tests": "tests/player/RESULTS.md 17/17 PASS (new case rtt002_film, checks 29-32); phone check PASS",
+        "audio": "none (video only, as the pilot); workflow fails on any audio stream; no music chosen or licensed",
+        "render": "in progress: https://github.com/marketmarathon/race-through-time/actions/runs/36627763732",
+        "pull_request": "https://github.com/marketmarathon/race-through-time/pull/10"
       }
     },
     {
@@ -202,7 +214,7 @@
         "IQ-03",
         "IQ-04"
       ],
-      "status": "ROUNDS 1-5 MERGED (pull requests #3-#7); starts correction MERGED (pull request #8, 19b1b03); round-5 pilot RENDERED 29 Sep 2026 into the private repo (DEC-061); render workflow in pull request, branch claude/cool-mccarthy-kf9mow, not merged; Luke to watch the pilot",
+      "status": "DONE: rounds 1-5 merged (pull requests #3-#8); round-5 pilot rendered (DEC-061) and approved by Luke (DEC-062); render workflow merged (pull request #9, c378ea7)",
       "result": {
         "decisions": "DEC-022 (owner) implemented; Claude working choices DEC-023..DEC-026",
         "colours": "one colour per driver for the whole video, assigned over all 1,164 races (rtt_timeline.js assignColours); 40 drivers reach the top ten, at most 12 on screen together (incl. rows fading out); 12 colours needed and used; palette replaced (IQ-04's closest pair CIEDE2000 9.6, new 18.5; white-name contrast >= 3.2)",
@@ -307,7 +319,7 @@
     "visibility": "public",
     "created": "2026-09-27",
     "created_by": "Claude via Luke's Chrome, on Luke's instruction",
-    "contents": "main @ 19b1b03 (starts correction merged via pull request #8); branch claude/cool-mccarthy-kf9mow = DEC-060/DEC-061 + render workflow (pull request, not merged)",
+    "contents": "main @ c378ea7 (pull request #9 merged); branch claude/festive-wright-ljiwlo = RTT-002 full film (pull request #10, not merged)",
     "push_routes": {
       "cowork_cloud": "NOT AVAILABLE - GitHub proxy refuses: repo not in the session's authorised set; no way to attach it from Cowork found",
       "github_web_upload_via_chrome": "WORKS - used 28 Sep; one commit per folder; each commit read back byte-for-byte",
