@@ -47,4 +47,4 @@ python scripts/rtt_adapter.py data/rtt-002 kits/rtt-002/race_rtt002.json --datas
 Tests: `node tests/player/run_tests.js` (results in `tests/player/RESULTS.md`), phone check `node tests/player/phone_check.js`.
 
 ## What is not in this kit
-No music, logo, pictures, flag files or Market Marathon fonts are committed. Flags come from the npm package at install time; Luke's logo and the car picture live only in the git-ignored `local_assets/`. There is no render workflow: none was asked for, and none may upload or publish.
+No music, logo, pictures, flag files or Market Marathon fonts are committed. Flags come from the npm package at install time; Luke's logo and the car picture live only in the git-ignored `local_assets/`. Render on GitHub: `.github/workflows/render_pilot.yml` (DEC-061) fetches the logo and car photo from the private repo `marketmarathon/race-through-time-private` (DEC-060) with the secret `RTT_PRIVATE_TOKEN`, checks their hashes, renders the pilot at 3840 × 2160 plus a 1920 × 1080 viewing copy, and saves both only as a release in that private repo. It uploads no workflow artifact (this repo is public) and publishes nothing.
