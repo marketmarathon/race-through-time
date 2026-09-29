@@ -1,8 +1,8 @@
 {
   "schema": "rtt-state/0.1",
-  "updated": "2026-09-28",
-  "updated_by": "Claude (Claude Code cloud session, environment \"Race Through Time\"), IQ-05 round 4",
-  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); IQ-04 MERGED (PR #2); IQ-05 rounds 1-3 MERGED (PR #3, #4, #5); IQ-05 round 4 (full logo, dated event label, date line, real car photo) IN PULL REQUEST (branch claude/charming-dirac-d7g4up), awaiting Luke",
+  "updated": "2026-09-29",
+  "updated_by": "Claude (Claude Code cloud session, environment \"Race Through Time\"), IQ-05 round 5",
+  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); IQ-04 MERGED (PR #2); IQ-05 rounds 1-4 MERGED (PR #3-#6); IQ-05 round 5 (race starts data, stats label \"91 wins · 306 starts · 29.7%\", round-3 bar length) IN PULL REQUEST (branch claude/awesome-planck-etvdg7), approved by Luke to merge once checks pass (DEC-057); independent check 3 (starts) out with Luke",
   "canonical_queue": "state/ folder on main in marketmarathon/race-through-time (this file)",
   "repo_baseline": {
     "repo": "marketmarathon/bars",
@@ -23,7 +23,7 @@
     "schedules": [],
     "recurring_reports": [],
     "public_publishes": [],
-    "note": "nothing activated; nothing uploaded or published. IQ-04 and IQ-05 (rounds 1-4) test frames and phone stills rendered locally in the Claude Code container only (not committed, not uploaded)"
+    "note": "nothing activated; nothing uploaded or published. IQ-04 and IQ-05 (rounds 1-5) test frames and phone stills rendered locally in the Claude Code container only (not committed, not uploaded)"
   },
   "episodes": [
     {
@@ -52,7 +52,8 @@
         "scripted_checks": "13/13 PASS (data/rtt-002/CHECKS.md)",
         "independent_check_comparison": "0 discrepancies in A, B, E, F, G (reports/RTT-002_discrepancy_report.md)",
         "second_independent_check": "top-ten entries (40) and top ten at freeze: 0 discrepancies (reports/RTT-002_topten_check_report.md)",
-        "nationality": "data/rtt-002/driver_nationality.csv (added 28 Sep 2026, IQ-05 round 3, after DATA_AUDIT; DEC-036): 116 drivers; primary Wikipedia list rev. 1376824402; Wikidata cross-check 113 agree, 3 disagree (Jim Clark, Phil Hill, Luigi Fagioli) - open for Luke; reports/RTT-002_nationality_comparison.md"
+        "nationality": "data/rtt-002/driver_nationality.csv (added 28 Sep 2026, IQ-05 round 3, after DATA_AUDIT; DEC-036): 116 drivers; primary Wikipedia list rev. 1376824402; Wikidata cross-check 113 agree, 3 disagree (Jim Clark, Phil Hill, Luigi Fagioli) - open for Luke; reports/RTT-002_nationality_comparison.md",
+        "starts": "data/rtt-002/starts.csv, career_starts.csv, STARTS_CHECKS.md, starts_checks.json, starts_manifest.json, STARTS_README.md (added 29 Sep 2026, IQ-05 round 5, DEC-053/DEC-055; new files, audited files unchanged): 14,480 starts rows for the 116 winners from the season tables at the wins revisions (source SHA-256 b26c0ed4..., extracted in Luke's Chrome); 12/12 checks PASS; List of F1 drivers rev. 1377016608: 115 of 116 agree; Barrichello 323 vs 322 open (D-08), waits on independent check 3"
       }
     },
     {
@@ -201,7 +202,7 @@
         "IQ-03",
         "IQ-04"
       ],
-      "status": "ROUNDS 1-3 MERGED (pull requests #3, #4, #5); ROUND 4 IN PULL REQUEST - branch claude/charming-dirac-d7g4up; not merged; waiting for Luke",
+      "status": "ROUNDS 1-4 MERGED (pull requests #3-#6); ROUND 5 IN PULL REQUEST - branch claude/awesome-planck-etvdg7; Luke approved merging once checks pass (DEC-057); not merged by Claude",
       "result": {
         "decisions": "DEC-022 (owner) implemented; Claude working choices DEC-023..DEC-026",
         "colours": "one colour per driver for the whole video, assigned over all 1,164 races (rtt_timeline.js assignColours); 40 drivers reach the top ten, at most 12 on screen together (incl. rows fading out); 12 colours needed and used; palette replaced (IQ-04's closest pair CIEDE2000 9.6, new 18.5; white-name contrast >= 3.2)",
@@ -254,6 +255,16 @@
         "car_photo": "Lewis Hamilton Ferrari SF-26 #44, 2026 Chinese GP qualifying, by Liauzh, CC BY 4.0, Wikimedia Commons, original SHA-1 cc6c19a2ba42a45c774b44c70c84beb86eb57721 (verified via Commons API 28 Sep 2026); background removed and cropped by Claude in Cowork; reference/rights_ledger.md; trademarks (Ferrari, HP, Shell and others) added to the D-05 pre-release check",
         "tests": "tests/player/RESULTS.md; phone check PASS (thresholds unchanged)",
         "renders": "none committed or uploaded; pilot not rendered to video (no ffmpeg in the container); real logo and car files not supplied to this container"
+      },
+      "round_5": {
+        "prompt": "prompts/CODE_SESSION_IQ-05e.md",
+        "decisions": "DEC-053 and DEC-057 (owner); Claude working choices DEC-054 (bar length, on the session instruction), DEC-055 (starts data), DEC-056 (player, adapter, tests)",
+        "contract": "reference/metric_contract_RTT-002.md Display attributes: race starts and win rate (definition, source, half-up rounding), committed before the build (DEC-036)",
+        "data": "scripts/rtt002_starts.py -> data/rtt-002/starts.csv (14,480 rows), career_starts.csv, checks 12/12 PASS, reproducing the prototype: round counts = races.csv in 77 seasons; 1,167 of 1,167 win credits have a start; 115 of 116 career starts = List of F1 drivers; Barrichello 323 (season tables) vs 322 (list) kept at 323, 94 candidate races listed (D-08)",
+        "adapter": "rtt-adapter/1.1 (events[].starts); kits/rtt-002/race_rtt002.json SHA-256 0fc72b84f41ad0b589a8094173d9aebc5ae1e1554c8241a70e31e4be3d5d1e52",
+        "pilot": "config_pilot_2014_2021_top20.json; stats label on every bar (win count bold, 29 px = 5.9 pt on a phone), event label off; barend 1265 -> 1420 (round 3 again, DEC-054; no shortening needed): furthest stats label x 1741 (limit 1856), logo box gap 9.9 px; FRAME_COUNT_ONLY 2502 frames = 83.4 s (unchanged); full video 16062 frames (unchanged)",
+        "tests": "tests/player/RESULTS.md (checks 26-28, case shared_drive_round5); phone check PASS (thresholds unchanged); OCR tesseract 5.3.4 installed in the container",
+        "renders": "none committed or uploaded; pilot not rendered to video (no ffmpeg in the container)"
       }
     },
     {
@@ -283,7 +294,7 @@
     "visibility": "public",
     "created": "2026-09-27",
     "created_by": "Claude via Luke's Chrome, on Luke's instruction",
-    "contents": "main @ d772f45 (IQ-05 round 3 merged via pull request #5); branch rtt-002-data kept; branch claude/charming-dirac-d7g4up = IQ-05 round 4 (pull request, not merged)",
+    "contents": "main @ d00e5fb (IQ-05 round 4 merged via pull request #6); branch marketmarathon-patch-1 (starts source, 2 commits by Claude in Cowork); branch claude/awesome-planck-etvdg7 = IQ-05 round 5 (pull request, not merged)",
     "push_routes": {
       "cowork_cloud": "NOT AVAILABLE - GitHub proxy refuses: repo not in the session's authorised set; no way to attach it from Cowork found",
       "github_web_upload_via_chrome": "WORKS - used 28 Sep; one commit per folder; each commit read back byte-for-byte",
@@ -317,6 +328,10 @@
       "sha256_H": "3fcbc440d19876f6b3089b4902e7cb254d24b70ad658a3e9b026f9fba288f8a9",
       "sha256_I": "13d5fa5b6de65c022aa0e6d3f17646e5c5198109633f62fc450a7aedf522fe8d",
       "result": "0 discrepancies"
+    },
+    "RTT-002_check3_starts": {
+      "prompt": "prompts/RTT-002_independent_check3_starts.md (sections J-N)",
+      "status": "OUT WITH LUKE (29 Sep 2026, DEC-057); answer stays private on his laptop, hash-frozen in state/ before any comparison"
     }
   },
   "laptop_working_copy": {
