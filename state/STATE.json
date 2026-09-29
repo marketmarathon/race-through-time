@@ -64,7 +64,17 @@
         "story_moments": "30 (data/rtt-002/story_moments.csv; reports/RTT-002_story_moments.md): 1 first race, 8 leader changes, 8 records equalled, 2 milestones (50, 100), 10 top-ten entries, 1 freeze",
         "tests": "tests/player/RESULTS.md 17/17 PASS (new case rtt002_film, checks 29-32); phone check PASS",
         "audio": "none (video only, as the pilot); workflow fails on any audio stream; no music chosen or licensed",
-        "render": "in progress: https://github.com/marketmarathon/race-through-time/actions/runs/36627763732",
+        "render": {
+          "workflow": ".github/workflows/render_pilot.yml (DEC-061, DEC-063)",
+          "run": "https://github.com/marketmarathon/race-through-time/actions/runs/36627763732 (push on claude/festive-wright-ljiwlo @ e4dbeda; success; about 48 min; 0 workflow artifacts)",
+          "release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-002-film-e4dbeda-run2 (private, pre-release)",
+          "files": {
+            "rtt002_config_rtt002_film_e4dbeda_3840x2160.mp4": "ba71e5da380aa14d95334e05f25f033f1e978fb25634ffd4d30ab777f96b79f9 (master, x264 CRF 4 slow)",
+            "rtt002_config_rtt002_film_e4dbeda_1920x1080_viewing.mp4": "b4c2b262aa1ee66d2b0760405772d673443ea6f92856b80a2e9ddbdcd23678ba (viewing copy, x264 CRF 18)"
+          },
+          "checks": "player input hash = dataset_hashes.txt; both overlay hashes checked; ffprobe 3840x2160 and 1920x1080, 30 fps, 20033 frames each; 0 audio streams in each",
+          "watched_by_claude": "no - checked frame by frame by the tests (draw calls on every frame, OCR at the 30 story moments); not downloaded into the container"
+        },
         "pull_request": "https://github.com/marketmarathon/race-through-time/pull/10"
       }
     },

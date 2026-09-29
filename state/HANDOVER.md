@@ -9,7 +9,7 @@ Previous handovers are in this file's git history. Session 10's pull request #9 
 - **Story moments:** 30 (`data/rtt-002/story_moments.csv`, `reports/RTT-002_story_moments.md`, `scripts/rtt002_story.py`), with captions above the car box: the first race, 8 leader changes, 8 records equalled, the first to 50 and to 100 wins, 10 top-ten entries (today's top ten) and the freeze.
 - **Tests 17/17 PASS** (`tests/player/RESULTS.md`), including the new `rtt002_film` case (checks 29–32). Phone check PASS.
 - **Audio:** none. Video only, as the pilot. The workflow now fails on any audio stream. No music has been chosen or licensed.
-- **Render:** `.github/workflows/render_pilot.yml` (config selectable, default the film) ran on the push of `e4dbeda`: RENDER_RESULT
+- **Render:** `.github/workflows/render_pilot.yml` (config selectable, default the film) ran on the push of `e4dbeda`: run https://github.com/marketmarathon/race-through-time/actions/runs/36627763732, success (render 40 min, 48 min in all), 0 workflow artifacts. **Release (private pre-release): https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-002-film-e4dbeda-run2**. 20,033 frames = 667.8 s. Master 3840 × 2160 SHA-256 `ba71e5da380aa14d95334e05f25f033f1e978fb25634ffd4d30ab777f96b79f9`; viewing copy 1920 × 1080 SHA-256 `b4c2b262aa1ee66d2b0760405772d673443ea6f92856b80a2e9ddbdcd23678ba`. Both hashes of the overlays were checked, ffprobe confirmed size and frame count, and neither file has an audio stream.
 - `marketmarathon/bars` untouched. Nothing uploaded to YouTube or published. The audited data files are unchanged.
 
 ## Not done / open
