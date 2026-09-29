@@ -1,8 +1,9 @@
 # RTT player input - SHA-256 record (written by scripts/rtt_adapter.py; do not edit)
-# adapter: rtt-adapter/1.0
+# adapter: rtt-adapter/1.1
 # schema: rtt-race/1
 # dataset_id: RTT-002
 38dee8ed5c0a7a3fe7b3ca9ae5b995c793c83d47d35c50e81c7da588ba557bb4  input  data/rtt-002/races.csv
 0a54bfcb946b35aeb168d453a23729f0dddc145e5e2d43c94f014049bebb2943  input  data/rtt-002/win_credits.csv
 fe826470dfa198f111a294754110d98439b338628f1f10e0e49601787c9ead88  input  data/rtt-002/drivers.csv
-13b8848b302fc14639d2e32b083954fdabed6c879007ee6e5a1bb875af0d0352  output kits/rtt-002/race_rtt002.json
+1e77f344e6567011c8de6e7a5208c5b14395013243d9694be2d607689ffd1933  input  data/rtt-002/starts.csv
+0fc72b84f41ad0b589a8094173d9aebc5ae1e1554c8241a70e31e4be3d5d1e52  output kits/rtt-002/race_rtt002.json

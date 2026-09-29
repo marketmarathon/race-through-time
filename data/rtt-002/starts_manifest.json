@@ -1,0 +1,32 @@
+{
+ "build": "rtt002-starts/1.0",
+ "inputs_read_only": {
+  "career_totals.csv": "998b5541ce16342e85cc58ec3830e5ee781ca507165b5526d20dec58bc60ac95",
+  "drivers.csv": "fe826470dfa198f111a294754110d98439b338628f1f10e0e49601787c9ead88",
+  "races.csv": "38dee8ed5c0a7a3fe7b3ca9ae5b995c793c83d47d35c50e81c7da588ba557bb4",
+  "win_credits.csv": "0a54bfcb946b35aeb168d453a23729f0dddc145e5e2d43c94f014049bebb2943"
+ },
+ "licence": "CC BY-SA 4.0 (derived from English Wikipedia); see ATTRIBUTION.md",
+ "metric_contract": "reference/metric_contract_RTT-002.md (Display attributes, DEC-053)",
+ "outputs": {
+  "STARTS_CHECKS.md": "415d738561ae19edfb4ffc960d5e28b4a328f94e8097161cb07c8ada30a1b084",
+  "career_starts.csv": "16492fbb6b50bedbbef2072a57426cbbe0131648ee93763e0214f685829640bb",
+  "starts.csv": "1e77f344e6567011c8de6e7a5208c5b14395013243d9694be2d607689ffd1933",
+  "starts_checks.json": "24f46614d8f4e472ce1ed17d97ed4738ad0dd033b26f2651e0faf6b188cbad7d"
+ },
+ "script": "scripts/rtt002_starts.py",
+ "source": {
+  "extract_header": "script extract_starts.browser.js|created 2026-09-29T04:49:50.508Z",
+  "extractor": "scripts/extract_starts.browser.js",
+  "extractor_sha256": "ac8edfdb347fbf84a683ab570cbf14889797573afbf2127fac545034371d5845",
+  "file": "source/wikipedia_starts_extract.psv",
+  "list_page": {
+   "permanent_url": "https://en.wikipedia.org/w/index.php?oldid=1377016608",
+   "retrieved_utc": "2026-09-29T04:51:53Z",
+   "revid": "1377016608",
+   "title": "List of Formula One drivers"
+  },
+  "season_pages": "77 season articles at the revisions in races.csv (same as the wins data)",
+  "sha256": "b26c0ed439d09b247462343c176c48964951291ec7058d8f476ef65ecdac9b64"
+ }
+}

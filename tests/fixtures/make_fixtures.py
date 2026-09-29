@@ -8,7 +8,9 @@ as data. Deterministic: running this again writes byte-identical files.
 
   long_names        very long display names, on a long bar and on a short one
   three_way_tie     three drivers level on the same count; the tie rule decides the order
-  shared_drive      two winners credited at one event (both step at the same frame)
+  shared_drive      two winners credited at one event (both step at the same frame); also a
+                    fictional starts.csv (IQ-05e) for the stats label: a driver who skips a
+                    race, one on 1 win from 1 start (100.0%), starts before the first win
   enter_leave       a driver enters and then leaves the visible top N (rows = 5)
   quiet_stretch     a long run of events with no visible change, then a change
   short_opening     fewer entrants than rows for the whole opening
@@ -24,8 +26,8 @@ import os
 HERE = os.path.dirname(os.path.abspath(__file__))
 
 
-def write(name, drivers, races, overrides, expect):
-    """drivers: [(id, name)]; races: [(date, gp, [winner ids])]"""
+def write(name, drivers, races, overrides, expect, starts=None):
+    """drivers: [(id, name)]; races: [(date, gp, [winner ids])]; starts: {race number: [ids]}"""
     d = os.path.join(HERE, name)
     os.makedirs(d, exist_ok=True)
     with open(os.path.join(d, "drivers.csv"), "w", newline="", encoding="utf-8") as f:
@@ -51,6 +53,16 @@ def write(name, drivers, races, overrides, expect):
         w = csv.writer(f, lineterminator="\n")
         w.writerow(["credit_index", "race_index", "driver_id", "career_wins_after"])
         w.writerows(crows)
+    if starts:
+        srows, n = [], {}
+        for i in range(1, len(races) + 1):
+            for sid in starts.get(i, []):
+                n[sid] = n.get(sid, 0) + 1
+                srows.append([len(srows) + 1, i, sid, n[sid]])
+        with open(os.path.join(d, "starts.csv"), "w", newline="", encoding="utf-8") as f:
+            w = csv.writer(f, lineterminator="\n")
+            w.writerow(["start_index", "race_index", "driver_id", "career_starts_after"])
+            w.writerows(srows)
     with open(os.path.join(d, "fixture.json"), "w", encoding="utf-8", newline="\n") as f:
         json.dump({"fictional": True, "overrides": overrides, "expect": expect}, f, indent=1, sort_keys=True)
         f.write("\n")
@@ -91,7 +103,8 @@ def main():
              ("2003-05-18", gp(4), ["SA"]), ("2003-06-01", gp(5), ["SC", "SA"])]
     write("shared_drive", drv, races, {"rows": 10},
           {"after_race": {"3": ["SB", "SC", "SA"], "4": ["SB", "SA", "SC"], "5": ["SA", "SB", "SC"]},
-           "same_frame_step": 3})
+           "same_frame_step": 3},
+          starts={1: ["SA", "SB", "SC"], 2: ["SA", "SB"], 3: ["SA", "SB"], 4: ["SA"], 5: ["SA", "SB", "SC"]})
 
     # 4. enter and leave the visible top N ------------------------------------------------------
     drv = [("E%d" % i, "Test Driver E%d" % i) for i in range(1, 9)]

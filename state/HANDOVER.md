@@ -1,25 +1,26 @@
-# HANDOVER — 28 Sep 2026 (session 7, Claude Code cloud session, environment "Race Through Time")
+# HANDOVER — 29 Sep 2026 (session 8, Claude Code cloud session, environment "Race Through Time")
 
-Previous handovers (session 2, Cowork: repo bootstrap, RTT-002 dataset, DATA_AUDIT; session 3: IQ-04; sessions 4–6: IQ-05 rounds 1–3) are in this file's git history. IQ-05 round 3 (pull request #5) was merged to main as `d772f45`.
+Previous handovers (session 2, Cowork: repo bootstrap, RTT-002 dataset, DATA_AUDIT; session 3: IQ-04; sessions 4–7: IQ-05 rounds 1–4) are in this file's git history. IQ-05 round 4 (pull request #6) was merged to main as `d00e5fb`.
 
-## Done: IQ-05 round 4 (branch `claude/charming-dirac-d7g4up`, pull request open, **not merged**)
-Prompt saved as `prompts/CODE_SESSION_IQ-05d.md`. Luke's feedback on round 3 = DEC-045 (owner); his follow-up on round 4 = DEC-051 (owner: round logo badge); Claude working choices DEC-046 to DEC-050 and DEC-052. `marketmarathon/bars` was not touched; nothing in `data/rtt-002/` was changed.
-- **Pilot**: `kits/rtt-002/config_pilot_2014_2021_top20.json`. FRAME_COUNT_ONLY **2,502 frames = 83.4 s** (unchanged from round 3). Full video unchanged at 16,062 frames and still passes every test.
-- **Logo (DEC-045 (1), DEC-051, DEC-052)**: square box **154 × 154 at x 1702, y 12** (bottom y 166; the leader's event label reaches up to y 175 beneath it) for Luke's logo as a round badge with RACE THROUGH TIME inside the globe (`local_assets/rtt_logo.png`, 885 × 885, transparent outside the circle). It replaces round 4's first 330 × 132 box for the wide banner logo.
-- **Event label (DEC-045 (2), DEC-047)**: "92 wins · Portuguese GP · 25 October 2020". To keep the longest label (the leader's "· Emilia Romagna GP · 1 November 2020") inside the 64 px margin, `barend` 1420 → 1265: bars **12% shorter**, leader's bar ends at 62% of the width (round 3: 70%). Furthest label edge x 1853 (limit 1856).
-- **Date line (DEC-045 (3), DEC-046)**: big season/Grand Prix/date block gone; one line "25 October 2020 · Portuguese GP" on the title's baseline at x 860, 34 px (6.9 pt on a phone), every frame, including the 49 of 160 races (31%) won by a driver off the board.
-- **Car photo (DEC-045 (4), DEC-048, DEC-050)**: box 600 × 163 at x 1256, y 787 (bottom edge y 950, above the 130 px controls strip), for `local_assets/rtt_car.png` (3435 × 936). Licence checked with one Commons API request (SHA-1, author, CC BY 4.0 match). Recorded in `reference/rights_ledger.md`; footer credit added; trademark note added under D-05. Axis grid lines now stop 12 px short of both boxes.
-- **Tests / phone**: `tests/player/RESULTS.md`; phone check PASS (thresholds unchanged). Placeholders have the real files' shapes, made at test time, never committed.
-- Nothing rendered to video, nothing uploaded or published; test frames and phone stills stayed in `tests/output/` (gitignored). The real logo and car files were not in this container, so they were not seen.
+## Done: IQ-05 round 5 (branch `claude/awesome-planck-etvdg7`, based on `origin/marketmarathon-patch-1`; pull request against main, **not merged**)
+Prompt saved as `prompts/CODE_SESSION_IQ-05e.md`. Luke's decisions = DEC-053 (owner) and DEC-057 (owner: approves merging once the checks pass; Claude does not merge); Claude working choices DEC-054 (bar length, on the session's instruction) to DEC-056. `marketmarathon/bars` was not touched; no existing file in `data/rtt-002/` was changed. Both source hashes verified before work (`wikipedia_starts_extract.psv` `b26c0ed4…`, `extract_starts.browser.js` `ac8edfdb…`).
+- **Contract first (DEC-036)**: starts and win rate added to "Display attributes" in `reference/metric_contract_RTT-002.md` (definition, source, half-up rounding), committed before the data build.
+- **Starts data**: `scripts/rtt002_starts.py` → new files `data/rtt-002/starts.csv` (14,480 rows), `career_starts.csv`, `STARTS_CHECKS.md`, `starts_checks.json`, `starts_manifest.json`, `STARTS_README.md`. 12/12 checks pass and reproduce the prototype exactly: round counts = `races.csv` in all 77 seasons (2026: 23 listed, 15 run); every one of 1,167 win credits has a start; career starts = "List of Formula One drivers" (rev. 1377016608) for 115 of 116. **Open: Rubens Barrichello 323 (season tables) vs 322 (List page)**, kept at 323; 94 candidate races listed, the 2002 Spanish GP ("Ret") the named example (D-08).
+- **Adapter** 1.0 → **1.1** (starts per race); `race_rtt002.json` SHA-256 `0fc72b84f41ad0b589a8094173d9aebc5ae1e1554c8241a70e31e4be3d5d1e52` (`kits/rtt-002/dataset_hashes.txt`).
+- **Pilot** (`config_pilot_2014_2021_top20.json`): stats label on every bar, "92 wins · 262 starts · 35.1%" (win count bold, rest caption grey, 29 px = 5.9 pt on a phone); event label off; winner glow, date line, logo and car boxes, footer unchanged. `barend` back to **1420** (round 3's bars, DEC-054): nothing needed shortening. FRAME_COUNT_ONLY **2,502 frames = 83.4 s** (unchanged). Full video unchanged: 16,062 frames, `config.json` draws as before.
+- **Tests / phone**: `tests/player/RESULTS.md` (new checks 26–28, new case `shared_drive_round5`); phone check PASS, thresholds unchanged. tesseract 5.3.4 was installed in this container for the OCR read-back.
+- Nothing rendered to video, nothing uploaded or published; test frames and phone stills stayed in `tests/output/` (git-ignored).
+- **Independent check 3 (race starts) is out with Luke**: prompt `prompts/RTT-002_independent_check3_starts.md` (sections J–N: starts at the freeze for all winners, first-win start numbers, entered-but-not-started races for eight drivers, and starts at four season ends), run by Luke in ChatGPT deep research; the answer stays private on his laptop and is hash-frozen in `state/` before any comparison, as for checks 1 and 2. **The Barrichello 323/322 disagreement (D-08) waits on it.**
 
 ## Not done / open
-- Pilot video not rendered (no ffmpeg here). Render where ffmpeg exists with the real `rtt_logo.png` and `rtt_car.png` in `local_assets/`; not uploaded without Luke's say.
-- Questions for Luke in the pull request: bars at 62% (below the blueprint's two-thirds) or an alternative; the 3 nationality disagreements (still open from round 3); the footer sits in the bottom strip YouTube's controls can cover; D-05 (now including the car's trademarks).
+- Pilot video not rendered (no ffmpeg here); render where ffmpeg and the real `local_assets/` files exist, not uploaded without Luke's say.
+- Waiting on Luke: check 3's answer (then freeze, compare, and settle D-08 Barrichello 323 vs 322). Questions for Luke: still open from earlier rounds: the 3 nationality disagreements, the footer in YouTube's controls strip, D-05 (incl. the car's trademarks).
 
 ## Next safe actions
-1. Luke reviews the round-4 pull request and answers its questions.
-2. Render the pilot for viewing once he agrees where (Cowork supplies logo and car files).
-3. IQ-06 live feasibility for RTT-001, 003–012 (not started). IQ-07 not started. New metric contracts follow DEC-036.
+1. Luke merges the round-5 pull request once its checks pass (DEC-057); he runs check 3 and returns the answer.
+2. Next session: hash-freeze the check-3 answer in `state/`, validate it, compare with `starts.csv` / `career_starts.csv` (new script, as `scripts/compare_rtt002_with_independent_check.py` did for the wins), list discrepancies for Luke.
+3. Render the pilot for viewing once he agrees where.
+4. IQ-06 live feasibility for RTT-001, 003–012 (not started). IQ-07 not started. New metric contracts follow DEC-036.
 
 ## Rules for the next session
-Read `state/STATE.json`, this file, `state/DECISIONS.md`, `reference/metric_contract_RTT-002.md` and `reference/rights_ledger.md`. Never edit C2-2 files or anything in `marketmarathon/bars` for RTT. Follow DEC-006: code, configs, data and written results only; logos, pictures, test frames, stills and renders stay out of the repo.
+Read `state/STATE.json`, this file, `state/DECISIONS.md`, `reference/metric_contract_RTT-002.md` and `reference/rights_ledger.md`. Never edit C2-2 files or anything in `marketmarathon/bars` for RTT. Follow DEC-006: code, configs, data and written results only; logos, pictures, test frames, stills and renders stay out of the repo. New data goes in new files; existing files in `data/rtt-002/` stay unchanged.

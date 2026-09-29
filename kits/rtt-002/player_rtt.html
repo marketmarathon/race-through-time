@@ -72,12 +72,20 @@
        - overlays: the axis grid lines stop short of every reserved overlay box (with the gap
          overlay_gap), so nothing at all is drawn inside a box except its picture. Grid segments are
          recorded in window.__GRID for the tests.
+     Changed in IQ-05 round 5 (DEC-053), switched by config, so config.json draws exactly as before:
+       - stats label: "stats_label" {enabled} puts wins, starts and win rate after EVERY bar on the
+         board: "91 wins · 306 starts · 29.7%" ("1 win", "1 start"). The win count ("91 wins", the
+         value label) is bold; "· 306 starts · 29.7%" follows in the caption grey. Starts come from
+         the race file (adapter 1.1, events[].starts); the rate is rtt_timeline.js rateText (one
+         decimal, rounded half up). All three numbers step only at a race, like the wins. It
+         replaces the event label (the player refuses the two together); the date line still names
+         every race. Recorded in window.__LABELS as kind "stats".
      Removed as unused: the Format C / C2-1 picture column and story cards, the prototype
      driver block that followed </html> in the C2-2 file.
 
      Test hook: every text label drawn in a frame is recorded in window.__LABELS
-     ({kind, id, text, x, y, w, size, alpha, tab, asc, desc}; tab = drawn on fixed-pitch digits,
-     asc/desc = the ink's height above and below the baseline), each bar's row position,
+     ({kind, id, text, x, y, w, size, alpha, tab, asc, desc, weight}; tab = drawn on fixed-pitch
+     digits, asc/desc = the ink's height above and below the baseline, weight = font weight), each bar's row position,
      opacity, highlight and drawn rectangle in window.__BARS, each flag drawn in window.__FLAGS
      ({id, code, x, y, w, h, alpha}), each axis grid segment in window.__GRID ({x, y, w, h}) and
      the target order in window.__RANK. Drawing does not
@@ -119,7 +127,7 @@ let RACE_SEC=0, RACE_FRAMES=0, INTRO_SEC=3.0;
 let NAME_PX=null, NAME_TRUNC=false;
 let SZ={axis:20, date:28, footer:17};
 let BOARD={bar_gap:22, name_frac:0.56, value_frac:0.54}, HL=null, WINLINE=null;
-let FLAGCOL=null, FLAGS=false, FLAGIMG={}, FLAGCODE={}, EVL=null, OVL=[], OVLGAP=0;
+let FLAGCOL=null, FLAGS=false, FLAGIMG={}, FLAGCODE={}, EVL=null, OVL=[], OVLGAP=0, STATS=false;
 const TOP=150, BOTTOM=1080-46;
 
 /* ---- the test hook: what text went on the frame ---- */
@@ -127,8 +135,9 @@ window.__LABELS=[]; window.__RANK=[]; window.__EVENT=null; window.__BARS=[]; win
 function note(kind,id,text,x,y,align,w,tab){
   const x0 = align==='right' ? x-w : align==='center' ? x-w/2 : x;
   const m=/(\d+)px/.exec(ctx.font), mt=ctx.measureText(text);
+  const wt=/(?:^|\s)(bold|\d{3})\s/.exec(ctx.font);                  // Chrome may say "bold" for 700
   window.__LABELS.push({kind,id,text,x:x0,y,w,size:m?+m[1]:null,alpha:ctx.globalAlpha,tab:!!tab,
-                        asc:mt.actualBoundingBoxAscent, desc:mt.actualBoundingBoxDescent});
+                        asc:mt.actualBoundingBoxAscent, desc:mt.actualBoundingBoxDescent, weight:wt?(wt[1]==='bold'?700:+wt[1]):400});
 }
 function text(kind,id,str,x,y,align){
   ctx.textAlign=align||'left'; ctx.fillText(str,x,y);
@@ -175,6 +184,10 @@ function setup(o){
   OVLGAP = CFG.overlay_gap!=null ? CFG.overlay_gap : 0;
   window.__imagesReady=Promise.all(loads).then(()=>Object.keys(FLAGIMG).length);
   EVL = CFG.event_label && CFG.event_label.enabled ? Object.assign({fade_sec:0.3}, CFG.event_label) : null;
+  /* IQ-05e stats label: needs starts in the race file; replaces the event label */
+  STATS = !!(CFG.stats_label && CFG.stats_label.enabled);
+  if(STATS && !TL.hasStarts) throw new Error('stats_label.enabled but the race file has no starts (rebuild it with scripts/rtt_adapter.py and data/rtt-002/starts.csv)');
+  if(STATS && EVL) throw new Error('stats_label replaces the event label; switch event_label off');
   /* colours: one per driver for the whole dataset (rtt_timeline.js assignColours, computed on
      the whole race file, not the window), so a passage and the full video agree. */
   ENT={}; const pal=CFG.palette;
@@ -202,6 +215,10 @@ function fmt(n){
   if(!Number.isInteger(n)) console.error('NON-INTEGER COUNT '+n);
   const v=Math.round(n);
   return v.toLocaleString('en-GB')+' '+(v===1 ? (CFG.unit_singular||CFG.unit) : CFG.unit);
+}
+/* IQ-05e: "· 306 starts · 29.7%" (the part after the bold win count) */
+function statsText(w,s){
+  return '· '+s.toLocaleString('en-GB')+' '+(s===1?'start':'starts')+' · '+RTT_TIMELINE.rateText(w,s)+'%';
 }
 /* The axis steps in whole units only: 1, 2, 5, 10, 20, 25, 50 ... never 0.5 or 2.5. */
 function niceStepInt(v){
@@ -248,12 +265,13 @@ function geom(){
 function nameSize(){
   if(NAME_PX!=null) return NAME_PX;
   const g=geom(), base=Math.round(g.NAMEF*NAMESCALE);
-  const seen={};
-  const take=s=>{ s.order.slice(0,NROWS+1).forEach(id=>{ seen[id]=Math.max(seen[id]||0,s.totals[id]); }); };
+  const seen={}, seenS={};
+  const take=s=>{ s.order.slice(0,NROWS+1).forEach(id=>{ seen[id]=Math.max(seen[id]||0,s.totals[id]);
+    if(STATS){ ctx.font='500 '+g.VALF+'px '+FONT; seenS[id]=Math.max(seenS[id]||0, g.VALF*0.35+tabWidth(statsText(s.totals[id],s.starts[id]),pitch())); } }); };
   take(TL.opening); TL.states.forEach(take);
   const ids=Object.keys(seen);
-  ctx.font='600 '+g.VALF+'px '+FONT; const p=pitch();
-  const valOf=id=>tabWidth(fmt(seen[id]),p);
+  ctx.font=(STATS?'700 ':'600 ')+g.VALF+'px '+FONT; const p=pitch();
+  const valOf=id=>tabWidth(fmt(seen[id]),p)+(seenS[id]||0);   // IQ-05e: plus the stats label
   const nx=g.x0+18, limit=1920-64;
   let f=base;
   for(;f>=20;f--){
@@ -382,7 +400,7 @@ function drawAt(t){
   /* (b) the count steps at the event; only the bar's length moves, over glide.bar_sec */
   const since = k>=0 ? fr-TL.startFrame[k] : 0;
   const g = k>=0 ? ease(since/Math.max(1,CFG.glide.bar_sec*FPS)) : 1;
-  const rows = cur.order.map(id=>({c:ENT[id], n:cur.totals[id], len:lerp(prev.totals[id]||0, cur.totals[id], g)}));
+  const rows = cur.order.map(id=>({c:ENT[id], n:cur.totals[id], s:cur.starts?cur.starts[id]:null, len:lerp(prev.totals[id]||0, cur.totals[id], g)}));
   const top = rows.slice(0,NROWS+3);
 
   ctx.fillStyle=T.ground; ctx.fillRect(0,0,1920,1080);
@@ -480,7 +498,7 @@ function drawAt(t){
     } else if(nx+ctx.measureText(nm).width+14<x0+w){ text('name',c.id,nm,nx,mid+nf*0.35,'left'); }
     else { ctx.fillStyle=T.ink; text('name',c.id,nm,x0+w+18,mid+nf*0.35,'left'); nameOut=ctx.measureText(nm).width+30; }
 
-    ctx.font='600 '+VALF+'px '+FONT;
+    ctx.font=(STATS?'700 ':'600 ')+VALF+'px '+FONT;          // IQ-05e: the win count in bold
     const txt=fmt(r.n), tw=tabWidth(txt,pitch());
     let after;                                   // where anything after the value may start
     if(!VALOUT && !nameOut && w>tw+40+ctx.measureText(nm).width+24){ ctx.fillStyle='#F4F6FA'; tabText(txt,x0+w-18,mid+VALF*0.35,'right','value',c.id); after=x0+w+18; }
@@ -492,6 +510,10 @@ function drawAt(t){
       tabText('· '+el.text,after,mid+VALF*0.35,'left','event',c.id);   // IQ-05d: the date's digits on fixed pitch too
       window.__LABELS[window.__LABELS.length-1].race_index=el.race_index;
       ctx.globalAlpha=a0;
+    }
+    if(STATS){                                   // IQ-05e: "· 306 starts · 29.7%" on every bar
+      ctx.fillStyle=T.cap||T.muted; ctx.font='500 '+VALF+'px '+FONT;
+      tabText(statsText(r.n,r.s),after,mid+VALF*0.35,'left','stats',c.id);
     }
     ctx.globalAlpha=1;
   });

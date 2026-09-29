@@ -1,30 +1,35 @@
-# Player test results (IQ-05 round 4)
+# Player test results (IQ-05 round 5)
 
 Written by `node tests/player/run_tests.js` (all cases). Frames are 1920x1080 (preview width), drawn headless in Playwright 1.56.1 Chromium, every race frame in order.
-OCR: tesseract 5.3.4 on every value label of the first frame of every race.
+OCR: tesseract 5.3.4 on every value label (and stats label, where on) of the first frame of every race.
 
-Overall: 14/14 PASS.
+Overall: 16/16 PASS.
 
-| Case | Result | Config | Rows | Races | Frames | Race length | Value labels checked | Winner lines checked | Highlight onsets (most in 1 s) | Numbers checked on fixed-pitch digits | Beats outside holds | Boundary frames | OCR read back (skipped: overlapping rows) | Board entries | Slowest entry (frames to clearly visible) | Colour-checked frames | Name size | Pacing (rank / visible / quiet) | Event labels checked (fading) | Event label: furthest right edge | Flags checked | Date lines checked (winner off the board) | Date line: closest item | Overlay boxes: closest item | Adapter output SHA-256 |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| enter_leave | PASS | `config.json` | 5 | 27 | 591 | 19.20 s | 2688 | off | off | 5535 | 0.40-0.70 s | 54 | 85/85 (40) | 9 | 5 | 591 | 33px | 13 / 5 / 9 | off | n/a | off | n/a | n/a | n/a | `bae1b8d036cb5835…` |
-| long_names | PASS | `config.json` | 10 | 15 | 369 | 11.80 s | 885 | off | off | 2577 | 0.40-0.70 s | 30 | 28/28 (0) | 4 | 0 | 369 | 32px | 4 / 6 / 5 | off | n/a | off | n/a | n/a | n/a | `d2321b472d872afa…` |
-| quiet_stretch | PASS | `config.json` | 10 | 57 | 918 | 30.10 s | 7935 | off | off | 12258 | 0.40-0.70 s | 114 | 525/525 (0) | 10 | 0 | 918 | 32px | 10 / 3 / 44 | off | n/a | off | n/a | n/a | n/a | `468a62380d522506…` |
-| shared_drive | PASS | `config.json` | 10 | 5 | 240 | 7.50 s | 567 | off | off | 1774 | 0.70-0.70 s | 10 | 6/6 (6) | 3 | 0 | 240 | 32px | 5 / 0 / 0 | off | n/a | off | n/a | n/a | n/a | `5487a302f046954d…` |
-| short_opening | PASS | `config.json` | 10 | 6 | 243 | 7.60 s | 531 | off | off | 1804 | 0.50-0.70 s | 12 | 12/12 (0) | 3 | 0 | 243 | 32px | 3 / 3 / 0 | off | n/a | off | n/a | n/a | n/a | `5220401ba091f4cd…` |
-| three_way_tie | PASS | `config.json` | 10 | 10 | 321 | 10.20 s | 987 | off | off | 2593 | 0.50-0.70 s | 20 | 14/14 (17) | 4 | 0 | 321 | 32px | 6 / 4 / 0 | off | n/a | off | n/a | n/a | n/a | `88a3fa4b571976ee…` |
-| shared_drive_winner_highlight | PASS | `config.json` | 10 | 5 | 240 | 7.50 s | 567 | 210 | 4 (2) | 1984 | 0.70-0.70 s | 10 | 6/6 (6) | 3 | 0 | 240 | 32px | 5 / 0 / 0 | off | n/a | off | n/a | n/a | n/a | `5487a302f046954d…` |
-| shared_drive_round4 | PASS | `config.json` | 20 | 5 | 240 | 7.50 s | 567 | off | 4 (2) | 1909 | 0.70-0.70 s | 10 | 6/6 (6) | 3 | 0 | 240 | 29px | 5 / 0 / 0 | 357 (18) | x 1637 | 357 | 210 (0) | 39 px | 16 px | `5487a302f046954d…` |
-| rtt002_1984_1989 | PASS | `config.json` | 10 | 96 | 1461 | 48.20 s | 14698 | off | off | 22309 | 0.40-0.70 s | 192 | 564/564 (392) | 4 | 5 | 1461 | 32px | 14 / 16 / 66 | off | n/a | off | n/a | n/a | n/a | `ab11668e8a123f84…` |
-| rtt002_2014_2021_A_top20 | PASS | `config_pilot_2014_2021_top20.json` | 20 | 160 | 2502 | 83.40 s | 50084 | off | 61 (3) | 64402 | 0.40-0.70 s | 320 | 1843/1843 (1355) | 2 | 1 | 2502 | 29px | 11 / 16 / 133 | 1854 (540) | x 1853 | 50084 | 2502 (588) | 39 px | 9 px | `ab11668e8a123f84…` |
-| rtt002_full_run | PASS | `config.json` | 10 | 1164 | 15747 | 524.40 s | 156008 | off | off | 239620 | 0.40-0.70 s | not saved | not run | 40 | 5 | 15747 | 32px | 136 / 140 / 888 | off | n/a | off | n/a | n/a | n/a | `ab11668e8a123f84…` |
+| Case | Result | Config | Rows | Races | Frames | Race length | Value labels checked | Winner lines checked | Highlight onsets (most in 1 s) | Numbers checked on fixed-pitch digits | Beats outside holds | Boundary frames | OCR read back (skipped: overlapping rows) | Board entries | Slowest entry (frames to clearly visible) | Colour-checked frames | Name size | Pacing (rank / visible / quiet) | Event labels checked (fading) | Event label: furthest right edge | Flags checked | Date lines checked (winner off the board) | Date line: closest item | Overlay boxes: closest item | Stats labels checked | Stats label: furthest right edge | Stats overlap: labels checked (row mid-overtake) | Stats label: closest item | Adapter output SHA-256 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| enter_leave | PASS | `config.json` | 5 | 27 | 591 | 19.20 s | 2688 | off | off | 5535 | 0.40-0.70 s | 54 | 85/85 (40) | 9 | 5 | 591 | 33px | 13 / 5 / 9 | off | n/a | off | n/a | n/a | n/a | off | n/a | n/a | n/a | `ea7d2b8cb412baba…` |
+| long_names | PASS | `config.json` | 10 | 15 | 369 | 11.80 s | 885 | off | off | 2577 | 0.40-0.70 s | 30 | 28/28 (0) | 4 | 0 | 369 | 32px | 4 / 6 / 5 | off | n/a | off | n/a | n/a | n/a | off | n/a | n/a | n/a | `af96bed9a709e154…` |
+| quiet_stretch | PASS | `config.json` | 10 | 57 | 918 | 30.10 s | 7935 | off | off | 12258 | 0.40-0.70 s | 114 | 525/525 (0) | 10 | 0 | 918 | 32px | 10 / 3 / 44 | off | n/a | off | n/a | n/a | n/a | off | n/a | n/a | n/a | `295097a2840bd36f…` |
+| shared_drive | PASS | `config.json` | 10 | 5 | 240 | 7.50 s | 567 | off | off | 1774 | 0.70-0.70 s | 10 | 6/6 (6) | 3 | 0 | 240 | 32px | 5 / 0 / 0 | off | n/a | off | n/a | n/a | n/a | off | n/a | n/a | n/a | `ff6f31866ff42ed1…` |
+| short_opening | PASS | `config.json` | 10 | 6 | 243 | 7.60 s | 531 | off | off | 1804 | 0.50-0.70 s | 12 | 12/12 (0) | 3 | 0 | 243 | 32px | 3 / 3 / 0 | off | n/a | off | n/a | n/a | n/a | off | n/a | n/a | n/a | `34b6817f696fdaf2…` |
+| three_way_tie | PASS | `config.json` | 10 | 10 | 321 | 10.20 s | 987 | off | off | 2593 | 0.50-0.70 s | 20 | 14/14 (17) | 4 | 0 | 321 | 32px | 6 / 4 / 0 | off | n/a | off | n/a | n/a | n/a | off | n/a | n/a | n/a | `af4adc580593b42e…` |
+| shared_drive_winner_highlight | PASS | `config.json` | 10 | 5 | 240 | 7.50 s | 567 | 210 | 4 (2) | 1984 | 0.70-0.70 s | 10 | 6/6 (6) | 3 | 0 | 240 | 32px | 5 / 0 / 0 | off | n/a | off | n/a | n/a | n/a | off | n/a | n/a | n/a | `ff6f31866ff42ed1…` |
+| shared_drive_round4 | PASS | `config.json` | 20 | 5 | 240 | 7.50 s | 567 | off | 4 (2) | 1909 | 0.70-0.70 s | 10 | 6/6 (6) | 3 | 0 | 240 | 29px | 5 / 0 / 0 | 357 (18) | x 1783 | 357 | 210 (0) | 39 px | 9 px | off | n/a | n/a | n/a | `ff6f31866ff42ed1…` |
+| shared_drive_round5 | PASS | `config.json` | 20 | 5 | 240 | 7.50 s | 567 | off | 4 (2) | 2101 | 0.70-0.70 s | 10 | 12/12 (12) | 3 | 0 | 240 | 29px | 5 / 0 / 0 | off | n/a | 357 | 210 (0) | 39 px | 12 px | 567 | x 1673 | 567 (175) | 9 px | `ff6f31866ff42ed1…` |
+| rtt002_1984_1989 | PASS | `config.json` | 10 | 96 | 1461 | 48.20 s | 14698 | off | off | 22309 | 0.40-0.70 s | 192 | 564/564 (392) | 4 | 5 | 1461 | 32px | 14 / 16 / 66 | off | n/a | off | n/a | n/a | n/a | off | n/a | n/a | n/a | `93a9d272a8b18bc4…` |
+| rtt002_2014_2021_A_top20 | PASS | `config_pilot_2014_2021_top20.json` | 20 | 160 | 2502 | 83.40 s | 50084 | off | 61 (3) | 112092 | 0.40-0.70 s | 320 | 3686/3686 (2710) | 2 | 1 | 2502 | 29px | 11 / 16 / 133 | off | n/a | 50084 | 2502 (588) | 39 px | 10 px | 50084 | x 1741 | 50082 (1486) | 7 px | `93a9d272a8b18bc4…` |
+| rtt002_full_run | PASS | `config.json` | 10 | 1164 | 15747 | 524.40 s | 156008 | off | off | 239620 | 0.40-0.70 s | not saved | not run | 40 | 5 | 15747 | 32px | 136 / 140 / 888 | off | n/a | off | n/a | n/a | n/a | off | n/a | n/a | n/a | `93a9d272a8b18bc4…` |
 
 Entry rule: a driver joining the visible board must be clearly visible (row opacity at least 0.8, name and value label drawn) within 8 frames of the first frame of that race, i.e. on frame +0 to +7. The column gives the slowest entry in the case (+N frames).
 Colour rule on frames: on every frame drawn, no two bars on screen (opacity above 0) share a colour or are closer than CIEDE2000 18, and every driver is drawn in the same colour in every RTT-002 case with the same board size.
 Winner highlight (where on): on the first frame of every race exactly the credited winners whose bars are on the board are lit, nothing else is ever lit, a highlight only rises from fully off on the first frame of a race that driver won (a repeat winner stays lit, so never flickers), at most 3 onsets in any second, and each fades out within highlight.sec.
+Round 5 (where on): stats label = on every frame every bar with a value label carries "· <S> start(s) · <R>%" right after it, S from starts.csv and R = wins / starts recomputed here (one decimal, rounded half up), the win count bold and the stats regular, numbers changing only on the first frame of a race, ending inside the 64 px right margin; it overlaps no bar, flag, name, value or stats label of a row that is not mid-overtake (within 0.85 row; counted in brackets) and no title, subtitle, axis number, footer or date line (row labels measured as drawn, inside the board clip at y 150-1034, as bars are); OCR also reads every stats label back at race boundaries.
 Round 4 (where on): date line = on every frame exactly one line "<D Month YYYY> · <GP>" for the race on screen, from races.csv, including races whose winner is off the board (frames of such races in brackets), overlapping nothing ("closest item" = the smallest gap on any frame to a bar, flag, name, value, event label, axis number, title, subtitle or footer); event labels now read "· <GP> · <D Month YYYY>" and must end inside the 64 px right margin (x 1856; "furthest right edge" = the largest on any frame); overlay boxes = also no axis grid line inside a box.
 Round 3 (where on): flags = every flag drawn equals the driver's flag_code in the nationality file and sits on its row; event labels = on every frame each winner on the board shows "· <GP>" from races.csv right after its value, and the only other event labels are the previous race's, fading; time block = on every frame no overlap with any bar, flag, name, value, event label, axis number, title or footer ("closest item" = the smallest gap on any frame); overlay boxes = nothing enters the reserved logo and car boxes on any frame, placeholders drawn inside them, and the boxes stay out of the bottom 130 px.
 Record holds (where on): the held races are exactly the BECOMES_JOINT / BECOMES_SOLE rows of data/rtt-002/record_progression.csv inside the window; on the last frame of each hold every row is within 0.1 row of its place; every other beat is within 0.8-1.4 x sec_per_event (to the nearest frame).
+
+**win_rate_rounding — PASS**
+- 125750 pairs (0 <= wins <= starts <= 500): player rateText = Python decimal ROUND_HALF_UP = test BigInt on every pair; examples 1/8 = 12.5%, 1/16 = 6.3%, 3/16 = 18.8%, 1/80 = 1.3%, 91/306 = 29.7%, 1/1 = 100.0%, 1/3 = 33.3%
 
 **record_moments_full_dataset — PASS**
 - 118 record events in record_progression.csv (12 BECOMES_SOLE, 12 BECOMES_JOINT, 94 EXTENDS_SOLE); the player's 118 match row for row
@@ -98,12 +103,17 @@ Record holds (where on): the held races are exactly the BECOMES_JOINT / BECOMES_
 
 **shared_drive_round4**
 - date line: 210 frames checked; 0 of 5 races (0%) were won by a driver not on the 20-row board after the race, and their 0 frames still name the race
-- furthest right edge of any event label: x 1636.7 (limit 1856), "· Test GP 4 · 18 May 2003 (SA, frame 104)"
+- furthest right edge of any event label: x 1782.9 (limit 1856), "· Test GP 4 · 18 May 2003 (SA, frame 104)"
+- shared drive at race 3: SA and SB both step on frame 72
+
+**shared_drive_round5**
+- date line: 210 frames checked; 0 of 5 races (0%) were won by a driver not on the 20-row board after the race, and their 0 frames still name the race
+- stats labels: 567 checked (three numbers each against starts.csv and win_credits.csv); furthest right edge x 1672.5 (limit 1856), "2 wins · 3 starts · 66.7% (SB, frame 72)"; overlap check on 567 labels, 175 of them with a row mid-overtake (those rows skipped), closest item 8.6 px
 - shared drive at race 3: SA and SB both step on frame 72
 
 **rtt002_2014_2021_A_top20**
 - date line: 2502 frames checked; 49 of 160 races (31%) were won by a driver not on the 20-row board after the race, and their 588 frames still name the race
-- furthest right edge of any event label: x 1852.8 (limit 1856), "· Emilia Romagna GP · 1 November 2020 (wp675561, frame 1892)"
+- stats labels: 50084 checked (three numbers each against starts.csv and win_credits.csv); furthest right edge x 1740.5 (limit 1856), "100 wins · 281 starts · 35.6% (wp675561, frame 2118)"; overlap check on 50082 labels, 1486 of them with a row mid-overtake (those rows skipped), closest item 7.0 px
 - 2020 Eifel Grand Prix (frame 1761): Lewis Hamilton 91 (P2), Michael Schumacher 91 (P1) — Hamilton equals Schumacher; Schumacher stays ahead on the tie rule (he reached 91 first)
 - 2020 Portuguese Grand Prix (frame 1821): Lewis Hamilton 92 (P1), Michael Schumacher 91 (P2) — Hamilton passes Schumacher
 - FRAME_COUNT_ONLY total 2502 frames = 83.4 s

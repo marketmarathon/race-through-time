@@ -5,17 +5,23 @@ Reads three CSVs in the RTT-002 layout (data/rtt-002/README.md):
   races.csv        race_index, season, round, race_date, grand_prix, winner_driver_ids
   win_credits.csv  credit_index, race_index, driver_id, career_wins_after
   drivers.csv      driver_id, display_name
+and, when present (IQ-05e, DEC-053), a fourth:
+  starts.csv       start_index, race_index, driver_id, career_starts_after
 Extra columns (provenance and so on) are ignored. Test fixtures under tests/fixtures/ use the
-same three files with only these columns.
+same files with only these columns.
 
 Writes one JSON file, schema "rtt-race/1":
   entrants  [{id, label}]                          in drivers.csv order (stable colours)
   events    [{race_index, season, round, date, grand_prix,
-              credits: [{id, total, credit_index}]}]   in race order
+              credits: [{id, total, credit_index}],
+              starts:  [{id, total}]}]            in race order; "starts" only with starts.csv
+                                                  (every driver who started that race, with the
+                                                  career starts the data gives after it)
 Every total is copied from win_credits.csv (career_wins_after) after checking it equals the
 running count of credits. Nothing is interpolated, smoothed or filled in: a race with no
 credit, a credit with no race, a driver with no display name, a non-integer or a count that
-does not add up stops the adapter with an error.
+does not add up stops the adapter with an error. With starts.csv the same holds for starts, and
+every credited winner must have a start at the race they won.
 
 Deterministic: sorted keys, fixed separators, no timestamps. The SHA-256 of the output is
 printed and, with --hash-file, written next to the input hashes.
@@ -33,7 +39,7 @@ import re
 import sys
 
 SCHEMA = "rtt-race/1"
-ADAPTER_VERSION = "rtt-adapter/1.0"
+ADAPTER_VERSION = "rtt-adapter/1.1"   # 1.1 (IQ-05e): optional starts.csv -> events[].starts
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
 
@@ -132,12 +138,50 @@ def build(in_dir):
         if sorted(got) != sorted(want):
             fail("race %d: credits %s do not match winner_driver_ids %s" % (ev["race_index"], got, want))
 
+    starts_path = os.path.join(in_dir, "starts.csv")
+    has_starts = os.path.isfile(starts_path)
+    if has_starts:
+        for ev in events:
+            ev["starts"] = []
+        srows = read_csv(starts_path, ["start_index", "race_index", "driver_id", "career_starts_after"])
+        sran, last_si, seen = {}, 0, set()
+        for srow in srows:
+            si = whole(srow["start_index"], "start_index")
+            if si != last_si + 1:
+                fail("start_index not consecutive from 1 at " + str(si))
+            last_si = si
+            ri = whole(srow["race_index"], "race_index")
+            did = srow["driver_id"].strip()
+            if ri not in by_race:
+                fail("start %d names race %d, which is not in races.csv" % (si, ri))
+            if did not in known:
+                fail("start %d names driver %s, who is not in drivers.csv" % (si, did))
+            if (ri, did) in seen:
+                fail("start %d: %s has two starts at race %d" % (si, did, ri))
+            seen.add((ri, did))
+            total = whole(srow["career_starts_after"], "career_starts_after")
+            sran[did] = sran.get(did, 0) + 1
+            if total != sran[did]:
+                fail("start %d: career_starts_after %d but %d starts counted for %s" % (si, total, sran[did], did))
+            by_race[ri]["starts"].append({"id": did, "total": total})
+        order = [s2["race_index"] for s2 in srows]
+        if [int(x) for x in order] != sorted(int(x) for x in order):
+            fail("starts.csv is not in race order")
+        for ev in events:
+            started = {x["id"] for x in ev["starts"]}
+            for c in ev["credits"]:
+                if c["id"] not in started:
+                    fail("race %d: winner %s has no start in starts.csv" % (ev["race_index"], c["id"]))
+
+    counts = {"events": len(events), "credits": last_ci, "entrants": len(entrants)}
+    if has_starts:
+        counts["starts"] = last_si
     return {
         "schema": SCHEMA,
         "adapter": ADAPTER_VERSION,
         "entrants": entrants,
         "events": events,
-        "counts": {"events": len(events), "credits": last_ci, "entrants": len(entrants)},
+        "counts": counts,
     }
 
 
@@ -157,8 +201,9 @@ def main():
     with open(a.out_json, "w", encoding="utf-8", newline="\n") as f:
         f.write(text)
     digest = sha256_file(a.out_json)
-    print("%s  %s  (%d events, %d credits, %d entrants)"
-          % (digest, a.out_json, out["counts"]["events"], out["counts"]["credits"], out["counts"]["entrants"]))
+    print("%s  %s  (%d events, %d credits, %d entrants%s)"
+          % (digest, a.out_json, out["counts"]["events"], out["counts"]["credits"], out["counts"]["entrants"],
+             ", %d starts" % out["counts"]["starts"] if "starts" in out["counts"] else ""))
 
     if a.hash_file:
         lines = ["# RTT player input - SHA-256 record (written by scripts/rtt_adapter.py; do not edit)",
@@ -166,8 +211,10 @@ def main():
                  "# schema: " + SCHEMA]
         if a.dataset_id:
             lines.append("# dataset_id: " + a.dataset_id)
-        for name in ("races.csv", "win_credits.csv", "drivers.csv"):
+        for name in ("races.csv", "win_credits.csv", "drivers.csv", "starts.csv"):
             p = os.path.join(a.in_dir, name)
+            if name == "starts.csv" and not os.path.isfile(p):
+                continue
             lines.append("%s  input  %s" % (sha256_file(p), os.path.relpath(p).replace(os.sep, "/")))
         lines.append("%s  output %s" % (digest, os.path.relpath(a.out_json).replace(os.sep, "/")))
         with open(a.hash_file, "w", encoding="utf-8", newline="\n") as f:

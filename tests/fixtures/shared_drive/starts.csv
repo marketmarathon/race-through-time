@@ -1,0 +1,12 @@
+start_index,race_index,driver_id,career_starts_after
+1,1,SA,1
+2,1,SB,1
+3,1,SC,1
+4,2,SA,2
+5,2,SB,2
+6,3,SA,3
+7,3,SB,3
+8,4,SA,4
+9,5,SA,5
+10,5,SB,4
+11,5,SC,2

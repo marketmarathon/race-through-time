@@ -1,0 +1,1193 @@
+{
+ "build": "rtt002-starts/1.0",
+ "checks": {
+  "career_starts_vs_list_of_f1_drivers_as_prototype": {
+   "detail": "115 of 116 agree with the List page (rev. 1377016608); disagreements (kept at the season-table value, listed for Luke, not resolved): Rubens Barrichello season tables 323, list 322",
+   "pass": true
+  },
+  "every_cell_classified": {
+   "detail": {
+    "(empty)": 15871,
+    "DNA": 17,
+    "DNP": 11,
+    "DNPQ": 338,
+    "DNQ": 1047,
+    "DNS": 364,
+    "DSQ": 155,
+    "EX": 25,
+    "NC": 192,
+    "Ret": 8971,
+    "WD": 37,
+    "number": 16479
+   },
+   "pass": true
+  },
+  "every_driver_has_starts": {
+   "detail": "116 of 116 drivers",
+   "pass": true
+  },
+  "every_row_resolves_to_a_page_id": {
+   "detail": "every driver row resolved through the T lines; 5 'Formula Two' separator rows skipped",
+   "pass": true
+  },
+  "every_win_credit_has_a_start": {
+   "detail": "1167 of 1167 win credits",
+   "pass": true
+  },
+  "indianapolis_500_1950_1960_counted": {
+   "detail": "11 Indianapolis 500 races, 72 starts by drivers of drivers.csv",
+   "pass": true
+  },
+  "list_page_wins_equal_career_totals": {
+   "detail": "116 of 116 drivers",
+   "pass": true
+  },
+  "luke_example_schumacher": {
+   "detail": "Michael Schumacher 91 wins · 306 starts · 29.7%",
+   "pass": true
+  },
+  "round_count_equals_races_csv": {
+   "detail": "every season after dropping empty-header columns (1967: 1 dropped, 1968: 1 dropped, 1969: 1 dropped, 1970: 1 dropped, 1972: 1 dropped, 1975: 1 dropped, 1976: 1 dropped, 1979: 1 dropped); 2026: 23 listed, 15 run",
+   "pass": true
+  },
+  "same_revisions_as_wins_data": {
+   "detail": "77 of 77 season pages at the revision races.csv records",
+   "pass": true
+  },
+  "starts_at_least_wins": {
+   "detail": "116 of 116 drivers",
+   "pass": true
+  },
+  "win_rate_rounding_half_up": {
+   "detail": "decimal ROUND_HALF_UP equals exact-fraction rounding on every wins <= starts <= 400; half-way cases 1/8 = 12.5, 1/16 = 6.25 -> 6.3, 3/16 = 18.75 -> 18.8, 1/80 = 1.25 -> 1.3",
+   "pass": true
+  }
+ },
+ "disagreement_evidence": {
+  "Rubens Barrichello": [
+   {
+    "cell": "Ret",
+    "date": "1993-03-14",
+    "race": "1993 South African Grand Prix",
+    "revision": "1375412761"
+   },
+   {
+    "cell": "Ret",
+    "date": "1993-03-28",
+    "race": "1993 Brazilian Grand Prix",
+    "revision": "1375412761"
+   },
+   {
+    "cell": "Ret",
+    "date": "1993-04-25",
+    "race": "1993 San Marino Grand Prix",
+    "revision": "1375412761"
+   },
+   {
+    "cell": "Ret",
+    "date": "1993-06-13",
+    "race": "1993 Canadian Grand Prix",
+    "revision": "1375412761"
+   },
+   {
+    "cell": "Ret",
+    "date": "1993-07-25",
+    "race": "1993 German Grand Prix",
+    "revision": "1375412761"
+   },
+   {
+    "cell": "Ret",
+    "date": "1993-08-15",
+    "race": "1993 Hungarian Grand Prix",
+    "revision": "1375412761"
+   },
+   {
+    "cell": "Ret",
+    "date": "1993-08-29",
+    "race": "1993 Belgian Grand Prix",
+    "revision": "1375412761"
+   },
+   {
+    "cell": "Ret",
+    "date": "1993-09-12",
+    "race": "1993 Italian Grand Prix",
+    "revision": "1375412761"
+   },
+   {
+    "cell": "Ret",
+    "date": "1994-05-15",
+    "race": "1994 Monaco Grand Prix",
+    "revision": "1373068999"
+   },
+   {
+    "cell": "Ret",
+    "date": "1994-05-29",
+    "race": "1994 Spanish Grand Prix",
+    "revision": "1373068999"
+   },
+   {
+    "cell": "Ret",
+    "date": "1994-07-03",
+    "race": "1994 French Grand Prix",
+    "revision": "1373068999"
+   },
+   {
+    "cell": "Ret",
+    "date": "1994-07-31",
+    "race": "1994 German Grand Prix",
+    "revision": "1373068999"
+   },
+   {
+    "cell": "Ret",
+    "date": "1994-08-14",
+    "race": "1994 Hungarian Grand Prix",
+    "revision": "1373068999"
+   },
+   {
+    "cell": "Ret",
+    "date": "1994-08-28",
+    "race": "1994 Belgian Grand Prix",
+    "revision": "1373068999"
+   },
+   {
+    "cell": "Ret",
+    "date": "1994-11-06",
+    "race": "1994 Japanese Grand Prix",
+    "revision": "1373068999"
+   },
+   {
+    "cell": "Ret",
+    "date": "1995-03-26",
+    "race": "1995 Brazilian Grand Prix",
+    "revision": "1375309886"
+   },
+   {
+    "cell": "Ret",
+    "date": "1995-04-09",
+    "race": "1995 Argentine Grand Prix",
+    "revision": "1375309886"
+   },
+   {
+    "cell": "Ret",
+    "date": "1995-04-30",
+    "race": "1995 San Marino Grand Prix",
+    "revision": "1375309886"
+   },
+   {
+    "cell": "Ret",
+    "date": "1995-05-28",
+    "race": "1995 Monaco Grand Prix",
+    "revision": "1375309886"
+   },
+   {
+    "cell": "Ret",
+    "date": "1995-07-30",
+    "race": "1995 German Grand Prix",
+    "revision": "1375309886"
+   },
+   {
+    "cell": "Ret",
+    "date": "1995-09-10",
+    "race": "1995 Italian Grand Prix",
+    "revision": "1375309886"
+   },
+   {
+    "cell": "Ret",
+    "date": "1995-10-22",
+    "race": "1995 Pacific Grand Prix",
+    "revision": "1375309886"
+   },
+   {
+    "cell": "Ret",
+    "date": "1995-10-29",
+    "race": "1995 Japanese Grand Prix",
+    "revision": "1375309886"
+   },
+   {
+    "cell": "Ret",
+    "date": "1995-11-12",
+    "race": "1995 Australian Grand Prix",
+    "revision": "1375309886"
+   },
+   {
+    "cell": "Ret",
+    "date": "1996-03-10",
+    "race": "1996 Australian Grand Prix",
+    "revision": "1376170380"
+   },
+   {
+    "cell": "Ret",
+    "date": "1996-03-31",
+    "race": "1996 Brazilian Grand Prix",
+    "revision": "1376170380"
+   },
+   {
+    "cell": "Ret",
+    "date": "1996-05-19",
+    "race": "1996 Monaco Grand Prix",
+    "revision": "1376170380"
+   },
+   {
+    "cell": "Ret",
+    "date": "1996-06-02",
+    "race": "1996 Spanish Grand Prix",
+    "revision": "1376170380"
+   },
+   {
+    "cell": "Ret",
+    "date": "1996-06-16",
+    "race": "1996 Canadian Grand Prix",
+    "revision": "1376170380"
+   },
+   {
+    "cell": "Ret",
+    "date": "1996-08-25",
+    "race": "1996 Belgian Grand Prix",
+    "revision": "1376170380"
+   },
+   {
+    "cell": "Ret",
+    "date": "1996-09-22",
+    "race": "1996 Portuguese Grand Prix",
+    "revision": "1376170380"
+   },
+   {
+    "cell": "Ret",
+    "date": "1997-03-09",
+    "race": "1997 Australian Grand Prix",
+    "revision": "1371597287"
+   },
+   {
+    "cell": "Ret",
+    "date": "1997-03-30",
+    "race": "1997 Brazilian Grand Prix",
+    "revision": "1371597287"
+   },
+   {
+    "cell": "Ret",
+    "date": "1997-04-13",
+    "race": "1997 Argentine Grand Prix",
+    "revision": "1371597287"
+   },
+   {
+    "cell": "Ret",
+    "date": "1997-04-27",
+    "race": "1997 San Marino Grand Prix",
+    "revision": "1371597287"
+   },
+   {
+    "cell": "Ret",
+    "date": "1997-05-25",
+    "race": "1997 Spanish Grand Prix",
+    "revision": "1371597287"
+   },
+   {
+    "cell": "Ret",
+    "date": "1997-06-15",
+    "race": "1997 Canadian Grand Prix",
+    "revision": "1371597287"
+   },
+   {
+    "cell": "Ret",
+    "date": "1997-06-29",
+    "race": "1997 French Grand Prix",
+    "revision": "1371597287"
+   },
+   {
+    "cell": "Ret",
+    "date": "1997-07-13",
+    "race": "1997 British Grand Prix",
+    "revision": "1371597287"
+   },
+   {
+    "cell": "Ret",
+    "date": "1997-07-27",
+    "race": "1997 German Grand Prix",
+    "revision": "1371597287"
+   },
+   {
+    "cell": "Ret",
+    "date": "1997-08-10",
+    "race": "1997 Hungarian Grand Prix",
+    "revision": "1371597287"
+   },
+   {
+    "cell": "Ret",
+    "date": "1997-08-24",
+    "race": "1997 Belgian Grand Prix",
+    "revision": "1371597287"
+   },
+   {
+    "cell": "Ret",
+    "date": "1997-09-28",
+    "race": "1997 Luxembourg Grand Prix",
+    "revision": "1371597287"
+   },
+   {
+    "cell": "Ret",
+    "date": "1997-10-12",
+    "race": "1997 Japanese Grand Prix",
+    "revision": "1371597287"
+   },
+   {
+    "cell": "Ret",
+    "date": "1997-10-26",
+    "race": "1997 European Grand Prix",
+    "revision": "1371597287"
+   },
+   {
+    "cell": "Ret",
+    "date": "1998-03-08",
+    "race": "1998 Australian Grand Prix",
+    "revision": "1372421349"
+   },
+   {
+    "cell": "Ret",
+    "date": "1998-03-29",
+    "race": "1998 Brazilian Grand Prix",
+    "revision": "1372421349"
+   },
+   {
+    "cell": "Ret",
+    "date": "1998-04-26",
+    "race": "1998 San Marino Grand Prix",
+    "revision": "1372421349"
+   },
+   {
+    "cell": "Ret",
+    "date": "1998-05-24",
+    "race": "1998 Monaco Grand Prix",
+    "revision": "1372421349"
+   },
+   {
+    "cell": "Ret",
+    "date": "1998-07-12",
+    "race": "1998 British Grand Prix",
+    "revision": "1372421349"
+   },
+   {
+    "cell": "Ret",
+    "date": "1998-07-26",
+    "race": "1998 Austrian Grand Prix",
+    "revision": "1372421349"
+   },
+   {
+    "cell": "Ret",
+    "date": "1998-08-02",
+    "race": "1998 German Grand Prix",
+    "revision": "1372421349"
+   },
+   {
+    "cell": "Ret",
+    "date": "1998-08-16",
+    "race": "1998 Hungarian Grand Prix",
+    "revision": "1372421349"
+   },
+   {
+    "cell": "Ret",
+    "date": "1998-11-01",
+    "race": "1998 Japanese Grand Prix",
+    "revision": "1372421349"
+   },
+   {
+    "cell": "Ret",
+    "date": "1999-04-11",
+    "race": "1999 Brazilian Grand Prix",
+    "revision": "1369387987"
+   },
+   {
+    "cell": "DSQ",
+    "date": "1999-05-30",
+    "race": "1999 Spanish Grand Prix",
+    "revision": "1369387987"
+   },
+   {
+    "cell": "Ret",
+    "date": "1999-06-13",
+    "race": "1999 Canadian Grand Prix",
+    "revision": "1369387987"
+   },
+   {
+    "cell": "Ret",
+    "date": "1999-07-25",
+    "race": "1999 Austrian Grand Prix",
+    "revision": "1369387987"
+   },
+   {
+    "cell": "Ret",
+    "date": "1999-08-01",
+    "race": "1999 German Grand Prix",
+    "revision": "1369387987"
+   },
+   {
+    "cell": "Ret",
+    "date": "2000-03-26",
+    "race": "2000 Brazilian Grand Prix",
+    "revision": "1371597275"
+   },
+   {
+    "cell": "Ret",
+    "date": "2000-04-23",
+    "race": "2000 British Grand Prix",
+    "revision": "1371597275"
+   },
+   {
+    "cell": "Ret",
+    "date": "2000-08-27",
+    "race": "2000 Belgian Grand Prix",
+    "revision": "1371597275"
+   },
+   {
+    "cell": "Ret",
+    "date": "2000-09-10",
+    "race": "2000 Italian Grand Prix",
+    "revision": "1371597275"
+   },
+   {
+    "cell": "Ret",
+    "date": "2001-04-01",
+    "race": "2001 Brazilian Grand Prix",
+    "revision": "1375812110"
+   },
+   {
+    "cell": "Ret",
+    "date": "2001-04-29",
+    "race": "2001 Spanish Grand Prix",
+    "revision": "1375812110"
+   },
+   {
+    "cell": "Ret",
+    "date": "2001-06-10",
+    "race": "2001 Canadian Grand Prix",
+    "revision": "1375812110"
+   },
+   {
+    "cell": "Ret",
+    "date": "2002-03-03",
+    "race": "2002 Australian Grand Prix",
+    "revision": "1371249242"
+   },
+   {
+    "cell": "Ret",
+    "date": "2002-03-17",
+    "race": "2002 Malaysian Grand Prix",
+    "revision": "1371249242"
+   },
+   {
+    "cell": "Ret",
+    "date": "2002-03-31",
+    "race": "2002 Brazilian Grand Prix",
+    "revision": "1371249242"
+   },
+   {
+    "cell": "Ret",
+    "date": "2002-04-28",
+    "race": "2002 Spanish Grand Prix",
+    "revision": "1371249242"
+   },
+   {
+    "cell": "Ret",
+    "date": "2003-03-09",
+    "race": "2003 Australian Grand Prix",
+    "revision": "1371597264"
+   },
+   {
+    "cell": "Ret",
+    "date": "2003-04-06",
+    "race": "2003 Brazilian Grand Prix",
+    "revision": "1371597264"
+   },
+   {
+    "cell": "Ret",
+    "date": "2003-08-03",
+    "race": "2003 German Grand Prix",
+    "revision": "1371597264"
+   },
+   {
+    "cell": "Ret",
+    "date": "2003-08-24",
+    "race": "2003 Hungarian Grand Prix",
+    "revision": "1371597264"
+   },
+   {
+    "cell": "Ret",
+    "date": "2003-09-28",
+    "race": "2003 United States Grand Prix",
+    "revision": "1371597264"
+   },
+   {
+    "cell": "Ret",
+    "date": "2004-10-10",
+    "race": "2004 Japanese Grand Prix",
+    "revision": "1371252745"
+   },
+   {
+    "cell": "Ret",
+    "date": "2005-03-20",
+    "race": "2005 Malaysian Grand Prix",
+    "revision": "1371249561"
+   },
+   {
+    "cell": "Ret",
+    "date": "2005-04-24",
+    "race": "2005 San Marino Grand Prix",
+    "revision": "1371249561"
+   },
+   {
+    "cell": "Ret",
+    "date": "2006-06-25",
+    "race": "2006 Canadian Grand Prix",
+    "revision": "1370957708"
+   },
+   {
+    "cell": "Ret",
+    "date": "2006-07-16",
+    "race": "2006 French Grand Prix",
+    "revision": "1370957708"
+   },
+   {
+    "cell": "Ret",
+    "date": "2006-07-30",
+    "race": "2006 German Grand Prix",
+    "revision": "1370957708"
+   },
+   {
+    "cell": "Ret",
+    "date": "2007-06-17",
+    "race": "2007 United States Grand Prix",
+    "revision": "1368924967"
+   },
+   {
+    "cell": "Ret",
+    "date": "2007-10-21",
+    "race": "2007 Brazilian Grand Prix",
+    "revision": "1368924967"
+   },
+   {
+    "cell": "DSQ",
+    "date": "2008-03-16",
+    "race": "2008 Australian Grand Prix",
+    "revision": "1373003249"
+   },
+   {
+    "cell": "Ret",
+    "date": "2008-04-27",
+    "race": "2008 Spanish Grand Prix",
+    "revision": "1373003249"
+   },
+   {
+    "cell": "Ret",
+    "date": "2008-07-20",
+    "race": "2008 German Grand Prix",
+    "revision": "1373003249"
+   },
+   {
+    "cell": "Ret",
+    "date": "2008-09-07",
+    "race": "2008 Belgian Grand Prix",
+    "revision": "1373003249"
+   },
+   {
+    "cell": "Ret",
+    "date": "2008-09-28",
+    "race": "2008 Singapore Grand Prix",
+    "revision": "1373003249"
+   },
+   {
+    "cell": "Ret",
+    "date": "2009-06-07",
+    "race": "2009 Turkish Grand Prix",
+    "revision": "1365999807"
+   },
+   {
+    "cell": "Ret",
+    "date": "2010-05-16",
+    "race": "2010 Monaco Grand Prix",
+    "revision": "1368835756"
+   },
+   {
+    "cell": "Ret",
+    "date": "2010-08-29",
+    "race": "2010 Belgian Grand Prix",
+    "revision": "1368835756"
+   },
+   {
+    "cell": "Ret",
+    "date": "2011-03-27",
+    "race": "2011 Australian Grand Prix",
+    "revision": "1376563046"
+   },
+   {
+    "cell": "Ret",
+    "date": "2011-04-10",
+    "race": "2011 Malaysian Grand Prix",
+    "revision": "1376563046"
+   },
+   {
+    "cell": "Ret",
+    "date": "2011-07-24",
+    "race": "2011 German Grand Prix",
+    "revision": "1376563046"
+   }
+  ]
+ },
+ "disagreements": [
+  {
+   "driver_id": "wp252989",
+   "driver_name": "Rubens Barrichello",
+   "list": "322",
+   "season_tables": 323
+  }
+ ],
+ "round_counts": [
+  {
+   "columns": 7,
+   "empty_header_dropped": 0,
+   "races_csv": 7,
+   "rounds_listed": 7,
+   "season": 1950
+  },
+  {
+   "columns": 8,
+   "empty_header_dropped": 0,
+   "races_csv": 8,
+   "rounds_listed": 8,
+   "season": 1951
+  },
+  {
+   "columns": 8,
+   "empty_header_dropped": 0,
+   "races_csv": 8,
+   "rounds_listed": 8,
+   "season": 1952
+  },
+  {
+   "columns": 9,
+   "empty_header_dropped": 0,
+   "races_csv": 9,
+   "rounds_listed": 9,
+   "season": 1953
+  },
+  {
+   "columns": 9,
+   "empty_header_dropped": 0,
+   "races_csv": 9,
+   "rounds_listed": 9,
+   "season": 1954
+  },
+  {
+   "columns": 7,
+   "empty_header_dropped": 0,
+   "races_csv": 7,
+   "rounds_listed": 7,
+   "season": 1955
+  },
+  {
+   "columns": 8,
+   "empty_header_dropped": 0,
+   "races_csv": 8,
+   "rounds_listed": 8,
+   "season": 1956
+  },
+  {
+   "columns": 8,
+   "empty_header_dropped": 0,
+   "races_csv": 8,
+   "rounds_listed": 8,
+   "season": 1957
+  },
+  {
+   "columns": 11,
+   "empty_header_dropped": 0,
+   "races_csv": 11,
+   "rounds_listed": 11,
+   "season": 1958
+  },
+  {
+   "columns": 9,
+   "empty_header_dropped": 0,
+   "races_csv": 9,
+   "rounds_listed": 9,
+   "season": 1959
+  },
+  {
+   "columns": 10,
+   "empty_header_dropped": 0,
+   "races_csv": 10,
+   "rounds_listed": 10,
+   "season": 1960
+  },
+  {
+   "columns": 8,
+   "empty_header_dropped": 0,
+   "races_csv": 8,
+   "rounds_listed": 8,
+   "season": 1961
+  },
+  {
+   "columns": 9,
+   "empty_header_dropped": 0,
+   "races_csv": 9,
+   "rounds_listed": 9,
+   "season": 1962
+  },
+  {
+   "columns": 10,
+   "empty_header_dropped": 0,
+   "races_csv": 10,
+   "rounds_listed": 10,
+   "season": 1963
+  },
+  {
+   "columns": 10,
+   "empty_header_dropped": 0,
+   "races_csv": 10,
+   "rounds_listed": 10,
+   "season": 1964
+  },
+  {
+   "columns": 10,
+   "empty_header_dropped": 0,
+   "races_csv": 10,
+   "rounds_listed": 10,
+   "season": 1965
+  },
+  {
+   "columns": 9,
+   "empty_header_dropped": 0,
+   "races_csv": 9,
+   "rounds_listed": 9,
+   "season": 1966
+  },
+  {
+   "columns": 12,
+   "empty_header_dropped": 1,
+   "races_csv": 11,
+   "rounds_listed": 11,
+   "season": 1967
+  },
+  {
+   "columns": 13,
+   "empty_header_dropped": 1,
+   "races_csv": 12,
+   "rounds_listed": 12,
+   "season": 1968
+  },
+  {
+   "columns": 12,
+   "empty_header_dropped": 1,
+   "races_csv": 11,
+   "rounds_listed": 11,
+   "season": 1969
+  },
+  {
+   "columns": 14,
+   "empty_header_dropped": 1,
+   "races_csv": 13,
+   "rounds_listed": 13,
+   "season": 1970
+  },
+  {
+   "columns": 11,
+   "empty_header_dropped": 0,
+   "races_csv": 11,
+   "rounds_listed": 11,
+   "season": 1971
+  },
+  {
+   "columns": 13,
+   "empty_header_dropped": 1,
+   "races_csv": 12,
+   "rounds_listed": 12,
+   "season": 1972
+  },
+  {
+   "columns": 15,
+   "empty_header_dropped": 0,
+   "races_csv": 15,
+   "rounds_listed": 15,
+   "season": 1973
+  },
+  {
+   "columns": 15,
+   "empty_header_dropped": 0,
+   "races_csv": 15,
+   "rounds_listed": 15,
+   "season": 1974
+  },
+  {
+   "columns": 15,
+   "empty_header_dropped": 1,
+   "races_csv": 14,
+   "rounds_listed": 14,
+   "season": 1975
+  },
+  {
+   "columns": 17,
+   "empty_header_dropped": 1,
+   "races_csv": 16,
+   "rounds_listed": 16,
+   "season": 1976
+  },
+  {
+   "columns": 17,
+   "empty_header_dropped": 0,
+   "races_csv": 17,
+   "rounds_listed": 17,
+   "season": 1977
+  },
+  {
+   "columns": 16,
+   "empty_header_dropped": 0,
+   "races_csv": 16,
+   "rounds_listed": 16,
+   "season": 1978
+  },
+  {
+   "columns": 16,
+   "empty_header_dropped": 1,
+   "races_csv": 15,
+   "rounds_listed": 15,
+   "season": 1979
+  },
+  {
+   "columns": 14,
+   "empty_header_dropped": 0,
+   "races_csv": 14,
+   "rounds_listed": 14,
+   "season": 1980
+  },
+  {
+   "columns": 15,
+   "empty_header_dropped": 0,
+   "races_csv": 15,
+   "rounds_listed": 15,
+   "season": 1981
+  },
+  {
+   "columns": 16,
+   "empty_header_dropped": 0,
+   "races_csv": 16,
+   "rounds_listed": 16,
+   "season": 1982
+  },
+  {
+   "columns": 15,
+   "empty_header_dropped": 0,
+   "races_csv": 15,
+   "rounds_listed": 15,
+   "season": 1983
+  },
+  {
+   "columns": 16,
+   "empty_header_dropped": 0,
+   "races_csv": 16,
+   "rounds_listed": 16,
+   "season": 1984
+  },
+  {
+   "columns": 16,
+   "empty_header_dropped": 0,
+   "races_csv": 16,
+   "rounds_listed": 16,
+   "season": 1985
+  },
+  {
+   "columns": 16,
+   "empty_header_dropped": 0,
+   "races_csv": 16,
+   "rounds_listed": 16,
+   "season": 1986
+  },
+  {
+   "columns": 16,
+   "empty_header_dropped": 0,
+   "races_csv": 16,
+   "rounds_listed": 16,
+   "season": 1987
+  },
+  {
+   "columns": 16,
+   "empty_header_dropped": 0,
+   "races_csv": 16,
+   "rounds_listed": 16,
+   "season": 1988
+  },
+  {
+   "columns": 16,
+   "empty_header_dropped": 0,
+   "races_csv": 16,
+   "rounds_listed": 16,
+   "season": 1989
+  },
+  {
+   "columns": 16,
+   "empty_header_dropped": 0,
+   "races_csv": 16,
+   "rounds_listed": 16,
+   "season": 1990
+  },
+  {
+   "columns": 16,
+   "empty_header_dropped": 0,
+   "races_csv": 16,
+   "rounds_listed": 16,
+   "season": 1991
+  },
+  {
+   "columns": 16,
+   "empty_header_dropped": 0,
+   "races_csv": 16,
+   "rounds_listed": 16,
+   "season": 1992
+  },
+  {
+   "columns": 16,
+   "empty_header_dropped": 0,
+   "races_csv": 16,
+   "rounds_listed": 16,
+   "season": 1993
+  },
+  {
+   "columns": 16,
+   "empty_header_dropped": 0,
+   "races_csv": 16,
+   "rounds_listed": 16,
+   "season": 1994
+  },
+  {
+   "columns": 17,
+   "empty_header_dropped": 0,
+   "races_csv": 17,
+   "rounds_listed": 17,
+   "season": 1995
+  },
+  {
+   "columns": 16,
+   "empty_header_dropped": 0,
+   "races_csv": 16,
+   "rounds_listed": 16,
+   "season": 1996
+  },
+  {
+   "columns": 17,
+   "empty_header_dropped": 0,
+   "races_csv": 17,
+   "rounds_listed": 17,
+   "season": 1997
+  },
+  {
+   "columns": 16,
+   "empty_header_dropped": 0,
+   "races_csv": 16,
+   "rounds_listed": 16,
+   "season": 1998
+  },
+  {
+   "columns": 16,
+   "empty_header_dropped": 0,
+   "races_csv": 16,
+   "rounds_listed": 16,
+   "season": 1999
+  },
+  {
+   "columns": 17,
+   "empty_header_dropped": 0,
+   "races_csv": 17,
+   "rounds_listed": 17,
+   "season": 2000
+  },
+  {
+   "columns": 17,
+   "empty_header_dropped": 0,
+   "races_csv": 17,
+   "rounds_listed": 17,
+   "season": 2001
+  },
+  {
+   "columns": 17,
+   "empty_header_dropped": 0,
+   "races_csv": 17,
+   "rounds_listed": 17,
+   "season": 2002
+  },
+  {
+   "columns": 16,
+   "empty_header_dropped": 0,
+   "races_csv": 16,
+   "rounds_listed": 16,
+   "season": 2003
+  },
+  {
+   "columns": 18,
+   "empty_header_dropped": 0,
+   "races_csv": 18,
+   "rounds_listed": 18,
+   "season": 2004
+  },
+  {
+   "columns": 19,
+   "empty_header_dropped": 0,
+   "races_csv": 19,
+   "rounds_listed": 19,
+   "season": 2005
+  },
+  {
+   "columns": 18,
+   "empty_header_dropped": 0,
+   "races_csv": 18,
+   "rounds_listed": 18,
+   "season": 2006
+  },
+  {
+   "columns": 17,
+   "empty_header_dropped": 0,
+   "races_csv": 17,
+   "rounds_listed": 17,
+   "season": 2007
+  },
+  {
+   "columns": 18,
+   "empty_header_dropped": 0,
+   "races_csv": 18,
+   "rounds_listed": 18,
+   "season": 2008
+  },
+  {
+   "columns": 17,
+   "empty_header_dropped": 0,
+   "races_csv": 17,
+   "rounds_listed": 17,
+   "season": 2009
+  },
+  {
+   "columns": 19,
+   "empty_header_dropped": 0,
+   "races_csv": 19,
+   "rounds_listed": 19,
+   "season": 2010
+  },
+  {
+   "columns": 19,
+   "empty_header_dropped": 0,
+   "races_csv": 19,
+   "rounds_listed": 19,
+   "season": 2011
+  },
+  {
+   "columns": 20,
+   "empty_header_dropped": 0,
+   "races_csv": 20,
+   "rounds_listed": 20,
+   "season": 2012
+  },
+  {
+   "columns": 19,
+   "empty_header_dropped": 0,
+   "races_csv": 19,
+   "rounds_listed": 19,
+   "season": 2013
+  },
+  {
+   "columns": 19,
+   "empty_header_dropped": 0,
+   "races_csv": 19,
+   "rounds_listed": 19,
+   "season": 2014
+  },
+  {
+   "columns": 19,
+   "empty_header_dropped": 0,
+   "races_csv": 19,
+   "rounds_listed": 19,
+   "season": 2015
+  },
+  {
+   "columns": 21,
+   "empty_header_dropped": 0,
+   "races_csv": 21,
+   "rounds_listed": 21,
+   "season": 2016
+  },
+  {
+   "columns": 20,
+   "empty_header_dropped": 0,
+   "races_csv": 20,
+   "rounds_listed": 20,
+   "season": 2017
+  },
+  {
+   "columns": 21,
+   "empty_header_dropped": 0,
+   "races_csv": 21,
+   "rounds_listed": 21,
+   "season": 2018
+  },
+  {
+   "columns": 21,
+   "empty_header_dropped": 0,
+   "races_csv": 21,
+   "rounds_listed": 21,
+   "season": 2019
+  },
+  {
+   "columns": 17,
+   "empty_header_dropped": 0,
+   "races_csv": 17,
+   "rounds_listed": 17,
+   "season": 2020
+  },
+  {
+   "columns": 22,
+   "empty_header_dropped": 0,
+   "races_csv": 22,
+   "rounds_listed": 22,
+   "season": 2021
+  },
+  {
+   "columns": 22,
+   "empty_header_dropped": 0,
+   "races_csv": 22,
+   "rounds_listed": 22,
+   "season": 2022
+  },
+  {
+   "columns": 22,
+   "empty_header_dropped": 0,
+   "races_csv": 22,
+   "rounds_listed": 22,
+   "season": 2023
+  },
+  {
+   "columns": 24,
+   "empty_header_dropped": 0,
+   "races_csv": 24,
+   "rounds_listed": 24,
+   "season": 2024
+  },
+  {
+   "columns": 24,
+   "empty_header_dropped": 0,
+   "races_csv": 24,
+   "rounds_listed": 24,
+   "season": 2025
+  },
+  {
+   "columns": 23,
+   "empty_header_dropped": 0,
+   "races_csv": 15,
+   "rounds_listed": 23,
+   "season": 2026
+  }
+ ],
+ "summary": {
+  "drivers": 116,
+  "drivers_with_several_rows_in_one_season": [],
+  "list_agree": 115,
+  "list_disagree": 1,
+  "list_page": "List of Formula One drivers rev. 1377016608 (retrieved 2026-09-29T04:51:53Z)",
+  "races": 1164,
+  "races_where_one_driver_has_several_starting_cells_counted_once": [],
+  "starts_rows": 14480
+ }
+}
