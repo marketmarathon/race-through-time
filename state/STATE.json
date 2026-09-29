@@ -1,8 +1,8 @@
 {
   "schema": "rtt-state/0.1",
   "updated": "2026-09-28",
-  "updated_by": "Claude (Claude Code cloud session, environment \"Race Through Time\"), IQ-05 round 3",
-  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); IQ-04 MERGED (PR #2); IQ-05 rounds 1 and 2 MERGED (PR #3, #4); IQ-05 round 3 (top-20 pilot with flags, event label, time block, overlays) IN PULL REQUEST (branch claude/wizardly-darwin-iv7sgt), awaiting Luke",
+  "updated_by": "Claude (Claude Code cloud session, environment \"Race Through Time\"), IQ-05 round 4",
+  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); IQ-04 MERGED (PR #2); IQ-05 rounds 1-3 MERGED (PR #3, #4, #5); IQ-05 round 4 (full logo, dated event label, date line, real car photo) IN PULL REQUEST (branch claude/charming-dirac-d7g4up), awaiting Luke",
   "canonical_queue": "state/ folder on main in marketmarathon/race-through-time (this file)",
   "repo_baseline": {
     "repo": "marketmarathon/bars",
@@ -23,7 +23,7 @@
     "schedules": [],
     "recurring_reports": [],
     "public_publishes": [],
-    "note": "nothing activated; nothing uploaded or published. IQ-04 and IQ-05 (rounds 1-3) test frames and phone stills rendered locally in the Claude Code container only (not committed, not uploaded)"
+    "note": "nothing activated; nothing uploaded or published. IQ-04 and IQ-05 (rounds 1-4) test frames and phone stills rendered locally in the Claude Code container only (not committed, not uploaded)"
   },
   "episodes": [
     {
@@ -40,7 +40,7 @@
       "state": "DATA_AUDIT_PASSED",
       "check_level": "LIVE",
       "verdict": "FEASIBLE_VIA_OPEN_LICENCE_ROUTE",
-      "blocker": "D-05 before release only; pilot (IQ-05) needs IQ-04",
+      "blocker": "D-05 before release only (results-data rights; car photo trademarks added 28 Sep 2026)",
       "dataset": {
         "branch": "main (merged from rtt-002-data via PR #1)",
         "commit": "7cde5df",
@@ -201,7 +201,7 @@
         "IQ-03",
         "IQ-04"
       ],
-      "status": "ROUNDS 1 AND 2 MERGED (pull requests #3, #4); ROUND 3 IN PULL REQUEST - branch claude/wizardly-darwin-iv7sgt; not merged; waiting for Luke",
+      "status": "ROUNDS 1-3 MERGED (pull requests #3, #4, #5); ROUND 4 IN PULL REQUEST - branch claude/charming-dirac-d7g4up; not merged; waiting for Luke",
       "result": {
         "decisions": "DEC-022 (owner) implemented; Claude working choices DEC-023..DEC-026",
         "colours": "one colour per driver for the whole video, assigned over all 1,164 races (rtt_timeline.js assignColours); 40 drivers reach the top ten, at most 12 on screen together (incl. rows fading out); 12 colours needed and used; palette replaced (IQ-04's closest pair CIEDE2000 9.6, new 18.5; white-name contrast >= 3.2)",
@@ -243,6 +243,17 @@
         "rights": "reference/rights_ledger.md (new): Archivo OFL-1.1, flag-icons MIT; car picture licence NOT FOUND until supplied",
         "tests": "tests/player/RESULTS.md; phone check PASS (thresholds unchanged)",
         "renders": "none committed or uploaded; pilot not rendered to video (no ffmpeg in the container)"
+      },
+      "round_4": {
+        "prompt": "prompts/CODE_SESSION_IQ-05d.md",
+        "decisions": "DEC-045 (Luke's feedback on round 3, owner) and DEC-051 (Luke's follow-up: round logo badge, owner); Claude working choices DEC-046..DEC-050, DEC-052",
+        "pilot": "config_pilot_2014_2021_top20.json; FRAME_COUNT_ONLY 2502 frames = 83.4 s (unchanged from round 3); full video 16062 frames (unchanged)",
+        "features": "logo box 154 x 154 (1:1, round badge 885 x 885 with RACE THROUGH TIME inside the globe, DEC-051/052) at x 1702, y 12 (round-4 first version: 330 x 132 banner logo, replaced); event label with date \"92 wins · Portuguese GP · 25 October 2020\"; big season/GP/date block replaced by one date line \"25 October 2020 · Portuguese GP\" on the title baseline at x 860, 34 px; car photo box 600 x 163 (3.67:1) at x 1256, y 787 (bottom y 950); car credit in the footer; axis grid lines kept 12 px clear of both boxes",
+        "bars": "barend 1420 -> 1265 so the longest dated label fits inside the 64 px margin (furthest edge x 1853, limit 1856): bar area 12% shorter (1136 vs 1291 px), leader bar end 62% of the width (round 3: 70%) - question for Luke",
+        "date_line": "every frame checked against races.csv; 49 of 160 races (31%) in 2014-2021 won by a driver off the 20-row board, their 588 frames still name the race; phone size 34 px = 6.9 pt",
+        "car_photo": "Lewis Hamilton Ferrari SF-26 #44, 2026 Chinese GP qualifying, by Liauzh, CC BY 4.0, Wikimedia Commons, original SHA-1 cc6c19a2ba42a45c774b44c70c84beb86eb57721 (verified via Commons API 28 Sep 2026); background removed and cropped by Claude in Cowork; reference/rights_ledger.md; trademarks (Ferrari, HP, Shell and others) added to the D-05 pre-release check",
+        "tests": "tests/player/RESULTS.md; phone check PASS (thresholds unchanged)",
+        "renders": "none committed or uploaded; pilot not rendered to video (no ffmpeg in the container); real logo and car files not supplied to this container"
       }
     },
     {
@@ -272,7 +283,7 @@
     "visibility": "public",
     "created": "2026-09-27",
     "created_by": "Claude via Luke's Chrome, on Luke's instruction",
-    "contents": "main @ 1cba884 (IQ-05 round 2 merged via pull request #4); branch rtt-002-data kept; branch claude/wizardly-darwin-iv7sgt = IQ-05 round 3 (pull request, not merged)",
+    "contents": "main @ d772f45 (IQ-05 round 3 merged via pull request #5); branch rtt-002-data kept; branch claude/charming-dirac-d7g4up = IQ-05 round 4 (pull request, not merged)",
     "push_routes": {
       "cowork_cloud": "NOT AVAILABLE - GitHub proxy refuses: repo not in the session's authorised set; no way to attach it from Cowork found",
       "github_web_upload_via_chrome": "WORKS - used 28 Sep; one commit per folder; each commit read back byte-for-byte",

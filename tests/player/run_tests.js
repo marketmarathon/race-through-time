@@ -73,6 +73,17 @@
  *      bright colours (CIELAB L* and C* both at least 50 as drawn); the tiers of all drivers who
  *      ever reach the top ten are reported
  *
+ * Changed in IQ-05 round 4 (DEC-045 to DEC-050; the round-3 fixture case now runs the round-4
+ * features and is renamed shared_drive_round4):
+ *  23. date line (time_label.mode "line"): on every frame exactly one line, reading
+ *      "<D Month YYYY> · <Grand Prix, 'GP'>" for the race on screen from races.csv, including
+ *      races whose winner is not on the board (counted and reported); it overlaps nothing (as 20)
+ *  24. event label with date (event_label.date): the label reads "· <GP> · <D Month YYYY>" from
+ *      races.csv, and every event label ends inside the 64 px right margin (x <= 1856); the
+ *      furthest right edge on any frame is reported
+ *  25. overlays: the axis grid lines are checked too, so nothing at all but the picture is drawn
+ *      inside a reserved box
+ *
  * Usage: node tests/player/run_tests.js [case ...]     (needs `npm ci` in kits/rtt-002)
  * Output: tests/output/ (PNGs, gitignored) and tests/player/RESULTS.md
  */
@@ -92,7 +103,8 @@ const CLEAR_ALPHA = 0.8;             // "clearly visible": row opacity at least 
 const COLOUR_OF = {};                // rows -> driver -> drawn colour, across every RTT-002 case with that board
 const HOLD_SETTLE_ROWS = 0.1;        // "settled": every row within this many rows of its place
 const MAX_ONSETS_PER_SEC = 3;        // blueprint section 10: no strobing
-const TAB_KINDS = ['value', 'axis', 'time_season', 'time_date', 'winner'];
+const TAB_KINDS = ['value', 'axis', 'time_season', 'time_date', 'time_line', 'winner', 'event'];
+const RIGHT_MARGIN = 1920 - 64;      // IQ-05d: every event label must end inside the 64 px right margin
 const BRIGHT = 50;
 const YT_CONTROLS_PX = 130;          // DEC-042: bottom strip YouTube's player controls may cover (estimate, 12% of 1080)                   // "bright" colour: CIELAB L* and C* both at least this, as drawn
 const STARS = ['Lewis Hamilton', 'Michael Schumacher', 'Max Verstappen', 'Ayrton Senna', 'Alain Prost'];
@@ -243,7 +255,8 @@ async function runCase(c) {
                 boundary_frames: 0, labels_checked: 0, ocr_checked: 0, ocr_skipped_overlap: 0, ocr_mismatch: [], failures: [], notes: [],
                 config: c.config || 'config.json', entries: 0, entry_frames_max: 0, colour_frames: 0,
                 rows: cfg.rows, winner_lines: 0, onsets: 0, onsets_max_per_sec: 0, tab_labels: 0, holds: [],
-                event_labels: 0, event_fading: 0, flags_checked: 0, block_clear: null, overlay_clear: null, overlays_drawn: {} };
+                event_labels: 0, event_fading: 0, flags_checked: 0, block_clear: null, overlay_clear: null, overlays_drawn: {},
+                date_lines: 0, date_lines_offboard: 0, offboard_races: 0, event_right: null, event_right_text: null };
   const fail = m => { if (res.failures.length < 40) res.failures.push(m); };
 
   if (cfg.overlays) process.env.RTT_LOCAL_ASSETS = placeholders(cfg);
@@ -279,9 +292,12 @@ async function runCase(c) {
     const entering = {};             // driver -> {k, start frame} while waiting to be clearly visible
     const minDE = (cfg.colour_rule && cfg.colour_rule.min_delta_e) || 0;
     const fadeFrames = EVON ? Math.max(1, (cfg.event_label.fade_sec || 0.3) * cfg.fps) : 0;
+    /* (24) the event label's text straight from races.csv: "<GP>" or, with event_label.date, "<GP> · <D Month YYYY>" */
+    const evText = r => gpShort(r.grand_prix) + (EVON && cfg.event_label.date ? ' · ' + dateText(r.race_date, cfg.time_label.months) : '');
+    res.offboard_races = inWindow.filter(r => { const e = E.after[r.race_index]; return !e.credits.some(x => e.order.slice(0, cfg.rows).includes(x.id)); }).length;
     let prevEv = {};
     for (let f = 0; f < info.raceFrames + outroFrames; f++) {
-      const L = await pg.evaluate(t => { drawAt(t); return { labels: window.__LABELS, rank: window.__RANK, ev: window.__EVENT, bars: window.__BARS, flags: window.__FLAGS, overlays: window.__OVERLAYS || [] }; }, f / cfg.fps);
+      const L = await pg.evaluate(t => { drawAt(t); return { labels: window.__LABELS, rank: window.__RANK, ev: window.__EVENT, bars: window.__BARS, flags: window.__FLAGS, overlays: window.__OVERLAYS || [], grid: window.__GRID || [] }; }, f / cfg.fps);
       res.frames++;
       const ri = L.ev.race_index == null ? null : String(L.ev.race_index);
       /* which race is showing, and does the time label say so */
@@ -298,10 +314,21 @@ async function runCase(c) {
         for (const id of exp.order.slice(0, cfg.rows)) if (!prevTop(k).includes(id)) { entering[id] = { k, s: f, race: ri }; res.entries++; }
       if (ri != null) {
         const r = exp.race;
-        const tl = Object.fromEntries(L.labels.filter(x => x.kind.startsWith('time_')).map(x => [x.kind, x.text]));
-        if (tl.time_season !== r.season) fail(`frame ${f}: season label "${tl.time_season}" != ${r.season}`);
-        if (tl.time_gp !== r.grand_prix) fail(`frame ${f}: Grand Prix label "${tl.time_gp}" != "${r.grand_prix}"`);
-        if (tl.time_date !== dateText(r.race_date, cfg.time_label.months)) fail(`frame ${f}: date label "${tl.time_date}" != ${r.race_date}`);
+        const tlL = L.labels.filter(x => x.kind.startsWith('time_'));
+        const tl = Object.fromEntries(tlL.map(x => [x.kind, x.text]));
+        if (cfg.time_label.mode === 'line') {
+          /* (23) the date line: one line, the race on screen, whoever won it */
+          const want = dateText(r.race_date, cfg.time_label.months) + ' · ' + gpShort(r.grand_prix);
+          if (tlL.length !== 1 || tl.time_line !== want || !(tlL[0].alpha > 0.99)) fail(`frame ${f} (race ${ri}): date line "${tlL.map(x => x.text).join(' | ')}" != "${want}"`);
+          else {
+            res.date_lines++;
+            if (!exp.credits.some(x => exp.order.slice(0, cfg.rows).includes(x.id))) res.date_lines_offboard++;
+          }
+        } else {
+          if (tl.time_season !== r.season) fail(`frame ${f}: season label "${tl.time_season}" != ${r.season}`);
+          if (tl.time_gp !== r.grand_prix) fail(`frame ${f}: Grand Prix label "${tl.time_gp}" != "${r.grand_prix}"`);
+          if (tl.time_date !== dateText(r.race_date, cfg.time_label.months)) fail(`frame ${f}: date label "${tl.time_date}" != ${r.race_date}`);
+        }
       }
       /* the visible order */
       const wantRank = exp.order.slice(0, cfg.rows);
@@ -396,13 +423,15 @@ async function runCase(c) {
         for (const x of evl) {
           const vl = L.labels.find(v => v.kind === 'value' && v.id === x.id);
           if (!vl || x.x < vl.x + vl.w || Math.abs(x.y - vl.y) > 0.5) fail(`frame ${f}: event label of ${x.id} is not right after its value`);
+          if (x.x + x.w > RIGHT_MARGIN + 0.01) fail(`frame ${f}: event label of ${x.id} "${x.text}" ends at x ${(x.x + x.w).toFixed(1)}, past the 64 px right margin`);
+          if (res.event_right == null || x.x + x.w > res.event_right) { res.event_right = x.x + x.w; res.event_right_text = `${x.text} (${x.id}, frame ${f})`; }
           if (cur.includes(x.id)) {
-            const want = '· ' + gpShort(inWindow[k].grand_prix);
+            const want = '· ' + evText(inWindow[k]);
             if (x.text !== want) fail(`frame ${f} (race ${ri}): ${x.id} event label "${x.text}" != "${want}"`);
             if (Math.abs(x.alpha - bar[x.id].alpha) > 1e-6) fail(`frame ${f}: ${x.id} event label not at full strength`);
             res.event_labels++;
           } else if (k > 0 && litOn(k - 1).includes(x.id) && since < fadeFrames) {
-            const want = '· ' + gpShort(inWindow[k - 1].grand_prix);
+            const want = '· ' + evText(inWindow[k - 1]);
             if (x.text !== want) fail(`frame ${f}: fading label of ${x.id} "${x.text}" != "${want}"`);
             if (prevEv[x.id] != null && x.alpha > prevEv[x.id] + 1e-6) fail(`frame ${f}: fading label of ${x.id} brightened`);
             res.event_fading++;
@@ -418,13 +447,14 @@ async function runCase(c) {
                       ...L.flags.filter(x => x.alpha > 0).map(x => ({ l: x.x, r: x.x + x.w, t: x.y, b: x.y + x.h })),
                       ...L.labels.filter(x => x.alpha > 0 && ['name', 'value', 'event', 'axis', 'title', 'subtitle', 'footer'].includes(x.kind)).map(rectOf)];
       const blockR = L.labels.filter(x => x.alpha > 0 && (x.kind.startsWith('time_') || x.kind === 'winner')).map(rectOf);
-      if (cfg.time_label.mode === 'block') for (const a of blockR) for (const o of others) {
+      if (['block', 'line'].includes(cfg.time_label.mode)) for (const a of blockR) for (const o of others) {
         if (overlap(a, o)) fail(`frame ${f} (race ${ri}): the time block overlaps something at x ${o.l.toFixed(0)}-${o.r.toFixed(0)}, y ${o.t.toFixed(0)}-${o.b.toFixed(0)}`);
         const g = gap(a, o); if (res.block_clear == null || g < res.block_clear) res.block_clear = g;
       }
       for (const ov of L.overlays) {
         const B = { l: ov.box.x, r: ov.box.x + ov.box.w, t: ov.box.y, b: ov.box.y + ov.box.h };
-        for (const o of others.concat(blockR)) {
+        const grid = L.grid.map(x => ({ l: x.x, r: x.x + x.w, t: x.y, b: x.y + x.h }));
+        for (const o of others.concat(blockR, grid)) {
           if (overlap(B, o)) fail(`frame ${f}: something enters the ${ov.name} box at x ${o.l.toFixed(0)}-${o.r.toFixed(0)}, y ${o.t.toFixed(0)}-${o.b.toFixed(0)}`);
           const g = gap(B, o); if (res.overlay_clear == null || g < res.overlay_clear) res.overlay_clear = g;
         }
@@ -478,6 +508,8 @@ async function runCase(c) {
       }
     }
     for (const [id, e] of Object.entries(entering)) fail(`race ${e.race}: ${id} entered but was never clearly visible`);
+    if (cfg.time_label.mode === 'line') res.notes.push(`date line: ${res.date_lines} frames checked; ${res.offboard_races} of ${inWindow.length} races (${(100 * res.offboard_races / inWindow.length).toFixed(0)}%) were won by a driver not on the ${cfg.rows}-row board after the race, and their ${res.date_lines_offboard} frames still name the race`);
+    if (res.event_right != null) res.notes.push(`furthest right edge of any event label: x ${res.event_right.toFixed(1)} (limit ${RIGHT_MARGIN}), "${res.event_right_text}"`);
     const wantRaces = inWindow.map(r => r.race_index);
     if (JSON.stringify(seenRaces) !== JSON.stringify(wantRaces)) fail(`races shown ${seenRaces.length} != races in window ${wantRaces.length}`);
     for (const [ri, want] of Object.entries((c.expect.after_race) || {}))
@@ -589,13 +621,15 @@ async function main() {
   const sd = JSON.parse(fs.readFileSync(path.join(FIX, 'shared_drive', 'fixture.json'), 'utf8'));
   cases.push({ name: 'shared_drive_winner_highlight', dir: path.join(FIX, 'shared_drive'),
                overrides: Object.assign({}, sd.overrides, { winner_line: { enabled: true }, highlight: { enabled: true, sec: 0.4, mix: 0.3, glow: 16 } }), expect: sd.expect });
-  /* IQ-05c: the round-3 board features on the (fictional) shared drive with the pilot's 20-row
-     geometry: flags from a fictional nationality file (one driver NOT FOUND), event labels on both
-     credited drivers, the time block with the winner line under it, and the overlay boxes */
+  /* IQ-05c/d: the pilot's board features on the (fictional) shared drive with the pilot's 20-row
+     geometry: flags from a fictional nationality file (one driver NOT FOUND), dated event labels on
+     both credited drivers, the date line, and the overlay boxes. Round 4: the winner line is off
+     here (it belongs under the big time block, which the date line replaces; the player refuses the
+     two together); it stays covered by shared_drive_winner_highlight. */
   const pilot = rtt.loadConfig('config_pilot_2014_2021_top20.json');
-  cases.push({ name: 'shared_drive_round3', dir: path.join(FIX, 'shared_drive'),
+  cases.push({ name: 'shared_drive_round4', dir: path.join(FIX, 'shared_drive'),
                overrides: Object.assign({}, sd.overrides, { rows: 20, board: pilot.board, namescale: pilot.namescale, barend: pilot.barend,
-                 winner_line: { enabled: true }, highlight: { enabled: true, sec: 0.4, mix: 0.3, glow: 16 },
+                 highlight: { enabled: true, sec: 0.4, mix: 0.3, glow: 16 }, overlay_gap: pilot.overlay_gap,
                  flags: Object.assign({}, pilot.flags, { enabled: true, csv: path.join(FIX, 'shared_drive', 'driver_nationality.csv') }),
                  event_label: pilot.event_label, time_label: Object.assign({}, pilot.time_label, { months: pilot.time_label.months }), overlays: pilot.overlays }),
                expect: sd.expect });
@@ -648,18 +682,19 @@ function writeReport(results) {
   const L = [];
   const cases = results.filter(r => r.frames != null), cols = results.filter(r => r.name.startsWith('colour_rule_full_dataset'));
   const rec = results.find(r => r.name === 'record_moments_full_dataset');
-  L.push('# Player test results (IQ-05 round 3)', '');
+  L.push('# Player test results (IQ-05 round 4)', '');
   L.push('Written by `node tests/player/run_tests.js` (all cases). Frames are 1920x1080 (preview width), drawn headless in Playwright ' + pw + ' Chromium, every race frame in order.');
   L.push('OCR: ' + (HAS_OCR ? spawnSync('tesseract', ['--version'], { encoding: 'utf8' }).stdout.split('\n')[0] + ' on every value label of the first frame of every race.' : 'NOT AVAILABLE (tesseract not installed); draw-call checks only.'), '');
   L.push(`Overall: ${results.filter(r => r.pass).length}/${results.length} PASS.`, '');
-  L.push('| Case | Result | Config | Rows | Races | Frames | Race length | Value labels checked | Winner lines checked | Highlight onsets (most in 1 s) | Numbers checked on fixed-pitch digits | Beats outside holds | Boundary frames | OCR read back (skipped: overlapping rows) | Board entries | Slowest entry (frames to clearly visible) | Colour-checked frames | Name size | Pacing (rank / visible / quiet) | Event labels checked (fading) | Flags checked | Time block: closest item | Overlay boxes: closest item | Adapter output SHA-256 |');
-  L.push('|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|');
+  L.push('| Case | Result | Config | Rows | Races | Frames | Race length | Value labels checked | Winner lines checked | Highlight onsets (most in 1 s) | Numbers checked on fixed-pitch digits | Beats outside holds | Boundary frames | OCR read back (skipped: overlapping rows) | Board entries | Slowest entry (frames to clearly visible) | Colour-checked frames | Name size | Pacing (rank / visible / quiet) | Event labels checked (fading) | Event label: furthest right edge | Flags checked | Date lines checked (winner off the board) | Date line: closest item | Overlay boxes: closest item | Adapter output SHA-256 |');
+  L.push('|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|');
   for (const r of cases)
-    L.push(`| ${r.name} | ${r.pass ? 'PASS' : 'FAIL'} | \`${r.config}\` | ${r.rows} | ${r.events} | ${r.frames} | ${r.race_sec.toFixed(2)} s | ${r.labels_checked} | ${r.winner_lines || 'off'} | ${r.onsets ? `${r.onsets} (${r.onsets_max_per_sec})` : 'off'} | ${r.tab_labels} | ${r.slot_range} | ${r.boundary_frames || 'not saved'} | ${r.boundary_frames ? `${r.ocr_checked - r.ocr_mismatch.length}/${r.ocr_checked} (${r.ocr_skipped_overlap})` : 'not run'} | ${r.entries} | ${r.entry_frames_max} | ${r.colour_frames} | ${r.name_px}px${r.name_truncated ? ' (truncated)' : ''} | ${r.pacing.rank_change} / ${r.pacing.visible_change} / ${r.pacing.quiet} | ${r.event_labels ? `${r.event_labels} (${r.event_fading})` : 'off'} | ${r.flags_checked || 'off'} | ${r.block_clear != null ? r.block_clear.toFixed(0) + ' px' : 'n/a'} | ${r.overlay_clear != null ? r.overlay_clear.toFixed(0) + ' px' : 'n/a'} | \`${r.adapter_sha256.slice(0, 16)}…\` |`);
+    L.push(`| ${r.name} | ${r.pass ? 'PASS' : 'FAIL'} | \`${r.config}\` | ${r.rows} | ${r.events} | ${r.frames} | ${r.race_sec.toFixed(2)} s | ${r.labels_checked} | ${r.winner_lines || 'off'} | ${r.onsets ? `${r.onsets} (${r.onsets_max_per_sec})` : 'off'} | ${r.tab_labels} | ${r.slot_range} | ${r.boundary_frames || 'not saved'} | ${r.boundary_frames ? `${r.ocr_checked - r.ocr_mismatch.length}/${r.ocr_checked} (${r.ocr_skipped_overlap})` : 'not run'} | ${r.entries} | ${r.entry_frames_max} | ${r.colour_frames} | ${r.name_px}px${r.name_truncated ? ' (truncated)' : ''} | ${r.pacing.rank_change} / ${r.pacing.visible_change} / ${r.pacing.quiet} | ${r.event_labels ? `${r.event_labels} (${r.event_fading})` : 'off'} | ${r.event_right != null ? 'x ' + r.event_right.toFixed(0) : 'n/a'} | ${r.flags_checked || 'off'} | ${r.date_lines ? `${r.date_lines} (${r.date_lines_offboard})` : 'n/a'} | ${r.block_clear != null ? r.block_clear.toFixed(0) + ' px' : 'n/a'} | ${r.overlay_clear != null ? r.overlay_clear.toFixed(0) + ' px' : 'n/a'} | \`${r.adapter_sha256.slice(0, 16)}…\` |`);
   L.push('');
   L.push(`Entry rule: a driver joining the visible board must be clearly visible (row opacity at least ${CLEAR_ALPHA}, name and value label drawn) within ${ENTRY_MAX_FRAMES} frames of the first frame of that race, i.e. on frame +0 to +${ENTRY_MAX_FRAMES - 1}. The column gives the slowest entry in the case (+N frames).`);
   L.push('Colour rule on frames: on every frame drawn, no two bars on screen (opacity above 0) share a colour or are closer than CIEDE2000 18, and every driver is drawn in the same colour in every RTT-002 case with the same board size.');
   L.push(`Winner highlight (where on): on the first frame of every race exactly the credited winners whose bars are on the board are lit, nothing else is ever lit, a highlight only rises from fully off on the first frame of a race that driver won (a repeat winner stays lit, so never flickers), at most ${MAX_ONSETS_PER_SEC} onsets in any second, and each fades out within highlight.sec.`);
+  L.push('Round 4 (where on): date line = on every frame exactly one line "<D Month YYYY> · <GP>" for the race on screen, from races.csv, including races whose winner is off the board (frames of such races in brackets), overlapping nothing ("closest item" = the smallest gap on any frame to a bar, flag, name, value, event label, axis number, title, subtitle or footer); event labels now read "· <GP> · <D Month YYYY>" and must end inside the 64 px right margin (x ' + RIGHT_MARGIN + '; "furthest right edge" = the largest on any frame); overlay boxes = also no axis grid line inside a box.');
   L.push('Round 3 (where on): flags = every flag drawn equals the driver\'s flag_code in the nationality file and sits on its row; event labels = on every frame each winner on the board shows "· <GP>" from races.csv right after its value, and the only other event labels are the previous race\'s, fading; time block = on every frame no overlap with any bar, flag, name, value, event label, axis number, title or footer ("closest item" = the smallest gap on any frame); overlay boxes = nothing enters the reserved logo and car boxes on any frame, placeholders drawn inside them, and the boxes stay out of the bottom ' + YT_CONTROLS_PX + ' px.');
   L.push(`Record holds (where on): the held races are exactly the BECOMES_JOINT / BECOMES_SOLE rows of data/rtt-002/record_progression.csv inside the window; on the last frame of each hold every row is within ${HOLD_SETTLE_ROWS} row of its place; every other beat is within 0.8-1.4 x sec_per_event (to the nearest frame).`, '');
   if (rec) {

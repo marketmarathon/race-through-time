@@ -17,8 +17,9 @@ function placeholderPNG(file, w, h, rgb) {
 }
 function placeholders(cfg, dir) {
   fs.mkdirSync(dir, { recursive: true });
-  // the logo is square (Luke's emblem, 1254 x 1254); the car picture is assumed about 2.2 : 1
-  const shape = { logo: [1254, 1254, [212, 175, 55]], car: [880, 400, [200, 200, 200]] };
+  // IQ-05d (DEC-045, DEC-051): the shapes of the real files - Luke's logo as a round badge is
+  // 885 x 885 (1 : 1), the car photo 3435 x 936 (about 3.67 : 1)
+  const shape = { logo: [885, 885, [212, 175, 55]], car: [3435, 936, [200, 200, 200]] };
   for (const b of cfg.overlays || []) { const [w, h, c] = shape[b.name] || [b.w, b.h, [128, 128, 128]]; placeholderPNG(path.join(dir, b.file), w, h, c); }
   return dir;
 }

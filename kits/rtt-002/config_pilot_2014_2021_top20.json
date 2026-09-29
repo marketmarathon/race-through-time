@@ -1,30 +1,33 @@
 {
  "extends": "config_pilot_2014_2021_base.json",
- "kit_version": "rtt002_pilot3_2014_2021_top20",
- "out": "rtt002_pilot3_2014_2021_top20.mp4",
+ "kit_version": "rtt002_pilot4_2014_2021_top20",
+ "out": "rtt002_pilot4_2014_2021_top20.mp4",
  "rows": 20,
  "board": { "bar_gap": 6, "name_frac": 0.78, "value_frac": 0.78 },
  "namescale": 1.0,
- "barend": 1420,
+ "barend": 1265,
  "flags": { "enabled": true, "column": true, "height_frac": 0.9, "gap": 10, "csv": "../../data/rtt-002/driver_nationality.csv" },
- "event_label": { "enabled": true, "fade_sec": 0.3 },
- "time_label": { "mode": "block", "x": 820, "date_y": 1012, "align": "left" },
+ "event_label": { "enabled": true, "fade_sec": 0.3, "date": true },
+ "time_label": { "mode": "line", "x": 860, "y": 74, "align": "left", "size": 34 },
+ "footer": "Race Through Time · Data derived from Wikipedia (CC BY-SA 4.0) · Car photo: Liauzh, CC BY 4.0, via Wikimedia Commons (background removed)",
  "palette": ["#2E86DE", "#06A54E", "#FF4F15", "#FB07F1", "#FF4663", "#C97A00", "#909600",
              "#464AF9", "#CC031B", "#A230AA", "#C4025C", "#367400", "#97511A",
              "#009CA2", "#7D77B3", "#AC6F8C", "#007260", "#1E6C84", "#7A6F41", "#9E7C6D", "#7A8580", "#6A616A"],
  "colour_rule": { "priority": { "rows": 10, "bright": 7 } },
  "overlays": [
-  { "name": "logo", "file": "rtt_logo.png", "x": 1732, "y": 18, "w": 124, "h": 124 },
-  { "name": "car",  "file": "rtt_car.png",  "x": 1416, "y": 750, "w": 440, "h": 200 }
+  { "name": "logo", "file": "rtt_logo.png", "x": 1702, "y": 12,  "w": 154, "h": 154 },
+  { "name": "car",  "file": "rtt_car.png",  "x": 1256, "y": 787, "w": 600, "h": 163 }
  ],
+ "overlay_gap": 12,
  "notes": [
-  "IQ-05 round 3 (DEC-034): Luke chose variant A, the top 20. Everything else is config_pilot_2014_2021_base.json.",
+  "IQ-05 round 3 (DEC-034): Luke chose variant A, the top 20. Everything else is config_pilot_2014_2021_base.json. Round 4 (DEC-045, Luke's feedback on round 3): full logo with its wordmark, the date after the Grand Prix in the event label, the big season / Grand Prix / date block replaced by one small date line next to the title, and a real car photo (credit in the footer).",
   "board: 6 px between bars (C2-2: 22) and name and value text up to 0.78 of the bar height, namescale 1.0, so the text is as large as 20 rows allow (29 px names and values on the 1920 frame).",
-  "barend (DEC-038): the bars are wider than in round 2 (the board uses about 70% of the width at the leader's bar end); the leader's value and event label still fit inside the frame on every frame (tests/player/run_tests.js).",
+  "barend (DEC-038, shortened in round 4, DEC-047): 1420 -> 1265 so the longest dated event label (the leader's \"· Emilia Romagna GP · 1 November 2020\" at the 2020 Emilia Romagna GP) still ends inside the 64 px right margin; the bar area is 12% shorter than in round 3 (1136 px against 1291 px) and the leader's bar ends at about x 1191 (62% of the width) instead of x 1337 (70%). tests/player/run_tests.js checks every label on every frame.",
   "flags (DEC-037; DEC-035: today's design of every flag, Luke's decision): each driver's flag from data/rtt-002/driver_nationality.csv (flag_code; primary source Wikipedia's list of Grand Prix winners at revision 1376824402, cross-checked with Wikidata, reports/RTT-002_nationality_comparison.md), drawn from the npm package flag-icons 7.5.0 (MIT; reference/rights_ledger.md; no flag file is committed), in a narrow column just left of the bars, moving with its row. The name is always drawn; the flag is an extra cue. column true keeps the column's space, so switching enabled off leaves the layout unchanged.",
-  "event_label (DEC-039): a winner on the board shows the Grand Prix after its value (\"92 wins · Portuguese GP\"), from the first frame of the race until the next race lands, then fades over 0.3 s.",
-  "time_label block (DEC-040): season, Grand Prix and date sit left-aligned at x 820, date on y 1012, in the empty space right of the lower bars; the tests check on every frame that the block overlaps no bar, flag, name, value or event label.",
-  "overlays (DEC-035 owner, DEC-042 placement): Luke's emblem (square, gold globe and compass) in a 124 x 124 box in the top-right corner, and a generic unbranded car picture in a 440 x 200 box in the bottom-right corner, its bottom edge at y 950 so it stays above the bottom 130 px that YouTube's player controls can cover (an estimate, see DEC-042). Both are private media and never committed (DEC-006): rtt.js loads kits/rtt-002/local_assets/rtt_logo.png and rtt_car.png if present (git-ignored folder); if a file is missing its box stays empty and the render goes on. The boxes are reserved either way; the tests check that no bar, flag, name, value, event label or time-block text ever enters them.",
+  "event_label (DEC-039; date added in round 4, DEC-045 (2)): a winner on the board shows the Grand Prix and the race date after its value (\"92 wins · Portuguese GP · 25 October 2020\", date as D Month YYYY from races.csv), from the first frame of the race until the next race lands, then fades over 0.3 s.",
+  "time_label line (DEC-045 (3), placement DEC-046): the big season / Grand Prix / date block of round 3 is gone. One small line, \"25 October 2020 · Portuguese GP\" (34 px, the date size of round 3), sits on the title's baseline (y 74), left-aligned at x 860, 39 px after the title, and ends at most at x 1466, 236 px before the logo box. It changes at every race, including the races won by a driver who is not on the board, because the date must be on screen continuously (blueprint section 11). The tests check its text against races.csv and that it overlaps nothing on every frame.",
+  "overlays (DEC-035, DEC-042; resized in round 4, DEC-045 (1) and (4), DEC-048): Luke's logo as a round badge, the globe with RACE THROUGH TIME inside it and transparent outside the circle (885 x 885 px, 1:1; DEC-051), in a 154 x 154 box in the top-right corner (x 1702-1856, y 12-166: as large as fits; the leader's event label reaches up to y 175 below it, DEC-052), and the real car photo (Lewis Hamilton's Ferrari SF-26, by Liauzh, CC BY 4.0, background removed and cropped; 3435 x 936 px, about 3.67:1; reference/rights_ledger.md) in a 600 x 163 box in the bottom-right corner (x 1256-1856, y 787-950), its bottom edge at y 950 so it stays above the bottom 130 px that YouTube's player controls can cover (an estimate, see DEC-042). Both are private media and never committed (DEC-006): rtt.js loads kits/rtt-002/local_assets/rtt_logo.png and rtt_car.png if present (git-ignored folder); if a file is missing its box stays empty and the render goes on. The boxes are reserved either way; overlay_gap 12 keeps the axis grid lines 12 px clear of them, and the tests check that no bar, flag, name, value, event label, date line or grid line ever enters them.",
+  "footer (DEC-045 (4)): the car photo's CC BY 4.0 credit is added to the footer as Luke worded it; at 26 px it is 1676 px long and ends at x 1740, inside the frame.",
   "palette and colour_rule.priority (DEC-041): the 22 top-20 colours from round 2 (every pair at least CIEDE2000 18.2 apart, white names at least 3.2:1), reordered: the first 7 are the bright, light ones (CIELAB lightness and chroma both at least 50 as drawn), then the vivid darker ones, then the muted ones. The drivers who ever reach the top ten choose first, most career wins first, and the 7 bright colours are kept for them. The DEC-023 rule (min CIEDE2000 18 between drivers on screen together) is unchanged."
  ]
 }
