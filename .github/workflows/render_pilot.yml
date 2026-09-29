@@ -1,0 +1,150 @@
+# Race Through Time - render the RTT-002 pilot (DEC-060, DEC-061).
+#
+# This repository is PUBLIC (DEC-006). Its workflow logs and workflow artifacts can be read and
+# downloaded by other people, so this workflow:
+#   - fetches Luke's logo and the car photo from the PRIVATE repo marketmarathon/race-through-time-private
+#     with the secret RTT_PRIVATE_TOKEN into $RUNNER_TEMP (outside the checkout), never into the repo;
+#   - checks both SHA-256 hashes against the ones recorded in reference/rights_ledger.md and stops on a mismatch;
+#   - renders the pilot and saves the videos ONLY as a release in the private repo;
+#   - uploads NO workflow artifact and uses NO cache, prints no picture or frame, and never prints the secret;
+#   - deletes the pictures, frames and videos from the runner at the end, whatever happened.
+#
+# It runs once when this file is pushed to the branch that added it (a workflow_dispatch workflow can
+# only be started by hand after it is on main), and afterwards by hand from the Actions tab on main.
+name: render-pilot
+
+on:
+  push:
+    branches: [claude/cool-mccarthy-kf9mow]
+    paths: [.github/workflows/render_pilot.yml]
+  workflow_dispatch:
+    inputs:
+      config:
+        description: Pilot config in kits/rtt-002
+        default: config_pilot_2014_2021_top20.json
+      raster_w:
+        description: Width of the master (3840 or 1920)
+        default: '3840'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: render-pilot
+  cancel-in-progress: false
+
+env:
+  PRIVATE_REPO: marketmarathon/race-through-time-private
+  LOGO_SHA256: e3db46119b52648c84eae5f6acd682bd7be855819818856e695592b20572eeca
+  CAR_SHA256: 4be74e673c601a93d0c08511d474638ca51e04cce5d4f2af46198696e81aa5bb
+  RTT_CONFIG: ${{ github.event.inputs.config || 'config_pilot_2014_2021_top20.json' }}
+  RASTER_W: ${{ github.event.inputs.raster_w || '3840' }}
+
+jobs:
+  render:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install ffmpeg, the kit and Chromium
+        working-directory: kits/rtt-002
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg > /dev/null
+          ffmpeg -hide_banner -encoders 2>/dev/null | grep -q libx264
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 npm ci
+          npx playwright install --with-deps chromium
+
+      - name: Check the player input and the frame count
+        working-directory: kits/rtt-002
+        run: |
+          case "$RASTER_W" in 3840|1920) ;; *) echo "::error::raster_w must be 3840 or 1920"; exit 1;; esac
+          want=$(awk '$2 == "output" && $3 ~ /race_rtt002.json$/ {print $1}' dataset_hashes.txt)
+          got=$(sha256sum race_rtt002.json | cut -d' ' -f1)
+          echo "race_rtt002.json $got (dataset_hashes.txt: $want)"
+          test -n "$want" && test "$got" = "$want"
+          FRAMES=$(node rtt.js | awk '/^FRAMES/ {print $2}')
+          echo "frames $FRAMES"
+          test -n "$FRAMES"
+          echo "FRAMES=$FRAMES" >> "$GITHUB_ENV"
+        env:
+          FRAME_COUNT_ONLY: '1'
+
+      - name: Fetch the logo and car photo from the private repo and check their hashes
+        env:
+          GH_TOKEN: ${{ secrets.RTT_PRIVATE_TOKEN }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then echo "::error::secret RTT_PRIVATE_TOKEN is not available to this run"; exit 1; fi
+          A="$RUNNER_TEMP/rtt_assets"; mkdir -p "$A"
+          for f in rtt_logo.png rtt_car.png; do
+            gh api -H 'Accept: application/vnd.github.raw' \
+              "repos/$PRIVATE_REPO/contents/assets/rtt-002/$f" > "$A/$f"
+          done
+          printf '%s  %s\n' "$LOGO_SHA256" "$A/rtt_logo.png" "$CAR_SHA256" "$A/rtt_car.png" | sha256sum -c -
+          echo "RTT_LOCAL_ASSETS=$A" >> "$GITHUB_ENV"
+
+      - name: Render the master
+        working-directory: kits/rtt-002
+        run: |
+          mkdir -p "$RUNNER_TEMP/rtt_out"
+          SEG_OUT="$RUNNER_TEMP/rtt_out/master.mp4" node rtt.js | tee "$RUNNER_TEMP/render.log"
+          # a missing overlay leaves its box empty and the render goes on; here that is a failure
+          if grep -q 'box kept empty' "$RUNNER_TEMP/render.log"; then echo "::error::an overlay picture was not loaded"; exit 1; fi
+
+      - name: Check the master and make a 1920x1080 viewing copy
+        run: |
+          O="$RUNNER_TEMP/rtt_out"
+          H=$(( RASTER_W * 9 / 16 ))
+          probe() { ffprobe -v error -select_streams v:0 -count_packets \
+                      -show_entries stream=width,height,nb_read_packets,r_frame_rate -of csv=p=0 "$1"; }
+          m=$(probe "$O/master.mp4"); echo "master: $m"
+          test "$m" = "$RASTER_W,$H,30/1,$FRAMES"
+          ffmpeg -hide_banner -loglevel error -y -i "$O/master.mp4" \
+            -vf scale=1920:1080:flags=lanczos -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p \
+            -color_primaries bt709 -color_trc bt709 -colorspace bt709 -movflags +faststart "$O/viewing.mp4"
+          v=$(probe "$O/viewing.mp4"); echo "viewing copy: $v"
+          test "$v" = "1920,1080,30/1,$FRAMES"
+
+      - name: Save both videos as a release in the private repo
+        env:
+          GH_TOKEN: ${{ secrets.RTT_PRIVATE_TOKEN }}
+        run: |
+          O="$RUNNER_TEMP/rtt_out"
+          SHORT=${GITHUB_SHA::7}
+          STEM="rtt002_${RTT_CONFIG%.json}_${SHORT}"
+          H=$(( RASTER_W * 9 / 16 ))
+          mv "$O/master.mp4"  "$O/${STEM}_${RASTER_W}x${H}.mp4"
+          mv "$O/viewing.mp4" "$O/${STEM}_1920x1080_viewing.mp4"
+          TAG="rtt-002-pilot5-${SHORT}-run${GITHUB_RUN_NUMBER}"
+          SEC=$(awk -v f="$FRAMES" 'BEGIN {printf "%.1f", f / 30}')
+          {
+            echo "RTT-002 pilot render (${RTT_CONFIG}), rendered by GitHub Actions."
+            echo
+            echo "- Source: ${GITHUB_REPOSITORY} @ ${GITHUB_SHA} (${GITHUB_REF_NAME}), run ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+            echo "- Config: kits/rtt-002/${RTT_CONFIG}"
+            echo "- ${FRAMES} frames at 30 fps = ${SEC} s"
+            echo "- Master ${RASTER_W}x${H} (x264, settings from the config); viewing copy 1920x1080 (x264 CRF 18), easier to watch on a phone"
+            echo "- Overlays: assets/rtt-002/rtt_logo.png SHA-256 ${LOGO_SHA256}; assets/rtt-002/rtt_car.png SHA-256 ${CAR_SHA256} (both checked before the render)"
+            echo "- Video SHA-256:"
+            (cd "$O" && sha256sum *.mp4 | sed 's/^/  - /')
+            echo
+            echo "Private review render. Not for upload or publication until Luke approves (DEC-001; D-05 still open)."
+          } > "$O/notes.md"
+          cat "$O/notes.md"
+          gh release create "$TAG" --repo "$PRIVATE_REPO" --target main --prerelease \
+            --title "RTT-002 ${RTT_CONFIG%.json} ${SHORT} ${RASTER_W}x${H}" --notes-file "$O/notes.md" \
+            "$O"/*.mp4
+          URL="https://github.com/${PRIVATE_REPO}/releases/tag/${TAG}"
+          echo "Release: $URL"
+          echo "Pilot saved to the private repo: $URL" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Delete the pictures, frames and videos from the runner
+        if: always()
+        run: rm -rf "$RUNNER_TEMP/rtt_assets" "$RUNNER_TEMP/rtt_out" "$RUNNER_TEMP/render.log" kits/rtt-002/local_assets
