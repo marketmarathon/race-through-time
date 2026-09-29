@@ -32,6 +32,13 @@ Rules (DEC-053):
   - Rows match drivers through the T lines (driver_id = "wp" + page ID); the "Formula Two"
     separator rows are not drivers. Only the 116 drivers of drivers.csv are written (the video's
     universe); every other row must still resolve to a page ID.
+  - Documented corrections (DEC-058): starts_corrections.csv (driver_id, race_index, race, action,
+    reason, evidence) is applied AFTER classification. The only action is not_a_start: the
+    driver's start at that race is removed. Each correction must name a known driver and race, must
+    remove a start the tables gave (otherwise the build stops), and is reported in the checks. The
+    source extract itself is never edited.
+  - Counting convention (DEC-059): Wikipedia's; relief drives and Formula 2 cars that ran in a
+    championship Grand Prix count as starts (the tables' cells are classified as they are).
   - Win rate = wins / starts after that race, a percentage with one decimal, rounded half up
     (decimal arithmetic, never binary floating point).
 
@@ -40,6 +47,7 @@ Outputs (data/rtt-002/; new files, standard library only, same inputs -> byte-id
                              with the source cell and the driver's career starts after the race
   career_starts.csv          per driver at the freeze: wins, starts, win rate, first start, and
                              the "List of Formula One drivers" entries/starts for comparison
+  (reads starts_corrections.csv too, if present)
   starts_checks.json         scripted checks (the build stops if one fails, except the listed
   STARTS_CHECKS.md           disagreements with the List page, which are reported, never resolved)
   starts_manifest.json       input and output SHA-256 hashes, revisions
@@ -57,7 +65,7 @@ from collections import Counter, defaultdict
 from decimal import Decimal, ROUND_HALF_UP
 from fractions import Fraction
 
-BUILD_VERSION = "rtt002-starts/1.0"
+BUILD_VERSION = "rtt002-starts/1.1"   # 1.1 (29 Sep 2026): documented corrections (starts_corrections.csv, DEC-058)
 SOURCE = "wikipedia_starts_extract.psv"
 SOURCE_SHA256 = "b26c0ed439d09b247462343c176c48964951291ec7058d8f476ef65ecdac9b64"
 EXTRACTOR = "scripts/extract_starts.browser.js"
@@ -69,7 +77,10 @@ F2_ROW = "Formula Two"
 PERMA = "https://en.wikipedia.org/w/index.php?oldid="
 WIKI = "https://en.wikipedia.org/wiki/"
 # the prototype results the build must reproduce exactly (prompts/CODE_SESSION_IQ-05e.md)
-EXPECT_LIST_AGREE, EXPECT_LIST_DISAGREE = 115, {"Rubens Barrichello": (323, 322)}
+# (1.0 reproduced the prototype: 115 agree, Barrichello 323 vs 322; the DEC-058 correction settles it)
+EXPECT_LIST_AGREE, EXPECT_LIST_DISAGREE = 116, {}
+CORRECTIONS = "starts_corrections.csv"
+CORRECTION_ACTIONS = {"not_a_start"}
 # races named in the task as example candidates for a disagreement (reported, never acted on)
 NAMED_CANDIDATES = {"Rubens Barrichello": ["2002 Spanish Grand Prix"]}
 
@@ -249,6 +260,30 @@ def build(data_dir):
     check("every_row_resolves_to_a_page_id", not unresolved,
           unresolved or "every driver row resolved through the T lines; %d 'Formula Two' separator rows skipped" % f2_rows)
     check("every_cell_classified", not bad_cells, bad_cells[:40] or dict(sorted(tok_count.items())))
+    # 2b. documented corrections (DEC-058), applied after classification
+    corrections, corr_bad = [], []
+    cpath = os.path.join(data_dir, CORRECTIONS)
+    race_ok = {r["race_index"]: r for r in races}
+    if os.path.exists(cpath):
+        for c in read_csv(cpath):
+            did, ri, act = c["driver_id"].strip(), c["race_index"].strip(), c["action"].strip()
+            if act not in CORRECTION_ACTIONS:
+                corr_bad.append("%s race %s: unknown action %r" % (did, ri, act))
+            elif did not in known or ri not in race_ok:
+                corr_bad.append("%s race %s: driver or race not in the dataset" % (did, ri))
+            elif "%s %s" % (race_ok[ri]["season"], race_ok[ri]["grand_prix"]) != c["race"].strip():
+                corr_bad.append("%s race %s: names %r, races.csv says %s %s" % (did, ri, c["race"], race_ok[ri]["season"], race_ok[ri]["grand_prix"]))
+            elif did not in started.get(ri, {}):
+                corr_bad.append("%s race %s: the tables give no start there, nothing to correct" % (did, ri))
+            elif any(x["race_index"] == ri and x["driver_id"] == did for x in credits):
+                corr_bad.append("%s race %s: credited with the win, cannot be a non-start" % (did, ri))
+            else:
+                cells = started[ri].pop(did)
+                corrections.append({"driver": name[did], "driver_id": did, "race_index": ri, "race": c["race"].strip(),
+                                    "action": act, "source_cells": " + ".join(cells), "reason": c["reason"], "evidence": c["evidence"]})
+    check("documented_corrections_applied", not corr_bad,
+          corr_bad or ("%d applied: %s" % (len(corrections), "; ".join("%s, %s (table cell \"%s\") -> %s" % (
+              x["driver"], x["race"], x["source_cells"], x["action"]) for x in corrections)) if corrections else "none"))
     multi_rows = sorted("%d %s (%d rows)" % (y, name[d], n) for (y, d), n in driver_rows.items() if n > 1)
     multi_cells = sorted({"%s %s" % (ri, name[d]) for ri, m in started.items() for d, c in m.items() if len(c) > 1})
 
@@ -368,13 +403,13 @@ def build(data_dir):
                "list_agree": agree, "list_disagree": len(disagree),
                "drivers_with_several_rows_in_one_season": multi_rows,
                "races_where_one_driver_has_several_starting_cells_counted_once": multi_cells}
-    cj = {"build": BUILD_VERSION, "summary": summary, "checks": checks, "disagreements": disagree,
+    cj = {"build": BUILD_VERSION, "summary": summary, "checks": checks, "corrections": corrections, "disagreements": disagree,
           "disagreement_evidence": evidence, "round_counts": count_rows}
     write(os.path.join(data_dir, "starts_checks.json"), json.dumps(cj, ensure_ascii=False, indent=1, sort_keys=True) + "\n")
 
     md = ["# RTT-002 starts — scripted checks", "",
           "Build `%s` (`scripts/rtt002_starts.py`). All checks pass: **True**. Definition, source and rounding: "
-          "`reference/metric_contract_RTT-002.md`, Display attributes (DEC-053)." % BUILD_VERSION, "",
+          "`reference/metric_contract_RTT-002.md`, Display attributes (DEC-053, DEC-058, DEC-059)." % BUILD_VERSION, "",
           "| Check | Result | Detail |", "|---|---|---|"]
     for k, v in checks.items():
         det = v.get("detail")
@@ -388,7 +423,18 @@ def build(data_dir):
            "- career starts at the freeze vs %s: %d agree, %d disagree" % (summary["list_page"], agree, len(disagree)),
            "- drivers with more than one row in a season's table (one start per race still): %s" % (", ".join(multi_rows) or "none"),
            "- races where one driver had more than one starting cell part (counted once): %s" % (", ".join(multi_cells) or "none"),
-           "", "## Disagreements with the List page (for Luke; not resolved, the season-table value is kept)", ""]
+           "", "## Documented corrections (`%s`)" % CORRECTIONS, ""]
+    if corrections:
+        md += ["Applied after classification; the source extract is not edited.", "",
+               "| Driver | Race | Table cell | Action | Reason | Evidence |", "|---|---|---|---|---|---|"]
+        md += ["| %s | %s (race_index %s) | %s | %s | %s | %s |" % (x["driver"], x["race"], x["race_index"], x["source_cells"],
+                                                             x["action"], x["reason"], x["evidence"]) for x in corrections]
+    else:
+        md.append("None.")
+    md += ["", "## Disagreements with the List page (for Luke; not resolved, the season-table value is kept)", ""]
+    if not disagree:
+        md.append("None: all 116 drivers agree.")
+        md.append("")
     for d in disagree:
         ev = evidence[d["driver_name"]]
         md.append("**%s**: %d starts from the season tables, %s in \"List of Formula One drivers\" (rev. %s). "
@@ -424,6 +470,7 @@ def build(data_dir):
                       "list_page": {"title": list_meta["title"], "revid": list_meta["revid"], "retrieved_utc": iso(list_meta["retrieved"]),
                                     "permanent_url": PERMA + list_meta["revid"]}},
            "inputs_read_only": {n: sha(os.path.join(data_dir, n)) for n in reads},
+           "corrections": {CORRECTIONS: sha(cpath)} if os.path.exists(cpath) else {},
            "outputs": {n: sha(os.path.join(data_dir, n)) for n in outs}}
     write(os.path.join(data_dir, "starts_manifest.json"), json.dumps(man, ensure_ascii=False, indent=1, sort_keys=True) + "\n")
     for n in outs + ["starts_manifest.json"]:

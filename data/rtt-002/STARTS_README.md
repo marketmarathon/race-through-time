@@ -2,14 +2,15 @@
 
 Luke's decision (DEC-053): the text after every bar shows wins, starts and win rate, "91 wins · 306 starts · 29.7%". He chose **starts** (races actually started), not entries. Definition, source and rounding are in `reference/metric_contract_RTT-002.md`, "Display attributes" (written before the build, DEC-036).
 
-These are **new files**. The audited dataset files (`races.csv`, `win_credits.csv`, `drivers.csv`, `career_totals.csv` and the rest, and `README.md`, `source/README.md`, `manifest.json`) were only read, not changed. Licence: CC BY-SA 4.0, derived from Wikipedia, as `ATTRIBUTION.md`; the starts come from the same season-page revisions listed there, plus the cross-check page below.
+These are **new files** (starts_corrections.csv added 29 Sep 2026, DEC-058). The audited dataset files (`races.csv`, `win_credits.csv`, `drivers.csv`, `career_totals.csv` and the rest, and `README.md`, `source/README.md`, `manifest.json`) were only read, not changed. Licence: CC BY-SA 4.0, derived from Wikipedia, as `ATTRIBUTION.md`; the starts come from the same season-page revisions listed there, plus the cross-check page below.
 
 | File | What it is |
 |---|---|
-| `starts.csv` | 14,480 rows: one per driver (the 116 of `drivers.csv`) per championship race started, in race order; the source cell(s) and the driver's career starts after that race; season page, revision, permanent link, retrieval time |
+| `starts.csv` | 14,479 rows (after the DEC-058 correction): one per driver (the 116 of `drivers.csv`) per championship race started, in race order; the source cell(s) and the driver's career starts after that race; season page, revision, permanent link, retrieval time |
 | `career_starts.csv` | Per driver at the freeze (2026 Azerbaijan GP): wins, starts, win rate, first start, and the "Race entries" / "Race starts" of "List of Formula One drivers" with AGREE / DISAGREE |
-| `STARTS_CHECKS.md`, `starts_checks.json` | 12 scripted checks (all pass), the disagreement with the evidence, round columns per season |
-| `starts_manifest.json` | SHA-256 of the source, the extraction code, the four dataset files read and every output |
+| `STARTS_CHECKS.md`, `starts_checks.json` | 13 scripted checks (all pass), the corrections applied, disagreements with the List page (none since DEC-058), round columns per season |
+| `starts_corrections.csv` | Documented corrections applied after classification (DEC-058): one row, Barrichello 2002 Spanish GP = not a start, with reason and evidence |
+| `starts_manifest.json` | SHA-256 of the source, the extraction code, the four dataset files read, the corrections file and every output |
 | `source/wikipedia_starts_extract.psv` | The raw extraction (below) |
 
 ## Source
@@ -24,8 +25,16 @@ These are **new files**. The audited dataset files (`races.csv`, `win_credits.cs
 
 - Every season's round columns, after dropping the empty-header separator column (1967, 1968, 1969, 1970, 1972, 1975, 1976, 1979), equal `races.csv` (2026: 23 listed, 15 run).
 - Every one of the 1,167 win credits has a start at that race (0 exceptions).
-- Career starts at the freeze equal the List page for **115 of 116** drivers. **One disagreement, for Luke, not resolved:** Rubens Barrichello, **323** from the season tables against **322** in the List page. The 94 candidate races (counted starts whose cell shows Ret, NC or DSQ) are listed in `STARTS_CHECKS.md`; the task names the 2002 Spanish GP ("Ret" in the 2002 table) as an example. The season-table value, 323, is used.
+- Career starts at the freeze equal the List page for **116 of 116** drivers. (Build 1.0 had 115: Rubens Barrichello 323 from the season tables against 322 in the List page. Independent check 3 found the cause, the 2002 Spanish GP, where the table shows "Ret" but he did not take the start; Luke corrected it, DEC-058, by `starts_corrections.csv`. He now has 322.)
 - Michael Schumacher: 91 wins · 306 starts · 29.7% (Luke's example).
+
+## Independent check 3 and the counting convention (29 Sep 2026)
+
+Independent check 3 (ChatGPT deep research, run by Luke; frozen in `state/RTT-002_independent_check3_freeze.json`; report `reports/RTT-002_starts_check3_report.md`) agrees with this data for all 16 season-end points checked, 34 of 36 first-win start numbers and 102 of 109 career totals it could settle. The one data error it found (Barrichello, above) is corrected. The rest are a counting convention.
+
+**Convention (DEC-059, Luke):** starts follow Wikipedia's convention: relief drives (a driver who took over another car without taking the start himself) and Formula 2 cars that ran in the same championship Grand Prix count as starts. Some statistics sources exclude them (hence the check's lower figures for Jack Brabham, Graham Hill, Luigi Musso and Pat Flaherty). Three one-start conflicts between sources for drivers who never appear on screen (Johnny Herbert, Pedro Rodríguez, François Cevert) are kept at Wikipedia's figure and listed in the report.
+
+**Methodology note for the video description:** "Starts and win rates follow Wikipedia's Formula One driver statistics; relief drives and Formula 2 entries in championship Grands Prix count as starts."
 
 ## How to rebuild
 

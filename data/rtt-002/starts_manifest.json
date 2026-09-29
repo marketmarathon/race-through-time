@@ -1,5 +1,8 @@
 {
- "build": "rtt002-starts/1.0",
+ "build": "rtt002-starts/1.1",
+ "corrections": {
+  "starts_corrections.csv": "c165323fa1bbe62e8d647e18fc9ca519eaf3921ad3c51d01e9426a2be8c1ef5b"
+ },
  "inputs_read_only": {
   "career_totals.csv": "998b5541ce16342e85cc58ec3830e5ee781ca507165b5526d20dec58bc60ac95",
   "drivers.csv": "fe826470dfa198f111a294754110d98439b338628f1f10e0e49601787c9ead88",
@@ -9,10 +12,10 @@
  "licence": "CC BY-SA 4.0 (derived from English Wikipedia); see ATTRIBUTION.md",
  "metric_contract": "reference/metric_contract_RTT-002.md (Display attributes, DEC-053)",
  "outputs": {
-  "STARTS_CHECKS.md": "415d738561ae19edfb4ffc960d5e28b4a328f94e8097161cb07c8ada30a1b084",
-  "career_starts.csv": "16492fbb6b50bedbbef2072a57426cbbe0131648ee93763e0214f685829640bb",
-  "starts.csv": "1e77f344e6567011c8de6e7a5208c5b14395013243d9694be2d607689ffd1933",
-  "starts_checks.json": "24f46614d8f4e472ce1ed17d97ed4738ad0dd033b26f2651e0faf6b188cbad7d"
+  "STARTS_CHECKS.md": "843f09790c65727e7e0b22cb76769950e538b9051686a12d655c4b96a2049f77",
+  "career_starts.csv": "5dace6f3c89284170466286f980f439832b083a86b0636ff83d736d2e8b2b7c4",
+  "starts.csv": "fe05f52c3aba5074946f8fd6111c65481e30b87ad4914405796d361ff41bb717",
+  "starts_checks.json": "4c730991ae5330ea931eb108f8e4285ba4cad0661477f650e3c25a6dc5e249a7"
  },
  "script": "scripts/rtt002_starts.py",
  "source": {
