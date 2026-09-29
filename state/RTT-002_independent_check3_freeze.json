@@ -1,0 +1,41 @@
+{
+  "schema": "rtt-check-freeze/0.1",
+  "episode": "RTT-002",
+  "what": "Independent check 3 (race starts; ChatGPT deep research, run by Luke): J = freeze race; K = career wins, entries and starts at the freeze for every winner; L = which career start each 10+ win driver's first win came on; M = entered-but-not-started races for 8 drivers; N = career starts at the end of 1989, 2006, 2016 and 2021 for 16 driver-seasons",
+  "prompt": "prompts/RTT-002_independent_check3_starts.md (v1, 29 Sep 2026)",
+  "run": "by Luke on 29 Sep 2026, ChatGPT deep research",
+  "received": "transcribed by Claude in Cowork from Luke's ChatGPT answer into private files on Luke's laptop, 29 Sep 2026",
+  "hashed_before_comparison": true,
+  "frozen_by": "Claude in Cowork",
+  "recorded_in_repo_by": "Claude (Claude Code cloud session), 29 Sep 2026, from the hashes supplied by Claude in Cowork; the files themselves were not supplied to this session, so the hashes are recorded as given, not recomputed here",
+  "private_file_location": "Luke's laptop: Claude Workspace\\Race Through Time\\Data\\F1_Starts_Check_2026-09-29\\ (private; never committed here)",
+  "check_freeze": {
+    "race": "2026 Azerbaijan Grand Prix",
+    "date": "2026-09-26",
+    "same_as_dataset_freeze": true
+  },
+  "files": {
+    "K_winners_entries_starts.csv": {
+      "sha256": "6fa282cbddc289002156cd58396a9689dc6d031e68152a03230d3a20b5735d4d"
+    },
+    "L_first_win_start_number.csv": {
+      "sha256": "b657fff12a4327da4c1d03c2f42be9c12075b5f3014f26d53a1c91fe751d5211"
+    },
+    "M_entered_not_started.csv": {
+      "sha256": "c7e007685491a4d5304b96662e067fee03c8c5919eded229b1d3914ad3102b1a"
+    },
+    "N_starts_at_season_end.csv": {
+      "sha256": "81162862c3cefee2cf8495469d2b06650ba9260a631dcb6da3d52bac96c2c3a4"
+    },
+    "NOTES.md": {
+      "sha256": "bea9b5fb0428f0378aca4f053cdd8e3a399bf82f7d785dcf8f71f5074a5dbbe6"
+    }
+  },
+  "sources_named_by_check": "StatsF1, GP Racing Stats and Formula 1 results pages; Wikipedia only where the check says so",
+  "comparison": {
+    "by": "Claude in Cowork, against data/rtt-002/starts.csv and career_starts.csv at main @ ee0d4c2 (pull request #7)",
+    "result": "K: career wins agree for all 116; career starts 102 agree, 7 NOT FOUND in the check, 7 disagree. L: 34 of 36 agree (Brabham, Graham Hill differ). M: 25 of 26 are non-starts in the data; 1 disagrees (Barrichello, 2002 Spanish GP). N: 16 of 16 agree",
+    "report": "reports/RTT-002_starts_check3_report.md",
+    "decisions": "DEC-058 (Barrichello 2002 Spanish GP corrected to not a start), DEC-059 (keep Wikipedia's counting convention: relief drives and Formula 2 cars in championship Grands Prix count as starts)"
+  }
+}

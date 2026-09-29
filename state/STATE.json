@@ -1,8 +1,8 @@
 {
   "schema": "rtt-state/0.1",
   "updated": "2026-09-29",
-  "updated_by": "Claude (Claude Code cloud session, environment \"Race Through Time\"), IQ-05 round 5",
-  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); IQ-04 MERGED (PR #2); IQ-05 rounds 1-4 MERGED (PR #3-#6); IQ-05 round 5 (race starts data, stats label \"91 wins · 306 starts · 29.7%\", round-3 bar length) IN PULL REQUEST (branch claude/awesome-planck-etvdg7), approved by Luke to merge once checks pass (DEC-057); independent check 3 (starts) out with Luke",
+  "updated_by": "Claude (Claude Code cloud session, environment \"Race Through Time\"), RTT-002 independent check 3 recorded; DEC-058/DEC-059",
+  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); starts data audit PASSED after independent check 3 with the DEC-058 correction and DEC-059 convention (in pull request, branch claude/awesome-planck-etvdg7); IQ-04 MERGED (PR #2); IQ-05 rounds 1-5 MERGED (PR #3-#7)",
   "canonical_queue": "state/ folder on main in marketmarathon/race-through-time (this file)",
   "repo_baseline": {
     "repo": "marketmarathon/bars",
@@ -53,7 +53,7 @@
         "independent_check_comparison": "0 discrepancies in A, B, E, F, G (reports/RTT-002_discrepancy_report.md)",
         "second_independent_check": "top-ten entries (40) and top ten at freeze: 0 discrepancies (reports/RTT-002_topten_check_report.md)",
         "nationality": "data/rtt-002/driver_nationality.csv (added 28 Sep 2026, IQ-05 round 3, after DATA_AUDIT; DEC-036): 116 drivers; primary Wikipedia list rev. 1376824402; Wikidata cross-check 113 agree, 3 disagree (Jim Clark, Phil Hill, Luigi Fagioli) - open for Luke; reports/RTT-002_nationality_comparison.md",
-        "starts": "data/rtt-002/starts.csv, career_starts.csv, STARTS_CHECKS.md, starts_checks.json, starts_manifest.json, STARTS_README.md (added 29 Sep 2026, IQ-05 round 5, DEC-053/DEC-055; new files, audited files unchanged): 14,480 starts rows for the 116 winners from the season tables at the wins revisions (source SHA-256 b26c0ed4..., extracted in Luke's Chrome); 12/12 checks PASS; List of F1 drivers rev. 1377016608: 115 of 116 agree; Barrichello 323 vs 322 open (D-08), waits on independent check 3"
+        "starts": "data/rtt-002/starts.csv (14,479 rows), career_starts.csv, starts_corrections.csv (DEC-058), STARTS_CHECKS.md, starts_checks.json, starts_manifest.json, STARTS_README.md (added 29 Sep 2026, DEC-053/DEC-055; new files, audited wins files unchanged): build rtt002-starts/1.1, 13/13 checks PASS; List of F1 drivers rev. 1377016608: 116 of 116 agree after the DEC-058 correction (Barrichello 2002 Spanish GP not a start: 323 -> 322); independent check 3 compared (reports/RTT-002_starts_check3_report.md); Wikipedia counting convention kept (DEC-059); starts data audit PASSED"
       }
     },
     {
@@ -202,7 +202,7 @@
         "IQ-03",
         "IQ-04"
       ],
-      "status": "ROUNDS 1-4 MERGED (pull requests #3-#6); ROUND 5 IN PULL REQUEST - branch claude/awesome-planck-etvdg7; Luke approved merging once checks pass (DEC-057); not merged by Claude",
+      "status": "ROUNDS 1-5 MERGED (pull requests #3-#7); starts correction after independent check 3 (DEC-058/DEC-059) IN PULL REQUEST - branch claude/awesome-planck-etvdg7, not merged",
       "result": {
         "decisions": "DEC-022 (owner) implemented; Claude working choices DEC-023..DEC-026",
         "colours": "one colour per driver for the whole video, assigned over all 1,164 races (rtt_timeline.js assignColours); 40 drivers reach the top ten, at most 12 on screen together (incl. rows fading out); 12 colours needed and used; palette replaced (IQ-04's closest pair CIEDE2000 9.6, new 18.5; white-name contrast >= 3.2)",
@@ -264,7 +264,8 @@
         "adapter": "rtt-adapter/1.1 (events[].starts); kits/rtt-002/race_rtt002.json SHA-256 0fc72b84f41ad0b589a8094173d9aebc5ae1e1554c8241a70e31e4be3d5d1e52",
         "pilot": "config_pilot_2014_2021_top20.json; stats label on every bar (win count bold, 29 px = 5.9 pt on a phone), event label off; barend 1265 -> 1420 (round 3 again, DEC-054; no shortening needed): furthest stats label x 1741 (limit 1856), logo box gap 9.9 px; FRAME_COUNT_ONLY 2502 frames = 83.4 s (unchanged); full video 16062 frames (unchanged)",
         "tests": "tests/player/RESULTS.md (checks 26-28, case shared_drive_round5); phone check PASS (thresholds unchanged); OCR tesseract 5.3.4 installed in the container",
-        "renders": "none committed or uploaded; pilot not rendered to video (no ffmpeg in the container)"
+        "renders": "none committed or uploaded; pilot not rendered to video (no ffmpeg in the container)",
+        "after_check3": "DEC-058: Barrichello 2002 Spanish GP corrected to not a start (starts_corrections.csv; 323 -> 322; List page 116/116). DEC-059: Wikipedia convention kept. Adapter rerun: kits/rtt-002/race_rtt002.json SHA-256 7b7ac6e5e1088468e3d30d09f9e4981cc479514669c125625084e11c2ca05b60 (14,479 starts). Tests rerun: tests/player/RESULTS.md"
       }
     },
     {
@@ -294,7 +295,7 @@
     "visibility": "public",
     "created": "2026-09-27",
     "created_by": "Claude via Luke's Chrome, on Luke's instruction",
-    "contents": "main @ d00e5fb (IQ-05 round 4 merged via pull request #6); branch marketmarathon-patch-1 (starts source, 2 commits by Claude in Cowork); branch claude/awesome-planck-etvdg7 = IQ-05 round 5 (pull request, not merged)",
+    "contents": "main @ ee0d4c2 (IQ-05 round 5 merged via pull request #7); branch claude/awesome-planck-etvdg7 = independent check 3 record + DEC-058 correction (pull request, not merged)",
     "push_routes": {
       "cowork_cloud": "NOT AVAILABLE - GitHub proxy refuses: repo not in the session's authorised set; no way to attach it from Cowork found",
       "github_web_upload_via_chrome": "WORKS - used 28 Sep; one commit per folder; each commit read back byte-for-byte",
@@ -331,7 +332,10 @@
     },
     "RTT-002_check3_starts": {
       "prompt": "prompts/RTT-002_independent_check3_starts.md (sections J-N)",
-      "status": "OUT WITH LUKE (29 Sep 2026, DEC-057); answer stays private on his laptop, hash-frozen in state/ before any comparison"
+      "run": "by Luke on 29 Sep 2026, ChatGPT deep research; transcribed by Claude in Cowork",
+      "files": "F1_Starts_Check_2026-09-29/ (private, laptop Data folder); SHA-256 of all five files in state/RTT-002_independent_check3_freeze.json",
+      "result": "K: wins 116/116, starts 102 agree, 7 NOT FOUND, 7 disagree; L: 34/36; M: 25/26; N: 16/16. One data error corrected (DEC-058); rest = counting convention kept (DEC-059) or one-start source conflicts for drivers never on screen",
+      "report": "reports/RTT-002_starts_check3_report.md"
     }
   },
   "laptop_working_copy": {
