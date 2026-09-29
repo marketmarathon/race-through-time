@@ -1,8 +1,8 @@
 {
   "schema": "rtt-state/0.1",
   "updated": "2026-09-29",
-  "updated_by": "Claude (Claude Code cloud session, environment \"Race Through Time\"), RTT-002 independent check 3 recorded; DEC-058/DEC-059",
-  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); starts data audit PASSED after independent check 3 with the DEC-058 correction and DEC-059 convention (in pull request, branch claude/awesome-planck-etvdg7); IQ-04 MERGED (PR #2); IQ-05 rounds 1-5 MERGED (PR #3-#7)",
+  "updated_by": "Claude (Claude Code cloud session, environment \"Race Through Time\"), private asset store (DEC-060) and pilot render on GitHub (DEC-061)",
+  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); starts data audit PASSED (DEC-058/DEC-059, merged PR #8); IQ-04 MERGED (PR #2); IQ-05 rounds 1-5 MERGED (PR #3-#7); round-5 pilot RENDERED on GitHub into the private repo (DEC-061, branch claude/cool-mccarthy-kf9mow, pull request not merged)",
   "canonical_queue": "state/ folder on main in marketmarathon/race-through-time (this file)",
   "repo_baseline": {
     "repo": "marketmarathon/bars",
@@ -23,7 +23,7 @@
     "schedules": [],
     "recurring_reports": [],
     "public_publishes": [],
-    "note": "nothing activated; nothing uploaded or published. IQ-04 and IQ-05 (rounds 1-5) test frames and phone stills rendered locally in the Claude Code container only (not committed, not uploaded)"
+    "note": "nothing activated; nothing uploaded or published. The round-5 pilot was rendered by GitHub Actions on 29 Sep 2026 and saved ONLY as a pre-release in the PRIVATE repo marketmarathon/race-through-time-private (DEC-061); no workflow artifact, nothing public"
   },
   "episodes": [
     {
@@ -202,7 +202,7 @@
         "IQ-03",
         "IQ-04"
       ],
-      "status": "ROUNDS 1-5 MERGED (pull requests #3-#7); starts correction after independent check 3 (DEC-058/DEC-059) IN PULL REQUEST - branch claude/awesome-planck-etvdg7, not merged",
+      "status": "ROUNDS 1-5 MERGED (pull requests #3-#7); starts correction MERGED (pull request #8, 19b1b03); round-5 pilot RENDERED 29 Sep 2026 into the private repo (DEC-061); render workflow in pull request, branch claude/cool-mccarthy-kf9mow, not merged; Luke to watch the pilot",
       "result": {
         "decisions": "DEC-022 (owner) implemented; Claude working choices DEC-023..DEC-026",
         "colours": "one colour per driver for the whole video, assigned over all 1,164 races (rtt_timeline.js assignColours); 40 drivers reach the top ten, at most 12 on screen together (incl. rows fading out); 12 colours needed and used; palette replaced (IQ-04's closest pair CIEDE2000 9.6, new 18.5; white-name contrast >= 3.2)",
@@ -266,6 +266,18 @@
         "tests": "tests/player/RESULTS.md (checks 26-28, case shared_drive_round5); phone check PASS (thresholds unchanged); OCR tesseract 5.3.4 installed in the container",
         "renders": "none committed or uploaded; pilot not rendered to video (no ffmpeg in the container)",
         "after_check3": "DEC-058: Barrichello 2002 Spanish GP corrected to not a start (starts_corrections.csv; 323 -> 322; List page 116/116). DEC-059: Wikipedia convention kept. Adapter rerun: kits/rtt-002/race_rtt002.json SHA-256 7b7ac6e5e1088468e3d30d09f9e4981cc479514669c125625084e11c2ca05b60 (14,479 starts). Tests rerun: tests/player/RESULTS.md"
+      },
+      "render": {
+        "workflow": ".github/workflows/render_pilot.yml (DEC-061)",
+        "run": "https://github.com/marketmarathon/race-through-time/actions/runs/36600844509 (push on claude/cool-mccarthy-kf9mow @ 5f797d3; success; 6 min 15 s; 0 workflow artifacts)",
+        "release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-002-pilot5-5f797d3-run1 (private, pre-release)",
+        "config": "config_pilot_2014_2021_top20.json; 2502 frames at 30 fps = 83.4 s",
+        "files": {
+          "rtt002_config_pilot_2014_2021_top20_5f797d3_3840x2160.mp4": "a05d4ee3f865618821116b781dd9ea496b749f5779420c03ffaf6bb6da149cd9 (master, x264 CRF 4 slow)",
+          "rtt002_config_pilot_2014_2021_top20_5f797d3_1920x1080_viewing.mp4": "23bfbdf3701592070ea71bdf4cbe2473a3862e864005394a5618ebf9a5e9b732 (viewing copy, x264 CRF 18)"
+        },
+        "checks": "player input hash = dataset_hashes.txt; both asset hashes checked before drawing; both overlays loaded; ffprobe: 3840x2160 and 1920x1080, 30 fps, 2502 frames each",
+        "watched_by_claude": "no - the full video was not downloaded into the Claude Code container; a 120-frame 4K test segment with the real overlays was checked there (one still looked at, then deleted)"
       }
     },
     {
@@ -295,7 +307,7 @@
     "visibility": "public",
     "created": "2026-09-27",
     "created_by": "Claude via Luke's Chrome, on Luke's instruction",
-    "contents": "main @ ee0d4c2 (IQ-05 round 5 merged via pull request #7); branch claude/awesome-planck-etvdg7 = independent check 3 record + DEC-058 correction (pull request, not merged)",
+    "contents": "main @ 19b1b03 (starts correction merged via pull request #8); branch claude/cool-mccarthy-kf9mow = DEC-060/DEC-061 + render workflow (pull request, not merged)",
     "push_routes": {
       "cowork_cloud": "NOT AVAILABLE - GitHub proxy refuses: repo not in the session's authorised set; no way to attach it from Cowork found",
       "github_web_upload_via_chrome": "WORKS - used 28 Sep; one commit per folder; each commit read back byte-for-byte",
@@ -341,5 +353,17 @@
   "laptop_working_copy": {
     "path": "C:\\Users\\luke\\Desktop\\Claude Workspace\\race-through-time",
     "nature": "plain file copy (no .git) of main; GitHub is the master copy"
+  },
+  "private_asset_store": {
+    "repo": "marketmarathon/race-through-time-private",
+    "visibility": "private",
+    "decision": "DEC-060 (Luke, 29 Sep 2026)",
+    "assets": {
+      "assets/rtt-002/rtt_logo.png": "e3db46119b52648c84eae5f6acd682bd7be855819818856e695592b20572eeca (885 x 885)",
+      "assets/rtt-002/rtt_car.png": "4be74e673c601a93d0c08511d474638ca51e04cce5d4f2af46198696e81aa5bb (3435 x 936)"
+    },
+    "hashes_read_back": "29 Sep 2026 by Claude Code: both match",
+    "secret": "RTT_PRIVATE_TOKEN (Actions secret in race-through-time): fine-grained token, race-through-time-private only, Contents read and write, EXPIRES 28 Sep 2027 - renew before then",
+    "claude_github_app": "has access (added to this session 29 Sep 2026)"
   }
 }
