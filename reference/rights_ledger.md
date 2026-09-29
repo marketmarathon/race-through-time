@@ -19,7 +19,7 @@ Every third-party or owner asset the RTT player draws or ships, with its licence
 |---|---|---|---|---|
 | RTT logo, round badge | `marketmarathon/race-through-time-private` (**private**), `assets/rtt-002/rtt_logo.png` | `e3db46119b52648c84eae5f6acd682bd7be855819818856e695592b20572eeca` | 885 × 885 PNG | logo box of the pilot |
 | Car photo, background removed (modified from Liauzh's CC BY 4.0 original, see below) | same repo, `assets/rtt-002/rtt_car.png` | `4be74e673c601a93d0c08511d474638ca51e04cce5d4f2af46198696e81aa5bb` | 3435 × 936 PNG | car box of the pilot |
-| Rendered pilot videos (review renders, not for publication) | same repo, **Releases** (tag `rtt-002-pilot5-…`), written by `.github/workflows/render_pilot.yml` (DEC-061) | in each release's notes | 3840 × 2160 master + 1920 × 1080 viewing copy | Luke's review |
+| Rendered pilot and full-film videos (review renders, not for publication) | same repo, **Releases** (tags `rtt-002-pilot5-…`, `rtt-002-film-…`), written by `.github/workflows/render_pilot.yml` (DEC-061) | in each release's notes | 3840 × 2160 master + 1920 × 1080 viewing copy | Luke's review |
 
 Access: Actions secret `RTT_PRIVATE_TOKEN` in this repo (fine-grained token, `race-through-time-private` only, Contents read and write, expires 28 Sep 2027 — renew before then) and the Claude GitHub App. The render workflow checks both hashes before drawing and leaves nothing on the public side: no workflow artifact, no cache, no committed file (DEC-061). Hashes read back by Claude Code on 29 Sep 2026: both match.
 
@@ -50,4 +50,4 @@ Access: Actions secret `RTT_PRIVATE_TOKEN` in this repo (fine-grained token, `ra
 
 ## Not used
 
-Market Marathon's Archivo TTFs (no licence file in that kit, DEC-016), any formula1.com material (DEC-008), Jolpica/Ergast data (non-commercial, DEC-003), team or sponsor logos as separate graphics (the car photo shows them on the car, see above), music (none chosen yet).
+Market Marathon's Archivo TTFs (no licence file in that kit, DEC-016), any formula1.com material (DEC-008), Jolpica/Ergast data (non-commercial, DEC-003), team or sponsor logos as separate graphics (the car photo shows them on the car, see above), music (none chosen or licensed yet: the pilot and the full film are video only, with no audio track; the render workflow checks this, DEC-063).

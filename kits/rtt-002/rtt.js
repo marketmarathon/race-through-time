@@ -29,6 +29,8 @@
  *     flag as an SVG from the npm package flag-icons (MIT, reference/rights_ledger.md). No flag
  *     file is copied into the repo. A code with no flag-icons file refuses to render; a driver
  *     whose flag_code is NOT FOUND / NOT AVAILABLE simply gets no flag (the name is always drawn).
+ *   - RTT-002 film: with "story" {enabled: true, csv: <file>} loadConfig() attaches the story
+ *     moments (data/rtt-002/story_moments.csv) to the config, for the pacing holds and captions.
  *   - Archivo is loaded from the npm package @fontsource/archivo (SIL OFL 1.1) instead of the
  *     TTFs in the Market Marathon kit, so no font file is copied into this public repo. The
  *     same measure-against-a-missing-family check refuses to render substituted type.
@@ -58,8 +60,17 @@ function readConfig(file, seen = []) {
   const own = Object.assign({}, cfg); delete own.extends;
   return merge(base, own);
 }
+/* RTT-002 film (DEC-063): "story" {enabled, csv} names the story moments file
+   (data/rtt-002/story_moments.csv, written by scripts/rtt002_story.py). Its rows are attached as
+   story.moments here, so the Node frame count and the page build the same timeline. */
 function loadConfig(file, overrides) {
-  return Object.assign(readConfig(file || 'config.json'), overrides || {});
+  const cfg = Object.assign(readConfig(file || 'config.json'), overrides || {});
+  if (cfg.story && cfg.story.enabled) {
+    const f = path.resolve(KIT, cfg.story.csv);
+    if (!fs.existsSync(f)) throw new Error('story.enabled but ' + cfg.story.csv + ' does not exist (run scripts/rtt002_story.py)');
+    cfg.story = Object.assign({}, cfg.story, { moments: readCsvRows(f) });
+  }
+  return cfg;
 }
 
 function frameTotals(cfg, data) {

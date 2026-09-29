@@ -99,6 +99,26 @@
  *  28. win_rate_rounding: the player's rateText against Python's decimal ROUND_HALF_UP on every
  *      pair 0 <= wins <= starts <= 500
  *
+ * Added for the RTT-002 full film (DEC-063), case rtt002_film (config_rtt002_film.json, all 1,164 races):
+ *  29. story moments: rebuilt here in JavaScript, independently of scripts/rtt002_story.py, from the
+ *      audited record_progression.csv, topten_entries.csv, topten_at_freeze.csv, races.csv and the
+ *      win_credits.csv recount, and compared row by row (kind, race, driver, wins, every caption
+ *      line) with data/rtt-002/story_moments.csv, which the player draws. On every frame the caption
+ *      drawn is exactly the expected one (or none), inside the frame, on fixed-pitch digits and
+ *      overlapping no bar, flag, label, axis grid line or overlay box. On each moment's first frame
+ *      the board agrees with the caption (leader, the named driver's drawn win count, the record level)
+ *  30. leader changes: the driver in first place is tracked on every frame; it changes exactly on the
+ *      first frame of the races that record_progression.csv (audited) gives as leader changes, and on
+ *      no other frame; the recount from win_credits.csv gives the same dates
+ *  31. final table: on the last frame the 20 rows, in order, with their drawn win counts equal
+ *      career_totals.csv ranks 1-20, and the top ten equals topten_at_freeze.csv; the final board is
+ *      on screen for 8-12 s
+ *  32. smooth pacing: every beat outside the story holds is within 0.8-1.4 x 0.5 s, neighbouring beat
+ *      multipliers differ by at most pacing.smooth.slew (and the frames follow the multipliers to the
+ *      nearest frame); every race from 2 before to 3 after each emphasis race (story moments and every
+ *      entry into the top ten, found here from win_credits.csv) runs at the slowest beat (1.4 x) or is
+ *      held; each story race is held exactly story.hold_sec[kind]
+ *
  * Usage: node tests/player/run_tests.js [case ...]     (needs `npm ci` in kits/rtt-002)
  * Output: tests/output/ (PNGs, gitignored) and tests/player/RESULTS.md
  */
@@ -118,7 +138,7 @@ const CLEAR_ALPHA = 0.8;             // "clearly visible": row opacity at least 
 const COLOUR_OF = {};                // rows -> driver -> drawn colour, across every RTT-002 case with that board
 const HOLD_SETTLE_ROWS = 0.1;        // "settled": every row within this many rows of its place
 const MAX_ONSETS_PER_SEC = 3;        // blueprint section 10: no strobing
-const TAB_KINDS = ['value', 'axis', 'time_season', 'time_date', 'time_line', 'winner', 'event', 'stats'];
+const TAB_KINDS = ['value', 'axis', 'time_season', 'time_date', 'time_line', 'winner', 'event', 'stats', 'caption'];
 const OVERTAKE_ROWS = 0.85;          // rows closer than this are mid-overtake (the player's name-pad rule)
 const RIGHT_MARGIN = 1920 - 64;      // IQ-05d: every event label must end inside the 64 px right margin
 const BRIGHT = 50;
@@ -291,6 +311,53 @@ sys.stdout.write("\\n".join(out))`], { encoding: 'utf8', maxBuffer: 1 << 26 }).s
   return res;
 }
 
+/* (29) The film's story moments, rebuilt here from the audited files with the same rules as
+   scripts/rtt002_story.py but a separate implementation, and the leader changes (30) two ways. */
+function filmStory(dir, E) {
+  const prog = readCSV(path.join(dir, 'record_progression.csv'));
+  const entries = readCSV(path.join(dir, 'topten_entries.csv'));
+  const nowTop = new Set(readCSV(path.join(dir, 'topten_at_freeze.csv')).map(r => r.driver_id));
+  const months = rtt.loadConfig('config.json').time_label.months;
+  const byDate = Object.fromEntries(E.races.map(r => [r.race_date, r]));
+  const pos = Object.fromEntries(E.races.map((r, i) => [r.race_index, i]));
+  const before = r => pos[r.race_index] ? E.after[E.races[pos[r.race_index] - 1].race_index] : { order: [], totals: {} };
+  const N = E.names, W = n => n + (n === 1 ? ' win' : ' wins');
+  const M = [], add = (kind, r, id, n, lines) => M.push({ kind, race_index: r.race_index, driver_id: id, n, lines });
+  const first = E.races[0];
+  add('FIRST_RACE', first, first.winner_driver_ids, 1, ['The first World Championship Grand Prix', 'Won by ' + N[first.winner_driver_ids]]);
+  let leader = null; const leaders = [];
+  prog.forEach((p, i) => { if (p.event === 'BECOMES_SOLE' && p.driver_id !== leader) { if (leader) leaders.push({ i, p, was: leader }); leader = p.driver_id; } });
+  for (const { p, was } of leaders) {
+    const r = byDate[p.race_date];
+    add('LEADER', r, p.driver_id, +p.career_wins, ['New all-time leader', `${N[p.driver_id]} · ${W(+p.career_wins)}`, `passes ${N[was]} (${W(before(r).totals[was])})`]);
+  }
+  const leadRow = new Set(leaders.map(x => x.i));
+  prog.forEach((p, i) => {
+    if (p.event !== 'BECOMES_JOINT') return;
+    const j = prog.findIndex((q, jj) => jj > i && q.driver_id === p.driver_id);
+    if (j < 0 || !leadRow.has(j)) return;
+    const others = p.record_holders_after.split(';').map(x => x.trim()).filter(x => x !== p.driver_name);
+    add('EQUALS', byDate[p.race_date], p.driver_id, +p.career_wins, ['Record equalled', `${N[p.driver_id]} · ${W(+p.career_wins)}`, 'level with ' + others.join(' and ')]);
+  });
+  for (const m of [50, 100]) {
+    const p = prog.find(q => +q.career_wins === m);
+    add('MILESTONE', byDate[p.race_date], p.driver_id, m, [`First driver to ${m} wins`, N[p.driver_id]]);
+  }
+  for (const e of entries.filter(e => nowTop.has(e.driver_id)))
+    add('TOPTEN', byDate[e.race_date], e.driver_id, +e.career_wins, ['Into the all-time top ten', `${N[e.driver_id]} · ${W(+e.career_wins)}`]);
+  const last = E.races[E.races.length - 1], lw = last.winner_driver_ids.split(';')[0];
+  add('FREEZE', last, lw, E.after[last.race_index].totals[lw], ['Standings at the data freeze', `${last.season} ${gpShort(last.grand_prix)} · ${dateText(last.race_date, months)}`]);
+  M.sort((a, b) => a.race_index - b.race_index);
+  /* (30) leader changes: audited (record_progression.csv) and recounted (win_credits.csv) */
+  const audited = leaders.map(x => `${x.p.race_date}|${x.p.driver_id}`);
+  const recount = []; let lead = null;
+  for (const r of E.races) { const t = E.after[r.race_index].order[0]; if (t !== lead) { if (lead) recount.push(`${r.race_date}|${t}`); lead = t; } }
+  /* (32) emphasis races: story moments and every entry into the top ten */
+  const emph = new Set(M.map(m => m.race_index));
+  E.races.forEach((r, i) => { const was = i ? E.after[E.races[i - 1].race_index].order.slice(0, 10) : []; if (E.after[r.race_index].order.slice(0, 10).some(id => !was.includes(id))) emph.add(r.race_index); });
+  return { moments: M, audited, recount, emphasis: emph };
+}
+
 async function runCase(c) {
   const out = path.join(OUTDIR, c.name);
   fs.rmSync(out, { recursive: true, force: true }); fs.mkdirSync(out, { recursive: true });
@@ -318,10 +385,34 @@ async function runCase(c) {
   if (STON && !E.hasStarts) throw new Error(c.name + ': stats_label on but ' + c.dir + ' has no starts.csv');
   const natCode = {};
   if (FLAGON) for (const r of readCSV(path.resolve(KITDIR, cfg.flags.csv))) natCode[r.driver_id] = /^[a-z]{2}(-[a-z]+)?$/.test(r.flag_code) ? r.flag_code : null;
+  /* (29)-(32) the full film: expected story moments and leader changes, built here */
+  const STORY = !!(cfg.story && cfg.story.enabled);
+  const film = STORY ? filmStory(c.dir, E) : null;
+  if (STORY) {
+    res.captions = 0; res.caption_clear = null; res.leader_changes = [];
+    const csv = readCSV(path.resolve(KITDIR, cfg.story.csv));
+    const key = m => [m.kind, m.race_index, m.driver_id, m.n, ...m.lines].join('|');
+    const got = csv.map(r => key({ kind: r.kind, race_index: r.race_index, driver_id: r.driver_id, n: +r.career_wins, lines: [r.caption_1, r.caption_2, r.caption_3].filter(Boolean) }));
+    const want = film.moments.map(key);
+    for (let i = 0; i < Math.max(got.length, want.length); i++) if (got[i] !== want[i]) fail(`story_moments.csv row ${i + 1}: "${got[i]}" but the audited files give "${want[i]}"`);
+    if (JSON.stringify(film.audited) !== JSON.stringify(film.recount)) fail(`leader changes: record_progression.csv gives ${film.audited.join(', ')}, the win_credits.csv recount ${film.recount.join(', ')}`);
+    res.notes.push(`story moments: ${want.length} rebuilt here from the audited files, equal to story_moments.csv row for row (${Object.entries(film.moments.reduce((a, m) => (a[m.kind] = (a[m.kind] || 0) + 1, a), {})).map(([k, v]) => `${v} ${k}`).join(', ')})`);
+    res.notes.push(`leader changes (record_progression.csv, audited; the same ${film.recount.length} dates from the win_credits.csv recount): ${film.audited.map(x => { const [d, id] = x.split('|'); return `${d} ${E.names[id]}`; }).join('; ')}`);
+  }
   const { br, pg } = await rtt.openPlayer({ cfg, data, raster: 1, chrome: process.env.PW_CHROME || '/opt/pw-browsers/chromium' });
   delete process.env.RTT_LOCAL_ASSETS;
   try {
-    const info = await pg.evaluate(() => ({ raceFrames: RACE_FRAMES, start: TL.startFrame, kind: TL.kind, mult: TL.mult, hold: TL.hold, namePx: nameSize(), trunc: NAME_TRUNC }));
+    const info = await pg.evaluate(() => ({ raceFrames: RACE_FRAMES, start: TL.startFrame, kind: TL.kind, mult: TL.mult, hold: TL.hold, holdSec: TL.holdSec, namePx: nameSize(), trunc: NAME_TRUNC }));
+    /* (29) when each caption should be on screen, computed here: from the moment race's first
+       frame for story.caption_sec, cut short by the next caption; the last one to the end */
+    const capWin = [];
+    if (STORY) {
+      const ms = film.moments.map(m => ({ m, k: inWindow.findIndex(r => r.race_index === m.race_index) })).filter(x => x.k >= 0);
+      ms.forEach((x, i) => { const from = info.start[x.k], next = i + 1 < ms.length ? info.start[ms[i + 1].k] : null;
+        capWin.push({ m: x.m, k: x.k, from, to: next == null ? info.raceFrames : Math.min(next, from + Math.round(cfg.story.caption_sec * cfg.fps)) }); });
+    }
+    const ocrAt = new Set(capWin.map(x => x.from));
+    let lastLeader = null;
     const WL = !!(cfg.winner_line && cfg.winner_line.enabled), HLON = !!(cfg.highlight && cfg.highlight.enabled);
     const hlFrames = HLON ? Math.round((cfg.highlight.sec || 0.4) * cfg.fps) : 0;
     const prevHl = {}, onsetFrames = [];
@@ -581,6 +672,53 @@ async function runCase(c) {
         res.holds.push({ k, race: ri, settle: worst });
         if (worst >= HOLD_SETTLE_ROWS) fail(`race ${ri}: held, but a row is still ${worst.toFixed(3)} rows from its place on the last frame of the hold`);
       }
+      /* (29) the caption on this frame */
+      if (STORY) {
+        const want = capWin.find(x => f >= x.from && f < x.to);
+        const cap = L.labels.filter(x => x.kind === 'caption').sort((a, b) => a.line - b.line);
+        if (!want) { if (cap.length) fail(`frame ${f}: caption "${cap.map(x => x.text).join(' / ')}" drawn outside every moment`); }
+        else {
+          const m = want.m;
+          if (cap.map(x => x.text).join(' / ') !== m.lines.join(' / ') || cap.some(x => !(x.alpha > 0) || x.moment !== film.moments.indexOf(m) + 1))
+            fail(`frame ${f} (race ${ri}): caption "${cap.map(x => x.text).join(' / ')}" != "${m.lines.join(' / ')}"`);
+          for (let i = 1; i < cap.length; i++) if (!(cap[i].y > cap[i - 1].y)) fail(`frame ${f}: caption lines out of order`);
+          const others = [...L.bars.filter(b => b.alpha > 0).map(b => clipBarR(b.rect)).filter(r => r.b > r.t),
+                          ...L.flags.filter(x => x.alpha > 0).map(x => ({ l: x.x, r: x.x + x.w, t: x.y, b: x.y + x.h })),
+                          ...L.labels.filter(x => x.alpha > 0 && x.kind !== 'caption').map(rectOf),
+                          ...L.grid.map(x => ({ l: x.x, r: x.x + x.w, t: x.y, b: x.y + x.h })),
+                          ...L.overlays.map(o => ({ l: o.box.x, r: o.box.x + o.box.w, t: o.box.y, b: o.box.y + o.box.h }))];
+          for (const x of cap) {
+            const R = rectOf(x);
+            if (R.r > RIGHT_MARGIN + 0.01 || R.l < 64 || R.t < 0 || R.b > 1080 - YT_CONTROLS_PX) fail(`frame ${f}: caption line "${x.text}" leaves the safe area`);
+            for (const o of others) {
+              if (overlap(R, o)) fail(`frame ${f} (race ${ri}): caption "${x.text}" overlaps something at x ${o.l.toFixed(0)}-${o.r.toFixed(0)}, y ${o.t.toFixed(0)}-${o.b.toFixed(0)}`);
+              const g = gap(R, o); if (res.caption_clear == null || g < res.caption_clear) { res.caption_clear = g; res.caption_clear_at = `"${x.text}", frame ${f}`; }
+            }
+          }
+          res.captions++;
+          /* on the moment's first frame the board agrees with the caption */
+          if (f === want.from) {
+            const shows = id => vals[id];
+            const note = `${m.kind} ${exp.race.race_date} ${exp.race.grand_prix}`;
+            if (shows(m.driver_id) !== m.n) fail(`${note}: caption says ${E.names[m.driver_id]} ${m.n}, board shows ${shows(m.driver_id)}`);
+            if (m.kind === 'LEADER' && L.rank[0] !== m.driver_id) fail(`${note}: caption names ${E.names[m.driver_id]} as leader, board leader is ${E.names[L.rank[0]]}`);
+            if (m.kind === 'LEADER') { const was = Object.keys(E.names).find(id => m.lines[2] === `passes ${E.names[id]} (${shows(id)} ${shows(id) === 1 ? 'win' : 'wins'})`); if (!was) fail(`${note}: "${m.lines[2]}" does not match the board`); }
+            if (m.kind === 'EQUALS' && shows(L.rank[0]) !== m.n) fail(`${note}: record equalled at ${m.n}, board leader has ${shows(L.rank[0])}`);
+            if (m.kind === 'MILESTONE' && Object.entries(exp.totals).some(([id, n]) => id !== m.driver_id && n >= m.n)) fail(`${note}: someone else already has ${m.n}`);
+            if (m.kind === 'TOPTEN' && !L.rank.slice(0, 10).includes(m.driver_id)) fail(`${note}: ${E.names[m.driver_id]} not in the top ten on the board`);
+            if (m.kind === 'FIRST_RACE' && k !== 0) fail(`${note}: not the first race`);
+            if (m.kind === 'FREEZE' && k !== inWindow.length - 1) fail(`${note}: not the last race`);
+          }
+        }
+        /* (30) the leader, frame by frame */
+        if (L.rank[0] !== lastLeader) {
+          if (lastLeader != null) {
+            res.leader_changes.push(`${exp.race.race_date}|${L.rank[0]}`);
+            if (info.start[k] !== f) fail(`frame ${f}: the leader changed off the first frame of a race`);
+          }
+          lastLeader = L.rank[0];
+        }
+      }
       /* (8) colours on screen */
       const shown = L.bars.filter(b => b.alpha > 0);
       const CO = COLOUR_OF[cfg.rows] = COLOUR_OF[cfg.rows] || {};
@@ -598,7 +736,7 @@ async function runCase(c) {
       if (c.expect.max_visible != null && Object.keys(vals).length > c.expect.max_visible) fail(`frame ${f}: more than ${c.expect.max_visible} bars`);
 
       /* event boundaries: keep the frame, and read the value labels back from its pixels */
-      if (bounds.has(f) && !c.light) {
+      if (bounds.has(f) && (!c.light || (c.ocrMoments && ocrAt.has(f)))) {
         res.boundary_frames++;
         const k = info.start.indexOf(f) >= 0 ? 'first' : 'last';
         const png = path.join(out, `f${String(f).padStart(5, '0')}_race${ri}_${k}.png`);
@@ -659,6 +797,38 @@ async function runCase(c) {
       const base = inWindow.length * cfg.pacing.sec_per_event;
       res.notes.push(`quiet stretch paced at ${cfg.pacing.mult.quiet}x; events take ${((info.raceFrames / cfg.fps) - cfg.pacing.lead_in_sec - cfg.pacing.end_hold_sec).toFixed(2)} s against ${base.toFixed(2)} s unpaced`);
     }
+    /* (30)-(32) the full film */
+    if (STORY) {
+      if (JSON.stringify(res.leader_changes) !== JSON.stringify(film.audited)) fail(`leader changes drawn ${res.leader_changes.join(', ')} != record_progression.csv ${film.audited.join(', ')}`);
+      else res.notes.push(`leader changes: the drawn leader changed ${res.leader_changes.length} times, each on the first frame of the race record_progression.csv gives, and on no other frame`);
+      res.notes.push(`captions: ${res.captions} frames checked; closest item to any caption ${res.caption_clear == null ? 'n/a' : res.caption_clear.toFixed(1) + ' px (' + res.caption_clear_at + ')'}`);
+      for (const w of capWin) res.notes.push(`moment ${w.m.kind} ${w.m.race_index} ${inWindow[w.k].race_date} ${inWindow[w.k].grand_prix}: "${w.m.lines.join(' / ')}" frames ${w.from}-${w.to - 1} (${((w.to - w.from) / cfg.fps).toFixed(1)} s from ${(w.from / cfg.fps).toFixed(1)} s)`);
+      /* (31) the final table */
+      const endL = await pg.evaluate(t => { drawAt(t); return { labels: window.__LABELS, rank: window.__RANK }; }, (info.raceFrames - 1) / cfg.fps);
+      const totals = readCSV(path.join(c.dir, 'career_totals.csv')).slice(0, cfg.rows);
+      const drawnV = Object.fromEntries(endL.labels.filter(x => x.kind === 'value').map(x => [x.id, +x.text.replace(/,/g, '').split(' ')[0]]));
+      totals.forEach((t, i) => { if (endL.rank[i] !== t.driver_id || drawnV[t.driver_id] !== +t.wins) fail(`final table row ${i + 1}: drawn ${E.names[endL.rank[i]]} ${drawnV[endL.rank[i]]}, career_totals.csv ${t.driver_name} ${t.wins}`); });
+      const top10 = readCSV(path.join(c.dir, 'topten_at_freeze.csv'));
+      if (top10.some((t, i) => endL.rank[i] !== t.driver_id || drawnV[t.driver_id] !== +t.wins)) fail('final top ten differs from topten_at_freeze.csv');
+      const onFinal = (info.raceFrames - info.start[info.start.length - 1]) / cfg.fps;
+      if (onFinal < 8 || onFinal > 12) fail(`final table on screen ${onFinal} s (brief: 8-12 s)`);
+      res.notes.push(`final table (last frame): ${totals.map((t, i) => `${i + 1}. ${t.driver_name} ${drawnV[t.driver_id]}`).join(', ')} — equal to career_totals.csv ranks 1-${cfg.rows} and topten_at_freeze.csv; on screen ${onFinal.toFixed(1)} s`);
+      /* (32) smooth pacing, reading time and holds */
+      const sp = cfg.pacing.sec_per_event * cfg.fps, S = cfg.pacing.smooth, last = info.start.length - 1;
+      const slotK = k => (k < last ? info.start[k + 1] : info.raceFrames) - info.start[k];
+      let worstStep = 0, slow = 0, fast = 0;
+      for (let k = 0; k < last; k++) {
+        if (!info.hold[k]) { if (Math.abs(slotK(k) - sp * info.mult[k]) > 1) fail(`race ${inWindow[k].race_index}: beat ${slotK(k)} frames does not follow its multiplier ${info.mult[k].toFixed(3)}`); if (info.mult[k] <= cfg.pacing.bounds[0] + 1e-9) fast++; }
+        if (k > 0) { const d = Math.abs(info.mult[k] - info.mult[k - 1]); worstStep = Math.max(worstStep, d); if (d > S.slew + 1e-9) fail(`race ${inWindow[k].race_index}: beat multiplier jumps ${d.toFixed(3)} (limit ${S.slew})`); }
+      }
+      inWindow.forEach((r, e) => {
+        if (!film.emphasis.has(r.race_index)) return;
+        for (let k = Math.max(0, e - S.reading.before); k <= Math.min(last - 1, e + S.reading.after); k++)
+          if (!info.hold[k] && slotK(k) < S.reading.mult * sp - 1) fail(`race ${inWindow[k].race_index}: only ${slotK(k)} frames near emphasis race ${r.race_index}`);
+      });
+      for (const w of capWin) if (w.k < last) { const want = cfg.story.hold_sec[w.m.kind] * cfg.fps; if (!info.hold[w.k] || Math.abs(slotK(w.k) - want) > 1) fail(`story race ${w.m.race_index}: held ${slotK(w.k)} frames, config ${want}`); else slow++; }
+      res.notes.push(`pacing: ${film.emphasis.size} emphasis races (story moments + every entry into the top ten) each with 1.4x beats from ${S.reading.before} races before to ${S.reading.after} after; ${slow} story races held for their hold_sec; ${fast} of ${last} beats at the fastest 0.8x (0.4 s); largest step between neighbouring multipliers ${worstStep.toFixed(3)} (limit ${S.slew}); total ${(info.raceFrames / cfg.fps).toFixed(1)} s`);
+    }
     /* (10) milestones, read from the drawn labels on the first frame of the race */
     for (const m of (c.expect.milestones || [])) {
       const k = inWindow.findIndex(r => r.season === m.season && r.grand_prix === m.grand_prix);
@@ -696,7 +866,7 @@ async function runCase(c) {
       const first = await pg.evaluate(() => { drawAt(0); return window.__LABELS; });
       const vals = first.filter(x => x.kind === 'value' && x.alpha > 0).length;
       if (!first.some(x => x.kind === 'title' && x.text === cfg.title) || !vals) fail(`first frame is not the board with the title (title ${first.some(x => x.kind === 'title')}, ${vals} values)`);
-      else res.notes.push(`opening: no title card; frame 0 is the board with the title "${cfg.title}" and ${vals} value labels (the totals before ${inWindow[0].season} ${inWindow[0].grand_prix}); first race lands at ${(info.start[0] / cfg.fps).toFixed(2)} s`);
+      else res.notes.push(`opening: no title card; frame 0 is the board with the title "${cfg.title}" and ${vals} value labels (${before ? `the totals before ${inWindow[0].season} ${inWindow[0].grand_prix}` : `the board opens empty, so ${inWindow[0].season} ${inWindow[0].grand_prix} lands on frame 0`}); first race lands at ${(info.start[0] / cfg.fps).toFixed(2)} s`);
     }
     if (cfg.pacing.final_board_sec != null) {
       const on = (info.raceFrames - info.start[info.start.length - 1]) / cfg.fps;
@@ -705,7 +875,8 @@ async function runCase(c) {
     }
     /* (14) record holds: exactly the listed moments, and every other beat inside the bounds */
     const slot = k => ((k + 1 < info.start.length ? info.start[k + 1] : null) - info.start[k]);
-    const heldRaces = inWindow.filter((r, k) => info.hold[k]).map(r => r.race_index);
+    const storyRace = new Set(STORY ? film.moments.map(m => m.race_index) : []);
+    const heldRaces = inWindow.filter((r, k) => info.hold[k] && !storyRace.has(r.race_index)).map(r => r.race_index);
     if (c.rtt002 && cfg.record_hold) {
       const types = cfg.record_hold.types || ['BECOMES_JOINT', 'BECOMES_SOLE'];
       const moments = recordProgression(c.dir).filter(r => inWindow.some(w => w.race_date === r.race_date));
@@ -720,7 +891,7 @@ async function runCase(c) {
     const beatLo = cfg.pacing.bounds[0] * cfg.pacing.sec_per_event * cfg.fps, beatHi = cfg.pacing.bounds[1] * cfg.pacing.sec_per_event * cfg.fps;
     let slotMin = Infinity, slotMax = 0;
     for (let k = 0; k + 1 < info.start.length; k++) {
-      if (info.hold[k]) { if (Math.abs(slot(k) - cfg.record_hold.sec * cfg.fps) > 1) fail(`race ${inWindow[k].race_index}: held ${slot(k)} frames, config says ${cfg.record_hold.sec} s`); continue; }
+      if (info.hold[k]) { if (Math.abs(slot(k) - info.holdSec[k] * cfg.fps) > 1) fail(`race ${inWindow[k].race_index}: held ${slot(k)} frames, config says ${info.holdSec[k]} s`); continue; }
       slotMin = Math.min(slotMin, slot(k)); slotMax = Math.max(slotMax, slot(k));
       if (slot(k) < beatLo - 1 || slot(k) > beatHi + 1) fail(`race ${inWindow[k].race_index}: beat ${slot(k)} frames is outside ${cfg.pacing.bounds} x ${cfg.pacing.sec_per_event} s`);
     }
@@ -775,6 +946,9 @@ async function main() {
   cases.push({ name: 'rtt002_2014_2021_A_top20', dir: RTT002, rtt002: true, config: 'config_pilot_2014_2021_top20.json', expect: { milestones } });
   /* the whole video, every frame, draw-call checks only (no PNGs or OCR: 16,000 frames) */
   cases.push({ name: 'rtt002_full_run', dir: RTT002, rtt002: true, light: true, overrides: {}, expect: {} });
+  /* RTT-002 full film (DEC-063): every frame of config_rtt002_film.json, draw-call checks on every
+     frame plus OCR on the first frame of every story moment (no PNGs elsewhere: about 20,000 frames) */
+  cases.push({ name: 'rtt002_film', dir: RTT002, rtt002: true, light: true, ocrMoments: true, config: 'config_rtt002_film.json', expect: {} });
   const run = only.length ? cases.filter(c => only.includes(c.name)) : cases;
 
   const results = [];
@@ -814,7 +988,7 @@ function writeReport(results) {
   const L = [];
   const cases = results.filter(r => r.frames != null), cols = results.filter(r => r.name.startsWith('colour_rule_full_dataset'));
   const rec = results.find(r => r.name === 'record_moments_full_dataset');
-  L.push('# Player test results (IQ-05 round 5)', '');
+  L.push('# Player test results (RTT-002 full film)', '');
   L.push('Written by `node tests/player/run_tests.js` (all cases). Frames are 1920x1080 (preview width), drawn headless in Playwright ' + pw + ' Chromium, every race frame in order.');
   L.push('OCR: ' + (HAS_OCR ? spawnSync('tesseract', ['--version'], { encoding: 'utf8' }).stdout.split('\n')[0] + ' on every value label (and stats label, where on) of the first frame of every race.' : 'NOT AVAILABLE (tesseract not installed); draw-call checks only.'), '');
   L.push(`Overall: ${results.filter(r => r.pass).length}/${results.length} PASS.`, '');
