@@ -16,7 +16,7 @@
  "story": {
   "enabled": true,
   "csv": "../../data/rtt-002/story_moments.csv",
-  "hold_sec": { "FIRST_RACE": 2.5, "LEADER": 3.0, "EQUALS": 3.0, "MILESTONE": 2.5, "TOPTEN": 2.0, "FREEZE": 1.0 },
+  "hold_sec": { "FIRST_RACE": 2.5, "LEADER": 3.0, "EQUALS": 3.0, "MILESTONE": 2.5, "TOPTEN": 2.5, "FREEZE": 1.0 },
   "caption_sec": 4.5,
   "fade_in_sec": 0.25,
   "fade_out_sec": 0.4,

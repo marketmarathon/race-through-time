@@ -383,9 +383,10 @@ window.drawIntro=drawIntro;
 
 /* A 1 px axis grid line from y0 to y1, broken where it would cross a reserved overlay box
    (IQ-05d): the box, widened by OVLGAP, is left empty. Segments go to window.__GRID. */
+let CAPBOX=[];                                   // RTT-002 film: the caption on screen, kept clear like a box
 function gridLine(x,y0,y1){
   let segs=[[y0,y1]];
-  for(const b of OVL){
+  for(const b of OVL.concat(CAPBOX)){
     if(x+1<=b.x-OVLGAP || x>=b.x+b.w+OVLGAP) continue;
     const t=b.y-OVLGAP, u=b.y+b.h+OVLGAP, next=[];
     for(const [a,z] of segs){ if(z<=t || a>=u){ next.push([a,z]); continue; }
@@ -429,6 +430,9 @@ function drawAt(t){
 
   // the time label sits UNDER the bars, as C2-2's year did, so a long bar crosses in front
   drawTime(ev);
+
+  const CAP = STORY ? captionLayout(fr) : null;
+  CAPBOX = CAP && CAP.c ? [CAP.box] : [];
 
   // scale: follows the longest bar as drawn, so it glides with the bars
   const G=geom(), x0=G.x0, W=G.W;
@@ -533,7 +537,7 @@ function drawAt(t){
   ctx.fillStyle=T.foot; ctx.font='400 '+SZ.footer+'px '+FONT;
   text('footer',null,CFG.footer||'',LEFT,1080-20,'left');
 
-  if(STORY) drawCaption(fr);
+  if(STORY) drawCaption(CAP);
 
   /* IQ-05c overlays (DEC-035): each picture fitted inside its reserved box; none if absent */
   window.__OVERLAYS=OVL.map(b=>{
@@ -551,27 +555,38 @@ function drawAt(t){
 window.drawAt=drawAt;
 
 /* RTT-002 film: the caption of the story moment on screen at race frame fr, if any. Lines are
-   stacked upwards from caption.y (last line on caption.y); first line bold white, the rest grey. */
-function drawCaption(fr){
+   stacked upwards from caption.y (last line on caption.y); first line bold white, the rest grey.
+   captionLayout() measures it before anything is drawn, so the axis grid lines can stop short of
+   it (as they do for the overlay boxes); drawCaption() draws it on top. */
+function captionLayout(fr){
   const c=TL.captions.find(x=>fr>=x.from && fr<x.to);
-  window.__CAPTION = c ? {moment:c.moment, alpha:0} : null;
-  if(!c) return;
+  if(!c) return {c:null};
   const inF=Math.max(1,STORY.fade_in_sec*FPS), outF=Math.max(1,STORY.fade_out_sec*FPS);
   const last = c.to>=RACE_FRAMES;                         // the freeze caption stays to the end
   const a=Math.min(ease((fr-c.from+1)/inF), last ? 1 : ease((c.to-fr)/outF));
-  if(a<=0) return;
-  const C=STORY.caption, n=c.lines.length;
-  ctx.globalAlpha=a;
-  let y=C.y;
+  const C=STORY.caption, n=c.lines.length, lines=[];
+  let y=C.y, l=1920, r=0, top=1080, bot=0;
   for(let i=n-1;i>=0;i--){
     const sz=C.sizes[Math.min(i,C.sizes.length-1)], wt=C.weights[Math.min(i,C.weights.length-1)];
-    ctx.font=wt+' '+sz+'px '+FONT; ctx.fillStyle = i===0 ? '#F4F6FA' : (T.cap||T.muted);
-    tabText(c.lines[i], C.x, y, C.align||'right', 'caption', null);
-    const L=window.__LABELS[window.__LABELS.length-1]; L.moment=c.moment; L.line=i;
+    ctx.font=wt+' '+sz+'px '+FONT;
+    const w=tabWidth(c.lines[i],pitch()), al=C.align||'right', x0 = al==='right' ? C.x-w : al==='center' ? C.x-w/2 : C.x;
+    lines.push({i,text:c.lines[i],y,font:ctx.font});
+    l=Math.min(l,x0); r=Math.max(r,x0+w); top=Math.min(top,y-sz); bot=Math.max(bot,y+sz*0.3);
     if(i>0) y-= C.sizes[Math.min(i-1,C.sizes.length-1)] + C.line_gap;
   }
+  return {c, a, lines, box:{x:l, y:top, w:r-l, h:bot-top}};
+}
+function drawCaption(L){
+  window.__CAPTION = L && L.c ? {moment:L.c.moment, alpha:L.a} : null;
+  if(!L || !L.c || L.a<=0) return;
+  const C=STORY.caption;
+  ctx.globalAlpha=L.a;
+  for(const ln of L.lines){
+    ctx.font=ln.font; ctx.fillStyle = ln.i===0 ? '#F4F6FA' : (T.cap||T.muted);
+    tabText(ln.text, C.x, ln.y, C.align||'right', 'caption', null);
+    const R=window.__LABELS[window.__LABELS.length-1]; R.moment=L.c.moment; R.line=ln.i;
+  }
   ctx.globalAlpha=1;
-  window.__CAPTION.alpha=a;
 }
 
 function drawOutro(o){

@@ -35,7 +35,7 @@ RTT_CONFIG=config_pilot_2014_2021_top20.json FRAME_COUNT_ONLY=1 node rtt.js   # 
 ```
 Full film (DEC-063):
 ```
-RTT_CONFIG=config_rtt002_film.json FRAME_COUNT_ONLY=1 node rtt.js   # FRAMES 19883 = 662.8 s (11 min 3 s)
+RTT_CONFIG=config_rtt002_film.json FRAME_COUNT_ONLY=1 node rtt.js   # FRAMES 20033 = 667.8 s (11 min 8 s)
 python scripts/rtt002_story.py        # rebuilds data/rtt-002/story_moments.csv and reports/RTT-002_story_moments.md
 ```
 Config keys added for the film (optional; absent = round-5 behaviour): `pacing.mode` "smooth" with `pacing.smooth` {sigma, slew, entry_rows, reading {mult, before, after}}; `story` {enabled, csv, hold_sec {kind: s}, caption_sec, fade_in_sec, fade_out_sec, caption {x, y, align, sizes, weights, line_gap}}.

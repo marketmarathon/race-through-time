@@ -700,14 +700,17 @@ async function runCase(c) {
           if (f === want.from) {
             const shows = id => vals[id];
             const note = `${m.kind} ${exp.race.race_date} ${exp.race.grand_prix}`;
-            if (shows(m.driver_id) !== m.n) fail(`${note}: caption says ${E.names[m.driver_id]} ${m.n}, board shows ${shows(m.driver_id)}`);
+            if (m.kind !== 'FREEZE' && shows(m.driver_id) !== m.n) fail(`${note}: caption says ${E.names[m.driver_id]} ${m.n}, board shows ${shows(m.driver_id)}`);
             if (m.kind === 'LEADER' && L.rank[0] !== m.driver_id) fail(`${note}: caption names ${E.names[m.driver_id]} as leader, board leader is ${E.names[L.rank[0]]}`);
             if (m.kind === 'LEADER') { const was = Object.keys(E.names).find(id => m.lines[2] === `passes ${E.names[id]} (${shows(id)} ${shows(id) === 1 ? 'win' : 'wins'})`); if (!was) fail(`${note}: "${m.lines[2]}" does not match the board`); }
             if (m.kind === 'EQUALS' && shows(L.rank[0]) !== m.n) fail(`${note}: record equalled at ${m.n}, board leader has ${shows(L.rank[0])}`);
             if (m.kind === 'MILESTONE' && Object.entries(exp.totals).some(([id, n]) => id !== m.driver_id && n >= m.n)) fail(`${note}: someone else already has ${m.n}`);
             if (m.kind === 'TOPTEN' && !L.rank.slice(0, 10).includes(m.driver_id)) fail(`${note}: ${E.names[m.driver_id]} not in the top ten on the board`);
             if (m.kind === 'FIRST_RACE' && k !== 0) fail(`${note}: not the first race`);
-            if (m.kind === 'FREEZE' && k !== inWindow.length - 1) fail(`${note}: not the last race`);
+            if (m.kind === 'FREEZE') {                    // names no driver: the race and date must be the date line's
+              const dl = L.labels.find(x => x.kind === 'time_line');
+              if (k !== inWindow.length - 1 || !dl || m.lines[1] !== `${exp.race.season} ${dl.text.split(' · ')[1]} · ${dl.text.split(' · ')[0]}`) fail(`${note}: freeze caption "${m.lines[1]}" does not match the last race / date line "${dl && dl.text}"`);
+            }
           }
         }
         /* (30) the leader, frame by frame */
