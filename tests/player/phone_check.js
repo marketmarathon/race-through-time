@@ -20,6 +20,8 @@
  * round 1's top-ten names (32 px = 6.5 pt) for information; that line is not a pass/fail gate.
  * Round 3 also reports, for information: the flag size (px on the frame, points on the phone) and the
  * event label size. There is no pass/fail threshold for flags: none was set, and none is invented here.
+ * Round 5 (IQ-05e) reports, for information, the stats label ("· 306 starts · 29.7%") and the bold win
+ * count before it; no new threshold is set for them (none was given, and none is invented here).
  * Exit code 1 if any check fails.
  *
  * Usage: node tests/player/phone_check.js      Output: tests/output/phone/ (gitignored)
@@ -119,6 +121,8 @@ async function stills(configFile, pick) {
   for (const r of report) if (r.flag || r.sizes.event) console.log(`  ${r.still}: ${r.flag ? `${r.flag.n} flags, each ${r.flag.w} x ${r.flag.h} px = ${pt(r.flag.w).toFixed(1)} x ${pt(r.flag.h).toFixed(1)} pt (${(pt(r.flag.w) * DPR).toFixed(0)} x ${(pt(r.flag.h) * DPR).toFixed(0)} device pixels)` : 'no flags'}${r.sizes.event ? `; event label ${r.sizes.event}px = ${pt(r.sizes.event).toFixed(2)} pt` : ''}`);
   console.log('\nFor information (not a gate): the date line (round 4) and the footer at phone scale');
   for (const r of report) if (r.sizes.time_line) console.log(`  ${r.still}: date line ${r.sizes.time_line}px = ${pt(r.sizes.time_line).toFixed(2)} pt (${(pt(r.sizes.time_line) * DPR).toFixed(0)} device pixels), footer ${r.sizes.footer}px = ${pt(r.sizes.footer).toFixed(2)} pt`);
+  console.log('\nFor information (not a gate): the stats label (round 5) at phone scale');
+  for (const r of report) if (r.sizes.stats) console.log(`  ${r.still}: win count (bold) ${r.sizes.value}px = ${pt(r.sizes.value).toFixed(2)} pt; stats label ${r.sizes.stats}px = ${pt(r.sizes.stats).toFixed(2)} pt (${(pt(r.sizes.stats) * DPR).toFixed(0)} device pixels); names ${r.sizes.name}px = ${pt(r.sizes.name).toFixed(2)} pt`);
   console.log(ok ? '\nPHONE CHECK PASS' : '\nPHONE CHECK FAIL');
   process.exit(ok ? 0 : 1);
 })().catch(e => { console.error(e); process.exit(2); });

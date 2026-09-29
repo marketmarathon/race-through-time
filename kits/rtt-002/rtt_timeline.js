@@ -28,6 +28,12 @@
  * judged on pacing.judge_rows; an exact final-board length (pacing.final_board_sec); and the
  * winner-highlight plan (who is lit on each race, and whether they stay lit into the next).
  * Without those keys every number is as before (config.json: 16,062 frames).
+ *
+ * IQ-05 round 5 (DEC-053): race starts. When the race file carries events[].starts (adapter 1.1,
+ * from data/rtt-002/starts.csv), every state also holds starts[id], the driver's career starts
+ * after that race, for every driver with a count. Like the wins, starts change only AT a race;
+ * they never change the order, the pacing or the colours. rateText() is the win rate shown on
+ * screen: wins / starts as a percentage with one decimal, rounded half up, in integer arithmetic.
  */
 (function (root) {
   'use strict';
@@ -38,11 +44,22 @@
     return ids;
   }
 
-  function snapshot(totals, reached) {
+  function snapshot(totals, reached, starts) {
     const order = rankOf(totals, reached);
     const tot = {};
     for (const id of order) tot[id] = totals[id];
-    return { order, totals: tot };
+    const snap = { order, totals: tot };
+    if (starts) { snap.starts = {}; for (const id of order) snap.starts[id] = starts[id] || 0; }
+    return snap;
+  }
+
+  /* IQ-05e (DEC-053): win rate = wins / starts, percent, one decimal, rounded half up. In tenths
+     of a percent that is floor((1000 w / s) + 1/2) = floor((2000 w + s) / (2 s)), done on
+     integers so no binary rounding can creep in: 1/8 -> "12.5", 1/16 -> "6.3", 91/306 -> "29.7". */
+  function rateText(w, s) {
+    if (!(Number.isInteger(w) && Number.isInteger(s) && s > 0 && w >= 0 && w <= s)) throw new Error('win rate of ' + w + ' wins from ' + s + ' starts');
+    const a = 2000 * w + s, b = 2 * s, t = (a - a % b) / b;
+    return Math.floor(t / 10) + '.' + (t % 10);
   }
 
   function sameList(a, b) {
@@ -70,7 +87,11 @@
     const to   = (cfg.window && cfg.window.to)   || '9999-99-99';
 
     const totals = {}, reached = {};
-    let opening = snapshot(totals, reached), openingEvent = null;
+    /* IQ-05e: starts ride along when the race file has them (all events or none) */
+    const HAS_STARTS = race.events.length > 0 && race.events.every(ev => Array.isArray(ev.starts));
+    if (!HAS_STARTS && race.events.some(ev => Array.isArray(ev.starts))) throw new Error('some events carry starts and some do not');
+    const starts = HAS_STARTS ? {} : null;
+    let opening = snapshot(totals, reached, starts), openingEvent = null;
     const events = [], states = [], recordOf = [];
     let record = 0, holders = new Set();
     for (const ev of race.events) {
@@ -88,7 +109,13 @@
         if (now > record) { rec.push({ id: c.id, total: now, type: holders.size === 1 && holders.has(c.id) ? 'EXTENDS_SOLE' : 'BECOMES_SOLE' }); record = now; holders = new Set([c.id]); }
         else if (now === record) { holders.add(c.id); rec.push({ id: c.id, total: now, type: 'BECOMES_JOINT' }); }
       }
-      const s = snapshot(totals, reached);
+      if (HAS_STARTS) for (const st of ev.starts) {
+        const n = (starts[st.id] || 0) + 1;
+        if (n !== st.total) throw new Error('event ' + ev.race_index + ': ' + st.id + ' starts ' + st.total + ' but counted ' + n);
+        starts[st.id] = n;
+      }
+      if (HAS_STARTS) for (const c of ev.credits) if (!ev.starts.some(st => st.id === c.id)) throw new Error('event ' + ev.race_index + ': winner ' + c.id + ' has no start');
+      const s = snapshot(totals, reached, starts);
       if (ev.date < from) { opening = s; openingEvent = ev; continue; }
       events.push(ev); states.push(s); recordOf.push(rec);
     }
@@ -159,7 +186,7 @@
     if (startFrame.length > 1 && colours.fadeRaces * minSlot < fadeFrames)
       throw new Error('pace too fast for the colour rule: ' + colours.fadeRaces + ' races x ' + minSlot + ' frames < ' + fadeFrames + '-frame fade');
 
-    return { events, states, opening, openingEvent, startFrame, raceFrames, mult, kind, fps, rows, colours, hold, records, highlight };
+    return { events, states, opening, openingEvent, startFrame, raceFrames, mult, kind, fps, rows, colours, hold, records, highlight, hasStarts: HAS_STARTS };
   }
 
   /* Which event is showing at race frame f: the last event whose start frame is <= f, or -1
@@ -334,7 +361,7 @@
      keeps its name. Everything else is races.csv's grand_prix exactly. */
   function gpShort(name) { return String(name).replace(/Grand Prix/g, 'GP'); }
 
-  const api = { build, eventAt, rankOf, assignColours, coVisible, drawnColour, deltaE, lab, gpShort };
+  const api = { build, eventAt, rankOf, assignColours, coVisible, drawnColour, deltaE, lab, gpShort, rateText };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   else root.RTT_TIMELINE = api;
 })(typeof window !== 'undefined' ? window : this);
