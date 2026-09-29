@@ -1,27 +1,29 @@
-# Race Through Time - render the RTT-002 pilot (DEC-060, DEC-061).
+# Race Through Time - render RTT-002: the full film or the pilot (DEC-060, DEC-061, DEC-063).
 #
 # This repository is PUBLIC (DEC-006). Its workflow logs and workflow artifacts can be read and
 # downloaded by other people, so this workflow:
 #   - fetches Luke's logo and the car photo from the PRIVATE repo marketmarathon/race-through-time-private
 #     with the secret RTT_PRIVATE_TOKEN into $RUNNER_TEMP (outside the checkout), never into the repo;
 #   - checks both SHA-256 hashes against the ones recorded in reference/rights_ledger.md and stops on a mismatch;
-#   - renders the pilot and saves the videos ONLY as a release in the private repo;
+#   - renders the chosen config (default: the full film, config_rtt002_film.json; the round-5 pilot is
+#     config_pilot_2014_2021_top20.json) and saves the videos ONLY as a pre-release in the private repo;
+#   - checks that the videos carry no audio track (no music is chosen or licensed yet);
 #   - uploads NO workflow artifact and uses NO cache, prints no picture or frame, and never prints the secret;
 #   - deletes the pictures, frames and videos from the runner at the end, whatever happened.
 #
-# It runs once when this file is pushed to the branch that added it (a workflow_dispatch workflow can
-# only be started by hand after it is on main), and afterwards by hand from the Actions tab on main.
+# It runs when this file is pushed to the full-film branch (so the film renders before that branch is
+# merged), and by hand from the Actions tab (Run workflow: pick the branch and the config).
 name: render-pilot
 
 on:
   push:
-    branches: [claude/cool-mccarthy-kf9mow]
+    branches: [claude/festive-wright-ljiwlo]
     paths: [.github/workflows/render_pilot.yml]
   workflow_dispatch:
     inputs:
       config:
-        description: Pilot config in kits/rtt-002
-        default: config_pilot_2014_2021_top20.json
+        description: Config in kits/rtt-002 (config_rtt002_film.json = full film; config_pilot_2014_2021_top20.json = round-5 pilot)
+        default: config_rtt002_film.json
       raster_w:
         description: Width of the master (3840 or 1920)
         default: '3840'
@@ -37,7 +39,7 @@ env:
   PRIVATE_REPO: marketmarathon/race-through-time-private
   LOGO_SHA256: e3db46119b52648c84eae5f6acd682bd7be855819818856e695592b20572eeca
   CAR_SHA256: 4be74e673c601a93d0c08511d474638ca51e04cce5d4f2af46198696e81aa5bb
-  RTT_CONFIG: ${{ github.event.inputs.config || 'config_pilot_2014_2021_top20.json' }}
+  RTT_CONFIG: ${{ github.event.inputs.config || 'config_rtt002_film.json' }}
   RASTER_W: ${{ github.event.inputs.raster_w || '3840' }}
 
 jobs:
@@ -111,6 +113,11 @@ jobs:
             -color_primaries bt709 -color_trc bt709 -colorspace bt709 -movflags +faststart "$O/viewing.mp4"
           v=$(probe "$O/viewing.mp4"); echo "viewing copy: $v"
           test "$v" = "1920,1080,30/1,$FRAMES"
+          # no music is chosen or licensed yet: both files must be video only, as the pilot was
+          for f in master viewing; do
+            a=$(ffprobe -v error -select_streams a -show_entries stream=index -of csv=p=0 "$O/$f.mp4" | wc -l)
+            echo "$f: $a audio stream(s)"; test "$a" = 0
+          done
 
       - name: Save both videos as a release in the private repo
         env:
@@ -122,16 +129,18 @@ jobs:
           H=$(( RASTER_W * 9 / 16 ))
           mv "$O/master.mp4"  "$O/${STEM}_${RASTER_W}x${H}.mp4"
           mv "$O/viewing.mp4" "$O/${STEM}_1920x1080_viewing.mp4"
-          TAG="rtt-002-pilot5-${SHORT}-run${GITHUB_RUN_NUMBER}"
+          case "$RTT_CONFIG" in config_rtt002_film.json) KIND=film; WHAT="full film";; *) KIND=pilot5; WHAT="pilot";; esac
+          TAG="rtt-002-${KIND}-${SHORT}-run${GITHUB_RUN_NUMBER}"
           SEC=$(awk -v f="$FRAMES" 'BEGIN {printf "%.1f", f / 30}')
           {
-            echo "RTT-002 pilot render (${RTT_CONFIG}), rendered by GitHub Actions."
+            echo "RTT-002 ${WHAT} render (${RTT_CONFIG}), rendered by GitHub Actions."
             echo
             echo "- Source: ${GITHUB_REPOSITORY} @ ${GITHUB_SHA} (${GITHUB_REF_NAME}), run ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
             echo "- Config: kits/rtt-002/${RTT_CONFIG}"
             echo "- ${FRAMES} frames at 30 fps = ${SEC} s"
             echo "- Master ${RASTER_W}x${H} (x264, settings from the config); viewing copy 1920x1080 (x264 CRF 18), easier to watch on a phone"
             echo "- Overlays: assets/rtt-002/rtt_logo.png SHA-256 ${LOGO_SHA256}; assets/rtt-002/rtt_car.png SHA-256 ${CAR_SHA256} (both checked before the render)"
+            echo "- Audio: none (video only, no audio track), as the pilot; no music is chosen or licensed for Race Through Time yet"
             echo "- Video SHA-256:"
             (cd "$O" && sha256sum *.mp4 | sed 's/^/  - /')
             echo
@@ -143,7 +152,7 @@ jobs:
             "$O"/*.mp4
           URL="https://github.com/${PRIVATE_REPO}/releases/tag/${TAG}"
           echo "Release: $URL"
-          echo "Pilot saved to the private repo: $URL" >> "$GITHUB_STEP_SUMMARY"
+          echo "RTT-002 ${WHAT} saved to the private repo: $URL" >> "$GITHUB_STEP_SUMMARY"
 
       - name: Delete the pictures, frames and videos from the runner
         if: always()
