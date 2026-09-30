@@ -12,6 +12,8 @@ Copied from `marketmarathon/bars` @ `2a10877695e83683c3caae651cad61fc686614eb` (
 | `config.json` | Everything RTT-specific: words, unit, palette and colour rule, pacing, window, sizes, layout tokens |
 | `config_pilot_2014_2021_base.json` | Shared pilot settings: `config.json` + window 2014–2021, 0.5 s per race judged on the top ten, board from the first frame (no title card), record holds (2.0 s), winner highlight, final board 10 s, no closing card. Not rendered on its own |
 | `config_pilot_2014_2021_top20.json` | The pilot (round 5): the base + 20 rows, flags, stats label on every bar (event label off), round-3 bar length, date line next to the title, overlay boxes for the round logo badge and the car photo, car credit in the footer, its own 22-colour palette with colour priority |
+| `config_rtt002_film.json` | **The full RTT-002 film** (DEC-063, DEC-068): extends the approved round-5 pilot config and changes only the window (all 1,164 races, 1950 British GP to the 2026 Azerbaijan GP), the subtitle's range and `lead_in_sec` (0: the board opens empty); `sec_per_event` 0.333 (1.5x, DEC-076). Look and pacing rules are the pilot's; no captions |
+| `config_speed_2014_2021_1x.json`, `_1.25x.json`, `_1.5x.json` | Speed comparison clips (DEC-071): the film's 2014–2021 passage at 0.5 / 0.4 / 0.333 s per race; record pauses 2.0 s and final table 10 s unchanged |
 | `local_assets/` | **Git-ignored.** Private pictures for the overlays (`rtt_logo.png`: Luke's logo as a round badge, 885 × 885, transparent outside the circle; `rtt_car.png`: the car photo with its background removed, 3435 × 936), supplied at render time by Claude in Cowork; never committed (DEC-006). Missing file = empty box, the render goes on |
 | `race_rtt002.json` | Player input (adapter 1.1: wins and, per race, every driver's starts), written by `scripts/rtt_adapter.py` from `data/rtt-002/` (CC BY-SA 4.0, see `data/rtt-002/ATTRIBUTION.md`) |
 | `dataset_hashes.txt` | SHA-256 of the adapter's four inputs (`starts.csv` since round 5) and its output |
@@ -32,6 +34,13 @@ Pilot (IQ-05 round 5):
 ```
 RTT_CONFIG=config_pilot_2014_2021_top20.json FRAME_COUNT_ONLY=1 node rtt.js   # FRAMES 2502 = 83.4 s
 ```
+Full film (DEC-068) and speed clips (DEC-071):
+```
+RTT_CONFIG=config_rtt002_film.json FRAME_COUNT_ONLY=1 node rtt.js           # FRAMES 11852 = 395.1 s (6 min 35 s), 1.5x (DEC-076)
+RTT_CONFIG=config_speed_2014_2021_1.5x.json FRAME_COUNT_ONLY=1 node rtt.js  # FRAMES 1828 (1x: 2502, 1.25x: 2098)
+```
+Music (DEC-072): `scripts/rtt_mix_music.sh VIDEO MUSIC OUT FINAL_HOLD_SEC` loops or cuts a track to the video's length, fades it out over the final table and mixes it to about -16 LUFS integrated, true peak at most -1 dBTP (it fails otherwise). The render workflow runs it when started with a `music` file from the private repo.
+
 Put `rtt_logo.png` and `rtt_car.png` in `local_assets/` (or point `RTT_LOCAL_ASSETS` at a folder) before a real render; without them the boxes stay empty.
 Config keys added in round 2 (all optional; absent = IQ-05 behaviour): `board` {bar_gap, name_frac, value_frac}; `highlight` {enabled, sec, mix, glow}; `winner_line` {enabled}; `record_hold` {enabled, sec, types}; `pacing.judge_rows`; `pacing.final_board_sec`; `sizes.winner`. Round 3: `flags` {enabled, column, height_frac, gap, csv}; `event_label` {enabled, fade_sec}; `time_label.mode` "block" {x, date_y, align}; `overlays` [{name, file, x, y, w, h}]; `local_assets`; `colour_rule.priority` {rows, bright}. Round 4: `time_label.mode` "line" {x, y, align, size} (one date line; `winner_line` cannot be combined with it); `event_label.date`; `overlay_gap` (axis grid lines stop this far short of every overlay box). Round 5: `stats_label` {enabled} (needs a race file with starts; cannot be combined with `event_label`). With `intro_sec` 0 there is no title card and the board (title on it) is the first frame.
 
@@ -47,4 +56,4 @@ python scripts/rtt_adapter.py data/rtt-002 kits/rtt-002/race_rtt002.json --datas
 Tests: `node tests/player/run_tests.js` (results in `tests/player/RESULTS.md`), phone check `node tests/player/phone_check.js`.
 
 ## What is not in this kit
-No music, logo, pictures, flag files or Market Marathon fonts are committed. Flags come from the npm package at install time; Luke's logo and the car picture live only in the git-ignored `local_assets/`. Render on GitHub: `.github/workflows/render_pilot.yml` (DEC-061) fetches the logo and car photo from the private repo `marketmarathon/race-through-time-private` (DEC-060) with the secret `RTT_PRIVATE_TOKEN`, checks their hashes, renders the pilot at 3840 × 2160 plus a 1920 × 1080 viewing copy, and saves both only as a release in that private repo. It uploads no workflow artifact (this repo is public) and publishes nothing.
+No music, logo, pictures, flag files or Market Marathon fonts are committed. Flags come from the npm package at install time; Luke's logo and the car picture live only in the git-ignored `local_assets/`. Render on GitHub: `.github/workflows/render_pilot.yml` (DEC-061) fetches the logo and car photo from the private repo `marketmarathon/race-through-time-private` (DEC-060) with the secret `RTT_PRIVATE_TOKEN`, checks their hashes, renders the chosen configs (by hand: default the full film at 3840 × 2160 plus a 1920 × 1080 viewing copy; on a push of the workflow file: the three 1080p speed clips), adds the music track if one is given (otherwise checks there is no audio track), and saves everything only as one pre-release in that private repo. It uploads no workflow artifact (this repo is public) and publishes nothing.
