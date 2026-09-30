@@ -1,0 +1,12 @@
+{
+ "extends": "config_rtt002_film.json",
+ "kit_version": "rtt002_speed_2014_2021_1.5x",
+ "out": "rtt002_speed_2014_2021_1.5x.mp4",
+ "window": { "from": "2014-01-01", "to": "2021-12-31" },
+ "range": "2014 – 2021",
+ "subtitle": "World Championship Grand Prix wins by driver, race by race, 2014 – 2021",
+ "pacing": { "sec_per_event": 0.3333333333333333, "lead_in_sec": 2.0 },
+ "notes": [
+  "Speed comparison clip (DEC-071, 1.5-times-faster): the 2014-2021 passage (160 races) of config_rtt002_film.json, no captions, only sec_per_event changed (0.3333333333333333 s per race before the 0.8 / 1.0 / 1.4 multipliers). The 2.0 s record pauses (DEC-034) and the 10 s final table stay as they are at every speed; the 2.0 s opening board (the pilot's lead-in) shows the pre-2014 totals. For Luke's comparison only; not the film."
+ ]
+}

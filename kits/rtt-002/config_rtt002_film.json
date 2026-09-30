@@ -1,32 +1,14 @@
 {
  "extends": "config_pilot_2014_2021_top20.json",
- "kit_version": "rtt002_film1",
+ "kit_version": "rtt002_film2",
  "out": "rtt002_film.mp4",
  "window": { "from": null, "to": null },
  "range": "1950 – 2026",
  "subtitle": "World Championship Grand Prix wins by driver, race by race, 1950 – 2026",
- "pacing": {
-  "sec_per_event": 0.5,
-  "lead_in_sec": 0,
-  "final_board_sec": 10.0,
-  "mode": "smooth",
-  "smooth": { "sigma": 3, "slew": 0.1, "entry_rows": 10, "reading": { "mult": 1.4, "before": 2, "after": 3 } }
- },
- "record_hold": { "enabled": false },
- "story": {
-  "enabled": true,
-  "csv": "../../data/rtt-002/story_moments.csv",
-  "hold_sec": { "FIRST_RACE": 2.5, "LEADER": 3.0, "EQUALS": 3.0, "MILESTONE": 2.5, "TOPTEN": 2.5, "FREEZE": 1.0 },
-  "caption_sec": 4.5,
-  "fade_in_sec": 0.25,
-  "fade_out_sec": 0.4,
-  "caption": { "x": 1856, "y": 752, "align": "right", "sizes": [34, 30, 30], "weights": [700, 500, 500], "line_gap": 10 }
- },
+ "pacing": { "lead_in_sec": 0 },
  "notes": [
-  "RTT-002 full film (DEC-062 approval of the round-5 look; DEC-063 film build). Everything that draws is inherited from config_pilot_2014_2021_top20.json, the round-5 pilot Luke approved on 29 Sep 2026: 20 rows, flags, stats label, bar length, date line, logo and car boxes, footer, palette, highlight. Only the window, the subtitle's range, the pacing and the story captions are new.",
-  "window null: all 1,164 championship races, 1950 British GP (13 May 1950) to the data freeze, 2026 Azerbaijan GP (26 September 2026). The board opens empty, so the first race lands on frame 0 (lead_in_sec 0) and the date line names a race on every frame.",
-  "pacing smooth (rtt_timeline.js): baseline 0.5 s per race (Luke: the pace is fine). Each race's beat multiplier (1.4 if the top-ten order or membership changes, 1.0 if a winner on the board, 0.8 if nothing on the top ten changes or after three unchanged races) is averaged over its neighbours (Gaussian, sigma 3 races), raised to 1.4 from 2 races before to 3 races after every story moment and every entry into the top ten, and limited so neighbouring beats differ by at most 0.1 (about one frame): quiet stretches run at up to 0.8x (0.4 s per race), busy ones and the build-up to every moment at 1.4x (0.7 s). Every beat stays within 0.8-1.4x.",
-  "story (data/rtt-002/story_moments.csv from scripts/rtt002_story.py; reports/RTT-002_story_moments.md): 30 moments. Each moment race is held for hold_sec[kind] (as the pilot held its record races for 2.0 s) and its caption, right-aligned above the car box, stays on screen caption_sec (4.5 s) from the race's first frame, or until the next caption; the freeze caption stays to the end. record_hold is off: the record races that matter are story moments.",
-  "final_board_sec 10: the final table is on screen for 10 s (brief: 8-12 s), no closing card."
+  "RTT-002 full film (DEC-062 approval of the round-5 look; DEC-068: story captions dropped, pacing = the approved pilot's rules). Everything that draws AND every pacing rule is inherited from config_pilot_2014_2021_top20.json, the round-5 pilot Luke approved on 29 Sep 2026: 20 rows, flags, stats label, bar length, date line, logo and car boxes, footer, palette, highlight; 0.5 s per race x 1.4 / 1.0 / 0.8 judged on the top ten; 2.0 s record pauses on every BECOMES_JOINT / BECOMES_SOLE race (DEC-034); final table on screen 10 s (DEC-070: YouTube end-screen elements sit over it); no title card, no closing card. Only the window and the subtitle's range are new.",
+  "window null: all 1,164 championship races, 1950 British GP (13 May 1950) to the data freeze, 2026 Azerbaijan GP (26 September 2026).",
+  "lead_in_sec 0 (the one pacing value that differs from the pilot's 2.0 s): the pilot opened on the totals before 2014, but the full film's opening board is empty (no wins before 1950) and has no race for the date line to name, so the first race lands on frame 0 and the date line is on screen from the first frame (blueprint: the date is shown continuously)."
  ]
 }

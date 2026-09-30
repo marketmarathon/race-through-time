@@ -34,22 +34,6 @@
  * after that race, for every driver with a count. Like the wins, starts change only AT a race;
  * they never change the order, the pacing or the colours. rateText() is the win rate shown on
  * screen: wins / starts as a percentage with one decimal, rounded half up, in integer arithmetic.
- *
- * RTT-002 full film (DEC-063): pacing.mode "smooth" and story moments. Without those keys every
- * number is as before (the pilot: 2,502 frames; config.json: 16,062).
- *   - smooth pacing: each race's beat multiplier is the IQ-04 one (rank_change / visible_change /
- *     quiet) averaged over its neighbours (Gaussian, pacing.smooth.sigma races), raised to the top
- *     of the bounds for pacing.smooth.reading.before races before and .after races after every
- *     emphasis race (every story moment and every entry into the top pacing.smooth.entry_rows),
- *     then limited so that no two neighbouring beats differ by more than pacing.smooth.slew (the
- *     limiter only ever slows a beat, so reading time is never cut). Every multiplier stays
- *     inside pacing.bounds (0.8-1.4).
- *   - story moments: cfg.story.moments (rows of data/rtt-002/story_moments.csv, read by rtt.js)
- *     are matched to their races by race_index, date and Grand Prix; the moment's driver must
- *     have exactly the stated wins after that race, or the build refuses. A moment race is held
- *     for story.hold_sec[kind] (outside the 0.8-1.4 bounds, as the pilot's record holds were),
- *     and its caption is on screen from the race's first frame for story.caption_sec, or until
- *     the next caption, or (the last one) to the end of the film.
  */
 (function (root) {
   'use strict';
@@ -158,58 +142,13 @@
       prev = states[k];
     }
 
-    /* RTT-002 film: story moments, matched to their races and checked against the counts */
-    const ST = cfg.story && cfg.story.enabled ? cfg.story : null;
-    const momentOf = events.map(() => null);
-    if (ST) {
-      const idx = {}; events.forEach((ev, k) => { idx[String(ev.race_index)] = k; });
-      for (const m of ST.moments || []) {
-        const k = idx[String(m.race_index)];
-        if (k == null) continue;                                   // outside the window
-        const ev = events[k];
-        if (ev.date !== m.race_date || ev.grand_prix !== m.grand_prix) throw new Error('story moment ' + m.moment + ': race ' + m.race_index + ' is ' + ev.date + ' ' + ev.grand_prix + ', not ' + m.race_date + ' ' + m.grand_prix);
-        if (states[k].totals[m.driver_id] !== +m.career_wins) throw new Error('story moment ' + m.moment + ': ' + m.driver_name + ' has ' + states[k].totals[m.driver_id] + ' wins after race ' + m.race_index + ', the caption says ' + m.career_wins);
-        if (momentOf[k]) throw new Error('two story moments on race ' + m.race_index);
-        if (!(ST.hold_sec && ST.hold_sec[m.kind] > 0)) throw new Error('story.hold_sec has no hold for ' + m.kind);
-        momentOf[k] = m;
-      }
-    }
-
-    /* RTT-002 film: the smooth speed curve (pacing.mode "smooth"). */
-    let emphasis = null;
-    if (P.mode === 'smooth') {
-      const S = P.smooth, lo = P.bounds[0], hi = P.bounds[1], n = mult.length;
-      const raw = mult.slice(), sig = S.sigma, R = Math.ceil(3 * sig);
-      for (let k = 0; k < n; k++) {
-        let a = 0, w = 0;
-        for (let j = Math.max(0, k - R); j <= Math.min(n - 1, k + R); j++) { const g = Math.exp(-0.5 * Math.pow((j - k) / sig, 2)); a += g * raw[j]; w += g; }
-        mult[k] = a / w;
-      }
-      /* emphasis races: every story moment and every entry into the top entry_rows */
-      const ER = S.entry_rows || 10, emph = [];
-      let pv = opening;
-      for (let k = 0; k < n; k++) {
-        const was = pv.order.slice(0, ER), now = states[k].order.slice(0, ER);
-        if (momentOf[k] || now.some(id => !was.includes(id))) emph.push(k);
-        pv = states[k];
-      }
-      for (const e of emph)
-        for (let k = Math.max(0, e - S.reading.before); k <= Math.min(n - 1, e + S.reading.after); k++) mult[k] = Math.max(mult[k], S.reading.mult);
-      for (let k = 1; k < n; k++) mult[k] = Math.max(mult[k], mult[k - 1] - S.slew);
-      for (let k = n - 2; k >= 0; k--) mult[k] = Math.max(mult[k], mult[k + 1] - S.slew);
-      for (let k = 0; k < n; k++) mult[k] = Math.min(hi, Math.max(lo, mult[k]));
-      emphasis = emph;
-    }
-
     /* IQ-05b record moments (a switchable test, record_hold.enabled): a race on which a driver
        reaches (BECOMES_JOINT) or takes (BECOMES_SOLE) the all-time record is held for
        record_hold.sec instead of its normal beat, so the rank glide settles before the next
        race lands. EXTENDS_SOLE is not held. Every other beat keeps the 0.8-1.4x bounds. */
     const RH = cfg.record_hold || {};
     const holdTypes = RH.types || ['BECOMES_JOINT', 'BECOMES_SOLE'];
-    const hold = events.map((ev, k) => !!(RH.enabled && recordOf[k].some(r => holdTypes.includes(r.type))) || !!momentOf[k]);
-    /* the length of each held race: a story moment's own hold, else record_hold.sec */
-    const holdSec = events.map((ev, k) => momentOf[k] ? ST.hold_sec[momentOf[k].kind] : hold[k] ? RH.sec : null);
+    const hold = events.map((ev, k) => !!RH.enabled && recordOf[k].some(r => holdTypes.includes(r.type)));
     const records = [];
     events.forEach((ev, k) => recordOf[k].forEach(r => records.push(Object.assign({ k, race_index: ev.race_index, date: ev.date, season: ev.season, grand_prix: ev.grand_prix, held: hold[k] }, r))));
 
@@ -217,7 +156,7 @@
     let sec = P.lead_in_sec;
     for (let k = 0; k < events.length; k++) {
       startFrame.push(Math.round(sec * fps));
-      if (k < events.length - 1) sec += hold[k] ? holdSec[k] : P.sec_per_event * mult[k];
+      if (k < events.length - 1) sec += hold[k] ? RH.sec : P.sec_per_event * mult[k];
     }
     /* The final board: pacing.final_board_sec (IQ-05b) puts it on screen for exactly that long
        from the first frame of the last race. Without it, the last race keeps its beat and
@@ -225,7 +164,7 @@
     const lastK = events.length - 1;
     const raceFrames = P.final_board_sec != null
       ? startFrame[lastK] + Math.round(P.final_board_sec * fps)
-      : Math.round((sec + (hold[lastK] ? holdSec[lastK] : P.sec_per_event * mult[lastK]) + P.end_hold_sec) * fps);
+      : Math.round((sec + (hold[lastK] ? RH.sec : P.sec_per_event * mult[lastK]) + P.end_hold_sec) * fps);
     for (let k = 1; k < startFrame.length; k++)
       if (startFrame[k] <= startFrame[k - 1]) throw new Error('two events share a frame; raise sec_per_event');
 
@@ -247,21 +186,7 @@
     if (startFrame.length > 1 && colours.fadeRaces * minSlot < fadeFrames)
       throw new Error('pace too fast for the colour rule: ' + colours.fadeRaces + ' races x ' + minSlot + ' frames < ' + fadeFrames + '-frame fade');
 
-    /* RTT-002 film: when each caption is on screen (race frames [from, to)) */
-    const captions = [];
-    if (ST) {
-      const ks = momentOf.map((m, k) => m ? k : -1).filter(k => k >= 0);
-      ks.forEach((k, i) => {
-        const from = startFrame[k], next = i + 1 < ks.length ? startFrame[ks[i + 1]] : raceFrames;
-        const to = i + 1 < ks.length ? Math.min(next, from + Math.round(ST.caption_sec * fps)) : raceFrames;
-        const m = momentOf[k];
-        captions.push({ k, from, to, moment: +m.moment, kind: m.kind, race_index: m.race_index, driver_id: m.driver_id,
-                        lines: [m.caption_1, m.caption_2, m.caption_3].filter(Boolean) });
-      });
-    }
-
-    return { events, states, opening, openingEvent, startFrame, raceFrames, mult, kind, fps, rows, colours, hold, holdSec, records, highlight, hasStarts: HAS_STARTS,
-             captions, emphasis };
+    return { events, states, opening, openingEvent, startFrame, raceFrames, mult, kind, fps, rows, colours, hold, records, highlight, hasStarts: HAS_STARTS };
   }
 
   /* Which event is showing at race frame f: the last event whose start frame is <= f, or -1
