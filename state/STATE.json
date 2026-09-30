@@ -23,7 +23,7 @@
     "schedules": [],
     "recurring_reports": [],
     "public_publishes": [],
-    "note": "nothing activated; nothing uploaded or published. The round-5 pilot and the full RTT-002 film were rendered by GitHub Actions on 29 Sep 2026 and saved ONLY as pre-releases in the PRIVATE repo marketmarathon/race-through-time-private (DEC-061, DEC-063); no workflow artifact, nothing public"
+    "note": "nothing activated; nothing uploaded or published. The round-5 pilot, the full film (29 Sep, with captions) and the three speed comparison clips (30 Sep, with music) were rendered by GitHub Actions and saved ONLY as pre-releases in the PRIVATE repo marketmarathon/race-through-time-private; no workflow artifact, nothing public"
   },
   "episodes": [
     {
@@ -77,7 +77,7 @@
         },
         "speed_clips": {
           "configs": "kits/rtt-002/config_speed_2014_2021_1x.json, _1.25x.json, _1.5x.json (2502 / 2098 / 1828 frames)",
-          "render": "SPEED_RELEASE"
+          "render": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-002-speed-596f656-run3 (private pre-release; run https://github.com/marketmarathon/race-through-time/actions/runs/36686306229, success, 6 min 20 s, 0 workflow artifacts). 1080p with music, each -16.0 LUFS: 1x 2502 frames = 83.4 s (SHA-256 f38a1b72658952c84c88a7923fb387484fb0f8930c2087b947bc7cb618f9c741), 1.25x 2098 frames = 69.9 s (c838266ac95820a7db757aee7365fbe0fb5eed4f9e6f3c70768c69054cc699f7), 1.5x 1828 frames = 60.9 s (46c2b66a368d5805b39c239a0334652c7805bea85f00ad5dce065aa851500f22). The clips are shorter than the first loop join (181 s), so they have no join."
         }
       },
       "owner_decisions_2026_09_30": {
