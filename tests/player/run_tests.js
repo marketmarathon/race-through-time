@@ -481,7 +481,9 @@ async function runCase(c) {
         for (const b of L.bars) prevHl[b.id] = b.hl;
         while (onsetFrames.length && onsetFrames[0] <= f - cfg.fps) onsetFrames.shift();
         res.onsets_max_per_sec = Math.max(res.onsets_max_per_sec, onsetFrames.length);
-        if (onsetFrames.length > MAX_ONSETS_PER_SEC) fail(`frame ${f}: highlights started on ${onsetFrames.length} different frames in the last second (max ${MAX_ONSETS_PER_SEC})`);
+        const X = c.flashException;             // DEC-077: owner-accepted exception, RTT-002 final film only
+        if (X && onsetFrames.length > MAX_ONSETS_PER_SEC && onsetFrames.length <= X.max) { if (onsetFrames[onsetFrames.length - 1] === f && isStart) res.flash_exception_windows = (res.flash_exception_windows || 0) + 1; }
+        else if (onsetFrames.length > MAX_ONSETS_PER_SEC) fail(`frame ${f}: highlights started on ${onsetFrames.length} different frames in the last second (max ${X ? X.max + ' under ' + X.decision : MAX_ONSETS_PER_SEC})`);
       }
       /* (18) flags */
       if (!FLAGON && L.flags.length) fail(`frame ${f}: flag drawn although flags are off`);
@@ -690,6 +692,12 @@ async function runCase(c) {
       const base = inWindow.length * cfg.pacing.sec_per_event;
       res.notes.push(`quiet stretch paced at ${cfg.pacing.mult.quiet}x; events take ${((info.raceFrames / cfg.fps) - cfg.pacing.lead_in_sec - cfg.pacing.end_hold_sec).toFixed(2)} s against ${base.toFixed(2)} s unpaced`);
     }
+    /* DEC-077: the owner-accepted highlight exception must match exactly */
+    if (c.flashException) {
+      const n = res.flash_exception_windows || 0;
+      if (n !== c.flashException.windows) fail(`highlight exception (${c.flashException.decision}): ${n} one-second windows with ${c.flashException.max} highlight starts, but ${c.flashException.windows} were accepted; ask Luke before changing this`);
+      else res.notes.push(`highlights: ${n} one-second windows with ${c.flashException.max} highlight starts (more than the usual ${MAX_ONSETS_PER_SEC}), exactly the ${c.flashException.windows} Luke accepted (${c.flashException.decision}); measured below the WCAG 2.x general- and red-flash area thresholds (worst 11.4% of a 10-degree field; reports/RTT-002_wcag_flash_check.md)`);
+    }
     /* (29), (30) the full film */
     if (c.film) {
       if (JSON.stringify(res.leader_changes) !== JSON.stringify(audited)) fail(`leader changes drawn ${res.leader_changes.join(', ')} != record_progression.csv ${audited.join(', ')}`);
@@ -820,7 +828,8 @@ async function main() {
   /* the whole video, every frame, draw-call checks only (no PNGs or OCR: 16,000 frames) */
   cases.push({ name: 'rtt002_full_run', dir: RTT002, rtt002: true, light: true, overrides: {}, expect: {} });
   /* RTT-002 full film (DEC-068): every frame, draw-call checks (no PNGs or OCR: about 17,000 frames) */
-  cases.push({ name: 'rtt002_film', dir: RTT002, rtt002: true, light: true, film: true, config: 'config_rtt002_film.json', expect: {} });
+  cases.push({ name: 'rtt002_film', dir: RTT002, rtt002: true, light: true, film: true, config: 'config_rtt002_film.json', expect: {},
+               flashException: { max: 4, windows: 21, decision: 'DEC-077' } });   // owner-accepted, this film only; every other case keeps 3
   /* speed comparison clips (DEC-071): the film's 2014-2021 passage at 1x, 1.25x and 1.5x, every frame */
   for (const v of ['1x', '1.25x', '1.5x'])
     cases.push({ name: `rtt002_speed_2014_2021_${v}`, dir: RTT002, rtt002: true, light: true, config: `config_speed_2014_2021_${v}.json`, expect: { milestones } });
