@@ -1,0 +1,17 @@
+{
+ "title": "Ego Chall",
+ "artist": "Blue Deer Studio",
+ "source": "YouTube Audio Library (Dance and Electronic, Dramatic, 3:20); chosen by Luke 30 Sep 2026 (DEC-073)",
+ "file": "Ego Chall - Blue Deer Studio.mp3",
+ "private_path": "assets/rtt-002/Ego Chall - Blue Deer Studio.mp3",
+ "sha256": "b3851963dc547b643717ca716abd2bae38148b61c94719c7a70d5bc7c49a526e",
+ "bytes": 8002910,
+ "loop_start": 31.208,
+ "loop_end": 180.930,
+ "crossfade_sec": 4.644,
+ "notes": [
+  "The audio file is NEVER committed here (licence: may not be made available separately from videos; reference/rights_ledger.md). It lives only in the private repo and is fetched and hash-checked at render time.",
+  "Loop points (DEC-074, found by beat tracking with librosa 0.11 in the Claude Code container): about 103.4 BPM, one beat every 0.5805 s; the steady beat starts at 9.45 s after an intro, the track fades out from about 190 s. loop_start = beat 37 (31.208 s), loop_end = beat 293 (180.930 s): exactly 256 beats = 64 bars, so every join lands on the same point of a phrase; of all beat-aligned pairs tried (start 9-32 s, end 150-189.5 s, spacing a multiple of 16 beats) it is the best-matching one with a 64-bar spacing (chroma + timbre similarity 1.504 of 2; best of any spacing 1.512).",
+  "Playback: the track plays from 0 s (its intro) and, instead of reaching its outro, crossfades at loop_end back to loop_start with an equal-power (quarter-sine) crossfade of crossfade_sec = 8 beats centred on the two beats, as often as the video needs; it fades out over the final table and is mixed to about -16 LUFS integrated, true peak at most -1 dBTP (scripts/rtt_mix_music.sh)."
+ ]
+}

@@ -472,7 +472,7 @@ async function runCase(c) {
           if (b.hl > was + 1e-6) {
             if (!(isStart && want.includes(b.id) && was === 0)) fail(`frame ${f} (race ${ri}): ${b.id} highlight rose ${was.toFixed(2)} -> ${b.hl.toFixed(2)} outside an onset (flicker)`);
             else if (k > 0 && litOn(k - 1).includes(b.id)) fail(`frame ${f} (race ${ri}): ${b.id} won the previous race too but its highlight went out and re-lit (flicker)`);
-            else { res.onsets++; onsetFrames.push(f); }
+            else { res.onsets++; if (onsetFrames[onsetFrames.length - 1] !== f) onsetFrames.push(f); }   // a shared drive lights two bars on ONE frame: one flash (DEC-075)
           }
           if (k >= 0 && f - info.start[k] >= hlFrames && b.hl > 0 && !(k + 1 < info.start.length && litOn(k + 1).includes(b.id)))
             fail(`frame ${f}: ${b.id} still lit ${f - info.start[k]} frames into the race (fade is ${hlFrames})`);
@@ -481,7 +481,7 @@ async function runCase(c) {
         for (const b of L.bars) prevHl[b.id] = b.hl;
         while (onsetFrames.length && onsetFrames[0] <= f - cfg.fps) onsetFrames.shift();
         res.onsets_max_per_sec = Math.max(res.onsets_max_per_sec, onsetFrames.length);
-        if (onsetFrames.length > MAX_ONSETS_PER_SEC) fail(`frame ${f}: ${onsetFrames.length} highlight onsets in the last second (max ${MAX_ONSETS_PER_SEC})`);
+        if (onsetFrames.length > MAX_ONSETS_PER_SEC) fail(`frame ${f}: highlights started on ${onsetFrames.length} different frames in the last second (max ${MAX_ONSETS_PER_SEC})`);
       }
       /* (18) flags */
       if (!FLAGON && L.flags.length) fail(`frame ${f}: flag drawn although flags are off`);
@@ -874,7 +874,7 @@ function writeReport(results) {
   L.push('');
   L.push(`Entry rule: a driver joining the visible board must be clearly visible (row opacity at least ${CLEAR_ALPHA}, name and value label drawn) within ${ENTRY_MAX_FRAMES} frames of the first frame of that race, i.e. on frame +0 to +${ENTRY_MAX_FRAMES - 1}. The column gives the slowest entry in the case (+N frames).`);
   L.push('Colour rule on frames: on every frame drawn, no two bars on screen (opacity above 0) share a colour or are closer than CIEDE2000 18, and every driver is drawn in the same colour in every RTT-002 case with the same board size.');
-  L.push(`Winner highlight (where on): on the first frame of every race exactly the credited winners whose bars are on the board are lit, nothing else is ever lit, a highlight only rises from fully off on the first frame of a race that driver won (a repeat winner stays lit, so never flickers), at most ${MAX_ONSETS_PER_SEC} onsets in any second, and each fades out within highlight.sec.`);
+  L.push(`Winner highlight (where on): on the first frame of every race exactly the credited winners whose bars are on the board are lit, nothing else is ever lit, a highlight only rises from fully off on the first frame of a race that driver won (a repeat winner stays lit, so never flickers), highlights start on at most ${MAX_ONSETS_PER_SEC} different frames in any second (both bars of a shared drive light on the same frame and count as one flash, DEC-075; the column counts bars), and each fades out within highlight.sec.`);
   L.push('Round 5 (where on): stats label = on every frame every bar with a value label carries "· <S> start(s) · <R>%" right after it, S from starts.csv and R = wins / starts recomputed here (one decimal, rounded half up), the win count bold and the stats regular, numbers changing only on the first frame of a race, ending inside the 64 px right margin; it overlaps no bar, flag, name, value or stats label of a row that is not mid-overtake (within ' + OVERTAKE_ROWS + ' row; counted in brackets) and no title, subtitle, axis number, footer or date line (row labels measured as drawn, inside the board clip at y 150-1034, as bars are); OCR also reads every stats label back at race boundaries.');
   L.push('Round 4 (where on): date line = on every frame exactly one line "<D Month YYYY> · <GP>" for the race on screen, from races.csv, including races whose winner is off the board (frames of such races in brackets), overlapping nothing ("closest item" = the smallest gap on any frame to a bar, flag, name, value, event label, axis number, title, subtitle or footer); event labels now read "· <GP> · <D Month YYYY>" and must end inside the 64 px right margin (x ' + RIGHT_MARGIN + '; "furthest right edge" = the largest on any frame); overlay boxes = also no axis grid line inside a box.');
   L.push('Round 3 (where on): flags = every flag drawn equals the driver\'s flag_code in the nationality file and sits on its row; event labels = on every frame each winner on the board shows "· <GP>" from races.csv right after its value, and the only other event labels are the previous race\'s, fading; time block = on every frame no overlap with any bar, flag, name, value, event label, axis number, title or footer ("closest item" = the smallest gap on any frame); overlay boxes = nothing enters the reserved logo and car boxes on any frame, placeholders drawn inside them, and the boxes stay out of the bottom ' + YT_CONTROLS_PX + ' px.');

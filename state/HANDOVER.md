@@ -1,32 +1,19 @@
 # HANDOVER — 30 Sep 2026 (session 11, Claude Code cloud session, environment "Race Through Time")
 
-Previous handovers are in this file's git history. Session 10's pull request #9 (private asset store, pilot render workflow) was merged to main as `c378ea7`.
+Previous handovers are in this file's git history. Pull request #9 was merged as `c378ea7`. This session's work is on branch `claude/festive-wright-ljiwlo`, **pull request #10** (not merged; Luke merges once checks pass, DEC-057).
 
-## Done (branch `claude/festive-wright-ljiwlo`, from main @ `c378ea7`; pull request #10 against main, **not merged**: Luke merges once checks pass, DEC-057)
-- **DEC-062 (owner):** Luke watched the round-5 pilot (`rtt-002-pilot5-5f797d3-run1`) and approved it ("I think it's great"). The RTT visual direction is approved (blueprint milestone 3). Names that run past short bars are accepted.
-- **The full RTT-002 film (DEC-063):** `kits/rtt-002/config_rtt002_film.json` extends the approved pilot config unchanged. It covers all 1,164 races from the 1950 British GP (13 May 1950) to the **data freeze, the 2026 Azerbaijan GP (26 Sep 2026)**. **20,033 frames = 667.8 s (11 min 8 s)**, including a 10 s final table. No title card and no closing card.
-- **Pacing:** smooth speed curve, 0.4–0.7 s per race (0.8–1.4 × 0.5 s), slowed around every story moment and top-ten entry. Story races are held 2.5–3 s.
-- **Story moments:** 30 (`data/rtt-002/story_moments.csv`, `reports/RTT-002_story_moments.md`, `scripts/rtt002_story.py`), with captions above the car box: the first race, 8 leader changes, 8 records equalled, the first to 50 and to 100 wins, 10 top-ten entries (today's top ten) and the freeze.
-- **Tests 17/17 PASS** (`tests/player/RESULTS.md`), including the new `rtt002_film` case (checks 29–32). Phone check PASS.
-- **Audio:** none. Video only, as the pilot. The workflow now fails on any audio stream. No music has been chosen or licensed.
-- **Render:** `.github/workflows/render_pilot.yml` (config selectable, default the film) ran on the push of `e4dbeda`: run https://github.com/marketmarathon/race-through-time/actions/runs/36627763732, success (render 40 min, 48 min in all), 0 workflow artifacts. **Release (private pre-release): https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-002-film-e4dbeda-run2**. 20,033 frames = 667.8 s. Master 3840 × 2160 SHA-256 `ba71e5da380aa14d95334e05f25f033f1e978fb25634ffd4d30ab777f96b79f9`; viewing copy 1920 × 1080 SHA-256 `b4c2b262aa1ee66d2b0760405772d673443ea6f92856b80a2e9ddbdcd23678ba`. Both hashes of the overlays were checked, ffprobe confirmed size and frame count, and neither file has an audio stream.
-- `marketmarathon/bars` untouched. Nothing uploaded to YouTube or published. The audited data files are unchanged.
+## Where RTT-002 stands
+- **Full film (29 Sep):** rendered with story captions (`rtt-002-film-e4dbeda-run2`, private). **Luke watched it on 30 Sep:** the captions are dropped and the film is back on the approved pilot's pacing rules (DEC-068). The full film is **not** re-rendered until Luke picks a speed (DEC-071).
+- **Film now:** `kits/rtt-002/config_rtt002_film.json` is the approved pilot config with window 1950–2026 and a lead-in of 0. It has no captions and no smooth curve. The pacing is 0.5 s per race × 1.4 / 1.0 / 0.8 judged on the top ten, a 2.0 s pause on the 24 record races, and a 10 s final table under YouTube's end screen, with no intro and no outro (DEC-070). Length: **9 min 24 s** at the current pace, **7 min 42 s** at 1.25× and **6 min 35 s** at 1.5×.
+- **Speed clips (DEC-071):** the film's 2014–2021 passage at 1×, 1.25× and 1.5×, 1080p, with music: SPEED_RELEASE
+- **Music (DEC-073, DEC-074):** "Ego Chall" by Blue Deer Studio (YouTube Audio Library; no attribution; the file may not be made available separately from videos, so it lives only in the private repo). SHA-256 verified. It is looped between 31.208 s and 180.930 s (256 beats) with 4.644 s beat-aligned crossfades, faded out over the final table, and mixed to -16 LUFS with true peak ≤ -1 dBTP. `scripts/rtt_mix_music.sh`; settings in `kits/rtt-002/music_rtt002.json`.
+- **Owner decisions 30 Sep:** DEC-064 (nationalities: Wikipedia values kept), DEC-065 (footer stays), DEC-066 (D-05 closed: risk accepted; not legal advice, Isle of Man law not checked), DEC-067 (DEC-059 description note before publishing), DEC-068 to DEC-073 (above).
+- Tests: `tests/player/RESULTS.md`. `marketmarathon/bars` untouched. Nothing uploaded to YouTube or published.
 
-## Owner decisions 30 Sep 2026 (recorded in this pull request; state files only, no re-render)
-- **DEC-064:** nationality disagreements closed. The Wikipedia values are kept (Jim Clark GBR, Phil Hill USA, Luigi Fagioli ITA) and no data file changes.
-- **DEC-065:** the footer stays in the bottom strip YouTube's controls can cover. The same credits go in the video description.
-- **DEC-066:** D-05 closed. Luke accepts the residual publication risk for the results data and for the car photo's trademarks. Claude said this is not legal advice and did not check Isle of Man law.
-- **DEC-067:** the DEC-059 description note is not a blocker; it is written before publishing.
-
-## Not done / open (for Luke)
-- Watch the full film (private release above; he needs to be signed in to GitHub). Claude has not watched the rendered film; it was checked frame by frame by the tests.
-- **D-10 captions:** caption only today's top ten entering the top ten (as built) or all 40 entries; keep or drop the 1950 "Record equalled" caption (Fangio level with Farina on 2 wins).
-- **D-11 music:** none chosen or licensed; both renders are video only.
-
-## Next safe actions
-1. Luke reviews and merges pull request #10 once its checks pass.
-2. Luke watches the full film and answers D-10; a caption change means rebuilding `story_moments.csv`, re-running the tests and a new render (by hand from the Actions tab once merged).
-3. IQ-06 live feasibility for RTT-001, 003–012; IQ-07 uploader (private-only). New metric contracts follow DEC-036.
+## Open (for Luke)
+1. Pick a speed from the three clips. Then one full-film render: Actions → render-pilot → Run workflow on this branch (or on main once merged), config `config_rtt002_film.json`, width 3840, music true. For a faster pace, first set `pacing.sec_per_event` in `config_rtt002_film.json` (0.4 = 1.25×, 0.333 = 1.5×) and re-run the tests.
+2. Question (DEC-069): reinstate the smooth speed curve from the original brief? Not done without his approval.
+3. Listen to the music loop joins in the full film (about 181 s, 331 s and 480 s at the current pace). Claude measured the beats and levels but cannot listen.
 
 ## Rules for the next session
-Read `state/STATE.json`, this file, `state/DECISIONS.md`, `reference/metric_contract_RTT-002.md` and `reference/rights_ledger.md`. Never edit C2-2 files or anything in `marketmarathon/bars` for RTT. Follow DEC-006: code, configs, data and written results only in this public repo; logos, pictures, test frames, stills and renders live only in the private repo (DEC-060). Never upload workflow artifacts from this repo and never print `RTT_PRIVATE_TOKEN` (DEC-061). New data goes in new files; the audited wins files stay unchanged; starts corrections go only through `starts_corrections.csv`. Pushing a change to `.github/workflows/render_pilot.yml` on the branch named in its `push` trigger starts a render.
+Read `state/STATE.json`, this file, `state/DECISIONS.md`, `reference/metric_contract_RTT-002.md` and `reference/rights_ledger.md`. **DEC-069: never add a visual feature or change the look beyond the owner-approved pilot without Luke's approval BEFORE rendering; list proposals as questions.** Never edit C2-2 files or anything in `marketmarathon/bars` for RTT. DEC-006: code, configs, data and written results only in this public repo; logos, pictures, **music**, test frames, stills and renders live only in the private repo (DEC-060, DEC-073). Never upload workflow artifacts from this repo and never print `RTT_PRIVATE_TOKEN` (DEC-061). New data goes in new files; the audited wins files stay unchanged. **A push that changes `.github/workflows/render_pilot.yml` on this branch renders the three speed clips** (never the full film); the full film renders only when started by hand.

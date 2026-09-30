@@ -1,8 +1,8 @@
 {
   "schema": "rtt-state/0.1",
   "updated": "2026-09-30",
-  "updated_by": "Claude (Claude Code cloud session, environment \"Race Through Time\"): owner decisions DEC-064..DEC-067 recorded (state files only)",
-  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); starts data audit PASSED (DEC-058/DEC-059, merged PR #8); IQ-04 MERGED (PR #2); IQ-05 rounds 1-5 MERGED (PR #3-#7); round-5 pilot RENDERED and APPROVED by Luke (DEC-062, visual direction = milestone 3); pull request #9 MERGED (c378ea7); RTT-002 FULL FILM built and tested (DEC-063, branch claude/festive-wright-ljiwlo, pull request #10, not merged)",
+  "updated_by": "Claude (Claude Code cloud session, environment \"Race Through Time\"): Luke watched the full film; captions dropped and pilot pacing restored (DEC-068), look rule (DEC-069), no intro/outro (DEC-070), speed clips (DEC-071), music workflow (DEC-072), music chosen and verified (DEC-073), loop and mix (DEC-074)",
+  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); starts data audit PASSED (DEC-058/DEC-059, merged PR #8); IQ-04 MERGED (PR #2); IQ-05 rounds 1-5 MERGED (PR #3-#7); round-5 pilot RENDERED and APPROVED by Luke (DEC-062, visual direction = milestone 3); pull request #9 MERGED (c378ea7); RTT-002 full film rendered 29 Sep (with captions) and WATCHED by Luke 30 Sep: captions dropped, pilot pacing restored (DEC-068); speed comparison clips with music (DEC-071, DEC-073) rendering; full film NOT re-rendered until Luke picks a speed (branch claude/festive-wright-ljiwlo, pull request #10, not merged)",
   "canonical_queue": "state/ folder on main in marketmarathon/race-through-time (this file)",
   "repo_baseline": {
     "repo": "marketmarathon/bars",
@@ -37,7 +37,7 @@
     {
       "id": "RTT-002",
       "title": "F1 Grand Prix Wins",
-      "state": "FULL_FILM_RENDER_REVIEW",
+      "state": "FULL_FILM_SPEED_CHOICE",
       "check_level": "LIVE",
       "verdict": "FEASIBLE_VIA_OPEN_LICENCE_ROUTE",
       "blocker": "none for data or rights: D-05 CLOSED 30 Sep 2026 (DEC-066, Luke accepts the residual risk for the results data and the car-photo trademarks; Claude's view is not legal advice, Isle of Man law not checked). Before release: Luke watches and approves the exact final render (DEC-001); caption questions D-10; music D-11 (none chosen)",
@@ -56,15 +56,14 @@
         "starts": "data/rtt-002/starts.csv (14,479 rows), career_starts.csv, starts_corrections.csv (DEC-058), STARTS_CHECKS.md, starts_checks.json, starts_manifest.json, STARTS_README.md (added 29 Sep 2026, DEC-053/DEC-055; new files, audited wins files unchanged): build rtt002-starts/1.1, 13/13 checks PASS; List of F1 drivers rev. 1377016608: 116 of 116 agree after the DEC-058 correction (Barrichello 2002 Spanish GP not a start: 323 -> 322); independent check 3 compared (reports/RTT-002_starts_check3_report.md); Wikipedia counting convention kept (DEC-059); starts data audit PASSED"
       },
       "film": {
-        "decisions": "DEC-062 (owner: pilot approved, visual direction approved), DEC-063 (Claude working choices)",
-        "config": "kits/rtt-002/config_rtt002_film.json (extends the approved config_pilot_2014_2021_top20.json)",
+        "decisions": "DEC-062, DEC-063 (story/caption/pacing parts superseded by DEC-068), DEC-068..DEC-074",
+        "config": "kits/rtt-002/config_rtt002_film.json: the approved pilot config, window 1950-2026, lead-in 0; no captions; pilot pacing rules (0.5 s x 1.4/1.0/0.8 on the top ten, 2.0 s record pauses on the 24 BECOMES_JOINT/BECOMES_SOLE races, final table 10 s)",
         "span": "1,164 races: 1950 British GP (1950-05-13) to the data freeze, 2026 Azerbaijan GP (2026-09-26)",
-        "frames": "20033 at 30 fps = 667.8 s (11 min 8 s), final table 10 s",
-        "pacing": "smooth: 0.4-0.7 s per race (0.8-1.4 x 0.5 s), slew 0.1, 1.4x from 2 before to 3 after 59 emphasis races; story races held 2.5-3.0 s",
-        "story_moments": "30 (data/rtt-002/story_moments.csv; reports/RTT-002_story_moments.md): 1 first race, 8 leader changes, 8 records equalled, 2 milestones (50, 100), 10 top-ten entries, 1 freeze",
-        "tests": "tests/player/RESULTS.md 17/17 PASS (new case rtt002_film, checks 29-32); phone check PASS",
-        "audio": "none (video only, as the pilot); workflow fails on any audio stream; no music chosen or licensed",
-        "render": {
+        "frames": "16908 at 30 fps = 563.6 s (9 min 24 s) at the current pace; 1.25x: 13874 = 7 min 42 s; 1.5x: 11852 = 6 min 35 s (record pauses and final table unchanged)",
+        "tests": "tests/player/RESULTS.md (cases rtt002_film and rtt002_speed_2014_2021_1x/1.25x/1.5x; checks 29-30: leader changes on the audited dates, final table)",
+        "audio": "DEC-073: 'Ego Chall' by Blue Deer Studio (YouTube Audio Library; no attribution; file only in the private repo, SHA-256 b3851963dc547b643717ca716abd2bae38148b61c94719c7a70d5bc7c49a526e, verified 30 Sep 2026); looped 31.208-180.930 s (256 beats) with 4.644 s equal-power crossfades, faded over the final table, -16 LUFS, true peak <= -1 dBTP (DEC-074)",
+        "pull_request": "https://github.com/marketmarathon/race-through-time/pull/10",
+        "render_29_sep": {
           "workflow": ".github/workflows/render_pilot.yml (DEC-061, DEC-063)",
           "run": "https://github.com/marketmarathon/race-through-time/actions/runs/36627763732 (push on claude/festive-wright-ljiwlo @ e4dbeda; success; about 48 min; 0 workflow artifacts)",
           "release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-002-film-e4dbeda-run2 (private, pre-release)",
@@ -73,9 +72,13 @@
             "rtt002_config_rtt002_film_e4dbeda_1920x1080_viewing.mp4": "b4c2b262aa1ee66d2b0760405772d673443ea6f92856b80a2e9ddbdcd23678ba (viewing copy, x264 CRF 18)"
           },
           "checks": "player input hash = dataset_hashes.txt; both overlay hashes checked; ffprobe 3840x2160 and 1920x1080, 30 fps, 20033 frames each; 0 audio streams in each",
-          "watched_by_claude": "no - checked frame by frame by the tests (draw calls on every frame, OCR at the 30 story moments); not downloaded into the container"
+          "watched_by_claude": "no - checked frame by frame by the tests (draw calls on every frame, OCR at the 30 story moments); not downloaded into the container",
+          "superseded": "watched by Luke 30 Sep 2026; captions dropped (DEC-068); not the final film"
         },
-        "pull_request": "https://github.com/marketmarathon/race-through-time/pull/10"
+        "speed_clips": {
+          "configs": "kits/rtt-002/config_speed_2014_2021_1x.json, _1.25x.json, _1.5x.json (2502 / 2098 / 1828 frames)",
+          "render": "SPEED_RELEASE"
+        }
       },
       "owner_decisions_2026_09_30": {
         "DEC-064": "nationality disagreements closed: Jim Clark GBR, Phil Hill USA, Luigi Fagioli ITA (Wikipedia); Wikidata Scotland / Dominican Republic / Kingdom of Italy not used; no data file changes",
@@ -84,9 +87,9 @@
         "DEC-067": "DEC-059 methodology note for the video description is not a blocker; written before publishing"
       },
       "open_for_luke": [
-        "watch the full film (rtt-002-film-e4dbeda-run2)",
-        "D-10 captions: which top-ten entries to caption; keep or drop the 1950 record-equalled caption",
-        "D-11 music (none chosen or licensed)"
+        "pick a speed from the three comparison clips (DEC-071); then one full-film render",
+        "reinstate the smooth speed curve? (question, DEC-068/DEC-069)",
+        "listen to the music loop joins in the full film (DEC-074)"
       ]
     },
     {
@@ -398,5 +401,10 @@
     "hashes_read_back": "29 Sep 2026 by Claude Code: both match",
     "secret": "RTT_PRIVATE_TOKEN (Actions secret in race-through-time): fine-grained token, race-through-time-private only, Contents read and write, EXPIRES 28 Sep 2027 - renew before then",
     "claude_github_app": "has access (added to this session 29 Sep 2026)"
-  }
+  },
+  "rules_all_sessions": [
+    "DEC-069 (Luke, 30 Sep 2026): never add a visual feature or change the look beyond the owner-approved pilot without Luke's approval BEFORE rendering; list proposals as questions instead",
+    "DEC-070: no intro/title screen and no outro/closing card; 10 s final-table hold at the end for YouTube end-screen elements",
+    "DEC-073: the music file may not be made available separately from videos: it lives only in the private repo, is never committed here and never uploaded as a workflow artifact"
+  ]
 }
