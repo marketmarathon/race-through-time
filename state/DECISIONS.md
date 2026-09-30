@@ -95,10 +95,12 @@ Newest last. Owner = Luke. A Claude working choice is reversible and listed so i
 
 - **DEC-075 · 30 Sep 2026 · Claude working choice (test rule, nothing on screen changes).** The "no strobing" test (DEC-030: highlights may start at most 3 times in any second) counted *bars*. With the pilot's pacing on the full history, the 1957 British GP shared drive (Tony Brooks and Stirling Moss, both lit on the same frame) among 0.4 s beats gave 4 bars in one second. Counted as flash moments (distinct frames on which any highlight starts), the maximum is 3 per second, the same as in the approved pilot. The test now counts frames; the number of bars is still reported. The player and the pacing are unchanged.
 
+- **DEC-076 · 30 Sep 2026 · Owner (Luke), speed.** Luke watched the three comparison clips (`rtt-002-speed-596f656-run3`) and chose **1.5× faster**: "it works really well with the music, the music is spot on". He was told that only the current pace keeps the film over 8 minutes (YouTube mid-roll eligibility) and chose 1.5× anyway. `config_rtt002_film.json`: `pacing.sec_per_event` 0.333 (exactly as the 1.5× clip); everything else unchanged: multipliers 1.4 / 1.0 / 0.8 on the top ten, 2.0 s record pauses, 10 s final table, no intro, no outro, no captions. Full film **11,852 frames = 6 min 35 s**. Music as in the 1.5× clip: "Ego Chall", hash-checked, looped on the beat (joins at about 181 s and 331 s), faded over the final table, -16 LUFS, true peak ≤ -1 dBTP. The final film is rendered at 3840 × 2160 plus a 1920 × 1080 viewing copy, after the full test suite passed on this config, and saved only as a private pre-release. Nothing goes to YouTube.
+
 ## Open — need the owner
-- **Speed (DEC-071):** Luke compares the three 2014–2021 clips (1×, 1.25×, 1.5×) and picks a pace; then the full film is rendered once more.
+- **Watch the final film (DEC-076):** 1.5×, with music; the private release link is in `state/HANDOVER.md`. Listen to the two loop joins (about 181 s and 331 s). Nothing is uploaded until Luke approves the exact final render (DEC-001).
+- **Speed — DECIDED by DEC-076:** 1.5×.
 - **Reinstate the smooth speed curve? (question, DEC-068/DEC-069):** the film brief asked for a smooth speed curve with reading time around leader changes and top-ten entries. It was removed with the captions, so the film now paces exactly as the pilot. Say if you want it back (it would change the running times above).
-- **Music joins (DEC-074):** Luke listens to the loop joins in the full film once it is rendered (at about 181 s, 331 s and 480 s at the current pace; the comparison clips are shorter than the first join, so they only show the start of the track and the fade-out).
 - **D-11 Music — CLOSED by DEC-073:** "Ego Chall" by Blue Deer Studio.
 - **D-10 RTT-002 captions — CLOSED by DEC-068:** captions dropped.
 - **Watching the full film — DONE 30 Sep 2026:** Luke watched `rtt-002-film-e4dbeda-run2` (feedback DEC-068 to DEC-072).

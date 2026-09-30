@@ -1,13 +1,20 @@
 {
  "extends": "config_pilot_2014_2021_top20.json",
- "kit_version": "rtt002_film2",
+ "kit_version": "rtt002_film3",
  "out": "rtt002_film.mp4",
- "window": { "from": null, "to": null },
+ "window": {
+  "from": null,
+  "to": null
+ },
  "range": "1950 – 2026",
  "subtitle": "World Championship Grand Prix wins by driver, race by race, 1950 – 2026",
- "pacing": { "lead_in_sec": 0 },
+ "pacing": {
+  "sec_per_event": 0.3333333333333333,
+  "lead_in_sec": 0
+ },
  "notes": [
-  "RTT-002 full film (DEC-062 approval of the round-5 look; DEC-068: story captions dropped, pacing = the approved pilot's rules). Everything that draws AND every pacing rule is inherited from config_pilot_2014_2021_top20.json, the round-5 pilot Luke approved on 29 Sep 2026: 20 rows, flags, stats label, bar length, date line, logo and car boxes, footer, palette, highlight; 0.5 s per race x 1.4 / 1.0 / 0.8 judged on the top ten; 2.0 s record pauses on every BECOMES_JOINT / BECOMES_SOLE race (DEC-034); final table on screen 10 s (DEC-070: YouTube end-screen elements sit over it); no title card, no closing card. Only the window and the subtitle's range are new.",
+  "RTT-002 full film (DEC-062 approval of the round-5 look; DEC-068: story captions dropped, pacing = the approved pilot's rules). Everything that draws AND every pacing rule is inherited from config_pilot_2014_2021_top20.json, the round-5 pilot Luke approved on 29 Sep 2026: 20 rows, flags, stats label, bar length, date line, logo and car boxes, footer, palette, highlight; 0.333 s per race (DEC-076: Luke chose 1.5x faster after the comparison clips; the pilot's 0.5 s) x 1.4 / 1.0 / 0.8 judged on the top ten; 2.0 s record pauses on every BECOMES_JOINT / BECOMES_SOLE race (DEC-034); final table on screen 10 s (DEC-070: YouTube end-screen elements sit over it); no title card, no closing card. Only the window and the subtitle's range are new.",
+  "pacing.sec_per_event 0.333 (DEC-076, Luke, 30 Sep 2026): 1.5x faster than the pilot's 0.5 s per race, exactly as config_speed_2014_2021_1.5x.json; the multipliers, the 2.0 s record pauses and the 10 s final table are unchanged. 11,852 frames = 6 min 35 s. Luke was told only the current pace keeps the film over 8 minutes (YouTube mid-roll eligibility) and chose 1.5x anyway.",
   "window null: all 1,164 championship races, 1950 British GP (13 May 1950) to the data freeze, 2026 Azerbaijan GP (26 September 2026).",
   "lead_in_sec 0 (the one pacing value that differs from the pilot's 2.0 s): the pilot opened on the totals before 2014, but the full film's opening board is empty (no wins before 1950) and has no race for the date line to name, so the first race lands on frame 0 and the date line is on screen from the first frame (blueprint: the date is shown continuously)."
  ]

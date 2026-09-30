@@ -12,7 +12,7 @@ Copied from `marketmarathon/bars` @ `2a10877695e83683c3caae651cad61fc686614eb` (
 | `config.json` | Everything RTT-specific: words, unit, palette and colour rule, pacing, window, sizes, layout tokens |
 | `config_pilot_2014_2021_base.json` | Shared pilot settings: `config.json` + window 2014–2021, 0.5 s per race judged on the top ten, board from the first frame (no title card), record holds (2.0 s), winner highlight, final board 10 s, no closing card. Not rendered on its own |
 | `config_pilot_2014_2021_top20.json` | The pilot (round 5): the base + 20 rows, flags, stats label on every bar (event label off), round-3 bar length, date line next to the title, overlay boxes for the round logo badge and the car photo, car credit in the footer, its own 22-colour palette with colour priority |
-| `config_rtt002_film.json` | **The full RTT-002 film** (DEC-063, DEC-068): extends the approved round-5 pilot config and changes only the window (all 1,164 races, 1950 British GP to the 2026 Azerbaijan GP), the subtitle's range and `lead_in_sec` (0: the board opens empty). Look and pacing rules are the pilot's; no captions |
+| `config_rtt002_film.json` | **The full RTT-002 film** (DEC-063, DEC-068): extends the approved round-5 pilot config and changes only the window (all 1,164 races, 1950 British GP to the 2026 Azerbaijan GP), the subtitle's range and `lead_in_sec` (0: the board opens empty); `sec_per_event` 0.333 (1.5x, DEC-076). Look and pacing rules are the pilot's; no captions |
 | `config_speed_2014_2021_1x.json`, `_1.25x.json`, `_1.5x.json` | Speed comparison clips (DEC-071): the film's 2014–2021 passage at 0.5 / 0.4 / 0.333 s per race; record pauses 2.0 s and final table 10 s unchanged |
 | `local_assets/` | **Git-ignored.** Private pictures for the overlays (`rtt_logo.png`: Luke's logo as a round badge, 885 × 885, transparent outside the circle; `rtt_car.png`: the car photo with its background removed, 3435 × 936), supplied at render time by Claude in Cowork; never committed (DEC-006). Missing file = empty box, the render goes on |
 | `race_rtt002.json` | Player input (adapter 1.1: wins and, per race, every driver's starts), written by `scripts/rtt_adapter.py` from `data/rtt-002/` (CC BY-SA 4.0, see `data/rtt-002/ATTRIBUTION.md`) |
@@ -36,7 +36,7 @@ RTT_CONFIG=config_pilot_2014_2021_top20.json FRAME_COUNT_ONLY=1 node rtt.js   # 
 ```
 Full film (DEC-068) and speed clips (DEC-071):
 ```
-RTT_CONFIG=config_rtt002_film.json FRAME_COUNT_ONLY=1 node rtt.js           # FRAMES 16908 = 563.6 s (9 min 24 s)
+RTT_CONFIG=config_rtt002_film.json FRAME_COUNT_ONLY=1 node rtt.js           # FRAMES 11852 = 395.1 s (6 min 35 s), 1.5x (DEC-076)
 RTT_CONFIG=config_speed_2014_2021_1.5x.json FRAME_COUNT_ONLY=1 node rtt.js  # FRAMES 1828 (1x: 2502, 1.25x: 2098)
 ```
 Music (DEC-072): `scripts/rtt_mix_music.sh VIDEO MUSIC OUT FINAL_HOLD_SEC` loops or cuts a track to the video's length, fades it out over the final table and mixes it to about -16 LUFS integrated, true peak at most -1 dBTP (it fails otherwise). The render workflow runs it when started with a `music` file from the private repo.
