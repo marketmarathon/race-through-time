@@ -1,8 +1,8 @@
 {
   "schema": "rtt-state/0.1",
   "updated": "2026-09-30",
-  "updated_by": "Claude (Claude Code cloud session, environment \"Race Through Time\"): FINAL RTT-002 film rendered at 1.5x with music (DEC-076, DEC-077)",
-  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); starts data audit PASSED (DEC-058/DEC-059, merged PR #8); IQ-04 MERGED (PR #2); IQ-05 rounds 1-5 MERGED (PR #3-#7); round-5 pilot RENDERED and APPROVED by Luke (DEC-062, visual direction = milestone 3); pull request #9 MERGED (c378ea7); RTT-002 FINAL FILM rendered 30 Sep 2026 at 1.5x with \"Ego Chall\" (DEC-076, DEC-077), private pre-release rtt-002-film-416d747-run4; awaiting Luke's watch and approval of this exact render (DEC-001); branch claude/festive-wright-ljiwlo, pull request #10, not merged",
+  "updated_by": "Claude (Claude Code cloud session, environment \"Race Through Time\"): Luke approved the final RTT-002 render (DEC-078)",
+  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); starts data audit PASSED (DEC-058/DEC-059, merged PR #8); IQ-04 MERGED (PR #2); IQ-05 rounds 1-5 MERGED (PR #3-#7); round-5 pilot RENDERED and APPROVED by Luke (DEC-062, visual direction = milestone 3); pull request #9 MERGED (c378ea7); RTT-002 FINAL FILM APPROVED by Luke 30 Sep 2026 (DEC-078): rtt-002-film-416d747-run4, master SHA-256 6618ef2e6733a9e1e38efeaa39e5095ca8385773acd62be1580d20eb9c7cfda8; NOT uploaded; merge of pull request #10 and private YouTube upload wait for Luke's go-ahead in Cowork",
   "canonical_queue": "state/ folder on main in marketmarathon/race-through-time (this file)",
   "repo_baseline": {
     "repo": "marketmarathon/bars",
@@ -14,10 +14,21 @@
   "protected_baseline": "Format C2-2 (RF_US_C2_v3, RF_UK_C2_v1, RF_FR_C2_v1) — do not modify",
   "launch": {
     "approved_launch_date": null,
-    "approved_videos": 0,
+    "approved_videos": 1,
     "briefs_passing_feasibility": 0,
     "required_videos": 10,
-    "required_briefs": 12
+    "required_briefs": 12,
+    "approved_video_list": [
+      {
+        "id": "RTT-002",
+        "release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-002-film-416d747-run4",
+        "master_sha256": "6618ef2e6733a9e1e38efeaa39e5095ca8385773acd62be1580d20eb9c7cfda8",
+        "viewing_sha256": "311e66acaaf71283f116d0637a569086a5facc0bdfaa400de6d6588178259822",
+        "seconds": 395.1,
+        "approved": "2026-09-30 (DEC-078)",
+        "uploaded": false
+      }
+    ]
   },
   "activations": {
     "schedules": [],
@@ -37,10 +48,10 @@
     {
       "id": "RTT-002",
       "title": "F1 Grand Prix Wins",
-      "state": "FINAL_FILM_RENDERED_AWAITING_OWNER_APPROVAL",
+      "state": "APPROVED_RENDER_NOT_UPLOADED",
       "check_level": "LIVE",
       "verdict": "FEASIBLE_VIA_OPEN_LICENCE_ROUTE",
-      "blocker": "none for data or rights: D-05 CLOSED 30 Sep 2026 (DEC-066, Luke accepts the residual risk for the results data and the car-photo trademarks; Claude's view is not legal advice, Isle of Man law not checked). Before release: Luke watches and approves the exact final render (DEC-001); caption questions D-10; music D-11 (none chosen)",
+      "blocker": "none for the render: approved 30 Sep 2026 (DEC-078). Before any upload: Luke's go-ahead in Cowork; uploader IQ-07 (private-only, channel-ID read-back) not built; description needs the credits (DEC-065), the methodology note (DEC-067) and the data attribution",
       "dataset": {
         "branch": "main (merged from rtt-002-data via PR #1)",
         "commit": "7cde5df",
@@ -90,6 +101,18 @@
           "checks": "player input hash = dataset_hashes.txt; logo, car and music hashes checked; ffprobe 3840x2160 and 1920x1080, 30 fps, 11852 frames each; one audio stream in each",
           "audio": "'Ego Chall' looped with 2 beat-aligned crossfades (180.93 s, 330.65 s), faded out 385.1-395.1 s; mixed -16.0 LUFS integrated, true peak -3.2 dBTP",
           "watched_by_claude": "no - checked frame by frame by the tests; audio checked by measurement only"
+        },
+        "approval": {
+          "decision": "DEC-078 (Luke, 30 Sep 2026): 'I like it. It looks really good. Perfect.'",
+          "release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-002-film-416d747-run4",
+          "approved_files": {
+            "master_3840x2160_sha256": "6618ef2e6733a9e1e38efeaa39e5095ca8385773acd62be1580d20eb9c7cfda8",
+            "viewing_1920x1080_sha256": "311e66acaaf71283f116d0637a569086a5facc0bdfaa400de6d6588178259822"
+          },
+          "seconds": 395.1,
+          "scope": "this exact render only; any re-render or re-encode is a different file and needs a new approval",
+          "uploaded": false,
+          "merged": false
         }
       },
       "owner_decisions_2026_09_30": {
@@ -99,9 +122,9 @@
         "DEC-067": "DEC-059 methodology note for the video description is not a blocker; written before publishing"
       },
       "open_for_luke": [
-        "watch and approve the exact final render rtt-002-film-416d747-run4 (DEC-001), incl. the two music joins at about 3:01 and 5:31",
-        "reinstate the smooth speed curve? (question, DEC-068/DEC-069)",
-        "merge pull request #10"
+        "go-ahead in Cowork to merge pull request #10",
+        "go-ahead in Cowork for the private YouTube upload (IQ-07 uploader not built yet)",
+        "reinstate the smooth speed curve? (question, DEC-068/DEC-069; not needed for this approved film)"
       ]
     },
     {
