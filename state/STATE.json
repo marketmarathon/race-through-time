@@ -1,7 +1,7 @@
 {
   "schema": "rtt-state/0.1",
-  "updated": "2026-09-29",
-  "updated_by": "Claude (Claude Code cloud session, environment \"Race Through Time\"), RTT-002 full film (DEC-062, DEC-063)",
+  "updated": "2026-09-30",
+  "updated_by": "Claude (Claude Code cloud session, environment \"Race Through Time\"): owner decisions DEC-064..DEC-067 recorded (state files only)",
   "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); starts data audit PASSED (DEC-058/DEC-059, merged PR #8); IQ-04 MERGED (PR #2); IQ-05 rounds 1-5 MERGED (PR #3-#7); round-5 pilot RENDERED and APPROVED by Luke (DEC-062, visual direction = milestone 3); pull request #9 MERGED (c378ea7); RTT-002 FULL FILM built and tested (DEC-063, branch claude/festive-wright-ljiwlo, pull request #10, not merged)",
   "canonical_queue": "state/ folder on main in marketmarathon/race-through-time (this file)",
   "repo_baseline": {
@@ -40,7 +40,7 @@
       "state": "FULL_FILM_RENDER_REVIEW",
       "check_level": "LIVE",
       "verdict": "FEASIBLE_VIA_OPEN_LICENCE_ROUTE",
-      "blocker": "D-05 before release only (results-data rights; car photo trademarks added 28 Sep 2026)",
+      "blocker": "none for data or rights: D-05 CLOSED 30 Sep 2026 (DEC-066, Luke accepts the residual risk for the results data and the car-photo trademarks; Claude's view is not legal advice, Isle of Man law not checked). Before release: Luke watches and approves the exact final render (DEC-001); caption questions D-10; music D-11 (none chosen)",
       "dataset": {
         "branch": "main (merged from rtt-002-data via PR #1)",
         "commit": "7cde5df",
@@ -52,7 +52,7 @@
         "scripted_checks": "13/13 PASS (data/rtt-002/CHECKS.md)",
         "independent_check_comparison": "0 discrepancies in A, B, E, F, G (reports/RTT-002_discrepancy_report.md)",
         "second_independent_check": "top-ten entries (40) and top ten at freeze: 0 discrepancies (reports/RTT-002_topten_check_report.md)",
-        "nationality": "data/rtt-002/driver_nationality.csv (added 28 Sep 2026, IQ-05 round 3, after DATA_AUDIT; DEC-036): 116 drivers; primary Wikipedia list rev. 1376824402; Wikidata cross-check 113 agree, 3 disagree (Jim Clark, Phil Hill, Luigi Fagioli) - open for Luke; reports/RTT-002_nationality_comparison.md",
+        "nationality": "data/rtt-002/driver_nationality.csv (added 28 Sep 2026, IQ-05 round 3, after DATA_AUDIT; DEC-036): 116 drivers; primary Wikipedia list rev. 1376824402; Wikidata cross-check 113 agree, 3 disagree (Jim Clark, Phil Hill, Luigi Fagioli) - CLOSED by DEC-064 (30 Sep 2026): Wikipedia values kept (GBR, USA, ITA), no data change; reports/RTT-002_nationality_comparison.md",
         "starts": "data/rtt-002/starts.csv (14,479 rows), career_starts.csv, starts_corrections.csv (DEC-058), STARTS_CHECKS.md, starts_checks.json, starts_manifest.json, STARTS_README.md (added 29 Sep 2026, DEC-053/DEC-055; new files, audited wins files unchanged): build rtt002-starts/1.1, 13/13 checks PASS; List of F1 drivers rev. 1377016608: 116 of 116 agree after the DEC-058 correction (Barrichello 2002 Spanish GP not a start: 323 -> 322); independent check 3 compared (reports/RTT-002_starts_check3_report.md); Wikipedia counting convention kept (DEC-059); starts data audit PASSED"
       },
       "film": {
@@ -76,7 +76,18 @@
           "watched_by_claude": "no - checked frame by frame by the tests (draw calls on every frame, OCR at the 30 story moments); not downloaded into the container"
         },
         "pull_request": "https://github.com/marketmarathon/race-through-time/pull/10"
-      }
+      },
+      "owner_decisions_2026_09_30": {
+        "DEC-064": "nationality disagreements closed: Jim Clark GBR, Phil Hill USA, Luigi Fagioli ITA (Wikipedia); Wikidata Scotland / Dominican Republic / Kingdom of Italy not used; no data file changes",
+        "DEC-065": "footer stays inside the bottom strip YouTube's controls can cover; same credits in the video description (agrees with Claude's recommendation)",
+        "DEC-066": "D-05 closed: residual publication risk accepted for the results data and the team/sponsor trademarks on the car photo; Claude said this is not legal advice and did not check Isle of Man law",
+        "DEC-067": "DEC-059 methodology note for the video description is not a blocker; written before publishing"
+      },
+      "open_for_luke": [
+        "watch the full film (rtt-002-film-e4dbeda-run2)",
+        "D-10 captions: which top-ten entries to caption; keep or drop the 1950 record-equalled caption",
+        "D-11 music (none chosen or licensed)"
+      ]
     },
     {
       "id": "RTT-003",
