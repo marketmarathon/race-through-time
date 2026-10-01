@@ -1,0 +1,112 @@
+{
+  "build": "rtt003-build/1.0",
+  "checks": {
+    "end_values_equal_latest_official": {
+      "detail": "mismatches: []",
+      "status": "PASS"
+    },
+    "every_point_has_provenance": {
+      "detail": "2697 rows checked",
+      "status": "PASS"
+    },
+    "excluded_consoles_absent": {
+      "detail": "19 excluded; present in series: []",
+      "status": "PASS"
+    },
+    "nintendo_fiscal_years_vs_lifetime": {
+      "detail": "12 families; outside rounding: []",
+      "status": "PASS"
+    },
+    "no_value_before_launch": {
+      "detail": "0 rows",
+      "status": "PASS"
+    },
+    "observations_integrity": {
+      "detail": "452 observations; 0 problems",
+      "status": "PASS"
+    },
+    "quarter_grid_complete": {
+      "detail": "166 quarter ends 1985-03-31..2026-06-30; incomplete: []",
+      "status": "PASS"
+    },
+    "series_non_decreasing": {
+      "detail": "1 decreases, 1 within documented rounding (listed below), 0 outside",
+      "status": "PASS"
+    },
+    "sony_ps4_ps5_sums_vs_headlines": {
+      "detail": "playstation_4: quarterly sell-in sums to 117.2m; Sony headline 'More than 117 million' (as of 2022-06-30) OK; playstation_4 FY2014: quarters sum 14.9 vs printed fiscal year 14.8 (Sony's rounding)",
+      "status": "PASS"
+    }
+  },
+  "notes": {
+    "decreases": [
+      "snes: 1996-12-31 45240000 -> 1997-03-31 45230000 (-10000 units; anchors NCR97-SNES-1996-12-31 / NIN-snes-1997-03-31; within the rebuilt total's rounding tolerance +/-90000)"
+    ],
+    "end_values": [
+      "atari_2600: end 25000000 >= latest official 25000000 (ATARI-2600-1988-06-kit, 1988-06-30) OK",
+      "dreamcast: end 8200000 == latest official 8200000 (SEGA-DC-2001-03-31, 2001-03-31) OK",
+      "game_boy: end 118690000 == latest official 118690000 (NINHS-game_boy-2026-06-30, 2026-06-30) OK",
+      "game_boy_advance: end 81510000 == latest official 81510000 (NINHS-game_boy_advance-2026-06-30, 2026-06-30) OK",
+      "game_gear: no verified official dated figure (end 10620000, estimated)",
+      "gamecube: end 21740000 == latest official 21740000 (NINHS-gamecube-2026-06-30, 2026-06-30) OK",
+      "master_system: no verified official dated figure (end 6200000, estimated)",
+      "mega_drive: no verified official dated figure (end 28540000, estimated)",
+      "nes: end 61910000 == latest official 61910000 (NINHS-nes-2026-06-30, 2026-06-30) OK",
+      "nintendo_3ds: end 75940000 == latest official 75940000 (NINHS-nintendo_3ds-2026-06-30, 2026-06-30) OK",
+      "nintendo_64: end 32930000 == latest official 32930000 (NINHS-nintendo_64-2026-06-30, 2026-06-30) OK",
+      "nintendo_ds: end 154020000 == latest official 154020000 (NINHS-nintendo_ds-2026-06-30, 2026-06-30) OK",
+      "nintendo_switch: end 156590000 == latest official 156590000 (NINHS-nintendo_switch-2026-06-30, 2026-06-30) OK",
+      "nintendo_switch_2: end 23680000 == latest official 23680000 (NINHS-nintendo_switch_2-2026-06-30, 2026-06-30) OK",
+      "playstation: end 102490000 >= latest official 102400000 (SIE-LT-playstation-x, 2012-03-31) OK",
+      "playstation_2: end 160000000 >= latest official 160000000 (SIE-LT-playstation_2, 2012-03-31) OK",
+      "playstation_3: end 87400000 >= latest official 87400000 (SIE-LT-playstation_3, 2017-03-31) OK",
+      "playstation_4: end 117200000 >= latest official 117000000 (SIE-LT-playstation_4, 2022-06-30) OK",
+      "playstation_5: end 95300000 == latest official 95300000 (SONY-QSUM-playstation_5-2026-06-30, 2026-06-30) OK",
+      "psp: end 76400000 >= latest official 76400000 (SIE-LT-psp, 2012-03-31) OK",
+      "saturn: end 8800000 == latest official 8800000 (SEGA-SAT-1998-03-31, 1998-03-31) OK",
+      "snes: end 49100000 == latest official 49100000 (NINHS-snes-2026-06-30, 2026-06-30) OK",
+      "wii: end 101630000 == latest official 101630000 (NINHS-wii-2026-06-30, 2026-06-30) OK",
+      "wii_u: end 13560000 == latest official 13560000 (NINHS-wii_u-2026-06-30, 2026-06-30) OK",
+      "xbox: end 24000000 >= latest official 24000000 (MS-XBOX-2006-05-09, 2006-05-09) OK",
+      "xbox_360: end 84000000 >= latest official 84000000 (MS-X360-2014-06-09, 2014-06-09) OK",
+      "xbox_one: end 54000000 rests on the analyst estimate AMPERE-XB1-2021-08-27 (DEC-084); latest official figure 5100000 (MS-XB1-CUM-2014-03-31, 2014-03-31) is below it: consistent",
+      "xbox_series: no verified official dated figure (end 28300000, analyst_estimate)"
+    ],
+    "nintendo": [
+      "game_boy: life-to-date 118690000 minus 18 fiscal years from FY3/1998 = 54050000 at 31 Mar 1997 (compared with older figures in the report)",
+      "game_boy: regions Japan+The Americas+Other = 118690000 vs total 118690000 (difference 0, tolerance +/-15000) OK",
+      "game_boy_advance: sum of 15 fiscal-year totals 81520000 vs life-to-date 81510000 (difference 10000, tolerance +/-75000) OK",
+      "game_boy_advance: regions Japan+The Americas+Other = 81510000 vs total 81510000 (difference 0, tolerance +/-15000) OK",
+      "gamecube: sum of 14 fiscal-year totals 21740000 vs life-to-date 21740000 (difference 0, tolerance +/-70000) OK",
+      "gamecube: regions Japan+The Americas+Other = 21750000 vs total 21740000 (difference 10000, tolerance +/-15000) OK",
+      "nes: life-to-date 61910000 minus 18 fiscal years from FY3/1998 = 61580000 at 31 Mar 1997 (compared with older figures in the report)",
+      "nes: regions Japan+The Americas+Other = 61910000 vs total 61910000 (difference 0, tolerance +/-15000) OK",
+      "nintendo_3ds: sum of 16 fiscal-year totals 75930000 vs life-to-date 75940000 (difference -10000, tolerance +/-80000) OK",
+      "nintendo_3ds: regions Japan+The Americas+Other = 75940000 vs total 75940000 (difference 0, tolerance +/-15000) OK",
+      "nintendo_64: life-to-date 32930000 minus 18 fiscal years from FY3/1998 = 5800000 at 31 Mar 1997 (compared with older figures in the report)",
+      "nintendo_64: regions Japan+The Americas+Other = 32920000 vs total 32930000 (difference -10000, tolerance +/-15000) OK",
+      "nintendo_ds: sum of 20 fiscal-year totals 154020000 vs life-to-date 154020000 (difference 0, tolerance +/-100000) OK",
+      "nintendo_ds: regions Japan+The Americas+Other = 154020000 vs total 154020000 (difference 0, tolerance +/-15000) OK",
+      "nintendo_switch: sum of 10 fiscal-year totals 155930000 vs life-to-date 155920000 (difference 10000, tolerance +/-50000) OK",
+      "nintendo_switch: regions Japan+The Americas+Europe+Other = 155920000 vs total 155920000 (difference 0, tolerance +/-20000) OK",
+      "nintendo_switch_2: sum of 1 fiscal-year totals 19860000 vs life-to-date 19860000 (difference 0, tolerance +/-5000) OK",
+      "nintendo_switch_2: regions Japan+The Americas+Europe+Other = 19850000 vs total 19860000 (difference -10000, tolerance +/-20000) OK",
+      "snes: life-to-date 49100000 minus 18 fiscal years from FY3/1998 = 45230000 at 31 Mar 1997 (compared with older figures in the report)",
+      "snes: regions Japan+The Americas+Other = 49100000 vs total 49100000 (difference 0, tolerance +/-15000) OK",
+      "wii: sum of 18 fiscal-year totals 101620000 vs life-to-date 101630000 (difference -10000, tolerance +/-90000) OK",
+      "wii: regions Japan+The Americas+Other = 101620000 vs total 101630000 (difference -10000, tolerance +/-15000) OK",
+      "wii_u: sum of 14 fiscal-year totals 13570000 vs life-to-date 13560000 (difference 10000, tolerance +/-70000) OK",
+      "wii_u: regions Japan+The Americas+Other = 13570000 vs total 13560000 (difference 10000, tolerance +/-15000) OK"
+    ],
+    "observation_problems": [],
+    "sony": [
+      "playstation_4: quarterly sell-in sums to 117.2m; Sony headline 'More than 117 million' (as of 2022-06-30) OK",
+      "playstation_4 FY2014: quarters sum 14.9 vs printed fiscal year 14.8 (Sony's rounding)",
+      "playstation_4 FY2019: quarters sum 13.4 vs printed fiscal year 13.5 (Sony's rounding)",
+      "playstation_4 FY2020: quarters sum 5.8 vs printed fiscal year 5.7 (Sony's rounding)",
+      "playstation_5: quarterly sell-in sums to 95.3m; Sony headline 'More than 95 million' (as of 2026-06-30) OK",
+      "playstation_5 FY2023: quarters sum 20.9 vs printed fiscal year 20.8 (Sony's rounding)",
+      "playstation_5 FY2025: quarters sum 15.9 vs printed fiscal year 16.0 (Sony's rounding)"
+    ]
+  }
+}

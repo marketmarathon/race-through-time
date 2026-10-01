@@ -1,6 +1,6 @@
 # Metric contract — RTT-003 Best-Selling Consoles 1985–2026 · v1.0 (data build IQ-09) · 1 Oct 2026
 
-Written before the data build (DEC-036). Owner decisions: DEC-081 to DEC-085 (Luke, 30 Sep 2026). Claude's working choices: DEC-086 to DEC-090 (questions for Luke, listed in `reports/RTT-003_data_report.md`).
+Written before the data build (DEC-036). Owner decisions: DEC-081 to DEC-085 (Luke, 30 Sep 2026). Claude's working choices: DEC-086 to DEC-092 (questions for Luke, listed in `reports/RTT-003_data_report.md`).
 
 **Public claim:** the best-selling video game consoles of all time, race from 31 March 1985 to 30 June 2026, measured in **units shipped** (manufacturers' sell-in to retailers and distributors). The title must say "units shipped" (DEC-081).
 **Unit:** consoles (hardware units), cumulative since launch, worldwide. Shown in millions.
@@ -36,7 +36,8 @@ Written before the data build (DEC-036). Owner decisions: DEC-081 to DEC-085 (Lu
 4. **Nintendo March year ends** (`source/nintendo_fy_hardware.csv`, transcribed from Nintendo's "Consolidated Sales Transition by Region", as of 31 Mar 2026): the total at 31 March of year Y = Nintendo's life-to-date total minus the sum of all later fiscal-year figures. Nintendo prints amounts under 10,000 units as markers (+0.1 / −0.1 in the 10,000-unit column); these count as zero, and each fiscal-year figure is rounded to 10,000 units, so a rebuilt total can be off by up to 5,000 units per later fiscal year. These rebuilt totals are compared with the independent older figures (Nintendo Online Magazine Game Boy series, Famitsu 1993–1997 tables, Nintendo's 1996 and 1997 company reports).
 5. **Sony PS4 and PS5** quarter ends are the running sums of Sony's quarterly sell-in table (0.1 million precision), checked against Sony's headlines ("more than 117 million", "more than 95 million").
 6. **Lower bounds.** A figure worded "more than", "over" or "at least", or a sum that leaves out known regions, carries the lower-bound flag; the bar label shows "+" at that anchor and while held at it.
-7. **Missing = NOT FOUND,** never zero and never invented. A lifetime figure with no date is recorded but not placed on the timeline.
+7. **Dates.** A figure given for a month only is placed at the month end (a milestone "reached in August" is a lower bound at 31 August). A figure with no as-of date ("to date", "since launch") is placed at its publication date. A fiscal-year statement is placed at the fiscal year end. Each such placement is noted on the observation.
+8. **Missing = NOT FOUND,** never zero and never invented. A lifetime figure with no date is recorded but not placed on the timeline.
 
 ## Provenance (per series point)
 | Provenance | Meaning |
@@ -45,7 +46,7 @@ Written before the data build (DEC-036). Owner decisions: DEC-081 to DEC-085 (Lu
 | arithmetic | the value is computed from grade A or B figures (Nintendo March rebuild, Sony quarterly sums, a manufacturer's regional sum) at that quarter end |
 | estimate | the quarter end is the date of a grade C or D anchor |
 | interpolated | straight line between two anchors |
-| held | after the console's last anchor, held flat |
+| held | after the console's last anchor, or between two anchors with the same value: flat |
 
 Each point also records the anchors it rests on (`left_anchor`, `right_anchor`) and the lowest grade among them (`grade`).
 
@@ -66,7 +67,7 @@ Every attribute the later player needs, and where it lives:
 | Lower-bound "+" flag | method step 6 | `series.csv` `plus_flag` |
 | Per-point provenance and anchors | method above | `series.csv` `provenance`, `left_anchor`, `right_anchor` |
 | Grade | lowest grade the point rests on | `series.csv` `grade` |
-| Estimated look (DEC-082: 1985–1993 bridged stretches; DEC-084: analyst estimates) | DEC-090 rule | `series.csv` `display_style` (official / estimated / analyst_estimate) |
+| Estimated look (DEC-082: 1985–1993 bridged stretches; DEC-084: analyst estimates) | DEC-090 rule: `analyst_estimate` if the point rests on an analyst figure; `estimated` if it rests on a grade C or D figure, or is a straight line across a gap of more than 366 days or before 1994, or the console is flagged as estimated throughout (`consoles.csv` `display_override`, DEC-089: Atari 2600, Master System); otherwise `official` | `series.csv` `display_style` (official / estimated / analyst_estimate) |
 | Console picture | private media, chosen later | `consoles.csv` `picture_ref` (**empty for now**) |
 | "Best-selling console ever" crown | first place at each quarter end | `crown.csv` |
 | Company scoreboard (pilot test) | sum of a maker's consoles at each quarter end | computed by the player from `series.csv` + `maker_key`; per-maker totals in `series_by_maker.csv` |

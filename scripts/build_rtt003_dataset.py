@@ -15,6 +15,7 @@ Method: reference/metric_contract_RTT-003.md. Standard library only; same inputs
 """
 import csv
 import hashlib
+import re
 import json
 import os
 import sys
@@ -116,8 +117,9 @@ def nintendo_observations(src, in_scope):
                                f"life-to-date {ltd} minus later fiscal-year totals ({nlater} columns)"
                                if nlater else f"life-to-date {ltd} (fiscal year {p} is the last column)",
                                nlater))
-        obs.append(nin_obs(cid, date(2026, 3, 31), ltd, f"life-to-date total {ltd} as of 31 Mar 2026", 0,
-                           ltd_row=True))
+        if not any(o["obs_id"] == f"NIN-{cid}-2026-03-31" for o in obs):
+            obs.append(nin_obs(cid, date(2026, 3, 31), ltd, f"life-to-date total {ltd} as of 31 Mar 2026", 0,
+                               ltd_row=True))
         # regional sums vs total (life to date)
         regs = [r for r in ("Japan", "The Americas", "Europe", "Other") if "LTD" in fam[cid][r]]
         reg_sum = sum(int(fam[cid][r]["LTD"]["units"]) for r in regs)
@@ -247,6 +249,8 @@ def build_series(consoles, obs_by_console, qends):
                 style = "estimated"
             else:
                 style = "official"
+            if style == "official" and c.get("display_override") == "estimated":
+                style = "estimated"  # DEC-089: whole bar flagged as estimated
             rows.append({
                 "quarter_end": q.isoformat(), "console_id": cid, "units": units, "millions": mill(units),
                 "provenance": prov, "grade": worst_grade(gov), "display_style": style,
@@ -422,20 +426,30 @@ def run_checks(consoles, obs, series, qends, nchecks, schecks, sony_life, cons_o
     cmap = {c["console_id"]: c for c in consoles}
 
     # 1 non-decreasing
-    dec = []
+    dec, big = [], 0
+    tol_of = {}
+    for o in obs:
+        m = re.search(r"rounding tolerance \+/-(\d+)", o["derivation"])
+        tol_of[o["obs_id"]] = int(m.group(1)) if m else 0
     for cid, rs in sorted(by_c.items()):
         for a, b in zip(rs, rs[1:]):
             if b["units"] < a["units"]:
+                drop = a["units"] - b["units"]
+                tol = max(tol_of.get(b["left_anchor"], 0), tol_of.get(a["left_anchor"], 0))
+                within = drop <= tol
+                big += 0 if within else 1
                 dec.append(f"{cid}: {a['quarter_end']} {a['units']} -> {b['quarter_end']} {b['units']} "
-                           f"({b['units'] - a['units']} units; anchors {a['left_anchor']} / {b['left_anchor']})")
-    checks["series_non_decreasing"] = {"status": "PASS" if not dec else "REVIEW", "detail": f"{len(dec)} decreases"}
+                           f"({b['units'] - a['units']} units; anchors {a['left_anchor']} / {b['left_anchor']}; "
+                           f"{'within the rebuilt total' + chr(39) + 's rounding tolerance +/-' + str(tol) if within else 'OUTSIDE rounding'})")
+    checks["series_non_decreasing"] = {"status": "PASS" if big == 0 else "REVIEW",
+                                       "detail": f"{len(dec)} decreases, {len(dec) - big} within documented rounding (listed below), {big} outside"}
     notes["decreases"] = dec
 
     # 2 Nintendo fiscal-year sums vs life-to-date
     nfail, ndet = [], []
     for cid, ch in sorted(nchecks.items()):
         tol = 5000 * ch["n_fy_columns"]
-        if ch["pre_fy_base"] <= 0:
+        if int(ch["first_fy"][4:8]) > 1998:
             diff = ch["fy_sum"] - ch["ltd"]
             ok = abs(diff) <= tol
             ndet.append(f"{cid}: sum of {ch['n_fy_columns']} fiscal-year totals {ch['fy_sum']} vs life-to-date "
@@ -469,7 +483,7 @@ def run_checks(consoles, obs, series, qends, nchecks, schecks, sony_life, cons_o
             sfail.append(cid)
         for fy, v in ch["fiscal_year_check"].items():
             if v["printed_fy"] and Fraction(v["quarters"]) != Fraction(v["printed_fy"]):
-                sdet.append(f"{cid} {fy}: quarters sum {float(Fraction(v['quarters'])):.1f} vs printed FY {v['printed_fy']} (rounding)")
+                sdet.append(f"{cid} {fy}: quarters sum {float(Fraction(v['quarters'])):.1f} vs printed fiscal year {float(Fraction(v['printed_fy'])):.1f} (Sony's rounding)")
     checks["sony_ps4_ps5_sums_vs_headlines"] = {"status": "PASS" if not sfail else "FAIL", "detail": "; ".join(sdet[:2])}
     notes["sony"] = sdet
 
@@ -502,13 +516,12 @@ def run_checks(consoles, obs, series, qends, nchecks, schecks, sony_life, cons_o
         else:
             ok = end == v
             rel = "=="
-        if cmap[cid].get("analyst_after"):
-            note = f" (analyst estimates after {cmap[cid]['analyst_after']}: end value rests on {rs[-1]['left_anchor']})"
-            ok = True if end >= v else ok
-        else:
-            note = ""
+        if cmap[cid].get("analyst_after") and latest_date <= cmap[cid]["analyst_after"] and end >= v:
+            end_det.append(f"{cid}: end {end} rests on the analyst estimate {rs[-1]['left_anchor']} (DEC-084); "
+                           f"latest official figure {v} ({lo['obs_id']}, {latest_date}) is below it: consistent")
+            continue
         end_det.append(f"{cid}: end {end} {rel} latest official {v} ({lo['obs_id']}, {latest_date}) "
-                       f"{'OK' if ok else 'MISMATCH'}{note}")
+                       f"{'OK' if ok else 'MISMATCH'}")
         if not ok:
             end_fail.append(cid)
     checks["end_values_equal_latest_official"] = {"status": "PASS" if not end_fail else "FAIL",

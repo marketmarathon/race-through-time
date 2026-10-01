@@ -1,0 +1,31 @@
+{
+  "build": "rtt003-build/1.0",
+  "dataset": "RTT-003 Best-Selling Consoles 1985-2026 (units shipped)",
+  "inputs": {
+    "source/consoles_curated.csv": "b90bea5b34b8755a2339902f6f895872a395be723c9c5e2391f129ba4bfc9516",
+    "source/nintendo_fy_hardware.csv": "789b8fd7191ebc416fc1074300d79ab354b29cd7251ba5ab9d3eb1882de74cb0",
+    "source/nintendo_fy_hardware.source.txt": "a8757d89f07886e9a754d4c458e0f9d61a8c6f9101bfc2d1fcb5e793451f64cc",
+    "source/observations_curated.csv": "a7f174c0a4c4b8e618007d7342b746c7ba17624afcdc8ab63d2eea028ad451e2",
+    "source/report_notes.md": "9c33689505303c9745cba72fee0cc5fcffb5acccf1f1d7eeceea01843302fdbd",
+    "source/sony_business_data.csv": "5077e5222455cb5ffc5df47fee461cb93c786e5597797cb1cecd21cc1323ea91",
+    "source/sony_business_data.source.txt": "08517fd6e45a88a532724ac56b09c41736cac0a521685893c4abfbb842196e1b"
+  },
+  "metric_contract": "reference/metric_contract_RTT-003.md v1.0",
+  "outputs": {
+    "CHECKS.md": "703773b68e4bbdaa64bb917130b7b7e6212ca854bc50c652b30dff51c90324f0",
+    "checks.json": "7e73f07ace03dd1a92c4db666434470e8d3e74e51a1459fe82f1f8588fad0f53",
+    "consoles.csv": "705fc6c8be60514d17f84c9462b5b6a6afe5a824250d138fe54e222aa11984d6",
+    "crown.csv": "19da1cf30a7aaa899ba3aa3cb55ddeb324082e51e388186a636b20e0d889f2c4",
+    "observations.csv": "c7ba79a4aad5d05f65b8ec1122c8581bb56658bc44e5d835ab810d8bab38aec6",
+    "overtakes.csv": "7ac139d06db0bc9d3a2736191a60ef8e8bd6521f2ee375442eb77b92b06d327c",
+    "series.csv": "6db3025935084f4dbdebf4c0af86737b7c7c85feb92dce49074acdef0c163ff9",
+    "series_by_maker.csv": "647f87372f774ba9a6d3c35916ace3cfdbf6e548cdad973d90772af99d4fd198"
+  },
+  "range": {
+    "first_quarter_end": "1985-03-31",
+    "last_quarter_end": "2026-06-30"
+  },
+  "report": {
+    "reports/RTT-003_data_report.md": "9489d442606b87b52a690d9e60566baabd50b683d779a94e2ab527bc2d0a5df0"
+  }
+}

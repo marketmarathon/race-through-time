@@ -21,7 +21,7 @@ Run by Claude Code (cloud session, environment "Race Through Time") before the R
 | archive.org | 200 | – | – | OPEN (item pages, downloads, metadata API) |
 | web.archive.org | connection reset after 8 s | reset again; `http://` 403 | "unable to fetch" | BLOCKED (Wayback Machine unreachable) |
 | segaxtreme.net | 200 | – | – | OPEN |
-| files.virtual-boy.com | 403 | 403 | 403 | BLOCKED |
+| files.virtual-boy.com | 403 | 403 | 403 | BLOCKED in the test; a later retry during verification answered 200 and the Famitsu scan was read |
 | atarimania.com | TLS connect failed | – | 200 | OPEN via WebFetch only |
 | ataricompendium.com | 200 | – | – | OPEN |
 | ampereanalysis.com | 200 | – | – | OPEN |
@@ -37,6 +37,7 @@ Run by Claude Code (cloud session, environment "Race Through Time") before the R
 - **Sony IR documents on sony.com / sony.net** (20-F filings mirrored there, earnings supplements, the 2019 Corporate Report) are blocked. Sony's current business-data page on sonyinteractive.com is open and gives the PS4 and PS5 quarterly sell-in tables and the lifetime totals.
 - **Nintendo Online Magazine** (the Game Boy series 1989–1997) is removed from nintendo.co.jp (404) and only in the Wayback Machine: UNVERIFIED (source blocked); used only as a cross-check.
 - **Sega's history pages on sega.jp** (Master System "about 19 million", Game Gear "10 million") are blocked.
-- **The Famitsu page of 20 May 1997 on files.virtual-boy.com** (cumulative shipments at 31 Mar 1996) is blocked.
+- **The Famitsu page on files.virtual-boy.com** (cumulative shipments at 31 Mar 1996) was blocked in the test but loaded on a later retry, so its figures are verified.
+- **Also blocked during verification** (not in the test list): upi.com, image.over-blog.com, business-standard.com, linkedin.com, wccftech.com, gamereactor.eu, tweaktown.com, gameworldobserver.com, channelnews.com.au, godisageek.com, gq-magazine.co.uk, xboxygen.com, newspapers.com, gamehistory.org, time.com, atari.com, stockanalysis.com, sony.mediaroom.com, www.hbs.edu; YouTube for the CNBC/IDC video. Ampere's own site is a JavaScript app; its articles were read from its public insights endpoint (wwwbe.ampereanalysis.com).
 
 The per-figure outcome is in the `verified` column of `data/rtt-003/observations.csv`; the list for Luke is in `reports/RTT-003_data_report.md` ("UNVERIFIED items").
