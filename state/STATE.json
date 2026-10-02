@@ -1,8 +1,8 @@
 {
   "schema": "rtt-state/0.1",
   "updated": "2026-10-02",
-  "updated_by": "Claude (Claude Code cloud session): IQ-10 round 4 - Luke's decisions DEC-130..DEC-133 and approved data update DEC-134 (Xbox Series X|S, Xbox 360, Atari 2600, Master System, Sega end dates) built, verified, tested and rendered to a private pre-release; pull request #13 open, not merged",
-  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); starts data audit PASSED (DEC-058/DEC-059, merged PR #8); IQ-04 MERGED (PR #2); IQ-05 rounds 1-5 MERGED (PR #3-#7); round-5 pilot RENDERED and APPROVED by Luke (DEC-062, visual direction = milestone 3); pull request #9 MERGED (c378ea7); RTT-002 FINAL FILM APPROVED (DEC-078), pull request #10 MERGED (main ef01814), UPLOADED by Luke in YouTube Studio and SCHEDULED PUBLIC 30 Sep 2026 (DEC-079 early release, DEC-080): video 2fY7Bzq8Uu0 on channel UC8R47xbyBB5Z93MdMkoUOWg; IQ-09 RTT-003 DATA BUILD DONE 1 Oct 2026; Luke's answers applied 2 Oct 2026 (DEC-093..DEC-102); pull request #12 MERGED 2 Oct 2026 (main 4288f6d); IQ-10 RTT-003 DESIGN PILOT ROUND 4 RENDERED 2 Oct 2026 (private pre-release; not the full film), awaiting Luke's review",
+  "updated_by": "Claude (Claude Code cloud session): IQ-10 round 5 (final pilot round) - Luke's decisions DEC-138..DEC-141 and data update (Nintendo quarterly Switch figures, Famitsu Mar 1993 Mega Drive / Game Gear, documented end dates) built, verified, tested and rendered to a private pre-release; pull request #13 open, not merged",
+  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); starts data audit PASSED (DEC-058/DEC-059, merged PR #8); IQ-04 MERGED (PR #2); IQ-05 rounds 1-5 MERGED (PR #3-#7); round-5 pilot RENDERED and APPROVED by Luke (DEC-062, visual direction = milestone 3); pull request #9 MERGED (c378ea7); RTT-002 FINAL FILM APPROVED (DEC-078), pull request #10 MERGED (main ef01814), UPLOADED by Luke in YouTube Studio and SCHEDULED PUBLIC 30 Sep 2026 (DEC-079 early release, DEC-080): video 2fY7Bzq8Uu0 on channel UC8R47xbyBB5Z93MdMkoUOWg; IQ-09 RTT-003 DATA BUILD DONE 1 Oct 2026; Luke's answers applied 2 Oct 2026 (DEC-093..DEC-102); pull request #12 MERGED 2 Oct 2026 (main 4288f6d); IQ-10 RTT-003 DESIGN PILOT ROUND 5 (FINAL PILOT ROUND) RENDERED 3 Oct 2026 (private pre-release; not the full film), awaiting Luke's review",
   "canonical_queue": "state/ folder on main in marketmarathon/race-through-time (this file)",
   "repo_baseline": {
     "repo": "marketmarathon/bars",
@@ -183,38 +183,39 @@
       "title": "Best-Selling Consoles 1985–2026",
       "subtitle_rule": "title must say units shipped (DEC-081)",
       "previous_title": "Nintendo Console Race (widened to all consoles by DEC-081)",
-      "state": "DESIGN_PILOT_ROUND4_RENDERED_AWAITING_LUKE",
+      "state": "DESIGN_PILOT_ROUND5_RENDERED_AWAITING_LUKE",
       "check_level": "LIVE",
       "verdict": "CONDITIONAL",
-      "blocker": "Luke reviews round 4; open: logos vs maker name in type (DEC-133); 'latest figure' on Nintendo consoles whose figures continue but stop growing (DEC-135); Telecompaper JAPAN filing and Famitsu No. 259 Mega Drive / Game Gear restatement (DEC-136). Still to come: Nintendo quarterly Switch figures, Wii U GamePad picture; music track. No full film until approved (DEC-069)",
-      "decisions": "owner DEC-081..DEC-085 (30 Sep 2026); DEC-086..DEC-092 confirmed by Luke 2 Oct 2026 via DEC-093..DEC-102; IQ-10 Claude working choices and proposals DEC-103..DEC-113; Luke's round-1 answers and round-2 changes DEC-114..DEC-118; round-2 choices DEC-119..DEC-121; round 3 DEC-122..DEC-129; round 4 DEC-130..DEC-137",
+      "blocker": "Luke reviews round 5 (final pilot round) and approves the design for the full film (DEC-069); open: one-quarter 'latest figure' on Game Gear at 31 Mar 1996 (DEC-142); four UNVERIFIED GameSpot end-date reports (DEC-143); music track (Luke will choose)",
+      "decisions": "owner DEC-081..DEC-085 (30 Sep 2026); DEC-086..DEC-092 confirmed by Luke 2 Oct 2026 via DEC-093..DEC-102; IQ-10 Claude working choices and proposals DEC-103..DEC-113; Luke's round-1 answers and round-2 changes DEC-114..DEC-118; round-2 choices DEC-119..DEC-121; round 3 DEC-122..DEC-129; round 4 DEC-130..DEC-137; round 5 DEC-138..DEC-143",
       "dataset": {
         "branch": "main (pull request #12 merged 2 Oct 2026, 4288f6d)",
         "path": "data/rtt-003/",
         "contract": "reference/metric_contract_RTT-003.md v1.0",
-        "build": "scripts/build_rtt003_dataset.py (rtt003-build/1.1, standard library, deterministic; adds bar status)",
+        "build": "scripts/build_rtt003_dataset.py (rtt003-build/1.2, standard library, deterministic; bar status by rule 2)",
         "range": "166 quarter ends, 1985-03-31 to 2026-06-30",
         "consoles_in_scope": 28,
         "consoles_listed_out_of_scope": 19,
         "series_rows": 2697,
-        "observations": 469,
-        "observations_verified": 440,
+        "observations": 481,
+        "observations_verified": 452,
         "observations_unverified": 28,
         "unverified_used": 0,
-        "checks": "10/10 PASS (rebuilt 2 Oct 2026, round 4; new check bar_status_rules); one 10,000-unit SNES dip within Nintendo's rounding, listed",
+        "checks": "10/10 PASS (rebuilt 3 Oct 2026, round 5); one 10,000-unit SNES dip within Nintendo's rounding, listed",
         "crown": "Atari 2600 (start, est.) -> NES 1988-12-31 (est.) -> Game Boy 1997-12-31 (official) -> PlayStation 2 2007-06-30 (est.) to 2026-06-30; Switch second at 156.59m vs PS2 160m+",
-        "top_ten_overtakes": "78 (38 official, 40 estimated/analyst); round 4: same pairs, 10 moved quarter, 8 changed figures",
+        "top_ten_overtakes": "78 (38 official, 40 estimated/analyst); round 5: same pairs, Switch passes DS moved to 2025-12-31 (official), Game Gear passes Master System figures changed",
         "report": "reports/RTT-003_data_report.md",
         "source_access": "reports/RTT-003_source_access.md",
-        "series_sha256": "c80566042aff2c648b5912edf9e47eeb4968e960a7182e6b735fc4f72ce0fe6c",
+        "series_sha256": "2bd7a85b8d5b328fbb3ff1080b055a14dfa714584e7900847b9b2ada2bed357e",
         "pull_request": "https://github.com/marketmarathon/race-through-time/pull/12 (merged)",
         "observations_not_found_primary": 1,
         "changes_2026_10_02": "Atari 2600 fades from 1991-12-31 (DEC-093); Xbox One + Microsoft 10m 2014-12-03 (DEC-095); PS5 launch 2020-11-11 (DEC-101); 7 UNVERIFIED anchors verified in Luke's Chrome (DEC-102); PS2 155m located and recorded as disagreement (DEC-094)",
-        "changes_round4_2026_10_02": "DEC-134 on branch claude/sweet-mendel-faig7w (pull request #13): Xbox Series X|S VGChartz estimates to 35.05m (Jun 2026; splice from Aldora reported); Xbox 360 85.73m at 20 Apr 2016, retired from 2016-06-30; Atari 2600 27.64m at 1 Jan 1992 (Guinness); Master System 5.70m (Mar 1993) and 6.08m (Sep 1993) from Famitsu No. 259, 6.20m recorded as a disagreement, retired from 1996-06-30; Game Gear retired from 1996-06-30; series.csv status column (live / latest_figure / retired). Crown sequence unchanged (NES crown quarter does not move). Sources checked on a GitHub runner (rtt003-sources run 37058144549); 4 not used figures UNVERIFIED (atari.com, sega.jp x2, shmuplations)"
+        "changes_round4_2026_10_02": "DEC-134 on branch claude/sweet-mendel-faig7w (pull request #13): Xbox Series X|S VGChartz estimates to 35.05m (Jun 2026; splice from Aldora reported); Xbox 360 85.73m at 20 Apr 2016, retired from 2016-06-30; Atari 2600 27.64m at 1 Jan 1992 (Guinness); Master System 5.70m (Mar 1993) and 6.08m (Sep 1993) from Famitsu No. 259, 6.20m recorded as a disagreement, retired from 1996-06-30; Game Gear retired from 1996-06-30; series.csv status column (live / latest_figure / retired). Crown sequence unchanged (NES crown quarter does not move). Sources checked on a GitHub runner (rtt003-sources run 37058144549); 4 not used figures UNVERIFIED (atari.com, sega.jp x2, shmuplations)",
+        "changes_round5_2026_10_03": "DEC-139/DEC-140 on branch claude/sweet-mendel-faig7w (pull request #13): Nintendo Switch quarterly life-to-date Mar 2024..Jun 2026 (checked in Nintendo's PDFs); Famitsu No. 259 Mega Drive 14.90m and Game Gear 4.35m at 1993-03-31 (15.40m / 4.40m now disagreements); documented end-of-production reports recorded (5 verified on a GitHub runner, run 37076454006, 3DS verified here, 4 GameSpot UNVERIFIED); rule 2 labels: latest figure only Mega Drive (from 1996-03-31), Master System (1993-09-30..1996-03-31) and Game Gear (1996-03-31 only); crown sequence unchanged"
       },
       "open_for_luke": [
-        "review the IQ-10 round-4 release; answer: logos vs maker name in type (DEC-133); 'latest figure' on Nintendo consoles whose figures continue but stop growing, or find documented end dates (DEC-135); Telecompaper JAPAN filing and the Famitsu No. 259 Mega Drive / Game Gear restatement (DEC-136)",
-        "still to come: Nintendo quarterly Switch figures (unlocks the Switch-passes-DS callout); licensed Wii U GamePad picture",
+        "review the IQ-10 round-5 release (final pilot round) and approve the design for the full film (DEC-069)",
+        "note: Game Gear reads 'latest figure' for the single quarter end 31 Mar 1996 under rule 2 (DEC-142); four GameSpot end-date reports UNVERIFIED (DEC-143)",
         "choose the music track (DEC-114 (d))",
         "merge pull request #13 when satisfied (DEC-057); merge the private repo branch claude/sweet-mendel-faig7w"
       ],
@@ -231,7 +232,7 @@
         },
         "stills": "final table 30 Jun 2026 (and with scoreboard), 2015 with 20 rows (Xbox One analyst look) and with scoreboard (Microsoft total analyst est.), maker colours sheet, PS2 note candidate, pictures at icon size; each at 1920x1080 and phone size",
         "tests": "tests/player/RESULTS_RTT003.md 7/7 PASS; tests/player/PHONE_RTT003.md PASS",
-        "full_film_estimate": "round 4: 5 min 8 s at 1.5 s per quarter (DEC-137)",
+        "full_film_estimate": "round 5: 5 min 8 s at 1.5 s per quarter",
         "music": "none (question DEC-109)",
         "pictures": "33 Commons PICK files (28 consoles + 5 logos), SHA-1 checked, private repo assets/rtt-003/ (branch claude/sweet-mendel-faig7w); fetched on a GitHub runner because Commons answers HTTP 429 to the container (DEC-103); icons DEC-104; credit: Xbox Series X photo Ian Hughes CC BY 2.0 (reference/rights_ledger.md)",
         "round1_release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-003-pilot-adc09ba-run2",
@@ -344,6 +345,36 @@
           "retired": "Atari 2600 1991-12-31; Dreamcast 2001-03-31; Master System and Game Gear 1996-06-30; Xbox 360 2016-06-30",
           "tests": "tests/player/RESULTS_RTT003.md 5/5 PASS (status labels exactly as series.csv, dimming only on those bars, record line = all-time maximum and the leader, crown = crown.csv at quarter ends, quarter ends exact); tests/player/PHONE_RTT003.md PASS; RTT-002 22 reference frames identical to main",
           "full_film_estimate": "9247 frames = 5 min 8 s (DEC-137); not rendered"
+        },
+        "round5": {
+          "decisions": "DEC-138..DEC-143",
+          "release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-003-pilot5-81534e5-run6",
+          "run": "https://github.com/marketmarathon/race-through-time/actions/runs/37077952862",
+          "files_sha256": {
+            "rtt003_clip_A_1985_1992_81534e5_1920x1080.mp4": "7e19e854ad492378a2c49e0f45d5b0d7312d58e73ce4a57670fc03d15223308a",
+            "rtt003_clip_B_1996_1999_81534e5_1920x1080.mp4": "f3d9ab7b1bfec0109f9a475f66fcaac33593f131552e72ea5047c566ed2344c3",
+            "rtt003_clip_C_2005_2009_81534e5_1920x1080.mp4": "759f9b2945ea207f14b5836b114065bd59b81e2ce4956dc11db9af78d02e7822",
+            "rtt003_clip_D_2024_2026_final_81534e5_1920x1080.mp4": "d4f1a9c72e0861fb0f02841d9057f91cc75846f91f461818732054b609c90aa2",
+            "r5_still_1_2005_1920x1080.png": "c5cfb342cf6bbea6fc15b2786ff7b3ac436541d0dce0cceeff5c461657517992",
+            "r5_still_1_2005_phone_390pt.png": "74fdc336139dc2c3cbd3272d9b95eb8f5aa858735f0a4137009037c310ecd669",
+            "r5_still_2_final_2026_1920x1080.png": "4ae9f8081273afbce067ddcb056ae8ed12398f732f6c954766d238ae611b25a8",
+            "r5_still_2_final_2026_phone_390pt.png": "e395ead9c4ea6b75fc6432c27c5354eb5f950935ddb6f64ed673f1834f4d62ed",
+            "r5_still_3_logo_tiles_2005_closeup_1200x1620.png": "04b68f3e5c1dfbf968d8807e68723319c5e252d1f1b5f243a1686425ca9dc6b5",
+            "r5_still_3_logo_tiles_2005_closeup_phone_390pt.png": "6eb4b5eb6e144452dec4d0cec483e563c6afd31227229e09f40186a388150b67"
+          },
+          "design": "as round 4 (all-time top 15, retired / latest-figure bars dimmed, gold record line, crown on the leader) with: logo tiles 98 x 49 px (picture-box height, 2:1, 2 px padding, artwork trimmed); rule-2 labels from the data; Switch passes DS callout (quarter to 31 Dec 2025)",
+          "clips": {
+            "A 1985-1992": "1286 frames = 42.9 s",
+            "B 1996-1999": "1011 frames = 33.7 s",
+            "C 2005-2009 with scoreboard": "1389 frames = 46.3 s",
+            "D 2024-2026 + final table": "837 frames = 27.9 s"
+          },
+          "stills": "30 Jun 2005; final table 30 Jun 2026; close-up of the logo tiles (30 Jun 2005, 2x); each also at phone size",
+          "logo_lettering_on_phone": "SEGA 5.8 pt (was 4.5), Atari 2.6 pt (was 1.8), Nintendo 1.9 pt (was 1.5); phone floor 5 pt",
+          "labels": "latest figure: Mega Drive from 1996-03-31; Master System 1993-09-30..1996-03-31; Game Gear 1996-03-31 only. Retired: Atari 2600 1991-12; Master System, Game Gear 1996-06; Saturn 1998-03; SNES, Dreamcast 2001-03; N64 2002-03; NES, Game Boy 2003-03; PlayStation 2005-03; Xbox 2006-06; GameCube 2008-03; GBA 2009-12; PS2, PSP 2012-03; DS 2014-03; Wii 2016-03; Xbox 360 2016-06; PS3, Wii U 2017-03; 3DS 2021-03; Xbox One 2021-09; PS4 2022-03",
+          "wii_u": "best rank 20th: never on the 15-row board (DEC-141)",
+          "tests": "tests/player/RESULTS_RTT003.md 5/5 PASS (round-4 checks plus rule 2 re-derived from the data on every series.csv row, Switch quarter ends = Nintendo's figures, Switch passes DS in the quarter to 2025-12-31); tests/player/PHONE_RTT003.md PASS; RTT-002 22 reference frames identical to main",
+          "full_film_estimate": "9247 frames = 5 min 8 s; not rendered"
         }
       }
     },
@@ -602,14 +633,15 @@
       "id": "IQ-10",
       "task": "RTT-003 design pilot: player configuration, pictures and logos, pilot clips and stills for Luke (not the full film)",
       "where": "Claude Code cloud session, environment \"Race Through Time\"; prompt prompts/CODE_SESSION_IQ-10.md",
-      "status": "ROUND 4 DONE 2 Oct 2026: data update DEC-134 and the all-time board with retired / latest-figure bars rendered to a private pre-release; pull request #13 open, NOT merged; awaiting Luke's review",
+      "status": "ROUND 5 (FINAL PILOT ROUND) DONE 3 Oct 2026: data update DEC-139, rule-2 labels DEC-140, larger trimmed logo tiles DEC-138 rendered to a private pre-release; pull request #13 open, NOT merged; awaiting Luke's review and approval for the full film",
       "result": {
         "release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-003-pilot-adc09ba-run2",
-        "decisions": "DEC-103..DEC-137",
+        "decisions": "DEC-103..DEC-143",
         "tests": "RTT-003 7/7 PASS, phone PASS; RTT-002 suite PASS and 22 frames pixel-identical to main",
         "round2_release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-003-pilot2-3b2d956-run3",
         "round3_release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-003-pilot3-b4cab47-run4",
-        "round4_release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-003-pilot4-325ace1-run5"
+        "round4_release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-003-pilot4-325ace1-run5",
+        "round5_release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-003-pilot5-81534e5-run6"
       }
     }
   ],
