@@ -1,6 +1,6 @@
 # RTT-003 — Best-Selling Consoles 1985–2026 (units shipped)
 
-Status: **DATA BUILD (IQ-09), 1 Oct 2026; owner answers applied 2 Oct 2026 — pull request #12, not merged** (DEC-069). **Round-4 data update (IQ-10, DEC-134, 2 Oct 2026):** Xbox Series X|S (VGChartz to Jun 2026), Xbox 360 (85.73m at 20 Apr 2016), Atari 2600 (27.64m at 1 Jan 1992), Master System (Famitsu No. 259), Sega end dates; build 1.1 adds each bar's `status` (live / latest_figure / retired, DEC-131/DEC-132/DEC-135).
+Status: **DATA BUILD (IQ-09), 1 Oct 2026; owner answers applied 2 Oct 2026 — pull request #12, not merged** (DEC-069). **Round-4 data update (IQ-10, DEC-134, 2 Oct 2026):** Xbox Series X|S (VGChartz to Jun 2026), Xbox 360 (85.73m at 20 Apr 2016), Atari 2600 (27.64m at 1 Jan 1992), Master System (Famitsu No. 259), Sega end dates; build 1.1 adds each bar's `status` (live / latest_figure / retired, DEC-131/DEC-132/DEC-135). **Round 5 (DEC-139, DEC-140, 3 Oct 2026):** Nintendo's quarterly Switch figures (Jun 2024 to Dec 2025), Famitsu No. 259's Mega Drive and Game Gear for Mar 1993, documented end-of-production reports as evidence; build 1.2 applies rule 2 (retired = manufacturer's final total or documented end; latest figure only with neither).
 Contract: `reference/metric_contract_RTT-003.md` v1.0. Owner decisions DEC-081 to DEC-085; Claude's working choices DEC-086 to DEC-092, confirmed by Luke on 2 Oct 2026 (DEC-093 to DEC-102).
 Report for Luke: `reports/RTT-003_data_report.md`. Source access test: `reports/RTT-003_source_access.md`.
 

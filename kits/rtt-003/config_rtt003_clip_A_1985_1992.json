@@ -1,6 +1,6 @@
 {
  "extends": "config_rtt003_film.json",
- "kit_version": "rtt003_pilot4_clipA",
+ "kit_version": "rtt003_pilot5_clipA",
  "out": "rtt003_clip_A_1985_1992.mp4",
  "window": {
   "from": "1985-01-01",

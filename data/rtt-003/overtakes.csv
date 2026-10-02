@@ -5,7 +5,7 @@ quarter_end,passer,passed,passer_rank_after,passed_rank_after,passer_millions,pa
 1991-06-30,snes,master_system,5,6,3.58,3.09,estimated,no
 1991-12-31,snes,mega_drive,4,5,6.56,6.05,estimated,no
 1992-12-31,game_boy,atari_2600,2,3,28.53,27.64,estimated,no
-1993-09-30,game_gear,master_system,6,7,6.13,6.08,estimated,no
+1993-09-30,game_gear,master_system,6,7,6.10,6.08,estimated,no
 1993-12-31,snes,atari_2600,3,4,29.39,27.64,estimated,no
 1995-12-31,mega_drive,atari_2600,4,5,28.02,27.64,estimated,no
 1996-06-30,playstation,master_system,7,8,6.50,6.08,estimated,no
@@ -74,6 +74,6 @@ quarter_end,passer,passed,passer_rank_after,passed_rank_after,passer_millions,pa
 2022-03-31,nintendo_switch,playstation,5,6,107.65,102.49,official,no
 2022-12-31,nintendo_switch,game_boy,3,4,121.19,118.69,official,no
 2022-12-31,nintendo_switch,playstation_4,3,5,121.19,117.20,official,no
-2025-09-30,nintendo_switch,nintendo_ds,2,3,154.03,154.02,official,no
+2025-12-31,nintendo_switch,nintendo_ds,2,3,155.37,154.02,official,no
 2025-12-31,playstation_5,playstation_3,8,9,92.20,87.40,official,no
 2025-12-31,playstation_5,xbox_360,8,10,92.20,85.73,estimated,no

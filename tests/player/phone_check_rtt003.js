@@ -24,7 +24,7 @@ const rtt = require(path.join(KIT, 'rtt.js'));
 const { placeholderPNG } = require('./placeholders.js');
 const CHROME = process.env.PW_CHROME || '/opt/pw-browsers/chromium';
 const PHONE_PT = 390, FLOOR = 5.0, k = PHONE_PT / 1920, pt = px => px * k;
-const LETTERING = { nintendo: 0.30, sega: 0.92, atari: 0.27 };
+const LETTERING = { nintendo: 0.30, sega: 0.92, atari: 0.28 };   // round 5: of the TRIMMED artwork's height (Atari 38.8 of 137.5; Nintendo and SEGA have no margin to trim)
 
 (async () => {
   const dir = path.join(ROOT, 'tests', 'output', 'rtt003_phone', '_assets');

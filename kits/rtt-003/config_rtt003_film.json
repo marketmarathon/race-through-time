@@ -1,7 +1,7 @@
 {
  "extends": "../rtt-002/config.json",
  "episode": "RTT-003",
- "kit_version": "rtt003_pilot4",
+ "kit_version": "rtt003_pilot5",
  "format_version": "RTT-1 player (kits/rtt-002), quarter-end series mode (IQ-10)",
  "out": "rtt003_film.mp4",
  "race_file": "../rtt-003/race_rtt003.json",
@@ -165,7 +165,8 @@
  ],
  "overlay_gap": 12,
  "notes": [
-  "RTT-003 design pilot, ROUND 4 (IQ-10; Luke's decisions and data update of 2 Oct 2026 after round 3, DEC-130 onwards; earlier rounds DEC-103..DEC-129). The full film is NOT rendered; this config defines it so the pilot clips (which extend it) and the length estimate come from one place. Drawn by the RTT-002 player (kits/rtt-002) in its quarter-end series mode; every RTT-003 feature is switched on here and is off for RTT-002.",
+  "RTT-003 design pilot, ROUND 5, the final pilot round (IQ-10; Luke's decisions and data of 3 Oct 2026, DEC-138 onwards; earlier rounds DEC-103..DEC-137). The full film is NOT rendered; this config defines it so the pilot clips (which extend it) and the length estimate come from one place. Drawn by the RTT-002 player (kits/rtt-002) in its quarter-end series mode; every RTT-003 feature is switched on here and is off for RTT-002.",
+  "Round 5 (DEC-138..DEC-143): logos settled - picture and maker logo left of the bar, model name on the bar; the logo tile is now the picture box's full height (height_frac 1.0, was 0.8), 2:1, 2 px padding, and the logo artwork is trimmed to its own bounding box (bar_logos.trim) so the lettering is as large as the layout allows; the bars start 20 px further right. Bar labels follow rule 2 (DEC-140, in the data). Switch passes DS for second is shown (DEC-141).",
   "Round 4 (DEC-130..DEC-133, DEC-135): the board is the ALL-TIME top 15 again (live_only removed). A bar that is not live stays in place, lightly dimmed (fade alpha 0.55, text 0.8, over 0.6 s), with '· retired' after its value from the first quarter end on or after a documented end date, or '· latest figure' when it stops without one (data/rtt-003/series.csv `status`, decided in the data build). The gold record line stays (record_line), at the all-time leader's figure with 'Record: <console> <value>' at its foot; the crown stays on the leader's bar. Callouts as round 2 (DS passes Game Boy is a normal overtake again). Pace, scoreboard and logos unchanged.",
   "Round 3 (DEC-122..DEC-126, superseded in part by round 4): 1.5 s per quarter (1985-88 at 0.75 s); live consoles only (live_only): a console races up to its retirement quarter (first quarter end on or after its fade_date in data/rtt-003/consoles.csv), its row carries '· retires' during that last quarter, then fades over 0.5 s and leaves; a gold record line at the all-time record (any console, retired included) labelled 'Record: <console> <value>', the crown on the holder's bar while it is on the board, on the label once it retires; after the last count a 1.6 s transition into the ALL-TIME top 15 (the record line leaves in the first third, the live bars move to their all-time places, the retired consoles fade in over the second part with the faded look), then the final line and PS2 footnote for 10 s. Scoreboard unchanged (its totals include retired consoles).",
   "Round 2: 15 rows (DEC-116, Xbox One appears from mid-2017); numbers count smoothly and land on the exact series.csv value on every quarter-end frame (count, DEC-118); the maker's logo beside each picture (bar_logos, DEC-119); no separate maker key - the bottom-right panel is the company scoreboard (kept, DEC-114) with its legend; tall pictures may use 1.2x the box height (pictures.tall_frac, DEC-120); callouts at the three crown changes plus Game Boy first past 100 million and DS passes Game Boy (moments, DEC-117; Switch passes DS on hold); final-table line and PS2 footnote (final_line, final_footnote, DEC-117).",
@@ -176,10 +177,11 @@
  "bar_logos": {
   "enabled": true,
   "dir": "logos",
-  "height_frac": 0.8,
+  "height_frac": 1.0,
   "aspect": 2.0,
   "gap": 8,
-  "pad": 3
+  "pad": 2,
+  "trim": true
  },
  "count": {
   "enabled": true
@@ -203,8 +205,7 @@
    "id": "nintendo_switch",
    "other": "nintendo_ds",
    "rank": 2,
-   "on_hold": true,
-   "note": "DEC-117: APPROVED but ON HOLD until Nintendo's quarterly Switch figures are in the data; not shown"
+   "note": "DEC-117, unlocked by DEC-141 (round 5): Switch passes DS for second, on Nintendo's quarterly figures (quarter to 31 Dec 2025)"
   }
  ],
  "final_line": {

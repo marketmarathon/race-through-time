@@ -4,8 +4,9 @@ Each board still measured as drawn on the 1920 frame and converted to points on 
 
 | Still | Names | Values | Axis | Date | Footer | Key names / totals / estimate words | Legend | Callout, note, record label, retires / status tag | Analyst label | Picture box | Crown | Result |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| r4_still_1_2005 | 33px = 6.7 pt | 33px = 6.7 pt | 34px = 6.9 pt | 34px = 6.9 pt | 26px = 5.3 pt | 26px = 5.3 pt | 26px = 5.3 pt | 26px = 5.3 pt | — | 81 x 58.8 px = 16.5 x 11.9 pt | 43 x 33 px = 8.7 x 6.7 pt | PASS |
-| r4_still_2_final_2026 | 33px = 6.7 pt | 33px = 6.7 pt | 34px = 6.9 pt | 34px = 6.9 pt | 26px = 5.3 pt | 26px = 5.3 pt | 26px = 5.3 pt | 26px = 5.3 pt | 33px = 6.7 pt | 81 x 49 px = 16.5 x 10.0 pt | 43 x 33 px = 8.7 x 6.7 pt | PASS |
+| r5_still_1_2005 | 33px = 6.7 pt | 33px = 6.7 pt | 34px = 6.9 pt | 34px = 6.9 pt | 26px = 5.3 pt | 26px = 5.3 pt | 26px = 5.3 pt | 26px = 5.3 pt | — | 81 x 58.8 px = 16.5 x 11.9 pt | 43 x 33 px = 8.7 x 6.7 pt | PASS |
+| r5_still_2_final_2026 | 33px = 6.7 pt | 33px = 6.7 pt | 34px = 6.9 pt | 34px = 6.9 pt | 26px = 5.3 pt | 26px = 5.3 pt | 26px = 5.3 pt | 26px = 5.3 pt | 33px = 6.7 pt | 81 x 49 px = 16.5 x 10.0 pt | 43 x 33 px = 8.7 x 6.7 pt | PASS |
+| r5_still_3_logo_tiles_2005 | 33px = 6.7 pt | 33px = 6.7 pt | 34px = 6.9 pt | 34px = 6.9 pt | 26px = 5.3 pt | 26px = 5.3 pt | 26px = 5.3 pt | 26px = 5.3 pt | — | 81 x 58.8 px = 16.5 x 11.9 pt | 43 x 33 px = 8.7 x 6.7 pt | PASS |
 
 Overall: PASS. For reference: RTT-002's approved film draws names and values at 29 px = 5.9 pt.
 
@@ -13,8 +14,8 @@ Overall: PASS. For reference: RTT-002's approved film draws names and values at 
 
 | Still | Maker | Tile | Logo drawn | Lettering height | Legible as text on a phone? |
 |---|---|---|---|---|---|
-| r4_still_1_2005 | nintendo | 78 x 39 px = 15.8 x 7.9 pt | 72 x 24 px | 7.2 px = 1.5 pt | **no** (under 5 pt) |
-| r4_still_1_2005 | sony | 78 x 39 px = 15.8 x 7.9 pt | 43 x 33 px | symbol, no lettering | n/a (symbol 6.7 pt tall) |
-| r4_still_1_2005 | sega | 78 x 39 px = 15.8 x 7.9 pt | 72 x 24 px | 22.1 px = 4.5 pt | **no** (under 5 pt) |
-| r4_still_1_2005 | atari | 78 x 39 px = 15.8 x 7.9 pt | 28 x 33 px | 8.9 px = 1.8 pt | **no** (under 5 pt) |
-| r4_still_1_2005 | microsoft | 78 x 39 px = 15.8 x 7.9 pt | 33 x 33 px | symbol, no lettering | n/a (symbol 6.7 pt tall) |
+| r5_still_1_2005 | nintendo | 98 x 49 px = 19.9 x 10.0 pt | 94 x 31 px | 9.4 px = 1.9 pt | **no** (under 5 pt) |
+| r5_still_1_2005 | sony | 98 x 49 px = 19.9 x 10.0 pt | 58 x 45 px | symbol, no lettering | n/a (symbol 9.1 pt tall) |
+| r5_still_1_2005 | sega | 98 x 49 px = 19.9 x 10.0 pt | 94 x 31 px | 28.7 px = 5.8 pt | yes |
+| r5_still_1_2005 | atari | 98 x 49 px = 19.9 x 10.0 pt | 38 x 45 px | 12.6 px = 2.6 pt | **no** (under 5 pt) |
+| r5_still_1_2005 | microsoft | 98 x 49 px = 19.9 x 10.0 pt | 45 x 45 px | symbol, no lettering | n/a (symbol 9.1 pt tall) |

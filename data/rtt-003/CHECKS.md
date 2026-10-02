@@ -1,6 +1,6 @@
 # RTT-003 scripted checks
 
-Build `rtt003-build/1.1`. All checks PASS: **True**. A check marked REVIEW found something that is reported in full below, not hidden.
+Build `rtt003-build/1.2`. All checks PASS: **True**. A check marked REVIEW found something that is reported in full below, not hidden.
 
 | Check | Result | Detail |
 |---|---|---|
@@ -11,9 +11,9 @@ Build `rtt003-build/1.1`. All checks PASS: **True**. A check marked REVIEW found
 | every_point_has_provenance | PASS | 2697 rows checked |
 | end_values_equal_latest_official | PASS | mismatches: [] |
 | excluded_consoles_absent | PASS | 19 excluded; present in series: [] |
-| observations_integrity | PASS | 469 observations; 0 problems |
+| observations_integrity | PASS | 481 observations; 0 problems |
 | quarter_grid_complete | PASS | 166 quarter ends 1985-03-31..2026-06-30; incomplete: [] |
-| bar_status_rules | PASS | 1288 latest-figure rows, 524 retired rows; problems: [] |
+| bar_status_rules | PASS | 134 latest-figure rows, 1678 retired rows; problems: [] |
 
 ## Decreases in any series (reported, not hidden)
 
@@ -94,8 +94,8 @@ Build `rtt003-build/1.1`. All checks PASS: **True**. A check marked REVIEW found
 ## Bars that still add a little after they are labelled (latest figure / retired)
 
 - atari_2600: retired from 1991-12-31 at 27637983 units; 2017 more units by 2026-06-30 (each quarter under 10,000)
-- game_boy_advance: latest_figure from 2009-12-31 at 81500137 units; 9863 more units by 2026-06-30 (each quarter under 10,000)
-- nes: latest_figure from 2003-03-31 at 61880000 units; 30000 more units by 2026-06-30 (each quarter under 10,000)
-- nintendo_64: latest_figure from 2002-03-31 at 32920000 units; 10000 more units by 2026-06-30 (each quarter under 10,000)
-- nintendo_ds: latest_figure from 2014-03-31 at 153990000 units; 30000 more units by 2026-06-30 (each quarter under 10,000)
-- snes: latest_figure from 2001-03-31 at 49070000 units; 30000 more units by 2026-06-30 (each quarter under 10,000)
+- game_boy_advance: retired from 2009-12-31 at 81500137 units; 9863 more units by 2026-06-30 (each quarter under 10,000)
+- nes: retired from 2003-03-31 at 61880000 units; 30000 more units by 2026-06-30 (each quarter under 10,000)
+- nintendo_64: retired from 2002-03-31 at 32920000 units; 10000 more units by 2026-06-30 (each quarter under 10,000)
+- nintendo_ds: retired from 2014-03-31 at 153990000 units; 30000 more units by 2026-06-30 (each quarter under 10,000)
+- snes: retired from 2001-03-31 at 49070000 units; 30000 more units by 2026-06-30 (each quarter under 10,000)

@@ -1,8 +1,8 @@
 {
-  "build": "rtt003-build/1.1",
+  "build": "rtt003-build/1.2",
   "checks": {
     "bar_status_rules": {
-      "detail": "1288 latest-figure rows, 524 retired rows; problems: []",
+      "detail": "134 latest-figure rows, 1678 retired rows; problems: []",
       "status": "PASS"
     },
     "end_values_equal_latest_official": {
@@ -26,7 +26,7 @@
       "status": "PASS"
     },
     "observations_integrity": {
-      "detail": "469 observations; 0 problems",
+      "detail": "481 observations; 0 problems",
       "status": "PASS"
     },
     "quarter_grid_complete": {
@@ -114,11 +114,11 @@
     ],
     "status_moves": [
       "atari_2600: retired from 1991-12-31 at 27637983 units; 2017 more units by 2026-06-30 (each quarter under 10,000)",
-      "game_boy_advance: latest_figure from 2009-12-31 at 81500137 units; 9863 more units by 2026-06-30 (each quarter under 10,000)",
-      "nes: latest_figure from 2003-03-31 at 61880000 units; 30000 more units by 2026-06-30 (each quarter under 10,000)",
-      "nintendo_64: latest_figure from 2002-03-31 at 32920000 units; 10000 more units by 2026-06-30 (each quarter under 10,000)",
-      "nintendo_ds: latest_figure from 2014-03-31 at 153990000 units; 30000 more units by 2026-06-30 (each quarter under 10,000)",
-      "snes: latest_figure from 2001-03-31 at 49070000 units; 30000 more units by 2026-06-30 (each quarter under 10,000)"
+      "game_boy_advance: retired from 2009-12-31 at 81500137 units; 9863 more units by 2026-06-30 (each quarter under 10,000)",
+      "nes: retired from 2003-03-31 at 61880000 units; 30000 more units by 2026-06-30 (each quarter under 10,000)",
+      "nintendo_64: retired from 2002-03-31 at 32920000 units; 10000 more units by 2026-06-30 (each quarter under 10,000)",
+      "nintendo_ds: retired from 2014-03-31 at 153990000 units; 30000 more units by 2026-06-30 (each quarter under 10,000)",
+      "snes: retired from 2001-03-31 at 49070000 units; 30000 more units by 2026-06-30 (each quarter under 10,000)"
     ]
   }
 }

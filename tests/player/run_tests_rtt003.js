@@ -1,4 +1,4 @@
-/* RTT-003 player tests (IQ-10, rounds 2-4). Every frame of each pilot clip and of the full-film config is drawn in
+/* RTT-003 player tests (IQ-10, rounds 2-5). Every frame of each pilot clip and of the full-film config is drawn in
  * order (the rank glide is stateful) through the kit's own driver path (kits/rtt-002/rtt.js openPlayer)
  * at 1920 x 1080, and what was drawn (window.__LABELS, __BARS, __PICS, __LOGOS, __CROWN, __KEY, __CALLOUT,
  * __FINAL) is checked against data/rtt-003/*.csv, read HERE, independently of the adapter and of rtt_timeline.js:
@@ -43,6 +43,13 @@
  *      has landed (the opening board's before the first); "· retired" / "· latest figure" after the value
  *      exactly on those bars, never on a live one
  *  19. dimming: a bar is dimmed (fade < 1) exactly when its status is not live; live bars at full strength
+ * Round 5:
+ *  20. rule 2 (DEC-140), derived HERE from series.csv units and grades and consoles.csv alone: a bar not on sale
+ *      stops in the last quarter it adds at least 10,000 units; from then it must read "retired" if it ends on a
+ *      manufacturer's figure (grade A/B, not an analyst estimate) or from a documented end (end_event_date), else
+ *      "latest figure"; series.csv `status` must agree on every row (and the screen follows series.csv, 18)
+ *  21. Nintendo Switch quarter ends = Nintendo's quarterly life-to-date figures (hard-coded below from the PDFs)
+ *  22. "Switch passes DS for second" is shown in the quarter to 31 Dec 2025 (when the window includes it)
  *  16 applies with status on too: the record line = the all-time maximum (= the leader), crown.csv's leader
  *      at quarter ends, the crown on the leader's bar; and the line is broken wherever a label crosses it.
  * Placeholder pictures and logos (plain shapes written at run time into tests/output/, never committed)
@@ -100,6 +107,20 @@ const crown = readCSV(path.join(DATA, 'crown.csv'));
 const leaderAt = q => crown.filter(c => c.quarter_end <= q).slice(-1)[0];
 const byMaker = {};
 for (const r of readCSV(path.join(DATA, 'series_by_maker.csv'))) (byMaker[r.quarter_end] = byMaker[r.quarter_end] || {})[r.maker_key] = r.units;
+// 20. rule 2, independently of the build
+const rule2 = [], rule2Labels = {};
+{ const rowsOf = {}; for (const q of quarters) for (const [id, r] of Object.entries(byQ[q])) (rowsOf[id] = rowsOf[id] || []).push(r);
+  for (const [id, rs] of Object.entries(rowsOf)) {
+    let stop = null; for (let i = 1; i < rs.length; i++) if (BigInt(rs[i].units) - BigInt(rs[i - 1].units) >= 10000n) stop = rs[i].quarter_end;
+    const last = rs[rs.length - 1], fin = ['A', 'B'].includes(last.grade) && last.display_style !== 'analyst_estimate', doc = C[id].end_event_date;
+    for (const r of rs) {
+      const want = C[id].on_sale_2026 === 'yes' || !stop || r.quarter_end < stop ? 'live' : (fin || (doc && r.quarter_end >= doc)) ? 'retired' : 'latest_figure';
+      if (r.status !== want) rule2.push(`${id} ${r.quarter_end}: series.csv ${r.status}, rule 2 ${want}`);
+      if (want !== 'live' && !(id + ' ' + want in rule2Labels)) rule2Labels[id + ' ' + want] = r.quarter_end;
+    } } }
+// 21. Nintendo Switch: Nintendo's quarterly life-to-date (units of 10,000), round-5 data update (DEC-139)
+const NINQ = { '2024-03-31': 14132, '2024-06-30': 14342, '2024-09-30': 14604, '2024-12-31': 15086, '2025-03-31': 15212, '2025-06-30': 15310, '2025-09-30': 15401, '2025-12-31': 15537, '2026-03-31': 15592, '2026-06-30': 15659 };
+const switchBad = Object.entries(NINQ).filter(([q, v]) => byQ[q].nintendo_switch.units !== String(v * 10000)).map(([q, v]) => `${q}: series ${byQ[q].nintendo_switch.units}, Nintendo ${v * 10000}`);
 const fadeQuarter = {};
 for (const c of consoles) fadeQuarter[c.console_id] = c.fade_date ? quarters.find(q => q >= c.fade_date) || null : null;
 
@@ -130,6 +151,8 @@ async function runCase(name, configFile, opts = {}) {
                 failures: [], counts: { quarter_end_values: 0, counting_values: 0, plus: 0, styles: { official: 0, estimated: 0, analyst_estimate: 0 }, est_labels: 0, faded_frames: 0, crown_frames: 0, callout_frames: 0, pics: 0, logos: 0, key_rows: 0, final_frames: 0 },
                 crowns: [], callouts: [], fadeStarts: {}, closest: { key: 1e9, logo: 1e9, callout: 1e9 }, tallOverlap: 0 };
   const fail = m => { if (res.failures.length < 40) res.failures.push(m); };
+  for (const m of rule2.slice(0, 10)) fail('rule 2: ' + m);
+  for (const m of switchBad) fail('Switch figure: ' + m);
   const pal = cfg.palette, mo = cfg.maker_order;
   const logo = (cfg.overlays || []).find(o => o.name === 'logo');
   const kOf = {}; info.dates.forEach((d, k) => kOf[d] = k);
@@ -409,7 +432,10 @@ async function runCase(name, configFile, opts = {}) {
   res.beats = { early: early.length ? `${Math.min(...early)}-${Math.max(...early)} frames` : 'n/a', late: late.length ? `${Math.min(...late)}-${Math.max(...late)} frames` : 'n/a' };
   const want = wantMoments.map(m => m.q + ' ' + m.type + ' ' + m.id).sort().join(', '), got = res.callouts.map(m => m.q + ' ' + m.type + ' ' + m.id).sort().join(', ');
   if (want !== got) fail(`callouts [${got}] but the data and the approved moments give [${want}]`);
-  if (res.callouts.some(c => c.id === 'nintendo_switch')) fail('the on-hold Switch passes DS moment was shown');
+  const swds = res.callouts.filter(c => c.id === 'nintendo_switch' && c.type === 'passes');
+  if (info.opening < '2025-12-31' && res.last >= '2025-12-31') { if (swds.length !== 1 || swds[0].q !== '2025-12-31') fail(`Switch passes DS shown at ${swds.map(c => c.q).join(', ') || 'no quarter'}, want 2025-12-31`); }
+  else if (swds.length) fail('Switch passes DS shown outside its quarter');
+  res.switchChecked = Object.keys(NINQ).filter(q => q > info.opening && q <= res.last).length;
   const noCount = needBetween.filter(x => !between.has(x));
   if (noCount.length) fail(`${noCount.length} bars grew by 1 million or more in a quarter without counting through it, e.g. ${noCount.slice(0, 3).join('; ')}`);
   res.counted = needBetween.length;
@@ -421,12 +447,14 @@ async function runCase(name, configFile, opts = {}) {
 }
 
 function write(results) {
-  const L = ['# RTT-003 player test results (IQ-10 round 4)', '',
+  const L = ['# RTT-003 player test results (IQ-10 round 5)', '',
     'Written by `node tests/player/run_tests_rtt003.js`. Every frame drawn in order at 1920 x 1080 in Playwright Chromium through `kits/rtt-002/rtt.js` (the same path as the render), with placeholder pictures and logos. Expected values read independently from `data/rtt-003/` (series.csv, consoles.csv, crown.csv, series_by_maker.csv). Round 2: the numbers count; on every quarter-end frame each value label must equal series.csv exactly (with "+" where plus_flag is yes); while counting, labels stay between the two quarter ends and never go backwards.', '',
     `Overall: ${results.filter(r => r.pass).length}/${results.length} PASS.`, '',
     '| Case | Result | Config | Quarters (opening → last) | Frames | Labels at quarter ends / while counting (with "+") / bars proven to count | Bar styles (official / estimated / analyst) | Analyst labels | Faded bar-frames | Pictures / logos checked | Crown leaders (frame) | Callouts (crossing frame) | Final-table frames | Fade starts (round 3: retirement exits) | Counts (≤1988 / later) | Closest gap: scoreboard / logo / callout line | Tall-picture overlap | Bars on the board at quarter ends (min / median / max) | Record holders (frame) | Live bars that did not move for 4+ quarters | Status bar-frames (latest figure / retired) | Status starts (first quarter shown) |',
     '|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|'];
   for (const r of results) L.push(`| ${r.name} | ${r.pass ? 'PASS' : 'FAIL'} | \`${r.config}\` | ${r.quarters} (${r.opening} → ${r.last}) | ${r.frames} (${(r.frames / 30).toFixed(1)} s) | ${r.counts.quarter_end_values} / ${r.counts.counting_values} (${r.counts.plus}) / ${r.counted} | ${r.counts.styles.official} / ${r.counts.styles.estimated} / ${r.counts.styles.analyst_estimate} | ${r.counts.est_labels} | ${r.counts.faded_frames} | ${r.counts.pics} / ${r.counts.logos} | ${r.crowns.map(c => c.id + ' f' + c.f).join(' → ')} | ${r.callouts.map(c => c.q + ' ' + c.id + ' f' + c.f).join('; ') || 'none'} | ${r.counts.final_frames} | ${Object.entries(r.fadeStarts).map(([k, v]) => k + ' ' + v).join('; ') || 'none'} | ${r.beats.early} / ${r.beats.late} | ${r.closest.key.toFixed(0)} / ${r.closest.logo.toFixed(0)} / ${r.closest.callout === 1e9 ? 'n/a' : r.closest.callout.toFixed(0)} px | ${r.tallOverlap.toFixed(1)} px | ${r.board ? r.board.min + ' / ' + r.board.median + ' / ' + r.board.max : 'n/a'} | ${(r.records || []).map(x => x.id + ' f' + x.f).join(' → ') || 'n/a'} | ${r.staticLive || 'none'} | ${r.counts.status_frames.latest_figure} / ${r.counts.status_frames.retired} | ${Object.entries(r.statusStarts).map(([k, v]) => k.replace(' latest_figure', ' latest figure') + ' ' + v).join('; ') || 'none'} |`);
+  L.push('', `Rule 2 (checked on every series.csv row, independently of the build): ${rule2.length ? rule2.length + ' MISMATCHES' : 'all rows agree'}. Labels and the quarter end they start: ${Object.entries(rule2Labels).sort((a, b) => a[1] < b[1] ? -1 : 1).map(([k, v]) => k.replace(' latest_figure', ' latest figure').replace(/_/g, ' ') + ' ' + v).join('; ')}.`);
+  L.push('', `Nintendo Switch quarter ends vs Nintendo's quarterly life-to-date figures (10 quarter ends, Mar 2024 to Jun 2026): ${switchBad.length ? switchBad.join('; ') : 'all equal'}; quarter ends inside each case: ${results.map(r => r.name + ' ' + r.switchChecked).join(', ')}.`);
   L.push('', 'Callout texts:');
   for (const r of results) for (const c of r.callouts) L.push(`- ${r.name}, ${c.q}: "${c.text}"`);
   for (const r of results) if (!r.pass) { L.push('', `**${r.name} failures** (first 40):`); for (const f of r.failures) L.push('- ' + f); }
@@ -440,7 +468,7 @@ function write(results) {
     ['clip_A_1985_1992', 'config_rtt003_clip_A_1985_1992.json', { atari: true }],
     ['clip_B_1996_1999', 'config_rtt003_clip_B_1996_1999.json'],
     ['clip_C_2005_2009', 'config_rtt003_clip_C_2005_2009.json'],
-    ['clip_D_2025_2026_final', 'config_rtt003_clip_D_2025_2026_final.json'],
+    ['clip_D_2024_2026_final', 'config_rtt003_clip_D_2024_2026_final.json'],
     ['film_full_config', 'config_rtt003_film.json', { atari: true }]
   ].filter(c => process.argv.length <= 2 || process.argv.slice(2).includes(c[0]));
   const results = [];

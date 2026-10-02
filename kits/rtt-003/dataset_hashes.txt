@@ -2,8 +2,8 @@
 # adapter: rtt003-adapter/1.1
 # schema: rtt-series/1
 # dataset_id: RTT-003
-4f43e4abd22431de28bd2d96457db647c4e1b2b2723867ef52175a87c2264965  input  data/rtt-003/consoles.csv
-c80566042aff2c648b5912edf9e47eeb4968e960a7182e6b735fc4f72ce0fe6c  input  data/rtt-003/series.csv
-f46d5f6e212a4bbb950069d280e881be7b9ec2663f75e9f6824241fa8dd0feae  input  data/rtt-003/series_by_maker.csv
+d5dd29379d4e96cf46c806805ba342540f62e8762c85ec015d0733ea910a3282  input  data/rtt-003/consoles.csv
+2bd7a85b8d5b328fbb3ff1080b055a14dfa714584e7900847b9b2ada2bed357e  input  data/rtt-003/series.csv
+7e6ecb7ec77356fd473e359c7e691adba6390d22fc83e936c3999229348b7932  input  data/rtt-003/series_by_maker.csv
 0a12b847ace74ba3f4b31df71709fef91f9142481c34fb964114a970dfac3db6  input  data/rtt-003/crown.csv
-b38b588b23c5a199be504f77145bbfd7a08537f8858a1ed7ba9e55ebfd3ba471  output kits/rtt-003/race_rtt003.json
+83af7cf03c653a252aab13c62e4838bd763b3c896ee13ec00c4cb75772fba772  output kits/rtt-003/race_rtt003.json

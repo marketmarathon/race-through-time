@@ -132,6 +132,9 @@
          from the quarter-end frame of the quarter where the status starts.
        - record_line {enabled}: the round-3 gold line without live_only - at the leader's figure, drawn after
          the bars and broken wherever a label crosses it, its label at its foot on the right.
+     Changed in IQ-10 round 5 (Luke, DEC-138 onwards):
+       - bar_logos.trim: the logo artwork is drawn trimmed to its own bounding box (logoCrop), so the tile
+         shows the logo without the file's empty margins (series only; the scoreboard's logos are unchanged).
      Removed as unused: the Format C / C2-1 picture column and story cards, the prototype
      driver block that followed </html> in the C2-2 file.
 
@@ -532,6 +535,17 @@ function fadeOf(id,k,fr){
   if(k<f) return 1;
   return 1-(1-FADE.alpha)*ease((fr-TL.startFrame[f])/Math.max(1,FADE.sec*FPS));
 }
+/* round 5 (DEC-138): the logo artwork's own bounding box (pixels with alpha > 40, measured once on an offscreen
+   raster at 8x), so the tile shows the logo without the file's empty margins. In the image's natural units. */
+const LOGOCROP={};
+function logoCrop(m){
+  if(LOGOCROP[m]) return LOGOCROP[m];
+  const im=LOGOIMG[m], S=8, w=Math.ceil(im.naturalWidth*S), h=Math.ceil(im.naturalHeight*S);
+  const cv=document.createElement('canvas'); cv.width=w; cv.height=h; const cx=cv.getContext('2d'); cx.drawImage(im,0,0,w,h);
+  const px=cx.getImageData(0,0,w,h).data; let x0=w,y0=h,x1=-1,y1=-1;
+  for(let y=0;y<h;y++) for(let x=0;x<w;x++) if(px[(y*w+x)*4+3]>40){ if(x<x0)x0=x; if(x>x1)x1=x; if(y<y0)y0=y; if(y>y1)y1=y; }
+  return LOGOCROP[m] = x1<0 ? {x:0,y:0,w:im.naturalWidth,h:im.naturalHeight} : {x:x0/S, y:y0/S, w:(x1-x0+1)/S, h:(y1-y0+1)/S};
+}
 /* round 4: how far a non-live bar's dim and label have come in (0..1); 1 when it stopped before the window */
 function statusIn(S,fr){ return S.dimFrom===-Infinity ? 1 : ease((fr-S.dimFrom+1)/TL.statusFade); }
 /* Callouts: only at a change of first place (TL.records), for CALLOUT.sec from its quarter end. */
@@ -765,9 +779,10 @@ function drawAt(t){
       const lx=LEFT+G.PW+BLOGO.gap, ly=mid-G.LH/2, lim=LOGOIMG[c.maker];
       ctx.globalAlpha=RA*fa; ctx.fillStyle='#F4F6FA'; rr(lx,ly,G.LW,G.LH,5); ctx.fill();
       let d=null;
-      if(lim && lim.naturalWidth){ const pw=G.LW-2*BLOGO.pad, ph=G.LH-2*BLOGO.pad, sc=Math.min(pw/lim.naturalWidth, ph/lim.naturalHeight);
-        d={x:lx+(G.LW-lim.naturalWidth*sc)/2, y:ly+(G.LH-lim.naturalHeight*sc)/2, w:lim.naturalWidth*sc, h:lim.naturalHeight*sc};
-        ctx.drawImage(lim,d.x,d.y,d.w,d.h); }
+      if(lim && lim.naturalWidth){ const cr=BLOGO.trim ? logoCrop(c.maker) : {x:0, y:0, w:lim.naturalWidth, h:lim.naturalHeight};   // round 5: trimmed artwork
+        const pw=G.LW-2*BLOGO.pad, ph=G.LH-2*BLOGO.pad, sc=Math.min(pw/cr.w, ph/cr.h);
+        d={x:lx+(G.LW-cr.w*sc)/2, y:ly+(G.LH-cr.h*sc)/2, w:cr.w*sc, h:cr.h*sc, crop:cr};
+        ctx.drawImage(lim,cr.x,cr.y,cr.w,cr.h,d.x,d.y,d.w,d.h); }
       ctx.globalAlpha=RA;
       window.__LOGOS.push({id:c.id, maker:c.maker, tile:{x:lx,y:ly,w:G.LW,h:G.LH}, drawn:d, alpha:RA*fa});
     }

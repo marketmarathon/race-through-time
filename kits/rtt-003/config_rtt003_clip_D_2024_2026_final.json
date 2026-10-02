@@ -1,0 +1,14 @@
+{
+ "extends": "config_rtt003_film.json",
+ "kit_version": "rtt003_pilot5_clipD",
+ "out": "rtt003_clip_D_2024_2026_final.mp4",
+ "window": {
+  "from": "2024-01-01",
+  "to": null
+ },
+ "range": "2024 – 2026",
+ "subtitle_sec": 0,
+ "notes": [
+  "Clip D (round 5): 2024 to 30 Jun 2026 on Nintendo's quarterly Switch figures (DEC-139): Switch passes DS for second in the quarter to 31 Dec 2025 (callout, DEC-141), then the final all-time top-15 table with the Switch line and the PS2 footnote, held 10 s (DEC-070). Opens on the 31 Dec 2023 board."
+ ]
+}
