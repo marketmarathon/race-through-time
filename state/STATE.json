@@ -1,8 +1,8 @@
 {
   "schema": "rtt-state/0.1",
   "updated": "2026-10-02",
-  "updated_by": "Claude (Claude Code cloud session): IQ-09 follow-up - Luke's answers DEC-093..DEC-102 applied to pull request #12; merged with the RTT-002 release record (DEC-079, DEC-080) from pull request #11",
-  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); starts data audit PASSED (DEC-058/DEC-059, merged PR #8); IQ-04 MERGED (PR #2); IQ-05 rounds 1-5 MERGED (PR #3-#7); round-5 pilot RENDERED and APPROVED by Luke (DEC-062, visual direction = milestone 3); pull request #9 MERGED (c378ea7); RTT-002 FINAL FILM APPROVED (DEC-078), pull request #10 MERGED (main ef01814), UPLOADED by Luke in YouTube Studio and SCHEDULED PUBLIC 30 Sep 2026 (DEC-079 early release, DEC-080): video 2fY7Bzq8Uu0 on channel UC8R47xbyBB5Z93MdMkoUOWg; IQ-09 RTT-003 DATA BUILD DONE 1 Oct 2026; Luke's answers applied 2 Oct 2026 (DEC-093..DEC-102); pull request #12 MERGED 2 Oct 2026 (main 4288f6d)",
+  "updated_by": "Claude (Claude Code cloud session): IQ-10 RTT-003 design pilot - player configuration, pictures and logos, pilot clips and stills (private pre-release), DEC-103..DEC-113; pull request open, not merged",
+  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); starts data audit PASSED (DEC-058/DEC-059, merged PR #8); IQ-04 MERGED (PR #2); IQ-05 rounds 1-5 MERGED (PR #3-#7); round-5 pilot RENDERED and APPROVED by Luke (DEC-062, visual direction = milestone 3); pull request #9 MERGED (c378ea7); RTT-002 FINAL FILM APPROVED (DEC-078), pull request #10 MERGED (main ef01814), UPLOADED by Luke in YouTube Studio and SCHEDULED PUBLIC 30 Sep 2026 (DEC-079 early release, DEC-080): video 2fY7Bzq8Uu0 on channel UC8R47xbyBB5Z93MdMkoUOWg; IQ-09 RTT-003 DATA BUILD DONE 1 Oct 2026; Luke's answers applied 2 Oct 2026 (DEC-093..DEC-102); pull request #12 MERGED 2 Oct 2026 (main 4288f6d); IQ-10 RTT-003 DESIGN PILOT RENDERED 2 Oct 2026 (private pre-release, clips and stills; not the full film), awaiting Luke's review",
   "canonical_queue": "state/ folder on main in marketmarathon/race-through-time (this file)",
   "repo_baseline": {
     "repo": "marketmarathon/bars",
@@ -183,13 +183,13 @@
       "title": "Best-Selling Consoles 1985–2026",
       "subtitle_rule": "title must say units shipped (DEC-081)",
       "previous_title": "Nintendo Console Race (widened to all consoles by DEC-081)",
-      "state": "DATA_BUILD_DONE_OWNER_ANSWERS_APPLIED_NOT_MERGED",
+      "state": "DESIGN_PILOT_RENDERED_AWAITING_LUKE",
       "check_level": "LIVE",
       "verdict": "CONDITIONAL",
-      "blocker": "merge of pull request #12 (Luke); no player work until Luke approves the design build (DEC-069, DEC-085)",
-      "decisions": "owner DEC-081..DEC-085 (30 Sep 2026); DEC-086..DEC-092 confirmed by Luke 2 Oct 2026 via DEC-093..DEC-102",
+      "blocker": "Luke reviews the IQ-10 pilot and answers DEC-106..DEC-112 (bar names, maker colours, 12 rows - Xbox One / Series never appear, music, weak pictures, drawing choices, extra callouts, PS2 note) and the pace (DEC-113); no full film until then (DEC-069)",
+      "decisions": "owner DEC-081..DEC-085 (30 Sep 2026); DEC-086..DEC-092 confirmed by Luke 2 Oct 2026 via DEC-093..DEC-102; IQ-10 Claude working choices and proposals DEC-103..DEC-113",
       "dataset": {
-        "branch": "claude/focused-clarke-u0m1ry (pull request #12, not merged)",
+        "branch": "main (pull request #12 merged 2 Oct 2026, 4288f6d)",
         "path": "data/rtt-003/",
         "contract": "reference/metric_contract_RTT-003.md v1.0",
         "build": "scripts/build_rtt003_dataset.py (rtt003-build/1.0, standard library, deterministic)",
@@ -207,15 +207,55 @@
         "report": "reports/RTT-003_data_report.md",
         "source_access": "reports/RTT-003_source_access.md",
         "series_sha256": "3d5350c4bc3cd785dca7677e1ac4374266bb996882948b63c3891def31708e1b",
-        "pull_request": "https://github.com/marketmarathon/race-through-time/pull/12",
+        "pull_request": "https://github.com/marketmarathon/race-through-time/pull/12 (merged)",
         "observations_not_found_primary": 1,
         "changes_2026_10_02": "Atari 2600 fades from 1991-12-31 (DEC-093); Xbox One + Microsoft 10m 2014-12-03 (DEC-095); PS5 launch 2020-11-11 (DEC-101); 7 UNVERIFIED anchors verified in Luke's Chrome (DEC-102); PS2 155m located and recorded as disagreement (DEC-094)"
       },
       "open_for_luke": [
-        "merge pull request #12 when satisfied (Claude does not merge, DEC-057)",
-        "later, not urgent: Nintendo quarterly figures (DEC-100)",
-        "player session (after design approval): PS2 155m on-screen note candidate (DEC-094); move quickly through 1985-88 (DEC-097); judge the estimated look in the pilot (DEC-099)"
-      ]
+        "review the IQ-10 pilot release and answer DEC-106..DEC-113",
+        "merge the IQ-10 pull request when satisfied (Claude does not merge, DEC-057)",
+        "private repo: the pictures sit on branch claude/sweet-mendel-faig7w of race-through-time-private; merge it into its main when convenient (the pilot workflow reads that branch)",
+        "later, not urgent: Nintendo quarterly figures (DEC-100) - would also date the Switch-passes-DS moment"
+      ],
+      "pilot": {
+        "task": "IQ-10, prompts/CODE_SESSION_IQ-10.md",
+        "player": "kits/rtt-002 player extended with a quarter-end series mode (DEC-105); RTT-002 unchanged: 22 reference frames pixel-identical to main, RTT-002 test suite PASS",
+        "kit": "kits/rtt-003/ (configs, race_rtt003.json from scripts/rtt003_adapter.py, stills, sheets, README)",
+        "workflow": ".github/workflows/rtt003_pilot.yml (own workflow; render_pilot.yml untouched; no RTT-002 render started)",
+        "release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-003-pilot-adc09ba-run2",
+        "run": "https://github.com/marketmarathon/race-through-time/actions/runs/36982774860",
+        "files_sha256": {
+          "rtt003_clip_A_1985_1992_adc09ba_1920x1080.mp4": "90f33573da890a193517f12983516d64c12f75e1b30a7554f14dbc9a0dc2f5e4",
+          "rtt003_clip_B_1996_1999_adc09ba_1920x1080.mp4": "2fe15ce198e1511ddd8a77bd056637c29e47ee925b16fcf2a6f5b1e52bf3ddc1",
+          "rtt003_clip_C_2005_2009_adc09ba_1920x1080.mp4": "7ad3f1261c1e2aa53c7ff38587e29a9553cb4e13bf7c563cb2984a036121bb60",
+          "rtt003_clip_C_2005_2009_scoreboard_adc09ba_1920x1080.mp4": "e1d9cc7bf37250751496dbcd2cb3e3667037c9fc8dd0b53e83bd9966b373c3f7",
+          "still_1_final_2026_1920x1080.png": "9fa378912970f03b24f940b2a32298866aff686e4a99721d9e9f9be222efe5de",
+          "still_1_final_2026_phone_390pt.png": "754b79901d6a2cdb10eeef972a8d94470d8cc1e4c188325b1ad43d47947a6d60",
+          "still_1b_final_2026_scoreboard_1920x1080.png": "aaa7bd2833af08f735c3b6754942110a0f351180fdd456237d787505c578833a",
+          "still_1b_final_2026_scoreboard_phone_390pt.png": "2908278e949babe1dfaeac4ace5e59b722c49007278d23365c8e15714c73c610",
+          "still_2a_2015_top20_xbox_one_1920x1080.png": "9b0b3b2385baa3e4147dc72386a551e2e8f3d212fe6dc977c522217d31457d7b",
+          "still_2a_2015_top20_xbox_one_phone_390pt.png": "cdb815bb38af9d95c806c458f33738c6d4d6067999f3e11e70bfb4da46f294f1",
+          "still_2b_2015_scoreboard_microsoft_1920x1080.png": "d054aa66d43fa2cfff02f439df324c9391a653e55f3c2fabd294c0fd617c288d",
+          "still_2b_2015_scoreboard_microsoft_phone_390pt.png": "fc14447bf87305e96e2cc2c911d2d4c4e4b60c853701038ee890fbfda18b776a",
+          "still_3_maker_colours_1920x1080.png": "648360a97d71ad79653fab32d95deb0455cced61ee2f2eab922d534bf4352ade",
+          "still_3_maker_colours_phone_390pt.png": "e559547dd3a08791b853d891661a02a1202163617ecc61c70d9c3e5899a91a8a",
+          "still_4_ps2_note_1920x1080.png": "82bfc83bac2d873fef588ad5a40275b7fbae130c39b16012899ce8038a32f6c1",
+          "still_4_ps2_note_phone_390pt.png": "60b388a4b8723a7a158bc30cda024419f741e720152d297dfb3398a351e38991",
+          "still_5_pictures_at_icon_size_1920x1080.png": "6d126677e7147b61a91e68b2407747ec365cb5f9041da90d64b784cbd152eb96",
+          "still_5_pictures_at_icon_size_phone_390pt.png": "064c63e6709ba0d6a2e4210348f8ddd982b711ca447be9125abc2417467b3d2e"
+        },
+        "superseded_release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-003-pilot-78db338-run1 (route check; scoreboard words 22 px, below the 5 pt phone floor; replaced)",
+        "clips": {
+          "A 1985-1992": "918 frames = 30.6 s",
+          "B 1996-1999": "702 frames = 23.4 s",
+          "C 2005-2009": "930 frames = 31.0 s, with and without the company scoreboard"
+        },
+        "stills": "final table 30 Jun 2026 (and with scoreboard), 2015 with 20 rows (Xbox One analyst look) and with scoreboard (Microsoft total analyst est.), maker colours sheet, PS2 note candidate, pictures at icon size; each at 1920x1080 and phone size",
+        "tests": "tests/player/RESULTS_RTT003.md 7/7 PASS; tests/player/PHONE_RTT003.md PASS",
+        "full_film_estimate": "6042 frames = 3 min 21 s at 1.0 s per quarter (DEC-113); not rendered",
+        "music": "none (question DEC-109)",
+        "pictures": "33 Commons PICK files (28 consoles + 5 logos), SHA-1 checked, private repo assets/rtt-003/ (branch claude/sweet-mendel-faig7w); fetched on a GitHub runner because Commons answers HTTP 429 to the container (DEC-103); icons DEC-104; credit: Xbox Series X photo Ian Hughes CC BY 2.0 (reference/rights_ledger.md)"
+      }
     },
     {
       "id": "RTT-004",
@@ -467,6 +507,17 @@
         "decisions": "DEC-081..DEC-102",
         "pull_request": "https://github.com/marketmarathon/race-through-time/pull/12"
       }
+    },
+    {
+      "id": "IQ-10",
+      "task": "RTT-003 design pilot: player configuration, pictures and logos, pilot clips and stills for Luke (not the full film)",
+      "where": "Claude Code cloud session, environment \"Race Through Time\"; prompt prompts/CODE_SESSION_IQ-10.md",
+      "status": "DONE 2 Oct 2026: pilot rendered to a private pre-release; pull request open, NOT merged; awaiting Luke's review",
+      "result": {
+        "release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-003-pilot-adc09ba-run2",
+        "decisions": "DEC-103..DEC-113",
+        "tests": "RTT-003 7/7 PASS, phone PASS; RTT-002 suite PASS and 22 frames pixel-identical to main"
+      }
     }
   ],
   "rtt_repo": {
@@ -533,7 +584,8 @@
     },
     "hashes_read_back": "29 Sep 2026 by Claude Code: both match",
     "secret": "RTT_PRIVATE_TOKEN (Actions secret in race-through-time): fine-grained token, race-through-time-private only, Contents read and write, EXPIRES 28 Sep 2027 - renew before then",
-    "claude_github_app": "has access (added to this session 29 Sep 2026)"
+    "claude_github_app": "has access (added to this session 29 Sep 2026)",
+    "assets_rtt003": "race-through-time-private branch claude/sweet-mendel-faig7w: assets/rtt-003/originals (28), logos (5), icons (28), manifest.csv and icons/manifest.csv with SHA-1 and SHA-256; hashes the render checks in kits/rtt-003/assets_sha256.txt"
   },
   "rules_all_sessions": [
     "DEC-069 (Luke, 30 Sep 2026): never add a visual feature or change the look beyond the owner-approved pilot without Luke's approval BEFORE rendering; list proposals as questions instead",
