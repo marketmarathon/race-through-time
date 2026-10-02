@@ -553,7 +553,7 @@ function drawMakerKey(cur){
       const tw=tabText(t,rx,cy+M.size*0.35,'right','key_total',m);
       row.total=cur.maker_totals[m]; row.plus=!!cur.maker_plus[m];
       if(st!=='official'){
-        ctx.fillStyle=T.cap||T.muted; ctx.font='500 '+(M.size-4)+'px '+FONT;
+        ctx.fillStyle=T.cap||T.muted; ctx.font='500 '+M.size+'px '+FONT;
         text('key_est',m,st==='analyst_estimate'?'analyst est.':'estimated',rx-tw-12,cy+M.size*0.35,'right');
       }
     }

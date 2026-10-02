@@ -14,6 +14,7 @@
 #   - uploads NO workflow artifact, uses NO cache, and deletes pictures, frames and videos at the end.
 # The full RTT-003 film is NOT rendered here (IQ-10 is a pilot).
 # Triggers: a push that changes THIS FILE on the IQ-10 branch, or by hand (once merged).
+# Run 1 (78db338) checked the whole route; run 2 renders the review set after the 26 px scoreboard-word fix.
 name: rtt003-pilot
 
 on:

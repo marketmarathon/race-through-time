@@ -27,7 +27,8 @@
  *  11. pacing: quarter ends up to 31 Dec 1988 at 0.5 s x 0.8-1.4, later 1.0 s x 0.8-1.4, crown changes
  *      held record_hold.sec, final table final_board_sec
  *  12. scoreboard (where on): each maker's total = series_by_maker.csv, ranked, "+" and the estimate
- *      marking as the adapter documents (any console of that maker with a "+"; least certain style)
+ *      marking as the adapter documents (any console of that maker with a "+"; least certain style), the
+ *      words "estimated" / "analyst est." exactly where that style is not official, nothing overlapping
  * Placeholder pictures and logos (plain shapes written at run time into tests/output/, never committed)
  * stand in for the private files. Results: tests/player/RESULTS_RTT003.md. Exit 1 on any failure.
  *
@@ -211,6 +212,11 @@ async function runCase(name, configFile, opts = {}) {
         if (r.style !== st || r.plus !== plus) fail(`f${f} ${q}: ${r.key} style/plus ${r.style}/${r.plus} != ${st}/${plus}`);
         const tl = S.L.find(l => l.kind === 'key_total' && l.id === r.key);
         if (!tl || tl.text !== millions(mk[r.key]) + (plus ? '+' : '')) fail(`f${f}: ${r.key} total label "${tl && tl.text}"`);
+        const kn = S.L.find(l => l.kind === 'key_name' && l.id === r.key), ke = S.L.find(l => l.kind === 'key_est' && l.id === r.key);
+        for (const x of [ke, tl]) if (x && kn && overlap(labelBox(kn), labelBox(x), 8)) fail(`f${f}: ${r.key} key name overlaps "${x.text}"`);
+        if (ke && tl && overlap(labelBox(ke), labelBox(tl), 8)) fail(`f${f}: ${r.key} "${ke.text}" overlaps its total`);
+        if (ke && ke.text !== (st === 'analyst_estimate' ? 'analyst est.' : 'estimated')) fail(`f${f}: ${r.key} estimate word "${ke.text}" for style ${st}`);
+        if (!ke && st !== 'official') fail(`f${f}: ${r.key} total contains ${st} figures but is not marked`);
       }
     }
     // 10. layout
