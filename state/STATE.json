@@ -1,8 +1,8 @@
 {
   "schema": "rtt-state/0.1",
   "updated": "2026-10-02",
-  "updated_by": "Claude (Claude Code cloud session): IQ-09 follow-up - Luke's answers DEC-093..DEC-102 applied to pull request #12",
-  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); starts data audit PASSED (DEC-058/DEC-059, merged PR #8); IQ-04 MERGED (PR #2); IQ-05 rounds 1-5 MERGED (PR #3-#7); round-5 pilot RENDERED and APPROVED by Luke (DEC-062, visual direction = milestone 3); pull request #9 MERGED (c378ea7); RTT-002 FINAL FILM APPROVED by Luke 30 Sep 2026 (DEC-078): rtt-002-film-416d747-run4, master SHA-256 6618ef2e6733a9e1e38efeaa39e5095ca8385773acd62be1580d20eb9c7cfda8; NOT uploaded; merge of pull request #10 and private YouTube upload wait for Luke's go-ahead in Cowork; IQ-09 RTT-003 DATA BUILD DONE 1 Oct 2026; Luke's answers applied 2 Oct 2026 (DEC-093..DEC-102); pull request #12 not merged",
+  "updated_by": "Claude (Claude Code cloud session): IQ-09 follow-up - Luke's answers DEC-093..DEC-102 applied to pull request #12; merged with the RTT-002 release record (DEC-079, DEC-080) from pull request #11",
+  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); starts data audit PASSED (DEC-058/DEC-059, merged PR #8); IQ-04 MERGED (PR #2); IQ-05 rounds 1-5 MERGED (PR #3-#7); round-5 pilot RENDERED and APPROVED by Luke (DEC-062, visual direction = milestone 3); pull request #9 MERGED (c378ea7); RTT-002 FINAL FILM APPROVED (DEC-078), pull request #10 MERGED (main ef01814), UPLOADED by Luke in YouTube Studio and SCHEDULED PUBLIC 30 Sep 2026 (DEC-079 early release, DEC-080): video 2fY7Bzq8Uu0 on channel UC8R47xbyBB5Z93MdMkoUOWg; IQ-09 RTT-003 DATA BUILD DONE 1 Oct 2026; Luke's answers applied 2 Oct 2026 (DEC-093..DEC-102); pull request #12 MERGED 2 Oct 2026 (main 4288f6d)",
   "canonical_queue": "state/ folder on main in marketmarathon/race-through-time (this file)",
   "repo_baseline": {
     "repo": "marketmarathon/bars",
@@ -26,15 +26,29 @@
         "viewing_sha256": "311e66acaaf71283f116d0637a569086a5facc0bdfaa400de6d6588178259822",
         "seconds": 395.1,
         "approved": "2026-09-30 (DEC-078)",
-        "uploaded": false
+        "uploaded": true,
+        "youtube_video_id": "2fY7Bzq8Uu0",
+        "url": "https://youtu.be/2fY7Bzq8Uu0",
+        "status": "scheduled public by Luke in Studio on 30 Sep 2026 (exact time as set in Studio)"
       }
-    ]
+    ],
+    "launch_plan_note": "DEC-079: Luke released RTT-002 on 30 Sep 2026 ahead of the launch-bank plan (Milestone 5: ten approved videos before day 1); Claude in Cowork flagged the departure. Milestone 5 and the 28-day cadence need re-planning."
   },
   "activations": {
     "schedules": [],
     "recurring_reports": [],
-    "public_publishes": [],
-    "note": "nothing activated; nothing uploaded or published. Pilot, film drafts, speed clips and the FINAL film (30 Sep, rtt-002-film-416d747-run4) exist ONLY as pre-releases in the PRIVATE repo marketmarathon/race-through-time-private; no workflow artifact, nothing public, nothing on YouTube"
+    "public_publishes": [
+      {
+        "id": "RTT-002",
+        "video_id": "2fY7Bzq8Uu0",
+        "url": "https://youtu.be/2fY7Bzq8Uu0",
+        "channel_id": "UC8R47xbyBB5Z93MdMkoUOWg",
+        "by": "Luke, by hand in YouTube Studio",
+        "scheduled": "30 Sep 2026 (exact time as set in Studio; Claude recommended 20:00 Europe/Isle_of_Man)",
+        "decision": "DEC-079, DEC-080"
+      }
+    ],
+    "note": "RTT-002 uploaded by Luke in YouTube Studio and scheduled public on 30 Sep 2026 (DEC-080). Nothing else published. No RTT uploader exists yet (IQ-07); no schedules or recurring reports activated by Claude."
   },
   "episodes": [
     {
@@ -48,10 +62,10 @@
     {
       "id": "RTT-002",
       "title": "F1 Grand Prix Wins",
-      "state": "APPROVED_RENDER_NOT_UPLOADED",
+      "state": "RELEASED_SCHEDULED_PUBLIC",
       "check_level": "LIVE",
       "verdict": "FEASIBLE_VIA_OPEN_LICENCE_ROUTE",
-      "blocker": "none for the render: approved 30 Sep 2026 (DEC-078). Before any upload: Luke's go-ahead in Cowork; uploader IQ-07 (private-only, channel-ID read-back) not built; description needs the credits (DEC-065), the methodology note (DEC-067) and the data attribution",
+      "blocker": null,
       "dataset": {
         "branch": "main (merged from rtt-002-data via PR #1)",
         "commit": "7cde5df",
@@ -122,10 +136,47 @@
         "DEC-067": "DEC-059 methodology note for the video description is not a blocker; written before publishing"
       },
       "open_for_luke": [
-        "go-ahead in Cowork to merge pull request #10",
-        "go-ahead in Cowork for the private YouTube upload (IQ-07 uploader not built yet)",
-        "reinstate the smooth speed curve? (question, DEC-068/DEC-069; not needed for this approved film)"
-      ]
+        "add web links to the description once advanced features unlock",
+        "end screen (Subscribe + next video) when video 2 exists",
+        "Sport playlist at Milestone 5",
+        "re-plan Milestone 5 / the 28-day cadence after the early release (DEC-079)"
+      ],
+      "release": {
+        "decisions": "DEC-079 (early release, departs from the launch-bank plan), DEC-080 (upload record)",
+        "youtube": {
+          "channel": "@racethroughtime",
+          "channel_id": "UC8R47xbyBB5Z93MdMkoUOWg",
+          "video_id": "2fY7Bzq8Uu0",
+          "url": "https://youtu.be/2fY7Bzq8Uu0"
+        },
+        "file": {
+          "name": "rtt002_config_rtt002_film_416d747_3840x2160.mp4",
+          "bytes": 425415150,
+          "release_asset_bytes": 425415150,
+          "release_asset_digest_sha256": "6618ef2e6733a9e1e38efeaa39e5095ca8385773acd62be1580d20eb9c7cfda8",
+          "approved_sha256": "6618ef2e6733a9e1e38efeaa39e5095ca8385773acd62be1580d20eb9c7cfda8",
+          "note": "laptop copy checked by size against the release asset (whose digest is the approved hash); laptop SHA-256 not computed"
+        },
+        "youtube_checks": "no issues found",
+        "duration_shown": "6:36 (file 395.1 s)",
+        "visibility": "scheduled public, 30 Sep 2026, exact time as set in Studio (Claude recommended 20:00 Europe/Isle_of_Man)",
+        "title": "Most F1 Grand Prix Wins of All Time (1950–2026)",
+        "description": "credits version without web links (advanced features not yet unlocked); add links later",
+        "settings": {
+          "category": "Sports",
+          "language": "English",
+          "licence": "Standard YouTube",
+          "embedding": true,
+          "shorts_remixing": false,
+          "comments": "on, Basic moderation, sorted by Top",
+          "made_for_kids": false,
+          "altered_or_synthetic": false,
+          "thumbnail": "custom, added by Luke",
+          "tags": true
+        },
+        "end_screen": "not added: needs a video or playlist element; add Subscribe + next video when the second video exists",
+        "playlist": "none yet; Sport playlist planned at Milestone 5"
+      }
     },
     {
       "id": "RTT-003",
@@ -395,7 +446,7 @@
       "depends": [
         "RTT channel ID from Studio"
       ],
-      "status": "QUEUED"
+      "status": "QUEUED - RTT-002 was uploaded by hand in Studio (DEC-080); channel ID now known: UC8R47xbyBB5Z93MdMkoUOWg"
     },
     {
       "id": "IQ-08",
@@ -435,7 +486,9 @@
     "handle": "@racethroughtime",
     "handle_source": "confirmed by Luke 27 Sep 2026",
     "google_account": "luke@marketmarathon.com (shared with Market Marathon)",
-    "channel_id": "NOT FOUND — read from Studio at IQ-07"
+    "channel_id": "UC8R47xbyBB5Z93MdMkoUOWg",
+    "channel_id_source": "Luke, 30 Sep 2026, from YouTube Studio (DEC-080)",
+    "advanced_features": "not yet (no clickable links in descriptions); phone verification done 30 Sep 2026"
   },
   "capabilities_2026_09_28": {
     "cowork_cloud_commands": "VERIFIED (git 2.43.0, Python)",

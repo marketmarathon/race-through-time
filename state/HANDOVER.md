@@ -1,4 +1,4 @@
-# HANDOVER — 2 Oct 2026 (session 12 follow-up, Claude Code cloud session, environment "Race Through Time": IQ-09)
+# HANDOVER — 2 Oct 2026 (session 12 follow-up, Claude Code cloud session, environment "Race Through Time": IQ-09; includes the session 11 RTT-002 release record, DEC-079/DEC-080)
 
 Previous handovers are in this file's git history. This session's work is on branch `claude/focused-clarke-u0m1ry`, **pull request #12** (https://github.com/marketmarathon/race-through-time/pull/12; not merged; Luke merges, DEC-057). Pull request #11 (RTT-002 release record, DEC-079/DEC-080) is still open and also edits the `state/` files, so whichever merges second needs a small merge of `state/`.
 
@@ -24,6 +24,7 @@ Previous handovers are in this file's git history. This session's work is on bra
 Read `reference/metric_contract_RTT-003.md`, `data/rtt-003/README.md` and DEC-081 to DEC-102. New figures go into `data/rtt-003/source/observations_curated.csv` with source URL, a short verbatim quote, `verified` and `used` with the reason; then rebuild. Never average disagreeing sources, never use a forecast, never present an analyst estimate as official.
 
 ## Where RTT-002 stands
+- **RELEASED (DEC-079, DEC-080):** pull request #10 merged (main `ef01814`). Luke uploaded the approved master (425,415,150 bytes, the same size as the release asset, whose digest is the approved SHA-256 `6618ef2e…`) by hand in YouTube Studio to @racethroughtime (channel ID `UC8R47xbyBB5Z93MdMkoUOWg`) as **video `2fY7Bzq8Uu0`** (https://youtu.be/2fY7Bzq8Uu0), and scheduled it public on 30 Sep 2026. Title "Most F1 Grand Prix Wins of All Time (1950–2026)"; category Sports; Shorts remixing off (music licence); comments on; not for kids; custom thumbnail. Released **ahead of the launch-bank plan** by Luke's decision; Claude in Cowork flagged the departure.
 - **FINAL FILM (30 Sep 2026, DEC-076, DEC-077):** https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-002-film-416d747-run4 (private pre-release). **6 min 35 s** (11,852 frames), 1.5×, "Ego Chall" with beat-aligned loop joins at 3:01 and 5:31, fading out over the 10 s final table, -16.0 LUFS, true peak -3.2 dBTP. Master 3840 × 2160 SHA-256 `6618ef2e6733a9e1e38efeaa39e5095ca8385773acd62be1580d20eb9c7cfda8`; viewing copy 1920 × 1080 `311e66acaaf71283f116d0637a569086a5facc0bdfaa400de6d6588178259822`. Rendered from `416d747` after 20/20 tests passed; run https://github.com/marketmarathon/race-through-time/actions/runs/36699045625. The highlight's 21 one-second windows with 4 starts were accepted by Luke (DEC-077) after it measured below the WCAG 2.x flash thresholds (`reports/RTT-002_wcag_flash_check.md`). **APPROVED by Luke on 30 Sep 2026 (DEC-078) against these two SHA-256 hashes. Not uploaded; nothing on YouTube.**
 - **Full film (29 Sep):** rendered with story captions (`rtt-002-film-e4dbeda-run2`, private). **Luke watched it on 30 Sep:** the captions are dropped and the film is back on the approved pilot's pacing rules (DEC-068). The full film is **not** re-rendered until Luke picks a speed (DEC-071).
 - **Film now:** `kits/rtt-002/config_rtt002_film.json` is the approved pilot config with window 1950–2026 and a lead-in of 0. It has no captions and no smooth curve. The pacing is 0.5 s per race × 1.4 / 1.0 / 0.8 judged on the top ten, a 2.0 s pause on the 24 record races, and a 10 s final table under YouTube's end screen, with no intro and no outro (DEC-070). Length: **9 min 24 s** at the current pace, **7 min 42 s** at 1.25× and **6 min 35 s** at 1.5×.
@@ -33,10 +34,12 @@ Read `reference/metric_contract_RTT-003.md`, `data/rtt-003/README.md` and DEC-08
 - Tests: `tests/player/RESULTS.md`. `marketmarathon/bars` untouched. Nothing uploaded to YouTube or published.
 
 ## Open (for Luke)
-1. **Go-ahead in Cowork to merge pull request #10.** Claude does not merge (DEC-057).
-2. **Go-ahead in Cowork for the private YouTube upload** of the approved master (SHA-256 `6618ef2e6733a9e1e38efeaa39e5095ca8385773acd62be1580d20eb9c7cfda8`). The uploader (IQ-07: private-only, RTT channel-ID read-back, separate RTT OAuth, DEC-005) is not built yet. Upload only the exact approved file; check its SHA-256 first.
-3. Before publishing: description with the data attribution (CC BY-SA 4.0), the car-photo credit (DEC-065), the starts methodology note (DEC-067). No attribution is needed for the music (DEC-073).
-4. Question (DEC-069), not needed for this film: reinstate the smooth speed curve in future films?
+1. Add the web links to the RTT-002 description once the channel's advanced features unlock (currently the credits version without links).
+2. End screen: add Subscribe + the next video when the second video exists (YouTube needs a video or playlist element).
+3. Sport playlist at Milestone 5.
+4. Re-plan Milestone 5 (ten approved videos) and the 28-day cadence after the early release (DEC-079).
+5. IQ-07 uploader (private-only, channel-ID read-back): the channel ID is now known (`UC8R47xbyBB5Z93MdMkoUOWg`). IQ-06 live feasibility for the next episodes.
+6. Question (DEC-069): reinstate the smooth speed curve in future films?
 
 ## Rules for the next session
 Read `state/STATE.json`, this file, `state/DECISIONS.md`, `reference/metric_contract_RTT-002.md` and `reference/rights_ledger.md`. **DEC-069: never add a visual feature or change the look beyond the owner-approved pilot without Luke's approval BEFORE rendering; list proposals as questions.** Never edit C2-2 files or anything in `marketmarathon/bars` for RTT. DEC-006: code, configs, data and written results only in this public repo; logos, pictures, **music**, test frames, stills and renders live only in the private repo (DEC-060, DEC-073). Never upload workflow artifacts from this repo and never print `RTT_PRIVATE_TOKEN` (DEC-061). New data goes in new files; the audited wins files stay unchanged. **A push that changes `.github/workflows/render_pilot.yml` on this branch renders the three speed clips** (never the full film); the full film renders only when started by hand.
