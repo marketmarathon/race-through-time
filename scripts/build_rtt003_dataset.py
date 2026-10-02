@@ -373,7 +373,7 @@ def main():
                 c["fade_date"], c["fade_basis"] = "", "still on sale at 30 Jun 2026: no fade"
             elif c["end_event_date"]:
                 c["fade_date"] = c["end_event_date"]
-                c["fade_basis"] = f"manufacturer {c['end_event']} ({c['end_event_date']}); DEC-086 rule 1"
+                c["fade_basis"] = f"{c['end_event']} ({c['end_event_date']}); DEC-086 rule 1"
             else:
                 c["fade_date"] = last_add or ""
                 c["fade_basis"] = ("no documented end date: last quarter in this series in which it added at least "
@@ -666,7 +666,8 @@ def write_report(path, src, consoles, cons_out, obs, series, boards, crown, over
             L.append(f"| {name.get(o['console_id'], o['console_id'])} | {o['as_of_date']} | {mill(int(o['units']))} | "
                      f"{ov} | {o['grade']} | {o['publisher']} | {o['use_reason']} |")
     L += ["", "## UNVERIFIED items (source blocked from this environment)", "",
-          "To check in Luke's Chrome (Cowork). `used = yes` means the bar currently rests on it.", "",
+          f"`used = yes` means a bar rests on it: {sum(1 for o in obs if o['verified'] == 'UNVERIFIED' and o['used'] == 'yes')} "
+          "at present. The others are recorded for completeness (superseded, consistent, out of scope or not needed).", "",
           "| Obs | Console | Date | Millions | Used | Source URL |", "|---|---|---|---|---|---|"]
     for o in obs:
         if o["verified"] == "UNVERIFIED":

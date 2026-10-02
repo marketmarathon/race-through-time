@@ -1,6 +1,6 @@
 # Metric contract — RTT-003 Best-Selling Consoles 1985–2026 · v1.0 (data build IQ-09) · 1 Oct 2026
 
-Written before the data build (DEC-036). Owner decisions: DEC-081 to DEC-085 (Luke, 30 Sep 2026). Claude's working choices: DEC-086 to DEC-092 (questions for Luke, listed in `reports/RTT-003_data_report.md`).
+Written before the data build (DEC-036). Owner decisions: DEC-081 to DEC-085 (Luke, 30 Sep 2026). Claude's working choices DEC-086 to DEC-092, all confirmed by Luke on 2 Oct 2026 (DEC-093 to DEC-102).
 
 **Public claim:** the best-selling video game consoles of all time, race from 31 March 1985 to 30 June 2026, measured in **units shipped** (manufacturers' sell-in to retailers and distributors). The title must say "units shipped" (DEC-081).
 **Unit:** consoles (hardware units), cumulative since launch, worldwide. Shown in millions.

@@ -648,7 +648,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2004-06-30,mega_drive,28540000,28.54,held,C,estimated,no,no,FAM-MD-1996-03-31,1996-03-31,,
 2004-06-30,nes,61910000,61.91,held,A,official,no,no,NIN-nes-2004-03-31,2004-03-31,NIN-nes-2005-03-31,2005-03-31
 2004-06-30,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2004-03-31,2004-03-31,NIN-nintendo_64-2005-03-31,2005-03-31
-2004-06-30,playstation,100327709,100.33,interpolated,A,official,no,yes,SIE-PS-2004-05-18,2004-05-18,SCEI-PS-2004-12-31,2004-12-31
+2004-06-30,playstation,100327709,100.33,interpolated,A,official,no,no,SIE-PS-2004-05-18,2004-05-18,SCEI-PS-2004-12-31,2004-12-31
 2004-06-30,playstation_2,77393134,77.39,interpolated,A,estimated,no,no,SIE-PS2-2004-01-13,2004-01-13,SIE-PS2-2005-11-29,2005-11-29
 2004-06-30,saturn,8800000,8.80,held,B,official,no,no,SEGA-SAT-1998-03-31,1998-03-31,,
 2004-06-30,snes,49100000,49.10,held,A,official,no,no,NIN-snes-2004-03-31,2004-03-31,NIN-snes-2005-03-31,2005-03-31
@@ -663,7 +663,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2004-09-30,mega_drive,28540000,28.54,held,C,estimated,no,no,FAM-MD-1996-03-31,1996-03-31,,
 2004-09-30,nes,61910000,61.91,held,A,official,no,no,NIN-nes-2004-03-31,2004-03-31,NIN-nes-2005-03-31,2005-03-31
 2004-09-30,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2004-03-31,2004-03-31,NIN-nintendo_64-2005-03-31,2005-03-31
-2004-09-30,playstation,101028855,101.03,interpolated,A,official,no,yes,SIE-PS-2004-05-18,2004-05-18,SCEI-PS-2004-12-31,2004-12-31
+2004-09-30,playstation,101028855,101.03,interpolated,A,official,no,no,SIE-PS-2004-05-18,2004-05-18,SCEI-PS-2004-12-31,2004-12-31
 2004-09-30,playstation_2,81417799,81.42,interpolated,A,estimated,no,no,SIE-PS2-2004-01-13,2004-01-13,SIE-PS2-2005-11-29,2005-11-29
 2004-09-30,saturn,8800000,8.80,held,B,official,no,no,SEGA-SAT-1998-03-31,1998-03-31,,
 2004-09-30,snes,49100000,49.10,held,A,official,no,no,NIN-snes-2004-03-31,2004-03-31,NIN-snes-2005-03-31,2005-03-31
@@ -679,7 +679,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2004-12-31,nes,61910000,61.91,held,A,official,no,no,NIN-nes-2004-03-31,2004-03-31,NIN-nes-2005-03-31,2005-03-31
 2004-12-31,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2004-03-31,2004-03-31,NIN-nintendo_64-2005-03-31,2005-03-31
 2004-12-31,nintendo_ds,1621538,1.62,interpolated,A,official,no,no,LAUNCH-nintendo_ds,2004-11-21,NIN-nintendo_ds-2005-03-31,2005-03-31
-2004-12-31,playstation,101730000,101.73,official,A,official,no,yes,SCEI-PS-2004-12-31,2004-12-31,,
+2004-12-31,playstation,101730000,101.73,official,A,official,no,no,SCEI-PS-2004-12-31,2004-12-31,,
 2004-12-31,playstation_2,85442464,85.44,interpolated,A,estimated,no,no,SIE-PS2-2004-01-13,2004-01-13,SIE-PS2-2005-11-29,2005-11-29
 2004-12-31,psp,588235,0.59,interpolated,A,official,no,no,LAUNCH-psp,2004-12-12,SIE-PSP-2005-10,2005-10-31
 2004-12-31,saturn,8800000,8.80,held,B,official,no,no,SEGA-SAT-1998-03-31,1998-03-31,,
@@ -696,7 +696,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2005-03-31,nes,61910000,61.91,arithmetic,A,official,no,no,NIN-nes-2005-03-31,2005-03-31,,
 2005-03-31,nintendo_64,32930000,32.93,arithmetic,A,official,no,no,NIN-nintendo_64-2005-03-31,2005-03-31,,
 2005-03-31,nintendo_ds,5270000,5.27,arithmetic,A,official,no,no,NIN-nintendo_ds-2005-03-31,2005-03-31,,
-2005-03-31,playstation,102490000,102.49,official,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2005-03-31,playstation,102490000,102.49,official,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2005-03-31,playstation_2,89379636,89.38,interpolated,A,estimated,no,no,SIE-PS2-2004-01-13,2004-01-13,SIE-PS2-2005-11-29,2005-11-29
 2005-03-31,psp,3374613,3.37,interpolated,A,official,no,no,LAUNCH-psp,2004-12-12,SIE-PSP-2005-10,2005-10-31
 2005-03-31,saturn,8800000,8.80,held,B,official,no,no,SEGA-SAT-1998-03-31,1998-03-31,,
@@ -713,7 +713,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2005-06-30,nes,61910000,61.91,held,A,official,no,no,NIN-nes-2005-03-31,2005-03-31,NIN-nes-2006-03-31,2006-03-31
 2005-06-30,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2005-03-31,2005-03-31,NIN-nintendo_64-2006-03-31,2006-03-31
 2005-06-30,nintendo_ds,8127151,8.13,interpolated,A,official,no,no,NIN-nintendo_ds-2005-03-31,2005-03-31,NIN-nintendo_ds-2006-03-31,2006-03-31
-2005-06-30,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2005-06-30,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2005-06-30,playstation_2,93360554,93.36,interpolated,A,estimated,no,no,SIE-PS2-2004-01-13,2004-01-13,SIE-PS2-2005-11-29,2005-11-29
 2005-06-30,psp,6191950,6.19,interpolated,A,official,no,no,LAUNCH-psp,2004-12-12,SIE-PSP-2005-10,2005-10-31
 2005-06-30,saturn,8800000,8.80,held,B,official,no,no,SEGA-SAT-1998-03-31,1998-03-31,,
@@ -730,7 +730,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2005-09-30,nes,61910000,61.91,held,A,official,no,no,NIN-nes-2005-03-31,2005-03-31,NIN-nes-2006-03-31,2006-03-31
 2005-09-30,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2005-03-31,2005-03-31,NIN-nintendo_64-2006-03-31,2006-03-31
 2005-09-30,nintendo_ds,11015699,11.02,interpolated,A,official,no,no,NIN-nintendo_ds-2005-03-31,2005-03-31,NIN-nintendo_ds-2006-03-31,2006-03-31
-2005-09-30,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2005-09-30,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2005-09-30,playstation_2,97385219,97.39,interpolated,A,estimated,no,no,SIE-PS2-2004-01-13,2004-01-13,SIE-PS2-2005-11-29,2005-11-29
 2005-09-30,psp,9040248,9.04,interpolated,A,official,no,no,LAUNCH-psp,2004-12-12,SIE-PSP-2005-10,2005-10-31
 2005-09-30,saturn,8800000,8.80,held,B,official,no,no,SEGA-SAT-1998-03-31,1998-03-31,,
@@ -747,7 +747,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2005-12-31,nes,61910000,61.91,held,A,official,no,no,NIN-nes-2005-03-31,2005-03-31,NIN-nes-2006-03-31,2006-03-31
 2005-12-31,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2005-03-31,2005-03-31,NIN-nintendo_64-2006-03-31,2006-03-31
 2005-12-31,nintendo_ds,13904247,13.90,interpolated,A,official,no,no,NIN-nintendo_ds-2005-03-31,2005-03-31,NIN-nintendo_ds-2006-03-31,2006-03-31
-2005-12-31,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2005-12-31,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2005-12-31,playstation_2,101126386,101.13,interpolated,A,estimated,no,no,SIE-PS2-2005-11-29,2005-11-29,SIE-PS2-2007-03,2007-03-31
 2005-12-31,psp,12259259,12.26,interpolated,A,official,no,no,SIE-PSP-2005-10,2005-10-31,SIE-PSP-2006-03-15,2006-03-15
 2005-12-31,saturn,8800000,8.80,held,B,official,no,no,SEGA-SAT-1998-03-31,1998-03-31,,
@@ -765,7 +765,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2006-03-31,nes,61910000,61.91,arithmetic,A,official,no,no,NIN-nes-2006-03-31,2006-03-31,,
 2006-03-31,nintendo_64,32930000,32.93,arithmetic,A,official,no,no,NIN-nintendo_64-2006-03-31,2006-03-31,,
 2006-03-31,nintendo_ds,16730000,16.73,arithmetic,A,official,no,no,NIN-nintendo_ds-2006-03-31,2006-03-31,,
-2006-03-31,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2006-03-31,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2006-03-31,playstation_2,104266222,104.27,interpolated,A,estimated,no,no,SIE-PS2-2005-11-29,2005-11-29,SIE-PS2-2007-03,2007-03-31
 2006-03-31,psp,15419948,15.42,interpolated,A,estimated,no,no,SIE-PSP-2006-03-15,2006-03-15,SIE-PSP-2007-03,2007-03-31
 2006-03-31,saturn,8800000,8.80,held,B,official,no,no,SEGA-SAT-1998-03-31,1998-03-31,,
@@ -783,7 +783,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2006-06-30,nes,61910000,61.91,held,A,official,no,no,NIN-nes-2006-03-31,2006-03-31,NIN-nes-2007-03-31,2007-03-31
 2006-06-30,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2006-03-31,2006-03-31,NIN-nintendo_64-2007-03-31,2007-03-31
 2006-06-30,nintendo_ds,22603863,22.60,interpolated,A,official,no,no,NIN-nintendo_ds-2006-03-31,2006-03-31,NIN-nintendo_ds-2007-03-31,2007-03-31
-2006-06-30,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2006-06-30,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2006-06-30,playstation_2,107440945,107.44,interpolated,A,estimated,no,no,SIE-PS2-2005-11-29,2005-11-29,SIE-PS2-2007-03,2007-03-31
 2006-06-30,psp,17808399,17.81,interpolated,A,estimated,no,no,SIE-PSP-2006-03-15,2006-03-15,SIE-PSP-2007-03,2007-03-31
 2006-06-30,saturn,8800000,8.80,held,B,official,no,no,SEGA-SAT-1998-03-31,1998-03-31,,
@@ -801,7 +801,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2006-09-30,nes,61910000,61.91,held,A,official,no,no,NIN-nes-2006-03-31,2006-03-31,NIN-nes-2007-03-31,2007-03-31
 2006-09-30,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2006-03-31,2006-03-31,NIN-nintendo_64-2007-03-31,2007-03-31
 2006-09-30,nintendo_ds,28542274,28.54,interpolated,A,official,no,no,NIN-nintendo_ds-2006-03-31,2006-03-31,NIN-nintendo_ds-2007-03-31,2007-03-31
-2006-09-30,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2006-09-30,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2006-09-30,playstation_2,110650554,110.65,interpolated,A,estimated,no,no,SIE-PS2-2005-11-29,2005-11-29,SIE-PS2-2007-03,2007-03-31
 2006-09-30,psp,20223097,20.22,interpolated,A,estimated,no,no,SIE-PSP-2006-03-15,2006-03-15,SIE-PSP-2007-03,2007-03-31
 2006-09-30,saturn,8800000,8.80,held,B,official,no,no,SEGA-SAT-1998-03-31,1998-03-31,,
@@ -819,7 +819,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2006-12-31,nes,61910000,61.91,held,A,official,no,no,NIN-nes-2006-03-31,2006-03-31,NIN-nes-2007-03-31,2007-03-31
 2006-12-31,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2006-03-31,2006-03-31,NIN-nintendo_64-2007-03-31,2007-03-31
 2006-12-31,nintendo_ds,34480685,34.48,interpolated,A,official,no,no,NIN-nintendo_ds-2006-03-31,2006-03-31,NIN-nintendo_ds-2007-03-31,2007-03-31
-2006-12-31,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2006-12-31,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2006-12-31,playstation_2,113860164,113.86,interpolated,A,estimated,no,no,SIE-PS2-2005-11-29,2005-11-29,SIE-PS2-2007-03,2007-03-31
 2006-12-31,playstation_3,1964286,1.96,interpolated,A,official,no,no,LAUNCH-playstation_3,2006-11-11,SIE-PS3-2007-03,2007-03-31
 2006-12-31,psp,22637795,22.64,interpolated,A,estimated,no,no,SIE-PSP-2006-03-15,2006-03-15,SIE-PSP-2007-03,2007-03-31
@@ -839,7 +839,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2007-03-31,nes,61910000,61.91,arithmetic,A,official,no,no,NIN-nes-2007-03-31,2007-03-31,,
 2007-03-31,nintendo_64,32930000,32.93,arithmetic,A,official,no,no,NIN-nintendo_64-2007-03-31,2007-03-31,,
 2007-03-31,nintendo_ds,40290000,40.29,arithmetic,A,official,no,no,NIN-nintendo_ds-2007-03-31,2007-03-31,,
-2007-03-31,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2007-03-31,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2007-03-31,playstation_2,117000000,117.00,official,A,official,yes,no,SIE-PS2-2007-03,2007-03-31,,
 2007-03-31,playstation_3,5500000,5.50,official,A,official,yes,no,SIE-PS3-2007-03,2007-03-31,,
 2007-03-31,psp,25000000,25.00,official,A,official,no,no,SIE-PSP-2007-03,2007-03-31,,
@@ -859,7 +859,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2007-06-30,nes,61910000,61.91,held,A,official,no,no,NIN-nes-2007-03-31,2007-03-31,NIN-nes-2008-03-31,2008-03-31
 2007-06-30,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2007-03-31,2007-03-31,NIN-nintendo_64-2008-03-31,2008-03-31
 2007-06-30,nintendo_ds,47826093,47.83,interpolated,A,official,no,no,NIN-nintendo_ds-2007-03-31,2007-03-31,NIN-nintendo_ds-2008-03-31,2008-03-31
-2007-06-30,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2007-06-30,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2007-06-30,playstation_2,119556582,119.56,interpolated,A,estimated,no,no,SIE-PS2-2007-03,2007-03-31,SIE-PS2-2008-08-21,2008-08-21
 2007-06-30,playstation_3,7091159,7.09,interpolated,A,estimated,no,no,SIE-PS3-2007-03,2007-03-31,SIE-PS3-2008-08-21,2008-08-21
 2007-06-30,psp,27914145,27.91,interpolated,A,estimated,no,no,SIE-PSP-2007-03,2007-03-31,SIE-PSP-2008-08-21,2008-08-21
@@ -879,7 +879,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2007-09-30,nes,61910000,61.91,held,A,official,no,no,NIN-nes-2007-03-31,2007-03-31,NIN-nes-2008-03-31,2008-03-31
 2007-09-30,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2007-03-31,2007-03-31,NIN-nintendo_64-2008-03-31,2008-03-31
 2007-09-30,nintendo_ds,55445000,55.45,interpolated,A,official,no,no,NIN-nintendo_ds-2007-03-31,2007-03-31,NIN-nintendo_ds-2008-03-31,2008-03-31
-2007-09-30,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2007-09-30,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2007-09-30,playstation_2,122141257,122.14,interpolated,A,estimated,no,no,SIE-PS2-2007-03,2007-03-31,SIE-PS2-2008-08-21,2008-08-21
 2007-09-30,playstation_3,8699804,8.70,interpolated,A,estimated,no,no,SIE-PS3-2007-03,2007-03-31,SIE-PS3-2008-08-21,2008-08-21
 2007-09-30,psp,30860314,30.86,interpolated,A,estimated,no,no,SIE-PSP-2007-03,2007-03-31,SIE-PSP-2008-08-21,2008-08-21
@@ -899,7 +899,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2007-12-31,nes,61910000,61.91,held,A,official,no,no,NIN-nes-2007-03-31,2007-03-31,NIN-nes-2008-03-31,2008-03-31
 2007-12-31,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2007-03-31,2007-03-31,NIN-nintendo_64-2008-03-31,2008-03-31
 2007-12-31,nintendo_ds,63063907,63.06,interpolated,A,official,no,no,NIN-nintendo_ds-2007-03-31,2007-03-31,NIN-nintendo_ds-2008-03-31,2008-03-31
-2007-12-31,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2007-12-31,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2007-12-31,playstation_2,124725933,124.73,interpolated,A,estimated,no,no,SIE-PS2-2007-03,2007-03-31,SIE-PS2-2008-08-21,2008-08-21
 2007-12-31,playstation_3,10308448,10.31,interpolated,A,estimated,no,no,SIE-PS3-2007-03,2007-03-31,SIE-PS3-2008-08-21,2008-08-21
 2007-12-31,psp,33806483,33.81,interpolated,A,estimated,no,no,SIE-PSP-2007-03,2007-03-31,SIE-PSP-2008-08-21,2008-08-21
@@ -919,7 +919,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2008-03-31,nes,61910000,61.91,arithmetic,A,official,no,no,NIN-nes-2008-03-31,2008-03-31,,
 2008-03-31,nintendo_64,32930000,32.93,arithmetic,A,official,no,no,NIN-nintendo_64-2008-03-31,2008-03-31,,
 2008-03-31,nintendo_ds,70600000,70.60,arithmetic,A,official,no,no,NIN-nintendo_ds-2008-03-31,2008-03-31,,
-2008-03-31,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2008-03-31,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2008-03-31,playstation_2,127282515,127.28,interpolated,A,estimated,no,no,SIE-PS2-2007-03,2007-03-31,SIE-PS2-2008-08-21,2008-08-21
 2008-03-31,playstation_3,11899607,11.90,interpolated,A,estimated,no,no,SIE-PS3-2007-03,2007-03-31,SIE-PS3-2008-08-21,2008-08-21
 2008-03-31,psp,36720629,36.72,interpolated,A,estimated,no,no,SIE-PSP-2007-03,2007-03-31,SIE-PSP-2008-08-21,2008-08-21
@@ -939,7 +939,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2008-06-30,nes,61910000,61.91,held,A,official,no,no,NIN-nes-2008-03-31,2008-03-31,NIN-nes-2009-03-31,2009-03-31
 2008-06-30,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2008-03-31,2008-03-31,NIN-nintendo_64-2009-03-31,2009-03-31
 2008-06-30,nintendo_ds,78373644,78.37,interpolated,A,official,no,no,NIN-nintendo_ds-2008-03-31,2008-03-31,NIN-nintendo_ds-2009-03-31,2009-03-31
-2008-06-30,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2008-06-30,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2008-06-30,playstation_2,129839096,129.84,interpolated,A,estimated,no,no,SIE-PS2-2007-03,2007-03-31,SIE-PS2-2008-08-21,2008-08-21
 2008-06-30,playstation_3,13490766,13.49,interpolated,A,estimated,no,no,SIE-PS3-2007-03,2007-03-31,SIE-PS3-2008-08-21,2008-08-21
 2008-06-30,psp,39634774,39.63,interpolated,A,estimated,no,no,SIE-PSP-2007-03,2007-03-31,SIE-PSP-2008-08-21,2008-08-21
@@ -959,7 +959,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2008-09-30,nes,61910000,61.91,held,A,official,no,no,NIN-nes-2008-03-31,2008-03-31,NIN-nes-2009-03-31,2009-03-31
 2008-09-30,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2008-03-31,2008-03-31,NIN-nintendo_64-2009-03-31,2009-03-31
 2008-09-30,nintendo_ds,86232712,86.23,interpolated,A,official,no,no,NIN-nintendo_ds-2008-03-31,2008-03-31,NIN-nintendo_ds-2009-03-31,2009-03-31
-2008-09-30,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2008-09-30,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2008-09-30,playstation_2,132724242,132.72,interpolated,A,official,no,no,SIE-PS2-2008-08-21,2008-08-21,SIE-PS2-2008-12,2008-12-31
 2008-09-30,playstation_3,16490909,16.49,interpolated,A,official,no,no,SIE-PS3-2008-08-21,2008-08-21,SIE-PS3-2008-12,2008-12-31
 2008-09-30,psp,43434969,43.43,interpolated,A,official,no,no,SIE-PSP-2008-08-21,2008-08-21,SIE-PSP-2009-01,2009-01-31
@@ -979,7 +979,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2008-12-31,nes,61910000,61.91,held,A,official,no,no,NIN-nes-2008-03-31,2008-03-31,NIN-nes-2009-03-31,2009-03-31
 2008-12-31,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2008-03-31,2008-03-31,NIN-nintendo_64-2009-03-31,2009-03-31
 2008-12-31,nintendo_ds,94091781,94.09,interpolated,A,official,no,no,NIN-nintendo_ds-2008-03-31,2008-03-31,NIN-nintendo_ds-2009-03-31,2009-03-31
-2008-12-31,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2008-12-31,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2008-12-31,playstation_2,136000000,136.00,official,A,official,yes,no,SIE-PS2-2008-12,2008-12-31,,
 2008-12-31,playstation_3,21300000,21.30,official,A,official,no,no,SIE-PS3-2008-12,2008-12-31,,
 2008-12-31,psp,48345399,48.35,interpolated,A,official,no,no,SIE-PSP-2008-08-21,2008-08-21,SIE-PSP-2009-01,2009-01-31
@@ -999,7 +999,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2009-03-31,nes,61910000,61.91,arithmetic,A,official,no,no,NIN-nes-2009-03-31,2009-03-31,,
 2009-03-31,nintendo_64,32930000,32.93,arithmetic,A,official,no,no,NIN-nintendo_64-2009-03-31,2009-03-31,,
 2009-03-31,nintendo_ds,101780000,101.78,arithmetic,A,official,no,no,NIN-nintendo_ds-2009-03-31,2009-03-31,,
-2009-03-31,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2009-03-31,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2009-03-31,playstation_2,137392265,137.39,interpolated,A,official,no,no,SIE-PS2-2008-12,2008-12-31,SIE-PS2-2009-06,2009-06-30
 2009-03-31,playstation_3,22235065,22.24,interpolated,A,official,no,no,SIE-PS3-2008-12,2008-12-31,SIE-PS3-2009-08-19,2009-08-19
 2009-03-31,psp,51140667,51.14,interpolated,A,official,no,no,SIE-PSP-2009-01,2009-01-31,SIE-PSP-2009-06,2009-06-30
@@ -1019,7 +1019,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2009-06-30,nes,61910000,61.91,held,A,official,no,no,NIN-nes-2009-03-31,2009-03-31,NIN-nes-2010-03-31,2010-03-31
 2009-06-30,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2009-03-31,2009-03-31,NIN-nintendo_64-2010-03-31,2010-03-31
 2009-06-30,nintendo_ds,108538932,108.54,interpolated,A,official,no,no,NIN-nintendo_ds-2009-03-31,2009-03-31,NIN-nintendo_ds-2010-03-31,2010-03-31
-2009-06-30,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2009-06-30,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2009-06-30,playstation_2,138800000,138.80,official,A,official,no,no,SIE-PS2-2009-06,2009-06-30,,
 2009-06-30,playstation_3,23180519,23.18,interpolated,A,official,no,no,SIE-PS3-2008-12,2008-12-31,SIE-PS3-2009-08-19,2009-08-19
 2009-06-30,psp,52900000,52.90,official,A,official,no,no,SIE-PSP-2009-06,2009-06-30,,
@@ -1039,7 +1039,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2009-09-30,nes,61910000,61.91,held,A,official,no,no,NIN-nes-2009-03-31,2009-03-31,NIN-nes-2010-03-31,2010-03-31
 2009-09-30,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2009-03-31,2009-03-31,NIN-nintendo_64-2010-03-31,2010-03-31
 2009-09-30,nintendo_ds,115372137,115.37,interpolated,A,official,no,no,NIN-nintendo_ds-2009-03-31,2009-03-31,NIN-nintendo_ds-2010-03-31,2010-03-31
-2009-09-30,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2009-09-30,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2009-09-30,playstation_2,140422222,140.42,interpolated,A,estimated,no,no,SIE-PS2-2009-06,2009-06-30,SIE-PS2-2010-08-18,2010-08-18
 2009-09-30,playstation_3,25950000,25.95,interpolated,A,official,no,no,SIE-PS3-2009-08-19,2009-08-19,SIE-PS3-2010-03-31,2010-03-31
 2009-09-30,psp,55787591,55.79,interpolated,A,official,no,no,SIE-PSP-2009-06,2009-06-30,SIE-PSP-2010-03-31,2010-03-31
@@ -1059,7 +1059,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2009-12-31,nes,61910000,61.91,held,A,official,no,no,NIN-nes-2009-03-31,2009-03-31,NIN-nes-2010-03-31,2010-03-31
 2009-12-31,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2009-03-31,2009-03-31,NIN-nintendo_64-2010-03-31,2010-03-31
 2009-12-31,nintendo_ds,122205342,122.21,interpolated,A,official,no,no,NIN-nintendo_ds-2009-03-31,2009-03-31,NIN-nintendo_ds-2010-03-31,2010-03-31
-2009-12-31,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2009-12-31,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2009-12-31,playstation_2,142044444,142.04,interpolated,A,estimated,no,no,SIE-PS2-2009-06,2009-06-30,SIE-PS2-2010-08-18,2010-08-18
 2009-12-31,playstation_3,30878571,30.88,interpolated,A,official,no,no,SIE-PS3-2009-08-19,2009-08-19,SIE-PS3-2010-03-31,2010-03-31
 2009-12-31,psp,58675182,58.68,interpolated,A,official,no,no,SIE-PSP-2009-06,2009-06-30,SIE-PSP-2010-03-31,2010-03-31
@@ -1079,7 +1079,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2010-03-31,nes,61910000,61.91,arithmetic,A,official,no,no,NIN-nes-2010-03-31,2010-03-31,,
 2010-03-31,nintendo_64,32930000,32.93,arithmetic,A,official,no,no,NIN-nintendo_64-2010-03-31,2010-03-31,,
 2010-03-31,nintendo_ds,128890000,128.89,arithmetic,A,official,no,no,NIN-nintendo_ds-2010-03-31,2010-03-31,,
-2010-03-31,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2010-03-31,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2010-03-31,playstation_2,143631401,143.63,interpolated,A,estimated,no,no,SIE-PS2-2009-06,2009-06-30,SIE-PS2-2010-08-18,2010-08-18
 2010-03-31,playstation_3,35700000,35.70,official,A,official,no,no,SIE-PS3-2010-03-31,2010-03-31,,
 2010-03-31,psp,61500000,61.50,official,A,official,no,no,SIE-PSP-2010-03-31,2010-03-31,,
@@ -1099,7 +1099,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2010-06-30,nes,61910000,61.91,held,A,official,no,no,NIN-nes-2010-03-31,2010-03-31,NIN-nes-2011-03-31,2011-03-31
 2010-06-30,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2010-03-31,2010-03-31,NIN-nintendo_64-2011-03-31,2011-03-31
 2010-06-30,nintendo_ds,133258000,133.26,interpolated,A,official,no,no,NIN-nintendo_ds-2010-03-31,2010-03-31,NIN-nintendo_ds-2011-03-31,2011-03-31
-2010-06-30,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2010-06-30,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2010-06-30,playstation_2,145235990,145.24,interpolated,A,estimated,no,no,SIE-PS2-2009-06,2009-06-30,SIE-PS2-2010-08-18,2010-08-18
 2010-06-30,playstation_3,37195000,37.20,interpolated,A,official,no,no,SIE-PS3-2010-03-31,2010-03-31,SIE-PS3-2010-08-18,2010-08-18
 2010-06-30,psp,62280000,62.28,interpolated,A,official,no,no,SIE-PSP-2010-03-31,2010-03-31,SIE-PSP-2010-08-18,2010-08-18
@@ -1119,7 +1119,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2010-09-30,nes,61910000,61.91,held,A,official,no,no,NIN-nes-2010-03-31,2010-03-31,NIN-nes-2011-03-31,2011-03-31
 2010-09-30,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2010-03-31,2010-03-31,NIN-nintendo_64-2011-03-31,2011-03-31
 2010-09-30,nintendo_ds,137674000,137.67,interpolated,A,official,no,no,NIN-nintendo_ds-2010-03-31,2010-03-31,NIN-nintendo_ds-2011-03-31,2011-03-31
-2010-09-30,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2010-09-30,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2010-09-30,playstation_2,147110241,147.11,interpolated,A,official,no,no,SIE-PS2-2010-08-18,2010-08-18,SIE-PS2-2011-01-31,2011-01-31
 2010-09-30,playstation_3,41600000,41.60,official,A,official,yes,no,SIE-PS3-2010-09,2010-09-30,,
 2010-09-30,psp,63945635,63.95,interpolated,A,official,no,no,SIE-PSP-2010-08-18,2010-08-18,SIE-PSP-2011-04-27,2011-04-27
@@ -1139,7 +1139,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2010-12-31,nes,61910000,61.91,held,A,official,no,no,NIN-nes-2010-03-31,2010-03-31,NIN-nes-2011-03-31,2011-03-31
 2010-12-31,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2010-03-31,2010-03-31,NIN-nintendo_64-2011-03-31,2011-03-31
 2010-12-31,nintendo_ds,142090000,142.09,interpolated,A,official,no,no,NIN-nintendo_ds-2010-03-31,2010-03-31,NIN-nintendo_ds-2011-03-31,2011-03-31
-2010-12-31,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2010-12-31,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2010-12-31,playstation_2,149271687,149.27,interpolated,A,official,no,no,SIE-PS2-2010-08-18,2010-08-18,SIE-PS2-2011-01-31,2011-01-31
 2010-12-31,playstation_3,45893333,45.89,interpolated,A,official,no,no,SIE-PS3-2010-09,2010-09-30,SIE-PS3-2011-03-29,2011-03-29
 2010-12-31,psp,66610714,66.61,interpolated,A,official,no,no,SIE-PSP-2010-08-18,2010-08-18,SIE-PSP-2011-04-27,2011-04-27
@@ -1160,7 +1160,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2011-03-31,nintendo_3ds,3620000,3.62,arithmetic,A,official,no,no,NIN-nintendo_3ds-2011-03-31,2011-03-31,,
 2011-03-31,nintendo_64,32930000,32.93,arithmetic,A,official,no,no,NIN-nintendo_64-2011-03-31,2011-03-31,,
 2011-03-31,nintendo_ds,146410000,146.41,arithmetic,A,official,no,no,NIN-nintendo_ds-2011-03-31,2011-03-31,,
-2011-03-31,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2011-03-31,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2011-03-31,playstation_2,151388235,151.39,interpolated,A,estimated,no,no,SIE-PS2-2011-01-31,2011-01-31,SIE-LT-playstation_2,2012-03-31
 2011-03-31,playstation_3,50068259,50.07,interpolated,A,estimated,no,no,SIE-PS3-2011-03-29,2011-03-29,SIE-PS3-2012-11-04,2012-11-04
 2011-03-31,psp,69217857,69.22,interpolated,A,official,no,no,SIE-PSP-2010-08-18,2010-08-18,SIE-PSP-2011-04-27,2011-04-27
@@ -1181,7 +1181,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2011-06-30,nintendo_3ds,6984016,6.98,interpolated,A,official,no,no,NIN-nintendo_3ds-2011-03-31,2011-03-31,NIN-nintendo_3ds-2012-03-31,2012-03-31
 2011-06-30,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2011-03-31,2011-03-31,NIN-nintendo_64-2012-03-31,2012-03-31
 2011-06-30,nintendo_ds,147678033,147.68,interpolated,A,official,no,no,NIN-nintendo_ds-2011-03-31,2011-03-31,NIN-nintendo_ds-2012-03-31,2012-03-31
-2011-06-30,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2011-06-30,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2011-06-30,playstation_2,153529412,153.53,interpolated,A,estimated,no,no,SIE-PS2-2011-01-31,2011-01-31,SIE-LT-playstation_2,2012-03-31
 2011-06-30,playstation_3,53174061,53.17,interpolated,A,estimated,no,no,SIE-PS3-2011-03-29,2011-03-29,SIE-PS3-2012-11-04,2012-11-04
 2011-06-30,psp,71208260,71.21,interpolated,A,official,no,no,SIE-PSP-2011-04-27,2011-04-27,SIE-LT-psp,2012-03-31
@@ -1202,7 +1202,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2011-09-30,nintendo_3ds,10385000,10.38,interpolated,A,official,no,no,NIN-nintendo_3ds-2011-03-31,2011-03-31,NIN-nintendo_3ds-2012-03-31,2012-03-31
 2011-09-30,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2011-03-31,2011-03-31,NIN-nintendo_64-2012-03-31,2012-03-31
 2011-09-30,nintendo_ds,148960000,148.96,interpolated,A,official,no,no,NIN-nintendo_ds-2011-03-31,2011-03-31,NIN-nintendo_ds-2012-03-31,2012-03-31
-2011-09-30,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2011-09-30,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2011-09-30,playstation_2,155694118,155.69,interpolated,A,estimated,no,no,SIE-PS2-2011-01-31,2011-01-31,SIE-LT-playstation_2,2012-03-31
 2011-09-30,playstation_3,56313993,56.31,interpolated,A,estimated,no,no,SIE-PS3-2011-03-29,2011-03-29,SIE-PS3-2012-11-04,2012-11-04
 2011-09-30,psp,72945133,72.95,interpolated,A,official,no,no,SIE-PSP-2011-04-27,2011-04-27,SIE-LT-psp,2012-03-31
@@ -1223,7 +1223,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2011-12-31,nintendo_3ds,13785984,13.79,interpolated,A,official,no,no,NIN-nintendo_3ds-2011-03-31,2011-03-31,NIN-nintendo_3ds-2012-03-31,2012-03-31
 2011-12-31,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2011-03-31,2011-03-31,NIN-nintendo_64-2012-03-31,2012-03-31
 2011-12-31,nintendo_ds,150241967,150.24,interpolated,A,official,no,no,NIN-nintendo_ds-2011-03-31,2011-03-31,NIN-nintendo_ds-2012-03-31,2012-03-31
-2011-12-31,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2011-12-31,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2011-12-31,playstation_2,157858824,157.86,interpolated,A,estimated,no,no,SIE-PS2-2011-01-31,2011-01-31,SIE-LT-playstation_2,2012-03-31
 2011-12-31,playstation_3,59453925,59.45,interpolated,A,estimated,no,no,SIE-PS3-2011-03-29,2011-03-29,SIE-PS3-2012-11-04,2012-11-04
 2011-12-31,psp,74682006,74.68,interpolated,A,official,no,no,SIE-PSP-2011-04-27,2011-04-27,SIE-LT-psp,2012-03-31
@@ -1244,7 +1244,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2012-03-31,nintendo_3ds,17150000,17.15,arithmetic,A,official,no,no,NIN-nintendo_3ds-2012-03-31,2012-03-31,,
 2012-03-31,nintendo_64,32930000,32.93,arithmetic,A,official,no,no,NIN-nintendo_64-2012-03-31,2012-03-31,,
 2012-03-31,nintendo_ds,151510000,151.51,arithmetic,A,official,no,no,NIN-nintendo_ds-2012-03-31,2012-03-31,,
-2012-03-31,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2012-03-31,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2012-03-31,playstation_2,160000000,160.00,official,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2012-03-31,playstation_3,62559727,62.56,interpolated,A,estimated,no,no,SIE-PS3-2011-03-29,2011-03-29,SIE-PS3-2012-11-04,2012-11-04
 2012-03-31,psp,76400000,76.40,official,A,official,yes,no,SIE-LT-psp,2012-03-31,,
@@ -1265,7 +1265,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2012-06-30,nintendo_3ds,20627945,20.63,interpolated,A,official,no,no,NIN-nintendo_3ds-2012-03-31,2012-03-31,NIN-nintendo_3ds-2013-03-31,2013-03-31
 2012-06-30,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2012-03-31,2012-03-31,NIN-nintendo_64-2013-03-31,2013-03-31
 2012-06-30,nintendo_ds,152095890,152.10,interpolated,A,official,no,no,NIN-nintendo_ds-2012-03-31,2012-03-31,NIN-nintendo_ds-2013-03-31,2013-03-31
-2012-06-30,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2012-06-30,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2012-06-30,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2012-06-30,playstation_3,65665529,65.67,interpolated,A,estimated,no,no,SIE-PS3-2011-03-29,2011-03-29,SIE-PS3-2012-11-04,2012-11-04
 2012-06-30,psp,76400000,76.40,held,A,official,yes,no,SIE-LT-psp,2012-03-31,,
@@ -1286,7 +1286,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2012-09-30,nintendo_3ds,24144110,24.14,interpolated,A,official,no,no,NIN-nintendo_3ds-2012-03-31,2012-03-31,NIN-nintendo_3ds-2013-03-31,2013-03-31
 2012-09-30,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2012-03-31,2012-03-31,NIN-nintendo_64-2013-03-31,2013-03-31
 2012-09-30,nintendo_ds,152688219,152.69,interpolated,A,official,no,no,NIN-nintendo_ds-2012-03-31,2012-03-31,NIN-nintendo_ds-2013-03-31,2013-03-31
-2012-09-30,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2012-09-30,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2012-09-30,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2012-09-30,playstation_3,68805461,68.81,interpolated,A,estimated,no,no,SIE-PS3-2011-03-29,2011-03-29,SIE-PS3-2012-11-04,2012-11-04
 2012-09-30,psp,76400000,76.40,held,A,official,yes,no,SIE-LT-psp,2012-03-31,,
@@ -1307,7 +1307,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2012-12-31,nintendo_3ds,27660274,27.66,interpolated,A,official,no,no,NIN-nintendo_3ds-2012-03-31,2012-03-31,NIN-nintendo_3ds-2013-03-31,2013-03-31
 2012-12-31,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2012-03-31,2012-03-31,NIN-nintendo_64-2013-03-31,2013-03-31
 2012-12-31,nintendo_ds,153280548,153.28,interpolated,A,official,no,no,NIN-nintendo_ds-2012-03-31,2012-03-31,NIN-nintendo_ds-2013-03-31,2013-03-31
-2012-12-31,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2012-12-31,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2012-12-31,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2012-12-31,playstation_3,71570248,71.57,interpolated,A,official,no,no,SIE-PS3-2012-11-04,2012-11-04,SIE-PS3-2013-11-02,2013-11-02
 2012-12-31,psp,76400000,76.40,held,A,official,yes,no,SIE-LT-psp,2012-03-31,,
@@ -1329,7 +1329,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2013-03-31,nintendo_3ds,31100000,31.10,arithmetic,A,official,no,no,NIN-nintendo_3ds-2013-03-31,2013-03-31,,
 2013-03-31,nintendo_64,32930000,32.93,arithmetic,A,official,no,no,NIN-nintendo_64-2013-03-31,2013-03-31,,
 2013-03-31,nintendo_ds,153860000,153.86,arithmetic,A,official,no,no,NIN-nintendo_ds-2013-03-31,2013-03-31,,
-2013-03-31,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2013-03-31,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2013-03-31,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2013-03-31,playstation_3,74049587,74.05,interpolated,A,official,no,no,SIE-PS3-2012-11-04,2012-11-04,SIE-PS3-2013-11-02,2013-11-02
 2013-03-31,psp,76400000,76.40,held,A,official,yes,no,SIE-LT-psp,2012-03-31,,
@@ -1351,7 +1351,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2013-06-30,nintendo_3ds,34151616,34.15,interpolated,A,official,no,no,NIN-nintendo_3ds-2013-03-31,2013-03-31,NIN-nintendo_3ds-2014-03-31,2014-03-31
 2013-06-30,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2013-03-31,2013-03-31,NIN-nintendo_64-2014-03-31,2014-03-31
 2013-06-30,nintendo_ds,153892411,153.89,interpolated,A,official,no,no,NIN-nintendo_ds-2013-03-31,2013-03-31,NIN-nintendo_ds-2014-03-31,2014-03-31
-2013-06-30,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2013-06-30,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2013-06-30,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2013-06-30,playstation_3,76556474,76.56,interpolated,A,official,no,no,SIE-PS3-2012-11-04,2012-11-04,SIE-PS3-2013-11-02,2013-11-02
 2013-06-30,psp,76400000,76.40,held,A,official,yes,no,SIE-LT-psp,2012-03-31,,
@@ -1373,7 +1373,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2013-09-30,nintendo_3ds,37236767,37.24,interpolated,A,official,no,no,NIN-nintendo_3ds-2013-03-31,2013-03-31,NIN-nintendo_3ds-2014-03-31,2014-03-31
 2013-09-30,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2013-03-31,2013-03-31,NIN-nintendo_64-2014-03-31,2014-03-31
 2013-09-30,nintendo_ds,153925178,153.93,interpolated,A,official,no,no,NIN-nintendo_ds-2013-03-31,2013-03-31,NIN-nintendo_ds-2014-03-31,2014-03-31
-2013-09-30,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2013-09-30,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2013-09-30,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2013-09-30,playstation_3,79090909,79.09,interpolated,A,official,no,no,SIE-PS3-2012-11-04,2012-11-04,SIE-PS3-2013-11-02,2013-11-02
 2013-09-30,psp,76400000,76.40,held,A,official,yes,no,SIE-LT-psp,2012-03-31,,
@@ -1395,7 +1395,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2013-12-31,nintendo_3ds,40321918,40.32,interpolated,A,official,no,no,NIN-nintendo_3ds-2013-03-31,2013-03-31,NIN-nintendo_3ds-2014-03-31,2014-03-31
 2013-12-31,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2013-03-31,2013-03-31,NIN-nintendo_64-2014-03-31,2014-03-31
 2013-12-31,nintendo_ds,153957945,153.96,interpolated,A,official,no,no,NIN-nintendo_ds-2013-03-31,2013-03-31,NIN-nintendo_ds-2014-03-31,2014-03-31
-2013-12-31,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2013-12-31,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2013-12-31,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2013-12-31,playstation_3,80350683,80.35,interpolated,A,estimated,no,no,SIE-PS3-2013-11-02,2013-11-02,SIE-LT-playstation_3,2017-03-31
 2013-12-31,playstation_4,4500000,4.50,arithmetic,A,official,no,no,SONY-QSUM-playstation_4-2013-12-31,2013-12-31,,
@@ -1419,7 +1419,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2014-03-31,nintendo_3ds,43340000,43.34,arithmetic,A,official,no,no,NIN-nintendo_3ds-2014-03-31,2014-03-31,,
 2014-03-31,nintendo_64,32930000,32.93,arithmetic,A,official,no,no,NIN-nintendo_64-2014-03-31,2014-03-31,,
 2014-03-31,nintendo_ds,153990000,153.99,arithmetic,A,official,no,no,NIN-nintendo_ds-2014-03-31,2014-03-31,,
-2014-03-31,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2014-03-31,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2014-03-31,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2014-03-31,playstation_3,80885622,80.89,interpolated,A,estimated,no,no,SIE-PS3-2013-11-02,2013-11-02,SIE-LT-playstation_3,2017-03-31
 2014-03-31,playstation_4,7600000,7.60,arithmetic,A,official,no,no,SONY-QSUM-playstation_4-2014-03-31,2014-03-31,,
@@ -1443,7 +1443,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2014-06-30,nintendo_3ds,45516521,45.52,interpolated,A,official,no,no,NIN-nintendo_3ds-2014-03-31,2014-03-31,NIN-nintendo_3ds-2015-03-31,2015-03-31
 2014-06-30,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2014-03-31,2014-03-31,NIN-nintendo_64-2026-03-31,2026-03-31
 2014-06-30,nintendo_ds,153994986,153.99,interpolated,A,official,no,no,NIN-nintendo_ds-2014-03-31,2014-03-31,NIN-nintendo_ds-2015-03-31,2015-03-31
-2014-06-30,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2014-06-30,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2014-06-30,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2014-06-30,playstation_3,81426506,81.43,interpolated,A,estimated,no,no,SIE-PS3-2013-11-02,2013-11-02,SIE-LT-playstation_3,2017-03-31
 2014-06-30,playstation_4,10400000,10.40,arithmetic,A,official,no,no,SONY-QSUM-playstation_4-2014-06-30,2014-06-30,,
@@ -1454,7 +1454,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2014-06-30,wii_u,7002685,7.00,interpolated,A,official,no,no,NIN-wii_u-2014-03-31,2014-03-31,NIN-wii_u-2015-03-31,2015-03-31
 2014-06-30,xbox,24000000,24.00,held,A,official,yes,no,MS-XBOX-2006-05-09,2006-05-09,,
 2014-06-30,xbox_360,84000000,84.00,held,A,official,yes,no,MS-X360-2014-06-09,2014-06-09,,
-2014-06-30,xbox_one,7261928,7.26,interpolated,D,analyst_estimate,no,yes,MS-XB1-CUM-2014-03-31,2014-03-31,OMDIA-XB1-2016-12-31,2016-12-31
+2014-06-30,xbox_one,6905263,6.91,interpolated,B,official,no,no,MS-XB1-CUM-2014-03-31,2014-03-31,MS-XB1-2014-12-03,2014-12-03
 2014-09-30,atari_2600,25000000,25.00,held,B,estimated,yes,no,ATARI-2600-1988-06-01,1988-06-01,,
 2014-09-30,dreamcast,8200000,8.20,held,A,official,no,no,SEGA-DC-2001-03-31,2001-03-31,,
 2014-09-30,game_boy,118690000,118.69,held,A,official,no,no,NIN-game_boy-2014-03-31,2014-03-31,NIN-game_boy-2026-03-31,2026-03-31
@@ -1467,7 +1467,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2014-09-30,nintendo_3ds,47716959,47.72,interpolated,A,official,no,no,NIN-nintendo_3ds-2014-03-31,2014-03-31,NIN-nintendo_3ds-2015-03-31,2015-03-31
 2014-09-30,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2014-03-31,2014-03-31,NIN-nintendo_64-2026-03-31,2026-03-31
 2014-09-30,nintendo_ds,154000027,154.00,interpolated,A,official,no,no,NIN-nintendo_ds-2014-03-31,2014-03-31,NIN-nintendo_ds-2015-03-31,2015-03-31
-2014-09-30,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2014-09-30,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2014-09-30,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2014-09-30,playstation_3,81973333,81.97,interpolated,A,estimated,no,no,SIE-PS3-2013-11-02,2013-11-02,SIE-LT-playstation_3,2017-03-31
 2014-09-30,playstation_4,13800000,13.80,arithmetic,A,official,no,no,SONY-QSUM-playstation_4-2014-09-30,2014-09-30,,
@@ -1478,7 +1478,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2014-09-30,wii_u,7854630,7.85,interpolated,A,official,no,no,NIN-wii_u-2014-03-31,2014-03-31,NIN-wii_u-2015-03-31,2015-03-31
 2014-09-30,xbox,24000000,24.00,held,A,official,yes,no,MS-XBOX-2006-05-09,2006-05-09,,
 2014-09-30,xbox_360,84000000,84.00,held,A,official,yes,no,MS-X360-2014-06-09,2014-06-09,,
-2014-09-30,xbox_one,9447614,9.45,interpolated,D,analyst_estimate,no,yes,MS-XB1-CUM-2014-03-31,2014-03-31,OMDIA-XB1-2016-12-31,2016-12-31
+2014-09-30,xbox_one,8730364,8.73,interpolated,B,official,no,no,MS-XB1-CUM-2014-03-31,2014-03-31,MS-XB1-2014-12-03,2014-12-03
 2014-12-31,atari_2600,25000000,25.00,held,B,estimated,yes,no,ATARI-2600-1988-06-01,1988-06-01,,
 2014-12-31,dreamcast,8200000,8.20,held,A,official,no,no,SEGA-DC-2001-03-31,2001-03-31,,
 2014-12-31,game_boy,118690000,118.69,held,A,official,no,no,NIN-game_boy-2014-03-31,2014-03-31,NIN-game_boy-2026-03-31,2026-03-31
@@ -1491,7 +1491,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2014-12-31,nintendo_3ds,49917397,49.92,interpolated,A,official,no,no,NIN-nintendo_3ds-2014-03-31,2014-03-31,NIN-nintendo_3ds-2015-03-31,2015-03-31
 2014-12-31,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2014-03-31,2014-03-31,NIN-nintendo_64-2026-03-31,2026-03-31
 2014-12-31,nintendo_ds,154005068,154.01,interpolated,A,official,no,no,NIN-nintendo_ds-2014-03-31,2014-03-31,NIN-nintendo_ds-2015-03-31,2015-03-31
-2014-12-31,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2014-12-31,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2014-12-31,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2014-12-31,playstation_3,82520161,82.52,interpolated,A,estimated,no,no,SIE-PS3-2013-11-02,2013-11-02,SIE-LT-playstation_3,2017-03-31
 2014-12-31,playstation_4,20200000,20.20,arithmetic,A,official,no,no,SONY-QSUM-playstation_4-2014-12-31,2014-12-31,,
@@ -1502,7 +1502,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2014-12-31,wii_u,8706575,8.71,interpolated,A,official,no,no,NIN-wii_u-2014-03-31,2014-03-31,NIN-wii_u-2015-03-31,2015-03-31
 2014-12-31,xbox,24000000,24.00,held,A,official,yes,no,MS-XBOX-2006-05-09,2006-05-09,,
 2014-12-31,xbox_360,84000000,84.00,held,A,official,yes,no,MS-X360-2014-06-09,2014-06-09,,
-2014-12-31,xbox_one,11633300,11.63,interpolated,D,analyst_estimate,no,yes,MS-XB1-CUM-2014-03-31,2014-03-31,OMDIA-XB1-2016-12-31,2016-12-31
+2014-12-31,xbox_one,10700922,10.70,interpolated,D,analyst_estimate,no,no,MS-XB1-2014-12-03,2014-12-03,OMDIA-XB1-2016-12-31,2016-12-31
 2015-03-31,atari_2600,25000000,25.00,held,B,estimated,yes,no,ATARI-2600-1988-06-01,1988-06-01,,
 2015-03-31,dreamcast,8200000,8.20,held,A,official,no,no,SEGA-DC-2001-03-31,2001-03-31,,
 2015-03-31,game_boy,118690000,118.69,held,A,official,no,no,NIN-game_boy-2014-03-31,2014-03-31,NIN-game_boy-2026-03-31,2026-03-31
@@ -1515,7 +1515,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2015-03-31,nintendo_3ds,52070000,52.07,arithmetic,A,official,no,no,NIN-nintendo_3ds-2015-03-31,2015-03-31,,
 2015-03-31,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2014-03-31,2014-03-31,NIN-nintendo_64-2026-03-31,2026-03-31
 2015-03-31,nintendo_ds,154010000,154.01,arithmetic,A,official,no,no,NIN-nintendo_ds-2015-03-31,2015-03-31,,
-2015-03-31,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2015-03-31,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2015-03-31,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2015-03-31,playstation_3,83055100,83.06,interpolated,A,estimated,no,no,SIE-PS3-2013-11-02,2013-11-02,SIE-LT-playstation_3,2017-03-31
 2015-03-31,playstation_4,22500000,22.50,arithmetic,A,official,no,no,SONY-QSUM-playstation_4-2015-03-31,2015-03-31,,
@@ -1526,7 +1526,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2015-03-31,wii_u,9540000,9.54,arithmetic,A,official,no,no,NIN-wii_u-2015-03-31,2015-03-31,,
 2015-03-31,xbox,24000000,24.00,held,A,official,yes,no,MS-XBOX-2006-05-09,2006-05-09,,
 2015-03-31,xbox_360,84000000,84.00,held,A,official,yes,no,MS-X360-2014-06-09,2014-06-09,,
-2015-03-31,xbox_one,13771471,13.77,interpolated,D,analyst_estimate,no,yes,MS-XB1-CUM-2014-03-31,2014-03-31,OMDIA-XB1-2016-12-31,2016-12-31
+2015-03-31,xbox_one,12953887,12.95,interpolated,D,analyst_estimate,no,no,MS-XB1-2014-12-03,2014-12-03,OMDIA-XB1-2016-12-31,2016-12-31
 2015-06-30,atari_2600,25000000,25.00,held,B,estimated,yes,no,ATARI-2600-1988-06-01,1988-06-01,,
 2015-06-30,dreamcast,8200000,8.20,held,A,official,no,no,SEGA-DC-2001-03-31,2001-03-31,,
 2015-06-30,game_boy,118690000,118.69,held,A,official,no,no,NIN-game_boy-2014-03-31,2014-03-31,NIN-game_boy-2026-03-31,2026-03-31
@@ -1539,7 +1539,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2015-06-30,nintendo_3ds,53758224,53.76,interpolated,A,official,no,no,NIN-nintendo_3ds-2015-03-31,2015-03-31,NIN-nintendo_3ds-2016-03-31,2016-03-31
 2015-06-30,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2014-03-31,2014-03-31,NIN-nintendo_64-2026-03-31,2026-03-31
 2015-06-30,nintendo_ds,154012486,154.01,interpolated,A,official,no,no,NIN-nintendo_ds-2015-03-31,2015-03-31,NIN-nintendo_ds-2016-03-31,2016-03-31
-2015-06-30,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2015-06-30,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2015-06-30,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2015-06-30,playstation_3,83595984,83.60,interpolated,A,estimated,no,no,SIE-PS3-2013-11-02,2013-11-02,SIE-LT-playstation_3,2017-03-31
 2015-06-30,playstation_4,25400000,25.40,arithmetic,A,official,no,no,SONY-QSUM-playstation_4-2015-06-30,2015-06-30,,
@@ -1550,7 +1550,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2015-06-30,wii_u,10350546,10.35,interpolated,A,official,no,no,NIN-wii_u-2015-03-31,2015-03-31,NIN-wii_u-2016-03-31,2016-03-31
 2015-06-30,xbox,24000000,24.00,held,A,official,yes,no,MS-XBOX-2006-05-09,2006-05-09,,
 2015-06-30,xbox_360,84000000,84.00,held,A,official,yes,no,MS-X360-2014-06-09,2014-06-09,,
-2015-06-30,xbox_one,15933400,15.93,interpolated,D,analyst_estimate,no,yes,MS-XB1-CUM-2014-03-31,2014-03-31,OMDIA-XB1-2016-12-31,2016-12-31
+2015-06-30,xbox_one,15231884,15.23,interpolated,D,analyst_estimate,no,no,MS-XB1-2014-12-03,2014-12-03,OMDIA-XB1-2016-12-31,2016-12-31
 2015-09-30,atari_2600,25000000,25.00,held,B,estimated,yes,no,ATARI-2600-1988-06-01,1988-06-01,,
 2015-09-30,dreamcast,8200000,8.20,held,A,official,no,no,SEGA-DC-2001-03-31,2001-03-31,,
 2015-09-30,game_boy,118690000,118.69,held,A,official,no,no,NIN-game_boy-2014-03-31,2014-03-31,NIN-game_boy-2026-03-31,2026-03-31
@@ -1563,7 +1563,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2015-09-30,nintendo_3ds,55465000,55.47,interpolated,A,official,no,no,NIN-nintendo_3ds-2015-03-31,2015-03-31,NIN-nintendo_3ds-2016-03-31,2016-03-31
 2015-09-30,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2014-03-31,2014-03-31,NIN-nintendo_64-2026-03-31,2026-03-31
 2015-09-30,nintendo_ds,154015000,154.01,interpolated,A,official,no,no,NIN-nintendo_ds-2015-03-31,2015-03-31,NIN-nintendo_ds-2016-03-31,2016-03-31
-2015-09-30,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2015-09-30,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2015-09-30,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2015-09-30,playstation_3,84142811,84.14,interpolated,A,estimated,no,no,SIE-PS3-2013-11-02,2013-11-02,SIE-LT-playstation_3,2017-03-31
 2015-09-30,playstation_4,29400000,29.40,arithmetic,A,official,no,no,SONY-QSUM-playstation_4-2015-09-30,2015-09-30,,
@@ -1574,7 +1574,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2015-09-30,wii_u,11170000,11.17,interpolated,A,official,no,no,NIN-wii_u-2015-03-31,2015-03-31,NIN-wii_u-2016-03-31,2016-03-31
 2015-09-30,xbox,24000000,24.00,held,A,official,yes,no,MS-XBOX-2006-05-09,2006-05-09,,
 2015-09-30,xbox_360,84000000,84.00,held,A,official,yes,no,MS-X360-2014-06-09,2014-06-09,,
-2015-09-30,xbox_one,18119085,18.12,interpolated,D,analyst_estimate,no,yes,MS-XB1-CUM-2014-03-31,2014-03-31,OMDIA-XB1-2016-12-31,2016-12-31
+2015-09-30,xbox_one,17534914,17.53,interpolated,D,analyst_estimate,no,no,MS-XB1-2014-12-03,2014-12-03,OMDIA-XB1-2016-12-31,2016-12-31
 2015-12-31,atari_2600,25000000,25.00,held,B,estimated,yes,no,ATARI-2600-1988-06-01,1988-06-01,,
 2015-12-31,dreamcast,8200000,8.20,held,A,official,no,no,SEGA-DC-2001-03-31,2001-03-31,,
 2015-12-31,game_boy,118690000,118.69,held,A,official,no,no,NIN-game_boy-2014-03-31,2014-03-31,NIN-game_boy-2026-03-31,2026-03-31
@@ -1587,7 +1587,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2015-12-31,nintendo_3ds,57171776,57.17,interpolated,A,official,no,no,NIN-nintendo_3ds-2015-03-31,2015-03-31,NIN-nintendo_3ds-2016-03-31,2016-03-31
 2015-12-31,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2014-03-31,2014-03-31,NIN-nintendo_64-2026-03-31,2026-03-31
 2015-12-31,nintendo_ds,154017514,154.02,interpolated,A,official,no,no,NIN-nintendo_ds-2015-03-31,2015-03-31,NIN-nintendo_ds-2016-03-31,2016-03-31
-2015-12-31,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2015-12-31,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2015-12-31,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2015-12-31,playstation_3,84689639,84.69,interpolated,A,estimated,no,no,SIE-PS3-2013-11-02,2013-11-02,SIE-LT-playstation_3,2017-03-31
 2015-12-31,playstation_4,37800000,37.80,arithmetic,A,official,no,no,SONY-QSUM-playstation_4-2015-12-31,2015-12-31,,
@@ -1598,7 +1598,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2015-12-31,wii_u,11989454,11.99,interpolated,A,official,no,no,NIN-wii_u-2015-03-31,2015-03-31,NIN-wii_u-2016-03-31,2016-03-31
 2015-12-31,xbox,24000000,24.00,held,A,official,yes,no,MS-XBOX-2006-05-09,2006-05-09,,
 2015-12-31,xbox_360,84000000,84.00,held,A,official,yes,no,MS-X360-2014-06-09,2014-06-09,,
-2015-12-31,xbox_one,20304771,20.30,interpolated,D,analyst_estimate,no,yes,MS-XB1-CUM-2014-03-31,2014-03-31,OMDIA-XB1-2016-12-31,2016-12-31
+2015-12-31,xbox_one,19837945,19.84,interpolated,D,analyst_estimate,no,no,MS-XB1-2014-12-03,2014-12-03,OMDIA-XB1-2016-12-31,2016-12-31
 2016-03-31,atari_2600,25000000,25.00,held,B,estimated,yes,no,ATARI-2600-1988-06-01,1988-06-01,,
 2016-03-31,dreamcast,8200000,8.20,held,A,official,no,no,SEGA-DC-2001-03-31,2001-03-31,,
 2016-03-31,game_boy,118690000,118.69,held,A,official,no,no,NIN-game_boy-2014-03-31,2014-03-31,NIN-game_boy-2026-03-31,2026-03-31
@@ -1611,7 +1611,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2016-03-31,nintendo_3ds,58860000,58.86,arithmetic,A,official,no,no,NIN-nintendo_3ds-2016-03-31,2016-03-31,,
 2016-03-31,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2014-03-31,2014-03-31,NIN-nintendo_64-2026-03-31,2026-03-31
 2016-03-31,nintendo_ds,154020000,154.02,arithmetic,A,official,no,no,NIN-nintendo_ds-2016-03-31,2016-03-31,,
-2016-03-31,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2016-03-31,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2016-03-31,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2016-03-31,playstation_3,85230522,85.23,interpolated,A,estimated,no,no,SIE-PS3-2013-11-02,2013-11-02,SIE-LT-playstation_3,2017-03-31
 2016-03-31,playstation_4,40200000,40.20,arithmetic,A,official,no,no,SONY-QSUM-playstation_4-2016-03-31,2016-03-31,,
@@ -1622,7 +1622,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2016-03-31,wii_u,12800000,12.80,arithmetic,A,official,no,no,NIN-wii_u-2016-03-31,2016-03-31,,
 2016-03-31,xbox,24000000,24.00,held,A,official,yes,no,MS-XBOX-2006-05-09,2006-05-09,,
 2016-03-31,xbox_360,84000000,84.00,held,A,official,yes,no,MS-X360-2014-06-09,2014-06-09,,
-2016-03-31,xbox_one,22466700,22.47,interpolated,D,analyst_estimate,no,yes,MS-XB1-CUM-2014-03-31,2014-03-31,OMDIA-XB1-2016-12-31,2016-12-31
+2016-03-31,xbox_one,22115942,22.12,interpolated,D,analyst_estimate,no,no,MS-XB1-2014-12-03,2014-12-03,OMDIA-XB1-2016-12-31,2016-12-31
 2016-06-30,atari_2600,25000000,25.00,held,B,estimated,yes,no,ATARI-2600-1988-06-01,1988-06-01,,
 2016-06-30,dreamcast,8200000,8.20,held,A,official,no,no,SEGA-DC-2001-03-31,2001-03-31,,
 2016-06-30,game_boy,118690000,118.69,held,A,official,no,no,NIN-game_boy-2014-03-31,2014-03-31,NIN-game_boy-2026-03-31,2026-03-31
@@ -1635,7 +1635,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2016-06-30,nintendo_3ds,60672521,60.67,interpolated,A,official,no,no,NIN-nintendo_3ds-2016-03-31,2016-03-31,NIN-nintendo_3ds-2017-03-31,2017-03-31
 2016-06-30,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2014-03-31,2014-03-31,NIN-nintendo_64-2026-03-31,2026-03-31
 2016-06-30,nintendo_ds,154020000,154.02,held,A,official,no,no,NIN-nintendo_ds-2016-03-31,2016-03-31,NIN-nintendo_ds-2017-03-31,2017-03-31
-2016-06-30,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2016-06-30,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2016-06-30,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2016-06-30,playstation_3,85771406,85.77,interpolated,A,estimated,no,no,SIE-PS3-2013-11-02,2013-11-02,SIE-LT-playstation_3,2017-03-31
 2016-06-30,playstation_4,43700000,43.70,arithmetic,A,official,no,no,SONY-QSUM-playstation_4-2016-06-30,2016-06-30,,
@@ -1646,7 +1646,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2016-06-30,wii_u,12989479,12.99,interpolated,A,official,no,no,NIN-wii_u-2016-03-31,2016-03-31,NIN-wii_u-2017-03-31,2017-03-31
 2016-06-30,xbox,24000000,24.00,held,A,official,yes,no,MS-XBOX-2006-05-09,2006-05-09,,
 2016-06-30,xbox_360,84000000,84.00,held,A,official,yes,no,MS-X360-2014-06-09,2014-06-09,,
-2016-06-30,xbox_one,24628628,24.63,interpolated,D,analyst_estimate,no,yes,MS-XB1-CUM-2014-03-31,2014-03-31,OMDIA-XB1-2016-12-31,2016-12-31
+2016-06-30,xbox_one,24393939,24.39,interpolated,D,analyst_estimate,no,no,MS-XB1-2014-12-03,2014-12-03,OMDIA-XB1-2016-12-31,2016-12-31
 2016-09-30,atari_2600,25000000,25.00,held,B,estimated,yes,no,ATARI-2600-1988-06-01,1988-06-01,,
 2016-09-30,dreamcast,8200000,8.20,held,A,official,no,no,SEGA-DC-2001-03-31,2001-03-31,,
 2016-09-30,game_boy,118690000,118.69,held,A,official,no,no,NIN-game_boy-2014-03-31,2014-03-31,NIN-game_boy-2026-03-31,2026-03-31
@@ -1659,7 +1659,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2016-09-30,nintendo_3ds,62504959,62.50,interpolated,A,official,no,no,NIN-nintendo_3ds-2016-03-31,2016-03-31,NIN-nintendo_3ds-2017-03-31,2017-03-31
 2016-09-30,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2014-03-31,2014-03-31,NIN-nintendo_64-2026-03-31,2026-03-31
 2016-09-30,nintendo_ds,154020000,154.02,held,A,official,no,no,NIN-nintendo_ds-2016-03-31,2016-03-31,NIN-nintendo_ds-2017-03-31,2017-03-31
-2016-09-30,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2016-09-30,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2016-09-30,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2016-09-30,playstation_3,86318233,86.32,interpolated,A,estimated,no,no,SIE-PS3-2013-11-02,2013-11-02,SIE-LT-playstation_3,2017-03-31
 2016-09-30,playstation_4,47600000,47.60,arithmetic,A,official,no,no,SONY-QSUM-playstation_4-2016-09-30,2016-09-30,,
@@ -1670,7 +1670,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2016-09-30,wii_u,13181041,13.18,interpolated,A,official,no,no,NIN-wii_u-2016-03-31,2016-03-31,NIN-wii_u-2017-03-31,2017-03-31
 2016-09-30,xbox,24000000,24.00,held,A,official,yes,no,MS-XBOX-2006-05-09,2006-05-09,,
 2016-09-30,xbox_360,84000000,84.00,held,A,official,yes,no,MS-X360-2014-06-09,2014-06-09,,
-2016-09-30,xbox_one,26814314,26.81,interpolated,D,analyst_estimate,no,yes,MS-XB1-CUM-2014-03-31,2014-03-31,OMDIA-XB1-2016-12-31,2016-12-31
+2016-09-30,xbox_one,26696970,26.70,interpolated,D,analyst_estimate,no,no,MS-XB1-2014-12-03,2014-12-03,OMDIA-XB1-2016-12-31,2016-12-31
 2016-12-31,atari_2600,25000000,25.00,held,B,estimated,yes,no,ATARI-2600-1988-06-01,1988-06-01,,
 2016-12-31,dreamcast,8200000,8.20,held,A,official,no,no,SEGA-DC-2001-03-31,2001-03-31,,
 2016-12-31,game_boy,118690000,118.69,held,A,official,no,no,NIN-game_boy-2014-03-31,2014-03-31,NIN-game_boy-2026-03-31,2026-03-31
@@ -1683,7 +1683,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2016-12-31,nintendo_3ds,64337397,64.34,interpolated,A,official,no,no,NIN-nintendo_3ds-2016-03-31,2016-03-31,NIN-nintendo_3ds-2017-03-31,2017-03-31
 2016-12-31,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2014-03-31,2014-03-31,NIN-nintendo_64-2026-03-31,2026-03-31
 2016-12-31,nintendo_ds,154020000,154.02,held,A,official,no,no,NIN-nintendo_ds-2016-03-31,2016-03-31,NIN-nintendo_ds-2017-03-31,2017-03-31
-2016-12-31,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2016-12-31,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2016-12-31,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2016-12-31,playstation_3,86865060,86.87,interpolated,A,estimated,no,no,SIE-PS3-2013-11-02,2013-11-02,SIE-LT-playstation_3,2017-03-31
 2016-12-31,playstation_4,57300000,57.30,arithmetic,A,official,no,no,SONY-QSUM-playstation_4-2016-12-31,2016-12-31,,
@@ -1694,7 +1694,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2016-12-31,wii_u,13372603,13.37,interpolated,A,official,no,no,NIN-wii_u-2016-03-31,2016-03-31,NIN-wii_u-2017-03-31,2017-03-31
 2016-12-31,xbox,24000000,24.00,held,A,official,yes,no,MS-XBOX-2006-05-09,2006-05-09,,
 2016-12-31,xbox_360,84000000,84.00,held,A,official,yes,no,MS-X360-2014-06-09,2014-06-09,,
-2016-12-31,xbox_one,29000000,29.00,estimate,D,analyst_estimate,no,yes,OMDIA-XB1-2016-12-31,2016-12-31,,
+2016-12-31,xbox_one,29000000,29.00,estimate,D,analyst_estimate,no,no,OMDIA-XB1-2016-12-31,2016-12-31,,
 2017-03-31,atari_2600,25000000,25.00,held,B,estimated,yes,no,ATARI-2600-1988-06-01,1988-06-01,,
 2017-03-31,dreamcast,8200000,8.20,held,A,official,no,no,SEGA-DC-2001-03-31,2001-03-31,,
 2017-03-31,game_boy,118690000,118.69,held,A,official,no,no,NIN-game_boy-2014-03-31,2014-03-31,NIN-game_boy-2026-03-31,2026-03-31
@@ -1708,7 +1708,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2017-03-31,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2014-03-31,2014-03-31,NIN-nintendo_64-2026-03-31,2026-03-31
 2017-03-31,nintendo_ds,154020000,154.02,arithmetic,A,official,no,no,NIN-nintendo_ds-2017-03-31,2017-03-31,,
 2017-03-31,nintendo_switch,2730000,2.73,arithmetic,A,official,no,no,NIN-nintendo_switch-2017-03-31,2017-03-31,,
-2017-03-31,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2017-03-31,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2017-03-31,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2017-03-31,playstation_3,87400000,87.40,official,A,official,yes,no,SIE-LT-playstation_3,2017-03-31,,
 2017-03-31,playstation_4,60200000,60.20,arithmetic,A,official,no,no,SONY-QSUM-playstation_4-2017-03-31,2017-03-31,,
@@ -1719,7 +1719,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2017-03-31,wii_u,13560000,13.56,arithmetic,A,official,no,no,NIN-wii_u-2017-03-31,2017-03-31,,
 2017-03-31,xbox,24000000,24.00,held,A,official,yes,no,MS-XBOX-2006-05-09,2006-05-09,,
 2017-03-31,xbox_360,84000000,84.00,held,A,official,yes,no,MS-X360-2014-06-09,2014-06-09,,
-2017-03-31,xbox_one,31219178,31.22,interpolated,D,analyst_estimate,no,yes,OMDIA-XB1-2016-12-31,2016-12-31,OMDIA-XB1-2017-12-31,2017-12-31
+2017-03-31,xbox_one,31219178,31.22,interpolated,D,analyst_estimate,no,no,OMDIA-XB1-2016-12-31,2016-12-31,OMDIA-XB1-2017-12-31,2017-12-31
 2017-06-30,atari_2600,25000000,25.00,held,B,estimated,yes,no,ATARI-2600-1988-06-01,1988-06-01,,
 2017-06-30,dreamcast,8200000,8.20,held,A,official,no,no,SEGA-DC-2001-03-31,2001-03-31,,
 2017-06-30,game_boy,118690000,118.69,held,A,official,no,no,NIN-game_boy-2014-03-31,2014-03-31,NIN-game_boy-2026-03-31,2026-03-31
@@ -1733,7 +1733,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2017-06-30,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2014-03-31,2014-03-31,NIN-nintendo_64-2026-03-31,2026-03-31
 2017-06-30,nintendo_ds,154020000,154.02,held,A,official,no,no,NIN-nintendo_ds-2017-03-31,2017-03-31,NIN-nintendo_ds-2018-03-31,2018-03-31
 2017-06-30,nintendo_switch,6482192,6.48,interpolated,A,official,no,no,NIN-nintendo_switch-2017-03-31,2017-03-31,NIN-nintendo_switch-2018-03-31,2018-03-31
-2017-06-30,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2017-06-30,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2017-06-30,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2017-06-30,playstation_3,87400000,87.40,held,A,official,yes,no,SIE-LT-playstation_3,2017-03-31,,
 2017-06-30,playstation_4,63500000,63.50,arithmetic,A,official,no,no,SONY-QSUM-playstation_4-2017-06-30,2017-06-30,,
@@ -1744,7 +1744,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2017-06-30,wii_u,13560000,13.56,held,A,official,no,no,NIN-wii_u-2017-03-31,2017-03-31,NIN-wii_u-2018-03-31,2018-03-31
 2017-06-30,xbox,24000000,24.00,held,A,official,yes,no,MS-XBOX-2006-05-09,2006-05-09,,
 2017-06-30,xbox_360,84000000,84.00,held,A,official,yes,no,MS-X360-2014-06-09,2014-06-09,,
-2017-06-30,xbox_one,33463014,33.46,interpolated,D,analyst_estimate,no,yes,OMDIA-XB1-2016-12-31,2016-12-31,OMDIA-XB1-2017-12-31,2017-12-31
+2017-06-30,xbox_one,33463014,33.46,interpolated,D,analyst_estimate,no,no,OMDIA-XB1-2016-12-31,2016-12-31,OMDIA-XB1-2017-12-31,2017-12-31
 2017-09-30,atari_2600,25000000,25.00,held,B,estimated,yes,no,ATARI-2600-1988-06-01,1988-06-01,,
 2017-09-30,dreamcast,8200000,8.20,held,A,official,no,no,SEGA-DC-2001-03-31,2001-03-31,,
 2017-09-30,game_boy,118690000,118.69,held,A,official,no,no,NIN-game_boy-2014-03-31,2014-03-31,NIN-game_boy-2026-03-31,2026-03-31
@@ -1758,7 +1758,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2017-09-30,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2014-03-31,2014-03-31,NIN-nintendo_64-2026-03-31,2026-03-31
 2017-09-30,nintendo_ds,154020000,154.02,held,A,official,no,no,NIN-nintendo_ds-2017-03-31,2017-03-31,NIN-nintendo_ds-2018-03-31,2018-03-31
 2017-09-30,nintendo_switch,10275616,10.28,interpolated,A,official,no,no,NIN-nintendo_switch-2017-03-31,2017-03-31,NIN-nintendo_switch-2018-03-31,2018-03-31
-2017-09-30,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2017-09-30,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2017-09-30,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2017-09-30,playstation_3,87400000,87.40,held,A,official,yes,no,SIE-LT-playstation_3,2017-03-31,,
 2017-09-30,playstation_4,67700000,67.70,arithmetic,A,official,no,no,SONY-QSUM-playstation_4-2017-09-30,2017-09-30,,
@@ -1769,7 +1769,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2017-09-30,wii_u,13560000,13.56,held,A,official,no,no,NIN-wii_u-2017-03-31,2017-03-31,NIN-wii_u-2018-03-31,2018-03-31
 2017-09-30,xbox,24000000,24.00,held,A,official,yes,no,MS-XBOX-2006-05-09,2006-05-09,,
 2017-09-30,xbox_360,84000000,84.00,held,A,official,yes,no,MS-X360-2014-06-09,2014-06-09,,
-2017-09-30,xbox_one,35731507,35.73,interpolated,D,analyst_estimate,no,yes,OMDIA-XB1-2016-12-31,2016-12-31,OMDIA-XB1-2017-12-31,2017-12-31
+2017-09-30,xbox_one,35731507,35.73,interpolated,D,analyst_estimate,no,no,OMDIA-XB1-2016-12-31,2016-12-31,OMDIA-XB1-2017-12-31,2017-12-31
 2017-12-31,atari_2600,25000000,25.00,held,B,estimated,yes,no,ATARI-2600-1988-06-01,1988-06-01,,
 2017-12-31,dreamcast,8200000,8.20,held,A,official,no,no,SEGA-DC-2001-03-31,2001-03-31,,
 2017-12-31,game_boy,118690000,118.69,held,A,official,no,no,NIN-game_boy-2014-03-31,2014-03-31,NIN-game_boy-2026-03-31,2026-03-31
@@ -1783,7 +1783,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2017-12-31,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2014-03-31,2014-03-31,NIN-nintendo_64-2026-03-31,2026-03-31
 2017-12-31,nintendo_ds,154020000,154.02,held,A,official,no,no,NIN-nintendo_ds-2017-03-31,2017-03-31,NIN-nintendo_ds-2018-03-31,2018-03-31
 2017-12-31,nintendo_switch,14069041,14.07,interpolated,A,official,no,no,NIN-nintendo_switch-2017-03-31,2017-03-31,NIN-nintendo_switch-2018-03-31,2018-03-31
-2017-12-31,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2017-12-31,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2017-12-31,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2017-12-31,playstation_3,87400000,87.40,held,A,official,yes,no,SIE-LT-playstation_3,2017-03-31,,
 2017-12-31,playstation_4,76700000,76.70,arithmetic,A,official,no,no,SONY-QSUM-playstation_4-2017-12-31,2017-12-31,,
@@ -1794,7 +1794,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2017-12-31,wii_u,13560000,13.56,held,A,official,no,no,NIN-wii_u-2017-03-31,2017-03-31,NIN-wii_u-2018-03-31,2018-03-31
 2017-12-31,xbox,24000000,24.00,held,A,official,yes,no,MS-XBOX-2006-05-09,2006-05-09,,
 2017-12-31,xbox_360,84000000,84.00,held,A,official,yes,no,MS-X360-2014-06-09,2014-06-09,,
-2017-12-31,xbox_one,38000000,38.00,estimate,D,analyst_estimate,no,yes,OMDIA-XB1-2017-12-31,2017-12-31,,
+2017-12-31,xbox_one,38000000,38.00,estimate,D,analyst_estimate,no,no,OMDIA-XB1-2017-12-31,2017-12-31,,
 2018-03-31,atari_2600,25000000,25.00,held,B,estimated,yes,no,ATARI-2600-1988-06-01,1988-06-01,,
 2018-03-31,dreamcast,8200000,8.20,held,A,official,no,no,SEGA-DC-2001-03-31,2001-03-31,,
 2018-03-31,game_boy,118690000,118.69,held,A,official,no,no,NIN-game_boy-2014-03-31,2014-03-31,NIN-game_boy-2026-03-31,2026-03-31
@@ -1808,7 +1808,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2018-03-31,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2014-03-31,2014-03-31,NIN-nintendo_64-2026-03-31,2026-03-31
 2018-03-31,nintendo_ds,154020000,154.02,arithmetic,A,official,no,no,NIN-nintendo_ds-2018-03-31,2018-03-31,,
 2018-03-31,nintendo_switch,17780000,17.78,arithmetic,A,official,no,no,NIN-nintendo_switch-2018-03-31,2018-03-31,,
-2018-03-31,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2018-03-31,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2018-03-31,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2018-03-31,playstation_3,87400000,87.40,held,A,official,yes,no,SIE-LT-playstation_3,2017-03-31,,
 2018-03-31,playstation_4,79200000,79.20,arithmetic,A,official,no,no,SONY-QSUM-playstation_4-2018-03-31,2018-03-31,,
@@ -1833,7 +1833,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2018-06-30,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2014-03-31,2014-03-31,NIN-nintendo_64-2026-03-31,2026-03-31
 2018-06-30,nintendo_ds,154020000,154.02,held,A,official,no,no,NIN-nintendo_ds-2018-03-31,2018-03-31,NIN-nintendo_ds-2019-03-31,2019-03-31
 2018-06-30,nintendo_switch,22005890,22.01,interpolated,A,official,no,no,NIN-nintendo_switch-2018-03-31,2018-03-31,NIN-nintendo_switch-2019-03-31,2019-03-31
-2018-06-30,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2018-06-30,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2018-06-30,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2018-06-30,playstation_3,87400000,87.40,held,A,official,yes,no,SIE-LT-playstation_3,2017-03-31,,
 2018-06-30,playstation_4,82400000,82.40,arithmetic,A,official,no,no,SONY-QSUM-playstation_4-2018-06-30,2018-06-30,,
@@ -1844,7 +1844,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2018-06-30,wii_u,13560000,13.56,held,A,official,no,no,NIN-wii_u-2018-03-31,2018-03-31,NIN-wii_u-2019-03-31,2019-03-31
 2018-06-30,xbox,24000000,24.00,held,A,official,yes,no,MS-XBOX-2006-05-09,2006-05-09,,
 2018-06-30,xbox_360,84000000,84.00,held,A,official,yes,no,MS-X360-2014-06-09,2014-06-09,,
-2018-06-30,xbox_one,40656579,40.66,interpolated,D,analyst_estimate,no,yes,IHS-XB1-2018-03-31,2018-03-31,IDC-XB1-2019-06-30,2019-06-30
+2018-06-30,xbox_one,40656579,40.66,interpolated,D,analyst_estimate,no,no,IHS-XB1-2018-03-31,2018-03-31,IDC-XB1-2019-06-30,2019-06-30
 2018-09-30,atari_2600,25000000,25.00,held,B,estimated,yes,no,ATARI-2600-1988-06-01,1988-06-01,,
 2018-09-30,dreamcast,8200000,8.20,held,A,official,no,no,SEGA-DC-2001-03-31,2001-03-31,,
 2018-09-30,game_boy,118690000,118.69,held,A,official,no,no,NIN-game_boy-2014-03-31,2014-03-31,NIN-game_boy-2026-03-31,2026-03-31
@@ -1858,7 +1858,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2018-09-30,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2014-03-31,2014-03-31,NIN-nintendo_64-2026-03-31,2026-03-31
 2018-09-30,nintendo_ds,154020000,154.02,held,A,official,no,no,NIN-nintendo_ds-2018-03-31,2018-03-31,NIN-nintendo_ds-2019-03-31,2019-03-31
 2018-09-30,nintendo_switch,26278219,26.28,interpolated,A,official,no,no,NIN-nintendo_switch-2018-03-31,2018-03-31,NIN-nintendo_switch-2019-03-31,2019-03-31
-2018-09-30,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2018-09-30,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2018-09-30,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2018-09-30,playstation_3,87400000,87.40,held,A,official,yes,no,SIE-LT-playstation_3,2017-03-31,,
 2018-09-30,playstation_4,86300000,86.30,arithmetic,A,official,no,no,SONY-QSUM-playstation_4-2018-09-30,2018-09-30,,
@@ -1869,7 +1869,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2018-09-30,wii_u,13560000,13.56,held,A,official,no,no,NIN-wii_u-2018-03-31,2018-03-31,NIN-wii_u-2019-03-31,2019-03-31
 2018-09-30,xbox,24000000,24.00,held,A,official,yes,no,MS-XBOX-2006-05-09,2006-05-09,,
 2018-09-30,xbox_360,84000000,84.00,held,A,official,yes,no,MS-X360-2014-06-09,2014-06-09,,
-2018-09-30,xbox_one,42230263,42.23,interpolated,D,analyst_estimate,no,yes,IHS-XB1-2018-03-31,2018-03-31,IDC-XB1-2019-06-30,2019-06-30
+2018-09-30,xbox_one,42230263,42.23,interpolated,D,analyst_estimate,no,no,IHS-XB1-2018-03-31,2018-03-31,IDC-XB1-2019-06-30,2019-06-30
 2018-12-31,atari_2600,25000000,25.00,held,B,estimated,yes,no,ATARI-2600-1988-06-01,1988-06-01,,
 2018-12-31,dreamcast,8200000,8.20,held,A,official,no,no,SEGA-DC-2001-03-31,2001-03-31,,
 2018-12-31,game_boy,118690000,118.69,held,A,official,no,no,NIN-game_boy-2014-03-31,2014-03-31,NIN-game_boy-2026-03-31,2026-03-31
@@ -1883,7 +1883,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2018-12-31,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2014-03-31,2014-03-31,NIN-nintendo_64-2026-03-31,2026-03-31
 2018-12-31,nintendo_ds,154020000,154.02,held,A,official,no,no,NIN-nintendo_ds-2018-03-31,2018-03-31,NIN-nintendo_ds-2019-03-31,2019-03-31
 2018-12-31,nintendo_switch,30550548,30.55,interpolated,A,official,no,no,NIN-nintendo_switch-2018-03-31,2018-03-31,NIN-nintendo_switch-2019-03-31,2019-03-31
-2018-12-31,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2018-12-31,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2018-12-31,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2018-12-31,playstation_3,87400000,87.40,held,A,official,yes,no,SIE-LT-playstation_3,2017-03-31,,
 2018-12-31,playstation_4,94400000,94.40,arithmetic,A,official,no,no,SONY-QSUM-playstation_4-2018-12-31,2018-12-31,,
@@ -1894,7 +1894,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2018-12-31,wii_u,13560000,13.56,held,A,official,no,no,NIN-wii_u-2018-03-31,2018-03-31,NIN-wii_u-2019-03-31,2019-03-31
 2018-12-31,xbox,24000000,24.00,held,A,official,yes,no,MS-XBOX-2006-05-09,2006-05-09,,
 2018-12-31,xbox_360,84000000,84.00,held,A,official,yes,no,MS-X360-2014-06-09,2014-06-09,,
-2018-12-31,xbox_one,43803947,43.80,interpolated,D,analyst_estimate,no,yes,IHS-XB1-2018-03-31,2018-03-31,IDC-XB1-2019-06-30,2019-06-30
+2018-12-31,xbox_one,43803947,43.80,interpolated,D,analyst_estimate,no,no,IHS-XB1-2018-03-31,2018-03-31,IDC-XB1-2019-06-30,2019-06-30
 2019-03-31,atari_2600,25000000,25.00,held,B,estimated,yes,no,ATARI-2600-1988-06-01,1988-06-01,,
 2019-03-31,dreamcast,8200000,8.20,held,A,official,no,no,SEGA-DC-2001-03-31,2001-03-31,,
 2019-03-31,game_boy,118690000,118.69,held,A,official,no,no,NIN-game_boy-2014-03-31,2014-03-31,NIN-game_boy-2026-03-31,2026-03-31
@@ -1908,7 +1908,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2019-03-31,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2014-03-31,2014-03-31,NIN-nintendo_64-2026-03-31,2026-03-31
 2019-03-31,nintendo_ds,154020000,154.02,arithmetic,A,official,no,no,NIN-nintendo_ds-2019-03-31,2019-03-31,,
 2019-03-31,nintendo_switch,34730000,34.73,arithmetic,A,official,no,no,NIN-nintendo_switch-2019-03-31,2019-03-31,,
-2019-03-31,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2019-03-31,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2019-03-31,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2019-03-31,playstation_3,87400000,87.40,held,A,official,yes,no,SIE-LT-playstation_3,2017-03-31,,
 2019-03-31,playstation_4,97000000,97.00,arithmetic,A,official,no,no,SONY-QSUM-playstation_4-2019-03-31,2019-03-31,,
@@ -1919,7 +1919,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2019-03-31,wii_u,13560000,13.56,arithmetic,A,official,no,no,NIN-wii_u-2019-03-31,2019-03-31,,
 2019-03-31,xbox,24000000,24.00,held,A,official,yes,no,MS-XBOX-2006-05-09,2006-05-09,,
 2019-03-31,xbox_360,84000000,84.00,held,A,official,yes,no,MS-X360-2014-06-09,2014-06-09,,
-2019-03-31,xbox_one,45343421,45.34,interpolated,D,analyst_estimate,no,yes,IHS-XB1-2018-03-31,2018-03-31,IDC-XB1-2019-06-30,2019-06-30
+2019-03-31,xbox_one,45343421,45.34,interpolated,D,analyst_estimate,no,no,IHS-XB1-2018-03-31,2018-03-31,IDC-XB1-2019-06-30,2019-06-30
 2019-06-30,atari_2600,25000000,25.00,held,B,estimated,yes,no,ATARI-2600-1988-06-01,1988-06-01,,
 2019-06-30,dreamcast,8200000,8.20,held,A,official,no,no,SEGA-DC-2001-03-31,2001-03-31,,
 2019-06-30,game_boy,118690000,118.69,held,A,official,no,no,NIN-game_boy-2014-03-31,2014-03-31,NIN-game_boy-2026-03-31,2026-03-31
@@ -1933,7 +1933,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2019-06-30,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2014-03-31,2014-03-31,NIN-nintendo_64-2026-03-31,2026-03-31
 2019-06-30,nintendo_ds,154020000,154.02,held,A,official,no,no,NIN-nintendo_ds-2019-03-31,2019-03-31,NIN-nintendo_ds-2020-03-31,2020-03-31
 2019-06-30,nintendo_switch,39958770,39.96,interpolated,A,official,no,no,NIN-nintendo_switch-2019-03-31,2019-03-31,NIN-nintendo_switch-2020-03-31,2020-03-31
-2019-06-30,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2019-06-30,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2019-06-30,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2019-06-30,playstation_3,87400000,87.40,held,A,official,yes,no,SIE-LT-playstation_3,2017-03-31,,
 2019-06-30,playstation_4,100200000,100.20,arithmetic,A,official,no,no,SONY-QSUM-playstation_4-2019-06-30,2019-06-30,,
@@ -1944,7 +1944,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2019-06-30,wii_u,13560000,13.56,held,A,official,no,no,NIN-wii_u-2019-03-31,2019-03-31,NIN-wii_u-2020-03-31,2020-03-31
 2019-06-30,xbox,24000000,24.00,held,A,official,yes,no,MS-XBOX-2006-05-09,2006-05-09,,
 2019-06-30,xbox_360,84000000,84.00,held,A,official,yes,no,MS-X360-2014-06-09,2014-06-09,,
-2019-06-30,xbox_one,46900000,46.90,estimate,D,analyst_estimate,no,yes,IDC-XB1-2019-06-30,2019-06-30,,
+2019-06-30,xbox_one,46900000,46.90,estimate,D,analyst_estimate,no,no,IDC-XB1-2019-06-30,2019-06-30,,
 2019-09-30,atari_2600,25000000,25.00,held,B,estimated,yes,no,ATARI-2600-1988-06-01,1988-06-01,,
 2019-09-30,dreamcast,8200000,8.20,held,A,official,no,no,SEGA-DC-2001-03-31,2001-03-31,,
 2019-09-30,game_boy,118690000,118.69,held,A,official,no,no,NIN-game_boy-2014-03-31,2014-03-31,NIN-game_boy-2026-03-31,2026-03-31
@@ -1958,7 +1958,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2019-09-30,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2014-03-31,2014-03-31,NIN-nintendo_64-2026-03-31,2026-03-31
 2019-09-30,nintendo_ds,154020000,154.02,held,A,official,no,no,NIN-nintendo_ds-2019-03-31,2019-03-31,NIN-nintendo_ds-2020-03-31,2020-03-31
 2019-09-30,nintendo_switch,45245000,45.24,interpolated,A,official,no,no,NIN-nintendo_switch-2019-03-31,2019-03-31,NIN-nintendo_switch-2020-03-31,2020-03-31
-2019-09-30,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2019-09-30,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2019-09-30,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2019-09-30,playstation_3,87400000,87.40,held,A,official,yes,no,SIE-LT-playstation_3,2017-03-31,,
 2019-09-30,playstation_4,103000000,103.00,arithmetic,A,official,no,no,SONY-QSUM-playstation_4-2019-09-30,2019-09-30,,
@@ -1969,7 +1969,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2019-09-30,wii_u,13560000,13.56,held,A,official,no,no,NIN-wii_u-2019-03-31,2019-03-31,NIN-wii_u-2020-03-31,2020-03-31
 2019-09-30,xbox,24000000,24.00,held,A,official,yes,no,MS-XBOX-2006-05-09,2006-05-09,,
 2019-09-30,xbox_360,84000000,84.00,held,A,official,yes,no,MS-X360-2014-06-09,2014-06-09,,
-2019-09-30,xbox_one,47930601,47.93,interpolated,D,analyst_estimate,no,yes,IDC-XB1-2019-06-30,2019-06-30,AMPERE-XB1-2020-06-30,2020-06-30
+2019-09-30,xbox_one,47930601,47.93,interpolated,D,analyst_estimate,no,no,IDC-XB1-2019-06-30,2019-06-30,AMPERE-XB1-2020-06-30,2020-06-30
 2019-12-31,atari_2600,25000000,25.00,held,B,estimated,yes,no,ATARI-2600-1988-06-01,1988-06-01,,
 2019-12-31,dreamcast,8200000,8.20,held,A,official,no,no,SEGA-DC-2001-03-31,2001-03-31,,
 2019-12-31,game_boy,118690000,118.69,held,A,official,no,no,NIN-game_boy-2014-03-31,2014-03-31,NIN-game_boy-2026-03-31,2026-03-31
@@ -1983,7 +1983,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2019-12-31,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2014-03-31,2014-03-31,NIN-nintendo_64-2026-03-31,2026-03-31
 2019-12-31,nintendo_ds,154020000,154.02,held,A,official,no,no,NIN-nintendo_ds-2019-03-31,2019-03-31,NIN-nintendo_ds-2020-03-31,2020-03-31
 2019-12-31,nintendo_switch,50531230,50.53,interpolated,A,official,no,no,NIN-nintendo_switch-2019-03-31,2019-03-31,NIN-nintendo_switch-2020-03-31,2020-03-31
-2019-12-31,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2019-12-31,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2019-12-31,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2019-12-31,playstation_3,87400000,87.40,held,A,official,yes,no,SIE-LT-playstation_3,2017-03-31,,
 2019-12-31,playstation_4,109000000,109.00,arithmetic,A,official,no,no,SONY-QSUM-playstation_4-2019-12-31,2019-12-31,,
@@ -1994,7 +1994,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2019-12-31,wii_u,13560000,13.56,held,A,official,no,no,NIN-wii_u-2019-03-31,2019-03-31,NIN-wii_u-2020-03-31,2020-03-31
 2019-12-31,xbox,24000000,24.00,held,A,official,yes,no,MS-XBOX-2006-05-09,2006-05-09,,
 2019-12-31,xbox_360,84000000,84.00,held,A,official,yes,no,MS-X360-2014-06-09,2014-06-09,,
-2019-12-31,xbox_one,48961202,48.96,interpolated,D,analyst_estimate,no,yes,IDC-XB1-2019-06-30,2019-06-30,AMPERE-XB1-2020-06-30,2020-06-30
+2019-12-31,xbox_one,48961202,48.96,interpolated,D,analyst_estimate,no,no,IDC-XB1-2019-06-30,2019-06-30,AMPERE-XB1-2020-06-30,2020-06-30
 2020-03-31,atari_2600,25000000,25.00,held,B,estimated,yes,no,ATARI-2600-1988-06-01,1988-06-01,,
 2020-03-31,dreamcast,8200000,8.20,held,A,official,no,no,SEGA-DC-2001-03-31,2001-03-31,,
 2020-03-31,game_boy,118690000,118.69,held,A,official,no,no,NIN-game_boy-2014-03-31,2014-03-31,NIN-game_boy-2026-03-31,2026-03-31
@@ -2008,7 +2008,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2020-03-31,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2014-03-31,2014-03-31,NIN-nintendo_64-2026-03-31,2026-03-31
 2020-03-31,nintendo_ds,154020000,154.02,arithmetic,A,official,no,no,NIN-nintendo_ds-2020-03-31,2020-03-31,,
 2020-03-31,nintendo_switch,55760000,55.76,arithmetic,A,official,no,no,NIN-nintendo_switch-2020-03-31,2020-03-31,,
-2020-03-31,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2020-03-31,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2020-03-31,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2020-03-31,playstation_3,87400000,87.40,held,A,official,yes,no,SIE-LT-playstation_3,2017-03-31,,
 2020-03-31,playstation_4,110400000,110.40,arithmetic,A,official,no,no,SONY-QSUM-playstation_4-2020-03-31,2020-03-31,,
@@ -2019,7 +2019,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2020-03-31,wii_u,13560000,13.56,arithmetic,A,official,no,no,NIN-wii_u-2020-03-31,2020-03-31,,
 2020-03-31,xbox,24000000,24.00,held,A,official,yes,no,MS-XBOX-2006-05-09,2006-05-09,,
 2020-03-31,xbox_360,84000000,84.00,held,A,official,yes,no,MS-X360-2014-06-09,2014-06-09,,
-2020-03-31,xbox_one,49980601,49.98,interpolated,D,analyst_estimate,no,yes,IDC-XB1-2019-06-30,2019-06-30,AMPERE-XB1-2020-06-30,2020-06-30
+2020-03-31,xbox_one,49980601,49.98,interpolated,D,analyst_estimate,no,no,IDC-XB1-2019-06-30,2019-06-30,AMPERE-XB1-2020-06-30,2020-06-30
 2020-06-30,atari_2600,25000000,25.00,held,B,estimated,yes,no,ATARI-2600-1988-06-01,1988-06-01,,
 2020-06-30,dreamcast,8200000,8.20,held,A,official,no,no,SEGA-DC-2001-03-31,2001-03-31,,
 2020-06-30,game_boy,118690000,118.69,held,A,official,no,no,NIN-game_boy-2014-03-31,2014-03-31,NIN-game_boy-2026-03-31,2026-03-31
@@ -2033,7 +2033,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2020-06-30,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2014-03-31,2014-03-31,NIN-nintendo_64-2026-03-31,2026-03-31
 2020-06-30,nintendo_ds,154020000,154.02,held,A,official,no,no,NIN-nintendo_ds-2020-03-31,2020-03-31,NIN-nintendo_ds-2021-03-31,2021-03-31
 2020-06-30,nintendo_switch,62947753,62.95,interpolated,A,official,no,no,NIN-nintendo_switch-2020-03-31,2020-03-31,NIN-nintendo_switch-2021-03-31,2021-03-31
-2020-06-30,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2020-06-30,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2020-06-30,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2020-06-30,playstation_3,87400000,87.40,held,A,official,yes,no,SIE-LT-playstation_3,2017-03-31,,
 2020-06-30,playstation_4,112300000,112.30,arithmetic,A,official,no,no,SONY-QSUM-playstation_4-2020-06-30,2020-06-30,,
@@ -2058,7 +2058,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2020-09-30,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2014-03-31,2014-03-31,NIN-nintendo_64-2026-03-31,2026-03-31
 2020-09-30,nintendo_ds,154020000,154.02,held,A,official,no,no,NIN-nintendo_ds-2020-03-31,2020-03-31,NIN-nintendo_ds-2021-03-31,2021-03-31
 2020-09-30,nintendo_switch,70214493,70.21,interpolated,A,official,no,no,NIN-nintendo_switch-2020-03-31,2020-03-31,NIN-nintendo_switch-2021-03-31,2021-03-31
-2020-09-30,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2020-09-30,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2020-09-30,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2020-09-30,playstation_3,87400000,87.40,held,A,official,yes,no,SIE-LT-playstation_3,2017-03-31,,
 2020-09-30,playstation_4,113800000,113.80,arithmetic,A,official,no,no,SONY-QSUM-playstation_4-2020-09-30,2020-09-30,,
@@ -2083,7 +2083,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2020-12-31,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2014-03-31,2014-03-31,NIN-nintendo_64-2026-03-31,2026-03-31
 2020-12-31,nintendo_ds,154020000,154.02,held,A,official,no,no,NIN-nintendo_ds-2020-03-31,2020-03-31,NIN-nintendo_ds-2021-03-31,2021-03-31
 2020-12-31,nintendo_switch,77481233,77.48,interpolated,A,official,no,no,NIN-nintendo_switch-2020-03-31,2020-03-31,NIN-nintendo_switch-2021-03-31,2021-03-31
-2020-12-31,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2020-12-31,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2020-12-31,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2020-12-31,playstation_3,87400000,87.40,held,A,official,yes,no,SIE-LT-playstation_3,2017-03-31,,
 2020-12-31,playstation_4,115200000,115.20,arithmetic,A,official,no,no,SONY-QSUM-playstation_4-2020-12-31,2020-12-31,,
@@ -2110,7 +2110,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2021-03-31,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2014-03-31,2014-03-31,NIN-nintendo_64-2026-03-31,2026-03-31
 2021-03-31,nintendo_ds,154020000,154.02,arithmetic,A,official,no,no,NIN-nintendo_ds-2021-03-31,2021-03-31,,
 2021-03-31,nintendo_switch,84590000,84.59,arithmetic,A,official,no,no,NIN-nintendo_switch-2021-03-31,2021-03-31,,
-2021-03-31,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2021-03-31,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2021-03-31,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2021-03-31,playstation_3,87400000,87.40,held,A,official,yes,no,SIE-LT-playstation_3,2017-03-31,,
 2021-03-31,playstation_4,116200000,116.20,arithmetic,A,official,no,no,SONY-QSUM-playstation_4-2021-03-31,2021-03-31,,
@@ -2137,7 +2137,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2021-06-30,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2014-03-31,2014-03-31,NIN-nintendo_64-2026-03-31,2026-03-31
 2021-06-30,nintendo_ds,154020000,154.02,held,A,official,no,no,NIN-nintendo_ds-2021-03-31,2021-03-31,NIN-nintendo_ds-2022-03-31,2022-03-31
 2021-06-30,nintendo_switch,90339205,90.34,interpolated,A,official,no,no,NIN-nintendo_switch-2021-03-31,2021-03-31,NIN-nintendo_switch-2022-03-31,2022-03-31
-2021-06-30,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2021-06-30,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2021-06-30,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2021-06-30,playstation_3,87400000,87.40,held,A,official,yes,no,SIE-LT-playstation_3,2017-03-31,,
 2021-06-30,playstation_4,116700000,116.70,arithmetic,A,official,no,no,SONY-QSUM-playstation_4-2021-06-30,2021-06-30,,
@@ -2164,7 +2164,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2021-09-30,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2014-03-31,2014-03-31,NIN-nintendo_64-2026-03-31,2026-03-31
 2021-09-30,nintendo_ds,154020000,154.02,held,A,official,no,no,NIN-nintendo_ds-2021-03-31,2021-03-31,NIN-nintendo_ds-2022-03-31,2022-03-31
 2021-09-30,nintendo_switch,96151589,96.15,interpolated,A,official,no,no,NIN-nintendo_switch-2021-03-31,2021-03-31,NIN-nintendo_switch-2022-03-31,2022-03-31
-2021-09-30,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2021-09-30,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2021-09-30,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2021-09-30,playstation_3,87400000,87.40,held,A,official,yes,no,SIE-LT-playstation_3,2017-03-31,,
 2021-09-30,playstation_4,116900000,116.90,arithmetic,A,official,no,no,SONY-QSUM-playstation_4-2021-09-30,2021-09-30,,
@@ -2191,7 +2191,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2021-12-31,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2014-03-31,2014-03-31,NIN-nintendo_64-2026-03-31,2026-03-31
 2021-12-31,nintendo_ds,154020000,154.02,held,A,official,no,no,NIN-nintendo_ds-2021-03-31,2021-03-31,NIN-nintendo_ds-2022-03-31,2022-03-31
 2021-12-31,nintendo_switch,101963973,101.96,interpolated,A,official,no,no,NIN-nintendo_switch-2021-03-31,2021-03-31,NIN-nintendo_switch-2022-03-31,2022-03-31
-2021-12-31,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2021-12-31,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2021-12-31,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2021-12-31,playstation_3,87400000,87.40,held,A,official,yes,no,SIE-LT-playstation_3,2017-03-31,,
 2021-12-31,playstation_4,117100000,117.10,arithmetic,A,official,no,no,SONY-QSUM-playstation_4-2021-12-31,2021-12-31,,
@@ -2218,7 +2218,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2022-03-31,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2014-03-31,2014-03-31,NIN-nintendo_64-2026-03-31,2026-03-31
 2022-03-31,nintendo_ds,154020000,154.02,arithmetic,A,official,no,no,NIN-nintendo_ds-2022-03-31,2022-03-31,,
 2022-03-31,nintendo_switch,107650000,107.65,arithmetic,A,official,no,no,NIN-nintendo_switch-2022-03-31,2022-03-31,,
-2022-03-31,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2022-03-31,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2022-03-31,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2022-03-31,playstation_3,87400000,87.40,held,A,official,yes,no,SIE-LT-playstation_3,2017-03-31,,
 2022-03-31,playstation_4,117200000,117.20,arithmetic,A,official,no,no,SONY-QSUM-playstation_4-2022-03-31,2022-03-31,,
@@ -2245,7 +2245,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2022-06-30,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2014-03-31,2014-03-31,NIN-nintendo_64-2026-03-31,2026-03-31
 2022-06-30,nintendo_ds,154020000,154.02,held,A,official,no,no,NIN-nintendo_ds-2022-03-31,2022-03-31,NIN-nintendo_ds-2023-03-31,2023-03-31
 2022-06-30,nintendo_switch,112130192,112.13,interpolated,A,official,no,no,NIN-nintendo_switch-2022-03-31,2022-03-31,NIN-nintendo_switch-2023-03-31,2023-03-31
-2022-06-30,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2022-06-30,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2022-06-30,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2022-06-30,playstation_3,87400000,87.40,held,A,official,yes,no,SIE-LT-playstation_3,2017-03-31,,
 2022-06-30,playstation_4,117200000,117.20,held,A,official,no,no,SONY-QSUM-playstation_4-2022-03-31,2022-03-31,,
@@ -2272,7 +2272,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2022-09-30,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2014-03-31,2014-03-31,NIN-nintendo_64-2026-03-31,2026-03-31
 2022-09-30,nintendo_ds,154020000,154.02,held,A,official,no,no,NIN-nintendo_ds-2022-03-31,2022-03-31,NIN-nintendo_ds-2023-03-31,2023-03-31
 2022-09-30,nintendo_switch,116659616,116.66,interpolated,A,official,no,no,NIN-nintendo_switch-2022-03-31,2022-03-31,NIN-nintendo_switch-2023-03-31,2023-03-31
-2022-09-30,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2022-09-30,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2022-09-30,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2022-09-30,playstation_3,87400000,87.40,held,A,official,yes,no,SIE-LT-playstation_3,2017-03-31,,
 2022-09-30,playstation_4,117200000,117.20,held,A,official,no,no,SONY-QSUM-playstation_4-2022-03-31,2022-03-31,,
@@ -2299,7 +2299,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2022-12-31,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2014-03-31,2014-03-31,NIN-nintendo_64-2026-03-31,2026-03-31
 2022-12-31,nintendo_ds,154020000,154.02,held,A,official,no,no,NIN-nintendo_ds-2022-03-31,2022-03-31,NIN-nintendo_ds-2023-03-31,2023-03-31
 2022-12-31,nintendo_switch,121189041,121.19,interpolated,A,official,no,no,NIN-nintendo_switch-2022-03-31,2022-03-31,NIN-nintendo_switch-2023-03-31,2023-03-31
-2022-12-31,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2022-12-31,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2022-12-31,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2022-12-31,playstation_3,87400000,87.40,held,A,official,yes,no,SIE-LT-playstation_3,2017-03-31,,
 2022-12-31,playstation_4,117200000,117.20,held,A,official,no,no,SONY-QSUM-playstation_4-2022-03-31,2022-03-31,,
@@ -2326,7 +2326,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2023-03-31,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2014-03-31,2014-03-31,NIN-nintendo_64-2026-03-31,2026-03-31
 2023-03-31,nintendo_ds,154020000,154.02,arithmetic,A,official,no,no,NIN-nintendo_ds-2023-03-31,2023-03-31,,
 2023-03-31,nintendo_switch,125620000,125.62,arithmetic,A,official,no,no,NIN-nintendo_switch-2023-03-31,2023-03-31,,
-2023-03-31,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2023-03-31,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2023-03-31,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2023-03-31,playstation_3,87400000,87.40,held,A,official,yes,no,SIE-LT-playstation_3,2017-03-31,,
 2023-03-31,playstation_4,117200000,117.20,held,A,official,no,no,SONY-QSUM-playstation_4-2022-03-31,2022-03-31,,
@@ -2339,7 +2339,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2023-03-31,xbox,24000000,24.00,held,A,official,yes,no,MS-XBOX-2006-05-09,2006-05-09,,
 2023-03-31,xbox_360,84000000,84.00,held,A,official,yes,no,MS-X360-2014-06-09,2014-06-09,,
 2023-03-31,xbox_one,54000000,54.00,held,D,analyst_estimate,no,no,AMPERE-XB1-2021-08-27,2021-08-27,,
-2023-03-31,xbox_series,20595890,20.60,interpolated,D,analyst_estimate,no,yes,AMPERE-XSX-2022-12-31,2022-12-31,OMDIA-XSX-2023-12-31,2023-12-31
+2023-03-31,xbox_series,20595890,20.60,interpolated,D,analyst_estimate,no,no,AMPERE-XSX-2022-12-31,2022-12-31,OMDIA-XSX-2023-12-31,2023-12-31
 2023-06-30,atari_2600,25000000,25.00,held,B,estimated,yes,no,ATARI-2600-1988-06-01,1988-06-01,,
 2023-06-30,dreamcast,8200000,8.20,held,A,official,no,no,SEGA-DC-2001-03-31,2001-03-31,,
 2023-06-30,game_boy,118690000,118.69,held,A,official,no,no,NIN-game_boy-2014-03-31,2014-03-31,NIN-game_boy-2026-03-31,2026-03-31
@@ -2353,7 +2353,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2023-06-30,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2014-03-31,2014-03-31,NIN-nintendo_64-2026-03-31,2026-03-31
 2023-06-30,nintendo_ds,154020000,154.02,held,A,official,no,no,NIN-nintendo_ds-2023-03-31,2023-03-31,NIN-nintendo_ds-2026-03-31,2026-03-31
 2023-06-30,nintendo_switch,129523552,129.52,interpolated,A,official,no,no,NIN-nintendo_switch-2023-03-31,2023-03-31,NIN-nintendo_switch-2024-03-31,2024-03-31
-2023-06-30,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2023-06-30,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2023-06-30,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2023-06-30,playstation_3,87400000,87.40,held,A,official,yes,no,SIE-LT-playstation_3,2017-03-31,,
 2023-06-30,playstation_4,117200000,117.20,held,A,official,no,no,SONY-QSUM-playstation_4-2022-03-31,2022-03-31,,
@@ -2366,7 +2366,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2023-06-30,xbox,24000000,24.00,held,A,official,yes,no,MS-XBOX-2006-05-09,2006-05-09,,
 2023-06-30,xbox_360,84000000,84.00,held,A,official,yes,no,MS-X360-2014-06-09,2014-06-09,,
 2023-06-30,xbox_one,54000000,54.00,held,D,analyst_estimate,no,no,AMPERE-XB1-2021-08-27,2021-08-27,,
-2023-06-30,xbox_series,22715068,22.72,interpolated,D,analyst_estimate,no,yes,AMPERE-XSX-2022-12-31,2022-12-31,OMDIA-XSX-2023-12-31,2023-12-31
+2023-06-30,xbox_series,22715068,22.72,interpolated,D,analyst_estimate,no,no,AMPERE-XSX-2022-12-31,2022-12-31,OMDIA-XSX-2023-12-31,2023-12-31
 2023-09-30,atari_2600,25000000,25.00,held,B,estimated,yes,no,ATARI-2600-1988-06-01,1988-06-01,,
 2023-09-30,dreamcast,8200000,8.20,held,A,official,no,no,SEGA-DC-2001-03-31,2001-03-31,,
 2023-09-30,game_boy,118690000,118.69,held,A,official,no,no,NIN-game_boy-2014-03-31,2014-03-31,NIN-game_boy-2026-03-31,2026-03-31
@@ -2380,7 +2380,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2023-09-30,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2014-03-31,2014-03-31,NIN-nintendo_64-2026-03-31,2026-03-31
 2023-09-30,nintendo_ds,154020000,154.02,held,A,official,no,no,NIN-nintendo_ds-2023-03-31,2023-03-31,NIN-nintendo_ds-2026-03-31,2026-03-31
 2023-09-30,nintendo_switch,133470000,133.47,interpolated,A,official,no,no,NIN-nintendo_switch-2023-03-31,2023-03-31,NIN-nintendo_switch-2024-03-31,2024-03-31
-2023-09-30,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2023-09-30,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2023-09-30,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2023-09-30,playstation_3,87400000,87.40,held,A,official,yes,no,SIE-LT-playstation_3,2017-03-31,,
 2023-09-30,playstation_4,117200000,117.20,held,A,official,no,no,SONY-QSUM-playstation_4-2022-03-31,2022-03-31,,
@@ -2393,7 +2393,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2023-09-30,xbox,24000000,24.00,held,A,official,yes,no,MS-XBOX-2006-05-09,2006-05-09,,
 2023-09-30,xbox_360,84000000,84.00,held,A,official,yes,no,MS-X360-2014-06-09,2014-06-09,,
 2023-09-30,xbox_one,54000000,54.00,held,D,analyst_estimate,no,no,AMPERE-XB1-2021-08-27,2021-08-27,,
-2023-09-30,xbox_series,24857534,24.86,interpolated,D,analyst_estimate,no,yes,AMPERE-XSX-2022-12-31,2022-12-31,OMDIA-XSX-2023-12-31,2023-12-31
+2023-09-30,xbox_series,24857534,24.86,interpolated,D,analyst_estimate,no,no,AMPERE-XSX-2022-12-31,2022-12-31,OMDIA-XSX-2023-12-31,2023-12-31
 2023-12-31,atari_2600,25000000,25.00,held,B,estimated,yes,no,ATARI-2600-1988-06-01,1988-06-01,,
 2023-12-31,dreamcast,8200000,8.20,held,A,official,no,no,SEGA-DC-2001-03-31,2001-03-31,,
 2023-12-31,game_boy,118690000,118.69,held,A,official,no,no,NIN-game_boy-2014-03-31,2014-03-31,NIN-game_boy-2026-03-31,2026-03-31
@@ -2407,7 +2407,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2023-12-31,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2014-03-31,2014-03-31,NIN-nintendo_64-2026-03-31,2026-03-31
 2023-12-31,nintendo_ds,154020000,154.02,held,A,official,no,no,NIN-nintendo_ds-2023-03-31,2023-03-31,NIN-nintendo_ds-2026-03-31,2026-03-31
 2023-12-31,nintendo_switch,137416448,137.42,interpolated,A,official,no,no,NIN-nintendo_switch-2023-03-31,2023-03-31,NIN-nintendo_switch-2024-03-31,2024-03-31
-2023-12-31,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2023-12-31,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2023-12-31,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2023-12-31,playstation_3,87400000,87.40,held,A,official,yes,no,SIE-LT-playstation_3,2017-03-31,,
 2023-12-31,playstation_4,117200000,117.20,held,A,official,no,no,SONY-QSUM-playstation_4-2022-03-31,2022-03-31,,
@@ -2420,7 +2420,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2023-12-31,xbox,24000000,24.00,held,A,official,yes,no,MS-XBOX-2006-05-09,2006-05-09,,
 2023-12-31,xbox_360,84000000,84.00,held,A,official,yes,no,MS-X360-2014-06-09,2014-06-09,,
 2023-12-31,xbox_one,54000000,54.00,held,D,analyst_estimate,no,no,AMPERE-XB1-2021-08-27,2021-08-27,,
-2023-12-31,xbox_series,27000000,27.00,estimate,D,analyst_estimate,no,yes,OMDIA-XSX-2023-12-31,2023-12-31,,
+2023-12-31,xbox_series,27000000,27.00,estimate,D,analyst_estimate,no,no,OMDIA-XSX-2023-12-31,2023-12-31,,
 2024-03-31,atari_2600,25000000,25.00,held,B,estimated,yes,no,ATARI-2600-1988-06-01,1988-06-01,,
 2024-03-31,dreamcast,8200000,8.20,held,A,official,no,no,SEGA-DC-2001-03-31,2001-03-31,,
 2024-03-31,game_boy,118690000,118.69,held,A,official,no,no,NIN-game_boy-2014-03-31,2014-03-31,NIN-game_boy-2026-03-31,2026-03-31
@@ -2434,7 +2434,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2024-03-31,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2014-03-31,2014-03-31,NIN-nintendo_64-2026-03-31,2026-03-31
 2024-03-31,nintendo_ds,154020000,154.02,held,A,official,no,no,NIN-nintendo_ds-2023-03-31,2023-03-31,NIN-nintendo_ds-2026-03-31,2026-03-31
 2024-03-31,nintendo_switch,141320000,141.32,arithmetic,A,official,no,no,NIN-nintendo_switch-2024-03-31,2024-03-31,,
-2024-03-31,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2024-03-31,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2024-03-31,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2024-03-31,playstation_3,87400000,87.40,held,A,official,yes,no,SIE-LT-playstation_3,2017-03-31,,
 2024-03-31,playstation_4,117200000,117.20,held,A,official,no,no,SONY-QSUM-playstation_4-2022-03-31,2022-03-31,,
@@ -2447,7 +2447,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2024-03-31,xbox,24000000,24.00,held,A,official,yes,no,MS-XBOX-2006-05-09,2006-05-09,,
 2024-03-31,xbox_360,84000000,84.00,held,A,official,yes,no,MS-X360-2014-06-09,2014-06-09,,
 2024-03-31,xbox_one,54000000,54.00,held,D,analyst_estimate,no,no,AMPERE-XB1-2021-08-27,2021-08-27,,
-2024-03-31,xbox_series,27650000,27.65,interpolated,D,analyst_estimate,no,yes,OMDIA-XSX-2023-12-31,2023-12-31,ALDORA-XSX-2024-06,2024-06-30
+2024-03-31,xbox_series,27650000,27.65,interpolated,D,analyst_estimate,no,no,OMDIA-XSX-2023-12-31,2023-12-31,ALDORA-XSX-2024-06-30,2024-06-30
 2024-06-30,atari_2600,25000000,25.00,held,B,estimated,yes,no,ATARI-2600-1988-06-01,1988-06-01,,
 2024-06-30,dreamcast,8200000,8.20,held,A,official,no,no,SEGA-DC-2001-03-31,2001-03-31,,
 2024-06-30,game_boy,118690000,118.69,held,A,official,no,no,NIN-game_boy-2014-03-31,2014-03-31,NIN-game_boy-2026-03-31,2026-03-31
@@ -2461,7 +2461,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2024-06-30,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2014-03-31,2014-03-31,NIN-nintendo_64-2026-03-31,2026-03-31
 2024-06-30,nintendo_ds,154020000,154.02,held,A,official,no,no,NIN-nintendo_ds-2023-03-31,2023-03-31,NIN-nintendo_ds-2026-03-31,2026-03-31
 2024-06-30,nintendo_switch,144012603,144.01,interpolated,A,official,no,no,NIN-nintendo_switch-2024-03-31,2024-03-31,NIN-nintendo_switch-2025-03-31,2025-03-31
-2024-06-30,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2024-06-30,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2024-06-30,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2024-06-30,playstation_3,87400000,87.40,held,A,official,yes,no,SIE-LT-playstation_3,2017-03-31,,
 2024-06-30,playstation_4,117200000,117.20,held,A,official,no,no,SONY-QSUM-playstation_4-2022-03-31,2022-03-31,,
@@ -2474,7 +2474,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2024-06-30,xbox,24000000,24.00,held,A,official,yes,no,MS-XBOX-2006-05-09,2006-05-09,,
 2024-06-30,xbox_360,84000000,84.00,held,A,official,yes,no,MS-X360-2014-06-09,2014-06-09,,
 2024-06-30,xbox_one,54000000,54.00,held,D,analyst_estimate,no,no,AMPERE-XB1-2021-08-27,2021-08-27,,
-2024-06-30,xbox_series,28300000,28.30,estimate,D,analyst_estimate,no,yes,ALDORA-XSX-2024-06,2024-06-30,,
+2024-06-30,xbox_series,28300000,28.30,estimate,D,analyst_estimate,no,no,ALDORA-XSX-2024-06-30,2024-06-30,,
 2024-09-30,atari_2600,25000000,25.00,held,B,estimated,yes,no,ATARI-2600-1988-06-01,1988-06-01,,
 2024-09-30,dreamcast,8200000,8.20,held,A,official,no,no,SEGA-DC-2001-03-31,2001-03-31,,
 2024-09-30,game_boy,118690000,118.69,held,A,official,no,no,NIN-game_boy-2014-03-31,2014-03-31,NIN-game_boy-2026-03-31,2026-03-31
@@ -2488,7 +2488,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2024-09-30,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2014-03-31,2014-03-31,NIN-nintendo_64-2026-03-31,2026-03-31
 2024-09-30,nintendo_ds,154020000,154.02,held,A,official,no,no,NIN-nintendo_ds-2023-03-31,2023-03-31,NIN-nintendo_ds-2026-03-31,2026-03-31
 2024-09-30,nintendo_switch,146734795,146.73,interpolated,A,official,no,no,NIN-nintendo_switch-2024-03-31,2024-03-31,NIN-nintendo_switch-2025-03-31,2025-03-31
-2024-09-30,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2024-09-30,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2024-09-30,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2024-09-30,playstation_3,87400000,87.40,held,A,official,yes,no,SIE-LT-playstation_3,2017-03-31,,
 2024-09-30,playstation_4,117200000,117.20,held,A,official,no,no,SONY-QSUM-playstation_4-2022-03-31,2022-03-31,,
@@ -2501,7 +2501,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2024-09-30,xbox,24000000,24.00,held,A,official,yes,no,MS-XBOX-2006-05-09,2006-05-09,,
 2024-09-30,xbox_360,84000000,84.00,held,A,official,yes,no,MS-X360-2014-06-09,2014-06-09,,
 2024-09-30,xbox_one,54000000,54.00,held,D,analyst_estimate,no,no,AMPERE-XB1-2021-08-27,2021-08-27,,
-2024-09-30,xbox_series,28300000,28.30,held,D,analyst_estimate,no,yes,ALDORA-XSX-2024-06,2024-06-30,,
+2024-09-30,xbox_series,28300000,28.30,held,D,analyst_estimate,no,no,ALDORA-XSX-2024-06-30,2024-06-30,,
 2024-12-31,atari_2600,25000000,25.00,held,B,estimated,yes,no,ATARI-2600-1988-06-01,1988-06-01,,
 2024-12-31,dreamcast,8200000,8.20,held,A,official,no,no,SEGA-DC-2001-03-31,2001-03-31,,
 2024-12-31,game_boy,118690000,118.69,held,A,official,no,no,NIN-game_boy-2014-03-31,2014-03-31,NIN-game_boy-2026-03-31,2026-03-31
@@ -2515,7 +2515,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2024-12-31,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2014-03-31,2014-03-31,NIN-nintendo_64-2026-03-31,2026-03-31
 2024-12-31,nintendo_ds,154020000,154.02,held,A,official,no,no,NIN-nintendo_ds-2023-03-31,2023-03-31,NIN-nintendo_ds-2026-03-31,2026-03-31
 2024-12-31,nintendo_switch,149456986,149.46,interpolated,A,official,no,no,NIN-nintendo_switch-2024-03-31,2024-03-31,NIN-nintendo_switch-2025-03-31,2025-03-31
-2024-12-31,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2024-12-31,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2024-12-31,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2024-12-31,playstation_3,87400000,87.40,held,A,official,yes,no,SIE-LT-playstation_3,2017-03-31,,
 2024-12-31,playstation_4,117200000,117.20,held,A,official,no,no,SONY-QSUM-playstation_4-2022-03-31,2022-03-31,,
@@ -2528,7 +2528,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2024-12-31,xbox,24000000,24.00,held,A,official,yes,no,MS-XBOX-2006-05-09,2006-05-09,,
 2024-12-31,xbox_360,84000000,84.00,held,A,official,yes,no,MS-X360-2014-06-09,2014-06-09,,
 2024-12-31,xbox_one,54000000,54.00,held,D,analyst_estimate,no,no,AMPERE-XB1-2021-08-27,2021-08-27,,
-2024-12-31,xbox_series,28300000,28.30,held,D,analyst_estimate,no,yes,ALDORA-XSX-2024-06,2024-06-30,,
+2024-12-31,xbox_series,28300000,28.30,held,D,analyst_estimate,no,no,ALDORA-XSX-2024-06-30,2024-06-30,,
 2025-03-31,atari_2600,25000000,25.00,held,B,estimated,yes,no,ATARI-2600-1988-06-01,1988-06-01,,
 2025-03-31,dreamcast,8200000,8.20,held,A,official,no,no,SEGA-DC-2001-03-31,2001-03-31,,
 2025-03-31,game_boy,118690000,118.69,held,A,official,no,no,NIN-game_boy-2014-03-31,2014-03-31,NIN-game_boy-2026-03-31,2026-03-31
@@ -2542,7 +2542,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2025-03-31,nintendo_64,32930000,32.93,held,A,official,no,no,NIN-nintendo_64-2014-03-31,2014-03-31,NIN-nintendo_64-2026-03-31,2026-03-31
 2025-03-31,nintendo_ds,154020000,154.02,held,A,official,no,no,NIN-nintendo_ds-2023-03-31,2023-03-31,NIN-nintendo_ds-2026-03-31,2026-03-31
 2025-03-31,nintendo_switch,152120000,152.12,arithmetic,A,official,no,no,NIN-nintendo_switch-2025-03-31,2025-03-31,,
-2025-03-31,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2025-03-31,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2025-03-31,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2025-03-31,playstation_3,87400000,87.40,held,A,official,yes,no,SIE-LT-playstation_3,2017-03-31,,
 2025-03-31,playstation_4,117200000,117.20,held,A,official,no,no,SONY-QSUM-playstation_4-2022-03-31,2022-03-31,,
@@ -2555,7 +2555,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2025-03-31,xbox,24000000,24.00,held,A,official,yes,no,MS-XBOX-2006-05-09,2006-05-09,,
 2025-03-31,xbox_360,84000000,84.00,held,A,official,yes,no,MS-X360-2014-06-09,2014-06-09,,
 2025-03-31,xbox_one,54000000,54.00,held,D,analyst_estimate,no,no,AMPERE-XB1-2021-08-27,2021-08-27,,
-2025-03-31,xbox_series,28300000,28.30,held,D,analyst_estimate,no,yes,ALDORA-XSX-2024-06,2024-06-30,,
+2025-03-31,xbox_series,28300000,28.30,held,D,analyst_estimate,no,no,ALDORA-XSX-2024-06-30,2024-06-30,,
 2025-06-30,atari_2600,25000000,25.00,held,B,estimated,yes,no,ATARI-2600-1988-06-01,1988-06-01,,
 2025-06-30,dreamcast,8200000,8.20,held,A,official,no,no,SEGA-DC-2001-03-31,2001-03-31,,
 2025-06-30,game_boy,118690000,118.69,held,A,official,no,no,NIN-game_boy-2014-03-31,2014-03-31,NIN-game_boy-2026-03-31,2026-03-31
@@ -2570,7 +2570,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2025-06-30,nintendo_ds,154020000,154.02,held,A,official,no,no,NIN-nintendo_ds-2023-03-31,2023-03-31,NIN-nintendo_ds-2026-03-31,2026-03-31
 2025-06-30,nintendo_switch,153067397,153.07,interpolated,A,official,no,no,NIN-nintendo_switch-2025-03-31,2025-03-31,NIN-nintendo_switch-2026-03-31,2026-03-31
 2025-06-30,nintendo_switch_2,1660535,1.66,interpolated,A,official,no,no,LAUNCH-nintendo_switch_2,2025-06-05,NIN-nintendo_switch_2-2026-03-31,2026-03-31
-2025-06-30,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2025-06-30,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2025-06-30,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2025-06-30,playstation_3,87400000,87.40,held,A,official,yes,no,SIE-LT-playstation_3,2017-03-31,,
 2025-06-30,playstation_4,117200000,117.20,held,A,official,no,no,SONY-QSUM-playstation_4-2022-03-31,2022-03-31,,
@@ -2583,7 +2583,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2025-06-30,xbox,24000000,24.00,held,A,official,yes,no,MS-XBOX-2006-05-09,2006-05-09,,
 2025-06-30,xbox_360,84000000,84.00,held,A,official,yes,no,MS-X360-2014-06-09,2014-06-09,,
 2025-06-30,xbox_one,54000000,54.00,held,D,analyst_estimate,no,no,AMPERE-XB1-2021-08-27,2021-08-27,,
-2025-06-30,xbox_series,28300000,28.30,held,D,analyst_estimate,no,yes,ALDORA-XSX-2024-06,2024-06-30,,
+2025-06-30,xbox_series,28300000,28.30,held,D,analyst_estimate,no,no,ALDORA-XSX-2024-06-30,2024-06-30,,
 2025-09-30,atari_2600,25000000,25.00,held,B,estimated,yes,no,ATARI-2600-1988-06-01,1988-06-01,,
 2025-09-30,dreamcast,8200000,8.20,held,A,official,no,no,SEGA-DC-2001-03-31,2001-03-31,,
 2025-09-30,game_boy,118690000,118.69,held,A,official,no,no,NIN-game_boy-2014-03-31,2014-03-31,NIN-game_boy-2026-03-31,2026-03-31
@@ -2598,7 +2598,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2025-09-30,nintendo_ds,154020000,154.02,held,A,official,no,no,NIN-nintendo_ds-2023-03-31,2023-03-31,NIN-nintendo_ds-2026-03-31,2026-03-31
 2025-09-30,nintendo_switch,154025205,154.03,interpolated,A,official,no,no,NIN-nintendo_switch-2025-03-31,2025-03-31,NIN-nintendo_switch-2026-03-31,2026-03-31
 2025-09-30,nintendo_switch_2,7771304,7.77,interpolated,A,official,no,no,LAUNCH-nintendo_switch_2,2025-06-05,NIN-nintendo_switch_2-2026-03-31,2026-03-31
-2025-09-30,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2025-09-30,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2025-09-30,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2025-09-30,playstation_3,87400000,87.40,held,A,official,yes,no,SIE-LT-playstation_3,2017-03-31,,
 2025-09-30,playstation_4,117200000,117.20,held,A,official,no,no,SONY-QSUM-playstation_4-2022-03-31,2022-03-31,,
@@ -2611,7 +2611,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2025-09-30,xbox,24000000,24.00,held,A,official,yes,no,MS-XBOX-2006-05-09,2006-05-09,,
 2025-09-30,xbox_360,84000000,84.00,held,A,official,yes,no,MS-X360-2014-06-09,2014-06-09,,
 2025-09-30,xbox_one,54000000,54.00,held,D,analyst_estimate,no,no,AMPERE-XB1-2021-08-27,2021-08-27,,
-2025-09-30,xbox_series,28300000,28.30,held,D,analyst_estimate,no,yes,ALDORA-XSX-2024-06,2024-06-30,,
+2025-09-30,xbox_series,28300000,28.30,held,D,analyst_estimate,no,no,ALDORA-XSX-2024-06-30,2024-06-30,,
 2025-12-31,atari_2600,25000000,25.00,held,B,estimated,yes,no,ATARI-2600-1988-06-01,1988-06-01,,
 2025-12-31,dreamcast,8200000,8.20,held,A,official,no,no,SEGA-DC-2001-03-31,2001-03-31,,
 2025-12-31,game_boy,118690000,118.69,held,A,official,no,no,NIN-game_boy-2014-03-31,2014-03-31,NIN-game_boy-2026-03-31,2026-03-31
@@ -2626,7 +2626,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2025-12-31,nintendo_ds,154020000,154.02,held,A,official,no,no,NIN-nintendo_ds-2023-03-31,2023-03-31,NIN-nintendo_ds-2026-03-31,2026-03-31
 2025-12-31,nintendo_switch,154983014,154.98,interpolated,A,official,no,no,NIN-nintendo_switch-2025-03-31,2025-03-31,NIN-nintendo_switch-2026-03-31,2026-03-31
 2025-12-31,nintendo_switch_2,13882074,13.88,interpolated,A,official,no,no,LAUNCH-nintendo_switch_2,2025-06-05,NIN-nintendo_switch_2-2026-03-31,2026-03-31
-2025-12-31,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2025-12-31,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2025-12-31,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2025-12-31,playstation_3,87400000,87.40,held,A,official,yes,no,SIE-LT-playstation_3,2017-03-31,,
 2025-12-31,playstation_4,117200000,117.20,held,A,official,no,no,SONY-QSUM-playstation_4-2022-03-31,2022-03-31,,
@@ -2639,7 +2639,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2025-12-31,xbox,24000000,24.00,held,A,official,yes,no,MS-XBOX-2006-05-09,2006-05-09,,
 2025-12-31,xbox_360,84000000,84.00,held,A,official,yes,no,MS-X360-2014-06-09,2014-06-09,,
 2025-12-31,xbox_one,54000000,54.00,held,D,analyst_estimate,no,no,AMPERE-XB1-2021-08-27,2021-08-27,,
-2025-12-31,xbox_series,28300000,28.30,held,D,analyst_estimate,no,yes,ALDORA-XSX-2024-06,2024-06-30,,
+2025-12-31,xbox_series,28300000,28.30,held,D,analyst_estimate,no,no,ALDORA-XSX-2024-06-30,2024-06-30,,
 2026-03-31,atari_2600,25000000,25.00,held,B,estimated,yes,no,ATARI-2600-1988-06-01,1988-06-01,,
 2026-03-31,dreamcast,8200000,8.20,held,A,official,no,no,SEGA-DC-2001-03-31,2001-03-31,,
 2026-03-31,game_boy,118690000,118.69,official,A,official,no,no,NIN-game_boy-2026-03-31,2026-03-31,,
@@ -2654,7 +2654,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2026-03-31,nintendo_ds,154020000,154.02,official,A,official,no,no,NIN-nintendo_ds-2026-03-31,2026-03-31,,
 2026-03-31,nintendo_switch,155920000,155.92,arithmetic,A,official,no,no,NIN-nintendo_switch-2026-03-31,2026-03-31,,
 2026-03-31,nintendo_switch_2,19860000,19.86,arithmetic,A,official,no,no,NIN-nintendo_switch_2-2026-03-31,2026-03-31,,
-2026-03-31,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2026-03-31,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2026-03-31,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2026-03-31,playstation_3,87400000,87.40,held,A,official,yes,no,SIE-LT-playstation_3,2017-03-31,,
 2026-03-31,playstation_4,117200000,117.20,held,A,official,no,no,SONY-QSUM-playstation_4-2022-03-31,2022-03-31,,
@@ -2667,7 +2667,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2026-03-31,xbox,24000000,24.00,held,A,official,yes,no,MS-XBOX-2006-05-09,2006-05-09,,
 2026-03-31,xbox_360,84000000,84.00,held,A,official,yes,no,MS-X360-2014-06-09,2014-06-09,,
 2026-03-31,xbox_one,54000000,54.00,held,D,analyst_estimate,no,no,AMPERE-XB1-2021-08-27,2021-08-27,,
-2026-03-31,xbox_series,28300000,28.30,held,D,analyst_estimate,no,yes,ALDORA-XSX-2024-06,2024-06-30,,
+2026-03-31,xbox_series,28300000,28.30,held,D,analyst_estimate,no,no,ALDORA-XSX-2024-06-30,2024-06-30,,
 2026-06-30,atari_2600,25000000,25.00,held,B,estimated,yes,no,ATARI-2600-1988-06-01,1988-06-01,,
 2026-06-30,dreamcast,8200000,8.20,held,A,official,no,no,SEGA-DC-2001-03-31,2001-03-31,,
 2026-06-30,game_boy,118690000,118.69,official,A,official,no,no,NINHS-game_boy-2026-06-30,2026-06-30,,
@@ -2682,7 +2682,7 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2026-06-30,nintendo_ds,154020000,154.02,official,A,official,no,no,NINHS-nintendo_ds-2026-06-30,2026-06-30,,
 2026-06-30,nintendo_switch,156590000,156.59,official,A,official,no,no,NINHS-nintendo_switch-2026-06-30,2026-06-30,,
 2026-06-30,nintendo_switch_2,23680000,23.68,official,A,official,no,no,NINHS-nintendo_switch_2-2026-06-30,2026-06-30,,
-2026-06-30,playstation,102490000,102.49,held,A,official,no,yes,SCEI-PS-2005-03-31,2005-03-31,,
+2026-06-30,playstation,102490000,102.49,held,A,official,no,no,SCEI-PS-2005-03-31,2005-03-31,,
 2026-06-30,playstation_2,160000000,160.00,held,A,official,yes,no,SIE-LT-playstation_2,2012-03-31,,
 2026-06-30,playstation_3,87400000,87.40,held,A,official,yes,no,SIE-LT-playstation_3,2017-03-31,,
 2026-06-30,playstation_4,117200000,117.20,held,A,official,no,no,SONY-QSUM-playstation_4-2022-03-31,2022-03-31,,
@@ -2695,4 +2695,4 @@ quarter_end,console_id,units,millions,provenance,grade,display_style,plus_flag,u
 2026-06-30,xbox,24000000,24.00,held,A,official,yes,no,MS-XBOX-2006-05-09,2006-05-09,,
 2026-06-30,xbox_360,84000000,84.00,held,A,official,yes,no,MS-X360-2014-06-09,2014-06-09,,
 2026-06-30,xbox_one,54000000,54.00,held,D,analyst_estimate,no,no,AMPERE-XB1-2021-08-27,2021-08-27,,
-2026-06-30,xbox_series,28300000,28.30,held,D,analyst_estimate,no,yes,ALDORA-XSX-2024-06,2024-06-30,,
+2026-06-30,xbox_series,28300000,28.30,held,D,analyst_estimate,no,no,ALDORA-XSX-2024-06-30,2024-06-30,,

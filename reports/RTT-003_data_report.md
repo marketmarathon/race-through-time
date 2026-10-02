@@ -7,25 +7,25 @@ Key: **official** = the bar rests only on manufacturer figures; **estimated** = 
 ## Summary for Luke
 
 - **What was built:** a quarter-by-quarter race of 28 consoles from 31 March 1985 to 30 June 2026 (166 quarter ends), in units shipped. Each point says whether it is an official figure, a calculation from official figures, a straight line between two dated figures, a press or analyst estimate, or held flat after the last figure.
-- **How it was checked:** 452 figures are recorded. 416 were confirmed at source on 1 Oct 2026: 175 checked by hand, and 241 transcribed by script from Nintendo's and Sony's own investor data. 36 could not be opened (UNVERIFIED); the bars rest on 7 of them. The scripted checks all pass. The one small dip (Super NES, 10,000 units in early 1997) is within Nintendo's rounding and is listed below, not hidden.
+- **How it was checked:** 454 figures are recorded. 426 are confirmed at source: 185 checked by hand (1 Oct 2026, plus 10 checked by Claude in Luke's Chrome on 2 Oct 2026), and 241 transcribed by script from Nintendo's and Sony's own investor data. 27 could not be opened (UNVERIFIED), and one has no primary source (NOT FOUND). **No bar rests on an unverified figure.** The scripted checks all pass. The one small dip (Super NES, 10,000 units in early 1997) is within Nintendo's rounding and is listed below, not hidden.
 - **The crown (best-selling console ever):** Atari 2600 at the start (estimated) → **NES** at the end of 1988 (estimated) → **Game Boy** at the end of 1997 (official) → **PlayStation 2** from mid-2007 (estimated; the switch falls in a 17-month gap between two Sony figures) to today. At 30 Jun 2026 PS2 has more than 160 million and Switch 156.59 million, so **Switch is second and has not taken the crown** (DEC-087).
 - **Weakest parts:** 1985–1993 (Atari 2600, NES before 1992, Master System) and Xbox One / Xbox Series X|S (analyst estimates only). All of these carry the estimated or analyst-estimate label. 37 of the 78 top-ten overtakes and two of the three crown changes rest on estimated or analyst figures.
-- **Blocked sources:** 7 figures the bars rest on could not be opened from this environment (old Sony data pages, Omdia's chart image, IDC via CNBC, Aldora via the Wall Street Journal). They are marked UNVERIFIED and listed below for a check in your Chrome.
+- **Blocked sources, now checked (2 Oct 2026):** the 7 figures the bars rested on were checked by Claude in Luke's Chrome: PlayStation 101.73m and 102.49m (old Sony data page, Wayback capture of 23 Mar 2009), Omdia 29m, 38m and 27m (the chart image itself), IDC 46.9m (CNBC's archived video description) and Aldora 28.3m (WSJ graphic; as-of date from GamingBolt).
 
 ## Notes on particular consoles
 
-- **Atari 2600 (DEC-089):** launch (c. Sept 1977, exact day unknown) = 0 → "over 20 million by 1986" (Wikipedia citing The Guardian, 6 Mar 1986, dated to that article, grade D) → Atari's own "more than 25 million systems have been sold to date" (press release, 1 June 1988; no region stated, grade B) → held at 25 million+ after that. Atari's undated "nearly 30 million" is recorded but not placed (no date; page blocked). The whole bar is flagged as estimated. At the start (31 Mar 1985) it reads 17.79 million: a straight line from 0 in 1977 to 20 million in 1986. Atari's sales were front-loaded (1980–82), so this probably understates 1985. **Fade:** no Atari end date was reached (Wikipedia says production ended in 1992, a secondary source), so under DEC-086 rule 2 it fades after mid-1988, when its last figure stops growing.
-- **Master System (DEC-089):** launch (Sega Mark III, 20 Oct 1985) = 0 → 3.5 million+ (31 Mar 1992) → 6.2 million+ (31 Mar 1993), both from Weekly Famitsu's table of manufacturers' shipment figures. **No region is printed for it** (it may be overseas only), so these are lower bounds. Held at 6.2 million+ after 1993. Unchecked regional press leads from the research (US about 1.5m by end-1989; Europe over 3m by end-1991; their hosts are blocked here) suggest the true worldwide total was higher. Sega's "about 19 million" (Mark III + Master System including licensed Brazilian sales) is undated and its page is blocked. The whole bar is estimated.
+- **Atari 2600 (DEC-089):** launch (c. Sept 1977, exact day unknown) = 0 → "over 20 million by 1986" (Wikipedia citing The Guardian, 6 Mar 1986, dated to that article, grade D) → Atari's own "more than 25 million systems have been sold to date" (press release, 1 June 1988; no region stated, grade B) → held at 25 million+ after that. Atari's undated "nearly 30 million" is recorded but not placed (no date; page blocked). The whole bar is flagged as estimated. At the start (31 Mar 1985) it reads 17.79 million: a straight line from 0 in 1977 to 20 million in 1986. Atari's sales were front-loaded (1980–82), so this probably understates 1985. **Fade (DEC-093):** from the quarter ending 31 Dec 1991. Atari decided to discontinue the 2600 and 7800 "as of Christmas 1991" (The 2600 Connection, issue 9, Mar/Apr 1992, p.2, citing Atari marketing VP Dana Plotkin; repeated in AtariUser, July 1992, p.22). That is specialist press citing Atari, grade C. Accepted as a labelled estimate by Luke (DEC-096).
+- **Master System (DEC-089):** launch (Sega Mark III, 20 Oct 1985) = 0 → 3.5 million+ (31 Mar 1992) → 6.2 million+ (31 Mar 1993), both from Weekly Famitsu's table of manufacturers' shipment figures. **No region is printed for it** (it may be overseas only), so these are lower bounds. Held at 6.2 million+ after 1993. Unchecked regional press leads from the research (US about 1.5m by end-1989; Europe over 3m by end-1991; their hosts are blocked here) suggest the true worldwide total was higher. Sega's "about 19 million" (Mark III + Master System including licensed Brazilian sales) is undated and its page is blocked. The whole bar is estimated; accepted by Luke (DEC-096).
 - **NES before 1992:** Japan + US annual sales from the Harvard Business School case "Power Play (A)" (1995), Tables B and C, added up year by year (grade D). Europe and other markets are missing, so these are lower bounds ("+"). From March 1992 the bar uses Famitsu's Japan + overseas totals (about 8.9 million of the overseas total is outside America). The bar therefore rises steeply in 1991 partly because Europe enters the count. The 1985 figures cannot be checked against the "2.5 million Famicoms by January 1985" claim (its sources are blocked); the case table gives 3.5 million by end-1984.
 - **Nintendo March year ends:** rebuilt as life-to-date minus later fiscal years. They match the independent older figures within rounding: NES 61.57m (end-1996, company report) vs 61.58m (Mar 1997, rebuilt); SNES 45.24m vs 45.23m; Game Boy 53.65m (end-1996) vs 54.05m (Mar 1997). Nintendo Online Magazine's Game Boy series equals the Famitsu sums at 1992, 1993 and 1996, but its March 1997 figure (54.75m) is 0.70m above the rebuilt 54.05m (listed as a disagreement).
-- **Sony:** PlayStation, PS2, PSP and PS3 use Sony's own dated milestones (press releases and Sony's company timeline on sonyinteractive.com). PS4 and PS5 use Sony's quarterly sell-in table. PlayStation's final 102.49 million (production shipments, March 2005) comes from Sony's old data page, which is blocked here. Sony's current page says "more than 102.4 million" (sell-in). The bar holds 102.49 million and does not show the change of basis as a fall.
+- **Sony:** PlayStation, PS2, PSP and PS3 use Sony's own dated milestones (press releases and Sony's company timeline on sonyinteractive.com). PS4 and PS5 use Sony's quarterly sell-in table. PlayStation's final 102.49 million (production shipments, March 2005) comes from Sony's old data page, checked in Luke's Chrome on the Wayback capture of 23 Mar 2009. Sony's current page says "more than 102.4 million" (sell-in). The bar holds 102.49 million and does not show the change of basis as a fall.
 - **Xbox (original) and Xbox 360:** Microsoft figures. Xbox 360 sums Microsoft's fiscal-year shipments to June 2013, then uses its "80 million" (Oct 2013) and "more than 84 million" (Jun 2014) and holds. After that, Microsoft reported Xbox 360 and Xbox One only combined.
-- **Xbox One (DEC-084, DEC-088):** Microsoft's 3.9m (Dec 2013) and 5.1m (Mar 2014). Then analysts: Omdia 29m (end-2016) and 38m (end-2017), IHS Markit 39.1m (Mar 2018), IDC 46.9m (mid-2019), Ampere 51m (Jun 2020) and Ampere 54m (Aug 2021, latest). **The "10 million (Microsoft, Dec 2014)" in the candidate path is a forecast** ("Shortly, we will have sold in to retailers more than 10 million Xbox One consoles", Xbox Wire, 12 Nov 2014), so it is not used.
-- **Xbox Series X|S (DEC-084, DEC-088):** Ampere 2.8m+ (end-2020), 5.32m (Jun 2021), 10.5m (end-2021), 13.8m (Jun 2022), 18.5m (end-2022); Omdia 27m (end-2023); Aldora 28.3m (Jun 2024). It is held at 28.3m after that and marked held. Omdia's 33m (end-2024) and 36m (end-2025) are forecasts and are not used. Ampere publishes no cumulative Series figure after 2022.
+- **Xbox One (DEC-084, DEC-095):** Microsoft's 3.9m (Dec 2013), 5.1m (Mar 2014) and **10 million (3 Dec 2014, Satya Nadella at the annual shareholder meeting: "the Xbox One hitting 10 million units sold")**. Then analysts: Omdia 29m (end-2016) and 38m (end-2017), IHS Markit 39.1m (Mar 2018), IDC 46.9m (mid-2019), Ampere 51m (Jun 2020) and Ampere 54m (Aug 2021, latest). The Xbox Wire post of 12 Nov 2014 ("Shortly, we will have sold in to retailers more than 10 million…") stays excluded as a forecast.
+- **Xbox Series X|S (DEC-084, DEC-095):** Ampere 2.8m+ (end-2020), 5.32m (Jun 2021), 10.5m (end-2021), 13.8m (Jun 2022), 18.5m (end-2022); Omdia 27m (end-2023); Aldora 28.3m (Jun 2024). It is held at 28.3m after that and marked held. Omdia's 33m (end-2024) and 36m (end-2025) are forecasts and are not used. The same Omdia chart shows 33m for 2024, but it was published on 13 Dec 2024 and may include a forecast for the rest of the year, so it is recorded and not used. Ampere publishes no cumulative Series figure after 2022. The "more than 21 million" Microsoft figure of June 2023 comes from a photographed slide at a Microsoft presentation in Brazil (BIG Festival). No court document or Microsoft-published primary source was found and it has no as-of date, so it is NOT FOUND (primary) and not used.
 - **Dreamcast:** Sega's 2001 report prints 8.20 million cumulative, although its earlier figures add up to 8.94 million. The printed 8.20 million is used and the conflict is listed.
 - **Saturn:** Famitsu (Japan 0.84m, Mar 1995; Japan + overseas 3.40m, Mar 1996) → Sega of America "more than seven million" (13 Jan 1997) → Sega's 8.8 million (31 Mar 1998), held. No later Sega figure was found (the often-quoted 9.26 million was not found in Sega's reports).
 - **Mega Drive / Game Gear:** Beep! MegaDrive (Jan 1994) sales by fiscal year for 1989–1991, then Famitsu 1992–1996. They are held at 28.54 million and 10.62 million from March 1996, because no later Sega figure was found. Both probably sold more afterwards (licensed manufacture), so they are understated.
-- **Left out:** PC Engine / TurboGrafx-16 (best evidence: Japan 3.92m (Famitsu, Mar 1995) plus an unchecked lead of about 0.75m in the US in 1991) and PS Vita (Sony never disclosed; last figure 1.2 million+ in Feb 2012). No sourced figure reaches 8 million for either. Both are listed as questions.
+- **Left out:** PC Engine / TurboGrafx-16 (best evidence: Japan 3.92m (Famitsu, Mar 1995) plus an unchecked lead of about 0.75m in the US in 1991) and PS Vita (Sony never disclosed; last figure 1.2 million+ in Feb 2012). No sourced figure reaches 8 million for either. Both stay out (DEC-098).
 
 ## Checks
 
@@ -38,7 +38,7 @@ Key: **official** = the bar rests only on manufacturer figures; **estimated** = 
 | every_point_has_provenance | PASS — 2697 rows checked |
 | end_values_equal_latest_official | PASS — mismatches: [] |
 | excluded_consoles_absent | PASS — 19 excluded; present in series: [] |
-| observations_integrity | PASS — 452 observations; 0 problems |
+| observations_integrity | PASS — 454 observations; 0 problems |
 | quarter_grid_complete | PASS — 166 quarter ends 1985-03-31..2026-06-30; incomplete: [] |
 
 Full detail: `data/rtt-003/CHECKS.md`.
@@ -105,7 +105,7 @@ Opening board 31 Mar 1985 (the race starts there), then 31 December of each year
 | # | Console | Millions | Shown as | Rests on |
 |---|---|---|---|---|
 | 1 | Game Boy | 118.69 | official | held, grade A |
-| 2 | PlayStation | 102.49 | official (U) | held, grade A |
+| 2 | PlayStation | 102.49 | official | held, grade A |
 | 3 | PlayStation 2 | 101.13 | estimated | interpolated, grade A |
 | 4 | Game Boy Advance | 73.07 | official | interpolated, grade A |
 | 5 | NES | 61.91 | official | held, grade A |
@@ -124,7 +124,7 @@ Opening board 31 Mar 1985 (the race starts there), then 31 December of each year
 | 1 | PlayStation 2 | 149.27 | official | interpolated, grade A |
 | 2 | Nintendo DS | 142.09 | official | interpolated, grade A |
 | 3 | Game Boy | 118.69 | official | held, grade A |
-| 4 | PlayStation | 102.49 | official (U) | held, grade A |
+| 4 | PlayStation | 102.49 | official | held, grade A |
 | 5 | Wii | 82.30 | official | interpolated, grade A |
 | 6 | Game Boy Advance | 81.51 | official | held, grade A |
 | 7 | PSP | 66.61 | official | interpolated, grade A |
@@ -141,7 +141,7 @@ Opening board 31 Mar 1985 (the race starts there), then 31 December of each year
 | 1 | PlayStation 2 | 160.00+ | official | held, grade A |
 | 2 | Nintendo DS | 154.02 | official | interpolated, grade A |
 | 3 | Game Boy | 118.69 | official | held, grade A |
-| 4 | PlayStation | 102.49 | official (U) | held, grade A |
+| 4 | PlayStation | 102.49 | official | held, grade A |
 | 5 | Wii | 101.60 | official | interpolated, grade A |
 | 6 | PlayStation 3 | 84.69 | estimated | interpolated, grade A |
 | 7 | Xbox 360 | 84.00+ | official | held, grade A |
@@ -159,7 +159,7 @@ Opening board 31 Mar 1985 (the race starts there), then 31 December of each year
 | 2 | Nintendo DS | 154.02 | official | held, grade A |
 | 3 | Game Boy | 118.69 | official | held, grade A |
 | 4 | PlayStation 4 | 115.20 | official | arithmetic, grade A |
-| 5 | PlayStation | 102.49 | official (U) | held, grade A |
+| 5 | PlayStation | 102.49 | official | held, grade A |
 | 6 | Wii | 101.63 | official | held, grade A |
 | 7 | PlayStation 3 | 87.40+ | official | held, grade A |
 | 8 | Xbox 360 | 84.00+ | official | held, grade A |
@@ -177,7 +177,7 @@ Opening board 31 Mar 1985 (the race starts there), then 31 December of each year
 | 3 | Nintendo DS | 154.02 | official | official, grade A |
 | 4 | Game Boy | 118.69 | official | official, grade A |
 | 5 | PlayStation 4 | 117.20 | official | held, grade A |
-| 6 | PlayStation | 102.49 | official (U) | held, grade A |
+| 6 | PlayStation | 102.49 | official | held, grade A |
 | 7 | Wii | 101.63 | official | official, grade A |
 | 8 | PlayStation 5 | 95.30 | official | arithmetic, grade A |
 | 9 | PlayStation 3 | 87.40+ | official | held, grade A |
@@ -235,7 +235,7 @@ Every quarter in which one console passed another and both were in the top ten a
 | 2003-12-31 | PlayStation 2 | NES | 3 / 4 | 68.99 vs 61.90 | official |
 | 2004-03-31 | Game Boy Advance | Super NES | 5 / 6 | 51.39 vs 49.10 | official |
 | 2004-12-31 | Game Boy Advance | NES | 4 / 5 | 62.99 vs 61.91 | official |
-| 2006-03-31 | PlayStation 2 | PlayStation | 2 / 3 | 104.27 vs 102.49 | estimated (U) |
+| 2006-03-31 | PlayStation 2 | PlayStation | 2 / 3 | 104.27 vs 102.49 | estimated |
 | 2006-09-30 | Nintendo DS | Mega Drive / Genesis | 8 / 9 | 28.54 vs 28.54 | estimated |
 | 2006-09-30 | Nintendo DS | Atari 2600 | 8 / 10 | 28.54 vs 25.00 | estimated |
 | 2006-12-31 | Nintendo DS | Nintendo 64 | 7 / 8 | 34.48 vs 32.93 | official |
@@ -248,7 +248,7 @@ Every quarter in which one console passed another and both were in the top ten a
 | 2008-09-30 | Wii | Nintendo 64 | 9 / 10 | 37.47 vs 32.93 | official |
 | 2009-03-31 | PSP | Super NES | 7 / 9 | 51.14 vs 49.10 | official |
 | 2009-03-31 | Wii | Super NES | 8 / 9 | 50.41 vs 49.10 | official |
-| 2009-06-30 | Nintendo DS | PlayStation | 3 / 4 | 108.54 vs 102.49 | official (U) |
+| 2009-06-30 | Nintendo DS | PlayStation | 3 / 4 | 108.54 vs 102.49 | official |
 | 2009-06-30 | Wii | PSP | 7 / 8 | 55.53 vs 52.90 | official |
 | 2009-12-31 | Nintendo DS | Game Boy | 2 / 3 | 122.21 vs 118.69 | official |
 | 2009-12-31 | Wii | NES | 6 / 7 | 65.88 vs 61.91 | official |
@@ -266,13 +266,13 @@ Every quarter in which one console passed another and both were in the top ten a
 | 2018-06-30 | PlayStation 4 | Game Boy Advance | 8 / 9 | 82.40 vs 81.51 | official |
 | 2018-09-30 | PlayStation 4 | Xbox 360 | 7 / 8 | 86.30 vs 84.00 | official |
 | 2018-12-31 | PlayStation 4 | PlayStation 3 | 6 / 7 | 94.40 vs 87.40 | official |
-| 2019-09-30 | PlayStation 4 | PlayStation | 4 / 5 | 103.00 vs 102.49 | official (U) |
+| 2019-09-30 | PlayStation 4 | PlayStation | 4 / 5 | 103.00 vs 102.49 | official |
 | 2019-09-30 | PlayStation 4 | Wii | 4 / 6 | 103.00 vs 101.63 | official |
 | 2021-03-31 | Nintendo Switch | Xbox 360 | 8 / 9 | 84.59 vs 84.00 | official |
 | 2021-03-31 | Nintendo Switch | Game Boy Advance | 8 / 10 | 84.59 vs 81.51 | official |
 | 2021-06-30 | Nintendo Switch | PlayStation 3 | 7 / 8 | 90.34 vs 87.40 | official |
 | 2021-12-31 | Nintendo Switch | Wii | 6 / 7 | 101.96 vs 101.63 | official |
-| 2022-03-31 | Nintendo Switch | PlayStation | 5 / 6 | 107.65 vs 102.49 | official (U) |
+| 2022-03-31 | Nintendo Switch | PlayStation | 5 / 6 | 107.65 vs 102.49 | official |
 | 2022-12-31 | Nintendo Switch | Game Boy | 3 / 4 | 121.19 vs 118.69 | official |
 | 2022-12-31 | Nintendo Switch | PlayStation 4 | 3 / 5 | 121.19 vs 117.20 | official |
 | 2025-09-30 | Nintendo Switch | Nintendo DS | 2 / 3 | 154.03 vs 154.02 | official |
@@ -294,7 +294,7 @@ Figures recorded but not used because a higher-grade source for the same date (o
 | Mega Drive / Genesis | 1993-03-31 | 14.90 | 15.40 (FAM-MD-1993-03-31) | C | SoftBank / Beep! MegaDrive | disagreement: Famitsu gives 15.40m for the same date; Famitsu used |
 | Nintendo 64 | 1997-03-31 | 6.12 | 5.80 (NIN-nintendo_64-1997-03-31) | C | Business Standard | disagreement: N64 fiscal 1997 shipments (= cumulative, launched Jun 1996) of 6.12m vs Nintendo's current figures rebuilt to 5.80m |
 | Nintendo 64 | 1997-12-31 | 15.60 | 15.22 (NIN-nintendo_64-1998-03-31) | B | Nintendo | disagreement: above Nintendo's current consolidated total rebuilt for 31 Mar 1998 (15.22m); using it would show a fall; current IR figures used |
-| PlayStation 2 | 2012-03-31 | 155.00 | 160.00 (SIE-LT-playstation_2) | A | Sony Corporation | disagreement: Sony's current business-data page gives more than 160 million as of 31 Mar 2012; DEC-087 uses 160m |
+| PlayStation 2 | 2012-03-31 | 155.00 | 160.00 (SIE-LT-playstation_2) | A | Sony Corporation | disagreement: Sony's current business-data page gives 'More than 160 million' (As of March 31, 2012, sell-in); DEC-094 keeps 160m; candidate for a short on-screen note in the player session |
 | Sega Saturn | 1996-03-28 | 3.50 | 3.40 (FAM-SAT-1996-03-31) | C | UPI | disagreement: above Famitsu's 3.40m three days later; Famitsu (verified) used |
 | Super NES | 1997-12-31 | 47.30 | 47.27 (NIN-snes-1998-03-31) | B | Nintendo | disagreement: 'more than 47.30m' at end-1997 is above the rebuilt 31 Mar 1998 total (47.27m); current IR figures used |
 | Xbox | 2005-09-30 | 21.90 | 22.00 (MS-XBOX-2005-06-30) | C | Taipei Times | disagreement: below Microsoft's own 22 million (30 Jun 2005); not used |
@@ -305,7 +305,7 @@ Figures recorded but not used because a higher-grade source for the same date (o
 
 ## UNVERIFIED items (source blocked from this environment)
 
-To check in Luke's Chrome (Cowork). `used = yes` means the bar currently rests on it.
+`used = yes` means a bar rests on it: 0 at present. The others are recorded for completeness (superseded, consistent, out of scope or not needed).
 
 | Obs | Console | Date | Millions | Used | Source URL |
 |---|---|---|---|---|---|
@@ -324,25 +324,16 @@ To check in Luke's Chrome (Cowork). `used = yes` means the bar currently rests o
 | PRESS-SMS-US-1989 | Master System | 1989-12-31 | 1.50 | no | https://image.over-blog.com/bGkOy5cliwalhfLKYq2X8j2t110=/filters:no_upscale()/image%2F0860284%2F20230213%2Fob_c4c2d9_sega-113.jpg |
 | BS-N64-1997-03-31 | Nintendo 64 | 1997-03-31 | 6.12 | no | https://www.business-standard.com/article/specials/nintendo-profits-fall-amid-hot-competition-197051401118_1.html |
 | SEC-PS-2002-03-31 | PlayStation | 2002-03-31 | 89.63 | no | https://www.sec.gov/Archives/edgar/data/313838/000095010902003508/d20f.htm |
-| SCEI-PS-2004-12-31 | PlayStation | 2004-12-31 | 101.73 | yes | http://scei.co.jp/corporate/data/bizdataps_e.html |
-| SCEI-PS-2005-03-31 | PlayStation | 2005-03-31 | 102.49 | yes | http://scei.co.jp/corporate/data/bizdataps_e.html |
 | SCEI-PS2-2007-03 | PlayStation 2 | 2007-03-31 | 117.89 | no | http://scei.co.jp/corporate/data/bizdataps2_e.html |
-| SONY-CR2019-PS2 | PlayStation 2 | 2012-03-31 | 155.00 | no | https://sony.net/SonyInfo/IR/library/corporatereport/CorporateReport2019_E.pdf |
 | SCEI-PS3-2006-12-31 | PlayStation 3 | 2006-12-31 | 1.84 | no | http://scei.co.jp/corporate/data/bizdataps3_e.html |
 | UPI-SAT-1996-03-28 | Sega Saturn | 1996-03-28 | 3.50 | no | https://www.upi.com/Archives/1996/03/28/Sega-Saturn-price-drops-by-50/2742827989200/ |
 | TAIPEI-XBOX-2005-09 | Xbox | 2005-09-30 | 21.90 | no | https://www.taipeitimes.com/News/worldbiz/archives/2005/11/17/2003280555 |
 | GQ-XB1-lifetime | Xbox One |  | 51.00 | no | https://www.gq-magazine.co.uk/culture/article/xbox-phil-spencer-todd-howard-interview |
 | IHS-XB1-2016-03-31 | Xbox One | 2016-03-31 | 21.20 | no | https://wccftech.com/ihs-forecasts-ps4-sales-53m-2016-59-console-market-spend-xb1wiiu-trail/ |
 | IHS-XB1-2016-12-31 | Xbox One | 2016-12-31 | 27.60 | no | https://www.linkedin.com/pulse/sony-dominates-2016-console-market-57-share-world-piers-harding-rolls |
-| OMDIA-XB1-2016-12-31 | Xbox One | 2016-12-31 | 29.00 | yes | https://www.gamedeveloper.com/business/microsoft-is-not-ready-to-deprioritize-xbox-consoles |
-| OMDIA-XB1-2017-12-31 | Xbox One | 2017-12-31 | 38.00 | yes | https://www.gamedeveloper.com/business/microsoft-is-not-ready-to-deprioritize-xbox-consoles |
 | NIKO-XB1-2018-01 | Xbox One | 2018-01-31 | 35.00 | no | https://www.gamereactor.eu/report-xbox-one-has-sold-35-million/ |
 | NIKO-XB1-2019-01 | Xbox One | 2019-01-31 | 41.00 | no | https://www.tweaktown.com/news/64602/xbox-one-sales-hit-41-million/index.html |
-| IDC-XB1-2019-06-30 | Xbox One | 2019-06-30 | 46.90 | yes | https://www.youtube.com/watch?v=kSi6pwtvIWI |
-| OMDIA-XSX-2023-12-31 | Xbox Series X|S | 2023-12-31 | 27.00 | yes | https://www.gamedeveloper.com/business/microsoft-is-not-ready-to-deprioritize-xbox-consoles |
 | XBOXYGEN-XSX-2023-12-31 | Xbox Series X|S | 2023-12-31 | 26.00 | no | https://www.xboxygen.com/News/51848-Non-Xbox-n-a-pas-vendu-que-2-millions-de-consoles-en-2024-les-chiffres-sont-mal-interpretes |
-| ALDORA-XSX-2024-06 | Xbox Series X|S | 2024-06-30 | 28.30 | yes | https://gameworldobserver.com/?p=26489 |
-| OMDIA-XSX-2024-12-31-fc | Xbox Series X|S | 2024-12-31 | 33.00 | no | https://www.gamedeveloper.com/business/microsoft-is-not-ready-to-deprioritize-xbox-consoles |
 | KAGAN-XSX-CY2025 | Xbox Series X|S | 2025-12-31 | 3.20 | no | https://godisageek.com/2026/07/console-shipments-fall-2026/ |
 | OMDIA-XSX-2025-12-31-fc | Xbox Series X|S | 2025-12-31 | 36.00 | no | https://www.channelnews.com.au/sony-to-cash-in-on-gta-vi-as-playstation-dominates-console-wars/ |
 
@@ -350,7 +341,7 @@ To check in Luke's Chrome (Cowork). `used = yes` means the bar currently rests o
 
 | Console | Launch | Anchors used (date: millions, grade) | End 30 Jun 2026 | Fade |
 |---|---|---|---|---|
-| Atari 2600 | 1977-09-30 | 1986-03-06: 20.00+ D; 1988-06-01: 25.00+ B | 25.00 (estimated) | 1988-06-30 |
+| Atari 2600 | 1977-09-30 | 1986-03-06: 20.00+ D; 1988-06-01: 25.00+ B | 25.00 (estimated) | 1991-12-31 |
 | NES | 1983-07-15 | 34 anchors, 1984-12-31 to 2026-06-30; grades A,B,C,D | 61.91 (official) | 2003-03-31 |
 | Master System | 1985-10-20 | 1992-03-31: 3.50+ C; 1993-03-31: 6.20+ C | 6.20 (estimated) | 1993-03-31 |
 | Mega Drive / Genesis | 1988-10-29 | 1989-03-31: 0.40 C; 1990-03-31: 1.40 C; 1991-03-31: 3.80 C; 1992-03-31: 6.80+ C; 1993-03-31: 15.40+ C; 1994-03-31: 22.55 C; 1995-03-31: 26.46 C; 1996-03-31: 28.54 C | 28.54 (estimated) | 1996-03-31 |
@@ -373,10 +364,10 @@ To check in Luke's Chrome (Cowork). `used = yes` means the bar currently rests o
 | Nintendo 3DS | 2011-02-26 | 17 anchors, 2011-03-31 to 2026-06-30; grades A | 75.94 (official) | 2021-03-31 |
 | Wii U | 2012-11-18 | 15 anchors, 2013-03-31 to 2026-06-30; grades A | 13.56 (official) | 2017-03-31 |
 | PlayStation 4 | 2013-11-15 | 34 anchors, 2013-12-31 to 2022-03-31; grades A | 117.20 (official) | 2022-03-31 |
-| Xbox One | 2013-11-22 | 2013-12-31: 3.90 B; 2014-03-31: 5.10 B; 2016-12-31: 29.00 D (U); 2017-12-31: 38.00 D (U); 2018-03-31: 39.10 D; 2019-06-30: 46.90 D (U); 2020-06-30: 51.00 D; 2021-08-27: 54.00 D | 54.00 (analyst estimate) | 2021-09-30 |
+| Xbox One | 2013-11-22 | 9 anchors, 2013-12-31 to 2021-08-27; grades B,D | 54.00 (analyst estimate) | 2021-09-30 |
 | Nintendo Switch | 2017-03-03 | 11 anchors, 2017-03-31 to 2026-06-30; grades A | 156.59 (official) | — |
-| Xbox Series X|S | 2020-11-10 | 2020-12-31: 2.80+ D; 2021-06-30: 5.32 D; 2021-12-31: 10.50 D; 2022-06-30: 13.80 D; 2022-12-31: 18.50 D; 2023-12-31: 27.00 D (U); 2024-06-30: 28.30 D (U) | 28.30 (analyst estimate) | — |
-| PlayStation 5 | 2020-11-12 | 23 anchors, 2020-12-31 to 2026-06-30; grades A | 95.30 (official) | — |
+| Xbox Series X|S | 2020-11-10 | 2020-12-31: 2.80+ D; 2021-06-30: 5.32 D; 2021-12-31: 10.50 D; 2022-06-30: 13.80 D; 2022-12-31: 18.50 D; 2023-12-31: 27.00 D; 2024-06-30: 28.30 D | 28.30 (analyst estimate) | — |
+| PlayStation 5 | 2020-11-11 | 23 anchors, 2020-12-31 to 2026-06-30; grades A | 95.30 (official) | — |
 | Nintendo Switch 2 | 2025-06-05 | 2026-03-31: 19.86 A; 2026-06-30: 23.68 A | 23.68 (official) | — |
 
 ## Consoles considered and left out
@@ -403,15 +394,20 @@ To check in Luke's Chrome (Cowork). `used = yes` means the bar currently rests o
 | Mini and classic re-releases | mini/classic re-releases: excluded by DEC-083 |
 | Steam Deck and other PC handhelds | PC / PC handheld: excluded by DEC-083 |
 
-## Open questions for Luke
+## Luke's answers (2 Oct 2026, Cowork chat) and what changed
 
-1. **Fade rule (DEC-086).** A bar fades in the year the maker announced the end of production or shipments. With no documented end date, it fades from the last quarter it added 10,000+ units in this data. Only two makers' end dates could be confirmed here: Dreamcast (31 Jan 2001) and Xbox 360 (20 Apr 2016). The rest use the data rule, which makes the Atari 2600 fade in mid-1988, although it was on sale until about 1992. Keep the rule, or should I look up the press-reported end dates (NES/SNES 2003, PS2 2012/13, Wii U 2017, 3DS 2020, Xbox One 2020/22) through your Chrome?
-2. **PS2 endpoint (DEC-087).** I used Sony's current "more than 160 million". Sony's 2019 Corporate Report said "more than 155 million" (that page is blocked here; please confirm it in Chrome). With 160m, PS2 keeps the crown; with 155m, Switch (156.59m) would have passed PS2 in early 2026. Keep 160m?
-3. **Xbox estimate path (DEC-088).** As listed above. The "10 million, Dec 2014" point was a forecast and is dropped. Ampere's 54m (Aug 2021) is added as the latest Xbox One estimate. Four points the bars rest on are only in blocked sources (Omdia 29m, 38m and 27m are in a chart image; IDC 46.9m, Aldora 28.3m). Please check them in Chrome, or say if you'd rather drop the Omdia chart figures and bridge by straight lines.
-4. **Master System and Atari 2600 (DEC-089).** Their bars are explained above. Accept them as labelled estimates, or show them only until better figures are found?
-5. **The opening board.** At 31 Mar 1985 only two consoles in scope are on sale (Atari 2600, NES; Master System joins in Oct 1985). The 1985 board is thin. Start the race in 1985 as decided, or consider lowering the threshold for the 1980s so it fills out (e.g. Atari 7800, Intellivision, ColecoVision; all below 8 million)?
-6. **Scope calls (DEC-092).** PC Engine/TurboGrafx-16 and PS Vita are left out (no figure reaches 8 million). Agree?
-7. **Estimated look (DEC-090).** A point is shown as "estimated" when it rests on a press or estimated figure, or on a straight line across a gap longer than a year or before 1994. Atari 2600 and Master System are estimated throughout. Xbox One and Series after March 2014 get the analyst-estimate look. Is that the right amount of "estimated"? 37 of 78 top-ten overtakes rest on estimated or analyst figures.
-8. **Nintendo quarterly figures (DEC-091).** Nintendo bars use March year ends plus 30 Jun 2026, with straight lines between, as the brief asked. Nintendo's quarterly earnings releases would sharpen the holiday-season jumps. Should they be collected in a later session?
-9. **PS5 launch date.** Sony's own timeline says 11 November 2020; I used 12 November (first-wave launch day). This has no effect on the quarterly values.
-10. **Blocked sources.** Please check the UNVERIFIED items marked `used = yes` in your Chrome (Cowork): old Sony data page (PlayStation 101.73m and 102.49m), Omdia chart (29m, 38m, 27m), IDC 46.9m, Aldora 28.3m.
+1. **Fade rule kept (DEC-093).** The Atari 2600 now fades from the quarter ending 31 Dec 1991 (Atari's documented decision "as of Christmas 1991"). The often-quoted "1 January 1992" is not verified and is not used.
+2. **PS2 stays at 160m+ (DEC-094).** Sony's 2019 Corporate Report wording ("total consoles sold surpassing 155 million units in March 2012", printed p.17) is recorded as a disagreement. It is a **candidate for a short on-screen note** in the player session.
+3. **Xbox path accepted (DEC-095).** Microsoft's 10 million (3 Dec 2014) was added. The June 2023 "21 million" has no primary source found and is not used.
+4. **Atari 2600 and Master System accepted** as labelled estimates (DEC-096).
+5. **The 1985 start stays**, with two consoles on the opening board (DEC-097). **Note for the player session: move quickly through 1985–88.**
+6. **PC Engine / TurboGrafx-16 and PS Vita stay out** (DEC-098).
+7. **Estimated look agreed for now**; to be judged in the pilot (DEC-099).
+8. **Nintendo quarterly figures: yes, later; not urgent** (DEC-100).
+9. **PS5 launch date: 11 November 2020** (Sony timeline) (DEC-101).
+10. **All 7 UNVERIFIED figures the bars rested on are now verified** (DEC-102).
+
+## Still open
+- Later, not urgent: collect Nintendo's quarterly figures (DEC-100).
+- For the player session (needs Luke's approval first, DEC-069 and DEC-085): the PS2 155m note; moving quickly through 1985–88; judging the estimated look in the pilot.
+- 27 figures remain UNVERIFIED but are **not used** (considered, superseded or not needed); they are listed above for completeness.

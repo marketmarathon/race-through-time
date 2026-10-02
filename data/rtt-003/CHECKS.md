@@ -11,7 +11,7 @@ Build `rtt003-build/1.0`. All checks PASS: **True**. A check marked REVIEW found
 | every_point_has_provenance | PASS | 2697 rows checked |
 | end_values_equal_latest_official | PASS | mismatches: [] |
 | excluded_consoles_absent | PASS | 19 excluded; present in series: [] |
-| observations_integrity | PASS | 452 observations; 0 problems |
+| observations_integrity | PASS | 454 observations; 0 problems |
 | quarter_grid_complete | PASS | 166 quarter ends 1985-03-31..2026-06-30; incomplete: [] |
 
 ## Decreases in any series (reported, not hidden)
@@ -83,7 +83,7 @@ Build `rtt003-build/1.0`. All checks PASS: **True**. A check marked REVIEW found
 - wii_u: end 13560000 == latest official 13560000 (NINHS-wii_u-2026-06-30, 2026-06-30) OK
 - xbox: end 24000000 >= latest official 24000000 (MS-XBOX-2006-05-09, 2006-05-09) OK
 - xbox_360: end 84000000 >= latest official 84000000 (MS-X360-2014-06-09, 2014-06-09) OK
-- xbox_one: end 54000000 rests on the analyst estimate AMPERE-XB1-2021-08-27 (DEC-084); latest official figure 5100000 (MS-XB1-CUM-2014-03-31, 2014-03-31) is below it: consistent
+- xbox_one: end 54000000 rests on the analyst estimate AMPERE-XB1-2021-08-27 (DEC-084); latest official figure 10000000 (MS-XB1-2014-12-03, 2014-12-03) is below it: consistent
 - xbox_series: no verified official dated figure (end 28300000, analyst_estimate)
 
 ## Observation integrity problems

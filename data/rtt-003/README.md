@@ -1,7 +1,7 @@
 # RTT-003 — Best-Selling Consoles 1985–2026 (units shipped)
 
-Status: **DATA BUILD (IQ-09), 1 Oct 2026 — not yet audited; no player, renderer or visual work** (DEC-069).
-Contract: `reference/metric_contract_RTT-003.md` v1.0. Owner decisions DEC-081 to DEC-085; Claude's working choices DEC-086 to DEC-092 (questions for Luke).
+Status: **DATA BUILD (IQ-09), 1 Oct 2026; owner answers applied 2 Oct 2026 — pull request #12, not merged; no player, renderer or visual work** (DEC-069).
+Contract: `reference/metric_contract_RTT-003.md` v1.0. Owner decisions DEC-081 to DEC-085; Claude's working choices DEC-086 to DEC-092, confirmed by Luke on 2 Oct 2026 (DEC-093 to DEC-102).
 Report for Luke: `reports/RTT-003_data_report.md`. Source access test: `reports/RTT-003_source_access.md`.
 
 **Race:** quarter ends from 31 Mar 1985 to 30 Jun 2026 (166 quarter ends). **Metric:** cumulative worldwide hardware units shipped (sell-in), by console family as the manufacturer groups it.

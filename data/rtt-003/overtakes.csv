@@ -34,7 +34,7 @@ quarter_end,passer,passed,passer_rank_after,passed_rank_after,passer_millions,pa
 2003-12-31,playstation_2,nes,3,4,68.99,61.90,official,no
 2004-03-31,game_boy_advance,snes,5,6,51.39,49.10,official,no
 2004-12-31,game_boy_advance,nes,4,5,62.99,61.91,official,no
-2006-03-31,playstation_2,playstation,2,3,104.27,102.49,estimated,yes
+2006-03-31,playstation_2,playstation,2,3,104.27,102.49,estimated,no
 2006-09-30,nintendo_ds,mega_drive,8,9,28.54,28.54,estimated,no
 2006-09-30,nintendo_ds,atari_2600,8,10,28.54,25.00,estimated,no
 2006-12-31,nintendo_ds,nintendo_64,7,8,34.48,32.93,official,no
@@ -47,7 +47,7 @@ quarter_end,passer,passed,passer_rank_after,passed_rank_after,passer_millions,pa
 2008-09-30,wii,nintendo_64,9,10,37.47,32.93,official,no
 2009-03-31,psp,snes,7,9,51.14,49.10,official,no
 2009-03-31,wii,snes,8,9,50.41,49.10,official,no
-2009-06-30,nintendo_ds,playstation,3,4,108.54,102.49,official,yes
+2009-06-30,nintendo_ds,playstation,3,4,108.54,102.49,official,no
 2009-06-30,wii,psp,7,8,55.53,52.90,official,no
 2009-12-31,nintendo_ds,game_boy,2,3,122.21,118.69,official,no
 2009-12-31,wii,nes,6,7,65.88,61.91,official,no
@@ -65,13 +65,13 @@ quarter_end,passer,passed,passer_rank_after,passed_rank_after,passer_millions,pa
 2018-06-30,playstation_4,game_boy_advance,8,9,82.40,81.51,official,no
 2018-09-30,playstation_4,xbox_360,7,8,86.30,84.00,official,no
 2018-12-31,playstation_4,playstation_3,6,7,94.40,87.40,official,no
-2019-09-30,playstation_4,playstation,4,5,103.00,102.49,official,yes
+2019-09-30,playstation_4,playstation,4,5,103.00,102.49,official,no
 2019-09-30,playstation_4,wii,4,6,103.00,101.63,official,no
 2021-03-31,nintendo_switch,xbox_360,8,9,84.59,84.00,official,no
 2021-03-31,nintendo_switch,game_boy_advance,8,10,84.59,81.51,official,no
 2021-06-30,nintendo_switch,playstation_3,7,8,90.34,87.40,official,no
 2021-12-31,nintendo_switch,wii,6,7,101.96,101.63,official,no
-2022-03-31,nintendo_switch,playstation,5,6,107.65,102.49,official,yes
+2022-03-31,nintendo_switch,playstation,5,6,107.65,102.49,official,no
 2022-12-31,nintendo_switch,game_boy,3,4,121.19,118.69,official,no
 2022-12-31,nintendo_switch,playstation_4,3,5,121.19,117.20,official,no
 2025-09-30,nintendo_switch,nintendo_ds,2,3,154.03,154.02,official,no
