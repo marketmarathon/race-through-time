@@ -1,27 +1,23 @@
-# HANDOVER — 2 Oct 2026 (session 12 follow-up, Claude Code cloud session, environment "Race Through Time": IQ-09; includes the session 11 RTT-002 release record, DEC-079/DEC-080)
+# HANDOVER — 2 Oct 2026 (session 13, Claude Code cloud session, environment "Race Through Time": IQ-10, the RTT-003 design pilot)
 
-Previous handovers are in this file's git history. This session's work is on branch `claude/focused-clarke-u0m1ry`, **pull request #12** (https://github.com/marketmarathon/race-through-time/pull/12; not merged; Luke merges, DEC-057). Pull request #11 (RTT-002 release record, DEC-079/DEC-080) is still open and also edits the `state/` files, so whichever merges second needs a small merge of `state/`.
+Previous handovers are in this file's git history. This session's work is on branch `claude/sweet-mendel-faig7w` in both repos; the public one has an IQ-10 pull request (not merged; Luke merges, DEC-057). Prompt: `prompts/CODE_SESSION_IQ-10.md`.
 
-## Where RTT-003 stands (IQ-09, data only)
-- **Episode:** "Best-Selling Consoles 1985–2026", all consoles, units shipped (DEC-081 to DEC-085). Prompt: `prompts/CODE_SESSION_IQ-09.md`.
-- **Luke's answers, 2 Oct 2026 (DEC-093 to DEC-102), applied and rebuilt:**
-  - Atari 2600 fades from 31 Dec 1991 ("as of Christmas 1991", The 2600 Connection no. 9 and AtariUser Jul 1992; the "1 January 1992" date is not used).
-  - PS2 stays at 160m+; Sony's 2019 report wording ("surpassing 155 million units in March 2012") is recorded as a disagreement and is a candidate on-screen note.
-  - Xbox One gains Microsoft's "10 million units sold" (3 Dec 2014).
-  - The June 2023 Series "21 million" is NOT FOUND (primary): it comes from a Microsoft Brazil slide, and no court or Microsoft document was found.
-  - PS5 launch is 11 Nov 2020.
-  - All 7 UNVERIFIED anchors were verified in Luke's Chrome.
-- **Data:** `data/rtt-003/`, 28 consoles, 166 quarter ends (31 Mar 1985 to 30 Jun 2026), 2,697 series rows. 454 observations: 426 verified, 27 UNVERIFIED (none used), 1 NOT FOUND (primary). Checks 9/9 PASS. Crown: Atari 2600 → NES (end-1988, est.) → Game Boy (end-1997, official) → PS2 (mid-2007, est.) to 30 Jun 2026. Switch is second.
-- **Report:** `reports/RTT-003_data_report.md`. Network test: `reports/RTT-003_source_access.md`.
-- Nothing rendered, uploaded or published; no player or visual change (DEC-069); `marketmarathon/bars` untouched.
+## Where RTT-003 stands (IQ-10, design pilot — not the full film)
+- **Pre-check:** no existing RTT-003 player work (no open pull requests; all 12 non-main branches already merged). Decisions continue at DEC-103.
+- **Pictures and logos (private repo only):** 28 console pictures + 5 maker logos, all PICK rows of the checked list, downloaded from Wikimedia Commons on a GitHub runner (Commons answers HTTP 429 to the cloud container) and SHA-1 checked, in `race-through-time-private` branch `claude/sweet-mendel-faig7w`: `assets/rtt-003/originals/`, `logos/`, `icons/` (backgrounds made transparent; the Xbox Series X cut out of its room), with manifests. Credit needed only for the Xbox Series X photo (Ian Hughes, CC BY 2.0); all in `reference/rights_ledger.md`. **Luke: merge that private branch into the private repo's main when convenient** (the pilot workflow reads the branch).
+- **Player:** the RTT-002 player now has a quarter-end series mode (DEC-105). Every RTT-003 feature is off for RTT-002: 22 RTT-002 frames are pixel-identical to `main` and the RTT-002 suite passes. RTT-003 configs in `kits/rtt-003/` (README there). Own render workflow `.github/workflows/rtt003_pilot.yml`; `render_pilot.yml` untouched, no RTT-002 render started.
+- **Pilot (private pre-release):** (release link added when render run 2 finishes) — clips A (1985–92, 30.6 s), B (1996–99, 23.4 s), C (2005–09, 31.0 s) with and without the company scoreboard, 1080p, no music; stills (final table, 2015 with 20 rows and with the scoreboard, maker colours, PS2 note, pictures at icon size), each also at phone size. Run 1 (`rtt-003-pilot-78db338-run1`) is superseded (scoreboard words too small on a phone).
+- **Tests:** `tests/player/RESULTS_RTT003.md` 7/7 PASS (every frame of each clip and of the film config checked against `data/rtt-003/`); `tests/player/PHONE_RTT003.md` PASS.
+- **Full film (not rendered):** 6,042 frames = **3 min 21 s** at 1.0 s per quarter (DEC-113).
+- **Key finding:** Xbox One peaks at 14th and Xbox Series X|S at 19th, so on the proposed 12-row board neither ever appears (DEC-108).
 
-## Open (RTT-003)
-1. Luke: merge pull request #12 when satisfied.
-2. Later, not urgent: collect Nintendo's quarterly figures (DEC-100).
-3. Player session, only after Luke approves the design build (DEC-069, DEC-085): PS2 155m note candidate (DEC-094); move quickly through 1985–88 (DEC-097); judge the estimated look in the pilot (DEC-099).
+## Open (RTT-003) — for Luke
+1. Watch the pilot release and answer DEC-106 to DEC-113: bar names; maker colours; 12 rows (or 15 / 20 so Xbox One appears); music (reuse the RTT-002 approach with a new track?); pictures that read poorly (Wii U, Switch docked, portrait shapes); how each approved feature is drawn; extra callouts; the PS2 note wording; the pace.
+2. Merge the IQ-10 pull request when satisfied; merge the private repo branch.
+3. Later, not urgent: Nintendo quarterly figures (DEC-100) — would also date "Switch passes DS".
 
 ## Rules for the next RTT-003 session
-Read `reference/metric_contract_RTT-003.md`, `data/rtt-003/README.md` and DEC-081 to DEC-102. New figures go into `data/rtt-003/source/observations_curated.csv` with source URL, a short verbatim quote, `verified` and `used` with the reason; then rebuild. Never average disagreeing sources, never use a forecast, never present an analyst estimate as official.
+Read `kits/rtt-003/README.md`, DEC-081 to DEC-113 and `reference/metric_contract_RTT-003.md`. DEC-069: nothing beyond the approved design is built or rendered without Luke's approval. Render RTT-003 only with `rtt003_pilot.yml` (or a new RTT-003 workflow), never `render_pilot.yml`. Data changes go through `data/rtt-003/source/` and the build script, then `scripts/rtt003_adapter.py`.
 
 ## Where RTT-002 stands
 - **RELEASED (DEC-079, DEC-080):** pull request #10 merged (main `ef01814`). Luke uploaded the approved master (425,415,150 bytes, the same size as the release asset, whose digest is the approved SHA-256 `6618ef2e…`) by hand in YouTube Studio to @racethroughtime (channel ID `UC8R47xbyBB5Z93MdMkoUOWg`) as **video `2fY7Bzq8Uu0`** (https://youtu.be/2fY7Bzq8Uu0), and scheduled it public on 30 Sep 2026. Title "Most F1 Grand Prix Wins of All Time (1950–2026)"; category Sports; Shorts remixing off (music licence); comments on; not for kids; custom thumbnail. Released **ahead of the launch-bank plan** by Luke's decision; Claude in Cowork flagged the departure.
@@ -42,4 +38,4 @@ Read `reference/metric_contract_RTT-003.md`, `data/rtt-003/README.md` and DEC-08
 6. Question (DEC-069): reinstate the smooth speed curve in future films?
 
 ## Rules for the next session
-Read `state/STATE.json`, this file, `state/DECISIONS.md`, `reference/metric_contract_RTT-002.md` and `reference/rights_ledger.md`. **DEC-069: never add a visual feature or change the look beyond the owner-approved pilot without Luke's approval BEFORE rendering; list proposals as questions.** Never edit C2-2 files or anything in `marketmarathon/bars` for RTT. DEC-006: code, configs, data and written results only in this public repo; logos, pictures, **music**, test frames, stills and renders live only in the private repo (DEC-060, DEC-073). Never upload workflow artifacts from this repo and never print `RTT_PRIVATE_TOKEN` (DEC-061). New data goes in new files; the audited wins files stay unchanged. **A push that changes `.github/workflows/render_pilot.yml` on this branch renders the three speed clips** (never the full film); the full film renders only when started by hand.
+Read `state/STATE.json`, this file, `state/DECISIONS.md`, `reference/metric_contract_RTT-002.md` and `reference/rights_ledger.md`. **DEC-069: never add a visual feature or change the look beyond the owner-approved pilot without Luke's approval BEFORE rendering; list proposals as questions.** Never edit C2-2 files or anything in `marketmarathon/bars` for RTT. DEC-006: code, configs, data and written results only in this public repo; logos, pictures, **music**, test frames, stills and renders live only in the private repo (DEC-060, DEC-073). Never upload workflow artifacts from this repo and never print `RTT_PRIVATE_TOKEN` (DEC-061). New data goes in new files; the audited wins files stay unchanged. **A push that changes `.github/workflows/render_pilot.yml` on the RTT-002 film branch renders the three speed clips** (never the full film); the full film renders only when started by hand. RTT-003 has its own workflows (`rtt003_assets.yml`, `rtt003_pilot.yml`), each triggered only by a push that changes that file on the IQ-10 branch.
