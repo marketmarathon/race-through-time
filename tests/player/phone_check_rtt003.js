@@ -31,7 +31,7 @@ const LETTERING = { nintendo: 0.30, sega: 0.92, atari: 0.27 };
   fs.mkdirSync(path.join(dir, 'icons'), { recursive: true }); fs.mkdirSync(path.join(dir, 'logos'), { recursive: true });
   const stills = JSON.parse(fs.readFileSync(path.join(ROOT, 'kits', 'rtt-003', 'stills.json'), 'utf8')).stills.filter(s => !s.sheet);
   const out = ['# RTT-003 phone check (IQ-10)', '', `Each board still measured as drawn on the 1920 frame and converted to points on a phone showing the video ${PHONE_PT} points wide. Thresholds as tests/player/phone_check.js (axis and date at least the names; footer at least ${FLOOR} pt); the RTT-003 additions (maker key, legend, callout, analyst label) use the footer floor. Pictures and the crown: reported only.`, '',
-               '| Still | Names | Values | Axis | Date | Footer | Key names / totals / estimate words | Legend | Callout, note, record label, retires tag | Analyst label | Picture box | Crown | Result |', '|---|---|---|---|---|---|---|---|---|---|---|---|---|'];
+               '| Still | Names | Values | Axis | Date | Footer | Key names / totals / estimate words | Legend | Callout, note, record label, retires / status tag | Analyst label | Picture box | Crown | Result |', '|---|---|---|---|---|---|---|---|---|---|---|---|---|'];
   let ok = true; const logoRows = [];
   for (const s of stills) {
     const cfg = rtt.loadConfig('../rtt-003/' + s.config, s.overrides);
@@ -50,7 +50,7 @@ const LETTERING = { nintendo: 0.30, sega: 0.92, atari: 0.27 };
     await br.close();
     const size = kinds => { const v = S.L.filter(l => kinds.includes(l.kind) && l.alpha > 0.3).map(l => l.size); return v.length ? Math.min(...v) : null; };
     const z = { name: size(['name']), value: size(['value']), axis: size(['axis']), date: size(['time_line']), footer: size(['footer']),
-                key: size(['key_name', 'key_total', 'key_est']), legend: size(['key_legend']), callout: size(['callout', 'callout_extra', 'note', 'final_line', 'footnote', 'record', 'exit_tag']), est: size(['est_label']) };
+                key: size(['key_name', 'key_total', 'key_est']), legend: size(['key_legend']), callout: size(['callout', 'callout_extra', 'note', 'final_line', 'footnote', 'record', 'exit_tag', 'status_tag']), est: size(['est_label']) };
     const lg = {}; for (const g of S.LG) if (g.drawn && !lg[g.maker]) lg[g.maker] = g;
     logoRows.push(...Object.values(lg).map(g => ({ still: s.name, maker: g.maker, tile: g.tile, drawn: g.drawn, letters: LETTERING[g.maker] ? g.drawn.h * LETTERING[g.maker] : null })));
     const fails = [];

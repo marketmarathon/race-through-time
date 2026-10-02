@@ -1,6 +1,6 @@
 {
  "extends": "config_rtt003_film.json",
- "kit_version": "rtt003_pilot1_clipC",
+ "kit_version": "rtt003_pilot4_clipC",
  "out": "rtt003_clip_C_2005_2009.mp4",
  "window": {
   "from": "2005-01-01",
@@ -12,6 +12,6 @@
   "final_board_sec": 3.0
  },
  "notes": [
-  "Clip C, 2005-2009, with the company scoreboard (DEC-114: Luke keeps it; the scoreboard is in the film config, so the round-1 'with scoreboard' config is no longer needed). PlayStation 2 takes the crown from Game Boy in the quarter to 30 Jun 2007 (estimated); Xbox One not launched yet."
+  "Clip C, 2005-2009, with the company scoreboard: PlayStation 2 takes the crown from Game Boy (30 Jun 2007, estimated); DS passes Game Boy for second (31 Dec 2009, a normal overtake again, DEC-133). Game Boy and others stay on the board dimmed with 'latest figure'."
  ]
 }

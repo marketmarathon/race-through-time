@@ -1,4 +1,4 @@
-/* RTT-003 player tests (IQ-10, round 2). Every frame of each pilot clip and of the full-film config is drawn in
+/* RTT-003 player tests (IQ-10, rounds 2-4). Every frame of each pilot clip and of the full-film config is drawn in
  * order (the rank glide is stateful) through the kit's own driver path (kits/rtt-002/rtt.js openPlayer)
  * at 1920 x 1080, and what was drawn (window.__LABELS, __BARS, __PICS, __LOGOS, __CROWN, __KEY, __CALLOUT,
  * __FINAL) is checked against data/rtt-003/*.csv, read HERE, independently of the adapter and of rtt_timeline.js:
@@ -38,6 +38,13 @@
  *      holder's bar while it is drawn, otherwise on the record label
  *  17. final table: after the transition the board is the all-time top 15 (retired consoles included)
  *  Reported: bars on screen per quarter end (min / median / max) and live bars that do not move.
+ * Round 4 (all-time board with bar status, DEC-131/DEC-132), where status is on (replaces 6, 14, 15, 17):
+ *  18. status: on every frame each bar's status = series.csv `status` of the last quarter end whose count
+ *      has landed (the opening board's before the first); "· retired" / "· latest figure" after the value
+ *      exactly on those bars, never on a live one
+ *  19. dimming: a bar is dimmed (fade < 1) exactly when its status is not live; live bars at full strength
+ *  16 applies with status on too: the record line = the all-time maximum (= the leader), crown.csv's leader
+ *      at quarter ends, the crown on the leader's bar; and the line is broken wherever a label crosses it.
  * Placeholder pictures and logos (plain shapes written at run time into tests/output/, never committed)
  * stand in for the private files. Results: tests/player/RESULTS_RTT003.md. Exit 1 on any failure.
  *
@@ -113,8 +120,8 @@ async function runCase(name, configFile, opts = {}) {
   delete process.env.RTT_LOCAL_ASSETS;
   const info = await pg.evaluate(() => ({ start: TL.startFrame, raceFrames: RACE_FRAMES, dates: TL.events.map(e => e.date), opening: TL.openingEvent.date,
                                           qend: TL.quarterEndFrame, count: TL.countFrames, mult: TL.mult, hold: TL.hold, geom: geom(),
-                                          live: !!TL.liveOnly, finalTable: !!TL.finalTable, finalFrom: TL.finalFrom, finalLineFrom: TL.finalLineFrom, finalTransition: TL.finalTransition }));
-  const LIVE = info.live, exitFadeF = LIVE ? Math.round((cfg.live_only.exit_fade_sec || 0.5) * cfg.fps) : 0;
+                                          live: !!TL.liveOnly, status: !!TL.statusOn, finalTable: !!TL.finalTable, finalFrom: TL.finalFrom, finalLineFrom: TL.finalLineFrom, finalTransition: TL.finalTransition }));
+  const STAT = info.status, LIVE = info.live, exitFadeF = LIVE ? Math.round((cfg.live_only.exit_fade_sec || 0.5) * cfg.fps) : 0;
   // retirement quarter of every console, from consoles.csv alone
   const retQ = {}; for (const c of consoles) if (c.fade_date) retQ[c.console_id] = quarters.find(q => q >= c.fade_date) || null;
   const qEndOf = d => d === info.opening ? info.start[0] - 1 : info.qend[info.dates.indexOf(d)];
@@ -141,10 +148,11 @@ async function runCase(name, configFile, opts = {}) {
   let prevDate = null, firstFrameOf = {}, prevLab = {}, prevU = {}, prevRank0 = null, prevRec = null;
   const boardSizes = [], staticLive = {}, lastQU = {};
   res.counts.record_frames = 0; res.counts.exit_tags = 0; res.records = [];
+  res.counts.status_frames = { latest_figure: 0, retired: 0 }; res.statusStarts = {};
   const between = new Set(), needBetween = [];
   const winDates = new Set(info.dates);
   for (let f = 0; f < info.raceFrames; f++) {
-    const S = await pg.evaluate(t => { drawAt(t); return { L: window.__LABELS, B: window.__BARS, P: window.__PICS, LG: window.__LOGOS, CR: window.__CROWN, K: window.__KEY, CO: window.__CALLOUT, R: window.__RANK, FI: window.__FINAL, RC: window.__RECORD }; }, f / cfg.fps);
+    const S = await pg.evaluate(t => { drawAt(t); return { L: window.__LABELS, B: window.__BARS, P: window.__PICS, LG: window.__LOGOS, CR: window.__CROWN, K: window.__KEY, CO: window.__CALLOUT, R: window.__RANK, FI: window.__FINAL, RC: window.__RECORD, ST: window.__STATUS }; }, f / cfg.fps);
     const dl = S.L.filter(l => l.kind === 'time_line');
     if (dl.length !== 1) { fail(`f${f}: ${dl.length} date lines`); continue; }
     const FSUF = ' · all-time top ' + cfg.rows, dtx = dl[0].text.endsWith(FSUF) ? dl[0].text.slice(0, -FSUF.length) : dl[0].text;
@@ -172,8 +180,23 @@ async function runCase(name, configFile, opts = {}) {
       for (const id of tags) if (!(id in res.fadeStarts)) res.fadeStarts[id] = q;      // round 3: the quarter its exit is shown
       for (const b of S.B.filter(b => b.alpha > 0 && !inFinal)) { const want = !!retQ[b.id] && (retQ[b.id] === q || (retQ[b.id] < q && f < goneAfter(b.id)));
         if (want !== tags.has(b.id)) fail(`f${f} ${q}: ${b.id} retires tag ${tags.has(b.id)}, retirement quarter ${retQ[b.id]}`); } }
+    // 18-19. round 4: status labels and dimming, from series.csv `status` alone
+    if (STAT) {
+      const tags = {}; for (const l of S.L.filter(l => l.kind === 'status_tag')) tags[l.id] = l;
+      const sq = atEnd ? q : pq;                      // the status of the last quarter end whose count has landed
+      for (const b of vis) {
+        const want = byQ[sq] && byQ[sq][b.id] ? byQ[sq][b.id].status : 'live';
+        if (!['live', 'latest_figure', 'retired'].includes(want)) fail(`series.csv status "${want}"`);
+        if (b.status !== want) fail(`f${f} ${q}: ${b.id} status ${b.status}, series.csv ${want}`);
+        const t = tags[b.id], wtxt = want === 'live' ? null : '· ' + cfg.status[want];
+        if (want === 'live' ? !!t : !(t && t.text === wtxt && t.alpha > 0)) fail(`f${f} ${q}: ${b.id} label "${t && t.text}" but status ${want}`);
+        if (want === 'live' ? Math.abs(b.fade - 1) > 1e-9 : !(b.fade < 1)) fail(`f${f} ${q}: ${b.id} fade ${b.fade} but status ${want}`);
+        if (want !== 'live') { res.counts.status_frames[want]++; if (!((b.id + ' ' + want) in res.statusStarts)) res.statusStarts[b.id + ' ' + want] = q; }
+      }
+      for (const id in tags) if (!vis.some(b => b.id === id)) fail(`f${f}: status label for ${id}, which is not drawn`);
+    }
     // 16. record line
-    if (LIVE && !inFinal) {
+    if ((LIVE && !inFinal) || STAT) {
       if (!S.RC) fail(`f${f}: no record line`); else {
         res.counts.record_frames++;
         const ids = Object.keys(byQ[q]), maxHi = ids.reduce((m, id) => { const u = BigInt(byQ[q][id].units); return u > m ? u : m; }, 0n);
@@ -191,6 +214,12 @@ async function runCase(name, configFile, opts = {}) {
         const holderDrawn = S.B.some(b => b.id === S.RC.id && b.alpha > 0);
         if (S.CR && S.CR.id !== S.RC.id) fail(`f${f}: crown on ${S.CR.id}, record holder ${S.RC.id}`);
         if (S.CR && !!S.CR.onLabel === holderDrawn) fail(`f${f}: crown ${S.CR.onLabel ? 'on the label' : 'on the bar'} but holder ${holderDrawn ? 'is' : 'is not'} on the board`);
+        if (STAT) {                                     // round 4: the leader is the record holder; the line is broken under every label that crosses it
+          if (S.RC.id !== S.R[0]) fail(`f${f}: record holder ${S.RC.id}, leader ${S.R[0]}`);
+          for (const l of S.L) { if (!l.size || l.kind === 'record' || l.kind.startsWith('key_') || l.x > S.RC.x + 8 || l.x + l.w < S.RC.x - 8) continue;
+            const a = l.y - l.size * 0.85, b2 = l.y + l.size * 0.3;
+            if (a < 1034 && b2 > cfg.board_top + 8 && !(S.RC.gaps || []).some(g => g[0] <= a + 0.01 && g[1] >= b2 - 0.01)) fail(`f${f}: the record line crosses ${l.kind} "${l.text}"`); }
+        }
       }
     }
     const uOf = {}; for (const b of S.B) uOf[b.id] = b.units;
@@ -213,7 +242,8 @@ async function runCase(name, configFile, opts = {}) {
       const wantCol = pal[mo.indexOf(C[b.id].maker_key)];
       if (b.colour.toLowerCase() !== wantCol.toLowerCase()) fail(`f${f}: ${b.id} colour ${b.colour} != ${wantCol}`);
       const fq = fadeQuarter[b.id];
-      if (LIVE) { const want = inFinal && retQ[b.id] ? cfg.fade.alpha : 1; if (Math.abs(b.fade - want) > 1e-9) fail(`f${f}: ${b.id} fade ${b.fade}, want ${want}`); }
+      if (STAT) { if (b.fade < 1) res.counts.faded_frames++; }                       // round 4: checked in 18-19
+      else if (LIVE) { const want = inFinal && retQ[b.id] ? cfg.fade.alpha : 1; if (Math.abs(b.fade - want) > 1e-9) fail(`f${f}: ${b.id} fade ${b.fade}, want ${want}`); }
       else if (fq === null || q < fq) { if (Math.abs(b.fade - 1) > 1e-9) fail(`f${f} ${q}: ${b.id} faded before its fade quarter ${fq}`); }
       else {
         if (firstFrameOf[fq] !== f && !(b.fade < 1)) fail(`f${f} ${q}: ${b.id} not faded after the start of its fade quarter ${fq}`);
@@ -383,19 +413,20 @@ async function runCase(name, configFile, opts = {}) {
   const noCount = needBetween.filter(x => !between.has(x));
   if (noCount.length) fail(`${noCount.length} bars grew by 1 million or more in a quarter without counting through it, e.g. ${noCount.slice(0, 3).join('; ')}`);
   res.counted = needBetween.length;
-  if (opts.atari && res.fadeStarts.atari_2600 !== '1991-12-31') fail(`Atari 2600 ${LIVE ? 'retires' : 'fades'} at ${res.fadeStarts.atari_2600}, want 1991-12-31`);
+  if (opts.atari && STAT && res.statusStarts['atari_2600 retired'] !== '1991-12-31') fail(`Atari 2600 labelled retired from ${res.statusStarts['atari_2600 retired']}, want 1991-12-31`);
+  if (opts.atari && !STAT && res.fadeStarts.atari_2600 !== '1991-12-31') fail(`Atari 2600 ${LIVE ? 'retires' : 'fades'} at ${res.fadeStarts.atari_2600}, want 1991-12-31`);
   if (isDataEnd && (cfg.final_line || {}).enabled && !res.counts.final_frames) fail('no final-table line on the final table');
   res.pass = res.failures.length === 0;
   return res;
 }
 
 function write(results) {
-  const L = ['# RTT-003 player test results (IQ-10 round 3)', '',
+  const L = ['# RTT-003 player test results (IQ-10 round 4)', '',
     'Written by `node tests/player/run_tests_rtt003.js`. Every frame drawn in order at 1920 x 1080 in Playwright Chromium through `kits/rtt-002/rtt.js` (the same path as the render), with placeholder pictures and logos. Expected values read independently from `data/rtt-003/` (series.csv, consoles.csv, crown.csv, series_by_maker.csv). Round 2: the numbers count; on every quarter-end frame each value label must equal series.csv exactly (with "+" where plus_flag is yes); while counting, labels stay between the two quarter ends and never go backwards.', '',
     `Overall: ${results.filter(r => r.pass).length}/${results.length} PASS.`, '',
-    '| Case | Result | Config | Quarters (opening → last) | Frames | Labels at quarter ends / while counting (with "+") / bars proven to count | Bar styles (official / estimated / analyst) | Analyst labels | Faded bar-frames | Pictures / logos checked | Crown leaders (frame) | Callouts (crossing frame) | Final-table frames | Fade starts (round 3: retirement exits) | Counts (≤1988 / later) | Closest gap: scoreboard / logo / callout line | Tall-picture overlap | Bars on the board at quarter ends (min / median / max) | Record holders (frame) | Live bars that did not move for 4+ quarters |',
-    '|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|'];
-  for (const r of results) L.push(`| ${r.name} | ${r.pass ? 'PASS' : 'FAIL'} | \`${r.config}\` | ${r.quarters} (${r.opening} → ${r.last}) | ${r.frames} (${(r.frames / 30).toFixed(1)} s) | ${r.counts.quarter_end_values} / ${r.counts.counting_values} (${r.counts.plus}) / ${r.counted} | ${r.counts.styles.official} / ${r.counts.styles.estimated} / ${r.counts.styles.analyst_estimate} | ${r.counts.est_labels} | ${r.counts.faded_frames} | ${r.counts.pics} / ${r.counts.logos} | ${r.crowns.map(c => c.id + ' f' + c.f).join(' → ')} | ${r.callouts.map(c => c.q + ' ' + c.id + ' f' + c.f).join('; ') || 'none'} | ${r.counts.final_frames} | ${Object.entries(r.fadeStarts).map(([k, v]) => k + ' ' + v).join('; ') || 'none'} | ${r.beats.early} / ${r.beats.late} | ${r.closest.key.toFixed(0)} / ${r.closest.logo.toFixed(0)} / ${r.closest.callout === 1e9 ? 'n/a' : r.closest.callout.toFixed(0)} px | ${r.tallOverlap.toFixed(1)} px | ${r.board ? r.board.min + ' / ' + r.board.median + ' / ' + r.board.max : 'n/a'} | ${(r.records || []).map(x => x.id + ' f' + x.f).join(' → ') || 'n/a'} | ${r.staticLive || 'none'} |`);
+    '| Case | Result | Config | Quarters (opening → last) | Frames | Labels at quarter ends / while counting (with "+") / bars proven to count | Bar styles (official / estimated / analyst) | Analyst labels | Faded bar-frames | Pictures / logos checked | Crown leaders (frame) | Callouts (crossing frame) | Final-table frames | Fade starts (round 3: retirement exits) | Counts (≤1988 / later) | Closest gap: scoreboard / logo / callout line | Tall-picture overlap | Bars on the board at quarter ends (min / median / max) | Record holders (frame) | Live bars that did not move for 4+ quarters | Status bar-frames (latest figure / retired) | Status starts (first quarter shown) |',
+    '|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|'];
+  for (const r of results) L.push(`| ${r.name} | ${r.pass ? 'PASS' : 'FAIL'} | \`${r.config}\` | ${r.quarters} (${r.opening} → ${r.last}) | ${r.frames} (${(r.frames / 30).toFixed(1)} s) | ${r.counts.quarter_end_values} / ${r.counts.counting_values} (${r.counts.plus}) / ${r.counted} | ${r.counts.styles.official} / ${r.counts.styles.estimated} / ${r.counts.styles.analyst_estimate} | ${r.counts.est_labels} | ${r.counts.faded_frames} | ${r.counts.pics} / ${r.counts.logos} | ${r.crowns.map(c => c.id + ' f' + c.f).join(' → ')} | ${r.callouts.map(c => c.q + ' ' + c.id + ' f' + c.f).join('; ') || 'none'} | ${r.counts.final_frames} | ${Object.entries(r.fadeStarts).map(([k, v]) => k + ' ' + v).join('; ') || 'none'} | ${r.beats.early} / ${r.beats.late} | ${r.closest.key.toFixed(0)} / ${r.closest.logo.toFixed(0)} / ${r.closest.callout === 1e9 ? 'n/a' : r.closest.callout.toFixed(0)} px | ${r.tallOverlap.toFixed(1)} px | ${r.board ? r.board.min + ' / ' + r.board.median + ' / ' + r.board.max : 'n/a'} | ${(r.records || []).map(x => x.id + ' f' + x.f).join(' → ') || 'n/a'} | ${r.staticLive || 'none'} | ${r.counts.status_frames.latest_figure} / ${r.counts.status_frames.retired} | ${Object.entries(r.statusStarts).map(([k, v]) => k.replace(' latest_figure', ' latest figure') + ' ' + v).join('; ') || 'none'} |`);
   L.push('', 'Callout texts:');
   for (const r of results) for (const c of r.callouts) L.push(`- ${r.name}, ${c.q}: "${c.text}"`);
   for (const r of results) if (!r.pass) { L.push('', `**${r.name} failures** (first 40):`); for (const f of r.failures) L.push('- ' + f); }

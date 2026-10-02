@@ -1,6 +1,6 @@
 {
  "extends": "config_rtt003_film.json",
- "kit_version": "rtt003_pilot3_clipD",
+ "kit_version": "rtt003_pilot4_clipD",
  "out": "rtt003_clip_D_2025_2026_final.mp4",
  "window": {
   "from": "2025-01-01",
@@ -9,6 +9,6 @@
  "range": "2025 – 2026",
  "subtitle_sec": 0,
  "notes": [
-  "Clip D (round 3): the last quarters of the race and the transition into the final ALL-TIME top-15 table at 30 Jun 2026, with the Switch line and the PS2 footnote, held 10 s (DEC-070). Opens on the 31 Dec 2024 board."
+  "Clip D: the last quarters of the race into the final all-time top-15 table at 30 Jun 2026 (Xbox Series X|S now moving on VGChartz estimates, DEC-134), with the Switch line and the PS2 footnote, held 10 s (DEC-070). Opens on the 31 Dec 2024 board."
  ]
 }

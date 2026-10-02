@@ -1,24 +1,14 @@
 {
  "stills": [
   {
-   "name": "r3_still_1_2005",
+   "name": "r4_still_1_2005",
    "config": "config_rtt003_film.json",
    "at": "2005-06-30"
   },
   {
-   "name": "r3_still_2_final_2026",
+   "name": "r4_still_2_final_2026",
    "config": "config_rtt003_film.json",
    "at": "final"
-  },
-  {
-   "name": "r3_still_3_logos_1990",
-   "config": "config_rtt003_film.json",
-   "at": "1990-12-31"
-  },
-  {
-   "name": "r3_still_4_names_as_text_1990",
-   "config": "config_rtt003_still_names_as_text.json",
-   "at": "1990-12-31"
   }
  ]
 }

@@ -227,7 +227,7 @@
       const order = Object.keys(ev.values).sort((a, b) => (ev.values[b] - ev.values[a]) || (r[a] < r[b] ? -1 : r[a] > r[b] ? 1 : 0) || (launch[a] < launch[b] ? -1 : launch[a] > launch[b] ? 1 : 0));
       const plus = {}; for (const id of ev.plus) plus[id] = true;
       const mplus = {}; for (const m of ev.maker_plus || []) mplus[m] = true;
-      all.push({ ev, st: { order, totals: Object.assign({}, ev.values), style: Object.assign({}, ev.style), plus,
+      all.push({ ev, st: { order, totals: Object.assign({}, ev.values), style: Object.assign({}, ev.style), plus, status: Object.assign({}, ev.status || {}),
                            maker_totals: Object.assign({}, ev.maker_totals), maker_style: Object.assign({}, ev.maker_style), maker_plus: mplus } });
     });
     let first = all.findIndex(x => x.ev.date >= from);
@@ -383,7 +383,36 @@
         tl.finalLineFrom = tl.quarterEndFrame[lastK] + 1 + tl.finalTransition;
       }
     }
+    /* IQ-10 round 4 (DEC-131, DEC-132): every console stays on the all-time board; a bar that is not live
+       carries its status from the data (series.csv `status`: "latest_figure" or "retired"). The status of
+       quarter k applies from that quarter's quarter-end frame (the frame on which its count lands on the
+       exact figure) until the next quarter-end frame; before the first one, the opening board's status.
+       status[id] = [{frame, kind}] (frame -Infinity = the opening board); dimFrom = the frame the bar
+       stopped being live (the dim and the label fade in over status.sec from there). */
+    const ST = cfg.status;
+    if (ST && ST.enabled) {
+      tl.statusOn = true;
+      tl.statusFade = Math.max(1, Math.round((ST.sec != null ? ST.sec : 0.6) * fps));
+      tl.status = {};
+      for (const e of race.entrants) {
+        const list = [{ frame: -Infinity, kind: opening.status[e.id] || 'live' }];
+        events.forEach((ev, k) => { const kd = states[k].status[e.id] || 'live';
+          if (kd !== list[list.length - 1].kind) list.push({ frame: tl.quarterEndFrame[k], kind: kd }); });
+        tl.status[e.id] = list;
+      }
+    }
     return tl;
+  }
+
+  /* IQ-10 round 4: a bar's status at frame f: {kind, dimFrom} (dimFrom: frame it stopped being live,
+     -Infinity = before the window, null = live). */
+  function statusAt(tl, id, f) {
+    const list = tl.status && tl.status[id];
+    if (!list) return { kind: 'live', dimFrom: null };
+    let i = 0; while (i + 1 < list.length && list[i + 1].frame <= f) i++;
+    if (list[i].kind === 'live') return { kind: 'live', dimFrom: null };
+    let j = i; while (j > 0 && list[j - 1].kind !== 'live') j--;
+    return { kind: list[i].kind, dimFrom: list[j].frame };
   }
 
   /* IQ-10 round 3: is console id on the live board at frame f? (launched, and not past the end of its exit) */
@@ -584,7 +613,7 @@
      keeps its name. Everything else is races.csv's grand_prix exactly. */
   function gpShort(name) { return String(name).replace(/Grand Prix/g, 'GP'); }
 
-  const api = { build, buildSeries, seriesFrame, isLive, eventAt, rankOf, assignColours, coVisible, drawnColour, deltaE, lab, gpShort, rateText };
+  const api = { build, buildSeries, seriesFrame, isLive, statusAt, eventAt, rankOf, assignColours, coVisible, drawnColour, deltaE, lab, gpShort, rateText };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   else root.RTT_TIMELINE = api;
 })(typeof window !== 'undefined' ? window : this);

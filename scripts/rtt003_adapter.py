@@ -10,6 +10,9 @@ the data build) and the lower-bound flag ("+"). Per maker it carries the total f
 series_by_maker.csv, a "+" if any of that maker's consoles carries one, and a style: the least
 certain style among that maker's consoles at that quarter end (analyst_estimate > estimated >
 official), so a company total that contains an analyst estimate is labelled as one (DEC-084).
+Round 4 (1.1): per quarter end, the status of each bar that is not live ("latest_figure" or "retired",
+series.csv `status`, decided in the data build, DEC-131/DEC-132); per console its latest_figure_from and
+retired_from quarter ends.
 Standard library only; deterministic (sorted keys, fixed separators).
 """
 import argparse
@@ -18,7 +21,8 @@ import hashlib
 import json
 import os
 
-ADAPTER = 'rtt003-adapter/1.0'
+ADAPTER = 'rtt003-adapter/1.1'
+STATUS = ('live', 'latest_figure', 'retired')
 RANK = {'official': 0, 'estimated': 1, 'analyst_estimate': 2}
 
 
@@ -44,14 +48,15 @@ def main():
         if r['maker_key'] not in seen:
             seen.add(r['maker_key']); makers.append({'key': r['maker_key'], 'label': r['maker'], 'first_launch': r['launch_date']})
     entrants = [{'id': r['console_id'], 'label': r['display_name'], 'maker': r['maker_key'], 'type': r['type'],
-                 'launch_date': r['launch_date'], 'fade_date': r['fade_date'] or None, 'fade_basis': r['fade_basis']}
+                 'launch_date': r['launch_date'], 'fade_date': r['fade_date'] or None, 'fade_basis': r['fade_basis'],
+                 'latest_figure_from': r['latest_figure_from'] or None, 'retired_from': r['retired_from'] or None}
                 for r in cons]
 
     ev = {}
     for r in rows(files['series']):
         if r['console_id'] not in maker_of:
             raise SystemExit('series.csv has a console that is not in scope: ' + r['console_id'])
-        e = ev.setdefault(r['quarter_end'], {'date': r['quarter_end'], 'values': {}, 'style': {}, 'plus': []})
+        e = ev.setdefault(r['quarter_end'], {'date': r['quarter_end'], 'values': {}, 'style': {}, 'plus': [], 'status': {}})
         u = int(r['units'])
         if str(u) != r['units'] or u < 0:
             raise SystemExit('not a whole number of units: ' + r['quarter_end'] + ' ' + r['console_id'])
@@ -59,6 +64,10 @@ def main():
         e['style'][r['console_id']] = r['display_style']
         if r['display_style'] not in RANK:
             raise SystemExit('unknown display_style ' + r['display_style'])
+        if r['status'] not in STATUS:
+            raise SystemExit('unknown status ' + r['status'])
+        if r['status'] != 'live':
+            e['status'][r['console_id']] = r['status']
         if r['plus_flag'] == 'yes':
             e['plus'].append(r['console_id'])
         elif r['plus_flag'] != 'no':

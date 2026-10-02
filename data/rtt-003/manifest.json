@@ -1,31 +1,31 @@
 {
-  "build": "rtt003-build/1.0",
+  "build": "rtt003-build/1.1",
   "dataset": "RTT-003 Best-Selling Consoles 1985-2026 (units shipped)",
   "inputs": {
-    "source/consoles_curated.csv": "ea513f75478d9bfb7f0490ec437181a76c8175c6249b28f7796c8666b73026a3",
+    "source/consoles_curated.csv": "5e5c59d91fd2670ebcfbf085382364a6531bcd4e619cde08b2a86338c396ffac",
     "source/nintendo_fy_hardware.csv": "789b8fd7191ebc416fc1074300d79ab354b29cd7251ba5ab9d3eb1882de74cb0",
     "source/nintendo_fy_hardware.source.txt": "a8757d89f07886e9a754d4c458e0f9d61a8c6f9101bfc2d1fcb5e793451f64cc",
-    "source/observations_curated.csv": "151b0396f53b666800c6b1c5eda21d851bf5675cb783eaf18ae3169374d60443",
-    "source/report_notes.md": "4361897927f1c6e91056aeb15b9f455a9a95364740eea596717aaf89deb96e63",
+    "source/observations_curated.csv": "e9b55935da176257e57cbc9aa21396bd1d6128e715a44cb8ddb36c2d6717eb3d",
+    "source/report_notes.md": "040a2abc3dfaaba37b978f0ab536adbdebf7b3d5eec80c7e1c4218c6e2a77002",
     "source/sony_business_data.csv": "5077e5222455cb5ffc5df47fee461cb93c786e5597797cb1cecd21cc1323ea91",
     "source/sony_business_data.source.txt": "08517fd6e45a88a532724ac56b09c41736cac0a521685893c4abfbb842196e1b"
   },
   "metric_contract": "reference/metric_contract_RTT-003.md v1.0",
   "outputs": {
-    "CHECKS.md": "ab9d86aaad4a685d52eebfa2b25ccbbbd6dfcaee5f18b564a97a854c984e9fc5",
-    "checks.json": "af813dae3aff5f75c0451e115cf2f5c8f8c228f73def18347f34b30245f2694b",
-    "consoles.csv": "b857b32e95b1203bf6298f2dfb3ace9c687d1dd33a5b5ba5a277f72945ba48e4",
-    "crown.csv": "19da1cf30a7aaa899ba3aa3cb55ddeb324082e51e388186a636b20e0d889f2c4",
-    "observations.csv": "d0cbdcb5db5983f7f8e8830ccea3dfa581cee50ca0f8cd9b15f1d04a28c8054d",
-    "overtakes.csv": "f6095080f57838570e62fff4fbe4a9feb47addb671dad369ab102cd0ffb7f9ff",
-    "series.csv": "3d5350c4bc3cd785dca7677e1ac4374266bb996882948b63c3891def31708e1b",
-    "series_by_maker.csv": "8456c1e6727e8b1fbc0a958d28d39bc779415b340cc43b2c00bf223f852854ce"
+    "CHECKS.md": "d50f80c5a6914596c2fc7a405b2fed50a5c07d91715c024206d8ef7817ea55ba",
+    "checks.json": "e88cab7a2a3fa66d0d911cfde46a92d61410d1851d5cd249a5445b5986c2e76c",
+    "consoles.csv": "4f43e4abd22431de28bd2d96457db647c4e1b2b2723867ef52175a87c2264965",
+    "crown.csv": "0a12b847ace74ba3f4b31df71709fef91f9142481c34fb964114a970dfac3db6",
+    "observations.csv": "a97d41c06954819d76a407e15b34567e73275f86ff83e5c16689cffb16e67edb",
+    "overtakes.csv": "30ee667306383d426bdd1cd0aa7108a01170681e262ed74efd4efbdafffb59a5",
+    "series.csv": "c80566042aff2c648b5912edf9e47eeb4968e960a7182e6b735fc4f72ce0fe6c",
+    "series_by_maker.csv": "f46d5f6e212a4bbb950069d280e881be7b9ec2663f75e9f6824241fa8dd0feae"
   },
   "range": {
     "first_quarter_end": "1985-03-31",
     "last_quarter_end": "2026-06-30"
   },
   "report": {
-    "reports/RTT-003_data_report.md": "3b5fd99472b24afb3f53c68fa1b46e6e7c587b4cbd20efbbd783d91b2fc3e62a"
+    "reports/RTT-003_data_report.md": "792eca7bfc3f4d8be3f1863fd6036965c515e6b275b9459e8dff22f2248e5ad7"
   }
 }

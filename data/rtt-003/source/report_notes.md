@@ -24,7 +24,7 @@
 <!-- SPLIT -->
 ## Luke's answers (2 Oct 2026, Cowork chat) and what changed
 
-1. **Fade rule kept (DEC-093).** The Atari 2600 now fades from the quarter ending 31 Dec 1991 (Atari's documented decision "as of Christmas 1991"). The often-quoted "1 January 1992" is not verified and is not used.
+1. **Fade rule kept (DEC-093).** The Atari 2600 now fades from the quarter ending 31 Dec 1991 (Atari's documented decision "as of Christmas 1991"). The often-quoted "1 January 1992" is not verified and is not used. *(Round 4, DEC-134: Guinness World Records' "27.64 million units … discontinuation on 1 January 1992" was checked and is now the 2600's end point; the retired label still starts at 31 Dec 1991.)*
 2. **PS2 stays at 160m+ (DEC-094).** Sony's 2019 Corporate Report wording ("total consoles sold surpassing 155 million units in March 2012", printed p.17) is recorded as a disagreement. It is a **candidate for a short on-screen note** in the player session.
 3. **Xbox path accepted (DEC-095).** Microsoft's 10 million (3 Dec 2014) was added. The June 2023 "21 million" has no primary source found and is not used.
 4. **Atari 2600 and Master System accepted** as labelled estimates (DEC-096).
@@ -34,6 +34,18 @@
 8. **Nintendo quarterly figures: yes, later; not urgent** (DEC-100).
 9. **PS5 launch date: 11 November 2020** (Sony timeline) (DEC-101).
 10. **All 7 UNVERIFIED figures the bars rested on are now verified** (DEC-102).
+
+## Round 4 data update (Luke, 2 Oct 2026, DEC-134)
+
+Every new figure was checked at its source on 2 Oct 2026. This container's network policy blocks vgchartz.com, guinnessworldrecords.com, telecompaper.com, inside-games.jp and mirai-idea.jp, so those pages were read on a GitHub-hosted runner (`.github/workflows/rtt003_sources.yml`, run 37058144549: excerpts and page hashes in the log, nothing saved). Xbox Wire and the two Famitsu scans were read here.
+
+- **Xbox Series X|S:** eight VGChartz lifetime estimates (30.14m to 35.05m), each mapped to the nearest quarter end (the reporting week nearest it; 4–5 days after the quarter end). All eight cumulative figures match the articles. **Splice:** Aldora's 28.3m (30 Jun 2024, sell-in) to VGChartz's 30.14m (sell-through, period to 5 Oct 2024) adds 1.84m in one quarter. VGChartz's own September 2024 estimate is 0.29m; at that rate a quarter is roughly 0.9m, so (Claude's estimate) about 1m of the step comes from the change of source, not from sales. Not used: S&P Global / Kagan via ChannelNews (14 Jul 2026), "shipped just 3.2 million Xbox Series X/S consoles in 2025" and Q1 2026 "below 500,000" (period figures; no URL supplied, not checked here); Omdia 33m end-2024 (forward-looking).
+- **Xbox 360:** Microsoft's "more than 84 million consoles sold into retail worldwide" (9 Jun 2014) kept; end point 85.73m at the production end, 20 Apr 2016 (VGChartz platform totals: "for all platforms that are no longer manufactured, all figures are total shipments from manufacturers"); straight line between, estimated look; retired from 30 Jun 2016. Not used (no URL supplied): VGChartz 84.46m end-2014; 85.8m (Moneycontrol citing VGChartz).
+- **Atari 2600:** end point 27.64m at 1 Jan 1992 (Guinness; underlying source not identified), straight line from "more than 25 million" (June 1988), estimated look. Not used: Atari "nearly 30 million" (atari.com, 403 from the runner too: UNVERIFIED; Atari SA URD 2021–22 p.6 per Luke, not checked); "more than 30 million" (BusinessWeek citing the 2004 Video Game Price Guide; no URL supplied). **The NES crown quarter does not move** (31 Dec 1988: NES 26.40m vs Atari 2600 25.43m, was 25.00m).
+- **Master System:** Famitsu's restated series, No. 259 (3 Dec 1993, p. 9): 5.70m (31 Mar 1993) and 6.08m (30 Sep 1993); the earlier 6.20m for 31 Mar 1993 (Vol. 159, 21 May 1993, p. 8) is recorded as a disagreement. Region not printed (later compilations say Europe). Latest figure from 30 Sep 1993; retired from 30 Jun 1996 (Telecompaper, 15 Apr 1996: "the discontinuation of the Master System, Mega CD, 32X and the Game Gear systems"). **Note for Luke:** Telecompaper files that item under JAPAN, so it may describe Sega's Japanese line-up only. Not used: Install Base forum 6.1m Europe Mar 1994 (original not found, no URL); Sega "about 19 million" Mark III + Master System (sega.jp, 403: UNVERIFIED).
+- **Game Gear:** no figure change (10.62m, 31 Mar 1996). Sega's "more than 10 million" (sega.jp, 403: UNVERIFIED) is consistent; "about 14 million" (Hideki Sato via shmuplations, 403: UNVERIFIED) is recorded as a disagreement. Retired from 30 Jun 1996 (same Telecompaper item).
+- **Mega Drive:** no figure change (28.54m, 31 Mar 1996); latest figure from 31 Mar 1996 (no documented end date). Recorded, not used: 30.75m (Inside, 30 Apr 2019, citing the 2018 CESA Games White Paper, no cutoff; checked); "30 million or more" (Yosuke Okunari, 30 Sep 2022; checked). The Famitsu No. 442 (6 Jun 1997) table was not found online.
+- **Found while checking (not changed, for Luke):** Famitsu No. 259 also restates the 31 Mar 1993 Mega Drive regions (Japan 300, Genesis 680, Europe 510 = 14.90m, against 15.40m used from Vol. 159) and the Game Gear regions (85 + 145 + 205 = 4.35m, against 4.40m used). Following the Master System rule would lower those two points slightly; Luke asked for no change to the Mega Drive and Game Gear figures, so they stay.
 
 ## Still open
 - Later, not urgent: collect Nintendo's quarterly figures (DEC-100).

@@ -1,6 +1,6 @@
 # RTT-003 scripted checks
 
-Build `rtt003-build/1.0`. All checks PASS: **True**. A check marked REVIEW found something that is reported in full below, not hidden.
+Build `rtt003-build/1.1`. All checks PASS: **True**. A check marked REVIEW found something that is reported in full below, not hidden.
 
 | Check | Result | Detail |
 |---|---|---|
@@ -11,8 +11,9 @@ Build `rtt003-build/1.0`. All checks PASS: **True**. A check marked REVIEW found
 | every_point_has_provenance | PASS | 2697 rows checked |
 | end_values_equal_latest_official | PASS | mismatches: [] |
 | excluded_consoles_absent | PASS | 19 excluded; present in series: [] |
-| observations_integrity | PASS | 454 observations; 0 problems |
+| observations_integrity | PASS | 469 observations; 0 problems |
 | quarter_grid_complete | PASS | 166 quarter ends 1985-03-31..2026-06-30; incomplete: [] |
+| bar_status_rules | PASS | 1288 latest-figure rows, 524 retired rows; problems: [] |
 
 ## Decreases in any series (reported, not hidden)
 
@@ -57,13 +58,13 @@ Build `rtt003-build/1.0`. All checks PASS: **True**. A check marked REVIEW found
 
 ## End values (30 Jun 2026) vs the latest verified official figure
 
-- atari_2600: end 25000000 >= latest official 25000000 (ATARI-2600-1988-06-kit, 1988-06-30) OK
+- atari_2600: end 27640000 >= latest official 25000000 (ATARI-2600-1988-06-kit, 1988-06-30) OK
 - dreamcast: end 8200000 == latest official 8200000 (SEGA-DC-2001-03-31, 2001-03-31) OK
 - game_boy: end 118690000 == latest official 118690000 (NINHS-game_boy-2026-06-30, 2026-06-30) OK
 - game_boy_advance: end 81510000 == latest official 81510000 (NINHS-game_boy_advance-2026-06-30, 2026-06-30) OK
 - game_gear: no verified official dated figure (end 10620000, estimated)
 - gamecube: end 21740000 == latest official 21740000 (NINHS-gamecube-2026-06-30, 2026-06-30) OK
-- master_system: no verified official dated figure (end 6200000, estimated)
+- master_system: no verified official dated figure (end 6080000, estimated)
 - mega_drive: no verified official dated figure (end 28540000, estimated)
 - nes: end 61910000 == latest official 61910000 (NINHS-nes-2026-06-30, 2026-06-30) OK
 - nintendo_3ds: end 75940000 == latest official 75940000 (NINHS-nintendo_3ds-2026-06-30, 2026-06-30) OK
@@ -82,10 +83,19 @@ Build `rtt003-build/1.0`. All checks PASS: **True**. A check marked REVIEW found
 - wii: end 101630000 == latest official 101630000 (NINHS-wii-2026-06-30, 2026-06-30) OK
 - wii_u: end 13560000 == latest official 13560000 (NINHS-wii_u-2026-06-30, 2026-06-30) OK
 - xbox: end 24000000 >= latest official 24000000 (MS-XBOX-2006-05-09, 2006-05-09) OK
-- xbox_360: end 84000000 >= latest official 84000000 (MS-X360-2014-06-09, 2014-06-09) OK
+- xbox_360: end 85730000 >= latest official 84000000 (MS-X360-2014-06-09, 2014-06-09) OK
 - xbox_one: end 54000000 rests on the analyst estimate AMPERE-XB1-2021-08-27 (DEC-084); latest official figure 10000000 (MS-XB1-2014-12-03, 2014-12-03) is below it: consistent
-- xbox_series: no verified official dated figure (end 28300000, analyst_estimate)
+- xbox_series: no verified official dated figure (end 35046439, analyst_estimate)
 
 ## Observation integrity problems
 
 - none
+
+## Bars that still add a little after they are labelled (latest figure / retired)
+
+- atari_2600: retired from 1991-12-31 at 27637983 units; 2017 more units by 2026-06-30 (each quarter under 10,000)
+- game_boy_advance: latest_figure from 2009-12-31 at 81500137 units; 9863 more units by 2026-06-30 (each quarter under 10,000)
+- nes: latest_figure from 2003-03-31 at 61880000 units; 30000 more units by 2026-06-30 (each quarter under 10,000)
+- nintendo_64: latest_figure from 2002-03-31 at 32920000 units; 10000 more units by 2026-06-30 (each quarter under 10,000)
+- nintendo_ds: latest_figure from 2014-03-31 at 153990000 units; 30000 more units by 2026-06-30 (each quarter under 10,000)
+- snes: latest_figure from 2001-03-31 at 49070000 units; 30000 more units by 2026-06-30 (each quarter under 10,000)
