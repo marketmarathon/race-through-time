@@ -1,6 +1,27 @@
-# HANDOVER — 30 Sep 2026 (session 11, Claude Code cloud session, environment "Race Through Time")
+# HANDOVER — 2 Oct 2026 (session 12 follow-up, Claude Code cloud session, environment "Race Through Time": IQ-09)
 
-Previous handovers are in this file's git history. Pull request #9 was merged as `c378ea7`. This session's work is on branch `claude/festive-wright-ljiwlo`, **pull request #10** (not merged; Luke merges once checks pass, DEC-057).
+Previous handovers are in this file's git history. This session's work is on branch `claude/focused-clarke-u0m1ry`, **pull request #12** (https://github.com/marketmarathon/race-through-time/pull/12; not merged; Luke merges, DEC-057). Pull request #11 (RTT-002 release record, DEC-079/DEC-080) is still open and also edits the `state/` files, so whichever merges second needs a small merge of `state/`.
+
+## Where RTT-003 stands (IQ-09, data only)
+- **Episode:** "Best-Selling Consoles 1985–2026", all consoles, units shipped (DEC-081 to DEC-085). Prompt: `prompts/CODE_SESSION_IQ-09.md`.
+- **Luke's answers, 2 Oct 2026 (DEC-093 to DEC-102), applied and rebuilt:**
+  - Atari 2600 fades from 31 Dec 1991 ("as of Christmas 1991", The 2600 Connection no. 9 and AtariUser Jul 1992; the "1 January 1992" date is not used).
+  - PS2 stays at 160m+; Sony's 2019 report wording ("surpassing 155 million units in March 2012") is recorded as a disagreement and is a candidate on-screen note.
+  - Xbox One gains Microsoft's "10 million units sold" (3 Dec 2014).
+  - The June 2023 Series "21 million" is NOT FOUND (primary): it comes from a Microsoft Brazil slide, and no court or Microsoft document was found.
+  - PS5 launch is 11 Nov 2020.
+  - All 7 UNVERIFIED anchors were verified in Luke's Chrome.
+- **Data:** `data/rtt-003/`, 28 consoles, 166 quarter ends (31 Mar 1985 to 30 Jun 2026), 2,697 series rows. 454 observations: 426 verified, 27 UNVERIFIED (none used), 1 NOT FOUND (primary). Checks 9/9 PASS. Crown: Atari 2600 → NES (end-1988, est.) → Game Boy (end-1997, official) → PS2 (mid-2007, est.) to 30 Jun 2026. Switch is second.
+- **Report:** `reports/RTT-003_data_report.md`. Network test: `reports/RTT-003_source_access.md`.
+- Nothing rendered, uploaded or published; no player or visual change (DEC-069); `marketmarathon/bars` untouched.
+
+## Open (RTT-003)
+1. Luke: merge pull request #12 when satisfied.
+2. Later, not urgent: collect Nintendo's quarterly figures (DEC-100).
+3. Player session, only after Luke approves the design build (DEC-069, DEC-085): PS2 155m note candidate (DEC-094); move quickly through 1985–88 (DEC-097); judge the estimated look in the pilot (DEC-099).
+
+## Rules for the next RTT-003 session
+Read `reference/metric_contract_RTT-003.md`, `data/rtt-003/README.md` and DEC-081 to DEC-102. New figures go into `data/rtt-003/source/observations_curated.csv` with source URL, a short verbatim quote, `verified` and `used` with the reason; then rebuild. Never average disagreeing sources, never use a forecast, never present an analyst estimate as official.
 
 ## Where RTT-002 stands
 - **FINAL FILM (30 Sep 2026, DEC-076, DEC-077):** https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-002-film-416d747-run4 (private pre-release). **6 min 35 s** (11,852 frames), 1.5×, "Ego Chall" with beat-aligned loop joins at 3:01 and 5:31, fading out over the 10 s final table, -16.0 LUFS, true peak -3.2 dBTP. Master 3840 × 2160 SHA-256 `6618ef2e6733a9e1e38efeaa39e5095ca8385773acd62be1580d20eb9c7cfda8`; viewing copy 1920 × 1080 `311e66acaaf71283f116d0637a569086a5facc0bdfaa400de6d6588178259822`. Rendered from `416d747` after 20/20 tests passed; run https://github.com/marketmarathon/race-through-time/actions/runs/36699045625. The highlight's 21 one-second windows with 4 starts were accepted by Luke (DEC-077) after it measured below the WCAG 2.x flash thresholds (`reports/RTT-002_wcag_flash_check.md`). **APPROVED by Luke on 30 Sep 2026 (DEC-078) against these two SHA-256 hashes. Not uploaded; nothing on YouTube.**

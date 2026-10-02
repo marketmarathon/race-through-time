@@ -1,0 +1,79 @@
+kind,console_id,fiscal_year,quarter,value_millions,qualifier,as_of,basis
+lifetime,playstation_5,,,95,more_than,2026-06-30,sell-in
+lifetime,playstation_4,,,117,more_than,2022-06-30,sell-in
+lifetime,playstation_3,,,87.4,more_than,2017-03-31,sell-in
+lifetime,psp,,,76.4,more_than,2012-03-31,sell-in
+lifetime,playstation_2,,,160,more_than,2012-03-31,sell-in
+lifetime,playstation,,,102.4,more_than,2012-03-31,sell-in
+quarterly,playstation_5,FY2020,Q3,4.5,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_5,FY2020,Q4,3.3,exact,,sell-in incl. returned and refurbished
+fiscal_year,playstation_5,FY2020,FY,7.8,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_5,FY2021,Q1,2.3,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_5,FY2021,Q2,3.3,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_5,FY2021,Q3,3.9,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_5,FY2021,Q4,2.0,exact,,sell-in incl. returned and refurbished
+fiscal_year,playstation_5,FY2021,FY,11.5,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_5,FY2022,Q1,2.4,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_5,FY2022,Q2,3.3,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_5,FY2022,Q3,7.1,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_5,FY2022,Q4,6.3,exact,,sell-in incl. returned and refurbished
+fiscal_year,playstation_5,FY2022,FY,19.1,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_5,FY2023,Q1,3.3,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_5,FY2023,Q2,4.9,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_5,FY2023,Q3,8.2,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_5,FY2023,Q4,4.5,exact,,sell-in incl. returned and refurbished
+fiscal_year,playstation_5,FY2023,FY,20.8,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_5,FY2024,Q1,2.4,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_5,FY2024,Q2,3.8,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_5,FY2024,Q3,9.5,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_5,FY2024,Q4,2.8,exact,,sell-in incl. returned and refurbished
+fiscal_year,playstation_5,FY2024,FY,18.5,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_5,FY2025,Q1,2.5,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_5,FY2025,Q2,4.0,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_5,FY2025,Q3,7.9,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_5,FY2025,Q4,1.5,exact,,sell-in incl. returned and refurbished
+fiscal_year,playstation_5,FY2025,FY,16.0,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_5,FY2026,Q1,1.6,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_4,FY2013,Q3,4.5,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_4,FY2013,Q4,3.1,exact,,sell-in incl. returned and refurbished
+fiscal_year,playstation_4,FY2013,FY,7.6,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_4,FY2014,Q1,2.8,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_4,FY2014,Q2,3.4,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_4,FY2014,Q3,6.4,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_4,FY2014,Q4,2.3,exact,,sell-in incl. returned and refurbished
+fiscal_year,playstation_4,FY2014,FY,14.8,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_4,FY2015,Q1,2.9,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_4,FY2015,Q2,4.0,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_4,FY2015,Q3,8.4,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_4,FY2015,Q4,2.4,exact,,sell-in incl. returned and refurbished
+fiscal_year,playstation_4,FY2015,FY,17.7,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_4,FY2016,Q1,3.5,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_4,FY2016,Q2,3.9,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_4,FY2016,Q3,9.7,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_4,FY2016,Q4,2.9,exact,,sell-in incl. returned and refurbished
+fiscal_year,playstation_4,FY2016,FY,20.0,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_4,FY2017,Q1,3.3,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_4,FY2017,Q2,4.2,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_4,FY2017,Q3,9.0,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_4,FY2017,Q4,2.5,exact,,sell-in incl. returned and refurbished
+fiscal_year,playstation_4,FY2017,FY,19.0,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_4,FY2018,Q1,3.2,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_4,FY2018,Q2,3.9,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_4,FY2018,Q3,8.1,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_4,FY2018,Q4,2.6,exact,,sell-in incl. returned and refurbished
+fiscal_year,playstation_4,FY2018,FY,17.8,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_4,FY2019,Q1,3.2,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_4,FY2019,Q2,2.8,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_4,FY2019,Q3,6.0,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_4,FY2019,Q4,1.4,exact,,sell-in incl. returned and refurbished
+fiscal_year,playstation_4,FY2019,FY,13.5,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_4,FY2020,Q1,1.9,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_4,FY2020,Q2,1.5,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_4,FY2020,Q3,1.4,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_4,FY2020,Q4,1.0,exact,,sell-in incl. returned and refurbished
+fiscal_year,playstation_4,FY2020,FY,5.7,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_4,FY2021,Q1,0.5,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_4,FY2021,Q2,0.2,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_4,FY2021,Q3,0.2,exact,,sell-in incl. returned and refurbished
+quarterly,playstation_4,FY2021,Q4,0.1,exact,,sell-in incl. returned and refurbished
+fiscal_year,playstation_4,FY2021,FY,1.0,exact,,sell-in incl. returned and refurbished
