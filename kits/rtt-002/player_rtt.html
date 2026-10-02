@@ -80,6 +80,28 @@
          decimal, rounded half up). All three numbers step only at a race, like the wins. It
          replaces the event label (the player refuses the two together); the date line still names
          every race. Recorded in window.__LABELS as kind "stats".
+     Changed in IQ-10 (RTT-003 design pilot, DEC-085 and DEC-103 onwards), only for a quarter-end series
+     ("rtt-series/1", scripts/rtt003_adapter.py) or behind new config keys, so every RTT-002 config draws
+     exactly as before (checked frame by frame against main):
+       - values: millions with one decimal, rounded half up from whole units ("118.7m"), "+" where the
+         data flags a lower bound; the axis steps in whole millions (axis_suffix "m").
+       - pictures: "pictures" {enabled, height_frac, aspect, gap}: one console picture per bar in a column
+         left of the bars (private icons, loaded by rtt.js; never committed), fitted inside its box.
+       - maker colours: one colour per maker (rtt_timeline.js buildSeries, maker_order -> palette).
+       - estimated look (DEC-090, DEC-084): display_style "estimated" bars carry dark diagonal stripes;
+         "analyst_estimate" bars are drawn half-strength with a dashed outline and "· analyst estimate"
+         after the value.
+       - fade: "fade" {enabled, alpha, text_alpha, sec}: from its fade quarter end a retired console's
+         bar and picture fade to alpha, its text to text_alpha (DEC-086, DEC-093).
+       - crown: "crown" {enabled, colour}: a crown after the leader's value.
+       - callout: "callout" {enabled, sec, y, size}: at each change of first place, one line under the
+         title ("NES becomes the best-selling console ever ..."), for callout.sec.
+       - maker key: "maker_key" {enabled, x, bottom, w, ...}: a panel with each maker's colour, logo and
+         name, and a legend for the estimated look and the crown; scoreboard true adds each maker's total.
+       - bar notes: "bar_notes" [{id, mark, text}]: a mark after that console's value and the note on the
+         callout line (the PS2 note candidate, DEC-094; stills only).
+       - glide.bar_mode "beat": a bar's length moves in a straight line over its whole quarter instead of
+         easing over glide.bar_sec (values still step only at the quarter end).
      Removed as unused: the Format C / C2-1 picture column and story cards, the prototype
      driver block that followed </html> in the C2-2 file.
 
@@ -128,10 +150,13 @@ let NAME_PX=null, NAME_TRUNC=false;
 let SZ={axis:20, date:28, footer:17};
 let BOARD={bar_gap:22, name_frac:0.56, value_frac:0.54}, HL=null, WINLINE=null;
 let FLAGCOL=null, FLAGS=false, FLAGIMG={}, FLAGCODE={}, EVL=null, OVL=[], OVLGAP=0, STATS=false;
-const TOP=150, BOTTOM=1080-46;
+/* IQ-10 (RTT-003): all null / false for RTT-002 */
+let SERIES=false, PIC=null, PICIMG={}, LOGOIMG={}, MKEY=null, FADE=null, CROWN=null, CALLOUT=null, NOTES=null, GLIDE_BEAT=false, AXU=1, MAKERS=[], MAKERNAME={};
+let TOP=150; const BOTTOM=1080-46;            // IQ-10: TOP from config board_top (RTT-003); 150 for RTT-002
 
 /* ---- the test hook: what text went on the frame ---- */
 window.__LABELS=[]; window.__RANK=[]; window.__EVENT=null; window.__BARS=[]; window.__FLAGS=[]; window.__GRID=[];
+window.__PICS=[]; window.__CROWN=null; window.__KEY=null; window.__CALLOUT=null;
 function note(kind,id,text,x,y,align,w,tab){
   const x0 = align==='right' ? x-w : align==='center' ? x-w/2 : x;
   const m=/(\d+)px/.exec(ctx.font), mt=ctx.measureText(text);
@@ -188,10 +213,30 @@ function setup(o){
   STATS = !!(CFG.stats_label && CFG.stats_label.enabled);
   if(STATS && !TL.hasStarts) throw new Error('stats_label.enabled but the race file has no starts (rebuild it with scripts/rtt_adapter.py and data/rtt-002/starts.csv)');
   if(STATS && EVL) throw new Error('stats_label replaces the event label; switch event_label off');
+  /* IQ-10 (RTT-003): series mode and its switches */
+  TOP = CFG.board_top!=null ? CFG.board_top : 150;
+  SERIES = !!TL.series; AXU = SERIES ? 1e6 : 1;
+  GLIDE_BEAT = !!(CFG.glide && CFG.glide.bar_mode==='beat');
+  const PC=CFG.pictures||{};
+  PIC = PC.enabled ? Object.assign({height_frac:0.92, aspect:1.65, gap:14}, PC) : null; PICIMG={}; LOGOIMG={};
+  if(PIC){
+    if(!o.pictures) throw new Error('pictures.enabled but no pictures were passed to setup()');
+    for(const [id,src] of Object.entries(o.pictures)){ const im=new Image(); im.src=src; PICIMG[id]=im; loads.push(im.decode()); }
+  }
+  for(const [k,src] of Object.entries(o.logos||{})){ const im=new Image(); im.src=src; LOGOIMG[k]=im; loads.push(im.decode()); }
+  MKEY = CFG.maker_key && CFG.maker_key.enabled ? Object.assign({x:1256, bottom:950, w:600, row_h:46, size:26, legend:true, scoreboard:false, logo_w:112, logo_h:34, pad:14}, CFG.maker_key) : null;
+  FADE = CFG.fade && CFG.fade.enabled ? Object.assign({alpha:0.4, text_alpha:0.7, sec:0.6}, CFG.fade) : null;
+  CROWN = CFG.crown && CFG.crown.enabled ? Object.assign({colour:'#F5C542'}, CFG.crown) : null;
+  CALLOUT = CFG.callout && CFG.callout.enabled ? Object.assign({sec:3.0, y:116, size:30, fade_in:0.25, fade_out:0.4}, CFG.callout) : null;
+  NOTES = Array.isArray(CFG.bar_notes) && CFG.bar_notes.length ? CFG.bar_notes : null;
+  MAKERS = SERIES ? (CFG.maker_order||[]) : []; MAKERNAME = {};
+  if(SERIES) for(const m of TL.makers) MAKERNAME[m.key] = (CFG.maker_names && CFG.maker_names[m.key]) || m.label;
+  if(SERIES && (STATS||EVL||HL||WINLINE||FLAGS)) throw new Error('a console series has no wins: switch off stats_label, event_label, highlight, winner_line and flags');
+  window.__imagesReady=Promise.all(loads).then(()=>Object.keys(FLAGIMG).length);
   /* colours: one per driver for the whole dataset (rtt_timeline.js assignColours, computed on
      the whole race file, not the window), so a passage and the full video agree. */
   ENT={}; const pal=CFG.palette;
-  o.data.entrants.forEach(e=>{ ENT[e.id]={id:e.id,label:e.label,colour:pal[TL.colours.index[e.id]],_y:null}; });
+  o.data.entrants.forEach(e=>{ ENT[e.id]={id:e.id,label:(CFG.labels&&CFG.labels[e.id])||e.label,colour:pal[TL.colours.index[e.id]],_y:null,maker:e.maker}; });
   NAME_PX=null; NAME_TRUNC=false;
 }
 window.setup=setup;
@@ -215,6 +260,17 @@ function fmt(n){
   if(!Number.isInteger(n)) console.error('NON-INTEGER COUNT '+n);
   const v=Math.round(n);
   return v.toLocaleString('en-GB')+' '+(v===1 ? (CFG.unit_singular||CFG.unit) : CFG.unit);
+}
+/* IQ-10: units -> "118.7m" (millions, one decimal, rounded half up on the whole units, done on
+   integers), "+" for a lower bound. 1,000m and over get a thousands separator. */
+function millions(u){
+  if(!Number.isInteger(u) || u<0) console.error('BAD UNITS '+u);
+  const t=Math.floor((u+50000)/100000);
+  return Math.floor(t/10).toLocaleString('en-GB')+'.'+(t%10)+'m';
+}
+function fmtS(u,plus,id){
+  const n=NOTES && NOTES.find(x=>x.id===id);
+  return millions(u)+(plus?'+':'')+(n?n.mark:'');
 }
 /* IQ-05e: "· 306 starts · 29.7%" (the part after the bold win count) */
 function statsText(w,s){
@@ -253,8 +309,10 @@ function geom(){
   /* IQ-05c: the flag column (4:3, as flag-icons draws them) sits between the left margin and the
      bars; the bars start after it. */
   const FH = FLAGCOL ? Math.round(BARH*FLAGCOL.height_frac) : 0, FW = Math.round(FH*4/3);
-  const x0 = FLAGCOL ? LEFT+FW+FLAGCOL.gap : LEFT+GAPBAR, W=1920-RIGHT-VALW-x0;
-  return {ROWH,BARH,NAMEF,VALF,x0,W,FH,FW};
+  /* IQ-10: the picture column (box PW x PH, the row's height x height_frac, aspect PIC.aspect) */
+  const PH = PIC ? Math.round(ROWH*PIC.height_frac) : 0, PW = PIC ? Math.round(PH*PIC.aspect) : 0;
+  const x0 = PIC ? LEFT+PW+PIC.gap : FLAGCOL ? LEFT+FW+FLAGCOL.gap : LEFT+GAPBAR, W=1920-RIGHT-VALW-x0;
+  return {ROWH,BARH,NAMEF,VALF,x0,W,FH,FW,PH,PW};
 }
 
 /* ONE name size for the whole video (C2-2's rule: two bars at different sizes reads as a
@@ -271,7 +329,13 @@ function nameSize(){
   take(TL.opening); TL.states.forEach(take);
   const ids=Object.keys(seen);
   ctx.font=(STATS?'700 ':'600 ')+g.VALF+'px '+FONT; const p=pitch();
-  const valOf=id=>tabWidth(fmt(seen[id]),p)+(seenS[id]||0);   // IQ-05e: plus the stats label
+  /* IQ-10: in a series the value is "118.7m+" (widest case: plus and any note mark), then maybe
+     "· analyst estimate", then maybe the crown */
+  let everA={}, estW=0;
+  if(SERIES){ [TL.opening].concat(TL.states).forEach(s=>s.order.slice(0,NROWS+1).forEach(id=>{ if(s.style[id]==='analyst_estimate') everA[id]=true; }));
+    ctx.font='500 '+g.VALF+'px '+FONT; estW=g.VALF*0.35+tabWidth('· analyst estimate',pitch()); ctx.font=(STATS?'700 ':'600 ')+g.VALF+'px '+FONT; }
+  const valOf=id=>SERIES ? tabWidth(fmtS(seen[id],true,id),p)+(everA[id]?estW:0)+(CROWN?g.VALF*1.6:0)
+                         : tabWidth(fmt(seen[id]),p)+(seenS[id]||0);   // IQ-05e: plus the stats label
   const nx=g.x0+18, limit=1920-64;
   let f=base;
   for(;f>=20;f--){
@@ -294,7 +358,7 @@ function dateText(iso){
   return d+' '+CFG.time_label.months[m-1]+' '+y;
 }
 /* IQ-05d date line and dated event label: "25 October 2020 · Portuguese GP" */
-function lineText(ev){ return dateText(ev.date)+' · '+RTT_TIMELINE.gpShort(ev.grand_prix); }
+function lineText(ev){ return SERIES ? dateText(ev.date) : dateText(ev.date)+' · '+RTT_TIMELINE.gpShort(ev.grand_prix); }
 function eventText(e){ return RTT_TIMELINE.gpShort(e.grand_prix)+(EVL.date && e.date ? ' · '+dateText(e.date) : ''); }
 /* IQ-05b winner line: every credited driver of the race shown, with the career total the data
    gives them after it ("Won by Daniel Ricciardo · 7 wins"; both drivers on a shared drive). */
@@ -384,6 +448,132 @@ function gridLine(x,y0,y1){
   for(const [a,z] of segs){ ctx.fillRect(x,a,1,z-a); window.__GRID.push({x,y:a,w:1,h:z-a}); }
 }
 
+/* ---- IQ-10 (RTT-003) helpers; only called in a quarter-end series ---- */
+function mixGround(hex,a){                       // the colour moved part of the way to the ground
+  const n=parseInt(hex.slice(1),16), g=parseInt(T.ground.slice(1),16);
+  return 'rgb('+[16,8,0].map(b=>Math.round(((n>>b)&255)*(1-a)+((g>>b)&255)*a)).join(',')+')';
+}
+/* The estimated look (DEC-090): "estimated" = the maker colour with dark diagonal stripes;
+   "analyst_estimate" (DEC-084) = the colour at half strength with a dashed outline. */
+function drawStyledBar(x,y,w,h,colour,st){
+  if(st==='analyst_estimate'){
+    ctx.fillStyle=mixGround(colour,0.5); rr(x,y,w,h,2); ctx.fill();
+    if(w>4){ ctx.save(); ctx.setLineDash([9,6]); ctx.lineWidth=2.5; ctx.strokeStyle=mixWhite(colour,0.3);
+      rr(x+1.25,y+1.25,w-2.5,h-2.5,2); ctx.stroke(); ctx.restore(); }
+    return;
+  }
+  ctx.fillStyle=colour; rr(x,y,w,h,2); ctx.fill();
+  if(st==='estimated'){
+    ctx.save(); rr(x,y,w,h,2); ctx.clip();
+    ctx.strokeStyle='rgba(6,10,18,0.45)'; ctx.lineWidth=5; ctx.beginPath();
+    for(let t=-h;t<w;t+=14){ ctx.moveTo(x+t,y+h); ctx.lineTo(x+t+h,y); }
+    ctx.stroke(); ctx.restore();
+  }
+}
+function drawCrown(x,y,w,h,col){
+  ctx.save(); ctx.fillStyle=col; ctx.beginPath();
+  ctx.moveTo(x,y+h); ctx.lineTo(x,y+h*0.32); ctx.lineTo(x+w*0.27,y+h*0.62); ctx.lineTo(x+w*0.5,y+h*0.12);
+  ctx.lineTo(x+w*0.73,y+h*0.62); ctx.lineTo(x+w,y+h*0.32); ctx.lineTo(x+w,y+h); ctx.closePath(); ctx.fill();
+  for(const [px,py] of [[x,y+h*0.32],[x+w*0.5,y+h*0.12],[x+w,y+h*0.32]]){ ctx.beginPath(); ctx.arc(px,py,h*0.1,0,Math.PI*2); ctx.fill(); }
+  ctx.restore();
+}
+/* Retired consoles (DEC-086, DEC-093): 1 until the console's fade quarter end, then down to FADE.alpha
+   over FADE.sec. TL.fade[id]: window event index, -1 = already faded at the opening, null = never. */
+function fadeOf(id,k,fr){
+  if(!FADE || !SERIES) return 1;
+  const f=TL.fade[id];
+  if(f==null) return 1;
+  if(f===-1) return FADE.alpha;
+  if(k<f) return 1;
+  return 1-(1-FADE.alpha)*ease((fr-TL.startFrame[f])/Math.max(1,FADE.sec*FPS));
+}
+/* Callouts: only at a change of first place (TL.records), for CALLOUT.sec from its quarter end. */
+function calloutAt(fr){
+  if(!CALLOUT || !SERIES) return null;
+  for(const rec of TL.records){
+    const s0=TL.startFrame[rec.k], u=(fr-s0)/FPS;
+    if(u>=0 && u<CALLOUT.sec) return {rec,u};
+  }
+  return null;
+}
+function drawCallout(CO,cur){
+  window.__CALLOUT=null;
+  const C=CALLOUT||{y:116,size:30};
+  if(CO){
+    const a=Math.min(1,CO.u/C.fade_in)*Math.min(1,(C.sec-CO.u)/C.fade_out);
+    ctx.globalAlpha=Math.max(0,a);
+    const sz=C.size, cw=sz*1.15, ch=sz*0.9;
+    drawCrown(LEFT,C.y-ch*0.92,cw,ch,CROWN?CROWN.colour:'#F5C542');
+    let x=LEFT+cw+12;
+    ctx.fillStyle=T.ink; ctx.font='600 '+sz+'px '+FONT;
+    const main=ENT[CO.rec.id].label+' becomes the best-selling console ever';
+    text('callout',CO.rec.id,main,x,C.y,'left'); x+=ctx.measureText(main).width;
+    const extra=' · passes '+ENT[CO.rec.previous].label+(CO.rec.style!=='official'?' · estimated figures':'');
+    ctx.fillStyle=T.cap||T.muted; ctx.font='500 '+sz+'px '+FONT;
+    text('callout_extra',CO.rec.id,extra,x,C.y,'left');
+    window.__CALLOUT={id:CO.rec.id, previous:CO.rec.previous, k:CO.rec.k, alpha:ctx.globalAlpha};
+    ctx.globalAlpha=1;
+    return;
+  }
+  if(NOTES){                                     // the PS2 note candidate (DEC-094), stills only
+    for(const n of NOTES) if(cur.order.slice(0,NROWS).includes(n.id)){
+      ctx.fillStyle=T.cap||T.muted; ctx.font='500 '+(CFG.note_size||28)+'px '+FONT;
+      tabText(n.mark+' '+n.text, LEFT, C.y, 'left', 'note', n.id);
+    }
+  }
+}
+/* The maker key (DEC-085): each maker that has launched a console by this quarter end, in maker_order
+   (or, with scoreboard, by total): colour, logo on a light tile (to identify the maker only), name,
+   and with scoreboard its total ("891.3m"), marked like the bars when it contains estimated or
+   analyst figures. A legend for the two estimated looks and the crown sits under the list. The panel's
+   size is fixed (room for every maker), so nothing moves when a maker joins. */
+function drawMakerKey(cur){
+  window.__KEY=null;
+  if(!MKEY) return;
+  const M=MKEY, n=MAKERS.length, legendH=M.legend ? 2*(M.size+12) : 0, H=M.pad*2+n*M.row_h+legendH, y0=M.bottom-H;
+  ctx.globalAlpha=1; ctx.fillStyle=T.panel; rr(M.x,y0,M.w,H,10); ctx.fill();
+  let ms=MAKERS.filter(m=>cur.maker_totals[m]!=null);
+  if(M.scoreboard) ms=ms.slice().sort((a,b)=>(cur.maker_totals[b]-cur.maker_totals[a]) || (MAKERS.indexOf(a)-MAKERS.indexOf(b)));
+  const rowsOut=[];
+  ms.forEach((m,i)=>{
+    const cy=y0+M.pad+i*M.row_h+M.row_h/2, colour=darkenForWhite(CFG.palette[MAKERS.indexOf(m)]);
+    const st=M.scoreboard ? cur.maker_style[m] : 'official';
+    drawStyledBar(M.x+M.pad, cy-13, 26, 26, colour, st);
+    const lx=M.x+M.pad+26+12, ly=cy-M.logo_h/2;
+    ctx.fillStyle='#F4F6FA'; rr(lx,ly,M.logo_w,M.logo_h,6); ctx.fill();
+    const im=LOGOIMG[m];
+    if(im && im.naturalWidth){ const pw=M.logo_w-12, ph=M.logo_h-8, sc=Math.min(pw/im.naturalWidth, ph/im.naturalHeight);
+      ctx.drawImage(im, lx+(M.logo_w-im.naturalWidth*sc)/2, ly+(M.logo_h-im.naturalHeight*sc)/2, im.naturalWidth*sc, im.naturalHeight*sc); }
+    ctx.fillStyle=T.ink; ctx.font='600 '+M.size+'px '+FONT;
+    text('key_name',m,MAKERNAME[m],lx+M.logo_w+14,cy+M.size*0.35,'left');
+    const row={key:m, y:cy, style:st};
+    if(M.scoreboard){
+      ctx.font='700 '+M.size+'px '+FONT;
+      const t=millions(cur.maker_totals[m])+(cur.maker_plus[m]?'+':''), rx=M.x+M.w-M.pad;
+      const tw=tabText(t,rx,cy+M.size*0.35,'right','key_total',m);
+      row.total=cur.maker_totals[m]; row.plus=!!cur.maker_plus[m];
+      if(st!=='official'){
+        ctx.fillStyle=T.cap||T.muted; ctx.font='500 '+(M.size-4)+'px '+FONT;
+        text('key_est',m,st==='analyst_estimate'?'analyst est.':'estimated',rx-tw-12,cy+M.size*0.35,'right');
+      }
+    }
+    rowsOut.push(row);
+  });
+  if(M.legend){
+    const ly1=y0+M.pad+n*M.row_h+M.size*0.9, ly2=ly1+M.size+12, sw='#8492A6';
+    let x=M.x+M.pad;
+    ctx.font='500 '+M.size+'px '+FONT;
+    drawStyledBar(x,ly1-M.size*0.8,26,M.size*0.95,sw,'estimated'); x+=36;
+    ctx.fillStyle=T.cap||T.muted; text('key_legend','estimated','estimated',x,ly1,'left'); x+=ctx.measureText('estimated').width+30;
+    drawStyledBar(x,ly1-M.size*0.8,26,M.size*0.95,sw,'analyst_estimate'); x+=36;
+    ctx.fillStyle=T.cap||T.muted; text('key_legend','analyst','analyst estimate',x,ly1,'left');
+    x=M.x+M.pad;
+    drawCrown(x,ly2-M.size*0.78,M.size*1.15,M.size*0.85,CROWN?CROWN.colour:'#F5C542'); x+=M.size*1.15+10;
+    ctx.fillStyle=T.cap||T.muted; text('key_legend','crown','best-selling console ever',x,ly2,'left');
+  }
+  window.__KEY={box:{x:M.x,y:y0,w:M.w,h:H}, rows:rowsOut};
+}
+
 /* ---- one race frame. t is seconds into the race; the frame index is what matters ---- */
 function drawAt(t){
   baseTransform(); window.__LABELS=[]; window.__GRID=[];
@@ -399,8 +589,11 @@ function drawAt(t){
 
   /* (b) the count steps at the event; only the bar's length moves, over glide.bar_sec */
   const since = k>=0 ? fr-TL.startFrame[k] : 0;
-  const g = k>=0 ? ease(since/Math.max(1,CFG.glide.bar_sec*FPS)) : 1;
-  const rows = cur.order.map(id=>({c:ENT[id], n:cur.totals[id], s:cur.starts?cur.starts[id]:null, len:lerp(prev.totals[id]||0, cur.totals[id], g)}));
+  /* IQ-10 glide.bar_mode "beat": straight line over the whole quarter (the last one: glide.bar_sec) */
+  const beatF = GLIDE_BEAT && k>=0 ? (k+1<TL.startFrame.length ? TL.startFrame[k+1]-TL.startFrame[k] : CFG.glide.bar_sec*FPS) : 0;
+  const g = k>=0 ? (GLIDE_BEAT ? Math.min(1, since/Math.max(1,beatF)) : ease(since/Math.max(1,CFG.glide.bar_sec*FPS))) : 1;
+  const rows = cur.order.map(id=>({c:ENT[id], n:cur.totals[id], s:cur.starts?cur.starts[id]:null, len:lerp(prev.totals[id]||0, cur.totals[id], g),
+                                   st:SERIES?cur.style[id]:null, pl:SERIES?!!cur.plus[id]:false}));
   const top = rows.slice(0,NROWS+3);
 
   ctx.fillStyle=T.ground; ctx.fillRect(0,0,1920,1080);
@@ -409,7 +602,7 @@ function drawAt(t){
   let titleTxt=CFG.title;
   if(CFG.time_label.mode==='title') titleTxt+=' · '+ev.season+(ev.grand_prix?' · '+ev.grand_prix:'');
   text('title',null,titleTxt,LEFT,74,'left');
-  const tsec=fr/FPS, subA=Math.max(0,Math.min(1,(CFG.subtitle_sec||0)-tsec));
+  const tsec=fr/FPS, CO=calloutAt(fr), subA=CO ? 0 : Math.max(0,Math.min(1,(CFG.subtitle_sec||0)-tsec));
   if(subA>0){
     ctx.globalAlpha=subA; ctx.fillStyle=T.muted; ctx.font='500 22px '+FONT;
     text('subtitle',null,CFG.subtitle,LEFT,106,'left');
@@ -423,11 +616,12 @@ function drawAt(t){
   const G=geom(), x0=G.x0, W=G.W;
   const lead=top.slice(0,NROWS).reduce((m,r)=>Math.max(m,r.len),0);
   const smoothMax=Math.max(1,lead)*1.06;
-  const step=niceStepInt(smoothMax/4);
+  const step=niceStepInt(smoothMax/AXU/4)*AXU;            // IQ-10: whole millions in a series (AXU 1e6); AXU 1 for RTT-002
   ctx.font='400 '+SZ.axis+'px '+FONT;
   for(let v=0;v<=smoothMax+1e-9;v+=step){
     const x=x0+W*v/smoothMax; if(x>1920-RIGHT-VALW+20) break;
-    ctx.fillStyle=T.axis; tabText(Math.round(v).toLocaleString('en-GB'),x,TOP-6,'center','axis',null);
+    const av=Math.round(v/AXU);
+    ctx.fillStyle=T.axis; tabText(av.toLocaleString('en-GB')+(SERIES&&av>0?(CFG.axis_suffix||''):''),x,TOP-6,'center','axis',null);
     ctx.fillStyle=T.grid; gridLine(Math.round(x),TOP+8,BOTTOM);
   }
 
@@ -459,7 +653,7 @@ function drawAt(t){
       evOf[h.id]={text:eventText(TL.events[k-1]), a:1-ease(since/fadeF), race_index:TL.events[k-1].race_index};
     for(const id of cur) evOf[id]={text:eventText(ev), a:1, race_index:ev.race_index};
   }
-  window.__BARS=[]; window.__FLAGS=[];
+  window.__BARS=[]; window.__FLAGS=[]; window.__PICS=[]; window.__CROWN=null;
   ctx.save(); ctx.beginPath(); ctx.rect(0, TOP, 1920, BOTTOM-TOP); ctx.clip();
   top.forEach(r=>{
     const c=r.c, y=TOP+14+c._y*ROWH; if(y>BOTTOM-4) return;
@@ -467,8 +661,20 @@ function drawAt(t){
     const hl=hlOf[c.id]||0;
     const w=Math.max(3,W*r.len/smoothMax), colour=darkenForWhite(c.colour);
     const by=y+(ROWH-BARH)/2, mid=by+BARH/2;
-    window.__BARS.push({id:c.id, y:c._y, alpha:ctx.globalAlpha, colour, hl, rect:{x:x0,y:by,w,h:BARH}});
+    /* IQ-10 fade: fa scales the bar and picture, ta the text */
+    const RA=ctx.globalAlpha, fa=fadeOf(c.id,k,fr), ta=FADE ? 1-(1-FADE.text_alpha)*(1-fa)/(1-FADE.alpha) : 1;
+    window.__BARS.push({id:c.id, y:c._y, alpha:ctx.globalAlpha, colour, hl, rect:{x:x0,y:by,w,h:BARH}, style:r.st, fade:fa, plus:r.pl});
     if(ctx.globalAlpha<=0){ ctx.globalAlpha=1; return; }
+    if(PIC){                                     // IQ-10 picture, in the column left of the bar
+      const im=PICIMG[c.id], bx=LEFT, byy=mid-G.PH/2;
+      if(im && im.naturalWidth){
+        const sc=Math.min(G.PW/im.naturalWidth, G.PH/im.naturalHeight), iw=im.naturalWidth*sc, ih=im.naturalHeight*sc;
+        const d={x:bx+(G.PW-iw)/2, y:byy+(G.PH-ih)/2, w:iw, h:ih};
+        ctx.globalAlpha=RA*fa; ctx.drawImage(im,d.x,d.y,d.w,d.h); ctx.globalAlpha=RA;
+        window.__PICS.push({id:c.id, box:{x:bx,y:byy,w:G.PW,h:G.PH}, drawn:d, alpha:RA*fa});
+      }
+    }
+    if(SERIES) ctx.globalAlpha=RA*fa;
     /* IQ-05c flag, in the column left of the bar, same row, same opacity */
     const code=FLAGS && FLAGCODE[c.id];
     if(code && FLAGIMG[code]){
@@ -480,7 +686,9 @@ function drawAt(t){
     if(hl>0){
       ctx.save(); ctx.shadowColor=mixWhite(colour,0.5); ctx.shadowBlur=HL.glow*hl*RASTER;
       ctx.fillStyle=mixWhite(colour,HL.mix*hl); rr(x0,by,w,BARH,2); ctx.fill(); ctx.restore();
-    } else { ctx.fillStyle=colour; rr(x0,by,w,BARH,2); ctx.fill(); }
+    } else if(SERIES){ drawStyledBar(x0,by,w,BARH,colour,r.st); }
+    else { ctx.fillStyle=colour; rr(x0,by,w,BARH,2); ctx.fill(); }
+    if(SERIES) ctx.globalAlpha=RA*ta;
 
     ctx.font='600 '+nf+'px '+FONT;
     const nx=x0+18;
@@ -499,7 +707,7 @@ function drawAt(t){
     else { ctx.fillStyle=T.ink; text('name',c.id,nm,x0+w+18,mid+nf*0.35,'left'); nameOut=ctx.measureText(nm).width+30; }
 
     ctx.font=(STATS?'700 ':'600 ')+VALF+'px '+FONT;          // IQ-05e: the win count in bold
-    const txt=fmt(r.n), tw=tabWidth(txt,pitch());
+    const txt=SERIES ? fmtS(r.n,r.pl,c.id) : fmt(r.n), tw=tabWidth(txt,pitch());
     let after;                                   // where anything after the value may start
     if(!VALOUT && !nameOut && w>tw+40+ctx.measureText(nm).width+24){ ctx.fillStyle='#F4F6FA'; tabText(txt,x0+w-18,mid+VALF*0.35,'right','value',c.id); after=x0+w+18; }
     else { ctx.fillStyle=T.ink; tabText(txt,x0+w+18+nameOut,mid+VALF*0.35,'left','value',c.id); after=x0+w+18+nameOut+tw+VALF*0.35; }
@@ -515,12 +723,23 @@ function drawAt(t){
       ctx.fillStyle=T.cap||T.muted; ctx.font='500 '+VALF+'px '+FONT;
       tabText(statsText(r.n,r.s),after,mid+VALF*0.35,'left','stats',c.id);
     }
+    if(SERIES && r.st==='analyst_estimate'){     // IQ-10 (DEC-084): the analyst-estimate label
+      ctx.fillStyle=T.cap||T.muted; ctx.font='500 '+VALF+'px '+FONT;
+      after+=tabText('· analyst estimate',after,mid+VALF*0.35,'left','est_label',c.id)+VALF*0.35;
+    }
+    if(CROWN && SERIES && c.id===cur.order[0]){ // IQ-10: the crown after the leader's value
+      const ch=VALF*1.0, cw=ch*1.3, cx=after+2, cy=mid-ch*0.55;
+      drawCrown(cx,cy,cw,ch,CROWN.colour);
+      window.__CROWN={id:c.id, x:cx, y:cy, w:cw, h:ch, alpha:ctx.globalAlpha};
+    }
     ctx.globalAlpha=1;
   });
   ctx.restore();
 
   ctx.fillStyle=T.foot; ctx.font='400 '+SZ.footer+'px '+FONT;
   text('footer',null,CFG.footer||'',LEFT,1080-20,'left');
+
+  if(SERIES){ drawCallout(CO, cur); drawMakerKey(cur); }   // IQ-10
 
   /* IQ-05c overlays (DEC-035): each picture fitted inside its reserved box; none if absent */
   window.__OVERLAYS=OVL.map(b=>{

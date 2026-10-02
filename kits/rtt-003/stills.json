@@ -1,0 +1,71 @@
+{
+ "stills": [
+  {
+   "name": "still_1_final_2026",
+   "config": "config_rtt003_film.json",
+   "at": "final"
+  },
+  {
+   "name": "still_1b_final_2026_scoreboard",
+   "config": "config_rtt003_film.json",
+   "at": "final",
+   "overrides": {
+    "maker_key": {
+     "enabled": true,
+     "x": 1256,
+     "bottom": 950,
+     "w": 600,
+     "row_h": 46,
+     "size": 26,
+     "pad": 14,
+     "logos": true,
+     "logo_dir": "logos",
+     "logo_w": 112,
+     "logo_h": 34,
+     "legend": true,
+     "scoreboard": true
+    }
+   }
+  },
+  {
+   "name": "still_2a_2015_top20_xbox_one",
+   "config": "config_rtt003_still_2015_top20.json",
+   "at": "2015-12-31"
+  },
+  {
+   "name": "still_2b_2015_scoreboard_microsoft",
+   "config": "config_rtt003_film.json",
+   "at": "2015-12-31",
+   "overrides": {
+    "maker_key": {
+     "enabled": true,
+     "x": 1256,
+     "bottom": 950,
+     "w": 600,
+     "row_h": 46,
+     "size": 26,
+     "pad": 14,
+     "logos": true,
+     "logo_dir": "logos",
+     "logo_w": 112,
+     "logo_h": 34,
+     "legend": true,
+     "scoreboard": true
+    }
+   }
+  },
+  {
+   "name": "still_3_maker_colours",
+   "sheet": "sheet_colours"
+  },
+  {
+   "name": "still_4_ps2_note",
+   "config": "config_rtt003_still_ps2_note.json",
+   "at": "final"
+  },
+  {
+   "name": "still_5_pictures_at_icon_size",
+   "sheet": "sheet_icons"
+  }
+ ]
+}

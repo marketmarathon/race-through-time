@@ -112,6 +112,40 @@ function loadOverlays(cfg) {
   return out;
 }
 
+/* IQ-10 (RTT-003): the console pictures and maker logos are private media (DEC-006, DEC-060), never
+   committed. With "pictures" {enabled, dir} each console's icon is read from <assets>/<dir>/<id>.png and,
+   with "maker_key" {enabled, logo_dir}, each maker's logo from <assets>/<logo_dir>/<key>.svg (assets =
+   RTT_LOCAL_ASSETS or cfg.local_assets). A missing file is reported ("not found - none drawn") and the
+   render goes on; the render workflow treats that message as a failure. Nothing happens for RTT-002. */
+function dataUrl(f) {
+  const ext = path.extname(f).slice(1).toLowerCase(), mime = ext === 'svg' ? 'image/svg+xml' : ext === 'jpg' ? 'image/jpeg' : 'image/' + ext;
+  return 'data:' + mime + ';base64,' + fs.readFileSync(f).toString('base64');
+}
+function loadPictures(cfg, data) {
+  const P = cfg.pictures;
+  if (!P || !P.enabled) return null;
+  const dir = path.join(path.resolve(KIT, process.env.RTT_LOCAL_ASSETS || cfg.local_assets || 'local_assets'), P.dir || 'icons');
+  const out = {};
+  for (const e of data.entrants) {
+    const f = path.join(dir, e.id + '.png');
+    if (!fs.existsSync(f)) { console.log('picture "' + e.id + '": ' + f + ' not found - none drawn'); continue; }
+    out[e.id] = dataUrl(f);
+  }
+  return out;
+}
+function loadLogos(cfg) {
+  const K = cfg.maker_key;
+  if (!K || !K.enabled || !K.logos) return {};
+  const dir = path.join(path.resolve(KIT, process.env.RTT_LOCAL_ASSETS || cfg.local_assets || 'local_assets'), K.logo_dir || 'logos');
+  const out = {};
+  for (const m of cfg.maker_order || []) {
+    const f = path.join(dir, m + '.svg');
+    if (!fs.existsSync(f)) { console.log('logo "' + m + '": ' + f + ' not found - none drawn'); continue; }
+    out[m] = dataUrl(f);
+  }
+  return out;
+}
+
 /* Open Chromium on the player, fonts loaded and proven, setup() done. Used by the CLI below
    and by the tests (tests/player/run_tests.js), so both draw through exactly the same path. */
 async function openPlayer({ cfg, data, raster = 1, chrome }) {
@@ -142,7 +176,8 @@ async function openPlayer({ cfg, data, raster = 1, chrome }) {
   }, fam);
   if (!fontOK) { await br.close(); throw new Error(fam + ' did not resolve - refusing to render substituted type'); }
 
-  await pg.evaluate(o => window.setup(o), { data, cfg, raster, flags: loadFlags(cfg), overlays: loadOverlays(cfg) });
+  await pg.evaluate(o => window.setup(o), { data, cfg, raster, flags: loadFlags(cfg), overlays: loadOverlays(cfg),
+                                          pictures: loadPictures(cfg, data), logos: loadLogos(cfg) });
   await pg.evaluate(() => window.__imagesReady);
   return { br, pg };
 }
@@ -218,5 +253,5 @@ async function main() {
   console.log(`wrote ${OUT}: frames ${A} to ${B - 1} of ${TOTAL} at ${1920 * R}x${1080 * R}`);
 }
 
-module.exports = { loadConfig, frameTotals, openPlayer, drawFrame, loadFlags, loadOverlays, KIT };
+module.exports = { loadConfig, frameTotals, openPlayer, drawFrame, loadFlags, loadOverlays, loadPictures, loadLogos, KIT };
 if (require.main === module) main().catch(e => { console.error('::error::' + e.message); process.exit(2); });

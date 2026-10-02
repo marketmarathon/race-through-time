@@ -1,0 +1,154 @@
+# Race Through Time - render the RTT-003 design pilot (IQ-10): clips and stills, 1920 x 1080, no music.
+#
+# Its OWN workflow: render_pilot.yml (RTT-002) is not changed, so nothing here can start an RTT-002 render.
+# This repository is PUBLIC (DEC-006). Its workflow logs and artifacts can be read by other people, so
+# this workflow (as render_pilot.yml, DEC-061):
+#   - fetches the console pictures, maker logos and Luke's logo from the PRIVATE repo
+#     marketmarathon/race-through-time-private with the secret RTT_PRIVATE_TOKEN into $RUNNER_TEMP
+#     (outside the checkout), never into the repo, and never prints the secret;
+#   - checks every SHA-256 against kits/rtt-003/assets_sha256.txt and the player input against
+#     kits/rtt-003/dataset_hashes.txt, and stops on any mismatch or any missing picture;
+#   - renders the four pilot clips (kits/rtt-003/config_rtt003_clip_*.json) at 1920 x 1080 with NO audio
+#     track, and the stills (kits/rtt-003/stills.json) at 1920 x 1080 plus phone size;
+#   - saves everything ONLY as one pre-release in the private repo, with every file's SHA-256 in its notes;
+#   - uploads NO workflow artifact, uses NO cache, and deletes pictures, frames and videos at the end.
+# The full RTT-003 film is NOT rendered here (IQ-10 is a pilot).
+# Triggers: a push that changes THIS FILE on the IQ-10 branch, or by hand (once merged).
+name: rtt003-pilot
+
+on:
+  push:
+    branches: [claude/sweet-mendel-faig7w]
+    paths: [.github/workflows/rtt003_pilot.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rtt003-pilot
+  cancel-in-progress: false
+
+env:
+  PRIVATE_REPO: marketmarathon/race-through-time-private
+  PRIVATE_REF: claude/sweet-mendel-faig7w
+  CLIPS: >-
+    config_rtt003_clip_A_1985_1992.json
+    config_rtt003_clip_B_1996_1999.json
+    config_rtt003_clip_C_2005_2009.json
+    config_rtt003_clip_C_2005_2009_scoreboard.json
+
+jobs:
+  render:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install ffmpeg, the kit and Chromium
+        working-directory: kits/rtt-002
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg > /dev/null
+          ffmpeg -hide_banner -encoders 2>/dev/null | grep -q libx264
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 npm ci
+          npx playwright install --with-deps chromium
+
+      - name: Check the player input and the frame counts
+        working-directory: kits/rtt-002
+        run: |
+          want=$(awk '$2 == "output" && $3 ~ /race_rtt003.json$/ {print $1}' ../rtt-003/dataset_hashes.txt)
+          got=$(sha256sum ../rtt-003/race_rtt003.json | cut -d' ' -f1)
+          echo "race_rtt003.json $got (dataset_hashes.txt: $want)"
+          test -n "$want" && test "$got" = "$want"
+          : > "$RUNNER_TEMP/plan.txt"
+          for c in $CLIPS; do
+            test -f "../rtt-003/$c" || { echo "::error::no config $c"; exit 1; }
+            f=$(RTT_CONFIG="../rtt-003/$c" FRAME_COUNT_ONLY=1 node rtt.js | awk '/^FRAMES/ {print $2}')
+            test -n "$f"
+            echo "$c $f" | tee -a "$RUNNER_TEMP/plan.txt"
+          done
+          echo "full film (not rendered): $(RTT_CONFIG=../rtt-003/config_rtt003_film.json FRAME_COUNT_ONLY=1 node rtt.js)"
+
+      - name: Fetch the pictures and logos from the private repo and check their hashes
+        env:
+          GH_TOKEN: ${{ secrets.RTT_PRIVATE_TOKEN }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then echo "::error::secret RTT_PRIVATE_TOKEN is not available to this run"; exit 1; fi
+          A="$RUNNER_TEMP/rtt_assets"; mkdir -p "$A/icons" "$A/logos"
+          : > "$RUNNER_TEMP/check.txt"
+          grep -v '^#' kits/rtt-003/assets_sha256.txt | while read -r sum p; do
+            case "$p" in
+              assets/rtt-003/icons/*|assets/rtt-003/logos/*) dst="$A/${p#assets/rtt-003/}";;
+              assets/rtt-002/rtt_logo.png) dst="$A/rtt_logo.png";;
+              *) echo "::error::unexpected path $p"; exit 1;;
+            esac
+            gh api -H 'Accept: application/vnd.github.raw' "repos/$PRIVATE_REPO/contents/$p?ref=$PRIVATE_REF" > "$dst"
+            printf '%s  %s\n' "$sum" "$dst" >> "$RUNNER_TEMP/check.txt"
+          done
+          sha256sum -c --quiet "$RUNNER_TEMP/check.txt"
+          echo "$(wc -l < "$RUNNER_TEMP/check.txt") private files fetched, all SHA-256 checked"
+          echo "RTT_LOCAL_ASSETS=$A" >> "$GITHUB_ENV"
+
+      - name: Render the clips (1920 x 1080, no audio) and check every video
+        run: |
+          set -o pipefail
+          O="$RUNNER_TEMP/rtt_out"; mkdir -p "$O"
+          SHORT=${GITHUB_SHA::7}
+          probe() { ffprobe -v error -select_streams v:0 -count_packets \
+                      -show_entries stream=width,height,nb_read_packets,r_frame_rate -of csv=p=0 "$1"; }
+          mapfile -t PLAN < "$RUNNER_TEMP/plan.txt"
+          for line in "${PLAN[@]}"; do
+            read -r c FRAMES <<< "$line"
+            STEM="rtt003_${c#config_rtt003_}"; STEM="${STEM%.json}_${SHORT}_1920x1080"
+            (cd kits/rtt-002 && SEG_OUT="$O/$STEM.mp4" RASTER_W=1920 RTT_CONFIG="../rtt-003/$c" node rtt.js | tee "$RUNNER_TEMP/render.log")
+            if grep -q 'not found' "$RUNNER_TEMP/render.log"; then echo "::error::a picture, logo or overlay was not loaded"; exit 1; fi
+            m=$(probe "$O/$STEM.mp4"); echo "$c: $m"
+            test "$m" = "1920,1080,30/1,$FRAMES"
+            a=$(ffprobe -v error -select_streams a -show_entries stream=index -of csv=p=0 "$O/$STEM.mp4" | wc -l)
+            echo "$STEM.mp4: $a audio stream(s), want 0"; test "$a" = 0
+          done
+
+      - name: Render the stills (1920 x 1080 and phone size)
+        run: |
+          set -o pipefail
+          node kits/rtt-003/render_stills.js "$RUNNER_TEMP/rtt_out" | tee "$RUNNER_TEMP/stills.log"
+          if grep -q 'not found' "$RUNNER_TEMP/stills.log"; then echo "::error::a picture or logo was not loaded"; exit 1; fi
+          ls "$RUNNER_TEMP/rtt_out"/*.png | wc -l
+
+      - name: Save the clips and stills as one pre-release in the private repo
+        env:
+          GH_TOKEN: ${{ secrets.RTT_PRIVATE_TOKEN }}
+        run: |
+          O="$RUNNER_TEMP/rtt_out"; SHORT=${GITHUB_SHA::7}
+          TAG="rtt-003-pilot-${SHORT}-run${GITHUB_RUN_NUMBER}"
+          {
+            echo "RTT-003 design pilot (IQ-10): clips and stills, rendered by GitHub Actions. No music."
+            echo
+            echo "- Source: ${GITHUB_REPOSITORY} @ ${GITHUB_SHA} (${GITHUB_REF_NAME}), run ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+            while read -r c FRAMES; do
+              echo "- kits/rtt-003/${c}: ${FRAMES} frames at 30 fps = $(awk -v f="$FRAMES" 'BEGIN {printf "%.1f", f / 30}') s, 1920 x 1080, x264, no audio"
+            done < "$RUNNER_TEMP/plan.txt"
+            echo "- Stills: kits/rtt-003/stills.json, 1920 x 1080 PNG plus the same frame at phone size (390 points wide at 3 device pixels per point)"
+            echo "- Pictures and logos: race-through-time-private ${PRIVATE_REF}, every SHA-256 checked against kits/rtt-003/assets_sha256.txt before drawing"
+            echo "- File SHA-256:"
+            (cd "$O" && sha256sum *.mp4 *.png | sed 's/^/  - /')
+            echo
+            echo "Private review render. Not for upload or publication (DEC-001). Not the full film."
+          } > "$O/notes.md"
+          cat "$O/notes.md"
+          gh release create "$TAG" --repo "$PRIVATE_REPO" --target main --prerelease \
+            --title "RTT-003 design pilot ${SHORT} (clips and stills)" --notes-file "$O/notes.md" "$O"/*.mp4 "$O"/*.png
+          URL="https://github.com/${PRIVATE_REPO}/releases/tag/${TAG}"
+          echo "Release: $URL"
+          echo "RTT-003 pilot saved to the private repo: $URL" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Delete the pictures, frames and videos from the runner
+        if: always()
+        run: rm -rf "$RUNNER_TEMP/rtt_assets" "$RUNNER_TEMP/rtt_out" "$RUNNER_TEMP/render.log" "$RUNNER_TEMP/stills.log" "$RUNNER_TEMP/check.txt"

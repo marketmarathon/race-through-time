@@ -1,0 +1,17 @@
+{
+ "extends": "config_rtt003_film.json",
+ "kit_version": "rtt003_pilot1_clipB",
+ "out": "rtt003_clip_B_1996_1999.mp4",
+ "window": {
+  "from": "1996-01-01",
+  "to": "1999-12-31"
+ },
+ "range": "1996 – 1999",
+ "subtitle_sec": 0,
+ "pacing": {
+  "final_board_sec": 3.0
+ },
+ "notes": [
+  "Pilot clip (IQ-10): the film config (config_rtt003_film.json) cut to a window; everything that draws and every pacing rule is the film's. Opens on the board of the last quarter end before the window for pacing.lead_in_sec (2.0 s; clip A: the first quarter end, 31 Mar 1985, the race start); final board held 3 s (a passage, not the film's 10 s end). No music. Clip B: Game Boy takes the crown from the NES at 31 Dec 1997 (official figures)."
+ ]
+}

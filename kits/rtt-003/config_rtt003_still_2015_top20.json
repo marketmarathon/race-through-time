@@ -1,0 +1,16 @@
+{
+ "extends": "config_rtt003_film.json",
+ "kit_version": "rtt003_still_2015_top20",
+ "rows": 20,
+ "pacing": {
+  "judge_rows": 20
+ },
+ "board": {
+  "bar_gap": 6,
+  "name_frac": 0.78,
+  "value_frac": 0.78
+ },
+ "notes": [
+  "Still only (IQ-10): the board at 31 Dec 2015 with 20 rows instead of 12, so that Xbox One (19th, 19.8m, an analyst estimate) is on screen and its look can be judged (DEC-084). Xbox One is never higher than 14th and Xbox Series X|S never higher than 19th, so on the proposed 12-row board neither ever appears. judge_rows 20 so the rank glide on the 20-row board has settled when the still is taken (the film judges on 12)."
+ ]
+}

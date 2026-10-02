@@ -1,0 +1,64 @@
+{
+ "extends": "../rtt-002/config.json",
+ "episode": "RTT-003",
+ "kit_version": "rtt003_pilot1",
+ "format_version": "RTT-1 player (kits/rtt-002), quarter-end series mode (IQ-10)",
+ "out": "rtt003_film.mp4",
+ "race_file": "../rtt-003/race_rtt003.json",
+ "intro_sec": 0,
+ "outro_sec": 0,
+ "rows": 12,
+ "board_top": 190,
+ "window": { "from": null, "to": null },
+ "pacing": {
+  "sec_per_event": 1.0,
+  "bounds": [0.8, 1.4],
+  "mult": { "rank_change": 1.4, "visible_change": 1.0, "quiet": 0.8 },
+  "settled_run_after": 3,
+  "judge_rows": 12,
+  "lead_in_sec": 2.0,
+  "final_board_sec": 10.0,
+  "segments": [ { "to": "1988-12-31", "sec_per_event": 0.5 } ]
+ },
+ "record_hold": { "enabled": true, "sec": 2.0, "types": ["CROWN"] },
+ "glide": { "bar_sec": 0.35, "rank_sec": 0.55, "entry_sec": 0.1, "bar_mode": "beat" },
+
+ "unit": "units",
+ "title": "Best-Selling Consoles (units shipped)",
+ "subtitle": "Worldwide units shipped to shops since launch, by console family, in millions",
+ "subtitle_sec": 8,
+ "range": "1985 – 2026",
+ "footer": "Race Through Time · Makers' shipment figures; estimates marked · Xbox Series X photo: Ian Hughes, CC BY 2.0, background removed",
+ "time_label": { "mode": "line", "x": 1046, "y": 74, "align": "left", "size": 34,
+                 "months": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"] },
+ "axis_suffix": "m",
+
+ "maker_order": ["atari", "nintendo", "sega", "sony", "microsoft"],
+ "maker_names": { "atari": "Atari", "nintendo": "Nintendo", "sega": "Sega", "sony": "Sony", "microsoft": "Microsoft" },
+ "palette": ["#B12582", "#F04257", "#0593C2", "#1A4EF9", "#1B7E20"],
+ "colour_rule": {},
+
+ "sizes": { "axis": 34, "date": 34, "footer": 26 },
+ "board": { "bar_gap": 14, "name_frac": 0.6, "value_frac": 0.6 },
+ "namescale": 1.0,
+ "barend": 1420,
+ "valout": true,
+ "nameoverflow": true,
+
+ "pictures": { "enabled": true, "dir": "icons", "height_frac": 0.92, "aspect": 1.65, "gap": 14 },
+ "fade": { "enabled": true, "alpha": 0.4, "text_alpha": 0.7, "sec": 0.6 },
+ "crown": { "enabled": true, "colour": "#F5C542" },
+ "callout": { "enabled": true, "sec": 3.0, "y": 130, "size": 30, "fade_in": 0.25, "fade_out": 0.4 },
+ "maker_key": { "enabled": true, "x": 1256, "bottom": 950, "w": 600, "row_h": 46, "size": 26, "pad": 14,
+                "logos": true, "logo_dir": "logos", "logo_w": 112, "logo_h": 34, "legend": true, "scoreboard": false },
+ "overlays": [ { "name": "logo", "file": "rtt_logo.png", "x": 1702, "y": 12, "w": 154, "h": 154 } ],
+ "overlay_gap": 12,
+
+ "notes": [
+  "RTT-003 design pilot (IQ-10). The FULL FILM is not rendered in this session; this config defines it so the pilot clips (which extend it) and the length estimate come from one place. Drawn by the RTT-002 player (kits/rtt-002/player_rtt.html) in its quarter-end series mode; every RTT-003 feature is switched on here and is off for RTT-002.",
+  "Approved design (DEC-085, Luke 2 Oct 2026): console name + picture + maker colour on each bar; values in millions with '+' for lower bounds; maker key with logos; retired consoles fade (data fade dates); crown on the leader; estimated look (DEC-090) and the analyst-estimate label (DEC-084); title says units shipped; quick 1985-88 (DEC-097); RTT-002 pacing approach (DEC-068); callouts at crown changes only; company scoreboard tested in one clip (maker_key.scoreboard).",
+  "Working choices for Luke (DEC-103 onwards): 12 rows; maker colours; bar names from data/rtt-003/consoles.csv; one decimal; the beat glide; the key panel's place (the old car box, bottom right); the callout wording and line under the title.",
+  "pacing: RTT-002's rule (DEC-068) on quarter ends: sec_per_event 1.0 s x 1.4 (top-12 order changed) / 1.0 (a top-12 bar grew) / 0.8 (quiet, or the 4th+ unchanged quarter in a row); quarter ends up to 31 Dec 1988 at 0.5 s (DEC-097); 2.0 s hold on each change of first place (as RTT-002's record pauses); final table 10 s (DEC-070); no title or closing card.",
+  "No music (IQ-10). Pictures and logos are private (race-through-time-private assets/rtt-003/icons, logos; DEC-060), loaded from RTT_LOCAL_ASSETS; never committed here."
+ ]
+}
