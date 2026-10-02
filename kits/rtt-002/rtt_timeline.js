@@ -241,9 +241,13 @@
     const states = win.map(x => x.st);
 
     const JR = P.judge_rows || rows, mult = [], kind = [];
-    let prev = opening, settled = 0;
+    /* round 3 (live_only): the beat is judged on the live board - consoles up to their retirement quarter */
+    const LIVE_ON = !!(cfg.live_only && cfg.live_only.enabled), retQ = {};
+    if (LIVE_ON) for (const e of race.entrants) if (e.fade_date) { const f = all.find(x => x.ev.date >= e.fade_date); if (f) retQ[e.id] = f.ev.date; }
+    const vis = (st, date) => (LIVE_ON ? st.order.filter(id => !retQ[id] || date <= retQ[id]) : st.order).slice(0, JR);
+    let prev = opening, prevDate = openingEvent.date, settled = 0;
     for (let k = 0; k < events.length; k++) {
-      const a = prev.order.slice(0, JR), b = states[k].order.slice(0, JR);
+      const a = vis(prev, prevDate), b = vis(states[k], events[k].date); prevDate = events[k].date;
       const moved = b.filter(id => states[k].totals[id] !== prev.totals[id]);
       let kd;
       if (!sameList(a, b)) { kd = 'rank_change'; settled = 0; }
@@ -348,7 +352,45 @@
       tl.finalLine = { text: (FL.label || FL.id) + ' is ' + (s.plus[FL.other] ? 'at least ' : '') + Math.floor(t / 10) + '.' + (t % 10) + ' million behind the ' + (FL.other_label || FL.other), gap: b - a, atLeast: !!s.plus[FL.other] };
     }
     tl.finalFrom = tl.quarterEndFrame[lastK];
+    /* IQ-10 round 3 (DEC-125): live consoles only. A console races while it is still adding shipments:
+       up to and including the first quarter end on or after its fade_date (data/rtt-003/consoles.csv).
+       During that last quarter its row carries "· retires"; right after the quarter's count it fades over
+       exit_fade_sec and leaves the board. exit[id] = {k, start (tag from), fadeFrom, end, units} (k -1 = at
+       the opening board);
+       'gone' = retired before the window; absent = races to the end of the window. With the window
+       reaching the end of the data, the film closes on the ALL-TIME top table (retired consoles included):
+       a transition of final_transition_sec after the last count, then final_hold_sec. */
+    const LO = cfg.live_only;
+    if (LO && LO.enabled) {
+      tl.liveOnly = true;
+      const fps_ = fps, fadeF = Math.round((LO.exit_fade_sec || 0.5) * fps_);
+      tl.exitFade = fadeF;
+      tl.exit = {};
+      for (const e of race.entrants) {
+        if (!e.fade_date) continue;
+        const fq = all.find(x => x.ev.date >= e.fade_date);
+        if (!fq) continue;
+        if (fq.ev.date < openingEvent.date) { tl.exit[e.id] = 'gone'; continue; }
+        const k = fq.ev.date === openingEvent.date ? -1 : events.findIndex(ev => ev.date === fq.ev.date);
+        if (k === -1 && fq.ev.date !== openingEvent.date) continue;    // retires after the window
+        const start = k >= 0 ? startFrame[k] : 0, fadeFrom = (k >= 0 ? tl.quarterEndFrame[k] : startFrame[0] - 1) + 1;
+        tl.exit[e.id] = { k, date: fq.ev.date, start, fadeFrom, end: fadeFrom + fadeF, units: fq.st.totals[e.id], plus: !!fq.st.plus[e.id] };
+      }
+      if (tl.isDataEnd) {
+        tl.finalTable = true;
+        tl.finalTransition = Math.round((LO.final_transition_sec || 1.0) * fps_);
+        tl.raceFrames = tl.quarterEndFrame[lastK] + 1 + tl.finalTransition + Math.round((LO.final_hold_sec != null ? LO.final_hold_sec : 10) * fps_);
+        tl.finalLineFrom = tl.quarterEndFrame[lastK] + 1 + tl.finalTransition;
+      }
+    }
     return tl;
+  }
+
+  /* IQ-10 round 3: is console id on the live board at frame f? (launched, and not past the end of its exit) */
+  function isLive(tl, id, f) {
+    const x = tl.exit && tl.exit[id];
+    if (x === 'gone') return false;
+    return !x || f < x.end;
   }
 
   /* IQ-10 round 2: the counted board on frame `since` of quarter k (k = -1: the opening board). Units are
@@ -542,7 +584,7 @@
      keeps its name. Everything else is races.csv's grand_prix exactly. */
   function gpShort(name) { return String(name).replace(/Grand Prix/g, 'GP'); }
 
-  const api = { build, buildSeries, seriesFrame, eventAt, rankOf, assignColours, coVisible, drawnColour, deltaE, lab, gpShort, rateText };
+  const api = { build, buildSeries, seriesFrame, isLive, eventAt, rankOf, assignColours, coVisible, drawnColour, deltaE, lab, gpShort, rateText };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   else root.RTT_TIMELINE = api;
 })(typeof window !== 'undefined' ? window : this);

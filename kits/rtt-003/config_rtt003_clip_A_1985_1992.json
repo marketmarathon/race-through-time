@@ -1,6 +1,6 @@
 {
  "extends": "config_rtt003_film.json",
- "kit_version": "rtt003_pilot1_clipA",
+ "kit_version": "rtt003_pilot3_clipA",
  "out": "rtt003_clip_A_1985_1992.mp4",
  "window": {
   "from": "1985-01-01",
@@ -11,6 +11,6 @@
   "final_board_sec": 3.0
  },
  "notes": [
-  "Pilot clip (IQ-10): the film config (config_rtt003_film.json) cut to a window; everything that draws and every pacing rule is the film's. Opens on the board of the last quarter end before the window for pacing.lead_in_sec (2.0 s; clip A: the first quarter end, 31 Mar 1985, the race start); final board held 3 s (a passage, not the film's 10 s end). No music. Clip A: the thin two-console start (Atari 2600 and NES), 1985-88 at 0.5 s per quarter (DEC-097), NES takes the crown at 31 Dec 1988 (estimated figures), the Atari 2600 fades from 31 Dec 1991 (DEC-093)."
+  "Clip A, 1985-1992, at the film's pace: 1.5 s per quarter with 1985-88 at 0.75 s (DEC-122). The two-console start, NES takes the crown (end-1988), Master System retires (Mar 1993 is after the clip; it is on the board throughout), the Atari 2600 retires at 31 Dec 1991 (DEC-093) and leaves the board."
  ]
 }

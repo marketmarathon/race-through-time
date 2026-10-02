@@ -27,6 +27,17 @@
  *  12. pacing: each quarter counts over 0.8-1.4 x its base (0.5 s to 1988, then 1.0 s, or the clip's base),
  *      a crown-change quarter then pauses record_hold.sec; final table final_board_sec
  *  13. scoreboard: totals = series_by_maker.csv at quarter ends, counted and in order between
+ * Round 3 (live board, DEC-125), where live_only is on:
+ *  14. retirement: a console's retirement quarter is the first quarter end on or after its consoles.csv
+ *      fade_date; it carries "· retires" exactly during that quarter, and no bar of it is drawn after that
+ *      quarter's count plus the exit fade - except in the final all-time table
+ *  15. the board at every quarter end = the expected order filtered to the consoles still racing
+ *  16. record line: on every racing frame its units = the largest all-time total of ANY console (retired
+ *      included) - at quarter ends exactly max(series.csv), its holder crown.csv's leader, "+" from the data;
+ *      while counting, at least every drawn bar and between the two quarter ends' maxima; the crown on the
+ *      holder's bar while it is drawn, otherwise on the record label
+ *  17. final table: after the transition the board is the all-time top 15 (retired consoles included)
+ *  Reported: bars on screen per quarter end (min / median / max) and live bars that do not move.
  * Placeholder pictures and logos (plain shapes written at run time into tests/output/, never committed)
  * stand in for the private files. Results: tests/player/RESULTS_RTT003.md. Exit 1 on any failure.
  *
@@ -101,7 +112,13 @@ async function runCase(name, configFile, opts = {}) {
   const { br, pg } = await rtt.openPlayer({ cfg, data, raster: 1, chrome: CHROME });
   delete process.env.RTT_LOCAL_ASSETS;
   const info = await pg.evaluate(() => ({ start: TL.startFrame, raceFrames: RACE_FRAMES, dates: TL.events.map(e => e.date), opening: TL.openingEvent.date,
-                                          qend: TL.quarterEndFrame, count: TL.countFrames, mult: TL.mult, hold: TL.hold, geom: geom() }));
+                                          qend: TL.quarterEndFrame, count: TL.countFrames, mult: TL.mult, hold: TL.hold, geom: geom(),
+                                          live: !!TL.liveOnly, finalTable: !!TL.finalTable, finalFrom: TL.finalFrom, finalLineFrom: TL.finalLineFrom, finalTransition: TL.finalTransition }));
+  const LIVE = info.live, exitFadeF = LIVE ? Math.round((cfg.live_only.exit_fade_sec || 0.5) * cfg.fps) : 0;
+  // retirement quarter of every console, from consoles.csv alone
+  const retQ = {}; for (const c of consoles) if (c.fade_date) retQ[c.console_id] = quarters.find(q => q >= c.fade_date) || null;
+  const qEndOf = d => d === info.opening ? info.start[0] - 1 : info.qend[info.dates.indexOf(d)];
+  const goneAfter = id => { const r = retQ[id]; if (!LIVE || !r) return Infinity; if (r < info.opening) return -1; const e = qEndOf(r); return e == null ? Infinity : e + 1 + exitFadeF; };
   const res = { name, config: configFile, frames: info.raceFrames, quarters: info.dates.length, opening: info.opening, last: info.dates[info.dates.length - 1],
                 failures: [], counts: { quarter_end_values: 0, counting_values: 0, plus: 0, styles: { official: 0, estimated: 0, analyst_estimate: 0 }, est_labels: 0, faded_frames: 0, crown_frames: 0, callout_frames: 0, pics: 0, logos: 0, key_rows: 0, final_frames: 0 },
                 crowns: [], callouts: [], fadeStarts: {}, closest: { key: 1e9, logo: 1e9, callout: 1e9 }, tallOverlap: 0 };
@@ -121,22 +138,61 @@ async function runCase(name, configFile, opts = {}) {
     if (m.type === 'passes') q = quarters.find(x => { const o = expectedOrder(x), p = prevQ(x) && expectedOrder(prevQ(x)); return o.indexOf(m.id) === m.rank - 1 && o.indexOf(m.other) === m.rank && p && p.indexOf(m.other) < p.indexOf(m.id); });
     if (q && q > info.opening && q <= res.last) wantMoments.push({ q, type: m.type, id: m.id, other: m.other });
   }
-  let prevDate = null, firstFrameOf = {}, prevLab = {}, prevU = {}, prevRank0 = null;
+  let prevDate = null, firstFrameOf = {}, prevLab = {}, prevU = {}, prevRank0 = null, prevRec = null;
+  const boardSizes = [], staticLive = {}, lastQU = {};
+  res.counts.record_frames = 0; res.counts.exit_tags = 0; res.records = [];
   const between = new Set(), needBetween = [];
   const winDates = new Set(info.dates);
   for (let f = 0; f < info.raceFrames; f++) {
-    const S = await pg.evaluate(t => { drawAt(t); return { L: window.__LABELS, B: window.__BARS, P: window.__PICS, LG: window.__LOGOS, CR: window.__CROWN, K: window.__KEY, CO: window.__CALLOUT, R: window.__RANK, FI: window.__FINAL }; }, f / cfg.fps);
+    const S = await pg.evaluate(t => { drawAt(t); return { L: window.__LABELS, B: window.__BARS, P: window.__PICS, LG: window.__LOGOS, CR: window.__CROWN, K: window.__KEY, CO: window.__CALLOUT, R: window.__RANK, FI: window.__FINAL, RC: window.__RECORD }; }, f / cfg.fps);
     const dl = S.L.filter(l => l.kind === 'time_line');
     if (dl.length !== 1) { fail(`f${f}: ${dl.length} date lines`); continue; }
-    const q = quarters.find(x => dateText(x) === dl[0].text);
+    const FSUF = ' · all-time top ' + cfg.rows, dtx = dl[0].text.endsWith(FSUF) ? dl[0].text.slice(0, -FSUF.length) : dl[0].text;
+    if (dtx !== dl[0].text && !(LIVE && info.finalTable && f > info.finalFrom)) fail(`f${f}: "all-time top" outside the final table`);
+    if (LIVE && info.finalTable && f > info.finalFrom && dtx === dl[0].text) fail(`f${f}: final table without "all-time top ${cfg.rows}"`);
+    const q = quarters.find(x => dateText(x) === dtx);
     if (!q) { fail(`f${f}: date line "${dl[0].text}" is not a quarter end`); continue; }
     if (prevDate && q < prevDate) fail(`f${f}: date went backwards ${prevDate} -> ${q}`);
     if (q !== prevDate) { firstFrameOf[q] = f; if (prevDate && !winDates.has(q)) fail(`f${f}: quarter ${q} is not in the window`); }
     const k = kOf[q], atEnd = k == null || f >= info.qend[k];            // k undefined = the opening board (exact)
     const pq = k == null ? q : (k > 0 ? info.dates[k - 1] : info.opening);
     const vis = S.B.filter(b => b.alpha > 0);
-    // 4. order: exact at the quarter end; while counting, the order of the counted figures
-    if (atEnd) { const want = expectedOrder(q).slice(0, cfg.rows); if (want.join() !== S.R.join()) fail(`f${f} ${q}: order ${S.R.join(' ')} != ${want.join(' ')}`); }
+    // 4. order: exact at the quarter end (round 3: filtered to the consoles still racing; the all-time top 15
+    //    on the final table); while counting, the order of the counted figures
+    const inFinal = LIVE && info.finalTable && f > info.finalFrom, settledFinal = inFinal && f >= info.finalLineFrom;
+    if (atEnd && (!inFinal || settledFinal)) {
+      const want = expectedOrder(q).filter(id => !LIVE || inFinal || f < goneAfter(id)).slice(0, cfg.rows);
+      if (want.join() !== S.R.join()) fail(`f${f} ${q}: order ${S.R.join(' ')} != ${want.join(' ')}`);
+      if (!inFinal && f === info.qend[k]) { boardSizes.push(S.R.length);
+        for (const id of S.R) { const u = byQ[q][id].units; if (lastQU[id] === u) staticLive[id] = (staticLive[id] || 0) + 1; lastQU[id] = u; } }
+    }
+    // 14. no bar after retirement (except the final table); "· retires" exactly in the retirement quarter
+    if (LIVE) for (const b of S.B) if (b.alpha > 0 && !inFinal && f >= goneAfter(b.id)) fail(`f${f} ${q}: ${b.id} drawn after its retirement (${retQ[b.id]})`);
+    if (LIVE) { const tags = new Set(S.L.filter(l => l.kind === 'exit_tag').map(l => l.id)); res.counts.exit_tags += tags.size;
+      for (const id of tags) if (!(id in res.fadeStarts)) res.fadeStarts[id] = q;      // round 3: the quarter its exit is shown
+      for (const b of S.B.filter(b => b.alpha > 0 && !inFinal)) { const want = !!retQ[b.id] && (retQ[b.id] === q || (retQ[b.id] < q && f < goneAfter(b.id)));
+        if (want !== tags.has(b.id)) fail(`f${f} ${q}: ${b.id} retires tag ${tags.has(b.id)}, retirement quarter ${retQ[b.id]}`); } }
+    // 16. record line
+    if (LIVE && !inFinal) {
+      if (!S.RC) fail(`f${f}: no record line`); else {
+        res.counts.record_frames++;
+        const ids = Object.keys(byQ[q]), maxHi = ids.reduce((m, id) => { const u = BigInt(byQ[q][id].units); return u > m ? u : m; }, 0n);
+        const maxLo = ids.reduce((m, id) => { const u = byQ[pq] && byQ[pq][id] ? BigInt(byQ[pq][id].units) : 0n; return u > m ? u : m; }, 0n);
+        const ru = BigInt(S.RC.units), lo = maxLo < maxHi ? maxLo : maxHi, hi = maxLo < maxHi ? maxHi : maxLo;
+        if (ru < lo || ru > hi) fail(`f${f} ${q}: record ${S.RC.units} outside ${lo}..${hi}`);
+        for (const b of S.B) if (b.alpha > 0 && BigInt(b.units) > ru) fail(`f${f}: ${b.id} ${b.units} above the record ${S.RC.units}`);
+        if (atEnd) { const L = leaderAt(q);
+          if (ru !== maxHi) fail(`f${f} ${q}: record ${S.RC.units} != max ${maxHi}`);
+          if (S.RC.id !== L.new_leader) fail(`f${f} ${q}: record holder ${S.RC.id}, crown.csv ${L.new_leader}`);
+          if (S.RC.plus !== (byQ[q][S.RC.id].plus_flag === 'yes')) fail(`f${f} ${q}: record "+" wrong`);
+          const want = `Record: ${C[S.RC.id].display_name} ${millions(byQ[q][S.RC.id].units)}${byQ[q][S.RC.id].plus_flag === 'yes' ? '+' : ''}`;
+          if (S.RC.text !== want) fail(`f${f}: record label "${S.RC.text}" != "${want}"`); }
+        if (!res.records.length || res.records[res.records.length - 1].id !== S.RC.id) res.records.push({ id: S.RC.id, f, q });
+        const holderDrawn = S.B.some(b => b.id === S.RC.id && b.alpha > 0);
+        if (S.CR && S.CR.id !== S.RC.id) fail(`f${f}: crown on ${S.CR.id}, record holder ${S.RC.id}`);
+        if (S.CR && !!S.CR.onLabel === holderDrawn) fail(`f${f}: crown ${S.CR.onLabel ? 'on the label' : 'on the bar'} but holder ${holderDrawn ? 'is' : 'is not'} on the board`);
+      }
+    }
     const uOf = {}; for (const b of S.B) uOf[b.id] = b.units;
     for (let i = 1; i < S.R.length; i++) if (uOf[S.R[i]] > uOf[S.R[i - 1]]) fail(`f${f}: ${S.R[i]} above ${S.R[i - 1]} with more units`);
     for (const b of vis) {
@@ -157,11 +213,12 @@ async function runCase(name, configFile, opts = {}) {
       const wantCol = pal[mo.indexOf(C[b.id].maker_key)];
       if (b.colour.toLowerCase() !== wantCol.toLowerCase()) fail(`f${f}: ${b.id} colour ${b.colour} != ${wantCol}`);
       const fq = fadeQuarter[b.id];
-      if (fq === null || q < fq) { if (Math.abs(b.fade - 1) > 1e-9) fail(`f${f} ${q}: ${b.id} faded before its fade quarter ${fq}`); }
+      if (LIVE) { const want = inFinal && retQ[b.id] ? cfg.fade.alpha : 1; if (Math.abs(b.fade - want) > 1e-9) fail(`f${f}: ${b.id} fade ${b.fade}, want ${want}`); }
+      else if (fq === null || q < fq) { if (Math.abs(b.fade - 1) > 1e-9) fail(`f${f} ${q}: ${b.id} faded before its fade quarter ${fq}`); }
       else {
         if (firstFrameOf[fq] !== f && !(b.fade < 1)) fail(`f${f} ${q}: ${b.id} not faded after the start of its fade quarter ${fq}`);
         res.counts.faded_frames++;
-        if (!(b.id in res.fadeStarts)) res.fadeStarts[b.id] = q;
+        if (!LIVE && !(b.id in res.fadeStarts)) res.fadeStarts[b.id] = q;
       }
       const mid = b.rect.y + b.rect.h / 2;
       const p = S.P.find(x => x.id === b.id);
@@ -188,7 +245,7 @@ async function runCase(name, configFile, opts = {}) {
       if (overlap(A, B)) res.tallOverlap = Math.max(res.tallOverlap, Math.min(A.y + A.h, B.y + B.h) - Math.max(A.y, B.y));
     }
     // 3. values: exact (with "+") at the quarter end; while counting, "+" if either end carries one; never backwards
-    const finalOn = isDataEnd && k === info.dates.length - 1 && f >= info.qend[k] && !S.CO;
+    const finalOn = isDataEnd && k === info.dates.length - 1 && f >= (LIVE && info.finalTable ? info.finalLineFrom : info.qend[k]) && !S.CO;
     for (const l of S.L.filter(l => l.kind === 'value')) {
       const r = byQ[q][l.id], pr = byQ[pq] && byQ[pq][l.id];
       const plusEnd = r.plus_flag === 'yes', plusPrev = pr ? pr.plus_flag === 'yes' : false;
@@ -218,7 +275,8 @@ async function runCase(name, configFile, opts = {}) {
     // 7. crown: on the counted leader every frame; crown.csv's leader at every quarter end
     if (!S.CR) fail(`f${f} ${q}: no crown`); else {
       res.counts.crown_frames++;
-      if (S.CR.id !== S.R[0]) fail(`f${f}: crown on ${S.CR.id}, leader ${S.R[0]}`);
+      if (!LIVE && S.CR.id !== S.R[0]) fail(`f${f}: crown on ${S.CR.id}, leader ${S.R[0]}`);
+      if (LIVE && inFinal && settledFinal && S.CR.id !== S.R[0]) fail(`f${f}: crown on ${S.CR.id} in the final table, leader ${S.R[0]}`);
       if (atEnd && S.CR.id !== leaderAt(q).new_leader) fail(`f${f} ${q}: crown on ${S.CR.id}, crown.csv says ${leaderAt(q).new_leader}`);
       if (S.CR.x + S.CR.w > 1856.5) fail(`f${f}: crown ends at x ${S.CR.x + S.CR.w}`);
       if (!res.crowns.length || res.crowns[res.crowns.length - 1].id !== S.CR.id) res.crowns.push({ q, id: S.CR.id, f });
@@ -233,9 +291,11 @@ async function runCase(name, configFile, opts = {}) {
         if (f === S.CO.frame) {
           const b = S.B.find(x => x.id === m.id), o = m.other && S.B.find(x => x.id === m.other);
           if (m.type === 'crown' && S.R[0] !== m.id) fail(`f${f}: crown callout but ${m.id} not first`);
-          if (m.type === 'crown' && prevRank0 === m.id) fail(`f${f}: crown callout ${m.id} was already first on the frame before`);
+          if (m.type === 'crown' && (LIVE ? prevRec === m.id : prevRank0 === m.id)) fail(`f${f}: crown callout ${m.id} was already the record holder / first on the frame before`);
+          if (m.type === 'crown' && LIVE && (!S.RC || S.RC.id !== m.id)) fail(`f${f}: crown callout but the record line is not ${m.id}'s`);
           if (m.type === 'first_past' && !(b && BigInt(b.units) >= BigInt(cfg.moments.find(x => x.id === m.id && x.type === 'first_past').units))) fail(`f${f}: first-past callout below the mark`);
-          if (m.type === 'passes' && !(b && o && b.units > o.units)) fail(`f${f}: passes callout but ${m.id} not ahead of ${m.other}`);
+          const oU = m.type !== 'passes' ? 0n : o ? BigInt(o.units) : BigInt(byQ[q][m.other].units);   // round 3: the passed console may be retired (frozen total)
+          if (m.type === 'passes' && !(b && BigInt(b.units) > oU)) fail(`f${f}: passes callout but ${m.id} not ahead of ${m.other}`);
           const cq = m.type === 'crown' ? crown.find(c => c.quarter_end === m.q) : null;
           const txt = S.L.filter(l => l.kind.startsWith('callout')).map(l => l.text).join('');
           if (cq && (cq.display_style !== 'official') !== txt.includes('estimated figures')) fail(`f${f}: callout "estimated figures" does not match crown.csv`);
@@ -290,7 +350,7 @@ async function runCase(name, configFile, opts = {}) {
     for (const a of top) for (const b of others.concat(top.filter(x => x !== a && x.kind !== a.kind && !(a.kind.startsWith('callout') && x.kind.startsWith('callout'))))) { const A = labelBox(a), B = labelBox(b);
       if (overlap(A, B)) fail(`f${f}: ${a.kind} overlaps ${b.kind} "${b.text}"`); else if (others.includes(b)) res.closest.callout = Math.min(res.closest.callout, gapTo(A, B)); }
     if (logo) for (const a of top) if (overlap(labelBox(a), logo)) fail(`f${f}: ${a.kind} enters the logo box`);
-    prevDate = q; prevRank0 = S.R[0];
+    prevDate = q; prevRank0 = S.R[0]; prevRec = S.RC ? S.RC.id : null;
   }
   await br.close();
   // 11. pacing: count length per quarter, holds after the count on crown quarters, final table
@@ -309,7 +369,11 @@ async function runCase(name, configFile, opts = {}) {
     beats.push({ d, n: cnt });
   }
   const lastF = firstFrameOf[info.dates[info.dates.length - 1]];
-  if (info.raceFrames - lastF !== Math.round(P.final_board_sec * cfg.fps)) fail(`final table ${info.raceFrames - lastF} frames, want ${P.final_board_sec} s`);
+  if (LIVE && info.finalTable) { const want = info.qend[info.dates.length - 1] + 1 + Math.round(cfg.live_only.final_transition_sec * cfg.fps) + Math.round(cfg.live_only.final_hold_sec * cfg.fps);
+    if (info.raceFrames !== want) fail(`final table ends at ${info.raceFrames}, want ${want}`); }
+  else if (info.raceFrames - lastF !== Math.round(P.final_board_sec * cfg.fps)) fail(`final table ${info.raceFrames - lastF} frames, want ${P.final_board_sec} s`);
+  if (boardSizes.length) { const so = boardSizes.slice().sort((a, b) => a - b); res.board = { min: so[0], median: so[Math.floor(so.length / 2)], max: so[so.length - 1] }; }
+  res.staticLive = Object.entries(staticLive).filter(([, n]) => n >= 4).map(([id, n]) => id + ' ' + n).join('; ');
   if (firstFrameOf[info.dates[0]] !== Math.round(P.lead_in_sec * cfg.fps)) fail(`first quarter after the opening lands at frame ${firstFrameOf[info.dates[0]]}`);
   const early = beats.filter(b => b.d <= '1988-12-31').map(b => b.n), late = beats.filter(b => b.d > '1988-12-31').map(b => b.n);
   res.beats = { early: early.length ? `${Math.min(...early)}-${Math.max(...early)} frames` : 'n/a', late: late.length ? `${Math.min(...late)}-${Math.max(...late)} frames` : 'n/a' };
@@ -319,19 +383,19 @@ async function runCase(name, configFile, opts = {}) {
   const noCount = needBetween.filter(x => !between.has(x));
   if (noCount.length) fail(`${noCount.length} bars grew by 1 million or more in a quarter without counting through it, e.g. ${noCount.slice(0, 3).join('; ')}`);
   res.counted = needBetween.length;
-  if (opts.atari && res.fadeStarts.atari_2600 !== '1991-12-31') fail(`Atari 2600 fades from ${res.fadeStarts.atari_2600}, want 1991-12-31`);
+  if (opts.atari && res.fadeStarts.atari_2600 !== '1991-12-31') fail(`Atari 2600 ${LIVE ? 'retires' : 'fades'} at ${res.fadeStarts.atari_2600}, want 1991-12-31`);
   if (isDataEnd && (cfg.final_line || {}).enabled && !res.counts.final_frames) fail('no final-table line on the final table');
   res.pass = res.failures.length === 0;
   return res;
 }
 
 function write(results) {
-  const L = ['# RTT-003 player test results (IQ-10 round 2)', '',
+  const L = ['# RTT-003 player test results (IQ-10 round 3)', '',
     'Written by `node tests/player/run_tests_rtt003.js`. Every frame drawn in order at 1920 x 1080 in Playwright Chromium through `kits/rtt-002/rtt.js` (the same path as the render), with placeholder pictures and logos. Expected values read independently from `data/rtt-003/` (series.csv, consoles.csv, crown.csv, series_by_maker.csv). Round 2: the numbers count; on every quarter-end frame each value label must equal series.csv exactly (with "+" where plus_flag is yes); while counting, labels stay between the two quarter ends and never go backwards.', '',
     `Overall: ${results.filter(r => r.pass).length}/${results.length} PASS.`, '',
-    '| Case | Result | Config | Quarters (opening → last) | Frames | Labels at quarter ends / while counting (with "+") / bars proven to count | Bar styles (official / estimated / analyst) | Analyst labels | Faded bar-frames | Pictures / logos checked | Crown leaders (frame) | Callouts (crossing frame) | Final-table frames | Fade starts | Counts (≤1988 / later) | Closest gap: scoreboard / logo / callout line | Tall-picture overlap |',
-    '|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|'];
-  for (const r of results) L.push(`| ${r.name} | ${r.pass ? 'PASS' : 'FAIL'} | \`${r.config}\` | ${r.quarters} (${r.opening} → ${r.last}) | ${r.frames} (${(r.frames / 30).toFixed(1)} s) | ${r.counts.quarter_end_values} / ${r.counts.counting_values} (${r.counts.plus}) / ${r.counted} | ${r.counts.styles.official} / ${r.counts.styles.estimated} / ${r.counts.styles.analyst_estimate} | ${r.counts.est_labels} | ${r.counts.faded_frames} | ${r.counts.pics} / ${r.counts.logos} | ${r.crowns.map(c => c.id + ' f' + c.f).join(' → ')} | ${r.callouts.map(c => c.q + ' ' + c.id + ' f' + c.f).join('; ') || 'none'} | ${r.counts.final_frames} | ${Object.entries(r.fadeStarts).map(([k, v]) => k + ' ' + v).join('; ') || 'none'} | ${r.beats.early} / ${r.beats.late} | ${r.closest.key.toFixed(0)} / ${r.closest.logo.toFixed(0)} / ${r.closest.callout === 1e9 ? 'n/a' : r.closest.callout.toFixed(0)} px | ${r.tallOverlap.toFixed(1)} px |`);
+    '| Case | Result | Config | Quarters (opening → last) | Frames | Labels at quarter ends / while counting (with "+") / bars proven to count | Bar styles (official / estimated / analyst) | Analyst labels | Faded bar-frames | Pictures / logos checked | Crown leaders (frame) | Callouts (crossing frame) | Final-table frames | Fade starts (round 3: retirement exits) | Counts (≤1988 / later) | Closest gap: scoreboard / logo / callout line | Tall-picture overlap | Bars on the board at quarter ends (min / median / max) | Record holders (frame) | Live bars that did not move for 4+ quarters |',
+    '|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|'];
+  for (const r of results) L.push(`| ${r.name} | ${r.pass ? 'PASS' : 'FAIL'} | \`${r.config}\` | ${r.quarters} (${r.opening} → ${r.last}) | ${r.frames} (${(r.frames / 30).toFixed(1)} s) | ${r.counts.quarter_end_values} / ${r.counts.counting_values} (${r.counts.plus}) / ${r.counted} | ${r.counts.styles.official} / ${r.counts.styles.estimated} / ${r.counts.styles.analyst_estimate} | ${r.counts.est_labels} | ${r.counts.faded_frames} | ${r.counts.pics} / ${r.counts.logos} | ${r.crowns.map(c => c.id + ' f' + c.f).join(' → ')} | ${r.callouts.map(c => c.q + ' ' + c.id + ' f' + c.f).join('; ') || 'none'} | ${r.counts.final_frames} | ${Object.entries(r.fadeStarts).map(([k, v]) => k + ' ' + v).join('; ') || 'none'} | ${r.beats.early} / ${r.beats.late} | ${r.closest.key.toFixed(0)} / ${r.closest.logo.toFixed(0)} / ${r.closest.callout === 1e9 ? 'n/a' : r.closest.callout.toFixed(0)} px | ${r.tallOverlap.toFixed(1)} px | ${r.board ? r.board.min + ' / ' + r.board.median + ' / ' + r.board.max : 'n/a'} | ${(r.records || []).map(x => x.id + ' f' + x.f).join(' → ') || 'n/a'} | ${r.staticLive || 'none'} |`);
   L.push('', 'Callout texts:');
   for (const r of results) for (const c of r.callouts) L.push(`- ${r.name}, ${c.q}: "${c.text}"`);
   for (const r of results) if (!r.pass) { L.push('', `**${r.name} failures** (first 40):`); for (const f of r.failures) L.push('- ' + f); }
@@ -345,7 +409,7 @@ function write(results) {
     ['clip_A_1985_1992', 'config_rtt003_clip_A_1985_1992.json', { atari: true }],
     ['clip_B_1996_1999', 'config_rtt003_clip_B_1996_1999.json'],
     ['clip_C_2005_2009', 'config_rtt003_clip_C_2005_2009.json'],
-    ['clip_A_1985_1992_1.5x', 'config_rtt003_clip_A_1985_1992_1.5x.json', { atari: true }],
+    ['clip_D_2025_2026_final', 'config_rtt003_clip_D_2025_2026_final.json'],
     ['film_full_config', 'config_rtt003_film.json', { atari: true }]
   ].filter(c => process.argv.length <= 2 || process.argv.slice(2).includes(c[0]));
   const results = [];

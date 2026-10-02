@@ -2,12 +2,12 @@
 
 Each board still measured as drawn on the 1920 frame and converted to points on a phone showing the video 390 points wide. Thresholds as tests/player/phone_check.js (axis and date at least the names; footer at least 5 pt); the RTT-003 additions (maker key, legend, callout, analyst label) use the footer floor. Pictures and the crown: reported only.
 
-| Still | Names | Values | Axis | Date | Footer | Key names / totals / estimate words | Legend | Callout / note | Analyst label | Picture box | Crown | Result |
+| Still | Names | Values | Axis | Date | Footer | Key names / totals / estimate words | Legend | Callout, note, record label, retires tag | Analyst label | Picture box | Crown | Result |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| r2_still_1_final_2026 | 33px = 6.7 pt | 33px = 6.7 pt | 34px = 6.9 pt | 34px = 6.9 pt | 26px = 5.3 pt | 26px = 5.3 pt | 26px = 5.3 pt | 26px = 5.3 pt | 33px = 6.7 pt | 81 x 49 px = 16.5 x 10.0 pt | 43 x 33 px = 8.7 x 6.7 pt | PASS |
-| r2_still_2_2018_xbox_one | 33px = 6.7 pt | 33px = 6.7 pt | 34px = 6.9 pt | 34px = 6.9 pt | 26px = 5.3 pt | 26px = 5.3 pt | 26px = 5.3 pt | — | 33px = 6.7 pt | 81 x 49 px = 16.5 x 10.0 pt | 43 x 33 px = 8.7 x 6.7 pt | PASS |
-| r2_still_3_closeup_1999 | 33px = 6.7 pt | 33px = 6.7 pt | 34px = 6.9 pt | 34px = 6.9 pt | 26px = 5.3 pt | 26px = 5.3 pt | 26px = 5.3 pt | — | — | 81 x 58.8 px = 16.5 x 11.9 pt | 43 x 33 px = 8.7 x 6.7 pt | PASS |
-| r2_still_4_closeup_2026 | 33px = 6.7 pt | 33px = 6.7 pt | 34px = 6.9 pt | 34px = 6.9 pt | 26px = 5.3 pt | 26px = 5.3 pt | 26px = 5.3 pt | 26px = 5.3 pt | 33px = 6.7 pt | 81 x 49 px = 16.5 x 10.0 pt | 43 x 33 px = 8.7 x 6.7 pt | PASS |
+| r3_still_1_2005 | 33px = 6.7 pt | 33px = 6.7 pt | 34px = 6.9 pt | 34px = 6.9 pt | 26px = 5.3 pt | 26px = 5.3 pt | 26px = 5.3 pt | 26px = 5.3 pt | — | 81 x 49 px = 16.5 x 10.0 pt | 31 x 22 px = 6.3 x 4.5 pt | PASS |
+| r3_still_2_final_2026 | 33px = 6.7 pt | 33px = 6.7 pt | 34px = 6.9 pt | 34px = 6.9 pt | 26px = 5.3 pt | 26px = 5.3 pt | 26px = 5.3 pt | 26px = 5.3 pt | 33px = 6.7 pt | 81 x 49 px = 16.5 x 10.0 pt | 43 x 33 px = 8.7 x 6.7 pt | PASS |
+| r3_still_3_logos_1990 | 33px = 6.7 pt | 33px = 6.7 pt | 34px = 6.9 pt | 34px = 6.9 pt | 26px = 5.3 pt | 26px = 5.3 pt | 26px = 5.3 pt | 26px = 5.3 pt | — | 81 x 49 px = 16.5 x 10.0 pt | 43 x 33 px = 8.7 x 6.7 pt | PASS |
+| r3_still_4_names_as_text_1990 | 33px = 6.7 pt | 33px = 6.7 pt | 34px = 6.9 pt | 34px = 6.9 pt | 26px = 5.3 pt | 26px = 5.3 pt | 26px = 5.3 pt | 26px = 5.3 pt | — | 81 x 49 px = 16.5 x 10.0 pt | 43 x 33 px = 8.7 x 6.7 pt | PASS |
 
 Overall: PASS. For reference: RTT-002's approved film draws names and values at 29 px = 5.9 pt.
 
@@ -15,8 +15,8 @@ Overall: PASS. For reference: RTT-002's approved film draws names and values at 
 
 | Still | Maker | Tile | Logo drawn | Lettering height | Legible as text on a phone? |
 |---|---|---|---|---|---|
-| r2_still_1_final_2026 | sony | 78 x 39 px = 15.8 x 7.9 pt | 43 x 33 px | symbol, no lettering | n/a (symbol 6.7 pt tall) |
-| r2_still_1_final_2026 | nintendo | 78 x 39 px = 15.8 x 7.9 pt | 72 x 24 px | 7.2 px = 1.5 pt | **no** (under 5 pt) |
-| r2_still_1_final_2026 | microsoft | 78 x 39 px = 15.8 x 7.9 pt | 33 x 33 px | symbol, no lettering | n/a (symbol 6.7 pt tall) |
-| r2_still_3_closeup_1999 | sega | 78 x 39 px = 15.8 x 7.9 pt | 72 x 24 px | 22.1 px = 4.5 pt | **no** (under 5 pt) |
-| r2_still_3_closeup_1999 | atari | 78 x 39 px = 15.8 x 7.9 pt | 28 x 33 px | 8.9 px = 1.8 pt | **no** (under 5 pt) |
+| r3_still_1_2005 | sony | 78 x 39 px = 15.8 x 7.9 pt | 43 x 33 px | symbol, no lettering | n/a (symbol 6.7 pt tall) |
+| r3_still_1_2005 | nintendo | 78 x 39 px = 15.8 x 7.9 pt | 72 x 24 px | 7.2 px = 1.5 pt | **no** (under 5 pt) |
+| r3_still_1_2005 | microsoft | 78 x 39 px = 15.8 x 7.9 pt | 33 x 33 px | symbol, no lettering | n/a (symbol 6.7 pt tall) |
+| r3_still_3_logos_1990 | atari | 78 x 39 px = 15.8 x 7.9 pt | 28 x 33 px | 8.9 px = 1.8 pt | **no** (under 5 pt) |
+| r3_still_3_logos_1990 | sega | 78 x 39 px = 15.8 x 7.9 pt | 72 x 24 px | 22.1 px = 4.5 pt | **no** (under 5 pt) |

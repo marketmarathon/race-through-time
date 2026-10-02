@@ -115,6 +115,16 @@
          frame where the counted figures cross (rtt_timeline.js); final_line and final_footnote: one line
          and a small footnote under the title on the final table only (the footnote's mark after its
          console's value, final table only).
+     Changed in IQ-10 round 3 (Luke, DEC-122 onwards), series with live_only only:
+       - live board: only consoles still adding shipments race (rtt_timeline.js exit / isLive). During its
+         retirement quarter a console's row shows "· retires"; right after that quarter it fades and leaves.
+       - record line: a gold line across the chart at the all-time record (the most units of ANY console,
+         retired included), labelled "Record: <console> <value>"; the crown sits on the holder's bar while it
+         is on the board and moves to the label once it retires. The scale always includes the record.
+       - final table: after the last count, a transition (final_transition_sec) to the ALL-TIME top table,
+         retired consoles fading in with the faded look, the record line fading out, the date line reading
+         "... · all-time top 15"; then the final line and footnote.
+       - maker_in_name {enabled}: the maker's name after the console name ("Game Gear · Sega"), still only.
      Removed as unused: the Format C / C2-1 picture column and story cards, the prototype
      driver block that followed </html> in the C2-2 file.
 
@@ -164,13 +174,13 @@ let SZ={axis:20, date:28, footer:17};
 let BOARD={bar_gap:22, name_frac:0.56, value_frac:0.54}, HL=null, WINLINE=null;
 let FLAGCOL=null, FLAGS=false, FLAGIMG={}, FLAGCODE={}, EVL=null, OVL=[], OVLGAP=0, STATS=false;
 /* IQ-10 (RTT-003): all null / false for RTT-002 */
-let COUNT=false, BLOGO=null, FFOOT=null, FINAL_ON=false;
+let COUNT=false, BLOGO=null, FFOOT=null, FINAL_ON=false, LIVE=false, FINAL_LBL=false;
 let SERIES=false, PIC=null, PICIMG={}, LOGOIMG={}, MKEY=null, FADE=null, CROWN=null, CALLOUT=null, NOTES=null, GLIDE_BEAT=false, AXU=1, MAKERS=[], MAKERNAME={};
 let TOP=150; const BOTTOM=1080-46;            // IQ-10: TOP from config board_top (RTT-003); 150 for RTT-002
 
 /* ---- the test hook: what text went on the frame ---- */
 window.__LABELS=[]; window.__RANK=[]; window.__EVENT=null; window.__BARS=[]; window.__FLAGS=[]; window.__GRID=[];
-window.__PICS=[]; window.__CROWN=null; window.__KEY=null; window.__CALLOUT=null; window.__LOGOS=[]; window.__FINAL=null;
+window.__PICS=[]; window.__CROWN=null; window.__KEY=null; window.__CALLOUT=null; window.__LOGOS=[]; window.__FINAL=null; window.__RECORD=null; window.__EXITS=[];
 function note(kind,id,text,x,y,align,w,tab){
   const x0 = align==='right' ? x-w : align==='center' ? x-w/2 : x;
   const m=/(\d+)px/.exec(ctx.font), mt=ctx.measureText(text);
@@ -239,6 +249,7 @@ function setup(o){
   }
   for(const [k,src] of Object.entries(o.logos||{})){ const im=new Image(); im.src=src; LOGOIMG[k]=im; loads.push(im.decode()); }
   COUNT = SERIES && !!(CFG.count && CFG.count.enabled);
+  LIVE = COUNT && !!TL.liveOnly;
   BLOGO = SERIES && CFG.bar_logos && CFG.bar_logos.enabled ? Object.assign({height_frac:0.8, aspect:2.0, gap:8, pad:3}, CFG.bar_logos) : null;
   FFOOT = SERIES && CFG.final_footnote && CFG.final_footnote.enabled ? Object.assign({mark:'*', size:26, dy:34}, CFG.final_footnote) : null;
   MKEY = CFG.maker_key && CFG.maker_key.enabled ? Object.assign({x:1256, bottom:950, w:600, row_h:46, size:26, legend:true, scoreboard:false, logo_w:112, logo_h:34, pad:14}, CFG.maker_key) : null;
@@ -253,7 +264,9 @@ function setup(o){
   /* colours: one per driver for the whole dataset (rtt_timeline.js assignColours, computed on
      the whole race file, not the window), so a passage and the full video agree. */
   ENT={}; const pal=CFG.palette;
-  o.data.entrants.forEach(e=>{ ENT[e.id]={id:e.id,label:(CFG.labels&&CFG.labels[e.id])||e.label,colour:pal[TL.colours.index[e.id]],_y:null,maker:e.maker}; });
+  o.data.entrants.forEach(e=>{ ENT[e.id]={id:e.id,label:(CFG.labels&&CFG.labels[e.id])||e.label,colour:pal[TL.colours.index[e.id]],_y:null,maker:e.maker}; ENT[e.id].short=ENT[e.id].label; });
+  if(SERIES && CFG.maker_in_name && CFG.maker_in_name.enabled)        // round 3 alternative (still only)
+    for(const e of o.data.entrants) ENT[e.id].label += (CFG.maker_in_name.sep||' · ') + MAKERNAME[e.maker];
   NAME_PX=null; NAME_TRUNC=false;
 }
 window.setup=setup;
@@ -377,7 +390,7 @@ function dateText(iso){
   return d+' '+CFG.time_label.months[m-1]+' '+y;
 }
 /* IQ-05d date line and dated event label: "25 October 2020 · Portuguese GP" */
-function lineText(ev){ return SERIES ? dateText(ev.date) : dateText(ev.date)+' · '+RTT_TIMELINE.gpShort(ev.grand_prix); }
+function lineText(ev){ return SERIES ? dateText(ev.date)+(FINAL_LBL?' · all-time top '+NROWS:'') : dateText(ev.date)+' · '+RTT_TIMELINE.gpShort(ev.grand_prix); }
 function eventText(e){ return RTT_TIMELINE.gpShort(e.grand_prix)+(EVL.date && e.date ? ' · '+dateText(e.date) : ''); }
 /* IQ-05b winner line: every credited driver of the race shown, with the career total the data
    gives them after it ("Won by Daniel Ricciardo · 7 wins"; both drivers on a shared drive). */
@@ -500,6 +513,7 @@ function drawCrown(x,y,w,h,col){
    over FADE.sec. TL.fade[id]: window event index, -1 = already faded at the opening, null = never. */
 function fadeOf(id,k,fr){
   if(!FADE || !SERIES) return 1;
+  if(LIVE) return (FINAL_LBL && TL.exit[id]) ? FADE.alpha : 1;     // round 3: the faded look only in the all-time table
   const f=TL.fade[id];
   if(f==null) return 1;
   if(f===-1) return FADE.alpha;
@@ -519,7 +533,7 @@ function calloutAt(fr){
   }
   return null;
 }
-function drawCallout(CO,cur){
+function drawCallout(CO,cur,SF,fr){
   window.__CALLOUT=null;
   const C=CALLOUT||{y:116,size:30};
   if(CO){
@@ -530,11 +544,13 @@ function drawCallout(CO,cur){
     if(type==='crown'){ drawCrown(LEFT,C.y-ch*0.92,cw,ch,CROWN?CROWN.colour:'#F5C542'); x+=cw+12; }
     ctx.fillStyle=T.ink; ctx.font='600 '+sz+'px '+FONT;
     const ord=n=>n+(['th','st','nd','rd'][(n%100>10&&n%100<14)?0:Math.min(n%10,4)%4]||'th');
-    const main = type==='crown' ? ENT[R.id].label+' becomes the best-selling console ever'
-               : type==='first_past' ? ENT[R.id].label+' is the first console past '+(R.units/1e6).toLocaleString('en-GB')+' million'
-               : ENT[R.id].label+' passes '+ENT[R.other].label+' for '+(R.rank===2?'second':ord(R.rank))+' place';
+    /* round 3: a passed console that has left the board is named with its frozen total */
+    const B=R.previous||R.other, gone = LIVE && B && !RTT_TIMELINE.isLive(TL,B,fr), bName = B ? (gone ? ENT[B].short+"'s "+millions(SF.u[B]) : ENT[B].short) : '';
+    const main = type==='crown' ? ENT[R.id].short+' becomes the best-selling console ever'
+               : type==='first_past' ? ENT[R.id].short+' is the first console past '+(R.units/1e6).toLocaleString('en-GB')+' million'
+               : ENT[R.id].short+' passes '+bName+' for '+(R.rank===2?'second':ord(R.rank))+' place'+(gone?' all-time':'');
     text('callout',R.id,main,x,C.y,'left'); x+=ctx.measureText(main).width;
-    const extra=(type==='crown' ? ' · passes '+ENT[R.previous||R.other].label : '')+(R.style!=='official'?' · estimated figures':'');
+    const extra=(type==='crown' ? ' · passes '+bName : '')+(R.style!=='official'?' · estimated figures':'');
     ctx.fillStyle=T.cap||T.muted; ctx.font='500 '+sz+'px '+FONT;
     text('callout_extra',CO.rec.id,extra,x,C.y,'left');
     window.__CALLOUT={id:R.id, previous:R.previous||R.other, type, k:R.k, frame:R.frame, alpha:ctx.globalAlpha};
@@ -626,8 +642,17 @@ function drawAt(t){
   const g = k>=0 ? (GLIDE_BEAT ? Math.min(1, since/Math.max(1,beatF)) : ease(since/Math.max(1,CFG.glide.bar_sec*FPS))) : 1;
   /* IQ-10 round 2 (count): the counted board - values, bar lengths, order and "+" from seriesFrame */
   const SF = COUNT ? RTT_TIMELINE.seriesFrame(TL, k, since) : null;
-  const ORD = SF ? SF.order : cur.order;
+  /* round 3 (live_only): the board holds the consoles still on sale (and those mid-exit); after the last
+     count it becomes the all-time table */
+  const FINAL = LIVE && TL.finalTable && fr > TL.finalFrom;
+  const FTU = FINAL ? Math.min(1, (fr-TL.finalFrom)/Math.max(1,TL.finalTransition)) : 0;
+  FINAL_LBL = FINAL;
+  const ORD = SF ? (LIVE && !FINAL ? SF.order.filter(id=>RTT_TIMELINE.isLive(TL,id,fr)) : SF.order) : cur.order;
   if(SF) window.__RANK = ORD.slice(0,NROWS);
+  if(LIVE) for(const id in ENT) if(!ORD.includes(id)) ENT[id]._y=null;     // a console that left re-enters at its place
+  const exitA = id => { const x=LIVE && TL.exit[id]; if(!x || x==='gone' || fr<x.start || fr>=x.end) return null;
+    return fr < x.fadeFrom ? 1 : 1-ease((fr-x.fadeFrom)/Math.max(1,TL.exitFade)); };
+  const REC = LIVE ? {id:SF.order[0], u:SF.u[SF.order[0]], plus:!!SF.plus[SF.order[0]]} : null;
   const rows = SF ? ORD.map(id=>({c:ENT[id], n:SF.u[id], s:null, len:SF.u[id], st:cur.style[id], pl:SF.plus[id]}))
                   : cur.order.map(id=>({c:ENT[id], n:cur.totals[id], s:cur.starts?cur.starts[id]:null, len:lerp(prev.totals[id]||0, cur.totals[id], g),
                                    st:SERIES?cur.style[id]:null, pl:SERIES?!!cur.plus[id]:false}));
@@ -640,7 +665,7 @@ function drawAt(t){
   if(CFG.time_label.mode==='title') titleTxt+=' · '+ev.season+(ev.grand_prix?' · '+ev.grand_prix:'');
   text('title',null,titleTxt,LEFT,74,'left');
   const tsec=fr/FPS, CO=calloutAt(fr);
-  FINAL_ON = COUNT && !CO && TL.isDataEnd && k===TL.events.length-1 && fr>=TL.finalFrom && !!(TL.finalLine||FFOOT);
+  FINAL_ON = COUNT && !CO && TL.isDataEnd && k===TL.events.length-1 && fr>=(LIVE && TL.finalTable ? TL.finalLineFrom : TL.finalFrom) && !!(TL.finalLine||FFOOT);
   const subA=CO ? 0 : Math.max(0,Math.min(1,(CFG.subtitle_sec||0)-tsec));
   if(subA>0){
     ctx.globalAlpha=subA; ctx.fillStyle=T.muted; ctx.font='500 22px '+FONT;
@@ -654,7 +679,7 @@ function drawAt(t){
   // scale: follows the longest bar as drawn, so it glides with the bars
   const G=geom(), x0=G.x0, W=G.W;
   const lead=top.slice(0,NROWS).reduce((m,r)=>Math.max(m,r.len),0);
-  const smoothMax=Math.max(1,lead)*1.06;
+  const smoothMax=Math.max(1,lead,REC?REC.u:0)*1.06;                // round 3: the record is always on the scale
   const step=niceStepInt(smoothMax/AXU/4)*AXU;            // IQ-10: whole millions in a series (AXU 1e6); AXU 1 for RTT-002
   ctx.font='400 '+SZ.axis+'px '+FONT;
   for(let v=0;v<=smoothMax+1e-9;v+=step){
@@ -663,9 +688,12 @@ function drawAt(t){
     ctx.fillStyle=T.axis; tabText(av.toLocaleString('en-GB')+(SERIES&&av>0?(CFG.axis_suffix||''):''),x,TOP-6,'center','axis',null);
     ctx.fillStyle=T.grid; gridLine(Math.round(x),TOP+8,BOTTOM);
   }
+  /* round 3: the gold record line, under the bars (the label is drawn after them) */
+  const recA = REC ? 1-Math.min(1,FTU*3) : 0, recX = REC ? x0+W*REC.u/smoothMax : 0;
+  if(recA>0){ ctx.save(); ctx.globalAlpha=recA*0.95; ctx.fillStyle=CROWN?CROWN.colour:'#F5C542'; ctx.fillRect(recX-1.5,TOP+8,3,BOTTOM-TOP-8); ctx.restore(); }
 
   const ROWH=G.ROWH, BARH=G.BARH, VALF=G.VALF;
-  const K=1-Math.exp(-1/(CFG.glide.rank_sec*FPS));
+  const K=1-Math.exp(-1/((FINAL && FTU<1 ? 0.25 : CFG.glide.rank_sec)*FPS));   // round 3: a quicker move into the all-time table
   /* A row joining the board (target inside it, row still below the last slot) starts just
      under the last row rather than from wherever it was waiting, and glides in with the
      shorter glide.entry_sec, so it is clearly visible within a few frames of its race. Every
@@ -697,12 +725,15 @@ function drawAt(t){
   top.forEach(r=>{
     const c=r.c, y=TOP+14+c._y*ROWH; if(y>BOTTOM-4) return;
     ctx.globalAlpha=c._y>NROWS-1?Math.max(0,1-(c._y-(NROWS-1))/0.75):1;
+    const XA = exitA(c.id);                         // round 3: retiring (null = not exiting)
+    if(XA!=null) ctx.globalAlpha*=XA;
+    if(FINAL && TL.exit[c.id]) ctx.globalAlpha*=ease((FTU-0.3)/0.7);   // retired consoles fade in from 30% of the transition (the record label is gone by a third), after the live bars have moved
     const hl=hlOf[c.id]||0;
     const w=Math.max(3,W*r.len/smoothMax), colour=darkenForWhite(c.colour);
     const by=y+(ROWH-BARH)/2, mid=by+BARH/2;
     /* IQ-10 fade: fa scales the bar and picture, ta the text */
     const RA=ctx.globalAlpha, fa=fadeOf(c.id,k,fr), ta=FADE ? 1-(1-FADE.text_alpha)*(1-fa)/(1-FADE.alpha) : 1;
-    window.__BARS.push({id:c.id, y:c._y, alpha:ctx.globalAlpha, colour, hl, rect:{x:x0,y:by,w,h:BARH}, style:r.st, fade:fa, plus:r.pl, units:r.n});
+    window.__BARS.push({id:c.id, y:c._y, alpha:ctx.globalAlpha, colour, hl, rect:{x:x0,y:by,w,h:BARH}, style:r.st, fade:fa, plus:r.pl, units:r.n, exiting:XA!=null});
     if(ctx.globalAlpha<=0){ ctx.globalAlpha=1; return; }
     if(PIC){                                     // IQ-10 picture, in the column left of the bar
       const im=PICIMG[c.id], bx=LEFT, byy=mid-G.PH/2;
@@ -778,7 +809,12 @@ function drawAt(t){
       ctx.fillStyle=T.cap||T.muted; ctx.font='500 '+VALF+'px '+FONT;
       after+=tabText('· analyst estimate',after,mid+VALF*0.35,'left','est_label',c.id)+VALF*0.35;
     }
-    if(CROWN && SERIES && c.id===ORD[0]){ // IQ-10: the crown after the leader's value
+    if(XA!=null){                                   // round 3: "· retires" while the bar leaves
+      ctx.fillStyle=T.ink; ctx.font='600 '+VALF+'px '+FONT;
+      after+=tabText('· retires',after,mid+VALF*0.35,'left','exit_tag',c.id)+VALF*0.35;
+      window.__EXITS.push({id:c.id, units:r.n, alpha:ctx.globalAlpha});
+    }
+    if(CROWN && SERIES && c.id===(REC?REC.id:ORD[0])){ // IQ-10: the crown after the leader's value (round 3: the record holder)
       const ch=VALF*1.0, cw=ch*1.3, cx=after+2, cy=mid-ch*0.55;
       drawCrown(cx,cy,cw,ch,CROWN.colour);
       window.__CROWN={id:c.id, x:cx, y:cy, w:cw, h:ch, alpha:ctx.globalAlpha};
@@ -786,11 +822,25 @@ function drawAt(t){
     ctx.globalAlpha=1;
   });
   ctx.restore();
+  /* round 3: the record label at the foot of the line, right-aligned to it; with the crown once the
+     holder has left the board */
+  window.__RECORD=null;
+  if(REC && recA>0){
+    const sz=CFG.record_label_size||26, holderOn=!!window.__CROWN;
+    const t='Record: '+ENT[REC.id].short+' '+millions(REC.u)+(REC.plus?'+':'');
+    ctx.save(); ctx.globalAlpha=recA; ctx.font='600 '+sz+'px '+FONT; ctx.fillStyle=CROWN?CROWN.colour:'#F5C542';
+    const tw=tabWidth(t,pitch()), cw=holderOn?0:sz*1.3+8, ly=BOTTOM-14, rx=recX-10;
+    tabText(t, rx-tw, ly, 'left', 'record', REC.id);
+    if(!holderOn){ const ch=sz*0.85; drawCrown(rx-tw-cw, ly-ch*0.9, sz*1.2, ch, CROWN?CROWN.colour:'#F5C542');
+      window.__CROWN={id:REC.id, x:rx-tw-cw, y:ly-ch*0.9, w:sz*1.2, h:ch, alpha:recA, onLabel:true}; }
+    ctx.restore();
+    window.__RECORD={id:REC.id, units:REC.u, plus:REC.plus, x:recX, alpha:recA, text:t};
+  }
 
   ctx.fillStyle=T.foot; ctx.font='400 '+SZ.footer+'px '+FONT;
   text('footer',null,CFG.footer||'',LEFT,1080-20,'left');
 
-  if(SERIES){ drawCallout(CO, cur); drawMakerKey(cur, SF); }   // IQ-10
+  if(SERIES){ drawCallout(CO, cur, SF, fr); drawMakerKey(cur, SF); }   // IQ-10
 
   /* IQ-05c overlays (DEC-035): each picture fitted inside its reserved box; none if absent */
   window.__OVERLAYS=OVL.map(b=>{

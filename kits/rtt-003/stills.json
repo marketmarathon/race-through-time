@@ -1,36 +1,24 @@
 {
  "stills": [
   {
-   "name": "r2_still_1_final_2026",
+   "name": "r3_still_1_2005",
+   "config": "config_rtt003_film.json",
+   "at": "2005-06-30"
+  },
+  {
+   "name": "r3_still_2_final_2026",
    "config": "config_rtt003_film.json",
    "at": "final"
   },
   {
-   "name": "r2_still_2_2018_xbox_one",
+   "name": "r3_still_3_logos_1990",
    "config": "config_rtt003_film.json",
-   "at": "2018-03-31"
+   "at": "1990-12-31"
   },
   {
-   "name": "r2_still_3_closeup_1999",
-   "config": "config_rtt003_film.json",
-   "at": "1999-03-31",
-   "crop": {
-    "x": 0,
-    "y": 220,
-    "w": 960,
-    "h": 420
-   }
-  },
-  {
-   "name": "r2_still_4_closeup_2026",
-   "config": "config_rtt003_film.json",
-   "at": "final",
-   "crop": {
-    "x": 0,
-    "y": 440,
-    "w": 960,
-    "h": 420
-   }
+   "name": "r3_still_4_names_as_text_1990",
+   "config": "config_rtt003_still_names_as_text.json",
+   "at": "1990-12-31"
   }
  ]
 }

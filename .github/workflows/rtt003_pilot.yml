@@ -17,6 +17,8 @@
 # Run 1 (78db338) checked the whole route; run 2 renders the review set after the 26 px scoreboard-word fix.
 # Round 2 (Luke's changes of 2 Oct 2026, DEC-114 onwards): clip A at 1.0 s and 1.5 s per quarter, B, C (scoreboard);
 # stills: final table, 2018 with Xbox One, two close-ups (picture + logo).
+# Round 3 (DEC-122 onwards): live board, retirement exits, record line, final all-time table; 1.5 s per quarter;
+# clips A, B, C, D (the transition into the final table); stills 2005, final, 1990 logos vs maker names.
 name: rtt003-pilot
 
 on:
@@ -37,9 +39,9 @@ env:
   PRIVATE_REF: claude/sweet-mendel-faig7w
   CLIPS: >-
     config_rtt003_clip_A_1985_1992.json
-    config_rtt003_clip_A_1985_1992_1.5x.json
     config_rtt003_clip_B_1996_1999.json
     config_rtt003_clip_C_2005_2009.json
+    config_rtt003_clip_D_2025_2026_final.json
 
 jobs:
   render:
@@ -130,9 +132,9 @@ jobs:
           GH_TOKEN: ${{ secrets.RTT_PRIVATE_TOKEN }}
         run: |
           O="$RUNNER_TEMP/rtt_out"; SHORT=${GITHUB_SHA::7}
-          TAG="rtt-003-pilot2-${SHORT}-run${GITHUB_RUN_NUMBER}"
+          TAG="rtt-003-pilot3-${SHORT}-run${GITHUB_RUN_NUMBER}"
           {
-            echo "RTT-003 design pilot (IQ-10) round 2: clips and stills, rendered by GitHub Actions. No music."
+            echo "RTT-003 design pilot (IQ-10) round 3: clips and stills, rendered by GitHub Actions. No music."
             echo
             echo "- Source: ${GITHUB_REPOSITORY} @ ${GITHUB_SHA} (${GITHUB_REF_NAME}), run ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
             while read -r c FRAMES; do
@@ -147,7 +149,7 @@ jobs:
           } > "$O/notes.md"
           cat "$O/notes.md"
           gh release create "$TAG" --repo "$PRIVATE_REPO" --target main --prerelease \
-            --title "RTT-003 design pilot round 2 ${SHORT} (clips and stills)" --notes-file "$O/notes.md" "$O"/*.mp4 "$O"/*.png
+            --title "RTT-003 design pilot round 3 ${SHORT} (clips and stills)" --notes-file "$O/notes.md" "$O"/*.mp4 "$O"/*.png
           URL="https://github.com/${PRIVATE_REPO}/releases/tag/${TAG}"
           echo "Release: $URL"
           echo "RTT-003 pilot saved to the private repo: $URL" >> "$GITHUB_STEP_SUMMARY"
