@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""RTT-003 round 4: check figures at sources the Claude Code cloud container cannot reach (network policy).
+"""RTT-003 rounds 4-5: check figures and statements at sources the Claude Code cloud container cannot reach (network policy).
 
 Run on a GitHub-hosted runner by .github/workflows/rtt003_sources.yml. For each page it prints the HTTP status,
 the page's SHA-256 and, for each search term, a short excerpt (about 30 words) around the first matches, so the
@@ -13,24 +13,16 @@ import urllib.request
 
 UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
 VG = ["Xbox Series X|S -", "Xbox Series X|S", "Worldwide hardware estimates", "week ending", " - ", "Estimates for"]
-PAGES = [
-    ("VGC-2024-10-05", "https://www.vgchartz.com/article/462852/ps5-best-seller-xs-tops-30m-lt-worldwide-hardware-estimates-for-september-2024/", VG),
-    ("VGC-2025-01-04", "https://www.vgchartz.com/article/463776/global-hardware-december-2024/", VG),
-    ("VGC-2025-04-05", "https://www.vgchartz.com/article/464519/ps5-sells-over-11m-and-tops-75m-lifetime-worldwide-hardware-estimates-for-march-2025/", VG),
-    ("VGC-2025-07-05", "https://www.vgchartz.com/article/465283/switch-2-sets-record-with-over-5m-sold-in-1st-month-worldwide-hardware-estimates-for-june-2025/", VG),
-    ("VGC-2025-10-04", "https://www.vgchartz.com/article/466071/ps5-outsells-switch-2-ps5-tops-80m-worldwide-hardware-estimates-for-september-2025/", VG),
-    ("VGC-2026-01-03", "https://www.vgchartz.com/article/466834/global-hardware-december-2025/", VG),
-    ("VGC-2026-04-04", "https://www.vgchartz.com/article/467615/switch-2-best-seller-ps5-tops-91m-lt-worldwide-hardware-estimates-for-march-2026/", VG),
-    ("VGC-2026-07-04", "https://www.vgchartz.com/article/468546/switch-2-best-seller-xs-tops-35m-lt-worldwide-hardware-estimates-for-june-2026/", VG),
-    ("VGC-PLATFORM-TOTALS", "https://www.vgchartz.com/charts/platform_totals/Hardware.php/", ["Xbox 360", "X360", "total shipments", "85.7", "85,7"]),
-    ("GWR-2600", "https://www.guinnessworldrecords.com/world-records/109745-best-selling-second-generation-videogame-console", ["27.64", "discontinuation", "1 January 1992"]),
-    ("ATARI-HISTORY", "https://atari.com/pages/history", ["30 million", "2600"]),
-    ("SEGA-COL02", "https://www.sega.jp/history/hard/column/column_02.html", ["万台", "1,900", "1900"]),
-    ("SEGA-COL04", "https://www.sega.jp/history/hard/column/column_04.html", ["万台", "最終的"]),
-    ("TELECOMPAPER-1996", "https://www.telecompaper.com/news/sega-trims-hardware-range--79620", ["Master System", "Game Gear", "discontinu", "Trims"]),
-    ("SHMUPLATIONS-SEGA", "https://shmuplations.com/segahistory/", ["14 million", "Game Gear"]),
-    ("INSIDE-2019", "https://www.inside-games.jp/article/2019/04/30/122048_2.html", ["メガドライブ", "3,075", "3075", "白書"]),
-    ("MIRAI-MD05", "https://www.mirai-idea.jp/post/megadrive05", ["3000万", "3,000万", "万台"]),
+PAGES = [   # round 5 (3 Oct 2026): documented end-of-production reports (round 4's list is in git history)
+    ("KOTAKU-WIIU", "https://kotaku.com/wii-u-production-has-officially-ended-for-japan-1791813878", ["production has ended globally", "Wii U production", "datePublished"]),
+    ("GAMESPOT-PS1", "https://www.gamespot.com/articles/sony-stops-making-original-ps/1100-6146549/", ["PSone", "PS one", "production", "datePublished"]),
+    ("GUARDIAN-PS2", "https://www.theguardian.com/technology/2013/jan/04/playstation-2-manufacture-ends-years", ["all PS2 production has ended worldwide", "production", "datePublished"]),
+    ("GAMESPOT-PSP", "https://www.gamespot.com/articles/after-10-years-sony-discontinues-psp-what-s-your-favorite-memory/1100-6420050/", ["discontinu", "end of", "datePublished"]),
+    ("KOTAKU-PS3", "https://kotaku.com/sony-killed-off-the-ps3-in-japan-update-1793363510", ["production of PS3 itself has already terminated", "terminated", "datePublished"]),
+    ("GAMESPOT-XBOX", "https://www.gamespot.com/articles/microsoft-pulls-plug-on-original-xbox-support/1100-6205466/", ["ceased", "production", "manufactur", "datePublished"]),
+    ("EURONEWS-XBOXONE", "https://www.euronews.com/next/2022/01/13/microsoft-xbox", ["stopped production for all Xbox One consoles", "end of 2020"]),
+    ("GAMEWATCH-DC", "https://game.watch.impress.co.jp/docs/20010131/sega2.htm", ["生産", "3月31日", "ドリームキャスト"]),
+    ("GAMESPOT-FAMICOM", "https://www.gamespot.com/articles/nintendo-to-end-famicom-and-super-famicom-production/1100-6029220/", ["Famicom", "September", "production", "datePublished"]),
 ]
 
 

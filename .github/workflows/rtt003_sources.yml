@@ -1,4 +1,4 @@
-# Race Through Time - RTT-003 round 4: check new figures at sources the Claude Code cloud container
+# Race Through Time - RTT-003 rounds 4-5: check new figures and end-of-production reports at sources the Claude Code cloud container
 # cannot reach (its network policy blocks vgchartz.com, guinnessworldrecords.com, telecompaper.com and others).
 # Separate from render_pilot.yml (RTT-002) and rtt003_pilot.yml: it renders nothing.
 # This repository is PUBLIC (DEC-006, DEC-061): no secret is used, NO workflow artifact is uploaded, NO cache;
