@@ -1,8 +1,8 @@
 {
   "schema": "rtt-state/0.1",
-  "updated": "2026-09-30",
-  "updated_by": "Claude (Claude Code cloud session, environment \"Race Through Time\"): RTT-002 released early by Luke (DEC-079) and uploaded/scheduled public in Studio (DEC-080)",
-  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); starts data audit PASSED (DEC-058/DEC-059, merged PR #8); IQ-04 MERGED (PR #2); IQ-05 rounds 1-5 MERGED (PR #3-#7); round-5 pilot RENDERED and APPROVED by Luke (DEC-062, visual direction = milestone 3); pull request #9 MERGED (c378ea7); RTT-002 FINAL FILM APPROVED (DEC-078), pull request #10 MERGED (main ef01814), UPLOADED by Luke in YouTube Studio and SCHEDULED PUBLIC 30 Sep 2026 (DEC-079 early release, DEC-080): video 2fY7Bzq8Uu0 on channel UC8R47xbyBB5Z93MdMkoUOWg",
+  "updated": "2026-10-02",
+  "updated_by": "Claude (Claude Code cloud session): IQ-09 follow-up - Luke's answers DEC-093..DEC-102 applied to pull request #12; merged with the RTT-002 release record (DEC-079, DEC-080) from pull request #11",
+  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); starts data audit PASSED (DEC-058/DEC-059, merged PR #8); IQ-04 MERGED (PR #2); IQ-05 rounds 1-5 MERGED (PR #3-#7); round-5 pilot RENDERED and APPROVED by Luke (DEC-062, visual direction = milestone 3); pull request #9 MERGED (c378ea7); RTT-002 FINAL FILM APPROVED (DEC-078), pull request #10 MERGED (main ef01814), UPLOADED by Luke in YouTube Studio and SCHEDULED PUBLIC 30 Sep 2026 (DEC-079 early release, DEC-080): video 2fY7Bzq8Uu0 on channel UC8R47xbyBB5Z93MdMkoUOWg; IQ-09 RTT-003 DATA BUILD DONE 1 Oct 2026; Luke's answers applied 2 Oct 2026 (DEC-093..DEC-102); pull request #12 MERGED 2 Oct 2026 (main 4288f6d)",
   "canonical_queue": "state/ folder on main in marketmarathon/race-through-time (this file)",
   "repo_baseline": {
     "repo": "marketmarathon/bars",
@@ -180,11 +180,42 @@
     },
     {
       "id": "RTT-003",
-      "title": "Nintendo Console Race",
-      "state": "FEASIBILITY",
-      "check_level": "DESK",
+      "title": "Best-Selling Consoles 1985–2026",
+      "subtitle_rule": "title must say units shipped (DEC-081)",
+      "previous_title": "Nintendo Console Race (widened to all consoles by DEC-081)",
+      "state": "DATA_BUILD_DONE_OWNER_ANSWERS_APPLIED_NOT_MERGED",
+      "check_level": "LIVE",
       "verdict": "CONDITIONAL",
-      "blocker": "dated path for older systems"
+      "blocker": "merge of pull request #12 (Luke); no player work until Luke approves the design build (DEC-069, DEC-085)",
+      "decisions": "owner DEC-081..DEC-085 (30 Sep 2026); DEC-086..DEC-092 confirmed by Luke 2 Oct 2026 via DEC-093..DEC-102",
+      "dataset": {
+        "branch": "claude/focused-clarke-u0m1ry (pull request #12, not merged)",
+        "path": "data/rtt-003/",
+        "contract": "reference/metric_contract_RTT-003.md v1.0",
+        "build": "scripts/build_rtt003_dataset.py (rtt003-build/1.0, standard library, deterministic)",
+        "range": "166 quarter ends, 1985-03-31 to 2026-06-30",
+        "consoles_in_scope": 28,
+        "consoles_listed_out_of_scope": 19,
+        "series_rows": 2697,
+        "observations": 454,
+        "observations_verified": 426,
+        "observations_unverified": 27,
+        "unverified_used": 0,
+        "checks": "9/9 PASS (rebuilt 2 Oct 2026); one 10,000-unit SNES dip within Nintendo's rounding, listed",
+        "crown": "Atari 2600 (start, est.) -> NES 1988-12-31 (est.) -> Game Boy 1997-12-31 (official) -> PlayStation 2 2007-06-30 (est.) to 2026-06-30; Switch second at 156.59m vs PS2 160m+",
+        "top_ten_overtakes": "78 (41 official, 37 estimated/analyst)",
+        "report": "reports/RTT-003_data_report.md",
+        "source_access": "reports/RTT-003_source_access.md",
+        "series_sha256": "3d5350c4bc3cd785dca7677e1ac4374266bb996882948b63c3891def31708e1b",
+        "pull_request": "https://github.com/marketmarathon/race-through-time/pull/12",
+        "observations_not_found_primary": 1,
+        "changes_2026_10_02": "Atari 2600 fades from 1991-12-31 (DEC-093); Xbox One + Microsoft 10m 2014-12-03 (DEC-095); PS5 launch 2020-11-11 (DEC-101); 7 UNVERIFIED anchors verified in Luke's Chrome (DEC-102); PS2 155m located and recorded as disagreement (DEC-094)"
+      },
+      "open_for_luke": [
+        "merge pull request #12 when satisfied (Claude does not merge, DEC-057)",
+        "later, not urgent: Nintendo quarterly figures (DEC-100)",
+        "player session (after design approval): PS2 155m on-screen note candidate (DEC-094); move quickly through 1985-88 (DEC-097); judge the estimated look in the pilot (DEC-099)"
+      ]
     },
     {
       "id": "RTT-004",
@@ -422,6 +453,20 @@
       "task": "Close RTT-002 audit gaps (D-07): top-ten entries independent check; decide on official top-20 comparison",
       "owner": "Luke (decision) / Claude (prompt)",
       "status": "DONE 28 Sep 2026 - (b) second check 0 discrepancies; (a) accepted by Luke (DEC-015)"
+    },
+    {
+      "id": "IQ-09",
+      "task": "RTT-003 data build: Best-Selling Consoles 1985-2026 (units shipped); data only, no player/visual work",
+      "where": "Claude Code cloud session, environment \"Race Through Time\"; prompt prompts/CODE_SESSION_IQ-09.md",
+      "status": "DONE 1 Oct 2026; Luke's answers applied 2 Oct 2026 (DEC-093..DEC-102); pull request #12 open, NOT merged",
+      "result": {
+        "files": "data/rtt-003/ (consoles.csv, observations.csv, series.csv, series_by_maker.csv, crown.csv, overtakes.csv, CHECKS.md, checks.json, manifest.json, README.md, source/)",
+        "scripts": "scripts/build_rtt003_dataset.py, scripts/rtt003_extract_nintendo.py, scripts/rtt003_extract_sony.py",
+        "research_input": "race-through-time-private research/rtt-003-chatgpt (leads only; referenced by ledger row number, no text copied)",
+        "network": "reports/RTT-003_source_access.md: blocked = sony.com, sony.net/sony.co.jp, sega.jp, web.archive.org, gamespot.com, law.justia.com (files.virtual-boy.com 403 then 200 on retry); WebFetch-only = sec.gov, segasammy.co.jp, atarimania.com",
+        "decisions": "DEC-081..DEC-102",
+        "pull_request": "https://github.com/marketmarathon/race-through-time/pull/12"
+      }
     }
   ],
   "rtt_repo": {

@@ -1,0 +1,5 @@
+source_url: https://www.nintendo.co.jp/ir/finance/historical_data/xls/consolidated_sales_e2603.xlsx
+title: Nintendo Co., Ltd. Consolidated Sales Transition by Region (as of March 31, 2026)
+sha256_of_downloaded_xlsx: 013bae4e416e767daa7d92fca33c8f97b211e67e5e44d585cb89c155ee7b2cd2
+downloaded_utc: 2026-10-01 (Claude Code cloud session, IQ-09)
+note: units in ten thousands as printed; figures rounded by Nintendo to the nearest ten thousand; 0.1/-0.1 markers = under 10,000 units (counted as 0)

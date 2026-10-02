@@ -1,0 +1,5 @@
+source_url: https://sonyinteractive.com/en/our-company/business-data-sales/
+title: Sony Interactive Entertainment - Business Data & Sales
+sha256_of_saved_html: d07f2458acb2da3e22d62dc6b05e164ad2ba9ce11f226bb094919fb4e43aa745
+downloaded_utc: 2026-10-01 (Claude Code cloud session, IQ-09)
+note: the PlayStation Vita line reads 'Sales data on PlayStation Vita are not disclosed'
