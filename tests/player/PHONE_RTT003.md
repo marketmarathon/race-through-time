@@ -5,7 +5,7 @@ Each board still measured as drawn on the 1920 frame and converted to points on 
 | Still | Names | Values | Axis | Date | Footer | Key names / totals / estimate words | Legend | Callout / note | Analyst label | Picture box | Crown | Result |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | r2_still_1_final_2026 | 33px = 6.7 pt | 33px = 6.7 pt | 34px = 6.9 pt | 34px = 6.9 pt | 26px = 5.3 pt | 26px = 5.3 pt | 26px = 5.3 pt | 26px = 5.3 pt | 33px = 6.7 pt | 81 x 49 px = 16.5 x 10.0 pt | 43 x 33 px = 8.7 x 6.7 pt | PASS |
-| r2_still_2_2017_xbox_one | 33px = 6.7 pt | 33px = 6.7 pt | 34px = 6.9 pt | 34px = 6.9 pt | 26px = 5.3 pt | 26px = 5.3 pt | 26px = 5.3 pt | — | 33px = 6.7 pt | 81 x 49 px = 16.5 x 10.0 pt | 43 x 33 px = 8.7 x 6.7 pt | PASS |
+| r2_still_2_2018_xbox_one | 33px = 6.7 pt | 33px = 6.7 pt | 34px = 6.9 pt | 34px = 6.9 pt | 26px = 5.3 pt | 26px = 5.3 pt | 26px = 5.3 pt | — | 33px = 6.7 pt | 81 x 49 px = 16.5 x 10.0 pt | 43 x 33 px = 8.7 x 6.7 pt | PASS |
 | r2_still_3_closeup_1999 | 33px = 6.7 pt | 33px = 6.7 pt | 34px = 6.9 pt | 34px = 6.9 pt | 26px = 5.3 pt | 26px = 5.3 pt | 26px = 5.3 pt | — | — | 81 x 58.8 px = 16.5 x 11.9 pt | 43 x 33 px = 8.7 x 6.7 pt | PASS |
 | r2_still_4_closeup_2026 | 33px = 6.7 pt | 33px = 6.7 pt | 34px = 6.9 pt | 34px = 6.9 pt | 26px = 5.3 pt | 26px = 5.3 pt | 26px = 5.3 pt | 26px = 5.3 pt | 33px = 6.7 pt | 81 x 49 px = 16.5 x 10.0 pt | 43 x 33 px = 8.7 x 6.7 pt | PASS |
 
