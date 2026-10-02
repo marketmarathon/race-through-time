@@ -134,9 +134,9 @@ function loadPictures(cfg, data) {
   return out;
 }
 function loadLogos(cfg) {
-  const K = cfg.maker_key;
-  if (!K || !K.enabled || !K.logos) return {};
-  const dir = path.join(path.resolve(KIT, process.env.RTT_LOCAL_ASSETS || cfg.local_assets || 'local_assets'), K.logo_dir || 'logos');
+  const K = cfg.maker_key || {}, BL = cfg.bar_logos || {};
+  if (!(K.enabled && K.logos) && !BL.enabled) return {};   // IQ-10 round 2: also for the logos on the bars
+  const dir = path.join(path.resolve(KIT, process.env.RTT_LOCAL_ASSETS || cfg.local_assets || 'local_assets'), K.logo_dir || BL.dir || 'logos');
   const out = {};
   for (const m of cfg.maker_order || []) {
     const f = path.join(dir, m + '.svg');

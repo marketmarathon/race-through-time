@@ -4,10 +4,19 @@ Each board still measured as drawn on the 1920 frame and converted to points on 
 
 | Still | Names | Values | Axis | Date | Footer | Key names / totals / estimate words | Legend | Callout / note | Analyst label | Picture box | Crown | Result |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| still_1_final_2026 | 33px = 6.7 pt | 33px = 6.7 pt | 34px = 6.9 pt | 34px = 6.9 pt | 26px = 5.3 pt | 26px = 5.3 pt | 26px = 5.3 pt | — | — | 106 x 64 px = 21.5 x 13.0 pt | 43 x 33 px = 8.7 x 6.7 pt | PASS |
-| still_1b_final_2026_scoreboard | 33px = 6.7 pt | 33px = 6.7 pt | 34px = 6.9 pt | 34px = 6.9 pt | 26px = 5.3 pt | 26px = 5.3 pt | 26px = 5.3 pt | — | — | 106 x 64 px = 21.5 x 13.0 pt | 43 x 33 px = 8.7 x 6.7 pt | PASS |
-| still_2a_2015_top20_xbox_one | 28px = 5.7 pt | 28px = 5.7 pt | 34px = 6.9 pt | 34px = 6.9 pt | 26px = 5.3 pt | 26px = 5.3 pt | 26px = 5.3 pt | — | 28px = 5.7 pt | 63 x 38 px = 12.8 x 7.7 pt | 36 x 28 px = 7.4 x 5.7 pt | PASS |
-| still_2b_2015_scoreboard_microsoft | 33px = 6.7 pt | 33px = 6.7 pt | 34px = 6.9 pt | 34px = 6.9 pt | 26px = 5.3 pt | 26px = 5.3 pt | 26px = 5.3 pt | — | — | 106 x 64 px = 21.5 x 13.0 pt | 43 x 33 px = 8.7 x 6.7 pt | PASS |
-| still_4_ps2_note | 33px = 6.7 pt | 33px = 6.7 pt | 34px = 6.9 pt | 34px = 6.9 pt | 26px = 5.3 pt | 26px = 5.3 pt | 26px = 5.3 pt | 28px = 5.7 pt | — | 106 x 64 px = 21.5 x 13.0 pt | 43 x 33 px = 8.7 x 6.7 pt | PASS |
+| r2_still_1_final_2026 | 33px = 6.7 pt | 33px = 6.7 pt | 34px = 6.9 pt | 34px = 6.9 pt | 26px = 5.3 pt | 26px = 5.3 pt | 26px = 5.3 pt | 26px = 5.3 pt | 33px = 6.7 pt | 81 x 49 px = 16.5 x 10.0 pt | 43 x 33 px = 8.7 x 6.7 pt | PASS |
+| r2_still_2_2017_xbox_one | 33px = 6.7 pt | 33px = 6.7 pt | 34px = 6.9 pt | 34px = 6.9 pt | 26px = 5.3 pt | 26px = 5.3 pt | 26px = 5.3 pt | — | 33px = 6.7 pt | 81 x 49 px = 16.5 x 10.0 pt | 43 x 33 px = 8.7 x 6.7 pt | PASS |
+| r2_still_3_closeup_1999 | 33px = 6.7 pt | 33px = 6.7 pt | 34px = 6.9 pt | 34px = 6.9 pt | 26px = 5.3 pt | 26px = 5.3 pt | 26px = 5.3 pt | — | — | 81 x 58.8 px = 16.5 x 11.9 pt | 43 x 33 px = 8.7 x 6.7 pt | PASS |
+| r2_still_4_closeup_2026 | 33px = 6.7 pt | 33px = 6.7 pt | 34px = 6.9 pt | 34px = 6.9 pt | 26px = 5.3 pt | 26px = 5.3 pt | 26px = 5.3 pt | 26px = 5.3 pt | 33px = 6.7 pt | 81 x 49 px = 16.5 x 10.0 pt | 43 x 33 px = 8.7 x 6.7 pt | PASS |
 
 Overall: PASS. For reference: RTT-002's approved film draws names and values at 29 px = 5.9 pt.
+
+## Maker logos on the bars (round 2)
+
+| Still | Maker | Tile | Logo drawn | Lettering height | Legible as text on a phone? |
+|---|---|---|---|---|---|
+| r2_still_1_final_2026 | sony | 78 x 39 px = 15.8 x 7.9 pt | 43 x 33 px | symbol, no lettering | n/a (symbol 6.7 pt tall) |
+| r2_still_1_final_2026 | nintendo | 78 x 39 px = 15.8 x 7.9 pt | 72 x 24 px | 7.2 px = 1.5 pt | **no** (under 5 pt) |
+| r2_still_1_final_2026 | microsoft | 78 x 39 px = 15.8 x 7.9 pt | 33 x 33 px | symbol, no lettering | n/a (symbol 6.7 pt tall) |
+| r2_still_3_closeup_1999 | sega | 78 x 39 px = 15.8 x 7.9 pt | 72 x 24 px | 22.1 px = 4.5 pt | **no** (under 5 pt) |
+| r2_still_3_closeup_1999 | atari | 78 x 39 px = 15.8 x 7.9 pt | 28 x 33 px | 8.9 px = 1.8 pt | **no** (under 5 pt) |

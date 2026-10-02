@@ -1,64 +1,223 @@
 {
  "extends": "../rtt-002/config.json",
  "episode": "RTT-003",
- "kit_version": "rtt003_pilot1",
+ "kit_version": "rtt003_pilot2",
  "format_version": "RTT-1 player (kits/rtt-002), quarter-end series mode (IQ-10)",
  "out": "rtt003_film.mp4",
  "race_file": "../rtt-003/race_rtt003.json",
  "intro_sec": 0,
  "outro_sec": 0,
- "rows": 12,
- "board_top": 190,
- "window": { "from": null, "to": null },
+ "rows": 15,
+ "board_top": 220,
+ "window": {
+  "from": null,
+  "to": null
+ },
  "pacing": {
   "sec_per_event": 1.0,
-  "bounds": [0.8, 1.4],
-  "mult": { "rank_change": 1.4, "visible_change": 1.0, "quiet": 0.8 },
+  "bounds": [
+   0.8,
+   1.4
+  ],
+  "mult": {
+   "rank_change": 1.4,
+   "visible_change": 1.0,
+   "quiet": 0.8
+  },
   "settled_run_after": 3,
-  "judge_rows": 12,
+  "judge_rows": 15,
   "lead_in_sec": 2.0,
   "final_board_sec": 10.0,
-  "segments": [ { "to": "1988-12-31", "sec_per_event": 0.5 } ]
+  "segments": [
+   {
+    "to": "1988-12-31",
+    "sec_per_event": 0.5
+   }
+  ]
  },
- "record_hold": { "enabled": true, "sec": 2.0, "types": ["CROWN"] },
- "glide": { "bar_sec": 0.35, "rank_sec": 0.55, "entry_sec": 0.1, "bar_mode": "beat" },
-
+ "record_hold": {
+  "enabled": true,
+  "sec": 2.0,
+  "types": [
+   "CROWN"
+  ]
+ },
+ "glide": {
+  "bar_sec": 0.35,
+  "rank_sec": 0.55,
+  "entry_sec": 0.1,
+  "bar_mode": "beat"
+ },
  "unit": "units",
  "title": "Best-Selling Consoles (units shipped)",
  "subtitle": "Worldwide units shipped to shops since launch, by console family, in millions",
  "subtitle_sec": 8,
  "range": "1985 – 2026",
  "footer": "Race Through Time · Makers' shipment figures; estimates marked · Xbox Series X photo: Ian Hughes, CC BY 2.0, background removed",
- "time_label": { "mode": "line", "x": 1046, "y": 74, "align": "left", "size": 34,
-                 "months": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"] },
+ "time_label": {
+  "mode": "line",
+  "x": 1046,
+  "y": 74,
+  "align": "left",
+  "size": 34,
+  "months": [
+   "January",
+   "February",
+   "March",
+   "April",
+   "May",
+   "June",
+   "July",
+   "August",
+   "September",
+   "October",
+   "November",
+   "December"
+  ]
+ },
  "axis_suffix": "m",
-
- "maker_order": ["atari", "nintendo", "sega", "sony", "microsoft"],
- "maker_names": { "atari": "Atari", "nintendo": "Nintendo", "sega": "Sega", "sony": "Sony", "microsoft": "Microsoft" },
- "palette": ["#B12582", "#F04257", "#0593C2", "#1A4EF9", "#1B7E20"],
+ "maker_order": [
+  "atari",
+  "nintendo",
+  "sega",
+  "sony",
+  "microsoft"
+ ],
+ "maker_names": {
+  "atari": "Atari",
+  "nintendo": "Nintendo",
+  "sega": "Sega",
+  "sony": "Sony",
+  "microsoft": "Microsoft"
+ },
+ "palette": [
+  "#B12582",
+  "#F04257",
+  "#0593C2",
+  "#1A4EF9",
+  "#1B7E20"
+ ],
  "colour_rule": {},
-
- "sizes": { "axis": 34, "date": 34, "footer": 26 },
- "board": { "bar_gap": 14, "name_frac": 0.6, "value_frac": 0.6 },
+ "sizes": {
+  "axis": 34,
+  "date": 34,
+  "footer": 26
+ },
+ "board": {
+  "bar_gap": 8,
+  "name_frac": 0.72,
+  "value_frac": 0.72
+ },
  "namescale": 1.0,
  "barend": 1420,
  "valout": true,
  "nameoverflow": true,
-
- "pictures": { "enabled": true, "dir": "icons", "height_frac": 0.92, "aspect": 1.65, "gap": 14 },
- "fade": { "enabled": true, "alpha": 0.4, "text_alpha": 0.7, "sec": 0.6 },
- "crown": { "enabled": true, "colour": "#F5C542" },
- "callout": { "enabled": true, "sec": 3.0, "y": 130, "size": 30, "fade_in": 0.25, "fade_out": 0.4 },
- "maker_key": { "enabled": true, "x": 1256, "bottom": 950, "w": 600, "row_h": 46, "size": 26, "pad": 14,
-                "logos": true, "logo_dir": "logos", "logo_w": 112, "logo_h": 34, "legend": true, "scoreboard": false },
- "overlays": [ { "name": "logo", "file": "rtt_logo.png", "x": 1702, "y": 12, "w": 154, "h": 154 } ],
+ "pictures": {
+  "enabled": true,
+  "dir": "icons",
+  "height_frac": 0.92,
+  "aspect": 1.65,
+  "gap": 14,
+  "tall_frac": 1.2
+ },
+ "fade": {
+  "enabled": true,
+  "alpha": 0.4,
+  "text_alpha": 0.7,
+  "sec": 0.6
+ },
+ "crown": {
+  "enabled": true,
+  "colour": "#F5C542"
+ },
+ "callout": {
+  "enabled": true,
+  "sec": 3.0,
+  "y": 128,
+  "size": 30,
+  "fade_in": 0.25,
+  "fade_out": 0.4
+ },
+ "maker_key": {
+  "enabled": true,
+  "x": 1256,
+  "bottom": 950,
+  "w": 600,
+  "row_h": 46,
+  "size": 26,
+  "pad": 14,
+  "logos": true,
+  "logo_dir": "logos",
+  "logo_w": 112,
+  "logo_h": 34,
+  "legend": true,
+  "scoreboard": true
+ },
+ "overlays": [
+  {
+   "name": "logo",
+   "file": "rtt_logo.png",
+   "x": 1702,
+   "y": 12,
+   "w": 154,
+   "h": 154
+  }
+ ],
  "overlay_gap": 12,
-
  "notes": [
-  "RTT-003 design pilot (IQ-10). The FULL FILM is not rendered in this session; this config defines it so the pilot clips (which extend it) and the length estimate come from one place. Drawn by the RTT-002 player (kits/rtt-002/player_rtt.html) in its quarter-end series mode; every RTT-003 feature is switched on here and is off for RTT-002.",
-  "Approved design (DEC-085, Luke 2 Oct 2026): console name + picture + maker colour on each bar; values in millions with '+' for lower bounds; maker key with logos; retired consoles fade (data fade dates); crown on the leader; estimated look (DEC-090) and the analyst-estimate label (DEC-084); title says units shipped; quick 1985-88 (DEC-097); RTT-002 pacing approach (DEC-068); callouts at crown changes only; company scoreboard tested in one clip (maker_key.scoreboard).",
-  "Working choices for Luke (DEC-103 onwards): 12 rows; maker colours; bar names from data/rtt-003/consoles.csv; one decimal; the beat glide; the key panel's place (the old car box, bottom right); the callout wording and line under the title.",
-  "pacing: RTT-002's rule (DEC-068) on quarter ends: sec_per_event 1.0 s x 1.4 (top-12 order changed) / 1.0 (a top-12 bar grew) / 0.8 (quiet, or the 4th+ unchanged quarter in a row); quarter ends up to 31 Dec 1988 at 0.5 s (DEC-097); 2.0 s hold on each change of first place (as RTT-002's record pauses); final table 10 s (DEC-070); no title or closing card.",
-  "No music (IQ-10). Pictures and logos are private (race-through-time-private assets/rtt-003/icons, logos; DEC-060), loaded from RTT_LOCAL_ASSETS; never committed here."
- ]
+  "RTT-003 design pilot, ROUND 2 (IQ-10; Luke's answers and changes of 2 Oct 2026, DEC-114 onwards). The full film is NOT rendered; this config defines it so the pilot clips (which extend it) and the length estimate come from one place. Drawn by the RTT-002 player (kits/rtt-002) in its quarter-end series mode; every RTT-003 feature is switched on here and is off for RTT-002.",
+  "Round 2: 15 rows (DEC-116, Xbox One appears from mid-2017); numbers count smoothly and land on the exact series.csv value on every quarter-end frame (count, DEC-118); the maker's logo beside each picture (bar_logos, DEC-119); no separate maker key - the bottom-right panel is the company scoreboard (kept, DEC-114) with its legend; tall pictures may use 1.2x the box height (pictures.tall_frac, DEC-120); callouts at the three crown changes plus Game Boy first past 100 million and DS passes Game Boy (moments, DEC-117; Switch passes DS on hold); final-table line and PS2 footnote (final_line, final_footnote, DEC-117).",
+  "Approved design (DEC-085) and round-1 choices DEC-106..DEC-111 as confirmed by Luke (names, maker colours, estimated look, fade, crown, title, pacing approach). Board 70 px lower than RTT-002's (board_top 220) to make room for the callout line and the final-table footnote.",
+  "pacing: RTT-002's rule (DEC-068) on quarter ends: sec_per_event 1.0 s x 1.4 / 1.0 / 0.8 judged on the 15 rows; quarter ends up to 31 Dec 1988 at 0.5 s (DEC-097); 2.0 s hold on each change of first place; final table 10 s (DEC-070). Clip A is also rendered at 1.5 s (config_rtt003_clip_A_1985_1992_1.5x.json) for Luke to compare (DEC-121).",
+  "No music (DEC-115: the RTT-002 approach with a new track later). Pictures and logos are private (race-through-time-private assets/rtt-003/icons, logos; DEC-060), loaded from RTT_LOCAL_ASSETS; never committed here."
+ ],
+ "bar_logos": {
+  "enabled": true,
+  "dir": "logos",
+  "height_frac": 0.8,
+  "aspect": 2.0,
+  "gap": 8,
+  "pad": 3
+ },
+ "count": {
+  "enabled": true
+ },
+ "moments": [
+  {
+   "type": "first_past",
+   "id": "game_boy",
+   "units": 100000000,
+   "note": "DEC-117: Game Boy first console past 100 million (Sep 2000)"
+  },
+  {
+   "type": "passes",
+   "id": "nintendo_ds",
+   "other": "game_boy",
+   "rank": 2,
+   "note": "DEC-117: DS passes Game Boy for second (Dec 2009)"
+  },
+  {
+   "type": "passes",
+   "id": "nintendo_switch",
+   "other": "nintendo_ds",
+   "rank": 2,
+   "on_hold": true,
+   "note": "DEC-117: APPROVED but ON HOLD until Nintendo's quarterly Switch figures are in the data; not shown"
+  }
+ ],
+ "final_line": {
+  "enabled": true,
+  "id": "nintendo_switch",
+  "other": "playstation_2",
+  "label": "Switch",
+  "other_label": "PS2"
+ },
+ "final_footnote": {
+  "enabled": true,
+  "id": "playstation_2",
+  "mark": "*",
+  "size": 26,
+  "dy": 34,
+  "text": "PS2: Sony's current figure is more than 160 million (March 2012); its 2019 report said more than 155 million"
+ }
 }

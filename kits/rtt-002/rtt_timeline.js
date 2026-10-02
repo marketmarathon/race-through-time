@@ -261,16 +261,21 @@
       if (c) records.push({ k, date: ev.date, id: c.id, previous: c.previous, style: c.style, type: 'CROWN', held: hold[k] });
     });
     const base = ev => { for (const s of P.segments || []) if (ev.date <= s.to) return s.sec_per_event; return P.sec_per_event; };
+    /* With counting (cfg.count, round 2), a held quarter counts at its normal beat and THEN holds for
+       record_hold.sec, so the pause follows the overtake; without counting (round 1) the hold replaces
+       the beat, as RTT-002's record pauses do. */
+    const CNT = !!(cfg.count && cfg.count.enabled);
+    const beatSec = k => CNT ? base(events[k]) * mult[k] + (hold[k] ? RH.sec : 0) : (hold[k] ? RH.sec : base(events[k]) * mult[k]);
     const startFrame = [];
     let sec = P.lead_in_sec;
     for (let k = 0; k < events.length; k++) {
       startFrame.push(Math.round(sec * fps));
-      if (k < events.length - 1) sec += hold[k] ? RH.sec : base(events[k]) * mult[k];
+      if (k < events.length - 1) sec += beatSec(k);
     }
     const lastK = events.length - 1;
     const raceFrames = P.final_board_sec != null
       ? startFrame[lastK] + Math.round(P.final_board_sec * fps)
-      : Math.round((sec + (hold[lastK] ? RH.sec : base(events[lastK]) * mult[lastK]) + P.end_hold_sec) * fps);
+      : Math.round((sec + beatSec(lastK) + P.end_hold_sec) * fps);
     for (let k = 1; k < startFrame.length; k++)
       if (startFrame[k] <= startFrame[k - 1]) throw new Error('two events share a frame; raise sec_per_event');
 
@@ -288,9 +293,81 @@
       const k = events.findIndex(ev => ev.date >= e.fade_date);
       fade[e.id] = k < 0 ? null : k;
     }
-    return { series: true, events, states, opening, openingEvent, startFrame, raceFrames, mult, kind, fps, rows,
-             colours: { index, used: MO.length, sets: [], fadeRaces: 0, minDeltaE: 0, rows }, hold, records,
-             highlight: events.map(() => []), hasStarts: false, fade, makers: race.makers, entrants: race.entrants };
+    /* IQ-10 round 2 (DEC-115): counting. Quarter k counts from quarter k-1's figures to its own over
+       countFrames[k] frames (its whole beat; a held quarter and the last quarter: one normal beat, then the
+       board holds),
+       reaching the exact series.csv value on the LAST frame of that count (the quarter-end frame). */
+    const countFrames = events.map((ev, k) => k < lastK && !hold[k] ? startFrame[k + 1] - startFrame[k] : Math.max(1, Math.round(base(ev) * mult[k] * fps)));
+    const tl = { series: true, events, states, opening, openingEvent, startFrame, raceFrames, mult, kind, fps, rows,
+                 colours: { index, used: MO.length, sets: [], fadeRaces: 0, minDeltaE: 0, rows }, hold, records,
+                 highlight: events.map(() => []), hasStarts: false, fade, makers: race.makers, entrants: race.entrants,
+                 countFrames, launch };
+    tl.quarterEndFrame = events.map((ev, k) => startFrame[k] + countFrames[k] - 1);
+    /* Moments (callouts): every change of first place (crown.csv) plus the configured extra moments
+       (cfg.moments: {type: "first_past", id, units} or {type: "passes", id, other, rank}). Each is checked
+       against the data here (a claim the data does not support stops the build) and placed on the exact
+       frame where the counted figures cross. */
+    const moments = [];
+    const crossing = (k, test) => { for (let s = 0; s < countFrames[k]; s++) { if (test(seriesFrame(tl, k, s))) return startFrame[k] + s; } return null; };
+    for (const r of records) {
+      const f = crossing(r.k, F => F.order[0] === r.id);
+      if (f == null) throw new Error('crown change ' + r.date + ': the counted figures never put ' + r.id + ' first');
+      moments.push({ type: 'crown', k: r.k, date: r.date, id: r.id, other: r.previous, style: r.style, frame: f });
+    }
+    const styleOf = (k, ids) => ids.map(id => states[k].style[id]).sort((a, b) => ({ official: 0, estimated: 1, analyst_estimate: 2 }[b] - { official: 0, estimated: 1, analyst_estimate: 2 }[a]))[0];
+    for (const m of cfg.moments || []) {
+      if (m.on_hold) continue;                                   // approved but not shown yet
+      if (m.type === 'first_past') {
+        const k = states.findIndex(s => (s.totals[m.id] || 0) >= m.units);
+        if (k < 0) continue;                                     // not inside this window
+        const before = k > 0 ? states[k - 1] : opening;
+        if ((before.totals[m.id] || 0) >= m.units) continue;     // crossed before the window
+        const firstEver = all.findIndex(x => Object.values(x.st.totals).some(u => u >= m.units));
+        if (all[firstEver].ev.date !== events[k].date || !(all[firstEver].st.totals[m.id] >= m.units)) throw new Error('moment: ' + m.id + ' is not the first console past ' + m.units);
+        const f = crossing(k, F => F.u[m.id] >= m.units);
+        moments.push({ type: m.type, k, date: events[k].date, id: m.id, units: m.units, style: styleOf(k, [m.id]), frame: f });
+      } else if (m.type === 'passes') {
+        const k = states.findIndex((s, i) => { const b = i > 0 ? states[i - 1] : opening;
+          return s.order.indexOf(m.id) === m.rank - 1 && s.order.indexOf(m.other) === m.rank && b.order.indexOf(m.other) >= 0 && b.order.indexOf(m.other) < (b.order.indexOf(m.id) < 0 ? 1e9 : b.order.indexOf(m.id)); });
+        if (k < 0) continue;
+        const f = crossing(k, F => F.order.indexOf(m.id) === m.rank - 1 && F.order.indexOf(m.other) === m.rank);
+        if (f == null) throw new Error('moment: ' + m.id + ' never passes ' + m.other + ' in the counted figures');
+        moments.push({ type: m.type, k, date: events[k].date, id: m.id, other: m.other, rank: m.rank, style: styleOf(k, [m.id, m.other]), frame: f });
+      } else throw new Error('unknown moment type ' + m.type);
+    }
+    moments.sort((a, b) => a.frame - b.frame);
+    tl.moments = moments;
+    /* The final-table line (cfg.final_line {id, other}): "<id> is at least <gap> million behind the <other>",
+       gap = other - id rounded DOWN to 0.1 million, "at least" only when the other's figure is a lower bound. */
+    const FL = cfg.final_line;
+    tl.isDataEnd = events[lastK].date === race.events[race.events.length - 1].date;   // the final table of the film
+    if (FL && FL.enabled && tl.isDataEnd) {
+      const s = states[lastK], a = s.totals[FL.id], b = s.totals[FL.other];
+      if (!(b > a)) throw new Error('final line: ' + FL.other + ' is not ahead of ' + FL.id);
+      const t = Math.floor((b - a) / 100000);
+      tl.finalLine = { text: (FL.label || FL.id) + ' is ' + (s.plus[FL.other] ? 'at least ' : '') + Math.floor(t / 10) + '.' + (t % 10) + ' million behind the ' + (FL.other_label || FL.other), gap: b - a, atLeast: !!s.plus[FL.other] };
+    }
+    tl.finalFrom = tl.quarterEndFrame[lastK];
+    return tl;
+  }
+
+  /* IQ-10 round 2: the counted board on frame `since` of quarter k (k = -1: the opening board). Units are
+     whole numbers on a straight line from quarter k-1 to quarter k, exact on the quarter-end frame (g = 1).
+     Order: most counted units first; equal counts keep quarter k's order (its tie rule). "+": on the
+     quarter-end frame exactly the data's flag; while counting, "+" if either end is a lower bound. */
+  function seriesFrame(tl, k, since) {
+    if (k < 0) { const o = tl.opening; return { g: 1, u: Object.assign({}, o.totals), order: o.order.slice(), plus: Object.assign({}, o.plus), mu: Object.assign({}, o.maker_totals), mplus: Object.assign({}, o.maker_plus) }; }
+    const cur = tl.states[k], prev = k > 0 ? tl.states[k - 1] : tl.opening, n = tl.countFrames[k];
+    const g = n <= 1 ? 1 : Math.min(1, Math.max(0, since) / (n - 1));
+    const u = {}, plus = {}, mu = {}, mplus = {}, idx = {};
+    cur.order.forEach((id, i) => { idx[id] = i; const a = prev.totals[id] || 0, b = cur.totals[id];
+      u[id] = g >= 1 ? b : Math.round(a + (b - a) * g);
+      plus[id] = g >= 1 ? !!cur.plus[id] : !!(cur.plus[id] || prev.plus[id]); });
+    const order = cur.order.slice().sort((x, y) => (u[y] - u[x]) || (idx[x] - idx[y]));
+    for (const m of Object.keys(cur.maker_totals)) { const a = prev.maker_totals[m] || 0, b = cur.maker_totals[m];
+      mu[m] = g >= 1 ? b : Math.round(a + (b - a) * g);
+      mplus[m] = g >= 1 ? !!cur.maker_plus[m] : !!(cur.maker_plus[m] || prev.maker_plus[m]); }
+    return { g, u, order, plus, mu, mplus };
   }
 
   /* Which event is showing at race frame f: the last event whose start frame is <= f, or -1
@@ -465,7 +542,7 @@
      keeps its name. Everything else is races.csv's grand_prix exactly. */
   function gpShort(name) { return String(name).replace(/Grand Prix/g, 'GP'); }
 
-  const api = { build, buildSeries, eventAt, rankOf, assignColours, coVisible, drawnColour, deltaE, lab, gpShort, rateText };
+  const api = { build, buildSeries, seriesFrame, eventAt, rankOf, assignColours, coVisible, drawnColour, deltaE, lab, gpShort, rateText };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   else root.RTT_TIMELINE = api;
 })(typeof window !== 'undefined' ? window : this);

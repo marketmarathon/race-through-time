@@ -8,13 +8,15 @@
 #     (outside the checkout), never into the repo, and never prints the secret;
 #   - checks every SHA-256 against kits/rtt-003/assets_sha256.txt and the player input against
 #     kits/rtt-003/dataset_hashes.txt, and stops on any mismatch or any missing picture;
-#   - renders the four pilot clips (kits/rtt-003/config_rtt003_clip_*.json) at 1920 x 1080 with NO audio
-#     track, and the stills (kits/rtt-003/stills.json) at 1920 x 1080 plus phone size;
+#   - renders the pilot clips (CLIPS below) at 1920 x 1080 with NO audio track, and the stills
+#     (kits/rtt-003/stills.json) at 1920 x 1080 (close-ups at 2x) plus phone size;
 #   - saves everything ONLY as one pre-release in the private repo, with every file's SHA-256 in its notes;
 #   - uploads NO workflow artifact, uses NO cache, and deletes pictures, frames and videos at the end.
 # The full RTT-003 film is NOT rendered here (IQ-10 is a pilot).
 # Triggers: a push that changes THIS FILE on the IQ-10 branch, or by hand (once merged).
 # Run 1 (78db338) checked the whole route; run 2 renders the review set after the 26 px scoreboard-word fix.
+# Round 2 (Luke's changes of 2 Oct 2026, DEC-114 onwards): clip A at 1.0 s and 1.5 s per quarter, B, C (scoreboard);
+# stills: final table, 2018 with Xbox One, two close-ups (picture + logo).
 name: rtt003-pilot
 
 on:
@@ -35,9 +37,9 @@ env:
   PRIVATE_REF: claude/sweet-mendel-faig7w
   CLIPS: >-
     config_rtt003_clip_A_1985_1992.json
+    config_rtt003_clip_A_1985_1992_1.5x.json
     config_rtt003_clip_B_1996_1999.json
     config_rtt003_clip_C_2005_2009.json
-    config_rtt003_clip_C_2005_2009_scoreboard.json
 
 jobs:
   render:
@@ -128,15 +130,15 @@ jobs:
           GH_TOKEN: ${{ secrets.RTT_PRIVATE_TOKEN }}
         run: |
           O="$RUNNER_TEMP/rtt_out"; SHORT=${GITHUB_SHA::7}
-          TAG="rtt-003-pilot-${SHORT}-run${GITHUB_RUN_NUMBER}"
+          TAG="rtt-003-pilot2-${SHORT}-run${GITHUB_RUN_NUMBER}"
           {
-            echo "RTT-003 design pilot (IQ-10): clips and stills, rendered by GitHub Actions. No music."
+            echo "RTT-003 design pilot (IQ-10) round 2: clips and stills, rendered by GitHub Actions. No music."
             echo
             echo "- Source: ${GITHUB_REPOSITORY} @ ${GITHUB_SHA} (${GITHUB_REF_NAME}), run ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
             while read -r c FRAMES; do
               echo "- kits/rtt-003/${c}: ${FRAMES} frames at 30 fps = $(awk -v f="$FRAMES" 'BEGIN {printf "%.1f", f / 30}') s, 1920 x 1080, x264, no audio"
             done < "$RUNNER_TEMP/plan.txt"
-            echo "- Stills: kits/rtt-003/stills.json, 1920 x 1080 PNG plus the same frame at phone size (390 points wide at 3 device pixels per point)"
+            echo "- Stills: kits/rtt-003/stills.json, 1920 x 1080 PNG (close-ups: a region drawn at 3840 x 2160) plus the same frame or region at phone size (390 points wide at 3 device pixels per point)"
             echo "- Pictures and logos: race-through-time-private ${PRIVATE_REF}, every SHA-256 checked against kits/rtt-003/assets_sha256.txt before drawing"
             echo "- File SHA-256:"
             (cd "$O" && sha256sum *.mp4 *.png | sed 's/^/  - /')
@@ -145,7 +147,7 @@ jobs:
           } > "$O/notes.md"
           cat "$O/notes.md"
           gh release create "$TAG" --repo "$PRIVATE_REPO" --target main --prerelease \
-            --title "RTT-003 design pilot ${SHORT} (clips and stills)" --notes-file "$O/notes.md" "$O"/*.mp4 "$O"/*.png
+            --title "RTT-003 design pilot round 2 ${SHORT} (clips and stills)" --notes-file "$O/notes.md" "$O"/*.mp4 "$O"/*.png
           URL="https://github.com/${PRIVATE_REPO}/releases/tag/${TAG}"
           echo "Release: $URL"
           echo "RTT-003 pilot saved to the private repo: $URL" >> "$GITHUB_STEP_SUMMARY"

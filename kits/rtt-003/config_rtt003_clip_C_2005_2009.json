@@ -12,6 +12,6 @@
   "final_board_sec": 3.0
  },
  "notes": [
-  "Pilot clip (IQ-10): the film config (config_rtt003_film.json) cut to a window; everything that draws and every pacing rule is the film's. Opens on the board of the last quarter end before the window for pacing.lead_in_sec (2.0 s; clip A: the first quarter end, 31 Mar 1985, the race start); final board held 3 s (a passage, not the film's 10 s end). No music. Clip C WITHOUT the company scoreboard: PlayStation 2 takes the crown from Game Boy at 30 Jun 2007 (estimated: the change falls in a 17-month gap between two Sony figures). Xbox One is not launched yet (Nov 2013)."
+  "Clip C, 2005-2009, with the company scoreboard (DEC-114: Luke keeps it; the scoreboard is in the film config, so the round-1 'with scoreboard' config is no longer needed). PlayStation 2 takes the crown from Game Boy in the quarter to 30 Jun 2007 (estimated); Xbox One not launched yet."
  ]
 }
