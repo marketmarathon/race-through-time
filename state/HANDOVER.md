@@ -1,6 +1,22 @@
-# HANDOVER — 3 Oct 2026 (session 13, Claude Code cloud session, environment "Race Through Time": IQ-10, the RTT-003 design pilot, rounds 1 to 5 — round 5 is the final pilot round; then IQ-11, CLAUDE.md and the house style)
+# HANDOVER — 3 Oct 2026 (session 13, Claude Code cloud session, environment "Race Through Time": IQ-10, the RTT-003 design pilot, rounds 1 to 5, IQ-11 (CLAUDE.md and the house style), then round 6: the RTT-003 FULL FILM with music)
 
 Previous handovers are in this file's git history. This session's work is on branch `claude/sweet-mendel-faig7w` in both repos; the public one has pull request #13 (not merged; Luke merges, DEC-057). Prompts: `prompts/CODE_SESSION_IQ-11.md` (IQ-11), `prompts/CODE_SESSION_IQ-10.md` (round 1), `-10b.md` (round 2), `-10d.md` (round 4), `-10e.md` (round 5); round 3's decisions are recorded in full as DEC-122 to DEC-129.
+
+## RTT-003 FULL FILM (round 6, 3 Oct 2026, DEC-146 to DEC-149) — awaiting Luke's approval
+- **Design approved by Luke** exactly as round 5 (DEC-146). **Music:** "Powerup!" by Jeremy Blake, YouTube Audio Library (DEC-147). It was rebuilt from the base64 parts and verified: SHA-256 `a855b541…f7be`, 11,406,143 bytes. It is committed only in the private repo at `assets/rtt-003/music/powerup_jeremy_blake.mp3` (private branch `claude/sweet-mendel-faig7w`, private `main` merged in) and listed in `reference/rights_ledger.md`.
+- **Full film (private pre-release):** https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-003-film-2945460-run1 (run https://github.com/marketmarathon/race-through-time/actions/runs/37108316963, 0 workflow artifacts).
+  - **Master 3840 × 2160:** `rtt003_film_2945460_3840x2160.mp4`, SHA-256 **`8b5b9d245fde4f735bf279e6122106148e9aebb37d7ed0b361c1cbd4feab9f97`**, 376,614,655 bytes.
+  - **Viewing copy 1920 × 1080:** `rtt003_film_2945460_1920x1080_viewing.mp4`, SHA-256 **`47b57561317698df000a6394711cd921faf2eb11e9f43dcf9a046ab8fcee2402`**, 46,229,964 bytes.
+  - **Length** 308.23 s = 5 min 8 s (9,247 frames). **Loudness** −16.0 LUFS integrated, **true peak** −1.5 dBTP (both files, measured after encoding). **Loop joins** at 255.93 s and 302.46 s; the second is inside the 10 s fade over the final table (DEC-148).
+- **Before the render:**
+  - RTT-003 suite 5/5 PASS, phone check PASS;
+  - RTT-002 suite 20/20 PASS, with its results file unchanged;
+  - WCAG flash check below the thresholds: worst 3.7% (general) and 0.3% (red) of a 10° field against 25%; no exception needed (DEC-149, `reports/RTT-003_wcag_flash_check.md`).
+- **How it was started:** new workflow `.github/workflows/rtt003_film.yml`. GitHub cannot start an unmerged workflow by hand, so the run was started by the deliberate push of that file after all tests had passed. Once merged it can be started from the Actions tab. `render_pilot.yml` (RTT-002) and RTT-002's music settings are unchanged.
+- **Next:**
+  1. Luke watches the film and approves the exact render by its SHA-256 (DEC-078), or asks for changes.
+  2. Luke merges pull request #13 and the private branch.
+  3. Luke uploads by hand in YouTube Studio (DEC-080). Nothing has been uploaded or published.
 
 ## IQ-11 (3 Oct 2026): standing rules and house style
 - **`CLAUDE.md`** (repo root) now carries the standing rules for every Claude Code session, and **`reference/house_style.md`** the approved design defaults (DEC-145). Read both first. Sections 1–6 of the house style apply to new episodes without asking Luke again unless the subject makes a default wrong; section 7 features are proposed in a new episode's first pilot round for Luke to confirm; DEC-069 is unchanged. When Luke approves a reusable choice, add it to `house_style.md` in the same pull request.

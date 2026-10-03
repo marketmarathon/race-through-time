@@ -1,8 +1,8 @@
 {
   "schema": "rtt-state/0.1",
   "updated": "2026-10-02",
-  "updated_by": "Claude (Claude Code cloud session): IQ-11 - CLAUDE.md and reference/house_style.md added (DEC-145), README 'Also' list corrected, RTT-001 recorded as the next episode (DEC-144); on branch claude/sweet-mendel-faig7w, pull request #13, not merged",
-  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); starts data audit PASSED (DEC-058/DEC-059, merged PR #8); IQ-04 MERGED (PR #2); IQ-05 rounds 1-5 MERGED (PR #3-#7); round-5 pilot RENDERED and APPROVED by Luke (DEC-062, visual direction = milestone 3); pull request #9 MERGED (c378ea7); RTT-002 FINAL FILM APPROVED (DEC-078), pull request #10 MERGED (main ef01814), UPLOADED by Luke in YouTube Studio and SCHEDULED PUBLIC 30 Sep 2026 (DEC-079 early release, DEC-080): video 2fY7Bzq8Uu0 on channel UC8R47xbyBB5Z93MdMkoUOWg; IQ-09 RTT-003 DATA BUILD DONE 1 Oct 2026; Luke's answers applied 2 Oct 2026 (DEC-093..DEC-102); pull request #12 MERGED 2 Oct 2026 (main 4288f6d); IQ-10 RTT-003 DESIGN PILOT ROUND 5 (FINAL PILOT ROUND) RENDERED 3 Oct 2026 (private pre-release; not the full film), awaiting Luke's review; IQ-11 (3 Oct 2026): CLAUDE.md and reference/house_style.md added on the IQ-10 branch (DEC-145); next episode RTT-001 Browser Wars (DEC-144)",
+  "updated_by": "Claude (Claude Code cloud session): IQ-10 round 6 - RTT-003 design approved (DEC-146), music Powerup! verified and mixed (DEC-147, DEC-148), WCAG flash check passed (DEC-149), FULL FILM rendered to a private pre-release; pull request #13 open, not merged",
+  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); starts data audit PASSED (DEC-058/DEC-059, merged PR #8); IQ-04 MERGED (PR #2); IQ-05 rounds 1-5 MERGED (PR #3-#7); round-5 pilot RENDERED and APPROVED by Luke (DEC-062, visual direction = milestone 3); pull request #9 MERGED (c378ea7); RTT-002 FINAL FILM APPROVED (DEC-078), pull request #10 MERGED (main ef01814), UPLOADED by Luke in YouTube Studio and SCHEDULED PUBLIC 30 Sep 2026 (DEC-079 early release, DEC-080): video 2fY7Bzq8Uu0 on channel UC8R47xbyBB5Z93MdMkoUOWg; IQ-09 RTT-003 DATA BUILD DONE 1 Oct 2026; Luke's answers applied 2 Oct 2026 (DEC-093..DEC-102); pull request #12 MERGED 2 Oct 2026 (main 4288f6d); IQ-10 RTT-003 DESIGN PILOT ROUND 5 (FINAL PILOT ROUND) RENDERED 3 Oct 2026 (private pre-release; not the full film), awaiting Luke's review; IQ-11 (3 Oct 2026): CLAUDE.md and reference/house_style.md added on the IQ-10 branch (DEC-145); next episode RTT-001 Browser Wars (DEC-144); IQ-10 round 6 (3 Oct 2026): RTT-003 design APPROVED (DEC-146), FULL FILM with music rendered to a private pre-release, awaiting Luke's approval by SHA-256",
   "canonical_queue": "state/ folder on main in marketmarathon/race-through-time (this file)",
   "repo_baseline": {
     "repo": "marketmarathon/bars",
@@ -184,11 +184,11 @@
       "title": "Best-Selling Consoles 1985–2026",
       "subtitle_rule": "title must say units shipped (DEC-081)",
       "previous_title": "Nintendo Console Race (widened to all consoles by DEC-081)",
-      "state": "DESIGN_PILOT_ROUND5_RENDERED_AWAITING_LUKE",
+      "state": "FULL_FILM_RENDERED_AWAITING_LUKE_APPROVAL",
       "check_level": "LIVE",
       "verdict": "CONDITIONAL",
-      "blocker": "Luke reviews round 5 (final pilot round) and approves the design for the full film (DEC-069); open: one-quarter 'latest figure' on Game Gear at 31 Mar 1996 (DEC-142); four UNVERIFIED GameSpot end-date reports (DEC-143); music track (Luke will choose)",
-      "decisions": "owner DEC-081..DEC-085 (30 Sep 2026); DEC-086..DEC-092 confirmed by Luke 2 Oct 2026 via DEC-093..DEC-102; IQ-10 Claude working choices and proposals DEC-103..DEC-113; Luke's round-1 answers and round-2 changes DEC-114..DEC-118; round-2 choices DEC-119..DEC-121; round 3 DEC-122..DEC-129; round 4 DEC-130..DEC-137; round 5 DEC-138..DEC-143",
+      "blocker": "Luke watches the full film and approves the exact render by its SHA-256 (DEC-078); then merge pull request #13 and the private branch, and upload by hand in YouTube Studio (DEC-080)",
+      "decisions": "owner DEC-081..DEC-085 (30 Sep 2026); DEC-086..DEC-092 confirmed by Luke 2 Oct 2026 via DEC-093..DEC-102; IQ-10 Claude working choices and proposals DEC-103..DEC-113; Luke's round-1 answers and round-2 changes DEC-114..DEC-118; round-2 choices DEC-119..DEC-121; round 3 DEC-122..DEC-129; round 4 DEC-130..DEC-137; round 5 DEC-138..DEC-143; round 6 DEC-146..DEC-149",
       "dataset": {
         "branch": "main (pull request #12 merged 2 Oct 2026, 4288f6d)",
         "path": "data/rtt-003/",
@@ -215,10 +215,9 @@
         "changes_round5_2026_10_03": "DEC-139/DEC-140 on branch claude/sweet-mendel-faig7w (pull request #13): Nintendo Switch quarterly life-to-date Mar 2024..Jun 2026 (checked in Nintendo's PDFs); Famitsu No. 259 Mega Drive 14.90m and Game Gear 4.35m at 1993-03-31 (15.40m / 4.40m now disagreements); documented end-of-production reports recorded (5 verified on a GitHub runner, run 37076454006, 3DS verified here, 4 GameSpot UNVERIFIED); rule 2 labels: latest figure only Mega Drive (from 1996-03-31), Master System (1993-09-30..1996-03-31) and Game Gear (1996-03-31 only); crown sequence unchanged"
       },
       "open_for_luke": [
-        "review the IQ-10 round-5 release (final pilot round) and approve the design for the full film (DEC-069)",
-        "note: Game Gear reads 'latest figure' for the single quarter end 31 Mar 1996 under rule 2 (DEC-142); four GameSpot end-date reports UNVERIFIED (DEC-143)",
-        "choose the music track (DEC-114 (d))",
-        "merge pull request #13 when satisfied (DEC-057); merge the private repo branch claude/sweet-mendel-faig7w"
+        "watch the RTT-003 full film and approve the exact render by its SHA-256 (DEC-078), or ask for changes",
+        "merge pull request #13 when satisfied (DEC-057), and the private repo branch claude/sweet-mendel-faig7w",
+        "upload by hand in YouTube Studio after approval (DEC-080)"
       ],
       "pilot": {
         "task": "IQ-10, prompts/CODE_SESSION_IQ-10.md",
@@ -377,6 +376,19 @@
           "tests": "tests/player/RESULTS_RTT003.md 5/5 PASS (round-4 checks plus rule 2 re-derived from the data on every series.csv row, Switch quarter ends = Nintendo's figures, Switch passes DS in the quarter to 2025-12-31); tests/player/PHONE_RTT003.md PASS; RTT-002 22 reference frames identical to main",
           "full_film_estimate": "9247 frames = 5 min 8 s; not rendered"
         }
+      },
+      "film": {
+        "decisions": "DEC-146 (design approved), DEC-147 (music), DEC-148 (loop and render), DEC-149 (flash check)",
+        "release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-003-film-2945460-run1",
+        "run": "https://github.com/marketmarathon/race-through-time/actions/runs/37108316963",
+        "workflow": ".github/workflows/rtt003_film.yml",
+        "master_3840x2160_sha256": "8b5b9d245fde4f735bf279e6122106148e9aebb37d7ed0b361c1cbd4feab9f97",
+        "viewing_1920x1080_sha256": "47b57561317698df000a6394711cd921faf2eb11e9f43dcf9a046ab8fcee2402",
+        "seconds": "308.233",
+        "audio": "\"Powerup!\" by Jeremy Blake (YouTube Audio Library), private assets/rtt-003/music/powerup_jeremy_blake.mp3 SHA-256 a855b541b2bd661a2077c6157ee3df11540a79d5c630a44d26f043ecdac7f7be; loop 209.398-255.930 s, crossfade 5.805 s; joins 255.93 s and 302.46 s; faded over the 10 s final table; -16.0 LUFS integrated, true peak -1.5 dBTP",
+        "flash": "WCAG 2.x: below the general- and red-flash thresholds (worst 3.7% / 0.3% of a 10-degree field; reports/RTT-003_wcag_flash_check.md)",
+        "tests": "RTT-003 suite 5/5 PASS, phone check PASS, RTT-002 suite 20/20 PASS (results unchanged), before the render",
+        "approved": null
       }
     },
     {
@@ -634,15 +646,16 @@
       "id": "IQ-10",
       "task": "RTT-003 design pilot: player configuration, pictures and logos, pilot clips and stills for Luke (not the full film)",
       "where": "Claude Code cloud session, environment \"Race Through Time\"; prompt prompts/CODE_SESSION_IQ-10.md",
-      "status": "ROUND 5 (FINAL PILOT ROUND) DONE 3 Oct 2026: data update DEC-139, rule-2 labels DEC-140, larger trimmed logo tiles DEC-138 rendered to a private pre-release; pull request #13 open, NOT merged; awaiting Luke's review and approval for the full film",
+      "status": "ROUND 6 DONE 3 Oct 2026: design approved (DEC-146), music mixed, FULL FILM rendered to a private pre-release; pull request #13 open, NOT merged; awaiting Luke's approval of the exact render",
       "result": {
         "release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-003-pilot-adc09ba-run2",
-        "decisions": "DEC-103..DEC-143",
+        "decisions": "DEC-103..DEC-143, DEC-146..DEC-149",
         "tests": "RTT-003 7/7 PASS, phone PASS; RTT-002 suite PASS and 22 frames pixel-identical to main",
         "round2_release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-003-pilot2-3b2d956-run3",
         "round3_release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-003-pilot3-b4cab47-run4",
         "round4_release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-003-pilot4-325ace1-run5",
-        "round5_release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-003-pilot5-81534e5-run6"
+        "round5_release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-003-pilot5-81534e5-run6",
+        "film_release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-003-film-2945460-run1"
       }
     },
     {
