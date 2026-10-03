@@ -1,8 +1,8 @@
 {
   "schema": "rtt-state/0.1",
   "updated": "2026-10-02",
-  "updated_by": "Claude (Claude Code cloud session): IQ-10 round 5 (final pilot round) - Luke's decisions DEC-138..DEC-141 and data update (Nintendo quarterly Switch figures, Famitsu Mar 1993 Mega Drive / Game Gear, documented end dates) built, verified, tested and rendered to a private pre-release; pull request #13 open, not merged",
-  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); starts data audit PASSED (DEC-058/DEC-059, merged PR #8); IQ-04 MERGED (PR #2); IQ-05 rounds 1-5 MERGED (PR #3-#7); round-5 pilot RENDERED and APPROVED by Luke (DEC-062, visual direction = milestone 3); pull request #9 MERGED (c378ea7); RTT-002 FINAL FILM APPROVED (DEC-078), pull request #10 MERGED (main ef01814), UPLOADED by Luke in YouTube Studio and SCHEDULED PUBLIC 30 Sep 2026 (DEC-079 early release, DEC-080): video 2fY7Bzq8Uu0 on channel UC8R47xbyBB5Z93MdMkoUOWg; IQ-09 RTT-003 DATA BUILD DONE 1 Oct 2026; Luke's answers applied 2 Oct 2026 (DEC-093..DEC-102); pull request #12 MERGED 2 Oct 2026 (main 4288f6d); IQ-10 RTT-003 DESIGN PILOT ROUND 5 (FINAL PILOT ROUND) RENDERED 3 Oct 2026 (private pre-release; not the full film), awaiting Luke's review",
+  "updated_by": "Claude (Claude Code cloud session): IQ-11 - CLAUDE.md and reference/house_style.md added (DEC-145), README 'Also' list corrected, RTT-001 recorded as the next episode (DEC-144); on branch claude/sweet-mendel-faig7w, pull request #13, not merged",
+  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); starts data audit PASSED (DEC-058/DEC-059, merged PR #8); IQ-04 MERGED (PR #2); IQ-05 rounds 1-5 MERGED (PR #3-#7); round-5 pilot RENDERED and APPROVED by Luke (DEC-062, visual direction = milestone 3); pull request #9 MERGED (c378ea7); RTT-002 FINAL FILM APPROVED (DEC-078), pull request #10 MERGED (main ef01814), UPLOADED by Luke in YouTube Studio and SCHEDULED PUBLIC 30 Sep 2026 (DEC-079 early release, DEC-080): video 2fY7Bzq8Uu0 on channel UC8R47xbyBB5Z93MdMkoUOWg; IQ-09 RTT-003 DATA BUILD DONE 1 Oct 2026; Luke's answers applied 2 Oct 2026 (DEC-093..DEC-102); pull request #12 MERGED 2 Oct 2026 (main 4288f6d); IQ-10 RTT-003 DESIGN PILOT ROUND 5 (FINAL PILOT ROUND) RENDERED 3 Oct 2026 (private pre-release; not the full film), awaiting Luke's review; IQ-11 (3 Oct 2026): CLAUDE.md and reference/house_style.md added on the IQ-10 branch (DEC-145); next episode RTT-001 Browser Wars (DEC-144)",
   "canonical_queue": "state/ folder on main in marketmarathon/race-through-time (this file)",
   "repo_baseline": {
     "repo": "marketmarathon/bars",
@@ -57,7 +57,8 @@
       "state": "FEASIBILITY",
       "check_level": "DESK",
       "verdict": "CONDITIONAL",
-      "blocker": "series start / era overclaim"
+      "blocker": "series start / era overclaim",
+      "next": "NEXT VIDEO after RTT-003 (DEC-144): full browser wars incl. the Netscape-vs-Internet Explorer era before StatCounter; early years as on-screen estimates; open: desktop only or all devices from the smartphone era; waiting on Luke's ChatGPT deep research"
     },
     {
       "id": "RTT-002",
@@ -643,6 +644,24 @@
         "round4_release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-003-pilot4-325ace1-run5",
         "round5_release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-003-pilot5-81534e5-run6"
       }
+    },
+    {
+      "id": "IQ-11",
+      "task": "Add CLAUDE.md (standing rules for every Code session) and reference/house_style.md (approved design defaults), checked against state/DECISIONS.md and the two film configs and updated to round 5; correct the README 'Also' list (DEC-060, DEC-061); record DEC-144 (RTT-001 next) and DEC-145 (house style)",
+      "where": "branch claude/sweet-mendel-faig7w, pull request #13 (its own commit); prompt prompts/CODE_SESSION_IQ-11.md",
+      "status": "DONE 3 Oct 2026: documentation only - nothing rendered, no data, player code or workflow changed; pull request #13 open, NOT merged",
+      "result": {
+        "files": [
+          "CLAUDE.md",
+          "reference/house_style.md",
+          "README.md",
+          "state/DECISIONS.md",
+          "state/STATE.json",
+          "state/HANDOVER.md",
+          "prompts/CODE_SESSION_IQ-11.md"
+        ],
+        "decisions": "DEC-144, DEC-145"
+      }
     }
   ],
   "rtt_repo": {
@@ -713,6 +732,7 @@
     "assets_rtt003": "race-through-time-private branch claude/sweet-mendel-faig7w: assets/rtt-003/originals (28), logos (5), icons (28), manifest.csv and icons/manifest.csv with SHA-1 and SHA-256; hashes the render checks in kits/rtt-003/assets_sha256.txt"
   },
   "rules_all_sessions": [
+    "CLAUDE.md (repo root, DEC-145): the standing rules for every Claude Code session - read it first; reference/house_style.md holds the approved design defaults (sections 1-6 apply to new episodes without asking again unless the subject makes a default wrong; section 7 features are proposed for Luke to confirm; DEC-069 unchanged)",
     "DEC-069 (Luke, 30 Sep 2026): never add a visual feature or change the look beyond the owner-approved pilot without Luke's approval BEFORE rendering; list proposals as questions instead",
     "DEC-070: no intro/title screen and no outro/closing card; 10 s final-table hold at the end for YouTube end-screen elements",
     "DEC-073: the music file may not be made available separately from videos: it lives only in the private repo, is never committed here and never uploaded as a workflow artifact"
@@ -728,5 +748,14 @@
       "data_caveat": "As reported to Luke by Claude (not re-derived in the IQ-10 session): only 17 of 251 console-calendar-years rest on official figures at both ends (113 of 241 on Nintendo/Sony April-March years). Needs its own data pass - Nintendo and Sony yearly tables, Xbox analyst figures - and probably a later start than 1985.",
       "status": "IDEA"
     }
-  ]
+  ],
+  "next_episode": {
+    "id": "RTT-001",
+    "title": "Browser Wars",
+    "after": "RTT-003",
+    "decision": "DEC-144 (Luke, Cowork chat, 2 Oct 2026)",
+    "scope": "the full browser wars, including the Netscape-vs-Internet Explorer era before StatCounter's series begins; figures for the early years built from the best available historical sources and shown on screen as estimates",
+    "open_question": "desktop only, or all devices from the smartphone era (not blocking)",
+    "research": "ChatGPT deep research prompt is with Luke; no answer yet"
+  }
 }
