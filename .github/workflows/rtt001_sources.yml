@@ -1,0 +1,28 @@
+# Race Through Time - RTT-001 Browser Wars data build (IQ-12): fetch the StatCounter export and check the pre-2009 figures
+# at sources the Claude Code cloud container cannot reach (its network policy blocks gs.statcounter.com, web.archive.org,
+# sites.cc.gatech.edu, www.justice.gov, w3counter.com and onestat.com). Same pattern as rtt003_sources.yml (DEC-136).
+# Separate from every render workflow: it renders nothing.
+# This repository is PUBLIC (DEC-006, DEC-061): no secret is used, NO workflow artifact is uploaded, NO cache;
+# the log prints HTTP status, page hashes, the figure lines of each page and the StatCounter CSV (CC BY-SA 3.0).
+# Trigger: a push that changes this file or the script on the IQ-12 branch, or by hand.
+name: rtt001-sources
+
+on:
+  push:
+    branches: [claude/jolly-volta-5lr5ql]
+    paths: [.github/workflows/rtt001_sources.yml, scripts/rtt001_check_sources.py]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Fetch each source and print its figure lines
+        run: python3 scripts/rtt001_check_sources.py
