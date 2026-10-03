@@ -1,0 +1,16 @@
+{
+ "build": "rtt001-build/1.0",
+ "sha256": {
+  "../../reports/RTT-001_data_report.md": "369dd2c1e131574228237d87329223defc38e5d780dfe795ef966b79aadaed34",
+  "CHECKS.md": "a14a40527e28872ba4580d2f7231f12775924586ad930e824def14290bf3ce92",
+  "browsers.csv": "d5721007a48e373a39fa2d2bc50f7bc7b710995f7f8d31b52313d2645de8d6b6",
+  "checks.json": "9578a01d3eae63ec4e8353a362ada20e62fcba3922b6d6e18c0815d3606253c6",
+  "leaders.csv": "db5e6efb24f1f8d2d5f752f39249cb7012bb2ff17b832b218dab17ac52f15824",
+  "observations.csv": "d125d25bf4071924b857d0f490800b3a6341dc3462f29640c09fd193cc6d60e8",
+  "series.csv": "4d8f7dfb0aac63dd9ca5040152c5ca180170dd93b5c05681535d34fd74a6d965",
+  "source/browsers_curated.csv": "0beee487e5697328db3cf4eeeb2b26fe95fe49b4972200c800d855922705f650",
+  "source/observations_curated.csv": "cab6e4e76d9ebd5f15d09240be0f1663aec3626bd46203a3d313f02159388c99",
+  "source/report_notes.md": "20a33f80f2f060f8407316f9d88dc1b19b45e5721a30e7984bb802020ee01541",
+  "source/statcounter_browser_ww_all_monthly_200901-202609.csv": "f595b08621cdd8029e0071597780ab00ac72e45c67bad7b926c4fe2ce925dc7e"
+ }
+}

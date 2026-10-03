@@ -1,0 +1,62 @@
+{
+ "build": "rtt001-build/1.0",
+ "all_pass": true,
+ "checks": [
+  {
+   "check": "values_within_0_100",
+   "result": "PASS",
+   "detail": "5705 values; outside: 0"
+  },
+  {
+   "check": "source_date_totals_at_most_100",
+   "result": "PASS",
+   "detail": "225 source dates; max total 99.97; breaches beyond the source's rounding: 0"
+  },
+  {
+   "check": "every_point_has_provenance",
+   "result": "PASS",
+   "detail": "5705 values checked; missing: 0"
+  },
+  {
+   "check": "one_source_per_date",
+   "result": "PASS",
+   "detail": "225 source dates; dates with two sources: {}"
+  },
+  {
+   "check": "eras_do_not_overlap",
+   "result": "PASS",
+   "detail": "GVU 1994-01-31..1994-11-16; EWS 1996-05-31..1999-01-31; STATCOUNTER 2009-01-31..2026-09-30; overlaps: []; points outside their era window: []"
+  },
+  {
+   "check": "statcounter_equals_raw_csv",
+   "result": "PASS",
+   "detail": "5420 StatCounter values compared with the raw export (213 months, 42 columns); mismatches: []"
+  },
+  {
+   "check": "no_unverified_or_not_found_used",
+   "result": "PASS",
+   "detail": "5455 used figures; used but not VERIFIED: []"
+  },
+  {
+   "check": "nothing_before_first_or_after_last_source_date",
+   "result": "PASS",
+   "detail": "45 browsers with points; values outside their first..last point: []; points without a browser row: []"
+  },
+  {
+   "check": "month_grid_complete",
+   "result": "PASS",
+   "detail": "393 month ends 1994-01-31..2026-09-30 x 45 browsers = 17685 rows"
+  },
+  {
+   "check": "arithmetic_rows_equal_their_parts",
+   "result": "PASS",
+   "detail": "136 arithmetic rows; problems: []"
+  },
+  {
+   "check": "other_is_never_a_bar",
+   "result": "PASS",
+   "detail": "'Other'/'unknown' rows in series: 0"
+  }
+ ],
+ "totals_beyond_rounding": []
+}
