@@ -1,8 +1,8 @@
 {
   "schema": "rtt-state/0.1",
-  "updated": "2026-10-02",
-  "updated_by": "Claude (Claude Code cloud session): IQ-10 round 6 - RTT-003 design approved (DEC-146), music Powerup! verified and mixed (DEC-147, DEC-148), WCAG flash check passed (DEC-149), FULL FILM rendered to a private pre-release; pull request #13 open, not merged",
-  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); starts data audit PASSED (DEC-058/DEC-059, merged PR #8); IQ-04 MERGED (PR #2); IQ-05 rounds 1-5 MERGED (PR #3-#7); round-5 pilot RENDERED and APPROVED by Luke (DEC-062, visual direction = milestone 3); pull request #9 MERGED (c378ea7); RTT-002 FINAL FILM APPROVED (DEC-078), pull request #10 MERGED (main ef01814), UPLOADED by Luke in YouTube Studio and SCHEDULED PUBLIC 30 Sep 2026 (DEC-079 early release, DEC-080): video 2fY7Bzq8Uu0 on channel UC8R47xbyBB5Z93MdMkoUOWg; IQ-09 RTT-003 DATA BUILD DONE 1 Oct 2026; Luke's answers applied 2 Oct 2026 (DEC-093..DEC-102); pull request #12 MERGED 2 Oct 2026 (main 4288f6d); IQ-10 RTT-003 DESIGN PILOT ROUND 5 (FINAL PILOT ROUND) RENDERED 3 Oct 2026 (private pre-release; not the full film), awaiting Luke's review; IQ-11 (3 Oct 2026): CLAUDE.md and reference/house_style.md added on the IQ-10 branch (DEC-145); next episode RTT-001 Browser Wars (DEC-144); IQ-10 round 6 (3 Oct 2026): RTT-003 design APPROVED (DEC-146), FULL FILM with music rendered to a private pre-release, awaiting Luke's approval by SHA-256",
+  "updated": "2026-10-03",
+  "updated_by": "Claude (Claude Code cloud session): RTT-003 record - full film APPROVED by Luke (DEC-150; pull request #13 merged as main 618c6a7, private pull request #1 as private main 4d47eb2), uploaded and published PUBLIC by Luke in YouTube Studio on 3 Oct 2026 (DEC-151): video JZzvA_ZDii0",
+  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); starts data audit PASSED (DEC-058/DEC-059, merged PR #8); IQ-04 MERGED (PR #2); IQ-05 rounds 1-5 MERGED (PR #3-#7); round-5 pilot RENDERED and APPROVED by Luke (DEC-062, visual direction = milestone 3); pull request #9 MERGED (c378ea7); RTT-002 FINAL FILM APPROVED (DEC-078), pull request #10 MERGED (main ef01814), UPLOADED by Luke in YouTube Studio and SCHEDULED PUBLIC 30 Sep 2026 (DEC-079 early release, DEC-080): video 2fY7Bzq8Uu0 on channel UC8R47xbyBB5Z93MdMkoUOWg; IQ-09 RTT-003 DATA BUILD DONE 1 Oct 2026; Luke's answers applied 2 Oct 2026 (DEC-093..DEC-102); pull request #12 MERGED 2 Oct 2026 (main 4288f6d); IQ-10 RTT-003 DESIGN PILOT ROUND 5 (FINAL PILOT ROUND) RENDERED 3 Oct 2026 (private pre-release; not the full film), awaiting Luke's review; IQ-11 (3 Oct 2026): CLAUDE.md and reference/house_style.md added on the IQ-10 branch (DEC-145); next episode RTT-001 Browser Wars (DEC-144); IQ-10 round 6 (3 Oct 2026): RTT-003 design APPROVED (DEC-146), FULL FILM with music rendered to a private pre-release, awaiting Luke's approval by SHA-256; RTT-003 FULL FILM APPROVED (DEC-150), pull request #13 MERGED (main 618c6a7) and private pull request #1 MERGED (private main 4d47eb2), UPLOADED by Luke in YouTube Studio and PUBLISHED PUBLIC 3 Oct 2026 (DEC-151): video JZzvA_ZDii0",
   "canonical_queue": "state/ folder on main in marketmarathon/race-through-time (this file)",
   "repo_baseline": {
     "repo": "marketmarathon/bars",
@@ -14,7 +14,7 @@
   "protected_baseline": "Format C2-2 (RF_US_C2_v3, RF_UK_C2_v1, RF_FR_C2_v1) — do not modify",
   "launch": {
     "approved_launch_date": null,
-    "approved_videos": 1,
+    "approved_videos": 2,
     "briefs_passing_feasibility": 0,
     "required_videos": 10,
     "required_briefs": 12,
@@ -30,9 +30,21 @@
         "youtube_video_id": "2fY7Bzq8Uu0",
         "url": "https://youtu.be/2fY7Bzq8Uu0",
         "status": "scheduled public by Luke in Studio on 30 Sep 2026 (exact time as set in Studio)"
+      },
+      {
+        "id": "RTT-003",
+        "release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-003-film-2945460-run1",
+        "master_sha256": "8b5b9d245fde4f735bf279e6122106148e9aebb37d7ed0b361c1cbd4feab9f97",
+        "master_bytes": 376614655,
+        "seconds": 308.233,
+        "approved": "2026-10-03 (DEC-150; master only)",
+        "uploaded": true,
+        "youtube_video_id": "JZzvA_ZDii0",
+        "url": "https://youtu.be/JZzvA_ZDii0",
+        "status": "published public by Luke in Studio on 3 Oct 2026 (Claude had recommended scheduling for 6 Oct)"
       }
     ],
-    "launch_plan_note": "DEC-079: Luke released RTT-002 on 30 Sep 2026 ahead of the launch-bank plan (Milestone 5: ten approved videos before day 1); Claude in Cowork flagged the departure. Milestone 5 and the 28-day cadence need re-planning."
+    "launch_plan_note": "DEC-079: Luke released RTT-002 on 30 Sep 2026 ahead of the launch-bank plan (Milestone 5: ten approved videos before day 1); Claude in Cowork flagged the departure. Milestone 5 and the 28-day cadence need re-planning. DEC-151: RTT-003 also released early, published public on 3 Oct 2026 (Claude had recommended 6 Oct). Milestone 5 and the cadence still need re-planning."
   },
   "activations": {
     "schedules": [],
@@ -46,9 +58,18 @@
         "by": "Luke, by hand in YouTube Studio",
         "scheduled": "30 Sep 2026 (exact time as set in Studio; Claude recommended 20:00 Europe/Isle_of_Man)",
         "decision": "DEC-079, DEC-080"
+      },
+      {
+        "id": "RTT-003",
+        "video_id": "JZzvA_ZDii0",
+        "url": "https://youtu.be/JZzvA_ZDii0",
+        "channel_id": "UC8R47xbyBB5Z93MdMkoUOWg",
+        "by": "Luke, by hand in YouTube Studio",
+        "published": "3 Oct 2026, public immediately (exact time as shown in Studio; Claude had recommended scheduling for 6 Oct)",
+        "decision": "DEC-150, DEC-151"
       }
     ],
-    "note": "RTT-002 uploaded by Luke in YouTube Studio and scheduled public on 30 Sep 2026 (DEC-080). Nothing else published. No RTT uploader exists yet (IQ-07); no schedules or recurring reports activated by Claude."
+    "note": "RTT-002 uploaded by Luke in YouTube Studio and scheduled public on 30 Sep 2026 (DEC-080); RTT-003 uploaded by Luke in YouTube Studio and published public on 3 Oct 2026 (DEC-151). Nothing else published. No RTT uploader exists yet (IQ-07); no schedules or recurring reports activated by Claude."
   },
   "episodes": [
     {
@@ -138,9 +159,10 @@
       },
       "open_for_luke": [
         "add web links to the description once advanced features unlock",
-        "end screen (Subscribe + next video) when video 2 exists",
+        "end screen (Subscribe + RTT-003 JZzvA_ZDii0): now possible, the second video exists (DEC-151)",
+        "record Studio numbers at about 2, 7 and 28 days (about 2 Oct - passed, read from Studio's date range - 7 Oct and 28 Oct 2026; DEC-151)",
         "Sport playlist at Milestone 5",
-        "re-plan Milestone 5 / the 28-day cadence after the early release (DEC-079)"
+        "re-plan Milestone 5 / the 28-day cadence after the early releases (DEC-079, DEC-151)"
       ],
       "release": {
         "decisions": "DEC-079 (early release, departs from the launch-bank plan), DEC-080 (upload record)",
@@ -184,10 +206,10 @@
       "title": "Best-Selling Consoles 1985–2026",
       "subtitle_rule": "title must say units shipped (DEC-081)",
       "previous_title": "Nintendo Console Race (widened to all consoles by DEC-081)",
-      "state": "FULL_FILM_RENDERED_AWAITING_LUKE_APPROVAL",
+      "state": "RELEASED_PUBLIC",
       "check_level": "LIVE",
       "verdict": "CONDITIONAL",
-      "blocker": "Luke watches the full film and approves the exact render by its SHA-256 (DEC-078); then merge pull request #13 and the private branch, and upload by hand in YouTube Studio (DEC-080)",
+      "blocker": null,
       "decisions": "owner DEC-081..DEC-085 (30 Sep 2026); DEC-086..DEC-092 confirmed by Luke 2 Oct 2026 via DEC-093..DEC-102; IQ-10 Claude working choices and proposals DEC-103..DEC-113; Luke's round-1 answers and round-2 changes DEC-114..DEC-118; round-2 choices DEC-119..DEC-121; round 3 DEC-122..DEC-129; round 4 DEC-130..DEC-137; round 5 DEC-138..DEC-143; round 6 DEC-146..DEC-149",
       "dataset": {
         "branch": "main (pull request #12 merged 2 Oct 2026, 4288f6d)",
@@ -215,9 +237,10 @@
         "changes_round5_2026_10_03": "DEC-139/DEC-140 on branch claude/sweet-mendel-faig7w (pull request #13): Nintendo Switch quarterly life-to-date Mar 2024..Jun 2026 (checked in Nintendo's PDFs); Famitsu No. 259 Mega Drive 14.90m and Game Gear 4.35m at 1993-03-31 (15.40m / 4.40m now disagreements); documented end-of-production reports recorded (5 verified on a GitHub runner, run 37076454006, 3DS verified here, 4 GameSpot UNVERIFIED); rule 2 labels: latest figure only Mega Drive (from 1996-03-31), Master System (1993-09-30..1996-03-31) and Game Gear (1996-03-31 only); crown sequence unchanged"
       },
       "open_for_luke": [
-        "watch the RTT-003 full film and approve the exact render by its SHA-256 (DEC-078), or ask for changes",
-        "merge pull request #13 when satisfied (DEC-057), and the private repo branch claude/sweet-mendel-faig7w",
-        "upload by hand in YouTube Studio after approval (DEC-080)"
+        "add end screens linking RTT-002 (2fY7Bzq8Uu0) and RTT-003 (JZzvA_ZDii0) (DEC-151)",
+        "record Studio numbers at about 2, 7 and 28 days: about 5 Oct, 10 Oct and 31 Oct 2026 (DEC-151)",
+        "add web links to the description once advanced features unlock",
+        "optional: confirm the uploaded laptop file's size is 376,614,655 bytes, as was done for RTT-002 (DEC-080)"
       ],
       "pilot": {
         "task": "IQ-10, prompts/CODE_SESSION_IQ-10.md",
@@ -388,7 +411,39 @@
         "audio": "\"Powerup!\" by Jeremy Blake (YouTube Audio Library), private assets/rtt-003/music/powerup_jeremy_blake.mp3 SHA-256 a855b541b2bd661a2077c6157ee3df11540a79d5c630a44d26f043ecdac7f7be; loop 209.398-255.930 s, crossfade 5.805 s; joins 255.93 s and 302.46 s; faded over the 10 s final table; -16.0 LUFS integrated, true peak -1.5 dBTP",
         "flash": "WCAG 2.x: below the general- and red-flash thresholds (worst 3.7% / 0.3% of a 10-degree field; reports/RTT-003_wcag_flash_check.md)",
         "tests": "RTT-003 suite 5/5 PASS, phone check PASS, RTT-002 suite 20/20 PASS (results unchanged), before the render",
-        "approved": null
+        "approved": "2026-10-03 by Luke (DEC-150): master 8b5b9d245fde4f735bf279e6122106148e9aebb37d7ed0b361c1cbd4feab9f97, 376,614,655 bytes (release asset digest and size checked by Claude Code against GitHub metadata); viewing copy not part of the approval",
+        "merged": {
+          "public": "pull request #13 merged 3 Oct 2026 10:41 UTC as main 618c6a76872aaf6b1f1bf1b97a8a10e3ccb633bc",
+          "private": "private pull request #1 merged 3 Oct 2026 10:43 UTC as private main 4d47eb23c272dea6cb1ad68d01bd720290910e66"
+        }
+      },
+      "release": {
+        "decisions": "DEC-150 (exact render approved), DEC-151 (upload record; released early, Claude had recommended 6 Oct)",
+        "youtube": {
+          "channel": "@racethroughtime",
+          "channel_id": "UC8R47xbyBB5Z93MdMkoUOWg",
+          "video_id": "JZzvA_ZDii0",
+          "url": "https://youtu.be/JZzvA_ZDii0"
+        },
+        "file": {
+          "name": "rtt003_film_2945460_3840x2160.mp4",
+          "release_asset_bytes": 376614655,
+          "release_asset_digest_sha256": "8b5b9d245fde4f735bf279e6122106148e9aebb37d7ed0b361c1cbd4feab9f97",
+          "approved_sha256": "8b5b9d245fde4f735bf279e6122106148e9aebb37d7ed0b361c1cbd4feab9f97",
+          "note": "uploaded file reported by Luke as the approved master; its own size and SHA-256 were not checked by Claude"
+        },
+        "duration_shown": "5:09 (file 308.23 s)",
+        "visibility": "public immediately, 3 Oct 2026 (Luke's decision; Claude had recommended scheduling for 6 Oct)",
+        "title": "Best-Selling Consoles of All Time by Units Shipped (1985–2026)",
+        "description": "as drafted in Cowork: credits version with decade chapters, no web links (advanced features not yet unlocked); add links later",
+        "thumbnail": "custom, added by Luke (3 Oct 2026)",
+        "other_settings": "not reported for this record",
+        "end_screen": "not yet: add end screens linking RTT-002 (2fY7Bzq8Uu0) and RTT-003",
+        "studio_numbers_due": [
+          "about 5 Oct",
+          "about 10 Oct",
+          "about 31 Oct 2026"
+        ]
       }
     },
     {
@@ -682,7 +737,7 @@
     "visibility": "public",
     "created": "2026-09-27",
     "created_by": "Claude via Luke's Chrome, on Luke's instruction",
-    "contents": "main @ c378ea7 (pull request #9 merged); branch claude/festive-wright-ljiwlo = RTT-002 full film (pull request #10, not merged)",
+    "contents": "main @ 618c6a7 (pull request #13 merged 3 Oct 2026: RTT-003 round 6 full film, CLAUDE.md, house style); no open pull requests at the time of the RTT-003 record session",
     "push_routes": {
       "cowork_cloud": "NOT AVAILABLE - GitHub proxy refuses: repo not in the session's authorised set; no way to attach it from Cowork found",
       "github_web_upload_via_chrome": "WORKS - used 28 Sep; one commit per folder; each commit read back byte-for-byte",
@@ -742,7 +797,7 @@
     "hashes_read_back": "29 Sep 2026 by Claude Code: both match",
     "secret": "RTT_PRIVATE_TOKEN (Actions secret in race-through-time): fine-grained token, race-through-time-private only, Contents read and write, EXPIRES 28 Sep 2027 - renew before then",
     "claude_github_app": "has access (added to this session 29 Sep 2026)",
-    "assets_rtt003": "race-through-time-private branch claude/sweet-mendel-faig7w: assets/rtt-003/originals (28), logos (5), icons (28), manifest.csv and icons/manifest.csv with SHA-1 and SHA-256; hashes the render checks in kits/rtt-003/assets_sha256.txt"
+    "assets_rtt003": "race-through-time-private branch claude/sweet-mendel-faig7w: assets/rtt-003/originals (28), logos (5), icons (28), manifest.csv and icons/manifest.csv with SHA-1 and SHA-256; hashes the render checks in kits/rtt-003/assets_sha256.txt; merged into private main by private pull request #1 (https://github.com/marketmarathon/race-through-time-private/pull/1) at 4d47eb23c272dea6cb1ad68d01bd720290910e66 on 3 Oct 2026, with the music assets/rtt-003/music/powerup_jeremy_blake.mp3"
   },
   "rules_all_sessions": [
     "CLAUDE.md (repo root, DEC-145): the standing rules for every Claude Code session - read it first; reference/house_style.md holds the approved design defaults (sections 1-6 apply to new episodes without asking again unless the subject makes a default wrong; section 7 features are proposed for Luke to confirm; DEC-069 unchanged)",
