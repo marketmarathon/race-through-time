@@ -60,7 +60,7 @@ The reference frame is 1920 × 1080. Masters are rendered at 3840 × 2160.
   - Luke chooses an exciting, fast, dramatic YouTube Audio Library track; Claude does not choose it (DEC-072).
   - The track is hash-checked, looped on the beat with crossfades, and faded out over the final table. It is mixed to −16 LUFS integrated with true peak ≤ −1 dBTP (DEC-072, DEC-074).
   - The file lives only in the private repo (DEC-073).
-  - RTT-003 reuses this approach with a new track (DEC-114 (d)).
+  - RTT-003 reuses this approach with a new track (DEC-114 (d)): "Powerup!" by Jeremy Blake (DEC-147), loop points found with `scripts/rtt_music_loop.py` (DEC-148, *working choice*).
 - **No narration** has been approved so far.
 - **Phone first:**
   - Every still is checked at phone size (a video 390 pt wide).
