@@ -174,6 +174,10 @@ def report(pid, url, fallback):
     if status is None:
         print(f"FAILED: {raw}")
         return False
+    return show(pid, raw, final, status)
+
+
+def show(pid, raw, final, status):
     print(f"HTTP {status}, {len(raw)} bytes, sha256 {hashlib.sha256(raw).hexdigest()}, final {final}")
     m = re.search(rb"(?is)<title[^>]*>(.*?)</title>", raw)
     if m:
@@ -197,6 +201,13 @@ def report(pid, url, fallback):
             print(("K| " if TERMS.search(ln) else "A| ") + ln[:240])
         for href, txt in re.findall(rb'(?is)<a[^>]+href="([^"]+)"[^>]*>(.*?)</a>', raw)[:150]:
             print("H| " + href.decode("latin-1")[:120] + " | " + re.sub(r"\s+", " ", re.sub(rb"<[^>]+>", b" ", txt).decode("latin-1")).strip()[:80])
+        return True
+    if pid.startswith(("WSS-", "ONESTAT-")):
+        for src, alt in re.findall(rb'(?is)<img[^>]+src="([^"]+)"[^>]*?(?:alt="([^"]*)")?', raw)[:20]:
+            print("I| " + src.decode("latin-1")[:120] + " | " + alt.decode("latin-1")[:80])
+        for ln in lines[:200]:
+            if re.search(r"\d", ln) or re.search(r"(?i)explorer|netscape|firefox|mozilla|opera|safari|browser", ln):
+                print("P| " + ln[:300])
         return True
     cap = 150 if pid.startswith("SIBLEY") else 120
     n = 0
@@ -234,7 +245,48 @@ def groups():
     return out
 
 
+# Run 3: one slow job, most important pages first (the hand-over points), because the web archive answered HTTP 429
+# to almost every request from the 13 parallel runners of run 2.
+PRIORITY = ["EWS-9604", "EWS-9606", "EWS-0012", "W3C-2007-05", "W3C-2008-12", "WSS-1120", "WSS-1107", "WSS-1088",
+            "WSS-1044", "ONESTAT-11-2021", "ONESTAT-50-2021", "EWS-0006", "EWS-9912", "EWS-9906", "EWS-9812",
+            "ONESTAT-15-2021", "ONESTAT-18-2021", "ONESTAT-23-2021", "ONESTAT-26-2021", "ONESTAT-30-2021",
+            "ONESTAT-34-2021", "ONESTAT-36-2021", "ONESTAT-37-2021", "ONESTAT-40-2021", "ONESTAT-41-2021",
+            "ONESTAT-42-2021", "ONESTAT-44-2021", "ONESTAT-48-2021", "ONESTAT-49-2021", "W3C-2007-08",
+            "W3C-2007-11", "W3C-2008-02", "W3C-2008-05", "W3C-2008-08", "W3C-2008-10", "TC-2000-12", "TC-2001-01",
+            "TC-2007-04", "TC-2007-05", "TC-2008-12", "W3SCHOOLS", "EWS-9806", "EWS-9801", "EWS-0003", "EWS-0009",
+            "EWS-9903", "EWS-9909", "EWS-9708", "EWS-9610", "EWS-9608", "ONESTAT-7-2021", "ONESTAT-18-2003",
+            "ONESTAT-23-2003", "ONESTAT-4-2021", "ONESTAT-53-2021", "ADTECH-2009-01", "XITI-23-2009-04"]
+DONE_BEFORE = {"EWS-9605", "EWS-9607", "EWS-9612", "EWS-9705", "EWS-9707", "EWS-9712", "EWS-9811", "EWS-9901"}
+
+
+def crawl():
+    """One request every 150 s; after HTTP 429 or a refused connection wait 10 minutes and try once more."""
+    byid = {p[0]: p for p in PAGES}
+    order = PRIORITY + [p[0] for p in PAGES if "web.archive.org" in p[1] and p[0] not in PRIORITY
+                        and p[0] not in DONE_BEFORE and not p[0].startswith(("GVU-", "BERGHEL"))]
+    ok = 0
+    for i, pid in enumerate(order):
+        pid_, url, _ = byid[pid]
+        print(f"\n=== {pid} {url}")
+        status, raw, final = get(url, tries=1)
+        if status is None:
+            print(f"  waiting 600 s after {raw}")
+            time.sleep(600)
+            status, raw, final = get(url, tries=1)
+        if status is None:
+            print(f"FAILED: {raw}")
+        else:
+            ok += 1
+            show(pid, raw, final, status)
+        time.sleep(150)
+    print(f"\n{ok}/{len(order)} pages fetched in the crawl")
+
+
 def main():
+    if len(sys.argv) > 1 and sys.argv[1] == "crawl":
+        print("RETRIEVED_UTC " + time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()) + " crawl")
+        crawl()
+        return 0
     g = int(sys.argv[1]) if len(sys.argv) > 1 else -1
     print("RETRIEVED_UTC " + time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()) + f" group {g}")
     pages = PAGES if g < 0 else groups()[g]

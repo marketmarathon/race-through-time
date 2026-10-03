@@ -16,19 +16,16 @@ on:
 permissions:
   contents: read
 
-# Run 1 (one job, 140 pages) was rate-limited by the web archive (HTTP 429, then refused connections) and timed out;
-# the pages are now split into 13 groups, one runner each, with about ten slow archive requests per runner.
+# Run 1 (one job, 140 pages) was rate-limited by the web archive (HTTP 429, then refused connections) and timed out.
+# Run 2 (13 parallel groups) fared worse: HTTP 429 to almost every request. Run 3: one slow job, one archive request
+# every 150 s, the hand-over pages first; the log is written as it goes, so a timeout keeps what was fetched.
 jobs:
   check:
     runs-on: ubuntu-24.04
-    timeout-minutes: 40
-    strategy:
-      fail-fast: false
-      matrix:
-        group: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    timeout-minutes: 350
     steps:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
       - name: Fetch each source and print its figure lines
-        run: python3 -u scripts/rtt001_check_sources.py ${{ matrix.group }}
+        run: python3 -u scripts/rtt001_check_sources.py crawl
