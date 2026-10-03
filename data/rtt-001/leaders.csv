@@ -1,5 +1,5 @@
 month,leader,leader_share,previous_leader,previous_share_this_month,provenance,handover,era,source_line,left_point,right_point
 1994-01,mosaic,97.22,,,observed,no,1,GVU WWW User Surveys (Georgia Tech),GVU-1994-01-31-mosaic,GVU-1994-01-31-mosaic
-1995-07,netscape,47.72,mosaic,43.03,interpolated,yes,1>2,Estimate between GVU survey (Nov 1994) and Illinois EWS server (May 1996),GVU-1994-11-16-netscape,EWS-1996-05-31-netscape
+1995-06,netscape,45.79,mosaic,44.55,interpolated,yes,1>2,Estimate between GVU survey (Nov 1994) and Illinois EWS server (Apr 1996),GVU-1994-11-16-netscape,EWS-1996-04-30-netscape
 1998-10,internet_explorer,49.1,netscape,48.3,observed,no,2,University of Illinois EWS web server,EWS-1998-10-31-microsoft,EWS-1998-10-31-microsoft
 2012-05,chrome,29.15,internet_explorer,28.87,observed,no,5,StatCounter Global Stats,SC-2012-05-Chrome,SC-2012-05-Chrome

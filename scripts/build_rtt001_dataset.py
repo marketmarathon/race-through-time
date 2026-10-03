@@ -175,28 +175,50 @@ def source_dates(pts):
     return owners
 
 
+def first_last_dates(owners):
+    """First and last source date of each source (for the hand-over rule)."""
+    fl = {}
+    for w, own in owners.items():
+        for sid in own:
+            a, b = fl.get(sid, (w, w))
+            fl[sid] = (min(a, w), max(b, w))
+    return fl
+
+
+def joinable(a, z, fl):
+    """DEC-153/156/157: a straight line joins two consecutive points of one browser if both come from the same source,
+    or if they are the outgoing source's last date and the next source's first date (a hand-over)."""
+    if a["source_id"] == z["source_id"]:
+        return True
+    i, j = ERA_ORDER.index(a["source_id"]), ERA_ORDER.index(z["source_id"])
+    return j == i + 1 and a["date"] == fl[a["source_id"]][1] and z["date"] == fl[z["source_id"]][0]
+
+
 def build_series(browsers, pts, owners, months):
     dates = sorted(owners)
     src_of = {w: sorted(s)[0] for w, s in owners.items()}
+    fl = first_last_dates(owners)
     rows = []
     for b in browsers:
         bid = b["browser_id"]
         bp = pts.get(bid, {})
+        bdates = sorted(bp)
         for me in months:
             row = {"month": me.strftime("%Y-%m"), "date": me.isoformat(), "browser_id": bid,
                    "display_name": b["display_name"], "share": "", "provenance": "not_found",
                    "era": "", "source_id": "", "source_line": "", "handover": "", "estimated": "yes" if me < dt.date(2009, 1, 1) else "no",
                    "left_point": "", "right_point": ""}
+            left_any = max((x for x in dates if x < me), default=None)
+            right_any = min((x for x in dates if x > me), default=None)
             if me in bp:
                 p = bp[me]
                 row.update(share=fmt(p["value"]), provenance=p["provenance"], left_point=p["obs_id"], right_point=p["obs_id"],
                            source_id=p["source_id"], era=SOURCES[p["source_id"]]["era"], handover="no",
                            source_line=SOURCES[p["source_id"]]["name"])
             else:
-                # neighbouring source dates around this month end
-                left = max((x for x in dates if x < me), default=None)
-                right = min((x for x in dates if x > me), default=None)
-                if left and right and left in bp and right in bp:
+                left = max((x for x in bdates if x < me), default=None)
+                right = min((x for x in bdates if x > me), default=None)
+                if left and right and joinable(bp[left], bp[right], fl):
                     a, z = bp[left], bp[right]
                     frac = Decimal((me - left).days) / Decimal((right - left).days)
                     v = q2(a["value"] + (z["value"] - a["value"]) * frac)
@@ -208,13 +230,11 @@ def build_series(browsers, pts, owners, months):
                         line, era, sid = SOURCES[a["source_id"]]["name"], SOURCES[a["source_id"]]["era"], a["source_id"]
                     row.update(share=fmt(v), provenance="interpolated", left_point=a["obs_id"], right_point=z["obs_id"],
                                source_id=sid, era=era, handover="yes" if hand else "no", source_line=line)
-                else:
+                elif left_any and right_any:
                     # era context even where this browser has no value (for the on-screen source line)
-                    if left and right and src_of[left] != src_of[right]:
-                        row.update(era=f"{SOURCES[src_of[left]]['era']}>{SOURCES[src_of[right]]['era']}", handover="yes")
-                    elif left or right:
-                        s = src_of[left] if left else src_of[right]
-                        row.update(era=SOURCES[s]["era"], handover="no")
+                    s1, s2 = src_of[left_any], src_of[right_any]
+                    row.update(era=SOURCES[s1]["era"] if s1 == s2 else f"{SOURCES[s1]['era']}>{SOURCES[s2]['era']}",
+                               handover="no" if s1 == s2 else "yes")
             rows.append(row)
     return rows
 
@@ -417,9 +437,10 @@ def write_report(path, src, browsers, obs, pts, owners, series, bd, changes, che
             a = pts[b].get(last)
             z = pts[b].get(first)
             L.append(f"| {names[b]} | {fmt(a['value']) + '%' if a else 'not reported'} | {fmt(z['value']) + '%' if z else 'not reported'} |")
-        xs = [o for o in obs if o.get("seam") == f"{s1}>{s2}"]
+        xs = [o for o in obs if o.get("seam") == f"{s1}>{s2}" and num(o["value_text"]) and
+              min(abs((d(o["date"]) - last).days), abs((d(o["date"]) - first).days)) <= 45]
         if xs:
-            L += ["", "Cross-checks near this hand-over (never on screen):", "", "| Source | Date | Browser (as published) | Value | Verified |", "|---|---|---|---|---|"]
+            L += ["", "Cross-checks within 45 days of either hand-over date, non-zero values (never on screen; all are in `observations.csv`):", "", "| Source | Date | Browser (as published) | Value | Verified |", "|---|---|---|---|---|"]
             L += [f"| {o['source_id']} | {o['date']} | {o['browser_label']} | {o['value_text']} | {o['verified']} |" for o in xs]
         L.append("")
 

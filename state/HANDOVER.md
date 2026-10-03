@@ -1,6 +1,31 @@
-# HANDOVER — 3 Oct 2026 (session 13, Claude Code cloud session, environment "Race Through Time": IQ-10, the RTT-003 design pilot, rounds 1 to 5, IQ-11 (CLAUDE.md and the house style), then round 6: the RTT-003 FULL FILM with music)
+# HANDOVER — 3 Oct 2026 (session 14, Claude Code cloud session: IQ-12, the RTT-001 Browser Wars data build). The previous session's notes (IQ-10 round 6 and IQ-11) follow below.
 
-Previous handovers are in this file's git history. This session's work is on branch `claude/sweet-mendel-faig7w` in both repos; the public one has pull request #13 (not merged; Luke merges, DEC-057). Prompts: `prompts/CODE_SESSION_IQ-11.md` (IQ-11), `prompts/CODE_SESSION_IQ-10.md` (round 1), `-10b.md` (round 2), `-10d.md` (round 4), `-10e.md` (round 5); round 3's decisions are recorded in full as DEC-122 to DEC-129.
+## RTT-001 Browser Wars — DATA BUILD (IQ-12, 3 Oct 2026) — awaiting Luke's answers
+- **Branch** `claude/jolly-volta-5lr5ql`, pull request open, **not merged** (DEC-057). Prompt: `prompts/CODE_SESSION_IQ-12.md` (brief SHA-256 `234e0b5f…c5f2`). Data only: nothing rendered, no player or visual change (DEC-069).
+- **Owner decisions recorded:** DEC-152 (one source per period: GVU 1994 → Illinois EWS Apr 1996–Dec 2000 → StatMarket, then OneStat 2001–Apr 2007 → W3Counter May 2007–Dec 2008 → StatCounter from Jan 2009; the race starts Jan 1994), DEC-153 (straight lines, including across hand-overs; estimated look with the source named before 2009), DEC-154 (all devices). DEC-144 already held "RTT-001 is next".
+- **Working choices for Luke:** DEC-155 to DEC-159 and DEC-162. **Verification:** DEC-160, DEC-161. **Findings:** DEC-163. Twelve numbered questions, with Claude's recommendations, are in `reports/RTT-001_data_report.md`.
+- **Data:** `data/rtt-001/` (`browsers.csv`, `observations.csv`, `series.csv`, `leaders.csv`, `CHECKS.md`, `manifest.json`); contract `reference/metric_contract_RTT-001.md`; build `python scripts/build_rtt001_dataset.py data/rtt-001 reports/RTT-001_data_report.md` (deterministic). **11/11 checks PASS.**
+- **Leaders:**
+  1. Mosaic, January 1994.
+  2. Netscape, June 1995. This is on the GVU–EWS hand-over line with no figure, so it is not a dated fact.
+  3. Internet Explorer, October 1998 (observed).
+  4. Chrome, May 2012 (observed).
+- **Verification:**
+  - StatCounter export SHA-256 `f595b086…dc7e` (fetched by a GitHub runner).
+  - GVU and 8 EWS months were checked by the runner.
+  - The web archive then blocked GitHub runners (HTTP 429). Claude in Cowork verified the other 480 pre-2009 figures in Luke's Chrome; the file's SHA-256 is `67905f6b…7336`, and those rows carry capture URLs, not page hashes.
+  - 384 cross-check figures stay UNVERIFIED and are never on screen.
+- **Rules for the next session:**
+  - **(1)** Never use a cross-check source on screen.
+  - **(2)** `.github/workflows/rtt001_sources.yml` runs only on a push that changes it or `scripts/rtt001_check_sources.py` on this branch. Its last mode is a slow archive crawl lasting up to about 6 hours, so leave both files alone unless a check is needed.
+  - **(3)** The web archive rate-limits GitHub runners hard. For archived pages, ask Claude in Cowork to check them in Luke's Chrome.
+  - **(4)** Merge conflicts are expected in `state/` with pull request #14 (DEC-150, DEC-151). Resolve them by keeping both; the numbering does not clash.
+- **Next:**
+  1. Luke answers the 12 questions.
+  2. Then a first design pilot for RTT-001, proposing the estimated look, the source line and the hand-over treatment for Luke's approval before anything is rendered (DEC-069).
+
+## Previous session (13, 3 Oct 2026: IQ-10 rounds 1–6 and IQ-11)
+Previous handovers are in this file's git history. That session's work is on branch `claude/sweet-mendel-faig7w` in both repos; the public one has pull request #13 (not merged; Luke merges, DEC-057). Prompts: `prompts/CODE_SESSION_IQ-11.md` (IQ-11), `prompts/CODE_SESSION_IQ-10.md` (round 1), `-10b.md` (round 2), `-10d.md` (round 4), `-10e.md` (round 5); round 3's decisions are recorded in full as DEC-122 to DEC-129.
 
 ## RTT-003 FULL FILM (round 6, 3 Oct 2026, DEC-146 to DEC-149) — awaiting Luke's approval
 - **Design approved by Luke** exactly as round 5 (DEC-146). **Music:** "Powerup!" by Jeremy Blake, YouTube Audio Library (DEC-147). It was rebuilt from the base64 parts and verified: SHA-256 `a855b541…f7be`, 11,406,143 bytes. It is committed only in the private repo at `assets/rtt-003/music/powerup_jeremy_blake.mp3` (private branch `claude/sweet-mendel-faig7w`, private `main` merged in) and listed in `reference/rights_ledger.md`.

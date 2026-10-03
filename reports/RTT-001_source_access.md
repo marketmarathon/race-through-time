@@ -17,9 +17,13 @@ Claude Code's own web-fetch tool also refused web.archive.org ("unable to fetch"
 
 - **Run 1** (run https://github.com/marketmarathon/race-through-time/actions/runs/37122102266, one job, about 140 pages at 2 s spacing): StatCounter export, every GVU page, 7 EWS monthly pages, then the web archive started answering HTTP 429 and refusing connections; the job hit its 45-minute limit.
 - **Run 2** (https://github.com/marketmarathon/race-through-time/actions/runs/37124724022, 13 parallel jobs, about ten archive pages each at 12 s spacing with 60/120/180 s back-off): non-archive pages all fetched (StatCounter again, same SHA-256; StatCounter FAQ; W3Counter live; Ars Technica; justice.gov); the web archive answered HTTP 429 to almost every request, about one archived page per job got through in 40 minutes.
-- **Run 3** (one slow job, one archive request every 150 s, hand-over pages first): see `state/HANDOVER.md` and `data/rtt-001/README.md` for its result.
+- **Run 3** (https://github.com/marketmarathon/race-through-time/actions/runs/37127153858, one slow job, one archive request every 150 s, hand-over pages first): **superseded and not used.** Before it finished, Claude in Cowork verified the remaining 480 pre-2009 figures in Luke's Chrome.
+  - Cowork's file is in the private repo at `research/rtt-001-chatgpt/RTT-001_cowork_chrome_verification_2026-10-03.csv` (176,322 bytes, SHA-256 `67905f6b9ceb7e0b2d25b5bfe9a6200207d81b78ab1d58fddb93d96ffb067336`, checked).
+  - It covers every remaining EWS month, 105 W3Counter, 35 StatMarket and 178 OneStat rows. Each value was found exactly at the stated web.archive.org capture.
+  - Cowork's browser tool could not return long hex strings, so **those rows carry the exact capture URL instead of a page SHA-256** (DEC-161).
+  - Claude Code has no tool to cancel a workflow run, so run 3 ran until its own time limit.
 
-**Rule followed:** a figure whose archived page could not be fetched is **UNVERIFIED (source blocked)**, is not used, and is listed for Claude in Cowork to check in Luke's Chrome (CLAUDE.md evidence rules).
+**Rule followed:** a figure not seen at its source is **UNVERIFIED**, is not used, and is listed (CLAUDE.md evidence rules). After Cowork's check, only cross-check figures remain UNVERIFIED (W3Schools 63, XiTi 28, Net Applications 20, TheCounter 273). None of them is ever on screen.
 
 ## Pages fetched and hashed (raw response, SHA-256)
 
