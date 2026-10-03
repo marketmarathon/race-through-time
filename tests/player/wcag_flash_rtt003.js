@@ -20,6 +20,8 @@
  *     window (8 px steps) is reported for every frame; the film FAILS if it ever exceeds 57,600 (general or red).
  * Also reported (as RTT-002's report did): the largest area of pixels making a transition on the SAME frame
  * inside any 10-degree window, and the largest single luminance transition of any pixel.
+ * Diagnostic: FLASH_DUMP=<frame> FLASH_DUMP_PNG=<file outside the repo> stops at that frame and saves it with the
+ * too-often-flashing pixels in magenta (a private still: never commit it).
  * Prints JSON. Definitions taken from WCAG 2.2 as known to Claude (w3.org was blocked from the container on
  * 30 Sep 2026); a measurement against a published guideline, not a medical assessment.
  */
@@ -32,7 +34,9 @@ const rtt = require(path.join(KIT, 'rtt.js'));
   const data = JSON.parse(fs.readFileSync(path.resolve(KIT, cfg.race_file)));
   if (!process.env.RTT_LOCAL_ASSETS) console.error('note: RTT_LOCAL_ASSETS not set - pictures and logos missing (use the real private files)');
   const { br, pg } = await rtt.openPlayer({ cfg, data, raster: 1, chrome: process.env.PW_CHROME || '/opt/pw-browsers/chromium' });
-  const frames = await pg.evaluate(() => RACE_FRAMES);
+  const DUMP = process.env.FLASH_DUMP != null ? +process.env.FLASH_DUMP : null;   // diagnostic: stop at this frame and save it
+  const frames = DUMP != null ? DUMP + 1 : await pg.evaluate(() => RACE_FRAMES);
+  if (DUMP != null) await pg.evaluate(f => { window.__DUMP = f; }, DUMP);
   await pg.evaluate(() => {
     const W = 1920, H = 1080, N = W * H, K = 8;       // keep the last 8 transition frames per pixel
     const lin = new Float64Array(256);
@@ -77,6 +81,13 @@ const rtt = require(path.join(KIT, 'rtt.js'));
       else out.nowWin = nNow;                                        // upper bound
       out.fastGWin = nFastG > 0 ? winMax(fastG) : { best: 0 };
       out.fastRWin = nFastR > 0 ? winMax(fastR) : { best: 0 };
+      if (window.__DUMP === f) {                       // diagnostic: the frame, with too-often-flashing pixels in magenta
+        const c2 = document.createElement('canvas'); c2.width = W; c2.height = H; const x2 = c2.getContext('2d');
+        const im = x2.createImageData(W, H);
+        for (let p = 0; p < N; p++) { const q = p * 4, m = fastG[p] || fastR[p];
+          im.data[q] = m ? 255 : d[q] * 0.5; im.data[q + 1] = m ? 0 : d[q + 1] * 0.5; im.data[q + 2] = m ? 255 : d[q + 2] * 0.5; im.data[q + 3] = 255; }
+        x2.putImageData(im, 0, 0); out.dump = c2.toDataURL('image/png');
+      }
       return out;
     };
   });
@@ -90,6 +101,7 @@ const rtt = require(path.join(KIT, 'rtt.js'));
     if (o.fastRWin.best > res.worst.fastR.best) res.worst.fastR = { ...o.fastRWin, f };
     if (o.nFastG) res.framesWithFastG++; if (o.nFastR) res.framesWithFastR++;
     res.maxFastGTotal = Math.max(res.maxFastGTotal, o.nFastG); res.maxFastRTotal = Math.max(res.maxFastRTotal, o.nFastR);
+    if (o.dump) fs.writeFileSync(process.env.FLASH_DUMP_PNG || 'flash_dump.png', Buffer.from(o.dump.split(',')[1], 'base64'));
     if (f % 1000 === 0) console.error(`frame ${f}/${frames}`);
   }
   const st = await pg.evaluate(() => ({ maxStep: window.__FL.maxStep, maxStepAt: window.__FL.maxStepAt }));
