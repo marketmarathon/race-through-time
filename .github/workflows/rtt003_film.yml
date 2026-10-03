@@ -1,0 +1,170 @@
+# Race Through Time - render the FULL RTT-003 film (round 6, DEC-146..DEC-149): the approved round-5 design and
+# data (config kits/rtt-003/config_rtt003_film.json), with the music, the way the RTT-002 final film was made
+# (render_pilot.yml): a 3840 x 2160 master plus a 1920 x 1080 viewing copy, saved ONLY as a private pre-release.
+#
+# Its OWN workflow: render_pilot.yml (RTT-002) and rtt003_pilot.yml (clips) are not changed, so nothing here
+# can start an RTT-002 render or a pilot render. This repository is PUBLIC (DEC-006), so this workflow (DEC-061):
+#   - fetches the console pictures, maker logos, Luke's logo and the music track from the PRIVATE repo with the
+#     secret RTT_PRIVATE_TOKEN into $RUNNER_TEMP (outside the checkout), never into the repo, never printed;
+#   - checks every SHA-256 (pictures and logos: kits/rtt-003/assets_sha256.txt; player input:
+#     kits/rtt-003/dataset_hashes.txt; music: kits/rtt-003/music_rtt003.json) and stops on any mismatch;
+#   - renders the film silent at 3840 x 2160, then adds the music with scripts/rtt_mix_music.sh (unchanged,
+#     DEC-072/DEC-074): "Powerup!" by Jeremy Blake (YouTube Audio Library; the file lives ONLY in the private repo,
+#     its licence forbids making it available separately) looped with beat-aligned crossfades at the config's
+#     loop points, faded out over the 10 s final table, mixed to about -16 LUFS integrated, true peak at most
+#     -1 dBTP (the script fails otherwise);
+#   - makes a 1920 x 1080 viewing copy (x264 CRF 18, the RTT-002 settings) and checks both videos (size, frame
+#     count, one audio track) and measures both again (loudness, true peak);
+#   - saves both videos ONLY as one pre-release in the private repo, with each file's SHA-256 in its notes;
+#   - uploads NO workflow artifact, uses NO cache, and deletes pictures, music, frames and videos at the end.
+# Nothing is uploaded to YouTube or published; Luke approves the exact render by its SHA-256 (DEC-078).
+# Triggers: by hand (Run workflow) once this file is on main; on the IQ-10 branch, where GitHub cannot start an
+# unmerged workflow by hand, a push that changes THIS FILE starts it (the deliberate start of round 6).
+name: rtt003-film
+
+on:
+  push:
+    branches: [claude/sweet-mendel-faig7w]
+    paths: [.github/workflows/rtt003_film.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rtt003-film
+  cancel-in-progress: false
+
+env:
+  PRIVATE_REPO: marketmarathon/race-through-time-private
+  PRIVATE_REF: claude/sweet-mendel-faig7w
+  FILM: config_rtt003_film.json
+  RASTER_W: '3840'
+
+jobs:
+  render:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install ffmpeg, the kit and Chromium
+        working-directory: kits/rtt-002
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg > /dev/null
+          ffmpeg -hide_banner -encoders 2>/dev/null | grep -q libx264
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 npm ci
+          npx playwright install --with-deps chromium
+
+      - name: Check the player input, the music config and the frame count
+        working-directory: kits/rtt-002
+        run: |
+          want=$(awk '$2 == "output" && $3 ~ /race_rtt003.json$/ {print $1}' ../rtt-003/dataset_hashes.txt)
+          got=$(sha256sum ../rtt-003/race_rtt003.json | cut -d' ' -f1)
+          echo "race_rtt003.json $got (dataset_hashes.txt: $want)"
+          test -n "$want" && test "$got" = "$want"
+          node -e "const m=require('../rtt-003/music_rtt003.json'); if(!/^[0-9a-f]{64}$/.test(m.sha256)||!m.file||m.file.includes('/')||!m.private_path) process.exit(1);
+            for (const [k,v] of [['MUSIC',m.file],['MUSIC_PATH',m.private_path],['MUSIC_SHA256',m.sha256],['LOOP_START',m.loop_start],['LOOP_END',m.loop_end],['XFADE',m.crossfade_sec]]) console.log(k+'='+v)" >> "$GITHUB_ENV"
+          echo "music: $(node -e "const m=require('../rtt-003/music_rtt003.json');console.log(m.title+' / '+m.artist+', loop '+m.loop_start+'-'+m.loop_end+' s, crossfade '+m.crossfade_sec+' s')")"
+          f=$(RTT_CONFIG="../rtt-003/$FILM" FRAME_COUNT_ONLY=1 node rtt.js | awk '/^FRAMES/ {print $2}')
+          hold=$(node -e "const c=require('./rtt.js').loadConfig('../rtt-003/$FILM');console.log(c.pacing.final_board_sec)")
+          test -n "$f" && test -n "$hold"
+          echo "FRAMES=$f" >> "$GITHUB_ENV"; echo "HOLD=$hold" >> "$GITHUB_ENV"
+          echo "$FILM: $f frames = $(awk -v f="$f" 'BEGIN {printf "%.2f", f / 30}') s, final table $hold s"
+
+      - name: Fetch the pictures, logos and music from the private repo and check their hashes
+        env:
+          GH_TOKEN: ${{ secrets.RTT_PRIVATE_TOKEN }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then echo "::error::secret RTT_PRIVATE_TOKEN is not available to this run"; exit 1; fi
+          A="$RUNNER_TEMP/rtt_assets"; mkdir -p "$A/icons" "$A/logos"
+          : > "$RUNNER_TEMP/check.txt"
+          grep -v '^#' kits/rtt-003/assets_sha256.txt | while read -r sum p; do
+            case "$p" in
+              assets/rtt-003/icons/*|assets/rtt-003/logos/*) dst="$A/${p#assets/rtt-003/}";;
+              assets/rtt-002/rtt_logo.png) dst="$A/rtt_logo.png";;
+              *) echo "::error::unexpected path $p"; exit 1;;
+            esac
+            gh api -H 'Accept: application/vnd.github.raw' "repos/$PRIVATE_REPO/contents/$p?ref=$PRIVATE_REF" > "$dst"
+            printf '%s  %s\n' "$sum" "$dst" >> "$RUNNER_TEMP/check.txt"
+          done
+          M="$RUNNER_TEMP/rtt_music"; mkdir -p "$M"
+          gh api -H 'Accept: application/vnd.github.raw' "repos/$PRIVATE_REPO/contents/$MUSIC_PATH?ref=$PRIVATE_REF" > "$M/$MUSIC"
+          printf '%s  %s\n' "$MUSIC_SHA256" "$M/$MUSIC" >> "$RUNNER_TEMP/check.txt"
+          sha256sum -c --quiet "$RUNNER_TEMP/check.txt"
+          echo "$(wc -l < "$RUNNER_TEMP/check.txt") private files fetched (pictures, logos, Luke's logo, music), all SHA-256 checked"
+          echo "RTT_LOCAL_ASSETS=$A" >> "$GITHUB_ENV"; echo "RTT_MUSIC_FILE=$M/$MUSIC" >> "$GITHUB_ENV"
+
+      - name: Render the film (3840 x 2160), add the music, make the viewing copy, check and measure both
+        run: |
+          set -o pipefail
+          O="$RUNNER_TEMP/rtt_out"; mkdir -p "$O"
+          SHORT=${GITHUB_SHA::7}; STEM="rtt003_film_${SHORT}"
+          probe() { ffprobe -v error -select_streams v:0 -count_packets \
+                      -show_entries stream=width,height,nb_read_packets,r_frame_rate -of csv=p=0 "$1"; }
+          audio() { ffprobe -v error -select_streams a -show_entries stream=index -of csv=p=0 "$1" | wc -l; }
+          (cd kits/rtt-002 && SEG_OUT="$O/silent.mp4" RASTER_W="$RASTER_W" RTT_CONFIG="../rtt-003/$FILM" node rtt.js | tee "$RUNNER_TEMP/render.log")
+          if grep -q 'not found' "$RUNNER_TEMP/render.log"; then echo "::error::a picture, logo or overlay was not loaded"; exit 1; fi
+          m=$(probe "$O/silent.mp4"); echo "silent master: $m"; test "$m" = "3840,2160,30/1,$FRAMES"
+          MASTER="$O/${STEM}_3840x2160.mp4"; VIEW="$O/${STEM}_1920x1080_viewing.mp4"
+          scripts/rtt_mix_music.sh "$O/silent.mp4" "$RTT_MUSIC_FILE" "$MASTER" "$HOLD" "$LOOP_START" "$LOOP_END" "$XFADE" 2>&1 | tee "$RUNNER_TEMP/mix.log"
+          rm "$O/silent.mp4"
+          ffmpeg -nostdin -hide_banner -loglevel error -y -i "$MASTER" -map 0:v:0 -map 0:a:0 \
+            -vf scale=1920:1080:flags=lanczos -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p \
+            -color_primaries bt709 -color_trc bt709 -colorspace bt709 -c:a copy -movflags +faststart "$VIEW"
+          v=$(probe "$VIEW"); echo "viewing copy: $v"; test "$v" = "1920,1080,30/1,$FRAMES"
+          : > "$RUNNER_TEMP/measure.txt"
+          for f in "$MASTER" "$VIEW"; do
+            a=$(audio "$f"); test "$a" = 1
+            d=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$f")
+            ffmpeg -nostdin -hide_banner -nostats -i "$f" -map 0:a:0 -af ebur128=peak=true -f null - 2> "$RUNNER_TEMP/m.txt"
+            python3 - "$RUNNER_TEMP/m.txt" "$(basename "$f")" "$d" <<'PY' | tee -a "$RUNNER_TEMP/measure.txt"
+          import re, sys
+          t = open(sys.argv[1]).read(); s = t[t.rindex('Summary:'):]
+          i = float(re.search(r'I:\s+(-?[\d.]+) LUFS', s).group(1)); tp = float(re.search(r'True peak:\s+Peak:\s+(-?[\d.]+) dBFS', s).group(1))
+          print(f"{sys.argv[2]}: {float(sys.argv[3]):.3f} s, 1 audio track, {i} LUFS integrated, true peak {tp} dBTP")
+          sys.exit(0 if abs(i + 16) <= 1 and tp <= -1.0 else 1)
+          PY
+          done
+          grep -o 'loop: .*' "$RUNNER_TEMP/mix.log" > "$RUNNER_TEMP/joins.txt" || true
+          cat "$RUNNER_TEMP/joins.txt"
+
+      - name: Save both videos as one pre-release in the private repo
+        env:
+          GH_TOKEN: ${{ secrets.RTT_PRIVATE_TOKEN }}
+        run: |
+          O="$RUNNER_TEMP/rtt_out"; SHORT=${GITHUB_SHA::7}
+          TAG="rtt-003-film-${SHORT}-run${GITHUB_RUN_NUMBER}"
+          {
+            echo "RTT-003 Best-Selling Consoles 1985-2026 (units shipped): FULL FILM, rendered by GitHub Actions."
+            echo
+            echo "- Source: ${GITHUB_REPOSITORY} @ ${GITHUB_SHA} (${GITHUB_REF_NAME}), run ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+            echo "- kits/rtt-003/${FILM}: ${FRAMES} frames at 30 fps = $(awk -v f="$FRAMES" 'BEGIN {printf "%.2f", f / 30}') s (final table ${HOLD} s); the approved round-5 design and data (DEC-146)"
+            echo "- Master 3840x2160 (x264 slow CRF 4, as RTT-002); viewing copy 1920x1080 (x264 CRF 18)"
+            echo "- Pictures and logos: race-through-time-private ${PRIVATE_REF}, every SHA-256 checked against kits/rtt-003/assets_sha256.txt before drawing"
+            echo "- Audio: \"Powerup!\" by Jeremy Blake (YouTube Audio Library), ${MUSIC_PATH} SHA-256 ${MUSIC_SHA256} (checked); loop ${LOOP_START}-${LOOP_END} s with ${XFADE} s beat-aligned crossfades, faded out over the final table, AAC 320 kb/s"
+            echo "- $(cat "$RUNNER_TEMP/joins.txt")"
+            echo "- Measured after encoding:"
+            sed 's/^/  - /' "$RUNNER_TEMP/measure.txt"
+            echo "- Video SHA-256:"
+            (cd "$O" && sha256sum *.mp4 | sed 's/^/  - /')
+            echo
+            echo "Private review render. Not for upload or publication until Luke approves the exact file by its SHA-256 (DEC-001, DEC-078)."
+          } > "$O/notes.md"
+          cat "$O/notes.md"
+          gh release create "$TAG" --repo "$PRIVATE_REPO" --target main --prerelease \
+            --title "RTT-003 full film ${SHORT} (3840x2160 + 1920x1080, music)" --notes-file "$O/notes.md" "$O"/*.mp4
+          URL="https://github.com/${PRIVATE_REPO}/releases/tag/${TAG}"
+          echo "Release: $URL"
+          echo "RTT-003 full film saved to the private repo: $URL" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Delete the pictures, music, frames and videos from the runner
+        if: always()
+        run: rm -rf "$RUNNER_TEMP/rtt_assets" "$RUNNER_TEMP/rtt_music" "$RUNNER_TEMP/rtt_out" "$RUNNER_TEMP/render.log" "$RUNNER_TEMP/mix.log" "$RUNNER_TEMP/check.txt"
