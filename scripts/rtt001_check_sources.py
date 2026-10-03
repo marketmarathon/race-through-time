@@ -33,7 +33,7 @@ STATCOUNTER_CSV = ("https://gs.statcounter.com/chart.php?statType_hidden=browser
 ACCESS = ["https://gs.statcounter.com/", "https://web.archive.org/", "https://sites.cc.gatech.edu/gvu/user_surveys/",
           "https://www.justice.gov/", "https://www.w3counter.com/", "https://www.onestat.com/"]
 
-# EWS monthly host reports, April 1996 to April 2001 (archive capture timestamps as found in the research leads)
+# EWS monthly host reports, April 1996 to December 2000 (archive capture timestamps as found in the research leads)
 EWS_CAPTURES = {
     "9604": "20010507151202", "9605": "20010507151131", "9606": "20010507151448", "9607": "20010507152042",
     "9608": "20010624182616", "9609": "20010507152419", "9610": "20010507145607", "9611": "20010507150001",
@@ -49,8 +49,7 @@ EWS_CAPTURES = {
     "9912": "20010507153200", "0001": "20010507084225", "0002": "20010507084420", "0003": "20010507085400",
     "0004": "20010507150630", "0005": "20010507150334", "0006": "20010624184754", "0007": "20010507151236",
     "0008": "20010507151210", "0009": "20020328155200", "0010": "20010507151854", "0011": "20020328153712",
-    "0012": "20010507152406", "0101": "20010507145900", "0102": "20010507150215", "0103": "20010507150557",
-    "0104": "20010507150631",
+    "0012": "20010507152406",
 }
 
 PAGES = []
@@ -135,7 +134,7 @@ TERMS = re.compile(r"(?i)(licen[cs]e|copyright|terms of use|permission|creative 
 SIBLEY = re.compile(r"(?i)(zona|navigator|internet explorer|%)")
 
 
-def get(url, tries=3):
+def get(url, tries=4):
     last = None
     for i in range(tries):
         try:
@@ -148,7 +147,10 @@ def get(url, tries=3):
                 break
         except Exception as e:  # report and continue: a blocked source is listed, not fatal
             last = f"{type(e).__name__}: {e}"
-        time.sleep(5 * (i + 1))
+        if i + 1 < tries:  # the web archive answers 429 or refuses connections when asked too fast: back off hard
+            wait = 60 * (i + 1) if "web.archive.org" in url else 5 * (i + 1)
+            print(f"  retry in {wait} s after {last}")
+            time.sleep(wait)
     return None, last, url
 
 
@@ -176,9 +178,29 @@ def report(pid, url, fallback):
     m = re.search(rb"(?is)<title[^>]*>(.*?)</title>", raw)
     if m:
         print("TITLE| " + re.sub(r"\s+", " ", html.unescape(m.group(1).decode("latin-1"))).strip()[:200])
-    cap = 400 if pid.startswith(("EWS-", "SIBLEY")) else 200
+    lines = [ln for ln in lines_of(raw) if ln]
+    if pid.startswith("EWS-") and pid != "EWS-INDEX":
+        # the host count, then the "Browser Flavors" family table and the detail tables down to the version list
+        for ln in lines:
+            if " hosts in " in ln or "Browser Statistics for" in ln:
+                print("L| " + ln[:240])
+                break
+        start = next((i for i, ln in enumerate(lines) if "Flavor" in ln), None)
+        if start is not None:
+            for ln in lines[start:start + 140]:
+                if ln.startswith("Browser Versions"):
+                    break
+                print("S| " + ln[:240])
+            return True
+    if (pid.startswith("GVU-") and "PAPER" not in pid) or pid in ("W3C-HOME", "ONESTAT-HOME", "SC-FAQ", "EWS-INDEX"):
+        for ln in lines[:250]:
+            print(("K| " if TERMS.search(ln) else "A| ") + ln[:240])
+        for href, txt in re.findall(rb'(?is)<a[^>]+href="([^"]+)"[^>]*>(.*?)</a>', raw)[:150]:
+            print("H| " + href.decode("latin-1")[:120] + " | " + re.sub(r"\s+", " ", re.sub(rb"<[^>]+>", b" ", txt).decode("latin-1")).strip()[:80])
+        return True
+    cap = 150 if pid.startswith("SIBLEY") else 120
     n = 0
-    for ln in lines_of(raw):
+    for ln in lines:
         if not ln:
             continue
         if TERMS.search(ln):
@@ -204,17 +226,28 @@ def statcounter():
         print("CSV| " + ln)
 
 
+def groups():
+    """Split the pages so that each runner asks the web archive for about ten pages only (run 1 was rate-limited)."""
+    arch = [p for p in PAGES if "web.archive.org" in p[1] and not p[0].startswith("GVU-")]
+    other = [p for p in PAGES if p not in arch]
+    out = [other] + [arch[i:i + 10] for i in range(0, len(arch), 10)]
+    return out
+
+
 def main():
-    print("RETRIEVED_UTC " + time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()))
-    for url in ACCESS:
-        status, raw, _ = get(url, tries=1)
-        print(f"ACCESS| {url} | {('HTTP ' + str(status)) if status else raw}")
-    statcounter()
+    g = int(sys.argv[1]) if len(sys.argv) > 1 else -1
+    print("RETRIEVED_UTC " + time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()) + f" group {g}")
+    pages = PAGES if g < 0 else groups()[g]
+    if g <= 0:
+        for url in ACCESS:
+            status, raw, _ = get(url, tries=1)
+            print(f"ACCESS| {url} | {('HTTP ' + str(status)) if status else raw}")
+        statcounter()
     ok = 0
-    for pid, url, fallback in PAGES:
+    for pid, url, fallback in pages:
         ok += report(pid, url, fallback)
-        time.sleep(2)
-    print(f"\n{ok}/{len(PAGES)} pages fetched")
+        time.sleep(12 if "web.archive.org" in url else 2)
+    print(f"\n{ok}/{len(pages)} pages fetched in group {g}")
     return 0
 
 
