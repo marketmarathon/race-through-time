@@ -1,0 +1,17 @@
+{
+ "title": "Powerup!",
+ "artist": "Jeremy Blake",
+ "source": "YouTube Studio Audio Library (Dance and Electronic, Bright, 4:46, added Nov 2018), licence \"YouTube Audio Library licence\" (no attribution required); chosen by Luke 3 Oct 2026 (DEC-147)",
+ "file": "powerup_jeremy_blake.mp3",
+ "private_path": "assets/rtt-003/music/powerup_jeremy_blake.mp3",
+ "sha256": "a855b541b2bd661a2077c6157ee3df11540a79d5c630a44d26f043ecdac7f7be",
+ "bytes": 11406143,
+ "loop_start": 209.398,
+ "loop_end": 255.930,
+ "crossfade_sec": 5.805,
+ "notes": [
+  "The audio file is NEVER committed here (licence: may not be made available separately from videos; reference/rights_ledger.md). It lives only in the private repo (rebuilt from two base64 parts, SHA-256 checked) and is fetched and hash-checked at render time.",
+  "Loop points (DEC-148, scripts/rtt_music_loop.py, librosa 0.11 in the Claude Code container): about 83.4 BPM, one beat every 0.7198 s (median); 387 beats; the song's sections fall on a 32-beat (8-bar) grid from beat 0 (boundaries found at beats 32, 96, 192, 256; build-up to about 23 s, main section to about 136 s, breakdown about 136-184 s, main section again from beat 256 = 186.3 s, outro from about 268 s). loop_start = beat 288 (209.398 s), loop_end = beat 352 (255.930 s): 64 beats = 16 bars, both on 8-bar phrase starts inside the second main section. Spectral match across the crossfade window 0.793 (1.0 = identical), level step +1.4 dB; the only higher-scoring pair (0.812) is 20 bars and starts half-way through a phrase in a stretch where the beat tracking is irregular.",
+  "Playback (scripts/rtt_mix_music.sh, unchanged): the track plays from 0 s; at loop_end it crossfades back to loop_start with an equal-power (quarter-sine) crossfade of crossfade_sec = 8 beats measured at loop_end, centred on the two beats. For the 308.23 s film: joins at 255.93 s and 302.46 s (the second inside the 10 s fade over the final table, which starts at 298.23 s). Mixed to -16 LUFS integrated, true peak at most -1 dBTP (test mix on a silent 308.23 s video: -16.0 LUFS, -1.5 dBTP)."
+ ]
+}
