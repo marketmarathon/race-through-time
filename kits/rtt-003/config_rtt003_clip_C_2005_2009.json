@@ -1,0 +1,17 @@
+{
+ "extends": "config_rtt003_film.json",
+ "kit_version": "rtt003_pilot5_clipC",
+ "out": "rtt003_clip_C_2005_2009.mp4",
+ "window": {
+  "from": "2005-01-01",
+  "to": "2009-12-31"
+ },
+ "range": "2005 – 2009",
+ "subtitle_sec": 0,
+ "pacing": {
+  "final_board_sec": 3.0
+ },
+ "notes": [
+  "Clip C, 2005-2009, with the company scoreboard: PlayStation 2 takes the crown from Game Boy (30 Jun 2007, estimated); DS passes Game Boy for second (31 Dec 2009, a normal overtake again, DEC-133). Game Boy and others stay on the board dimmed with 'latest figure'."
+ ]
+}

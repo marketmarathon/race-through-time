@@ -1,8 +1,8 @@
 {
   "schema": "rtt-state/0.1",
   "updated": "2026-10-02",
-  "updated_by": "Claude (Claude Code cloud session): IQ-09 follow-up - Luke's answers DEC-093..DEC-102 applied to pull request #12; merged with the RTT-002 release record (DEC-079, DEC-080) from pull request #11",
-  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); starts data audit PASSED (DEC-058/DEC-059, merged PR #8); IQ-04 MERGED (PR #2); IQ-05 rounds 1-5 MERGED (PR #3-#7); round-5 pilot RENDERED and APPROVED by Luke (DEC-062, visual direction = milestone 3); pull request #9 MERGED (c378ea7); RTT-002 FINAL FILM APPROVED (DEC-078), pull request #10 MERGED (main ef01814), UPLOADED by Luke in YouTube Studio and SCHEDULED PUBLIC 30 Sep 2026 (DEC-079 early release, DEC-080): video 2fY7Bzq8Uu0 on channel UC8R47xbyBB5Z93MdMkoUOWg; IQ-09 RTT-003 DATA BUILD DONE 1 Oct 2026; Luke's answers applied 2 Oct 2026 (DEC-093..DEC-102); pull request #12 MERGED 2 Oct 2026 (main 4288f6d)",
+  "updated_by": "Claude (Claude Code cloud session): IQ-10 round 6 - RTT-003 design approved (DEC-146), music Powerup! verified and mixed (DEC-147, DEC-148), WCAG flash check passed (DEC-149), FULL FILM rendered to a private pre-release; pull request #13 open, not merged",
+  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); starts data audit PASSED (DEC-058/DEC-059, merged PR #8); IQ-04 MERGED (PR #2); IQ-05 rounds 1-5 MERGED (PR #3-#7); round-5 pilot RENDERED and APPROVED by Luke (DEC-062, visual direction = milestone 3); pull request #9 MERGED (c378ea7); RTT-002 FINAL FILM APPROVED (DEC-078), pull request #10 MERGED (main ef01814), UPLOADED by Luke in YouTube Studio and SCHEDULED PUBLIC 30 Sep 2026 (DEC-079 early release, DEC-080): video 2fY7Bzq8Uu0 on channel UC8R47xbyBB5Z93MdMkoUOWg; IQ-09 RTT-003 DATA BUILD DONE 1 Oct 2026; Luke's answers applied 2 Oct 2026 (DEC-093..DEC-102); pull request #12 MERGED 2 Oct 2026 (main 4288f6d); IQ-10 RTT-003 DESIGN PILOT ROUND 5 (FINAL PILOT ROUND) RENDERED 3 Oct 2026 (private pre-release; not the full film), awaiting Luke's review; IQ-11 (3 Oct 2026): CLAUDE.md and reference/house_style.md added on the IQ-10 branch (DEC-145); next episode RTT-001 Browser Wars (DEC-144); IQ-10 round 6 (3 Oct 2026): RTT-003 design APPROVED (DEC-146), FULL FILM with music rendered to a private pre-release, awaiting Luke's approval by SHA-256",
   "canonical_queue": "state/ folder on main in marketmarathon/race-through-time (this file)",
   "repo_baseline": {
     "repo": "marketmarathon/bars",
@@ -57,7 +57,8 @@
       "state": "FEASIBILITY",
       "check_level": "DESK",
       "verdict": "CONDITIONAL",
-      "blocker": "series start / era overclaim"
+      "blocker": "series start / era overclaim",
+      "next": "NEXT VIDEO after RTT-003 (DEC-144): full browser wars incl. the Netscape-vs-Internet Explorer era before StatCounter; early years as on-screen estimates; open: desktop only or all devices from the smartphone era; waiting on Luke's ChatGPT deep research"
     },
     {
       "id": "RTT-002",
@@ -183,39 +184,212 @@
       "title": "Best-Selling Consoles 1985–2026",
       "subtitle_rule": "title must say units shipped (DEC-081)",
       "previous_title": "Nintendo Console Race (widened to all consoles by DEC-081)",
-      "state": "DATA_BUILD_DONE_OWNER_ANSWERS_APPLIED_NOT_MERGED",
+      "state": "FULL_FILM_RENDERED_AWAITING_LUKE_APPROVAL",
       "check_level": "LIVE",
       "verdict": "CONDITIONAL",
-      "blocker": "merge of pull request #12 (Luke); no player work until Luke approves the design build (DEC-069, DEC-085)",
-      "decisions": "owner DEC-081..DEC-085 (30 Sep 2026); DEC-086..DEC-092 confirmed by Luke 2 Oct 2026 via DEC-093..DEC-102",
+      "blocker": "Luke watches the full film and approves the exact render by its SHA-256 (DEC-078); then merge pull request #13 and the private branch, and upload by hand in YouTube Studio (DEC-080)",
+      "decisions": "owner DEC-081..DEC-085 (30 Sep 2026); DEC-086..DEC-092 confirmed by Luke 2 Oct 2026 via DEC-093..DEC-102; IQ-10 Claude working choices and proposals DEC-103..DEC-113; Luke's round-1 answers and round-2 changes DEC-114..DEC-118; round-2 choices DEC-119..DEC-121; round 3 DEC-122..DEC-129; round 4 DEC-130..DEC-137; round 5 DEC-138..DEC-143; round 6 DEC-146..DEC-149",
       "dataset": {
-        "branch": "claude/focused-clarke-u0m1ry (pull request #12, not merged)",
+        "branch": "main (pull request #12 merged 2 Oct 2026, 4288f6d)",
         "path": "data/rtt-003/",
         "contract": "reference/metric_contract_RTT-003.md v1.0",
-        "build": "scripts/build_rtt003_dataset.py (rtt003-build/1.0, standard library, deterministic)",
+        "build": "scripts/build_rtt003_dataset.py (rtt003-build/1.2, standard library, deterministic; bar status by rule 2)",
         "range": "166 quarter ends, 1985-03-31 to 2026-06-30",
         "consoles_in_scope": 28,
         "consoles_listed_out_of_scope": 19,
         "series_rows": 2697,
-        "observations": 454,
-        "observations_verified": 426,
-        "observations_unverified": 27,
+        "observations": 481,
+        "observations_verified": 452,
+        "observations_unverified": 28,
         "unverified_used": 0,
-        "checks": "9/9 PASS (rebuilt 2 Oct 2026); one 10,000-unit SNES dip within Nintendo's rounding, listed",
+        "checks": "10/10 PASS (rebuilt 3 Oct 2026, round 5); one 10,000-unit SNES dip within Nintendo's rounding, listed",
         "crown": "Atari 2600 (start, est.) -> NES 1988-12-31 (est.) -> Game Boy 1997-12-31 (official) -> PlayStation 2 2007-06-30 (est.) to 2026-06-30; Switch second at 156.59m vs PS2 160m+",
-        "top_ten_overtakes": "78 (41 official, 37 estimated/analyst)",
+        "top_ten_overtakes": "78 (38 official, 40 estimated/analyst); round 5: same pairs, Switch passes DS moved to 2025-12-31 (official), Game Gear passes Master System figures changed",
         "report": "reports/RTT-003_data_report.md",
         "source_access": "reports/RTT-003_source_access.md",
-        "series_sha256": "3d5350c4bc3cd785dca7677e1ac4374266bb996882948b63c3891def31708e1b",
-        "pull_request": "https://github.com/marketmarathon/race-through-time/pull/12",
+        "series_sha256": "2bd7a85b8d5b328fbb3ff1080b055a14dfa714584e7900847b9b2ada2bed357e",
+        "pull_request": "https://github.com/marketmarathon/race-through-time/pull/12 (merged)",
         "observations_not_found_primary": 1,
-        "changes_2026_10_02": "Atari 2600 fades from 1991-12-31 (DEC-093); Xbox One + Microsoft 10m 2014-12-03 (DEC-095); PS5 launch 2020-11-11 (DEC-101); 7 UNVERIFIED anchors verified in Luke's Chrome (DEC-102); PS2 155m located and recorded as disagreement (DEC-094)"
+        "changes_2026_10_02": "Atari 2600 fades from 1991-12-31 (DEC-093); Xbox One + Microsoft 10m 2014-12-03 (DEC-095); PS5 launch 2020-11-11 (DEC-101); 7 UNVERIFIED anchors verified in Luke's Chrome (DEC-102); PS2 155m located and recorded as disagreement (DEC-094)",
+        "changes_round4_2026_10_02": "DEC-134 on branch claude/sweet-mendel-faig7w (pull request #13): Xbox Series X|S VGChartz estimates to 35.05m (Jun 2026; splice from Aldora reported); Xbox 360 85.73m at 20 Apr 2016, retired from 2016-06-30; Atari 2600 27.64m at 1 Jan 1992 (Guinness); Master System 5.70m (Mar 1993) and 6.08m (Sep 1993) from Famitsu No. 259, 6.20m recorded as a disagreement, retired from 1996-06-30; Game Gear retired from 1996-06-30; series.csv status column (live / latest_figure / retired). Crown sequence unchanged (NES crown quarter does not move). Sources checked on a GitHub runner (rtt003-sources run 37058144549); 4 not used figures UNVERIFIED (atari.com, sega.jp x2, shmuplations)",
+        "changes_round5_2026_10_03": "DEC-139/DEC-140 on branch claude/sweet-mendel-faig7w (pull request #13): Nintendo Switch quarterly life-to-date Mar 2024..Jun 2026 (checked in Nintendo's PDFs); Famitsu No. 259 Mega Drive 14.90m and Game Gear 4.35m at 1993-03-31 (15.40m / 4.40m now disagreements); documented end-of-production reports recorded (5 verified on a GitHub runner, run 37076454006, 3DS verified here, 4 GameSpot UNVERIFIED); rule 2 labels: latest figure only Mega Drive (from 1996-03-31), Master System (1993-09-30..1996-03-31) and Game Gear (1996-03-31 only); crown sequence unchanged"
       },
       "open_for_luke": [
-        "merge pull request #12 when satisfied (Claude does not merge, DEC-057)",
-        "later, not urgent: Nintendo quarterly figures (DEC-100)",
-        "player session (after design approval): PS2 155m on-screen note candidate (DEC-094); move quickly through 1985-88 (DEC-097); judge the estimated look in the pilot (DEC-099)"
-      ]
+        "watch the RTT-003 full film and approve the exact render by its SHA-256 (DEC-078), or ask for changes",
+        "merge pull request #13 when satisfied (DEC-057), and the private repo branch claude/sweet-mendel-faig7w",
+        "upload by hand in YouTube Studio after approval (DEC-080)"
+      ],
+      "pilot": {
+        "task": "IQ-10, prompts/CODE_SESSION_IQ-10.md",
+        "player": "kits/rtt-002 player extended with a quarter-end series mode (DEC-105); RTT-002 unchanged: 22 reference frames pixel-identical to main, RTT-002 test suite PASS",
+        "kit": "kits/rtt-003/ (configs, race_rtt003.json from scripts/rtt003_adapter.py, stills, sheets, README)",
+        "workflow": ".github/workflows/rtt003_pilot.yml (own workflow; render_pilot.yml untouched; no RTT-002 render started)",
+        "superseded_release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-003-pilot-78db338-run1 (route check; scoreboard words 22 px, below the 5 pt phone floor; replaced)",
+        "clips": {
+          "A 1985-1992": "918 frames = 30.6 s",
+          "B 1996-1999": "702 frames = 23.4 s",
+          "C 2005-2009": "930 frames = 31.0 s, with and without the company scoreboard"
+        },
+        "stills": "final table 30 Jun 2026 (and with scoreboard), 2015 with 20 rows (Xbox One analyst look) and with scoreboard (Microsoft total analyst est.), maker colours sheet, PS2 note candidate, pictures at icon size; each at 1920x1080 and phone size",
+        "tests": "tests/player/RESULTS_RTT003.md 7/7 PASS; tests/player/PHONE_RTT003.md PASS",
+        "full_film_estimate": "round 5: 5 min 8 s at 1.5 s per quarter",
+        "music": "none (question DEC-109)",
+        "pictures": "33 Commons PICK files (28 consoles + 5 logos), SHA-1 checked, private repo assets/rtt-003/ (branch claude/sweet-mendel-faig7w); fetched on a GitHub runner because Commons answers HTTP 429 to the container (DEC-103); icons DEC-104; credit: Xbox Series X photo Ian Hughes CC BY 2.0 (reference/rights_ledger.md)",
+        "round1_release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-003-pilot-adc09ba-run2",
+        "round1_files_sha256": {
+          "rtt003_clip_A_1985_1992_adc09ba_1920x1080.mp4": "90f33573da890a193517f12983516d64c12f75e1b30a7554f14dbc9a0dc2f5e4",
+          "rtt003_clip_B_1996_1999_adc09ba_1920x1080.mp4": "2fe15ce198e1511ddd8a77bd056637c29e47ee925b16fcf2a6f5b1e52bf3ddc1",
+          "rtt003_clip_C_2005_2009_adc09ba_1920x1080.mp4": "7ad3f1261c1e2aa53c7ff38587e29a9553cb4e13bf7c563cb2984a036121bb60",
+          "rtt003_clip_C_2005_2009_scoreboard_adc09ba_1920x1080.mp4": "e1d9cc7bf37250751496dbcd2cb3e3667037c9fc8dd0b53e83bd9966b373c3f7",
+          "still_1_final_2026_1920x1080.png": "9fa378912970f03b24f940b2a32298866aff686e4a99721d9e9f9be222efe5de",
+          "still_1_final_2026_phone_390pt.png": "754b79901d6a2cdb10eeef972a8d94470d8cc1e4c188325b1ad43d47947a6d60",
+          "still_1b_final_2026_scoreboard_1920x1080.png": "aaa7bd2833af08f735c3b6754942110a0f351180fdd456237d787505c578833a",
+          "still_1b_final_2026_scoreboard_phone_390pt.png": "2908278e949babe1dfaeac4ace5e59b722c49007278d23365c8e15714c73c610",
+          "still_2a_2015_top20_xbox_one_1920x1080.png": "9b0b3b2385baa3e4147dc72386a551e2e8f3d212fe6dc977c522217d31457d7b",
+          "still_2a_2015_top20_xbox_one_phone_390pt.png": "cdb815bb38af9d95c806c458f33738c6d4d6067999f3e11e70bfb4da46f294f1",
+          "still_2b_2015_scoreboard_microsoft_1920x1080.png": "d054aa66d43fa2cfff02f439df324c9391a653e55f3c2fabd294c0fd617c288d",
+          "still_2b_2015_scoreboard_microsoft_phone_390pt.png": "fc14447bf87305e96e2cc2c911d2d4c4e4b60c853701038ee890fbfda18b776a",
+          "still_3_maker_colours_1920x1080.png": "648360a97d71ad79653fab32d95deb0455cced61ee2f2eab922d534bf4352ade",
+          "still_3_maker_colours_phone_390pt.png": "e559547dd3a08791b853d891661a02a1202163617ecc61c70d9c3e5899a91a8a",
+          "still_4_ps2_note_1920x1080.png": "82bfc83bac2d873fef588ad5a40275b7fbae130c39b16012899ce8038a32f6c1",
+          "still_4_ps2_note_phone_390pt.png": "60b388a4b8723a7a158bc30cda024419f741e720152d297dfb3398a351e38991",
+          "still_5_pictures_at_icon_size_1920x1080.png": "6d126677e7147b61a91e68b2407747ec365cb5f9041da90d64b784cbd152eb96",
+          "still_5_pictures_at_icon_size_phone_390pt.png": "064c63e6709ba0d6a2e4210348f8ddd982b711ca447be9125abc2417467b3d2e"
+        },
+        "round1_run": "https://github.com/marketmarathon/race-through-time/actions/runs/36982774860",
+        "round2": {
+          "decisions": "DEC-114..DEC-121",
+          "release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-003-pilot2-3b2d956-run3",
+          "run": "https://github.com/marketmarathon/race-through-time/actions/runs/37004568230",
+          "files_sha256": {
+            "rtt003_clip_A_1985_1992_3b2d956_1920x1080.mp4": "3eafb32c55ebb35674bc75676e29a805a0bc016f141fbe191f34e36408705fa4",
+            "rtt003_clip_A_1985_1992_1.5x_3b2d956_1920x1080.mp4": "9d745da3ba29dd4533dc4a709cebe01f414509c203c2e9205830b80fd09e20a7",
+            "rtt003_clip_B_1996_1999_3b2d956_1920x1080.mp4": "e82af22879ace463353fcb42fca1110ae54e6f220e3f7e9c8ad1e820e8f502d7",
+            "rtt003_clip_C_2005_2009_3b2d956_1920x1080.mp4": "a8075ac9a418f99a8cac8c543b08c7ce20edd6082a37c02c2abef3cfd524a042",
+            "r2_still_1_final_2026_1920x1080.png": "e3517b35933aabf40cbe61f8d65fbec6e5c00914da03585c3a0dc3a9617b2520",
+            "r2_still_1_final_2026_phone_390pt.png": "85f4ebd542194a8f7388bd9b6288ff4ed075ad4aff2e8c8bff95222ad4571ac1",
+            "r2_still_2_2018_xbox_one_1920x1080.png": "9368ed9525b930df4d09617e518e891f7607f66435bfbc2b2fa1a6b6ad230512",
+            "r2_still_2_2018_xbox_one_phone_390pt.png": "7c82e71f046b2c545819d62d6e947338370927c2c2af603698b492700a73444a",
+            "r2_still_3_closeup_1999_closeup_1920x840.png": "1dbfd2073215737eaa8d6977cdc17ded726117a8783e9e15be877904e0fff76a",
+            "r2_still_3_closeup_1999_closeup_phone_390pt.png": "01d011c55090c0fdb53f2c82c8fc0c9974ee7f686e057a263d696f490684f367",
+            "r2_still_4_closeup_2026_closeup_1920x840.png": "a4e6406ee54e6604d743538186abe7ff235827877c8eee6a025cc0411c742a1d",
+            "r2_still_4_closeup_2026_closeup_phone_390pt.png": "028614587d0d24d5de9eca00af9d70f7e7f4d51834d86c6c9173a3e95d5a3b07"
+          },
+          "changes": "15 rows; numbers count smoothly (exact at every quarter end); maker logo beside each picture; no separate key (scoreboard kept); taller portrait pictures; callouts at crown changes + Game Boy first past 100m + DS passes Game Boy (Switch passes DS on hold); final-table line + PS2 footnote; crown pause after the count",
+          "clips": {
+            "A 1985-1992 at 1.0 s/quarter": "939 frames = 31.3 s",
+            "A at 1.5 s/quarter": "1304 frames = 43.5 s",
+            "B 1996-1999": "744 frames = 24.8 s",
+            "C 2005-2009 with scoreboard": "996 frames = 33.2 s"
+          },
+          "stills": "final table 30 Jun 2026 with line and footnote; 31 Mar 2018 with Xbox One (14th, analyst estimate); close-ups of picture + logo (31 Mar 1999, 30 Jun 2026) at 2x; each also at phone size",
+          "tests": "tests/player/RESULTS_RTT003.md 5/5 PASS (counting proven on 480 bar-quarters in the film); tests/player/PHONE_RTT003.md PASS (names/values 6.7 pt at 15 rows); text logos' lettering under 5 pt reported: Nintendo 1.5 pt, SEGA 4.5 pt, ATARI 1.8 pt",
+          "full_film_estimate": "6309 frames = 3 min 30 s at 1.0 s/quarter; 9193 frames = 5 min 6 s at 1.5 s/quarter (DEC-121); not rendered",
+          "rtt002_unchanged": "22 reference frames pixel-identical to main; RTT-002 suite re-run"
+        },
+        "round3": {
+          "decisions": "DEC-122..DEC-129",
+          "release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-003-pilot3-b4cab47-run4",
+          "run": "https://github.com/marketmarathon/race-through-time/actions/runs/37048461532",
+          "files_sha256": {
+            "rtt003_clip_A_1985_1992_b4cab47_1920x1080.mp4": "e55ddc775717aa3ebbc2542f0b963cb055297a2c90ff1fb65506f336bf53b5be",
+            "rtt003_clip_B_1996_1999_b4cab47_1920x1080.mp4": "0f61bceea635373dd3cf9b5143bf448d691529a8164d7056cd1798e28d0ee609",
+            "rtt003_clip_C_2005_2009_b4cab47_1920x1080.mp4": "8f4c2bb8437629e32e4aeb0fbfc4a96f3b1b7e8c70f6476b776f6525070a4f98",
+            "rtt003_clip_D_2025_2026_final_b4cab47_1920x1080.mp4": "ab3949698e4877677dbcc0d56d6c48c953ededc9ffbaed354e1c1cb05e6a92db",
+            "r3_still_1_2005_1920x1080.png": "564ae0dc41fc65d94ac4ebf3a2f7923311c915e7eec70dc110577e62d538ee24",
+            "r3_still_1_2005_phone_390pt.png": "1a24ee458bf604e57ba524c681097b9888e08dab497e01a772657b4475323cec",
+            "r3_still_2_final_2026_1920x1080.png": "b47af75755485d521fbaa26ba1af450666c2ebfa1649af42bae7f0cf926bb8ed",
+            "r3_still_2_final_2026_phone_390pt.png": "68b48c3c7b7e7a3f7f4529a1d2fabbc2a4ce3a4b7a62924e9760cb03f8aabe29",
+            "r3_still_3_logos_1990_1920x1080.png": "176e24fd47b86ad5164faaadb8ce1a70bea5c077341c4e12622dd0a0b7c31d7e",
+            "r3_still_3_logos_1990_phone_390pt.png": "6c03fe6deebed1d60637b81820cb39e839e111454648ec42a3a032a8d245bb20",
+            "r3_still_4_names_as_text_1990_1920x1080.png": "06293f3088230112d97ef7977c85c45d23b29580f5e0564b386492382bd97de1",
+            "r3_still_4_names_as_text_1990_phone_390pt.png": "3a9fdc66d67414f41c3db5c3af134753832b4b9e344bf0c9a7a095e7573c9452"
+          },
+          "design": "Option 1 (DEC-125): live consoles only; '· retires' during the retirement quarter then the bar leaves; gold record line at the all-time record (crown on holder's bar while it races, on the label after); 1.6 s transition into the all-time top 15 with the Switch line and PS2 footnote; 1.5 s per quarter, 1985-88 at 0.75 s (DEC-122); scoreboard unchanged (DEC-123); metric all-time cumulative (DEC-124)",
+          "clips": {
+            "A 1985-1992": "1304 frames = 43.5 s",
+            "B 1996-1999": "993 frames = 33.1 s",
+            "C 2005-2009 with scoreboard": "1263 frames = 42.1 s",
+            "D 2025-2026 + final table": "687 frames = 22.9 s"
+          },
+          "stills": "30 Jun 2005; final all-time table; 31 Dec 1990 with logos; 31 Dec 1990 with maker names as text (alternative, DEC-126); each also at phone size",
+          "board_bars": "min 2 / median 6 / max 8 at quarter ends of the film",
+          "tests": "tests/player/RESULTS_RTT003.md 5/5 PASS (no bar after retirement, record = all-time maximum, record/crown changes = crown.csv, quarter ends exact); tests/player/PHONE_RTT003.md PASS",
+          "full_film_estimate": "8458 frames = 4 min 42 s (DEC-129); not rendered",
+          "data_gap_retirements": "Master System 1993-03; Mega Drive, Game Gear 1996-03; Saturn 1998-03; Xbox 2006-06; PS2, PSP 2012-03; PS3 2017-03; Xbox One 2021-09",
+          "static_live_bars": "Atari 2600 14 quarters (1988-1991), Xbox 360 8 (2014-2016), Xbox Series X|S 8 (held at 28.3m since Jun 2024)"
+        },
+        "round4": {
+          "decisions": "DEC-130..DEC-137",
+          "release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-003-pilot4-325ace1-run5",
+          "run": "https://github.com/marketmarathon/race-through-time/actions/runs/37060263539",
+          "files_sha256": {
+            "rtt003_clip_A_1985_1992_325ace1_1920x1080.mp4": "6e4590f04e34903b72a25e3762c96fb445a429241437ddff1abe3023c3d26b50",
+            "rtt003_clip_B_1996_1999_325ace1_1920x1080.mp4": "3086878439c1f59f65be5257f5abb3a5078a5b7749f82f5d055cf68abac7ef13",
+            "rtt003_clip_C_2005_2009_325ace1_1920x1080.mp4": "d56af73766c0e6944a54690e619c5e073eb08caedaa23e4a6e639f7fa5bf1a73",
+            "rtt003_clip_D_2025_2026_final_325ace1_1920x1080.mp4": "eae7f1264205c505f0d7ab22155393fd2fe54732f800c6ac0697ea1b97fadf43",
+            "r4_still_1_2005_1920x1080.png": "588648e2fc201b904bc7c1c70d03af46b36ecb1068780da5abdf482d09d22236",
+            "r4_still_1_2005_phone_390pt.png": "81911fefefa3f182758bc1273dcd97a23d9645f52b2cd2755232bdba58125a93",
+            "r4_still_2_final_2026_1920x1080.png": "a9f627eece013148ed71fe935e2b4f34487a98702d28973e9994bbed9b0e34de",
+            "r4_still_2_final_2026_phone_390pt.png": "5cfcab42bb2a183707e51b2c7ee3bc742c140176930b55bf73fd0d297a197934"
+          },
+          "design": "all-time top 15 again (DEC-131); bars not live stay in place, dimmed (alpha 0.55), with '· retired' from a documented end date or '· latest figure' when they stop without one (DEC-132, DEC-135), from series.csv status; gold record line kept (DEC-130), drawn after the bars with gaps where labels cross it, label at its foot on the right; crown on the leader's bar; callouts as round 2 (DS passes Game Boy a normal overtake, DEC-133); pace, scoreboard and logos unchanged",
+          "clips": {
+            "A 1985-1992": "1286 frames = 42.9 s",
+            "B 1996-1999": "1011 frames = 33.7 s",
+            "C 2005-2009 with scoreboard": "1389 frames = 46.3 s",
+            "D 2025-2026 + final table": "639 frames = 21.3 s"
+          },
+          "stills": "30 Jun 2005; final table 30 Jun 2026; each also at phone size",
+          "latest_figure": "figures run out: Master System (1993-09 to 1996-03), Mega Drive (1996-03), Saturn (1998-03), PlayStation (2005-03), Xbox (2006-06), PS2 (2012-03), PSP (2012-03), PS3 (2017-03), PS4 (2022-03), Xbox One (2021-09); maker's figures continue but flat: NES (2003-03), Game Boy (2003-03), SNES (2001-03), N64 (2002-03), GBA (2009-12), GameCube (2008-03), DS (2014-03), Wii (2016-03), 3DS (2021-03), Wii U (2017-03)",
+          "retired": "Atari 2600 1991-12-31; Dreamcast 2001-03-31; Master System and Game Gear 1996-06-30; Xbox 360 2016-06-30",
+          "tests": "tests/player/RESULTS_RTT003.md 5/5 PASS (status labels exactly as series.csv, dimming only on those bars, record line = all-time maximum and the leader, crown = crown.csv at quarter ends, quarter ends exact); tests/player/PHONE_RTT003.md PASS; RTT-002 22 reference frames identical to main",
+          "full_film_estimate": "9247 frames = 5 min 8 s (DEC-137); not rendered"
+        },
+        "round5": {
+          "decisions": "DEC-138..DEC-143",
+          "release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-003-pilot5-81534e5-run6",
+          "run": "https://github.com/marketmarathon/race-through-time/actions/runs/37077952862",
+          "files_sha256": {
+            "rtt003_clip_A_1985_1992_81534e5_1920x1080.mp4": "7e19e854ad492378a2c49e0f45d5b0d7312d58e73ce4a57670fc03d15223308a",
+            "rtt003_clip_B_1996_1999_81534e5_1920x1080.mp4": "f3d9ab7b1bfec0109f9a475f66fcaac33593f131552e72ea5047c566ed2344c3",
+            "rtt003_clip_C_2005_2009_81534e5_1920x1080.mp4": "759f9b2945ea207f14b5836b114065bd59b81e2ce4956dc11db9af78d02e7822",
+            "rtt003_clip_D_2024_2026_final_81534e5_1920x1080.mp4": "d4f1a9c72e0861fb0f02841d9057f91cc75846f91f461818732054b609c90aa2",
+            "r5_still_1_2005_1920x1080.png": "c5cfb342cf6bbea6fc15b2786ff7b3ac436541d0dce0cceeff5c461657517992",
+            "r5_still_1_2005_phone_390pt.png": "74fdc336139dc2c3cbd3272d9b95eb8f5aa858735f0a4137009037c310ecd669",
+            "r5_still_2_final_2026_1920x1080.png": "4ae9f8081273afbce067ddcb056ae8ed12398f732f6c954766d238ae611b25a8",
+            "r5_still_2_final_2026_phone_390pt.png": "e395ead9c4ea6b75fc6432c27c5354eb5f950935ddb6f64ed673f1834f4d62ed",
+            "r5_still_3_logo_tiles_2005_closeup_1200x1620.png": "04b68f3e5c1dfbf968d8807e68723319c5e252d1f1b5f243a1686425ca9dc6b5",
+            "r5_still_3_logo_tiles_2005_closeup_phone_390pt.png": "6eb4b5eb6e144452dec4d0cec483e563c6afd31227229e09f40186a388150b67"
+          },
+          "design": "as round 4 (all-time top 15, retired / latest-figure bars dimmed, gold record line, crown on the leader) with: logo tiles 98 x 49 px (picture-box height, 2:1, 2 px padding, artwork trimmed); rule-2 labels from the data; Switch passes DS callout (quarter to 31 Dec 2025)",
+          "clips": {
+            "A 1985-1992": "1286 frames = 42.9 s",
+            "B 1996-1999": "1011 frames = 33.7 s",
+            "C 2005-2009 with scoreboard": "1389 frames = 46.3 s",
+            "D 2024-2026 + final table": "837 frames = 27.9 s"
+          },
+          "stills": "30 Jun 2005; final table 30 Jun 2026; close-up of the logo tiles (30 Jun 2005, 2x); each also at phone size",
+          "logo_lettering_on_phone": "SEGA 5.8 pt (was 4.5), Atari 2.6 pt (was 1.8), Nintendo 1.9 pt (was 1.5); phone floor 5 pt",
+          "labels": "latest figure: Mega Drive from 1996-03-31; Master System 1993-09-30..1996-03-31; Game Gear 1996-03-31 only. Retired: Atari 2600 1991-12; Master System, Game Gear 1996-06; Saturn 1998-03; SNES, Dreamcast 2001-03; N64 2002-03; NES, Game Boy 2003-03; PlayStation 2005-03; Xbox 2006-06; GameCube 2008-03; GBA 2009-12; PS2, PSP 2012-03; DS 2014-03; Wii 2016-03; Xbox 360 2016-06; PS3, Wii U 2017-03; 3DS 2021-03; Xbox One 2021-09; PS4 2022-03",
+          "wii_u": "best rank 20th: never on the 15-row board (DEC-141)",
+          "tests": "tests/player/RESULTS_RTT003.md 5/5 PASS (round-4 checks plus rule 2 re-derived from the data on every series.csv row, Switch quarter ends = Nintendo's figures, Switch passes DS in the quarter to 2025-12-31); tests/player/PHONE_RTT003.md PASS; RTT-002 22 reference frames identical to main",
+          "full_film_estimate": "9247 frames = 5 min 8 s; not rendered"
+        }
+      },
+      "film": {
+        "decisions": "DEC-146 (design approved), DEC-147 (music), DEC-148 (loop and render), DEC-149 (flash check)",
+        "release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-003-film-2945460-run1",
+        "run": "https://github.com/marketmarathon/race-through-time/actions/runs/37108316963",
+        "workflow": ".github/workflows/rtt003_film.yml",
+        "master_3840x2160_sha256": "8b5b9d245fde4f735bf279e6122106148e9aebb37d7ed0b361c1cbd4feab9f97",
+        "viewing_1920x1080_sha256": "47b57561317698df000a6394711cd921faf2eb11e9f43dcf9a046ab8fcee2402",
+        "seconds": "308.233",
+        "audio": "\"Powerup!\" by Jeremy Blake (YouTube Audio Library), private assets/rtt-003/music/powerup_jeremy_blake.mp3 SHA-256 a855b541b2bd661a2077c6157ee3df11540a79d5c630a44d26f043ecdac7f7be; loop 209.398-255.930 s, crossfade 5.805 s; joins 255.93 s and 302.46 s; faded over the 10 s final table; -16.0 LUFS integrated, true peak -1.5 dBTP",
+        "flash": "WCAG 2.x: below the general- and red-flash thresholds (worst 3.7% / 0.3% of a 10-degree field; reports/RTT-003_wcag_flash_check.md)",
+        "tests": "RTT-003 suite 5/5 PASS, phone check PASS, RTT-002 suite 20/20 PASS (results unchanged), before the render",
+        "approved": null
+      }
     },
     {
       "id": "RTT-004",
@@ -467,6 +641,40 @@
         "decisions": "DEC-081..DEC-102",
         "pull_request": "https://github.com/marketmarathon/race-through-time/pull/12"
       }
+    },
+    {
+      "id": "IQ-10",
+      "task": "RTT-003 design pilot: player configuration, pictures and logos, pilot clips and stills for Luke (not the full film)",
+      "where": "Claude Code cloud session, environment \"Race Through Time\"; prompt prompts/CODE_SESSION_IQ-10.md",
+      "status": "ROUND 6 DONE 3 Oct 2026: design approved (DEC-146), music mixed, FULL FILM rendered to a private pre-release; pull request #13 open, NOT merged; awaiting Luke's approval of the exact render",
+      "result": {
+        "release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-003-pilot-adc09ba-run2",
+        "decisions": "DEC-103..DEC-143, DEC-146..DEC-149",
+        "tests": "RTT-003 7/7 PASS, phone PASS; RTT-002 suite PASS and 22 frames pixel-identical to main",
+        "round2_release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-003-pilot2-3b2d956-run3",
+        "round3_release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-003-pilot3-b4cab47-run4",
+        "round4_release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-003-pilot4-325ace1-run5",
+        "round5_release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-003-pilot5-81534e5-run6",
+        "film_release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-003-film-2945460-run1"
+      }
+    },
+    {
+      "id": "IQ-11",
+      "task": "Add CLAUDE.md (standing rules for every Code session) and reference/house_style.md (approved design defaults), checked against state/DECISIONS.md and the two film configs and updated to round 5; correct the README 'Also' list (DEC-060, DEC-061); record DEC-144 (RTT-001 next) and DEC-145 (house style)",
+      "where": "branch claude/sweet-mendel-faig7w, pull request #13 (its own commit); prompt prompts/CODE_SESSION_IQ-11.md",
+      "status": "DONE 3 Oct 2026: documentation only - nothing rendered, no data, player code or workflow changed; pull request #13 open, NOT merged",
+      "result": {
+        "files": [
+          "CLAUDE.md",
+          "reference/house_style.md",
+          "README.md",
+          "state/DECISIONS.md",
+          "state/STATE.json",
+          "state/HANDOVER.md",
+          "prompts/CODE_SESSION_IQ-11.md"
+        ],
+        "decisions": "DEC-144, DEC-145"
+      }
     }
   ],
   "rtt_repo": {
@@ -533,11 +741,34 @@
     },
     "hashes_read_back": "29 Sep 2026 by Claude Code: both match",
     "secret": "RTT_PRIVATE_TOKEN (Actions secret in race-through-time): fine-grained token, race-through-time-private only, Contents read and write, EXPIRES 28 Sep 2027 - renew before then",
-    "claude_github_app": "has access (added to this session 29 Sep 2026)"
+    "claude_github_app": "has access (added to this session 29 Sep 2026)",
+    "assets_rtt003": "race-through-time-private branch claude/sweet-mendel-faig7w: assets/rtt-003/originals (28), logos (5), icons (28), manifest.csv and icons/manifest.csv with SHA-1 and SHA-256; hashes the render checks in kits/rtt-003/assets_sha256.txt"
   },
   "rules_all_sessions": [
+    "CLAUDE.md (repo root, DEC-145): the standing rules for every Claude Code session - read it first; reference/house_style.md holds the approved design defaults (sections 1-6 apply to new episodes without asking again unless the subject makes a default wrong; section 7 features are proposed for Luke to confirm; DEC-069 unchanged)",
     "DEC-069 (Luke, 30 Sep 2026): never add a visual feature or change the look beyond the owner-approved pilot without Luke's approval BEFORE rendering; list proposals as questions instead",
     "DEC-070: no intro/title screen and no outro/closing card; 10 s final-table hold at the end for YouTube end-screen elements",
     "DEC-073: the music file may not be made available separately from videos: it lives only in the private repo, is never committed here and never uploaded as a workflow artifact"
-  ]
+  ],
+  "ideas": [
+    {
+      "id": "IDEA-001",
+      "title": "Best-Selling Console Each Year",
+      "kind": "candidate episode (not in the Slate 100 numbering yet)",
+      "added": "2026-10-02",
+      "decision": "DEC-128 (Luke)",
+      "summary": "An annual sales race (consoles' units shipped per calendar year), a separate video reusing the RTT-003 research.",
+      "data_caveat": "As reported to Luke by Claude (not re-derived in the IQ-10 session): only 17 of 251 console-calendar-years rest on official figures at both ends (113 of 241 on Nintendo/Sony April-March years). Needs its own data pass - Nintendo and Sony yearly tables, Xbox analyst figures - and probably a later start than 1985.",
+      "status": "IDEA"
+    }
+  ],
+  "next_episode": {
+    "id": "RTT-001",
+    "title": "Browser Wars",
+    "after": "RTT-003",
+    "decision": "DEC-144 (Luke, Cowork chat, 2 Oct 2026)",
+    "scope": "the full browser wars, including the Netscape-vs-Internet Explorer era before StatCounter's series begins; figures for the early years built from the best available historical sources and shown on screen as estimates",
+    "open_question": "desktop only, or all devices from the smartphone era (not blocking)",
+    "research": "ChatGPT deep research prompt is with Luke; no answer yet"
+  }
 }

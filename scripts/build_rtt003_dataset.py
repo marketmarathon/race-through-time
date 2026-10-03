@@ -23,7 +23,7 @@ from collections import defaultdict
 from datetime import date, timedelta
 from fractions import Fraction
 
-BUILD = "rtt003-build/1.0"
+BUILD = "rtt003-build/1.2"
 START = date(1985, 3, 31)
 END = date(2026, 6, 30)
 GRADE_ORDER = {"A": 0, "B": 1, "C": 2, "D": 3}
@@ -386,6 +386,53 @@ def main():
             c["best_rank"] = str(best)
         cons_out.append(c)
 
+    # bar status (DEC-131, DEC-132; rule 2 of DEC-140): live / latest_figure / retired, per console and quarter end.
+    # A stopped bar (from the last quarter adding at least 10,000 units) reads "retired" when the manufacturer's own
+    # cumulative total has stopped growing (the bar ends on a manufacturer figure, grade A/B, not an analyst's) OR
+    # from the first quarter end on or after a documented end of production; otherwise "latest figure".
+    qset = [q.isoformat() for q in qends]
+    obs_id = {o["obs_id"]: o for o in obs}
+    last_fig = defaultdict(str)
+    for o in obs:
+        if o["used"] == "yes" and len(o["as_of_date"]) == 10:
+            last_fig[o["console_id"]] = max(last_fig[o["console_id"]], o["as_of_date"])
+    status_of = {}
+    for c in cons_out:
+        rs = by_c.get(c["console_id"], [])
+        c["latest_figure_from"] = c["retired_from"] = c["status_basis"] = ""
+        if not rs or c["on_sale_2026"] == "yes":
+            if rs:
+                c["status_basis"] = "on sale at 30 Jun 2026: live throughout"
+            continue
+        doc = next((q for q in qset if c["end_event_date"] and q >= c["end_event_date"]), "")
+        stop = c["last_quarter_adding_shipments"]
+        end_anchor = obs_id.get(rs[-1]["left_anchor"], {})
+        final_total = end_anchor.get("grade") in ("A", "B") and end_anchor.get("analyst") == "no"
+        if not stop:
+            ret = lat = ""
+        elif final_total:
+            ret, lat = stop, ""
+        else:
+            ret = max(stop, doc) if doc else ""
+            lat = stop if not ret or stop < ret else ""
+        c["retired_from"], c["latest_figure_from"] = ret, lat
+        why = []
+        if lat:
+            why.append(f"latest figure from {lat}: our figures run out (last figure {last_fig[c['console_id']]}, "
+                       f"{end_anchor.get('publisher', '')}, grade {end_anchor.get('grade', '')}) with no documented end by then")
+        if ret and final_total:
+            why.append(f"retired from {ret}: the manufacturer's final total ({end_anchor['publisher']}, {end_anchor['obs_id']}); "
+                       f"the bar adds under 10,000 units a quarter after {stop}"
+                       + (f"; documented end: {c['end_event']} ({c['end_event_date']})" if c["end_event_date"] else ""))
+        elif ret:
+            why.append(f"retired from {ret}: documented end, {c['end_event']} ({c['end_event_date']})")
+        c["status_basis"] = "; ".join(why)
+        status_of[c["console_id"]] = (lat, ret)
+    for r in series:
+        lat, ret = status_of.get(r["console_id"], ("", ""))
+        q = r["quarter_end"]
+        r["status"] = "retired" if ret and q >= ret else "latest_figure" if lat and q >= lat else "live"
+
     # per-maker totals (company scoreboard input)
     maker = {c["console_id"]: c["maker_key"] for c in consoles}
     agg = defaultdict(int)
@@ -399,12 +446,13 @@ def main():
     os.makedirs(out, exist_ok=True)
     cons_fields = list(consoles[0].keys()) + ["first_quarter_end", "end_units_2026_06_30", "end_provenance",
                                               "end_display_style", "last_quarter_adding_shipments", "fade_date",
-                                              "fade_basis", "best_rank"]
+                                              "fade_basis", "best_rank", "latest_figure_from", "retired_from",
+                                              "status_basis"]
     write_csv(os.path.join(out, "consoles.csv"), cons_out, cons_fields)
     write_csv(os.path.join(out, "observations.csv"), obs, OBS_FIELDS)
     ser_fields = ["quarter_end", "console_id", "units", "millions", "provenance", "grade", "display_style",
                   "plus_flag", "unverified_anchor", "left_anchor", "left_anchor_date", "right_anchor",
-                  "right_anchor_date"]
+                  "right_anchor_date", "status"]
     write_csv(os.path.join(out, "series.csv"), series, ser_fields)
     write_csv(os.path.join(out, "series_by_maker.csv"), maker_rows, ["quarter_end", "maker_key", "units", "millions"])
     write_csv(os.path.join(out, "crown.csv"), crown, list(crown[0].keys()))
@@ -570,6 +618,39 @@ def run_checks(consoles, obs, series, qends, nchecks, schecks, sony_life, cons_o
             gaps.append(c["console_id"])
     checks["quarter_grid_complete"] = {"status": "PASS" if not gaps else "FAIL",
                                        "detail": f"{len(qends)} quarter ends {qends[0]}..{qends[-1]}; incomplete: {gaps}"}
+
+    # 10 bar status (DEC-131, DEC-132, DEC-140 rule 2): retired only on a manufacturer's final total or a documented
+    #    end; latest figure only with neither; live while on sale; never back to live
+    sbad, moved = [], []
+    obs_id_all = {o["obs_id"]: o for o in obs}
+    cout = {c["console_id"]: c for c in cons_out}
+    for cid, rs in sorted(by_c.items()):
+        c = cout[cid]
+        prev = "live"
+        for r in rs:
+            st = r["status"]
+            fin = obs_id_all.get(rs[-1]["left_anchor"], {})
+            if st == "retired" and not ((fin.get("grade") in ("A", "B") and fin.get("analyst") == "no")
+                                        or (c["end_event_date"] and r["quarter_end"] >= c["end_event_date"])):
+                sbad.append(f"{cid} {r['quarter_end']} retired with neither a manufacturer's final total nor a documented end")
+            if st == "latest_figure" and ((fin.get("grade") in ("A", "B") and fin.get("analyst") == "no")
+                                          or (c["end_event_date"] and r["quarter_end"] >= c["end_event_date"])):
+                sbad.append(f"{cid} {r['quarter_end']} latest figure although a final total or documented end applies")
+            if c["on_sale_2026"] == "yes" and st != "live":
+                sbad.append(f"{cid} {r['quarter_end']} on sale but {st}")
+            if prev != "live" and st == "live":
+                sbad.append(f"{cid} {r['quarter_end']} back to live")
+            if prev == "retired" and st == "latest_figure":
+                sbad.append(f"{cid} {r['quarter_end']} retired -> latest figure")
+            prev = st
+        first = next((r for r in rs if r["status"] != "live"), None)
+        if first and rs[-1]["units"] != first["units"]:
+            moved.append(f"{cid}: {first['status']} from {first['quarter_end']} at {first['units']} units; "
+                         f"{rs[-1]['units'] - first['units']} more units by {rs[-1]['quarter_end']} (each quarter under 10,000)")
+    checks["bar_status_rules"] = {"status": "PASS" if not sbad else "FAIL",
+                                  "detail": f"{sum(1 for r in series if r['status'] == 'latest_figure')} latest-figure rows, "
+                                            f"{sum(1 for r in series if r['status'] == 'retired')} retired rows; problems: {sbad[:5]}"}
+    notes["status_moves"] = moved
     return checks, notes
 
 
@@ -587,7 +668,8 @@ def write_checks(out, checks, notes):
               "nintendo": "Nintendo fiscal-year sums and regional sums vs life-to-date",
               "sony": "Sony PS4 / PS5 quarterly sums vs Sony's headlines",
               "end_values": "End values (30 Jun 2026) vs the latest verified official figure",
-              "observation_problems": "Observation integrity problems"}
+              "observation_problems": "Observation integrity problems",
+              "status_moves": "Bars that still add a little after they are labelled (latest figure / retired)"}
     for k, t in titles.items():
         L += ["", f"## {t}", ""]
         items = notes.get(k, [])
@@ -601,7 +683,7 @@ STYLE_WORD = {"official": "official", "estimated": "estimated", "analyst_estimat
 
 
 def write_report(path, src, consoles, cons_out, obs, series, boards, crown, overt, checks):
-    name = {c["console_id"]: c["display_name"] for c in consoles}
+    name = {c["console_id"]: c["display_name"].replace("|", "\\|") for c in consoles}   # "Xbox Series X|S" inside tables
     L = ["# RTT-003 data report — Best-Selling Consoles 1985–2026 (units shipped)", "",
          f"Generated by `scripts/build_rtt003_dataset.py` ({BUILD}). Data: `data/rtt-003/`. "
          "Contract: `reference/metric_contract_RTT-003.md`. Figures in millions of units shipped (sell-in).", "",
@@ -685,8 +767,26 @@ def write_report(path, src, consoles, cons_out, obs, series, boards, crown, over
         else:
             txt = "; ".join(f"{o['as_of_date']}: {mill(int(o['units']))}{'+' if o['lower_bound'] == 'yes' else ''} "
                             f"{o['grade']}{' (U)' if o['verified'] == 'UNVERIFIED' else ''}" for o in an)
-        L.append(f"| {c['display_name']} | {c['launch_date']} | {txt} | {mill(int(c['end_units_2026_06_30']))} "
+        L.append(f"| {name[c['console_id']]} | {c['launch_date']} | {txt} | {mill(int(c['end_units_2026_06_30']))} "
                  f"({STYLE_WORD[c['end_display_style']]}) | {c['fade_date'] or '—'} |")
+    L += ["", "## Retired and latest-figure bars (DEC-131, DEC-132, DEC-140)", "",
+          "Rule 2 (DEC-140): a bar stops in the last quarter in which it added at least 10,000 units. From then it reads "
+          "**retired** when the manufacturer's own cumulative total has stopped growing (the bar ends on a manufacturer "
+          "figure, grade A or B) or from the first quarter end on or after a documented end of production; otherwise "
+          "**latest figure**. Both are lightly dimmed. Consoles on sale at 30 Jun 2026 are live throughout.", "",
+          "| Console | Latest figure | Retired | Basis |", "|---|---|---|---|"]
+    for c in cons_out:
+        if c["in_scope"] != "yes" or not (c.get("latest_figure_from") or c.get("retired_from")):
+            continue
+        lat, ret = c["latest_figure_from"], c["retired_from"]
+        span = ((f"{lat} only" if qprev(ret) == lat else f"{lat} to {qprev(ret)}") if ret else f"from {lat}") if lat else "—"
+        L.append(f"| {name[c['console_id']]} | {span} | {('from ' + ret) if ret else '—'} | {c['status_basis']} |")
+    spl = [o for o in obs if "SPLICE" in o["use_reason"]]
+    if spl:
+        L += ["", "## Splices (a change of source or basis inside one bar)", "", "| Console | Date | Figure | Source | Note |", "|---|---|---|---|---|"]
+        for o in spl:
+            L.append(f"| {name.get(o['console_id'], o['console_id'])} | {o['as_of_date']} | {mill(int(o['units']))} | "
+                     f"{o['publisher']} | {o['use_reason']} |")
     L += ["", "## Consoles considered and left out", "", "| Console | Why |", "|---|---|"]
     for c in cons_out:
         if c["in_scope"] != "yes":
@@ -695,6 +795,13 @@ def write_report(path, src, consoles, cons_out, obs, series, boards, crown, over
         L += ["", parts[1].strip()]
     with open(path, "w", encoding="utf-8") as f:
         f.write("\n".join(L) + "\n")
+
+
+def qprev(q):
+    """The quarter end before q (q is a quarter end, ISO)."""
+    y, m = int(q[:4]), int(q[5:7])
+    y, m = (y - 1, 12) if m == 3 else (y, m - 3)
+    return date(y, m, {3: 31, 6: 30, 9: 30, 12: 31}[m]).isoformat()
 
 
 def write_manifest(out, report_path):

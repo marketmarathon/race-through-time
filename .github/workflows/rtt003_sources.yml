@@ -1,0 +1,27 @@
+# Race Through Time - RTT-003 rounds 4-5: check new figures and end-of-production reports at sources the Claude Code cloud container
+# cannot reach (its network policy blocks vgchartz.com, guinnessworldrecords.com, telecompaper.com and others).
+# Separate from render_pilot.yml (RTT-002) and rtt003_pilot.yml: it renders nothing.
+# This repository is PUBLIC (DEC-006, DEC-061): no secret is used, NO workflow artifact is uploaded, NO cache;
+# the log prints only HTTP status, page hashes and short excerpts around the searched figures.
+# Trigger: a push that changes this file or the script on the IQ-10 branch, or by hand.
+name: rtt003-sources
+
+on:
+  push:
+    branches: [claude/sweet-mendel-faig7w]
+    paths: [.github/workflows/rtt003_sources.yml, scripts/rtt003_check_sources.py]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Fetch each source and print excerpts around the figures
+        run: python3 scripts/rtt003_check_sources.py

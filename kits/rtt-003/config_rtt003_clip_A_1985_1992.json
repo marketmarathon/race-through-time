@@ -1,0 +1,16 @@
+{
+ "extends": "config_rtt003_film.json",
+ "kit_version": "rtt003_pilot5_clipA",
+ "out": "rtt003_clip_A_1985_1992.mp4",
+ "window": {
+  "from": "1985-01-01",
+  "to": "1992-12-31"
+ },
+ "range": "1985 – 1992",
+ "pacing": {
+  "final_board_sec": 3.0
+ },
+ "notes": [
+  "Clip A, 1985-1992, at the film's pace: 1.5 s per quarter with 1985-88 at 0.75 s (DEC-122). The two-console start; NES takes the crown (end-1988); the Atari 2600 rises to 27.64m (Guinness, 1 Jan 1992) and is labelled 'retired' from 31 Dec 1991 (DEC-134); every bar stays on the board (DEC-131)."
+ ]
+}

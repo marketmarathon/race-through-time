@@ -1,6 +1,6 @@
 # RTT-003 — Best-Selling Consoles 1985–2026 (units shipped)
 
-Status: **DATA BUILD (IQ-09), 1 Oct 2026; owner answers applied 2 Oct 2026 — pull request #12, not merged; no player, renderer or visual work** (DEC-069).
+Status: **DATA BUILD (IQ-09), 1 Oct 2026; owner answers applied 2 Oct 2026 — pull request #12, not merged** (DEC-069). **Round-4 data update (IQ-10, DEC-134, 2 Oct 2026):** Xbox Series X|S (VGChartz to Jun 2026), Xbox 360 (85.73m at 20 Apr 2016), Atari 2600 (27.64m at 1 Jan 1992), Master System (Famitsu No. 259), Sega end dates; build 1.1 adds each bar's `status` (live / latest_figure / retired, DEC-131/DEC-132/DEC-135). **Round 5 (DEC-139, DEC-140, 3 Oct 2026):** Nintendo's quarterly Switch figures (Jun 2024 to Dec 2025), Famitsu No. 259's Mega Drive and Game Gear for Mar 1993, documented end-of-production reports as evidence; build 1.2 applies rule 2 (retired = manufacturer's final total or documented end; latest figure only with neither).
 Contract: `reference/metric_contract_RTT-003.md` v1.0. Owner decisions DEC-081 to DEC-085; Claude's working choices DEC-086 to DEC-092, confirmed by Luke on 2 Oct 2026 (DEC-093 to DEC-102).
 Report for Luke: `reports/RTT-003_data_report.md`. Source access test: `reports/RTT-003_source_access.md`.
 
@@ -10,9 +10,9 @@ Report for Luke: `reports/RTT-003_data_report.md`. Source access test: `reports/
 
 | File | What it is |
 |---|---|
-| `consoles.csv` | One row per console considered (in scope and excluded, with the reason). Display attributes: name, other names, models included, maker, maker colour key, type, launch date and region, fade date and basis, `picture_ref` (empty until the player session), end value, best rank |
+| `consoles.csv` | One row per console considered (in scope and excluded, with the reason). Display attributes: name, other names, models included, maker, maker colour key, type, launch date and region, fade date and basis, `picture_ref` (empty until the player session), end value, best rank; `latest_figure_from`, `retired_from`, `status_basis` (build 1.1) |
 | `observations.csv` | Every figure used or considered: date, units, qualifier, lower-bound flag, basis, geography, grade (A–D), analyst flag, forecast flag, arithmetic flag and derivation, source title, publisher, URL, a short verbatim quote from the source (under 25 words), `verified` (yes / no / UNVERIFIED = source blocked), `used` (yes / no) and why, the figure it disagrees with |
-| `series.csv` | One row per console per quarter end from launch (or 31 Mar 1985): units, millions, provenance (official / arithmetic / estimate / interpolated / held), lowest grade it rests on, display style (official / estimated / analyst_estimate), "+" flag, unverified flag, and the two anchors it rests on |
+| `series.csv` | One row per console per quarter end from launch (or 31 Mar 1985): units, millions, provenance (official / arithmetic / estimate / interpolated / held), lowest grade it rests on, display style (official / estimated / analyst_estimate), "+" flag, unverified flag, the two anchors it rests on, and `status` (live / latest_figure / retired; build 1.1) |
 | `series_by_maker.csv` | Per-maker totals per quarter end (input for the company scoreboard Luke wants tested in the pilot) |
 | `crown.csv` | Every change of first place, with what it rests on |
 | `overtakes.csv` | Every overtake inside the top ten, with what it rests on |

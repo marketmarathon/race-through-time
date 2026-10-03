@@ -1,0 +1,9 @@
+# RTT-003 player input - SHA-256 record (written by scripts/rtt003_adapter.py; do not edit)
+# adapter: rtt003-adapter/1.1
+# schema: rtt-series/1
+# dataset_id: RTT-003
+d5dd29379d4e96cf46c806805ba342540f62e8762c85ec015d0733ea910a3282  input  data/rtt-003/consoles.csv
+2bd7a85b8d5b328fbb3ff1080b055a14dfa714584e7900847b9b2ada2bed357e  input  data/rtt-003/series.csv
+7e6ecb7ec77356fd473e359c7e691adba6390d22fc83e936c3999229348b7932  input  data/rtt-003/series_by_maker.csv
+0a12b847ace74ba3f4b31df71709fef91f9142481c34fb964114a970dfac3db6  input  data/rtt-003/crown.csv
+83af7cf03c653a252aab13c62e4838bd763b3c896ee13ec00c4cb75772fba772  output kits/rtt-003/race_rtt003.json

@@ -1,0 +1,242 @@
+{
+ "note": "Which row of the private reconciled picture list (race-through-time-private research/rtt-003-images/RTT-003_images_reconciled_2026-09-30.csv) each bar and maker key uses. Metadata only: no picture is committed to this public repo (DEC-006, DEC-060). PICK rows only; BACKUP only if a PICK cannot be downloaded; REJECT never. Mega Drive / Genesis uses the Genesis Model 1 picture (the row marked PICK; the JP Mega Drive row is an alternative design). NES and Super NES use the Western designs (bar names NES, Super NES).",
+ "consoles": {
+  "atari_2600": {
+   "csv_console": "Atari 2600",
+   "role": "PICK",
+   "file_title": "Atari-2600-Six-Switch-Console-01.jpg",
+   "commons_sha1": "f22986790bfd4a1952c1d4abed072284dc3dd610",
+   "backup": []
+  },
+  "nes": {
+   "csv_console": "NES",
+   "role": "PICK",
+   "file_title": "NES-Console-Set.jpg",
+   "commons_sha1": "8d0cf0ec525cbd6ee1d38f2df5df29497455e61a",
+   "backup": []
+  },
+  "master_system": {
+   "csv_console": "Sega Master System",
+   "role": "PICK",
+   "file_title": "Sega-Master-System-Set.jpg",
+   "commons_sha1": "71677308c3ab18369752ec41c63106fd99e8a18d",
+   "backup": []
+  },
+  "mega_drive": {
+   "csv_console": "Sega Genesis",
+   "role": "PICK",
+   "file_title": "Sega-Genesis-Mod1-Set.jpg",
+   "commons_sha1": "4c94a7648071671140cd94911b1eb1c8a1cabcb1",
+   "backup": []
+  },
+  "game_boy": {
+   "csv_console": "Game Boy",
+   "role": "PICK",
+   "file_title": "Game-Boy-FL.jpg",
+   "commons_sha1": "07741f8c26d09fb7bb31083b307c96074f3b5776",
+   "backup": []
+  },
+  "game_gear": {
+   "csv_console": "Game Gear",
+   "role": "PICK",
+   "file_title": "Game-Gear-Handheld.jpg",
+   "commons_sha1": "f95a703cc8cb53d3794d56edfd0f0a1000b3079e",
+   "backup": []
+  },
+  "snes": {
+   "csv_console": "SNES",
+   "role": "PICK",
+   "file_title": "SNES-Mod1-Console-Set.jpg",
+   "commons_sha1": "1ba6242ab2a3394acb78fb4ad36092cc80291875",
+   "backup": []
+  },
+  "saturn": {
+   "csv_console": "Sega Saturn",
+   "role": "PICK",
+   "file_title": "Sega-Saturn-Console-Set-Mk1.png",
+   "commons_sha1": "5b1cdb54f3a8b0d199ac840d3d2f731bbab4917c",
+   "backup": []
+  },
+  "playstation": {
+   "csv_console": "PlayStation",
+   "role": "PICK",
+   "file_title": "Sony-PlayStation-5501-Console-FL.jpg",
+   "commons_sha1": "be20850b4a3dcd96da92ae591129adefe72b21dc",
+   "backup": []
+  },
+  "nintendo_64": {
+   "csv_console": "Nintendo 64",
+   "role": "PICK",
+   "file_title": "N64-Console-Set.jpg",
+   "commons_sha1": "dec0ec1396613564e48480f4b64ccbd2dcd504d2",
+   "backup": []
+  },
+  "dreamcast": {
+   "csv_console": "Dreamcast",
+   "role": "PICK",
+   "file_title": "Sega-Dreamcast-Console-FL.jpg",
+   "commons_sha1": "4b9b32494a23c60dd1cd4b33e9f76c681b334657",
+   "backup": []
+  },
+  "playstation_2": {
+   "csv_console": "PlayStation 2",
+   "role": "PICK",
+   "file_title": "Sony-PlayStation-2-30001-wController-L.jpg",
+   "commons_sha1": "15865aa602aaf1b629992d674106d596338dc757",
+   "backup": []
+  },
+  "game_boy_advance": {
+   "csv_console": "Game Boy Advance",
+   "role": "PICK",
+   "file_title": "Nintendo-Game-Boy-Advance-Purple-FL.jpg",
+   "commons_sha1": "8b2be64747e3045c887f116b24831bbd3ad884d1",
+   "backup": []
+  },
+  "gamecube": {
+   "csv_console": "GameCube",
+   "role": "PICK",
+   "file_title": "GameCube-Set.jpg",
+   "commons_sha1": "3b981d45bc5db21f2e3e50b47af7f088c731dda3",
+   "backup": []
+  },
+  "xbox": {
+   "csv_console": "Xbox",
+   "role": "PICK",
+   "file_title": "Xbox-Console-wDuke-L.jpg",
+   "commons_sha1": "4172b760662e1f73cdb984610b5ec737c6b7db37",
+   "backup": []
+  },
+  "nintendo_ds": {
+   "csv_console": "Nintendo DS",
+   "role": "PICK",
+   "file_title": "Nintendo-DS-Fat-Blue.jpg",
+   "commons_sha1": "34e9b5893414a200680c1ed5c419e3049235ea63",
+   "backup": []
+  },
+  "psp": {
+   "csv_console": "PSP",
+   "role": "PICK",
+   "file_title": "Sony-PSP-1000-Body.png",
+   "commons_sha1": "a74eb968f5096ea1def2cb440666be55316bd27b",
+   "backup": []
+  },
+  "xbox_360": {
+   "csv_console": "Xbox 360",
+   "role": "PICK",
+   "file_title": "Xbox-360-Pro-wController.jpg",
+   "commons_sha1": "be4526ee968a9fa0353b2bace5b7f3ee71999543",
+   "backup": []
+  },
+  "wii": {
+   "csv_console": "Wii",
+   "role": "PICK",
+   "file_title": "Wii-Console.png",
+   "commons_sha1": "4ae9e710616cade4050101795cdf0b7f9ad99b77",
+   "backup": []
+  },
+  "playstation_3": {
+   "csv_console": "PlayStation 3",
+   "role": "PICK",
+   "file_title": "Sony-PlayStation-3-CECHA01-Console-FL.jpg",
+   "commons_sha1": "61629dd68eaaebe7812540328e65acff059327a0",
+   "backup": []
+  },
+  "nintendo_3ds": {
+   "csv_console": "Nintendo 3DS",
+   "role": "PICK",
+   "file_title": "Nintendo-3DS-AquaOpen.jpg",
+   "commons_sha1": "cf02aeba59050e374e601d0ae647470a741636d6",
+   "backup": []
+  },
+  "wii_u": {
+   "csv_console": "Wii U",
+   "role": "PICK",
+   "file_title": "Nintendo-Wii-U-Console-FL.jpg",
+   "commons_sha1": "ba49e4422f2c53afadecb718e60c13c1689a5687",
+   "backup": []
+  },
+  "playstation_4": {
+   "csv_console": "PlayStation 4",
+   "role": "PICK",
+   "file_title": "PS4-Console-wDS4.jpg",
+   "commons_sha1": "8808cf9d47adb1646692eb8cf3dfdd27068d6465",
+   "backup": []
+  },
+  "xbox_one": {
+   "csv_console": "Xbox One",
+   "role": "PICK",
+   "file_title": "Xbox-One-Console-wController-FL.jpg",
+   "commons_sha1": "e440962fea1fe5dd9d0d56b9a7728d56f797b944",
+   "backup": []
+  },
+  "nintendo_switch": {
+   "csv_console": "Nintendo Switch",
+   "role": "PICK",
+   "file_title": "Nintendo-Switch-Console-Docked-wJoyConRB.jpg",
+   "commons_sha1": "7a839f998c8523628815f240e7c90512b4979b59",
+   "backup": []
+  },
+  "xbox_series": {
+   "csv_console": "Xbox Series X|S",
+   "role": "PICK (changed from ChatGPT first choice)",
+   "file_title": "Xbox series X (50648118708).jpg",
+   "commons_sha1": "89e733a2eb31fd7e05c3cc7c3a6ba1ff633eba4f",
+   "backup": [
+    "Xbox Series X 2.jpg"
+   ]
+  },
+  "playstation_5": {
+   "csv_console": "PlayStation 5",
+   "role": "PICK (changed from ChatGPT first choice)",
+   "file_title": "Black and white Playstation 5 base edition with controller.png",
+   "commons_sha1": "23cddb79fd8350510b54c27e42c35162d072e8c6",
+   "backup": [
+    "PlayStation 5 and DualSense with transparent background.png"
+   ]
+  },
+  "nintendo_switch_2": {
+   "csv_console": "Nintendo Switch 2",
+   "role": "PICK (new - not in ChatGPT answer)",
+   "file_title": "Nintendo Switch 2 console in handheld mode.png",
+   "commons_sha1": "725c667d0ebd4e29cb0fbf308499cfdffee09101",
+   "backup": []
+  }
+ },
+ "logos": {
+  "nintendo": {
+   "csv_console": "LOGO Nintendo",
+   "role": "PICK",
+   "file_title": "Nintendo.svg",
+   "commons_sha1": "05b3fc7b69c4af07b916bcfbf4d2ea1d5b525360",
+   "backup": []
+  },
+  "sony": {
+   "csv_console": "LOGO Sony / PlayStation",
+   "role": "PICK",
+   "file_title": "PlayStation logo.svg",
+   "commons_sha1": "98758fc9b207ad4bebb1898d5bee151f95f66ea6",
+   "backup": []
+  },
+  "microsoft": {
+   "csv_console": "LOGO Microsoft / Xbox",
+   "role": "PICK",
+   "file_title": "Xbox one logo.svg",
+   "commons_sha1": "b99433a21f047fee9f0da25a5a8e9e14ad0bd044",
+   "backup": []
+  },
+  "sega": {
+   "csv_console": "LOGO Sega",
+   "role": "PICK",
+   "file_title": "SEGA logo.svg",
+   "commons_sha1": "fa75f68c2f5c275e561fb3bdb99ac6d07bdc945b",
+   "backup": []
+  },
+  "atari": {
+   "csv_console": "LOGO Atari",
+   "role": "PICK",
+   "file_title": "Atari logo alt.svg",
+   "commons_sha1": "5539759ca9086757033fa39152de38b7356c2783",
+   "backup": []
+  }
+ }
+}

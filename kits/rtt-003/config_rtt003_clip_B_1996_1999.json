@@ -1,0 +1,17 @@
+{
+ "extends": "config_rtt003_film.json",
+ "kit_version": "rtt003_pilot5_clipB",
+ "out": "rtt003_clip_B_1996_1999.mp4",
+ "window": {
+  "from": "1996-01-01",
+  "to": "1999-12-31"
+ },
+ "range": "1996 – 1999",
+ "subtitle_sec": 0,
+ "pacing": {
+  "final_board_sec": 3.0
+ },
+ "notes": [
+  "Clip B, 1996-1999: Mega Drive 'latest figure' from Mar 1996; Game Gear 'latest figure' at 31 Mar 1996 only, then Master System and Game Gear 'retired' from 30 Jun 1996 (Telecompaper, 15 Apr 1996); Game Boy takes the crown from the NES at 31 Dec 1997; Saturn 'retired' from Mar 1998 (Sega's final total). Opens on the board of the last quarter end before the window for 2.0 s; final board held 3 s. No music."
+ ]
+}

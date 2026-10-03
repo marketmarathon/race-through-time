@@ -15,8 +15,9 @@ This repository is **public**. Anything committed here is publicly redistributed
 - unreleased masters (draft or finished renders).
 
 **Also:**
-- Renders upload straight to YouTube as **private**. No GitHub Releases for unreleased films.
-- Workflow artifacts use the shortest retention (artifact visibility on public repos to be confirmed at setup).
+- Renders are saved only as **private pre-releases** in `marketmarathon/race-through-time-private`, with a SHA-256 for every file (DEC-060, DEC-061). Nothing is uploaded to YouTube or published from this repo; Luke approves the exact file by its SHA-256 (DEC-078) and, for now, uploads it by hand (DEC-080).
+- Workflows in this repo upload **no workflow artifacts** and use no cache (DEC-061).
+- The full rules for every Claude Code session are in [`CLAUDE.md`](CLAUDE.md).
 - Licensed audio is pulled at render time from private storage, as Market Marathon already does.
 - Private research inputs (for example independent-check files) stay outside this repo; only their SHA-256 hash and validation results are recorded here.
 

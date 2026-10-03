@@ -1,0 +1,14 @@
+{
+ "extends": "config_rtt003_film.json",
+ "kit_version": "rtt003_still_names",
+ "bar_logos": {
+  "enabled": false
+ },
+ "maker_in_name": {
+  "enabled": true,
+  "sep": " · "
+ },
+ "notes": [
+  "Still only (round 3, DEC-126): the ALTERNATIVE to the text logos on the bars - the maker's name in type after the console name ('Game Gear · Sega') and no logo tile. Not used in the clips; Luke to compare with the logo still of the same date."
+ ]
+}
