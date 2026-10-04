@@ -1,8 +1,8 @@
 # RTT-001 phone check (IQ-13)
 
-Each board still measured as drawn on the 1920 frame and converted to points on a phone showing the video 390 points wide. Names and values at least 5.9 pt (RTT-002's approved size); axis and date at least the names; footer, source line, marker, note and callouts at least 5 pt. Picture box and crown: reported only.
+Each board still measured as drawn on the 1920 frame and converted to points on a phone showing the video 390 points wide. Names and values at least 5.9 pt (RTT-002's approved size); axis and date at least the names; footer, source line, marker, note and callouts at least 5 pt. Logo tile and crown: reported only.
 
-| Still | Names | Values | Axis | Date | Footer | Source line | Marker | Note | Callout | Picture box | Crown | Result |
+| Still | Names | Values | Axis | Date | Footer | Source line | Marker | Note | Callout | Logo tile | Crown | Result |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | s01_h1_mid_jan2001_built | 34px = 6.9 pt | 36px = 7.3 pt | 34px = 6.9 pt | 34px = 6.9 pt | 26px = 5.3 pt | 30px = 6.1 pt | — | — | — | 72 x 72 px = 14.6 x 14.6 pt | — | PASS |
 | s01_h1_mid_jan2001_A | 34px = 6.9 pt | 36px = 7.3 pt | 34px = 6.9 pt | 34px = 6.9 pt | 26px = 5.3 pt | 30px = 6.1 pt | — | — | — | 72 x 72 px = 14.6 x 14.6 pt | — | PASS |
