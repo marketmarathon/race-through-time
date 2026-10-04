@@ -38,29 +38,29 @@
   - **(1)** Never use a cross-check source on screen.
   - **(2)** `.github/workflows/rtt001_sources.yml` runs only on a push that changes it or `scripts/rtt001_check_sources.py` on this branch. Its last mode is a slow archive crawl lasting up to about 6 hours, so leave both files alone unless a check is needed.
   - **(3)** The web archive rate-limits GitHub runners hard. For archived pages, ask Claude in Cowork to check them in Luke's Chrome.
-  - **(4)** Merge conflicts are expected in `state/` with pull request #14 (DEC-150, DEC-151). Resolve them by keeping both; the numbering does not clash.
+  - **(4)** Merge conflicts are expected in `state/` with pull request #14 (DEC-150, DEC-151). Resolve them by keeping both; the numbering does not clash. (Done on 4 Oct 2026, when pull request #14 was brought up to date with `main` `b5a09d3`.)
 - **Next:**
   1. Luke answers the 12 questions.
   2. Then a first design pilot for RTT-001, proposing the estimated look, the source line and the hand-over treatment for Luke's approval before anything is rendered (DEC-069).
 
-## Previous session (13, 3 Oct 2026: IQ-10 rounds 1–6 and IQ-11)
-Previous handovers are in this file's git history. That session's work is on branch `claude/sweet-mendel-faig7w` in both repos; the public one has pull request #13 (not merged; Luke merges, DEC-057). Prompts: `prompts/CODE_SESSION_IQ-11.md` (IQ-11), `prompts/CODE_SESSION_IQ-10.md` (round 1), `-10b.md` (round 2), `-10d.md` (round 4), `-10e.md` (round 5); round 3's decisions are recorded in full as DEC-122 to DEC-129.
+## RTT-003 RELEASED (3 Oct 2026, DEC-150, DEC-151; recorded in pull request #14, brought up to date with `main` on 4 Oct 2026)
+- **Approved (DEC-150):** Luke approved the exact render in private pre-release `rtt-003-film-2945460-run1` (https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-003-film-2945460-run1): **master `rtt003_film_2945460_3840x2160.mp4`, SHA-256 `8b5b9d245fde4f735bf279e6122106148e9aebb37d7ed0b361c1cbd4feab9f97`, 376,614,655 bytes**, 5 min 8 s. Claude Code checked the release asset's GitHub digest and size: both match. The viewing copy is not part of the approval.
+- **Merged (confirmed on GitHub):** public pull request #13 → **main `618c6a7`** (10:41 UTC, 3 Oct); private pull request #1 (https://github.com/marketmarathon/race-through-time-private/pull/1) → **private main `4d47eb2`** (10:43 UTC, 3 Oct), which brings the RTT-003 pictures, logos and "Powerup!" music onto private `main`.
+- **Published (DEC-151):** uploaded by Luke by hand in YouTube Studio to @racethroughtime (`UC8R47xbyBB5Z93MdMkoUOWg`) and **published public immediately on 3 Oct 2026** (Luke's decision; Claude had recommended scheduling for 6 Oct). **Video `JZzvA_ZDii0`** (https://youtu.be/JZzvA_ZDii0); Studio shows 5:09. Title "Best-Selling Consoles of All Time by Units Shipped (1985–2026)"; description as drafted in Cowork (credits version with decade chapters, no web links yet); custom thumbnail added by Luke. The uploaded file's own size and SHA-256 were not checked by Claude (Luke's report).
+- **Follow-ups:**
+  1. End screens on both videos linking RTT-002 (`2fY7Bzq8Uu0`) and RTT-003 (`JZzvA_ZDii0`).
+  2. Studio numbers at about 2, 7 and 28 days: RTT-002 about 2 Oct (passed; read it from Studio's date range), 7 Oct and 28 Oct; RTT-003 about 5 Oct, 10 Oct and 31 Oct 2026.
+  3. Web links in both descriptions once the channel's advanced features unlock.
+- RTT-003 is released: do not re-render or change it. Any fix would be a new file needing a fresh approval (DEC-078).
 
-## RTT-003 FULL FILM (round 6, 3 Oct 2026, DEC-146 to DEC-149) — awaiting Luke's approval
-- **Design approved by Luke** exactly as round 5 (DEC-146). **Music:** "Powerup!" by Jeremy Blake, YouTube Audio Library (DEC-147). It was rebuilt from the base64 parts and verified: SHA-256 `a855b541…f7be`, 11,406,143 bytes. It is committed only in the private repo at `assets/rtt-003/music/powerup_jeremy_blake.mp3` (private branch `claude/sweet-mendel-faig7w`, private `main` merged in) and listed in `reference/rights_ledger.md`.
-- **Full film (private pre-release):** https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-003-film-2945460-run1 (run https://github.com/marketmarathon/race-through-time/actions/runs/37108316963, 0 workflow artifacts).
-  - **Master 3840 × 2160:** `rtt003_film_2945460_3840x2160.mp4`, SHA-256 **`8b5b9d245fde4f735bf279e6122106148e9aebb37d7ed0b361c1cbd4feab9f97`**, 376,614,655 bytes.
-  - **Viewing copy 1920 × 1080:** `rtt003_film_2945460_1920x1080_viewing.mp4`, SHA-256 **`47b57561317698df000a6394711cd921faf2eb11e9f43dcf9a046ab8fcee2402`**, 46,229,964 bytes.
-  - **Length** 308.23 s = 5 min 8 s (9,247 frames). **Loudness** −16.0 LUFS integrated, **true peak** −1.5 dBTP (both files, measured after encoding). **Loop joins** at 255.93 s and 302.46 s; the second is inside the 10 s fade over the final table (DEC-148).
-- **Before the render:**
-  - RTT-003 suite 5/5 PASS, phone check PASS;
-  - RTT-002 suite 20/20 PASS, with its results file unchanged;
-  - WCAG flash check below the thresholds: worst 3.7% (general) and 0.3% (red) of a 10° field against 25%; no exception needed (DEC-149, `reports/RTT-003_wcag_flash_check.md`).
-- **How it was started:** new workflow `.github/workflows/rtt003_film.yml`. GitHub cannot start an unmerged workflow by hand, so the run was started by the deliberate push of that file after all tests had passed. Once merged it can be started from the Actions tab. `render_pilot.yml` (RTT-002) and RTT-002's music settings are unchanged.
-- **Next:**
-  1. Luke watches the film and approves the exact render by its SHA-256 (DEC-078), or asks for changes.
-  2. Luke merges pull request #13 and the private branch.
-  3. Luke uploads by hand in YouTube Studio (DEC-080). Nothing has been uploaded or published.
+## Previous session (13, 3 Oct 2026: IQ-10 rounds 1–6 and IQ-11)
+Previous handovers are in this file's git history. That session's work is on branch `claude/sweet-mendel-faig7w` in both repos; the public one had pull request #13, merged by Luke on 3 Oct 2026 (main `618c6a7`); the private branch was merged as private pull request #1 (private main `4d47eb2`). Prompts: `prompts/CODE_SESSION_IQ-11.md` (IQ-11), `prompts/CODE_SESSION_IQ-10.md` (round 1), `-10b.md` (round 2), `-10d.md` (round 4), `-10e.md` (round 5); round 3's decisions are recorded in full as DEC-122 to DEC-129.
+
+## RTT-003 full film (round 6, 3 Oct 2026, DEC-146 to DEC-149) — the render that was approved (DEC-150)
+- Design approved (DEC-146); music "Powerup!" by Jeremy Blake, YouTube Audio Library (DEC-147), SHA-256 `a855b541…f7be`, 11,406,143 bytes, private only, listed in `reference/rights_ledger.md`.
+- Run https://github.com/marketmarathon/race-through-time/actions/runs/37108316963 (0 workflow artifacts). Viewing copy 1920 × 1080 `47b57561317698df000a6394711cd921faf2eb11e9f43dcf9a046ab8fcee2402`, 46,229,964 bytes. 308.23 s (9,247 frames); −16.0 LUFS, true peak −1.5 dBTP; loop joins at 255.93 s and 302.46 s (DEC-148, accepted with the approved file).
+- Before the render: RTT-003 suite 5/5 PASS, phone check PASS; RTT-002 suite 20/20 PASS (results unchanged); WCAG flash check below the thresholds (DEC-149, `reports/RTT-003_wcag_flash_check.md`).
+- `.github/workflows/rtt003_film.yml` is on `main` and can be started from the Actions tab.
 
 ## IQ-11 (3 Oct 2026): standing rules and house style
 - **`CLAUDE.md`** (repo root) now carries the standing rules for every Claude Code session, and **`reference/house_style.md`** the approved design defaults (DEC-145). Read both first. Sections 1–6 of the house style apply to new episodes without asking Luke again unless the subject makes a default wrong; section 7 features are proposed in a new episode's first pilot round for Luke to confirm; DEC-069 is unchanged. When Luke approves a reusable choice, add it to `house_style.md` in the same pull request.
@@ -79,12 +79,13 @@ Previous handovers are in this file's git history. That session's work is on bra
 - **Pictures and logos** as in round 1 (private repo branch `claude/sweet-mendel-faig7w`, `assets/rtt-003/`; files unchanged — the logo trim is done at draw time); credits in `reference/rights_ledger.md`. Luke: merge that private branch when convenient.
 
 ## Open (RTT-003) — for Luke
-1. Watch the round-5 release (final pilot round) and approve the design for the full film (DEC-069), or ask for changes.
-2. Note the one-quarter "latest figure" on Game Gear (31 Mar 1996) and the four UNVERIFIED GameSpot end-date reports (they move no bar and no label).
-3. Choose the music track (DEC-114 (d)).
-4. Merge pull request #13 when satisfied (Claude does not merge, DEC-057), and the private repo branch.
+1. End screens on both videos (DEC-151).
+2. Studio numbers at about 2, 7 and 28 days for both videos (dates above).
+3. Optional: confirm the uploaded laptop file is 376,614,655 bytes, as was done for RTT-002 (DEC-080).
+4. Earlier notes, now informational: the one-quarter "latest figure" on Game Gear (31 Mar 1996) and the four UNVERIFIED GameSpot end-date reports (they move no bar and no label).
 
 ## Rules for the next RTT-003 session
+RTT-003 is released (DEC-151): do not re-render or change it. The text below is kept for reference.
 Read `kits/rtt-003/README.md`, DEC-081 to DEC-143 and `reference/metric_contract_RTT-003.md`. DEC-069: nothing beyond the approved design is built or rendered without Luke's approval; the full film needs his go-ahead after round 5. Render RTT-003 only with `rtt003_pilot.yml` (or a new RTT-003 workflow), never `render_pilot.yml`. Data changes go through `data/rtt-003/source/` and `scripts/build_rtt003_dataset.py`, then `scripts/rtt003_adapter.py`; re-run `node tests/player/run_tests_rtt003.js`. Sources this container cannot reach can be checked with `rtt003_sources.yml` (edit the PAGES list in `scripts/rtt003_check_sources.py`; a push that changes either file runs it).
 
 ## Where RTT-002 stands
@@ -99,9 +100,9 @@ Read `kits/rtt-003/README.md`, DEC-081 to DEC-143 and `reference/metric_contract
 
 ## Open (for Luke)
 1. Add the web links to the RTT-002 description once the channel's advanced features unlock (currently the credits version without links).
-2. End screen: add Subscribe + the next video when the second video exists (YouTube needs a video or playlist element).
+2. End screen: now possible, the second video exists (RTT-003 `JZzvA_ZDii0`, DEC-151). Add Subscribe + RTT-003 to RTT-002, and RTT-002 to RTT-003.
 3. Sport playlist at Milestone 5.
-4. Re-plan Milestone 5 (ten approved videos) and the 28-day cadence after the early release (DEC-079).
+4. Re-plan Milestone 5 (ten approved videos) and the 28-day cadence after the early releases (DEC-079, DEC-151: two videos now public).
 5. IQ-07 uploader (private-only, channel-ID read-back): the channel ID is now known (`UC8R47xbyBB5Z93MdMkoUOWg`). IQ-06 live feasibility for the next episodes.
 6. Question (DEC-069): reinstate the smooth speed curve in future films?
 
