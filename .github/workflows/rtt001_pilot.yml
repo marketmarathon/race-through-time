@@ -15,6 +15,7 @@
 # No full film is rendered (DEC-069: nothing beyond the approved look goes into a film before Luke approves it).
 # Triggers: a push that changes THIS FILE on the IQ-13 branch, or by hand (once merged).
 # Run 1 (56b6f43): empty picture boxes. Run 2 (IQ-13b): browser logos in the picture boxes (owner direction DEC-180).
+# Run 3 (IQ-13c): every browser on the board with a logo (owner decisions DEC-182); stills only (ONLY_STILLS).
 name: rtt001-pilot
 
 on:
@@ -33,6 +34,9 @@ concurrency:
 env:
   PRIVATE_REPO: marketmarathon/race-through-time-private
   PRIVATE_REF: claude/compassionate-cray-tlnnkm
+  # Run 3 (IQ-13c, DEC-182): stills only - the logo sheet and four boards across 1994-2026 with every browser's logo.
+  # Empty = every clip and every still (runs 1 and 2).
+  ONLY_STILLS: s16_logos s17_board_jan1994 s18_board_jun2005 s19_board_jun2013 s20_board_jun2022 c08_boards_with_logos
 
 jobs:
   render:
@@ -70,7 +74,7 @@ jobs:
             f=$(RTT_CONFIG="../rtt-001/$c" FRAME_COUNT_ONLY=1 node rtt.js | awk '/^FRAMES/ {print $2}')
             test -n "$f"
             echo "$c $f" | tee -a "$RUNNER_TEMP/plan.txt"
-          done < ../rtt-001/clips.txt
+          done < <(if [ -n "$ONLY_STILLS" ]; then :; else cat ../rtt-001/clips.txt; fi)
           for c in film opt_A opt_B opt_C; do echo "full film, not rendered, config_rtt001_$c.json: $(RTT_CONFIG=../rtt-001/config_rtt001_$c.json FRAME_COUNT_ONLY=1 node rtt.js)"; done
 
       - name: Fetch Luke's logo and the browser logos from the private repo and check their hashes
@@ -115,7 +119,7 @@ jobs:
       - name: Render the stills (1920 x 1080 and phone size) and the comparison sheets
         run: |
           set -o pipefail
-          node kits/rtt-001/render_stills.js "$RUNNER_TEMP/rtt_out" | tee "$RUNNER_TEMP/stills.log"
+          node kits/rtt-001/render_stills.js "$RUNNER_TEMP/rtt_out" $ONLY_STILLS | tee "$RUNNER_TEMP/stills.log"
           if grep -q 'not found' "$RUNNER_TEMP/stills.log"; then echo "::error::a logo was not loaded"; exit 1; fi
           ls "$RUNNER_TEMP/rtt_out"/*.png | wc -l
 
@@ -135,13 +139,13 @@ jobs:
             echo "- Stills: kits/rtt-001/stills.json, 1920 x 1080 PNG plus the same frame at phone size (390 points wide at 3 device pixels per point); *_sheet.png = options side by side"
             echo "- Luke's logo and 15 browser logos (Wikimedia Commons, kits/rtt-001/logos.json): race-through-time-private ${PRIVATE_REF}, every SHA-256 checked against kits/rtt-001/assets_sha256.txt before drawing; other browsers name only"
             echo "- File SHA-256:"
-            (cd "$O" && sha256sum *.mp4 *.png | sed 's/^/  - /')
+            (cd "$O" && sha256sum $(ls *.mp4 2>/dev/null) *.png | sed 's/^/  - /')
             echo
             echo "Private review render. Not for upload or publication (DEC-001). Not the film."
           } > "$O/notes.md"
           cat "$O/notes.md"
           gh release create "$TAG" --repo "$PRIVATE_REPO" --target main --prerelease \
-            --title "RTT-001 design pilot 1 ${SHORT} (clips and stills)" --notes-file "$O/notes.md" "$O"/*.mp4 "$O"/*.png
+            --title "RTT-001 design pilot 1 ${SHORT} (clips and stills)" --notes-file "$O/notes.md" $(ls "$O"/*.mp4 2>/dev/null) "$O"/*.png
           URL="https://github.com/${PRIVATE_REPO}/releases/tag/${TAG}"
           echo "Release: $URL"
           echo "RTT-001 pilot saved to the private repo: $URL" >> "$GITHUB_STEP_SUMMARY"
