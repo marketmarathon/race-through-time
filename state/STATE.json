@@ -1,7 +1,7 @@
 {
   "schema": "rtt-state/0.1",
   "updated": "2026-10-04",
-  "updated_by": "Claude (Claude Code cloud session): IQ-13 + IQ-13b - RTT-001 design pilot 1 (options side by side, browser logos), private pre-release rtt-001-pilot1-82167f8-run2; DEC-169..DEC-181; pull request open, not merged",
+  "updated_by": "Claude (Claude Code cloud session): IQ-13 + IQ-13b + IQ-13c - RTT-001 design pilot 1 (rtt-001-pilot1-82167f8-run2) and logo round (rtt-001-pilot1-f3d9e2f-run3, every browser on the board has a logo or own tile); DEC-169..DEC-183; pull request #16 open, not merged",
   "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); starts data audit PASSED (DEC-058/DEC-059, merged PR #8); IQ-04 MERGED (PR #2); IQ-05 rounds 1-5 MERGED (PR #3-#7); round-5 pilot RENDERED and APPROVED by Luke (DEC-062, visual direction = milestone 3); pull request #9 MERGED (c378ea7); RTT-002 FINAL FILM APPROVED (DEC-078), pull request #10 MERGED (main ef01814), UPLOADED by Luke in YouTube Studio and SCHEDULED PUBLIC 30 Sep 2026 (DEC-079 early release, DEC-080): video 2fY7Bzq8Uu0 on channel UC8R47xbyBB5Z93MdMkoUOWg; IQ-09 RTT-003 DATA BUILD DONE 1 Oct 2026; Luke's answers applied 2 Oct 2026 (DEC-093..DEC-102); pull request #12 MERGED 2 Oct 2026 (main 4288f6d); IQ-10 RTT-003 DESIGN PILOT ROUND 5 (FINAL PILOT ROUND) RENDERED 3 Oct 2026 (private pre-release; not the full film), awaiting Luke's review; IQ-11 (3 Oct 2026): CLAUDE.md and reference/house_style.md added on the IQ-10 branch (DEC-145); next episode RTT-001 Browser Wars (DEC-144); IQ-10 round 6 (3 Oct 2026): RTT-003 design APPROVED (DEC-146), FULL FILM with music rendered to a private pre-release, awaiting Luke's approval by SHA-256; IQ-12 (3 Oct 2026): RTT-001 Browser Wars DATA BUILD done (data/rtt-001, 11/11 checks PASS), pull request open, awaiting Luke's answers to 12 questions; IQ-12b (4 Oct 2026): Luke answered all 12 RTT-001 questions (DEC-164..DEC-166), smoothing direction for the pilot (DEC-167), order check (DEC-168); IQ-13/IQ-13b (4 Oct 2026): RTT-001 DESIGN PILOT 1 rendered to a private pre-release (smoothing options A/B/C, flagged stretches, notes, marker, colours, browser logos per owner direction DEC-180, features, pacing, titles), awaiting Luke's answers; pull request #15 merged by Luke (b5a09d3)",
   "canonical_queue": "state/ folder on main in marketmarathon/race-through-time (this file)",
   "repo_baseline": {
@@ -57,7 +57,7 @@
       "state": "DESIGN_PILOT_1_RENDERED_AWAITING_LUKE",
       "check_level": "LIVE",
       "verdict": "CONDITIONAL",
-      "blocker": "Luke watches pilot 1 (rtt-001-pilot1-82167f8-run2) and answers the numbered questions (DEC-169..DEC-181), including the rights basis for the browser logos (DEC-180) before any full film. Nothing beyond the approved look goes into a film before he approves (DEC-069).",
+      "blocker": "Luke watches pilot 1 (rtt-001-pilot1-82167f8-run2: clips and stills) and the logo round (rtt-001-pilot1-f3d9e2f-run3) and answers the numbered questions (DEC-169..DEC-183). Nothing beyond the approved look goes into a film before he approves (DEC-069).",
       "decisions": "DEC-144 (next video); owner DEC-152..DEC-154 (3 Oct 2026: one source per period, straight lines across hand-overs with the estimated look before 2009, all devices); Claude working choices DEC-155..DEC-159, DEC-162; verification DEC-160, DEC-161; findings DEC-163; Luke's answers 4 Oct 2026: DEC-164 (DEC-155..DEC-159, DEC-162 CONFIRMED), DEC-165 (pilot notes), DEC-166 (GVU credit), DEC-167 (smoothing where data is missing, pilot only; series.csv unchanged); DEC-168 (order check); pilot 1: DEC-169..DEC-179 (Claude working choices, proposals, findings, delivery), DEC-180 (owner direction: browser logos), DEC-181 (logo choices)",
       "dataset": {
         "branch": "merged to main by Luke (pull request #15, merge b5a09d3, 4 Oct 2026); branch claude/jolly-volta-5lr5ql kept",
@@ -77,9 +77,9 @@
         "leaders": "Mosaic 1994-01 > Netscape 1995-06 (on the GVU-EWS hand-over line, not a dated fact) > Internet Explorer 1998-10 (observed) > Chrome 2012-05 (observed)",
         "handover_order": "same order: EWS>StatMarket, StatMarket>OneStat, OneStat>W3Counter; FLAGGED: GVU>EWS (leader Mosaic>Netscape), W3Counter>StatCounter (Safari/Opera swap)"
       },
-      "next": "Luke answers the pilot-1 questions and confirms (or not) the logo rights basis; then pilot 2 or the full film with his choices (DEC-069)",
+      "next": "Luke's answers to the 14 pilot-1 questions (coming separately) and a look at the logo round; Claude in Cowork fetches the NetFront logo and any Lynx logo (kits/rtt-001/logos.json for_cowork); then pilot 2 or the full film with his choices (DEC-069)",
       "pilot1": {
-        "brief": "prompts/CODE_SESSION_IQ-13.md + prompts/CODE_SESSION_IQ-13b.md (logos)",
+        "brief": "prompts/CODE_SESSION_IQ-13.md + prompts/CODE_SESSION_IQ-13b.md (logos) + prompts/CODE_SESSION_IQ-13c.md (every browser gets a logo)",
         "branch": "claude/compassionate-cray-tlnnkm (pull request, not merged)",
         "release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-001-pilot1-82167f8-run2",
         "run": "https://github.com/marketmarathon/race-through-time/actions/runs/37195380047",
@@ -88,7 +88,7 @@
         "contents": "17 clips (1920x1080, no audio): two big hand-overs x {as built, A, B, C}; two flagged stretches as built and smoothed; 2010-2013 at 0.40/0.50/0.65 s per month; 2013-2026 at film pace and with the faster pace from Jan 2014. 28 stills + phone size; 7 comparison sheets.",
         "full_film_length": "not rendered; 3:03 at 0.40, 3:45 at 0.50, 4:48 at 0.65 s per month (with two 2 s callout pauses); 3:08 at 0.50 with 0.3 s from Jan 2014",
         "tests": "RTT-001 22/22 PASS, phone PASS; RTT-002 20/20 and RTT-003 5/5 unchanged; 21 reference frames pixel-identical",
-        "logos": "15 Commons logos (kits/rtt-001/logos.json), private branch claude/compassionate-cray-tlnnkm commit 630aacd; 15 browsers name only (incl. Safari, Mosaic, UC Browser)",
+        "logos": "29 browsers on the board: 27 real logo files (IE and IE Mobile share the IE6 \"e\", cropped at draw time) in kits/rtt-001/logos.json, private branch claude/compassionate-cray-tlnnkm commits 630aacd + 3d784d1; own neutral tiles for Lynx and NetFront (DEC-182, DEC-183); Dolfin never reaches the board",
         "file_sha256": {
           "rtt001_clip_calm_2013_2026_faster_from_2014_82167f8_1920x1080.mp4": "5092e163f4358a5ab542bc359e174b4d3ee891339dce2772a17ddaf8e09141ff",
           "rtt001_clip_calm_2013_2026_film_pace_82167f8_1920x1080.mp4": "9fc3586856b759d99fc2a00b1b45a8ec2f959e4641aea11a10a7a06c4fbbe6a8",
@@ -170,6 +170,26 @@
           "s15_titles_phone_390pt.png": "18e5e1747fcc811d71592a0e1ca5e796763d1f358bbaf01b58c2f13c49b3ff55",
           "s16_logos_1920x1080.png": "f4e7aeb9c364ccab961e76868f1e036701bd2ea434d85c4a61da0579d5bf21ca",
           "s16_logos_phone_390pt.png": "97508bb9bcf24c99ddc37fd5ad58ff051e050b36da3e74c320d8a209127729d6"
+        },
+        "run3_logos": {
+          "release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-001-pilot1-f3d9e2f-run3",
+          "run": "https://github.com/marketmarathon/race-through-time/actions/runs/37215599659",
+          "source_commit": "f3d9e2f6e204ca0616e36bc31d9add8a4c82a4c7",
+          "contents": "stills only: s16 logo sheet (every browser, its logo as drawn and larger, with its status), four boards with logos (Jan 1994, Jun 2005, Jun 2013, Jun 2022), each also at phone size; c08 the four boards side by side",
+          "release_notes_wording": "the notes header still says \"15 browser logos ... other browsers name only\" (stale workflow text from run 2); the files and SHA-256s are correct. Fix the wording in rtt001_pilot.yml with the next render push, not on its own (a push of that file renders)",
+          "file_sha256": {
+            "c08_boards_with_logos_sheet.png": "fdd1246a26775712241257b9854cbabb7e1638fc2d04bf0e7bbe5139afb2445f",
+            "s16_logos_1920x1080.png": "d0b7b9f8cf533d4c372a1a0a16d2c41fc9b13c5ec741fd769420e3d0c3fec30a",
+            "s16_logos_phone_390pt.png": "2b0cdc51b7ccc23ddcf054e220426088882015953b33b4c743508eb0190d4354",
+            "s17_board_jan1994_1920x1080.png": "38f153e8bfe3e39292e10aff54e235ec9653f99366c89e7f11e47d4cfcf6de04",
+            "s17_board_jan1994_phone_390pt.png": "f5e188da0b652db68ddd57300deb39db73c4b0c94ad338209686091f76e56fa5",
+            "s18_board_jun2005_1920x1080.png": "8bc760f68eb05b6842d338a840c503eeb1e9cbc538670c2584e9501a01954add",
+            "s18_board_jun2005_phone_390pt.png": "4253bd616662b56c4ab1e0b219eb7f5f372d48ae9c7722dd01d19fcb267da2a9",
+            "s19_board_jun2013_1920x1080.png": "0d729961e4db37f8ba761592b67025a7aa9528a7542b552ed940a63393de0597",
+            "s19_board_jun2013_phone_390pt.png": "398b0b9ccdc18871eabb41f3ed8086212107c84f521dc5d48ed6b389e80031e6",
+            "s20_board_jun2022_1920x1080.png": "a8954a374b6c004199d7ea8b3b060eae4b8068d056cbfab640400943be86fe40",
+            "s20_board_jun2022_phone_390pt.png": "f2c64481042cf04515abdfd23e848abc93fa2c9b2fb0a26d2876e9507a13ad85"
+          }
         }
       }
     },
@@ -834,9 +854,18 @@
       "id": "IQ-13b",
       "task": "Owner direction: browser logos on the bars (replaces brief item 7)",
       "where": "same branch; prompt prompts/CODE_SESSION_IQ-13b.md",
-      "status": "DONE 4 Oct 2026: 15 logos from Commons into the private repo, shown in run 2; rights basis to be confirmed by Luke",
+      "status": "DONE 4 Oct 2026: 15 logos from Commons into the private repo, shown in run 2; extended by IQ-13c",
       "result": {
         "decisions": "DEC-180, DEC-181"
+      }
+    },
+    {
+      "id": "IQ-13c",
+      "task": "Owner decisions on logos: every browser on the board gets a logo (free or non-free for identification); IE and IE Mobile use the IE6 \"e\" (crop only); own neutral tile only where no real logo exists",
+      "where": "branch claude/compassionate-cray-tlnnkm, pull request #16 (not merged); prompt prompts/CODE_SESSION_IQ-13c.md",
+      "status": "DONE 4 Oct 2026: 27 logo files (13 new) fetched on a runner into the private repo; own tiles for Lynx and NetFront; rendered to https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-001-pilot1-f3d9e2f-run3; NetFront/Lynx listed for Claude in Cowork",
+      "result": {
+        "decisions": "DEC-182, DEC-183"
       }
     }
   ],
@@ -901,21 +930,33 @@
     "assets": {
       "assets/rtt-002/rtt_logo.png": "e3db46119b52648c84eae5f6acd682bd7be855819818856e695592b20572eeca (885 x 885)",
       "assets/rtt-002/rtt_car.png": "4be74e673c601a93d0c08511d474638ca51e04cce5d4f2af46198696e81aa5bb (3435 x 936)",
-      "assets/rtt-001/logos/internet_explorer.svg": "8dca730a6ce6ab35e43858e666230e2dc7bc9b6b1e470acb63064066a2c6f8f8 (branch claude/compassionate-cray-tlnnkm, Public domain)",
-      "assets/rtt-001/logos/chrome.svg": "213cf08d59d8b5247610a33f6907ab250b3dd5fc7d4994785606cd07716e9ed6 (branch claude/compassionate-cray-tlnnkm, Public domain)",
-      "assets/rtt-001/logos/firefox.png": "f44384e76d674ce1734e4a467fdd7627d207e16354a01a8ba9dc9b4f09cccd17 (branch claude/compassionate-cray-tlnnkm, MPL 1.1)",
-      "assets/rtt-001/logos/netscape.svg": "191584d578a8ba094159f53418919d7933207e8dd3d38512e91eb2490da2e4f8 (branch claude/compassionate-cray-tlnnkm, Public domain)",
-      "assets/rtt-001/logos/edge.svg": "228f22cc4bf1603374f4a51ccf824377adc04aa0123aed741f32cd5f0899ed81 (branch claude/compassionate-cray-tlnnkm, MIT)",
-      "assets/rtt-001/logos/opera.svg": "75a7effb1bb83748023b53e8c0ad949291904108ad3172177d978f48ab869188 (branch claude/compassionate-cray-tlnnkm, Public domain)",
-      "assets/rtt-001/logos/samsung_internet.svg": "fbce8a57aec23d6c2d817025671d36eb3dadb82d8185a877fd5c091548b4231d (branch claude/compassionate-cray-tlnnkm, Public domain)",
-      "assets/rtt-001/logos/android.png": "050634206a24c75c6b306fafaa4aa5bab420681510e20994013546f36c691173 (branch claude/compassionate-cray-tlnnkm, BSD)",
-      "assets/rtt-001/logos/blackberry.svg": "3796d917c14cc48cb4c8f3754b32656e99189a12eb1578a2f142c644174c9b86 (branch claude/compassionate-cray-tlnnkm, Public domain)",
-      "assets/rtt-001/logos/aol.svg": "e16b136e0464249adb33c57fe72bca88dcdcc628a9cd192ebbc16bab8dede517 (branch claude/compassionate-cray-tlnnkm, Public domain)",
-      "assets/rtt-001/logos/yandex.png": "84507c0fea378e7ee1757db5f996affc7f46292650a014eb809f0dd3a5888ba8 (branch claude/compassionate-cray-tlnnkm, Public domain)",
-      "assets/rtt-001/logos/maxthon.jpg": "a0bca1ccbbe8a71e38d6efd20bfcf9051d3bade1751b781622df6fa15e302f62 (branch claude/compassionate-cray-tlnnkm, Public domain)",
-      "assets/rtt-001/logos/kaios.svg": "cc12486b5d9ad7a316ff6633d7efd695152c8f3fe73d14c6a27df45af90858f5 (branch claude/compassionate-cray-tlnnkm, Public domain)",
-      "assets/rtt-001/logos/seamonkey.svg": "e252f65f196abe7b0d647fcd97b1f588d6795fe90681d61ec86f24f4f481d198 (branch claude/compassionate-cray-tlnnkm, MPL 1.1)",
-      "assets/rtt-001/logos/brave.svg": "f675603da5ca33f36ffb8e1578332b01c1bad926703f79419b429d2892bcd0f6 (branch claude/compassionate-cray-tlnnkm, MPL 2)"
+      "assets/rtt-001/logos/chrome.svg": "213cf08d59d8b5247610a33f6907ab250b3dd5fc7d4994785606cd07716e9ed6 (branch claude/compassionate-cray-tlnnkm, Public domain; free (public domain on Commons))",
+      "assets/rtt-001/logos/firefox.png": "f44384e76d674ce1734e4a467fdd7627d207e16354a01a8ba9dc9b4f09cccd17 (branch claude/compassionate-cray-tlnnkm, MPL 1.1; free licence (MPL 1.1))",
+      "assets/rtt-001/logos/netscape.svg": "191584d578a8ba094159f53418919d7933207e8dd3d38512e91eb2490da2e4f8 (branch claude/compassionate-cray-tlnnkm, Public domain; free (public domain on Commons))",
+      "assets/rtt-001/logos/edge.svg": "228f22cc4bf1603374f4a51ccf824377adc04aa0123aed741f32cd5f0899ed81 (branch claude/compassionate-cray-tlnnkm, MIT; free licence (MIT))",
+      "assets/rtt-001/logos/opera.svg": "75a7effb1bb83748023b53e8c0ad949291904108ad3172177d978f48ab869188 (branch claude/compassionate-cray-tlnnkm, Public domain; free (public domain on Commons))",
+      "assets/rtt-001/logos/samsung_internet.svg": "fbce8a57aec23d6c2d817025671d36eb3dadb82d8185a877fd5c091548b4231d (branch claude/compassionate-cray-tlnnkm, Public domain; free (public domain on Commons))",
+      "assets/rtt-001/logos/android.png": "050634206a24c75c6b306fafaa4aa5bab420681510e20994013546f36c691173 (branch claude/compassionate-cray-tlnnkm, BSD; free licence (BSD))",
+      "assets/rtt-001/logos/blackberry.svg": "3796d917c14cc48cb4c8f3754b32656e99189a12eb1578a2f142c644174c9b86 (branch claude/compassionate-cray-tlnnkm, Public domain; free (public domain on Commons))",
+      "assets/rtt-001/logos/aol.svg": "e16b136e0464249adb33c57fe72bca88dcdcc628a9cd192ebbc16bab8dede517 (branch claude/compassionate-cray-tlnnkm, Public domain; free (public domain on Commons))",
+      "assets/rtt-001/logos/yandex.png": "84507c0fea378e7ee1757db5f996affc7f46292650a014eb809f0dd3a5888ba8 (branch claude/compassionate-cray-tlnnkm, Public domain; free (public domain on Commons))",
+      "assets/rtt-001/logos/maxthon.jpg": "a0bca1ccbbe8a71e38d6efd20bfcf9051d3bade1751b781622df6fa15e302f62 (branch claude/compassionate-cray-tlnnkm, Public domain; free (public domain on Commons))",
+      "assets/rtt-001/logos/kaios.svg": "cc12486b5d9ad7a316ff6633d7efd695152c8f3fe73d14c6a27df45af90858f5 (branch claude/compassionate-cray-tlnnkm, Public domain; free (public domain on Commons))",
+      "assets/rtt-001/logos/seamonkey.svg": "e252f65f196abe7b0d647fcd97b1f588d6795fe90681d61ec86f24f4f481d198 (branch claude/compassionate-cray-tlnnkm, MPL 1.1; free licence (MPL 1.1))",
+      "assets/rtt-001/logos/brave.svg": "f675603da5ca33f36ffb8e1578332b01c1bad926703f79419b429d2892bcd0f6 (branch claude/compassionate-cray-tlnnkm, MPL 2; free licence (MPL 2))",
+      "assets/rtt-001/logos/internet_explorer.png": "df375912f83b8d467f21a8f61526ba9b71922e68b219c3614e79f2da90225804 (branch claude/compassionate-cray-tlnnkm, Public domain; free (public domain on Commons))",
+      "assets/rtt-001/logos/safari.png": "65ef423cd0ff128ca83456b5de3cdc40f24e60b325af910e173b72d197b6135b (branch claude/compassionate-cray-tlnnkm, non-free (Apple); non-free, identification use (DEC-182))",
+      "assets/rtt-001/logos/mosaic.gif": "2094a49756ffba2e68581a2f1e29181b84c004ee2b85662ea49bf585e67e90c1 (branch claude/compassionate-cray-tlnnkm, Fair use (en.wikipedia non-free file); non-free, identification use (DEC-182))",
+      "assets/rtt-001/logos/uc_browser.svg": "b9bb7dafb9e9413804ed9409fac6cd477f4d1d694f7fa8db34096b52888cdf3b (branch claude/compassionate-cray-tlnnkm, Fair use (en.wikipedia non-free file); non-free, identification use (DEC-182))",
+      "assets/rtt-001/logos/qq.png": "4a1b7850a96c1bc4d8b7a088bdc7df4afc22f979a90b69868ba77bea6bf3ce81 (branch claude/compassionate-cray-tlnnkm, Fair use (en.wikipedia non-free file); non-free, identification use (DEC-182))",
+      "assets/rtt-001/logos/qihoo360.jpg": "aef91cea85856f5c99f8a9eaa52aee87f88a291d184802532b961dfa99b76f8f (branch claude/compassionate-cray-tlnnkm, PD (as tagged on en.wikipedia); free (tagged public domain on en.wikipedia))",
+      "assets/rtt-001/logos/mozilla.svg": "8d59957e04f1b4a70265100f053bce73fddb862aad26016607ba8f1ddde1e36d (branch claude/compassionate-cray-tlnnkm, Public domain; free (public domain on Commons))",
+      "assets/rtt-001/logos/nokia.svg": "938052201cc00dbd2799eb698c1275033244daca29c58b2e1d84bbd555f263b6 (branch claude/compassionate-cray-tlnnkm, Public domain; free (public domain on Commons))",
+      "assets/rtt-001/logos/sony_ps3.svg": "2e5610ff2f6e8b236abe2004297cec46d05d0cf73a05e5dd734b6c3c0e84b512 (branch claude/compassionate-cray-tlnnkm, Public domain; free (public domain on Commons))",
+      "assets/rtt-001/logos/instabridge.png": "265908ec49c1d53a398ca266bdbd1b21b557c960bcb8a99732e32c678bd62a23 (branch claude/compassionate-cray-tlnnkm, CC BY-SA 4.0; free licence (CC BY-SA 4.0; credit AgathaRibeiro), identification use)",
+      "assets/rtt-001/logos/samba.gif": "eae522c10459313241b1763efb875e337356325bc047f66b031dcb69de96ef7e (branch claude/compassionate-cray-tlnnkm, Fair use (en.wikipedia non-free file); non-free, identification use (DEC-182))",
+      "assets/rtt-001/logos/cello.gif": "fbb8b63101950c734369bb734b8bbefa2b8c9929e41af8321ae262b73598e914 (branch claude/compassionate-cray-tlnnkm, Fair use (en.wikipedia non-free file); non-free, identification use (DEC-182))",
+      "assets/rtt-001/logos/internet_explorer_10_11_unused.svg": "8dca730a6ce6ab35e43858e666230e2dc7bc9b6b1e470acb63064066a2c6f8f8 (branch claude/compassionate-cray-tlnnkm, Public domain; superseded by the IE6 crop, DEC-182 (4); not drawn)"
     },
     "hashes_read_back": "29 Sep 2026 by Claude Code: both match",
     "secret": "RTT_PRIVATE_TOKEN (Actions secret in race-through-time): fine-grained token, race-through-time-private only, Contents read and write, EXPIRES 28 Sep 2027 - renew before then",
