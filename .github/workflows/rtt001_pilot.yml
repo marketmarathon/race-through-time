@@ -3,7 +3,7 @@
 # Its OWN workflow: render_pilot.yml (RTT-002) and the RTT-003 workflows are not changed, so nothing here can start
 # another episode's render. This repository is PUBLIC (DEC-006). Its workflow logs and artifacts can be read by other
 # people, so this workflow (as rtt003_pilot.yml, DEC-061):
-#   - fetches Luke's logo (the only private file pilot 1 draws) from the PRIVATE repo
+#   - fetches Luke's logo and the browser logos (owner direction DEC-180) from the PRIVATE repo
 #     marketmarathon/race-through-time-private with the secret RTT_PRIVATE_TOKEN into $RUNNER_TEMP (outside the
 #     checkout), never into the repo, and never prints the secret;
 #   - checks its SHA-256 against kits/rtt-001/assets_sha256.txt and the player input against
@@ -14,6 +14,7 @@
 #   - uploads NO workflow artifact, uses NO cache, and deletes frames and videos at the end.
 # No full film is rendered (DEC-069: nothing beyond the approved look goes into a film before Luke approves it).
 # Triggers: a push that changes THIS FILE on the IQ-13 branch, or by hand (once merged).
+# Run 1 (56b6f43): empty picture boxes. Run 2 (IQ-13b): browser logos in the picture boxes (owner direction DEC-180).
 name: rtt001-pilot
 
 on:
@@ -31,7 +32,7 @@ concurrency:
 
 env:
   PRIVATE_REPO: marketmarathon/race-through-time-private
-  PRIVATE_REF: main
+  PRIVATE_REF: claude/compassionate-cray-tlnnkm
 
 jobs:
   render:
@@ -72,16 +73,17 @@ jobs:
           done < ../rtt-001/clips.txt
           for c in film opt_A opt_B opt_C; do echo "full film, not rendered, config_rtt001_$c.json: $(RTT_CONFIG=../rtt-001/config_rtt001_$c.json FRAME_COUNT_ONLY=1 node rtt.js)"; done
 
-      - name: Fetch Luke's logo from the private repo and check its hash
+      - name: Fetch Luke's logo and the browser logos from the private repo and check their hashes
         env:
           GH_TOKEN: ${{ secrets.RTT_PRIVATE_TOKEN }}
         run: |
           if [ -z "$GH_TOKEN" ]; then echo "::error::secret RTT_PRIVATE_TOKEN is not available to this run"; exit 1; fi
-          A="$RUNNER_TEMP/rtt_assets"; mkdir -p "$A"
+          A="$RUNNER_TEMP/rtt_assets"; mkdir -p "$A/logos"
           : > "$RUNNER_TEMP/check.txt"
           grep -v '^#' kits/rtt-001/assets_sha256.txt | while read -r sum p; do
             case "$p" in
               assets/rtt-002/rtt_logo.png) dst="$A/rtt_logo.png";;
+              assets/rtt-001/logos/*) dst="$A/logos/${p#assets/rtt-001/logos/}";;
               *) echo "::error::unexpected path $p"; exit 1;;
             esac
             gh api -H 'Accept: application/vnd.github.raw' "repos/$PRIVATE_REPO/contents/$p?ref=$PRIVATE_REF" > "$dst"
@@ -103,7 +105,7 @@ jobs:
             read -r c FRAMES <<< "$line"
             STEM="rtt001_${c#config_rtt001_}"; STEM="${STEM%.json}_${SHORT}_1920x1080"
             (cd kits/rtt-002 && SEG_OUT="$O/$STEM.mp4" RASTER_W=1920 RTT_CONFIG="../rtt-001/$c" node rtt.js | tee "$RUNNER_TEMP/render.log")
-            if grep -q 'not found' "$RUNNER_TEMP/render.log"; then echo "::error::the logo or an overlay was not loaded"; exit 1; fi
+            if grep -q 'not found' "$RUNNER_TEMP/render.log"; then echo "::error::a logo or an overlay was not loaded"; exit 1; fi
             m=$(probe "$O/$STEM.mp4"); echo "$c: $m"
             test "$m" = "1920,1080,30/1,$FRAMES"
             a=$(ffprobe -v error -select_streams a -show_entries stream=index -of csv=p=0 "$O/$STEM.mp4" | wc -l)
@@ -114,7 +116,7 @@ jobs:
         run: |
           set -o pipefail
           node kits/rtt-001/render_stills.js "$RUNNER_TEMP/rtt_out" | tee "$RUNNER_TEMP/stills.log"
-          if grep -q 'not found' "$RUNNER_TEMP/stills.log"; then echo "::error::the logo was not loaded"; exit 1; fi
+          if grep -q 'not found' "$RUNNER_TEMP/stills.log"; then echo "::error::a logo was not loaded"; exit 1; fi
           ls "$RUNNER_TEMP/rtt_out"/*.png | wc -l
 
       - name: Save the clips and stills as one pre-release in the private repo
@@ -124,14 +126,14 @@ jobs:
           O="$RUNNER_TEMP/rtt_out"; SHORT=${GITHUB_SHA::7}
           TAG="rtt-001-pilot1-${SHORT}-run${GITHUB_RUN_NUMBER}"
           {
-            echo "RTT-001 Browser Wars design pilot 1 (IQ-13): clips and stills for Luke to choose from, rendered by GitHub Actions. No music. Not a film."
+            echo "RTT-001 Browser Wars design pilot 1 (IQ-13, with browser logos IQ-13b): clips and stills for Luke to choose from, rendered by GitHub Actions. No music. Not a film."
             echo
             echo "- Source: ${GITHUB_REPOSITORY} @ ${GITHUB_SHA} (${GITHUB_REF_NAME}), run ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
             while read -r c FRAMES; do
               echo "- kits/rtt-001/${c}: ${FRAMES} frames at 30 fps = $(awk -v f="$FRAMES" 'BEGIN {printf "%.1f", f / 30}') s, 1920 x 1080, x264, no audio"
             done < "$RUNNER_TEMP/plan.txt"
             echo "- Stills: kits/rtt-001/stills.json, 1920 x 1080 PNG plus the same frame at phone size (390 points wide at 3 device pixels per point); *_sheet.png = options side by side"
-            echo "- Luke's logo: race-through-time-private ${PRIVATE_REF}, SHA-256 checked against kits/rtt-001/assets_sha256.txt before drawing; browser logos not used (empty picture boxes)"
+            echo "- Luke's logo and 15 browser logos (Wikimedia Commons, kits/rtt-001/logos.json): race-through-time-private ${PRIVATE_REF}, every SHA-256 checked against kits/rtt-001/assets_sha256.txt before drawing; other browsers name only"
             echo "- File SHA-256:"
             (cd "$O" && sha256sum *.mp4 *.png | sed 's/^/  - /')
             echo
