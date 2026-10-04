@@ -24,4 +24,16 @@ function placeholders(cfg, dir) {
   return dir;
 }
 
-module.exports = { placeholderPNG, placeholders };
+/* IQ-13b (RTT-001): a stand-in for each private browser logo named in a config's pictures.files ({id: "<id>.<ext>"}),
+   written at test time into tests/output/ (never committed): a plain square, as an SVG for .svg names, else a PNG. */
+function logoPlaceholders(cfg, dir) {
+  const files = (cfg.pictures && cfg.pictures.files) || {};
+  const d = path.join(dir, cfg.pictures && cfg.pictures.dir || 'logos'); fs.mkdirSync(d, { recursive: true });
+  for (const name of Object.values(files)) {
+    if (name.toLowerCase().endsWith('.svg')) fs.writeFileSync(path.join(d, name), '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="#3A7BD5"/></svg>');
+    else placeholderPNG(path.join(d, name), 400, 200, [58, 123, 213]);   // wide enough for a crop rectangle
+  }
+  return Object.keys(files);
+}
+
+module.exports = { placeholderPNG, placeholders, logoPlaceholders };

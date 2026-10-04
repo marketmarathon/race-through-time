@@ -34,7 +34,7 @@ These are the standing rules. The detail and history are in `state/DECISIONS.md`
 ## Building and rendering
 - **Reuse and extend the existing player** (`kits/rtt-002/` is the base; RTT-003 extended it rather than copying it, DEC-105). Do not rebuild it.
 - **Each episode renders through its own workflow.** Never start another episode's render. A push that changes `.github/workflows/render_pilot.yml` renders RTT-002 clips, so leave that file alone when working on any other episode.
-- Run the episode's test suite before any render (`node tests/player/run_tests.js` for RTT-002, `node tests/player/run_tests_rtt003.js` for RTT-003). If you change shared player code, show that RTT-002's approved output is unchanged.
+- Run the episode's test suite before any render (`node tests/player/run_tests.js` for RTT-002, `node tests/player/run_tests_rtt003.js` for RTT-003, `node tests/player/run_tests_rtt001.js` for RTT-001). If you change shared player code, show that RTT-002's approved output is unchanged.
 - **Previews:** use stills to check layout, text, styling and readability. Use clips only to check motion, overtakes, pacing, timing or audio. Check every still at phone size too (`tests/player/phone_check*.js`).
 - When a design question is open, show the options side by side in the same round rather than building one into the film.
 

@@ -1,0 +1,15 @@
+{
+ "extends": "config_rtt001_film.json",
+ "kit_version": "rtt001_pilot1_h2_onestat_w3counter_built",
+ "out": "rtt001_h2_onestat_w3counter_built.mp4",
+ "window": {
+  "from": "2006-06-01",
+  "to": "2008-03-31"
+ },
+ "pacing": {
+  "final_board_sec": 2.0
+ },
+ "notes": [
+  "Hand-over 2 of 2 with the biggest measurement jump: OneStat (31 Jan 2007, IE 85.81%) to W3Counter (31 May 2007, IE 67.1%), as built (straight lines, published decimals; the reference). Opening board May 2006; June 2006 - March 2008 at 0.5 s per month; no music."
+ ]
+}

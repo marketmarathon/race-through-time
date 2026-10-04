@@ -1,0 +1,623 @@
+{
+ "note": "RTT-001 browser logos (IQ-13b, owner direction DEC-180). One logo per browser for the whole film, purely to identify the browser, shown unmodified on a light tile. Every row read at its Commons file page by Claude Code via the Commons API on 4 Oct 2026 (licence, author, SHA-1). The files are downloaded only on a GitHub runner (.github/workflows/rtt001_assets.yml, scripts/rtt001_fetch_logos.py) into the PRIVATE repo; never committed here (DEC-006, DEC-060). Rights basis and notices: reference/rights_ledger.md. Luke confirms the rights basis before any full film. IQ-13c (owner decisions DEC-182): every browser on the board gets a logo; non-free files used purely to identify the browser; IE uses the IE6 'e' (crop only, at draw time); IE Mobile uses the same 'e'; own neutral tiles only where no real logo was found.",
+ "logos": [
+  {
+   "browser_id": "internet_explorer_10_11_unused",
+   "commons_title": "File:Internet Explorer 10+11 logo.svg",
+   "page": "https://commons.wikimedia.org/wiki/File:Internet_Explorer_10+11_logo.svg",
+   "sha1": "a6bdeec0e9933991796692f8045eaccd04a942b0",
+   "licence": "Public domain",
+   "author": "Microsoft",
+   "source_credit": "Extracted from File:IE10 Wikipedia.png (color) and File:Internet Explorer 10 icon.svg (shape).",
+   "commons_restrictions": "trademarked",
+   "description": "The Internet Explorer 10 logo",
+   "size": [
+    223,
+    219
+   ],
+   "bytes": 2422,
+   "ext": "svg",
+   "sha256": "8dca730a6ce6ab35e43858e666230e2dc7bc9b6b1e470acb63064066a2c6f8f8",
+   "private_path": "assets/rtt-001/logos/internet_explorer_10_11_unused.svg",
+   "site": "commons.wikimedia.org",
+   "status": "superseded by the IE6 crop (DEC-182 (4)); file kept in the private repo, not drawn"
+  },
+  {
+   "browser_id": "chrome",
+   "commons_title": "File:Google Chrome icon (September 2014).svg",
+   "page": "https://commons.wikimedia.org/wiki/File:Google_Chrome_icon_(September_2014).svg",
+   "sha1": "54187692e71d4d8c7fd7a039567072a22d5229ad",
+   "licence": "Public domain",
+   "author": "Google",
+   "source_credit": "https://www.google.com/chrome/static/images/chrome-logo.svg",
+   "commons_restrictions": "trademarked",
+   "description": "Google Chrome logo and computer icon, with Material Design motif used from September 2014 to March 2022 for android, Jan",
+   "size": [
+    512,
+    512
+   ],
+   "bytes": 4657,
+   "ext": "svg",
+   "sha256": "213cf08d59d8b5247610a33f6907ab250b3dd5fc7d4994785606cd07716e9ed6",
+   "private_path": "assets/rtt-001/logos/chrome.svg",
+   "site": "commons.wikimedia.org",
+   "status": "free (public domain on Commons)"
+  },
+  {
+   "browser_id": "firefox",
+   "commons_title": "File:Mozilla Firefox 3.5 logo.png",
+   "page": "https://commons.wikimedia.org/wiki/File:Mozilla_Firefox_3.5_logo.png",
+   "sha1": "0ef65f9f9191d1f327dac0d2ff1a9786c505a171",
+   "licence": "MPL 1.1",
+   "author": "Mozilla Foundation",
+   "source_credit": "https://mxr.mozilla.org/mozilla-central/source/other-licenses/branding/firefox/default256.png (Now moved to https://mxr.mozilla.org/mozilla-central/source/brows",
+   "commons_restrictions": "trademarked",
+   "description": "Mozilla",
+   "size": [
+    512,
+    512
+   ],
+   "bytes": 195147,
+   "ext": "png",
+   "sha256": "f44384e76d674ce1734e4a467fdd7627d207e16354a01a8ba9dc9b4f09cccd17",
+   "private_path": "assets/rtt-001/logos/firefox.png",
+   "site": "commons.wikimedia.org",
+   "status": "free licence (MPL 1.1)"
+  },
+  {
+   "browser_id": "netscape",
+   "commons_title": "File:Netscape icon.svg",
+   "page": "https://commons.wikimedia.org/wiki/File:Netscape_icon.svg",
+   "sha1": "d63686306dc312c4958a3b133a83011c7a6df8d3",
+   "licence": "Public domain",
+   "author": "Netscape Communications Corp. (original icon). Gabriel dos Santos (SVG version).",
+   "source_credit": "",
+   "commons_restrictions": "trademarked",
+   "description": "Icon used on Netscape Navigator browsers from 1994 to 2007.",
+   "size": [
+    128,
+    128
+   ],
+   "bytes": 8511,
+   "ext": "svg",
+   "sha256": "191584d578a8ba094159f53418919d7933207e8dd3d38512e91eb2490da2e4f8",
+   "private_path": "assets/rtt-001/logos/netscape.svg",
+   "site": "commons.wikimedia.org",
+   "status": "free (public domain on Commons)"
+  },
+  {
+   "browser_id": "edge",
+   "commons_title": "File:Microsoft Edge logo (2019).svg",
+   "page": "https://commons.wikimedia.org/wiki/File:Microsoft_Edge_logo_(2019).svg",
+   "sha1": "e62225ca8f64ceb4746cf45423f5884cf7e6a1db",
+   "licence": "MIT",
+   "author": "Microsoft Corporation",
+   "source_credit": "https://static.wikia.nocookie.net/logopedia/images/4/4d/Microsoft_Edge_%282019%29.svg/revision/latest?cb=20210706013511",
+   "commons_restrictions": "trademarked",
+   "description": "Microsoft Edge browser logo used since 2019.",
+   "size": [
+    512,
+    512
+   ],
+   "bytes": 3814,
+   "ext": "svg",
+   "sha256": "228f22cc4bf1603374f4a51ccf824377adc04aa0123aed741f32cd5f0899ed81",
+   "private_path": "assets/rtt-001/logos/edge.svg",
+   "site": "commons.wikimedia.org",
+   "status": "free licence (MIT)"
+  },
+  {
+   "browser_id": "opera",
+   "commons_title": "File:Opera 2015 icon.svg",
+   "page": "https://commons.wikimedia.org/wiki/File:Opera_2015_icon.svg",
+   "sha1": "98fd873229a098f2e34148dcc5776f9ddc53ffa3",
+   "licence": "Public domain",
+   "author": "Opera",
+   "source_credit": "https://brand.opera.com/",
+   "commons_restrictions": "trademarked",
+   "description": "Icon of Opera Browser.",
+   "size": [
+    512,
+    512
+   ],
+   "bytes": 1677,
+   "ext": "svg",
+   "sha256": "75a7effb1bb83748023b53e8c0ad949291904108ad3172177d978f48ab869188",
+   "private_path": "assets/rtt-001/logos/opera.svg",
+   "site": "commons.wikimedia.org",
+   "status": "free (public domain on Commons)"
+  },
+  {
+   "browser_id": "samsung_internet",
+   "commons_title": "File:Samsung Internet logo.svg",
+   "page": "https://commons.wikimedia.org/wiki/File:Samsung_Internet_logo.svg",
+   "sha1": "10280793cbdd1eeee9c1b0624f2f50a6d4a7974a",
+   "licence": "Public domain",
+   "author": "Samsung Electronics",
+   "source_credit": "https://samsunginter.net/",
+   "commons_restrictions": "trademarked",
+   "description": "Logo of Samsung Internet.",
+   "size": [
+    512,
+    512
+   ],
+   "bytes": 1869,
+   "ext": "svg",
+   "sha256": "fbce8a57aec23d6c2d817025671d36eb3dadb82d8185a877fd5c091548b4231d",
+   "private_path": "assets/rtt-001/logos/samsung_internet.svg",
+   "site": "commons.wikimedia.org",
+   "status": "free (public domain on Commons)"
+  },
+  {
+   "browser_id": "android",
+   "commons_title": "File:Icon webview.png",
+   "page": "https://commons.wikimedia.org/wiki/File:Icon_webview.png",
+   "sha1": "87dc4cfa6ee3a5e3f2f14444d49d0772fb9eed65",
+   "licence": "BSD",
+   "author": "Chromium project",
+   "source_credit": "https://chromium.googlesource.com/chromium/src/+/master/android_webview/apk/java/res/drawable-xxhdpi?autodive=0",
+   "commons_restrictions": "",
+   "description": "AOSP browser icon",
+   "size": [
+    144,
+    144
+   ],
+   "bytes": 37607,
+   "ext": "png",
+   "sha256": "050634206a24c75c6b306fafaa4aa5bab420681510e20994013546f36c691173",
+   "private_path": "assets/rtt-001/logos/android.png",
+   "site": "commons.wikimedia.org",
+   "status": "free licence (BSD)"
+  },
+  {
+   "browser_id": "blackberry",
+   "commons_title": "File:Blackberry Logo without wordmark.svg",
+   "page": "https://commons.wikimedia.org/wiki/File:Blackberry_Logo_without_wordmark.svg",
+   "sha1": "32026f6a231d8c93457a23674a906c04f630ff90",
+   "licence": "Public domain",
+   "author": "BlackBerry Limited",
+   "source_credit": "http://us.blackberry.com/",
+   "commons_restrictions": "trademarked",
+   "description": "Official logo of BlackBerry Limited",
+   "size": [
+    39,
+    27
+   ],
+   "bytes": 8378,
+   "ext": "svg",
+   "sha256": "3796d917c14cc48cb4c8f3754b32656e99189a12eb1578a2f142c644174c9b86",
+   "private_path": "assets/rtt-001/logos/blackberry.svg",
+   "site": "commons.wikimedia.org",
+   "status": "free (public domain on Commons)"
+  },
+  {
+   "browser_id": "aol",
+   "commons_title": "File:AOL logo.svg",
+   "page": "https://commons.wikimedia.org/wiki/File:AOL_logo.svg",
+   "sha1": "9528141f5041e59db0c6c6c77a03efcea8841bbb",
+   "licence": "Public domain",
+   "author": "AOL",
+   "source_credit": "Unknown sourceUnknown source",
+   "commons_restrictions": "trademarked",
+   "description": "The logo of AOL – American web portal and online service provider",
+   "size": [
+    512,
+    205
+   ],
+   "bytes": 1007,
+   "ext": "svg",
+   "sha256": "e16b136e0464249adb33c57fe72bca88dcdcc628a9cd192ebbc16bab8dede517",
+   "private_path": "assets/rtt-001/logos/aol.svg",
+   "site": "commons.wikimedia.org",
+   "status": "free (public domain on Commons)"
+  },
+  {
+   "browser_id": "yandex",
+   "commons_title": "File:Yandex Browser logo.png",
+   "page": "https://commons.wikimedia.org/wiki/File:Yandex_Browser_logo.png",
+   "sha1": "da4cc67517e995ae5321b15418c0cbaf87fc36cf",
+   "licence": "Public domain",
+   "author": "Yandex",
+   "source_credit": "Yandex.Browser",
+   "commons_restrictions": "trademarked",
+   "description": "Yandex.Browser logo",
+   "size": [
+    256,
+    256
+   ],
+   "bytes": 20916,
+   "ext": "png",
+   "sha256": "84507c0fea378e7ee1757db5f996affc7f46292650a014eb809f0dd3a5888ba8",
+   "private_path": "assets/rtt-001/logos/yandex.png",
+   "site": "commons.wikimedia.org",
+   "status": "free (public domain on Commons)"
+  },
+  {
+   "browser_id": "maxthon",
+   "commons_title": "File:Maxthon Browser Logo.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Maxthon_Browser_Logo.jpg",
+   "sha1": "c5257e4507cf50ea2b0438b050bd9feb891480aa",
+   "licence": "Public domain",
+   "author": "Maxthon",
+   "source_credit": "Maxthon",
+   "commons_restrictions": "trademarked",
+   "description": "Maxthon Browser Logo",
+   "size": [
+    434,
+    411
+   ],
+   "bytes": 67874,
+   "ext": "jpg",
+   "sha256": "a0bca1ccbbe8a71e38d6efd20bfcf9051d3bade1751b781622df6fa15e302f62",
+   "private_path": "assets/rtt-001/logos/maxthon.jpg",
+   "site": "commons.wikimedia.org",
+   "status": "free (public domain on Commons)"
+  },
+  {
+   "browser_id": "kaios",
+   "commons_title": "File:KaiOS logo.svg",
+   "page": "https://commons.wikimedia.org/wiki/File:KaiOS_logo.svg",
+   "sha1": "f50c2e0749bf5199d946c7ac5ce627fbda245137",
+   "licence": "Public domain",
+   "author": "KaiOS Technologies Inc.",
+   "source_credit": "KaiOS Press kit",
+   "commons_restrictions": "trademarked",
+   "description": "Logo of KaiOS.",
+   "size": [
+    700,
+    250
+   ],
+   "bytes": 2755,
+   "ext": "svg",
+   "sha256": "cc12486b5d9ad7a316ff6633d7efd695152c8f3fe73d14c6a27df45af90858f5",
+   "private_path": "assets/rtt-001/logos/kaios.svg",
+   "site": "commons.wikimedia.org",
+   "status": "free (public domain on Commons)"
+  },
+  {
+   "browser_id": "seamonkey",
+   "commons_title": "File:SeaMonkey.svg",
+   "page": "https://commons.wikimedia.org/wiki/File:SeaMonkey.svg",
+   "sha1": "8e760bde941d73f4c1262d0daf001d7257c98877",
+   "licence": "MPL 1.1",
+   "author": "Mozilla.",
+   "source_credit": "SVG version own work, traced using file File:SeaMonkey.png obtained from seamonkey-project.org",
+   "commons_restrictions": "trademarked",
+   "description": "SeaMonkey Logo",
+   "size": [
+    160,
+    160
+   ],
+   "bytes": 15444,
+   "ext": "svg",
+   "sha256": "e252f65f196abe7b0d647fcd97b1f588d6795fe90681d61ec86f24f4f481d198",
+   "private_path": "assets/rtt-001/logos/seamonkey.svg",
+   "site": "commons.wikimedia.org",
+   "status": "free licence (MPL 1.1)"
+  },
+  {
+   "browser_id": "brave",
+   "commons_title": "File:Brave Logo (2024).svg",
+   "page": "https://commons.wikimedia.org/wiki/File:Brave_Logo_(2024).svg",
+   "sha1": "13be872943074a3970bf0e34368f741015320b68",
+   "licence": "MPL 2",
+   "author": "Brave Software, Inc.",
+   "source_credit": "https://brave.com/",
+   "commons_restrictions": "trademarked",
+   "description": "Logo of Brave since 2024.",
+   "size": [
+    129,
+    40
+   ],
+   "bytes": 4815,
+   "ext": "svg",
+   "sha256": "f675603da5ca33f36ffb8e1578332b01c1bad926703f79419b429d2892bcd0f6",
+   "private_path": "assets/rtt-001/logos/brave.svg",
+   "site": "commons.wikimedia.org",
+   "status": "free licence (MPL 2)"
+  },
+  {
+   "browser_id": "internet_explorer",
+   "commons_title": "File:Ie6Logo.png",
+   "site": "commons.wikimedia.org",
+   "page": "https://commons.wikimedia.org/wiki/File:Ie6Logo.png",
+   "sha1": "c9b3cb7f9d6f069003c184b8cc67a98ab72f9732",
+   "licence": "Public domain",
+   "status": "free (public domain on Commons)",
+   "author": "Microsoft",
+   "source_credit": "Internet Explorer 6",
+   "commons_restrictions": "trademarked",
+   "description": "Internet Explorer 6's logo (the 'e' and the 'Microsoft Internet Explorer 6' wordmark)",
+   "size": [
+    350,
+    150
+   ],
+   "bytes": 53017,
+   "ext": "png",
+   "crop": {
+    "x": 19,
+    "y": 13,
+    "w": 117,
+    "h": 120
+   },
+   "crop_note": "crop only (owner decision DEC-182 (4)): the 'e' at x 21-133, y 15-130 of the file plus a 2 px margin; done at draw time, the stored file is unmodified",
+   "sha256": "df375912f83b8d467f21a8f61526ba9b71922e68b219c3614e79f2da90225804",
+   "private_path": "assets/rtt-001/logos/internet_explorer.png"
+  },
+  {
+   "browser_id": "ie_mobile",
+   "same_as": "internet_explorer",
+   "status": "as Internet Explorer (owner decision DEC-182 (3))"
+  },
+  {
+   "browser_id": "safari",
+   "commons_title": null,
+   "site": "developer.apple.com",
+   "url": "https://developer.apple.com/assets/elements/icons/safari/safari-256x256_2x.png",
+   "page": "https://developer.apple.com/safari/",
+   "sha1": null,
+   "sha256_local": "65ef423cd0ff128ca83456b5de3cdc40f24e60b325af910e173b72d197b6135b",
+   "licence": "non-free (Apple)",
+   "status": "non-free, identification use (DEC-182)",
+   "author": "Apple Inc.",
+   "source_credit": "Apple Developer, Safari page icon asset",
+   "commons_restrictions": "trademarked",
+   "description": "Safari icon, macOS Big Sur era design (2020-2025), 512 x 512 PNG from Apple's own developer site",
+   "size": [
+    512,
+    512
+   ],
+   "bytes": 459039,
+   "ext": "png",
+   "sha256": "65ef423cd0ff128ca83456b5de3cdc40f24e60b325af910e173b72d197b6135b",
+   "private_path": "assets/rtt-001/logos/safari.png"
+  },
+  {
+   "browser_id": "mosaic",
+   "commons_title": "File:Logo of NCSA Mosaic.gif",
+   "site": "en.wikipedia.org",
+   "page": "https://en.wikipedia.org/wiki/File:Logo_of_NCSA_Mosaic.gif",
+   "sha1": "e07ab5e4e5c614c32f7f5aefc8c20162e0249453",
+   "licence": "Fair use (en.wikipedia non-free file)",
+   "status": "non-free, identification use (DEC-182)",
+   "author": "NCSA",
+   "source_credit": "",
+   "commons_restrictions": "",
+   "description": "Logo of NCSA Mosaic (English Wikipedia infobox)",
+   "size": [
+    383,
+    179
+   ],
+   "bytes": 22719,
+   "ext": "gif",
+   "sha256": "2094a49756ffba2e68581a2f1e29181b84c004ee2b85662ea49bf585e67e90c1",
+   "private_path": "assets/rtt-001/logos/mosaic.gif"
+  },
+  {
+   "browser_id": "uc_browser",
+   "commons_title": "File:UC Browser logo.svg",
+   "site": "en.wikipedia.org",
+   "page": "https://en.wikipedia.org/wiki/File:UC_Browser_logo.svg",
+   "sha1": "29ea5849628258b2e54d3d233d7abd6081525ba2",
+   "licence": "Fair use (en.wikipedia non-free file)",
+   "status": "non-free, identification use (DEC-182)",
+   "author": "UCWeb",
+   "source_credit": "",
+   "commons_restrictions": "",
+   "description": "UC Browser squirrel icon",
+   "size": [
+    316,
+    316
+   ],
+   "bytes": 3910,
+   "ext": "svg",
+   "sha256": "b9bb7dafb9e9413804ed9409fac6cd477f4d1d694f7fa8db34096b52888cdf3b",
+   "private_path": "assets/rtt-001/logos/uc_browser.svg"
+  },
+  {
+   "browser_id": "qq",
+   "commons_title": "File:QQ Browser logo.png",
+   "site": "en.wikipedia.org",
+   "page": "https://en.wikipedia.org/wiki/File:QQ_Browser_logo.png",
+   "sha1": "b7dd5e60ff3482e771ab2db1bb6ef7092d653f0c",
+   "licence": "Fair use (en.wikipedia non-free file)",
+   "status": "non-free, identification use (DEC-182)",
+   "author": "Tencent",
+   "source_credit": "",
+   "commons_restrictions": "",
+   "description": "QQ Browser icon with its Chinese wordmark (shown whole: only the IE crop is approved)",
+   "size": [
+    375,
+    135
+   ],
+   "bytes": 13597,
+   "ext": "png",
+   "sha256": "4a1b7850a96c1bc4d8b7a088bdc7df4afc22f979a90b69868ba77bea6bf3ce81",
+   "private_path": "assets/rtt-001/logos/qq.png"
+  },
+  {
+   "browser_id": "qihoo360",
+   "commons_title": "File:360 Secure Browser Logo.jpg",
+   "site": "en.wikipedia.org",
+   "page": "https://en.wikipedia.org/wiki/File:360_Secure_Browser_Logo.jpg",
+   "sha1": "1cc6785e16a54c8da743b40e22543f9bf3f23b09",
+   "licence": "PD (as tagged on en.wikipedia)",
+   "status": "free (tagged public domain on en.wikipedia)",
+   "author": "360 Secure Browser",
+   "source_credit": "",
+   "commons_restrictions": "",
+   "description": "Logo of 360 Secure Browser",
+   "size": [
+    195,
+    55
+   ],
+   "bytes": 6809,
+   "ext": "jpg",
+   "sha256": "aef91cea85856f5c99f8a9eaa52aee87f88a291d184802532b961dfa99b76f8f",
+   "private_path": "assets/rtt-001/logos/qihoo360.jpg"
+  },
+  {
+   "browser_id": "mozilla",
+   "commons_title": "File:Mozilla Foundation icon until 2017.svg",
+   "site": "commons.wikimedia.org",
+   "page": "https://commons.wikimedia.org/wiki/File:Mozilla_Foundation_icon_until_2017.svg",
+   "sha1": "a1a76bbd2314cf2d13bfae6cb3bc75265d0b5a94",
+   "licence": "Public domain",
+   "status": "free (public domain on Commons)",
+   "author": "Mozilla Foundation",
+   "source_credit": "",
+   "commons_restrictions": "trademarked",
+   "description": "Mozilla's red dinosaur head, the mozilla.org mark of the Mozilla Suite years (the Suite itself had no separate icon on Commons; File:Mozilla Suite Logo.png is GFDL only)",
+   "size": [
+    278,
+    278
+   ],
+   "bytes": 2045,
+   "ext": "svg",
+   "sha256": "8d59957e04f1b4a70265100f053bce73fddb862aad26016607ba8f1ddde1e36d",
+   "private_path": "assets/rtt-001/logos/mozilla.svg"
+  },
+  {
+   "browser_id": "nokia",
+   "commons_title": "File:Nokia wordmark.svg",
+   "site": "commons.wikimedia.org",
+   "page": "https://commons.wikimedia.org/wiki/File:Nokia_wordmark.svg",
+   "sha1": "ce16113cdae1c02505afe8cc34052d1cdf47baad",
+   "licence": "Public domain",
+   "status": "free (public domain on Commons)",
+   "author": "Nokia Corporation",
+   "source_credit": "",
+   "commons_restrictions": "trademarked",
+   "description": "Nokia wordmark (StatCounter label \"Nokia\" covers Nokia's phone browsers)",
+   "size": [
+    313,
+    53
+   ],
+   "bytes": 1301,
+   "ext": "svg",
+   "sha256": "938052201cc00dbd2799eb698c1275033244daca29c58b2e1d84bbd555f263b6",
+   "private_path": "assets/rtt-001/logos/nokia.svg"
+  },
+  {
+   "browser_id": "sony_ps3",
+   "commons_title": "File:PlayStation 3 Logo.svg",
+   "site": "commons.wikimedia.org",
+   "page": "https://commons.wikimedia.org/wiki/File:PlayStation_3_Logo.svg",
+   "sha1": "76527c26a128ce96209e1b760b4565472df791b3",
+   "licence": "Public domain",
+   "status": "free (public domain on Commons)",
+   "author": "Sony",
+   "source_credit": "",
+   "commons_restrictions": "trademarked",
+   "description": "'PS3' wordmark (the console's browser)",
+   "size": [
+    630,
+    134
+   ],
+   "bytes": 3526,
+   "ext": "svg",
+   "sha256": "2e5610ff2f6e8b236abe2004297cec46d05d0cf73a05e5dd734b6c3c0e84b512",
+   "private_path": "assets/rtt-001/logos/sony_ps3.svg"
+  },
+  {
+   "browser_id": "instabridge",
+   "commons_title": "File:Instabridge Logo Blue.png",
+   "site": "commons.wikimedia.org",
+   "page": "https://commons.wikimedia.org/wiki/File:Instabridge_Logo_Blue.png",
+   "sha1": "263ffc424e950270f41e308f7e8c9995aedb9240",
+   "licence": "CC BY-SA 4.0",
+   "status": "free licence (CC BY-SA 4.0; credit AgathaRibeiro), identification use",
+   "author": "AgathaRibeiro",
+   "source_credit": "",
+   "commons_restrictions": "",
+   "description": "Instabridge logo (blue)",
+   "size": [
+    361,
+    361
+   ],
+   "bytes": 5655,
+   "ext": "png",
+   "sha256": "265908ec49c1d53a398ca266bdbd1b21b557c960bcb8a99732e32c678bd62a23",
+   "private_path": "assets/rtt-001/logos/instabridge.png"
+  },
+  {
+   "browser_id": "samba",
+   "commons_title": "File:MacWWW.gif",
+   "site": "en.wikipedia.org",
+   "page": "https://en.wikipedia.org/wiki/File:MacWWW.gif",
+   "sha1": "b1ab736cee783dd4e360d703c382e4d5ec1a98d0",
+   "licence": "Fair use (en.wikipedia non-free file)",
+   "status": "non-free, identification use (DEC-182)",
+   "author": "CERN",
+   "source_credit": "",
+   "commons_restrictions": "",
+   "description": "MacWWW (Samba) application icon, 32 x 32 (English Wikipedia infobox); drawn without smoothing",
+   "size": [
+    32,
+    32
+   ],
+   "bytes": 201,
+   "ext": "gif",
+   "sha256": "eae522c10459313241b1763efb875e337356325bc047f66b031dcb69de96ef7e",
+   "private_path": "assets/rtt-001/logos/samba.gif"
+  },
+  {
+   "browser_id": "cello",
+   "commons_title": "File:Cello icon.gif",
+   "site": "en.wikipedia.org",
+   "page": "https://en.wikipedia.org/wiki/File:Cello_icon.gif",
+   "sha1": "d7f13a8521e3ffe2cc162068af85af4e3bbf254b",
+   "licence": "Fair use (en.wikipedia non-free file)",
+   "status": "non-free, identification use (DEC-182)",
+   "author": "Legal Information Institute, Cornell Law School",
+   "source_credit": "",
+   "commons_restrictions": "",
+   "description": "Cello application icon, 32 x 32 (English Wikipedia infobox); drawn without smoothing",
+   "size": [
+    32,
+    32
+   ],
+   "bytes": 216,
+   "ext": "gif",
+   "sha256": "fbb8b63101950c734369bb734b8bbefa2b8c9929e41af8321ae262b73598e914",
+   "private_path": "assets/rtt-001/logos/cello.gif"
+  }
+ ],
+ "name_only": {
+  "dolfin": "never in the top 10 of any month (checked under every option): not on the board, so no logo is needed"
+ },
+ "fetched": "race-through-time-private claude/compassionate-cray-tlnnkm: commit 630aacd (15 files, rtt001_assets.yml run 37194306876) and commit 3d784d1 (13 more, run https://github.com/marketmarathon/race-through-time/actions/runs/37214246516), 4 Oct 2026; each SHA-1 equal to its file page (or, for Apple's Safari icon, the SHA-256 recorded here)",
+ "own_tiles": {
+  "lynx": {
+   "text": "Lynx",
+   "year": 1992,
+   "why": "text-only browser; no graphical logo found on Commons, en/fr/de Wikipedia or its home page",
+   "year_source": "https://en.wikipedia.org/wiki/Lynx_(web_browser) infobox: released 1992"
+  },
+  "netfront": {
+   "text": "NetFront",
+   "year": 1995,
+   "why": "no logo on Commons or any Wikipedia (en, ja, de, fr, ko, zh checked); maker and archive pages not reachable from here - listed for Cowork",
+   "year_source": "https://en.wikipedia.org/wiki/NetFront: first version shipped in 1995"
+  }
+ },
+ "for_cowork": [
+  {
+   "browser": "netfront",
+   "look_for": "the NetFront Browser logo (ACCESS Co.), peak years 2008-2012",
+   "pages": [
+    "https://web.archive.org/web/2010*/http://www.access-company.com/products/*",
+    "https://www.access-company.com/en/",
+    "https://web.archive.org/web/2009*/http://www.access-company.com/news/press/*"
+   ]
+  },
+  {
+   "browser": "lynx",
+   "look_for": "any graphical Lynx logo or icon (probably none exists)",
+   "pages": [
+    "https://web.archive.org/web/1997*/http://lynx.browser.org/",
+    "https://lynx.invisible-island.net/"
+   ]
+  }
+ ]
+}

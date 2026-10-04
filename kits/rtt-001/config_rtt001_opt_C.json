@@ -1,0 +1,3 @@
+{ "extends": "config_rtt001_opt_B.json", "kit_version": "rtt001_pilot1_optC",
+  "marker": { "enabled": true },
+  "notes": ["Option C (DEC-167, Cowork's recommendation): as B, plus a 'New source' marker after the source line for 3 s whenever the source line first names a new source (DEC-165 (8))."] }

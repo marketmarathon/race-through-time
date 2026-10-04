@@ -1,0 +1,337 @@
+{
+ "extends": "../rtt-002/config.json",
+ "episode": "RTT-001",
+ "kit_version": "rtt001_pilot1",
+ "format_version": "RTT-1 player (kits/rtt-002), quarter-end series mode (IQ-10) with the monthly share kind (IQ-13)",
+ "out": "rtt001_film.mp4",
+ "race_file": "../rtt-001/race_rtt001.json",
+ "intro_sec": 0,
+ "outro_sec": 0,
+ "rows": 10,
+ "board_top": 232,
+ "window": {
+  "from": null,
+  "to": null
+ },
+ "pacing": {
+  "sec_per_event": 0.5,
+  "bounds": [
+   0.8,
+   1.4
+  ],
+  "mult": {
+   "rank_change": 1.4,
+   "visible_change": 1.0,
+   "quiet": 0.8
+  },
+  "settled_run_after": 3,
+  "judge_rows": 10,
+  "lead_in_sec": 2.0,
+  "final_board_sec": 10.0
+ },
+ "record_hold": {
+  "enabled": false,
+  "sec": 2.0,
+  "types": [
+   "CROWN"
+  ]
+ },
+ "glide": {
+  "bar_sec": 0.35,
+  "rank_sec": 0.55,
+  "entry_sec": 0.1,
+  "bar_mode": "beat"
+ },
+ "count": {
+  "enabled": true
+ },
+ "unit": "percent",
+ "title": "Most-Used Web Browsers",
+ "subtitle": "",
+ "subtitle_sec": 0,
+ "range": "1994 – 2026",
+ "footer": "Race Through Time · Data: GVU WWW User Surveys, Georgia Tech Research Corporation · Univ. of Illinois · StatMarket · OneStat · W3Counter · StatCounter",
+ "time_label": {
+  "mode": "line",
+  "format": "month",
+  "x": 1676,
+  "y": 74,
+  "align": "right",
+  "size": 34,
+  "months": [
+   "January",
+   "February",
+   "March",
+   "April",
+   "May",
+   "June",
+   "July",
+   "August",
+   "September",
+   "October",
+   "November",
+   "December"
+  ]
+ },
+ "axis_suffix": "%",
+ "values": {
+  "decimals": 1,
+  "approx": false
+ },
+ "smoothing": {
+  "mode": "none",
+  "handover_months": 12,
+  "include_flagged": false
+ },
+ "source_line": {
+  "enabled": true,
+  "y": 124,
+  "size": 30,
+  "prefix": "Source: ",
+  "estimated": " · estimated",
+  "changing": "changing from {from} to {to}",
+  "names": {
+   "GVU": "GVU WWW User Surveys (Georgia Tech)",
+   "EWS": "University of Illinois EWS web server",
+   "STATMARKET": "WebSideStory StatMarket",
+   "ONESTAT": "OneStat.com",
+   "W3COUNTER": "W3Counter",
+   "STATCOUNTER": "StatCounter Global Stats"
+  },
+  "measure": {
+   "GVU": "survey of web users",
+   "EWS": "hosts visiting one university server",
+   "STATMARKET": "visitors to sites it tracks",
+   "ONESTAT": "visitors to sites it tracks",
+   "W3COUNTER": "page views on sites it tracks",
+   "STATCOUNTER": "page views, all devices"
+  },
+  "short": {
+   "GVU": "the GVU survey",
+   "EWS": "the Illinois EWS server",
+   "STATMARKET": "StatMarket",
+   "ONESTAT": "OneStat",
+   "W3COUNTER": "W3Counter",
+   "STATCOUNTER": "StatCounter"
+  }
+ },
+ "marker": {
+  "enabled": false,
+  "sec": 3.0,
+  "text": "New source",
+  "size": 26
+ },
+ "note_line": {
+  "y": 172,
+  "size": 30,
+  "sec": 3.0
+ },
+ "notes_at": [],
+ "maker_order": [
+  "mosaic",
+  "netscape",
+  "internet_explorer",
+  "edge",
+  "firefox",
+  "mozilla",
+  "seamonkey",
+  "safari",
+  "chrome",
+  "opera",
+  "lynx",
+  "cello",
+  "samba",
+  "aol",
+  "android",
+  "uc_browser",
+  "samsung_internet",
+  "samsung",
+  "nokia",
+  "blackberry",
+  "ie_mobile",
+  "yandex",
+  "netfront",
+  "qihoo360",
+  "qq",
+  "maxthon",
+  "sogou",
+  "coc_coc",
+  "sony_ps3",
+  "chromium",
+  "silk",
+  "puffin",
+  "kaios",
+  "dolfin",
+  "sony_ps4",
+  "brave",
+  "whale",
+  "openwave",
+  "phantom",
+  "instabridge",
+  "pale_moon",
+  "sonyericsson",
+  "obigo",
+  "jasmine"
+ ],
+ "palette": [
+  "#8A4FC8",
+  "#197378",
+  "#0A9BBE",
+  "#05A087",
+  "#D7640A",
+  "#D72D7D",
+  "#5F6937",
+  "#3D6FE0",
+  "#4C9A2A",
+  "#E8283A",
+  "#8C7D23",
+  "#A53C78",
+  "#A05532",
+  "#967800",
+  "#87876E",
+  "#AA8000",
+  "#8A44D8",
+  "#6E7480",
+  "#966464",
+  "#69696E",
+  "#C33787",
+  "#196E78",
+  "#8C6EAF",
+  "#5F691E",
+  "#737387",
+  "#0A967D",
+  "#6E7480",
+  "#6E7480",
+  "#286E73",
+  "#6E7480",
+  "#6E7480",
+  "#6E7480",
+  "#B91E7D",
+  "#6E7480",
+  "#6E7480",
+  "#915A5F",
+  "#6E7480",
+  "#6E7480",
+  "#6E7480",
+  "#8C695A",
+  "#6E7480",
+  "#6E7480",
+  "#6E7480",
+  "#6E7480"
+ ],
+ "colour_rule": {},
+ "sizes": {
+  "axis": 34,
+  "date": 34,
+  "footer": 26
+ },
+ "board": {
+  "bar_gap": 10,
+  "name_frac": 0.72,
+  "value_frac": 0.72
+ },
+ "namescale": 0.9,
+ "barend": 1420,
+ "valout": true,
+ "nameoverflow": true,
+ "pictures": {
+  "enabled": true,
+  "dir": "logos",
+  "files": {
+   "chrome": "chrome.svg",
+   "firefox": "firefox.png",
+   "netscape": "netscape.svg",
+   "edge": "edge.svg",
+   "opera": "opera.svg",
+   "samsung_internet": "samsung_internet.svg",
+   "android": "android.png",
+   "blackberry": "blackberry.svg",
+   "aol": "aol.svg",
+   "yandex": "yandex.png",
+   "maxthon": "maxthon.jpg",
+   "kaios": "kaios.svg",
+   "seamonkey": "seamonkey.svg",
+   "brave": "brave.svg",
+   "internet_explorer": "internet_explorer.png",
+   "ie_mobile": "internet_explorer.png",
+   "safari": "safari.png",
+   "mosaic": "mosaic.gif",
+   "uc_browser": "uc_browser.svg",
+   "qq": "qq.png",
+   "qihoo360": "qihoo360.jpg",
+   "mozilla": "mozilla.svg",
+   "nokia": "nokia.svg",
+   "sony_ps3": "sony_ps3.svg",
+   "instabridge": "instabridge.png",
+   "samba": "samba.gif",
+   "cello": "cello.gif"
+  },
+  "tile": true,
+  "tile_pad": 6,
+  "placeholder": false,
+  "height_frac": 0.92,
+  "aspect": 1.0,
+  "gap": 14,
+  "crop": {
+   "internet_explorer": {
+    "x": 19,
+    "y": 13,
+    "w": 117,
+    "h": 120
+   },
+   "ie_mobile": {
+    "x": 19,
+    "y": 13,
+    "w": 117,
+    "h": 120
+   }
+  },
+  "own": {
+   "lynx": {
+    "text": "Lynx",
+    "year": 1992
+   },
+   "netfront": {
+    "text": "NetFront",
+    "year": 1995
+   }
+  }
+ },
+ "crown": {
+  "enabled": false,
+  "colour": "#F5C542"
+ },
+ "callout": {
+  "enabled": false,
+  "sec": 3.0,
+  "y": 172,
+  "size": 30,
+  "fade_in": 0.25,
+  "fade_out": 0.4,
+  "texts": {
+   "crown": "{id} takes the lead",
+   "crown_extra": " · passes {other}",
+   "passes": "{id} passes {other} for {rank} place",
+   "passes_extra": "",
+   "estimated": " · estimated figures"
+  }
+ },
+ "moments": [],
+ "overlays": [
+  {
+   "name": "logo",
+   "file": "rtt_logo.png",
+   "x": 1702,
+   "y": 12,
+   "w": 154,
+   "h": 154
+  }
+ ],
+ "overlay_gap": 12,
+ "notes": [
+  "RTT-001 Browser Wars, design pilot 1 (IQ-13, prompts/CODE_SESSION_IQ-13.md). This config is the AS-BUILT reference: values exactly as data/rtt-001/series.csv (straight lines between dated figures, DEC-153), one decimal (metric contract), the house estimated look before January 2009 with the source named on screen (DEC-153), top 10, one logo per browser on a light tile where a usable logo exists (owner direction DEC-180; files listed in logos.json, private), name only otherwise. It is not a film: nothing beyond the approved look goes into a full film before Luke approves it (DEC-069).",
+  "The smoothing options A, B and C of DEC-167 are config_rtt001_opt_A/B/C.json (extending this file); the clips and stills extend those. Smoothing is drawn by the player (rtt_timeline.js shareRace); series.csv is never changed.",
+  "Drawn by the RTT-002 player (kits/rtt-002) in its series mode with the monthly share kind (race kind 'share', scripts/rtt001_adapter.py). Colours: one per browser (maker_order = browser ids, palette), chosen by DEC-173. No music this round.",
+  "Colours (DEC-173): one per browser, near its familiar brand colour; no two browsers that can be on screen together closer than CIEDE2000 18 (closest 18.1, Internet Explorer / Netscape); white names at least 3.0 : 1 on every bar, every bar at least 3.0 : 1 on the background. Browsers that never reach the top 10 get #6E7480 (never drawn). Search: kits/rtt-001/palette_search.js."
+ ]
+}

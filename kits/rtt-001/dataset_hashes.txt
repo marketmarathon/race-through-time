@@ -1,0 +1,6 @@
+# SHA-256 of the adapter inputs and output (rtt001-adapter/1.0)
+942f2c72fcd2606eb28eaafe5d74a60f6ea1e2a1f2be2bcd3d115e2431379ab8 input data/rtt-001/browsers.csv
+764d8b5c8055d5a91eec797fe3aaaf8253467f3d988321805f41f5e6ad1102df input data/rtt-001/handover_order.csv
+8f865fd25090ee5f1ec0e3c3849621a4404ca102196b1399a3505c1e42a92709 input data/rtt-001/observations.csv
+a15663f675484cbd26944ddcc878f2d0156ef042cafd044e351f8b96baa456cd input data/rtt-001/series.csv
+39b0796e24d59bb9ae054f3f0755f8cc8e44e5a0dbd484fcf41c10e25d80ca38 output kits/rtt-001/race_rtt001.json

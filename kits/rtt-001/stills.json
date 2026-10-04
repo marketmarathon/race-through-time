@@ -1,0 +1,445 @@
+{
+ "stills": [
+  {
+   "name": "s01_h1_mid_jan2001_built",
+   "config": "config_rtt001_film.json",
+   "at": "2001-01-31"
+  },
+  {
+   "name": "s01_h1_mid_jan2001_A",
+   "config": "config_rtt001_opt_A.json",
+   "at": "2001-01-31"
+  },
+  {
+   "name": "s01_h1_mid_jan2001_B",
+   "config": "config_rtt001_opt_B.json",
+   "at": "2001-01-31"
+  },
+  {
+   "name": "s01_h1_mid_jan2001_C",
+   "config": "config_rtt001_opt_C.json",
+   "at": "2001-01-31"
+  },
+  {
+   "name": "s02_h2_mid_mar2007_built",
+   "config": "config_rtt001_film.json",
+   "at": "2007-03-31"
+  },
+  {
+   "name": "s02_h2_mid_mar2007_A",
+   "config": "config_rtt001_opt_A.json",
+   "at": "2007-03-31"
+  },
+  {
+   "name": "s02_h2_mid_mar2007_B",
+   "config": "config_rtt001_opt_B.json",
+   "at": "2007-03-31"
+  },
+  {
+   "name": "s02_h2_mid_mar2007_C",
+   "config": "config_rtt001_opt_C.json",
+   "at": "2007-03-31"
+  },
+  {
+   "name": "s03_f1_gvu_ews_aug1995_built",
+   "config": "config_rtt001_film.json",
+   "at": "1995-08-31"
+  },
+  {
+   "name": "s03_f1_gvu_ews_aug1995_smoothed",
+   "config": "config_rtt001_opt_C.json",
+   "at": "1995-08-31",
+   "overrides": {
+    "smoothing": {
+     "include_flagged": true
+    }
+   }
+  },
+  {
+   "name": "s04_f2_w3c_statcounter_dec2008_built",
+   "config": "config_rtt001_film.json",
+   "at": "2008-12-31"
+  },
+  {
+   "name": "s04_f2_w3c_statcounter_dec2008_smoothed",
+   "config": "config_rtt001_opt_C.json",
+   "at": "2008-12-31",
+   "overrides": {
+    "smoothing": {
+     "include_flagged": true
+    }
+   }
+  },
+  {
+   "name": "s05_note_jun1996_with",
+   "config": "config_rtt001_opt_C.json",
+   "at": "1996-06-30",
+   "after_sec": 1.5,
+   "overrides": {
+    "notes_at": [
+     {
+      "date": "1996-06-30",
+      "text": "Note: until May 1996 this source counted Internet Explorer inside “Mosaic”"
+     }
+    ]
+   }
+  },
+  {
+   "name": "s05_note_jun1996_without",
+   "config": "config_rtt001_opt_C.json",
+   "at": "1996-06-30",
+   "after_sec": 1.5
+  },
+  {
+   "name": "s06_marker_jul2000_with",
+   "config": "config_rtt001_opt_C.json",
+   "at": "2000-07-31",
+   "after_sec": 1.5
+  },
+  {
+   "name": "s06_marker_jul2000_without",
+   "config": "config_rtt001_opt_B.json",
+   "at": "2000-07-31",
+   "after_sec": 1.5
+  },
+  {
+   "name": "s07_estimated_dec2008",
+   "config": "config_rtt001_opt_C.json",
+   "at": "2008-12-31"
+  },
+  {
+   "name": "s07_official_jan2009",
+   "config": "config_rtt001_opt_C.json",
+   "at": "2009-01-31"
+  },
+  {
+   "name": "s08_values_jan2016_two_decimals",
+   "config": "config_rtt001_opt_C.json",
+   "at": "2016-01-31",
+   "overrides": {
+    "values": {
+     "decimals": 2
+    }
+   }
+  },
+  {
+   "name": "s08_values_jan2016_one_decimal",
+   "config": "config_rtt001_opt_C.json",
+   "at": "2016-01-31"
+  },
+  {
+   "name": "s09_feature_crown_jun2012",
+   "config": "config_rtt001_opt_C.json",
+   "at": "2012-06-30",
+   "overrides": {
+    "crown": {
+     "enabled": true
+    }
+   }
+  },
+  {
+   "name": "s10_feature_callout_ie_oct1998",
+   "config": "config_rtt001_opt_C.json",
+   "at": "1998-10-31",
+   "overrides": {
+    "crown": {
+     "enabled": true
+    },
+    "callout": {
+     "enabled": true
+    },
+    "record_hold": {
+     "enabled": true
+    }
+   },
+   "after_moment_sec": 0.3
+  },
+  {
+   "name": "s11_feature_callout_chrome_may2012",
+   "config": "config_rtt001_opt_C.json",
+   "at": "2012-05-31",
+   "overrides": {
+    "crown": {
+     "enabled": true
+    },
+    "callout": {
+     "enabled": true
+    },
+    "record_hold": {
+     "enabled": true
+    }
+   },
+   "after_moment_sec": 0.3
+  },
+  {
+   "name": "s12_extra_callout_chrome_passes_firefox_nov2011",
+   "config": "config_rtt001_opt_C.json",
+   "at": "2011-11-30",
+   "overrides": {
+    "crown": {
+     "enabled": true
+    },
+    "callout": {
+     "enabled": true
+    },
+    "record_hold": {
+     "enabled": true
+    },
+    "moments": [
+     {
+      "type": "passes",
+      "id": "chrome",
+      "other": "firefox",
+      "rank": 2
+     }
+    ]
+   },
+   "after_moment_sec": 0.3
+  },
+  {
+   "name": "s13_extra_callout_safari_passes_ie_sep2014",
+   "config": "config_rtt001_opt_C.json",
+   "at": "2014-09-30",
+   "overrides": {
+    "crown": {
+     "enabled": true
+    },
+    "callout": {
+     "enabled": true
+    },
+    "record_hold": {
+     "enabled": true
+    },
+    "moments": [
+     {
+      "type": "passes",
+      "id": "safari",
+      "other": "internet_explorer",
+      "rank": 2
+     }
+    ]
+   },
+   "after_moment_sec": 0.3
+  },
+  {
+   "name": "s14_palette",
+   "sheet": "sheet_palette"
+  },
+  {
+   "name": "s15_titles",
+   "sheet": "sheet_titles"
+  },
+  {
+   "name": "s16_logos",
+   "sheet": "sheet_logos"
+  },
+  {
+   "name": "s17_board_jan1994",
+   "config": "config_rtt001_opt_C.json",
+   "at": "1994-01-31"
+  },
+  {
+   "name": "s18_board_jun2005",
+   "config": "config_rtt001_opt_C.json",
+   "at": "2005-06-30"
+  },
+  {
+   "name": "s19_board_jun2013",
+   "config": "config_rtt001_opt_C.json",
+   "at": "2013-06-30"
+  },
+  {
+   "name": "s20_board_jun2022",
+   "config": "config_rtt001_opt_C.json",
+   "at": "2022-06-30"
+  },
+  {
+   "name": "c01_h1_ews_statmarket_options",
+   "compose": {
+    "title": "1. EWS server to StatMarket (December 2000 to February 2001): January 2001, the middle of the hand-over",
+    "cols": 2,
+    "items": [
+     {
+      "still": "s01_h1_mid_jan2001_built",
+      "caption": "As built (straight lines): reference"
+     },
+     {
+      "still": "s01_h1_mid_jan2001_A",
+      "caption": "A: eased, spread over 12 months"
+     },
+     {
+      "still": "s01_h1_mid_jan2001_B",
+      "caption": "B: A + “~” estimates before 2009"
+     },
+     {
+      "still": "s01_h1_mid_jan2001_C",
+      "caption": "C: B + “New source” marker (Cowork's pick)"
+     }
+    ]
+   }
+  },
+  {
+   "name": "c02_h2_onestat_w3counter_options",
+   "compose": {
+    "title": "1. OneStat to W3Counter (January to May 2007): March 2007, the middle of the hand-over",
+    "cols": 2,
+    "items": [
+     {
+      "still": "s02_h2_mid_mar2007_built",
+      "caption": "As built (straight lines): reference"
+     },
+     {
+      "still": "s02_h2_mid_mar2007_A",
+      "caption": "A: eased, spread over 12 months"
+     },
+     {
+      "still": "s02_h2_mid_mar2007_B",
+      "caption": "B: A + “~” estimates before 2009"
+     },
+     {
+      "still": "s02_h2_mid_mar2007_C",
+      "caption": "C: B + “New source” marker (Cowork's pick)"
+     }
+    ]
+   }
+  },
+  {
+   "name": "c03_flagged_stretches",
+   "compose": {
+    "title": "2. The two flagged stretches, as built and smoothed (option C)",
+    "cols": 2,
+    "items": [
+     {
+      "still": "s03_f1_gvu_ews_aug1995_built",
+      "caption": "GVU to EWS, August 1995: as built"
+     },
+     {
+      "still": "s03_f1_gvu_ews_aug1995_smoothed",
+      "caption": "GVU to EWS, August 1995: smoothed"
+     },
+     {
+      "still": "s04_f2_w3c_statcounter_dec2008_built",
+      "caption": "W3Counter to StatCounter, December 2008: as built"
+     },
+     {
+      "still": "s04_f2_w3c_statcounter_dec2008_smoothed",
+      "caption": "W3Counter to StatCounter, December 2008: smoothed"
+     }
+    ]
+   }
+  },
+  {
+   "name": "c04_notes",
+   "compose": {
+    "title": "3. On-screen notes, with and without",
+    "cols": 2,
+    "items": [
+     {
+      "still": "s05_note_jun1996_with",
+      "caption": "June 1996 note: with"
+     },
+     {
+      "still": "s05_note_jun1996_without",
+      "caption": "June 1996 note: without"
+     },
+     {
+      "still": "s06_marker_jul2000_with",
+      "caption": "“New source” marker (July 2000): with"
+     },
+     {
+      "still": "s06_marker_jul2000_without",
+      "caption": "“New source” marker (July 2000): without"
+     }
+    ]
+   }
+  },
+  {
+   "name": "c05_estimated_look",
+   "compose": {
+    "title": "4. Either side of 2009: estimated look and source line",
+    "cols": 2,
+    "items": [
+     {
+      "still": "s07_estimated_dec2008",
+      "caption": "December 2008: estimated (stripes, “~” values, source named)"
+     },
+     {
+      "still": "s07_official_jan2009",
+      "caption": "January 2009: StatCounter, normal look"
+     }
+    ]
+   }
+  },
+  {
+   "name": "c06_values",
+   "compose": {
+    "title": "5. Values from 2009: two decimals (as StatCounter publishes) or one decimal",
+    "cols": 2,
+    "items": [
+     {
+      "still": "s08_values_jan2016_two_decimals",
+      "caption": "Two decimals"
+     },
+     {
+      "still": "s08_values_jan2016_one_decimal",
+      "caption": "One decimal"
+     }
+    ]
+   }
+  },
+  {
+   "name": "c07_features",
+   "compose": {
+    "title": "8. Features to propose: crown, the two dated leader changes, two more callout candidates",
+    "cols": 2,
+    "items": [
+     {
+      "still": "s09_feature_crown_jun2012",
+      "caption": "Crown on the leader's bar"
+     },
+     {
+      "still": "s10_feature_callout_ie_oct1998",
+      "caption": "Callout: Internet Explorer takes the lead (October 1998)"
+     },
+     {
+      "still": "s11_feature_callout_chrome_may2012",
+      "caption": "Callout: Chrome takes the lead (May 2012)"
+     },
+     {
+      "still": "s12_extra_callout_chrome_passes_firefox_nov2011",
+      "caption": "Extra candidate: Chrome passes Firefox for second (November 2011)"
+     },
+     {
+      "still": "s13_extra_callout_safari_passes_ie_sep2014",
+      "caption": "Extra candidate: Safari passes Internet Explorer for second (September 2014)"
+     }
+    ]
+   }
+  },
+  {
+   "name": "c08_boards_with_logos",
+   "compose": {
+    "title": "Logos on the board, 1994 to 2022 (owner decisions DEC-182)",
+    "cols": 2,
+    "items": [
+     {
+      "still": "s17_board_jan1994",
+      "caption": "January 1994"
+     },
+     {
+      "still": "s18_board_jun2005",
+      "caption": "June 2005"
+     },
+     {
+      "still": "s19_board_jun2013",
+      "caption": "June 2013"
+     },
+     {
+      "still": "s20_board_jun2022",
+      "caption": "June 2022"
+     }
+    ]
+   }
+  }
+ ]
+}

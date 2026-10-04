@@ -1,0 +1,15 @@
+{
+ "extends": "config_rtt001_film.json",
+ "kit_version": "rtt001_pilot1_f1_gvu_ews_built",
+ "out": "rtt001_f1_gvu_ews_built.mp4",
+ "window": {
+  "from": "1994-01-01",
+  "to": "1996-12-31"
+ },
+ "pacing": {
+  "final_board_sec": 2.0
+ },
+ "notes": [
+  "Flagged stretch 1 (DEC-168): GVU survey (16 Nov 1994) to Illinois EWS server (30 Apr 1996), where Mosaic hands the lead to Netscape with no figure in between; as built (straight lines). Starts on the first month of the data."
+ ]
+}

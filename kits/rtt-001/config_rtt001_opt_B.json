@@ -1,0 +1,3 @@
+{ "extends": "config_rtt001_opt_A.json", "kit_version": "rtt001_pilot1_optB",
+  "values": { "approx": true },
+  "notes": ["Option B (DEC-167): as A, plus every value before January 2009 reads as a rounded estimate ('~85%', '<1%')."] }

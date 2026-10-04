@@ -1,0 +1,15 @@
+{
+ "extends": "config_rtt001_opt_C.json",
+ "kit_version": "rtt001_pilot1_h1_ews_statmarket_C",
+ "out": "rtt001_h1_ews_statmarket_C.mp4",
+ "window": {
+  "from": "2000-04-01",
+  "to": "2001-12-31"
+ },
+ "pacing": {
+  "final_board_sec": 2.0
+ },
+ "notes": [
+  "Hand-over 1 of 2 with the biggest measurement jump (DEC-167, brief item 1): Illinois EWS server (31 Dec 2000, IE 75.4%) to StatMarket (21 Feb 2001, IE 87.71%), option C (B + \"New source\" marker). Opening board March 2000; April 2000 - December 2001 at 0.5 s per month; no music."
+ ]
+}

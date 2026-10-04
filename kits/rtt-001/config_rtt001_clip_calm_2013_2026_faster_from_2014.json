@@ -1,0 +1,31 @@
+{
+ "extends": "config_rtt001_opt_C.json",
+ "kit_version": "rtt001_pilot1_calm_2013_2026_faster_from_2014",
+ "out": "rtt001_calm_2013_2026_faster_from_2014.mp4",
+ "window": {
+  "from": "2013-01-01",
+  "to": "2026-09-30"
+ },
+ "pacing": {
+  "final_board_sec": 3.0,
+  "sec_per_event": 0.5,
+  "segments": [
+   {
+    "from": "2014-01-31",
+    "sec_per_event": 0.3
+   }
+  ]
+ },
+ "crown": {
+  "enabled": true
+ },
+ "callout": {
+  "enabled": true
+ },
+ "record_hold": {
+  "enabled": true
+ },
+ "notes": [
+  "PROPOSAL (brief item 9, DEC-177): a faster fixed pace of 0.3 s per month from January 2014, a clean year boundary after which Chrome's lead over second place is never below 18 points (checked on series.csv); before that the film pace (0.5 s). Not a speed curve: one named change of pace."
+ ]
+}

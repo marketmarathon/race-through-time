@@ -1,0 +1,25 @@
+{
+ "extends": "config_rtt001_opt_C.json",
+ "kit_version": "rtt001_pilot1_calm_2013_2026_film_pace",
+ "out": "rtt001_calm_2013_2026_film_pace.mp4",
+ "window": {
+  "from": "2013-01-01",
+  "to": "2026-09-30"
+ },
+ "pacing": {
+  "final_board_sec": 3.0,
+  "sec_per_event": 0.5
+ },
+ "crown": {
+  "enabled": true
+ },
+ "callout": {
+  "enabled": true
+ },
+ "record_hold": {
+  "enabled": true
+ },
+ "notes": [
+  "The calm stretch (Chrome far ahead) at the film pace of 0.5 s per month, for comparison with the faster option."
+ ]
+}
