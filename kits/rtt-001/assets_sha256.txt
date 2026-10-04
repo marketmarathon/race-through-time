@@ -1,8 +1,7 @@
 # RTT-001 private assets read by .github/workflows/rtt001_pilot.yml - SHA-256 checked before any render (DEC-060, DEC-061).
 # Files live only in marketmarathon/race-through-time-private (branch claude/compassionate-cray-tlnnkm until merged); never committed here.
-# Browser logos: owner direction DEC-180; sources, licences and notices in kits/rtt-001/logos.json and reference/rights_ledger.md.
+# Browser logos: owner decisions DEC-180, DEC-182; sources, licences and status in kits/rtt-001/logos.json and reference/rights_ledger.md.
 e3db46119b52648c84eae5f6acd682bd7be855819818856e695592b20572eeca  assets/rtt-002/rtt_logo.png
-8dca730a6ce6ab35e43858e666230e2dc7bc9b6b1e470acb63064066a2c6f8f8  assets/rtt-001/logos/internet_explorer.svg
 213cf08d59d8b5247610a33f6907ab250b3dd5fc7d4994785606cd07716e9ed6  assets/rtt-001/logos/chrome.svg
 f44384e76d674ce1734e4a467fdd7627d207e16354a01a8ba9dc9b4f09cccd17  assets/rtt-001/logos/firefox.png
 191584d578a8ba094159f53418919d7933207e8dd3d38512e91eb2490da2e4f8  assets/rtt-001/logos/netscape.svg
@@ -17,3 +16,15 @@ a0bca1ccbbe8a71e38d6efd20bfcf9051d3bade1751b781622df6fa15e302f62  assets/rtt-001
 cc12486b5d9ad7a316ff6633d7efd695152c8f3fe73d14c6a27df45af90858f5  assets/rtt-001/logos/kaios.svg
 e252f65f196abe7b0d647fcd97b1f588d6795fe90681d61ec86f24f4f481d198  assets/rtt-001/logos/seamonkey.svg
 f675603da5ca33f36ffb8e1578332b01c1bad926703f79419b429d2892bcd0f6  assets/rtt-001/logos/brave.svg
+df375912f83b8d467f21a8f61526ba9b71922e68b219c3614e79f2da90225804  assets/rtt-001/logos/internet_explorer.png
+65ef423cd0ff128ca83456b5de3cdc40f24e60b325af910e173b72d197b6135b  assets/rtt-001/logos/safari.png
+2094a49756ffba2e68581a2f1e29181b84c004ee2b85662ea49bf585e67e90c1  assets/rtt-001/logos/mosaic.gif
+b9bb7dafb9e9413804ed9409fac6cd477f4d1d694f7fa8db34096b52888cdf3b  assets/rtt-001/logos/uc_browser.svg
+4a1b7850a96c1bc4d8b7a088bdc7df4afc22f979a90b69868ba77bea6bf3ce81  assets/rtt-001/logos/qq.png
+aef91cea85856f5c99f8a9eaa52aee87f88a291d184802532b961dfa99b76f8f  assets/rtt-001/logos/qihoo360.jpg
+8d59957e04f1b4a70265100f053bce73fddb862aad26016607ba8f1ddde1e36d  assets/rtt-001/logos/mozilla.svg
+938052201cc00dbd2799eb698c1275033244daca29c58b2e1d84bbd555f263b6  assets/rtt-001/logos/nokia.svg
+2e5610ff2f6e8b236abe2004297cec46d05d0cf73a05e5dd734b6c3c0e84b512  assets/rtt-001/logos/sony_ps3.svg
+265908ec49c1d53a398ca266bdbd1b21b557c960bcb8a99732e32c678bd62a23  assets/rtt-001/logos/instabridge.png
+eae522c10459313241b1763efb875e337356325bc047f66b031dcb69de96ef7e  assets/rtt-001/logos/samba.gif
+fbb8b63101950c734369bb734b8bbefa2b8c9929e41af8321ae262b73598e914  assets/rtt-001/logos/cello.gif

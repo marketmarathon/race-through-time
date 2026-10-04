@@ -79,30 +79,39 @@
       text('width', null, 'title ' + Math.round(tw) + ' px wide at 50 px; the date line starts at x ' + Math.round(TLB.x - dw), LEFT, y0 + 230, 'left');
     });
   }
-  /* IQ-13b (DEC-180): every browser logo as drawn on the board (its tile at board size and at 2x), with its Commons
-     licence, and the browsers shown by name only. LOGOS is passed in by render_stills.js from logos.json. */
+  /* IQ-13b/13c (DEC-180, DEC-182): every browser that reaches the board with its logo exactly as drawn there (the tile
+     at board size and at 1.5x; IE's 'e' cropped from its file, IE Mobile sharing it; our own neutral tile where no real
+     logo exists), with the file's status. meta is logos.json, passed in by render_stills.js. */
   function sheetLogos(meta) {
     baseTransform(); window.__LABELS = [];
     ctx.fillStyle = T.ground; ctx.fillRect(0, 0, 1920, 1080);
-    ctx.fillStyle = T.ink; ctx.font = '700 44px ' + FONT; text('title', null, 'RTT-001 browser logos (owner direction; rights basis to confirm)', LEFT, 62, 'left');
-    ctx.fillStyle = T.cap; ctx.font = '500 22px ' + FONT;
-    text('sub', null, 'One logo per browser, unmodified, on a light tile the size of the picture box (left: as on the board; right: twice the size). Source: Wikimedia Commons.', LEFT, 96, 'left');
-    const G = geom(), box = G.PW, rowH = 124;
-    meta.logos.forEach((L, i) => {
-      const col = Math.floor(i / 7), x = LEFT + col * 610, y = 126 + (i % 7) * rowH, im = PICIMG[L.browser_id];
-      const tile = (tx, ty, sz) => { ctx.fillStyle = '#F4F6FA'; rr(tx, ty, sz, sz, 8); ctx.fill();
-        if (im) { const pad = 6 * sz / box, w0 = im.naturalWidth || 1, h0 = im.naturalHeight || 1, sc = Math.min((sz - 2 * pad) / w0, (sz - 2 * pad) / h0);
-          ctx.drawImage(im, tx + (sz - w0 * sc) / 2, ty + (sz - h0 * sc) / 2, w0 * sc, h0 * sc); } };
-      tile(x, y + (rowH - 8 - box) / 2, box); tile(x + box + 14, y, rowH - 8);
-      const tx = x + box + rowH + 24;
-      ctx.fillStyle = T.ink; ctx.font = '600 26px ' + FONT; text('name', L.browser_id, ENT[L.browser_id].label, tx, y + 34, 'left');
-      ctx.fillStyle = T.cap; ctx.font = '500 19px ' + FONT;
-      const fit = t => { let u = t; while (u.length > 3 && ctx.measureText(u).width > x + 590 - tx) u = u.slice(0, -2); return u === t ? t : u.trimEnd() + '…'; };
-      text('lic', L.browser_id, fit(L.licence + ' · ' + L.commons_title.replace('File:', '')), tx, y + 64, 'left');
-      text('auth', L.browser_id, fit(String(L.author)), tx, y + 90, 'left');
+    ctx.fillStyle = T.ink; ctx.font = '700 40px ' + FONT; text('title', null, 'RTT-001 browser logos (owner decisions; identification only)', LEFT, 56, 'left');
+    ctx.fillStyle = T.cap; ctx.font = '500 20px ' + FONT;
+    text('sub', null, 'Every browser that reaches the top 10, its logo as on the board (left) and larger (right). Free = public domain or a free licence; non-free = used only to identify the browser.', LEFT, 88, 'left');
+    const by = {}; for (const L of meta.logos) by[L.browser_id] = L;
+    const ids = onBoard(), per = 10, rowH = 94, G = geom(), box = G.PW, big = 82;
+    ids.forEach((id, i) => {
+      const col = Math.floor(i / per), x = LEFT + col * 610, y = 112 + (i % per) * rowH;
+      const L = by[id] && by[id].same_as ? by[by[id].same_as] : by[id];
+      const tile = (tx, ty, sz) => {
+        const im = PICIMG[id], own = PIC.own && PIC.own[id];
+        if (im) { ctx.fillStyle = '#F4F6FA'; rr(tx, ty, sz, sz, 8); ctx.fill();
+          const cr = (PIC.crop && PIC.crop[id]) || { x: 0, y: 0, w: im.naturalWidth || 1, h: im.naturalHeight || 1 }, pad = 6 * sz / box, sc = Math.min((sz - 2 * pad) / cr.w, (sz - 2 * pad) / cr.h);
+          if (Math.max(cr.w, cr.h) <= 64) ctx.imageSmoothingEnabled = false;
+          ctx.drawImage(im, cr.x, cr.y, cr.w, cr.h, tx + (sz - cr.w * sc) / 2, ty + (sz - cr.h * sc) / 2, cr.w * sc, cr.h * sc); ctx.imageSmoothingEnabled = true; }
+        else if (own) { ctx.fillStyle = darkenForWhite(ENT[id].colour); rr(tx, ty, sz, sz, 8); ctx.fill(); ctx.fillStyle = '#F4F6FA'; ctx.textAlign = 'center';
+          let fs = Math.round(sz * 0.30); ctx.font = '700 ' + fs + 'px ' + FONT; while (fs > 10 && ctx.measureText(own.text).width > sz - 10) { fs--; ctx.font = '700 ' + fs + 'px ' + FONT; }
+          ctx.fillText(own.text, tx + sz / 2, ty + sz * 0.50); ctx.font = '500 ' + Math.round(sz * 0.24) + 'px ' + FONT; ctx.fillText(String(own.year), tx + sz / 2, ty + sz * 0.82); ctx.textAlign = 'left'; }
+        else { ctx.strokeStyle = '#F06A6A'; ctx.lineWidth = 2; rr(tx + 1, ty + 1, sz - 2, sz - 2, 8); ctx.stroke(); } };
+      tile(x, y + (big - box) / 2, box); tile(x + box + 12, y, big);
+      const tx = x + box + big + 24;
+      const fit = t => { let u = String(t); while (u.length > 3 && ctx.measureText(u).width > x + 595 - tx) u = u.slice(0, -2); return u === String(t) ? u : u.trimEnd() + '\u2026'; };
+      ctx.fillStyle = T.ink; ctx.font = '600 24px ' + FONT; text('name', id, ENT[id].label, tx, y + 28, 'left');
+      ctx.fillStyle = T.cap; ctx.font = '500 17px ' + FONT;
+      const own = meta.own_tiles && meta.own_tiles[id];
+      const l1 = own ? 'Our own neutral tile: no logo found' : L ? (/non-free/.test(L.status || '') ? 'non-free: identification use only' : 'free \u00b7 ' + (L.licence || '')) : 'NO LOGO', l2 = own ? own.why : L ? (L.commons_title ? L.commons_title.replace('File:', '') : L.site) + (by[id] && by[id].same_as ? ' (as Internet Explorer)' : '') + (L.crop ? ' \u00b7 cropped' : '') : '';
+      text('lic', id, fit(l1), tx, y + 52, 'left'); text('src', id, fit(l2), tx, y + 74, 'left');
     });
-    ctx.fillStyle = T.cap; ctx.font = '500 22px ' + FONT;
-    text('foot', null, 'Name only (no usable file found): ' + Object.keys(meta.name_only).map(id => ENT[id] ? ENT[id].label : id).join(', ') + '.', LEFT, 1040, 'left');
   }
   window.RTT001_SHEETS = { sheet_palette: sheetPalette, sheet_titles: sheetTitles, sheet_logos: sheetLogos };
 })();

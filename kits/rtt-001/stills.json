@@ -234,6 +234,26 @@
    "sheet": "sheet_logos"
   },
   {
+   "name": "s17_board_jan1994",
+   "config": "config_rtt001_opt_C.json",
+   "at": "1994-01-31"
+  },
+  {
+   "name": "s18_board_jun2005",
+   "config": "config_rtt001_opt_C.json",
+   "at": "2005-06-30"
+  },
+  {
+   "name": "s19_board_jun2013",
+   "config": "config_rtt001_opt_C.json",
+   "at": "2013-06-30"
+  },
+  {
+   "name": "s20_board_jun2022",
+   "config": "config_rtt001_opt_C.json",
+   "at": "2022-06-30"
+  },
+  {
    "name": "c01_h1_ews_statmarket_options",
    "compose": {
     "title": "1. EWS server to StatMarket (December 2000 to February 2001): January 2001, the middle of the hand-over",
@@ -392,6 +412,31 @@
      {
       "still": "s13_extra_callout_safari_passes_ie_sep2014",
       "caption": "Extra candidate: Safari passes Internet Explorer for second (September 2014)"
+     }
+    ]
+   }
+  },
+  {
+   "name": "c08_boards_with_logos",
+   "compose": {
+    "title": "Logos on the board, 1994 to 2022 (owner decisions DEC-182)",
+    "cols": 2,
+    "items": [
+     {
+      "still": "s17_board_jan1994",
+      "caption": "January 1994"
+     },
+     {
+      "still": "s18_board_jun2005",
+      "caption": "June 2005"
+     },
+     {
+      "still": "s19_board_jun2013",
+      "caption": "June 2013"
+     },
+     {
+      "still": "s20_board_jun2022",
+      "caption": "June 2022"
      }
     ]
    }

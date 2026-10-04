@@ -238,7 +238,6 @@
   "enabled": true,
   "dir": "logos",
   "files": {
-   "internet_explorer": "internet_explorer.svg",
    "chrome": "chrome.svg",
    "firefox": "firefox.png",
    "netscape": "netscape.svg",
@@ -252,14 +251,51 @@
    "maxthon": "maxthon.jpg",
    "kaios": "kaios.svg",
    "seamonkey": "seamonkey.svg",
-   "brave": "brave.svg"
+   "brave": "brave.svg",
+   "internet_explorer": "internet_explorer.png",
+   "ie_mobile": "internet_explorer.png",
+   "safari": "safari.png",
+   "mosaic": "mosaic.gif",
+   "uc_browser": "uc_browser.svg",
+   "qq": "qq.png",
+   "qihoo360": "qihoo360.jpg",
+   "mozilla": "mozilla.svg",
+   "nokia": "nokia.svg",
+   "sony_ps3": "sony_ps3.svg",
+   "instabridge": "instabridge.png",
+   "samba": "samba.gif",
+   "cello": "cello.gif"
   },
   "tile": true,
   "tile_pad": 6,
   "placeholder": false,
   "height_frac": 0.92,
   "aspect": 1.0,
-  "gap": 14
+  "gap": 14,
+  "crop": {
+   "internet_explorer": {
+    "x": 19,
+    "y": 13,
+    "w": 117,
+    "h": 120
+   },
+   "ie_mobile": {
+    "x": 19,
+    "y": 13,
+    "w": 117,
+    "h": 120
+   }
+  },
+  "own": {
+   "lynx": {
+    "text": "Lynx",
+    "year": 1992
+   },
+   "netfront": {
+    "text": "NetFront",
+    "year": 1995
+   }
+  }
  },
  "crown": {
   "enabled": false,

@@ -31,7 +31,7 @@ function logoPlaceholders(cfg, dir) {
   const d = path.join(dir, cfg.pictures && cfg.pictures.dir || 'logos'); fs.mkdirSync(d, { recursive: true });
   for (const name of Object.values(files)) {
     if (name.toLowerCase().endsWith('.svg')) fs.writeFileSync(path.join(d, name), '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="#3A7BD5"/></svg>');
-    else placeholderPNG(path.join(d, name), 120, 120, [58, 123, 213]);
+    else placeholderPNG(path.join(d, name), 400, 200, [58, 123, 213]);   // wide enough for a crop rectangle
   }
   return Object.keys(files);
 }

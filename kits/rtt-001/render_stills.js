@@ -32,8 +32,9 @@ function stillConfig(s) { return merge(rtt.loadConfig('../rtt-001/' + s.config),
 
 /* the frame a still shows: the last frame of month `at`'s beat, or the film's last frame */
 async function targetFrame(pg, s) {
-  const info = await pg.evaluate(() => ({ dates: TL.events.map(e => e.date), start: TL.startFrame, raceFrames: RACE_FRAMES }));
+  const info = await pg.evaluate(() => ({ dates: TL.events.map(e => e.date), start: TL.startFrame, raceFrames: RACE_FRAMES, opening: TL.openingEvent.date }));
   if (s.at === 'final') return info.raceFrames - 1;
+  if (s.at === info.opening && !info.dates.includes(s.at)) return info.start[0] - 1;   // the opening board (e.g. January 1994)
   const k = info.dates.indexOf(s.at);
   if (k < 0) throw new Error(s.name + ': no month end ' + s.at + ' in ' + s.config);
   if (s.after_moment_sec != null) {               // a callout: that many seconds after the frame its figures cross

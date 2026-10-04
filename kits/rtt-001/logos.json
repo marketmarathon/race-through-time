@@ -18,7 +18,7 @@
    "bytes": 2422,
    "ext": "svg",
    "sha256": "8dca730a6ce6ab35e43858e666230e2dc7bc9b6b1e470acb63064066a2c6f8f8",
-   "private_path": "assets/rtt-001/logos/internet_explorer.svg",
+   "private_path": "assets/rtt-001/logos/internet_explorer_10_11_unused.svg",
    "site": "commons.wikimedia.org",
    "status": "superseded by the IE6 crop (DEC-182 (4)); file kept in the private repo, not drawn"
   },
@@ -340,7 +340,9 @@
     "w": 117,
     "h": 120
    },
-   "crop_note": "crop only (owner decision DEC-182 (4)): the 'e' at x 21-133, y 15-130 of the file plus a 2 px margin; done at draw time, the stored file is unmodified"
+   "crop_note": "crop only (owner decision DEC-182 (4)): the 'e' at x 21-133, y 15-130 of the file plus a 2 px margin; done at draw time, the stored file is unmodified",
+   "sha256": "df375912f83b8d467f21a8f61526ba9b71922e68b219c3614e79f2da90225804",
+   "private_path": "assets/rtt-001/logos/internet_explorer.png"
   },
   {
    "browser_id": "ie_mobile",
@@ -366,7 +368,9 @@
     512
    ],
    "bytes": 459039,
-   "ext": "png"
+   "ext": "png",
+   "sha256": "65ef423cd0ff128ca83456b5de3cdc40f24e60b325af910e173b72d197b6135b",
+   "private_path": "assets/rtt-001/logos/safari.png"
   },
   {
    "browser_id": "mosaic",
@@ -385,7 +389,9 @@
     179
    ],
    "bytes": 22719,
-   "ext": "gif"
+   "ext": "gif",
+   "sha256": "2094a49756ffba2e68581a2f1e29181b84c004ee2b85662ea49bf585e67e90c1",
+   "private_path": "assets/rtt-001/logos/mosaic.gif"
   },
   {
    "browser_id": "uc_browser",
@@ -404,7 +410,9 @@
     316
    ],
    "bytes": 3910,
-   "ext": "svg"
+   "ext": "svg",
+   "sha256": "b9bb7dafb9e9413804ed9409fac6cd477f4d1d694f7fa8db34096b52888cdf3b",
+   "private_path": "assets/rtt-001/logos/uc_browser.svg"
   },
   {
    "browser_id": "qq",
@@ -423,7 +431,9 @@
     135
    ],
    "bytes": 13597,
-   "ext": "png"
+   "ext": "png",
+   "sha256": "4a1b7850a96c1bc4d8b7a088bdc7df4afc22f979a90b69868ba77bea6bf3ce81",
+   "private_path": "assets/rtt-001/logos/qq.png"
   },
   {
    "browser_id": "qihoo360",
@@ -442,7 +452,9 @@
     55
    ],
    "bytes": 6809,
-   "ext": "jpg"
+   "ext": "jpg",
+   "sha256": "aef91cea85856f5c99f8a9eaa52aee87f88a291d184802532b961dfa99b76f8f",
+   "private_path": "assets/rtt-001/logos/qihoo360.jpg"
   },
   {
    "browser_id": "mozilla",
@@ -461,7 +473,9 @@
     278
    ],
    "bytes": 2045,
-   "ext": "svg"
+   "ext": "svg",
+   "sha256": "8d59957e04f1b4a70265100f053bce73fddb862aad26016607ba8f1ddde1e36d",
+   "private_path": "assets/rtt-001/logos/mozilla.svg"
   },
   {
    "browser_id": "nokia",
@@ -480,7 +494,9 @@
     53
    ],
    "bytes": 1301,
-   "ext": "svg"
+   "ext": "svg",
+   "sha256": "938052201cc00dbd2799eb698c1275033244daca29c58b2e1d84bbd555f263b6",
+   "private_path": "assets/rtt-001/logos/nokia.svg"
   },
   {
    "browser_id": "sony_ps3",
@@ -499,7 +515,9 @@
     134
    ],
    "bytes": 3526,
-   "ext": "svg"
+   "ext": "svg",
+   "sha256": "2e5610ff2f6e8b236abe2004297cec46d05d0cf73a05e5dd734b6c3c0e84b512",
+   "private_path": "assets/rtt-001/logos/sony_ps3.svg"
   },
   {
    "browser_id": "instabridge",
@@ -518,7 +536,9 @@
     361
    ],
    "bytes": 5655,
-   "ext": "png"
+   "ext": "png",
+   "sha256": "265908ec49c1d53a398ca266bdbd1b21b557c960bcb8a99732e32c678bd62a23",
+   "private_path": "assets/rtt-001/logos/instabridge.png"
   },
   {
    "browser_id": "samba",
@@ -537,7 +557,9 @@
     32
    ],
    "bytes": 201,
-   "ext": "gif"
+   "ext": "gif",
+   "sha256": "eae522c10459313241b1763efb875e337356325bc047f66b031dcb69de96ef7e",
+   "private_path": "assets/rtt-001/logos/samba.gif"
   },
   {
    "browser_id": "cello",
@@ -556,13 +578,15 @@
     32
    ],
    "bytes": 216,
-   "ext": "gif"
+   "ext": "gif",
+   "sha256": "fbb8b63101950c734369bb734b8bbefa2b8c9929e41af8321ae262b73598e914",
+   "private_path": "assets/rtt-001/logos/cello.gif"
   }
  ],
  "name_only": {
   "dolfin": "never in the top 10 of any month (checked under every option): not on the board, so no logo is needed"
  },
- "fetched": "race-through-time-private claude/compassionate-cray-tlnnkm commit 630aacd, by rtt001_assets.yml run https://github.com/marketmarathon/race-through-time/actions/runs/37194306876 (4 Oct 2026); SHA-1 equal to the Commons API and to this list for all 15",
+ "fetched": "race-through-time-private claude/compassionate-cray-tlnnkm: commit 630aacd (15 files, rtt001_assets.yml run 37194306876) and commit 3d784d1 (13 more, run https://github.com/marketmarathon/race-through-time/actions/runs/37214246516), 4 Oct 2026; each SHA-1 equal to its file page (or, for Apple's Safari icon, the SHA-256 recorded here)",
  "own_tiles": {
   "lynx": {
    "text": "Lynx",
