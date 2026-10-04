@@ -1,0 +1,7 @@
+StatCounter Global Stats - browser market share, worldwide, all platforms (desktop + mobile + tablet + console), monthly
+URL: https://gs.statcounter.com/chart.php?statType_hidden=browser&region_hidden=ww&granularity=monthly&fromInt=200901&toInt=202609&fromMonthYear=2009-01&toMonthYear=2026-09&device_hidden=desktop%2Bmobile%2Btablet%2Bconsole&csv=1
+Retrieved: 2026-10-03 12:12 UTC (GitHub runner, run https://github.com/marketmarathon/race-through-time/actions/runs/37122102266); again 13:00 UTC (run 37124724022), identical
+File: statcounter_browser_ww_all_monthly_200901-202609.csv, 37,466 bytes, 214 lines (header + 213 months, 2009-01 to 2026-09), LF line endings, ASCII
+SHA-256: f595b08621cdd8029e0071597780ab00ac72e45c67bad7b926c4fe2ce925dc7e
+How it got here: the runner printed the file line by line to its log (this container cannot reach gs.statcounter.com); Claude Code rebuilt it from the log and checked the SHA-256 above.
+Licence: Creative Commons Attribution-Share Alike 3.0 Unported (https://gs.statcounter.com/faq). Credit StatCounter Global Stats with a link: https://gs.statcounter.com

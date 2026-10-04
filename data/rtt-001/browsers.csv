@@ -1,0 +1,46 @@
+browser_id,display_name,maker,statcounter_labels,family_rule,colour_key,logo_ref,first_point,last_point,best_rank
+mosaic,Mosaic,"NCSA and licensees (Spyglass, SPRY, Quarterdeck and others)",,"Every Mosaic variant a source reports: GVU xmosaic + winmosaic + macmosaic (summed per date); EWS 'Mosaic', which until May 1996 includes Microsoft's browser, then 'Mosaic (other than MS)'",,,1994-01-31,1997-06-30,1
+netscape,Netscape,Netscape Communications (AOL from 1999),,"Navigator, Communicator and Netscape 6-9",,,1994-11-16,2007-01-31,1
+internet_explorer,Internet Explorer,Microsoft,IE,All Internet Explorer versions (EWS 'Microsoft'; StatCounter 'IE'); Edge and IE Mobile are separate,,,1996-06-30,2026-09-30,1
+edge,Microsoft Edge,Microsoft,Edge|Edge Legacy,"StatCounter 'Edge' + 'Edge Legacy' summed per month (one browser, two labels; DEC-155 question)",,,2015-07-31,2026-09-30,3
+firefox,Firefox,Mozilla,Firefox,Firefox only; the Mozilla Suite / SeaMonkey are separate,,,2004-11-22,2026-09-30,2
+mozilla,Mozilla Suite,Mozilla,Mozilla,"Source label 'Mozilla' (the Mozilla Application Suite and other non-Firefox Mozilla browsers, as the source reports)",,,2002-09-30,2026-09-30,2
+seamonkey,SeaMonkey,SeaMonkey project,SeaMonkey,As StatCounter reports it,,,2009-01-31,2023-10-31,10
+safari,Safari,Apple,Safari,As the source reports it,,,2003-02-03,2026-09-30,2
+chrome,Chrome,Google,Chrome,As the source reports it,,,2009-01-31,2026-09-30,1
+opera,Opera,Opera,Opera,All Opera versions,,,2001-10-25,2026-09-30,3
+lynx,Lynx,University of Kansas,,As the source reports it,,,1994-01-31,1997-06-30,2
+cello,Cello,Cornell Law School,,As the source reports it,,,1994-01-31,1994-01-31,4
+samba,Samba,CERN,,As the source reports it (GVU Jan 1994),,,1994-01-31,1994-01-31,3
+macweb,MacWeb,EINet,,As the source reports it,,,1994-11-16,1994-11-16,
+aol,AOL,AOL,AOL,As the source reports it (StatMarket counted AOL inside Internet Explorer; never added again),,,2007-05-31,2012-03-31,5
+android,Android Browser,Google,Android,StatCounter 'Android' (the stock Android browser),,,2009-01-31,2026-09-30,5
+uc_browser,UC Browser,UCWeb (Alibaba),UC Browser,,,,2010-03-31,2026-09-30,3
+samsung_internet,Samsung Internet,Samsung,Samsung Internet,,,,2016-02-29,2026-09-30,4
+samsung,Samsung (other),Samsung,Samsung,StatCounter's separate 'Samsung' label,,,2009-08-31,2016-02-29,12
+nokia,Nokia,Nokia,Nokia,,,,2009-01-31,2019-12-31,6
+blackberry,BlackBerry,BlackBerry,BlackBerry,,,,2009-01-31,2020-08-31,6
+ie_mobile,IE Mobile,Microsoft,IEMobile,"Kept separate from desktop Internet Explorer, as StatCounter reports it (DEC-155 question)",,,2009-01-31,2024-01-31,8
+yandex,Yandex Browser,Yandex,Yandex Browser,,,,2012-11-30,2026-09-30,9
+netfront,NetFront,Access,NetFront,,,,2009-01-31,2019-03-31,9
+qihoo360,360 Safe Browser,Qihoo 360,360 Safe Browser,,,,2012-05-31,2026-09-30,9
+qq,QQ Browser,Tencent,QQ Browser,,,,2012-04-30,2026-09-30,8
+maxthon,Maxthon,Maxthon,Maxthon,,,,2009-12-31,2024-01-31,6
+sogou,Sogou Explorer,Sogou,Sogou Explorer,,,,2012-07-31,2026-09-30,13
+coc_coc,Coc Coc,Coc Coc,Coc Coc,,,,2014-06-30,2026-09-30,12
+sony_ps3,Sony PS3,Sony,Sony PS3,,,,2009-01-31,2018-12-31,9
+chromium,Chromium,Chromium project,Chromium,,,,2011-04-30,2025-03-31,12
+silk,Silk,Amazon,Silk,,,,2012-03-31,2017-01-31,12
+puffin,Puffin,CloudMosa,Puffin,,,,2013-07-31,2026-09-30,12
+kaios,KaiOS,KaiOS,KaiOS,,,,2018-03-31,2026-09-30,10
+dolfin,Dolfin,Samsung,Dolfin,,,,2011-04-30,2018-01-31,11
+sony_ps4,Sony PS4,Sony,Sony PS4,,,,2014-02-28,2026-09-30,13
+brave,Brave,Brave Software,Brave,,,,2025-03-31,2026-09-30,7
+whale,Whale Browser,Naver,Whale Browser,,,,2017-10-31,2026-09-30,12
+openwave,Openwave,Openwave,Openwave,,,,2009-01-31,2017-01-31,12
+phantom,Phantom,Phantom,Phantom,StatCounter label as published,,,2012-08-31,2018-08-31,21
+instabridge,Instabridge,Instabridge,Instabridge,,,,2022-01-31,2026-09-30,7
+pale_moon,Pale Moon,Moonchild Productions,Pale Moon,,,,2012-06-30,2026-09-30,17
+sonyericsson,SonyEricsson,Sony Ericsson,SonyEricsson,,,,2009-01-31,2018-07-31,12
+obigo,Obigo,Obigo,Obigo,,,,2011-05-31,2016-02-29,12
+jasmine,Jasmine,Samsung,Jasmine,,,,2011-04-30,2015-05-31,12

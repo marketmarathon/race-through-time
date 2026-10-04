@@ -1,8 +1,8 @@
 {
   "schema": "rtt-state/0.1",
-  "updated": "2026-10-02",
-  "updated_by": "Claude (Claude Code cloud session): IQ-10 round 6 - RTT-003 design approved (DEC-146), music Powerup! verified and mixed (DEC-147, DEC-148), WCAG flash check passed (DEC-149), FULL FILM rendered to a private pre-release; pull request #13 open, not merged",
-  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); starts data audit PASSED (DEC-058/DEC-059, merged PR #8); IQ-04 MERGED (PR #2); IQ-05 rounds 1-5 MERGED (PR #3-#7); round-5 pilot RENDERED and APPROVED by Luke (DEC-062, visual direction = milestone 3); pull request #9 MERGED (c378ea7); RTT-002 FINAL FILM APPROVED (DEC-078), pull request #10 MERGED (main ef01814), UPLOADED by Luke in YouTube Studio and SCHEDULED PUBLIC 30 Sep 2026 (DEC-079 early release, DEC-080): video 2fY7Bzq8Uu0 on channel UC8R47xbyBB5Z93MdMkoUOWg; IQ-09 RTT-003 DATA BUILD DONE 1 Oct 2026; Luke's answers applied 2 Oct 2026 (DEC-093..DEC-102); pull request #12 MERGED 2 Oct 2026 (main 4288f6d); IQ-10 RTT-003 DESIGN PILOT ROUND 5 (FINAL PILOT ROUND) RENDERED 3 Oct 2026 (private pre-release; not the full film), awaiting Luke's review; IQ-11 (3 Oct 2026): CLAUDE.md and reference/house_style.md added on the IQ-10 branch (DEC-145); next episode RTT-001 Browser Wars (DEC-144); IQ-10 round 6 (3 Oct 2026): RTT-003 design APPROVED (DEC-146), FULL FILM with music rendered to a private pre-release, awaiting Luke's approval by SHA-256",
+  "updated": "2026-10-04",
+  "updated_by": "Claude (Claude Code cloud session): IQ-12b - Luke's answers to the RTT-001 data questions recorded (DEC-164..DEC-167), hand-over order check (DEC-168); pull request #15 updated, not merged",
+  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); starts data audit PASSED (DEC-058/DEC-059, merged PR #8); IQ-04 MERGED (PR #2); IQ-05 rounds 1-5 MERGED (PR #3-#7); round-5 pilot RENDERED and APPROVED by Luke (DEC-062, visual direction = milestone 3); pull request #9 MERGED (c378ea7); RTT-002 FINAL FILM APPROVED (DEC-078), pull request #10 MERGED (main ef01814), UPLOADED by Luke in YouTube Studio and SCHEDULED PUBLIC 30 Sep 2026 (DEC-079 early release, DEC-080): video 2fY7Bzq8Uu0 on channel UC8R47xbyBB5Z93MdMkoUOWg; IQ-09 RTT-003 DATA BUILD DONE 1 Oct 2026; Luke's answers applied 2 Oct 2026 (DEC-093..DEC-102); pull request #12 MERGED 2 Oct 2026 (main 4288f6d); IQ-10 RTT-003 DESIGN PILOT ROUND 5 (FINAL PILOT ROUND) RENDERED 3 Oct 2026 (private pre-release; not the full film), awaiting Luke's review; IQ-11 (3 Oct 2026): CLAUDE.md and reference/house_style.md added on the IQ-10 branch (DEC-145); next episode RTT-001 Browser Wars (DEC-144); IQ-10 round 6 (3 Oct 2026): RTT-003 design APPROVED (DEC-146), FULL FILM with music rendered to a private pre-release, awaiting Luke's approval by SHA-256; IQ-12 (3 Oct 2026): RTT-001 Browser Wars DATA BUILD done (data/rtt-001, 11/11 checks PASS), pull request open, awaiting Luke's answers to 12 questions; IQ-12b (4 Oct 2026): Luke answered all 12 RTT-001 questions (DEC-164..DEC-166), smoothing direction for the pilot (DEC-167), order check (DEC-168)",
   "canonical_queue": "state/ folder on main in marketmarathon/race-through-time (this file)",
   "repo_baseline": {
     "repo": "marketmarathon/bars",
@@ -54,11 +54,30 @@
     {
       "id": "RTT-001",
       "title": "Browser Wars",
-      "state": "FEASIBILITY",
-      "check_level": "DESK",
+      "state": "DATA_BUILD_APPROVED_PENDING_MERGE",
+      "check_level": "LIVE",
       "verdict": "CONDITIONAL",
-      "blocker": "series start / era overclaim",
-      "next": "NEXT VIDEO after RTT-003 (DEC-144): full browser wars incl. the Netscape-vs-Internet Explorer era before StatCounter; early years as on-screen estimates; open: desktop only or all devices from the smartphone era; waiting on Luke's ChatGPT deep research"
+      "blocker": "Merge pull request #15 (Luke). Then the design pilot (DEC-069): smoothing options A/B/C side by side (DEC-167, Cowork recommends C); June 1996 note and new-source marker (DEC-165); decide the two flagged hand-overs GVU>EWS (leader changes) and W3Counter>StatCounter (Safari/Opera swap) (DEC-168)",
+      "decisions": "DEC-144 (next video); owner DEC-152..DEC-154 (3 Oct 2026: one source per period, straight lines across hand-overs with the estimated look before 2009, all devices); Claude working choices DEC-155..DEC-159, DEC-162; verification DEC-160, DEC-161; findings DEC-163; Luke's answers 4 Oct 2026: DEC-164 (DEC-155..DEC-159, DEC-162 CONFIRMED), DEC-165 (pilot notes), DEC-166 (GVU credit), DEC-167 (smoothing where data is missing, pilot only; series.csv unchanged); DEC-168 (order check)",
+      "dataset": {
+        "branch": "claude/jolly-volta-5lr5ql (pull request open, not merged)",
+        "path": "data/rtt-001/",
+        "contract": "reference/metric_contract_RTT-001.md v1.0",
+        "build": "scripts/build_rtt001_dataset.py (rtt001-build/1.1, standard library, deterministic; adds handover_order.csv)",
+        "range": "393 month ends, 1994-01-31 to 2026-09-30",
+        "eras": "GVU 1994 > EWS Apr 1996-Dec 2000 > StatMarket Feb 2001-Aug 2002 > OneStat Sep 2002-Jan 2007 > W3Counter May 2007-Dec 2008 > StatCounter Jan 2009-Sep 2026 (all platforms)",
+        "browsers": 45,
+        "series_rows": 17685,
+        "observations": 9997,
+        "pre2009_verified": 532,
+        "unverified_cross_checks": 384,
+        "unverified_used": 0,
+        "checks": "11/11 PASS",
+        "statcounter_export_sha256": "f595b08621cdd8029e0071597780ab00ac72e45c67bad7b926c4fe2ce925dc7e",
+        "leaders": "Mosaic 1994-01 > Netscape 1995-06 (on the GVU-EWS hand-over line, not a dated fact) > Internet Explorer 1998-10 (observed) > Chrome 2012-05 (observed)",
+        "handover_order": "same order: EWS>StatMarket, StatMarket>OneStat, OneStat>W3Counter; FLAGGED: GVU>EWS (leader Mosaic>Netscape), W3Counter>StatCounter (Safari/Opera swap)"
+      },
+      "next": "Luke merges #15; then RTT-001 design pilot with options A/B/C side by side (stills or short clips), nothing rendered before his approval of the proposals (DEC-069)"
     },
     {
       "id": "RTT-002",
@@ -675,6 +694,38 @@
         ],
         "decisions": "DEC-144, DEC-145"
       }
+    },
+    {
+      "id": "IQ-12",
+      "task": "RTT-001 Browser Wars data build (data only): metric contract, StatCounter all-platform export, pre-2009 figures verified at source, series/observations/browsers, checks, report for Luke; record DEC-152..DEC-163",
+      "where": "branch claude/jolly-volta-5lr5ql, pull request (not merged); prompt prompts/CODE_SESSION_IQ-12.md",
+      "status": "DONE 3 Oct 2026: data build complete, 11/11 checks PASS; nothing rendered, no player or visual change",
+      "result": {
+        "files": [
+          "reference/metric_contract_RTT-001.md",
+          "scripts/build_rtt001_dataset.py",
+          "scripts/rtt001_check_sources.py",
+          ".github/workflows/rtt001_sources.yml",
+          "data/rtt-001/",
+          "reports/RTT-001_data_report.md",
+          "reports/RTT-001_source_access.md",
+          "reference/rights_ledger.md",
+          "state/DECISIONS.md",
+          "state/STATE.json",
+          "state/HANDOVER.md",
+          "prompts/CODE_SESSION_IQ-12.md"
+        ],
+        "decisions": "DEC-152..DEC-163"
+      }
+    },
+    {
+      "id": "IQ-12b",
+      "task": "Record Luke's answers to the RTT-001 data questions (DEC-164..DEC-167), confirm DEC-155..DEC-159 and DEC-162, add the hand-over/long-gap order check (DEC-168)",
+      "where": "branch claude/jolly-volta-5lr5ql, pull request #15; prompt prompts/CODE_SESSION_IQ-12b.md",
+      "status": "DONE 4 Oct 2026: series.csv, observations.csv and leaders.csv unchanged; build 1.1 adds handover_order.csv; nothing rendered",
+      "result": {
+        "decisions": "DEC-164..DEC-168"
+      }
     }
   ],
   "rtt_repo": {
@@ -768,7 +819,9 @@
     "after": "RTT-003",
     "decision": "DEC-144 (Luke, Cowork chat, 2 Oct 2026)",
     "scope": "the full browser wars, including the Netscape-vs-Internet Explorer era before StatCounter's series begins; figures for the early years built from the best available historical sources and shown on screen as estimates",
-    "open_question": "desktop only, or all devices from the smartphone era (not blocking)",
-    "research": "ChatGPT deep research prompt is with Luke; no answer yet"
+    "open_question": "answered: all devices (DEC-154)",
+    "research": "ChatGPT deep research received and used as leads only; every used figure verified at source (DEC-161)",
+    "data_build": "IQ-12, 3 Oct 2026: data/rtt-001, reports/RTT-001_data_report.md",
+    "answers": "4 Oct 2026: all 12 data questions answered (DEC-164..DEC-166); smoothing direction DEC-167"
   }
 }
