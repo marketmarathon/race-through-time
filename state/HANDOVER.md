@@ -1,8 +1,49 @@
-# HANDOVER — 3 Oct 2026 (session 14, Claude Code cloud session: RTT-003 record-keeping — film approved, merges confirmed, upload and release recorded)
+# HANDOVER — 4 Oct 2026 (session 14, Claude Code cloud session: IQ-12, the RTT-001 Browser Wars data build, and IQ-12b, Luke's answers). The previous session's notes (IQ-10 round 6 and IQ-11) follow below.
 
-Previous handovers are in this file's git history. This session was record-keeping only: no renders, and no data, player or workflow changes. Branch `claude/compassionate-faraday-leeckn`; prompt `prompts/CODE_SESSION_RTT-003_record.md` (with Luke's thumbnail correction appended). Decisions DEC-150 and DEC-151. RTT-001 is handled in another session and is not changed here.
+## RTT-001 — Luke's answers (IQ-12b, 4 Oct 2026)
+- **All 12 data questions answered** (prompt `prompts/CODE_SESSION_IQ-12b.md`):
+  - DEC-155 to DEC-159 and DEC-162 are CONFIRMED (DEC-164).
+  - The pilot proposes the June 1996 note and a new-source marker, and there is no dated callout for Netscape passing Mosaic (DEC-165).
+  - The GVU figures are kept, with credit to GVU / Georgia Tech Research Corporation on screen and in the description (DEC-166).
+- **Smoothing direction (DEC-167), for the design pilot only:**
+  - `series.csv` is unchanged: every published figure is untouched, and nothing is rendered.
+  - The pilot shows three options side by side, as stills or short clips:
+    - **A:** eased motion on hand-over and gap stretches, each hand-over spread over about 12 months;
+    - **B:** A plus rounded "~85%" labels before 2009;
+    - **C:** B plus the new-source marker. Cowork recommends C.
+  - Labelling rule unchanged: everything before 2009 in the estimated look, with the source named.
+- **Order check (DEC-168, build 1.1, `data/rtt-001/handover_order.csv`):**
+  - Same order across EWS→StatMarket, StatMarket→OneStat and OneStat→W3Counter.
+  - **Flagged, not to be smoothed until Luke decides:** GVU→EWS (the leader changes, Mosaic to Netscape) and W3Counter→StatCounter (Safari and Opera swap; the leaders are unchanged).
+  - Inside OneStat, two small swaps (Opera/Safari, Netscape/Opera) are real movements in one source's own figures.
+  - Proposed pilot rule: never spread a hand-over into StatCounter's months (from January 2009).
+- **Next:** Luke merges pull request #15. Then the RTT-001 design pilot, with the proposals listed as questions first (DEC-069).
 
-## RTT-003 RELEASED (3 Oct 2026, DEC-150, DEC-151)
+## RTT-001 Browser Wars — DATA BUILD (IQ-12, 3 Oct 2026) — answered 4 Oct 2026 (above)
+- **Branch** `claude/jolly-volta-5lr5ql`, pull request open, **not merged** (DEC-057). Prompt: `prompts/CODE_SESSION_IQ-12.md` (brief SHA-256 `234e0b5f…c5f2`). Data only: nothing rendered, no player or visual change (DEC-069).
+- **Owner decisions recorded:** DEC-152 (one source per period: GVU 1994 → Illinois EWS Apr 1996–Dec 2000 → StatMarket, then OneStat 2001–Apr 2007 → W3Counter May 2007–Dec 2008 → StatCounter from Jan 2009; the race starts Jan 1994), DEC-153 (straight lines, including across hand-overs; estimated look with the source named before 2009), DEC-154 (all devices). DEC-144 already held "RTT-001 is next".
+- **Working choices for Luke:** DEC-155 to DEC-159 and DEC-162. **Verification:** DEC-160, DEC-161. **Findings:** DEC-163. Twelve numbered questions, with Claude's recommendations, are in `reports/RTT-001_data_report.md`.
+- **Data:** `data/rtt-001/` (`browsers.csv`, `observations.csv`, `series.csv`, `leaders.csv`, `CHECKS.md`, `manifest.json`); contract `reference/metric_contract_RTT-001.md`; build `python scripts/build_rtt001_dataset.py data/rtt-001 reports/RTT-001_data_report.md` (deterministic). **11/11 checks PASS.**
+- **Leaders:**
+  1. Mosaic, January 1994.
+  2. Netscape, June 1995. This is on the GVU–EWS hand-over line with no figure, so it is not a dated fact.
+  3. Internet Explorer, October 1998 (observed).
+  4. Chrome, May 2012 (observed).
+- **Verification:**
+  - StatCounter export SHA-256 `f595b086…dc7e` (fetched by a GitHub runner).
+  - GVU and 8 EWS months were checked by the runner.
+  - The web archive then blocked GitHub runners (HTTP 429). Claude in Cowork verified the other 480 pre-2009 figures in Luke's Chrome; the file's SHA-256 is `67905f6b…7336`, and those rows carry capture URLs, not page hashes.
+  - 384 cross-check figures stay UNVERIFIED and are never on screen.
+- **Rules for the next session:**
+  - **(1)** Never use a cross-check source on screen.
+  - **(2)** `.github/workflows/rtt001_sources.yml` runs only on a push that changes it or `scripts/rtt001_check_sources.py` on this branch. Its last mode is a slow archive crawl lasting up to about 6 hours, so leave both files alone unless a check is needed.
+  - **(3)** The web archive rate-limits GitHub runners hard. For archived pages, ask Claude in Cowork to check them in Luke's Chrome.
+  - **(4)** Merge conflicts are expected in `state/` with pull request #14 (DEC-150, DEC-151). Resolve them by keeping both; the numbering does not clash. (Done on 4 Oct 2026, when pull request #14 was brought up to date with `main` `b5a09d3`.)
+- **Next:**
+  1. Luke answers the 12 questions.
+  2. Then a first design pilot for RTT-001, proposing the estimated look, the source line and the hand-over treatment for Luke's approval before anything is rendered (DEC-069).
+
+## RTT-003 RELEASED (3 Oct 2026, DEC-150, DEC-151; recorded in pull request #14, brought up to date with `main` on 4 Oct 2026)
 - **Approved (DEC-150):** Luke approved the exact render in private pre-release `rtt-003-film-2945460-run1` (https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-003-film-2945460-run1): **master `rtt003_film_2945460_3840x2160.mp4`, SHA-256 `8b5b9d245fde4f735bf279e6122106148e9aebb37d7ed0b361c1cbd4feab9f97`, 376,614,655 bytes**, 5 min 8 s. Claude Code checked the release asset's GitHub digest and size: both match. The viewing copy is not part of the approval.
 - **Merged (confirmed on GitHub):** public pull request #13 → **main `618c6a7`** (10:41 UTC, 3 Oct); private pull request #1 (https://github.com/marketmarathon/race-through-time-private/pull/1) → **private main `4d47eb2`** (10:43 UTC, 3 Oct), which brings the RTT-003 pictures, logos and "Powerup!" music onto private `main`.
 - **Published (DEC-151):** uploaded by Luke by hand in YouTube Studio to @racethroughtime (`UC8R47xbyBB5Z93MdMkoUOWg`) and **published public immediately on 3 Oct 2026** (Luke's decision; Claude had recommended scheduling for 6 Oct). **Video `JZzvA_ZDii0`** (https://youtu.be/JZzvA_ZDii0); Studio shows 5:09. Title "Best-Selling Consoles of All Time by Units Shipped (1985–2026)"; description as drafted in Cowork (credits version with decade chapters, no web links yet); custom thumbnail added by Luke. The uploaded file's own size and SHA-256 were not checked by Claude (Luke's report).
@@ -10,12 +51,16 @@ Previous handovers are in this file's git history. This session was record-keepi
   1. End screens on both videos linking RTT-002 (`2fY7Bzq8Uu0`) and RTT-003 (`JZzvA_ZDii0`).
   2. Studio numbers at about 2, 7 and 28 days: RTT-002 about 2 Oct (passed; read it from Studio's date range), 7 Oct and 28 Oct; RTT-003 about 5 Oct, 10 Oct and 31 Oct 2026.
   3. Web links in both descriptions once the channel's advanced features unlock.
+- RTT-003 is released: do not re-render or change it. Any fix would be a new file needing a fresh approval (DEC-078).
 
-## RTT-003 full film (round 6, 3 Oct 2026, DEC-146 to DEC-149) — the render that was approved
-- Design approved (DEC-146); music "Powerup!" by Jeremy Blake, YouTube Audio Library (DEC-147), SHA-256 `a855b541…f7be`, private only, listed in `reference/rights_ledger.md`.
+## Previous session (13, 3 Oct 2026: IQ-10 rounds 1–6 and IQ-11)
+Previous handovers are in this file's git history. That session's work is on branch `claude/sweet-mendel-faig7w` in both repos; the public one had pull request #13, merged by Luke on 3 Oct 2026 (main `618c6a7`); the private branch was merged as private pull request #1 (private main `4d47eb2`). Prompts: `prompts/CODE_SESSION_IQ-11.md` (IQ-11), `prompts/CODE_SESSION_IQ-10.md` (round 1), `-10b.md` (round 2), `-10d.md` (round 4), `-10e.md` (round 5); round 3's decisions are recorded in full as DEC-122 to DEC-129.
+
+## RTT-003 full film (round 6, 3 Oct 2026, DEC-146 to DEC-149) — the render that was approved (DEC-150)
+- Design approved (DEC-146); music "Powerup!" by Jeremy Blake, YouTube Audio Library (DEC-147), SHA-256 `a855b541…f7be`, 11,406,143 bytes, private only, listed in `reference/rights_ledger.md`.
 - Run https://github.com/marketmarathon/race-through-time/actions/runs/37108316963 (0 workflow artifacts). Viewing copy 1920 × 1080 `47b57561317698df000a6394711cd921faf2eb11e9f43dcf9a046ab8fcee2402`, 46,229,964 bytes. 308.23 s (9,247 frames); −16.0 LUFS, true peak −1.5 dBTP; loop joins at 255.93 s and 302.46 s (DEC-148, accepted with the approved file).
-- Before the render: RTT-003 suite 5/5 PASS, phone check PASS; RTT-002 suite 20/20 PASS (results unchanged); WCAG flash check below the thresholds (DEC-149).
-- `.github/workflows/rtt003_film.yml` is now on `main` and can be started from the Actions tab.
+- Before the render: RTT-003 suite 5/5 PASS, phone check PASS; RTT-002 suite 20/20 PASS (results unchanged); WCAG flash check below the thresholds (DEC-149, `reports/RTT-003_wcag_flash_check.md`).
+- `.github/workflows/rtt003_film.yml` is on `main` and can be started from the Actions tab.
 
 ## IQ-11 (3 Oct 2026): standing rules and house style
 - **`CLAUDE.md`** (repo root) now carries the standing rules for every Claude Code session, and **`reference/house_style.md`** the approved design defaults (DEC-145). Read both first. Sections 1–6 of the house style apply to new episodes without asking Luke again unless the subject makes a default wrong; section 7 features are proposed in a new episode's first pilot round for Luke to confirm; DEC-069 is unchanged. When Luke approves a reusable choice, add it to `house_style.md` in the same pull request.
@@ -40,7 +85,7 @@ Previous handovers are in this file's git history. This session was record-keepi
 4. Earlier notes, now informational: the one-quarter "latest figure" on Game Gear (31 Mar 1996) and the four UNVERIFIED GameSpot end-date reports (they move no bar and no label).
 
 ## Rules for the next RTT-003 session
-RTT-003 is released: do not re-render or change it. Any fix would be a new file needing a fresh approval (DEC-078). The text below is kept for reference.
+RTT-003 is released (DEC-151): do not re-render or change it. The text below is kept for reference.
 Read `kits/rtt-003/README.md`, DEC-081 to DEC-143 and `reference/metric_contract_RTT-003.md`. DEC-069: nothing beyond the approved design is built or rendered without Luke's approval; the full film needs his go-ahead after round 5. Render RTT-003 only with `rtt003_pilot.yml` (or a new RTT-003 workflow), never `render_pilot.yml`. Data changes go through `data/rtt-003/source/` and `scripts/build_rtt003_dataset.py`, then `scripts/rtt003_adapter.py`; re-run `node tests/player/run_tests_rtt003.js`. Sources this container cannot reach can be checked with `rtt003_sources.yml` (edit the PAGES list in `scripts/rtt003_check_sources.py`; a push that changes either file runs it).
 
 ## Where RTT-002 stands

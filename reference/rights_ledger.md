@@ -92,6 +92,20 @@ Chosen from the checked list `research/rtt-003-images/RTT-003_images_reconciled_
 
 Private RTT-003 renders (pilot clips and stills): private repo **Releases**, tags `rtt-003-pilot-…`, written by `.github/workflows/rtt003_pilot.yml` (its own workflow; `render_pilot.yml` unchanged), with every file's SHA-256 in the release notes. No music in the pilot.
 
+## RTT-001 Browser Wars data sources (IQ-12, recorded 3 Oct 2026)
+
+Principle: rights before use. The video uses a handful of published percentages per source as facts. **This is a record of the terms found, not legal advice; Isle of Man law has not been checked.** Logos and browser pictures are not chosen yet (`browsers.csv` `logo_ref` is empty) and will get their own rows before use.
+
+| Source | What we use | Terms found (read from) | Obligations / open points | Committed? |
+|---|---|---|---|---|
+| StatCounter Global Stats, browser market share, worldwide, all platforms, monthly 2009-01 to 2026-09 | Every monthly value (era 5) | **CC BY-SA 3.0 Unported.** FAQ https://gs.statcounter.com/faq: "we license our work under a Creative Commons Attribution-Share Alike 3.0 Unported License" (fetched by the GitHub runner, 3 Oct 2026, page SHA-256 `11e4393b…59eb`); "please ensure to credit us (with a link) anywhere you use our stats/data/graphs" (read by Claude in Cowork, 3 Oct 2026) | Credit "StatCounter Global Stats" with a link (https://gs.statcounter.com) on screen and in the description; the derived dataset is shared alike (it is public in this repo) | Yes: raw export `data/rtt-001/source/statcounter_browser_ww_all_monthly_200901-202609.csv` (SHA-256 `f595b086…dc7e`) |
+| GVU WWW User Surveys, Georgia Tech (1st survey Jan 1994; 2nd survey Oct–Nov 1994) | 9 published percentages (era 1) | Copyright page of the 2nd survey (https://sites.cc.gatech.edu/gvu/user_surveys/survey-09-1994/copyright.html, SHA-256 `62c80018…0b00`): "This material may be modified, copied and redistributed … subject to the following restrictions: (a) The recipient may not derive income for the Georgia Tech Research Corporation (herein "GTRC") information itself; (b) In any material based on this information, the recipient agrees to acknowledge GTRC" | **Luke decided on 4 Oct 2026 (DEC-166):** keep the GVU 1994 figures and credit GVU / Georgia Tech Research Corporation on screen and in the description. Restriction (a) was put to him first. Not legal advice; Isle of Man law not checked | No (figures only, in `observations.csv`) |
+| University of Illinois EWS server, monthly browser reports (via web.archive.org) | Monthly host shares, Apr 1996 – Dec 2000 (era 2) | NOT FOUND (the reports' index page was in the crawl list; no terms seen in the monthly pages) | Name the source on screen; list for Luke | No (figures only) |
+| WebSideStory StatMarket press releases (via web.archive.org) | Snapshot shares 2001–2002 (era 3a), if verified | Page footer of the archived release (2007 capture): "© 2007 WebSideStory, Inc. All rights reserved." and a "Terms of Use" link (not fetched) | Terms NOT FOUND; name the source on screen; list for Luke | No (figures only) |
+| OneStat.com press releases (via web.archive.org) | Snapshot shares 2002–2007 (era 3b), if verified | NOT FOUND (onestat.com timed out from the runner; the site appears to be gone) | Name the source on screen; list for Luke | No (figures only) |
+| W3Counter global stats (archived monthly reports, 2010 captures) | Monthly shares May 2007 – Dec 2008 (era 4), if verified | Live site footer: "Copyright © 2004-2026 Awio Web Services LLC" and a "Terms of Service" link (https://www.w3counter.com/legal/terms, not fetched) | Terms NOT FOUND; name the source on screen; list for Luke | No (figures only) |
+| Cross-check sources (TheCounter, Net Applications via Ars Technica, XiTi/AT Internet, W3Schools, ADTECH, Zona via justice.gov) | Nothing on screen (seam table and disagreement list only) | Not needed for on-screen use | — | No |
+
 ## Tools used to make the video (not drawn, not shipped)
 
 | Tool | Version | Licence |
