@@ -1,0 +1,277 @@
+{
+ "note": "RTT-001 browser logos (IQ-13b, owner direction DEC-180). One logo per browser for the whole film, purely to identify the browser, shown unmodified on a light tile. Every row read at its Commons file page by Claude Code via the Commons API on 4 Oct 2026 (licence, author, SHA-1). The files are downloaded only on a GitHub runner (.github/workflows/rtt001_assets.yml, scripts/rtt001_fetch_logos.py) into the PRIVATE repo; never committed here (DEC-006, DEC-060). Rights basis and notices: reference/rights_ledger.md. Luke confirms the rights basis before any full film.",
+ "logos": [
+  {
+   "browser_id": "internet_explorer",
+   "commons_title": "File:Internet Explorer 10+11 logo.svg",
+   "page": "https://commons.wikimedia.org/wiki/File:Internet_Explorer_10+11_logo.svg",
+   "sha1": "a6bdeec0e9933991796692f8045eaccd04a942b0",
+   "licence": "Public domain",
+   "author": "Microsoft",
+   "source_credit": "Extracted from File:IE10 Wikipedia.png (color) and File:Internet Explorer 10 icon.svg (shape).",
+   "commons_restrictions": "trademarked",
+   "description": "The Internet Explorer 10 logo",
+   "size": [
+    223,
+    219
+   ],
+   "bytes": 2422,
+   "ext": "svg"
+  },
+  {
+   "browser_id": "chrome",
+   "commons_title": "File:Google Chrome icon (September 2014).svg",
+   "page": "https://commons.wikimedia.org/wiki/File:Google_Chrome_icon_(September_2014).svg",
+   "sha1": "54187692e71d4d8c7fd7a039567072a22d5229ad",
+   "licence": "Public domain",
+   "author": "Google",
+   "source_credit": "https://www.google.com/chrome/static/images/chrome-logo.svg",
+   "commons_restrictions": "trademarked",
+   "description": "Google Chrome logo and computer icon, with Material Design motif used from September 2014 to March 2022 for android, Jan",
+   "size": [
+    512,
+    512
+   ],
+   "bytes": 4657,
+   "ext": "svg"
+  },
+  {
+   "browser_id": "firefox",
+   "commons_title": "File:Mozilla Firefox 3.5 logo.png",
+   "page": "https://commons.wikimedia.org/wiki/File:Mozilla_Firefox_3.5_logo.png",
+   "sha1": "0ef65f9f9191d1f327dac0d2ff1a9786c505a171",
+   "licence": "MPL 1.1",
+   "author": "Mozilla Foundation",
+   "source_credit": "https://mxr.mozilla.org/mozilla-central/source/other-licenses/branding/firefox/default256.png (Now moved to https://mxr.mozilla.org/mozilla-central/source/brows",
+   "commons_restrictions": "trademarked",
+   "description": "Mozilla",
+   "size": [
+    512,
+    512
+   ],
+   "bytes": 195147,
+   "ext": "png"
+  },
+  {
+   "browser_id": "netscape",
+   "commons_title": "File:Netscape icon.svg",
+   "page": "https://commons.wikimedia.org/wiki/File:Netscape_icon.svg",
+   "sha1": "d63686306dc312c4958a3b133a83011c7a6df8d3",
+   "licence": "Public domain",
+   "author": "Netscape Communications Corp. (original icon). Gabriel dos Santos (SVG version).",
+   "source_credit": "",
+   "commons_restrictions": "trademarked",
+   "description": "Icon used on Netscape Navigator browsers from 1994 to 2007.",
+   "size": [
+    128,
+    128
+   ],
+   "bytes": 8511,
+   "ext": "svg"
+  },
+  {
+   "browser_id": "edge",
+   "commons_title": "File:Microsoft Edge logo (2019).svg",
+   "page": "https://commons.wikimedia.org/wiki/File:Microsoft_Edge_logo_(2019).svg",
+   "sha1": "e62225ca8f64ceb4746cf45423f5884cf7e6a1db",
+   "licence": "MIT",
+   "author": "Microsoft Corporation",
+   "source_credit": "https://static.wikia.nocookie.net/logopedia/images/4/4d/Microsoft_Edge_%282019%29.svg/revision/latest?cb=20210706013511",
+   "commons_restrictions": "trademarked",
+   "description": "Microsoft Edge browser logo used since 2019.",
+   "size": [
+    512,
+    512
+   ],
+   "bytes": 3814,
+   "ext": "svg"
+  },
+  {
+   "browser_id": "opera",
+   "commons_title": "File:Opera 2015 icon.svg",
+   "page": "https://commons.wikimedia.org/wiki/File:Opera_2015_icon.svg",
+   "sha1": "98fd873229a098f2e34148dcc5776f9ddc53ffa3",
+   "licence": "Public domain",
+   "author": "Opera",
+   "source_credit": "https://brand.opera.com/",
+   "commons_restrictions": "trademarked",
+   "description": "Icon of Opera Browser.",
+   "size": [
+    512,
+    512
+   ],
+   "bytes": 1677,
+   "ext": "svg"
+  },
+  {
+   "browser_id": "samsung_internet",
+   "commons_title": "File:Samsung Internet logo.svg",
+   "page": "https://commons.wikimedia.org/wiki/File:Samsung_Internet_logo.svg",
+   "sha1": "10280793cbdd1eeee9c1b0624f2f50a6d4a7974a",
+   "licence": "Public domain",
+   "author": "Samsung Electronics",
+   "source_credit": "https://samsunginter.net/",
+   "commons_restrictions": "trademarked",
+   "description": "Logo of Samsung Internet.",
+   "size": [
+    512,
+    512
+   ],
+   "bytes": 1869,
+   "ext": "svg"
+  },
+  {
+   "browser_id": "android",
+   "commons_title": "File:Icon webview.png",
+   "page": "https://commons.wikimedia.org/wiki/File:Icon_webview.png",
+   "sha1": "87dc4cfa6ee3a5e3f2f14444d49d0772fb9eed65",
+   "licence": "BSD",
+   "author": "Chromium project",
+   "source_credit": "https://chromium.googlesource.com/chromium/src/+/master/android_webview/apk/java/res/drawable-xxhdpi?autodive=0",
+   "commons_restrictions": "",
+   "description": "AOSP browser icon",
+   "size": [
+    144,
+    144
+   ],
+   "bytes": 37607,
+   "ext": "png"
+  },
+  {
+   "browser_id": "blackberry",
+   "commons_title": "File:Blackberry Logo without wordmark.svg",
+   "page": "https://commons.wikimedia.org/wiki/File:Blackberry_Logo_without_wordmark.svg",
+   "sha1": "32026f6a231d8c93457a23674a906c04f630ff90",
+   "licence": "Public domain",
+   "author": "BlackBerry Limited",
+   "source_credit": "http://us.blackberry.com/",
+   "commons_restrictions": "trademarked",
+   "description": "Official logo of BlackBerry Limited",
+   "size": [
+    39,
+    27
+   ],
+   "bytes": 8378,
+   "ext": "svg"
+  },
+  {
+   "browser_id": "aol",
+   "commons_title": "File:AOL logo.svg",
+   "page": "https://commons.wikimedia.org/wiki/File:AOL_logo.svg",
+   "sha1": "9528141f5041e59db0c6c6c77a03efcea8841bbb",
+   "licence": "Public domain",
+   "author": "AOL",
+   "source_credit": "Unknown sourceUnknown source",
+   "commons_restrictions": "trademarked",
+   "description": "The logo of AOL – American web portal and online service provider",
+   "size": [
+    512,
+    205
+   ],
+   "bytes": 1007,
+   "ext": "svg"
+  },
+  {
+   "browser_id": "yandex",
+   "commons_title": "File:Yandex Browser logo.png",
+   "page": "https://commons.wikimedia.org/wiki/File:Yandex_Browser_logo.png",
+   "sha1": "da4cc67517e995ae5321b15418c0cbaf87fc36cf",
+   "licence": "Public domain",
+   "author": "Yandex",
+   "source_credit": "Yandex.Browser",
+   "commons_restrictions": "trademarked",
+   "description": "Yandex.Browser logo",
+   "size": [
+    256,
+    256
+   ],
+   "bytes": 20916,
+   "ext": "png"
+  },
+  {
+   "browser_id": "maxthon",
+   "commons_title": "File:Maxthon Browser Logo.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Maxthon_Browser_Logo.jpg",
+   "sha1": "c5257e4507cf50ea2b0438b050bd9feb891480aa",
+   "licence": "Public domain",
+   "author": "Maxthon",
+   "source_credit": "Maxthon",
+   "commons_restrictions": "trademarked",
+   "description": "Maxthon Browser Logo",
+   "size": [
+    434,
+    411
+   ],
+   "bytes": 67874,
+   "ext": "jpg"
+  },
+  {
+   "browser_id": "kaios",
+   "commons_title": "File:KaiOS logo.svg",
+   "page": "https://commons.wikimedia.org/wiki/File:KaiOS_logo.svg",
+   "sha1": "f50c2e0749bf5199d946c7ac5ce627fbda245137",
+   "licence": "Public domain",
+   "author": "KaiOS Technologies Inc.",
+   "source_credit": "KaiOS Press kit",
+   "commons_restrictions": "trademarked",
+   "description": "Logo of KaiOS.",
+   "size": [
+    700,
+    250
+   ],
+   "bytes": 2755,
+   "ext": "svg"
+  },
+  {
+   "browser_id": "seamonkey",
+   "commons_title": "File:SeaMonkey.svg",
+   "page": "https://commons.wikimedia.org/wiki/File:SeaMonkey.svg",
+   "sha1": "8e760bde941d73f4c1262d0daf001d7257c98877",
+   "licence": "MPL 1.1",
+   "author": "Mozilla.",
+   "source_credit": "SVG version own work, traced using file File:SeaMonkey.png obtained from seamonkey-project.org",
+   "commons_restrictions": "trademarked",
+   "description": "SeaMonkey Logo",
+   "size": [
+    160,
+    160
+   ],
+   "bytes": 15444,
+   "ext": "svg"
+  },
+  {
+   "browser_id": "brave",
+   "commons_title": "File:Brave Logo (2024).svg",
+   "page": "https://commons.wikimedia.org/wiki/File:Brave_Logo_(2024).svg",
+   "sha1": "13be872943074a3970bf0e34368f741015320b68",
+   "licence": "MPL 2",
+   "author": "Brave Software, Inc.",
+   "source_credit": "https://brave.com/",
+   "commons_restrictions": "trademarked",
+   "description": "Logo of Brave since 2024.",
+   "size": [
+    129,
+    40
+   ],
+   "bytes": 4815,
+   "ext": "svg"
+  }
+ ],
+ "name_only": {
+  "safari": "no usable file on Commons (only fan-made icons, a CC BY 4.0 redraw and an MIT outline glyph; Apple's own icon is not hosted)",
+  "mosaic": "none found (File:Mosaic Logo.svg is The Mosaic Company, not NCSA Mosaic)",
+  "uc_browser": "none found (only screenshots)",
+  "lynx": "text-only browser; no logo",
+  "mozilla": "File:Mozilla Suite Logo.png is GFDL (needs the licence text with the video); not used",
+  "nokia": "none found",
+  "ie_mobile": "none found (only screenshots)",
+  "netfront": "none found",
+  "qq": "none found",
+  "qihoo360": "none found",
+  "sony_ps3": "none found for the PS3 browser",
+  "instabridge": "only CC BY-SA 4.0 uploads by a user (ShareAlike, avoided as for RTT-003)",
+  "samba": "none found",
+  "cello": "none found",
+  "dolfin": "none found"
+ }
+}
