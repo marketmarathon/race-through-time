@@ -1,6 +1,25 @@
-# HANDOVER — 3 Oct 2026 (session 14, Claude Code cloud session: IQ-12, the RTT-001 Browser Wars data build). The previous session's notes (IQ-10 round 6 and IQ-11) follow below.
+# HANDOVER — 4 Oct 2026 (session 14, Claude Code cloud session: IQ-12, the RTT-001 Browser Wars data build, and IQ-12b, Luke's answers). The previous session's notes (IQ-10 round 6 and IQ-11) follow below.
 
-## RTT-001 Browser Wars — DATA BUILD (IQ-12, 3 Oct 2026) — awaiting Luke's answers
+## RTT-001 — Luke's answers (IQ-12b, 4 Oct 2026)
+- **All 12 data questions answered** (prompt `prompts/CODE_SESSION_IQ-12b.md`):
+  - DEC-155 to DEC-159 and DEC-162 are CONFIRMED (DEC-164).
+  - The pilot proposes the June 1996 note and a new-source marker, and there is no dated callout for Netscape passing Mosaic (DEC-165).
+  - The GVU figures are kept, with credit to GVU / Georgia Tech Research Corporation on screen and in the description (DEC-166).
+- **Smoothing direction (DEC-167), for the design pilot only:**
+  - `series.csv` is unchanged: every published figure is untouched, and nothing is rendered.
+  - The pilot shows three options side by side, as stills or short clips:
+    - **A:** eased motion on hand-over and gap stretches, each hand-over spread over about 12 months;
+    - **B:** A plus rounded "~85%" labels before 2009;
+    - **C:** B plus the new-source marker. Cowork recommends C.
+  - Labelling rule unchanged: everything before 2009 in the estimated look, with the source named.
+- **Order check (DEC-168, build 1.1, `data/rtt-001/handover_order.csv`):**
+  - Same order across EWS→StatMarket, StatMarket→OneStat and OneStat→W3Counter.
+  - **Flagged, not to be smoothed until Luke decides:** GVU→EWS (the leader changes, Mosaic to Netscape) and W3Counter→StatCounter (Safari and Opera swap; the leaders are unchanged).
+  - Inside OneStat, two small swaps (Opera/Safari, Netscape/Opera) are real movements in one source's own figures.
+  - Proposed pilot rule: never spread a hand-over into StatCounter's months (from January 2009).
+- **Next:** Luke merges pull request #15. Then the RTT-001 design pilot, with the proposals listed as questions first (DEC-069).
+
+## RTT-001 Browser Wars — DATA BUILD (IQ-12, 3 Oct 2026) — answered 4 Oct 2026 (above)
 - **Branch** `claude/jolly-volta-5lr5ql`, pull request open, **not merged** (DEC-057). Prompt: `prompts/CODE_SESSION_IQ-12.md` (brief SHA-256 `234e0b5f…c5f2`). Data only: nothing rendered, no player or visual change (DEC-069).
 - **Owner decisions recorded:** DEC-152 (one source per period: GVU 1994 → Illinois EWS Apr 1996–Dec 2000 → StatMarket, then OneStat 2001–Apr 2007 → W3Counter May 2007–Dec 2008 → StatCounter from Jan 2009; the race starts Jan 1994), DEC-153 (straight lines, including across hand-overs; estimated look with the source named before 2009), DEC-154 (all devices). DEC-144 already held "RTT-001 is next".
 - **Working choices for Luke:** DEC-155 to DEC-159 and DEC-162. **Verification:** DEC-160, DEC-161. **Findings:** DEC-163. Twelve numbered questions, with Claude's recommendations, are in `reports/RTT-001_data_report.md`.

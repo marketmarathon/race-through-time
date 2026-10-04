@@ -25,7 +25,7 @@ import os
 import sys
 from decimal import Decimal, ROUND_HALF_UP
 
-BUILD = "rtt001-build/1.0"
+BUILD = "rtt001-build/1.1"
 FIRST_MONTH, LAST_MONTH = (1994, 1), (2026, 9)
 SC_FILE = "statcounter_browser_ww_all_monthly_200901-202609.csv"
 
@@ -388,6 +388,39 @@ def write_checks(out, checks, notes):
 
 
 # ---------------------------------------------------------------- report
+def order_checks(pts, owners, names, gap_days=92):
+    """DEC-167/DEC-168: for every hand-over and every long gap between consecutive source dates (more than gap_days),
+    compare the order of the bars at both ends. A change of order or of leader means smoothing that stretch would
+    smooth a real crossing: such stretches are flagged, not smoothed."""
+    fl = first_last_dates(owners)
+    dates = sorted(owners)
+    src = {w: sorted(o)[0] for w, o in owners.items()}
+    out = []
+    for a, z in zip(dates, dates[1:]):
+        hand = src[a] != src[z]
+        if not hand and (z - a).days <= gap_days:
+            continue
+        left = sorted(((bp[a]["value"], b) for b, bp in pts.items() if a in bp), key=lambda t: (-t[0], names[t[1]]))
+        right = sorted(((bp[z]["value"], b) for b, bp in pts.items() if z in bp), key=lambda t: (-t[0], names[t[1]]))
+        both = [b for _, b in left if b in {x for _, x in right}]
+        lo = [b for _, b in left if b in both]
+        ro = [b for _, b in right if b in both]
+        swaps = [(lo[i], lo[j]) for i in range(len(lo)) for j in range(i + 1, len(lo)) if ro.index(lo[i]) > ro.index(lo[j])]
+        leader_change = bool(lo and ro and lo[0] != ro[0])  # leader among browsers reported at both ends
+        out.append({"from": a.isoformat(), "to": z.isoformat(), "days": (z - a).days, "kind": "hand-over" if hand else "long gap",
+                    "sources": f"{src[a]}>{src[z]}" if hand else src[a],
+                    "order_from": " > ".join(f"{names[b]} {fmt(v)}" for v, b in left[:6]),
+                    "order_to": " > ".join(f"{names[b]} {fmt(v)}" for v, b in right[:6]),
+                    "leader_change": "yes" if leader_change else "no",
+                    "swaps": "; ".join(f"{names[x]} / {names[y]}" for x, y in swaps),
+                    "only_from": ", ".join(names[b] for _, b in left if b not in both),
+                    "only_to": ", ".join(names[b] for _, b in right if b not in both),
+                    "flag": ("FLAG: leader changes - do not smooth" if leader_change else
+                             ("FLAG: order changes - do not smooth" if hand else "order changes inside one source (real movement in its own figures): easing keeps both ends, so the swap stays; flagged for the pilot")
+                             if swaps else "same order")})
+    return out
+
+
 def write_report(path, src, browsers, obs, pts, owners, series, bd, changes, checks):
     names = {b["browser_id"]: b["display_name"] for b in browsers}
     byid = {o["obs_id"]: o for o in obs}
@@ -444,6 +477,13 @@ def write_report(path, src, browsers, obs, pts, owners, series, bd, changes, che
             L += [f"| {o['source_id']} | {o['date']} | {o['browser_label']} | {o['value_text']} | {o['verified']} |" for o in xs]
         L.append("")
 
+    oc = order_checks(pts, owners, names)
+    L += ["## Order of the bars at both ends of every hand-over and long gap (DEC-167, DEC-168)", "",
+          "Luke allows smoothing where data is missing (a design-pilot choice; `series.csv` is unchanged). This check compares the order of the browsers at the two ends of each hand-over and of each gap of more than 92 days between figures. Where the order or the leader changes, the stretch is **flagged and not smoothed**. Browsers present at only one end are listed separately; they do not count as an order change.", "",
+          "| From | To | Days | Kind | Order at start | Order at end | Leader changes? | Order swaps (browsers at both ends) | Only at start | Only at end | Result |",
+          "|---|---|---|---|---|---|---|---|---|---|---|"]
+    L += [f"| {r['from']} | {r['to']} | {r['days']} | {r['kind']} ({r['sources']}) | {r['order_from']} | {r['order_to']} | {r['leader_change']} | {r['swaps'] or '—'} | {r['only_from'] or '—'} | {r['only_to'] or '—'} | {r['flag']} |" for r in oc]
+    L.append("")
     dis = [o for o in obs if o.get("disagrees_with")]
     L += ["## Disagreements (recorded, never averaged)", "", "| Figure | Source | Date | Value | Disagrees with | Note |", "|---|---|---|---|---|---|"]
     for o in dis:
@@ -529,6 +569,8 @@ def main():
                "source_line", "handover", "left_point", "right_point"]
     write_csv(os.path.join(out, "series.csv"), series, sfields)
     write_csv(os.path.join(out, "leaders.csv"), changes, list(changes[0].keys()))
+    oc = order_checks(pts, source_dates(pts), names)
+    write_csv(os.path.join(out, "handover_order.csv"), oc, list(oc[0].keys()))
     allok = write_checks(out, checks, notes)
     write_report(report_path, src, browsers, obs, pts, owners, series, bd, changes, checks)
     write_manifest(out, report_path)

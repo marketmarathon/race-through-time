@@ -1,6 +1,6 @@
 # RTT-001 scripted checks
 
-Build `rtt001-build/1.0`. All checks PASS: **True**. A check marked REVIEW found something that is reported in full below, not hidden or fixed.
+Build `rtt001-build/1.1`. All checks PASS: **True**. A check marked REVIEW found something that is reported in full below, not hidden or fixed.
 
 | Check | Result | Detail |
 |---|---|---|

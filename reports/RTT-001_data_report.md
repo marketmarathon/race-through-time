@@ -1,6 +1,6 @@
 # RTT-001 Browser Wars — data report for Luke
 
-Build `rtt001-build/1.0` (`scripts/build_rtt001_dataset.py`). Contract: `reference/metric_contract_RTT-001.md`. Data: `data/rtt-001/`.
+Build `rtt001-build/1.1` (`scripts/build_rtt001_dataset.py`). Contract: `reference/metric_contract_RTT-001.md`. Data: `data/rtt-001/`.
 
 ## Summary for Luke
 
@@ -517,6 +517,28 @@ Cross-checks within 45 days of either hand-over date, non-zero values (never on 
 | W3SCHOOLS | 2009-02-28 | Opera | 2.2 | UNVERIFIED |
 | W3SCHOOLS | 2009-02-28 | Safari | 3.0 | UNVERIFIED |
 
+## Order of the bars at both ends of every hand-over and long gap (DEC-167, DEC-168)
+
+Luke allows smoothing where data is missing (a design-pilot choice; `series.csv` is unchanged). This check compares the order of the browsers at the two ends of each hand-over and of each gap of more than 92 days between figures. Where the order or the leader changes, the stretch is **flagged and not smoothed**. Browsers present at only one end are listed separately; they do not count as an order change.
+
+| From | To | Days | Kind | Order at start | Order at end | Leader changes? | Order swaps (browsers at both ends) | Only at start | Only at end | Result |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 1994-01-31 | 1994-11-16 | 289 | long gap (GVU) | Mosaic 97.22 > Lynx 1.95 > Samba 0.30 > Cello 0.08 | Mosaic 68 > Netscape 18 > MacWeb 3 > Lynx 2 | no | — | Samba, Cello | Netscape, MacWeb | same order |
+| 1994-11-16 | 1996-04-30 | 531 | hand-over (GVU>EWS) | Mosaic 68 > Netscape 18 > MacWeb 3 > Lynx 2 | Netscape 83.3 > Mosaic 12.9 > Lynx 0.8 | yes | Mosaic / Netscape | MacWeb | — | FLAG: leader changes - do not smooth |
+| 2000-12-31 | 2001-02-21 | 52 | hand-over (EWS>STATMARKET) | Internet Explorer 75.4 > Netscape 21.6 | Internet Explorer 87.71 > Netscape 12.01 | no | — | — | — | same order |
+| 2001-04-25 | 2001-10-25 | 183 | long gap (STATMARKET) | Internet Explorer 86.61 > Netscape 13.10 | Internet Explorer 89.03 > Netscape 10.47 > Opera 0.33 | no | — | — | Opera | same order |
+| 2001-10-25 | 2002-08-26 | 305 | long gap (STATMARKET) | Internet Explorer 89.03 > Netscape 10.47 > Opera 0.33 | Internet Explorer 95.97 > Netscape 3.39 | no | — | Opera | — | same order |
+| 2002-08-26 | 2002-09-30 | 35 | hand-over (STATMARKET>ONESTAT) | Internet Explorer 95.97 > Netscape 3.39 | Internet Explorer 94.9 > Netscape 3.0 > Mozilla Suite 0.9 | no | — | — | Mozilla Suite | same order |
+| 2003-02-03 | 2003-07-28 | 175 | long gap (ONESTAT) | Internet Explorer 95.2 > Netscape 2.9 > Safari 0.11 | Internet Explorer 95.4 > Netscape 2.5 | no | — | Safari | — | same order |
+| 2003-07-28 | 2004-01-19 | 175 | long gap (ONESTAT) | Internet Explorer 95.4 > Netscape 2.5 | Mozilla Suite 1.8 > Safari 0.48 | no | — | Internet Explorer, Netscape | Mozilla Suite, Safari | same order |
+| 2004-01-19 | 2004-05-28 | 130 | long gap (ONESTAT) | Mozilla Suite 1.8 > Safari 0.48 | Mozilla Suite 2.1 > Safari 0.71 | no | — | — | — | same order |
+| 2004-05-28 | 2004-11-22 | 178 | long gap (ONESTAT) | Mozilla Suite 2.1 > Safari 0.71 | Internet Explorer 88.90 > Firefox 4.58 > Opera 1.33 > Safari 0.91 | no | — | Mozilla Suite | Internet Explorer, Firefox, Opera | same order |
+| 2004-11-22 | 2005-02-28 | 98 | long gap (ONESTAT) | Internet Explorer 88.90 > Firefox 4.58 > Opera 1.33 > Safari 0.91 | Internet Explorer 87.28 > Firefox 8.45 > Safari 1.21 > Netscape 1.11 > Opera 1.09 | no | Opera / Safari | — | Netscape | order changes inside one source (real movement in its own figures): easing keeps both ends, so the swap stays; flagged for the pilot |
+| 2005-04-27 | 2005-11-02 | 189 | long gap (ONESTAT) | Internet Explorer 86.63 > Firefox 8.69 > Safari 1.26 > Netscape 1.08 > Opera 1.03 | Internet Explorer 85.45 > Firefox 11.51 > Safari 1.75 > Opera 0.77 > Netscape 0.26 | no | Netscape / Opera | — | — | order changes inside one source (real movement in its own figures): easing keeps both ends, so the swap stays; flagged for the pilot |
+| 2006-01-31 | 2006-05-31 | 120 | long gap (ONESTAT) | Internet Explorer 85.82 > Firefox 11.23 > Safari 1.88 > Opera 0.77 > Netscape 0.16 | Internet Explorer 85.17 > Firefox 11.79 > Safari 2.02 > Opera 0.79 > Netscape 0.15 | no | — | — | — | same order |
+| 2007-01-31 | 2007-05-31 | 120 | hand-over (ONESTAT>W3COUNTER) | Internet Explorer 85.81 > Firefox 11.69 > Safari 1.64 > Opera 0.58 > Netscape 0.13 | Internet Explorer 67.1 > Firefox 24.8 > Safari 2.4 > Opera 1.8 > AOL 1.1 | no | — | Netscape | AOL | same order |
+| 2008-12-31 | 2009-01-31 | 31 | hand-over (W3COUNTER>STATCOUNTER) | Internet Explorer 58.6 > Firefox 31.1 > Safari 2.9 > Opera 2.0 > Mozilla Suite 1.1 | Internet Explorer 64.97 > Firefox 26.85 > Opera 3.07 > Safari 2.79 > Chrome 1.37 > AOL 0.27 | no | Safari / Opera | — | Chrome, AOL, Nokia, Sony PS3, SeaMonkey, BlackBerry, Openwave, SonyEricsson, Android Browser, IE Mobile, NetFront | FLAG: order changes - do not smooth |
+
 ## Disagreements (recorded, never averaged)
 
 | Figure | Source | Date | Value | Disagrees with | Note |
@@ -946,7 +968,21 @@ Cross-checks within 45 days of either hand-over date, non-zero values (never on 
 | W3SCHOOLS-2009-02-28-opera | W3SCHOOLS | 2009-02-28 | Opera | 2.2 | UNVERIFIED | UNVERIFIED: the web archive refused the GitHub runner (HTTP 429), not yet seen at source; listed for Cowork to check in Luke's Chrome; cross-check only, never on screen (DEC-156) |
 | W3SCHOOLS-2009-02-28-safari | W3SCHOOLS | 2009-02-28 | Safari | 3.0 | UNVERIFIED | UNVERIFIED: the web archive refused the GitHub runner (HTTP 429), not yet seen at source; listed for Cowork to check in Luke's Chrome; cross-check only, never on screen (DEC-156) |
 
-## Questions for Luke (each with Claude's recommendation)
+## Luke's answers (4 Oct 2026, DEC-164 to DEC-167)
+
+All twelve were answered:
+- **1–5 yes:** DEC-155 to DEC-159 and DEC-162 are confirmed.
+- **6 yes:** EWS stays as published; the pilot proposes a short note.
+- **7 yes:** no dated callout.
+- **8 yes:** the pilot proposes a new-source marker.
+- **9:** keep GVU, with credit to GVU / Georgia Tech Research Corporation on screen and in the description.
+- **10:** accepted.
+- **11:** as handled.
+- **12:** GVU April 1995 stays out.
+
+**New direction (DEC-167):** smoothing where data is clearly missing. This is a design-pilot choice only: `series.csv` is unchanged. The pilot will show options A, B and C side by side (Cowork recommends C). The order check below flags two hand-overs that change the order or the leader, GVU→EWS and W3Counter→StatCounter (DEC-168). They are not smoothed until Luke decides.
+
+## The questions as asked on 3 Oct 2026 (each with Claude's recommendation)
 
 1. **Browser families (DEC-155).** Mosaic versions added together; Netscape 1–9 as one; Edge separate from IE; Firefox separate from the Mozilla Suite. Two further calls:
    - StatCounter's "Edge" and "Edge Legacy" are added together as one Edge bar. Because of this, September 2026 shows Edge at 6.03%, not StatCounter's headline 6.02%.

@@ -21,7 +21,21 @@
 - The 384 cross-check figures (W3Schools, XiTi, Net Applications, TheCounter) remain UNVERIFIED. They are never on screen and only appear in the seam table.
 
 <!-- QUESTIONS -->
-## Questions for Luke (each with Claude's recommendation)
+## Luke's answers (4 Oct 2026, DEC-164 to DEC-167)
+
+All twelve were answered:
+- **1–5 yes:** DEC-155 to DEC-159 and DEC-162 are confirmed.
+- **6 yes:** EWS stays as published; the pilot proposes a short note.
+- **7 yes:** no dated callout.
+- **8 yes:** the pilot proposes a new-source marker.
+- **9:** keep GVU, with credit to GVU / Georgia Tech Research Corporation on screen and in the description.
+- **10:** accepted.
+- **11:** as handled.
+- **12:** GVU April 1995 stays out.
+
+**New direction (DEC-167):** smoothing where data is clearly missing. This is a design-pilot choice only: `series.csv` is unchanged. The pilot will show options A, B and C side by side (Cowork recommends C). The order check below flags two hand-overs that change the order or the leader, GVU→EWS and W3Counter→StatCounter (DEC-168). They are not smoothed until Luke decides.
+
+## The questions as asked on 3 Oct 2026 (each with Claude's recommendation)
 
 1. **Browser families (DEC-155).** Mosaic versions added together; Netscape 1–9 as one; Edge separate from IE; Firefox separate from the Mozilla Suite. Two further calls:
    - StatCounter's "Edge" and "Edge Legacy" are added together as one Edge bar. Because of this, September 2026 shows Edge at 6.03%, not StatCounter's headline 6.02%.
