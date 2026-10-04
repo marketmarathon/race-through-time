@@ -135,6 +135,24 @@
      Changed in IQ-10 round 5 (Luke, DEC-138 onwards):
        - bar_logos.trim: the logo artwork is drawn trimmed to its own bounding box (logoCrop), so the tile
          shows the logo without the file's empty margins (series only; the scoreboard's logos are unchanged).
+     Changed in IQ-13 (RTT-001 design pilot 1, DEC-169 onwards), only for a SHARE series (race kind "share",
+     scripts/rtt001_adapter.py) or behind new config keys, so every RTT-002 and RTT-003 config draws exactly as before:
+       - values: percent from whole hundredths, with values.decimals (1 or 2, rounded half up on the integers); with
+         values.approx, an estimated (pre-2009) value reads "~85%" (whole percent, half up) or "<1%" (DEC-167 (B));
+         the axis steps in whole percent (axis_suffix "%").
+       - smoothing: done in rtt_timeline.js shareRace() at draw time (DEC-167); series.csv is never changed.
+       - bars enter and leave: a browser that appears fades in at its value over its first month's count, one that
+         stops fades out over the next month's count and is gone on that month end (rtt_timeline.js shareFrame).
+       - date line: time_label.format "month" reads "June 1996".
+       - source line: "source_line" {enabled, y, size, prefix, names, measure, estimated, changing}: one line under the
+         title naming the month's source (series.csv source_line; inside a smoothed hand-over window "changing from X
+         to Y"), with " · estimated" before 2009 (DEC-153).
+       - new-source marker: "marker" {enabled, sec, text}: a small pill after the source line for marker.sec when a
+         source line first names a new source (DEC-165 (8)).
+       - dated notes: "notes_at" [{date, text}] with "note_line" {sec, size}: one calm line in the callout place
+         for note_line.sec from that month (the June 1996 EWS note, DEC-165 (6)).
+       - callout.texts {crown, passes, estimated}: callout wording templates ({id}, {other}, {rank}).
+       - pictures.placeholder: an empty outlined picture box where there is no picture (logos not yet cleared).
      Removed as unused: the Format C / C2-1 picture column and story cards, the prototype
      driver block that followed </html> in the C2-2 file.
 
@@ -186,10 +204,12 @@ let FLAGCOL=null, FLAGS=false, FLAGIMG={}, FLAGCODE={}, EVL=null, OVL=[], OVLGAP
 /* IQ-10 (RTT-003): all null / false for RTT-002 */
 let COUNT=false, BLOGO=null, FFOOT=null, FINAL_ON=false, LIVE=false, FINAL_LBL=false, STATUS=null, RECLINE=false;
 let SERIES=false, PIC=null, PICIMG={}, LOGOIMG={}, MKEY=null, FADE=null, CROWN=null, CALLOUT=null, NOTES=null, GLIDE_BEAT=false, AXU=1, MAKERS=[], MAKERNAME={};
+let SHARE=false, VAL=null, SRCL=null, MARK=null, NOTEL=null;   // IQ-13 (RTT-001): all off for RTT-002 and RTT-003
 let TOP=150; const BOTTOM=1080-46;            // IQ-10: TOP from config board_top (RTT-003); 150 for RTT-002
 
 /* ---- the test hook: what text went on the frame ---- */
 window.__LABELS=[]; window.__RANK=[]; window.__EVENT=null; window.__BARS=[]; window.__FLAGS=[]; window.__GRID=[];
+window.__SOURCE=null; window.__MARKER=null; window.__NOTE=null;
 window.__PICS=[]; window.__CROWN=null; window.__KEY=null; window.__CALLOUT=null; window.__LOGOS=[]; window.__FINAL=null; window.__RECORD=null; window.__EXITS=[]; window.__STATUS=[];
 function note(kind,id,text,x,y,align,w,tab){
   const x0 = align==='right' ? x-w : align==='center' ? x-w/2 : x;
@@ -249,7 +269,11 @@ function setup(o){
   if(STATS && EVL) throw new Error('stats_label replaces the event label; switch event_label off');
   /* IQ-10 (RTT-003): series mode and its switches */
   TOP = CFG.board_top!=null ? CFG.board_top : 150;
-  SERIES = !!TL.series; AXU = SERIES ? 1e6 : 1;
+  SERIES = !!TL.series; SHARE = !!TL.share; AXU = SHARE ? 100 : SERIES ? 1e6 : 1;
+  VAL = SHARE ? Object.assign({decimals:1, approx:false}, CFG.values||{}) : null;
+  SRCL = SHARE && CFG.source_line && CFG.source_line.enabled ? Object.assign({y:120, size:30, prefix:'Source: ', names:{}, measure:{}, estimated:' · estimated', changing:'changing from {from} to {to}'}, CFG.source_line) : null;
+  MARK = SHARE && CFG.marker && CFG.marker.enabled ? Object.assign({sec:3.0, text:'New source', fade_in:0.25, fade_out:0.4}, CFG.marker) : null;
+  NOTEL = SHARE ? Object.assign({sec:3.0, size:30, fade_in:0.25, fade_out:0.4}, CFG.note_line||{}) : null;
   GLIDE_BEAT = !!(CFG.glide && CFG.glide.bar_mode==='beat');
   const PC=CFG.pictures||{};
   PIC = PC.enabled ? Object.assign({height_frac:0.92, aspect:1.65, gap:14}, PC) : null; PICIMG={}; LOGOIMG={};
@@ -312,7 +336,15 @@ function millions(u){
   const t=Math.floor((u+50000)/100000);
   return Math.floor(t/10).toLocaleString('en-GB')+'.'+(t%10)+'m';
 }
-function fmtS(u,plus,id){
+/* IQ-13: hundredths of a percent -> "29.2%" / "29.15%"; estimated with values.approx -> "~29%" or "<1%" */
+function pct(u,st){
+  if(!Number.isInteger(u) || u<0) console.error('BAD SHARE '+u);
+  if(VAL.approx && st==='estimated'){ const w=Math.floor((u+50)/100); return w>=1 ? '~'+w+'%' : '<1%'; }
+  if(VAL.decimals===2) return Math.floor(u/100)+'.'+String(u%100).padStart(2,'0')+'%';
+  const t=Math.floor((u+5)/10); return Math.floor(t/10)+'.'+(t%10)+'%';
+}
+function fmtS(u,plus,id,st){
+  if(SHARE) return pct(u,st);
   const n=NOTES && NOTES.find(x=>x.id===id);
   return millions(u)+(plus?'+':'')+(n?n.mark:'');
 }
@@ -380,7 +412,8 @@ function nameSize(){
   let everA={}, estW=0;
   if(SERIES){ [TL.opening].concat(TL.states).forEach(s=>s.order.slice(0,NROWS+1).forEach(id=>{ if(s.style[id]==='analyst_estimate') everA[id]=true; }));
     ctx.font='500 '+g.VALF+'px '+FONT; estW=g.VALF*0.35+tabWidth('· analyst estimate',pitch()); ctx.font=(STATS?'700 ':'600 ')+g.VALF+'px '+FONT; }
-  const valOf=id=>SERIES ? tabWidth(fmtS(seen[id],true,id)+(FFOOT&&FFOOT.id===id?FFOOT.mark:''),p)+(everA[id]?estW:0)+(CROWN?g.VALF*1.6:0)
+  const valOf=id=>SHARE ? Math.max(tabWidth(pct(seen[id],'official'),p), VAL.approx ? tabWidth(pct(seen[id],'estimated'),p) : 0)+(CROWN?g.VALF*1.6:0)
+               : SERIES ? tabWidth(fmtS(seen[id],true,id)+(FFOOT&&FFOOT.id===id?FFOOT.mark:''),p)+(everA[id]?estW:0)+(CROWN?g.VALF*1.6:0)
                          : tabWidth(fmt(seen[id]),p)+(seenS[id]||0);   // IQ-05e: plus the stats label
   const nx=g.x0+18, limit=1920-64;
   let f=base;
@@ -401,6 +434,7 @@ function fitName(nm,maxw){
 /* ---- (d) the time label: season, Grand Prix, date ---- */
 function dateText(iso){
   const [y,m,d]=iso.split('-').map(Number);
+  if(CFG.time_label.format==='month') return CFG.time_label.months[m-1]+' '+y;     // IQ-13: monthly data
   return d+' '+CFG.time_label.months[m-1]+' '+y;
 }
 /* IQ-05d date line and dated event label: "25 October 2020 · Portuguese GP" */
@@ -574,16 +608,25 @@ function drawCallout(CO,cur,SF,fr){
     const ord=n=>n+(['th','st','nd','rd'][(n%100>10&&n%100<14)?0:Math.min(n%10,4)%4]||'th');
     /* round 3: a passed console that has left the board is named with its frozen total */
     const B=R.previous||R.other, gone = LIVE && B && !RTT_TIMELINE.isLive(TL,B,fr), bName = B ? (gone ? ENT[B].short+"'s "+millions(SF.u[B]) : ENT[B].short) : '';
-    const main = type==='crown' ? ENT[R.id].short+' becomes the best-selling console ever'
+    const TX = CALLOUT && CALLOUT.texts, fill = t => String(t||'').replace('{id}',ENT[R.id].short).replace('{other}',bName).replace('{rank}',R.rank===2?'second':ord(R.rank||0));
+    const main = TX ? fill(TX[type]) : type==='crown' ? ENT[R.id].short+' becomes the best-selling console ever'
                : type==='first_past' ? ENT[R.id].short+' is the first console past '+(R.units/1e6).toLocaleString('en-GB')+' million'
                : ENT[R.id].short+' passes '+bName+' for '+(R.rank===2?'second':ord(R.rank))+' place'+(gone?' all-time':'');
     text('callout',R.id,main,x,C.y,'left'); x+=ctx.measureText(main).width;
-    const extra=(type==='crown' ? ' · passes '+bName : '')+(R.style!=='official'?' · estimated figures':'');
+    const extra=TX ? fill(TX[type+'_extra'])+(R.style!=='official'?(TX.estimated||''):'') : (type==='crown' ? ' · passes '+bName : '')+(R.style!=='official'?' · estimated figures':'');
     ctx.fillStyle=T.cap||T.muted; ctx.font='500 '+sz+'px '+FONT;
     text('callout_extra',CO.rec.id,extra,x,C.y,'left');
     window.__CALLOUT={id:R.id, previous:R.previous||R.other, type, k:R.k, frame:R.frame, alpha:ctx.globalAlpha};
     ctx.globalAlpha=1;
     return;
+  }
+  window.__NOTE=null;
+  if(SHARE && TL.notes.length){                  // IQ-13: a dated note (the June 1996 EWS note), one calm line
+    for(const n of TL.notes){ const u=(fr-n.frame)/FPS; if(u<0 || u>=NOTEL.sec) continue;
+      const a=Math.max(0,Math.min(1,u/NOTEL.fade_in)*Math.min(1,(NOTEL.sec-u)/NOTEL.fade_out));
+      ctx.globalAlpha=a; ctx.fillStyle=T.cap||T.muted; ctx.font='500 '+NOTEL.size+'px '+FONT;
+      tabText(n.text, LEFT, NOTEL.y||C.y, 'left', 'note_line', null);
+      window.__NOTE={text:n.text, date:n.date, alpha:a}; ctx.globalAlpha=1; break; }
   }
   if(FINAL_ON){                                  // round 2: the final-table line and footnote
     window.__FINAL={};
@@ -597,6 +640,34 @@ function drawCallout(CO,cur,SF,fr){
     }
   }
 }
+/* IQ-13 (RTT-001): the source line under the title and the "new source" marker. The month shown is the one being
+   counted towards (the date line's month). Before January 2009 the line ends " · estimated" (DEC-153). */
+function sourceText(ev){
+  const S=SRCL, nm=id=>S.names[id]||id, sh=id=>(S.short||{})[id]||nm(id), ms=id=>S.measure[id] ? ' ('+S.measure[id]+')' : '';
+  let t;
+  if(ev.smooth) t=S.changing.replace('{from}',sh(ev.smooth.from)).replace('{to}',sh(ev.smooth.to));
+  else if(String(ev.source_id).includes('>')) t=ev.source_line.charAt(0).toLowerCase()+ev.source_line.slice(1);
+  else t=nm(ev.source_id)+ms(ev.source_id);
+  return S.prefix+t+(ev.date<TL.scStart ? S.estimated : '');
+}
+function drawSource(ev, fr){
+  window.__SOURCE=null; window.__MARKER=null;
+  if(!SRCL || !ev || !ev.source_id) return;
+  const t=sourceText(ev);
+  ctx.fillStyle=T.cap||T.muted; ctx.font='500 '+SRCL.size+'px '+FONT;
+  const w=tabText(t, LEFT, SRCL.y, 'left', 'source_line', null);
+  window.__SOURCE={text:t, source_id:ev.source_id, smooth:ev.smooth||null};
+  if(!MARK) return;
+  for(const m of TL.markers){ const u=(fr-m.frame)/FPS; if(u<0 || u>=MARK.sec) continue;
+    const a=Math.max(0,Math.min(1,u/MARK.fade_in)*Math.min(1,(MARK.sec-u)/MARK.fade_out));
+    ctx.save(); ctx.globalAlpha=a; ctx.font='700 '+(MARK.size||Math.round(SRCL.size*0.8))+'px '+FONT;
+    const pw=ctx.measureText(MARK.text).width+28, ph=SRCL.size*1.1, px=LEFT+w+18, py=SRCL.y-SRCL.size*0.85;
+    ctx.fillStyle=T.rule||'#2FD0C8'; rr(px,py,pw,ph,ph/2); ctx.fill();
+    ctx.fillStyle=T.ground; text('marker',null,MARK.text,px+14,SRCL.y-SRCL.size*0.12,'left');
+    ctx.restore();
+    window.__MARKER={date:m.date, sources:m.sources, alpha:a, box:{x:px,y:py,w:pw,h:ph}}; break; }
+}
+
 /* The maker key (DEC-085): each maker that has launched a console by this quarter end, in maker_order
    (or, with scoreboard, by total): colour, logo on a light tile (to identify the maker only), name,
    and with scoreboard its total ("891.3m"), marked like the bars when it contains estimated or
@@ -681,7 +752,7 @@ function drawAt(t){
   const exitA = id => { const x=LIVE && TL.exit[id]; if(!x || x==='gone' || fr<x.start || fr>=x.end) return null;
     return fr < x.fadeFrom ? 1 : 1-ease((fr-x.fadeFrom)/Math.max(1,TL.exitFade)); };
   const REC = RECLINE ? {id:SF.order[0], u:SF.u[SF.order[0]], plus:!!SF.plus[SF.order[0]]} : null;   // round 4: the record line without live_only too
-  const rows = SF ? ORD.map(id=>({c:ENT[id], n:SF.u[id], s:null, len:SF.u[id], st:cur.style[id], pl:SF.plus[id]}))
+  const rows = SF ? ORD.map(id=>({c:ENT[id], n:SF.u[id], s:null, len:SF.u[id], st:SHARE&&!(id in cur.style)?prev.style[id]:cur.style[id], pl:SF.plus[id], a:SF.alpha?SF.alpha[id]:null}))
                   : cur.order.map(id=>({c:ENT[id], n:cur.totals[id], s:cur.starts?cur.starts[id]:null, len:lerp(prev.totals[id]||0, cur.totals[id], g),
                                    st:SERIES?cur.style[id]:null, pl:SERIES?!!cur.plus[id]:false}));
   const top = rows.slice(0,NROWS+3);
@@ -753,6 +824,7 @@ function drawAt(t){
   top.forEach(r=>{
     const c=r.c, y=TOP+14+c._y*ROWH; if(y>BOTTOM-4) return;
     ctx.globalAlpha=c._y>NROWS-1?Math.max(0,1-(c._y-(NROWS-1))/0.75):1;
+    if(r.a!=null) ctx.globalAlpha*=r.a;            // IQ-13: a browser entering or leaving the data fades
     const XA = exitA(c.id);                         // round 3: retiring (null = not exiting)
     if(XA!=null) ctx.globalAlpha*=XA;
     if(FINAL && TL.exit[c.id]) ctx.globalAlpha*=ease((FTU-0.3)/0.7);   // retired consoles fade in from 30% of the transition (the record label is gone by a third), after the live bars have moved
@@ -762,7 +834,7 @@ function drawAt(t){
     /* IQ-10 fade: fa scales the bar and picture, ta the text */
     const RA=ctx.globalAlpha, fa=fadeOf(c.id,k,fr), ta=FADE ? 1-(1-FADE.text_alpha)*(1-fa)/(1-FADE.alpha) : 1;
     const SK = STATUS ? RTT_TIMELINE.statusAt(TL,c.id,fr) : null;   // round 4
-    window.__BARS.push({id:c.id, y:c._y, alpha:ctx.globalAlpha, colour, hl, rect:{x:x0,y:by,w,h:BARH}, style:r.st, fade:fa, plus:r.pl, units:r.n, exiting:XA!=null, status:SK?SK.kind:null});
+    window.__BARS.push({id:c.id, y:c._y, alpha:ctx.globalAlpha, colour, hl, rect:{x:x0,y:by,w,h:BARH}, style:r.st, fade:fa, plus:r.pl, units:r.n, exiting:XA!=null, status:SK?SK.kind:null, enter_leave:r.a!=null&&r.a<1});
     if(ctx.globalAlpha<=0){ ctx.globalAlpha=1; return; }
     if(PIC){                                     // IQ-10 picture, in the column left of the bar
       const im=PICIMG[c.id], bx=LEFT, byy=mid-G.PH/2;
@@ -773,6 +845,10 @@ function drawAt(t){
         const d={x:bx+(G.PW-iw)/2, y:bY+(bh-ih)/2, w:iw, h:ih};
         ctx.globalAlpha=RA*fa; ctx.drawImage(im,d.x,d.y,d.w,d.h); ctx.globalAlpha=RA;
         window.__PICS.push({id:c.id, box:{x:bx,y:bY,w:G.PW,h:bh}, drawn:d, alpha:RA*fa, tall:tall>1});
+      } else if(PIC.placeholder){                 // IQ-13: an empty box of the picture's size (logos not cleared yet)
+        ctx.save(); ctx.globalAlpha=RA*fa; ctx.strokeStyle='rgba(244,246,250,0.32)'; ctx.lineWidth=2; ctx.setLineDash([6,5]);
+        rr(bx+1,byy+1,G.PW-2,G.PH-2,6); ctx.stroke(); ctx.restore();
+        window.__PICS.push({id:c.id, box:{x:bx,y:byy,w:G.PW,h:G.PH}, drawn:null, alpha:RA*fa, placeholder:true});
       }
     }
     if(BLOGO){                                   // round 2: the maker's logo on a light tile beside the picture
@@ -819,7 +895,7 @@ function drawAt(t){
     else { ctx.fillStyle=T.ink; text('name',c.id,nm,x0+w+18,mid+nf*0.35,'left'); nameOut=ctx.measureText(nm).width+30; }
 
     ctx.font=(STATS?'700 ':'600 ')+VALF+'px '+FONT;          // IQ-05e: the win count in bold
-    const txt=SERIES ? fmtS(r.n,r.pl,c.id)+(FINAL_ON&&FFOOT&&FFOOT.id===c.id?FFOOT.mark:'') : fmt(r.n), tw=tabWidth(txt,pitch());
+    const txt=SERIES ? fmtS(r.n,r.pl,c.id,r.st)+(FINAL_ON&&FFOOT&&FFOOT.id===c.id?FFOOT.mark:'') : fmt(r.n), tw=tabWidth(txt,pitch());
     let after;                                   // where anything after the value may start
     if(!VALOUT && !nameOut && w>tw+40+ctx.measureText(nm).width+24){ ctx.fillStyle='#F4F6FA'; tabText(txt,x0+w-18,mid+VALF*0.35,'right','value',c.id); after=x0+w+18; }
     else { ctx.fillStyle=T.ink; tabText(txt,x0+w+18+nameOut,mid+VALF*0.35,'left','value',c.id); after=x0+w+18+nameOut+tw+VALF*0.35; }
@@ -893,6 +969,7 @@ function drawAt(t){
   text('footer',null,CFG.footer||'',LEFT,1080-20,'left');
 
   if(SERIES){ drawCallout(CO, cur, SF, fr); drawMakerKey(cur, SF); }   // IQ-10
+  if(SHARE) drawSource(ev, fr);                                          // IQ-13
 
   /* IQ-05c overlays (DEC-035): each picture fitted inside its reserved box; none if absent */
   window.__OVERLAYS=OVL.map(b=>{

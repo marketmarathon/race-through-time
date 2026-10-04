@@ -1,0 +1,18 @@
+{
+ "extends": "config_rtt001_opt_C.json",
+ "kit_version": "rtt001_pilot1_f1_gvu_ews_smoothed",
+ "out": "rtt001_f1_gvu_ews_smoothed.mp4",
+ "window": {
+  "from": "1994-01-01",
+  "to": "1996-12-31"
+ },
+ "pacing": {
+  "final_board_sec": 2.0
+ },
+ "smoothing": {
+  "include_flagged": true
+ },
+ "notes": [
+  "Flagged stretch 1 (DEC-168) with smoothing applied (option C with include_flagged): the 531-day gap eased as one hand-over; no date or callout for the Netscape takeover (DEC-165 (7))."
+ ]
+}

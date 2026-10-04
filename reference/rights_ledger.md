@@ -106,6 +106,8 @@ Principle: rights before use. The video uses a handful of published percentages 
 | W3Counter global stats (archived monthly reports, 2010 captures) | Monthly shares May 2007 – Dec 2008 (era 4), if verified | Live site footer: "Copyright © 2004-2026 Awio Web Services LLC" and a "Terms of Service" link (https://www.w3counter.com/legal/terms, not fetched) | Terms NOT FOUND; name the source on screen; list for Luke | No (figures only) |
 | Cross-check sources (TheCounter, Net Applications via Ars Technica, XiTi/AT Internet, W3Schools, ADTECH, Zona via justice.gov) | Nothing on screen (seam table and disagreement list only) | Not needed for on-screen use | — | No |
 
+**RTT-001 design pilot 1 (IQ-13, 4 Oct 2026): no browser logo or picture is used.** Browser logos are trademarks and their terms are not checked yet, so every bar has an empty picture box of the final size (72 × 72 px on the 1920 frame; brief item 7). Logos come in a later round only after each is recorded here with its source, licence and SHA-256 (rights before use). The only private file the pilot draws is Luke's RTT logo (`assets/rtt-002/rtt_logo.png`, as for RTT-002 and RTT-003). Credits on screen: the footer names GVU WWW User Surveys / Georgia Tech Research Corporation (DEC-166), the University of Illinois, StatMarket, OneStat, W3Counter and StatCounter, and the source line names StatCounter Global Stats on every month from 2009; the draft description credits (with StatCounter's link, CC BY-SA 3.0) are in `kits/rtt-001/description_credits.md`.
+
 ## Tools used to make the video (not drawn, not shipped)
 
 | Tool | Version | Licence |

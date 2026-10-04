@@ -124,6 +124,7 @@ function dataUrl(f) {
 function loadPictures(cfg, data) {
   const P = cfg.pictures;
   if (!P || !P.enabled) return null;
+  if (P.placeholder_only) return {};               // IQ-13 (RTT-001): empty picture boxes only, no files read
   const dir = path.join(path.resolve(KIT, process.env.RTT_LOCAL_ASSETS || cfg.local_assets || 'local_assets'), P.dir || 'icons');
   const out = {};
   for (const e of data.entrants) {

@@ -1,0 +1,3 @@
+{ "extends": "config_rtt001_film.json", "kit_version": "rtt001_pilot1_optA",
+  "smoothing": { "mode": "eased" },
+  "notes": ["Option A (DEC-167): eased motion on gap and hand-over stretches, each hand-over spread over about 12 months; the two hand-overs flagged by the order check (DEC-168) are left as built; values one decimal."] }

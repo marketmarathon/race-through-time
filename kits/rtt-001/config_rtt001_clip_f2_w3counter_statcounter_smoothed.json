@@ -1,0 +1,18 @@
+{
+ "extends": "config_rtt001_opt_C.json",
+ "kit_version": "rtt001_pilot1_f2_w3counter_statcounter_smoothed",
+ "out": "rtt001_f2_w3counter_statcounter_smoothed.mp4",
+ "window": {
+  "from": "2007-10-01",
+  "to": "2009-06-30"
+ },
+ "pacing": {
+  "final_board_sec": 2.0
+ },
+ "smoothing": {
+  "include_flagged": true
+ },
+ "notes": [
+  "Flagged stretch 2 (DEC-168) with smoothing applied (option C with include_flagged): the jump spread over the 12 months up to StatCounter's first month (January 2008 - January 2009); StatCounter's months are never changed."
+ ]
+}

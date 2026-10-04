@@ -1,0 +1,25 @@
+{
+ "extends": "config_rtt001_opt_C.json",
+ "kit_version": "rtt001_pilot1_pace_2010_2013_0p50",
+ "out": "rtt001_pace_2010_2013_0p50.mp4",
+ "window": {
+  "from": "2010-01-01",
+  "to": "2013-12-31"
+ },
+ "pacing": {
+  "final_board_sec": 2.0,
+  "sec_per_event": 0.5
+ },
+ "crown": {
+  "enabled": true
+ },
+ "callout": {
+  "enabled": true
+ },
+ "record_hold": {
+  "enabled": true
+ },
+ "notes": [
+  "Pacing (brief item 9): 2010-2013, including Chrome passing Internet Explorer (May 2012), at 0.5 s per month (x1.4 / 1.0 / 0.8 by the house rule, judged on the top 10). Shows the PROPOSED crown and leader-change callout with its 2 s pause, so the moment can be judged. Option C values (the same as A and B from 2009)."
+ ]
+}

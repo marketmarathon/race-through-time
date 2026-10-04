@@ -208,7 +208,115 @@
    *   - fade: the window event from which each retired console fades (first quarter end on or after
    *     its fade_date); -1 = already faded on the opening board; null = not inside the window.
    */
+  /* ---- IQ-13 (RTT-001): a monthly SHARE series (race.kind "share", scripts/rtt001_adapter.py) ----
+   * Values are whole HUNDREDTHS of a percent, copied from data/rtt-001/series.csv. Nothing here changes the data
+   * (DEC-167): shareRace() returns a copy of the race whose month-end values are what the player DRAWS under
+   * cfg.smoothing, plus the hand-over windows it used, the source line of each month and the changes of first place
+   * of the drawn values. With smoothing off (or mode "none") every value is series.csv exactly.
+   *
+   * smoothing {mode: "none" | "eased", handover_months: 12, include_flagged: false}:
+   *   - within one source, the line through that source's published figures (race.knots) is a monotone cubic
+   *     (Fritsch-Carlson) instead of straight lines: it passes through every published figure, never goes beyond the
+   *     two figures either side of it, and comes to rest (zero slope) at a source's first and last figure;
+   *   - at each hand-over, for a browser reported on both sides, the bar blends gradually from the outgoing source's
+   *     line O to the incoming source's line I over a window of handover_months months centred on the hand-over (the
+   *     whole gap when the gap is longer), never reaching into StatCounter's months (from race.sc_start; that window
+   *     ends on StatCounter's first month instead): (1 - w) O(t) + w I(t), with O held at its last figure after it
+   *     and I at its first figure before it, and w an eased 0..1 ramp (smoothstep) over the window. A blend of two
+   *     published lines never goes outside the figures the two sources gave in that stretch;
+   *   - hand-overs flagged in the order check (DEC-168) are left as built unless include_flagged is true;
+   *   - from race.sc_start (StatCounter) and outside every window nothing is smoothed: values are series.csv exactly
+   *     at every month end that is a published figure, and on every StatCounter month;
+   *   - a bar is drawn in exactly the months series.csv has a value for it (never added, never removed).
+   * Rank: share, then the previous month's order, then the browser's name (reference/metric_contract_RTT-001.md). */
+  const dayNum = iso => Date.UTC(+iso.slice(0, 4), +iso.slice(5, 7) - 1, +iso.slice(8, 10)) / 864e5;
+  function pchip(xs, ys) {
+    const n = xs.length;
+    if (n === 1) return () => ys[0];
+    const h = [], d = [], m = new Array(n).fill(0);
+    for (let i = 0; i < n - 1; i++) { h.push(xs[i + 1] - xs[i]); d.push((ys[i + 1] - ys[i]) / h[i]); }
+    for (let i = 1; i < n - 1; i++) if (d[i - 1] * d[i] > 0) { const w1 = 2 * h[i] + h[i - 1], w2 = h[i] + 2 * h[i - 1]; m[i] = (w1 + w2) / (w1 / d[i - 1] + w2 / d[i]); }
+    return x => {
+      if (x <= xs[0]) return ys[0];
+      if (x >= xs[n - 1]) return ys[n - 1];
+      let i = 0; while (x > xs[i + 1]) i++;
+      const t = (x - xs[i]) / h[i], t2 = t * t, t3 = t2 * t;
+      return (2 * t3 - 3 * t2 + 1) * ys[i] + (t3 - 2 * t2 + t) * h[i] * m[i] + (-2 * t3 + 3 * t2) * ys[i + 1] + (t3 - t2) * h[i] * m[i + 1];
+    };
+  }
+  function linear(xs, ys) {
+    return x => { if (x <= xs[0]) return ys[0]; if (x >= xs[xs.length - 1]) return ys[ys.length - 1];
+      let i = 0; while (x > xs[i + 1]) i++; return ys[i] + (ys[i + 1] - ys[i]) * (x - xs[i]) / (xs[i + 1] - xs[i]); };
+  }
+  const smoothstep = u => u <= 0 ? 0 : u >= 1 ? 1 : u * u * (3 - 2 * u);
+  function shareOrder(values, prevOrder, label) {
+    const pos = {}; prevOrder.forEach((id, i) => { pos[id] = i; });
+    return Object.keys(values).sort((a, b) => (values[b] - values[a]) || ((a in pos ? pos[a] : 1e9) - (b in pos ? pos[b] : 1e9)) || (label[a] < label[b] ? -1 : label[a] > label[b] ? 1 : 0));
+  }
+  function shareRace(race, cfg) {
+    const S = Object.assign({ mode: 'none', handover_months: 12, include_flagged: false }, cfg.smoothing || {});
+    const SC = dayNum(race.sc_start), label = {};
+    for (const e of race.entrants) label[e.id] = e.label;
+    const evs = race.events.map(ev => Object.assign({}, ev, { values: Object.assign({}, ev.values), series_values: ev.values }));
+    const windows = [];
+    if (S.mode === 'eased') {
+      /* segments: per browser and source, the function through that source's points */
+      const seg = {};
+      for (const [id, ks] of Object.entries(race.knots || {})) {
+        for (const k of ks) { const s = (seg[id] = seg[id] || {})[k.src] = seg[id][k.src] || { xs: [], ys: [] }; s.xs.push(dayNum(k.date)); s.ys.push(k.v); }
+        for (const s of Object.values(seg[id])) s.f = pchip(s.xs, s.ys);
+      }
+      for (const ev of evs) if (dayNum(ev.date) >= SC) for (const [id, v] of Object.entries(ev.values)) {
+        const s = ((seg[id] = seg[id] || {}).STATCOUNTER = seg[id].STATCOUNTER || { xs: [], ys: [] }); s.xs.push(dayNum(ev.date)); s.ys.push(v / 100);
+      }
+      for (const id in seg) if (seg[id].STATCOUNTER) seg[id].STATCOUNTER.f = linear(seg[id].STATCOUNTER.xs, seg[id].STATCOUNTER.ys);
+      const half0 = S.handover_months * 365.25 / 24;
+      for (const h of race.handovers || []) {
+        if (h.flagged && !S.include_flagged) continue;
+        const to = dayNum(h.t_o), ti = dayNum(h.t_i), c = (to + ti) / 2, half = Math.max(half0, (ti - to) / 2);
+        let a = c - half, b = c + half;
+        if (b > SC) { a -= b - SC; b = SC; }
+        const joined = Object.keys(seg).filter(id => seg[id][h.from] && seg[id][h.to] && seg[id][h.from].xs[seg[id][h.from].xs.length - 1] === to && seg[id][h.to].xs[0] === ti);
+        windows.push({ from: h.from, to: h.to, t_o: h.t_o, t_i: h.t_i, a, b, flagged: h.flagged, joined,
+                       D: Object.fromEntries(joined.map(id => [id, seg[id][h.to].ys[0] - seg[id][h.from].ys[seg[id][h.from].ys.length - 1]])) });
+      }
+      for (const ev of evs) {
+        const t = dayNum(ev.date);
+        if (t >= SC) continue;
+        const W = windows.find(w => t >= w.a && t <= w.b);
+        if (W) ev.smooth = { from: W.from, to: W.to };
+        for (const id of Object.keys(ev.values)) {
+          let v = null;
+          if (W && W.joined.includes(id)) {
+            const O = seg[id][W.from], I = seg[id][W.to], w = smoothstep((t - W.a) / (W.b - W.a));
+            v = (1 - w) * O.f(t) + w * I.f(t);           // pchip / linear hold their end values outside their points
+          } else {
+            const s = Object.values(seg[id] || {}).find(s => t >= s.xs[0] && t <= s.xs[s.xs.length - 1]);
+            if (s) v = s.f(t);                         // inside one source's points: the eased line
+          }                                            // otherwise (a hand-over left as built): series.csv
+          if (v != null) ev.values[id] = Math.round(Math.min(100, Math.max(0, v)) * 100);
+        }
+      }
+    }
+    /* changes of first place of the DRAWN values; dated = both browsers' figures that month are published (observed or
+       arithmetic) and the month is not inside a smoothed window - only those get a callout and a hold (DEC-165 (7)) */
+    const crown = [];
+    let prev = null, prevOrder = [];
+    for (const ev of evs) {
+      const order = shareOrder(ev.values, prevOrder, label);
+      ev.order = order;
+      if (order[0] !== prev) {
+        const dated = prev != null && !ev.smooth && 'oa'.includes(ev.prov[order[0]]) && 'oa'.includes(ev.prov[prev] || 'i');
+        crown.push({ date: ev.date, id: order[0], previous: dated ? prev : null, was: prev, style: ev.style[order[0]], dated });
+      }
+      prev = order[0]; prevOrder = order;
+    }
+    return Object.assign({}, race, { events: evs, crown, windows, smoothing: S });
+  }
+
   function buildSeries(race, cfg) {
+    const SHARE = race.kind === 'share';
+    if (SHARE) race = shareRace(race, cfg);
     const fps = cfg.fps, rows = cfg.rows, P = cfg.pacing;
     checkPacing(P);
     const from = (cfg.window && cfg.window.from) || '0000-00-00';
@@ -224,7 +332,7 @@
         if (lastVal[id] !== u) { lastVal[id] = u; reached[id] = ev.date; }
       }
       const r = Object.assign({}, reached);
-      const order = Object.keys(ev.values).sort((a, b) => (ev.values[b] - ev.values[a]) || (r[a] < r[b] ? -1 : r[a] > r[b] ? 1 : 0) || (launch[a] < launch[b] ? -1 : launch[a] > launch[b] ? 1 : 0));
+      const order = SHARE ? ev.order : Object.keys(ev.values).sort((a, b) => (ev.values[b] - ev.values[a]) || (r[a] < r[b] ? -1 : r[a] > r[b] ? 1 : 0) || (launch[a] < launch[b] ? -1 : launch[a] > launch[b] ? 1 : 0));
       const plus = {}; for (const id of ev.plus) plus[id] = true;
       const mplus = {}; for (const m of ev.maker_plus || []) mplus[m] = true;
       all.push({ ev, st: { order, totals: Object.assign({}, ev.values), style: Object.assign({}, ev.style), plus, status: Object.assign({}, ev.status || {}),
@@ -264,7 +372,8 @@
       hold.push(!!RH.enabled && (RH.types || []).includes('CROWN') && !!c);
       if (c) records.push({ k, date: ev.date, id: c.id, previous: c.previous, style: c.style, type: 'CROWN', held: hold[k] });
     });
-    const base = ev => { for (const s of P.segments || []) if (ev.date <= s.to) return s.sec_per_event; return P.sec_per_event; };
+    /* IQ-13: a segment may also name the month it starts from ({from, sec_per_event}: a faster fixed pace from a named month) */
+    const base = ev => { for (const s of P.segments || []) if ((s.to == null || ev.date <= s.to) && (s.from == null || ev.date >= s.from)) return s.sec_per_event; return P.sec_per_event; };
     /* With counting (cfg.count, round 2), a held quarter counts at its normal beat and THEN holds for
        record_hold.sec, so the pause follows the overtake; without counting (round 1) the hold replaces
        the beat, as RTT-002's record pauses do. */
@@ -401,7 +510,37 @@
         tl.status[e.id] = list;
       }
     }
+    /* IQ-13 (RTT-001, share): the hand-over windows used, the "new source" markers and the dated notes */
+    if (SHARE) {
+      tl.share = true; tl.windows = race.windows; tl.smoothing = race.smoothing; tl.scStart = race.sc_start;
+      tl.crownAll = race.crown;
+      const srcs = ev => ev.smooth ? [ev.smooth.from, ev.smooth.to] : String(ev.source_id || '').split('>').filter(Boolean);
+      tl.markers = [];
+      events.forEach((ev, k) => { const was = srcs(k > 0 ? events[k - 1] : openingEvent), now = srcs(ev);
+        const fresh = now.filter(s => !was.includes(s));
+        if (fresh.length && was.length) tl.markers.push({ k, date: ev.date, frame: startFrame[k], sources: fresh }); });
+      tl.notes = [];
+      for (const n of cfg.notes_at || []) { const k = events.findIndex(ev => ev.date === n.date); if (k >= 0) tl.notes.push({ k, date: n.date, frame: startFrame[k], text: n.text }); }
+    }
     return tl;
+  }
+
+  /* IQ-13 (RTT-001, share): the counted board on frame `since` of month k. Like seriesFrame, plus bars that enter
+     and leave: a browser with no value at month k-1 appears at month k's value, fading in over the count; one with
+     no value at month k keeps month k-1's value and fades out, gone on the month-end frame (no bar where the data
+     has no value). alpha[id] is that fade (1 for every other bar). */
+  function shareFrame(tl, k, since) {
+    if (k < 0) { const o = tl.opening, alpha = {}; o.order.forEach(id => { alpha[id] = 1; });
+      return { g: 1, u: Object.assign({}, o.totals), order: o.order.slice(), plus: {}, mu: {}, mplus: {}, alpha }; }
+    const cur = tl.states[k], prev = k > 0 ? tl.states[k - 1] : tl.opening, n = tl.countFrames[k];
+    const g = n <= 1 ? 1 : Math.min(1, Math.max(0, since) / (n - 1));
+    const u = {}, alpha = {}, idx = {};
+    cur.order.forEach((id, i) => { idx[id] = i; const b = cur.totals[id];
+      if (id in prev.totals) { const a = prev.totals[id]; u[id] = g >= 1 ? b : Math.round(a + (b - a) * g); alpha[id] = 1; }
+      else { u[id] = b; alpha[id] = g; } });
+    if (g < 1) prev.order.forEach((id, i) => { if (!(id in cur.totals)) { u[id] = prev.totals[id]; alpha[id] = 1 - g; idx[id] = 1e6 + i; } });
+    const order = Object.keys(u).sort((x, y) => (u[y] - u[x]) || (idx[x] - idx[y]));
+    return { g, u, order, plus: {}, mu: {}, mplus: {}, alpha };
   }
 
   /* IQ-10 round 4: a bar's status at frame f: {kind, dimFrom} (dimFrom: frame it stopped being live,
@@ -427,6 +566,7 @@
      Order: most counted units first; equal counts keep quarter k's order (its tie rule). "+": on the
      quarter-end frame exactly the data's flag; while counting, "+" if either end is a lower bound. */
   function seriesFrame(tl, k, since) {
+    if (tl.share) return shareFrame(tl, k, since);
     if (k < 0) { const o = tl.opening; return { g: 1, u: Object.assign({}, o.totals), order: o.order.slice(), plus: Object.assign({}, o.plus), mu: Object.assign({}, o.maker_totals), mplus: Object.assign({}, o.maker_plus) }; }
     const cur = tl.states[k], prev = k > 0 ? tl.states[k - 1] : tl.opening, n = tl.countFrames[k];
     const g = n <= 1 ? 1 : Math.min(1, Math.max(0, since) / (n - 1));
@@ -613,7 +753,7 @@
      keeps its name. Everything else is races.csv's grand_prix exactly. */
   function gpShort(name) { return String(name).replace(/Grand Prix/g, 'GP'); }
 
-  const api = { build, buildSeries, seriesFrame, isLive, statusAt, eventAt, rankOf, assignColours, coVisible, drawnColour, deltaE, lab, gpShort, rateText };
+  const api = { build, buildSeries, shareRace, pchip, seriesFrame, isLive, statusAt, eventAt, rankOf, assignColours, coVisible, drawnColour, deltaE, lab, gpShort, rateText };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   else root.RTT_TIMELINE = api;
 })(typeof window !== 'undefined' ? window : this);

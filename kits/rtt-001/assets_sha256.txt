@@ -1,0 +1,4 @@
+# RTT-001 private assets read by .github/workflows/rtt001_pilot.yml - SHA-256 checked before any render (DEC-060, DEC-061).
+# Files live only in marketmarathon/race-through-time-private (main); never committed here. Pilot 1 uses only Luke's logo:
+# the browser logos are trademarks whose terms are not yet checked, so each bar has an empty picture box (brief item 7).
+e3db46119b52648c84eae5f6acd682bd7be855819818856e695592b20572eeca  assets/rtt-002/rtt_logo.png
