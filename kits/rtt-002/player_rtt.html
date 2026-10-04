@@ -153,6 +153,8 @@
          for note_line.sec from that month (the June 1996 EWS note, DEC-165 (6)).
        - callout.texts {crown, passes, estimated}: callout wording templates ({id}, {other}, {rank}).
        - pictures.placeholder: an empty outlined picture box where there is no picture (logos not yet cleared).
+       - pictures.files + pictures.tile (IQ-13b, DEC-180): one logo per browser from the listed private files, drawn
+         unmodified and fitted on a light tile of the picture box's size; a browser with no usable logo has none.
      Removed as unused: the Format C / C2-1 picture column and story cards, the prototype
      driver block that followed </html> in the C2-2 file.
 
@@ -838,7 +840,13 @@ function drawAt(t){
     if(ctx.globalAlpha<=0){ ctx.globalAlpha=1; return; }
     if(PIC){                                     // IQ-10 picture, in the column left of the bar
       const im=PICIMG[c.id], bx=LEFT, byy=mid-G.PH/2;
-      if(im && im.naturalWidth){
+      if(im && PIC.tile){                         // IQ-13b: a logo, unmodified, fitted on a light tile (DEC-180)
+        const pad=PIC.tile_pad!=null?PIC.tile_pad:6, iw0=im.naturalWidth||im.width||1, ih0=im.naturalHeight||im.height||1;
+        ctx.globalAlpha=RA*fa; ctx.fillStyle='#F4F6FA'; rr(bx,byy,G.PW,G.PH,8); ctx.fill();
+        const sc=Math.min((G.PW-2*pad)/iw0,(G.PH-2*pad)/ih0), d={x:bx+(G.PW-iw0*sc)/2, y:byy+(G.PH-ih0*sc)/2, w:iw0*sc, h:ih0*sc};
+        ctx.drawImage(im,d.x,d.y,d.w,d.h); ctx.globalAlpha=RA;
+        window.__PICS.push({id:c.id, box:{x:bx,y:byy,w:G.PW,h:G.PH}, drawn:d, alpha:RA*fa, tile:true});
+      } else if(im && im.naturalWidth){
         /* round 2: a portrait picture may be up to PIC.tall_frac of the box height (the tall consoles) */
         const tall = im.naturalWidth<im.naturalHeight && PIC.tall_frac ? PIC.tall_frac : 1, bh=G.PH*tall, bY=mid-bh/2;
         const sc=Math.min(G.PW/im.naturalWidth, bh/im.naturalHeight), iw=im.naturalWidth*sc, ih=im.naturalHeight*sc;

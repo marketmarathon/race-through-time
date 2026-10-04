@@ -23,4 +23,11 @@ hands over to the next.
   https://gs.statcounter.com/browser-market-share
 - The dataset built for this video (and how it was built) is public: https://github.com/marketmarathon/race-through-time
 
+**Browser logos** (Wikimedia Commons; one per browser, only to identify it): Browser names and logos are trademarks of
+their owners and are shown only to identify the browsers; Race Through Time is not affiliated with or endorsed by any of
+them. Firefox is a trademark of the Mozilla Foundation in the US and other countries. Microsoft Edge logo © Microsoft
+Corporation, MIT licence; Android Browser icon © the Chromium project, BSD licence; Firefox and SeaMonkey logos, Mozilla
+Public License 1.1; Brave logo, Mozilla Public License 2.0; the others are public domain on Wikimedia Commons. File pages
+and licences: `kits/rtt-001/logos.json` (the licence texts' required notices to be completed before publishing).
+
 Music: to be chosen by Luke (none in the pilot).

@@ -27,7 +27,8 @@
  *   9. dated note (when notes_at is set): exactly for note_line.sec from the first frame of its month
  *  10. crown on the leader's bar on every frame (when on); callouts only at the leader changes whose month is a
  *      published figure for both browsers (leaders.csv: October 1998, May 2012) plus the configured extra moments
- *  11. pictures: every drawn bar has its empty picture box (placeholder) on its row; no picture file is drawn
+ *  11. logos (owner direction DEC-180): every drawn bar of a browser listed in pictures.files has its logo on a tile on
+ *      its row, inside the tile and left of the bar; every other browser has none (name only)
  *  12. layout: no label outside the frame; the source line, marker, note and callout overlap no title, date line,
  *      axis number or the RTT logo box
  *  13. pacing: each month counts over 0.8-1.4 x its base (the config's sec_per_event, or a segment's), a dated leader
@@ -36,7 +37,7 @@
  *      before closer than CIEDE2000 18 (DEC-023)
  *  15. smoothing never moves a change of first place: the leaders on the month-end frames change exactly as in
  *      leaders.csv, except where a flagged stretch is smoothed on purpose (include_flagged), which is reported
- * Placeholder RTT logo (a plain square, written at run time into tests/output/, never committed). Results:
+ * Placeholder RTT logo and browser logos (plain shapes, written at run time into tests/output/, never committed). Results:
  * tests/player/RESULTS_RTT001.md. Exit 1 on any failure.
  *
  *   node tests/player/run_tests_rtt001.js [case ...]
@@ -49,7 +50,7 @@ const KIT = path.join(ROOT, 'kits', 'rtt-002');
 const DATA = path.join(ROOT, 'data', 'rtt-001');
 const rtt = require(path.join(KIT, 'rtt.js'));
 const TLJS = require(path.join(KIT, 'rtt_timeline.js'));
-const { placeholderPNG } = require('./placeholders.js');
+const { placeholderPNG, logoPlaceholders } = require('./placeholders.js');
 const CHROME = process.env.PW_CHROME || '/opt/pw-browsers/chromium';
 const OUT = path.join(ROOT, 'tests', 'output', 'rtt001');
 const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -111,6 +112,7 @@ async function runCase(name, configFile, overrides) {
   const data = JSON.parse(fs.readFileSync(path.resolve(KIT, cfg.race_file), 'utf8'));
   const dir = path.join(OUT, '_assets'); fs.mkdirSync(dir, { recursive: true });
   placeholderPNG(path.join(dir, 'rtt_logo.png'), 885, 885, [212, 175, 55]);
+  const withLogo = new Set(logoPlaceholders(cfg, dir));
   process.env.RTT_LOCAL_ASSETS = dir;
   const { br, pg } = await rtt.openPlayer({ cfg, data, raster: 1, chrome: CHROME });
   delete process.env.RTT_LOCAL_ASSETS;
@@ -122,7 +124,7 @@ async function runCase(name, configFile, overrides) {
   const SL = cfg.source_line, MK = cfg.marker && cfg.marker.enabled ? Object.assign({ sec: 3.0 }, cfg.marker) : null;
   const NL = Object.assign({ sec: 3.0 }, cfg.note_line || {}), notes = cfg.notes_at || [];
   const res = { name, config: configFile, frames: info.raceFrames, months: info.dates.length, opening: info.opening, last: info.dates[info.dates.length - 1],
-                failures: [], counts: { exact: 0, window: 0, between: 0, approx: 0, counting: 0, enter_leave: 0, est: 0, off: 0, markers: 0, notes: 0, crown: 0, callout: 0, pics: 0 },
+                failures: [], counts: { exact: 0, window: 0, between: 0, approx: 0, counting: 0, enter_leave: 0, est: 0, off: 0, markers: 0, notes: 0, crown: 0, callout: 0, pics: 0, nameOnly: 0 },
                 maxOff: 0, maxOffAt: '', callouts: [], leaderChanges: [], lastLeader: null, markerMonths: [], minDE: 1e9, minPair: '' };
   const fail = m => { if (res.failures.length < 40) res.failures.push(m); };
   if (!dataUntouched) fail('series.csv differs from the build manifest (the data must not change, DEC-167)');
@@ -214,8 +216,15 @@ async function runCase(name, configFile, overrides) {
     if (X.CO) { res.counts.callout++; const c = info.dates[X.CO.k] + ' ' + X.CO.id; if (!res.callouts.includes(c)) res.callouts.push(c); }
     // 11. pictures
     for (const b of vis) { const p = X.P.find(p => p.id === b.id);
-      if (!p || !p.placeholder || p.drawn) fail(`f${f}: ${b.id} has no empty picture box`); else { res.counts.pics++;
-        if (Math.abs((p.box.y + p.box.h / 2) - (b.rect.y + b.rect.h / 2)) > 1) fail(`f${f}: ${b.id} picture box off its row`); } }
+      if (withLogo.has(b.id)) {
+        if (!p || !p.tile || !p.drawn) { fail(`f${f}: ${b.id} has no logo`); continue; }
+        res.counts.pics++;
+        const d = p.drawn, bx = p.box;
+        if (d.x < bx.x - 0.5 || d.y < bx.y - 0.5 || d.x + d.w > bx.x + bx.w + 0.5 || d.y + d.h > bx.y + bx.h + 0.5) fail(`f${f}: ${b.id} logo outside its tile`);
+        if (Math.abs((bx.y + bx.h / 2) - (b.rect.y + b.rect.h / 2)) > 1) fail(`f${f}: ${b.id} logo off its row`);
+        if (bx.x + bx.w > b.rect.x) fail(`f${f}: ${b.id} logo overlaps its bar`);
+      } else if (p) fail(`f${f}: ${b.id} has a picture but no logo file is listed for it`);
+      else res.counts.nameOnly++; }
     // 12. layout
     for (const l of X.L) if (l.alpha > 0.01 && l.kind !== 'name' && (l.x < 0 || l.x + l.w > 1920)) fail(`f${f}: ${l.kind} "${l.text}" outside the frame`);
     const topL = X.L.filter(l => ['source_line', 'marker', 'note_line', 'callout', 'callout_extra'].includes(l.kind) && l.alpha > 0.01);
@@ -264,9 +273,9 @@ function write(results) {
     'Written by `node tests/player/run_tests_rtt001.js`. Every frame drawn in order at 1920 x 1080 in Playwright Chromium through `kits/rtt-002/rtt.js` (the same path as the render). Expected values read independently from `data/rtt-001/` (series.csv, observations.csv, handover_order.csv, leaders.csv, manifest.json). The checks are listed at the top of the test file.', '',
     `Data untouched: series.csv SHA-256 ${seriesHash} ${dataUntouched ? '= the build manifest' : '**differs from the build manifest**'}.`, '',
     `Overall: ${results.filter(r => r.pass).length}/${results.length} PASS.`, '',
-    '| Case | Result | Config | Months (opening → last) | Frames | Month-end values exact / in a hand-over window / between their two figures | Counting values checked | "~" labels | Smoothed values that differ from series.csv (largest difference) | Enter/leave bar-frames | Source markers (months) | Note frames | Crown frames | Callouts | Picture boxes | Closest colours (CIEDE2000) | Changes of first place (month-end frames) |',
+    '| Case | Result | Config | Months (opening → last) | Frames | Month-end values exact / in a hand-over window / between their two figures | Counting values checked | "~" labels | Smoothed values that differ from series.csv (largest difference) | Enter/leave bar-frames | Source markers (months) | Note frames | Crown frames | Callouts | Logos / name-only bar-frames | Closest colours (CIEDE2000) | Changes of first place (month-end frames) |',
     '|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|'];
-  for (const r of results) L.push(`| ${r.name} | ${r.pass ? 'PASS' : 'FAIL'} | \`${r.config}\` | ${r.months} (${r.opening} → ${r.last}) | ${r.frames} (${(r.frames / 30).toFixed(1)} s) | ${r.counts.exact} / ${r.counts.window} / ${r.counts.between} | ${r.counts.counting} | ${r.counts.approx} | ${r.counts.off}${r.maxOff ? ' (' + (r.maxOff / 100).toFixed(2) + ' points: ' + r.maxOffAt + ')' : ''} | ${r.counts.enter_leave} | ${r.counts.markers} (${r.markerMonths.join(', ') || 'none'}) | ${r.counts.notes} | ${r.counts.crown} | ${r.callouts.join('; ') || 'none'} | ${r.counts.pics} | ${r.minDE === 1e9 ? 'n/a' : r.minDE.toFixed(1) + ' (' + r.minPair + ')'} | ${r.leaderChanges.join(', ') || 'none'} |`);
+  for (const r of results) L.push(`| ${r.name} | ${r.pass ? 'PASS' : 'FAIL'} | \`${r.config}\` | ${r.months} (${r.opening} → ${r.last}) | ${r.frames} (${(r.frames / 30).toFixed(1)} s) | ${r.counts.exact} / ${r.counts.window} / ${r.counts.between} | ${r.counts.counting} | ${r.counts.approx} | ${r.counts.off}${r.maxOff ? ' (' + (r.maxOff / 100).toFixed(2) + ' points: ' + r.maxOffAt + ')' : ''} | ${r.counts.enter_leave} | ${r.counts.markers} (${r.markerMonths.join(', ') || 'none'}) | ${r.counts.notes} | ${r.counts.crown} | ${r.callouts.join('; ') || 'none'} | ${r.counts.pics} / ${r.counts.nameOnly} | ${r.minDE === 1e9 ? 'n/a' : r.minDE.toFixed(1) + ' (' + r.minPair + ')'} | ${r.leaderChanges.join(', ') || 'none'} |`);
   for (const r of results) if (!r.pass) { L.push('', `**${r.name} failures** (first 40):`); for (const f of r.failures) L.push('- ' + f); }
   L.push('');
   fs.writeFileSync(path.join(__dirname, 'RESULTS_RTT001.md'), L.join('\n'));

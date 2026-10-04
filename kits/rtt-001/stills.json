@@ -230,6 +230,10 @@
    "sheet": "sheet_titles"
   },
   {
+   "name": "s16_logos",
+   "sheet": "sheet_logos"
+  },
+  {
    "name": "c01_h1_ews_statmarket_options",
    "compose": {
     "title": "1. EWS server to StatMarket (December 2000 to February 2001): January 2001, the middle of the hand-over",

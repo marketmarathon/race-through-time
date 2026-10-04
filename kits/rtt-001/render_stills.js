@@ -58,7 +58,8 @@ async function main() {
     const { br, pg } = await rtt.openPlayer({ cfg, data, raster: 1, chrome: CHROME });
     if (s.sheet) {
       await pg.addScriptTag({ path: path.join(__dirname, 'sheets.js') });
-      await pg.evaluate(n => window.RTT001_SHEETS[n](), s.sheet);
+      const meta = JSON.parse(fs.readFileSync(path.join(__dirname, 'logos.json'), 'utf8'));
+      await pg.evaluate(([n, m]) => window.RTT001_SHEETS[n](m), [s.sheet, meta]);
     } else {
       const target = await targetFrame(pg, s);
       for (let f = 0; f <= target; f++) await rtt.drawFrame(pg, f, cfg);

@@ -121,12 +121,31 @@ function dataUrl(f) {
   const ext = path.extname(f).slice(1).toLowerCase(), mime = ext === 'svg' ? 'image/svg+xml' : ext === 'jpg' ? 'image/jpeg' : 'image/' + ext;
   return 'data:' + mime + ';base64,' + fs.readFileSync(f).toString('base64');
 }
+/* An SVG with a viewBox but no width/height decodes at a default size in Chromium, which can squash its proportions;
+   give its root element the viewBox's own width and height (the drawing itself is untouched). */
+function svgSized(f) {
+  let t = fs.readFileSync(f, 'utf8');
+  const m = /<svg\b[^>]*>/i.exec(t);
+  if (m && !/\swidth\s*=/.test(m[0])) {
+    const vb = /viewBox\s*=\s*["']\s*[-\d.]+[\s,]+[-\d.]+[\s,]+([\d.]+)[\s,]+([\d.]+)/i.exec(m[0]);
+    if (vb) t = t.slice(0, m.index) + m[0].replace(/<svg\b/i, '<svg width="' + vb[1] + '" height="' + vb[2] + '"') + t.slice(m.index + m[0].length);
+  }
+  return 'data:image/svg+xml;base64,' + Buffer.from(t, 'utf8').toString('base64');
+}
 function loadPictures(cfg, data) {
   const P = cfg.pictures;
   if (!P || !P.enabled) return null;
   if (P.placeholder_only) return {};               // IQ-13 (RTT-001): empty picture boxes only, no files read
   const dir = path.join(path.resolve(KIT, process.env.RTT_LOCAL_ASSETS || cfg.local_assets || 'local_assets'), P.dir || 'icons');
   const out = {};
+  if (P.files) {                                   // IQ-13b (RTT-001): only the listed files {id: "<file>"}; other bars have none
+    for (const [id, name] of Object.entries(P.files)) {
+      const f = path.join(dir, name);
+      if (!fs.existsSync(f)) { console.log('picture "' + id + '": ' + f + ' not found - none drawn'); continue; }
+      out[id] = path.extname(f).toLowerCase() === '.svg' ? svgSized(f) : dataUrl(f);
+    }
+    return out;
+  }
   for (const e of data.entrants) {
     const f = path.join(dir, e.id + '.png');
     if (!fs.existsSync(f)) { console.log('picture "' + e.id + '": ' + f + ' not found - none drawn'); continue; }

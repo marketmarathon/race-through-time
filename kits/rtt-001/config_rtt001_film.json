@@ -236,8 +236,27 @@
  "nameoverflow": true,
  "pictures": {
   "enabled": true,
-  "placeholder": true,
-  "placeholder_only": true,
+  "dir": "logos",
+  "files": {
+   "internet_explorer": "internet_explorer.svg",
+   "chrome": "chrome.svg",
+   "firefox": "firefox.png",
+   "netscape": "netscape.svg",
+   "edge": "edge.svg",
+   "opera": "opera.svg",
+   "samsung_internet": "samsung_internet.svg",
+   "android": "android.png",
+   "blackberry": "blackberry.svg",
+   "aol": "aol.svg",
+   "yandex": "yandex.png",
+   "maxthon": "maxthon.jpg",
+   "kaios": "kaios.svg",
+   "seamonkey": "seamonkey.svg",
+   "brave": "brave.svg"
+  },
+  "tile": true,
+  "tile_pad": 6,
+  "placeholder": false,
   "height_frac": 0.92,
   "aspect": 1.0,
   "gap": 14
@@ -274,7 +293,7 @@
  ],
  "overlay_gap": 12,
  "notes": [
-  "RTT-001 Browser Wars, design pilot 1 (IQ-13, prompts/CODE_SESSION_IQ-13.md). This config is the AS-BUILT reference: values exactly as data/rtt-001/series.csv (straight lines between dated figures, DEC-153), one decimal (metric contract), the house estimated look before January 2009 with the source named on screen (DEC-153), top 10, empty picture boxes (logos not cleared yet). It is not a film: nothing beyond the approved look goes into a full film before Luke approves it (DEC-069).",
+  "RTT-001 Browser Wars, design pilot 1 (IQ-13, prompts/CODE_SESSION_IQ-13.md). This config is the AS-BUILT reference: values exactly as data/rtt-001/series.csv (straight lines between dated figures, DEC-153), one decimal (metric contract), the house estimated look before January 2009 with the source named on screen (DEC-153), top 10, one logo per browser on a light tile where a usable logo exists (owner direction DEC-180; files listed in logos.json, private), name only otherwise. It is not a film: nothing beyond the approved look goes into a full film before Luke approves it (DEC-069).",
   "The smoothing options A, B and C of DEC-167 are config_rtt001_opt_A/B/C.json (extending this file); the clips and stills extend those. Smoothing is drawn by the player (rtt_timeline.js shareRace); series.csv is never changed.",
   "Drawn by the RTT-002 player (kits/rtt-002) in its series mode with the monthly share kind (race kind 'share', scripts/rtt001_adapter.py). Colours: one per browser (maker_order = browser ids, palette), chosen by DEC-173. No music this round.",
   "Colours (DEC-173): one per browser, near its familiar brand colour; no two browsers that can be on screen together closer than CIEDE2000 18 (closest 18.1, Internet Explorer / Netscape); white names at least 3.0 : 1 on every bar, every bar at least 3.0 : 1 on the background. Browsers that never reach the top 10 get #6E7480 (never drawn). Search: kits/rtt-001/palette_search.js."

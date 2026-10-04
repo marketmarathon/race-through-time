@@ -1,4 +1,19 @@
 # RTT-001 private assets read by .github/workflows/rtt001_pilot.yml - SHA-256 checked before any render (DEC-060, DEC-061).
-# Files live only in marketmarathon/race-through-time-private (main); never committed here. Pilot 1 uses only Luke's logo:
-# the browser logos are trademarks whose terms are not yet checked, so each bar has an empty picture box (brief item 7).
+# Files live only in marketmarathon/race-through-time-private (branch claude/compassionate-cray-tlnnkm until merged); never committed here.
+# Browser logos: owner direction DEC-180; sources, licences and notices in kits/rtt-001/logos.json and reference/rights_ledger.md.
 e3db46119b52648c84eae5f6acd682bd7be855819818856e695592b20572eeca  assets/rtt-002/rtt_logo.png
+8dca730a6ce6ab35e43858e666230e2dc7bc9b6b1e470acb63064066a2c6f8f8  assets/rtt-001/logos/internet_explorer.svg
+213cf08d59d8b5247610a33f6907ab250b3dd5fc7d4994785606cd07716e9ed6  assets/rtt-001/logos/chrome.svg
+f44384e76d674ce1734e4a467fdd7627d207e16354a01a8ba9dc9b4f09cccd17  assets/rtt-001/logos/firefox.png
+191584d578a8ba094159f53418919d7933207e8dd3d38512e91eb2490da2e4f8  assets/rtt-001/logos/netscape.svg
+228f22cc4bf1603374f4a51ccf824377adc04aa0123aed741f32cd5f0899ed81  assets/rtt-001/logos/edge.svg
+75a7effb1bb83748023b53e8c0ad949291904108ad3172177d978f48ab869188  assets/rtt-001/logos/opera.svg
+fbce8a57aec23d6c2d817025671d36eb3dadb82d8185a877fd5c091548b4231d  assets/rtt-001/logos/samsung_internet.svg
+050634206a24c75c6b306fafaa4aa5bab420681510e20994013546f36c691173  assets/rtt-001/logos/android.png
+3796d917c14cc48cb4c8f3754b32656e99189a12eb1578a2f142c644174c9b86  assets/rtt-001/logos/blackberry.svg
+e16b136e0464249adb33c57fe72bca88dcdcc628a9cd192ebbc16bab8dede517  assets/rtt-001/logos/aol.svg
+84507c0fea378e7ee1757db5f996affc7f46292650a014eb809f0dd3a5888ba8  assets/rtt-001/logos/yandex.png
+a0bca1ccbbe8a71e38d6efd20bfcf9051d3bade1751b781622df6fa15e302f62  assets/rtt-001/logos/maxthon.jpg
+cc12486b5d9ad7a316ff6633d7efd695152c8f3fe73d14c6a27df45af90858f5  assets/rtt-001/logos/kaios.svg
+e252f65f196abe7b0d647fcd97b1f588d6795fe90681d61ec86f24f4f481d198  assets/rtt-001/logos/seamonkey.svg
+f675603da5ca33f36ffb8e1578332b01c1bad926703f79419b429d2892bcd0f6  assets/rtt-001/logos/brave.svg

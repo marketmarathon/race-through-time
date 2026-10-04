@@ -6,7 +6,7 @@
  *   - axis numbers and the date line at least the names (DEC-022 (3), as phone_check.js);
  *   - footer, source line, "New source" marker, note line and callouts at least 5.0 pt (the footer floor of
  *     phone_check.js, as RTT-003 used for its callouts).
- * The empty picture box and the crown are reported (points on the phone), with no threshold.
+ * The logo tile and the crown are reported (points on the phone), with no threshold.
  * Output: tests/player/PHONE_RTT001.md. Exit 1 on any failure.
  */
 const fs = require('fs');
@@ -15,7 +15,7 @@ const ROOT = path.resolve(__dirname, '..', '..');
 const KIT = path.join(ROOT, 'kits', 'rtt-002');
 const rtt = require(path.join(KIT, 'rtt.js'));
 const ST = require(path.join(ROOT, 'kits', 'rtt-001', 'render_stills.js'));
-const { placeholderPNG } = require('./placeholders.js');
+const { placeholderPNG, logoPlaceholders } = require('./placeholders.js');
 const CHROME = process.env.PW_CHROME || '/opt/pw-browsers/chromium';
 const PHONE_PT = 390, FLOOR = 5.0, NAMES = 5.9, k = PHONE_PT / 1920, pt = px => px * k;
 
@@ -23,11 +23,12 @@ const PHONE_PT = 390, FLOOR = 5.0, NAMES = 5.9, k = PHONE_PT / 1920, pt = px => 
   const dir = path.join(ROOT, 'tests', 'output', 'rtt001_phone', '_assets'); fs.mkdirSync(dir, { recursive: true });
   placeholderPNG(path.join(dir, 'rtt_logo.png'), 885, 885, [212, 175, 55]);
   const stills = JSON.parse(fs.readFileSync(path.join(ROOT, 'kits', 'rtt-001', 'stills.json'), 'utf8')).stills.filter(s => s.config);
-  const out = ['# RTT-001 phone check (IQ-13)', '', `Each board still measured as drawn on the 1920 frame and converted to points on a phone showing the video ${PHONE_PT} points wide. Names and values at least ${NAMES} pt (RTT-002's approved size); axis and date at least the names; footer, source line, marker, note and callouts at least ${FLOOR} pt. Picture box and crown: reported only.`, '',
-               '| Still | Names | Values | Axis | Date | Footer | Source line | Marker | Note | Callout | Picture box | Crown | Result |', '|---|---|---|---|---|---|---|---|---|---|---|---|---|'];
+  const out = ['# RTT-001 phone check (IQ-13)', '', `Each board still measured as drawn on the 1920 frame and converted to points on a phone showing the video ${PHONE_PT} points wide. Names and values at least ${NAMES} pt (RTT-002's approved size); axis and date at least the names; footer, source line, marker, note and callouts at least ${FLOOR} pt. Logo tile and crown: reported only.`, '',
+               '| Still | Names | Values | Axis | Date | Footer | Source line | Marker | Note | Callout | Logo tile | Crown | Result |', '|---|---|---|---|---|---|---|---|---|---|---|---|---|'];
   let ok = true;
   for (const s of stills) {
     const cfg = ST.stillConfig(s);
+    logoPlaceholders(cfg, dir);
     const data = JSON.parse(fs.readFileSync(path.resolve(KIT, cfg.race_file), 'utf8'));
     process.env.RTT_LOCAL_ASSETS = dir;
     const { br, pg } = await rtt.openPlayer({ cfg, data, raster: 1, chrome: CHROME });

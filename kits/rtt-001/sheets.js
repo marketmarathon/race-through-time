@@ -79,5 +79,30 @@
       text('width', null, 'title ' + Math.round(tw) + ' px wide at 50 px; the date line starts at x ' + Math.round(TLB.x - dw), LEFT, y0 + 230, 'left');
     });
   }
-  window.RTT001_SHEETS = { sheet_palette: sheetPalette, sheet_titles: sheetTitles };
+  /* IQ-13b (DEC-180): every browser logo as drawn on the board (its tile at board size and at 2x), with its Commons
+     licence, and the browsers shown by name only. LOGOS is passed in by render_stills.js from logos.json. */
+  function sheetLogos(meta) {
+    baseTransform(); window.__LABELS = [];
+    ctx.fillStyle = T.ground; ctx.fillRect(0, 0, 1920, 1080);
+    ctx.fillStyle = T.ink; ctx.font = '700 44px ' + FONT; text('title', null, 'RTT-001 browser logos (owner direction; rights basis to confirm)', LEFT, 62, 'left');
+    ctx.fillStyle = T.cap; ctx.font = '500 22px ' + FONT;
+    text('sub', null, 'One logo per browser, unmodified, on a light tile the size of the picture box (left: as on the board; right: twice the size). Source: Wikimedia Commons.', LEFT, 96, 'left');
+    const G = geom(), box = G.PW, rowH = 124;
+    meta.logos.forEach((L, i) => {
+      const col = Math.floor(i / 7), x = LEFT + col * 610, y = 126 + (i % 7) * rowH, im = PICIMG[L.browser_id];
+      const tile = (tx, ty, sz) => { ctx.fillStyle = '#F4F6FA'; rr(tx, ty, sz, sz, 8); ctx.fill();
+        if (im) { const pad = 6 * sz / box, w0 = im.naturalWidth || 1, h0 = im.naturalHeight || 1, sc = Math.min((sz - 2 * pad) / w0, (sz - 2 * pad) / h0);
+          ctx.drawImage(im, tx + (sz - w0 * sc) / 2, ty + (sz - h0 * sc) / 2, w0 * sc, h0 * sc); } };
+      tile(x, y + (rowH - 8 - box) / 2, box); tile(x + box + 14, y, rowH - 8);
+      const tx = x + box + rowH + 24;
+      ctx.fillStyle = T.ink; ctx.font = '600 26px ' + FONT; text('name', L.browser_id, ENT[L.browser_id].label, tx, y + 34, 'left');
+      ctx.fillStyle = T.cap; ctx.font = '500 19px ' + FONT;
+      const fit = t => { let u = t; while (u.length > 3 && ctx.measureText(u).width > x + 590 - tx) u = u.slice(0, -2); return u === t ? t : u.trimEnd() + '…'; };
+      text('lic', L.browser_id, fit(L.licence + ' · ' + L.commons_title.replace('File:', '')), tx, y + 64, 'left');
+      text('auth', L.browser_id, fit(String(L.author)), tx, y + 90, 'left');
+    });
+    ctx.fillStyle = T.cap; ctx.font = '500 22px ' + FONT;
+    text('foot', null, 'Name only (no usable file found): ' + Object.keys(meta.name_only).map(id => ENT[id] ? ENT[id].label : id).join(', ') + '.', LEFT, 1040, 'left');
+  }
+  window.RTT001_SHEETS = { sheet_palette: sheetPalette, sheet_titles: sheetTitles, sheet_logos: sheetLogos };
 })();
