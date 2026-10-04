@@ -29,5 +29,9 @@ Each board still measured as drawn on the 1920 frame and converted to points on 
 | s11_feature_callout_chrome_may2012 | 34px = 6.9 pt | 36px = 7.3 pt | 34px = 6.9 pt | 34px = 6.9 pt | 26px = 5.3 pt | 30px = 6.1 pt | — | — | 30px = 6.1 pt | 72 x 72 px = 14.6 x 14.6 pt | 47 x 36 px = 9.5 x 7.3 pt | PASS |
 | s12_extra_callout_chrome_passes_firefox_nov2011 | 34px = 6.9 pt | 36px = 7.3 pt | 34px = 6.9 pt | 34px = 6.9 pt | 26px = 5.3 pt | 30px = 6.1 pt | — | — | 30px = 6.1 pt | 72 x 72 px = 14.6 x 14.6 pt | 47 x 36 px = 9.5 x 7.3 pt | PASS |
 | s13_extra_callout_safari_passes_ie_sep2014 | 34px = 6.9 pt | 36px = 7.3 pt | 34px = 6.9 pt | 34px = 6.9 pt | 26px = 5.3 pt | 30px = 6.1 pt | — | — | 30px = 6.1 pt | 72 x 72 px = 14.6 x 14.6 pt | 47 x 36 px = 9.5 x 7.3 pt | PASS |
+| s17_board_jan1994 | 34px = 6.9 pt | 36px = 7.3 pt | 34px = 6.9 pt | 34px = 6.9 pt | 26px = 5.3 pt | 30px = 6.1 pt | — | — | — | 72 x 72 px = 14.6 x 14.6 pt | — | PASS |
+| s18_board_jun2005 | 34px = 6.9 pt | 36px = 7.3 pt | 34px = 6.9 pt | 34px = 6.9 pt | 26px = 5.3 pt | 30px = 6.1 pt | — | — | — | 72 x 72 px = 14.6 x 14.6 pt | — | PASS |
+| s19_board_jun2013 | 34px = 6.9 pt | 36px = 7.3 pt | 34px = 6.9 pt | 34px = 6.9 pt | 26px = 5.3 pt | 30px = 6.1 pt | — | — | — | 72 x 72 px = 14.6 x 14.6 pt | — | PASS |
+| s20_board_jun2022 | 34px = 6.9 pt | 36px = 7.3 pt | 34px = 6.9 pt | 34px = 6.9 pt | 26px = 5.3 pt | 30px = 6.1 pt | — | — | — | 72 x 72 px = 14.6 x 14.6 pt | — | PASS |
 
 Overall: PASS. For reference: RTT-002's approved film draws names and values at 29 px = 5.9 pt; RTT-003's at 33 px = 6.7 pt.
