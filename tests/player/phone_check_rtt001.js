@@ -38,8 +38,9 @@ const PHONE_PT = 390, FLOOR = 5.0, NAMES = 5.9, k = PHONE_PT / 1920, pt = px => 
     const S = await pg.evaluate(() => ({ L: window.__LABELS, P: window.__PICS, CR: window.__CROWN }));
     await br.close();
     const size = kinds => { const v = S.L.filter(l => kinds.includes(l.kind) && l.alpha > 0.3).map(l => l.size); return v.length ? Math.min(...v) : null; };
-    const z = { name: size(['name']), value: size(['value']), axis: size(['axis']), date: size(['time_line', 'date_month', 'date_year']),   // date/era round: the month and the year of the date block footer: size(['footer']),
+    const z = { name: size(['name']), value: size(['value']), axis: size(['axis']), date: size(['time_line', 'date_month', 'date_year']), footer: size(['footer']),
                 source: size(['source_line']), marker: size(['marker']), note: size(['note_line']), callout: size(['callout', 'callout_extra']) };
+    // date: the old date line, or the date block's month and year (date/era round, DEC-214)
     const fails = [];
     for (const kk of ['name', 'value']) if (z[kk] == null || pt(z[kk]) < NAMES) fails.push(kk + ' < ' + NAMES + ' pt');
     if (!(z.axis >= z.name)) fails.push('axis < names');
