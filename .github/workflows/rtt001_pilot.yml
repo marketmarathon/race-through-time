@@ -19,6 +19,8 @@
 # Pilot 2 (IQ-13 answers, 5 Oct 2026, DEC-184 to DEC-203): Luke's approved choices, and the board-size option side by
 # side (fixed 10 slots or bars sized to the browsers on the board, DEC-188/DEC-202): the stills in ONLY_STILLS and the
 # one clip in ONLY_CLIPS; tagged rtt-001-pilot2-<commit>-run<n>.
+# Pilot 3 (date and era picture, DEC-214 to DEC-219): old vs option A vs option B at four months, the era-picture
+# sheet, the side-by-side sheet, and a clip of A and of B across 2008-2009; tagged rtt-001-pilot3-<commit>-run<n>.
 name: rtt001-pilot
 
 on:
@@ -37,12 +39,11 @@ concurrency:
 env:
   PRIVATE_REPO: marketmarathon/race-through-time-private
   PRIVATE_REF: claude/compassionate-cray-tlnnkm
-  # Pilot 2 (DEC-188/DEC-202): the board-size stills (fixed and fitted at four months), the logo sheet with QQ Browser
-  # cropped (DEC-199) and the side-by-side sheet; one clip across January 2009 (5 browsers to 10).
+  # Pilot 3 (DEC-214..DEC-219): the date block and era picture, old vs option A vs option B; clips of A and B across 2008-2009.
   # ONLY_STILLS empty = every still; ONLY_CLIPS empty = every clip in clips.txt, unless ONLY_STILLS is set (stills only).
-  ONLY_STILLS: b01_fixed_jan1995 b01_fit_jan1995 b02_fixed_jun1999 b02_fit_jun1999 b03_fixed_jun2005 b03_fit_jun2005 b04_fixed_jun2015 b04_fit_jun2015 s21_logos_approved c09_board_fixed_vs_fit
-  ONLY_CLIPS: config_rtt001_clip_fit_2008_2009.json
-  TAG_PREFIX: rtt-001-pilot2
+  ONLY_STILLS: e01_old_jun1996 e01_A_jun1996 e01_B_jun1996 e02_old_jun2004 e02_A_jun2004 e02_B_jun2004 e03_old_jun2010 e03_A_jun2010 e03_B_jun2010 e04_old_jun2020 e04_A_jun2020 e04_B_jun2020 s22_era_devices c10_date_era_old_A_B
+  ONLY_CLIPS: config_rtt001_clip_era_A_2008_2009.json config_rtt001_clip_era_B_2008_2009.json
+  TAG_PREFIX: rtt-001-pilot3
 
 jobs:
   render:
