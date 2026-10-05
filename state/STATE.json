@@ -1,8 +1,8 @@
 {
   "schema": "rtt-state/0.1",
-  "updated": "2026-10-04",
-  "updated_by": "Claude (Claude Code cloud session): IQ-13 + IQ-13b + IQ-13c - RTT-001 design pilot 1 (rtt-001-pilot1-82167f8-run2) and logo round (rtt-001-pilot1-f3d9e2f-run3, every browser on the board has a logo or own tile); DEC-169..DEC-183; pull request #16 merged 4 Oct 2026 22:37 UTC (main 3bb2857); brought up to date with main ed7b6e6 on 4 Oct 2026 (pull request #14, the RTT-003 record: full film APPROVED by Luke, DEC-150, and published PUBLIC 3 Oct 2026, DEC-151, video JZzvA_ZDii0)",
-  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); starts data audit PASSED (DEC-058/DEC-059, merged PR #8); IQ-04 MERGED (PR #2); IQ-05 rounds 1-5 MERGED (PR #3-#7); round-5 pilot RENDERED and APPROVED by Luke (DEC-062, visual direction = milestone 3); pull request #9 MERGED (c378ea7); RTT-002 FINAL FILM APPROVED (DEC-078), pull request #10 MERGED (main ef01814), UPLOADED by Luke in YouTube Studio and SCHEDULED PUBLIC 30 Sep 2026 (DEC-079 early release, DEC-080): video 2fY7Bzq8Uu0 on channel UC8R47xbyBB5Z93MdMkoUOWg; IQ-09 RTT-003 DATA BUILD DONE 1 Oct 2026; Luke's answers applied 2 Oct 2026 (DEC-093..DEC-102); pull request #12 MERGED 2 Oct 2026 (main 4288f6d); IQ-10 RTT-003 DESIGN PILOT ROUND 5 (FINAL PILOT ROUND) RENDERED 3 Oct 2026 (private pre-release; not the full film), awaiting Luke's review; IQ-11 (3 Oct 2026): CLAUDE.md and reference/house_style.md added on the IQ-10 branch (DEC-145); next episode RTT-001 Browser Wars (DEC-144); IQ-10 round 6 (3 Oct 2026): RTT-003 design APPROVED (DEC-146), FULL FILM with music rendered to a private pre-release, then APPROVED by Luke (DEC-150); IQ-12 (3 Oct 2026): RTT-001 Browser Wars DATA BUILD done (data/rtt-001, 11/11 checks PASS), pull request open, awaiting Luke's answers to 12 questions; IQ-12b (4 Oct 2026): Luke answered all 12 RTT-001 questions (DEC-164..DEC-166), smoothing direction for the pilot (DEC-167), order check (DEC-168); RTT-003 record (3-4 Oct 2026, pull request #14): full film APPROVED (DEC-150), pull request #13 MERGED (main 618c6a7) and private pull request #1 MERGED (private main 4d47eb2), UPLOADED by Luke in YouTube Studio and PUBLISHED PUBLIC 3 Oct 2026 (DEC-151): video JZzvA_ZDii0; IQ-13/IQ-13b/IQ-13c (4 Oct 2026): RTT-001 DESIGN PILOT 1 rendered to a private pre-release (smoothing options A/B/C, flagged stretches, notes, marker, colours, browser logos per owner direction DEC-180, features, pacing, titles), then the logo round with every browser's logo (DEC-182/DEC-183, private pre-release rtt-001-pilot1-f3d9e2f-run3), awaiting Luke's answers; pull request #15 merged by Luke (b5a09d3); pull request #16 merged 4 Oct 2026 22:37 UTC (main 3bb2857)",
+  "updated": "2026-10-05",
+  "updated_by": "Claude (Claude Code cloud session): IQ-13 answers - Luke's 17 answers to RTT-001 pilot 1 recorded (DEC-184..DEC-200) and built (config_rtt001_approved.json); board-size option (DEC-202) rendered to rtt-001-pilot2-fb1e3af-run4 (DEC-203); pull request open, not merged",
+  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); starts data audit PASSED (DEC-058/DEC-059, merged PR #8); IQ-04 MERGED (PR #2); IQ-05 rounds 1-5 MERGED (PR #3-#7); round-5 pilot RENDERED and APPROVED by Luke (DEC-062, visual direction = milestone 3); pull request #9 MERGED (c378ea7); RTT-002 FINAL FILM APPROVED (DEC-078), pull request #10 MERGED (main ef01814), UPLOADED by Luke in YouTube Studio and SCHEDULED PUBLIC 30 Sep 2026 (DEC-079 early release, DEC-080): video 2fY7Bzq8Uu0 on channel UC8R47xbyBB5Z93MdMkoUOWg; IQ-09 RTT-003 DATA BUILD DONE 1 Oct 2026; Luke's answers applied 2 Oct 2026 (DEC-093..DEC-102); pull request #12 MERGED 2 Oct 2026 (main 4288f6d); IQ-10 RTT-003 DESIGN PILOT ROUND 5 (FINAL PILOT ROUND) RENDERED 3 Oct 2026 (private pre-release; not the full film), awaiting Luke's review; IQ-11 (3 Oct 2026): CLAUDE.md and reference/house_style.md added on the IQ-10 branch (DEC-145); next episode RTT-001 Browser Wars (DEC-144); IQ-10 round 6 (3 Oct 2026): RTT-003 design APPROVED (DEC-146), FULL FILM with music rendered to a private pre-release, then APPROVED by Luke (DEC-150); IQ-12 (3 Oct 2026): RTT-001 Browser Wars DATA BUILD done (data/rtt-001, 11/11 checks PASS), pull request open, awaiting Luke's answers to 12 questions; IQ-12b (4 Oct 2026): Luke answered all 12 RTT-001 questions (DEC-164..DEC-166), smoothing direction for the pilot (DEC-167), order check (DEC-168); RTT-003 record (3-4 Oct 2026, pull request #14): full film APPROVED (DEC-150), pull request #13 MERGED (main 618c6a7) and private pull request #1 MERGED (private main 4d47eb2), UPLOADED by Luke in YouTube Studio and PUBLISHED PUBLIC 3 Oct 2026 (DEC-151): video JZzvA_ZDii0; IQ-13/IQ-13b/IQ-13c (4 Oct 2026): RTT-001 DESIGN PILOT 1 rendered to a private pre-release (smoothing options A/B/C, flagged stretches, notes, marker, colours, browser logos per owner direction DEC-180, features, pacing, titles), then the logo round with every browser's logo (DEC-182/DEC-183, private pre-release rtt-001-pilot1-f3d9e2f-run3), awaiting Luke's answers; pull request #15 merged by Luke (b5a09d3); pull request #16 merged 4 Oct 2026 22:37 UTC (main 3bb2857); IQ-13 answers (5 Oct 2026): Luke answered all 17 RTT-001 pilot-1 questions (DEC-184..DEC-200: option C, both flagged stretches smoothed, crown, NO callouts, 0.5 s per month and 0.3 s from 2014, title chosen, QQ cropped), pilot 2 with the board-size option rendered to a private pre-release (rtt-001-pilot2-fb1e3af-run4, DEC-203), awaiting Luke's board choice; pull request open, not merged",
   "canonical_queue": "state/ folder on main in marketmarathon/race-through-time (this file)",
   "repo_baseline": {
     "repo": "marketmarathon/bars",
@@ -75,11 +75,11 @@
     {
       "id": "RTT-001",
       "title": "Browser Wars",
-      "state": "DESIGN_PILOT_1_RENDERED_AWAITING_LUKE",
+      "state": "PILOT_2_BOARD_OPTION_RENDERED_AWAITING_LUKE",
       "check_level": "LIVE",
       "verdict": "CONDITIONAL",
-      "blocker": "Luke watches pilot 1 (rtt-001-pilot1-82167f8-run2: clips and stills) and the logo round (rtt-001-pilot1-f3d9e2f-run3) and answers the numbered questions (DEC-169..DEC-183). Nothing beyond the approved look goes into a film before he approves (DEC-069).",
-      "decisions": "DEC-144 (next video); owner DEC-152..DEC-154 (3 Oct 2026: one source per period, straight lines across hand-overs with the estimated look before 2009, all devices); Claude working choices DEC-155..DEC-159, DEC-162; verification DEC-160, DEC-161; findings DEC-163; Luke's answers 4 Oct 2026: DEC-164 (DEC-155..DEC-159, DEC-162 CONFIRMED), DEC-165 (pilot notes), DEC-166 (GVU credit), DEC-167 (smoothing where data is missing, pilot only; series.csv unchanged); DEC-168 (order check); pilot 1: DEC-169..DEC-179 (Claude working choices, proposals, findings, delivery), DEC-180 (owner direction: browser logos), DEC-181 (logo choices)",
+      "blocker": "Luke chooses the board: fixed 10 slots or bars sized to the browsers on the board (DEC-188, DEC-202), from rtt-001-pilot2-fb1e3af-run4. Everything else is approved (DEC-184..DEC-200). Then music (Luke picks a track) and the full film (DEC-069).",
+      "decisions": "DEC-144 (next video); owner DEC-152..DEC-154 (3 Oct 2026: one source per period, straight lines across hand-overs with the estimated look before 2009, all devices); Claude working choices DEC-155..DEC-159, DEC-162; verification DEC-160, DEC-161; findings DEC-163; Luke's answers 4 Oct 2026: DEC-164 (DEC-155..DEC-159, DEC-162 CONFIRMED), DEC-165 (pilot notes), DEC-166 (GVU credit), DEC-167 (smoothing where data is missing, pilot only; series.csv unchanged); DEC-168 (order check); pilot 1: DEC-169..DEC-179 (Claude working choices, proposals, findings, delivery), DEC-180 (owner direction: browser logos), DEC-181 (logo choices); DEC-182, DEC-183 (logos for every browser); Luke's answers to pilot 1, 5 Oct 2026: DEC-184..DEC-200; DEC-201 (building the answers), DEC-202 (board-size option, proposal), DEC-203 (pilot 2 delivery)",
       "dataset": {
         "branch": "merged to main by Luke (pull request #15, merge b5a09d3, 4 Oct 2026); branch claude/jolly-volta-5lr5ql kept",
         "path": "data/rtt-001/",
@@ -98,7 +98,7 @@
         "leaders": "Mosaic 1994-01 > Netscape 1995-06 (on the GVU-EWS hand-over line, not a dated fact) > Internet Explorer 1998-10 (observed) > Chrome 2012-05 (observed)",
         "handover_order": "same order: EWS>StatMarket, StatMarket>OneStat, OneStat>W3Counter; FLAGGED: GVU>EWS (leader Mosaic>Netscape), W3Counter>StatCounter (Safari/Opera swap)"
       },
-      "next": "Luke's answers to the 14 pilot-1 questions (coming separately) and a look at the logo round; Claude in Cowork fetches the NetFront logo and any Lynx logo (kits/rtt-001/logos.json for_cowork); then pilot 2 or the full film with his choices (DEC-069)",
+      "next": "Luke's board choice (and the two smaller questions in the pull request); Luke picks the music track; then the full film rendered from config_rtt001_approved.json (or _fit) to a private pre-release for approval by SHA-256 (DEC-078). Claude in Cowork may still fetch the NetFront logo and any Lynx logo (kits/rtt-001/logos.json for_cowork).",
       "pilot1": {
         "brief": "prompts/CODE_SESSION_IQ-13.md + prompts/CODE_SESSION_IQ-13b.md (logos) + prompts/CODE_SESSION_IQ-13c.md (every browser gets a logo)",
         "branch": "merged to main (pull request #16, merge 3bb2857, 4 Oct 2026); branch claude/compassionate-cray-tlnnkm kept",
@@ -211,6 +211,37 @@
             "s20_board_jun2022_1920x1080.png": "a8954a374b6c004199d7ea8b3b060eae4b8068d056cbfab640400943be86fe40",
             "s20_board_jun2022_phone_390pt.png": "f2c64481042cf04515abdfd23e848abc93fa2c9b2fb0a26d2876e9507a13ad85"
           }
+        }
+      },
+      "approved_config": "kits/rtt-001/config_rtt001_approved.json (fixed slots) / config_rtt001_approved_fit.json (board-size option); 5,529 frames = 3 min 4 s",
+      "pilot2": {
+        "brief": "prompts/CODE_SESSION_IQ-13_answers.md",
+        "release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-001-pilot2-fb1e3af-run4",
+        "run": "https://github.com/marketmarathon/race-through-time/actions/runs/37318951814",
+        "source_commit": "fb1e3af4a07c72ed07701f989418bd9f92a95d28",
+        "contents": "board-size option side by side: b01-b04 fixed vs fit at Jan 1995, Jun 1999, Jun 2005, Jun 2015 (each also at phone size), c09 sheet, s21 logo sheet as approved (QQ cropped), clip fit_2008_2009 (10.2 s, no audio)",
+        "tests": "RTT-001 25/25 PASS (check 16 board size), phone PASS; RTT-002 20/20 and RTT-003 5/5 unchanged; 21 reference frames pixel-identical",
+        "file_sha256": {
+          "rtt001_clip_fit_2008_2009_fb1e3af_1920x1080.mp4": "49c1c1b801e32f9dcbe7d41acf76c8d336b795ad4c466888e35f79ac174da8e8",
+          "b01_fit_jan1995_1920x1080.png": "f382d33465cd185f2fbf62c9a3c3ab9779384e51c1e0c2e3733bbbe79f311eab",
+          "b01_fit_jan1995_phone_390pt.png": "39260def82d7048e16bcef092549948e3d9f7dbef61ce21e46311bc84f672718",
+          "b01_fixed_jan1995_1920x1080.png": "0052f4be9c0c6e83562d0f453e3f6d7859490aaa6c0760cf0648ee739cbb2d64",
+          "b01_fixed_jan1995_phone_390pt.png": "6b84b7f400f798753cb8193c7d24b2328fa46ea72b26dc2b42f87e4fd09aa3f5",
+          "b02_fit_jun1999_1920x1080.png": "65627e5fffcef1a6d267374662747ee774709e96aa8ae8bc11c53b60dd7dd817",
+          "b02_fit_jun1999_phone_390pt.png": "715cfaef032eeb9270eff4d30202cf96fc990c448a0305c3bb08eaa5cfbba3b5",
+          "b02_fixed_jun1999_1920x1080.png": "f25118f95f5786d209cc9e79fe1b1044955d83a5f4efa8733289da3d32480349",
+          "b02_fixed_jun1999_phone_390pt.png": "0c0be4d1aa10404581ef87caaf339cd03452555d1afd674b163e20c91e5fbc56",
+          "b03_fit_jun2005_1920x1080.png": "c03be209dc6b5d9a4a4a4d246d346586311d167cdd17289f74c12123dc591ae9",
+          "b03_fit_jun2005_phone_390pt.png": "f7dab114d2a8b4830f669e43b58d5c314cefcc21a60900986ea77562c5e188a8",
+          "b03_fixed_jun2005_1920x1080.png": "5469e6e9d54d5f6b277c2871f1b41f114d4e1ab52c7ce505827e2cbf1e7f4df4",
+          "b03_fixed_jun2005_phone_390pt.png": "c48ce610bfbda66b76b9f07607db1de9455ba6e81ee9c8f52b280adc8f64ca41",
+          "b04_fit_jun2015_1920x1080.png": "fd733784a7e95a11bb9ed447d7a1035a3727102d5ded2a95e6758441006da84a",
+          "b04_fit_jun2015_phone_390pt.png": "a6736da14592ef2619e58429dc2cfea88d050f5f7e1a6c5ec064cac0239d03d7",
+          "b04_fixed_jun2015_1920x1080.png": "fd733784a7e95a11bb9ed447d7a1035a3727102d5ded2a95e6758441006da84a",
+          "b04_fixed_jun2015_phone_390pt.png": "a6736da14592ef2619e58429dc2cfea88d050f5f7e1a6c5ec064cac0239d03d7",
+          "c09_board_fixed_vs_fit_sheet.png": "77c127792e02c17d3bdc66c75839473885a4fc5f4e385347418e68e7591c9426",
+          "s21_logos_approved_1920x1080.png": "f993babf87a87c7e7a4568dfcfbfe76d4ea61cb28f9e8354249914e3ef07cff0",
+          "s21_logos_approved_phone_390pt.png": "1870904069086d562db75f43c4121f5afa1b8bdef66b2ffcd7cbb5231b779385"
         }
       }
     },
@@ -921,6 +952,15 @@
       "status": "DONE 4 Oct 2026: 27 logo files (13 new) fetched on a runner into the private repo; own tiles for Lynx and NetFront; rendered to https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-001-pilot1-f3d9e2f-run3; NetFront/Lynx listed for Claude in Cowork",
       "result": {
         "decisions": "DEC-182, DEC-183"
+      }
+    },
+    {
+      "id": "IQ-13 answers",
+      "task": "Luke's 17 answers to RTT-001 pilot 1 built into the player; the board-size option (fixed 10 slots or bars sized to the board) rendered side by side",
+      "where": "branch claude/compassionate-cray-tlnnkm (restarted from main 272ce40 after pull request #16 merged), pull request open, not merged; prompt prompts/CODE_SESSION_IQ-13_answers.md",
+      "status": "DONE 5 Oct 2026: rendered to https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-001-pilot2-fb1e3af-run4; awaiting Luke's board choice",
+      "result": {
+        "decisions": "DEC-184..DEC-203"
       }
     }
   ],
