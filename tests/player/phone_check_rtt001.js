@@ -22,7 +22,7 @@ const PHONE_PT = 390, FLOOR = 5.0, NAMES = 5.9, k = PHONE_PT / 1920, pt = px => 
 (async () => {
   const dir = path.join(ROOT, 'tests', 'output', 'rtt001_phone', '_assets'); fs.mkdirSync(dir, { recursive: true });
   placeholderPNG(path.join(dir, 'rtt_logo.png'), 885, 885, [212, 175, 55]);
-  const stills = JSON.parse(fs.readFileSync(path.join(ROOT, 'kits', 'rtt-001', 'stills.json'), 'utf8')).stills.filter(s => s.config);
+  const stills = JSON.parse(fs.readFileSync(path.join(ROOT, 'kits', 'rtt-001', 'stills.json'), 'utf8')).stills.filter(s => s.config && !s.sheet);   // boards only (a sheet may name a config)
   const out = ['# RTT-001 phone check (IQ-13)', '', `Each board still measured as drawn on the 1920 frame and converted to points on a phone showing the video ${PHONE_PT} points wide. Names and values at least ${NAMES} pt (RTT-002's approved size); axis and date at least the names; footer, source line, marker, note and callouts at least ${FLOOR} pt. Logo tile and crown: reported only.`, '',
                '| Still | Names | Values | Axis | Date | Footer | Source line | Marker | Note | Callout | Logo tile | Crown | Result |', '|---|---|---|---|---|---|---|---|---|---|---|---|---|'];
   let ok = true;
