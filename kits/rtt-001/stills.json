@@ -440,6 +440,92 @@
      }
     ]
    }
+  },
+  {
+   "name": "b01_fixed_jan1995",
+   "config": "config_rtt001_approved.json",
+   "at": "1995-01-31"
+  },
+  {
+   "name": "b01_fit_jan1995",
+   "config": "config_rtt001_approved_fit.json",
+   "at": "1995-01-31"
+  },
+  {
+   "name": "b02_fixed_jun1999",
+   "config": "config_rtt001_approved.json",
+   "at": "1999-06-30"
+  },
+  {
+   "name": "b02_fit_jun1999",
+   "config": "config_rtt001_approved_fit.json",
+   "at": "1999-06-30"
+  },
+  {
+   "name": "b03_fixed_jun2005",
+   "config": "config_rtt001_approved.json",
+   "at": "2005-06-30"
+  },
+  {
+   "name": "b03_fit_jun2005",
+   "config": "config_rtt001_approved_fit.json",
+   "at": "2005-06-30"
+  },
+  {
+   "name": "b04_fixed_jun2015",
+   "config": "config_rtt001_approved.json",
+   "at": "2015-06-30"
+  },
+  {
+   "name": "b04_fit_jun2015",
+   "config": "config_rtt001_approved_fit.json",
+   "at": "2015-06-30"
+  },
+  {
+   "name": "s21_logos_approved",
+   "sheet": "sheet_logos",
+   "config": "config_rtt001_approved.json"
+  },
+  {
+   "name": "c09_board_fixed_vs_fit",
+   "compose": {
+    "title": "RTT-001 board size (answer 5, DEC-188): fixed 10 slots (left) or bars sized to the number of browsers on the board (right)",
+    "cols": 2,
+    "items": [
+     {
+      "still": "b01_fixed_jan1995",
+      "caption": "January 1995: fixed 10 slots"
+     },
+     {
+      "still": "b01_fit_jan1995",
+      "caption": "January 1995: bars sized to the browsers on the board"
+     },
+     {
+      "still": "b02_fixed_jun1999",
+      "caption": "June 1999: fixed 10 slots"
+     },
+     {
+      "still": "b02_fit_jun1999",
+      "caption": "June 1999: bars sized to the browsers on the board"
+     },
+     {
+      "still": "b03_fixed_jun2005",
+      "caption": "June 2005: fixed 10 slots"
+     },
+     {
+      "still": "b03_fit_jun2005",
+      "caption": "June 2005: bars sized to the browsers on the board"
+     },
+     {
+      "still": "b04_fixed_jun2015",
+      "caption": "June 2015: fixed 10 slots"
+     },
+     {
+      "still": "b04_fit_jun2015",
+      "caption": "June 2015: bars sized to the browsers on the board"
+     }
+    ]
+   }
   }
  ]
 }

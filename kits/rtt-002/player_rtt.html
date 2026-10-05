@@ -158,6 +158,9 @@
        - pictures.crop {id: {x,y,w,h}} (IQ-13c): draw only that region of the file (the IE6 'e' without its wordmark;
          crop only, the file is unchanged); icons of 64 px or less are scaled without smoothing; pictures.own
          {id: {text, year}}: our own neutral tile (name and launch year on the bar colour) where no real logo exists.
+       - board.fit {enabled, min_slots, sec} (IQ-13 answers, option for Luke, DEC-188/DEC-202): the rows are sized to
+         the number of bars on the board (at least min_slots, at most rows) instead of always leaving room for ten;
+         only row height and bar thickness change, smoothed over sec (fitSlots); window.__SLOTS records the slots.
      Removed as unused: the Format C / C2-1 picture column and story cards, the prototype
      driver block that followed </html> in the C2-2 file.
 
@@ -205,6 +208,7 @@ let RACE_SEC=0, RACE_FRAMES=0, INTRO_SEC=3.0;
 let NAME_PX=null, NAME_TRUNC=false;
 let SZ={axis:20, date:28, footer:17};
 let BOARD={bar_gap:22, name_frac:0.56, value_frac:0.54}, HL=null, WINLINE=null;
+let BOARDFIT=null;                             // IQ-13 answers: board.fit (rows sized to the bars on the board)
 let FLAGCOL=null, FLAGS=false, FLAGIMG={}, FLAGCODE={}, EVL=null, OVL=[], OVLGAP=0, STATS=false;
 /* IQ-10 (RTT-003): all null / false for RTT-002 */
 let COUNT=false, BLOGO=null, FFOOT=null, FINAL_ON=false, LIVE=false, FINAL_LBL=false, STATUS=null, RECLINE=false;
@@ -245,6 +249,7 @@ function setup(o){
   VALW = CFG.valw!=null ? CFG.valw : 250;
   SZ=Object.assign({axis:20, date:28, footer:17, winner:34}, CFG.sizes||{});
   BOARD=Object.assign({bar_gap:22, name_frac:0.56, value_frac:0.54}, CFG.board||{});
+  BOARDFIT = BOARD.fit && BOARD.fit.enabled ? Object.assign({min_slots:5, sec:2.0}, BOARD.fit) : null; FITS=null;
   HL = CFG.highlight && CFG.highlight.enabled ? Object.assign({sec:0.4, mix:0.3, glow:22}, CFG.highlight) : null;
   WINLINE = CFG.winner_line && CFG.winner_line.enabled ? CFG.winner_line : null;
   if(WINLINE && CFG.time_label.mode==='line') throw new Error('winner_line needs time_label mode "board" or "block"; the date line (mode "line") has no room for it');
@@ -396,6 +401,39 @@ function geom(){
   const LH = BLOGO ? Math.round(PH*BLOGO.height_frac) : 0, LW = BLOGO ? Math.round(LH*BLOGO.aspect) : 0;
   const x0 = PIC ? LEFT+PW+(BLOGO?BLOGO.gap+LW:0)+PIC.gap : FLAGCOL ? LEFT+FW+FLAGCOL.gap : LEFT+GAPBAR, W=1920-RIGHT-VALW-x0;
   return {ROWH,BARH,NAMEF,VALF,x0,W,FH,FW,PH,PW,LH,LW};
+}
+/* IQ-13 answers (DEC-188, DEC-202; an option for Luke): board.fit sizes the rows to the number of bars on the board
+   (at least fit.min_slots, at most rows). Only the row height and the bar's thickness change (the gap keeps
+   its share of the row); text, logo tiles and the bars' left edge stay at their top-10 size and place, so
+   nothing moves sideways and the phone text floor is unchanged. The slot count is the step function "browsers
+   with a figure" smoothed over fit.sec with a raised-cosine window (after a rolling maximum, so there is always
+   room for every bar), so a resize eases in and out with no sudden start or stop: the room opens before new
+   bars arrive and closes after leaving bars have gone. A pure function of the frame: any frame can be drawn on
+   its own. */
+let FITS=null;
+function fitSlots(fr){
+  const F=BOARDFIT;
+  if(!FITS){
+    /* bars on the board at frame f: this month's browsers and, while it counts, last month's (one that stops
+       fades out over this month) */
+    const n=new Float64Array(RACE_FRAMES+1), cnt=s=>Math.min(NROWS, s.order.length);
+    for(let f=0; f<=RACE_FRAMES; f++){ const k=RTT_TIMELINE.eventAt(TL,Math.min(f,RACE_FRAMES)), s=k>=0?TL.states[k]:TL.opening, p=k>0?TL.states[k-1]:TL.opening;
+      n[f]=Math.max(F.min_slots, cnt(s), k>=0?cnt(p):0); }
+    /* the largest count within half a window either side, then the raised-cosine smoothing: every value under
+       the window is at least n[f], so the slots never fall below the bars on the board. The room opens before
+       browsers arrive and closes only after they have gone. */
+    const H=Math.max(1,Math.round(F.sec*FPS/2)), w=[]; let ws=0;
+    const m=new Float64Array(RACE_FRAMES+1), at=f=>n[Math.min(RACE_FRAMES,Math.max(0,f))];
+    for(let f=0; f<=RACE_FRAMES; f++){ let v=0; for(let j=-H;j<=H;j++) v=Math.max(v,at(f+j)); m[f]=v; }
+    for(let j=-H;j<=H;j++){ const v=0.5*(1+Math.cos(Math.PI*j/(H+1))); w.push(v); ws+=v; }
+    FITS=new Float64Array(RACE_FRAMES+1);
+    for(let f=0; f<=RACE_FRAMES; f++){ let a=0; for(let j=-H;j<=H;j++) a+=w[j+H]*m[Math.min(RACE_FRAMES,Math.max(0,f+j))]; FITS[f]=a/ws; }
+  }
+  return FITS[Math.max(0,Math.min(RACE_FRAMES,fr))];
+}
+function fitGeom(G,slots){
+  const ROWH=(BOTTOM-TOP-14)/slots, BARH=ROWH*G.BARH/G.ROWH;
+  return Object.assign({},G,{ROWH,BARH,slots});
 }
 
 /* ONE name size for the whole video (C2-2's rule: two bars at different sizes reads as a
@@ -781,7 +819,8 @@ function drawAt(t){
   drawTime(ev);
 
   // scale: follows the longest bar as drawn, so it glides with the bars
-  const G=geom(), x0=G.x0, W=G.W;
+  const G=BOARDFIT ? fitGeom(geom(),fitSlots(fr)) : geom(), x0=G.x0, W=G.W;
+  window.__SLOTS = BOARDFIT ? G.slots : NROWS;
   const lead=top.slice(0,NROWS).reduce((m,r)=>Math.max(m,r.len),0);
   const smoothMax=Math.max(1,lead,REC?REC.u:0)*1.06;                // round 3: the record is always on the scale
   const step=niceStepInt(smoothMax/AXU/4)*AXU;            // IQ-10: whole millions in a series (AXU 1e6); AXU 1 for RTT-002

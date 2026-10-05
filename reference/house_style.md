@@ -12,7 +12,7 @@
 - **No intro or title screen, and no outro or closing card** (DEC-070). Frame 0 is the board with its title (DEC-032, *working choice, standing*).
 - **The final table holds for 10 s** at the end, and YouTube's end-screen elements sit over it (DEC-070).
 - **No running story captions** over the race: the viewer can see what is happening (DEC-068).
-- **Callouts are rare,** used only at the biggest moments: changes of leader plus at most a handful of others, approved per episode (DEC-085, DEC-117). Each is one line under the title for about 3 s (DEC-111, kept by DEC-114).
+- **Callouts are rare,** used only at the biggest moments: changes of leader plus at most a handful of others, approved per episode (DEC-085, DEC-117). Each is one line under the title for about 3 s (DEC-111, kept by DEC-114). **Where viewers can see the change happen, leave the label out:** RTT-001 has no callouts at all, not even at its changes of leader (DEC-193, DEC-194; project principle 9). Propose callouts only where they add something the board does not show.
 - **No fixed length.** Pace follows the drama (project principle 12). Luke chose a faster film over the 8-minute mid-roll threshold for RTT-002 (DEC-076), so do not stretch a film to reach a length.
 - **The title states the measure and its basis,** e.g. "Best-Selling Consoles (units shipped)" (DEC-111, kept by DEC-114).
 
@@ -24,17 +24,18 @@
   - ×0.8 when nothing visible changes, or after more than three visible-but-unchanged beats in a row.
 
   There is a 2.0 s pause on record moments. RTT-002 runs at 0.333 s per race (DEC-018, DEC-034, DEC-068, DEC-076).
-- **Period data** (quarters, years): RTT-003 runs at 1.5 s per quarter, with its thin early years (1985–88) at half that (DEC-122, DEC-133), and a 2 s pause after each change of leader (DEC-125 (c)).
+- **Period data** (quarters, years): RTT-003 runs at 1.5 s per quarter, with its thin early years (1985–88) at half that (DEC-122, DEC-133), and a 2 s pause after each change of leader (DEC-125 (c)). RTT-001 (monthly shares) runs at 0.5 s per month with the same multipliers (DEC-195), with no pause because it has no callouts (DEC-201 (2), *working choice*).
+- **Speed up when there isn't much going on:** a long calm stretch may run at one named faster fixed pace from a clean boundary, e.g. RTT-001 at 0.3 s per month from January 2014, once Chrome's lead is settled (DEC-196). This is one change of pace, not a speed curve.
 - **Choosing the speed:** render the same passage at two or three speeds and let Luke pick (DEC-071, DEC-076, DEC-118).
 - **Not approved:** a smooth speed curve that slows around entries. It is an open question (DEC-068).
 
 ## 3. Board and frame
 The reference frame is 1920 × 1080. Masters are rendered at 3840 × 2160.
-- **Board size is set per episode, for phone readability.** Approved so far: top 20 (RTT-002, DEC-034) and top 15 (RTT-003, DEC-114, DEC-131).
+- **Board size is set per episode, for phone readability.** Approved so far: top 20 (RTT-002, DEC-034), top 15 (RTT-003, DEC-114, DEC-131) and top 10 (RTT-001, DEC-188).
 - **How numbers move:**
   - Counts of discrete events step on the event and hold until the next one (DEC-017, *working choice, standing*).
   - Continuous measures count smoothly between data points and show the exact data value at each data point (DEC-115).
-- **Values follow the bar.** Shown in the episode's unit with "+" where the figure is a lower bound, e.g. "118.7m+" (DEC-111, DEC-115). RTT-002 shows "91 wins · 306 starts · 29.7%" (DEC-053).
+- **Values follow the bar.** Shown in the episode's unit with "+" where the figure is a lower bound, e.g. "118.7m+" (DEC-111, DEC-115). RTT-002 shows "91 wins · 306 starts · 29.7%" (DEC-053). Shares of a total show one decimal, e.g. "44.0%" (RTT-001, DEC-189).
 - **A small date line is always visible** near the title and changes at every data point (DEC-045 (3)).
 - **The RTT logo** is the round globe badge, top right, in a square box of about 154 px (DEC-051, DEC-052).
 - **One picture per bar,** matching the name on the bar (DEC-114 (a)). Tall pictures must not look narrow; fix the sizing rather than swapping the picture (DEC-114 (e)). RTT-002 used today's design of each national flag (DEC-035 (1)).
@@ -54,6 +55,7 @@ The reference frame is 1920 × 1080. Masters are rendered at 3840 × 2160.
   - The bar stays on the board, lightly dimmed (alpha 0.55, text 0.8) (DEC-131; values DEC-135, *working choice*).
   - It reads "· retired" when the bar ends on the manufacturer's own final total, or from a documented end of production. It reads "· latest figure" only where our figures run out with neither (DEC-140, refining DEC-132). A bar counts as stopped from the last period in which it added at least 10,000 units (DEC-142, *working choice*).
 - **A source disagreement worth mentioning** gets a short footnote on the final table only, not during the race. Example: RTT-003's PS2 note (DEC-117).
+- **A series stitched from several sources** (RTT-001): one source line under the title names the month's source, ending " · estimated" while the figures are estimates (DEC-153, DEC-187); a small "New source" marker for 3 s when a new source starts; the changes of source are smoothed at draw time with the data unchanged, and smoothed estimated values read as whole-percent estimates, "~85%" or "<1%" (DEC-184, DEC-185). A one-line dated note may explain a change in what a source counted (DEC-186).
 
 ## 6. Sound, delivery and approval
 - **Music:**
@@ -78,7 +80,8 @@ The reference frame is 1920 × 1080. Masters are rendered at 3840 × 2160.
 Luke approved each of these for the episode named. Propose any of them in a new episode's first pilot round.
 - **Winner highlight** on the bar whose count just rose (RTT-002; DEC-027, DEC-030).
 - **Record pause:** 2.0 s when a record is equalled or broken (RTT-002; DEC-034).
-- **Gold record line** at the all-time leader's figure, with its label, plus a **crown** on the leader's bar (RTT-003; DEC-125 (c), DEC-130, DEC-131).
+- **Gold record line** at the all-time leader's figure, with its label, plus a **crown** on the leader's bar (RTT-003; DEC-125 (c), DEC-130, DEC-131). The crown alone on the leader's bar (RTT-001; DEC-192).
+- **A logo per bar, purely to identify it,** on a light tile left of the bar, with the name on the bar; non-free logo files accepted by Luke for identification, each file's source and status in the rights ledger; crop only where Luke allows it, never redrawn; our own neutral tile (name and launch year in the bar colour) where no real logo exists (RTT-001; DEC-180, DEC-182, DEC-191, DEC-198, DEC-199).
 - **Group scoreboard:** a small panel of group totals, e.g. maker totals (RTT-003; DEC-114, DEC-123).
 - **A one-line summary on the final table,** e.g. "Switch is at least 3.4 million behind the PS2" (RTT-003; DEC-117).
 - **Group logo beside the picture on each bar**, with the name on the bar (RTT-003; DEC-116, DEC-126; settled by DEC-138). RTT-003's tile is the picture box's height, 2:1, with the logo artwork trimmed to its own edges (DEC-142, *working choice*). Small text logos stay hard to read on a phone (RTT-003: SEGA 5.8 pt, Atari 2.6 pt, Nintendo 1.9 pt; DEC-142).
@@ -86,5 +89,6 @@ Luke approved each of these for the episode named. Propose any of them in a new 
 
 ## 8. Open questions (not defaults yet)
 - Should a smooth speed curve ever come back? (DEC-068, DEC-069)
+- **Board sized to the number of bars on it** (rows larger while few entities exist, settling at the episode's board size) or fixed slots: proposed for RTT-001, Luke to choose (DEC-188, DEC-202).
 
 Closed in round 5: logos versus the group name in type — logos kept (DEC-138); and how to label bars whose maker figures continue but stop growing — "retired" on the manufacturer's final total (DEC-140, section 5).

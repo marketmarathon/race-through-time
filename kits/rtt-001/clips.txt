@@ -15,3 +15,4 @@ config_rtt001_clip_pace_2010_2013_0p50.json
 config_rtt001_clip_pace_2010_2013_0p65.json
 config_rtt001_clip_calm_2013_2026_film_pace.json
 config_rtt001_clip_calm_2013_2026_faster_from_2014.json
+config_rtt001_clip_fit_2008_2009.json

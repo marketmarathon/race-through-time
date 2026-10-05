@@ -1,0 +1,3 @@
+{ "extends": "config_rtt001_approved.json", "kit_version": "rtt001_approved_1_fit",
+  "board": { "fit": { "enabled": true, "min_slots": 5, "sec": 2.0 } },
+  "notes": ["OPTION for Luke (answer 5, DEC-188; DEC-202): as config_rtt001_approved.json, but the rows are sized to the number of browsers on the board (at least 5 slots, at most 10), easing over 2 s when browsers arrive or leave. Text, logo tiles and the bars' left edge stay at their top-10 size and place."] }
