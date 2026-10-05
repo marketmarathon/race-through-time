@@ -15,6 +15,8 @@
 #     music: kits/rtt-001/music_rtt001.json) and stops on any mismatch;
 #   - stops if the track is shorter than the film and no loop points are set (a track at least as long as the film
 #     plays once from its start);
+#   - checks the whole film against the WCAG 2.x general-flash and red-flash thresholds before rendering
+#     (tests/player/wcag_flash_rtt003.js, as RTT-003, DEC-149) and stops if it fails;
 #   - renders the film silent at 3840 x 2160, then adds the music with scripts/rtt_mix_music.sh (unchanged,
 #     DEC-072/DEC-074): faded out over the 10 s final table, about -16 LUFS integrated, true peak at most -1 dBTP
 #     (the script fails otherwise);
@@ -130,6 +132,26 @@ jobs:
             echo "::error::the track (${td} s) is shorter than the film (${fd} s) and music_rtt001.json has no loop points"; exit 1
           fi
 
+      - name: WCAG 2.x flash check of the whole film before rendering (as RTT-003, DEC-149)
+        if: steps.gate.outputs.ready == 'true'
+        run: |
+          set -o pipefail
+          # every frame drawn in order at 1920 x 1080 with the real logos; every pixel followed (general and red flash);
+          # fails if too-often-flashing pixels ever cover more than 25% of a 10-degree field (57,600 px)
+          # the script defaults to the Claude Code container's Chromium; on the runner, use the one Playwright installed
+          export PW_CHROME=$(cd kits/rtt-002 && node -e "console.log(require('playwright').chromium.executablePath())")
+          test -x "$PW_CHROME"
+          node tests/player/wcag_flash_rtt003.js ../rtt-001/$FILM > "$RUNNER_TEMP/flash.json"
+          cat "$RUNNER_TEMP/flash.json"
+          python3 - "$RUNNER_TEMP/flash.json" > "$RUNNER_TEMP/flash.txt" <<'PY'
+          import json, sys
+          r = json.load(open(sys.argv[1]))
+          print(f"WCAG 2.x flash check (tests/player/wcag_flash_rtt003.js, every frame, every pixel): {'PASS' if r['pass'] else 'FAIL'}; "
+                f"largest too-often-flashing area in a 10-degree field {r['worst']['fastG']['best']} px general, {r['worst']['fastR']['best']} px red, "
+                f"limit {r['limit_px_10deg']} px (25%)")
+          PY
+          cat "$RUNNER_TEMP/flash.txt"
+
       - name: Render the film (3840 x 2160), add the music, make the viewing copy, check and measure both
         if: steps.gate.outputs.ready == 'true'
         run: |
@@ -186,6 +208,7 @@ jobs:
             echo "- Logos: race-through-time-private, every SHA-256 checked against kits/rtt-001/assets_sha256.txt before drawing"
             echo "- Audio: ${TRACK}, ${MUSIC_PATH} SHA-256 ${MUSIC_SHA256} (checked); faded out over the final table, AAC 320 kb/s"
             echo "- $(cat "$RUNNER_TEMP/joins.txt")"
+            echo "- $(cat "$RUNNER_TEMP/flash.txt")"
             echo "- Measured after encoding:"
             sed 's/^/  - /' "$RUNNER_TEMP/measure.txt"
             echo "- Video SHA-256:"
