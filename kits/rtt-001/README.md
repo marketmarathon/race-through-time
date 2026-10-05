@@ -1,6 +1,6 @@
 # RTT kit — RTT-001 Browser Wars (share of web browsing by browser, January 1994 – September 2026, all devices) · design pilots 1 and 2 (IQ-13, IQ-13 answers)
 
-**Pilots only: stills and short clips for Luke to choose from. No film is rendered yet; Luke's answers to pilot 1 are in `config_rtt001_approved.json` (DEC-184 to DEC-200), and the board-size option waits for his choice (DEC-202)** (DEC-069; brief `prompts/CODE_SESSION_IQ-13.md`). Everything new in this round is an option, listed as a question (DEC-169 to DEC-179 in `state/DECISIONS.md`).
+**Pilots only: stills and short clips for Luke to choose from. No film is rendered yet. The design is approved (DEC-184 to DEC-207); the film, `config_rtt001_approved_fit.json`, renders with `.github/workflows/rtt001_film.yml` once Luke's music track is recorded (DEC-208)** (DEC-069; brief `prompts/CODE_SESSION_IQ-13.md`). Everything new in this round is an option, listed as a question (DEC-169 to DEC-179 in `state/DECISIONS.md`).
 
 This kit has **no player of its own**: it is drawn by the RTT-002 player (`kits/rtt-002/player_rtt.html`, `rtt_timeline.js`, `rtt.js`), extended in IQ-13 with a monthly **share** kind of its quarter-end series mode (RTT-003, IQ-10). Every RTT-001 feature is switched on by a key in these configs or by the race file's `kind: "share"`, and is off for RTT-002 and RTT-003: 21 reference frames of five RTT-002 and RTT-003 configs are pixel-identical before and after, and both test suites pass unchanged.
 
@@ -13,7 +13,8 @@ This kit has **no player of its own**: it is drawn by the RTT-002 player (`kits/
 | `config_rtt001_film.json` | The **as-built reference**: straight lines exactly as `series.csv`, one decimal, estimated look before 2009 with the source named, top 10, browser logos on light tiles (DEC-180) or the name only, browser colours. Not a film |
 | `config_rtt001_opt_A.json`, `_B`, `_C` | Smoothing options A, B and C of DEC-167 (each extends the one before) |
 | `config_rtt001_approved.json` | **Luke's answers to pilot 1 (DEC-184 to DEC-200):** option C, both flagged stretches smoothed, the June 1996 note, crown, no callouts, 0.5 s per month and 0.3 s from January 2014, the chosen title, QQ Browser cropped to its icon; fixed 10 slots. 5,529 frames = 3 min 4 s |
-| `config_rtt001_approved_fit.json` | The board-size option for Luke (DEC-188, DEC-202): as approved, with the rows sized to the browsers on the board (`board.fit`) |
+| `config_rtt001_approved_fit.json` | **THE FILM** (Luke, DEC-204 to DEC-207): as approved, with the rows sized to the browsers on the board (`board.fit`, at most twice as thick) |
+| `music_rtt001.json` | The film's music record: waiting for Luke's track (`ready: false`); `.github/workflows/rtt001_film.yml` renders nothing until it is ready (DEC-208) |
 | `config_rtt001_clip_*.json`, `clips.txt` | The 18 pilot clips (pilot 2 added `clip_fit_2008_2009`, the resize across January 2009): the two big hand-overs × {as built, A, B, C}; the two flagged stretches as built and smoothed; 2010–2013 at 0.40 / 0.50 / 0.65 s per month; 2013–2026 at the film pace and with the proposed faster pace from January 2014 |
 | `stills.json`, `render_stills.js`, `sheets.js` | 41 stills (each also at phone size) and 9 side-by-side comparison sheets (s16–s20 and c08 are the logo round, run 3; b01–b04, s21 and c09 are pilot 2, the board-size option); `sheets.js` draws the palette, title and logo sheets |
 | `palette_search.js`, `palette_targets.json` | How the browser colours were found (DEC-173) |

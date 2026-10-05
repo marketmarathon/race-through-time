@@ -1,0 +1,20 @@
+{
+ "ready": false,
+ "title": null,
+ "artist": null,
+ "source": null,
+ "file": null,
+ "private_path": null,
+ "private_ref": "main",
+ "sha256": null,
+ "bytes": null,
+ "duration_sec": null,
+ "loop_start": null,
+ "loop_end": null,
+ "crossfade_sec": null,
+ "notes": [
+  "WAITING FOR LUKE'S TRACK (DEC-208): Cowork is shortlisting fast, exciting YouTube Audio Library tracks with Luke (house style 6, DEC-072). Until this file says ready: true with the track's details, .github/workflows/rtt001_film.yml stops at its first step and renders nothing.",
+  "When the track arrives: Claude in Cowork uploads the file to the private repo (never here: the Audio Library licence forbids making it available separately; reference/rights_ledger.md). Claude Code then fills in title, artist, source (with the Audio Library licence), file, private_path, private_ref, sha256, bytes and duration_sec, records the track in the rights ledger and a DEC, sets ready: true and pushes the workflow file to start the render.",
+  "The film runs 5,529 frames = 184.3 s with a 10 s final table (config_rtt001_approved_fit.json). A track of at least that length plays once from its start, cut to the film and faded out over the final table: no loop points. A shorter track needs beat-aligned loop points (scripts/rtt_music_loop.py, as DEC-148); the workflow stops if the track is shorter than the film and loop_start/loop_end are not set."
+ ]
+}

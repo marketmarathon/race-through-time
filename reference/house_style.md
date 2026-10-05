@@ -24,7 +24,7 @@
   - ×0.8 when nothing visible changes, or after more than three visible-but-unchanged beats in a row.
 
   There is a 2.0 s pause on record moments. RTT-002 runs at 0.333 s per race (DEC-018, DEC-034, DEC-068, DEC-076).
-- **Period data** (quarters, years): RTT-003 runs at 1.5 s per quarter, with its thin early years (1985–88) at half that (DEC-122, DEC-133), and a 2 s pause after each change of leader (DEC-125 (c)). RTT-001 (monthly shares) runs at 0.5 s per month with the same multipliers (DEC-195), with no pause because it has no callouts (DEC-201 (2), *working choice*).
+- **Period data** (quarters, years): RTT-003 runs at 1.5 s per quarter, with its thin early years (1985–88) at half that (DEC-122, DEC-133), and a 2 s pause after each change of leader (DEC-125 (c)). RTT-001 (monthly shares) runs at 0.5 s per month with the same multipliers (DEC-195), with no pause at its changes of leader, because it has no callouts (DEC-206).
 - **Speed up when there isn't much going on:** a long calm stretch may run at one named faster fixed pace from a clean boundary, e.g. RTT-001 at 0.3 s per month from January 2014, once Chrome's lead is settled (DEC-196). This is one change of pace, not a speed curve.
 - **Choosing the speed:** render the same passage at two or three speeds and let Luke pick (DEC-071, DEC-076, DEC-118).
 - **Not approved:** a smooth speed curve that slows around entries. It is an open question (DEC-068).
@@ -32,6 +32,7 @@
 ## 3. Board and frame
 The reference frame is 1920 × 1080. Masters are rendered at 3840 × 2160.
 - **Board size is set per episode, for phone readability.** Approved so far: top 20 (RTT-002, DEC-034), top 15 (RTT-003, DEC-114, DEC-131) and top 10 (RTT-001, DEC-188).
+- **When few entities exist, the board adapts instead of leaving empty slots:** rows are sized to the number of bars on the board, never more than twice the board's normal thickness, settling at the episode's board size; only row height and bar thickness change (text, pictures and the bars' left edge stay put), and each resize eases over about 2 s, opening room before new bars arrive (RTT-001; DEC-188, DEC-202, DEC-204, DEC-205; player key `board.fit`).
 - **How numbers move:**
   - Counts of discrete events step on the event and hold until the next one (DEC-017, *working choice, standing*).
   - Continuous measures count smoothly between data points and show the exact data value at each data point (DEC-115).
@@ -89,6 +90,7 @@ Luke approved each of these for the episode named. Propose any of them in a new 
 
 ## 8. Open questions (not defaults yet)
 - Should a smooth speed curve ever come back? (DEC-068, DEC-069)
-- **Board sized to the number of bars on it** (rows larger while few entities exist, settling at the episode's board size) or fixed slots: proposed for RTT-001, Luke to choose (DEC-188, DEC-202).
+
+Closed for RTT-001 (5 Oct 2026): board sized to the bars on it — approved (DEC-204, section 3).
 
 Closed in round 5: logos versus the group name in type — logos kept (DEC-138); and how to label bars whose maker figures continue but stop growing — "retired" on the manufacturer's final total (DEC-140, section 5).
