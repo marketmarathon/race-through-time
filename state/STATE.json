@@ -1,8 +1,8 @@
 {
   "schema": "rtt-state/0.1",
   "updated": "2026-10-05",
-  "updated_by": "Claude (Claude Code cloud session): RTT-001 full film rendered with \"All In\" by Everet Almond (rtt-001-film-c3c8c72-run4, master SHA-256 7977f8df...0c5e; DEC-213), after a flash finding fixed by anchoring the stripes to the frame (DEC-212); pull request #18 open, not merged",
-  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); starts data audit PASSED (DEC-058/DEC-059, merged PR #8); IQ-04 MERGED (PR #2); IQ-05 rounds 1-5 MERGED (PR #3-#7); round-5 pilot RENDERED and APPROVED by Luke (DEC-062, visual direction = milestone 3); pull request #9 MERGED (c378ea7); RTT-002 FINAL FILM APPROVED (DEC-078), pull request #10 MERGED (main ef01814), UPLOADED by Luke in YouTube Studio and SCHEDULED PUBLIC 30 Sep 2026 (DEC-079 early release, DEC-080): video 2fY7Bzq8Uu0 on channel UC8R47xbyBB5Z93MdMkoUOWg; IQ-09 RTT-003 DATA BUILD DONE 1 Oct 2026; Luke's answers applied 2 Oct 2026 (DEC-093..DEC-102); pull request #12 MERGED 2 Oct 2026 (main 4288f6d); IQ-10 RTT-003 DESIGN PILOT ROUND 5 (FINAL PILOT ROUND) RENDERED 3 Oct 2026 (private pre-release; not the full film), awaiting Luke's review; IQ-11 (3 Oct 2026): CLAUDE.md and reference/house_style.md added on the IQ-10 branch (DEC-145); next episode RTT-001 Browser Wars (DEC-144); IQ-10 round 6 (3 Oct 2026): RTT-003 design APPROVED (DEC-146), FULL FILM with music rendered to a private pre-release, then APPROVED by Luke (DEC-150); IQ-12 (3 Oct 2026): RTT-001 Browser Wars DATA BUILD done (data/rtt-001, 11/11 checks PASS), pull request open, awaiting Luke's answers to 12 questions; IQ-12b (4 Oct 2026): Luke answered all 12 RTT-001 questions (DEC-164..DEC-166), smoothing direction for the pilot (DEC-167), order check (DEC-168); RTT-003 record (3-4 Oct 2026, pull request #14): full film APPROVED (DEC-150), pull request #13 MERGED (main 618c6a7) and private pull request #1 MERGED (private main 4d47eb2), UPLOADED by Luke in YouTube Studio and PUBLISHED PUBLIC 3 Oct 2026 (DEC-151): video JZzvA_ZDii0; IQ-13/IQ-13b/IQ-13c (4 Oct 2026): RTT-001 DESIGN PILOT 1 rendered to a private pre-release (smoothing options A/B/C, flagged stretches, notes, marker, colours, browser logos per owner direction DEC-180, features, pacing, titles), then the logo round with every browser's logo (DEC-182/DEC-183, private pre-release rtt-001-pilot1-f3d9e2f-run3), awaiting Luke's answers; pull request #15 merged by Luke (b5a09d3); pull request #16 merged 4 Oct 2026 22:37 UTC (main 3bb2857); IQ-13 answers (5 Oct 2026): Luke answered all 17 RTT-001 pilot-1 questions (DEC-184..DEC-200: option C, both flagged stretches smoothed, crown, NO callouts, 0.5 s per month and 0.3 s from 2014, title chosen, QQ cropped), pilot 2 with the board-size option rendered to a private pre-release (rtt-001-pilot2-fb1e3af-run4, DEC-203), awaiting Luke's board choice; pull request #18 open, not merged; IQ-13 pilot-2 answers (5 Oct 2026): board sized to the browsers APPROVED (DEC-204..DEC-207); full film ready to render at 3840x2160 once Luke's music track is recorded (rtt001_film.yml music gate, DEC-208); IQ-13 music (5 Oct 2026): Luke chose \"All In\" by Everet Almond (DEC-209); the full film renders once Cowork has put the file in the private repo and its SHA-256 matches (DEC-210); RTT-001 FULL FILM rendered 5 Oct 2026 (https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-001-film-c3c8c72-run4, DEC-213), awaiting Luke's approval by SHA-256",
+  "updated_by": "Claude (Claude Code cloud session): RTT-001 date and era picture round - options A and B rendered side by side (rtt-001-pilot3-3586025-run5, DEC-220); film rtt-001-film-c3c8c72-run4 not approved, to be re-rendered after Luke's choice; pull request #18 open, not merged",
+  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); starts data audit PASSED (DEC-058/DEC-059, merged PR #8); IQ-04 MERGED (PR #2); IQ-05 rounds 1-5 MERGED (PR #3-#7); round-5 pilot RENDERED and APPROVED by Luke (DEC-062, visual direction = milestone 3); pull request #9 MERGED (c378ea7); RTT-002 FINAL FILM APPROVED (DEC-078), pull request #10 MERGED (main ef01814), UPLOADED by Luke in YouTube Studio and SCHEDULED PUBLIC 30 Sep 2026 (DEC-079 early release, DEC-080): video 2fY7Bzq8Uu0 on channel UC8R47xbyBB5Z93MdMkoUOWg; IQ-09 RTT-003 DATA BUILD DONE 1 Oct 2026; Luke's answers applied 2 Oct 2026 (DEC-093..DEC-102); pull request #12 MERGED 2 Oct 2026 (main 4288f6d); IQ-10 RTT-003 DESIGN PILOT ROUND 5 (FINAL PILOT ROUND) RENDERED 3 Oct 2026 (private pre-release; not the full film), awaiting Luke's review; IQ-11 (3 Oct 2026): CLAUDE.md and reference/house_style.md added on the IQ-10 branch (DEC-145); next episode RTT-001 Browser Wars (DEC-144); IQ-10 round 6 (3 Oct 2026): RTT-003 design APPROVED (DEC-146), FULL FILM with music rendered to a private pre-release, then APPROVED by Luke (DEC-150); IQ-12 (3 Oct 2026): RTT-001 Browser Wars DATA BUILD done (data/rtt-001, 11/11 checks PASS), pull request open, awaiting Luke's answers to 12 questions; IQ-12b (4 Oct 2026): Luke answered all 12 RTT-001 questions (DEC-164..DEC-166), smoothing direction for the pilot (DEC-167), order check (DEC-168); RTT-003 record (3-4 Oct 2026, pull request #14): full film APPROVED (DEC-150), pull request #13 MERGED (main 618c6a7) and private pull request #1 MERGED (private main 4d47eb2), UPLOADED by Luke in YouTube Studio and PUBLISHED PUBLIC 3 Oct 2026 (DEC-151): video JZzvA_ZDii0; IQ-13/IQ-13b/IQ-13c (4 Oct 2026): RTT-001 DESIGN PILOT 1 rendered to a private pre-release (smoothing options A/B/C, flagged stretches, notes, marker, colours, browser logos per owner direction DEC-180, features, pacing, titles), then the logo round with every browser's logo (DEC-182/DEC-183, private pre-release rtt-001-pilot1-f3d9e2f-run3), awaiting Luke's answers; pull request #15 merged by Luke (b5a09d3); pull request #16 merged 4 Oct 2026 22:37 UTC (main 3bb2857); IQ-13 answers (5 Oct 2026): Luke answered all 17 RTT-001 pilot-1 questions (DEC-184..DEC-200: option C, both flagged stretches smoothed, crown, NO callouts, 0.5 s per month and 0.3 s from 2014, title chosen, QQ cropped), pilot 2 with the board-size option rendered to a private pre-release (rtt-001-pilot2-fb1e3af-run4, DEC-203), awaiting Luke's board choice; pull request #18 open, not merged; IQ-13 pilot-2 answers (5 Oct 2026): board sized to the browsers APPROVED (DEC-204..DEC-207); full film ready to render at 3840x2160 once Luke's music track is recorded (rtt001_film.yml music gate, DEC-208); IQ-13 music (5 Oct 2026): Luke chose \"All In\" by Everet Almond (DEC-209); the full film renders once Cowork has put the file in the private repo and its SHA-256 matches (DEC-210); RTT-001 FULL FILM rendered 5 Oct 2026 (https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-001-film-c3c8c72-run4, DEC-213), awaiting Luke's approval by SHA-256; RTT-001 film NOT approved (DEC-214): date and era-picture options rendered to https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-001-pilot3-3586025-run5 (DEC-220), awaiting Luke's choice",
   "canonical_queue": "state/ folder on main in marketmarathon/race-through-time (this file)",
   "repo_baseline": {
     "repo": "marketmarathon/bars",
@@ -75,11 +75,11 @@
     {
       "id": "RTT-001",
       "title": "Browser Wars",
-      "state": "FULL_FILM_RENDERED_AWAITING_LUKE_APPROVAL",
+      "state": "PILOT_3_DATE_ERA_RENDERED_AWAITING_LUKE",
       "check_level": "LIVE",
       "verdict": "CONDITIONAL",
-      "blocker": "Luke watches the full film (https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-001-film-c3c8c72-run4) and approves the exact master by its SHA-256 (7977f8df3548859473f2d5794fc8b004e3274d21cec390c7b49d7e0ce2100c5e) per DEC-078, or asks for changes.",
-      "decisions": "DEC-144 (next video); owner DEC-152..DEC-154 (3 Oct 2026: one source per period, straight lines across hand-overs with the estimated look before 2009, all devices); Claude working choices DEC-155..DEC-159, DEC-162; verification DEC-160, DEC-161; findings DEC-163; Luke's answers 4 Oct 2026: DEC-164 (DEC-155..DEC-159, DEC-162 CONFIRMED), DEC-165 (pilot notes), DEC-166 (GVU credit), DEC-167 (smoothing where data is missing, pilot only; series.csv unchanged); DEC-168 (order check); pilot 1: DEC-169..DEC-179 (Claude working choices, proposals, findings, delivery), DEC-180 (owner direction: browser logos), DEC-181 (logo choices); DEC-182, DEC-183 (logos for every browser); Luke's answers to pilot 1, 5 Oct 2026: DEC-184..DEC-200; DEC-201 (building the answers), DEC-202 (board-size option, proposal), DEC-203 (pilot 2 delivery); Luke's pilot-2 answers, 5 Oct 2026: DEC-204 (bars sized to the board), DEC-205 (at most twice as thick), DEC-206 (no pause), DEC-207 (January 2009 as it is); DEC-208 (film made ready, music gate); DEC-209 (music: \"All In\" by Everet Almond), DEC-210 (no loop, flash check before the render); DEC-211 (music file, SHA-256), DEC-212 (flash finding and fix: stripes anchored to the frame), DEC-213 (full film rendered)",
+      "blocker": "Luke has NOT approved the film rtt-001-film-c3c8c72-run4 (DEC-214). He chooses the date and era-picture option (A recommended, or B), the era switch dates (DEC-216) and the sizes (DEC-217) from https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-001-pilot3-3586025-run5; then the full film is re-rendered with the flash check for a fresh approval.",
+      "decisions": "DEC-144 (next video); owner DEC-152..DEC-154 (3 Oct 2026: one source per period, straight lines across hand-overs with the estimated look before 2009, all devices); Claude working choices DEC-155..DEC-159, DEC-162; verification DEC-160, DEC-161; findings DEC-163; Luke's answers 4 Oct 2026: DEC-164 (DEC-155..DEC-159, DEC-162 CONFIRMED), DEC-165 (pilot notes), DEC-166 (GVU credit), DEC-167 (smoothing where data is missing, pilot only; series.csv unchanged); DEC-168 (order check); pilot 1: DEC-169..DEC-179 (Claude working choices, proposals, findings, delivery), DEC-180 (owner direction: browser logos), DEC-181 (logo choices); DEC-182, DEC-183 (logos for every browser); Luke's answers to pilot 1, 5 Oct 2026: DEC-184..DEC-200; DEC-201 (building the answers), DEC-202 (board-size option, proposal), DEC-203 (pilot 2 delivery); Luke's pilot-2 answers, 5 Oct 2026: DEC-204 (bars sized to the board), DEC-205 (at most twice as thick), DEC-206 (no pause), DEC-207 (January 2009 as it is); DEC-208 (film made ready, music gate); DEC-209 (music: \"All In\" by Everet Almond), DEC-210 (no loop, flash check before the render); DEC-211 (music file, SHA-256), DEC-212 (flash finding and fix: stripes anchored to the frame), DEC-213 (full film rendered); date and era picture round 5 Oct 2026: DEC-214, DEC-215 (owner directions), DEC-216..DEC-218 (proposals), DEC-219 (era pictures are original work), DEC-220 (pilot 3 delivery)",
       "dataset": {
         "branch": "merged to main by Luke (pull request #15, merge b5a09d3, 4 Oct 2026); branch claude/jolly-volta-5lr5ql kept",
         "path": "data/rtt-001/",
@@ -98,7 +98,7 @@
         "leaders": "Mosaic 1994-01 > Netscape 1995-06 (on the GVU-EWS hand-over line, not a dated fact) > Internet Explorer 1998-10 (observed) > Chrome 2012-05 (observed)",
         "handover_order": "same order: EWS>StatMarket, StatMarket>OneStat, OneStat>W3Counter; FLAGGED: GVU>EWS (leader Mosaic>Netscape), W3Counter>StatCounter (Safari/Opera swap)"
       },
-      "next": "After approval: merge pull request #18 (Luke), upload by hand in YouTube Studio (Luke), with the description credits (kits/rtt-001/description_credits.md) and the browser-logo 'not affiliated' line; confirm the track needs no attribution (README_all_in.txt). Optional: NetFront and Lynx real logos.",
+      "next": "After Luke's choice: build it into the film config (config_rtt001_era_A.json or _B), run all tests and the flash check, push rtt001_film.yml (a header run note) to re-render the 4K master and viewing copy with the music; Luke approves the new master by SHA-256 (DEC-078).",
       "pilot1": {
         "brief": "prompts/CODE_SESSION_IQ-13.md + prompts/CODE_SESSION_IQ-13b.md (logos) + prompts/CODE_SESSION_IQ-13c.md (every browser gets a logo)",
         "branch": "merged to main (pull request #16, merge 3bb2857, 4 Oct 2026); branch claude/compassionate-cray-tlnnkm kept",
@@ -266,7 +266,46 @@
           "sha256": "0518981754c3d6632333b0f6f3de045f4d810878cd6c838816eed722f7ecdfa7"
         },
         "loudness": "-16.0 LUFS integrated, true peak -7.3 dBTP (both files)",
-        "approved": false
+        "approved": false,
+        "note": "rtt-001-film-c3c8c72-run4 NOT approved: Luke asked for a new date and an era picture (DEC-214, DEC-215); to be re-rendered after his choice"
+      },
+      "pilot3": {
+        "brief": "prompts/CODE_SESSION_IQ-13_date_era.md",
+        "release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-001-pilot3-3586025-run5",
+        "run": "https://github.com/marketmarathon/race-through-time/actions/runs/37376206924",
+        "source_commit": "3586025ae83a5e9826b6d0207a1846217081dad2",
+        "contents": "old vs option A vs option B at Jun 1996/2004/2010/2020 (+phone), c10 sheet, s22 era devices sheet, clips A and B across 2008-2009",
+        "file_sha256": {
+          "rtt001_clip_era_A_2008_2009_3586025_1920x1080.mp4": "aa72952d9fb293aa385eec1de91a30896384b608abb50bf71a836ddfab3cb911",
+          "rtt001_clip_era_B_2008_2009_3586025_1920x1080.mp4": "b2fe388b2bcadec7defbecb0892bdcbc68794a6210c1296d552f259eb9c6a9a2",
+          "c10_date_era_old_A_B_sheet.png": "444dc3a792bb2cc75076aa37319892f7c38bd23d2afdd83fbf86823bc8a03939",
+          "e01_A_jun1996_1920x1080.png": "cae6cdcccc52fb933c0c27e8b1b3bf0a7c0a807bc0c6e7337a692eff9985d39c",
+          "e01_A_jun1996_phone_390pt.png": "c9266de7c912891888481e1d42fd3c1a50e4bba795b2c20b07408c710b9f4e4b",
+          "e01_B_jun1996_1920x1080.png": "40deeaf7012001c7ccfc9fcd14f53a483756f9d19b31b02c88d732490b7264d0",
+          "e01_B_jun1996_phone_390pt.png": "eeb80317bd19a66ce31f6e64d281f1e634097e00d2a7277b89b11b0c0b7b69d8",
+          "e01_old_jun1996_1920x1080.png": "b9ab3e2327698191ff956dadde5a8f27aadbf29dd47c4eb4b16f622585d472f3",
+          "e01_old_jun1996_phone_390pt.png": "0c98bddda7892acaf3530068040a4280ea73bf8d8d85fa0e1a8eefbb938bd0de",
+          "e02_A_jun2004_1920x1080.png": "ad5f71ca992fcf384364bcce8efd419346bad082f7dacb6258ff51baa96ddf34",
+          "e02_A_jun2004_phone_390pt.png": "2eef1da15ef3135535f33324e030b7456b8d3fae6d635e65b0c92df9ed3e17db",
+          "e02_B_jun2004_1920x1080.png": "3df177d1838d0feddea0625769cb61a85d4153b7f2e1ffb0bd8d419faf8364fc",
+          "e02_B_jun2004_phone_390pt.png": "5958948211e748f373ea74d726ed2c28201eebd887fb7e83e80b8002e77e8598",
+          "e02_old_jun2004_1920x1080.png": "60976a845d80856b1ede48c483bd8867406036c39c71f259f828c3741414c9c5",
+          "e02_old_jun2004_phone_390pt.png": "1b620b576695f0f25364d1985938f4496b67ba097e5798b3acff2e4eb57c5abc",
+          "e03_A_jun2010_1920x1080.png": "c905b20024e2ea715cccfa7c3cfb78856eff104f2336a8122df14b3ec650a18d",
+          "e03_A_jun2010_phone_390pt.png": "08cfabdb1ed7f211d3fe0bbfa1e63d3fc0ae5a2e03921cf6464497b1b6dddb40",
+          "e03_B_jun2010_1920x1080.png": "f1350c276cfdbd3bdc949ad80d82cb1b92073af66addd5429dd1104a739970b2",
+          "e03_B_jun2010_phone_390pt.png": "c1de6c00ee5573522ca26cc6ede6a46e4c3d79f7049eb306bbec576f95e201ba",
+          "e03_old_jun2010_1920x1080.png": "bb15497c2d2172ccab42022d8e31dc1d7851e8b7265f2d95eb5fb7fb7e652531",
+          "e03_old_jun2010_phone_390pt.png": "13d7f48dd169b69be8741fd1adf68a35455957e7895f0260d42f11b4cdc8df14",
+          "e04_A_jun2020_1920x1080.png": "b291353b10491222ea99e4872c257fd742b4d406da8bfc68ba63beb68675fc27",
+          "e04_A_jun2020_phone_390pt.png": "71ba939521ccf21014b8f84bdb1712d1780b5d694b94b5b9789bec4d912afbc3",
+          "e04_B_jun2020_1920x1080.png": "a7812a050b52498fb9410b3bde15a0f0b78678cf5c3b50dab6d6f07215dbce84",
+          "e04_B_jun2020_phone_390pt.png": "6a613017e4bd9f654f391b92cc93bb612fd7a2e4747f0f1f07fefd157cb51c82",
+          "e04_old_jun2020_1920x1080.png": "ec3da10b4d64881dde77598237ff590a64932e44b9eb1e953435cc9c82806649",
+          "e04_old_jun2020_phone_390pt.png": "4c6c023da84451a8b60ea8be784e86b48a11a466e08ed29b437340cce35de47a",
+          "s22_era_devices_1920x1080.png": "f590dc43a3d55cf09f27e004a19c36425b96c4ccb5027e6a570a0300e36c458b",
+          "s22_era_devices_phone_390pt.png": "4e94aca1292cd15c4412f245d5634dd64d390dafb51b67d3528c6abf7f61381e"
+        }
       }
     },
     {
@@ -1003,6 +1042,15 @@
       "status": "DONE 5 Oct 2026: full film rendered to https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-001-film-c3c8c72-run4 (DEC-213); awaiting Luke's approval by SHA-256",
       "result": {
         "decisions": "DEC-209..DEC-213"
+      }
+    },
+    {
+      "id": "IQ-13 date/era",
+      "task": "Luke's changes after watching the film: a big bold year with the month, bottom right, beside our own era pictures (CRT+modem, tower, laptop, early phone, modern phone) crossfading; stills first (DEC-069)",
+      "where": "branch claude/compassionate-cray-tlnnkm, pull request #18 (not merged); prompt prompts/CODE_SESSION_IQ-13_date_era.md",
+      "status": "PILOT RENDERED 5 Oct 2026: https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-001-pilot3-3586025-run5; awaiting Luke's choice (A/B, switch dates, sizes); then re-render the film",
+      "result": {
+        "decisions": "DEC-214..DEC-220"
       }
     }
   ],
