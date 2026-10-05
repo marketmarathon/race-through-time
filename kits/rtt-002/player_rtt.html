@@ -414,11 +414,11 @@ let FITS=null;
 function fitSlots(fr){
   const F=BOARDFIT;
   if(!FITS){
-    /* bars on the board at frame f: this month's browsers and, while it counts, last month's (one that stops
-       fades out over this month) */
-    const n=new Float64Array(RACE_FRAMES+1), cnt=s=>Math.min(NROWS, s.order.length);
+    /* bars on the board at frame f: this month's browsers together with last month's (one that stops fades out
+       over this month while one that starts fades in, so both are drawn) */
+    const n=new Float64Array(RACE_FRAMES+1);
     for(let f=0; f<=RACE_FRAMES; f++){ const k=RTT_TIMELINE.eventAt(TL,Math.min(f,RACE_FRAMES)), s=k>=0?TL.states[k]:TL.opening, p=k>0?TL.states[k-1]:TL.opening;
-      n[f]=Math.max(F.min_slots, cnt(s), k>=0?cnt(p):0); }
+      n[f]=Math.max(F.min_slots, Math.min(NROWS, new Set(k>=0?s.order.concat(p.order):s.order).size)); }
     /* the largest count within half a window either side, then the raised-cosine smoothing: every value under
        the window is at least n[f], so the slots never fall below the bars on the board. The room opens before
        browsers arrive and closes only after they have gone. */
