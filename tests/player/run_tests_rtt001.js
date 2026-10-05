@@ -38,6 +38,13 @@
  *      before closer than CIEDE2000 18 (DEC-023)
  *  15. smoothing never moves a change of first place: the leaders on the month-end frames change exactly as in
  *      leaders.csv, except where a flagged stretch is smoothed on purpose (include_flagged), which is reported
+ *  16. board size (IQ-13 answers, DEC-188/DEC-202): one name size and one value size on every frame, and the bars'
+ *      left edge never moves; every bar inside the slots is drawn whole inside the board, and no bar on the board stops
+ *      being drawn for lack of room (a row gliding up into the last slot from below is cut by the board's edge, as
+ *      always); with board.fit the slots stay
+ *      within [min_slots, rows] and never below the bars on the board, are exactly rows while ten browsers are on it,
+ *      and change smoothly (at most 0.2 slots and a change of speed of at most 0.012 slots from one frame to the
+ *      next, so no jump and no sudden start or stop)
  * Placeholder RTT logo and browser logos (plain shapes, written at run time into tests/output/, never committed). Results:
  * tests/player/RESULTS_RTT001.md. Exit 1 on any failure.
  *
@@ -126,7 +133,8 @@ async function runCase(name, configFile, overrides) {
   const NL = Object.assign({ sec: 3.0 }, cfg.note_line || {}), notes = cfg.notes_at || [];
   const res = { name, config: configFile, frames: info.raceFrames, months: info.dates.length, opening: info.opening, last: info.dates[info.dates.length - 1],
                 failures: [], counts: { exact: 0, window: 0, between: 0, approx: 0, counting: 0, enter_leave: 0, est: 0, off: 0, markers: 0, notes: 0, crown: 0, callout: 0, pics: 0, nameOnly: 0, own: 0 },
-                maxOff: 0, maxOffAt: '', callouts: [], leaderChanges: [], lastLeader: null, markerMonths: [], minDE: 1e9, minPair: '' };
+                maxOff: 0, maxOffAt: '', callouts: [], leaderChanges: [], lastLeader: null, markerMonths: [], minDE: 1e9, minPair: '',
+                slots: { min: 1e9, max: 0, step: 0, accel: 0 }, sizes: { name: new Set(), value: new Set(), x0: new Set() } };
   const fail = m => { if (res.failures.length < 40) res.failures.push(m); };
   if (!dataUntouched) fail('series.csv differs from the build manifest (the data must not change, DEC-167)');
   const logo = (cfg.overlays || []).find(o => o.name === 'logo');
@@ -143,8 +151,10 @@ async function runCase(name, configFile, overrides) {
   const wantCallouts = cfg.callout && cfg.callout.enabled ? datedLeaders.filter(l => mOfLeader(l) > info.opening && mOfLeader(l) <= res.last).map(l => mOfLeader(l) + ' ' + l.leader) : [];
   const drawnAt = {};                    // [month][id] = drawn hundredths on the month-end frame
   let prevDate = null; const firstFrameOf = {}; const coTops = [];
+  const FIT = cfg.board && cfg.board.fit && cfg.board.fit.enabled ? Object.assign({ min_slots: 5 }, cfg.board.fit) : null, slotsAt = [];
+  const BOTTOM = 1080 - 46; const drawnBefore = new Set();
   for (let f = 0; f < info.raceFrames; f++) {
-    const X = await pg.evaluate(t => { drawAt(t); return { L: window.__LABELS, B: window.__BARS, R: window.__RANK, P: window.__PICS, CR: window.__CROWN, CO: window.__CALLOUT, SO: window.__SOURCE, MA: window.__MARKER, NO: window.__NOTE }; }, f / cfg.fps);
+    const X = await pg.evaluate(t => { drawAt(t); return { L: window.__LABELS, B: window.__BARS, R: window.__RANK, P: window.__PICS, CR: window.__CROWN, CO: window.__CALLOUT, SO: window.__SOURCE, MA: window.__MARKER, NO: window.__NOTE, SL: window.__SLOTS }; }, f / cfg.fps);
     const dl = X.L.filter(l => l.kind === 'time_line');
     if (dl.length !== 1) { fail(`f${f}: ${dl.length} date lines`); continue; }
     const q = months.find(m => monthText(m) === dl[0].text);
@@ -236,6 +246,18 @@ async function runCase(name, configFile, overrides) {
       if (logo && overlap(labelBox(a), logo, cfg.overlay_gap || 0)) fail(`f${f}: ${a.kind} enters the logo box`); }
     if (X.MA) { const mb = X.MA.box; for (const b of others.concat(topL.filter(l => l.kind !== 'marker'))) if (overlap(mb, labelBox(b))) fail(`f${f}: marker overlaps ${b.kind}`);
       if (logo && overlap(mb, logo, cfg.overlay_gap || 0)) fail(`f${f}: marker enters the logo box`); }
+    // 16. board size
+    for (const l of X.L) { if (l.kind === 'name') res.sizes.name.add(l.size); if (l.kind === 'value') res.sizes.value.add(l.size); }
+    for (const b of vis) res.sizes.x0.add(Math.round(b.rect.x * 100) / 100);
+    const sl = X.SL;
+    for (const id of X.R) { const b = X.B.find(b => b.id === id);   // (a row gliding up into the last slot from below is cut by the board's edge, as always)
+      if (!b) { if (drawnBefore.has(id)) fail(`f${f} ${q}: ${id} was on the board and is no longer drawn (no room)`); continue; }
+      if (b.alpha > 0 && b.y <= sl - 1 + 1e-6 && b.rect.y + b.rect.h > BOTTOM + 0.5) fail(`f${f} ${q}: ${id} in slot ${b.y.toFixed(2)} of ${sl.toFixed(2)} drawn below the board (${(b.rect.y + b.rect.h).toFixed(1)} > ${BOTTOM})`); }
+    drawnBefore.clear(); for (const b of X.B) if (X.R.includes(b.id)) drawnBefore.add(b.id); slotsAt.push(sl); res.slots.min = Math.min(res.slots.min, sl); res.slots.max = Math.max(res.slots.max, sl);
+    if (FIT) {
+      if (sl < FIT.min_slots - 1e-9 || sl > cfg.rows + 1e-9) fail(`f${f}: ${sl.toFixed(3)} slots outside ${FIT.min_slots}..${cfg.rows}`);
+      if (sl < X.R.length - 1e-9) fail(`f${f} ${q}: ${sl.toFixed(3)} slots for ${X.R.length} bars`);
+    } else if (sl !== cfg.rows) fail(`f${f}: ${sl} slots with board.fit off`);
     // 14. colours (collected on month-end frames)
     if (atEnd && k != null && f === info.qend[k]) { if (X.R[0] !== res.lastLeader) { res.leaderChanges.push(q.slice(0, 7) + ' ' + X.R[0]); res.lastLeader = X.R[0]; } }
     if (f === 0) { res.lastLeader = X.R[0]; }
@@ -243,6 +265,15 @@ async function runCase(name, configFile, overrides) {
     prevDate = q;
   }
   await br.close();
+  // 16. the slots change smoothly, and are exactly rows wherever ten browsers have been on the board for a whole window
+  for (let f = 1; f < slotsAt.length; f++) { const d = Math.abs(slotsAt[f] - slotsAt[f - 1]); res.slots.step = Math.max(res.slots.step, d);
+    if (f > 1) res.slots.accel = Math.max(res.slots.accel, Math.abs(slotsAt[f] - 2 * slotsAt[f - 1] + slotsAt[f - 2])); }
+  if (res.slots.step > 0.2) fail(`slots change by up to ${res.slots.step.toFixed(3)} per frame (> 0.2)`);
+  if (res.slots.accel > 0.012) fail(`slots change speed by up to ${res.slots.accel.toFixed(4)} per frame (> 0.012)`);
+  if (FIT && info.dates.some(d => d >= '2009-12-31') && Math.abs(slotsAt[slotsAt.length - 1] - cfg.rows) > 1e-9) fail(`slots ${slotsAt[slotsAt.length - 1]} at the end, want ${cfg.rows}`);
+  if (res.sizes.name.size > 1) fail(`name sizes ${[...res.sizes.name].join(', ')} (one size for the whole video)`);
+  if (res.sizes.value.size > 1) fail(`value sizes ${[...res.sizes.value].join(', ')}`);
+  if (res.sizes.x0.size > 1) fail(`bars start at x ${[...res.sizes.x0].join(', ')} (the left edge must not move)`);
   for (let i = 0; i < coTops.length; i++) {
     const V2 = new Map(); for (let j = Math.max(0, i - 3); j <= i; j++) for (const [id, c] of coTops[j]) { if (V2.has(id) && V2.get(id) !== c) fail(`${id} changes colour`); V2.set(id, c); }
     const a = [...V2]; for (let x = 0; x < a.length; x++) for (let y = x + 1; y < a.length; y++) { const d = TLJS.deltaE(a[x][1], a[y][1]); if (d < res.minDE) { res.minDE = d; res.minPair = a[x][0] + ' / ' + a[y][0]; } }
@@ -272,13 +303,13 @@ async function runCase(name, configFile, overrides) {
 }
 
 function write(results) {
-  const L = ['# RTT-001 player test results (IQ-13, design pilot 1)', '',
+  const L = ['# RTT-001 player test results (IQ-13 design pilot 1; IQ-13 answers: the approved choices and the board-size option)', '',
     'Written by `node tests/player/run_tests_rtt001.js`. Every frame drawn in order at 1920 x 1080 in Playwright Chromium through `kits/rtt-002/rtt.js` (the same path as the render). Expected values read independently from `data/rtt-001/` (series.csv, observations.csv, handover_order.csv, leaders.csv, manifest.json). The checks are listed at the top of the test file.', '',
     `Data untouched: series.csv SHA-256 ${seriesHash} ${dataUntouched ? '= the build manifest' : '**differs from the build manifest**'}.`, '',
     `Overall: ${results.filter(r => r.pass).length}/${results.length} PASS.`, '',
-    '| Case | Result | Config | Months (opening → last) | Frames | Month-end values exact / in a hand-over window / between their two figures | Counting values checked | "~" labels | Smoothed values that differ from series.csv (largest difference) | Enter/leave bar-frames | Source markers (months) | Note frames | Crown frames | Callouts | Logos / own tiles / name-only bar-frames | Closest colours (CIEDE2000) | Changes of first place (month-end frames) |',
-    '|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|'];
-  for (const r of results) L.push(`| ${r.name} | ${r.pass ? 'PASS' : 'FAIL'} | \`${r.config}\` | ${r.months} (${r.opening} → ${r.last}) | ${r.frames} (${(r.frames / 30).toFixed(1)} s) | ${r.counts.exact} / ${r.counts.window} / ${r.counts.between} | ${r.counts.counting} | ${r.counts.approx} | ${r.counts.off}${r.maxOff ? ' (' + (r.maxOff / 100).toFixed(2) + ' points: ' + r.maxOffAt + ')' : ''} | ${r.counts.enter_leave} | ${r.counts.markers} (${r.markerMonths.join(', ') || 'none'}) | ${r.counts.notes} | ${r.counts.crown} | ${r.callouts.join('; ') || 'none'} | ${r.counts.pics} / ${r.counts.own} / ${r.counts.nameOnly} | ${r.minDE === 1e9 ? 'n/a' : r.minDE.toFixed(1) + ' (' + r.minPair + ')'} | ${r.leaderChanges.join(', ') || 'none'} |`);
+    '| Case | Result | Config | Months (opening → last) | Frames | Month-end values exact / in a hand-over window / between their two figures | Counting values checked | "~" labels | Smoothed values that differ from series.csv (largest difference) | Enter/leave bar-frames | Source markers (months) | Note frames | Crown frames | Callouts | Logos / own tiles / name-only bar-frames | Closest colours (CIEDE2000) | Changes of first place (month-end frames) | Board slots min–max (largest change / change of speed per frame) |',
+    '|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|'];
+  for (const r of results) L.push(`| ${r.name} | ${r.pass ? 'PASS' : 'FAIL'} | \`${r.config}\` | ${r.months} (${r.opening} → ${r.last}) | ${r.frames} (${(r.frames / 30).toFixed(1)} s) | ${r.counts.exact} / ${r.counts.window} / ${r.counts.between} | ${r.counts.counting} | ${r.counts.approx} | ${r.counts.off}${r.maxOff ? ' (' + (r.maxOff / 100).toFixed(2) + ' points: ' + r.maxOffAt + ')' : ''} | ${r.counts.enter_leave} | ${r.counts.markers} (${r.markerMonths.join(', ') || 'none'}) | ${r.counts.notes} | ${r.counts.crown} | ${r.callouts.join('; ') || 'none'} | ${r.counts.pics} / ${r.counts.own} / ${r.counts.nameOnly} | ${r.minDE === 1e9 ? 'n/a' : r.minDE.toFixed(1) + ' (' + r.minPair + ')'} | ${r.leaderChanges.join(', ') || 'none'} | ${r.slots.min === r.slots.max ? r.slots.min : r.slots.min.toFixed(2) + '–' + r.slots.max.toFixed(2) + ' (' + r.slots.step.toFixed(3) + ' / ' + r.slots.accel.toFixed(4) + ')'} |`);
   for (const r of results) if (!r.pass) { L.push('', `**${r.name} failures** (first 40):`); for (const f of r.failures) L.push('- ' + f); }
   L.push('');
   fs.writeFileSync(path.join(__dirname, 'RESULTS_RTT001.md'), L.join('\n'));
@@ -290,7 +321,8 @@ function write(results) {
   const cases = clips.map(c => [c.replace(/^config_rtt001_clip_|\.json$/g, ''), c])
     .concat([['film_as_built', 'config_rtt001_film.json'], ['film_option_A', 'config_rtt001_opt_A.json'], ['film_option_B', 'config_rtt001_opt_B.json'],
              ['film_option_C', 'config_rtt001_opt_C.json'],
-             ['film_option_C_note_crown_callouts', 'config_rtt001_opt_C.json', { notes_at: [{ date: '1996-06-30', text: 'Note: until May 1996 this source counted Internet Explorer inside “Mosaic”' }], crown: { enabled: true }, callout: { enabled: true }, record_hold: { enabled: true } }]])
+             ['film_option_C_note_crown_callouts', 'config_rtt001_opt_C.json', { notes_at: [{ date: '1996-06-30', text: 'Note: until May 1996 this source counted Internet Explorer inside “Mosaic”' }], crown: { enabled: true }, callout: { enabled: true }, record_hold: { enabled: true } }],
+             ['film_approved_fixed_slots', 'config_rtt001_approved.json'], ['film_approved_board_fit', 'config_rtt001_approved_fit.json']])
     .filter(c => process.argv.length <= 2 || process.argv.slice(2).includes(c[0]));
   const results = [];
   for (const [n, c, o] of cases) { const t0 = Date.now(); const r = await runCase(n, c, o); results.push(r);
