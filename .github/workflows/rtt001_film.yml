@@ -27,6 +27,9 @@
 # Nothing is uploaded to YouTube or published; Luke approves the exact render by its SHA-256 (DEC-078).
 # Triggers: by hand (Run workflow) once this file is on main; on the IQ-13 branch, where GitHub cannot start an
 # unmerged workflow by hand, a push that changes THIS FILE starts it.
+# Run 1 of the film (5 Oct 2026): "All In" by Everet Almond (DEC-209, DEC-211), no loop (DEC-210), stripes anchored to the
+# frame after the flash finding (DEC-212). Tests before the push: RTT-001 25/25, phone PASS, RTT-002 20/20, RTT-003 5/5,
+# 21 reference frames identical; local whole-film flash check PASS (9,013 px worst, limit 57,600).
 name: rtt001-film
 
 on:
