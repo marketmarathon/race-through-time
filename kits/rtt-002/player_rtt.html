@@ -158,6 +158,8 @@
        - pictures.crop {id: {x,y,w,h}} (IQ-13c): draw only that region of the file (the IE6 'e' without its wordmark;
          crop only, the file is unchanged); icons of 64 px or less are scaled without smoothing; pictures.own
          {id: {text, year}}: our own neutral tile (name and launch year on the bar colour) where no real logo exists.
+       - board.stripes "screen" (DEC-212): the estimated look's stripes are anchored to the frame, not the bar, so a
+         bar moving up or down does not carry a moving stripe pattern (flash safety); absent = as RTT-003 (unchanged).
        - board.fit {enabled, min_slots, sec} (IQ-13 answers, option for Luke, DEC-188/DEC-202): the rows are sized to
          the number of bars on the board (at least min_slots, at most rows) instead of always leaving room for ten;
          only row height and bar thickness change, smoothed over sec (fitSlots); window.__SLOTS records the slots.
@@ -589,7 +591,13 @@ function drawStyledBar(x,y,w,h,colour,st){
   if(st==='estimated'){
     ctx.save(); rr(x,y,w,h,2); ctx.clip();
     ctx.strokeStyle='rgba(6,10,18,0.45)'; ctx.lineWidth=5; ctx.beginPath();
-    for(let t=-h;t<w;t+=14){ ctx.moveTo(x+t,y+h); ctx.lineTo(x+t+h,y); }
+    if(BOARD.stripes==='screen'){
+      /* RTT-001 (DEC-212): the stripes are the lines X + Y = 14k of the FRAME, not of the bar, so a bar that glides up
+         or down (an overtake, a resize) moves under a still pattern instead of carrying its stripes with it - a
+         moving stripe pattern flickers (WCAG 2.x flash check, tests/player/wcag_flash_rtt003.js). Same angle,
+         spacing, width and darkness as below; only the stripes' phase along the bar differs. */
+      for(let c=Math.floor((x+y)/14)*14; c<x+w+y+h+14; c+=14){ ctx.moveTo(c-(y+h),y+h); ctx.lineTo(c-y,y); }
+    } else for(let t=-h;t<w;t+=14){ ctx.moveTo(x+t,y+h); ctx.lineTo(x+t+h,y); }
     ctx.stroke(); ctx.restore();
   }
 }

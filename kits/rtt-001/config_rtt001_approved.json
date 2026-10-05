@@ -5,6 +5,7 @@
   "notes_at": [ { "date": "1996-06-30", "text": "Note: until May 1996 this source counted Internet Explorer inside “Mosaic”" } ],
   "crown": { "enabled": true },
   "callout": { "enabled": false },
+  "board": { "stripes": "screen" },
   "record_hold": { "enabled": false },
   "pacing": { "sec_per_event": 0.5, "segments": [ { "from": "2014-01-31", "sec_per_event": 0.3 } ] },
   "pictures": { "crop": { "qq": { "x": 10, "y": 31, "w": 74, "h": 74 } } },
