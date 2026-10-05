@@ -16,6 +16,9 @@
 # Triggers: a push that changes THIS FILE on the IQ-13 branch, or by hand (once merged).
 # Run 1 (56b6f43): empty picture boxes. Run 2 (IQ-13b): browser logos in the picture boxes (owner direction DEC-180).
 # Run 3 (IQ-13c): every browser on the board with a logo (owner decisions DEC-182); stills only (ONLY_STILLS).
+# Pilot 2 (IQ-13 answers, 5 Oct 2026, DEC-184 to DEC-203): Luke's approved choices, and the board-size option side by
+# side (fixed 10 slots or bars sized to the browsers on the board, DEC-188/DEC-202): the stills in ONLY_STILLS and the
+# one clip in ONLY_CLIPS; tagged rtt-001-pilot2-<commit>-run<n>.
 name: rtt001-pilot
 
 on:
@@ -34,9 +37,12 @@ concurrency:
 env:
   PRIVATE_REPO: marketmarathon/race-through-time-private
   PRIVATE_REF: claude/compassionate-cray-tlnnkm
-  # Run 3 (IQ-13c, DEC-182): stills only - the logo sheet and four boards across 1994-2026 with every browser's logo.
-  # Empty = every clip and every still (runs 1 and 2).
-  ONLY_STILLS: s16_logos s17_board_jan1994 s18_board_jun2005 s19_board_jun2013 s20_board_jun2022 c08_boards_with_logos
+  # Pilot 2 (DEC-188/DEC-202): the board-size stills (fixed and fitted at four months), the logo sheet with QQ Browser
+  # cropped (DEC-199) and the side-by-side sheet; one clip across January 2009 (5 browsers to 10).
+  # ONLY_STILLS empty = every still; ONLY_CLIPS empty = every clip in clips.txt, unless ONLY_STILLS is set (stills only).
+  ONLY_STILLS: b01_fixed_jan1995 b01_fit_jan1995 b02_fixed_jun1999 b02_fit_jun1999 b03_fixed_jun2005 b03_fit_jun2005 b04_fixed_jun2015 b04_fit_jun2015 s21_logos_approved c09_board_fixed_vs_fit
+  ONLY_CLIPS: config_rtt001_clip_fit_2008_2009.json
+  TAG_PREFIX: rtt-001-pilot2
 
 jobs:
   render:
@@ -74,8 +80,8 @@ jobs:
             f=$(RTT_CONFIG="../rtt-001/$c" FRAME_COUNT_ONLY=1 node rtt.js | awk '/^FRAMES/ {print $2}')
             test -n "$f"
             echo "$c $f" | tee -a "$RUNNER_TEMP/plan.txt"
-          done < <(if [ -n "$ONLY_STILLS" ]; then :; else cat ../rtt-001/clips.txt; fi)
-          for c in film opt_A opt_B opt_C; do echo "full film, not rendered, config_rtt001_$c.json: $(RTT_CONFIG=../rtt-001/config_rtt001_$c.json FRAME_COUNT_ONLY=1 node rtt.js)"; done
+          done < <(if [ -n "$ONLY_CLIPS" ]; then printf '%s\n' $ONLY_CLIPS; elif [ -n "$ONLY_STILLS" ]; then :; else cat ../rtt-001/clips.txt; fi)
+          for c in film opt_A opt_B opt_C approved approved_fit; do echo "full film, not rendered, config_rtt001_$c.json: $(RTT_CONFIG=../rtt-001/config_rtt001_$c.json FRAME_COUNT_ONLY=1 node rtt.js)"; done
 
       - name: Fetch Luke's logo and the browser logos from the private repo and check their hashes
         env:
@@ -90,7 +96,9 @@ jobs:
               assets/rtt-001/logos/*) dst="$A/logos/${p#assets/rtt-001/logos/}";;
               *) echo "::error::unexpected path $p"; exit 1;;
             esac
-            gh api -H 'Accept: application/vnd.github.raw' "repos/$PRIVATE_REPO/contents/$p?ref=$PRIVATE_REF" > "$dst"
+            # the logo branch, or the private main once Luke has merged it; the SHA-256 check below decides either way
+            gh api -H 'Accept: application/vnd.github.raw' "repos/$PRIVATE_REPO/contents/$p?ref=$PRIVATE_REF" > "$dst" 2>/dev/null \
+              || gh api -H 'Accept: application/vnd.github.raw' "repos/$PRIVATE_REPO/contents/$p?ref=main" > "$dst"
             printf '%s  %s\n' "$sum" "$dst" >> "$RUNNER_TEMP/check.txt"
           done
           sha256sum -c --quiet "$RUNNER_TEMP/check.txt"
@@ -128,16 +136,16 @@ jobs:
           GH_TOKEN: ${{ secrets.RTT_PRIVATE_TOKEN }}
         run: |
           O="$RUNNER_TEMP/rtt_out"; SHORT=${GITHUB_SHA::7}
-          TAG="rtt-001-pilot1-${SHORT}-run${GITHUB_RUN_NUMBER}"
+          TAG="${TAG_PREFIX:-rtt-001-pilot1}-${SHORT}-run${GITHUB_RUN_NUMBER}"
           {
-            echo "RTT-001 Browser Wars design pilot 1 (IQ-13, with browser logos IQ-13b): clips and stills for Luke to choose from, rendered by GitHub Actions. No music. Not a film."
+            echo "RTT-001 Browser Wars design pilot (${TAG_PREFIX:-rtt-001-pilot1}): clips and stills for Luke to choose from, rendered by GitHub Actions. No music. Not a film."
             echo
             echo "- Source: ${GITHUB_REPOSITORY} @ ${GITHUB_SHA} (${GITHUB_REF_NAME}), run ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
             while read -r c FRAMES; do
               echo "- kits/rtt-001/${c}: ${FRAMES} frames at 30 fps = $(awk -v f="$FRAMES" 'BEGIN {printf "%.1f", f / 30}') s, 1920 x 1080, x264, no audio"
             done < "$RUNNER_TEMP/plan.txt"
             echo "- Stills: kits/rtt-001/stills.json, 1920 x 1080 PNG plus the same frame at phone size (390 points wide at 3 device pixels per point); *_sheet.png = options side by side"
-            echo "- Luke's logo and 15 browser logos (Wikimedia Commons, kits/rtt-001/logos.json): race-through-time-private ${PRIVATE_REF}, every SHA-256 checked against kits/rtt-001/assets_sha256.txt before drawing; other browsers name only"
+            echo "- Luke's logo and the browser logos (kits/rtt-001/logos.json; Lynx and NetFront on our own neutral tiles): race-through-time-private, every SHA-256 checked against kits/rtt-001/assets_sha256.txt before drawing"
             echo "- File SHA-256:"
             (cd "$O" && sha256sum $(ls *.mp4 2>/dev/null) *.png | sed 's/^/  - /')
             echo
@@ -145,7 +153,7 @@ jobs:
           } > "$O/notes.md"
           cat "$O/notes.md"
           gh release create "$TAG" --repo "$PRIVATE_REPO" --target main --prerelease \
-            --title "RTT-001 design pilot 1 ${SHORT} (clips and stills)" --notes-file "$O/notes.md" $(ls "$O"/*.mp4 2>/dev/null) "$O"/*.png
+            --title "RTT-001 design ${TAG_PREFIX:-rtt-001-pilot1} ${SHORT} (clips and stills)" --notes-file "$O/notes.md" $(ls "$O"/*.mp4 2>/dev/null) "$O"/*.png
           URL="https://github.com/${PRIVATE_REPO}/releases/tag/${TAG}"
           echo "Release: $URL"
           echo "RTT-001 pilot saved to the private repo: $URL" >> "$GITHUB_STEP_SUMMARY"
