@@ -48,6 +48,7 @@ The reference frame is 1920 × 1080. Masters are rendered at 3840 × 2160.
   - Each entity keeps one colour for the whole film.
   - No two entities on screen together share a colour, or come closer than CIEDE2000 18 (DEC-023, *working choice, standing*).
   - Where a group matters more than the entity (e.g. console makers), colour by group. Check the group colours under simulated colour blindness (DEC-107, approved DEC-114).
+- **A moving bar must not carry a moving pattern:** striped (estimated) bars that glide up or down draw their stripes anchored to the frame, not the bar, or the stripes flicker; RTT-001's whole-film check failed until this was done (DEC-212). Every film gets the whole-picture WCAG flash check before its render (`tests/player/wcag_flash_rtt003.js`; RTT-003 DEC-149, RTT-001 DEC-213).
 - **No flashes or strobing.** An event highlight is one gentle brightening with a soft glow, fading over 0.4 s (DEC-027, DEC-030). At most 3 highlight starts in any second. More needs Luke's knowing acceptance after a WCAG flash check, as for RTT-002 (DEC-077).
 
 ## 5. Evidence on screen
