@@ -113,5 +113,28 @@
       text('lic', id, fit(l1), tx, y + 52, 'left'); text('src', id, fit(l2), tx, y + 74, 'left');
     });
   }
-  window.RTT001_SHEETS = { sheet_palette: sheetPalette, sheet_titles: sheetTitles, sheet_logos: sheetLogos };
+  /* date/era round (DEC-215, DEC-216): the five era pictures - our own drawings, made from plain shapes in the player
+     (drawDevice) - large and at their size in the film, with the proposed switch dates from era.eras. */
+  function sheetDevices() {
+    baseTransform(); window.__LABELS = [];
+    ctx.fillStyle = T.ground; ctx.fillRect(0, 0, 1920, 1080);
+    ctx.fillStyle = T.ink; ctx.font = '700 40px ' + FONT; text('title', null, 'RTT-001 era pictures (proposal): our own drawings, no photos, logos or brands', LEFT, 56, 'left');
+    ctx.fillStyle = T.cap; ctx.font = '500 22px ' + FONT;
+    text('sub', null, 'Each is drawn from plain shapes by the player. Top: large. Bottom: the size in the film (240 x 200 px on the 1920 frame). Each change crossfades over 2 s.', LEFT, 92, 'left');
+    const names = { crt: 'CRT monitor + modem', tower: 'Desktop tower', laptop: 'Laptop', phone_early: 'Early touch phone', phone_modern: 'Modern phone' };
+    const M = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    const eras = ERA.eras, cw = (1920 - 2 * LEFT) / eras.length;
+    eras.forEach((e, i) => {
+      const x = LEFT + i * cw;
+      ctx.fillStyle = T.panel; rr(x + 6, 120, cw - 12, 900, 12); ctx.fill();
+      drawDevice(e.device, x + 16, 140, cw - 32, (cw - 32) * 200 / 240, 1, null);
+      drawDevice(e.device, x + (cw - 240) / 2, 520, 240, 200, 1, null);
+      ctx.fillStyle = T.ink; ctx.font = '700 28px ' + FONT; text('name', e.device, names[e.device] || e.device, x + 20, 790, 'left');
+      ctx.fillStyle = T.cap; ctx.font = '600 26px ' + FONT;
+      const until = i + 1 < eras.length ? eras[i + 1].from : null, mo = d => M[+d.slice(5, 7) - 1] + ' ' + d.slice(0, 4);
+      text('from', e.device, 'from ' + mo(e.from), x + 20, 836, 'left');
+      text('until', e.device, until ? 'to the end of ' + (+until.slice(0, 4) - 1) : 'to the end of the film', x + 20, 872, 'left');
+    });
+  }
+  window.RTT001_SHEETS = { sheet_palette: sheetPalette, sheet_titles: sheetTitles, sheet_logos: sheetLogos, sheet_devices: sheetDevices };
 })();

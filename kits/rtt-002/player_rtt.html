@@ -216,6 +216,7 @@ let FLAGCOL=null, FLAGS=false, FLAGIMG={}, FLAGCODE={}, EVL=null, OVL=[], OVLGAP
 let COUNT=false, BLOGO=null, FFOOT=null, FINAL_ON=false, LIVE=false, FINAL_LBL=false, STATUS=null, RECLINE=false;
 let SERIES=false, PIC=null, PICIMG={}, LOGOIMG={}, MKEY=null, FADE=null, CROWN=null, CALLOUT=null, NOTES=null, GLIDE_BEAT=false, AXU=1, MAKERS=[], MAKERNAME={};
 let SHARE=false, VAL=null, SRCL=null, MARK=null, NOTEL=null;   // IQ-13 (RTT-001): all off for RTT-002 and RTT-003
+let DATEBLK=null, ERA=null, ERAST=null;                          // RTT-001 date/era round (DEC-214..): off unless configured
 let TOP=150; const BOTTOM=1080-46;            // IQ-10: TOP from config board_top (RTT-003); 150 for RTT-002
 
 /* ---- the test hook: what text went on the frame ---- */
@@ -286,6 +287,8 @@ function setup(o){
   SRCL = SHARE && CFG.source_line && CFG.source_line.enabled ? Object.assign({y:120, size:30, prefix:'Source: ', names:{}, measure:{}, estimated:' · estimated', changing:'changing from {from} to {to}'}, CFG.source_line) : null;
   MARK = SHARE && CFG.marker && CFG.marker.enabled ? Object.assign({sec:3.0, text:'New source', fade_in:0.25, fade_out:0.4}, CFG.marker) : null;
   NOTEL = SHARE ? Object.assign({sec:3.0, size:30, fade_in:0.25, fade_out:0.4}, CFG.note_line||{}) : null;
+  DATEBLK = CFG.date_block && CFG.date_block.enabled ? Object.assign({mode:'beside', right:1630, year_y:990, year_size:112, month_y:872, month_size:40, roll_sec:0.5}, CFG.date_block) : null;
+  ERA = CFG.era && CFG.era.enabled ? Object.assign({x:1652, y:800, w:240, h:200, fade_sec:2.0, eras:[]}, CFG.era) : null; ERAST=null;
   GLIDE_BEAT = !!(CFG.glide && CFG.glide.bar_mode==='beat');
   const PC=CFG.pictures||{};
   PIC = PC.enabled ? Object.assign({height_frac:0.92, aspect:1.65, gap:14}, PC) : null; PICIMG={}; LOGOIMG={};
@@ -492,7 +495,7 @@ function winnerText(ev){
 }
 function drawTime(ev){
   const TLB=CFG.time_label;
-  if(TLB.mode==='title' || !ev) return;
+  if(TLB.mode==='title' || TLB.mode==='none' || !ev) return;   // 'none': the date is drawn by date_block (RTT-001)
   /* "line" (IQ-05d, DEC-045 (3)): one small line, date first, then the Grand Prix, at
      time_label.x / y. Every frame names the race it shows, whoever won it. */
   if(TLB.mode==='line'){
@@ -600,6 +603,123 @@ function drawStyledBar(x,y,w,h,colour,st){
     } else for(let t=-h;t<w;t+=14){ ctx.moveTo(x+t,y+h); ctx.lineTo(x+t+h,y); }
     ctx.stroke(); ctx.restore();
   }
+}
+/* ---- RTT-001 date/era round (owner directions DEC-214, DEC-215; options for Luke, DEC-216..DEC-218) ----
+   date_block {enabled, mode 'beside'|'screen', right, year_y, year_size, month_y, month_size, roll_sec}: a big bold
+   year with the month smaller above it, bottom right; when the year changes the old year rolls up and out and the
+   new one rolls in from below over roll_sec (eased), clipped to its own band. mode 'screen': the year and month are
+   drawn on the era device's screen instead (era must be on).
+   era {enabled, x, y, w, h, fade_sec, eras:[{from:'YYYY-MM-DD', device}]}: our own flat drawings of how people
+   browsed (crt, tower, laptop, phone_early, phone_modern), drawn here from plain shapes - no image file, no photo,
+   no logo, no brand likeness (original work, reference/rights_ledger.md). The device changes on the first frame of
+   the first month on or after `from`, crossfading over fade_sec; nothing else moves.
+   Both are pure functions of the frame. Labels: date_month, date_year; window.__DATEBLOCK, window.__ERA. */
+function eraState(){
+  if(ERAST) return ERAST;
+  const dates=TL.events.map(e=>e.date), firstOf=d=>{ const k=dates.findIndex(x=>x>=d); return k<0?Infinity:TL.startFrame[k]; };
+  const eras=(ERA?ERA.eras:[]).map(e=>({device:e.device, from:e.from, f:(TL.openingEvent&&TL.openingEvent.date>=e.from)?-Infinity:firstOf(e.from)}));
+  const yearStart=[]; let prevY=TL.openingEvent?+TL.openingEvent.date.slice(0,4):null;
+  dates.forEach((d,k)=>{ const y=+d.slice(0,4); yearStart[k]= y!==prevY ? {f:TL.startFrame[k], from:prevY} : (k>0?yearStart[k-1]:null); prevY=y; });
+  return (ERAST={eras, yearStart});
+}
+function eraPage(x,y,w,h){                         // a generic web page on a screen: address bar, lines, a picture block
+  ctx.fillStyle='#16243A'; rr(x,y,w,h,Math.min(6,w*0.06)); ctx.fill();
+  const u=Math.min(w,h);
+  ctx.fillStyle='#2F4A6E'; rr(x+w*0.08,y+h*0.07,w*0.84,Math.max(3,h*0.1),u*0.04); ctx.fill();
+  ctx.fillStyle='#3D5A82';
+  const lw=[0.78,0.62,0.7]; for(let i=0;i<3;i++){ rr(x+w*0.08,y+h*(0.25+i*0.1),w*lw[i],Math.max(2,h*0.045),u*0.02); ctx.fill(); }
+  ctx.fillStyle='#4A6FA0'; rr(x+w*0.08,y+h*0.6,w*0.5,h*0.3,u*0.03); ctx.fill();
+  ctx.fillStyle='#3D5A82'; rr(x+w*0.64,y+h*0.62,w*0.28,Math.max(2,h*0.045),u*0.02); ctx.fill(); rr(x+w*0.64,y+h*0.72,w*0.22,Math.max(2,h*0.045),u*0.02); ctx.fill();
+}
+const ERA_DEV={                                   // each drawn in a 240 x 200 box; returns its screen rectangle
+  crt(){ ctx.fillStyle='#D8CEB2'; rr(40,8,160,134,14); ctx.fill();
+    ctx.fillStyle='#C9BF9F'; rr(40,120,160,22,10); ctx.fill();
+    ctx.fillStyle='#C4B995'; rr(54,20,132,100,9); ctx.fill();
+    ctx.fillStyle='#BFB494'; ctx.beginPath(); ctx.moveTo(98,142); ctx.lineTo(142,142); ctx.lineTo(152,154); ctx.lineTo(88,154); ctx.closePath(); ctx.fill();
+    ctx.fillStyle='#CFC4A6'; rr(72,153,96,9,4); ctx.fill();
+    ctx.fillStyle='#CFC4A6'; rr(150,166,82,24,5); ctx.fill();                        // the dial-up modem
+    ctx.fillStyle='#2A3446'; rr(157,177,68,7,3); ctx.fill();
+    for(const [lx,c] of [[163,'#5BD17A'],[173,'#5BD17A'],[183,'#E8C547']]){ ctx.fillStyle=c; ctx.beginPath(); ctx.arc(lx,171.5,2.6,0,Math.PI*2); ctx.fill(); }
+    return {x:62,y:28,w:116,h:84}; },
+  tower(){ ctx.fillStyle='#A9B0BA'; rr(14,22,152,108,8); ctx.fill();
+    ctx.fillStyle='#8D94A0'; rr(80,130,20,20,2); ctx.fill(); rr(56,149,68,8,4); ctx.fill();
+    ctx.fillStyle='#9AA1AB'; rr(14,166,152,14,4); ctx.fill();
+    ctx.fillStyle='#B5BBC4'; rr(176,12,56,176,7); ctx.fill();                          // the tower
+    ctx.fillStyle='#6E7684'; rr(183,26,42,10,2); ctx.fill(); rr(183,41,42,10,2); ctx.fill(); rr(191,60,26,4,2); ctx.fill();
+    ctx.fillStyle='#8D94A0'; ctx.beginPath(); ctx.arc(204,154,7,0,Math.PI*2); ctx.fill();
+    ctx.fillStyle='#5BD17A'; ctx.beginPath(); ctx.arc(204,172,2.6,0,Math.PI*2); ctx.fill();
+    return {x:22,y:30,w:136,h:92}; },
+  laptop(){ ctx.fillStyle='#4C5568'; rr(46,14,148,108,8); ctx.fill();
+    ctx.fillStyle='#434B5C'; ctx.fillRect(46,118,148,8);
+    ctx.fillStyle='#5E687B'; ctx.beginPath(); ctx.moveTo(30,126); ctx.lineTo(210,126); ctx.lineTo(228,156); ctx.lineTo(12,156); ctx.closePath(); ctx.fill();
+    ctx.fillStyle='#434B5C';
+    for(let r=0;r<3;r++){ const yy=130+r*7, inset=18-r*4; for(let c=0;c<12;c++){ const x0=30+inset+c*(150-2*inset+ (r*8))/12; ctx.fillRect(x0,yy,9,4); } }
+    ctx.fillStyle='#525C6F'; rr(96,152,48,3,1.5); ctx.fill();
+    return {x:54,y:22,w:132,h:92}; },
+  phone_early(){ ctx.fillStyle='#4A5366'; rr(78,8,84,180,16); ctx.fill();
+    ctx.strokeStyle='#7A8498'; ctx.lineWidth=2.5; rr(79.25,9.25,81.5,177.5,15); ctx.stroke();
+    ctx.fillStyle='#2B3240'; rr(106,20,28,4,2); ctx.fill();
+    for(const bx of [94,113,132]){ rr(bx,166,14,6,3); ctx.fill(); }                      // three plain hardware keys
+    return {x:87,y:34,w:66,h:122}; },
+  phone_modern(){ ctx.fillStyle='#3A4252'; rr(76,2,88,196,22); ctx.fill();
+    ctx.strokeStyle='#8A94A8'; ctx.lineWidth=2.5; rr(77.25,3.25,85.5,193.5,21); ctx.stroke();
+    return {x:81,y:7,w:78,h:186,r:18,cam:true}; }
+};
+function drawDevice(dev,x,y,w,h,alpha,screenFn){
+  const f=ERA_DEV[dev]; if(!f || alpha<=0) return null;
+  const s=Math.min(w/240,h/200), ox=x+(w-240*s)/2, oy=y+(h-200*s)/2;
+  ctx.save(); ctx.globalAlpha=alpha; ctx.translate(ox,oy); ctx.scale(s,s);
+  const S=f(); ctx.restore();
+  const scr={x:ox+S.x*s, y:oy+S.y*s, w:S.w*s, h:S.h*s};
+  ctx.save(); ctx.globalAlpha=alpha;
+  if(screenFn) screenFn(scr); else eraPage(scr.x,scr.y,scr.w,scr.h);
+  if(S.cam){ ctx.fillStyle='#0B0E14'; ctx.beginPath(); ctx.arc(scr.x+scr.w/2, scr.y+9*s, 3*s, 0, Math.PI*2); ctx.fill(); }
+  ctx.restore();
+  return scr;
+}
+function drawYear(yNow, yOld, p, xr, base, size, align, band){
+  /* the year, rolling: p 0 = old year in place, 1 = new year in place (eased by the caller) */
+  ctx.save(); ctx.beginPath(); ctx.rect(band.x, band.y, band.w, band.h); ctx.clip();
+  ctx.font='800 '+size+'px '+FONT; ctx.fillStyle=T.ink;
+  const d=size*1.05, a0=ctx.globalAlpha;
+  if(yOld!=null && p<1){ ctx.globalAlpha=a0*(1-p); tabText(String(yOld), xr, base-p*d, align, 'date_year_old', null); }
+  ctx.globalAlpha=a0*(yOld!=null?p:1); tabText(String(yNow), xr, base+(yOld!=null?(1-p)*d:0), align, 'date_year', null);
+  ctx.restore();
+}
+function drawDateEra(k, fr){
+  var dbox=null;
+  const ST=eraState(), ev=k>=0?TL.events[k]:TL.openingEvent, y=+ev.date.slice(0,4), m=+ev.date.slice(5,7);
+  const month=CFG.time_label.months[m-1];
+  const ys=k>=0?ST.yearStart[k]:null, rollF=DATEBLK?Math.max(1,DATEBLK.roll_sec*FPS):1;
+  const p = ys && ys.from!=null && fr-ys.f<rollF ? ease((fr-ys.f)/rollF) : 1, yOld = p<1 ? ys.from : null;
+  let devNow=null, devPrev=null, a=1, scrNow=null;
+  if(ERA){
+    let i=-1; ST.eras.forEach((e,j)=>{ if(fr>=e.f) i=j; });
+    if(i<0) i=0;
+    devNow=ST.eras[i].device; a = i>0 ? ease((fr-ST.eras[i].f)/Math.max(1,ERA.fade_sec*FPS)) : 1;
+    if(a<1 && i>0) devPrev=ST.eras[i-1].device;
+    /* clear the area (the axis grid lines run behind it) */
+    ctx.fillStyle=T.ground; ctx.fillRect(ERA.x-6, ERA.y-6, ERA.w+12, ERA.h+12);
+    const onScreen = DATEBLK && DATEBLK.mode==='screen';
+    const scrFn = onScreen ? (scr)=>{
+      ctx.fillStyle='#16243A'; rr(scr.x,scr.y,scr.w,scr.h,Math.min(6,scr.w*0.06)); ctx.fill();
+      const ys2=Math.min(DATEBLK.year_size, scr.w*0.30, scr.h*0.42), ms=Math.max(12,ys2*0.38), cx=scr.x+scr.w/2;
+      ctx.font='600 '+ms+'px '+FONT; ctx.fillStyle=T.cap||T.muted; text('date_month',null,month,cx,scr.y+scr.h*0.5-ys2*0.62,'center');
+      drawYear(y, yOld, p, cx, scr.y+scr.h*0.5+ys2*0.45, ys2, 'center', {x:scr.x, y:scr.y+scr.h*0.5-ys2*0.4, w:scr.w, h:ys2*1.15});
+    } : null;
+    if(devPrev) drawDevice(devPrev, ERA.x, ERA.y, ERA.w, ERA.h, 1-a, scrFn);
+    scrNow=drawDevice(devNow, ERA.x, ERA.y, ERA.w, ERA.h, a, scrFn);
+    window.__ERA={device:devNow, prev:devPrev, alpha:a, box:{x:ERA.x,y:ERA.y,w:ERA.w,h:ERA.h}};
+  }
+  if(DATEBLK && DATEBLK.mode!=='screen'){
+    const D=DATEBLK, R=D.right;
+    var dbox={x:R-D.year_size*2.7, y:D.month_y-D.month_size-8, w:D.year_size*2.7+8, h:D.year_y-D.month_y+D.month_size+D.year_size*0.32};
+    ctx.fillStyle=T.ground; ctx.fillRect(dbox.x, dbox.y, dbox.w, dbox.h);
+    ctx.fillStyle=T.cap||T.muted; ctx.font='600 '+D.month_size+'px '+FONT; text('date_month',null,month,R,D.month_y,'right');
+    drawYear(y, yOld, p, R, D.year_y, D.year_size, 'right', {x:R-D.year_size*2.7, y:D.year_y-D.year_size*0.95, w:D.year_size*2.7+6, h:D.year_size*1.2});
+  }
+  /* the area the date block may draw in (the rolling year is clipped to it): beside = its own box, screen = the device */
+  window.__DATEBLOCK={year:y, month, rolling:p<1, from:yOld, box: DATEBLK ? (DATEBLK.mode==='screen' ? (ERA?{x:ERA.x,y:ERA.y,w:ERA.w,h:ERA.h}:null) : dbox) : null};
 }
 function drawCrown(x,y,w,h,col){
   ctx.save(); ctx.fillStyle=col; ctx.beginPath();
@@ -1039,6 +1159,7 @@ function drawAt(t){
 
   if(SERIES){ drawCallout(CO, cur, SF, fr); drawMakerKey(cur, SF); }   // IQ-10
   if(SHARE) drawSource(ev, fr);                                          // IQ-13
+  if(DATEBLK || ERA) drawDateEra(k, fr);                                 // RTT-001 date/era round
 
   /* IQ-05c overlays (DEC-035): each picture fitted inside its reserved box; none if absent */
   window.__OVERLAYS=OVL.map(b=>{

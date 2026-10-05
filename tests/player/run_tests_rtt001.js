@@ -38,6 +38,9 @@
  *      before closer than CIEDE2000 18 (DEC-023)
  *  15. smoothing never moves a change of first place: the leaders on the month-end frames change exactly as in
  *      leaders.csv, except where a flagged stretch is smoothed on purpose (include_flagged), which is reported
+ *  17. date block and era picture (date/era round, DEC-214/DEC-215, when configured): the date is read from the
+ *      date block (month and year labels; check 1 applies to it); the date block and the era picture stay inside the
+ *      frame above the footer, and no bar, name, value, logo tile, crown, source line or footer overlaps them
  *  16. board size (IQ-13 answers, DEC-188/DEC-202): one name size and one value size on every frame, and the bars'
  *      left edge never moves; every bar inside the slots is drawn whole inside the board, and no bar on the board stops
  *      being drawn for lack of room (a row gliding up into the last slot from below is cut by the board's edge, as
@@ -154,8 +157,25 @@ async function runCase(name, configFile, overrides) {
   const FIT = cfg.board && cfg.board.fit && cfg.board.fit.enabled ? Object.assign({ min_slots: 5 }, cfg.board.fit) : null, slotsAt = [];
   const BOTTOM = 1080 - 46; const drawnBefore = new Set();
   for (let f = 0; f < info.raceFrames; f++) {
-    const X = await pg.evaluate(t => { drawAt(t); return { L: window.__LABELS, B: window.__BARS, R: window.__RANK, P: window.__PICS, CR: window.__CROWN, CO: window.__CALLOUT, SO: window.__SOURCE, MA: window.__MARKER, NO: window.__NOTE, SL: window.__SLOTS }; }, f / cfg.fps);
-    const dl = X.L.filter(l => l.kind === 'time_line');
+    const X = await pg.evaluate(t => { drawAt(t); return { L: window.__LABELS, B: window.__BARS, R: window.__RANK, P: window.__PICS, CR: window.__CROWN, CO: window.__CALLOUT, SO: window.__SOURCE, MA: window.__MARKER, NO: window.__NOTE, SL: window.__SLOTS, ER: window.__ERA, DB: window.__DATEBLOCK }; }, f / cfg.fps);
+    const DBK = cfg.date_block && cfg.date_block.enabled;
+    // (option B draws the date on both devices while they crossfade: the more visible one is read; both name the same month)
+    const top1 = arr => arr.length ? arr.reduce((m, l) => (l.alpha > m.alpha ? l : m)) : null;
+    const dl = DBK ? (() => { const mo = X.L.filter(l => l.kind === 'date_month'), yr = X.L.filter(l => l.kind === 'date_year');
+      if (new Set(mo.map(l => l.text)).size > 1 || new Set(yr.map(l => l.text)).size > 1) return [{ text: 'two different dates' }];
+      return mo.length && yr.length ? [{ text: top1(mo).text + ' ' + top1(yr).text }] : []; })() : X.L.filter(l => l.kind === 'time_line');
+    // 17. date block and era picture: inside the frame above the footer, overlapping nothing on the board
+    if (DBK || (cfg.era && cfg.era.enabled)) {
+      const boxes = X.DB && X.DB.box ? [X.DB.box] : [];      // the date block's own area (the rolling year is clipped to it)
+      if (X.ER) boxes.push(X.ER.box);
+      const foot = X.L.find(l => l.kind === 'footer'), footTop = foot ? labelBox(foot).y : 1080;
+      for (const b of boxes) { if (b.x < 0 || b.x + b.w > 1920 || b.y < 0 || b.y + b.h > footTop) fail(`f${f}: date/era box ${JSON.stringify(b)} outside the frame or into the footer`);
+        for (const r of X.B.filter(r => r.alpha > 0.01)) if (overlap(b, r.rect)) fail(`f${f}: ${r.id}'s bar overlaps the date/era area`);
+        for (const l of X.L.filter(l => ['name', 'value', 'source_line', 'marker', 'note_line', 'axis', 'title'].includes(l.kind) && l.alpha > 0.01)) if (overlap(b, labelBox(l))) fail(`f${f}: ${l.kind} "${l.text}" overlaps the date/era area`);
+        for (const pc of X.P.filter(pc => pc.alpha > 0.01)) if (overlap(b, pc.box)) fail(`f${f}: ${pc.id}'s logo tile overlaps the date/era area`);
+        if (X.CR && overlap(b, X.CR)) fail(`f${f}: the crown overlaps the date/era area`); }
+      res.counts.dateEra = (res.counts.dateEra || 0) + 1;
+    }
     if (dl.length !== 1) { fail(`f${f}: ${dl.length} date lines`); continue; }
     const q = months.find(m => monthText(m) === dl[0].text);
     if (!q) { fail(`f${f}: date line "${dl[0].text}" is not a month of the data`); continue; }
@@ -322,7 +342,8 @@ function write(results) {
     .concat([['film_as_built', 'config_rtt001_film.json'], ['film_option_A', 'config_rtt001_opt_A.json'], ['film_option_B', 'config_rtt001_opt_B.json'],
              ['film_option_C', 'config_rtt001_opt_C.json'],
              ['film_option_C_note_crown_callouts', 'config_rtt001_opt_C.json', { notes_at: [{ date: '1996-06-30', text: 'Note: until May 1996 this source counted Internet Explorer inside “Mosaic”' }], crown: { enabled: true }, callout: { enabled: true }, record_hold: { enabled: true } }],
-             ['film_approved_fixed_slots', 'config_rtt001_approved.json'], ['film_approved_board_fit', 'config_rtt001_approved_fit.json']])
+             ['film_approved_fixed_slots', 'config_rtt001_approved.json'], ['film_approved_board_fit', 'config_rtt001_approved_fit.json'],
+             ['film_era_A', 'config_rtt001_era_A.json'], ['film_era_B', 'config_rtt001_era_B.json']])
     .filter(c => process.argv.length <= 2 || process.argv.slice(2).includes(c[0]));
   const results = [];
   for (const [n, c, o] of cases) { const t0 = Date.now(); const r = await runCase(n, c, o); results.push(r);

@@ -526,6 +526,128 @@
      }
     ]
    }
+  },
+  {
+   "name": "e01_old_jun1996",
+   "config": "config_rtt001_approved_fit.json",
+   "at": "1996-06-30"
+  },
+  {
+   "name": "e01_A_jun1996",
+   "config": "config_rtt001_era_A.json",
+   "at": "1996-06-30"
+  },
+  {
+   "name": "e01_B_jun1996",
+   "config": "config_rtt001_era_B.json",
+   "at": "1996-06-30"
+  },
+  {
+   "name": "e02_old_jun2004",
+   "config": "config_rtt001_approved_fit.json",
+   "at": "2004-06-30"
+  },
+  {
+   "name": "e02_A_jun2004",
+   "config": "config_rtt001_era_A.json",
+   "at": "2004-06-30"
+  },
+  {
+   "name": "e02_B_jun2004",
+   "config": "config_rtt001_era_B.json",
+   "at": "2004-06-30"
+  },
+  {
+   "name": "e03_old_jun2010",
+   "config": "config_rtt001_approved_fit.json",
+   "at": "2010-06-30"
+  },
+  {
+   "name": "e03_A_jun2010",
+   "config": "config_rtt001_era_A.json",
+   "at": "2010-06-30"
+  },
+  {
+   "name": "e03_B_jun2010",
+   "config": "config_rtt001_era_B.json",
+   "at": "2010-06-30"
+  },
+  {
+   "name": "e04_old_jun2020",
+   "config": "config_rtt001_approved_fit.json",
+   "at": "2020-06-30"
+  },
+  {
+   "name": "e04_A_jun2020",
+   "config": "config_rtt001_era_A.json",
+   "at": "2020-06-30"
+  },
+  {
+   "name": "e04_B_jun2020",
+   "config": "config_rtt001_era_B.json",
+   "at": "2020-06-30"
+  },
+  {
+   "name": "s22_era_devices",
+   "sheet": "sheet_devices",
+   "config": "config_rtt001_era_A.json"
+  },
+  {
+   "name": "c10_date_era_old_A_B",
+   "compose": {
+    "title": "RTT-001 date and era picture (DEC-214, DEC-215): as rendered (left), option A (middle), option B (right)",
+    "cols": 3,
+    "items": [
+     {
+      "still": "e01_old_jun1996",
+      "caption": "June 1996 - as rendered (old date)"
+     },
+     {
+      "still": "e01_A_jun1996",
+      "caption": "June 1996 - A: big year beside the era picture"
+     },
+     {
+      "still": "e01_B_jun1996",
+      "caption": "June 1996 - B: year on the device screen"
+     },
+     {
+      "still": "e02_old_jun2004",
+      "caption": "June 2004 - as rendered (old date)"
+     },
+     {
+      "still": "e02_A_jun2004",
+      "caption": "June 2004 - A: big year beside the era picture"
+     },
+     {
+      "still": "e02_B_jun2004",
+      "caption": "June 2004 - B: year on the device screen"
+     },
+     {
+      "still": "e03_old_jun2010",
+      "caption": "June 2010 - as rendered (old date)"
+     },
+     {
+      "still": "e03_A_jun2010",
+      "caption": "June 2010 - A: big year beside the era picture"
+     },
+     {
+      "still": "e03_B_jun2010",
+      "caption": "June 2010 - B: year on the device screen"
+     },
+     {
+      "still": "e04_old_jun2020",
+      "caption": "June 2020 - as rendered (old date)"
+     },
+     {
+      "still": "e04_A_jun2020",
+      "caption": "June 2020 - A: big year beside the era picture"
+     },
+     {
+      "still": "e04_B_jun2020",
+      "caption": "June 2020 - B: year on the device screen"
+     }
+    ]
+   }
   }
  ]
 }
