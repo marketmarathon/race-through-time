@@ -1,8 +1,8 @@
 {
   "schema": "rtt-state/0.1",
   "updated": "2026-10-04",
-  "updated_by": "Claude (Claude Code cloud session): IQ-13 + IQ-13b + IQ-13c - RTT-001 design pilot 1 (rtt-001-pilot1-82167f8-run2) and logo round (rtt-001-pilot1-f3d9e2f-run3, every browser on the board has a logo or own tile); DEC-169..DEC-183; pull request #16 open, not merged; brought up to date with main ed7b6e6 on 4 Oct 2026 (pull request #14, the RTT-003 record: full film APPROVED by Luke, DEC-150, and published PUBLIC 3 Oct 2026, DEC-151, video JZzvA_ZDii0)",
-  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); starts data audit PASSED (DEC-058/DEC-059, merged PR #8); IQ-04 MERGED (PR #2); IQ-05 rounds 1-5 MERGED (PR #3-#7); round-5 pilot RENDERED and APPROVED by Luke (DEC-062, visual direction = milestone 3); pull request #9 MERGED (c378ea7); RTT-002 FINAL FILM APPROVED (DEC-078), pull request #10 MERGED (main ef01814), UPLOADED by Luke in YouTube Studio and SCHEDULED PUBLIC 30 Sep 2026 (DEC-079 early release, DEC-080): video 2fY7Bzq8Uu0 on channel UC8R47xbyBB5Z93MdMkoUOWg; IQ-09 RTT-003 DATA BUILD DONE 1 Oct 2026; Luke's answers applied 2 Oct 2026 (DEC-093..DEC-102); pull request #12 MERGED 2 Oct 2026 (main 4288f6d); IQ-10 RTT-003 DESIGN PILOT ROUND 5 (FINAL PILOT ROUND) RENDERED 3 Oct 2026 (private pre-release; not the full film), awaiting Luke's review; IQ-11 (3 Oct 2026): CLAUDE.md and reference/house_style.md added on the IQ-10 branch (DEC-145); next episode RTT-001 Browser Wars (DEC-144); IQ-10 round 6 (3 Oct 2026): RTT-003 design APPROVED (DEC-146), FULL FILM with music rendered to a private pre-release, then APPROVED by Luke (DEC-150); IQ-12 (3 Oct 2026): RTT-001 Browser Wars DATA BUILD done (data/rtt-001, 11/11 checks PASS), pull request open, awaiting Luke's answers to 12 questions; IQ-12b (4 Oct 2026): Luke answered all 12 RTT-001 questions (DEC-164..DEC-166), smoothing direction for the pilot (DEC-167), order check (DEC-168); RTT-003 record (3-4 Oct 2026, pull request #14): full film APPROVED (DEC-150), pull request #13 MERGED (main 618c6a7) and private pull request #1 MERGED (private main 4d47eb2), UPLOADED by Luke in YouTube Studio and PUBLISHED PUBLIC 3 Oct 2026 (DEC-151): video JZzvA_ZDii0; IQ-13/IQ-13b/IQ-13c (4 Oct 2026): RTT-001 DESIGN PILOT 1 rendered to a private pre-release (smoothing options A/B/C, flagged stretches, notes, marker, colours, browser logos per owner direction DEC-180, features, pacing, titles), then the logo round with every browser's logo (DEC-182/DEC-183, private pre-release rtt-001-pilot1-f3d9e2f-run3), awaiting Luke's answers; pull request #15 merged by Luke (b5a09d3); pull request #16 open, not merged",
+  "updated_by": "Claude (Claude Code cloud session): IQ-13 + IQ-13b + IQ-13c - RTT-001 design pilot 1 (rtt-001-pilot1-82167f8-run2) and logo round (rtt-001-pilot1-f3d9e2f-run3, every browser on the board has a logo or own tile); DEC-169..DEC-183; pull request #16 merged 4 Oct 2026 22:37 UTC (main 3bb2857); brought up to date with main ed7b6e6 on 4 Oct 2026 (pull request #14, the RTT-003 record: full film APPROVED by Luke, DEC-150, and published PUBLIC 3 Oct 2026, DEC-151, video JZzvA_ZDii0)",
+  "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); starts data audit PASSED (DEC-058/DEC-059, merged PR #8); IQ-04 MERGED (PR #2); IQ-05 rounds 1-5 MERGED (PR #3-#7); round-5 pilot RENDERED and APPROVED by Luke (DEC-062, visual direction = milestone 3); pull request #9 MERGED (c378ea7); RTT-002 FINAL FILM APPROVED (DEC-078), pull request #10 MERGED (main ef01814), UPLOADED by Luke in YouTube Studio and SCHEDULED PUBLIC 30 Sep 2026 (DEC-079 early release, DEC-080): video 2fY7Bzq8Uu0 on channel UC8R47xbyBB5Z93MdMkoUOWg; IQ-09 RTT-003 DATA BUILD DONE 1 Oct 2026; Luke's answers applied 2 Oct 2026 (DEC-093..DEC-102); pull request #12 MERGED 2 Oct 2026 (main 4288f6d); IQ-10 RTT-003 DESIGN PILOT ROUND 5 (FINAL PILOT ROUND) RENDERED 3 Oct 2026 (private pre-release; not the full film), awaiting Luke's review; IQ-11 (3 Oct 2026): CLAUDE.md and reference/house_style.md added on the IQ-10 branch (DEC-145); next episode RTT-001 Browser Wars (DEC-144); IQ-10 round 6 (3 Oct 2026): RTT-003 design APPROVED (DEC-146), FULL FILM with music rendered to a private pre-release, then APPROVED by Luke (DEC-150); IQ-12 (3 Oct 2026): RTT-001 Browser Wars DATA BUILD done (data/rtt-001, 11/11 checks PASS), pull request open, awaiting Luke's answers to 12 questions; IQ-12b (4 Oct 2026): Luke answered all 12 RTT-001 questions (DEC-164..DEC-166), smoothing direction for the pilot (DEC-167), order check (DEC-168); RTT-003 record (3-4 Oct 2026, pull request #14): full film APPROVED (DEC-150), pull request #13 MERGED (main 618c6a7) and private pull request #1 MERGED (private main 4d47eb2), UPLOADED by Luke in YouTube Studio and PUBLISHED PUBLIC 3 Oct 2026 (DEC-151): video JZzvA_ZDii0; IQ-13/IQ-13b/IQ-13c (4 Oct 2026): RTT-001 DESIGN PILOT 1 rendered to a private pre-release (smoothing options A/B/C, flagged stretches, notes, marker, colours, browser logos per owner direction DEC-180, features, pacing, titles), then the logo round with every browser's logo (DEC-182/DEC-183, private pre-release rtt-001-pilot1-f3d9e2f-run3), awaiting Luke's answers; pull request #15 merged by Luke (b5a09d3); pull request #16 merged 4 Oct 2026 22:37 UTC (main 3bb2857)",
   "canonical_queue": "state/ folder on main in marketmarathon/race-through-time (this file)",
   "repo_baseline": {
     "repo": "marketmarathon/bars",
@@ -101,7 +101,7 @@
       "next": "Luke's answers to the 14 pilot-1 questions (coming separately) and a look at the logo round; Claude in Cowork fetches the NetFront logo and any Lynx logo (kits/rtt-001/logos.json for_cowork); then pilot 2 or the full film with his choices (DEC-069)",
       "pilot1": {
         "brief": "prompts/CODE_SESSION_IQ-13.md + prompts/CODE_SESSION_IQ-13b.md (logos) + prompts/CODE_SESSION_IQ-13c.md (every browser gets a logo)",
-        "branch": "claude/compassionate-cray-tlnnkm (pull request, not merged)",
+        "branch": "merged to main (pull request #16, merge 3bb2857, 4 Oct 2026); branch claude/compassionate-cray-tlnnkm kept",
         "release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-001-pilot1-82167f8-run2",
         "run": "https://github.com/marketmarathon/race-through-time/actions/runs/37195380047",
         "source_commit": "82167f86021dcf4cbab8be9356a56abf9baa60a7",
@@ -867,7 +867,7 @@
     {
       "id": "IQ-12",
       "task": "RTT-001 Browser Wars data build (data only): metric contract, StatCounter all-platform export, pre-2009 figures verified at source, series/observations/browsers, checks, report for Luke; record DEC-152..DEC-163",
-      "where": "branch claude/jolly-volta-5lr5ql, pull request (not merged); prompt prompts/CODE_SESSION_IQ-12.md",
+      "where": "branch claude/jolly-volta-5lr5ql, pull request #15 (merged 4 Oct 2026, b5a09d3); prompt prompts/CODE_SESSION_IQ-12.md",
       "status": "DONE 3 Oct 2026: data build complete, 11/11 checks PASS; nothing rendered, no player or visual change",
       "result": {
         "files": [
@@ -899,7 +899,7 @@
     {
       "id": "IQ-13",
       "task": "RTT-001 design pilot 1: options side by side (smoothing A/B/C, flagged stretches, notes, marker, estimated look, board, colours, features, pacing, titles); stills and clips only",
-      "where": "branch claude/compassionate-cray-tlnnkm, pull request (not merged); prompt prompts/CODE_SESSION_IQ-13.md",
+      "where": "branch claude/compassionate-cray-tlnnkm, pull request #16 (merged 4 Oct 2026, 3bb2857); prompt prompts/CODE_SESSION_IQ-13.md",
       "status": "DONE 4 Oct 2026: rendered to https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-001-pilot1-82167f8-run2; awaiting Luke's answers",
       "result": {
         "decisions": "DEC-169..DEC-179"
@@ -917,7 +917,7 @@
     {
       "id": "IQ-13c",
       "task": "Owner decisions on logos: every browser on the board gets a logo (free or non-free for identification); IE and IE Mobile use the IE6 \"e\" (crop only); own neutral tile only where no real logo exists",
-      "where": "branch claude/compassionate-cray-tlnnkm, pull request #16 (not merged); prompt prompts/CODE_SESSION_IQ-13c.md",
+      "where": "branch claude/compassionate-cray-tlnnkm, pull request #16 (merged 4 Oct 2026, 3bb2857); prompt prompts/CODE_SESSION_IQ-13c.md",
       "status": "DONE 4 Oct 2026: 27 logo files (13 new) fetched on a runner into the private repo; own tiles for Lynx and NetFront; rendered to https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-001-pilot1-f3d9e2f-run3; NetFront/Lynx listed for Claude in Cowork",
       "result": {
         "decisions": "DEC-182, DEC-183"

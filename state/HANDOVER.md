@@ -28,10 +28,10 @@
   - **Flagged, not to be smoothed until Luke decides:** GVU→EWS (the leader changes, Mosaic to Netscape) and W3Counter→StatCounter (Safari and Opera swap; the leaders are unchanged).
   - Inside OneStat, two small swaps (Opera/Safari, Netscape/Opera) are real movements in one source's own figures.
   - Proposed pilot rule: never spread a hand-over into StatCounter's months (from January 2009).
-- **Next:** Luke merges pull request #15. Then the RTT-001 design pilot, with the proposals listed as questions first (DEC-069).
+- **Next:** Luke merges pull request #15 (merged 4 Oct 2026, 10:15 UTC, merge commit `b5a09d3`). Then the RTT-001 design pilot, with the proposals listed as questions first (DEC-069).
 
 ## RTT-001 Browser Wars — DATA BUILD (IQ-12, 3 Oct 2026) — answered 4 Oct 2026 (above)
-- **Branch** `claude/jolly-volta-5lr5ql`, pull request open, **not merged** (DEC-057). Prompt: `prompts/CODE_SESSION_IQ-12.md` (brief SHA-256 `234e0b5f…c5f2`). Data only: nothing rendered, no player or visual change (DEC-069).
+- **Branch** `claude/jolly-volta-5lr5ql`, pull request https://github.com/marketmarathon/race-through-time/pull/15 **merged** on 4 Oct 2026, 10:15 UTC (merge commit `b5a09d3` on `main`; confirmed on GitHub 5 Oct 2026). Prompt: `prompts/CODE_SESSION_IQ-12.md` (brief SHA-256 `234e0b5f…c5f2`). Data only: nothing rendered, no player or visual change (DEC-069).
 - **Owner decisions recorded:** DEC-152 (one source per period: GVU 1994 → Illinois EWS Apr 1996–Dec 2000 → StatMarket, then OneStat 2001–Apr 2007 → W3Counter May 2007–Dec 2008 → StatCounter from Jan 2009; the race starts Jan 1994), DEC-153 (straight lines, including across hand-overs; estimated look with the source named before 2009), DEC-154 (all devices). DEC-144 already held "RTT-001 is next".
 - **Working choices for Luke:** DEC-155 to DEC-159 and DEC-162. **Verification:** DEC-160, DEC-161. **Findings:** DEC-163. Twelve numbered questions, with Claude's recommendations, are in `reports/RTT-001_data_report.md`.
 - **Data:** `data/rtt-001/` (`browsers.csv`, `observations.csv`, `series.csv`, `leaders.csv`, `CHECKS.md`, `manifest.json`); contract `reference/metric_contract_RTT-001.md`; build `python scripts/build_rtt001_dataset.py data/rtt-001 reports/RTT-001_data_report.md` (deterministic). **11/11 checks PASS.**
