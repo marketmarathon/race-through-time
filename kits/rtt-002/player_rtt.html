@@ -681,7 +681,7 @@ function drawYear(yNow, yOld, p, xr, base, size, align, band){
   /* the year, rolling: p 0 = old year in place, 1 = new year in place (eased by the caller) */
   ctx.save(); ctx.beginPath(); ctx.rect(band.x, band.y, band.w, band.h); ctx.clip();
   ctx.font='800 '+size+'px '+FONT; ctx.fillStyle=T.ink;
-  const d=size*1.05, a0=ctx.globalAlpha;
+  const d=size*0.86, a0=ctx.globalAlpha;
   if(yOld!=null && p<1){ ctx.globalAlpha=a0*(1-p); tabText(String(yOld), xr, base-p*d, align, 'date_year_old', null); }
   ctx.globalAlpha=a0*(yOld!=null?p:1); tabText(String(yNow), xr, base+(yOld!=null?(1-p)*d:0), align, 'date_year', null);
   ctx.restore();
@@ -705,7 +705,7 @@ function drawDateEra(k, fr){
       ctx.fillStyle='#16243A'; rr(scr.x,scr.y,scr.w,scr.h,Math.min(6,scr.w*0.06)); ctx.fill();
       const ys2=Math.min(DATEBLK.year_size, scr.w*0.30, scr.h*0.42), ms=Math.max(12,ys2*0.38), cx=scr.x+scr.w/2;
       ctx.font='600 '+ms+'px '+FONT; ctx.fillStyle=T.cap||T.muted; text('date_month',null,month,cx,scr.y+scr.h*0.5-ys2*0.62,'center');
-      drawYear(y, yOld, p, cx, scr.y+scr.h*0.5+ys2*0.45, ys2, 'center', {x:scr.x, y:scr.y+scr.h*0.5-ys2*0.4, w:scr.w, h:ys2*1.15});
+      drawYear(y, yOld, p, cx, scr.y+scr.h*0.5+ys2*0.45, ys2, 'center', {x:scr.x, y:scr.y+scr.h*0.5+ys2*0.45-ys2*0.80, w:scr.w, h:ys2*0.86});
     } : null;
     if(devPrev) drawDevice(devPrev, ERA.x, ERA.y, ERA.w, ERA.h, 1-a, scrFn);
     scrNow=drawDevice(devNow, ERA.x, ERA.y, ERA.w, ERA.h, a, scrFn);
@@ -716,7 +716,7 @@ function drawDateEra(k, fr){
     var dbox={x:R-D.year_size*2.7, y:D.month_y-D.month_size-8, w:D.year_size*2.7+8, h:D.year_y-D.month_y+D.month_size+D.year_size*0.32};
     ctx.fillStyle=T.ground; ctx.fillRect(dbox.x, dbox.y, dbox.w, dbox.h);
     ctx.fillStyle=T.cap||T.muted; ctx.font='600 '+D.month_size+'px '+FONT; text('date_month',null,month,R,D.month_y,'right');
-    drawYear(y, yOld, p, R, D.year_y, D.year_size, 'right', {x:R-D.year_size*2.7, y:D.year_y-D.year_size*0.95, w:D.year_size*2.7+6, h:D.year_size*1.2});
+    drawYear(y, yOld, p, R, D.year_y, D.year_size, 'right', {x:R-D.year_size*2.7, y:D.year_y-D.year_size*0.80, w:D.year_size*2.7+6, h:D.year_size*0.86});   // the digits' own height: an odometer, clear of the month
   }
   /* the area the date block may draw in (the rolling year is clipped to it): beside = its own box, screen = the device */
   window.__DATEBLOCK={year:y, month, rolling:p<1, from:yOld, box: DATEBLK ? (DATEBLK.mode==='screen' ? (ERA?{x:ERA.x,y:ERA.y,w:ERA.w,h:ERA.h}:null) : dbox) : null};
