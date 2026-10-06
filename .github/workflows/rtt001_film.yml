@@ -30,6 +30,9 @@
 # Run 1 of the film (5 Oct 2026): "All In" by Everet Almond (DEC-209, DEC-211), no loop (DEC-210), stripes anchored to the
 # frame after the flash finding (DEC-212). Tests before the push: RTT-001 25/25, phone PASS, RTT-002 20/20, RTT-003 5/5,
 # 21 reference frames identical; local whole-film flash check PASS (9,013 px worst, limit 57,600).
+# Run 2 of the film (6 Oct 2026): run 1 was not approved (DEC-214); now config_rtt001_photos.json: the date top right
+# beside the logo and a real photograph of each era's device bottom right, 480 x 360 px (DEC-221..DEC-231); the
+# photos are fetched and SHA-256-checked like the logos.
 name: rtt001-film
 
 on:
@@ -48,7 +51,7 @@ concurrency:
 env:
   PRIVATE_REPO: marketmarathon/race-through-time-private
   PRIVATE_REF: claude/compassionate-cray-tlnnkm
-  FILM: config_rtt001_approved_fit.json
+  FILM: config_rtt001_photos.json
   RASTER_W: '3840'
 
 jobs:
@@ -115,6 +118,7 @@ jobs:
             case "$p" in
               assets/rtt-002/rtt_logo.png) dst="$A/rtt_logo.png";;
               assets/rtt-001/logos/*) dst="$A/logos/${p#assets/rtt-001/logos/}";;
+              assets/rtt-001/photos/*) dst="$A/photos/${p#assets/rtt-001/photos/}"; mkdir -p "$(dirname "$dst")";;
               *) echo "::error::unexpected path $p"; exit 1;;
             esac
             # the logo branch, or the private main once Luke has merged it; the SHA-256 check below decides either way
@@ -206,9 +210,10 @@ jobs:
             echo "RTT-001 Most-Used Web Browsers 1994-2026 (share of web browsing): FULL FILM, rendered by GitHub Actions."
             echo
             echo "- Source: ${GITHUB_REPOSITORY} @ ${GITHUB_SHA} (${GITHUB_REF_NAME}), run ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
-            echo "- kits/rtt-001/${FILM}: ${FRAMES} frames at 30 fps = $(awk -v f="$FRAMES" 'BEGIN {printf "%.2f", f / 30}') s (final table ${HOLD} s); Luke's answers DEC-184..DEC-207"
+            echo "- kits/rtt-001/${FILM}: ${FRAMES} frames at 30 fps = $(awk -v f="$FRAMES" 'BEGIN {printf "%.2f", f / 30}') s (final table ${HOLD} s); Luke's answers DEC-184..DEC-207, DEC-221..DEC-231 (date top right, era photos)"
             echo "- Master 3840x2160; viewing copy 1920x1080 (x264 CRF 18)"
             echo "- Logos: race-through-time-private, every SHA-256 checked against kits/rtt-001/assets_sha256.txt before drawing"
+            echo "- Era photos (DEC-227): Wikimedia Commons, CC BY / CC BY-SA, same SHA-256 check; credits for the description in kits/rtt-001/description_credits.md"
             echo "- Audio: ${TRACK}, ${MUSIC_PATH} SHA-256 ${MUSIC_SHA256} (checked); faded out over the final table, AAC 320 kb/s"
             echo "- $(cat "$RUNNER_TEMP/joins.txt")"
             echo "- $(cat "$RUNNER_TEMP/flash.txt")"
