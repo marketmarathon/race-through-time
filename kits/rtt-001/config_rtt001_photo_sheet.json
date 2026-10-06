@@ -1,0 +1,157 @@
+{
+ "extends": "config_rtt001_photos.json",
+ "kit_version": "rtt001_photo_sheet",
+ "era": {
+  "eras": [
+   {
+    "from": "1994-01-31",
+    "device": "crt",
+    "file": "candidates/crt1990s/04_IBM_Aptiva_2144_M51.jpg",
+    "crop": {
+     "x": 0,
+     "y": 60,
+     "w": 1920,
+     "h": 1440
+    },
+    "label": "IBM Aptiva 2144-M51 with its G40 monitor (about 1995)",
+    "credit": "Ruben de Rijcke · CC BY-SA 4.0",
+    "recommended": true
+   },
+   {
+    "from": "2100-01-31",
+    "device": "crt",
+    "file": "candidates/crt1990s/07_IBM_Aptiva_486_carregando_o_Windows_95.jpg",
+    "label": "IBM Aptiva 486 loading Windows 95",
+    "credit": "Al Lemos · CC BY-SA 3.0",
+    "recommended": false
+   },
+   {
+    "from": "2100-01-31",
+    "device": "crt",
+    "file": "candidates/crt1990s/11_Gateway_2000.jpg",
+    "bg": "#152134",
+    "label": "Gateway 2000 desktop and CRT",
+    "credit": "MBlairMartin · CC BY-SA 4.0",
+    "recommended": false
+   },
+   {
+    "from": "2100-01-31",
+    "device": "tower",
+    "file": "candidates/tower2000s/03_DellDimensionE521.jpg",
+    "crop": {
+     "x": 20,
+     "y": 20,
+     "w": 1880,
+     "h": 2740
+    },
+    "bg": "#152134",
+    "label": "Dell Dimension E521 tower (2006)",
+    "credit": "Rowen Hansen · CC BY-SA 4.0",
+    "recommended": true
+   },
+   {
+    "from": "2100-01-31",
+    "device": "tower",
+    "file": "candidates/tower2000s/04_Dell_XPS_T600R.jpg",
+    "bg": "#152134",
+    "label": "Dell XPS T600r tower (about 2000)",
+    "credit": "Thomasp94 · CC BY-SA 3.0",
+    "recommended": false
+   },
+   {
+    "from": "2100-01-31",
+    "device": "tower",
+    "file": "candidates/tower2000s/11_EMachines_eTower.jpg",
+    "bg": "#152134",
+    "label": "eMachines eTower (about 2000)",
+    "credit": "Ali West · CC BY 2.0",
+    "recommended": false
+   },
+   {
+    "from": "2100-01-31",
+    "device": "laptop",
+    "file": "candidates/laptop2006/09_ThinkPad_T43.jpg",
+    "label": "IBM ThinkPad T43 (2005)",
+    "credit": "Bitmaster Helsinki · CC BY 2.0",
+    "recommended": true
+   },
+   {
+    "from": "2100-01-31",
+    "device": "laptop",
+    "file": "candidates/laptop2006/03_Ibm_lenovo_thinkpad_t60.jpg",
+    "bg": "#152134",
+    "label": "IBM/Lenovo ThinkPad T60 (2006)",
+    "credit": "osde8info · CC BY-SA 2.0",
+    "recommended": false
+   },
+   {
+    "from": "2100-01-31",
+    "device": "laptop",
+    "file": "candidates/laptop2006/04_IBM_Lenovo_ThinkPad_T60.jpg",
+    "label": "IBM/Lenovo ThinkPad T60 (2006)",
+    "credit": "Enrico Guazzini · CC BY-SA 3.0",
+    "recommended": false
+   },
+   {
+    "from": "2100-01-31",
+    "device": "phone_early",
+    "file": "candidates/phone2009/06_HTC_Dream_Orange_FR.jpg",
+    "label": "HTC Dream, the first Android phone (2008)",
+    "credit": "Akela NDE · CC BY-SA 3.0",
+    "recommended": true
+   },
+   {
+    "from": "2100-01-31",
+    "device": "phone_early",
+    "file": "candidates/phone2009/04_HTC_Dream_opened.jpg",
+    "label": "HTC Dream, opened (2008)",
+    "credit": "Marcus Sümnick · CC BY 3.0",
+    "recommended": false
+   },
+   {
+    "from": "2100-01-31",
+    "device": "phone_early",
+    "file": "candidates/phone2009/07_CreativeTools_se_PackshotCreator_HTC_Hero_Android.jpg",
+    "bg": "#FFFFFF",
+    "label": "HTC Hero (2009)",
+    "credit": "Creative Tools. Watermark removed by User:Ainali · CC BY 2.0",
+    "recommended": false
+   },
+   {
+    "from": "2100-01-31",
+    "device": "phone_modern",
+    "file": "candidates/phone2015/08_Samsung_Galaxy_S7_26089332033_.jpg",
+    "crop": {
+     "x": 480,
+     "y": 250,
+     "w": 960,
+     "h": 720
+    },
+    "label": "Samsung Galaxy S7 (2016)",
+    "credit": "Maurizio Pesce from Milan, Italia · CC BY 2.0",
+    "recommended": true
+   },
+   {
+    "from": "2100-01-31",
+    "device": "phone_modern",
+    "file": "candidates/phone2015/02_Samsung_Galaxy_S6_Gold_Platinum_Front.jpg",
+    "bg": "#152134",
+    "label": "Samsung Galaxy S6 (2015)",
+    "credit": "Beamish4 · CC BY-SA 4.0",
+    "recommended": false
+   },
+   {
+    "from": "2100-01-31",
+    "device": "phone_modern",
+    "file": "candidates/phone2015/14_Android_Assistant_on_the_Google_Pixel_XL_smartphone_29526761.jpg",
+    "bg": "#152134",
+    "label": "Google Pixel XL (2016)",
+    "credit": "Maurizio Pesce from Milan, Italia · CC BY-SA 4.0",
+    "recommended": false
+   }
+  ]
+ },
+ "notes": [
+  "Contact sheet only (DEC-221): loads every shortlisted photo of kits/rtt-001/era_photos.json so sheets.js can draw them side by side. Not a film config."
+ ]
+}

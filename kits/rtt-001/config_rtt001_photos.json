@@ -1,7 +1,76 @@
-{ "extends": "config_rtt001_approved_fit.json", "kit_version": "rtt001_photos_1",
-  "time_label": { "mode": "none" },
-  "date_block": { "enabled": true, "mode": "beside", "right": 1680, "month_y": 60, "month_size": 40, "year_y": 160, "year_size": 112, "roll_sec": 0.5 },
-  "era": { "enabled": true, "x": 1590, "y": 775, "w": 300, "h": 225, "radius": 12, "fade_sec": 2.0, "photo_dir": "photos",
-    "eras": [ { "from": "1994-01-31", "device": "crt" }, { "from": "2000-01-31", "device": "tower" }, { "from": "2006-01-31", "device": "laptop" },
-              { "from": "2009-01-31", "device": "phone_early" }, { "from": "2015-01-31", "device": "phone_modern" } ] },
-  "notes": ["Luke's answers on pilot 3 (DEC-221 to DEC-224): the date (year 112 px, month 40 px, half-second roll) top right, directly left of the channel logo; real photographs of each era's device bottom right on a 300 x 225 px rounded tile, crossfading over 2 s. Photo files and crops are set from Luke's contact sheet (era.eras[].file / crop, private assets/rtt-001/photos)."] }
+{
+ "extends": "config_rtt001_approved_fit.json",
+ "kit_version": "rtt001_photos_1",
+ "time_label": {
+  "mode": "none"
+ },
+ "date_block": {
+  "enabled": true,
+  "mode": "beside",
+  "right": 1680,
+  "month_y": 60,
+  "month_size": 40,
+  "year_y": 160,
+  "year_size": 112,
+  "roll_sec": 0.5
+ },
+ "era": {
+  "enabled": true,
+  "x": 1590,
+  "y": 775,
+  "w": 300,
+  "h": 225,
+  "radius": 12,
+  "fade_sec": 2.0,
+  "photo_dir": "photos",
+  "eras": [
+   {
+    "from": "1994-01-31",
+    "device": "crt",
+    "file": "candidates/crt1990s/04_IBM_Aptiva_2144_M51.jpg",
+    "crop": {
+     "x": 0,
+     "y": 60,
+     "w": 1920,
+     "h": 1440
+    }
+   },
+   {
+    "from": "2000-01-31",
+    "device": "tower",
+    "file": "candidates/tower2000s/03_DellDimensionE521.jpg",
+    "crop": {
+     "x": 20,
+     "y": 20,
+     "w": 1880,
+     "h": 2740
+    },
+    "bg": "#152134"
+   },
+   {
+    "from": "2006-01-31",
+    "device": "laptop",
+    "file": "candidates/laptop2006/09_ThinkPad_T43.jpg"
+   },
+   {
+    "from": "2009-01-31",
+    "device": "phone_early",
+    "file": "candidates/phone2009/06_HTC_Dream_Orange_FR.jpg"
+   },
+   {
+    "from": "2015-01-31",
+    "device": "phone_modern",
+    "file": "candidates/phone2015/08_Samsung_Galaxy_S7_26089332033_.jpg",
+    "crop": {
+     "x": 480,
+     "y": 250,
+     "w": 960,
+     "h": 720
+    }
+   }
+  ]
+ },
+ "notes": [
+  "Luke's answers on pilot 3 (DEC-221 to DEC-224): the date (year 112 px, month 40 px, half-second roll) top right, directly left of the channel logo; real photographs of each era's device bottom right on a 300 x 225 px rounded tile, crossfading over 2 s: Claude's recommended picks from kits/rtt-001/era_photos.json (IBM Aptiva, Dell Dimension E521, ThinkPad T43, HTC Dream, Samsung Galaxy S7), files in the private repo (assets/rtt-001/photos)."
+ ]
+}

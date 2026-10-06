@@ -1,0 +1,8 @@
+{
+ "extends": "config_rtt001_photos.json",
+ "kit_version": "rtt001_photos_clip_2008_2009",
+ "out": "rtt001_photos_2008_2009.mp4",
+ "window": { "from": "2008-07-01", "to": "2009-06-30" },
+ "pacing": { "final_board_sec": 2.0 },
+ "notes": ["Era photos round (DEC-221, DEC-222): July 2008 - June 2009 at 0.5 s per month, across the year roll 2008 -> 2009 (top right) and the photo change ThinkPad T43 -> HTC Dream in January 2009 (crossfade over 2 s). No music."]
+}

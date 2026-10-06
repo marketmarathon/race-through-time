@@ -136,5 +136,35 @@
       text('until', e.device, until ? 'to the end of ' + (+until.slice(0, 4) - 1) : 'to the end of the film', x + 20, 872, 'left');
     });
   }
-  window.RTT001_SHEETS = { sheet_palette: sheetPalette, sheet_titles: sheetTitles, sheet_logos: sheetLogos, sheet_devices: sheetDevices };
+  /* era photos (DEC-221): the contact sheet - every shortlisted photo (config_rtt001_photo_sheet.json loads them all), one
+     row per era, three to a row, drawn exactly as in the film (tile, crop, background), with author, licence and Claude's
+     recommended pick marked. */
+  function sheetPhotos() {
+    baseTransform(); window.__LABELS = [];
+    ctx.fillStyle = T.ground; ctx.fillRect(0, 0, 1920, 1080);
+    ctx.fillStyle = T.ink; ctx.font = '700 36px ' + FONT; text('title', null, 'RTT-001 era photos: the shortlist (Wikimedia Commons, commercial-use licences)', LEFT, 48, 'left');
+    ctx.fillStyle = T.cap; ctx.font = '500 20px ' + FONT;
+    text('sub', null, 'Each row is one era; each tile is drawn as in the film (300 x 225 px there). Gold outline = Claude\'s recommended pick (used in the stills). Under each: what it shows, photographer, licence.', LEFT, 78, 'left');
+    const rows = ['crt', 'tower', 'laptop', 'phone_early', 'phone_modern'];
+    const names = { crt: ['Mid-1990s', 'beige CRT desktop'], tower: ['2000s', 'desktop tower'], laptop: ['Mid-2000s', 'laptop'], phone_early: ['Around 2009', 'first touch phones'], phone_modern: ['2015 on', 'modern phone'] };
+    const tw = 220, th = 165, rowH = 196, x0 = LEFT + 230, cw = 548, capw = cw - tw - 34;
+    rows.forEach((dev, r) => {
+      const y = 98 + r * rowH, list = ERA.eras.filter(e => e.device === dev);
+      ctx.fillStyle = T.ink; ctx.font = '700 24px ' + FONT; text('era', dev, names[dev][0], LEFT, y + 40, 'left');
+      ctx.fillStyle = T.cap; ctx.font = '500 20px ' + FONT; text('era2', dev, names[dev][1], LEFT, y + 70, 'left');
+      list.forEach((e, i) => {
+        const x = x0 + i * cw;
+        drawEraPhoto(e, x, y, tw, th, 1);
+        if (e.recommended) { ctx.save(); ctx.strokeStyle = '#F5C542'; ctx.lineWidth = 4; rr(x - 3, y - 3, tw + 6, th + 6, 14); ctx.stroke(); ctx.restore(); }
+        ctx.fillStyle = T.ink; ctx.font = '600 19px ' + FONT;
+        const fit = (s, w) => { let u = s; while (u.length > 3 && ctx.measureText(u).width > w) u = u.slice(0, -2); return u === s ? u : u.trimEnd() + '\u2026'; };
+        text('label', dev, fit((e.recommended ? '\u2605 ' : '') + e.label, capw), x + tw + 12, y + 30, 'left');
+        ctx.fillStyle = T.cap; ctx.font = '500 16px ' + FONT;
+        const words = (e.credit || '').split(' · ');
+        text('credit', dev, fit(words[0] || '', capw), x + tw + 12, y + 58, 'left');
+        text('licence', dev, fit(words[1] || '', capw), x + tw + 12, y + 80, 'left');
+      });
+    });
+  }
+  window.RTT001_SHEETS = { sheet_palette: sheetPalette, sheet_titles: sheetTitles, sheet_logos: sheetLogos, sheet_devices: sheetDevices, sheet_photos: sheetPhotos };
 })();
