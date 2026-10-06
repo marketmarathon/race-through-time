@@ -1,4 +1,9 @@
-# HANDOVER — 6 Oct 2026 (session 16 continued, Claude Code cloud session: IQ-13 — Luke's pilot-4 answers and the RTT-001 full film run 2). Earlier notes of this session and the previous ones follow below.
+# HANDOVER — 6 Oct 2026 (session 16 continued, Claude Code cloud session: IQ-13 — RTT-001 film APPROVED and packaging). Earlier notes of this session and the previous ones follow below.
+
+## RTT-001 — FILM APPROVED (6 Oct 2026, DEC-233) — ready for Luke's upload
+- **Approved file:** `rtt001_film_9d6f1a3_3840x2160.mp4` from https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-001-film-9d6f1a3-run5, SHA-256 `e8a82e0cc896f4a617af1ab6087575ab6eae1df07bee608c24c52b761ad2bbe7`, **222,968,905 bytes**. Viewing copy 24,942,013 bytes (not for upload).
+- **Packaging (DEC-234):** chapters, leader-change times, photo switches and the two thumbnail moments in `kits/rtt-001/chapters_and_moments.md`; final description credits (logos, photos, music, about 1,530 characters) in `kits/rtt-001/description_credits.md`.
+- **Next (Luke):** download the master, check its size/SHA-256, upload by hand in Studio (DEC-080) with the chapters and credits; then merge pull request #18 and the private branch `claude/compassionate-cray-tlnnkm` (it holds the photos). Afterwards record the video ID and publication date as a DEC.
 
 ## RTT-001 — FULL FILM RUN 2 RENDERED (6 Oct 2026, DEC-227 to DEC-232) — awaiting Luke's approval by SHA-256
 - **Watch:** https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-001-film-9d6f1a3-run5 (run https://github.com/marketmarathon/race-through-time/actions/runs/37474298724, 0 artifacts). Master `rtt001_film_9d6f1a3_3840x2160.mp4` SHA-256 `e8a82e0cc896f4a617af1ab6087575ab6eae1df07bee608c24c52b761ad2bbe7`; viewing copy `rtt001_film_9d6f1a3_1920x1080_viewing.mp4` SHA-256 `98ea530973ad623d9f0b3b84c37d39b4cf53f6d50a508ffa0542e9173d1c36b6`; 184.3 s, −16.0 LUFS, true peak −7.3 dBTP; flash check PASS (12,678 px worst, limit 57,600).

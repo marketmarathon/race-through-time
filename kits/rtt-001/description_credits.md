@@ -23,19 +23,16 @@ hands over to the next.
   https://gs.statcounter.com/browser-market-share
 - The dataset built for this video (and how it was built) is public: https://github.com/marketmarathon/race-through-time
 
-**Browser logos** (one per browser, only to identify it): Browser names and logos are trademarks of their owners and
-are shown only to identify the browsers; Race Through Time is not affiliated with or endorsed by any of them. Firefox is a
-trademark of the Mozilla Foundation in the US and other countries. Sources: Wikimedia Commons, English Wikipedia and
-Apple (Safari). Microsoft Edge logo © Microsoft Corporation, MIT licence; Android Browser icon © the Chromium project,
-BSD licence; Firefox and SeaMonkey logos, Mozilla Public License 1.1; Brave logo, Mozilla Public License 2.0; Instabridge
-logo by AgathaRibeiro, CC BY-SA 4.0. Lynx and NetFront are shown with our own name tiles. File pages, licences and
-status: `kits/rtt-001/logos.json` (the licence texts' required notices to be completed before publishing).
+**Logos** (final lines, 6 Oct 2026; Claude's reading of each licence's minimum, not legal advice):
+Browser names and logos are trademarks of their owners, shown only to identify each browser; no affiliation or endorsement. Firefox is a trademark of the Mozilla Foundation in the US and other countries. Logo licences: Microsoft Edge logo © Microsoft Corporation, MIT License; Android Browser icon © The Chromium Authors, BSD License; Firefox and SeaMonkey logos © Mozilla, MPL 1.1; Brave logo © Brave Software, MPL 2.0; Instabridge logo by AgathaRibeiro, CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0). Other logos are public domain or shown for identification only. Sources: Wikimedia Commons, Wikipedia, Apple.
 
-**Photos of the devices** (bottom right; owner decisions DEC-221, DEC-227; rights in `reference/rights_ledger.md`):
-- IBM Aptiva 2144-M51 with its G40 monitor: photo by Ruben de Rijcke, CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), cropped, via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:IBM_Aptiva_2144-M51.jpg
-- Dell XPS T600r: photo by Thomasp94, CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0), via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Dell_XPS_T600R.jpg
-- IBM ThinkPad T43: photo by Bitmaster Helsinki, CC BY 2.0 (https://creativecommons.org/licenses/by/2.0), via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:ThinkPad_T43.jpg
-- HTC Dream: photo by Akela NDE, CC BY-SA 3.0 (http://creativecommons.org/licenses/by-sa/3.0/), via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:HTC_Dream_Orange_FR.jpeg
-- Samsung Galaxy S6: photo by Beamish4, CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), cropped, via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Samsung_Galaxy_S6_(Gold_Platinum)_-_Front.jpg
+**Photos of the devices** (final lines; owner decisions DEC-221, DEC-227, DEC-230; rights in `reference/rights_ledger.md`):
+Photos (Wikimedia Commons; cropped where marked):
+IBM Aptiva: Ruben de Rijcke, CC BY-SA 4.0 https://creativecommons.org/licenses/by-sa/4.0, cropped, https://commons.wikimedia.org/wiki/File:IBM_Aptiva_2144-M51.jpg
+Dell XPS T600r: Thomasp94, CC BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0, https://commons.wikimedia.org/wiki/File:Dell_XPS_T600R.jpg
+IBM ThinkPad T43: Bitmaster Helsinki, CC BY 2.0 https://creativecommons.org/licenses/by/2.0, https://commons.wikimedia.org/wiki/File:ThinkPad_T43.jpg
+HTC Dream: Akela NDE, CC BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0, https://commons.wikimedia.org/wiki/File:HTC_Dream_Orange_FR.jpeg
+Samsung Galaxy S6: Beamish4, CC BY-SA 4.0 https://creativecommons.org/licenses/by-sa/4.0, cropped, https://commons.wikimedia.org/wiki/File:Samsung_Galaxy_S6_(Gold_Platinum)_-_Front.jpg
 
-**Music:** "All In" by Everet Almond (YouTube Audio Library).
+**Music** (final line, DEC-230):
+Music: "All In" by Everet Almond (YouTube Audio Library)
