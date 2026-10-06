@@ -343,7 +343,8 @@ function write(results) {
              ['film_option_C', 'config_rtt001_opt_C.json'],
              ['film_option_C_note_crown_callouts', 'config_rtt001_opt_C.json', { notes_at: [{ date: '1996-06-30', text: 'Note: until May 1996 this source counted Internet Explorer inside “Mosaic”' }], crown: { enabled: true }, callout: { enabled: true }, record_hold: { enabled: true } }],
              ['film_approved_fixed_slots', 'config_rtt001_approved.json'], ['film_approved_board_fit', 'config_rtt001_approved_fit.json'],
-             ['film_era_A', 'config_rtt001_era_A.json'], ['film_era_B', 'config_rtt001_era_B.json']])
+             ['film_era_A', 'config_rtt001_era_A.json'], ['film_era_B', 'config_rtt001_era_B.json'],
+             ['film_photos', 'config_rtt001_photos.json']])
     .filter(c => process.argv.length <= 2 || process.argv.slice(2).includes(c[0]));
   const results = [];
   for (const [n, c, o] of cases) { const t0 = Date.now(); const r = await runCase(n, c, o); results.push(r);
