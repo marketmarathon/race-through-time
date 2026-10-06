@@ -216,7 +216,7 @@ let FLAGCOL=null, FLAGS=false, FLAGIMG={}, FLAGCODE={}, EVL=null, OVL=[], OVLGAP
 let COUNT=false, BLOGO=null, FFOOT=null, FINAL_ON=false, LIVE=false, FINAL_LBL=false, STATUS=null, RECLINE=false;
 let SERIES=false, PIC=null, PICIMG={}, LOGOIMG={}, MKEY=null, FADE=null, CROWN=null, CALLOUT=null, NOTES=null, GLIDE_BEAT=false, AXU=1, MAKERS=[], MAKERNAME={};
 let SHARE=false, VAL=null, SRCL=null, MARK=null, NOTEL=null;   // IQ-13 (RTT-001): all off for RTT-002 and RTT-003
-let DATEBLK=null, ERA=null, ERAST=null;                          // RTT-001 date/era round (DEC-214..): off unless configured
+let DATEBLK=null, ERA=null, ERAST=null, ERAIMG={};                          // RTT-001 date/era round (DEC-214..): off unless configured
 let TOP=150; const BOTTOM=1080-46;            // IQ-10: TOP from config board_top (RTT-003); 150 for RTT-002
 
 /* ---- the test hook: what text went on the frame ---- */
@@ -297,6 +297,7 @@ function setup(o){
     for(const [id,src] of Object.entries(o.pictures)){ const im=new Image(); im.src=src; PICIMG[id]=im; loads.push(im.decode()); }
   }
   for(const [k,src] of Object.entries(o.logos||{})){ const im=new Image(); im.src=src; LOGOIMG[k]=im; loads.push(im.decode()); }
+  ERAIMG={}; for(const [k,src] of Object.entries(o.era_photos||{})){ const im=new Image(); im.src=src; ERAIMG[k]=im; loads.push(im.decode()); }   // RTT-001 era photos (DEC-221)
   COUNT = SERIES && !!(CFG.count && CFG.count.enabled);
   LIVE = COUNT && !!TL.liveOnly;
   /* round 4 (DEC-131, DEC-132): the all-time board with "retired" / "latest figure" bars, and the record line on its own */
@@ -677,6 +678,21 @@ function drawDevice(dev,x,y,w,h,alpha,screenFn){
   ctx.restore();
   return scr;
 }
+/* RTT-001 era photos (DEC-221): a real photograph on a rounded tile, cropped to fill it (era entry `crop` {x,y,w,h} in
+   the file's pixels, else a centred crop of the tile's shape); crop only, the file is unchanged. */
+function drawEraPhoto(e, x, y, w, h, alpha){
+  const im=ERAIMG[e.file]; if(!im || !im.naturalWidth || alpha<=0) return false;
+  const W=im.naturalWidth, H=im.naturalHeight, ar=w/h;
+  let c=e.crop ? Object.assign({},e.crop) : (W/H>ar ? {x:(W-H*ar)/2, y:0, w:H*ar, h:H} : {x:0, y:(H-W/ar)/2, w:W, h:W/ar});
+  ctx.save(); ctx.globalAlpha=alpha; rr(x,y,w,h,ERA.radius!=null?ERA.radius:12); ctx.clip();
+  ctx.fillStyle=e.bg||'#F4F6FA'; ctx.fillRect(x,y,w,h);
+  /* a crop of another shape is fitted inside the tile, centred, on the tile's light background (a cut-out look) */
+  const s=Math.min(w/c.w,h/c.h), dw=c.w*s, dh=c.h*s;
+  ctx.drawImage(im,c.x,c.y,c.w,c.h,x+(w-dw)/2,y+(h-dh)/2,dw,dh);
+  ctx.restore();
+  ctx.save(); ctx.globalAlpha=alpha*0.6; ctx.strokeStyle=T.rule||'#2A3A52'; ctx.lineWidth=1.5; rr(x+0.75,y+0.75,w-1.5,h-1.5,ERA.radius!=null?ERA.radius:12); ctx.stroke(); ctx.restore();
+  return true;
+}
 function drawYear(yNow, yOld, p, xr, base, size, align, band){
   /* the year, rolling: p 0 = old year in place, 1 = new year in place (eased by the caller) */
   ctx.save(); ctx.beginPath(); ctx.rect(band.x, band.y, band.w, band.h); ctx.clip();
@@ -707,14 +723,16 @@ function drawDateEra(k, fr){
       ctx.font='600 '+ms+'px '+FONT; ctx.fillStyle=T.cap||T.muted; text('date_month',null,month,cx,scr.y+scr.h*0.5-ys2*0.62,'center');
       drawYear(y, yOld, p, cx, scr.y+scr.h*0.5+ys2*0.45, ys2, 'center', {x:scr.x, y:scr.y+scr.h*0.5+ys2*0.45-ys2*0.80, w:scr.w, h:ys2*0.86});
     } : null;
-    if(devPrev) drawDevice(devPrev, ERA.x, ERA.y, ERA.w, ERA.h, 1-a, scrFn);
-    scrNow=drawDevice(devNow, ERA.x, ERA.y, ERA.w, ERA.h, a, scrFn);
-    window.__ERA={device:devNow, prev:devPrev, alpha:a, box:{x:ERA.x,y:ERA.y,w:ERA.w,h:ERA.h}};
+    const eNow=ST.eras[i], ePrev=devPrev?ST.eras[i-1]:null, src=ERA.eras;
+    const photo=(j,al)=>src[j] && src[j].file ? drawEraPhoto(src[j], ERA.x, ERA.y, ERA.w, ERA.h, al) : false;
+    if(devPrev && !photo(i-1,1-a)) drawDevice(devPrev, ERA.x, ERA.y, ERA.w, ERA.h, 1-a, scrFn);
+    if(!photo(i,a)) scrNow=drawDevice(devNow, ERA.x, ERA.y, ERA.w, ERA.h, a, scrFn);
+    window.__ERA={device:devNow, prev:devPrev, alpha:a, box:{x:ERA.x,y:ERA.y,w:ERA.w,h:ERA.h}, photo:src[i]&&src[i].file||null};
   }
   if(DATEBLK && DATEBLK.mode!=='screen'){
     const D=DATEBLK, R=D.right;
     var dbox={x:R-D.year_size*2.7, y:D.month_y-D.month_size-8, w:D.year_size*2.7+8, h:D.year_y-D.month_y+D.month_size+D.year_size*0.32};
-    ctx.fillStyle=T.ground; ctx.fillRect(dbox.x, dbox.y, dbox.w, dbox.h);
+    if(dbox.y+dbox.h>TOP){ ctx.fillStyle=T.ground; ctx.fillRect(dbox.x, dbox.y, dbox.w, dbox.h); }   // above the board (top right, DEC-222) there is nothing to clear
     ctx.fillStyle=T.cap||T.muted; ctx.font='600 '+D.month_size+'px '+FONT; text('date_month',null,month,R,D.month_y,'right');
     drawYear(y, yOld, p, R, D.year_y, D.year_size, 'right', {x:R-D.year_size*2.7, y:D.year_y-D.year_size*0.80, w:D.year_size*2.7+6, h:D.year_size*0.86});   // the digits' own height: an odometer, clear of the month
   }
