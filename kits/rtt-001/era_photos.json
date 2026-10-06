@@ -1,5 +1,5 @@
 {
- "note": "RTT-001 era photos (DEC-221): the shortlist for Luke, 3 per era, from the candidates in the private repo (assets/rtt-001/photos/candidates, branch claude/compassionate-cray-tlnnkm). Commercial-use licences only; every licence and author as read from the file page through the Commons API by the rtt001-photos workflow. recommended = Claude's pick, used in the pilot stills. crop = the part of the file drawn (crop only, the file is unchanged); bg = the tile behind a photo that does not fill it.",
+ "note": "RTT-001 era photos (DEC-221): the shortlist for Luke, 3 per era, from the candidates in the private repo (assets/rtt-001/photos/candidates, branch claude/compassionate-cray-tlnnkm). Commercial-use licences only; every licence and author as read from the file page through the Commons API by the rtt001-photos workflow. recommended = Claude's pick, used in the pilot stills. crop = the part of the file drawn (crop only, the file is unchanged); bg = the tile behind a photo that does not fill it. chosen = in the film (owner decision DEC-227, 6 Oct 2026: the recommended picks except the Dell XPS T600r and the Galaxy S6, which match their eras).",
  "photos": [
   {
    "device": "crt",
@@ -30,7 +30,8 @@
    "size": [
     1920,
     1643
-   ]
+   ],
+   "chosen": true
   },
   {
    "device": "crt",
@@ -55,7 +56,8 @@
    "size": [
     1321,
     1185
-   ]
+   ],
+   "chosen": false
   },
   {
    "device": "crt",
@@ -81,7 +83,8 @@
    "size": [
     1307,
     1425
-   ]
+   ],
+   "chosen": false
   },
   {
    "device": "tower",
@@ -113,7 +116,8 @@
    "size": [
     1920,
     2777
-   ]
+   ],
+   "chosen": false
   },
   {
    "device": "tower",
@@ -139,7 +143,8 @@
    "size": [
     1920,
     2580
-   ]
+   ],
+   "chosen": true
   },
   {
    "device": "tower",
@@ -165,7 +170,8 @@
    "size": [
     1920,
     2560
-   ]
+   ],
+   "chosen": false
   },
   {
    "device": "laptop",
@@ -190,7 +196,8 @@
    "size": [
     1920,
     1440
-   ]
+   ],
+   "chosen": true
   },
   {
    "device": "laptop",
@@ -216,7 +223,8 @@
    "size": [
     1863,
     2487
-   ]
+   ],
+   "chosen": false
   },
   {
    "device": "laptop",
@@ -241,7 +249,8 @@
    "size": [
     1920,
     1440
-   ]
+   ],
+   "chosen": false
   },
   {
    "device": "phone_early",
@@ -266,7 +275,8 @@
    "size": [
     1920,
     1440
-   ]
+   ],
+   "chosen": true
   },
   {
    "device": "phone_early",
@@ -291,7 +301,8 @@
    "size": [
     1600,
     1269
-   ]
+   ],
+   "chosen": false
   },
   {
    "device": "phone_early",
@@ -317,7 +328,8 @@
    "size": [
     1920,
     2030
-   ]
+   ],
+   "chosen": false
   },
   {
    "device": "phone_modern",
@@ -348,7 +360,8 @@
    "size": [
     1920,
     1280
-   ]
+   ],
+   "chosen": false
   },
   {
    "device": "phone_modern",
@@ -369,12 +382,19 @@
    "rendering": "Commons rendering https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Samsung_Galaxy_S6_%28Gold_Platinum%29_-_Front.jpg/1920px-Samsung_Galaxy_S6_%28Gold_Platinum%29_-_Front.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
    "sha256": "ae2dc03f911519d5c7b465720784cf0d09d7497a801ae7f197db99ed19ddb881",
    "bytes": 1744732,
-   "attribution": "Samsung Galaxy S6: photo by Beamish4, CC BY-SA 4.0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Samsung_Galaxy_S6_(Gold_Platinum)_-_Front.jpg)",
+   "attribution": "Samsung Galaxy S6: photo by Beamish4, CC BY-SA 4.0, cropped, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Samsung_Galaxy_S6_(Gold_Platinum)_-_Front.jpg)",
    "bg": "#152134",
    "size": [
     1920,
     2559
-   ]
+   ],
+   "chosen": true,
+   "crop": {
+    "x": 280,
+    "y": 220,
+    "w": 1260,
+    "h": 2160
+   }
   },
   {
    "device": "phone_modern",
@@ -400,7 +420,8 @@
    "size": [
     1920,
     2744
-   ]
+   ],
+   "chosen": false
   }
  ]
 }

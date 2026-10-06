@@ -38,10 +38,12 @@ The reference frame is 1920 × 1080. Masters are rendered at 3840 × 2160.
   - Continuous measures count smoothly between data points and show the exact data value at each data point (DEC-115).
 - **Values follow the bar.** Shown in the episode's unit with "+" where the figure is a lower bound, e.g. "118.7m+" (DEC-111, DEC-115). RTT-002 shows "91 wins · 306 starts · 29.7%" (DEC-053). Shares of a total show one decimal, e.g. "44.0%" (RTT-001, DEC-189).
 - **A small date line is always visible** near the title and changes at every data point (DEC-045 (3)).
+- **Big date, top right (RTT-001 onwards, DEC-222, DEC-229):** the year in extra-bold 112 px with the month in 40 px above it, right-aligned directly left of the RTT logo, replacing the small date line; the year rolls like an odometer over half a second when it changes (player key `date_block`, `time_label.mode` "none").
+- **Era photo, bottom right (RTT-001, DEC-221, DEC-227 to DEC-229, DEC-231):** a real photograph of the typical device of the period (never a drawing), commercial-use licence only (public domain, CC0, CC BY, CC BY-SA), on a rounded 480 × 360 px tile (about 98 × 73 pt on a phone) that keeps at least 40 px clear of everything on the board on every frame; photos crossfade over 2 s at the era's switch dates; the device should belong to its era (no anachronisms). Credits go in the description only, not on screen (DEC-230). Player key `era` with `eras[].file`, files only in the private repo.
 - **The RTT logo** is the round globe badge, top right, in a square box of about 154 px (DEC-051, DEC-052).
 - **One picture per bar,** matching the name on the bar (DEC-114 (a)). Tall pictures must not look narrow; fix the sizing rather than swapping the picture (DEC-114 (e)). RTT-002 used today's design of each national flag (DEC-035 (1)).
 - **The bottom strip** (about 130 px; Claude's estimate of what YouTube's controls cover) holds nothing important. The footer credits sit there (DEC-042, DEC-065).
-- **The footer carries the data and photo credits.** The same credits go in the video description (DEC-065).
+- **The footer carries the data and photo credits.** The same credits go in the video description (DEC-065). Exception: the RTT-001 era photos and the music are credited in the description only (DEC-230).
 
 ## 4. Colour and motion
 - **Colours:**

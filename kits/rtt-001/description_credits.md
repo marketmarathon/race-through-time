@@ -1,4 +1,4 @@
-# RTT-001 Browser Wars: draft credits for the YouTube description (IQ-13, not final)
+# RTT-001 Browser Wars: credits for the YouTube description (IQ-13; photos and music added 6 Oct 2026, DEC-230)
 
 Draft only: the final description is written before publishing, and nothing is published from this repo. Wording follows
 DEC-166 (GVU / Georgia Tech Research Corporation credit on screen and in the description) and the StatCounter terms in
@@ -31,4 +31,11 @@ BSD licence; Firefox and SeaMonkey logos, Mozilla Public License 1.1; Brave logo
 logo by AgathaRibeiro, CC BY-SA 4.0. Lynx and NetFront are shown with our own name tiles. File pages, licences and
 status: `kits/rtt-001/logos.json` (the licence texts' required notices to be completed before publishing).
 
-Music: to be chosen by Luke (none in the pilot).
+**Photos of the devices** (bottom right; owner decisions DEC-221, DEC-227; rights in `reference/rights_ledger.md`):
+- IBM Aptiva 2144-M51 with its G40 monitor: photo by Ruben de Rijcke, CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), cropped, via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:IBM_Aptiva_2144-M51.jpg
+- Dell XPS T600r: photo by Thomasp94, CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0), via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Dell_XPS_T600R.jpg
+- IBM ThinkPad T43: photo by Bitmaster Helsinki, CC BY 2.0 (https://creativecommons.org/licenses/by/2.0), via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:ThinkPad_T43.jpg
+- HTC Dream: photo by Akela NDE, CC BY-SA 3.0 (http://creativecommons.org/licenses/by-sa/3.0/), via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:HTC_Dream_Orange_FR.jpeg
+- Samsung Galaxy S6: photo by Beamish4, CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), cropped, via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Samsung_Galaxy_S6_(Gold_Platinum)_-_Front.jpg
+
+**Music:** "All In" by Everet Almond (YouTube Audio Library).

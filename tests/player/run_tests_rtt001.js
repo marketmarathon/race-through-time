@@ -40,7 +40,8 @@
  *      leaders.csv, except where a flagged stretch is smoothed on purpose (include_flagged), which is reported
  *  17. date block and era picture (date/era round, DEC-214/DEC-215, when configured): the date is read from the
  *      date block (month and year labels; check 1 applies to it); the date block and the era picture stay inside the
- *      frame above the footer, and no bar, name, value, logo tile, crown, source line or footer overlaps them
+ *      frame above the footer, and no bar, name, value, logo tile, crown, source line or footer overlaps them; a photo
+ *      tile (era.eras[].file) also keeps 40 px of clear space to all of them (DEC-228: as large as possible, never crowding)
  *  16. board size (IQ-13 answers, DEC-188/DEC-202): one name size and one value size on every frame, and the bars'
  *      left edge never moves; every bar inside the slots is drawn whole inside the board, and no bar on the board stops
  *      being drawn for lack of room (a row gliding up into the last slot from below is cut by the board's edge, as
@@ -167,13 +168,16 @@ async function runCase(name, configFile, overrides) {
     // 17. date block and era picture: inside the frame above the footer, overlapping nothing on the board
     if (DBK || (cfg.era && cfg.era.enabled)) {
       const boxes = X.DB && X.DB.box ? [X.DB.box] : [];      // the date block's own area (the rolling year is clipped to it)
-      if (X.ER) boxes.push(X.ER.box);
+      const eraBox = X.ER ? X.ER.box : null; if (eraBox) boxes.push(eraBox);
+      // photo tiles (era.eras[].file) must stay at least 40 px clear of everything on the board and of the footer
+      const ERA_GAP = cfg.era && (cfg.era.eras || []).some(e => e.file) ? 40 : 0;
       const foot = X.L.find(l => l.kind === 'footer'), footTop = foot ? labelBox(foot).y : 1080;
-      for (const b of boxes) { if (b.x < 0 || b.x + b.w > 1920 || b.y < 0 || b.y + b.h > footTop) fail(`f${f}: date/era box ${JSON.stringify(b)} outside the frame or into the footer`);
-        for (const r of X.B.filter(r => r.alpha > 0.01)) if (overlap(b, r.rect)) fail(`f${f}: ${r.id}'s bar overlaps the date/era area`);
-        for (const l of X.L.filter(l => ['name', 'value', 'source_line', 'marker', 'note_line', 'axis', 'title'].includes(l.kind) && l.alpha > 0.01)) if (overlap(b, labelBox(l))) fail(`f${f}: ${l.kind} "${l.text}" overlaps the date/era area`);
-        for (const pc of X.P.filter(pc => pc.alpha > 0.01)) if (overlap(b, pc.box)) fail(`f${f}: ${pc.id}'s logo tile overlaps the date/era area`);
-        if (X.CR && overlap(b, X.CR)) fail(`f${f}: the crown overlaps the date/era area`); }
+      for (const b of boxes) { if (b.x < 0 || b.x + b.w > 1920 || b.y < 0 || b.y + b.h > footTop - (b === eraBox ? ERA_GAP : 0)) fail(`f${f}: date/era box ${JSON.stringify(b)} outside the frame or into the footer`);
+        const g = b === eraBox ? ERA_GAP : 0;   // the photo tile keeps clear space around it, not just no overlap (DEC-228)
+        for (const r of X.B.filter(r => r.alpha > 0.01)) if (overlap(b, r.rect, g)) fail(`f${f}: ${r.id}'s bar overlaps or crowds the date/era area`);
+        for (const l of X.L.filter(l => ['name', 'value', 'source_line', 'marker', 'note_line', 'axis', 'title'].includes(l.kind) && l.alpha > 0.01)) if (overlap(b, labelBox(l), g)) fail(`f${f}: ${l.kind} "${l.text}" overlaps or crowds the date/era area`);
+        for (const pc of X.P.filter(pc => pc.alpha > 0.01)) if (overlap(b, pc.box, g)) fail(`f${f}: ${pc.id}'s logo tile overlaps or crowds the date/era area`);
+        if (X.CR && overlap(b, X.CR, g)) fail(`f${f}: the crown overlaps or crowds the date/era area`); }
       res.counts.dateEra = (res.counts.dateEra || 0) + 1;
     }
     if (dl.length !== 1) { fail(`f${f}: ${dl.length} date lines`); continue; }

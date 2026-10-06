@@ -1,6 +1,6 @@
 {
  "extends": "config_rtt001_approved_fit.json",
- "kit_version": "rtt001_photos_1",
+ "kit_version": "rtt001_photos_2",
  "time_label": {
   "mode": "none"
  },
@@ -16,11 +16,11 @@
  },
  "era": {
   "enabled": true,
-  "x": 1590,
-  "y": 775,
-  "w": 300,
-  "h": 225,
-  "radius": 12,
+  "x": 1410,
+  "y": 640,
+  "w": 480,
+  "h": 360,
+  "radius": 16,
   "fade_sec": 2.0,
   "photo_dir": "photos",
   "eras": [
@@ -38,13 +38,7 @@
    {
     "from": "2000-01-31",
     "device": "tower",
-    "file": "candidates/tower2000s/03_DellDimensionE521.jpg",
-    "crop": {
-     "x": 20,
-     "y": 20,
-     "w": 1880,
-     "h": 2740
-    },
+    "file": "candidates/tower2000s/04_Dell_XPS_T600R.jpg",
     "bg": "#152134"
    },
    {
@@ -60,17 +54,18 @@
    {
     "from": "2015-01-31",
     "device": "phone_modern",
-    "file": "candidates/phone2015/08_Samsung_Galaxy_S7_26089332033_.jpg",
+    "file": "candidates/phone2015/02_Samsung_Galaxy_S6_Gold_Platinum_Front.jpg",
     "crop": {
-     "x": 480,
-     "y": 250,
-     "w": 960,
-     "h": 720
-    }
+     "x": 280,
+     "y": 220,
+     "w": 1260,
+     "h": 2160
+    },
+    "bg": "#152134"
    }
   ]
  },
  "notes": [
-  "Luke's answers on pilot 3 (DEC-221 to DEC-224): the date (year 112 px, month 40 px, half-second roll) top right, directly left of the channel logo; real photographs of each era's device bottom right on a 300 x 225 px rounded tile, crossfading over 2 s: Claude's recommended picks from kits/rtt-001/era_photos.json (IBM Aptiva, Dell Dimension E521, ThinkPad T43, HTC Dream, Samsung Galaxy S7), files in the private repo (assets/rtt-001/photos)."
+  "Luke's answers on pilot 3 and pilot 4 (DEC-221 to DEC-224, DEC-227 to DEC-230): the date (year 112 px, month 40 px, half-second roll) top right, directly left of the channel logo; real photographs of each era's device bottom right on a 480 x 360 px rounded tile (sized against every frame of the film, DEC-231), crossfading over 2 s at 1994 / 2000 / 2006 / 2009 / 2015: IBM Aptiva with its CRT, Dell XPS T600r, IBM ThinkPad T43, HTC Dream, Samsung Galaxy S6 (kits/rtt-001/era_photos.json; files in the private repo, assets/rtt-001/photos). Credits in the YouTube description only (kits/rtt-001/description_credits.md)."
  ]
 }
