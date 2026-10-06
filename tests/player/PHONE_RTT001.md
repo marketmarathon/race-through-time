@@ -53,5 +53,13 @@ Each board still measured as drawn on the 1920 frame and converted to points on 
 | e04_old_jun2020 | 34px = 6.9 pt | 36px = 7.3 pt | 34px = 6.9 pt | 34px = 6.9 pt | 26px = 5.3 pt | 30px = 6.1 pt | — | — | — | 72 x 72 px = 14.6 x 14.6 pt | 47 x 36 px = 9.5 x 7.3 pt | PASS |
 | e04_A_jun2020 | 34px = 6.9 pt | 36px = 7.3 pt | 34px = 6.9 pt | 40px = 8.1 pt | 26px = 5.3 pt | 30px = 6.1 pt | — | — | — | 72 x 72 px = 14.6 x 14.6 pt | 47 x 36 px = 9.5 x 7.3 pt | PASS |
 | e04_B_jun2020 | 34px = 6.9 pt | 36px = 7.3 pt | 34px = 6.9 pt | 13px = 2.6 pt | 26px = 5.3 pt | 30px = 6.1 pt | — | — | — | 72 x 72 px = 14.6 x 14.6 pt | 47 x 36 px = 9.5 x 7.3 pt | FAIL: date < names |
+| f01_old_jun1996 | 34px = 6.9 pt | 36px = 7.3 pt | 34px = 6.9 pt | 34px = 6.9 pt | 26px = 5.3 pt | 30px = 6.1 pt | — | 30px = 6.1 pt | — | 72 x 72 px = 14.6 x 14.6 pt | 47 x 36 px = 9.5 x 7.3 pt | PASS |
+| f01_new_jun1996 | 34px = 6.9 pt | 36px = 7.3 pt | 34px = 6.9 pt | 40px = 8.1 pt | 26px = 5.3 pt | 30px = 6.1 pt | — | 30px = 6.1 pt | — | 72 x 72 px = 14.6 x 14.6 pt | 47 x 36 px = 9.5 x 7.3 pt | PASS |
+| f02_old_jun2004 | 34px = 6.9 pt | 36px = 7.3 pt | 34px = 6.9 pt | 34px = 6.9 pt | 26px = 5.3 pt | 30px = 6.1 pt | — | — | — | 72 x 72 px = 14.6 x 14.6 pt | 47 x 36 px = 9.5 x 7.3 pt | PASS |
+| f02_new_jun2004 | 34px = 6.9 pt | 36px = 7.3 pt | 34px = 6.9 pt | 40px = 8.1 pt | 26px = 5.3 pt | 30px = 6.1 pt | — | — | — | 72 x 72 px = 14.6 x 14.6 pt | 47 x 36 px = 9.5 x 7.3 pt | PASS |
+| f03_old_jun2010 | 34px = 6.9 pt | 36px = 7.3 pt | 34px = 6.9 pt | 34px = 6.9 pt | 26px = 5.3 pt | 30px = 6.1 pt | — | — | — | 72 x 72 px = 14.6 x 14.6 pt | 47 x 36 px = 9.5 x 7.3 pt | PASS |
+| f03_new_jun2010 | 34px = 6.9 pt | 36px = 7.3 pt | 34px = 6.9 pt | 40px = 8.1 pt | 26px = 5.3 pt | 30px = 6.1 pt | — | — | — | 72 x 72 px = 14.6 x 14.6 pt | 47 x 36 px = 9.5 x 7.3 pt | PASS |
+| f04_old_jun2020 | 34px = 6.9 pt | 36px = 7.3 pt | 34px = 6.9 pt | 34px = 6.9 pt | 26px = 5.3 pt | 30px = 6.1 pt | — | — | — | 72 x 72 px = 14.6 x 14.6 pt | 47 x 36 px = 9.5 x 7.3 pt | PASS |
+| f04_new_jun2020 | 34px = 6.9 pt | 36px = 7.3 pt | 34px = 6.9 pt | 40px = 8.1 pt | 26px = 5.3 pt | 30px = 6.1 pt | — | — | — | 72 x 72 px = 14.6 x 14.6 pt | 47 x 36 px = 9.5 x 7.3 pt | PASS |
 
 Overall: FAIL. For reference: RTT-002's approved film draws names and values at 29 px = 5.9 pt; RTT-003's at 33 px = 6.7 pt.
