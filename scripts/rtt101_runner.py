@@ -59,20 +59,29 @@ def main():
         st, body, err = get(f"https://en.wikipedia.org/w/api.php?{q}", ua=WUA)
         emit("wiki:" + t, st, body, err)
         time.sleep(1.0)
+    batch = []
     for it in job.get("check", []):
         st, body, err = get(it["url"])
         t = text_of(body) if body else ""
-        found = []
+        near = (it.get("near") or "").lower()
+        hit = None
         for n in it.get("needles", []):
-            i = t.find(n)
-            if i >= 0:
-                found.append((n, t[max(0, i - 100): i + len(n) + 60]))
-        rec = {"id": it["id"], "status": st, "err": err, "sha256": hashlib.sha256(body).hexdigest() if body else "",
-               "bytes": len(body), "found": [f[0] for f in found], "excerpt": found[0][1] if found else ""}
-        print("RTT101CHECK " + json.dumps(rec, ensure_ascii=False))
-        sys.stdout.flush()
+            for mm in re.finditer(re.escape(n), t):
+                i = mm.start()
+                win = t[max(0, i - 400): i + len(n) + 400].lower()
+                if not near or near in win:
+                    hit = (n, t[max(0, i - 110): i + len(n) + 70])
+                    break
+            if hit:
+                break
+        batch.append({"id": it["id"], "status": st, "err": err, "sha256": hashlib.sha256(body).hexdigest() if body else "",
+                      "bytes": len(body), "needle": hit[0] if hit else "", "excerpt": hit[1] if hit else "",
+                      "surname_on_page": bool(near and near in t.lower())})
+        if len(batch) == 20:
+            print("RTT101CHECKS " + json.dumps(batch, ensure_ascii=False)); sys.stdout.flush(); batch = []
         time.sleep(job.get("delay", 1.5))
-
+    if batch:
+        print("RTT101CHECKS " + json.dumps(batch, ensure_ascii=False))
 
 if __name__ == "__main__":
     main()

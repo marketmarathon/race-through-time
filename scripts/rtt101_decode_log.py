@@ -13,8 +13,10 @@ except Exception:
 idx = open(os.path.join(out, "index.tsv"), "a", encoding="utf-8")
 checks = open(os.path.join(out, "checks.jsonl"), "a", encoding="utf-8")
 for line in raw.splitlines():
-    if " RTT101CHECK " in line:
-        checks.write(line.split(" RTT101CHECK ", 1)[1] + "\n"); continue
+    if " RTT101CHECKS " in line:
+        for rec in json.loads(line.split(" RTT101CHECKS ", 1)[1]):
+            checks.write(json.dumps(rec, ensure_ascii=False) + "\n")
+        continue
     if " RTT101B64 " not in line:
         continue
     name, st, err, sha, b64 = line.split(" RTT101B64 ", 1)[1].split(" ", 4)

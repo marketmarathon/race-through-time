@@ -232,6 +232,99 @@ def window_rows(title, page):
     return out
 
 
+def club_season_rows(title, page):
+    """One-sided In/Out tables of a 1992-2002 club-season page; the page's club is the other side."""
+    m = re.match(r"(\d{4}–(?:\d{2}|2000)) (.+) season$", title)
+    if not m:
+        return []
+    own = L.club_id(m.group(2))
+    if not own:
+        return []
+    w = page["wikitext"]
+    refs = named_refs(w)
+    out = []
+    for tm in re.finditer(r"\{\|.*?\n\|\}", w, re.S):
+        table = tm.group(0)
+        before = w[max(0, tm.start() - 600):tm.start()]
+        heads = re.findall(r"^=+\s*(.*?)\s*=+\s*$", before, re.M)
+        ctx = (" ".join(heads[-2:]) + " " + before[-200:]).lower()
+        hdr = []
+        for hl in re.findall(r"^!(.*)$", table, re.M):
+            hdr += [re.sub(r"^[^|]*\|(?!\|)", "", h).strip().lower() for h in hl.split("!!")]
+        hdr = [h for h in hdr if h]
+        if not any(h.startswith("fee") for h in hdr):
+            continue
+
+        def col(pred):
+            for n, h in enumerate(hdr):
+                if pred(h):
+                    return n
+            return None
+        c_name = col(lambda h: h in ("name", "player"))
+        c_fee = col(lambda h: h.startswith("fee"))
+        c_date = col(lambda h: h.startswith("date"))
+        c_from = col(lambda h: h in ("from", "transferred from", "previous club", "club from"))
+        c_to = col(lambda h: h in ("to", "transferred to", "new club", "club to"))
+        c_club = col(lambda h: h == "club")
+        if c_name is None:
+            continue
+        if c_from is not None:
+            direction, c_other = "in", c_from
+        elif c_to is not None:
+            direction, c_other = "out", c_to
+        elif c_club is not None and re.search(r"\b(in|arrivals|incoming|signings)\b", ctx) and not re.search(r"\b(out|departures|outgoing)\b", ctx[-120:]):
+            direction, c_other = "in", c_club
+        elif c_club is not None and re.search(r"\b(out|departures|outgoing|sold)\b", ctx):
+            direction, c_other = "out", c_club
+        else:
+            continue
+        last_head = (heads[-1] if heads else "").lower()
+        cap = re.search(r"^\|\+(.*)$", table, re.M)
+        loan = "loan" in last_head or bool(cap and "loan" in cap.group(1).lower())
+        ncols = max(c_name, c_fee, c_other, c_date or 0) + 1
+        carry_date, carry_left = "", 0
+        for cells in split_rows(table):
+            vals, spans = [], []
+            for c in cells:
+                c2, rs = strip_attr(c)
+                vals.append(c2)
+                spans.append(rs)
+            if len(vals) == ncols - 1 and c_date == 0 and carry_left > 0:
+                vals = [""] + vals
+                carry_left -= 1
+                date = carry_date
+            elif len(vals) >= ncols:
+                date = parse_date(vals[c_date]) if c_date is not None else ""
+                if not date and c_date is not None:
+                    plain = re.sub(r"\{\{[^}]*\}\}", " ", vals[c_date]).replace("'", " ")
+                    mm = re.search(r"([A-Za-z]+)\s+(\d{4})", plain)
+                    if mm and mm.group(1).lower() in MONTHS:
+                        date = f"{mm.group(2)}-{MONTHS[mm.group(1).lower()]:02d}"
+                if c_date == 0 and spans[0] > 1:
+                    carry_date, carry_left = date, spans[0] - 1
+            else:
+                continue
+            ot, on = link_target(vals[c_other])
+            oid = L.club_id(ot) or L.club_id(on)
+            low = (ot + on).lower()
+            if "wimbledon" in low and ("afc" in low or "milton" in low):
+                oid = None
+            ftxt = fee_text(vals[c_fee]) or ""
+            if loan and "loan" not in ftxt.lower():
+                ftxt = ("Loan " + ftxt).strip()
+            cites = [c for c in cell_refs(" ".join(vals), refs)
+                     if "transfermarkt" not in (c.get("url", "") + c.get("website", "") + c.get("work", "")).lower()]
+            frm = (ot, on, oid) if direction == "in" else ("", m.group(2), own)
+            to = ("", m.group(2), own) if direction == "in" else (ot, on, oid)
+            out.append({"window": f"club-season {m.group(1)}", "page": title, "revid": page["revid"], "date": date,
+                        "player": player_name(vals[c_name]), "from_article": frm[0], "from_name": frm[1], "from_club_id": frm[2] or "",
+                        "to_article": to[0], "to_name": to[1], "to_club_id": to[2] or "", "fee_text": ftxt,
+                        "citation_only_transfermarkt": "no", "cite_urls": " ".join(c.get("url", "") for c in cites if c.get("url")),
+                        "cite_publishers": " | ".join((c.get("publisher") or c.get("work") or c.get("website") or "") for c in cites),
+                        "cite_dates": " | ".join(c.get("date", "") for c in cites)})
+    return out
+
+
 def season_tables(pages):
     code_map = {}
     for t, p in pages.items():
@@ -313,7 +406,14 @@ def main():
             rows += window_rows(t, pages[t])
     with open(os.path.join(OUT, "wiki_window_rows.csv"), "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=list(rows[0])); w.writeheader(); w.writerows(rows)
-    print(len(pages), "pages;", len(st), "club-season rows;", len(rows), "window rows with a PL-history club")
+    cs = []
+    for t in sorted(pages):
+        if t.endswith(" season"):
+            cs += club_season_rows(t, pages[t])
+    if cs:
+        with open(os.path.join(OUT, "wiki_club_season_rows.csv"), "w", newline="", encoding="utf-8") as f:
+            w = csv.DictWriter(f, fieldnames=list(cs[0])); w.writeheader(); w.writerows(cs)
+    print(len(pages), "pages;", len(st), "club-season rows;", len(rows), "window rows with a PL-history club;", len(cs), "club-season page rows")
 
 
 if __name__ == "__main__":

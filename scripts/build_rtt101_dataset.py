@@ -227,21 +227,33 @@ def source_id(url, publisher, grade, kind):
 
 wiki_rows = rd("wiki_window_rows.csv") + rd("wiki_club_season_rows.csv")
 seen = {}
+near = defaultdict(list)  # (player, from, to, loan) -> transfers, for the same deal listed on both clubs' pages
 for r in wiki_rows:
     date = r["date"]
     k = kind_of(r["fee_text"])
     if k == "loan_return" or not date:
         continue
+    basis = "Wikipedia list date (pointer)"
+    if re.fullmatch(r"\d{4}-\d{2}", date):
+        date, basis = month_end(date + "-01"), "month only on the Wikipedia page: month end (contract §2)"
     key = (pname(r["player"]), r["from_club_id"] or L.norm(r["from_name"]), r["to_club_id"] or L.norm(r["to_name"]), date, k == "loan")
-    if key in seen:
-        t = seen[key]
+    nk = key[:3] + (k == "loan",)
+    hit = None
+    if key not in seen and r["page"].endswith(" season"):
+        for t0 in near[nk]:
+            if abs((dt.date.fromisoformat(t0["date"]) - dt.date.fromisoformat(date)).days) <= 60:
+                hit = t0
+                break
+    if key in seen or hit:
+        t = seen.get(key) or hit
     else:
         tid = "T" + sha("|".join(map(str, key)))[:10]
         t = {"transfer_id": tid, "player": r["player"], "from_club": r["from_club_id"] or r["from_name"],
              "to_club": r["to_club_id"] or r["to_name"], "from_club_id": r["from_club_id"], "to_club_id": r["to_club_id"],
-             "type": k, "date": date, "date_basis": "Wikipedia list date (pointer)", "found_via": f"Wikipedia: {r['page']} (rev {r['revid']})",
+             "type": k, "date": date, "date_basis": basis, "found_via": f"Wikipedia: {r['page']} (rev {r['revid']})",
              "parent_transfer_id": "", "_ev": []}
         seen[key] = t
+        near[nk].append(t)
         transfers.append(t)
     wsid = source_id(f"https://en.wikipedia.org/w/index.php?oldid={r['revid']}", "Wikipedia: " + r["page"], "C", "wikipedia_pointer")
     p = L.parse_fee(r["fee_text"])
