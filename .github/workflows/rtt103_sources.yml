@@ -1,0 +1,66 @@
+# Race Through Time - RTT-103 The AI Spending Race (IQ-16): fetch the source documents the Claude Code cloud container
+# cannot reach (its network policy blocks hkexnews.hk, ir.baidu.com, data.alibabagroup.com, tencent.com, fred.stlouisfed.org,
+# federalreserve.gov and the US companies' investor-relations sites). www.sec.gov is fetched from the container instead.
+# Its own workflow: it renders nothing and cannot start any episode's render.
+# This repository is PUBLIC (DEC-006, DEC-061), so this workflow:
+#   - reads the URL lists from the PRIVATE repo (ChatGPT's research catalogues never enter this repo) and commits the
+#     fetched text, HTML and CSV plus a SHA-256 manifest to the PRIVATE repo only, with the secret RTT_PRIVATE_TOKEN,
+#     never printing it;
+#   - uploads NO workflow artifact, uses NO cache and prints only source IDs, sizes and hashes;
+#   - deletes everything it downloaded from the runner at the end.
+# Trigger: a push that changes this file or the fetch script on the IQ-16 branch, or by hand.
+name: rtt103-sources
+
+on:
+  push:
+    branches: [claude/gracious-meitner-aedj37]
+    paths: [.github/workflows/rtt103_sources.yml, scripts/rtt103_fetch_sources.py]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rtt103-sources
+  cancel-in-progress: false
+
+env:
+  PRIVATE_REPO: marketmarathon/race-through-time-private
+  PRIVATE_BRANCH: claude/gracious-meitner-aedj37
+
+jobs:
+  fetch:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Fetch sources, convert PDFs to text, commit to the private repo
+        env:
+          GH_TOKEN: ${{ secrets.RTT_PRIVATE_TOKEN }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          if [ -z "$GH_TOKEN" ]; then echo "::error::secret RTT_PRIVATE_TOKEN is not available to this run"; exit 1; fi
+          command -v pdftotext > /dev/null || { sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils > /dev/null; }
+          W="$RUNNER_TEMP/rtt103"; mkdir -p "$W"
+          git clone -q "https://x-access-token:${GH_TOKEN}@github.com/${PRIVATE_REPO}.git" "$W/private"
+          cd "$W/private"
+          if git ls-remote --exit-code --heads origin "$PRIVATE_BRANCH" > /dev/null; then git checkout -q "$PRIVATE_BRANCH"; else git checkout -q -b "$PRIVATE_BRANCH" origin/main; fi
+          OUT="research/rtt-103/fetched_$(date -u +%Y-%m-%d)_run${GITHUB_RUN_ID}"
+          cd "$GITHUB_WORKSPACE"
+          python3 scripts/rtt103_fetch_sources.py "$W/private" "$W/private/$OUT"
+          cd "$W/private"
+          git config user.name "rtt103-sources workflow"
+          git config user.email "rtt103-sources@users.noreply.github.com"
+          git add "$OUT"
+          if git diff --cached --quiet; then echo "nothing new to commit"; exit 0; fi
+          git commit -q -m "RTT-103: source documents fetched on a GitHub runner (IQ-16; run ${RUN_URL})"
+          git push -q origin "HEAD:$PRIVATE_BRANCH"
+          echo "committed $(git rev-parse --short HEAD) to ${PRIVATE_REPO} ${PRIVATE_BRANCH} under ${OUT}"
+
+      - name: Delete the downloads from the runner
+        if: always()
+        run: rm -rf "$RUNNER_TEMP/rtt103"

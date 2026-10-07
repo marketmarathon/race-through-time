@@ -1,0 +1,134 @@
+#!/usr/bin/env python3
+"""RTT-103 (IQ-16): fetch the source documents the Claude Code cloud container cannot reach.
+
+Run on a GitHub-hosted runner by .github/workflows/rtt103_sources.yml. The URL lists are the private research
+catalogues in race-through-time-private/research/rtt-103/ (ChatGPT's Section A files, DEC-006: they never enter this
+public repo), plus the two FX sources. Every URL whose host is not www.sec.gov is downloaded once; for each file the
+manifest records the URL, the catalogue source_ids that cite it, HTTP status, bytes, SHA-256 and content type.
+PDFs are converted to layout text with pdftotext and only the text is kept (the PDF's own SHA-256 is recorded);
+HTML and CSV are kept as downloaded. Output goes to the private repo only. The log prints IDs, sizes and hashes only.
+
+Usage: rtt103_fetch_sources.py <private_repo_dir> <out_dir>
+Standard library only (plus the pdftotext command).
+"""
+import csv
+import hashlib
+import io
+import json
+import os
+import re
+import subprocess
+import sys
+import time
+import urllib.parse
+import urllib.request
+
+UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
+INPUTS = ["part01_sectionA_source_catalogue.csv", "part02b_china_prompt_tencent_Section_A_file.txt",
+          "part03b_china_prompt_baidu_Section_A_file.txt", "part04b_china_prompt_alibaba_Section_A_file.txt"]
+EXTRA = [  # FX (brief: Federal Reserve H.10, FRED DEXCHUS as distributor) - not in the catalogues by these exact URLs
+    ("FX-FRED-DEXCHUS", "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXCHUS"),
+    ("FX-H10-HIST-CHINA", "https://www.federalreserve.gov/releases/h10/hist/dat00_ch.htm"),
+    ("FX-FRED-DEXCHUS-PAGE", "https://fred.stlouisfed.org/series/DEXCHUS"),
+]
+SKIP_HOSTS = {"www.sec.gov"}  # fetched directly from the container
+
+
+def catalogue_rows(path):
+    """Yield dict rows from a plain CSV or from the ```csv blocks of a ChatGPT Section A text file."""
+    raw = open(path, encoding="utf-8-sig").read()
+    if path.endswith(".csv"):
+        blocks = [raw]
+    else:
+        blocks = re.findall(r"```csv\n(.*?)```", raw, flags=re.S)
+    for b in blocks:
+        rd = csv.DictReader(io.StringIO(b))
+        if not rd.fieldnames or "url" not in rd.fieldnames or "source_id" not in rd.fieldnames:
+            continue
+        for row in rd:
+            yield row
+
+
+def safe_name(sid):
+    return re.sub(r"[^A-Za-z0-9_.-]", "_", sid)
+
+
+def fetch(url, tries=3):
+    last = None
+    for i in range(tries):
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "*/*",
+                                                       "Accept-Language": "en-GB,en;q=0.9,zh;q=0.6"})
+            with urllib.request.urlopen(req, timeout=90) as r:
+                return r.status, r.headers.get("Content-Type", ""), r.read()
+        except urllib.error.HTTPError as e:
+            last = f"HTTP {e.code}"
+            if e.code in (403, 404, 410):
+                break
+        except Exception as e:  # report, retry, continue: a blocked source is listed, not fatal
+            last = f"{type(e).__name__}: {e}"
+        time.sleep(5 * (i + 1))
+    return None, last, None
+
+
+def main():
+    priv, out = sys.argv[1], sys.argv[2]
+    src = os.path.join(priv, "research", "rtt-103")
+    os.makedirs(os.path.join(out, "docs"), exist_ok=True)
+    urls = {}  # url -> list of source_ids
+    for name in INPUTS:
+        for row in catalogue_rows(os.path.join(src, name)):
+            for u in re.findall(r"https?://[^\s;\"]+", row.get("url", "")):
+                if urllib.parse.urlparse(u).hostname in SKIP_HOSTS:
+                    continue
+                urls.setdefault(u, []).append(row["source_id"])
+    for sid, u in EXTRA:
+        urls.setdefault(u, []).append(sid)
+    print(f"{len(urls)} URLs to fetch")
+    manifest, last_host_time = [], {}
+    for n, (u, sids) in enumerate(sorted(urls.items(), key=lambda kv: kv[1][0])):
+        host = urllib.parse.urlparse(u).hostname
+        wait = 1.5 - (time.time() - last_host_time.get(host, 0))
+        if wait > 0:
+            time.sleep(wait)
+        status, ctype, body = fetch(u)
+        last_host_time[host] = time.time()
+        rec = {"url": u, "source_ids": sids, "host": host, "fetched_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
+        if body is None:
+            rec.update({"ok": False, "error": ctype})
+            print(f"[{n + 1}] {sids[0]} FAILED {ctype}")
+            manifest.append(rec)
+            continue
+        sha = hashlib.sha256(body).hexdigest()
+        base = safe_name(sids[0])
+        is_pdf = body[:5] == b"%PDF-" or "pdf" in ctype.lower()
+        rec.update({"ok": True, "http_status": status, "content_type": ctype, "bytes": len(body), "sha256": sha,
+                    "is_pdf": is_pdf})
+        if is_pdf:
+            tmp = os.path.join(out, "tmp.pdf")
+            open(tmp, "wb").write(body)
+            txt = os.path.join(out, "docs", base + ".pdf.txt")
+            r = subprocess.run(["pdftotext", "-layout", tmp, txt], capture_output=True)
+            os.remove(tmp)
+            rec["kept_file"] = f"docs/{base}.pdf.txt" if r.returncode == 0 else None
+            if r.returncode == 0:
+                rec["kept_sha256"] = hashlib.sha256(open(txt, "rb").read()).hexdigest()
+            else:
+                rec["pdftotext_error"] = r.stderr.decode(errors="replace")[:200]
+        else:
+            ext = ".csv" if ("csv" in ctype.lower() or u.endswith(".csv")) else ".html"
+            path = os.path.join(out, "docs", base + ext)
+            open(path, "wb").write(body)
+            rec["kept_file"] = f"docs/{base}{ext}"
+            rec["kept_sha256"] = sha
+        print(f"[{n + 1}] {sids[0]} HTTP {status} {len(body)} bytes sha256 {sha[:16]} pdf={is_pdf}")
+        manifest.append(rec)
+    json.dump({"made_by": "scripts/rtt103_fetch_sources.py", "run": os.environ.get("RUN_URL", ""),
+               "documents": manifest}, open(os.path.join(out, "manifest.json"), "w"), indent=1)
+    ok = sum(1 for m in manifest if m["ok"])
+    print(f"{ok}/{len(manifest)} fetched")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
