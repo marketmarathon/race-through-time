@@ -147,5 +147,5 @@ def grade_of(url):
 
 
 # words before a figure that mean it is not this deal's guaranteed fee (a maximum, valuation, offer or another figure)
-NOTFEE = re.compile(r"(combined|up to|could be worth|could rise|could reach|rising to|rise to|potentially|valued|valuation|similar to|demanding|"
+NOTFEE = re.compile(r"(combined|potential|up to|could be worth|could rise|could reach|rising to|rise to|potentially|valued|valuation|similar to|demanding|"
                     r"\bbid\b|\boffer|asking for|wanted|rejected|in excess of|more than|over)\W*(a\s+|an\s+|about\s+|around\s+)?$", re.I)
