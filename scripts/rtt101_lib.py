@@ -9,8 +9,12 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ALIASES = os.path.join(HERE, "..", "data", "rtt-101", "source", "club_aliases.csv")
 
 
+TRANSLIT = str.maketrans({"ø": "o", "Ø": "O", "æ": "ae", "Æ": "Ae", "ß": "ss", "đ": "d", "Đ": "D", "ł": "l", "Ł": "L", "ı": "i",
+                          "þ": "th", "Þ": "Th", "ð": "d", "Ð": "D", "œ": "oe", "Œ": "Oe"})
+
+
 def norm(s):
-    s = unicodedata.normalize("NFKD", s or "").encode("ascii", "ignore").decode().lower()
+    s = unicodedata.normalize("NFKD", (s or "").translate(TRANSLIT)).encode("ascii", "ignore").decode().lower()
     s = s.replace("&", " and ")
     s = re.sub(r"\b(a\.?f\.?c\.?|f\.?c\.?)\b", " ", s)
     return re.sub(r"[^a-z0-9]+", " ", s).strip()

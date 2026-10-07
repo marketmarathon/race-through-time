@@ -19,7 +19,12 @@ FILES = [("part09b_prompt2_biggest_transfers_B_1992-2000.csv", "B"),
          ("part09c_prompt2_record_transfer_evidence_A_PARTIAL_v2_777rows.csv", "A")]
 # 1992-2007 gap lists (DEC-264): every CSV named part*_gaps_*.csv, as section "G" (leads only; fees checked at source)
 import glob as _glob
-FILES += [(os.path.basename(f), "G") for f in sorted(_glob.glob(os.path.join(PRIV, "part*_gaps_*.csv")))]
+_latest = {}
+for f in sorted(_glob.glob(os.path.join(PRIV, "part*_gaps_*.csv"))):
+    m = re.search(r"_gaps_([ABC])_", os.path.basename(f))  # sections A-C are transfer lists; D is conflicts/warnings (notes only)
+    if m:
+        _latest[m.group(1)] = f  # a later part replaces an earlier one (part19b replaces part18b)
+FILES += [(os.path.basename(f), "G") for _, f in sorted(_latest.items())]
 REPORTED = re.compile(r"\b(reported|believed|thought to be|understood|in the region of|around|about|some)\b", re.I)
 UEFA = re.compile(r"uefa\.com", re.I)
 

@@ -210,3 +210,30 @@ for c in open_c:
       f"{m(c['canonical_gbp'])} ({c['canonical_grade']}) | {'; '.join(o[:60] for o in others[:3])} | {c['settled_at_source'][4:]} |")
 with open(OUT, "a", encoding="utf-8") as f:
     f.write("\n".join(P2) + "\n")
+
+# ---------------------------------------------------------------- effect of the gap list (DEC-264) on 1997-2007 window totals
+BEF = {w["window"]: w for w in rd("window_totals_before_gap_list_v2.csv", os.path.join(D, "source"))}
+G = []
+g = G.append
+g("\n### Effect of the 1992–2007 gap list (sections A v2, B, C) on window totals, 1997–2007\n")
+g("Our sums count fees paid by PL clubs (gross) and fees paid to minus received from non-PL clubs (net); undisclosed fees count £0. "
+  "\"Before\" = the build just before sections A v2, B and C were added (`source/window_totals_before_gap_list_v2.csv`). Published totals are research leads "
+  "(part17b, UNVERIFIED); none exist for windows before summer 2002 (no window system).\n")
+g("| Window | Gross before | Gross after | Change | Published gross (first A/B source) | Gap left | Net before | Net after |\n|---|---|---|---|---|---|---|---|")
+tot_b = tot_a = 0.0
+for win in sorted(set(WT) | set(BEF), key=wkey):
+    y = int(win.split()[1])
+    if not (1997 <= y <= 2007):
+        continue
+    b, a = BEF.get(win, {}), WT.get(win, {})
+    gb, ga = float(b.get("gross_spend_gbp") or 0), float(a.get("gross_spend_gbp") or 0)
+    tot_b += gb; tot_a += ga
+    pub = next((r for r in sorted(lead_by.get(win, []), key=lambda r: r["grade"]) if r["gross_gbp"]), None)
+    gap_left = (m(float(pub["gross_gbp"]) - ga) if pub else "—")
+    g(f"| {win} | {m(gb)} | {m(ga)} | {m(ga - gb)} | {(m(pub['gross_gbp']) + ' (' + pub['grade'] + ', ' + pub['publisher'][:22] + ')') if pub else '—'} | {gap_left} | "
+      f"{m(b.get('net_spend_gbp'))} | {m(a.get('net_spend_gbp'))} |")
+g(f"\nTotal gross 1997–2007: {m(tot_b)} before, {m(tot_a)} after ({m(tot_a - tot_b)} added by the gap list). "
+  "Where a published total exists, our sum stays below it mainly because undisclosed fees count £0 and the early Wikipedia window lists are short; "
+  "the gap list narrows the gap but does not close it, and no figure is forced to match.")
+with open(OUT, "a", encoding="utf-8") as f:
+    f.write("\n".join(G) + "\n")

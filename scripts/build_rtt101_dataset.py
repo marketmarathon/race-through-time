@@ -279,7 +279,8 @@ for r in wiki_rows:
 # research leads (UNVERIFIED): match to the skeleton by player, PL club and date; otherwise a new row (found via research)
 idx = defaultdict(list)
 for t in transfers:
-    idx[pname(t["player"]).split(" ")[-1] if t["player"] else ""].append(t)
+    for tok in set(pname(t["player"]).split(" ")):
+        idx[tok].append(t)  # every word of the name, so "Juninho" finds "Juninho Paulista"
 lead_rows = rd("leads_evidence.csv")
 
 
@@ -310,7 +311,10 @@ for r in lead_rows:
         continue
     last = pname(r["player"]).split(" ")[-1] if r["player"] else ""
     best, far = None, None
-    for t in idx.get(last, []):
+    pool = []
+    for tok in set(pname(r["player"]).split(" ")):
+        pool += [x for x in idx.get(tok, []) if x not in pool]
+    for t in pool:
         if not same_player(t["player"], r["player"]):
             continue
         if (fid and t["from_club_id"] != fid and toid and t["to_club_id"] != toid):
@@ -350,7 +354,8 @@ for r in lead_rows:
                                   "research lead (private ChatGPT files; not in the Wikipedia lists)"), "parent_transfer_id": "", "_ev": []}
             group_new[gk] = best
             transfers.append(best)
-            idx[last].append(best)
+            for tok in set(pname(r["player"]).split(" ")):
+                idx[tok].append(best)
     if any(e["url"] == r["url"] and e["fee_text"] == r["fee_as_reported"] for e in best["_ev"]):
         continue  # the same source and figure already attached (research sections repeat each other)
     grade = r["grade"] if r["grade"] in GRADE_RANK else "D"
@@ -451,6 +456,7 @@ TOTAL_RX = re.compile(r"(with|including|incl\.?|inclusive of|plus)\s+(all\s+)?(t
 for t in transfers:
     t["season_attributed"] = season_of(t["date"]) or ""
     cands = []
+    wiki_undisclosed = any(e["origin"] == "wikipedia_list" and kind_of(e["fee_text"]) == "undisclosed" for e in t["_ev"])
     for i, e in enumerate(t["_ev"]):
         e["evidence_id"] = f"{t['transfer_id']}-E{i + 1:02d}"
         p = e["parsed"]
@@ -474,7 +480,8 @@ for t in transfers:
         e["figure_rejected"] = (t["transfer_id"], money(e["gbp"]) if e["gbp"] is not None else "") in amount_rejects or (
             e["amount"] is not None and (t["transfer_id"], money(e["amount"])) in amount_rejects)
         usable = (e["gbp"] is not None and "up_to" not in p["qualifiers"] and "combined" not in p["qualifiers"]
-                  and not e["total_incl_addons"] and not e["figure_rejected"])
+                  and not e["total_incl_addons"] and not e["figure_rejected"]
+                  and not (wiki_undisclosed and e["grade"] in ("C", "D")))  # undisclosed: only an A/B reported figure (DEC-237 (g))
         if usable:
             e["published"] = pubdate(e["url"]) or e.get("lead_published", "")
             cands.append((0 if e["status"] == "VERIFIED" else 1, GRADE_RANK.get(e["grade"], 3), 0 if e["currency"] == "GBP" else 1,
