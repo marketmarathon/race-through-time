@@ -11,7 +11,7 @@ Phase 1 preview: every fee is UNVERIFIED unless `status` says VERIFIED. Not for 
 | PL-to-PL deals net to zero (spend - income of PL clubs = net spend with non-PL clubs) | **PASS** | spend £27,629,175,813 − income £14,472,850,732 = £13,156,325,081; net with non-PL clubs £13,156,325,081 |
 | no fee without a source row | **PASS** | 3211 fee-bearing transfers |
 | no Transfermarkt figure or URL anywhere | **PASS** | none found |
-| quotes under 25 words | **PASS** | 15571 evidence rows |
+| quotes under 25 words | **PASS** | 15568 evidence rows |
 | every conversion has a rate row | **PASS** | 14 conversions |
 | month-end series consistent with the ledger | **PASS** | 413 month ends × 51 clubs |
 | Bank of England Jan 1992 monthly averages equal Cowork's V-04 reading | **PASS** | 7 of 7 series compared |

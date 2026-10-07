@@ -397,6 +397,8 @@ for t in transfers:
         for c in checks.get(u, []):
             if c["status"] != "VERIFIED" or not sn or L.norm(c.get("near", "")) != sn or c["amount"] not in amounts:
                 continue
+            if (t["transfer_id"], c["amount"]) in amount_rejects:
+                continue  # Claude rejected this figure for this deal on review (whatever page states it)
             if e0 and e0["origin"] == "research_lead" and e0["url"] == c["url"] and money(e0["parsed"]["amount"]) == c["amount"]:
                 e0["checked"] = c
                 continue
