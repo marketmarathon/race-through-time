@@ -153,3 +153,21 @@ w("""- **Wikipedia** rate-limits the Claude Code container (HTTP 429), so every 
 """)
 open(OUT, "w", encoding="utf-8").write("\n".join(L) + "\n")
 print("report written:", OUT, len(L), "lines")
+
+Q = []
+q = Q.append
+nl = sum(1 for c in C if c["for_luke"])
+q(f"**Tier 1 is too big as worded (DEC-253).** {tc.get('1', 0):,} transfers are Tier 1, mostly because of the \"changes the top-12 order\" test. "
+  "*Recommendation:* keep £20m+, records and disputed fees, and narrow the order test to \"changes the leader, or who is in the top 12, at any month end\"; the rest get Tier 2's scripted check.")
+q("**Undisclosed fees count £0 (DEC-237 (g)).** " + f"{sum(1 for t in T if t['fee_status'].startswith('undisclosed')):,} transfers have no reported figure. "
+  "*Recommendation:* keep the rule, say on screen \"Undisclosed fees not included\", and give each club's undisclosed count in the description.")
+q("**The early years are the least complete (1992–2007).** *Recommendation:* in phase 2, Claude in Cowork uses Transfermarkt in your Chrome only as a finding list (route A, nothing stored) to spot missing 1992–2007 deals involving the bigger fees, and takes each fee from a press or club source.")
+q("**Relegated clubs keep their frozen bar and their rank** (contract §1; e.g. a relegated club can sit 8th at the freeze). *Recommendation:* keep them in the ranking; how a frozen bar looks is a design question for the pilot (DEC-069).")
+q("**Start of the race.** At 31 May 1992 every bar is £0 (the leader that month is only a tie-break). *Recommendation:* the film starts at the first month end with a fee (July 1992); the data stay as they are.")
+q(f"**Same-grade fee disagreements on Tier 1 transfers:** {nl} are listed in `conflicts.csv` (column `for_luke`). *Recommendation:* phase 2 settles each at source; the ones still open after that come back to you as a short list.")
+q("**Claude's working choices** DEC-247 (finding list), DEC-248 (tiers), DEC-249 (board size later), DEC-250 (build details) and DEC-254 (how the scripted check marks a fee VERIFIED, and publisher grades). *Recommendation:* confirm them.")
+q("**Phase 2 first batch.** *Recommendation:* verify the Tier 1 fees of the clubs that lead or reach the top 3 (Chelsea, Manchester United, Manchester City, Arsenal, Liverpool, Newcastle, Blackburn, Everton) first, in batches of 50 (`tier1_list.csv`, column `batch`).")
+with open(OUT, "a", encoding="utf-8") as f:
+    f.write("\n## 9. Questions for Luke (each with Claude's recommendation)\n\n")
+    for i, s in enumerate(Q, 1):
+        f.write(f"{i}. {s}\n")

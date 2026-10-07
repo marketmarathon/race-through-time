@@ -10,7 +10,7 @@ OUT = "data/rtt-101/source/runner_checks.csv"
 items = {i["id"]: i for i in json.load(open(job, encoding="utf-8"))["check"]}
 B = ("bbc.co.uk", "bbc.com", "theguardian.com", "guardian.co.uk", "observer", "skysports.com", "sky.com", "independent.co.uk",
      "the-independent.com", "telegraph.co.uk", "thetimes.co.uk", "timesonline", "reuters.com", "uefa.com", "nytimes.com",
-     "theathletic.com", "espn.", "ft.com", "pa.media", "standard.co.uk", "mirror.co.uk", "dailymail.co.uk", "manchestereveningnews")
+     "theathletic.com", "espn.", "ft.com", "pa.media")
 A = ("premierleague.com", "fc.com", "fc.co.uk", "arsenal.com", "mancity.com", "manutd.com", "tottenhamhotspur.com", "nufc.co.uk",
      "evertonfc.com", "whufc.com", "avfc.co.uk", "lcfc.com", "wolves.co.uk", "afcb.co.uk", "brightonandhovealbion.com", "cpfc.co.uk",
      "fulhamfc.com", "nottinghamforest.co.uk", "brentfordfc.com", "leedsunited.com", "burnleyfootballclub.com", "sunderlandafc.com",
