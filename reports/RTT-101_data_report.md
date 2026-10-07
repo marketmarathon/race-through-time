@@ -6,10 +6,10 @@ Rebuild: `python3 scripts/build_rtt101_dataset.py && python3 scripts/rtt101_repo
 
 ## 1. What was built
 
-- **13,013 transfer events** that involve a club in the Premier League that season (1992-93 to the freeze, 1 Sep 2026), of which **3,309 carry a fee** above £0. The rest are loans without a fee (5,330), free transfers (2,045), undisclosed fees with no figure, counted £0 (2,179), and fees not found (150).
-- Fee status: **VERIFIED 1,524**, UNVERIFIED 1,785. Grade of the fee used: A 19, B 1,310, C (Wikipedia pointer only) 1,939, D 41.
-- Tiers (DEC-248): Tier 1 **2,029**, Tier 2 663, Tier 3 633 (5% sample: 32).
-  Tier 1 reasons (a transfer can have several): removal changes the leader or the top 12 1,122; fee >= £20m 547; club or British record (research lead) 527; disputed fee (research section C) 10; alternative fee version changes the leader or the top 12 2.
+- **13,013 transfer events** that involve a club in the Premier League that season (1992-93 to the freeze, 1 Sep 2026), of which **3,310 carry a fee** above £0. The rest are loans without a fee (5,330), free transfers (2,045), undisclosed fees with no figure, counted £0 (2,179), and fees not found (149).
+- Fee status: **VERIFIED 1,524**, UNVERIFIED 1,786. Grade of the fee used: A 19, B 1,311, C (Wikipedia pointer only) 1,939, D 41.
+- Tiers (DEC-248): Tier 1 **2,030**, Tier 2 663, Tier 3 633 (5% sample: 32).
+  Tier 1 reasons (a transfer can have several): removal changes the leader or the top 12 1,122; fee >= £20m 548; club or British record (research lead) 527; disputed fee (research section C) 10; alternative fee version changes the leader or the top 12 2.
 - 16,575 evidence rows in `fee_evidence.csv`; 2,748 sources in `sources.csv`; 363 transfers with more than one fee version (`conflicts.csv`).
 - **Scripted source check** (GitHub runner, 4,299 cited pages): VERIFIED 3,662; page fetched but figure not found near the player's name 559; blocked or gone 78.
   Tier 2 result: 320 of 663 Tier 2 fees VERIFIED by the scripted check.
@@ -23,8 +23,8 @@ Rebuild: `python3 scripts/build_rtt101_dataset.py && python3 scripts/rtt101_repo
 | every season has an attribution window | **PASS** | 1992-05-03 to 2026-09-01 |
 | 51 clubs, each with at least one PL season | **PASS** | 51 clubs |
 | no transfer counted outside its club's PL seasons | **PASS** | 3734 ledger rows frozen (club not in the PL) |
-| PL-to-PL deals net to zero (spend - income of PL clubs = net spend with non-PL clubs) | **PASS** | spend £27,699,598,988 − income £14,281,745,139 = £13,417,853,849; net with non-PL clubs £13,417,853,849 |
-| no fee without a source row | **PASS** | 3309 fee-bearing transfers |
+| PL-to-PL deals net to zero (spend - income of PL clubs = net spend with non-PL clubs) | **PASS** | spend £27,754,598,988 − income £14,336,745,139 = £13,417,853,849; net with non-PL clubs £13,417,853,849 |
+| no fee without a source row | **PASS** | 3310 fee-bearing transfers |
 | no Transfermarkt figure or URL anywhere | **PASS** | none found |
 | quotes under 25 words | **PASS** | 16575 evidence rows |
 | every conversion has a rate row | **PASS** | 16 conversions |
@@ -86,7 +86,7 @@ First place at each month end, nominal cumulative net spend; a change is listed 
 
 **2023-09-30:** 1. Chelsea £1.67bn; 2. Manchester United £1.30bn; 3. Manchester City £1.21bn; 4. Arsenal £744.8m; 5. Liverpool £627.0m; 6. Newcastle United £554.0m; 7. Tottenham Hotspur £498.0m; 8. West Ham United £423.5m; 9. Aston Villa £377.5m; 10. Everton £370.4m; 11. AFC Bournemouth £242.6m; 12. Fulham £183.5m
 
-**2026-09-01:** 1. Manchester United £1.73bn; 2. Manchester City £1.62bn; 3. Chelsea £1.61bn; 4. Arsenal £1.17bn; 5. Liverpool £985.5m; 6. Tottenham Hotspur £946.0m; 7. Newcastle United £675.1m; 8. West Ham United £537.1m (out of the PL); 9. Everton £413.1m; 10. Fulham £334.3m; 11. Sunderland £306.3m; 12. Aston Villa £267.7m
+**2026-09-01:** 1. Manchester United £1.73bn; 2. Chelsea £1.67bn; 3. Manchester City £1.62bn; 4. Arsenal £1.17bn; 5. Liverpool £985.5m; 6. Tottenham Hotspur £946.0m; 7. Newcastle United £675.1m; 8. West Ham United £537.1m (out of the PL); 9. Everton £413.1m; 10. Fulham £334.3m; 11. Sunderland £306.3m; 12. Aston Villa £267.7m
 
 ## 5. Coverage by era
 
@@ -99,7 +99,7 @@ Counts are club-sides (a PL-to-PL deal counts once for each club).
 | 2007-2012 | 2,972 | 419 | 179 | 171 | 670 | 10 |
 | 2012-2017 | 3,052 | 523 | 269 | 249 | 567 | 10 |
 | 2017-2022 | 2,120 | 418 | 272 | 259 | 486 | 19 |
-| 2022-2026 | 3,091 | 777 | 575 | 565 | 533 | 22 |
+| 2022-2026 | 3,091 | 779 | 577 | 565 | 533 | 20 |
 
 What the eras mean:
 - **1992–2002:** no Wikipedia window lists exist (V-10). The finding list is the clubs' season pages (200 of 210 fetched; the ten Leeds United pages are titled "Leeds United A.F.C." and were not fetched in this round) plus the research leads. About a quarter of those pages have no transfer table at all, so this era is the least complete. Transfermarkt was not used (route A says to consult it only to spot omissions; nothing from it is stored).
@@ -184,7 +184,7 @@ Our sums are **fees only, Premier League clubs only, from this preview** (gross 
 | January 2024 | £86.0m | £75.2m | — | — | £96.2m / NOT FOUND (Sky Sports) |
 | summer 2024 | £1.81bn | £592.4m | — | — | £2.08bn / £627.4m (Sky Sports) |
 | January 2025 | £343.5m | £213.6m | — | — | around £370m / NOT FOUND (BBC Sport) |
-| summer 2025 | £2.77bn | £1.19bn | — | — | surpassed £3bn; £3.087bn / NOT FOUND (BBC Sport) |
+| summer 2025 | £2.83bn | £1.19bn | — | — | surpassed £3bn; £3.087bn / NOT FOUND (BBC Sport) |
 | January 2026 | £344.1m | £111.3m | — | — | £397m / NOT FOUND (BBC Sport) |
 | summer 2026 | £3.07bn | £1.24bn | — | — | around £3.46 billion / NOT FOUND (Reuters, syndicated ) |
 
@@ -207,7 +207,7 @@ Why the totals differ:
 
 ## 9. Questions for Luke (each with Claude's recommendation)
 
-1. **Tier 1 is too big as worded (DEC-253).** 2,029 transfers are Tier 1, mostly because of the "changes the top-12 order" test. *Recommendation:* keep £20m+, records and disputed fees, and narrow the order test to "changes the leader, or who is in the top 12, at any month end"; the rest get Tier 2's scripted check.
+1. **Tier 1 is too big as worded (DEC-253).** 2,030 transfers are Tier 1, mostly because of the "changes the top-12 order" test. *Recommendation:* keep £20m+, records and disputed fees, and narrow the order test to "changes the leader, or who is in the top 12, at any month end"; the rest get Tier 2's scripted check.
 2. **Undisclosed fees count £0 (DEC-237 (g)).** 2,179 transfers have no reported figure. *Recommendation:* keep the rule, say on screen "Undisclosed fees not included", and give each club's undisclosed count in the description.
 3. **The early years are the least complete (1992–2007).** *Recommendation:* in phase 2, Claude in Cowork uses Transfermarkt in your Chrome only as a finding list (route A, nothing stored) to spot missing 1992–2007 deals involving the bigger fees, and takes each fee from a press or club source.
 4. **Relegated clubs keep their frozen bar and their rank** (contract §1; e.g. a relegated club can sit 8th at the freeze). *Recommendation:* keep them in the ranking; how a frozen bar looks is a design question for the pilot (DEC-069).
@@ -218,7 +218,7 @@ Why the totals differ:
 
 ## 10. Phase 2 (IQ-15b): verification at source
 
-- **Tier 1 (DEC-256):** 2,013 fee-bearing Tier 1 transfers; **1,159 VERIFIED at source**, each quote read by Claude (1,460 quotes accepted, 169 rejected; `source/review_decisions.csv`). The rest have no page that states the figure next to the player's name yet (mostly 1990s–2000s deals whose only sources are Wikipedia figures or dead links).
+- **Tier 1 (DEC-256):** 2,014 fee-bearing Tier 1 transfers; **1,159 VERIFIED at source**, each quote read by Claude (1,460 quotes accepted, 169 rejected; `source/review_decisions.csv`). The rest have no page that states the figure next to the player's name yet (mostly 1990s–2000s deals whose only sources are Wikipedia figures or dead links).
 - **Tier 2:** 320 of 663 VERIFIED by the scripted check. **Tier 3 sample:** 2 of 32 VERIFIED.
 - **Undisclosed fees (DEC-257):** 47 grade A/B reported figures found at the cited source and read by Claude, used and flagged "reported" (45 transfers; 33 close candidates rejected on reading: another deal, grade D, not a fee, or a total with add-ons; `source/reported_fees.csv`); every other candidate figure on those pages belonged to another deal, a wage, an offer or a fine.
 - **1992–2007 gap list (DEC-264), sections A v2, B and C (1992–2007):** 137 new moves added, 60 VERIFIED (the page names the player, both clubs and the fee); the rest matched transfers already in the build. 6 gap rows have no transfer date (retrospective articles only) and are listed in `unmatched_leads.csv`.
