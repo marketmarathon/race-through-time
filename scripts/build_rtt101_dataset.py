@@ -327,7 +327,9 @@ for r in lead_rows:
         if gap <= 120:
             best = t
             break
-        if gap <= 400 and fid and toid and t["from_club_id"] == fid and t["to_club_id"] == toid and far is None:
+        same_from = (t["from_club_id"] == fid) if fid else (L.norm(t["from_club"])[:6] == L.norm(r["from_club"])[:6] != "")
+        same_to = (t["to_club_id"] == toid) if toid else (L.norm(t["to_club"])[:6] == L.norm(r["to_club"])[:6] != "")
+        if gap <= 400 and (fid or toid) and same_from and same_to and far is None:
             far = t  # same player, same two clubs, within 400 days: the same deal reported at another stage
     note = ""
     if best is None and far is not None:
@@ -387,6 +389,27 @@ for c in rd("runner_checks.csv"):
     elif rv:
         c = dict(c, reviewed=rv["decision"] + (": " + rv["note"] if rv["note"] else ""))
     checks[c["url"]].append(c)
+SB_ROW = re.compile(r"(\d\d) (\w{3}), (\d\d)\s+(?:\d\d \w{3}, \d\d\s+)?$")
+SB_MON = {m: i for i, m in enumerate(["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"], 1)}
+
+
+def soccerbase_row_ok(c, tdate):
+    """A Soccerbase career table lists every move; its figure counts only from the row whose joining date is this transfer's
+    (within 62 days). A "Totals" line or another row's figure is not this deal's fee."""
+    if "soccerbase.com" not in c["url"]:
+        return True
+    i = c["quote"].find(c["needle"])
+    m = SB_ROW.search(c["quote"][:i]) if i >= 0 else None
+    if not m or not tdate or m.group(2).lower() not in SB_MON:
+        return False
+    y = int(m.group(3))
+    try:
+        joined = dt.date(y + (1900 if y >= 50 else 2000), SB_MON[m.group(2).lower()], int(m.group(1)))
+    except ValueError:
+        return False
+    return abs((joined - dt.date.fromisoformat(tdate)).days) <= 62
+
+
 # a figure the runner found at the cited source becomes its own evidence row (VERIFIED, graded by publisher). A check is
 # attached only to a transfer that cites that page itself and whose player's surname is the one the runner looked for.
 for t in transfers:
@@ -404,6 +427,8 @@ for t in transfers:
                 continue
             if (t["transfer_id"], c["amount"]) in amount_rejects:
                 continue  # Claude rejected this figure for this deal on review (whatever page states it)
+            if not soccerbase_row_ok(c, t["date"]):
+                continue  # another row of the player's Soccerbase table, or its career total
             if e0 and e0["origin"] == "research_lead" and e0["url"] == c["url"] and money(e0["parsed"]["amount"]) == c["amount"]:
                 e0["checked"] = c
                 continue
