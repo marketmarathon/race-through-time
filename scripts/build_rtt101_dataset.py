@@ -283,8 +283,15 @@ for t in transfers:
 lead_rows = rd("leads_evidence.csv")
 
 
+LEAD_DATES = {(L.norm(r["player"]), L.norm(r["from_club"]), L.norm(r["to_club"])): r for r in rd("lead_dates.csv")}
+
+
 def lead_date(r):
     d = r["date"].strip()
+    fix = LEAD_DATES.get((L.norm(r["player"]), L.norm(r["from_club"]), L.norm(r["to_club"])))
+    if fix and not re.match(r"\d{4}-\d{2}", d):
+        d0 = fix["date"]
+        return (month_end(d0 + "-01") if len(d0) == 7 else d0), fix["date_basis"]
     if re.fullmatch(r"\d{4}-\d{2}-\d{2}", d):
         return d, "research lead date (UNVERIFIED)"
     if re.fullmatch(r"\d{4}-\d{2}", d):

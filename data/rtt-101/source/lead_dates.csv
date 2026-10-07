@@ -1,0 +1,4 @@
+player,from_club,to_club,date,date_basis,source
+Tim Flowers,Southampton,Blackburn Rovers,1993-11-04,"Wikipedia player article (pointer, C): ""Flowers left Southampton on 4 November 1993""","Wikipedia 'Tim Flowers' (runner fetch 7 Oct 2026)"
+Anders Limpar,Arsenal,Everton,1994-03,"month only (transfer deadline day, March 1994), month end; Wikipedia player article (pointer, C)","Wikipedia 'Anders Limpar' (runner fetch 7 Oct 2026)"
+Peter Beagrie,Everton,Manchester City,1994-03,"month only (March 1994), month end; Wikipedia player article (pointer, C)","Wikipedia 'Peter Beagrie' (runner fetch 7 Oct 2026)"
