@@ -187,10 +187,12 @@ p(f"- **Tier 1 (DEC-256):** {len(t1):,} fee-bearing Tier 1 transfers; **{sum(1 f
   "sources are Wikipedia figures or dead links).")
 p(f"- **Tier 2:** {sum(1 for t in fee_t if t['tier'] == '2' and t['status'] == 'VERIFIED'):,} of {sum(1 for t in fee_t if t['tier'] == '2'):,} VERIFIED by the scripted check. "
   f"**Tier 3 sample:** {sum(1 for t in T if t['tier3_sample'] == 'yes' and t['status'] == 'VERIFIED')} of {sum(1 for t in T if t['tier3_sample'] == 'yes')} VERIFIED.")
-p(f"- **Undisclosed fees (DEC-257):** {len(RF)} grade A/B reported figures found at the cited source and read by Claude, used and flagged \"reported\" "
-  "(`source/reported_fees.csv`); every other candidate figure on those pages belonged to another deal, a wage, an offer or a fine.")
+p(f"- **Undisclosed fees (DEC-257):** {sum(1 for r in RF if r['decision'] == 'accept')} grade A/B reported figures found at the cited source and read by Claude, "
+  f"used and flagged \"reported\" ({len({r.get('transfer_id') or r['candidate_id'] for r in RF if r['decision'] == 'accept'})} transfers; "
+  f"{sum(1 for r in RF if r['decision'] != 'accept')} close candidates rejected on reading: another deal, grade D, not a fee, or a total with add-ons; "
+  "`source/reported_fees.csv`); every other candidate figure on those pages belonged to another deal, a wage, an offer or a fine.")
 gap = [t for t in T if t["found_via"].startswith("ChatGPT gap list")]
-p(f"- **1992–2007 gap list (DEC-264), section A (1992–97):** {len(gap)} new moves added, {sum(1 for t in gap if t['status'] == 'VERIFIED')} VERIFIED "
+p(f"- **1992–2007 gap list (DEC-264), sections A v2, B and C (1992–2007):** {len(gap)} new moves added, {sum(1 for t in gap if t['status'] == 'VERIFIED')} VERIFIED "
   "(the page names the player, both clubs and the fee); the rest matched transfers already in the build. "
   f"{sum(1 for u in UL if u['section'] == 'G')} gap rows have no transfer date (retrospective articles only) and are listed in `unmatched_leads.csv`.")
 p("- **Leeds United 1992–2002** pages added; **last 1991–92 First Division matchday 2 May 1992** confirmed by eight club fixture lists (pointers, grade C).")

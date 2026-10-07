@@ -421,8 +421,10 @@ for r in rd("reported_fees.csv"):
     if r["decision"] != "accept":
         continue
     for t in transfers:
-        if pname(t["player"]).split(" ")[-1] != L.norm(r["near"]) or not any(
-                r["url"] in ([e["url"]] if e["origin"] != "wikipedia_list" else e.get("cite_urls", "").split()) for e in t["_ev"]):
+        if r.get("transfer_id") and t["transfer_id"] != r["transfer_id"]:
+            continue  # the figure belongs to the deal it was found for, not to the same player's other moves on that page
+        if pname(t["player"]).split(" ")[-1] != L.norm(r["near"]) or not (r["url"] in art_cites.get(t["transfer_id"], []) or any(
+                r["url"] in ([e["url"]] if e["origin"] != "wikipedia_list" else e.get("cite_urls", "").split()) for e in t["_ev"])):
             continue
         sid = source_id(r["url"], urllib.parse.urlparse(r["url"]).netloc, r["grade_by_publisher"], "press_or_club")
         t["_ev"].append({"origin": "reported_search", "source_id": sid, "grade": r["grade_by_publisher"], "fee_text": r["money"],
