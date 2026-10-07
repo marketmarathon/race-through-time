@@ -266,29 +266,31 @@ Settled at source = the fee used is confirmed at source and no differing same-gr
 
 Our sums count fees paid by PL clubs (gross) and fees paid to minus received from non-PL clubs (net); undisclosed fees count £0. "Before" = the build just before sections A v2, B and C were added (`source/window_totals_before_gap_list_v2.csv`). Published totals are research leads (part17b, UNVERIFIED); none exist for windows before summer 2002 (no window system).
 
-| Window | Gross before | Gross after | Change | Published gross (first A/B source) | Gap left | Net before | Net after |
-|---|---|---|---|---|---|---|---|
-| January 1997 | £41.5m | £41.5m | £0.0m | — | — | £12.4m | £12.4m |
-| summer 1997 | £116.2m | £144.9m | £28.6m | — | — | £30.9m | £59.5m |
-| January 1998 | £49.6m | £51.2m | £1.6m | — | — | £10.5m | £12.1m |
-| summer 1998 | £128.7m | £162.3m | £33.6m | — | — | £49.4m | £80.7m |
-| January 1999 | £82.6m | £93.7m | £11.1m | — | — | £28.6m | £36.2m |
-| summer 1999 | £136.1m | £172.5m | £36.4m | — | — | £28.6m | £56.7m |
-| January 2000 | £42.1m | £43.8m | £1.7m | — | — | £19.5m | £21.2m |
-| summer 2000 | £241.3m | £246.4m | £5.1m | — | — | £97.1m | £92.8m |
-| January 2001 | £58.6m | £64.3m | £5.7m | — | — | −£11.9m | −£8.4m |
-| summer 2001 | £264.2m | £289.4m | £25.2m | — | — | £150.2m | £173.7m |
-| January 2002 | £56.1m | £60.2m | £4.2m | — | — | £22.2m | £29.6m |
-| summer 2002 | £174.2m | £174.7m | £0.5m | — | — | £114.4m | £115.4m |
-| January 2003 | £36.8m | £39.8m | £3.0m | £35.0m (B, The Independent) | −£4.8m | £14.2m | £17.2m |
-| summer 2003 | £212.4m | £212.4m | −£0.1m | £215.0m (B, The Independent) | £2.6m | £120.3m | £119.2m |
-| January 2004 | £61.1m | £44.0m | −£17.1m | — | — | £34.6m | £17.4m |
-| summer 2004 | £172.0m | £204.3m | £32.3m | — | — | £99.3m | £131.8m |
-| January 2005 | £41.2m | £44.0m | £2.8m | — | — | £12.8m | £15.6m |
-| summer 2005 | £195.3m | £229.4m | £34.0m | £235.0m (B, The Independent) | £5.6m | £81.4m | £112.3m |
-| January 2006 | £51.2m | £51.1m | −£0.1m | — | — | £41.7m | £41.6m |
-| summer 2006 | £239.8m | £239.4m | −£0.4m | £300.0m (B, BBC News) | £60.5m | £118.4m | £122.0m |
-| January 2007 | £37.5m | £39.8m | £2.4m | — | — | £17.9m | £17.2m |
-| summer 2007 | £324.6m | £321.0m | −£3.6m | — | — | £166.2m | £162.6m |
+"Change" also includes the corrections made by reading the sources since that snapshot (for example a maximum replaced by the guaranteed fee); "of which gap list" is the gross paid by PL clubs in all moves the gap list created (section A's first version, part18b, was already in the snapshot, so this column can exceed the change).
 
-Total gross 1997–2007: £2.76bn before, £2.97bn after (£206.8m added by the gap list). Where a published total exists, our sum stays below it mainly because undisclosed fees count £0 and the early Wikipedia window lists are short; the gap list narrows the gap but does not close it, and no figure is forced to match.
+| Window | Gross before | Gross after | Change | of which gap list | Published gross (first A/B source) | Gap left | Net before | Net after |
+|---|---|---|---|---|---|---|---|---|
+| January 1997 | £41.5m | £41.5m | £0.0m | £14.3m | — | — | £12.4m | £12.4m |
+| summer 1997 | £116.2m | £144.9m | £28.6m | £28.6m | — | — | £30.9m | £59.5m |
+| January 1998 | £49.6m | £51.2m | £1.6m | £1.0m | — | — | £10.5m | £12.1m |
+| summer 1998 | £128.7m | £162.3m | £33.6m | £32.9m | — | — | £49.4m | £80.7m |
+| January 1999 | £82.6m | £93.7m | £11.1m | £11.1m | — | — | £28.6m | £36.2m |
+| summer 1999 | £136.1m | £172.5m | £36.4m | £36.4m | — | — | £28.6m | £56.7m |
+| January 2000 | £42.1m | £43.8m | £1.7m | £2.0m | — | — | £19.5m | £21.2m |
+| summer 2000 | £241.3m | £246.4m | £5.1m | £17.2m | — | — | £97.1m | £92.8m |
+| January 2001 | £58.6m | £64.3m | £5.7m | £5.5m | — | — | −£11.9m | −£8.4m |
+| summer 2001 | £264.2m | £289.4m | £25.2m | £32.8m | — | — | £150.2m | £173.7m |
+| January 2002 | £56.1m | £60.2m | £4.2m | £6.3m | — | — | £22.2m | £29.6m |
+| summer 2002 | £174.2m | £174.7m | £0.5m | £0.0m | — | — | £114.4m | £115.4m |
+| January 2003 | £36.8m | £39.8m | £3.0m | £3.0m | £35.0m (B, The Independent) | −£4.8m | £14.2m | £17.2m |
+| summer 2003 | £212.4m | £212.4m | −£0.1m | £0.0m | £215.0m (B, The Independent) | £2.6m | £120.3m | £119.2m |
+| January 2004 | £61.1m | £44.0m | −£17.1m | £0.0m | — | — | £34.6m | £17.4m |
+| summer 2004 | £172.0m | £204.3m | £32.3m | £33.0m | — | — | £99.3m | £131.8m |
+| January 2005 | £41.2m | £44.0m | £2.8m | £2.8m | — | — | £12.8m | £15.6m |
+| summer 2005 | £195.3m | £229.4m | £34.0m | £28.4m | £235.0m (B, The Independent) | £5.6m | £81.4m | £112.3m |
+| January 2006 | £51.2m | £51.1m | −£0.1m | £0.0m | — | — | £41.7m | £41.6m |
+| summer 2006 | £239.8m | £239.4m | −£0.4m | £4.7m | £300.0m (B, BBC News) | £60.5m | £118.4m | £122.0m |
+| January 2007 | £37.5m | £39.8m | £2.4m | £3.0m | — | — | £17.9m | £17.2m |
+| summer 2007 | £324.6m | £321.0m | −£3.6m | £0.0m | — | — | £166.2m | £162.6m |
+
+Total gross 1997–2007: £2.76bn before, £2.97bn after (£206.8m net change, of which £262.9m paid in moves the gap list added). Where a published total exists, our sum stays below it mainly because undisclosed fees count £0 and the early Wikipedia window lists are short; the gap list narrows the gap but does not close it, and no figure is forced to match.

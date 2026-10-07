@@ -221,20 +221,30 @@ g("\n### Effect of the 1992–2007 gap list (sections A v2, B, C) on window tota
 g("Our sums count fees paid by PL clubs (gross) and fees paid to minus received from non-PL clubs (net); undisclosed fees count £0. "
   "\"Before\" = the build just before sections A v2, B and C were added (`source/window_totals_before_gap_list_v2.csv`). Published totals are research leads "
   "(part17b, UNVERIFIED); none exist for windows before summer 2002 (no window system).\n")
-g("| Window | Gross before | Gross after | Change | Published gross (first A/B source) | Gap left | Net before | Net after |\n|---|---|---|---|---|---|---|---|")
-tot_b = tot_a = 0.0
+g("\"Change\" also includes the corrections made by reading the sources since that snapshot (for example a maximum replaced by the guaranteed fee); "
+  "\"of which gap list\" is the gross paid by PL clubs in all moves the gap list created (section A's first version, part18b, was already in the "
+  "snapshot, so this column can exceed the change).\n")
+g("| Window | Gross before | Gross after | Change | of which gap list | Published gross (first A/B source) | Gap left | Net before | Net after |\n|---|---|---|---|---|---|---|---|---|")
+gap_ids = {t["transfer_id"] for t in T if t["found_via"].startswith("ChatGPT gap list")}
+gap_win = {}
+for r in rd("club_ledger.csv"):
+    if r["transfer_id"] in gap_ids and r["side"] == "buyer" and r["counted"] == "yes" and r["net_gbp"]:
+        mo, yr = int(r["date"][5:7]), int(r["date"][:4])
+        w = f"summer {yr}" if 4 <= mo <= 10 else (f"January {yr}" if mo <= 3 else f"January {yr + 1}")
+        gap_win[w] = gap_win.get(w, 0.0) + float(r["net_gbp"])
+tot_b = tot_a = tot_g = 0.0
 for win in sorted(set(WT) | set(BEF), key=wkey):
     y = int(win.split()[1])
     if not (1997 <= y <= 2007):
         continue
     b, a = BEF.get(win, {}), WT.get(win, {})
     gb, ga = float(b.get("gross_spend_gbp") or 0), float(a.get("gross_spend_gbp") or 0)
-    tot_b += gb; tot_a += ga
+    tot_b += gb; tot_a += ga; tot_g += gap_win.get(win, 0.0)
     pub = next((r for r in sorted(lead_by.get(win, []), key=lambda r: r["grade"]) if r["gross_gbp"]), None)
     gap_left = (m(float(pub["gross_gbp"]) - ga) if pub else "—")
-    g(f"| {win} | {m(gb)} | {m(ga)} | {m(ga - gb)} | {(m(pub['gross_gbp']) + ' (' + pub['grade'] + ', ' + pub['publisher'][:22] + ')') if pub else '—'} | {gap_left} | "
+    g(f"| {win} | {m(gb)} | {m(ga)} | {m(ga - gb)} | {m(gap_win.get(win, 0.0))} | {(m(pub['gross_gbp']) + ' (' + pub['grade'] + ', ' + pub['publisher'][:22] + ')') if pub else '—'} | {gap_left} | "
       f"{m(b.get('net_spend_gbp'))} | {m(a.get('net_spend_gbp'))} |")
-g(f"\nTotal gross 1997–2007: {m(tot_b)} before, {m(tot_a)} after ({m(tot_a - tot_b)} added by the gap list). "
+g(f"\nTotal gross 1997–2007: {m(tot_b)} before, {m(tot_a)} after ({m(tot_a - tot_b)} net change, of which {m(tot_g)} paid in moves the gap list added). "
   "Where a published total exists, our sum stays below it mainly because undisclosed fees count £0 and the early Wikipedia window lists are short; "
   "the gap list narrows the gap but does not close it, and no figure is forced to match.")
 with open(OUT, "a", encoding="utf-8") as f:
