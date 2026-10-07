@@ -443,6 +443,10 @@ def pubdate(url):
     return ""
 
 
+# a figure described as a total including add-ons is not the guaranteed fee (DEC-237 (e)) and not a rival version
+TOTAL_RX = re.compile(r"(with|including|incl\.?|inclusive of|plus)\s+(all\s+)?(the\s+)?(add-ons|add ons|bonuses|extras)|in total|overall|total (fee|package|cost|deal)|package", re.I)
+
+
 # canonical fee per transfer
 for t in transfers:
     t["season_attributed"] = season_of(t["date"]) or ""
@@ -464,7 +468,13 @@ for t in transfers:
         e["status"] = "VERIFIED" if ck else "UNVERIFIED"
         if ck:
             e["quote"], e["retrieved"] = ck["quote"], ck["retrieved"]
-        usable = e["gbp"] is not None and "up_to" not in p["qualifiers"] and "combined" not in p["qualifiers"]
+        e["total_incl_addons"] = bool(TOTAL_RX.search(e["fee_text"] or "")) and "guaranteed_part" not in p["qualifiers"]
+        if re.search(r"sell-on|sell on", e["fee_text"] or "", re.I):
+            e["total_incl_addons"] = True  # a sell-on payment to a former club is not this deal's fee (DEC-238 handles it)
+        e["figure_rejected"] = (t["transfer_id"], money(e["gbp"]) if e["gbp"] is not None else "") in amount_rejects or (
+            e["amount"] is not None and (t["transfer_id"], money(e["amount"])) in amount_rejects)
+        usable = (e["gbp"] is not None and "up_to" not in p["qualifiers"] and "combined" not in p["qualifiers"]
+                  and not e["total_incl_addons"] and not e["figure_rejected"])
         if usable:
             e["published"] = pubdate(e["url"]) or e.get("lead_published", "")
             cands.append((0 if e["status"] == "VERIFIED" else 1, GRADE_RANK.get(e["grade"], 3), 0 if e["currency"] == "GBP" else 1,
@@ -641,7 +651,8 @@ for t in transfers:
 
 conflicts = []
 for t in transfers:
-    vs = [e for e in t["_ev"] if e["gbp"] is not None and "up_to" not in e["parsed"]["qualifiers"]]
+    vs = [e for e in t["_ev"] if e["gbp"] is not None and "up_to" not in e["parsed"]["qualifiers"] and "combined" not in e["parsed"]["qualifiers"]
+          and not e.get("total_incl_addons") and not e.get("figure_rejected")]
     if len({round(e["gbp"]) for e in vs}) < 2:
         continue
     lo, hi = min(e["gbp"] for e in vs), max(e["gbp"] for e in vs)
@@ -649,12 +660,38 @@ for t in transfers:
     for e in vs:
         same_grade[e["grade"]].add(round(e["gbp"]))
     flag = any(len(v) > 1 and (max(v) - min(v)) > 1e6 and (max(v) - min(v)) > 0.1 * min(v) for v in same_grade.values())
+    # settled at source (DEC-261): the fee used is VERIFIED and no differing figure of the same grade is VERIFIED
+    can = t["canonical"]
+    # totals that a source itself explains: guaranteed fee + add-ons, or a stated "rising to" maximum (any currency, in GBP)
+    explained = set()
+    for e in t["_ev"]:
+        txt = (e["fee_text"] or "") + " " + (e.get("quote") or "")
+        if not re.search(r"add-on|add ons|bonus|variable|rise|rising|performance|incentive|instalment|up to|potential|could reach|"
+                         r"appearance|further|initial|guaranteed|up front|upfront|clause|player-plus-cash|plus", txt, re.I):
+            continue
+        nums = []
+        for mm in re.finditer(r"(£|€|\$)\s?(\d+(?:\.\d+)?)\s?(m|million|bn)", txt.replace(",", "")):
+            v = float(mm.group(2)) * (1e9 if mm.group(3) == "bn" else 1e6)
+            g, _ = convert(v, {"£": "GBP", "€": "EUR", "$": "USD"}[mm.group(1)], t["date"] or "")
+            if g:
+                nums.append(g)
+        explained.update(nums)
+        if len(nums) >= 2:
+            explained.add(nums[0] + nums[1])
+    def is_explained(v):
+        return any(abs(v - x) <= max(0.03 * x, 2e5) for x in explained)
+    rival_verified = [e for e in vs if e["status"] == "VERIFIED" and can is not None and e["grade"] == can["grade"]
+                      and abs(e["gbp"] - can["gbp"]) > max(1e6, 0.1 * can["gbp"]) and not is_explained(e["gbp"])]
+    settled = (can is not None and can["status"] == "VERIFIED" and not rival_verified)
     conflicts.append({"transfer_id": t["transfer_id"], "player": t["player"], "from_club": t["from_club"], "to_club": t["to_club"],
                       "date": t["date"], "canonical_gbp": money(t["fee_gbp"]), "canonical_grade": t["grade"],
                       "min_gbp": money(lo), "max_gbp": money(hi), "spread_gbp": money(hi - lo), "versions": len(vs),
                       "tier": t["tier"], "same_grade_gap_over_10pct_and_1m": "yes" if flag else "",
-                      "for_luke": "yes" if (flag and t["tier"] == "1") else "",
-                      "versions_detail": " | ".join(f"{e['grade']} {e['fee_text'][:60]} ({e['url'][:80]})" for e in vs)})
+                      "settled_at_source": ("yes: the fee used is confirmed at source; differing figures were not" if settled else
+                                            ("no: two same-grade sources confirm different figures" if rival_verified else
+                                             "no: the fee used is not yet confirmed at source")),
+                      "for_luke": "yes" if (flag and t["tier"] == "1" and not settled) else "",
+                      "versions_detail": " | ".join(f"{e['grade']} {e['status'][0]} {e['fee_text'][:60]} ({e['url'][:80]})" for e in vs)})
 conflicts.sort(key=lambda c: (-float(c["spread_gbp"]), c["transfer_id"]))
 
 
@@ -777,7 +814,7 @@ for r in series:
 wr("series_monthly.csv", series, ["month_end", "club_id", "cum_net_gbp", "rank", "in_pl", "pl_seasons_played", "cum_real_net_gbp2026",
                                   "avg_real_net_per_season_gbp2026"])
 wr("conflicts.csv", conflicts, ["transfer_id", "player", "from_club", "to_club", "date", "canonical_gbp", "canonical_grade", "min_gbp", "max_gbp", "spread_gbp",
-                                "versions", "tier", "same_grade_gap_over_10pct_and_1m", "for_luke", "versions_detail"])
+                                "versions", "tier", "same_grade_gap_over_10pct_and_1m", "settled_at_source", "for_luke", "versions_detail"])
 PRIORITY = ["chelsea", "manchester_united", "manchester_city", "arsenal", "liverpool", "newcastle_united", "blackburn_rovers", "everton"]  # DEC-263
 
 
