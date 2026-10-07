@@ -50,7 +50,7 @@ for fn in ("BOE_MONTHLY.csv", "BOE_DAILY.csv"):
         d = datetime.datetime.strptime(r[0].strip(), "%d %b %Y").date().isoformat()
         for code, v in zip(head[1:], r[1:]):
             code, v = code.strip(), v.strip()
-            if v and code in SER:
+            if v and code in SER and d >= "1992-01-01":
                 fx.append((code, d, v))
 fx.sort()
 with open(os.path.join(OUT, "fx.csv"), "w", newline="", encoding="utf-8") as f:
