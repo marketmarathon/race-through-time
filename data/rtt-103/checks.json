@@ -1,0 +1,404 @@
+{
+ "build": "rtt103-build/1.0",
+ "checks": [
+  {
+   "check": "every input printed in its cited filing",
+   "company": "amazon",
+   "detail": "0 inputs without a text check",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "quarters sum to the fiscal year (rounding of printed millions allowed, up to $2m)",
+   "company": "amazon",
+   "detail": "16 fiscal years tested; 8 tautological (Q2-Q4 all derived from year-to-date figures); 5 rounding differences: FY2011: quarters 1,810,000,000 vs year 1,811,000,000; FY2013: quarters 3,442,000,000 vs year 3,444,000,000; FY2015: quarters 4,588,000,000 vs year 4,589,000,000; FY2017: quarters 10,057,000,000 vs year 10,058,000,000; FY2020: quarters 35,045,000,000 vs year 35,044,000,000. no difference above $2m",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "TTM equals the sum of four consecutive quarters",
+   "company": "amazon",
+   "detail": "66 TTM points recomputed",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "every quarter is 89-92 days and maps to one calendar bucket",
+   "company": "amazon",
+   "detail": "140 quarter records; lengths 90-92 days",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "no duplicate quarters",
+   "company": "amazon",
+   "detail": "69 canonical quarters",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "purchases printed as cash outflows (in parentheses)",
+   "company": "amazon",
+   "detail": "0 exceptions",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "no free cash flow, depreciation or acquisition line used",
+   "company": "amazon",
+   "detail": "130 inputs checked by label",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "units are recorded for every input (thousands or millions)",
+   "company": "amazon",
+   "detail": "units seen: millions",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "no zero or negative canonical quarter",
+   "company": "amazon",
+   "detail": "0 found",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "finance leases neither added nor double counted in the canonical series",
+   "company": "amazon",
+   "detail": "canonical lines are cash purchases only; finance-lease principal and lease additions are kept as context",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "every input printed in its cited filing",
+   "company": "microsoft",
+   "detail": "0 inputs without a text check",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "quarters sum to the fiscal year (rounding of printed millions allowed, up to $2m)",
+   "company": "microsoft",
+   "detail": "17 fiscal years tested; 0 tautological (Q2-Q4 all derived from year-to-date figures); no difference above $2m",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "TTM equals the sum of four consecutive quarters",
+   "company": "microsoft",
+   "detail": "66 TTM points recomputed",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "every quarter is 89-92 days and maps to one calendar bucket",
+   "company": "microsoft",
+   "detail": "140 quarter records; lengths 90-92 days",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "no duplicate quarters",
+   "company": "microsoft",
+   "detail": "69 canonical quarters",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "purchases printed as cash outflows (in parentheses)",
+   "company": "microsoft",
+   "detail": "0 exceptions",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "no free cash flow, depreciation or acquisition line used",
+   "company": "microsoft",
+   "detail": "87 inputs checked by label",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "units are recorded for every input (thousands or millions)",
+   "company": "microsoft",
+   "detail": "units seen: millions",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "no zero or negative canonical quarter",
+   "company": "microsoft",
+   "detail": "0 found",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "finance leases neither added nor double counted in the canonical series",
+   "company": "microsoft",
+   "detail": "canonical lines are cash purchases only; finance-lease principal and lease additions are kept as context",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "every input printed in its cited filing",
+   "company": "alphabet",
+   "detail": "0 inputs without a text check",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "quarters sum to the fiscal year (rounding of printed millions allowed, up to $2m)",
+   "company": "alphabet",
+   "detail": "16 fiscal years tested; 16 tautological (Q2-Q4 all derived from year-to-date figures); no difference above $2m",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "TTM equals the sum of four consecutive quarters",
+   "company": "alphabet",
+   "detail": "66 TTM points recomputed",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "every quarter is 89-92 days and maps to one calendar bucket",
+   "company": "alphabet",
+   "detail": "140 quarter records; lengths 90-92 days",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "no duplicate quarters",
+   "company": "alphabet",
+   "detail": "69 canonical quarters",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "purchases printed as cash outflows (in parentheses)",
+   "company": "alphabet",
+   "detail": "0 exceptions",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "no free cash flow, depreciation or acquisition line used",
+   "company": "alphabet",
+   "detail": "121 inputs checked by label",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "units are recorded for every input (thousands or millions)",
+   "company": "alphabet",
+   "detail": "units seen: millions, thousands",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "no zero or negative canonical quarter",
+   "company": "alphabet",
+   "detail": "0 found",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "finance leases neither added nor double counted in the canonical series",
+   "company": "alphabet",
+   "detail": "canonical lines are cash purchases only; finance-lease principal and lease additions are kept as context",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "every input printed in its cited filing",
+   "company": "meta",
+   "detail": "0 inputs without a text check",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "quarters sum to the fiscal year (rounding of printed millions allowed, up to $2m)",
+   "company": "meta",
+   "detail": "14 fiscal years tested; 14 tautological (Q2-Q4 all derived from year-to-date figures); no difference above $2m",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "TTM equals the sum of four consecutive quarters",
+   "company": "meta",
+   "detail": "57 TTM points recomputed",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "every quarter is 89-92 days and maps to one calendar bucket",
+   "company": "meta",
+   "detail": "140 quarter records; lengths 90-92 days",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "no duplicate quarters",
+   "company": "meta",
+   "detail": "60 canonical quarters",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "purchases printed as cash outflows (in parentheses)",
+   "company": "meta",
+   "detail": "0 exceptions",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "no free cash flow, depreciation or acquisition line used",
+   "company": "meta",
+   "detail": "105 inputs checked by label",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "units are recorded for every input (thousands or millions)",
+   "company": "meta",
+   "detail": "units seen: millions",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "no zero or negative canonical quarter",
+   "company": "meta",
+   "detail": "0 found",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "finance leases neither added nor double counted in the canonical series",
+   "company": "meta",
+   "detail": "canonical lines are cash purchases only; finance-lease principal and lease additions are kept as context",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "every input printed in its cited filing",
+   "company": "oracle",
+   "detail": "0 inputs without a text check",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "quarters sum to the fiscal year (rounding of printed millions allowed, up to $2m)",
+   "company": "oracle",
+   "detail": "17 fiscal years tested; 17 tautological (Q2-Q4 all derived from year-to-date figures); no difference above $2m",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "TTM equals the sum of four consecutive quarters",
+   "company": "oracle",
+   "detail": "66 TTM points recomputed",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "every quarter is 89-92 days and maps to one calendar bucket",
+   "company": "oracle",
+   "detail": "140 quarter records; lengths 90-92 days",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "no duplicate quarters",
+   "company": "oracle",
+   "detail": "70 canonical quarters",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "purchases printed as cash outflows (in parentheses)",
+   "company": "oracle",
+   "detail": "0 exceptions",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "no free cash flow, depreciation or acquisition line used",
+   "company": "oracle",
+   "detail": "122 inputs checked by label",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "units are recorded for every input (thousands or millions)",
+   "company": "oracle",
+   "detail": "units seen: millions",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "no zero or negative canonical quarter",
+   "company": "oracle",
+   "detail": "0 found",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "finance leases neither added nor double counted in the canonical series",
+   "company": "oracle",
+   "detail": "canonical lines are cash purchases only; finance-lease principal and lease additions are kept as context",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "cross-check: Amazon's own printed twelve-month figures equal our four-quarter sums (within $3m rounding)",
+   "company": "amazon",
+   "detail": "50 printed TTM figures compared; all agree",
+   "kind": "crosscheck",
+   "result": "PASS"
+  },
+  {
+   "check": "cross-check: three-month figures printed outside the cash-flow statement (MD&A) equal our quarters",
+   "company": "amazon",
+   "detail": "2 compared; all agree",
+   "kind": "crosscheck",
+   "result": "PASS"
+  },
+  {
+   "check": "cross-check: three-month figures printed outside the cash-flow statement (MD&A) equal our quarters",
+   "company": "alphabet",
+   "detail": "10 compared; 2016-09-30: printed 2,554,000,000 vs ours 2,583,000,000",
+   "kind": "crosscheck",
+   "result": "FAIL"
+  },
+  {
+   "check": "cross-check: Meta's release capex equals purchases of P&E less proceeds (+ finance-lease principal from 2019), within print rounding",
+   "company": "meta",
+   "detail": "56 quarters compared; 2018-12-31: release 4,370,000,000 vs statement 4,301,000,000",
+   "kind": "crosscheck",
+   "result": "FAIL"
+  }
+ ],
+ "latest_common_complete_quarter": "2026-Q2",
+ "qa_passed": [
+  "Alibaba",
+  "Alphabet",
+  "Amazon",
+  "Baidu",
+  "Meta",
+  "Microsoft",
+  "Oracle",
+  "Tencent"
+ ],
+ "race_companies": [
+  "Amazon",
+  "Microsoft",
+  "Alphabet",
+  "Meta",
+  "Oracle",
+  "Alibaba",
+  "Tencent",
+  "Baidu"
+ ]
+}
