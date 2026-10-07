@@ -1,7 +1,7 @@
 {
   "schema": "rtt-state/0.1",
   "updated": "2026-10-07",
-  "updated_by": "Claude (Claude Code cloud session): IQ-15 - RTT-101 Premier League net transfer spend, data build phase 1 (UNVERIFIED preview); DEC-235..DEC-255; branch claude/nice-davinci-guln5e, pull request #19 (not merged)",
+  "updated_by": "Claude (Claude Code cloud session): IQ-15b - RTT-101 phase 2 (Tier 1 verification at source, undisclosed-fee search, 1992-2007 ChatGPT gap list); DEC-256..DEC-273; branch claude/nice-davinci-guln5e, pull request #19 (not merged)",
   "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); starts data audit PASSED (DEC-058/DEC-059, merged PR #8); IQ-04 MERGED (PR #2); IQ-05 rounds 1-5 MERGED (PR #3-#7); round-5 pilot RENDERED and APPROVED by Luke (DEC-062, visual direction = milestone 3); pull request #9 MERGED (c378ea7); RTT-002 FINAL FILM APPROVED (DEC-078), pull request #10 MERGED (main ef01814), UPLOADED by Luke in YouTube Studio and SCHEDULED PUBLIC 30 Sep 2026 (DEC-079 early release, DEC-080): video 2fY7Bzq8Uu0 on channel UC8R47xbyBB5Z93MdMkoUOWg; IQ-09 RTT-003 DATA BUILD DONE 1 Oct 2026; Luke's answers applied 2 Oct 2026 (DEC-093..DEC-102); pull request #12 MERGED 2 Oct 2026 (main 4288f6d); IQ-10 RTT-003 DESIGN PILOT ROUND 5 (FINAL PILOT ROUND) RENDERED 3 Oct 2026 (private pre-release; not the full film), awaiting Luke's review; IQ-11 (3 Oct 2026): CLAUDE.md and reference/house_style.md added on the IQ-10 branch (DEC-145); next episode RTT-001 Browser Wars (DEC-144); IQ-10 round 6 (3 Oct 2026): RTT-003 design APPROVED (DEC-146), FULL FILM with music rendered to a private pre-release, then APPROVED by Luke (DEC-150); IQ-12 (3 Oct 2026): RTT-001 Browser Wars DATA BUILD done (data/rtt-001, 11/11 checks PASS), pull request open, awaiting Luke's answers to 12 questions; IQ-12b (4 Oct 2026): Luke answered all 12 RTT-001 questions (DEC-164..DEC-166), smoothing direction for the pilot (DEC-167), order check (DEC-168); RTT-003 record (3-4 Oct 2026, pull request #14): full film APPROVED (DEC-150), pull request #13 MERGED (main 618c6a7) and private pull request #1 MERGED (private main 4d47eb2), UPLOADED by Luke in YouTube Studio and PUBLISHED PUBLIC 3 Oct 2026 (DEC-151): video JZzvA_ZDii0; IQ-13/IQ-13b/IQ-13c (4 Oct 2026): RTT-001 DESIGN PILOT 1 rendered to a private pre-release (smoothing options A/B/C, flagged stretches, notes, marker, colours, browser logos per owner direction DEC-180, features, pacing, titles), then the logo round with every browser's logo (DEC-182/DEC-183, private pre-release rtt-001-pilot1-f3d9e2f-run3), awaiting Luke's answers; pull request #15 merged by Luke (b5a09d3); pull request #16 merged 4 Oct 2026 22:37 UTC (main 3bb2857)",
   "canonical_queue": "state/ folder on main in marketmarathon/race-through-time (this file)",
   "repo_baseline": {
@@ -654,21 +654,21 @@
     {
       "id": "RTT-101",
       "title": "Premier League Clubs: Cumulative Net Transfer Spend, 1992-2026",
-      "state": "DATA_PHASE_1_BUILT_AWAITING_LUKE",
-      "blocker": "Luke answers the numbered questions in reports/RTT-101_data_report.md section 9 / pull request #19 (Tier 1 size DEC-253 first); then phase 2 verifies Tier 1 at source in batches. Nothing is designed or rendered before that (DEC-069).",
-      "decisions": "owner DEC-235..DEC-240, DEC-245; Claude working choices DEC-247..DEC-250, DEC-254; record DEC-251; findings DEC-252, DEC-253, DEC-255",
+      "state": "DATA_PHASE_2_DONE_AWAITING_LUKE",
+      "blocker": "Luke answers the four phase 2 questions in reports/RTT-101_data_report.md section 10 / pull request #19 (Soccerbase rows as VERIFIED; a further research round on data/rtt-101/tier1_needs_press_source.csv; 14 deals known only as maxima or approximations; 30 same-grade conflicts). Nothing is designed or rendered before Luke approves it (DEC-069).",
+      "decisions": "owner DEC-235..DEC-240, DEC-245, DEC-256..DEC-264 (DEC-258 superseded by DEC-264); Claude working choices DEC-247..DEC-250, DEC-254 (confirmed DEC-262), DEC-265, DEC-268; record DEC-251; findings DEC-252, DEC-253, DEC-255, DEC-266, DEC-267, DEC-269..DEC-273",
       "dataset": {
         "branch": "claude/nice-davinci-guln5e (pull request #19, not merged)",
         "path": "data/rtt-101/",
-        "contract": "reference/metric_contract_RTT-101.md v1.0",
+        "contract": "reference/metric_contract_RTT-101.md v1.1",
         "build": "python3 scripts/build_rtt101_dataset.py && python3 scripts/rtt101_report.py (deterministic)",
         "report": "reports/RTT-101_data_report.md",
-        "status": "UNVERIFIED preview, not for screen",
+        "status": "UNVERIFIED preview where a Tier 1 fee has no grade A/B source; phase 2: 1,159 of 2,023 fee-bearing Tier 1 fees VERIFIED at source (954 grade A/B, 174 grade C, 31 grade D); 1,629 quotes read by Claude",
         "cpi_base": "ONS D7BT August 2026 (September due 21 Oct 2026)",
         "freeze": "2026-09-01 23:00 BST (close of the summer 2026 window)"
       },
-      "research": "private repo research/rtt-101-chatgpt/ (ChatGPT answers, leads only; Cowork checks V-01..V-11)",
-      "runner": ".github/workflows/rtt101_sources.yml (no secrets, no artifacts; job file data/rtt-101/runner_job.json)"
+      "research": "private repo research/rtt-101-chatgpt/ (ChatGPT answers, leads only; Cowork checks V-01..V-11; 1992-2007 gap list part19b/c/d/e, DEC-264)",
+      "runner": ".github/workflows/rtt101_sources.yml (no secrets, no artifacts; matrix of job files data/rtt-101/runner_job.json and runner_job_b.json)"
     },
     {
       "id": "RTT-102",

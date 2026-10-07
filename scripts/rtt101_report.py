@@ -181,7 +181,10 @@ p = P2.append
 fee_t = [t for t in T if t["fee_gbp"] and float(t["fee_gbp"]) > 0]
 t1 = [t for t in fee_t if t["tier"] == "1"]
 p("\n## 10. Phase 2 (IQ-15b): verification at source\n")
-p(f"- **Tier 1 (DEC-256):** {len(t1):,} fee-bearing Tier 1 transfers; **{sum(1 for t in t1 if t['status'] == 'VERIFIED'):,} VERIFIED at source**, "
+v1 = [t for t in t1 if t["status"] == "VERIFIED"]
+p(f"- **Tier 1 (DEC-256):** {len(t1):,} fee-bearing Tier 1 transfers; **{len(v1):,} VERIFIED at source** "
+  f"({sum(1 for t in v1 if t['grade'] in ('A', 'B')):,} by a club, league or press source, grade A/B; {sum(1 for t in v1 if t['grade'] == 'C'):,} only by a "
+  f"database such as Soccerbase, grade C; {sum(1 for t in v1 if t['grade'] == 'D'):,} only by a grade D site), "
   f"each quote read by Claude ({sum(1 for r in RV if r['decision'] == 'accept'):,} quotes accepted, {sum(1 for r in RV if r['decision'] == 'reject')} rejected; "
   "`source/review_decisions.csv`). The rest have no page that states the figure next to the player's name yet (mostly 1990s–2000s deals whose only "
   "sources are Wikipedia figures or dead links).")
@@ -200,7 +203,9 @@ p("- **Root causes found by reading the batches, and fixed in the build** (each 
   "Wikipedia sort templates; the same deal listed twice; research leads matched on surname only (Kylian Hazard had been given Eden Hazard's fee); "
   "club-season tables whose direction was read from prose, plus a Wikipedia table labelled \"From\" in an \"Out\" section (Newcastle 1998–99); "
   "figures that are maxima, offers, valuations, instalments, combined fees or totals including add-ons; a regression that had dropped "
-  "pre-2002 research-lead transfers (restored).")
+  "pre-2002 research-lead transfers (restored); accented names not matched (ø, æ, ß and others); Soccerbase \"Totals\" lines and other rows of a "
+  "career table read as this deal's fee (a Soccerbase figure now counts only from the row whose joining date is the transfer's); the same deal "
+  "reported at two stages with a non-PL club not merged (Yobo, Baros); a reported figure attached to the same player's other moves.")
 open_c = [c for c in C if c["for_luke"]]
 p(f"\n### Same-grade fee conflicts still open (DEC-261): {len(open_c)}\n")
 p("Settled at source = the fee used is confirmed at source and no differing same-grade figure is (totals including add-ons are not rivals). "
@@ -261,3 +266,40 @@ with open(os.path.join(D, "tier1_needs_press_source.csv"), "w", newline="", enco
         w.writerow([t["transfer_id"], t["player"], t["from_club"], t["to_club"], t["date"], t["season_attributed"], t["fee_gbp"], t["grade"],
                     t["status"], t["found_via"]])
 print("tier1_needs_press_source.csv:", len(need), "Tier 1 transfers without a VERIFIED grade A/B figure")
+
+# ---------------------------------------------------------------- phase 2: leader sequence and questions for Luke
+SM = rd("series_monthly.csv")
+by_m = defaultdict(dict)
+for r in SM:
+    if r["rank"]:
+        by_m[r["month_end"]][r["club_id"]] = int(r["rank"])
+lead_seq, prev = [], None
+for mo in sorted(by_m):
+    ldr = min(by_m[mo], key=lambda c: by_m[mo][c])
+    if ldr != prev:
+        lead_seq.append((mo, ldr))
+        prev = ldr
+NAME = {r["club_id"]: r["display_name"] for r in rd("clubs.csv")}
+SRC_URL = {r["source_id"]: r["url"] for r in rd("sources.csv")}
+zero_rej = [r for r in RV if r["scope"] == "amount" and any(w in r["note"] for w in ("add-on", "maximum", "up to", "inclusive", "exact", "includes", "excess", "plus"))
+            and r["transfer_id"] in {t["transfer_id"] for t in T if not (t["fee_gbp"] and float(t["fee_gbp"]) > 0)}]
+Q2 = [
+    f"**Database-only Tier 1 figures.** {sum(1 for t in v1 if t['grade'] == 'C'):,} Tier 1 fees are confirmed only by a grade C source "
+    f"({sum(1 for t in v1 if t['grade'] == 'C' and 'soccerbase.com' in SRC_URL.get(t['canonical_source_id'], '')):,} of them a Soccerbase row for that move) "
+    f"and {sum(1 for t in v1 if t['grade'] == 'D'):,} only by a source graded D (mostly later retrospective articles). May a Soccerbase row count as VERIFIED for screen? "
+    "*Recommendation:* yes for Soccerbase rows (they are dated career tables, checked row by row), no for grade D; keep looking for press sources for both.",
+    f"**Next research round.** {len(need):,} Tier 1 fees still have no VERIFIED club, league or press source (`data/rtt-101/tier1_needs_press_source.csv`, "
+    "mostly 1992–2007). *Recommendation:* one more ChatGPT deep-research round on that list (a press or club URL and a short quote per deal, leads only; "
+    "every figure checked at source here), starting with 1992–2002.",
+    f"**Fees known only as a maximum or an approximation.** {len({r['transfer_id'] for r in zero_rej})} deals count £0 because every figure found is a "
+    "maximum, a total including add-ons, or an approximation (\"just under £30m\", \"in excess of £13m\", \"£40m-plus\"). *Recommendation:* keep £0 "
+    "(DEC-237 (e)) and add these deals to the next research round to find the guaranteed fee.",
+    f"**Same-grade conflicts.** {len(open_c)} remain (table above). *Recommendation:* use the rule already in the contract (highest grade, then the earliest "
+    "contemporary report) for all of them, and list them in the description notes; Luke can overrule any single deal.",
+]
+P3 = ["\n### Leader sequence after phase 2\n",
+      "Leader at each change (month end): " + "; ".join(f"{mo[:7]} {NAME.get(c, c)}" for mo, c in lead_seq) + ".\n",
+      "\n### Questions for Luke after phase 2 (each with Claude's recommendation)\n"]
+P3 += [f"{i}. {q}" for i, q in enumerate(Q2, 1)]
+with open(OUT, "a", encoding="utf-8") as f:
+    f.write("\n".join(P3) + "\n")

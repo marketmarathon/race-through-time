@@ -225,7 +225,19 @@ def same_player(a, b):
     if len(ta) == 1 or len(tb) == 1:
         one, other = (ta, tb) if len(ta) == 1 else (tb, ta)
         return one[0] in (other[0], other[-1])
-    return ta[-1] == tb[-1] and ta[0][0] == tb[0][0]
+    if ta[-1] != tb[-1] or ta[0][0] != tb[0][0]:
+        return False
+    fa, fb = (NICK.get(x, x) for x in (ta[0].rstrip("."), tb[0].rstrip(".")))
+    # an initial matches any first name with that letter; two written-out first names must agree in their first three letters or in their
+    # consonants (Andy/Andrew, Franck/Frank, Alexei/Aleksey, Amdy/Amady yes; Dean/David no)
+    skel = lambda x: re.sub(r"[aeiouy]", "", x)  # noqa: E731
+    return len(fa) <= 1 or len(fb) <= 1 or fa[:3] == fb[:3] or skel(fa) == skel(fb)
+
+
+NICK = {"mike": "michael", "mick": "michael", "bill": "william", "billy": "william", "bob": "robert", "bobby": "robert", "rob": "robert",
+        "robbie": "robert", "jim": "james", "jimmy": "james", "tony": "anthony", "tom": "thomas", "tommy": "thomas", "joe": "joseph",
+        "nick": "nicholas", "nicky": "nicholas", "ted": "edward", "eddie": "edward", "ed": "edward", "harry": "henry", "jack": "john",
+        "johnny": "john", "sasha": "aleksandr", "pepe": "jose"}
 
 
 transfers, evidence, sources = [], [], {}
@@ -312,8 +324,9 @@ for r in lead_rows:
     last = pname(r["player"]).split(" ")[-1] if r["player"] else ""
     best, far = None, None
     pool = []
-    for tok in set(pname(r["player"]).split(" ")):
+    for tok in sorted(set(pname(r["player"]).split(" "))):  # sorted: the match must not depend on set order (build is deterministic)
         pool += [x for x in idx.get(tok, []) if x not in pool]
+    pool.sort(key=lambda x: (x["date"], x["transfer_id"]))
     for t in pool:
         if not same_player(t["player"], r["player"]):
             continue
@@ -935,6 +948,18 @@ check("Bank of England Jan 1992 monthly averages equal Cowork's V-04 reading", a
       f"{len(got)} of 7 series compared")
 ecb = {r["month"]: r["gbp_per_eur"] for r in rd("fx_ecb_crosscheck.csv", DATA)}
 check("ECB GBP/EUR 1999-01 equals Cowork's V-06 reading (0.7029125)", ecb.get("1999-01") == "0.7029125", f"{len(ecb)} months")
+# lesson of IQ-15b (two over-broad rejections): an "amount" rejection must not silently remove a research lead whose own quote names the player
+# with that figure, unless the review note says it was weighed against that lead
+blocked = []
+for t in transfers:
+    sn = pname(t["player"]).split(" ")[-1] if t["player"] else ""
+    for e in t["_ev"]:
+        if e["origin"] == "research_lead" and e.get("figure_rejected") and sn and sn in L.norm(e.get("quote") or ""):
+            notes = [r["note"] for r in review.values() if r.get("scope") == "amount" and r["transfer_id"] == t["transfer_id"]]
+            if not any("research lead" in n for n in notes):
+                blocked.append(f"{t['player']} {e['fee_text']}")
+check("no amount rejection silently removes a research lead that quotes the player with that figure", not blocked,
+      "; ".join(blocked[:10]) or "all such rejections were weighed against the lead")
 check("CPI base month recorded", True, f"D7BT {cpi_base_month} = {cpi_base} (September 2026 not yet published at build time)")
 
 with open(os.path.join(DATA, "CHECKS.md"), "w", encoding="utf-8") as f:

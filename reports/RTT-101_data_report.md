@@ -6,14 +6,14 @@ Rebuild: `python3 scripts/build_rtt101_dataset.py && python3 scripts/rtt101_repo
 
 ## 1. What was built
 
-- **13,013 transfer events** that involve a club in the Premier League that season (1992-93 to the freeze, 1 Sep 2026), of which **3,310 carry a fee** above £0. The rest are loans without a fee (5,330), free transfers (2,045), undisclosed fees with no figure, counted £0 (2,179), and fees not found (149).
-- Fee status: **VERIFIED 1,524**, UNVERIFIED 1,786. Grade of the fee used: A 19, B 1,311, C (Wikipedia pointer only) 1,939, D 41.
-- Tiers (DEC-248): Tier 1 **2,030**, Tier 2 663, Tier 3 633 (5% sample: 32).
-  Tier 1 reasons (a transfer can have several): removal changes the leader or the top 12 1,122; fee >= £20m 548; club or British record (research lead) 527; disputed fee (research section C) 10; alternative fee version changes the leader or the top 12 2.
-- 16,575 evidence rows in `fee_evidence.csv`; 2,748 sources in `sources.csv`; 363 transfers with more than one fee version (`conflicts.csv`).
+- **13,013 transfer events** that involve a club in the Premier League that season (1992-93 to the freeze, 1 Sep 2026), of which **3,309 carry a fee** above £0. The rest are loans without a fee (5,330), free transfers (2,046), undisclosed fees with no figure, counted £0 (2,179), and fees not found (149).
+- Fee status: **VERIFIED 1,523**, UNVERIFIED 1,786. Grade of the fee used: A 19, B 1,311, C (Wikipedia pointer only) 1,938, D 41.
+- Tiers (DEC-248): Tier 1 **2,039**, Tier 2 663, Tier 3 623 (5% sample: 31).
+  Tier 1 reasons (a transfer can have several): removal changes the leader or the top 12 1,132; fee >= £20m 548; club or British record (research lead) 526; disputed fee (research section C) 10; alternative fee version changes the leader or the top 12 2.
+- 16,575 evidence rows in `fee_evidence.csv`; 2,748 sources in `sources.csv`; 361 transfers with more than one fee version (`conflicts.csv`).
 - **Scripted source check** (GitHub runner, 4,299 cited pages): VERIFIED 3,662; page fetched but figure not found near the player's name 559; blocked or gone 78.
   Tier 2 result: 320 of 663 Tier 2 fees VERIFIED by the scripted check.
-  Tier 3 sample: 2 of 32 VERIFIED; most Tier 3 rows have no fetchable citation (error rate cannot be published yet: phase 2).
+  Tier 3 sample: 5 of 31 VERIFIED; most Tier 3 rows have no fetchable citation (error rate cannot be published yet: phase 2).
 
 ## 2. Checks
 
@@ -23,14 +23,15 @@ Rebuild: `python3 scripts/build_rtt101_dataset.py && python3 scripts/rtt101_repo
 | every season has an attribution window | **PASS** | 1992-05-03 to 2026-09-01 |
 | 51 clubs, each with at least one PL season | **PASS** | 51 clubs |
 | no transfer counted outside its club's PL seasons | **PASS** | 3734 ledger rows frozen (club not in the PL) |
-| PL-to-PL deals net to zero (spend - income of PL clubs = net spend with non-PL clubs) | **PASS** | spend £27,754,598,988 − income £14,336,745,139 = £13,417,853,849; net with non-PL clubs £13,417,853,849 |
-| no fee without a source row | **PASS** | 3310 fee-bearing transfers |
+| PL-to-PL deals net to zero (spend - income of PL clubs = net spend with non-PL clubs) | **PASS** | spend £27,747,598,988 − income £14,329,495,139 = £13,418,103,849; net with non-PL clubs £13,418,103,849 |
+| no fee without a source row | **PASS** | 3309 fee-bearing transfers |
 | no Transfermarkt figure or URL anywhere | **PASS** | none found |
 | quotes under 25 words | **PASS** | 16575 evidence rows |
 | every conversion has a rate row | **PASS** | 16 conversions |
 | month-end series consistent with the ledger | **PASS** | 413 month ends × 51 clubs |
 | Bank of England Jan 1992 monthly averages equal Cowork's V-04 reading | **PASS** | 7 of 7 series compared |
 | ECB GBP/EUR 1999-01 equals Cowork's V-06 reading (0.7029125) | **PASS** | 333 months |
+| no amount rejection silently removes a research lead that quotes the player with that figure | **PASS** | all such rejections were weighed against the lead |
 | CPI base month recorded | **PASS** | D7BT 2026-08 = 143.6 (September 2026 not yet published at build time) |
 
 Plus the private cross-checks in `data/rtt-101/CHECKS.md` (membership equals research file part03b; its differences are the two known flag errors and points deductions it ignores).
@@ -70,17 +71,17 @@ First place at each month end, nominal cumulative net spend; a change is listed 
 
 **1993-05-31:** 1. Blackburn Rovers £5.4m; 2. Manchester City £2.5m; 3. Aston Villa £2.5m; 4. Sheffield Wednesday £2.0m; 5. Leeds United £1.9m; 6. Liverpool £0.9m; 7. Oldham Athletic £0.8m; 8. Chelsea £0.6m; 9. Ipswich Town £0.5m; 10. Arsenal £0.3m; 11. Manchester United £0.0m; 12. Newcastle United £0.0m
 
-**1997-05-31:** 1. Newcastle United £36.7m; 2. Aston Villa £20.6m; 3. Everton £20.5m; 4. Liverpool £19.3m; 5. Middlesbrough £16.7m (out of the PL); 6. Arsenal £16.7m; 7. Chelsea £16.1m; 8. Coventry City £14.7m; 9. Leeds United £13.9m; 10. Sheffield Wednesday £12.1m; 11. Blackburn Rovers £10.1m; 12. Tottenham Hotspur £8.7m
+**1997-05-31:** 1. Newcastle United £36.7m; 2. Aston Villa £20.6m; 3. Everton £20.5m; 4. Liverpool £19.3m; 5. Middlesbrough £16.9m (out of the PL); 6. Arsenal £16.7m; 7. Chelsea £16.1m; 8. Coventry City £14.7m; 9. Leeds United £13.9m; 10. Sheffield Wednesday £12.1m; 11. Blackburn Rovers £10.1m; 12. Tottenham Hotspur £8.7m
 
-**2002-05-31:** 1. Leeds United £86.3m; 2. Chelsea £78.6m; 3. Liverpool £70.6m; 4. Newcastle United £67.7m; 5. Manchester United £61.4m; 6. Tottenham Hotspur £52.8m; 7. Middlesbrough £47.9m; 8. Aston Villa £46.2m; 9. Blackburn Rovers £45.3m; 10. Fulham £37.0m; 11. Arsenal £32.0m; 12. Manchester City £25.6m
+**2002-05-31:** 1. Leeds United £86.3m; 2. Chelsea £78.6m; 3. Liverpool £70.6m; 4. Newcastle United £67.7m; 5. Manchester United £61.4m; 6. Tottenham Hotspur £52.8m; 7. Middlesbrough £48.1m; 8. Aston Villa £46.2m; 9. Blackburn Rovers £45.5m; 10. Fulham £37.0m; 11. Arsenal £32.0m; 12. Manchester City £25.6m
 
-**2005-05-31:** 1. Chelsea £282.8m; 2. Manchester United £118.5m; 3. Liverpool £100.9m; 4. Newcastle United £86.3m; 5. Tottenham Hotspur £80.3m; 6. Middlesbrough £78.0m; 7. Aston Villa £53.1m; 8. Manchester City £49.6m; 9. Sunderland £39.8m; 10. Blackburn Rovers £39.2m; 11. Arsenal £36.8m; 12. Birmingham City £28.9m
+**2005-05-31:** 1. Chelsea £282.8m; 2. Manchester United £118.5m; 3. Liverpool £100.9m; 4. Newcastle United £86.3m; 5. Tottenham Hotspur £80.3m; 6. Middlesbrough £78.3m; 7. Aston Villa £53.1m; 8. Manchester City £49.6m; 9. Sunderland £39.8m; 10. Blackburn Rovers £39.4m; 11. Arsenal £36.8m; 12. Birmingham City £28.9m
 
-**2008-08-31:** 1. Chelsea £362.0m; 2. Liverpool £172.2m; 3. Manchester United £159.8m; 4. Tottenham Hotspur £123.2m; 5. Middlesbrough £121.5m; 6. Aston Villa £115.0m; 7. Newcastle United £104.9m; 8. Sunderland £80.0m; 9. Manchester City £79.8m; 10. Everton £48.7m; 11. Birmingham City £46.9m (out of the PL); 12. Fulham £46.6m
+**2008-08-31:** 1. Chelsea £362.0m; 2. Liverpool £172.2m; 3. Manchester United £159.8m; 4. Tottenham Hotspur £123.2m; 5. Middlesbrough £121.8m; 6. Aston Villa £115.0m; 7. Newcastle United £104.9m; 8. Sunderland £80.0m; 9. Manchester City £79.8m; 10. Everton £48.7m; 11. Birmingham City £46.9m (out of the PL); 12. Fulham £46.6m
 
-**2012-05-31:** 1. Chelsea £474.1m; 2. Manchester City £364.9m; 3. Liverpool £157.6m; 4. Tottenham Hotspur £130.5m; 5. Aston Villa £122.0m; 6. Manchester United £121.9m; 7. Middlesbrough £121.4m (out of the PL); 8. Sunderland £94.7m; 9. Birmingham City £75.4m (out of the PL); 10. Newcastle United £71.9m; 11. Everton £67.0m; 12. Stoke City £58.4m
+**2012-05-31:** 1. Chelsea £474.1m; 2. Manchester City £364.9m; 3. Liverpool £157.6m; 4. Tottenham Hotspur £130.5m; 5. Aston Villa £122.0m; 6. Manchester United £121.9m; 7. Middlesbrough £121.7m (out of the PL); 8. Sunderland £94.7m; 9. Birmingham City £75.4m (out of the PL); 10. Newcastle United £71.9m; 11. Everton £67.0m; 12. Stoke City £58.4m
 
-**2016-08-31:** 1. Manchester City £788.6m; 2. Chelsea £704.4m; 3. Manchester United £538.9m; 4. Liverpool £285.2m; 5. Tottenham Hotspur £155.7m; 6. Arsenal £154.8m; 7. Sunderland £145.9m; 8. Middlesbrough £139.2m; 9. Aston Villa £117.2m (out of the PL); 10. West Ham United £117.1m; 11. Stoke City £112.7m; 12. Everton £98.6m
+**2016-08-31:** 1. Manchester City £788.6m; 2. Chelsea £704.4m; 3. Manchester United £538.9m; 4. Liverpool £285.2m; 5. Tottenham Hotspur £155.7m; 6. Arsenal £154.8m; 7. Sunderland £145.9m; 8. Middlesbrough £139.5m; 9. Aston Villa £117.2m (out of the PL); 10. West Ham United £117.1m; 11. Stoke City £112.7m; 12. Everton £98.6m
 
 **2020-10-31:** 1. Manchester City £1.13bn; 2. Chelsea £980.8m; 3. Manchester United £841.3m; 4. Liverpool £417.7m; 5. Everton £395.2m; 6. Arsenal £359.2m; 7. Tottenham Hotspur £303.7m; 8. Aston Villa £283.9m; 9. West Ham United £233.6m; 10. Newcastle United £190.7m; 11. West Bromwich Albion £161.1m; 12. Fulham £148.8m
 
@@ -94,8 +95,8 @@ Counts are club-sides (a PL-to-PL deal counts once for each club).
 
 | Era | Transfers found | With a fee | Fee grade A/B | Fee VERIFIED | Undisclosed, no figure | Fee not found |
 |---|---|---|---|---|---|---|
-| 1992-2002 (no window lists) | 2,178 | 1,471 | 340 | 540 | 33 | 94 |
-| 2002-2007 | 1,179 | 475 | 94 | 189 | 143 | 13 |
+| 1992-2002 (no window lists) | 2,178 | 1,471 | 341 | 540 | 33 | 94 |
+| 2002-2007 | 1,179 | 473 | 92 | 187 | 143 | 13 |
 | 2007-2012 | 2,972 | 419 | 179 | 171 | 670 | 10 |
 | 2012-2017 | 3,052 | 523 | 269 | 249 | 567 | 10 |
 | 2017-2022 | 2,120 | 418 | 272 | 259 | 486 | 19 |
@@ -147,7 +148,7 @@ Our sums are **fees only, Premier League clubs only, from this preview** (gross 
 | Window | Our gross | Our net | Premier League gross (A) | PL net (A) | Press gross / net (B, first listed) |
 |---|---|---|---|---|---|
 | January 2003 | £39.8m | £17.2m | — | — | £35m / NOT FOUND (The Independent) |
-| summer 2003 | £212.4m | £119.2m | — | — | £215m / NOT FOUND (The Independent) |
+| summer 2003 | £204.9m | £119.2m | — | — | £215m / NOT FOUND (The Independent) |
 | summer 2005 | £229.4m | £112.3m | — | — | £235m / NOT FOUND (The Independent) |
 | summer 2006 | £239.4m | £122.0m | — | — | £300m / NOT FOUND (BBC News) |
 | summer 2008 | £338.6m | £162.6m | — | — | 500 million pounds / NOT FOUND (Reuters (via Rediff)) |
@@ -207,7 +208,7 @@ Why the totals differ:
 
 ## 9. Questions for Luke (each with Claude's recommendation)
 
-1. **Tier 1 is too big as worded (DEC-253).** 2,030 transfers are Tier 1, mostly because of the "changes the top-12 order" test. *Recommendation:* keep £20m+, records and disputed fees, and narrow the order test to "changes the leader, or who is in the top 12, at any month end"; the rest get Tier 2's scripted check.
+1. **Tier 1 is too big as worded (DEC-253).** 2,039 transfers are Tier 1, mostly because of the "changes the top-12 order" test. *Recommendation:* keep £20m+, records and disputed fees, and narrow the order test to "changes the leader, or who is in the top 12, at any month end"; the rest get Tier 2's scripted check.
 2. **Undisclosed fees count £0 (DEC-237 (g)).** 2,179 transfers have no reported figure. *Recommendation:* keep the rule, say on screen "Undisclosed fees not included", and give each club's undisclosed count in the description.
 3. **The early years are the least complete (1992–2007).** *Recommendation:* in phase 2, Claude in Cowork uses Transfermarkt in your Chrome only as a finding list (route A, nothing stored) to spot missing 1992–2007 deals involving the bigger fees, and takes each fee from a press or club source.
 4. **Relegated clubs keep their frozen bar and their rank** (contract §1; e.g. a relegated club can sit 8th at the freeze). *Recommendation:* keep them in the ranking; how a frozen bar looks is a design question for the pilot (DEC-069).
@@ -218,12 +219,12 @@ Why the totals differ:
 
 ## 10. Phase 2 (IQ-15b): verification at source
 
-- **Tier 1 (DEC-256):** 2,014 fee-bearing Tier 1 transfers; **1,159 VERIFIED at source**, each quote read by Claude (1,460 quotes accepted, 169 rejected; `source/review_decisions.csv`). The rest have no page that states the figure next to the player's name yet (mostly 1990s–2000s deals whose only sources are Wikipedia figures or dead links).
-- **Tier 2:** 320 of 663 VERIFIED by the scripted check. **Tier 3 sample:** 2 of 32 VERIFIED.
+- **Tier 1 (DEC-256):** 2,023 fee-bearing Tier 1 transfers; **1,159 VERIFIED at source** (954 by a club, league or press source, grade A/B; 174 only by a database such as Soccerbase, grade C; 31 only by a grade D site), each quote read by Claude (1,460 quotes accepted, 169 rejected; `source/review_decisions.csv`). The rest have no page that states the figure next to the player's name yet (mostly 1990s–2000s deals whose only sources are Wikipedia figures or dead links).
+- **Tier 2:** 320 of 663 VERIFIED by the scripted check. **Tier 3 sample:** 5 of 31 VERIFIED.
 - **Undisclosed fees (DEC-257):** 47 grade A/B reported figures found at the cited source and read by Claude, used and flagged "reported" (45 transfers; 33 close candidates rejected on reading: another deal, grade D, not a fee, or a total with add-ons; `source/reported_fees.csv`); every other candidate figure on those pages belonged to another deal, a wage, an offer or a fine.
 - **1992–2007 gap list (DEC-264), sections A v2, B and C (1992–2007):** 137 new moves added, 60 VERIFIED (the page names the player, both clubs and the fee); the rest matched transfers already in the build. 6 gap rows have no transfer date (retrospective articles only) and are listed in `unmatched_leads.csv`.
 - **Leeds United 1992–2002** pages added; **last 1991–92 First Division matchday 2 May 1992** confirmed by eight club fixture lists (pointers, grade C).
-- **Root causes found by reading the batches, and fixed in the build** (each fix applies to every row, not only the one seen): player names inside Wikipedia sort templates; the same deal listed twice; research leads matched on surname only (Kylian Hazard had been given Eden Hazard's fee); club-season tables whose direction was read from prose, plus a Wikipedia table labelled "From" in an "Out" section (Newcastle 1998–99); figures that are maxima, offers, valuations, instalments, combined fees or totals including add-ons; a regression that had dropped pre-2002 research-lead transfers (restored).
+- **Root causes found by reading the batches, and fixed in the build** (each fix applies to every row, not only the one seen): player names inside Wikipedia sort templates; the same deal listed twice; research leads matched on surname only (Kylian Hazard had been given Eden Hazard's fee); club-season tables whose direction was read from prose, plus a Wikipedia table labelled "From" in an "Out" section (Newcastle 1998–99); figures that are maxima, offers, valuations, instalments, combined fees or totals including add-ons; a regression that had dropped pre-2002 research-lead transfers (restored); accented names not matched (ø, æ, ß and others); Soccerbase "Totals" lines and other rows of a career table read as this deal's fee (a Soccerbase figure now counts only from the row whose joining date is the transfer's); the same deal reported at two stages with a non-PL club not merged (Yobo, Baros); a reported figure attached to the same player's other moves.
 
 ### Same-grade fee conflicts still open (DEC-261): 30
 
@@ -273,7 +274,7 @@ Our sums count fees paid by PL clubs (gross) and fees paid to minus received fro
 | January 1997 | £41.5m | £41.5m | £0.0m | £14.3m | — | — | £12.4m | £12.4m |
 | summer 1997 | £116.2m | £144.9m | £28.6m | £28.6m | — | — | £30.9m | £59.5m |
 | January 1998 | £49.6m | £51.2m | £1.6m | £1.0m | — | — | £10.5m | £12.1m |
-| summer 1998 | £128.7m | £162.3m | £33.6m | £32.9m | — | — | £49.4m | £80.7m |
+| summer 1998 | £128.7m | £162.6m | £33.9m | £32.9m | — | — | £49.4m | £80.7m |
 | January 1999 | £82.6m | £93.7m | £11.1m | £11.1m | — | — | £28.6m | £36.2m |
 | summer 1999 | £136.1m | £172.5m | £36.4m | £36.4m | — | — | £28.6m | £56.7m |
 | January 2000 | £42.1m | £43.8m | £1.7m | £2.0m | — | — | £19.5m | £21.2m |
@@ -283,7 +284,7 @@ Our sums count fees paid by PL clubs (gross) and fees paid to minus received fro
 | January 2002 | £56.1m | £60.2m | £4.2m | £6.3m | — | — | £22.2m | £29.6m |
 | summer 2002 | £174.2m | £174.7m | £0.5m | £0.0m | — | — | £114.4m | £115.4m |
 | January 2003 | £36.8m | £39.8m | £3.0m | £3.0m | £35.0m (B, The Independent) | −£4.8m | £14.2m | £17.2m |
-| summer 2003 | £212.4m | £212.4m | −£0.1m | £0.0m | £215.0m (B, The Independent) | £2.6m | £120.3m | £119.2m |
+| summer 2003 | £212.4m | £204.9m | −£7.6m | £0.0m | £215.0m (B, The Independent) | £10.1m | £120.3m | £119.2m |
 | January 2004 | £61.1m | £44.0m | −£17.1m | £0.0m | — | — | £34.6m | £17.4m |
 | summer 2004 | £172.0m | £204.3m | £32.3m | £33.0m | — | — | £99.3m | £131.8m |
 | January 2005 | £41.2m | £44.0m | £2.8m | £2.8m | — | — | £12.8m | £15.6m |
@@ -293,4 +294,16 @@ Our sums count fees paid by PL clubs (gross) and fees paid to minus received fro
 | January 2007 | £37.5m | £39.8m | £2.4m | £3.0m | — | — | £17.9m | £17.2m |
 | summer 2007 | £324.6m | £321.0m | −£3.6m | £0.0m | — | — | £166.2m | £162.6m |
 
-Total gross 1997–2007: £2.76bn before, £2.97bn after (£206.8m net change, of which £262.9m paid in moves the gap list added). Where a published total exists, our sum stays below it mainly because undisclosed fees count £0 and the early Wikipedia window lists are short; the gap list narrows the gap but does not close it, and no figure is forced to match.
+Total gross 1997–2007: £2.76bn before, £2.96bn after (£199.5m net change, of which £262.9m paid in moves the gap list added). Where a published total exists, our sum stays below it mainly because undisclosed fees count £0 and the early Wikipedia window lists are short; the gap list narrows the gap but does not close it, and no figure is forced to match.
+
+### Leader sequence after phase 2
+
+Leader at each change (month end): 1992-05 Arsenal; 1992-07 Blackburn Rovers; 1993-07 Liverpool; 1993-09 Blackburn Rovers; 1995-07 Liverpool; 1996-07 Newcastle United; 1997-07 Liverpool; 1998-02 Newcastle United; 1999-07 Liverpool; 2000-01 Newcastle United; 2000-03 Liverpool; 2000-06 Chelsea; 2000-07 Liverpool; 2001-07 Manchester United; 2001-08 Liverpool; 2001-11 Leeds United; 2002-07 Manchester United; 2003-03 Newcastle United; 2003-07 Chelsea; 2015-08 Manchester City; 2016-07 Chelsea; 2016-08 Manchester City; 2022-08 Chelsea; 2026-09 Manchester United.
+
+
+### Questions for Luke after phase 2 (each with Claude's recommendation)
+
+1. **Database-only Tier 1 figures.** 174 Tier 1 fees are confirmed only by a grade C source (167 of them a Soccerbase row for that move) and 31 only by a source graded D (mostly later retrospective articles). May a Soccerbase row count as VERIFIED for screen? *Recommendation:* yes for Soccerbase rows (they are dated career tables, checked row by row), no for grade D; keep looking for press sources for both.
+2. **Next research round.** 1,069 Tier 1 fees still have no VERIFIED club, league or press source (`data/rtt-101/tier1_needs_press_source.csv`, mostly 1992–2007). *Recommendation:* one more ChatGPT deep-research round on that list (a press or club URL and a short quote per deal, leads only; every figure checked at source here), starting with 1992–2002.
+3. **Fees known only as a maximum or an approximation.** 14 deals count £0 because every figure found is a maximum, a total including add-ons, or an approximation ("just under £30m", "in excess of £13m", "£40m-plus"). *Recommendation:* keep £0 (DEC-237 (e)) and add these deals to the next research round to find the guaranteed fee.
+4. **Same-grade conflicts.** 30 remain (table above). *Recommendation:* use the rule already in the contract (highest grade, then the earliest contemporary report) for all of them, and list them in the description notes; Luke can overrule any single deal.
