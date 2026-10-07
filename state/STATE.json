@@ -660,7 +660,7 @@
       "dataset": {
         "branch": "claude/nice-davinci-guln5e (pull request #19, not merged)",
         "path": "data/rtt-101/",
-        "contract": "reference/metric_contract_RTT-101.md v1.1",
+        "contract": "reference/metric_contract_RTT-101.md v1.2",
         "build": "python3 scripts/build_rtt101_dataset.py && python3 scripts/rtt101_report.py (deterministic)",
         "report": "reports/RTT-101_data_report.md",
         "status": "UNVERIFIED preview where a Tier 1 fee has no grade A/B source; phase 2: 1,159 of 2,023 fee-bearing Tier 1 fees VERIFIED at source (954 grade A/B, 174 grade C, 31 grade D); 1,629 quotes read by Claude",
