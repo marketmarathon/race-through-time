@@ -428,10 +428,12 @@ for r in rd("reported_fees.csv"):
             continue
         sid = source_id(r["url"], urllib.parse.urlparse(r["url"]).netloc, r["grade_by_publisher"], "press_or_club")
         t["_ev"].append({"origin": "reported_search", "source_id": sid, "grade": r["grade_by_publisher"], "fee_text": r["money"],
-                         "parsed": {"amount": float(r["amount"]), "currency": r["currency"], "qualifiers": ["reported"], "kind": "fee"},
+                         "parsed": {"amount": float(r["amount"]), "currency": r["currency"],
+                                    "qualifiers": ["guaranteed_part"] if r["candidate_id"].startswith("G-") else ["reported"], "kind": "fee"},
                          "quote": r["quote"], "url": r["url"], "archive_url": "", "date": t["date"],
                          "checked": {"check_id": r["candidate_id"], "quote": r["quote"], "retrieved": r["retrieved"], "reviewed": "accept: " + r["note"]},
-                         "note": "reported figure for an undisclosed fee, read at the source (DEC-257)"})
+                         "note": ("guaranteed fee stated on the same page as a total including add-ons, read at the source (DEC-237 (e))"
+                                  if r["candidate_id"].startswith("G-") else "reported figure for an undisclosed fee, read at the source (DEC-257)")})
 
 # publication date of each page (runner) or from the URL itself; used for "earliest contemporary report" (brief §7)
 page_dates = {r["url"]: r["published"][:10] for r in rd("page_dates.csv")}
@@ -499,7 +501,7 @@ for t in transfers:
         t["fx_date"] = e["fx"]["fx_date"] if e["fx"] else ""
         t["fx_series"] = e["fx"]["fx_series"] if e["fx"] else ""
         rep = ("reported" in e["parsed"]["qualifiers"] or "undisclosed" in e["fee_text"].lower() or bool(e.get("grade_note"))
-               or e["origin"] == "reported_search")
+               or (e["origin"] == "reported_search" and "guaranteed_part" not in e["parsed"]["qualifiers"]))
         t["fee_status"] = ("free" if e["gbp"] == 0 else "reported" if rep else "stated")
         if e["gbp"] == 0 and t["type"] not in ("loan",):
             t["type"] = "free"

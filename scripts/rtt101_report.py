@@ -174,7 +174,7 @@ with open(OUT, "a", encoding="utf-8") as f:
 
 # ---------------------------------------------------------------- phase 2 (IQ-15b)
 RV = rd("review_decisions.csv", os.path.join(D, "source"))
-RF = rd("reported_fees.csv", os.path.join(D, "source"))
+RF = [r for r in rd("reported_fees.csv", os.path.join(D, "source")) if not r["candidate_id"].startswith("G-")]  # G- rows: guaranteed part of a total
 UL = rd("unmatched_leads.csv")
 P2 = []
 p = P2.append
@@ -239,3 +239,15 @@ g(f"\nTotal gross 1997–2007: {m(tot_b)} before, {m(tot_a)} after ({m(tot_a - t
   "the gap list narrows the gap but does not close it, and no figure is forced to match.")
 with open(OUT, "a", encoding="utf-8") as f:
     f.write("\n".join(G) + "\n")
+
+# ---------------------------------------------------------------- list for the next research round (no fees from Transfermarkt; derived data only)
+need = [t for t in T if t["tier"] == "1" and t["fee_gbp"] and float(t["fee_gbp"]) > 0
+        and not (t["status"] == "VERIFIED" and t["grade"] in ("A", "B"))]
+need.sort(key=lambda t: (t["date"], t["player"]))
+with open(os.path.join(D, "tier1_needs_press_source.csv"), "w", newline="", encoding="utf-8") as f:
+    w = csv.writer(f, lineterminator="\n")
+    w.writerow(["transfer_id", "player", "from_club", "to_club", "date", "season", "fee_gbp_used", "grade_used", "status", "found_via"])
+    for t in need:
+        w.writerow([t["transfer_id"], t["player"], t["from_club"], t["to_club"], t["date"], t["season_attributed"], t["fee_gbp"], t["grade"],
+                    t["status"], t["found_via"]])
+print("tier1_needs_press_source.csv:", len(need), "Tier 1 transfers without a VERIFIED grade A/B figure")
