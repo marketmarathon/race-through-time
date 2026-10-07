@@ -389,6 +389,38 @@ for t in transfers:
                              "quote": c["quote"], "url": c["url"], "archive_url": "", "date": t["date"], "checked": c,
                              "note": "figure found at the source cited by the Wikipedia row (scripted check, GitHub runner)"})
 
+# reported figures for undisclosed deals, found at a cited source and read by Claude (DEC-257); only "accept" rows are used
+for r in rd("reported_fees.csv"):
+    if r["decision"] != "accept":
+        continue
+    for t in transfers:
+        if pname(t["player"]).split(" ")[-1] != L.norm(r["near"]) or not any(
+                r["url"] in ([e["url"]] if e["origin"] != "wikipedia_list" else e.get("cite_urls", "").split()) for e in t["_ev"]):
+            continue
+        sid = source_id(r["url"], urllib.parse.urlparse(r["url"]).netloc, r["grade_by_publisher"], "press_or_club")
+        t["_ev"].append({"origin": "reported_search", "source_id": sid, "grade": r["grade_by_publisher"], "fee_text": r["money"],
+                         "parsed": {"amount": float(r["amount"]), "currency": r["currency"], "qualifiers": ["reported"], "kind": "fee"},
+                         "quote": r["quote"], "url": r["url"], "archive_url": "", "date": t["date"],
+                         "checked": {"check_id": r["candidate_id"], "quote": r["quote"], "retrieved": r["retrieved"], "reviewed": "accept: " + r["note"]},
+                         "note": "reported figure for an undisclosed fee, read at the source (DEC-257)"})
+
+# publication date of each page (runner) or from the URL itself; used for "earliest contemporary report" (brief §7)
+page_dates = {r["url"]: r["published"][:10] for r in rd("page_dates.csv")}
+MON3 = {m: i for i, m in enumerate(["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"], 1)}
+
+
+def pubdate(url):
+    if url in page_dates and re.match(r"\d{4}-\d{2}-\d{2}", page_dates[url]):
+        return page_dates[url]
+    m = re.search(r"/(\d{4})/([a-z]{3})/(\d{1,2})/", url)
+    if m and m.group(2) in MON3:
+        return f"{m.group(1)}-{MON3[m.group(2)]:02d}-{int(m.group(3)):02d}"
+    m = re.search(r"(\d{4})-(\d{2})-(\d{2})/?$", url)
+    if m:
+        return f"{m.group(1)}-{m.group(2)}-{m.group(3)}"
+    return ""
+
+
 # canonical fee per transfer
 for t in transfers:
     t["season_attributed"] = season_of(t["date"]) or ""
@@ -412,8 +444,9 @@ for t in transfers:
             e["quote"], e["retrieved"] = ck["quote"], ck["retrieved"]
         usable = e["gbp"] is not None and "up_to" not in p["qualifiers"]
         if usable:
+            e["published"] = pubdate(e["url"])
             cands.append((0 if e["status"] == "VERIFIED" else 1, GRADE_RANK.get(e["grade"], 3), 0 if e["currency"] == "GBP" else 1,
-                          e["date"] or "9999", i, e))
+                          e["published"] or "9999", i, e))
     kinds = [kind_of(e["fee_text"]) for e in t["_ev"] if e["origin"] == "wikipedia_list"]
     if cands:
         cands.sort(key=lambda x: x[:5])
@@ -424,7 +457,8 @@ for t in transfers:
         t["fx_rate"] = e["fx"]["fx_rate"] if e["fx"] else ""
         t["fx_date"] = e["fx"]["fx_date"] if e["fx"] else ""
         t["fx_series"] = e["fx"]["fx_series"] if e["fx"] else ""
-        rep = "reported" in e["parsed"]["qualifiers"] or "undisclosed" in e["fee_text"].lower() or bool(e.get("grade_note"))
+        rep = ("reported" in e["parsed"]["qualifiers"] or "undisclosed" in e["fee_text"].lower() or bool(e.get("grade_note"))
+               or e["origin"] == "reported_search")
         t["fee_status"] = ("free" if e["gbp"] == 0 else "reported" if rep else "stated")
         if e["gbp"] == 0 and t["type"] not in ("loan",):
             t["type"] = "free"
@@ -671,7 +705,8 @@ for t in transfers:
                         "cited_publishers": e.get("cite_publishers", ""), "retrieved": e.get("retrieved", ""),
                         "status": e["status"], "canonical": "yes" if t["canonical"] is e else "",
                         "note": e.get("note", "") or e.get("grade_note", ""),
-                        "review": (e.get("checked") or {}).get("reviewed", ""), "check_id": (e.get("checked") or {}).get("check_id", "")})
+                        "review": (e.get("checked") or {}).get("reviewed", ""), "check_id": (e.get("checked") or {}).get("check_id", ""),
+                        "published": e.get("published", "") or pubdate(e["url"])})
 used_sources = {e["source_id"] for e in ev_rows}
 src_rows = sorted((s for s in sources.values() if s["source_id"] in used_sources), key=lambda s: s["source_id"])
 for t in transfers:
@@ -692,7 +727,7 @@ with open(os.path.join(DATA, "transfers.csv"), "w", newline="", encoding="utf-8"
     for t in transfers:
         w.writerow([t.get(c, "") for c in TCOLS])
 wr("fee_evidence.csv", ev_rows, ["evidence_id", "transfer_id", "source_id", "origin", "fee_text", "amount", "currency", "qualifiers", "gbp", "grade", "quote",
-                                 "quote_words", "url", "archive_url", "cited_urls", "cited_publishers", "retrieved", "status", "canonical", "note", "check_id", "review"])
+                                 "quote_words", "url", "archive_url", "cited_urls", "cited_publishers", "retrieved", "status", "canonical", "note", "check_id", "review", "published"])
 wr("sources.csv", src_rows, ["source_id", "url", "publisher", "grade", "kind"])
 wr("club_ledger.csv", ledger, ["club_id", "date", "season", "transfer_id", "side", "player", "counterparty", "type", "net_gbp", "net_real_gbp2026",
                                "counted", "reason", "fee_status", "grade", "status", "notes"])
