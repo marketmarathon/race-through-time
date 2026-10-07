@@ -6,7 +6,7 @@ Usage: rtt101_ingest_checks.py JOB_JSON CHECKS_JSONL RETRIEVED_DATE   (appends; 
 import csv, json, os, re, sys, urllib.parse
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from rtt101_lib import grade_of  # noqa: E402
+from rtt101_lib import grade_of, NOTFEE  # noqa: E402
 
 job, log, day = sys.argv[1], sys.argv[2], sys.argv[3]
 OUT = "data/rtt-101/source/runner_checks.csv"
@@ -27,7 +27,11 @@ for line in open(log, encoding="utf-8"):
     if not it:
         continue
     st = rec["status"]
-    if rec["needle"]:
+    ex = rec.get("excerpt", "")
+    pre = ex[:ex.find(rec["needle"])][-45:] if rec["needle"] and rec["needle"] in ex else ""
+    if rec["needle"] and NOTFEE.search(pre):
+        res = "NOT CONFIRMED (figure on the page is a maximum, valuation, offer or other figure)"
+    elif rec["needle"]:
         res = "VERIFIED"
     elif st == 200:
         res = "NOT CONFIRMED (page fetched; figure not found near the player's name)"

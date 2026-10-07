@@ -10,7 +10,7 @@ import csv, json, os, re, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import rtt101_lib as L  # noqa: E402
-from rtt101_lib import grade_of  # noqa: E402
+from rtt101_lib import grade_of, NOTFEE  # noqa: E402
 
 job, log, day = sys.argv[1], sys.argv[2], sys.argv[3]
 D = "data/rtt-101"
@@ -60,6 +60,9 @@ for line in open(log, encoding="utf-8"):
         p = L.parse_fee(s["money"])
         if p["amount"] is None:
             continue
+        pre = s["excerpt"][:s["excerpt"].find(s["money"])][-45:] if s["money"] in s["excerpt"] else ""
+        if NOTFEE.search(pre):
+            continue  # a maximum, a valuation, an offer or another deal's figure, not this deal's fee
         key = (round(p["amount"] / 1e4), p["currency"])
         q = short(s["excerpt"], s["money"])
         for tid in tids:
