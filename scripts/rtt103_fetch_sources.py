@@ -53,13 +53,13 @@ def safe_name(sid):
     return re.sub(r"[^A-Za-z0-9_.-]", "_", sid)
 
 
-def fetch(url, tries=3):
+def fetch(url, tries=2):
     last = None
     for i in range(tries):
         try:
             req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "*/*",
                                                        "Accept-Language": "en-GB,en;q=0.9,zh;q=0.6"})
-            with urllib.request.urlopen(req, timeout=90) as r:
+            with urllib.request.urlopen(req, timeout=40) as r:
                 return r.status, r.headers.get("Content-Type", ""), r.read()
         except urllib.error.HTTPError as e:
             last = f"HTTP {e.code}"
@@ -67,7 +67,7 @@ def fetch(url, tries=3):
                 break
         except Exception as e:  # report, retry, continue: a blocked source is listed, not fatal
             last = f"{type(e).__name__}: {e}"
-        time.sleep(5 * (i + 1))
+        time.sleep(3)
     return None, last, None
 
 
@@ -85,20 +85,30 @@ def main():
     for sid, u in EXTRA:
         urls.setdefault(u, []).append(sid)
     print(f"{len(urls)} URLs to fetch")
-    manifest, last_host_time = [], {}
+    manifest, last_host_time, host_fails = [], {}, {}
+    deadline = time.time() + 60 * float(os.environ.get("BUDGET_MINUTES", "70"))
     for n, (u, sids) in enumerate(sorted(urls.items(), key=lambda kv: kv[1][0])):
         host = urllib.parse.urlparse(u).hostname
+        rec = {"url": u, "source_ids": sids, "host": host}
+        if time.time() > deadline:
+            manifest.append(dict(rec, ok=False, error="not attempted: time budget reached"))
+            continue
+        if host_fails.get(host, 0) >= 4:  # four failures in a row: the host refuses this runner; list the rest
+            manifest.append(dict(rec, ok=False, error="not attempted: host failed 4 times in a row"))
+            continue
         wait = 1.5 - (time.time() - last_host_time.get(host, 0))
         if wait > 0:
             time.sleep(wait)
         status, ctype, body = fetch(u)
         last_host_time[host] = time.time()
-        rec = {"url": u, "source_ids": sids, "host": host, "fetched_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
+        rec["fetched_utc"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
         if body is None:
+            host_fails[host] = host_fails.get(host, 0) + 1
             rec.update({"ok": False, "error": ctype})
             print(f"[{n + 1}] {sids[0]} FAILED {ctype}")
             manifest.append(rec)
             continue
+        host_fails[host] = 0
         sha = hashlib.sha256(body).hexdigest()
         base = safe_name(sids[0])
         is_pdf = body[:5] == b"%PDF-" or "pdf" in ctype.lower()
@@ -127,6 +137,9 @@ def main():
                "documents": manifest}, open(os.path.join(out, "manifest.json"), "w"), indent=1)
     ok = sum(1 for m in manifest if m["ok"])
     print(f"{ok}/{len(manifest)} fetched")
+    for h in sorted({m["host"] for m in manifest}):
+        hm = [m for m in manifest if m["host"] == h]
+        print(f"  {h}: {sum(m['ok'] for m in hm)}/{len(hm)}")
     return 0
 
 
