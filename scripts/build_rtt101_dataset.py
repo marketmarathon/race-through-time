@@ -357,6 +357,9 @@ for r in lead_rows:
                         "issue_type": r["issue_type"], "grade_note": r["grade_note"], "note": note})
 
 review = {r["check_id"]: r for r in rd("review_decisions.csv")}  # Claude's reading of each Tier 1 quote (phase 2)
+art_cites = defaultdict(list)
+for r in rd("player_article_citations.csv"):
+    art_cites[r["transfer_id"]].append(r["url"])
 checks = defaultdict(list)
 for c in rd("runner_checks.csv"):
     rv = review.get(c["check_id"])
@@ -372,13 +375,15 @@ for t in transfers:
     for e in t["_ev"]:
         for u in ([e["url"]] if e["origin"] == "research_lead" else e.get("cite_urls", "").split()):
             own.setdefault(u, e)
+    for u in art_cites.get(t["transfer_id"], []):
+        own.setdefault(u, None)  # cited by the player's own Wikipedia article in a sentence about this move (pointer)
     sn = pname(t["player"]).split(" ")[-1] if t["player"] else ""
     amounts = {money(e["parsed"]["amount"]) for e in t["_ev"] if e["parsed"]["amount"] is not None}
     for u, e0 in list(own.items()):
         for c in checks.get(u, []):
             if c["status"] != "VERIFIED" or not sn or L.norm(c.get("near", "")) != sn or c["amount"] not in amounts:
                 continue
-            if e0["origin"] == "research_lead" and e0["url"] == c["url"] and money(e0["parsed"]["amount"]) == c["amount"]:
+            if e0 and e0["origin"] == "research_lead" and e0["url"] == c["url"] and money(e0["parsed"]["amount"]) == c["amount"]:
                 e0["checked"] = c
                 continue
             if any(x.get("checked", {}).get("check_id") == c["check_id"] for x in t["_ev"]):
@@ -387,7 +392,8 @@ for t in transfers:
             t["_ev"].append({"origin": "runner_check", "source_id": sid, "grade": c["grade_by_publisher"],
                              "fee_text": c["needle"], "parsed": {"amount": float(c["amount"]), "currency": c["currency"], "qualifiers": [], "kind": "fee"},
                              "quote": c["quote"], "url": c["url"], "archive_url": "", "date": t["date"], "checked": c,
-                             "note": "figure found at the source cited by the Wikipedia row (scripted check, GitHub runner)"})
+                             "note": ("figure found at the source cited by the Wikipedia row" if e0 else
+                                      "figure found at a source cited by the player's Wikipedia article") + " (GitHub runner)"})
 
 # reported figures for undisclosed deals, found at a cited source and read by Claude (DEC-257); only "accept" rows are used
 for r in rd("reported_fees.csv"):

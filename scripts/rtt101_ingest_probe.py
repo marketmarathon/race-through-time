@@ -21,6 +21,9 @@ by_url = {}
 for e in E:
     for u in ([e["url"]] if e["origin"] != "wikipedia_list" else e["cited_urls"].split()):
         by_url.setdefault(u, set()).add(e["transfer_id"])
+if os.path.exists(f"{D}/source/player_article_citations.csv"):
+    for r in csv.DictReader(open(f"{D}/source/player_article_citations.csv", encoding="utf-8")):
+        by_url.setdefault(r["url"], set()).add(r["transfer_id"])
 amounts = {}
 for e in E:
     if e["amount"] and e["currency"]:
