@@ -41,7 +41,7 @@ chelsea,1992-2002 (no window lists),10,60,48,21,21,27,1,0
 chelsea,2002-2007,5,68,38,12,9,29,8,1
 chelsea,2007-2012,5,161,21,9,9,12,32,0
 chelsea,2012-2017,5,250,45,15,11,34,21,0
-chelsea,2017-2022,5,167,31,15,15,16,29,1
+chelsea,2017-2022,5,167,31,14,14,17,29,1
 chelsea,2022-2026,5,303,105,70,71,34,40,1
 coventry_city,1992-2002 (no window lists),9,123,85,14,17,68,3,6
 coventry_city,2022-2026,1,18,6,6,6,0,4,0
@@ -83,7 +83,7 @@ liverpool,1992-2002 (no window lists),10,71,48,18,19,29,0,0
 liverpool,2002-2007,5,69,24,2,2,22,11,2
 liverpool,2007-2012,5,184,31,11,11,20,61,0
 liverpool,2012-2017,5,170,49,10,10,39,16,0
-liverpool,2017-2022,5,100,38,22,20,18,5,1
+liverpool,2017-2022,5,100,38,21,19,19,5,1
 liverpool,2022-2026,5,123,37,28,26,11,12,0
 luton_town,2022-2026,1,30,2,2,2,0,10,0
 manchester_city,1992-2002 (no window lists),5,23,21,6,11,10,0,0
@@ -92,17 +92,17 @@ manchester_city,2007-2012,5,195,27,9,8,19,48,0
 manchester_city,2012-2017,5,151,37,8,8,29,21,1
 manchester_city,2017-2022,5,124,33,20,19,14,32,0
 manchester_city,2022-2026,5,169,62,46,42,20,16,1
-manchester_united,1992-2002 (no window lists),10,144,73,24,25,48,8,0
+manchester_united,1992-2002 (no window lists),10,144,73,24,24,49,8,0
 manchester_united,2002-2007,5,62,28,8,7,21,4,2
 manchester_united,2007-2012,5,135,11,7,7,4,37,1
 manchester_united,2012-2017,5,175,32,10,8,24,32,0
 manchester_united,2017-2022,5,96,23,17,16,7,10,2
-manchester_united,2022-2026,5,147,36,26,25,11,22,0
+manchester_united,2022-2026,5,147,36,25,24,12,22,0
 middlesbrough,1992-2002 (no window lists),7,61,37,8,12,25,0,1
 middlesbrough,2002-2007,5,59,13,1,2,11,4,1
 middlesbrough,2007-2012,2,50,11,1,1,10,8,0
 middlesbrough,2012-2017,1,39,4,0,0,4,15,0
-newcastle_united,1992-2002 (no window lists),9,141,106,20,25,81,0,2
+newcastle_united,1992-2002 (no window lists),9,141,106,20,24,82,0,2
 newcastle_united,2002-2007,5,58,27,2,2,25,6,0
 newcastle_united,2007-2012,4,92,13,3,2,11,25,0
 newcastle_united,2012-2017,4,99,11,0,0,11,28,0

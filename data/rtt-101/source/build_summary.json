@@ -23,7 +23,7 @@
   [
    "PL-to-PL deals net to zero (spend - income of PL clubs = net spend with non-PL clubs)",
    "PASS",
-   "spend \u00a327,632,035,830 \u2212 income \u00a314,454,140,732 = \u00a313,177,895,098; net with non-PL clubs \u00a313,177,895,098"
+   "spend \u00a327,658,485,813 \u2212 income \u00a314,495,640,732 = \u00a313,162,845,081; net with non-PL clubs \u00a313,162,845,081"
   ],
   [
    "no fee without a source row",
@@ -38,12 +38,12 @@
   [
    "quotes under 25 words",
    "PASS",
-   "15608 evidence rows"
+   "15600 evidence rows"
   ],
   [
    "every conversion has a rate row",
    "PASS",
-   "13 conversions"
+   "14 conversions"
   ],
   [
    "month-end series consistent with the ledger",
@@ -68,17 +68,17 @@
  ],
  "cpi_base_month": "2026-08",
  "n_conflicts": 317,
- "n_conflicts_for_luke": 79,
+ "n_conflicts_for_luke": 76,
  "n_fee": 3214,
  "n_status": {
-  "UNVERIFIED": 2081,
-  "VERIFIED": 1133
+  "UNVERIFIED": 2084,
+  "VERIFIED": 1130
  },
  "n_tier": {
   "": 9704,
-  "1": 1741,
-  "2": 747,
-  "3": 733
+  "1": 1783,
+  "2": 730,
+  "3": 708
  },
  "n_transfers": 12925
 }

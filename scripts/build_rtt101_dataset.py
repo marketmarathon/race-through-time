@@ -357,7 +357,9 @@ for r in lead_rows:
     sid = source_id(r["url"], r["publisher"], grade, "press_or_club")
     parsed = L.parse_fee(r["fee_as_reported"])
     gp = L.parse_fee(r.get("guaranteed_part", "")) if r.get("guaranteed_part", "").strip().upper() not in ("", "NOT FOUND") else None
-    if gp and gp["amount"] and gp["currency"] and "up_to" not in gp["qualifiers"]:
+    if (gp and gp["amount"] and gp["currency"] and "up_to" not in gp["qualifiers"]
+            and (parsed["amount"] is None or gp["currency"] != parsed["currency"] or gp["amount"] >= 0.5 * parsed["amount"])):
+        # a "guaranteed part" under half the headline is usually a first instalment, which is not the whole guaranteed fee
         parsed = dict(parsed, amount=gp["amount"], currency=gp["currency"], qualifiers=[q for q in parsed["qualifiers"] if q != "up_to"] + ["guaranteed_part"])
     best["_ev"].append({"origin": "research_lead", "source_id": sid, "grade": grade, "fee_text": r["fee_as_reported"],
                         "parsed": parsed, "quote": r["quote"], "url": r["url"],
@@ -369,9 +371,12 @@ review = {r["check_id"]: r for r in rd("review_decisions.csv")}  # Claude's read
 art_cites = defaultdict(list)
 for r in rd("player_article_citations.csv"):
     art_cites[r["transfer_id"]].append(r["url"])
+amount_rejects = {(r["transfer_id"], r.get("amount", "")) for r in review.values() if r["decision"] == "reject" and r.get("scope") == "amount"}
 checks = defaultdict(list)
 for c in rd("runner_checks.csv"):
     rv = review.get(c["check_id"])
+    if not rv and any((tid, c["amount"]) in amount_rejects for tid in [c["transfer_id"]]):
+        rv = {"decision": "reject", "note": "the same figure was rejected for this deal on review"}
     if rv and rv["decision"] == "reject":
         c = dict(c, status="UNVERIFIED", result="REJECTED on review: " + rv["note"])
     elif rv:
@@ -457,7 +462,7 @@ for t in transfers:
         e["status"] = "VERIFIED" if ck else "UNVERIFIED"
         if ck:
             e["quote"], e["retrieved"] = ck["quote"], ck["retrieved"]
-        usable = e["gbp"] is not None and "up_to" not in p["qualifiers"]
+        usable = e["gbp"] is not None and "up_to" not in p["qualifiers"] and "combined" not in p["qualifiers"]
         if usable:
             e["published"] = pubdate(e["url"]) or e.get("lead_published", "")
             cands.append((0 if e["status"] == "VERIFIED" else 1, GRADE_RANK.get(e["grade"], 3), 0 if e["currency"] == "GBP" else 1,

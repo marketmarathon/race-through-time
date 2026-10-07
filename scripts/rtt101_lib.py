@@ -84,6 +84,8 @@ def parse_fee(text, _plain=False):
         out["kind"] = "none"; return out
     if re.fullmatch(r"(free|free transfer|nominal|released|end of contract|bosman)\b.*", low) and not re.search(r"\d", low):
         out["kind"] = "free"; out["amount"] = 0.0; out["currency"] = "GBP"; return out
+    if re.search(r"combined|joint fee|for both players|together with", low):
+        out["qualifiers"].append("combined")  # a fee for more than one player is never one deal's fee
     if "undisclosed" in low and not re.search(r"\d", low):
         out["kind"] = "undisclosed"; return out
     if re.fullmatch(r"(loan|on loan|season-long loan|loan return|end of loan|loaned)\b.*", low) and not re.search(r"\d", low):
@@ -145,5 +147,5 @@ def grade_of(url):
 
 
 # words before a figure that mean it is not this deal's guaranteed fee (a maximum, valuation, offer or another figure)
-NOTFEE = re.compile(r"(up to|could be worth|could rise|could reach|rising to|rise to|potentially|valued|valuation|similar to|demanding|"
+NOTFEE = re.compile(r"(combined|up to|could be worth|could rise|could reach|rising to|rise to|potentially|valued|valuation|similar to|demanding|"
                     r"\bbid\b|\boffer|asking for|wanted|rejected|in excess of|more than|over)\W*(a\s+|an\s+|about\s+|around\s+)?$", re.I)

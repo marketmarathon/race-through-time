@@ -14,13 +14,15 @@ for x in csv.DictReader(open("data/rtt-101/tier1_list.csv", encoding="utf-8")):
     if x["batch"] != batch or not e or not e["check_id"] or x["status"] != "VERIFIED":
         continue
     rej = rejects.get(x["player"])
+    scope = "amount" if rej and rej.startswith("amount:") else "check"
     rows[e["check_id"]] = {"check_id": e["check_id"], "batch": batch, "transfer_id": x["transfer_id"], "player": x["player"],
-                           "quote": e["quote"], "decision": "reject" if rej else "accept",
-                           "note": rej or "quote read: the figure is this deal's fee", "reviewed_by": "Claude Code (IQ-15b)"}
+                           "amount": e["amount"], "quote": e["quote"], "decision": "reject" if rej else "accept", "scope": scope,
+                           "note": (rej[7:].strip() if scope == "amount" else rej) if rej else "quote read: the figure is this deal's fee",
+                           "reviewed_by": "Claude Code (IQ-15b)"}
     n += 1
 with open(P, "w", newline="", encoding="utf-8") as f:
-    w = csv.DictWriter(f, fieldnames=["check_id", "batch", "transfer_id", "player", "quote", "decision", "note", "reviewed_by"], lineterminator="\n")
+    w = csv.DictWriter(f, fieldnames=["check_id", "batch", "transfer_id", "player", "amount", "quote", "decision", "scope", "note", "reviewed_by"], lineterminator="\n")
     w.writeheader()
     for k in sorted(rows):
-        w.writerow(rows[k])
+        w.writerow({c: rows[k].get(c, "") for c in w.fieldnames})
 print(batch, n, "quotes recorded;", sum(1 for r in rows.values() if r["decision"] == "reject"), "rejected in total")
