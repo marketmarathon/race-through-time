@@ -171,3 +171,42 @@ with open(OUT, "a", encoding="utf-8") as f:
     f.write("\n## 9. Questions for Luke (each with Claude's recommendation)\n\n")
     for i, s in enumerate(Q, 1):
         f.write(f"{i}. {s}\n")
+
+# ---------------------------------------------------------------- phase 2 (IQ-15b)
+RV = rd("review_decisions.csv", os.path.join(D, "source"))
+RF = rd("reported_fees.csv", os.path.join(D, "source"))
+UL = rd("unmatched_leads.csv")
+P2 = []
+p = P2.append
+fee_t = [t for t in T if t["fee_gbp"] and float(t["fee_gbp"]) > 0]
+t1 = [t for t in fee_t if t["tier"] == "1"]
+p("\n## 10. Phase 2 (IQ-15b): verification at source\n")
+p(f"- **Tier 1 (DEC-256):** {len(t1):,} fee-bearing Tier 1 transfers; **{sum(1 for t in t1 if t['status'] == 'VERIFIED'):,} VERIFIED at source**, "
+  f"each quote read by Claude ({sum(1 for r in RV if r['decision'] == 'accept'):,} quotes accepted, {sum(1 for r in RV if r['decision'] == 'reject')} rejected; "
+  "`source/review_decisions.csv`). The rest have no page that states the figure next to the player's name yet (mostly 1990s–2000s deals whose only "
+  "sources are Wikipedia figures or dead links).")
+p(f"- **Tier 2:** {sum(1 for t in fee_t if t['tier'] == '2' and t['status'] == 'VERIFIED'):,} of {sum(1 for t in fee_t if t['tier'] == '2'):,} VERIFIED by the scripted check. "
+  f"**Tier 3 sample:** {sum(1 for t in T if t['tier3_sample'] == 'yes' and t['status'] == 'VERIFIED')} of {sum(1 for t in T if t['tier3_sample'] == 'yes')} VERIFIED.")
+p(f"- **Undisclosed fees (DEC-257):** {len(RF)} grade A/B reported figures found at the cited source and read by Claude, used and flagged \"reported\" "
+  "(`source/reported_fees.csv`); every other candidate figure on those pages belonged to another deal, a wage, an offer or a fine.")
+gap = [t for t in T if t["found_via"].startswith("ChatGPT gap list")]
+p(f"- **1992–2007 gap list (DEC-264), section A (1992–97):** {len(gap)} new moves added, {sum(1 for t in gap if t['status'] == 'VERIFIED')} VERIFIED "
+  "(the page names the player, both clubs and the fee); the rest matched transfers already in the build. "
+  f"{sum(1 for u in UL if u['section'] == 'G')} gap rows have no transfer date (retrospective articles only) and are listed in `unmatched_leads.csv`.")
+p("- **Leeds United 1992–2002** pages added; **last 1991–92 First Division matchday 2 May 1992** confirmed by eight club fixture lists (pointers, grade C).")
+p("- **Root causes found by reading the batches, and fixed in the build** (each fix applies to every row, not only the one seen): player names inside "
+  "Wikipedia sort templates; the same deal listed twice; research leads matched on surname only (Kylian Hazard had been given Eden Hazard's fee); "
+  "club-season tables whose direction was read from prose, plus a Wikipedia table labelled \"From\" in an \"Out\" section (Newcastle 1998–99); "
+  "figures that are maxima, offers, valuations, instalments, combined fees or totals including add-ons; a regression that had dropped "
+  "pre-2002 research-lead transfers (restored).")
+open_c = [c for c in C if c["for_luke"]]
+p(f"\n### Same-grade fee conflicts still open (DEC-261): {len(open_c)}\n")
+p("Settled at source = the fee used is confirmed at source and no differing same-grade figure is (totals including add-ons are not rivals). "
+  "Still open = two same-grade sources confirm different figures, or the fee used is not yet confirmed.\n")
+p("| Player | From → To | Date | Fee used | Other confirmed figure(s) | Why open |\n|---|---|---|---|---|---|")
+for c in open_c:
+    others = sorted({v.split(" (")[0] for v in c["versions_detail"].split(" | ") if " V " in v and not v.startswith("C ")})
+    p(f"| {c['player']} | {clubs.get(c['from_club'], c['from_club'])} → {clubs.get(c['to_club'], c['to_club'])} | {c['date']} | "
+      f"{m(c['canonical_gbp'])} ({c['canonical_grade']}) | {'; '.join(o[:60] for o in others[:3])} | {c['settled_at_source'][4:]} |")
+with open(OUT, "a", encoding="utf-8") as f:
+    f.write("\n".join(P2) + "\n")

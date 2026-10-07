@@ -212,3 +212,48 @@ Why the totals differ:
 6. **Same-grade fee disagreements on Tier 1 transfers:** 29 are listed in `conflicts.csv` (column `for_luke`). *Recommendation:* phase 2 settles each at source; the ones still open after that come back to you as a short list.
 7. **Claude's working choices** DEC-247 (finding list), DEC-248 (tiers), DEC-249 (board size later), DEC-250 (build details) and DEC-254 (how the scripted check marks a fee VERIFIED, and publisher grades). *Recommendation:* confirm them.
 8. **Phase 2 first batch.** *Recommendation:* verify the Tier 1 fees of the clubs that lead or reach the top 3 (Chelsea, Manchester United, Manchester City, Arsenal, Liverpool, Newcastle, Blackburn, Everton) first, in batches of 50 (`tier1_list.csv`, column `batch`).
+
+## 10. Phase 2 (IQ-15b): verification at source
+
+- **Tier 1 (DEC-256):** 1,807 fee-bearing Tier 1 transfers; **857 VERIFIED at source**, each quote read by Claude (858 quotes accepted, 57 rejected; `source/review_decisions.csv`). The rest have no page that states the figure next to the player's name yet (mostly 1990s–2000s deals whose only sources are Wikipedia figures or dead links).
+- **Tier 2:** 215 of 686 VERIFIED by the scripted check. **Tier 3 sample:** 1 of 35 VERIFIED.
+- **Undisclosed fees (DEC-257):** 12 grade A/B reported figures found at the cited source and read by Claude, used and flagged "reported" (`source/reported_fees.csv`); every other candidate figure on those pages belonged to another deal, a wage, an offer or a fine.
+- **1992–2007 gap list (DEC-264), section A (1992–97):** 46 new moves added, 33 VERIFIED (the page names the player, both clubs and the fee); the rest matched transfers already in the build. 5 gap rows have no transfer date (retrospective articles only) and are listed in `unmatched_leads.csv`.
+- **Leeds United 1992–2002** pages added; **last 1991–92 First Division matchday 2 May 1992** confirmed by eight club fixture lists (pointers, grade C).
+- **Root causes found by reading the batches, and fixed in the build** (each fix applies to every row, not only the one seen): player names inside Wikipedia sort templates; the same deal listed twice; research leads matched on surname only (Kylian Hazard had been given Eden Hazard's fee); club-season tables whose direction was read from prose, plus a Wikipedia table labelled "From" in an "Out" section (Newcastle 1998–99); figures that are maxima, offers, valuations, instalments, combined fees or totals including add-ons; a regression that had dropped pre-2002 research-lead transfers (restored).
+
+### Same-grade fee conflicts still open (DEC-261): 29
+
+Settled at source = the fee used is confirmed at source and no differing same-grade figure is (totals including add-ons are not rivals). Still open = two same-grade sources confirm different figures, or the fee used is not yet confirmed.
+
+| Player | From → To | Date | Fee used | Other confirmed figure(s) | Why open |
+|---|---|---|---|---|---|
+| Carlos Tevez | Media Sports Investments → Manchester City | 2009-07-14 | £25.0m (B) | B V according to reliable sources, £45m; B V around £25million; £45million claim denied; B V £25.5m | two same-grade sources confirm different figures |
+| Cesc Fàbregas | Arsenal → Barcelona | 2011-08-15 | £25.4m (B) |  | the fee used is not yet confirmed at source |
+| Julián Álvarez | Manchester City → Atlético Madrid | 2024-08-12 | £64.4m (B) |  | the fee used is not yet confirmed at source |
+| Rodri | Manchester City → Barcelona | 2026-08-18 | £65.4m (B) | B V £65.4m; B V £65m; B V €60m | two same-grade sources confirm different figures |
+| Kai Havertz | Bayer Leverkusen → Chelsea | 2020-09-04 | £75.8m (B) | B V £62m; B V £71m; B V £75.8m | two same-grade sources confirm different figures |
+| David Luiz | Chelsea → Paris Saint-Germain | 2014-06-13 | £40.0m (B) | B V £40m; B V £50m | two same-grade sources confirm different figures |
+| Michael Turner | Hull City → Sunderland | 2009-08-31 | £12.0m (B) | B V £12m; B V £12m; believed to be in the region of £12m; B V £12million | two same-grade sources confirm different figures |
+| Martín Zubimendi | Real Sociedad → Arsenal | 2025-07-06 | £60.0m (B) | B V almost £60m; B V £51m; B V £60m | two same-grade sources confirm different figures |
+| Gareth Bale | Tottenham Hotspur → Real Madrid | 2013-09-01 | £85.3m (B) | B V 100m euros; B V Real claimed €91m; B V thought to be a world record figure of €100m | two same-grade sources confirm different figures |
+| André-Frank Zambo Anguissa | Marseille → Fulham | 2018-08-09 | £30.0m (B) | B V Sky Sports News understands to be £22.3m; B V around £30m | two same-grade sources confirm different figures |
+| Aleksandar Mitrović | Fulham → Al Hilal | 2023-08-19 | £50.0m (B) | B V 50 million euros; B V £50m | two same-grade sources confirm different figures |
+| Willian | Anzhi Makhachkala → Chelsea | 2013-08-28 | £25.5m (B) | B V thought to be in the region of £25.5m; B V £32m | two same-grade sources confirm different figures |
+| Granit Xhaka | Borussia Mönchengladbach → Arsenal | 2016-05-25 | £30.0m (B) | B V in the region of £30m; B V reported £35m; B V £35m | two same-grade sources confirm different figures |
+| Richarlison | Watford → Everton | 2018-07-24 | £35.0m (B) | B V around £40m; B V potential £50m deal | two same-grade sources confirm different figures |
+| Fred | Shakhtar Donetsk → Manchester United | 2018-06-21 | £47.0m (B) | B V believed to be £52m; B V £47m | two same-grade sources confirm different figures |
+| Sofiane Boufal | Lille → Southampton | 2016-08-29 | £21.0m (B) | B V Sky sources understand the fee to be a club-record £16m; B V £21m according to sources at the south-coast club | two same-grade sources confirm different figures |
+| Shaun Wright-Phillips | Manchester City → Chelsea | 2005-07-18 | £21.0m (B) |  | the fee used is not yet confirmed at source |
+| Don Hutchison | Liverpool → West Ham United | 1994-08-30 | £1.5m (B) | B V pounds 1.5m; B V £5.3m | two same-grade sources confirm different figures |
+| Henrikh Mkhitaryan | Borussia Dortmund → Manchester United | 2016-07-06 | £26.3m (B) | B V undisclosed fee believed to be £30m; B V £26.3m | two same-grade sources confirm different figures |
+| Anderson | F.C. Porto → Manchester United | 2007-07-02 | £17.0m (B) | B V £17m; B V £20.4m; D V £17m | two same-grade sources confirm different figures |
+| Caleb Yirenkyi | Nordsjælland → Coventry City | 2026-08-07 | £23.0m (B) | B V £23.1m; B V £23m; B V £26m | two same-grade sources confirm different figures |
+| Cesc Fàbregas | Barcelona → Chelsea | 2014-06-12 | £27.0m (B) |  | the fee used is not yet confirmed at source |
+| Luke Shaw | Southampton → Manchester United | 2014-06-27 | £27.0m (B) | B V reported £30m; B V £27m; B V £27m; could rise to £31m | two same-grade sources confirm different figures |
+| James Milner | Newcastle United → Aston Villa | 2008-08-29 | £12.0m (B) | B V believed to be in the region of £10m; B V £12m | two same-grade sources confirm different figures |
+| Graeme Le Saux | Blackburn Rovers → Chelsea | 1997-08-08 | £5.0m (B) | B V pounds 5m; B V pounds 7m | two same-grade sources confirm different figures |
+| Paolo Di Canio | Celtic → Sheffield Wednesday | 1997-08-06 | £4.5m (B) | B V pounds 3m; B V pounds 4.5m player-plus-cash deal | two same-grade sources confirm different figures |
+| Faustino Asprilla | Newcastle United → Parma | 1998-01-31 | £7.3m (B) | B V pounds 6m; B V pounds 7.3m | two same-grade sources confirm different figures |
+| Nick Barmby | Middlesbrough → Everton | 1996-10-30 | £5.7m (B) | B V pounds 4.5m; B V pounds 5.3m; B V pounds 5.75m | two same-grade sources confirm different figures |
+| Christos Tzolis | PAOK → Norwich City | 2021-08-12 | £8.8m (B) | B V around £10m; B V £8.8m | two same-grade sources confirm different figures |
