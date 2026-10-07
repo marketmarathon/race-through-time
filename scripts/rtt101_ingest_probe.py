@@ -24,6 +24,7 @@ for e in E:
 if os.path.exists(f"{D}/source/player_article_citations.csv"):
     for r in csv.DictReader(open(f"{D}/source/player_article_citations.csv", encoding="utf-8")):
         by_url.setdefault(r["url"], set()).add(r["transfer_id"])
+gap_tids = {tid for tid, t in T.items() if t["found_via"].startswith("ChatGPT gap list")}  # page must also name both clubs
 amounts = {}
 for e in E:
     if e["amount"] and e["currency"]:
@@ -53,6 +54,7 @@ for line in open(log, encoding="utf-8"):
     if rec.get("published"):
         dates[it["url"]] = {"url": it["url"], "published": rec["published"][:25], "page_sha256": rec["sha256"], "retrieved": day}
     near = L.norm(it["near"])
+    clubs_ok = all(rec.get("also_found") or [True]) if it.get("also") else None
     tids = [tid for tid in by_url.get(it["url"], ()) if tid in T and surname(T[tid]["player"]) == near]
     for s in rec.get("snips", []):
         p = L.parse_fee(s["money"])
@@ -61,7 +63,7 @@ for line in open(log, encoding="utf-8"):
         key = (round(p["amount"] / 1e4), p["currency"])
         q = short(s["excerpt"], s["money"])
         for tid in tids:
-            if key in amounts.get(tid, set()):
+            if key in amounts.get(tid, set()) and (tid not in gap_tids or clubs_ok):
                 cid = f"P{rec['id']}-{key[0]}{key[1]}"
                 checks[cid] = {"check_id": cid, "transfer_id": tid, "near": it["near"], "url": it["url"], "amount": f"{p['amount']:.2f}",
                                "currency": p["currency"], "http_status": rec["status"], "result": "VERIFIED", "status": "VERIFIED",

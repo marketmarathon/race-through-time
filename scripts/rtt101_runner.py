@@ -125,7 +125,8 @@ def main():
                     break
         out.append({"id": it["id"], "status": st, "err": err, "sha256": hashlib.sha256(body).hexdigest() if body else "",
                     "published": pub, "surname_on_page": bool(near and near in low),
-                    "undisclosed_on_page": bool(near and "undisclosed" in low), "snips": snips})
+                    "undisclosed_on_page": bool(near and "undisclosed" in low), "snips": snips,
+                    "also_found": [any(v.lower() in low for v in grp) for grp in it.get("also", [])]})
         if len(out) == 20:
             print("RTT101PROBE " + json.dumps(out, ensure_ascii=False)); sys.stdout.flush(); out = []
         time.sleep(job.get("delay", 1.0))
