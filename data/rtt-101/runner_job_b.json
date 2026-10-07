@@ -1,0 +1,7061 @@
+{
+"delay": 0.8,
+"probe": [
+{
+"id": "c9bfd918ceb79194",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=8539",
+"near": "Williams",
+"group": "t1"
+},
+{
+"id": "07cbce8d654b4093",
+"url": "https://www.hampshirelive.news/sport/football/paul-walsh-guy-whittingham-portsmouth-5921906",
+"near": "Walsh",
+"group": "t1"
+},
+{
+"id": "d5c71385540bb9d1",
+"url": "https://www.skysports.com/football/player/21746/dean-austin",
+"near": "Austin",
+"group": "t1"
+},
+{
+"id": "5a535871a4fbd9d3",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=4622",
+"near": "Lowe",
+"group": "t1"
+},
+{
+"id": "ecfc73524b734591",
+"url": "https://www.gordonpoole.com/talent/neil-razor-ruddock/",
+"near": "Ruddock",
+"group": "t1"
+},
+{
+"id": "67aef244c8d3438b",
+"url": "https://www.independent.co.uk/sport/football-southampton-sign-monkou-1541889.html",
+"near": "Monkou",
+"group": "t1"
+},
+{
+"id": "eca3ef66618f76f3",
+"url": "https://www.independent.co.uk/sport/football-on-the-move-1541911.html",
+"near": "Groves",
+"group": "t1"
+},
+{
+"id": "3502382ea45bb082",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=3133",
+"near": "Genchev",
+"group": "t1"
+},
+{
+"id": "41201cb19a8f8e65",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=4885",
+"near": "Mason",
+"group": "t1"
+},
+{
+"id": "8f606b75c120410c",
+"url": "https://www.independent.co.uk/sport/sporting-digest-football-1483666.html",
+"near": "Fjortoft",
+"group": "t1"
+},
+{
+"id": "c3c00db367a4ca3e",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=7916",
+"near": "Thomsen",
+"group": "t1"
+},
+{
+"id": "a9568fe3cfbf0925",
+"url": "http://www.wsc.co.uk/the-archive/31-Players/5381-ceased-anglian",
+"near": "Taricco",
+"group": "t1"
+},
+{
+"id": "a96209f334c308b2",
+"url": "https://www.independent.co.uk/sport/football-boro-offer-ajax-pounds-6m-for-kluivert-1327288.html",
+"near": "Ekoku",
+"group": "t1"
+},
+{
+"id": "e65a57027a7b32c5",
+"url": "https://www.independent.co.uk/sport/football-cort-lays-down-law-to-newcastle-1239200.html",
+"near": "Ekoku",
+"group": "t1"
+},
+{
+"id": "c321b1816b66e255",
+"url": "https://www.skysports.com/football/player/21072/duncan-ferguson",
+"near": "Ferguson",
+"group": "t1"
+},
+{
+"id": "0d537b6374f856cf",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=4243",
+"near": "Kiwomya",
+"group": "t1"
+},
+{
+"id": "f49791b0e5d81303",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=1412",
+"near": "Chapman",
+"group": "t1"
+},
+{
+"id": "22a392b6c3d00256",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=4901",
+"near": "Mathie",
+"group": "t1"
+},
+{
+"id": "43cb7dded97bdff2",
+"url": "https://www.telegraph.co.uk/sport/main.jhtml?xml=/sport/football/john_ley/sftips.xml",
+"near": "Swailes",
+"group": "t1"
+},
+{
+"id": "103585ac8eca30f3",
+"url": "https://www.independent.co.uk/sport/milosevic-happy-in-the-long-run-1600418.html",
+"near": "Milošević",
+"group": "t1"
+},
+{
+"id": "eb8e8b58a5fd7565",
+"url": "http://www.thefreelibrary.com/SIGN+OR+GET+OUT+RIOCH!%3B+Arsenal+warn+crisis+boss.-a061314883",
+"near": "Schwarz",
+"group": "t1"
+},
+{
+"id": "e4bc0e54fba1c25e",
+"url": "https://www.independent.co.uk/sport/nelson-finalises-move-to-villa-1328527.html",
+"near": "Coton",
+"group": "t1"
+},
+{
+"id": "ba4b6c14ce0abde2",
+"url": "https://www.independent.co.uk/sport/briefly--poborsky-signs-at-last-1329803.html",
+"near": "Poborský",
+"group": "t1"
+},
+{
+"id": "deae50f35e2390ae",
+"url": "https://www.independent.co.uk/sport/di-matteo-seals-move-to-chelsea-1327518.html",
+"near": "Solskjær",
+"group": "t1"
+},
+{
+"id": "53e55cb1a389bda3",
+"url": "https://www.independent.co.uk/sport/on-the-move-1310342.html",
+"near": "Prior",
+"group": "t1"
+},
+{
+"id": "6e2f0f9c4ba368ec",
+"url": "https://www.independent.co.uk/sport/little-moves-in-for-pounds-4m-curcic-1309845.html",
+"near": "Ćurčić",
+"group": "t1"
+},
+{
+"id": "36d5942f5800247e",
+"url": "https://www.theguardian.com/football/2001/may/09/newsstory.sport9",
+"near": "Bilić",
+"group": "t1"
+},
+{
+"id": "c7b9a6fece91f200",
+"url": "http://www.thefreelibrary.com/CLARK%3A+GLAD+TO+BE+WEAR.-a064828151",
+"near": "Clark",
+"group": "t1"
+},
+{
+"id": "87df3aea6e91bf1c",
+"url": "http://www.thefreelibrary.com/ELLIOTT%3A+I'LL+BOUNCE+BACK.-a061059921",
+"near": "Elliott",
+"group": "t1"
+},
+{
+"id": "3d4800061ca98130",
+"url": "https://www.independent.co.uk/sport/football-united-snap-up-nevland-1264444.html",
+"near": "Nevland",
+"group": "t1"
+},
+{
+"id": "b085a5eddd7bf8b0",
+"url": "http://www.thefreelibrary.com/Ginola+bit+part+as+Spurs+draw+blank.-a061076431",
+"near": "Ginola",
+"group": "t1"
+},
+{
+"id": "cba3ced451623e4c",
+"url": "http://www.thefreelibrary.com/DAHL+JOINS+TOON+FOR+PETE'S+SAKE.-a061071257",
+"near": "Tomasson",
+"group": "t1"
+},
+{
+"id": "d737ad0440198265",
+"url": "https://www.skysports.com/football/player/6505/valerien-ismael",
+"near": "Ismaël",
+"group": "t1"
+},
+{
+"id": "df319e99d36d6f55",
+"url": "https://www.independent.co.uk/news/education/education-news/football-sideslines-1142004.html",
+"near": "O'Kane",
+"group": "t1"
+},
+{
+"id": "e55375899f6f93a5",
+"url": "https://news.bbc.co.uk/1/hi/sport/football/129636.stm",
+"near": "Pallister",
+"group": "t1"
+},
+{
+"id": "aca883a9f576d977",
+"url": "https://news.google.com/newspapers?id=z_VOAAAAIBAJ&pg=5849,205321&dq=jesper+blomqvist&hl=en",
+"near": "Blomqvist",
+"group": "t1"
+},
+{
+"id": "01d657fbe5be7e47",
+"url": "https://www.theguardian.com/football/1999/jan/27/newsstory.sport",
+"near": "Foé",
+"group": "t1"
+},
+{
+"id": "d925c2f471aef1c9",
+"url": "https://www.independent.co.uk/sport/football-on-the-move-1077357.html",
+"near": "Foé",
+"group": "t1"
+},
+{
+"id": "b00f2e084115d50f",
+"url": "https://www.skysports.com/football/player/21124/seth-johnson",
+"near": "Johnson",
+"group": "t1"
+},
+{
+"id": "8555a2e79b0a788e",
+"url": "https://www.skysports.com/football/player/4464/michael-bridges",
+"near": "Bridges",
+"group": "t1"
+},
+{
+"id": "357ca4ad05dace3b",
+"url": "http://news.bbc.co.uk/2/hi/sport/football/fa_carling_premiership/434743.stm",
+"near": "Taibi",
+"group": "t1"
+},
+{
+"id": "1b92b10a47f65692",
+"url": "http://news.bbc.co.uk/1/hi/sport/443765.stm",
+"near": "Silvestre",
+"group": "t1"
+},
+{
+"id": "720b811c0f82f55c",
+"url": "https://www.skysports.com/football/player/21119/georgi-kinkladze",
+"near": "Kinkladze",
+"group": "t1"
+},
+{
+"id": "6d191c78adcbad86",
+"url": "https://news.bbc.co.uk/2/hi/sport/football/772566.stm",
+"near": "Bassedas",
+"group": "t1"
+},
+{
+"id": "0680caf5d04d73a0",
+"url": "http://news.bbc.co.uk/2/hi/sport/football/fa_carling_premiership/797974.stm",
+"near": "Guðjohnsen",
+"group": "t1"
+},
+{
+"id": "d21100ddfdef711a",
+"url": "http://news.bbc.co.uk/sport2/hi/football/teams/c/chelsea/809869.stm",
+"near": "Stanić",
+"group": "t1"
+},
+{
+"id": "a4d8fe7c449c83fe",
+"url": "https://news.bbc.co.uk/1/hi/sport/football/813978.stm",
+"near": "Pistone",
+"group": "t1"
+},
+{
+"id": "c390962b21c887e0",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/e/everton/813978.stm",
+"near": "Pistone",
+"group": "t1"
+},
+{
+"id": "dee02c3c001ff832",
+"url": "https://news.bbc.co.uk/sport1/hi/football/teams/e/everton/818680.stm",
+"near": "Watson",
+"group": "t1"
+},
+{
+"id": "4063ec6284c12c49",
+"url": "http://news.bbc.co.uk/sport1/hi/football/teams/c/coventry_city/830130.stm",
+"near": "Bothroyd",
+"group": "t1"
+},
+{
+"id": "b2db8d17758245eb",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/e/everton/832040.stm",
+"near": "Nyarko",
+"group": "t1"
+},
+{
+"id": "184058b65946001d",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/e/everton/839581.stm",
+"near": "Alexandersson",
+"group": "t1"
+},
+{
+"id": "068f9a7d56ae18a6",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/n/newcastle_united/835244.stm",
+"near": "Marić",
+"group": "t1"
+},
+{
+"id": "206e67e8eaab51b9",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/e/everton/843612.stm",
+"near": "Gravesen",
+"group": "t1"
+},
+{
+"id": "3e27240852a9275e",
+"url": "https://www.skysports.com/football/player/3397/ade-akinbiyi",
+"near": "Akinbiyi",
+"group": "t1"
+},
+{
+"id": "ad24ad2eaa8570b0",
+"url": "http://news.bbc.co.uk/sport1/hi/football/eng_prem/859609.stm",
+"near": "Whelan",
+"group": "t1"
+},
+{
+"id": "b3073bb72eae7ac7",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/m/middlesbrough/859609.stm",
+"near": "Whelan",
+"group": "t1"
+},
+{
+"id": "f39b144d5694b931",
+"url": "http://news.bbc.co.uk/sport1/hi/football/teams/c/coventry_city/863426.stm",
+"near": "Thompson",
+"group": "t1"
+},
+{
+"id": "37ba481d58244d3c",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/e/everton/884163.stm",
+"near": "Ferguson",
+"group": "t1"
+},
+{
+"id": "14013e412278142f",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/l/liverpool/895249.stm",
+"near": "Ziege",
+"group": "t1"
+},
+{
+"id": "1df3798341a9de24",
+"url": "https://www.independent.co.uk/sport/football/premier-league/chelsea-search-ends-in-pound17m-jokanovic-deal-637216.html",
+"near": "Jokanović",
+"group": "t1"
+},
+{
+"id": "d1bbf803dc783c66",
+"url": "https://news.bbc.co.uk/sport1/hi/northern_ireland/975283.stm",
+"near": "Dunne",
+"group": "t1"
+},
+{
+"id": "51e91471537c3079",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/e/everton/976919.stm",
+"near": "Tal",
+"group": "t1"
+},
+{
+"id": "7fca4c804f0b8cde",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/e/everton/976335.stm",
+"near": "Naysmith",
+"group": "t1"
+},
+{
+"id": "406699ff93703e64",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/w/west_ham_utd/1036838.stm",
+"near": "Song",
+"group": "t1"
+},
+{
+"id": "1caf0afc0db45977",
+"url": "https://news.bbc.co.uk/sport1/hi/football/teams/l/liverpool/1047409.stm",
+"near": "Sjölund",
+"group": "t1"
+},
+{
+"id": "5a1a465cba46cbd3",
+"url": "http://news.bbc.co.uk/sport1/hi/football/teams/c/coventry_city/1048934.stm",
+"near": "Carsley",
+"group": "t1"
+},
+{
+"id": "930191bc9e03dbb3",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/w/west_ham_utd/1073522.stm",
+"near": "Camara",
+"group": "t1"
+},
+{
+"id": "701710bb592d3028",
+"url": "https://www.theguardian.com/football/2000/oct/31/newsstory.ajax",
+"near": "Grønkjær",
+"group": "t1"
+},
+{
+"id": "fdab80a5f5288aad",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/n/nottm_forest/1112136.stm",
+"near": "Johnson",
+"group": "t1"
+},
+{
+"id": "8d1586e929f35b27",
+"url": "https://www.theguardian.com/football/2003/sep/27/sport.comment4",
+"near": "Ángel",
+"group": "t1"
+},
+{
+"id": "85495beb7bde68b8",
+"url": "https://www.theguardian.com/football/2000/dec/22/newsstory.sport7",
+"near": "Ángel",
+"group": "t1"
+},
+{
+"id": "d538ffce0e8af971",
+"url": "https://news.bbc.co.uk/sport1/hi/football/teams/w/west_ham_utd/1120082.stm",
+"near": "Dailly",
+"group": "t1"
+},
+{
+"id": "9058f509c1c2dba8",
+"url": "http://news.bbc.co.uk/sport1/hi/football/teams/w/wolverhampton_wanderers/1168036.stm",
+"near": "Roussel",
+"group": "t1"
+},
+{
+"id": "36a63770ea3e29a1",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/i/ipswich_town/1205564.stm",
+"near": "Makin",
+"group": "t1"
+},
+{
+"id": "2881c182a2c25b56",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/n/newcastle_united/1229323.stm",
+"near": "O'Brien",
+"group": "t1"
+},
+{
+"id": "7388e9e3afb75624",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/s/sunderland/1338372.stm",
+"near": "Medina",
+"group": "t1"
+},
+{
+"id": "7a24775167b1421b",
+"url": "https://news.bbc.co.uk/sport1/hi/football/teams/c/charlton_athletic/1345349.stm",
+"near": "Bartlett",
+"group": "t1"
+},
+{
+"id": "436bcde9eb0f0fc9",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/c/chelsea/1388696.stm",
+"near": "Lampard",
+"group": "t1"
+},
+{
+"id": "242a18c4d34cc608",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/b/blackburn_rovers/1390529.stm",
+"near": "Grabbi",
+"group": "t1"
+},
+{
+"id": "ee102f4a8339a871",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/s/sunderland/1411413.stm",
+"near": "Laslandes",
+"group": "t1"
+},
+{
+"id": "a14682f4ac36833a",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/b/blackburn_rovers/1413713.stm",
+"near": "Mahon",
+"group": "t1"
+},
+{
+"id": "70c701e91440337c",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/s/sunderland/1331517.stm",
+"near": "Fredgaard",
+"group": "t1"
+},
+{
+"id": "c8caa96a09727e5b",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/l/leicester_city/1430128.stm",
+"near": "Walker",
+"group": "t1"
+},
+{
+"id": "40dd335d78468873",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/s/southampton/1432893.stm",
+"near": "Delap",
+"group": "t1"
+},
+{
+"id": "1939c5abac7040de",
+"url": "https://www.skysports.com/football/player/2466/rory-delap",
+"near": "Delap",
+"group": "t1"
+},
+{
+"id": "447739998b4a8a20",
+"url": "https://www.skysports.com/football/news/10507078/manchester-uniteds-top-10-transfer-record-signings",
+"near": "Verón",
+"group": "t1"
+},
+{
+"id": "fd3d9aeb62c1209d",
+"url": "https://www.theguardian.com/football/2001/jul/12/newsstory.sport7",
+"near": "Verón",
+"group": "t1"
+},
+{
+"id": "11fa1ad22e5dfead",
+"url": "https://www.skysports.com/football/news/15115/10507078/after-paul-pogbas-arrival-manchester-uniteds-previous-top-10-transfer-record-signings",
+"near": "Verón",
+"group": "t1"
+},
+{
+"id": "a0088cf9299b4320",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/c/charlton_athletic/1457424.stm",
+"near": "Young",
+"group": "t1"
+},
+{
+"id": "8cc93b96261a127f",
+"url": "http://news.bbc.co.uk/sport2/hi/football/teams/l/leicester_city/1437263.stm",
+"near": "Scowcroft",
+"group": "t1"
+},
+{
+"id": "d8551e0f58a66be8",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/l/leicester_city/1437263.stm",
+"near": "Scowcroft",
+"group": "t1"
+},
+{
+"id": "9718fedadfa78483",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/n/newcastle_united/1465404.stm",
+"near": "Robert",
+"group": "t1"
+},
+{
+"id": "ce2b83b958634069",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/f/fulham/1469088.stm",
+"near": "Ouaddou",
+"group": "t1"
+},
+{
+"id": "b569ad39759ad4b8",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/w/wolverhampton_wanderers/1476357.stm",
+"near": "Newton",
+"group": "t1"
+},
+{
+"id": "3dfe6b7aadcd5b8c",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/f/fulham/1477811.stm",
+"near": "Harley",
+"group": "t1"
+},
+{
+"id": "474fc7e979a8a604",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/w/west_ham_utd/1514594.stm",
+"near": "Hutchison",
+"group": "t1"
+},
+{
+"id": "0711c7be0be69267",
+"url": "https://www.skysports.com/football/player/22259/don-hutchison",
+"near": "Hutchison",
+"group": "t1"
+},
+{
+"id": "f247c3b97efc0875",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/w/west_ham_utd/1516567.stm",
+"near": "Řepka",
+"group": "t1"
+},
+{
+"id": "61bc98171989d601",
+"url": "https://www.skysports.com/football/player/6145/tomas-repka",
+"near": "Řepka",
+"group": "t1"
+},
+{
+"id": "c477816c4f9d21c0",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/b/blackburn_rovers/1672212.stm",
+"near": "Bent",
+"group": "t1"
+},
+{
+"id": "cb7849dfe69cb944",
+"url": "http://news.bbc.co.uk/sport1/hi/football/eng_prem/1672212.stm",
+"near": "Bent",
+"group": "t1"
+},
+{
+"id": "5c27652cb7104e9e",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/q/qpr/1747701.stm",
+"near": "Shittu",
+"group": "t1"
+},
+{
+"id": "6f8231b7292be3e2",
+"url": "http://news.bbc.co.uk/sport2/hi/football/teams/l/liverpool/1787989.stm",
+"near": "Xavier",
+"group": "t1"
+},
+{
+"id": "a3d3f335a4923be8",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/d/derby_county/1795552.stm",
+"near": "Barton",
+"group": "t1"
+},
+{
+"id": "b999dff7f6b1b4a4",
+"url": "http://news.bbc.co.uk/sport/hi/english/football/teams/n/newcastle_united/newsid_1795000/1795337.stm",
+"near": "Jenas",
+"group": "t1"
+},
+{
+"id": "761b57dd90e2d70a",
+"url": "https://news.bbc.co.uk/sport1/hi/football/teams/d/derby_county/1800770.stm",
+"near": "Lee",
+"group": "t1"
+},
+{
+"id": "9e65ec13d80e10a5",
+"url": "https://news.bbc.co.uk/sport1/hi/football/teams/w/west_ham_utd/1866917.stm",
+"near": "Todorov",
+"group": "t1"
+},
+{
+"id": "240f3407ab567904",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/l/leicester_city/1981926.stm",
+"near": "Rowett",
+"group": "t1"
+},
+{
+"id": "e5190ddd9a0098d7",
+"url": "http://news.bbc.co.uk/sport1/hi/football/teams/e/everton/2149205.stm",
+"near": "Wright",
+"group": "t1"
+},
+{
+"id": "5c437b1049b17dc7",
+"url": "http://news.bbc.co.uk/sport1/hi/football/teams/b/birmingham_city/2634769.stm",
+"near": "Clemence",
+"group": "t1"
+},
+{
+"id": "9cc2bd447377c246",
+"url": "http://news.bbc.co.uk/sport1/hi/football/teams/b/birmingham_city/2634769.stm",
+"near": "Clapham",
+"group": "t1"
+},
+{
+"id": "eb809acfa666ddf4",
+"url": "http://news.bbc.co.uk/sport1/hi/football/teams/b/birmingham_city/2652803.stm",
+"near": "Upson",
+"group": "t1"
+},
+{
+"id": "3e30fe3a1fae4a94",
+"url": "http://news.bbc.co.uk/sport1/hi/football/teams/m/man_city/2689503.stm",
+"near": "Sommeil",
+"group": "t1"
+},
+{
+"id": "be0d257c053b5c48",
+"url": "http://news.bbc.co.uk/sport1/hi/football/teams/m/man_city/2702189.stm",
+"near": "Fowler",
+"group": "t1"
+},
+{
+"id": "3f0493a4a715d95b",
+"url": "http://news.bbc.co.uk/sport1/hi/football/teams/n/newcastle_united/2712545.stm",
+"near": "Woodgate",
+"group": "t1"
+},
+{
+"id": "faea77c0ae29683f",
+"url": "https://www.skysports.com/football/news/2272672/cole-and-veron-become-blues",
+"near": "Verón",
+"group": "t1"
+},
+{
+"id": "3da7ab780e6994b2",
+"url": "https://www.skysports.com/football/news/2272680/united-accept-blues-veron-bid",
+"near": "Verón",
+"group": "t1"
+},
+{
+"id": "18a3ca06f6ddeebc",
+"url": "https://www.uefa.com/uefachampionsleague/news/0254-0d7b34e7cabb-cbe9cd5916f1-1000--makelele-makes-chelsea-move/",
+"near": "Makélélé",
+"group": "t1"
+},
+{
+"id": "7bc4eabc2a0668b2",
+"url": "https://www.theguardian.com/football/2003/sep/01/newsstory.chelsea",
+"near": "Makélélé",
+"group": "t1"
+},
+{
+"id": "ea185f6f053aba7c",
+"url": "https://www.skysports.com/football/player/4855/claude-makelele",
+"near": "Makélélé",
+"group": "t1"
+},
+{
+"id": "c3d0a61531106378",
+"url": "https://www.theguardian.com/football/2005/may/06/newsstory.sport7",
+"near": "Ayegbeni",
+"group": "t1"
+},
+{
+"id": "2e924974543b1435",
+"url": "https://www.theguardian.com/football/2007/jan/17/newsstory.sport11",
+"near": "Ayegbeni",
+"group": "t1"
+},
+{
+"id": "ece1baa7c3e1e383",
+"url": "https://www.tottenhamhotspur.com/news/nine-for-berbatov-170506/",
+"near": "Berbatov",
+"group": "t1"
+},
+{
+"id": "d5fb2d7c13acbf8a",
+"url": "http://www.juventus.com/uk/news/detail.aspx?lml_language_id=0&trs_id=1370000&ID=8477",
+"near": "Boumsong",
+"group": "t1"
+},
+{
+"id": "9a6a278dfb1e66d9",
+"url": "http://www.nufc.premiumtv.co.uk/page/NewsDetail/0,,10278~887839,00.html",
+"near": "Martins",
+"group": "t1"
+},
+{
+"id": "956ab7aff089fa9b",
+"url": "http://www.asroma.it/NewsDoc.aspx?Categoria=ITComunicatiFinanziari&Documento=6241",
+"near": "Mido",
+"group": "t1"
+},
+{
+"id": "f6c0af90cd41f8ae",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/f/fulham/6256888.stm",
+"near": "Kamara",
+"group": "t1"
+},
+{
+"id": "521550501daab898",
+"url": "https://news.bbc.co.uk/sport1/hi/football/teams/m/man_city/6917424.stm",
+"near": "Petrov",
+"group": "t1"
+},
+{
+"id": "783d0ee8d0465601",
+"url": "https://www.skysports.com/football/news/2637753/reading-snap-up-fae",
+"near": "Faé",
+"group": "t1"
+},
+{
+"id": "5e8238bcbdf31dc8",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/m/man_city/7221987.stm",
+"near": "Benjani",
+"group": "t1"
+},
+{
+"id": "7ef5001c51f42661",
+"url": "https://news.bbc.co.uk/sport1/hi/football/africa/7338325.stm",
+"near": "Pienaar",
+"group": "t1"
+},
+{
+"id": "b6b92b07a31be076",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/t/tottenham_hotspur/7373163.stm",
+"near": "Modrić",
+"group": "t1"
+},
+{
+"id": "836fd5087f77f5d5",
+"url": "https://www.tottenhamhotspur.com/news/1027968/player-transfer-luka-modric",
+"near": "Modrić",
+"group": "t1"
+},
+{
+"id": "0bbfb42898e3a6c0",
+"url": "https://www.skysports.com/football/news/3493169/spurs-confirm-modric-deal",
+"near": "Modrić",
+"group": "t1"
+},
+{
+"id": "78e96dccb22f13b0",
+"url": "https://www.theguardian.com/football/2008/jul/02/premierleague.manchestercity",
+"near": "Jô",
+"group": "t1"
+},
+{
+"id": "b8e455a3f6138701",
+"url": "https://www.skysports.com/football/news/3767430/city-confirm-jo-capture",
+"near": "Jô",
+"group": "t1"
+},
+{
+"id": "f58fa75158f24995",
+"url": "https://www.theguardian.com/football/2008/jul/03/premierleague.manchestercity",
+"near": "Jô",
+"group": "t1"
+},
+{
+"id": "92bd1917756bc35a",
+"url": "https://www.skysports.com/amp/football/news/11679/7051141/jo-makes-city-exit",
+"near": "Jô",
+"group": "t1"
+},
+{
+"id": "5d0515dfb9917d79",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/b/blackburn_rovers/7526434.stm",
+"near": "Robinson",
+"group": "t1"
+},
+{
+"id": "0522589477cd3b4c",
+"url": "https://www.skysports.com/football/news/3878303/muntari-seals-inter-switch",
+"near": "Muntari",
+"group": "t1"
+},
+{
+"id": "f86dac6ec44b3ce7",
+"url": "https://www.theguardian.com/football/2010/may/14/birmingham-christian-benitez-permanent",
+"near": "Benitez",
+"group": "t1"
+},
+{
+"id": "8545aba877950137",
+"url": "http://news.bbc.co.uk/sport1/hi/football/teams/b/birmingham_city/8704954.stm",
+"near": "Žigić",
+"group": "t1"
+},
+{
+"id": "e6d2f7278021cf29",
+"url": "https://www.theguardian.com/football/2010/may/26/birmingham-nikola-zigic-serbia-premier",
+"near": "Žigić",
+"group": "t1"
+},
+{
+"id": "af8bb6b51dc848aa",
+"url": "http://news.bbc.co.uk/sport1/hi/football/teams/m/man_city/8783455.stm",
+"near": "Touré",
+"group": "t1"
+},
+{
+"id": "03d640ff26b9ce8e",
+"url": "http://www.skysports.com/story/0,19528,12875_6287283,00.html",
+"near": "Myhill",
+"group": "t1"
+},
+{
+"id": "b20be2f7162b4bef",
+"url": "http://news.bbc.co.uk/sport2/hi/football/teams/l/liverpool/9377256.stm",
+"near": "Suárez",
+"group": "t1"
+},
+{
+"id": "3a823a583afeb3bd",
+"url": "https://www.skysports.com/football/news/11898/6714656/tuncay-seals-wolfsburg-switch",
+"near": "Sanli",
+"group": "t1"
+},
+{
+"id": "bebf79b72b4bdf4a",
+"url": "https://www.bbc.co.uk/sport/football/14482418?pubDate=20250411",
+"near": "Fàbregas",
+"group": "t1"
+},
+{
+"id": "21acd68f4e1cd3b5",
+"url": "https://www.theguardian.com/football/2011/aug/15/cesc-fabregas-signs-barcelona-arsenal",
+"near": "Fàbregas",
+"group": "t1"
+},
+{
+"id": "f88239c5ff5892e0",
+"url": "https://www.theguardian.com/football/2011/aug/15/barcelona-cesc-fabregas-arsenal-tears",
+"near": "Fàbregas",
+"group": "t1"
+},
+{
+"id": "20864c8ed8783c5c",
+"url": "https://www.independent.co.uk/sport/football/premier-league/qpr-strengthen-for-survival-bid-with-busy-transfer-window-2347401.html",
+"near": "Wright-Phillips",
+"group": "t1"
+},
+{
+"id": "a1ad354d31f34d50",
+"url": "http://www1.skysports.com/football/news/12691/7439451/Cisse-completes-Magpies-move",
+"near": "Cissé",
+"group": "t1"
+},
+{
+"id": "11c04031302ad46b",
+"url": "https://www.bbc.co.uk/sport/football/16783436",
+"near": "Cissé",
+"group": "t1"
+},
+{
+"id": "4fa408c1e4a2927f",
+"url": "https://www.bbc.co.uk/sport/football/16783119",
+"near": "Jelavić",
+"group": "t1"
+},
+{
+"id": "259ce6634d9178b9",
+"url": "https://www.theguardian.com/football/2012/jun/06/tottenham-niko-kranjcar-dynamo-kyiv",
+"near": "Kranjčar",
+"group": "t1"
+},
+{
+"id": "10e0a7cd0df904e1",
+"url": "https://www.bbc.co.uk/sport/football/19342136",
+"near": "Jarvis",
+"group": "t1"
+},
+{
+"id": "74ec8e59d244986c",
+"url": "https://www.bbc.co.uk/sport/football/19389191",
+"near": "Modrić",
+"group": "t1"
+},
+{
+"id": "e78e20883a3b1475",
+"url": "https://news.sky.com/story/modric-completes-real-madrid-move-10471807",
+"near": "Modrić",
+"group": "t1"
+},
+{
+"id": "c831730705047c31",
+"url": "https://www.skysports.com/football/news/8031604/dembele-joins-tottenham",
+"near": "Dembélé",
+"group": "t1"
+},
+{
+"id": "86cf4d6163d0c59a",
+"url": "https://www.bbc.co.uk/sport/football/19421873",
+"near": "Hernández",
+"group": "t1"
+},
+{
+"id": "9878afb8b1c553d6",
+"url": "https://www.bbc.co.uk/sport/football/19442980",
+"near": "Ramírez",
+"group": "t1"
+},
+{
+"id": "744269abb9f9a508",
+"url": "https://www.bbc.co.uk/sport/football/21039302",
+"near": "Rémy",
+"group": "t1"
+},
+{
+"id": "6292eea8a4294170",
+"url": "https://www.bbc.co.uk/sport/football/23929339",
+"near": "Özil",
+"group": "t1"
+},
+{
+"id": "545a3c54bfe0dfc9",
+"url": "https://www.theguardian.com/football/2013/sep/02/mesut-ozil-arsenal-real-madrid",
+"near": "Özil",
+"group": "t1"
+},
+{
+"id": "d2eb657b33ab8af0",
+"url": "https://www.skysports.com/football/news/10291273/granit-xhaka-becomes-arsenals-third-most-expensive-transfer-at-around-30m",
+"near": "Özil",
+"group": "t1"
+},
+{
+"id": "40c0ca1d85e653ce",
+"url": "https://www.theguardian.com/football/2014/jan/15/hull-everton-nikica-jelavic-deal",
+"near": "Jelavić",
+"group": "t1"
+},
+{
+"id": "1d891d197a1bdfd8",
+"url": "https://www.bbc.co.uk/sport/football/25757771",
+"near": "Long",
+"group": "t1"
+},
+{
+"id": "06342ea54e4c31d0",
+"url": "https://www.theguardian.com/football/2014/jun/12/chelsea-sign-cesc-fabregas-from-barcelona",
+"near": "Fàbregas",
+"group": "t1"
+},
+{
+"id": "03597b8af3a1a07a",
+"url": "https://www.bbc.co.uk/sport/football/27819204",
+"near": "Fàbregas",
+"group": "t1"
+},
+{
+"id": "8b60b226623440e5",
+"url": "https://www.skysports.com/football/news/10507078/manchester-uniteds-top-10-transfer-record-signings",
+"near": "María",
+"group": "t1"
+},
+{
+"id": "e987d47be72a695c",
+"url": "https://www.bbc.co.uk/sport/football/28926665",
+"near": "María",
+"group": "t1"
+},
+{
+"id": "a5995b13cdf69064",
+"url": "https://www.bbc.co.uk/sport/football/28994304",
+"near": "Rémy",
+"group": "t1"
+},
+{
+"id": "fe4150343e405f85",
+"url": "https://www.skysports.com/transfer/news/11714/9451951/transfer-news-hull-city-abel-hernandez-for-club-record-fee-from-palermo",
+"near": "Hernández",
+"group": "t1"
+},
+{
+"id": "5bee770464e93394",
+"url": "https://www.skysports.com/football/news/11714/10558453/hull-city-confirm-signing-of-ryan-mason-from-tottenham",
+"near": "Hernández",
+"group": "t1"
+},
+{
+"id": "980ea5d4b0432cc6",
+"url": "https://www.skysports.com/football/news/20876/9451537/transfer-news-george-boyd-completes-move-to-burnley-from-hull",
+"near": "Boyd",
+"group": "t1"
+},
+{
+"id": "4e4e6f3f92cd0236",
+"url": "https://www.skysports.com/amp/football/news/11708/9476309/transfer-news-george-boyd-delighted-to-be-at-burnley",
+"near": "Boyd",
+"group": "t1"
+},
+{
+"id": "3619fd6360349317",
+"url": "https://www.bbc.co.uk/sport/football/30719419",
+"near": "Kramarić",
+"group": "t1"
+},
+{
+"id": "745456b8dce308a8",
+"url": "https://www.theguardian.com/football/2015/jan/07/leicester-city-transfer-record-croatia-andrej-kramaric",
+"near": "Kramarić",
+"group": "t1"
+},
+{
+"id": "fe8eda4588336938",
+"url": "https://www.theguardian.com/football/2015/jul/13/asmir-begovic-chelsea-stoke",
+"near": "Begović",
+"group": "t1"
+},
+{
+"id": "a923f046f944409c",
+"url": "https://www.bbc.co.uk/sport/football/33681538",
+"near": "María",
+"group": "t1"
+},
+{
+"id": "65dea6fa315d8dd9",
+"url": "https://www.independent.co.uk/sport/football/transfers/angel-di-maria-to-psg-manchester-united-winger-set-for-medical-as-ps44-3m-fee-is-agreed-10433184.html",
+"near": "María",
+"group": "t1"
+},
+{
+"id": "5a50b77ec2a6da41",
+"url": "https://www.bbc.co.uk/sport/football/33852895",
+"near": "Rondón",
+"group": "t1"
+},
+{
+"id": "37f8ec3447389d1f",
+"url": "https://www.skysports.com/football/news/10502879/ngolo-kante-set-for-chelsea-talks-after-16332m-fee-agreed-with-leicester",
+"near": "Kanté",
+"group": "t1"
+},
+{
+"id": "4fe6a02570d2569b",
+"url": "https://www.premierleague.com/en/news/64814",
+"near": "Kanté",
+"group": "t1"
+},
+{
+"id": "ee4e4601e7e8e078",
+"url": "https://www.bbc.co.uk/sport/football/40309248",
+"near": "Ryan",
+"group": "t1"
+},
+{
+"id": "64674d108bbe93ee",
+"url": "https://www.skysports.com/football/news/11743/11464693/bournemouth-sign-jefferson-lerma-for-gbp25m-from-levante",
+"near": "Aké",
+"group": "t1"
+},
+{
+"id": "a064b5eba88c3f1a",
+"url": "https://www.bbc.co.uk/sport/football/44421345",
+"near": "Mounié",
+"group": "t1"
+},
+{
+"id": "bdf988c5bf2048a8",
+"url": "https://www.theguardian.com/football/2017/jul/22/west-ham-sign-marko-arnautovic-stoke-city",
+"near": "Arnautović",
+"group": "t1"
+},
+{
+"id": "d28c2cd466d6e893",
+"url": "https://www.bbc.co.uk/sport/football/41031823",
+"near": "Sánchez",
+"group": "t1"
+},
+{
+"id": "05515c0d4b4d4ba3",
+"url": "https://www.bbc.co.uk/sport/football/41075272",
+"near": "Keïta",
+"group": "t1"
+},
+{
+"id": "f2797ac74aa25fd7",
+"url": "http://www.evertonfc.com/news/2018/01/05/barkley",
+"near": "Barkley",
+"group": "t1"
+},
+{
+"id": "bd24f0a340c683a2",
+"url": "http://www.espn.com/soccer/chelsea/story/3357802/chelsea-complete-signing-of-roma-left-back-emerson-palmieri",
+"near": "Emerson",
+"group": "t1"
+},
+{
+"id": "6602f52dbd48ea40",
+"url": "http://www.tottenhamhotspur.com/news/moura-move-agreed-310118/",
+"near": "Moura",
+"group": "t1"
+},
+{
+"id": "c31ed23f1e09fc41",
+"url": "https://www.leedsunited.com/news/team-news/22954/leeds-complete-tyler-roberts-transfer",
+"near": "Roberts",
+"group": "t1"
+},
+{
+"id": "e6efc7e664b5a55d",
+"url": "https://www.bbc.co.uk/sport/football/44642493",
+"near": "Solanke",
+"group": "t1"
+},
+{
+"id": "f187d553a844f601",
+"url": "https://www.liverpoolfc.com/news/media-watch/305497-liverpool-fc-dominic-solanke-fee",
+"near": "Solanke",
+"group": "t1"
+},
+{
+"id": "8ec557a24fb8e05d",
+"url": "https://www.skysports.com/transfer/news/11447178/stoke-sign-tom-ince-from-huddersfield-on-four-year-contract-in-12m-deal",
+"near": "Ince",
+"group": "t1"
+},
+{
+"id": "2a2bb6d27bb48766",
+"url": "https://www.skysports.com/football/news/11681/11454605/aleksandar-mitrovic-joins-fulham-from-newcastle-on-five-year-deal",
+"near": "Mitrović",
+"group": "t1"
+},
+{
+"id": "497dafde03fdc5e7",
+"url": "https://www.bbc.co.uk/sport/football/45091226",
+"near": "Traoré",
+"group": "t1"
+},
+{
+"id": "e82764de424989d6",
+"url": "https://www.wolves.co.uk/news/mens-first-team/20180807-traore-completes-molineux-move/",
+"near": "Traoré",
+"group": "t1"
+},
+{
+"id": "b8f752ef8c0fce60",
+"url": "https://www.bbc.co.uk/sport/football/46902590",
+"near": "Dembélé",
+"group": "t1"
+},
+{
+"id": "c30248d62b42633e",
+"url": "https://www.bbc.co.uk/sport/47118880",
+"near": "Jiménez",
+"group": "t1"
+},
+{
+"id": "b96e25be969bc196",
+"url": "https://www.bbc.co.uk/sport/football/47811338",
+"near": "Jiménez",
+"group": "t1"
+},
+{
+"id": "d46fbed86f8794c6",
+"url": "https://www.bbc.co.uk/sport/48827145",
+"near": "Kovačić",
+"group": "t1"
+},
+{
+"id": "a4a6915f94998e0a",
+"url": "https://www.chelseafc.com/en/news/2019/07/01/academy-trio-sign-new-deals",
+"near": "Angban",
+"group": "t1"
+},
+{
+"id": "f91575cfb49f82ff",
+"url": "https://www.bbc.co.uk/sport/48827145",
+"near": "Freeman",
+"group": "t1"
+},
+{
+"id": "fb1e8c9312da9dd8",
+"url": "https://www.premierleague.com/en/news/1263418",
+"near": "Freeman",
+"group": "t1"
+},
+{
+"id": "b2c5d65e0533357f",
+"url": "https://www.bbc.co.uk/sport/48827145",
+"near": "Pérez",
+"group": "t1"
+},
+{
+"id": "16756c8832422c2c",
+"url": "https://www.bbc.co.uk/sport/football/48876616",
+"near": "Arnautović",
+"group": "t1"
+},
+{
+"id": "651b874a0d5045cb",
+"url": "https://www.bbc.co.uk/sport/48827145",
+"near": "Tielemans",
+"group": "t1"
+},
+{
+"id": "111b78126b4b2362",
+"url": "https://www.bbc.co.uk/sport/football/48913144",
+"near": "Tielemans",
+"group": "t1"
+},
+{
+"id": "7bafd82e417cf903",
+"url": "https://www.bbc.co.uk/sport/48827145",
+"near": "Robinson",
+"group": "t1"
+},
+{
+"id": "78cb92864d217510",
+"url": "https://www.bbc.co.uk/sport/football/48970326",
+"near": "Robinson",
+"group": "t1"
+},
+{
+"id": "ef6e7f454c2e9e2a",
+"url": "https://www.bbc.co.uk/sport/football/transfers",
+"near": "Pépé",
+"group": "t1"
+},
+{
+"id": "a3b007a220db126f",
+"url": "https://www.bbc.co.uk/sport/football/49197553",
+"near": "Pépé",
+"group": "t1"
+},
+{
+"id": "ea3d5c34de19a73d",
+"url": "https://www.bbc.co.uk/sport/football/transfers",
+"near": "Danjuma",
+"group": "t1"
+},
+{
+"id": "5061bef0d4aa5610",
+"url": "https://www.bbc.co.uk/sport/football/transfers",
+"near": "Saint-Maximin",
+"group": "t1"
+},
+{
+"id": "5033adbc2fbdefb1",
+"url": "https://www.bbc.co.uk/sport/football/transfers",
+"near": "Gbamin",
+"group": "t1"
+},
+{
+"id": "5f1a3e4f960224f1",
+"url": "https://www.bbc.co.uk/sport/football/transfers",
+"near": "McBurnie",
+"group": "t1"
+},
+{
+"id": "2c75d80512a5dab9",
+"url": "https://www.bbc.co.uk/sport/football/49207182",
+"near": "McBurnie",
+"group": "t1"
+},
+{
+"id": "211c261f050f25ef",
+"url": "https://www.bbc.co.uk/sport/football/transfers",
+"near": "Sessegnon",
+"group": "t1"
+},
+{
+"id": "02f83fc6051a0f04",
+"url": "https://www.bbc.co.uk/sport/football/transfers",
+"near": "Iwobi",
+"group": "t1"
+},
+{
+"id": "90ce743f274d0bc3",
+"url": "https://www.wolves.co.uk/news/mens-first-team/20200107-cavaleiro-joins-fulham-permanently/",
+"near": "Cavaleiro",
+"group": "t1"
+},
+{
+"id": "5a83e176e01334f3",
+"url": "https://www.skysports.com/football/news/11668/11941864/hakim-ziyech-signs-five-year-chelsea-deal-ahead-of-summer-move",
+"near": "Ziyech",
+"group": "t1"
+},
+{
+"id": "a40cfaa13e1e6d16",
+"url": "https://www.chelseafc.com/en/news/2019/07/06/alvaro-morata-leaves-chelsea-loan-to-atletico-madrid-a-permanent",
+"near": "Morata",
+"group": "t1"
+},
+{
+"id": "311431925c14c7cd",
+"url": "https://www.bbc.co.uk/sport/football/53275990",
+"near": "Sané",
+"group": "t1"
+},
+{
+"id": "d6fb9a2544d6bdec",
+"url": "https://www.mancity.com/news/mens/nathan-ake-signs-63732245",
+"near": "Aké",
+"group": "t1"
+},
+{
+"id": "f6af9ac76743ecc2",
+"url": "https://www.chelseafc.com/en/news/2020/06/22/pasalic-joins-atalanta-permanently",
+"near": "Pašalić",
+"group": "t1"
+},
+{
+"id": "44a2ac1d067d33c6",
+"url": "https://www.bbc.co.uk/sport/football/53985035",
+"near": "Castagne",
+"group": "t1"
+},
+{
+"id": "c603478bb515c0a7",
+"url": "https://www.expressandstar.com/sport/football/west-bromwich-albion/2020/09/04/west-brom-announce-signing-of-cedric-kipre/",
+"near": "Kipré",
+"group": "t1"
+},
+{
+"id": "0778f562cda3e1f0",
+"url": "https://www.bbc.co.uk/sport/football/54068529",
+"near": "Doucouré",
+"group": "t1"
+},
+{
+"id": "e7b899d690ec2587",
+"url": "https://www.tottenhamhotspur.com/news/2020/september/reguilon-completes-transfer/",
+"near": "Reguilón",
+"group": "t1"
+},
+{
+"id": "49b50300d9d6428a",
+"url": "https://www.bbc.co.uk/sport/football/54262570",
+"near": "Semedo",
+"group": "t1"
+},
+{
+"id": "7b9961104888aa13",
+"url": "https://www.bbc.co.uk/sport/football/55576847",
+"near": "Haller",
+"group": "t1"
+},
+{
+"id": "4018340621be3bdb",
+"url": "https://www.bbc.co.uk/sport/football/55810784",
+"near": "Benrahma",
+"group": "t1"
+},
+{
+"id": "01ddfbc2bd4c588e",
+"url": "https://www.bbc.co.uk/sport/football/57434337",
+"near": "Buendía",
+"group": "t1"
+},
+{
+"id": "2adfefebd6da3a65",
+"url": "https://www.bbc.co.uk/sport/football/57371870",
+"near": "Buendía",
+"group": "t1"
+},
+{
+"id": "42e7ae9f43ecc7cf",
+"url": "https://www.bbc.co.uk/sport/football/57242659",
+"near": "Konaté",
+"group": "t1"
+},
+{
+"id": "d24e51375e759638",
+"url": "https://www.bbc.co.uk/sport/football/57922585",
+"near": "Ajer",
+"group": "t1"
+},
+{
+"id": "5e92f990cc725029",
+"url": "https://www.brentfordfc.com/en/news/brentford-complete-signing-of-kristoffer-ajer-from-celtic-582480",
+"near": "Ajer",
+"group": "t1"
+},
+{
+"id": "de769a6961178ba1",
+"url": "https://www.skysports.com/football/news/11661/12321439/transfer-news-summer-transfer-window-done-deals-july-2021",
+"near": "Ajer",
+"group": "t1"
+},
+{
+"id": "fc90b40e8251a25c",
+"url": "https://www.bbc.co.uk/sport/football/58084505",
+"near": "Bailey",
+"group": "t1"
+},
+{
+"id": "48f092a0d13b6c5c",
+"url": "https://www.chelseafc.com/en/news/2021/08/17/abraham-completes-move-to-roma",
+"near": "Abraham",
+"group": "t1"
+},
+{
+"id": "ee55cdd6b23370b7",
+"url": "https://www.bbc.co.uk/sport/football/58279217",
+"near": "Ødegaard",
+"group": "t1"
+},
+{
+"id": "e344bdf3f45a625d",
+"url": "https://www.wolves.co.uk/news/first-team/20210820-mir-completes-move-to-sevilla/",
+"near": "Mir",
+"group": "t1"
+},
+{
+"id": "b44e1c11c235801e",
+"url": "https://www.bbc.co.uk/sport/football/58402029",
+"near": "Royal",
+"group": "t1"
+},
+{
+"id": "ecb161c99ba2d03d",
+"url": "https://www.bbc.co.uk/sport/football/60180371",
+"near": "Díaz",
+"group": "t1"
+},
+{
+"id": "86f8052ce12f754a",
+"url": "https://www.bbc.co.uk/sport/football/60189980",
+"near": "Álvarez",
+"group": "t1"
+},
+{
+"id": "7cefad0de401f8a0",
+"url": "https://www.bbc.co.uk/sport/football/61742358",
+"near": "Núñez",
+"group": "t1"
+},
+{
+"id": "8d60725d2448c8a2",
+"url": "https://www.skysports.com/football/news/11669/12630828/darwin-nunez-joins-liverpool-in-club-record-gbp85m-transfer-deal-from-benfica?pubDate=20250406",
+"near": "Núñez",
+"group": "t1"
+},
+{
+"id": "30f45c5f8372be42",
+"url": "https://www.slbenfica.pt/pt-pt/agora/noticias/2022/06/13/futebol-benfica-darwin-comunicado-cmvm-transferencia-liverpool",
+"near": "Núñez",
+"group": "t1"
+},
+{
+"id": "52c632377e2b7c27",
+"url": "https://www.slbenfica.pt/pt-pt/agora/noticias/2022/09/09/futebol-benfica-presidente-rui-costa-explica-aos-benfiquistas-todas-as-movimentacoes-de-mercado",
+"near": "Núñez",
+"group": "t1"
+},
+{
+"id": "6b8e0ccf813584cc",
+"url": "https://www.independent.co.uk/sport/football/chelsea-transfer-marc-cucurella-fee-brighton-b2138830.html",
+"near": "Núñez",
+"group": "t1"
+},
+{
+"id": "a28b6e42adfcc8fe",
+"url": "https://www.bbc.co.uk/sport/football/61877332",
+"near": "Mané",
+"group": "t1"
+},
+{
+"id": "c7dd55e34b8a8d44",
+"url": "https://www.bbc.co.uk/sport/football/61774964",
+"near": "Richarlison}}",
+"group": "t1"
+},
+{
+"id": "f2a8fab4d829f588",
+"url": "https://www.skysports.com/football/news/11095/12643134/richarlison-tottenham-complete-60m-deal-for-everton-forward?pubDate=20250621",
+"near": "Richarlison}}",
+"group": "t1"
+},
+{
+"id": "8af670d07da33fc7",
+"url": "https://www.bbc.co.uk/sport/football/62092127",
+"near": "Bergwijn",
+"group": "t1"
+},
+{
+"id": "7814a7f6040eed5c",
+"url": "https://www.bbc.co.uk/sport/football/62262148",
+"near": "Martínez",
+"group": "t1"
+},
+{
+"id": "246405fdbcc7b003",
+"url": "https://www.bbc.co.uk/sport/football/62561914",
+"near": "Sergio}}",
+"group": "t1"
+},
+{
+"id": "fe7fd80b2dfc45bd",
+"url": "https://www.bbc.co.uk/sport/football/62695883",
+"near": "Lucas}}",
+"group": "t1"
+},
+{
+"id": "cdfae39ac7f5167f",
+"url": "https://www.bbc.com/sport/football/62748772",
+"near": "2000}}",
+"group": "t1"
+},
+{
+"id": "4b9e582f881ff6fd",
+"url": "https://www.bbc.co.uk/sport/football/64298998",
+"near": "2001}}",
+"group": "t1"
+},
+{
+"id": "47ce4c2e1f6603c3",
+"url": "https://www.bbc.co.uk/sport/football/64477147",
+"near": "1991}}",
+"group": "t1"
+},
+{
+"id": "57334a7042256c20",
+"url": "https://www.bbc.co.uk/sport/football/64463077",
+"near": "Enzo}}",
+"group": "t1"
+},
+{
+"id": "66ad771c6fde966d",
+"url": "https://www.bbc.co.uk/sport/football/65502319",
+"near": "Joao}}",
+"group": "t1"
+},
+{
+"id": "b68c9d70deaa35c5",
+"url": "https://www.bbc.co.uk/sport/football/66005040",
+"near": "Ruben}}",
+"group": "t1"
+},
+{
+"id": "f7aa43cb31c20262",
+"url": "https://www.bbc.co.uk/sport/football/66003047",
+"near": "Mateo}}",
+"group": "t1"
+},
+{
+"id": "1b15253fd6d61b9b",
+"url": "https://theathletic.com/4651179/2023/06/30/ruben-loftus-cheek-milan-chelsea/",
+"near": "Loftus-Cheek",
+"group": "t1"
+},
+{
+"id": "47fd329f1642492b",
+"url": "https://scpconteudos.pt/sites/default/files/comunicadopedroporro01072023_230701_175346.pdf",
+"near": "Porro",
+"group": "t1"
+},
+{
+"id": "0309374c8f8f131b",
+"url": "https://www.bbc.co.uk/sport/football/66085528",
+"near": "Andersen",
+"group": "t1"
+},
+{
+"id": "0658fb8d8cbad811",
+"url": "https://theathletic.com/4685441/2023/07/13/christian-pulisic-transfer-milan-chelsea-usmnt/",
+"near": "Pulisic",
+"group": "t1"
+},
+{
+"id": "f60dea587966abb6",
+"url": "https://www.bbc.co.uk/sport/football/66017042",
+"near": "Jurrien}}",
+"group": "t1"
+},
+{
+"id": "6fcdbed84601a35e",
+"url": "https://www.bbc.co.uk/sport/football/66242177",
+"near": "Amdouni",
+"group": "t1"
+},
+{
+"id": "47fd62782a3499f8",
+"url": "https://www.bbc.co.uk/sport/football/66308712",
+"near": "Raul}}",
+"group": "t1"
+},
+{
+"id": "c7e14c77f75b28b2",
+"url": "https://www.tennessean.com/story/sports/nashvillesc/2023/07/25/nashville-sc-sings-sam-surridge-designated-player-nottingham-forrest-mls/70373423007/",
+"near": "Surridge",
+"group": "t1"
+},
+{
+"id": "0af9b0915950090b",
+"url": "https://theathletic.com/4723195/2023/07/28/calvin-bassey-fulham-transfer/",
+"near": "Bassey",
+"group": "t1"
+},
+{
+"id": "0dd6bc31be13039e",
+"url": "https://www.bbc.co.uk/sport/football/66403293",
+"near": "Disasi",
+"group": "t1"
+},
+{
+"id": "e60df457edd19c46",
+"url": "https://www.bbc.co.uk/sport/football/66397787",
+"near": "Robert}}",
+"group": "t1"
+},
+{
+"id": "4b651b0b3deb6434",
+"url": "https://www.bbc.co.uk/sport/football/66012707",
+"near": "Josko}}",
+"group": "t1"
+},
+{
+"id": "3e77bf2b334baa0d",
+"url": "https://www.bbc.co.uk/sport/football/66414526",
+"near": "Rasmus}}",
+"group": "t1"
+},
+{
+"id": "1493188880fd8cbb",
+"url": "https://www.theguardian.com/football/2023/aug/05/manchester-united-unveil-rasmus-hojlund-lens-friendly",
+"near": "Hojlund",
+"group": "t1"
+},
+{
+"id": "0a3a8c97d36795db",
+"url": "https://www.bbc.co.uk/sport/football/66406170",
+"near": "Ven",
+"group": "t1"
+},
+{
+"id": "3e1adc91c2d1512a",
+"url": "https://www.bbc.co.uk/sport/football/66539123",
+"near": "Romeo}}",
+"group": "t1"
+},
+{
+"id": "b82c61552eb86bc5",
+"url": "https://theathletic.com/4786831/2023/08/20/tyler-adams-transfer-usmnt-bournemouth/",
+"near": "Adams",
+"group": "t1"
+},
+{
+"id": "13a13c8434eb3154",
+"url": "https://www.bbc.co.uk/sport/football/66644536",
+"near": "1998}}",
+"group": "t1"
+},
+{
+"id": "acf1a81c58a40673",
+"url": "https://www.bbc.co.uk/sport/football/66676558",
+"near": "Murillo|dab=footballer}}",
+"group": "t1"
+},
+{
+"id": "5592bd62ddb60b07",
+"url": "https://www.bbc.co.uk/sport/football/66692394",
+"near": "Ibrahim}}",
+"group": "t1"
+},
+{
+"id": "38caa5089bcf468a",
+"url": "https://www.bbc.co.uk/sport/football/67932833",
+"near": "Radu}}",
+"group": "t1"
+},
+{
+"id": "1f041cbc55c59a79",
+"url": "https://www.brentfordfc.com/en/news/first-team-igor-thiago-club-brugge-brentford-transfer",
+"near": "Thiago",
+"group": "t1"
+},
+{
+"id": "df0c4284b230501b",
+"url": "https://www.bbc.co.uk/sport/football/articles/cgrrqzy69y5o",
+"near": "Enes}}",
+"group": "t1"
+},
+{
+"id": "8244afcbbc0aaa4c",
+"url": "https://www.birminghammail.co.uk/sport/football/transfer-news/breaking-aston-villa-confirm-50m-29408891",
+"near": "Luiz",
+"group": "t1"
+},
+{
+"id": "1adca96c90e8459e",
+"url": "https://www.bbc.com/sport/football/articles/c903dvqvgpqo",
+"near": "2004}}",
+"group": "t1"
+},
+{
+"id": "85533546eb25aa12",
+"url": "https://www.bbc.com/sport/articles/cd1j8893wldo",
+"near": "Milenković",
+"group": "t1"
+},
+{
+"id": "d7d45bdc9c65a6cb",
+"url": "https://www.bbc.com/sport/football/articles/c99we1pzk72o",
+"near": "Diaby",
+"group": "t1"
+},
+{
+"id": "45a8c3c6a5a14fe5",
+"url": "https://www.bbc.co.uk/sport/football/articles/cv2gydlv8lzo",
+"near": "Jörgensen",
+"group": "t1"
+},
+{
+"id": "dfe8fee053aa80d5",
+"url": "https://www.bbc.co.uk/sport/football/articles/c77llr5y035o",
+"near": "Füllkrug",
+"group": "t1"
+},
+{
+"id": "d2f9f44063de47e4",
+"url": "https://www.bbc.co.uk/sport/football/articles/czx6kk46d4po",
+"near": "Álvarez",
+"group": "t1"
+},
+{
+"id": "c2c42fff601be956",
+"url": "https://www.bbc.co.uk/sport/football/articles/c0rw5jwzl4jo",
+"near": "1999}}",
+"group": "t1"
+},
+{
+"id": "d763eee3a209d207",
+"url": "https://www.bbc.co.uk/sport/football/articles/cx2g77n815go",
+"near": "Félix",
+"group": "t1"
+},
+{
+"id": "1f44e8e9ee46b564",
+"url": "https://www.bbc.co.uk/sport/football/articles/cly85ryg3z9o",
+"near": "Kadıoğlu",
+"group": "t1"
+},
+{
+"id": "cf7a94fb0d0323e9",
+"url": "https://www.bbc.co.uk/sport/football/articles/cj9l8mdxyl1o",
+"near": "2001}}",
+"group": "t1"
+},
+{
+"id": "facabd7668a40407",
+"url": "https://www.bbc.co.uk/sport/football/articles/clynv7m9e0po",
+"near": "Toney",
+"group": "t1"
+},
+{
+"id": "83db10f736d7f0fb",
+"url": "https://www.reuters.com/sports/soccer/al-ahli-sign-english-striker-toney-brentford-2024-08-31/",
+"near": "Toney",
+"group": "t1"
+},
+{
+"id": "5ff378c38f0d3e70",
+"url": "https://www.bbc.co.uk/sport/football/articles/cy84gl75edyo",
+"near": "Ugarte",
+"group": "t1"
+},
+{
+"id": "fbfb8f99012ed2c8",
+"url": "https://www.bbc.co.uk/sport/football/articles/cn4m2n1zl8jo",
+"near": "Malen",
+"group": "t1"
+},
+{
+"id": "ad06a072b814f192",
+"url": "https://www.bbc.co.uk/sport/football/articles/c20gkk6k1v0o",
+"near": "Durán",
+"group": "t1"
+},
+{
+"id": "11295787c50a3c46",
+"url": "https://www.bbc.co.uk/sport/football/articles/c98yqd3z7gro",
+"near": "González",
+"group": "t1"
+},
+{
+"id": "f5d0a12b62ba4ccd",
+"url": "https://www.bbc.co.uk/sport/football/articles/c98yqd3z7gro?pubDate=20250401",
+"near": "González",
+"group": "t1"
+},
+{
+"id": "5de8454e282ed72a",
+"url": "https://desporto.sapo.pt/futebol/primeira-liga/artigos/e-oficial-nico-gonzalez-deixa-fc-porto-e-e-reforco-do-manchester-city",
+"near": "González",
+"group": "t1"
+},
+{
+"id": "a1548318957ca7bf",
+"url": "https://www.skysports.com/football/news/11679/13302309/man-city-hopeful-of-deadline-day-deal-for-gonzalez",
+"near": "González",
+"group": "t1"
+},
+{
+"id": "b4055afe627f1416",
+"url": "https://www.bbc.co.uk/sport/football/articles/cvgv7gee971o",
+"near": "Aït-Nouri",
+"group": "t1"
+},
+{
+"id": "21f9806ec136b487",
+"url": "https://www.skysports.com/football/live-blog/11661/13375102/sunderland-transfer-news-rumours-and-gossip-live-updates-and-latest-on-deals-signings-loans-and-contracts?postid=9680179#liveblog-body",
+"near": "Fée",
+"group": "t1"
+},
+{
+"id": "f9460de0a763bf4b",
+"url": "https://www.bbc.co.uk/sport/football/articles/c3wd35j5xdlo",
+"near": "Fée",
+"group": "t1"
+},
+{
+"id": "f56b83e6de8ee516",
+"url": "https://www.skysports.com/football/news/11695/13389620/sunderland-transfer-news-habib-diarra-30m-club-record-deal-agreed-for-se",
+"near": "Fée",
+"group": "t1"
+},
+{
+"id": "c26c23aec59e7080",
+"url": "https://www.nytimes.com/athletic/6400369/2025/06/03/west-ham-transfer-todibo-complete/",
+"near": "Todibo",
+"group": "t1"
+},
+{
+"id": "96ca47e5c6b8ff72",
+"url": "https://www.bbc.com/sport/football/articles/cgq7jle544eo",
+"near": "Petrović",
+"group": "t1"
+},
+{
+"id": "6f908a65254da97a",
+"url": "https://www.bbc.com/sport/football/articles/c860l3d10j6o",
+"near": "Gyökeres",
+"group": "t1"
+},
+{
+"id": "20a87ec22e5fe150",
+"url": "https://www.reuters.com/sports/soccer/arsenal-sign-striker-gyokeres-sporting-2025-07-26/",
+"near": "Gyökeres",
+"group": "t1"
+},
+{
+"id": "ad96d44ce2309436",
+"url": "https://scpconteudos.pt/sites/default/files/comunicadovg26072025vf.pdf",
+"near": "Gyökeres",
+"group": "t1"
+},
+{
+"id": "d4a270c446507bc9",
+"url": "https://www.skysports.com/football/news/11670/13401655/viktor-gyokeres-transfer-news-striker-given-clearance-to-complete-arsenal-move-after-total",
+"near": "Gyökeres",
+"group": "t1"
+},
+{
+"id": "39ad6e57c22d2c8d",
+"url": "https://www.the-independent.com/sport/football/viktor-gyokeres-arsenal-transfer-news-sesko-ekitike-arteta-b2791678.html",
+"near": "Gyökeres",
+"group": "t1"
+},
+{
+"id": "111883c9e0c1c7e9",
+"url": "https://www.skysports.com/football/news/11095/13416014/eberechi-eze-joins-arsenal-forward-moves-from-crystal-palace-in-67-5m-deal-after-tottenham-hotspur-move-is-hijacked",
+"near": "Gyökeres",
+"group": "t1"
+},
+{
+"id": "6f61059ea19aaf8d",
+"url": "https://www.skysports.com/football/news/11668/13403469/joao-felix-transfer-news-chelsea-forward-joins-al-nassr-in-43-7m-deal",
+"near": "Félix",
+"group": "t1"
+},
+{
+"id": "e9e7d40f395b2d69",
+"url": "https://www.bbc.com/sport/football/articles/c1w8j9g5qleo",
+"near": "Díaz",
+"group": "t1"
+},
+{
+"id": "611cb7d445d8f894",
+"url": "https://www.bbc.co.uk/sport/football/articles/c4glx97j59zo",
+"near": "Díaz",
+"group": "t1"
+},
+{
+"id": "2b04d742a059af75",
+"url": "https://www.bbc.co.uk/sport/football/articles/c39dx8mjd39o",
+"near": "Šeško",
+"group": "t1"
+},
+{
+"id": "c4ab2c26f448b741",
+"url": "https://www.skysports.com/transfer/news/13408955/benjamin-sesko-transfer-news-man-utd-complete-deal-to-sign-forward-from-rb-leipzig-as-newcastle-miss-out",
+"near": "Šeško",
+"group": "t1"
+},
+{
+"id": "f34ef8d43462d722",
+"url": "https://www.skysports.com/football/news/13407644/benjamin-sesko-transfer-news-man-utd-agree-deal-in-principle-for-rb-leipzig-forward-as-newcastle-set-to-miss-out",
+"near": "Šeško",
+"group": "t1"
+},
+{
+"id": "57a34524169dcde3",
+"url": "https://www.bbc.co.uk/sport/football/articles/c4gje4j37r9o",
+"near": "Núñez",
+"group": "t1"
+},
+{
+"id": "b531cbf3cf795a81",
+"url": "https://www.bbc.co.uk/sport/football/articles/cwy192l58z2o",
+"near": "Diakité",
+"group": "t1"
+},
+{
+"id": "3014103a45471116",
+"url": "https://www.nytimes.com/athletic/6585449/2025/08/30/nick-woltemade-newcastle-signing/",
+"near": "Woltemade",
+"group": "t1"
+},
+{
+"id": "44c805a5bb0e573b",
+"url": "https://www.bbc.co.uk/sport/football/articles/c9vdzl3gek3o",
+"near": "Woltemade",
+"group": "t1"
+},
+{
+"id": "43243d6cc3cbbe77",
+"url": "https://www.bbc.co.uk/sport/football/articles/cpwywrxv828o#:~:text=Fulham%20have%20completed%20a%20club,%2C%20too%2C%22%20said%20Kevin.",
+"near": "2003}}",
+"group": "t1"
+},
+{
+"id": "d57f9a516f97d1f7",
+"url": "https://www.bbc.com/sport/football/articles/czxyxlp5pxzo",
+"near": "2000}}",
+"group": "t1"
+},
+{
+"id": "abb04540325fe777",
+"url": "https://www.bbc.co.uk/sport/articles/cwy8lve847eo",
+"near": "Guéhi",
+"group": "t1"
+},
+{
+"id": "727476e6f5358f3e",
+"url": "https://www.bbc.co.uk/sport/football/articles/cvgpzeyq1pno",
+"near": "2006}}",
+"group": "t1"
+},
+{
+"id": "57943d2dcef38aa6",
+"url": "https://www.bbc.co.uk/sport/football/articles/cly3wdl90wxo",
+"near": "Paquetá",
+"group": "t1"
+},
+{
+"id": "2504449dbd5a63f9",
+"url": "https://www.thetimes.com/sport/football/article/liverpool-chelsea-rio-ngumoha-nqr320cj8",
+"near": "Elliott",
+"group": "t1"
+},
+{
+"id": "248bc852914dfda8",
+"url": "https://www.bbc.co.uk/sport/football/articles/cdjkl44yrg3o",
+"near": "Muñoz",
+"group": "t1"
+},
+{
+"id": "8f45cfb8c645b27a",
+"url": "https://www.bbc.co.uk/sport/football/articles/c8x2189557wo",
+"near": "Hincapié",
+"group": "t1"
+},
+{
+"id": "3c3a3a6c544382ad",
+"url": "https://www.bbc.co.uk/sport/football/live/cdrp385eerxt",
+"near": "Højlund",
+"group": "t1"
+},
+{
+"id": "7a77eaf4c4627c91",
+"url": "https://onefootball.com/de/news/official-malen-completes-permanent-25m-transfer-from-aston-villa-to-roma-42925279",
+"near": "Malen",
+"group": "t1"
+},
+{
+"id": "de09ab26cb025f38",
+"url": "https://www.espn.co.uk/football/story/_/id/48990955/summer-transfer-window-grading-big-signings-mens-soccer",
+"near": "Emegha",
+"group": "t1"
+},
+{
+"id": "278e6ab36d3af608",
+"url": "https://www.skysports.com/football/news/11678/13560722/bazoumana-toure-newcastle-sign-ivory-coast-winger-for-lb42m",
+"near": "Touré",
+"group": "t1"
+},
+{
+"id": "9e47a02e6fa90275",
+"url": "https://www.nytimes.com/athletic/7408574/2026/07/06/tyrique-george-everton-chelsea-transfer/",
+"near": "George",
+"group": "t1"
+},
+{
+"id": "3ddb3c33b2ef7939",
+"url": "https://www.bbc.co.uk/sport/football/articles/c0jylx731v1o",
+"near": "Emersonn}}",
+"group": "t1"
+},
+{
+"id": "673b70b5385780b6",
+"url": "https://www.itfc.co.uk/news/2026/july/08/brazilian-striker-emersonn-signs/",
+"near": "Emersonn}}",
+"group": "t1"
+},
+{
+"id": "36c70d1925a360a0",
+"url": "https://www.theguardian.com/football/2026/aug/17/premier-league-2026-27-preview-no-12-ipswich",
+"near": "Emersonn}}",
+"group": "t1"
+},
+{
+"id": "3024b03c6325f2cb",
+"url": "https://www.theguardian.com/football/2026/aug/22/ipswich-sunderland-premier-league-match-report",
+"near": "Emersonn}}",
+"group": "t1"
+},
+{
+"id": "b6dd4438b4a05ede",
+"url": "https://www.sportsmole.co.uk/football/man-city/transfer-talk/feature/every-pl-club-that-broke-its-transfer-record-in-summer-2026-window_604298.html",
+"near": "Emersonn}}",
+"group": "t1"
+},
+{
+"id": "d046e9445d88ffb7",
+"url": "https://www.sportsmole.co.uk/football/ipswich-town/transfer-talk/news/who-is-the-new-brazilian-premier-league-signing-that-cost-ipswich-town-gbp27m_600899.html",
+"near": "Emersonn}}",
+"group": "t1"
+},
+{
+"id": "d6c6a33324439de3",
+"url": "https://www.bbc.co.uk/sport/football/articles/c93239v347qo",
+"near": "Rodríguez",
+"group": "t1"
+},
+{
+"id": "546672e9e43b488a",
+"url": "https://www.bbc.co.uk/sport/football/articles/cy7370x2yp7o",
+"near": "Vušković",
+"group": "t1"
+},
+{
+"id": "36f6a95774cb8a4d",
+"url": "https://www.skysports.com/transfer/news/13563294/luka-vuskovic-brighton-complete-50m-deal-to-sign-tottenham-defender",
+"near": "Vušković",
+"group": "t1"
+},
+{
+"id": "cde37f8fdcac9395",
+"url": "https://www.bbc.co.uk/sport/football/articles/c9w0kl9rjpno",
+"near": "Muharemović",
+"group": "t1"
+},
+{
+"id": "7b7d38cdf029d914",
+"url": "https://www.bbc.co.uk/sport/football/articles/cn8n43nzyvmo",
+"near": "Sangaré",
+"group": "t1"
+},
+{
+"id": "9e56dbe43c67d860",
+"url": "https://www.brentfordfc.com/en/news/first-team-brentford-mamadou-sangare-lens-club-record-transfer",
+"near": "Sangaré",
+"group": "t1"
+},
+{
+"id": "c87dcd719ff1d0b6",
+"url": "https://www.reuters.com/sports/soccer/brentford-sign-sangare-lens-club-record-fee-2026-08-01/",
+"near": "Sangaré",
+"group": "t1"
+},
+{
+"id": "81a3c789e9b23a63",
+"url": "https://www.sportsmole.co.uk/football/man-city/transfer-talk/feature/every-pl-club-that-broke-its-transfer-record-in-summer-2026-window_604298.html",
+"near": "Sangaré",
+"group": "t1"
+},
+{
+"id": "db42aaefd3d7bc86",
+"url": "https://www.bbc.co.uk/sport/football/articles/c5yv049xqpzo",
+"near": "García",
+"group": "t1"
+},
+{
+"id": "03e22f34892dd13d",
+"url": "https://www.bbc.co.uk/sport/football/articles/c3ekzyz1qj8o",
+"near": "Horníček",
+"group": "t1"
+},
+{
+"id": "6dd42874d94dc36a",
+"url": "https://www.bbc.co.uk/sport/football/articles/c1719r079rjo",
+"near": "Guimarães",
+"group": "t1"
+},
+{
+"id": "5fa319942aba1855",
+"url": "https://www.skysports.com/transfer/news/13570096/bruno-guimaraes-arsenal-sign-midfielder-in-75m-transfer-as-newcastle-surpass-240m-in-player-sales-this-summer",
+"near": "Guimarães",
+"group": "t1"
+},
+{
+"id": "d9dd5853e3ff0488",
+"url": "https://www.premierleague.com/en/news/4682480/five-reasons-why-arsenal-have-signed-bruno-guimaraes",
+"near": "Guimarães",
+"group": "t1"
+},
+{
+"id": "40aff025f6eaf4e7",
+"url": "https://www.bbc.co.uk/sport/football/articles/c2k7w3vwv5yo",
+"near": "Rodri}}",
+"group": "t1"
+},
+{
+"id": "87e850a912f8b9a4",
+"url": "https://www.skysports.com/football/news/11095/13574286/rodri-barcelona-complete-lb65-4m-signing-of-spain-midfielder-from-man-city",
+"near": "Rodri}}",
+"group": "t1"
+},
+{
+"id": "36bcb07e3df9e056",
+"url": "https://www.theguardian.com/football/2026/aug/18/barcelona-snatch-rodri-from-madrid-and-make-him-new-busquets",
+"near": "Rodri}}",
+"group": "t1"
+},
+{
+"id": "a082ebde3f6e5ca9",
+"url": "https://www.theguardian.com/football/2026/sep/02/premier-league-transfer-window-club-analysis-summer-2026",
+"near": "Rodri}}",
+"group": "t1"
+},
+{
+"id": "b4fb7fca480bfcf9",
+"url": "https://www.bbc.co.uk/sport/football/articles/czekzxd09zlo",
+"near": "Dedić",
+"group": "t1"
+},
+{
+"id": "65d9abdf783b9a32",
+"url": "https://www.bbc.co.uk/sport/football/articles/ckg97jpkkego",
+"near": "Konsa",
+"group": "t1"
+},
+{
+"id": "3d1bb0b803bedafa",
+"url": "https://www.bbc.co.uk/sport/football/articles/cy7z637nj8jo",
+"near": "2004}}",
+"group": "t1"
+},
+{
+"id": "d318040b6766e7d7",
+"url": "https://www.bbc.co.uk/sport/football/articles/cx2zlnpnk4zo",
+"near": "González",
+"group": "t1"
+},
+{
+"id": "4fff6db1db91cac1",
+"url": "https://www.nytimes.com/athletic/7539787/2026/08/27/liam-delap-nottingham-forest/",
+"near": "Delap",
+"group": "t1"
+},
+{
+"id": "c5a602020aa7bd02",
+"url": "https://www.reuters.com/sports/soccer/forest-sign-forward-delap-chelsea-reported-club-record-fee-2026-08-27/",
+"near": "Delap",
+"group": "t1"
+},
+{
+"id": "b624aa23cf6e5d6a",
+"url": "https://www.bbc.co.uk/sport/football/articles/cn5d7k4nkyvo",
+"near": "Muñoz",
+"group": "t1"
+},
+{
+"id": "dba15efff3d595e8",
+"url": "https://www.bbc.com/sport/football/articles/cr7deg1ze03o",
+"near": "Fernández",
+"group": "t1"
+},
+{
+"id": "f60964d82b8e4c3e",
+"url": "https://www.reuters.com/sports/soccer/man-city-agree-sign-fernandez-chelsea-british-record-fee-reports-2026-09-01/",
+"near": "Fernández",
+"group": "t1"
+},
+{
+"id": "2f18c6feb1a0a5b3",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=341",
+"near": "Baker",
+"group": "und"
+},
+{
+"id": "c170609061427af2",
+"url": "http://prideofanglia.com/tmwmtt/details.php?&player=Vlado%20Bozinoski",
+"near": "Bozinovski",
+"group": "und"
+},
+{
+"id": "83a49d351448b49d",
+"url": "http://www.transferleague.co.uk/premiership-transfers/manchester-united-transfers.html",
+"near": "Djordjic",
+"group": "und"
+},
+{
+"id": "ab39938d4caa1434",
+"url": "http://www.transferleague.co.uk/premiership-transfers/manchester-united-transfers.html",
+"near": "Ryan",
+"group": "und"
+},
+{
+"id": "86809674668480fa",
+"url": "http://www.transferleague.co.uk/premiership-transfers/manchester-united-transfers.html",
+"near": "Gibson",
+"group": "und"
+},
+{
+"id": "1acbb1c8be815422",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/f/fulham/1456296.stm",
+"near": "Doherty",
+"group": "und"
+},
+{
+"id": "a4827009c94f1e2e",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/b/blackburn_rovers/1580888.stm",
+"near": "Johansson",
+"group": "und"
+},
+{
+"id": "46f8888d64af826c",
+"url": "https://www.tottenhamhotspur.com/news-archive-1/hilliers-a-hatter/",
+"near": "Hillier",
+"group": "und"
+},
+{
+"id": "046236bd532e2072",
+"url": "http://news.bbc.co.uk/sport2/hi/football/teams/i/ipswich_town/1653883.stm",
+"near": "Pen",
+"group": "und"
+},
+{
+"id": "1c60fe69d778629a",
+"url": "http://news.bbc.co.uk/sport/hi/english/football/teams/b/blackburn_rovers/newsid_1827000/1827212.stm",
+"near": "Ünsal",
+"group": "und"
+},
+{
+"id": "b4383f6a2992ee31",
+"url": "https://news.bbc.co.uk/sport2/hi/football/1861185.stm",
+"near": "Johnson",
+"group": "und"
+},
+{
+"id": "a3cda92ff54e41e5",
+"url": "http://news.bbc.co.uk/sport1/hi/football/teams/p/preston/2234483.stm",
+"near": "Lewis",
+"group": "und"
+},
+{
+"id": "2b759bb9b50c272a",
+"url": "http://news.bbc.co.uk/sport1/hi/football/teams/b/blackpool/2421285.stm",
+"near": "Southern",
+"group": "und"
+},
+{
+"id": "5a97e19c07956934",
+"url": "http://news.bbc.co.uk/sport1/hi/scotland/2649223.stm",
+"near": "Shields",
+"group": "und"
+},
+{
+"id": "69940eef225e66de",
+"url": "http://news.bbc.co.uk/sport1/hi/scotland/2640475.stm",
+"near": "Penman",
+"group": "und"
+},
+{
+"id": "6ec566462fa229b0",
+"url": "https://news.bbc.co.uk/sport1/hi/football/teams/a/arsenal/2595961.stm",
+"near": "Senderos",
+"group": "und"
+},
+{
+"id": "77282ea041fb6e23",
+"url": "https://www.uefa.com/uefachampionsleague/news/0254-0d7b371ff8ca-1fc9542f5a74-1000--lehmann-seals-arsenal-switch/",
+"near": "Lehmann",
+"group": "und"
+},
+{
+"id": "40a50403f5238caf",
+"url": "https://www.uefa.com/uefachampionsleague/news/0254-0d7b371ff8ca-1fc9542f5a74-1000--lehmann-seals-arsenal-switch/",
+"near": "Warmuz",
+"group": "und"
+},
+{
+"id": "a011613fdf6b47ac",
+"url": "https://infoweb.newsbank.com/apps/news/document-view?p=AWNB&docref=news/0FCDF83CD43566A9",
+"near": "Gardner",
+"group": "und"
+},
+{
+"id": "d0550155d21b33c6",
+"url": "https://infoweb.newsbank.com/apps/news/document-view?p=AWNB&docref=news/0FCDF83CD43566A9",
+"near": "Beaumont",
+"group": "und"
+},
+{
+"id": "f4ef0c8c5c8b390b",
+"url": "https://news.bbc.co.uk/sport1/hi/football/teams/t/tottenham_hotspur/3148307.stm",
+"near": "Mabizela",
+"group": "und"
+},
+{
+"id": "b3fbd4c5a43cdaeb",
+"url": "http://www.arsenal.com/news/news-archive/baptista-moves-to-arsenal-as-reyes-joins-real-madrid",
+"near": "Baptista",
+"group": "und"
+},
+{
+"id": "f50340d7b93bfb36",
+"url": "http://www.cafc.co.uk/newsview.ink?nid=30022",
+"near": "Andersen",
+"group": "und"
+},
+{
+"id": "e06de0066fa99638",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/l/liverpool/6379977.stm",
+"near": "Mascherano",
+"group": "und"
+},
+{
+"id": "420fddc651246865",
+"url": "https://news.bbc.co.uk/sport1/hi/football/teams/l/liverpool/6698329.stm",
+"near": "Németh",
+"group": "und"
+},
+{
+"id": "a33ea730038b4d09",
+"url": "https://news.bbc.co.uk/sport1/hi/football/teams/l/liverpool/6698329.stm",
+"near": "Simon",
+"group": "und"
+},
+{
+"id": "231b3ed7be68c418",
+"url": "http://home.skysports.com/list.aspx?hlid=470290&CPID=8&clid=8&lid=&title=Chelsea+snatch+Blades+ace",
+"near": "Mellis",
+"group": "und"
+},
+{
+"id": "4030ec76527c3a15",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/t/tottenham_hotspur/6735427.stm",
+"near": "Taarabt",
+"group": "und"
+},
+{
+"id": "6e157f4417194835",
+"url": "http://www.tottenhamhotspur.com/news/articles/berchichetojoinacademy.html",
+"near": "Berchiche",
+"group": "und"
+},
+{
+"id": "d0860bdc9986089a",
+"url": "http://www.chelseafc.com/page/NewsHomePage/0,,10268~1063678,00.html",
+"near": "Elmer",
+"group": "und"
+},
+{
+"id": "95ea7f220d857888",
+"url": "https://news.bbc.co.uk/sport1/hi/football/teams/a/arsenal/6695079.stm",
+"near": "Fabiański",
+"group": "und"
+},
+{
+"id": "a4a781f1d4232ced",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/a/arsenal/6260864.stm",
+"near": "Silva",
+"group": "und"
+},
+{
+"id": "c3c2f3404fb4675f",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/w/wolverhampton_wanderers/6904094.stm",
+"near": "Elliott",
+"group": "und"
+},
+{
+"id": "f1aa3954733a9fdc",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/b/bolton_wanderers/6907745.stm",
+"near": "Helguson",
+"group": "und"
+},
+{
+"id": "a4fd98586c02b5fd",
+"url": "https://news.bbc.co.uk/sport1/hi/football/teams/t/tottenham_hotspur/6916683.stm",
+"near": "Rose",
+"group": "und"
+},
+{
+"id": "2814d2ecc1bb911b",
+"url": "https://www.skysports.com/football/news/11685/3015793/ephraim-returns-to-qpr",
+"near": "Ephraim",
+"group": "und"
+},
+{
+"id": "34a7b84d32ec1386",
+"url": "http://news.bbc.co.uk/sport1/hi/football/teams/s/swindon_town/7219857.stm",
+"near": "Cox",
+"group": "und"
+},
+{
+"id": "4fe1d05073d64194",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/p/portsmouth/7225061.stm",
+"near": "Defoe",
+"group": "und"
+},
+{
+"id": "15421b8121448b12",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/m/man_utd/7422152.stm",
+"near": "Piqué",
+"group": "und"
+},
+{
+"id": "1818c189dcb4f8f5",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/t/tottenham_hotspur/7476574.stm",
+"near": "Gomes",
+"group": "und"
+},
+{
+"id": "f457e279bdd4740d",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/c/celtic/7506849.stm",
+"near": "Samaras",
+"group": "und"
+},
+{
+"id": "c7f7cf5c5bea9e2d",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/a/aston_villa/7503296.stm",
+"near": "Guzan",
+"group": "und"
+},
+{
+"id": "6f64327997e027a3",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/p/peterborough_united/7748258.stm",
+"near": "Zakuani",
+"group": "und"
+},
+{
+"id": "2b2a2762b3b787f1",
+"url": "http://news.bbc.co.uk/sport1/hi/football/teams/m/man_utd/7156290.stm",
+"near": "Manucho",
+"group": "und"
+},
+{
+"id": "c9b944b3082c40eb",
+"url": "http://www.skysports.com/story/0,19528,12875_4756294,00.html",
+"near": "Pourie",
+"group": "und"
+},
+{
+"id": "276bf608da5cf9b6",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/a/aston_villa/7817345.stm",
+"near": "Halfhuid",
+"group": "und"
+},
+{
+"id": "a44047d4c65f3258",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/q/qpr/7768191.stm",
+"near": "Cook",
+"group": "und"
+},
+{
+"id": "cce6351fc5273fc6",
+"url": "http://www.skysports.com/story/0,19528,12875_4784499,00.html",
+"near": "Wallace",
+"group": "und"
+},
+{
+"id": "da43390fec152244",
+"url": "http://www.skysports.com/story/0,19528,12875_4784513,00.html",
+"near": "Blackman",
+"group": "und"
+},
+{
+"id": "1eaf40e00377554a",
+"url": "http://www.skysports.com/story/0,19528,12875_4803772,00.html",
+"near": "Vučkić",
+"group": "und"
+},
+{
+"id": "823e80c1b58dbb56",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/s/sunderland/7933612.stm",
+"near": "Prica",
+"group": "und"
+},
+{
+"id": "c602b7ecc03612b7",
+"url": "https://news.bbc.co.uk/sport1/hi/football/teams/w/west_ham_utd/8000289.stm",
+"near": "Ilunga",
+"group": "und"
+},
+{
+"id": "97d67a412e784155",
+"url": "https://news.bbc.co.uk/sport1/hi/football/teams/l/leicester_city/8017818.stm",
+"near": "Hobbs",
+"group": "und"
+},
+{
+"id": "6630aa0eecfa5519",
+"url": "http://www.skysports.com/story/0,19528,12875_5314018,00.html",
+"near": "Hutton",
+"group": "und"
+},
+{
+"id": "25ccdb8c43c40a4f",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/m/man_city/8115411.stm",
+"near": "Taylor",
+"group": "und"
+},
+{
+"id": "6e04e5f9b8df5d36",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/w/wolverhampton_wanderers/8132901.stm",
+"near": "Halford",
+"group": "und"
+},
+{
+"id": "d753bb11289da9a1",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/b/birmingham_city/8140142.stm",
+"near": "Bowyer",
+"group": "und"
+},
+{
+"id": "e19f2d0fc58957a8",
+"url": "https://news.bbc.co.uk/sport1/hi/football/teams/l/liverpool/8186102.stm",
+"near": "Aquilani",
+"group": "und"
+},
+{
+"id": "d686338fe8171983",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/f/fulham/8232661.stm",
+"near": "Elm",
+"group": "und"
+},
+{
+"id": "2ce467e0fcea8b9c",
+"url": "https://news.bbc.co.uk/sport2/hi/football/teams/f/falkirk/8258461.stm",
+"near": "Flynn",
+"group": "und"
+},
+{
+"id": "0576e7019a19c611",
+"url": "https://www.skysports.com/story/0,19528,12875_5821132,00.html",
+"near": "Marshall",
+"group": "und"
+},
+{
+"id": "681be17c6566d7e1",
+"url": "http://www.skysports.com/story/0,19528,12875_6200383,00.html",
+"near": "Stoch",
+"group": "und"
+},
+{
+"id": "29bb7c895428d2ac",
+"url": "http://www.manutd.com/en/News-And-Features/Football-News/2010/Jan/Reds-swoop-for-Smalling.aspx",
+"near": "Smalling",
+"group": "und"
+},
+{
+"id": "b4518f95021620e2",
+"url": "http://news.bbc.co.uk/sport1/hi/football/teams/m/man_city/8672609.stm",
+"near": "Boateng",
+"group": "und"
+},
+{
+"id": "e2dd9615ad0637bd",
+"url": "http://www.skysports.com/story/0,19528,12875_6239697,00.html",
+"near": "Gueye",
+"group": "und"
+},
+{
+"id": "43c5825c24504cf9",
+"url": "http://www.skysports.com/story/0,19528,12875_6242569,00.html",
+"near": "Benayoun",
+"group": "und"
+},
+{
+"id": "afa4595c73699e25",
+"url": "http://news.bbc.co.uk/sport1/hi/football/teams/c/chelsea/8797276.stm",
+"near": "Kalas",
+"group": "und"
+},
+{
+"id": "9fe3b4532f1d7dd8",
+"url": "http://www.skysports.com/story/0,19528,12875_6250913,00.html",
+"near": "Koscielny",
+"group": "und"
+},
+{
+"id": "b7cc804bd0e3266c",
+"url": "http://news.bbc.co.uk/sport1/hi/football/teams/w/west_ham_utd/8830249.stm",
+"near": "Piquionne",
+"group": "und"
+},
+{
+"id": "0abb73f4f60b2d25",
+"url": "http://www.skysports.com/story/0,19528,12875_6324047,00.html",
+"near": "Németh",
+"group": "und"
+},
+{
+"id": "2221239d46c4b166",
+"url": "http://news.bbc.co.uk/sport1/hi/football/teams/w/west_bromwich_albion/8921633.stm",
+"near": "Odemwingie",
+"group": "und"
+},
+{
+"id": "5969de29bcf0ecba",
+"url": "http://www.skysports.com/story/0,19528,12875_6326146,00.html",
+"near": "Tchoyi",
+"group": "und"
+},
+{
+"id": "4de6707ddf5208d5",
+"url": "http://news.bbc.co.uk/sport2/hi/football/teams/w/west_ham_utd/8959283.stm",
+"near": "Jacobsen",
+"group": "und"
+},
+{
+"id": "7cd9e73ca1816d54",
+"url": "http://www.skysports.com/story/0,19528,12875_6351553,00.html",
+"near": "Plessis",
+"group": "und"
+},
+{
+"id": "0dbc341112717091",
+"url": "http://www.skysports.com/story/0,19528,11701_6351392,00.html",
+"near": "Lawrence",
+"group": "und"
+},
+{
+"id": "92bab962417b0340",
+"url": "http://www.skysports.com/story/0,19528,11701_6351392,00.html",
+"near": "Kitson",
+"group": "und"
+},
+{
+"id": "9a3744b33ea67fc8",
+"url": "http://www.skysports.com/story/0,19528,12875_6352778,00.html",
+"near": "Delač",
+"group": "und"
+},
+{
+"id": "7b1d29fb34573617",
+"url": "http://www.skysports.com/story/0,19528,12875_6530120,00.html",
+"near": "Lindegaard",
+"group": "und"
+},
+{
+"id": "e3540f2aaef18c91",
+"url": "http://news.bbc.co.uk/sport2/hi/football/teams/l/leeds_united/9332159.stm",
+"near": "O'Brien",
+"group": "und"
+},
+{
+"id": "cd38efa3b89904f4",
+"url": "http://www.skysports.com/story/0,19528,12875_6635737,00.html",
+"near": "Arfa",
+"group": "und"
+},
+{
+"id": "61ea78bf34a8f850",
+"url": "http://news.bbc.co.uk/sport1/hi/football/teams/s/swansea_city/9345233.stm",
+"near": "Moore",
+"group": "und"
+},
+{
+"id": "e57aa74184754d09",
+"url": "http://news.bbc.co.uk/sport1/hi/football/teams/f/fulham/9349503.stm",
+"near": "Sidwell",
+"group": "und"
+},
+{
+"id": "0c7b422bb2eaad50",
+"url": "http://news.bbc.co.uk/sport2/hi/football/teams/w/west_ham_utd/9372501.stm",
+"near": "O'Neil",
+"group": "und"
+},
+{
+"id": "a407c1d497a54f24",
+"url": "http://news.bbc.co.uk/sport2/hi/football/teams/w/west_ham_utd/9371608.stm",
+"near": "Ba",
+"group": "und"
+},
+{
+"id": "e26f2551c6668ffd",
+"url": "http://soccernet.espn.go.com/news/story/_/id/872095/curtis-davies-makes-birmingham-move-from-aston-v?cc=3436",
+"near": "Davies",
+"group": "und"
+},
+{
+"id": "c401265112c9339a",
+"url": "http://news.bbc.co.uk/sport2/hi/football/teams/h/hull_city/9382779.stm",
+"near": "Stewart",
+"group": "und"
+},
+{
+"id": "e55034adf2f10d82",
+"url": "http://news.bbc.co.uk/sport2/hi/football/teams/b/blackburn_rovers/9382967.stm",
+"near": "Rochina",
+"group": "und"
+},
+{
+"id": "2ddef019c09176bb",
+"url": "http://news.bbc.co.uk/sport2/hi/football/teams/b/blackpool/9382499.stm",
+"near": "Reid",
+"group": "und"
+},
+{
+"id": "32d8d4ae57d414a4",
+"url": "http://news.bbc.co.uk/sport2/hi/football/teams/b/blackburn_rovers/9382967.stm",
+"near": "Formica",
+"group": "und"
+},
+{
+"id": "c3bf2407c0c1a803",
+"url": "https://www.bbc.co.uk/sport/football/13373860",
+"near": "Evans",
+"group": "und"
+},
+{
+"id": "b23a8cd54b556e88",
+"url": "http://www.skysports.com/story/0,19528,12875_6930581,00.html",
+"near": "Poole",
+"group": "und"
+},
+{
+"id": "16aaee62b567e14b",
+"url": "http://www.liverpoolecho.co.uk/liverpool-fc/liverpool-fc-news/2011/05/19/liverpool-fc-beat-man-utd-to-signature-of-irish-teenager-alex-o-hanlon-100252-28725288/",
+"near": "O'Hanlon",
+"group": "und"
+},
+{
+"id": "51e61e64943d5bb8",
+"url": "https://www.bbc.co.uk/sport/football/13563979",
+"near": "Leigertwood",
+"group": "und"
+},
+{
+"id": "d926b125298636aa",
+"url": "https://www.bbc.co.uk/sport/football/13581063",
+"near": "Vaughan",
+"group": "und"
+},
+{
+"id": "c3f7ecc6c8589033",
+"url": "https://www.bbc.co.uk/sport/football/13644871",
+"near": "Sala",
+"group": "und"
+},
+{
+"id": "55cdfe8cad33df72",
+"url": "https://www.bbc.co.uk/sport/football/13710146",
+"near": "Elmohamady",
+"group": "und"
+},
+{
+"id": "8bdc608de6d99021",
+"url": "http://www.nufc.co.uk/articles/20110610/hello-cabaye_2281670_2374709",
+"near": "Cabaye",
+"group": "und"
+},
+{
+"id": "590ae359f5efde80",
+"url": "https://www.bbc.co.uk/sport/football/13797585",
+"near": "Nolan",
+"group": "und"
+},
+{
+"id": "e1425bec4b683737",
+"url": "https://www.bbc.co.uk/sport/football/13906698",
+"near": "Carson",
+"group": "und"
+},
+{
+"id": "80007c40d59a642b",
+"url": "https://www.bbc.co.uk/sport/football/14023074",
+"near": "Dikgacoi",
+"group": "und"
+},
+{
+"id": "1b6e0269736773db",
+"url": "http://www.skysports.com/story/0,19528,12875_7030999,00.html",
+"near": "Zuiverloon",
+"group": "und"
+},
+{
+"id": "db90c67ae7f7181d",
+"url": "http://www.skysports.com/story/0,19528,12875_7038814,00.html",
+"near": "Downing",
+"group": "und"
+},
+{
+"id": "ef01a4c76450a9e2",
+"url": "http://www.tottenhamhotspur.com/news/souleymane-deal-agreed-180711/",
+"near": "Coulibaly",
+"group": "und"
+},
+{
+"id": "23ce88834d256b2b",
+"url": "http://www.skysports.com/story/0,19528,12875_7047873,00.html",
+"near": "M'Poku",
+"group": "und"
+},
+{
+"id": "f7016fae3ba369c6",
+"url": "http://www.skysports.com/story/0,19528,12875_7047975,00.html",
+"near": "Mavinga",
+"group": "und"
+},
+{
+"id": "d0994308c7cd6d4e",
+"url": "http://www.skysports.com/story/0,19528,12875_7051141,00.html",
+"near": "Jô",
+"group": "und"
+},
+{
+"id": "d61993f4bef933be",
+"url": "http://www.chelseafc.com/news-article/article/2402319",
+"near": "Courtois",
+"group": "und"
+},
+{
+"id": "5e9fb7fc66ead9dc",
+"url": "http://www.liverpoolfc.tv/news/latest-news/reds-complete-jovanovic-sale",
+"near": "Jovanović",
+"group": "und"
+},
+{
+"id": "682c4e939e4fa68f",
+"url": "https://www.bbc.co.uk/sport/football/14717634",
+"near": "Traoré",
+"group": "und"
+},
+{
+"id": "78cbd2430ee2b49f",
+"url": "https://www.bbc.co.uk/sport/football/14716581",
+"near": "Elliot",
+"group": "und"
+},
+{
+"id": "911a0a76301d332e",
+"url": "https://www.bbc.co.uk/sport/football/14692916",
+"near": "Chu-young",
+"group": "und"
+},
+{
+"id": "e4c0b1b8125eb9d9",
+"url": "https://www.bbc.co.uk/sport/football/14637292",
+"near": "Coates",
+"group": "und"
+},
+{
+"id": "7a175658f5d5dfb6",
+"url": "https://www.bbc.co.uk/sport/football/14716581",
+"near": "Santon",
+"group": "und"
+},
+{
+"id": "30b3eb07d86cd1b9",
+"url": "http://www.skysports.com/story/0,19528,12875_7142525,00.html",
+"near": "Tankovic",
+"group": "und"
+},
+{
+"id": "ba0dfc90bf71f27c",
+"url": "http://www.wolves.co.uk/page/News/0,,10307~2554152,00.html",
+"near": "Jónsson",
+"group": "und"
+},
+{
+"id": "05b55a269ee6e1c6",
+"url": "http://www1.skysports.com/football/news/12691/7405392/Blues-bid-farewell-to-Anelka",
+"near": "Anelka",
+"group": "und"
+},
+{
+"id": "6241e033971fdddb",
+"url": "http://www1.skysports.com/football/news/12691/7452322/Canaries-swoop-for-Howson",
+"near": "Howson",
+"group": "und"
+},
+{
+"id": "7a6ee569b24ae8be",
+"url": "http://www1.skysports.com/football/news/12691/7461210/Diouf-heads-to-Hannover",
+"near": "Diouf",
+"group": "und"
+},
+{
+"id": "abc8587ba291a2d0",
+"url": "http://www1.skysports.com/football/news/12691/7466298/Latics-land-Fulham-winger",
+"near": "Marsh-Brown",
+"group": "und"
+},
+{
+"id": "e2bf2084f77fcd79",
+"url": "http://www1.skysports.com/football/news/12691/7467508/Milan-land-Blues-youngster",
+"near": "Prosenik",
+"group": "und"
+},
+{
+"id": "b124384bde0f841e",
+"url": "https://www.bbc.co.uk/sport/football/16823427",
+"near": "Pogrebnyak",
+"group": "und"
+},
+{
+"id": "b7de9b471eb29489",
+"url": "https://www.bbc.co.uk/sport/football/16820538",
+"near": "Saha",
+"group": "und"
+},
+{
+"id": "d3e3fb4d6c635a97",
+"url": "http://www1.skysports.com/football/news/12691/7472104/Reds-land-Portuguese-talent",
+"near": "Teixeira",
+"group": "und"
+},
+{
+"id": "775ce00ffa0bae8d",
+"url": "https://www.bbc.co.uk/sport/football/18445768",
+"near": "Cowler",
+"group": "und"
+},
+{
+"id": "e128caaf4252f396",
+"url": "http://www1.skysports.com/football/news/12691/7845031/Barca-seal-Roman-move",
+"near": "Román",
+"group": "und"
+},
+{
+"id": "cd5f00e6d0429f8b",
+"url": "http://www1.skysports.com/football/news/12691/7844823/Lokomotiv-pick-up-Corluka",
+"near": "Ćorluka",
+"group": "und"
+},
+{
+"id": "afe5947800384ce8",
+"url": "https://www.bbc.co.uk/sport/football/18613946",
+"near": "Diakité",
+"group": "und"
+},
+{
+"id": "018fa9dc96619821",
+"url": "http://www1.skysports.com/football/news/12691/7887939/Toffees-offload-Silva",
+"near": "Silva",
+"group": "und"
+},
+{
+"id": "86cd31df91297f9a",
+"url": "https://www.bbc.co.uk/sport/football/18869616",
+"near": "Gunter",
+"group": "und"
+},
+{
+"id": "e3aea6c014a30ff3",
+"url": "http://www1.skysports.com/football/news/12691/7928539/Hammers-sign-Swiss-keeper",
+"near": "Spiegel",
+"group": "und"
+},
+{
+"id": "8a07ccfe44de23d8",
+"url": "http://www.fulhamfc.com/Club/News/NewsArticles/2012/July/GecovDeparts.aspx",
+"near": "Gecov",
+"group": "und"
+},
+{
+"id": "10fb86e4c08cfcc3",
+"url": "https://www.bbc.co.uk/sport/football/18977182",
+"near": "Hazard",
+"group": "und"
+},
+{
+"id": "7b3b238978a95e22",
+"url": "http://www1.skysports.com/football/news/12691/7937411/Red-Bulls-capture-Cahill",
+"near": "Cahill",
+"group": "und"
+},
+{
+"id": "a15458779efe59eb",
+"url": "http://www1.skysports.com/football/news/12691/7937587/Snodgrass-makes-Canaries-switch",
+"near": "Snodgrass",
+"group": "und"
+},
+{
+"id": "407d97014781e975",
+"url": "https://www.bbc.co.uk/sport/football/19021133",
+"near": "Vlaar",
+"group": "und"
+},
+{
+"id": "52ff9788a1f40a1d",
+"url": "http://www1.skysports.com/football/news/12691/7957920/Weiss-wraps-up-Pescara-move",
+"near": "Weiss",
+"group": "und"
+},
+{
+"id": "8de681205e98ea7b",
+"url": "https://www.bbc.co.uk/sport/football/19289850",
+"near": "Assaidi",
+"group": "und"
+},
+{
+"id": "095a237dfc7ef974",
+"url": "https://www.bbc.co.uk/sport/football/19319677",
+"near": "Connolly",
+"group": "und"
+},
+{
+"id": "9f18b5ccda385c8b",
+"url": "https://www.bbc.co.uk/sport/football/19379209",
+"near": "Edu",
+"group": "und"
+},
+{
+"id": "2655e0798008abf7",
+"url": "http://www.manutd.com/en/News-And-Features/Football-News/2012/Sep/manchester-united-complete-signing-of-angelo-henriquez.aspx",
+"near": "Henríquez",
+"group": "und"
+},
+{
+"id": "70bd8fc56d9ea0ee",
+"url": "http://www.fulhamfc.com/news/2013/february/25/dalla-valle-makes-molde-move",
+"near": "Valle",
+"group": "und"
+},
+{
+"id": "b32734133693fc55",
+"url": "http://www.portlandtimbers.com/news/2013/02/timbers-sign-forward-frederic-piquionne",
+"near": "Piquionne",
+"group": "und"
+},
+{
+"id": "1ca19197fb67ed68",
+"url": "http://www1.skysports.com/football/news/11681/8909707/",
+"near": "Frei",
+"group": "und"
+},
+{
+"id": "15c13a42accaf202",
+"url": "https://www.bbc.co.uk/sport/football/23916361",
+"near": "Razak",
+"group": "und"
+},
+{
+"id": "82ce12e3c5d00944",
+"url": "https://www.bbc.co.uk/sport/football/28680725",
+"near": "Coady",
+"group": "und"
+},
+{
+"id": "e0891f180052d4d7",
+"url": "http://www.walesonline.co.uk/sport/football/football-news/cardiff-city-one-wales-brightest-11929955",
+"near": "Matondo",
+"group": "und"
+},
+{
+"id": "74ef5ce8a3858771",
+"url": "http://www.skysports.com/football/news/11701/10598328/stoke-city-sign-teenage-defender-harry-souttar-from-dundee-united",
+"near": "Souttar",
+"group": "und"
+},
+{
+"id": "d838330c86cf1b20",
+"url": "http://www.mfc.co.uk/news/article/2016/middlesbrough-fc-transfer-signing-finland-mikael-soisalo-3500847.aspx",
+"near": "Soisalo",
+"group": "und"
+},
+{
+"id": "840ef90db23db9df",
+"url": "http://www.liverpoolfc.com/news/first-team/249713-tiago-ilori-completes-permanent-move-to-reading",
+"near": "Ilori",
+"group": "und"
+},
+{
+"id": "ee4531e8464b6128",
+"url": "http://www.mfc.co.uk/news/boro-agree-deal-to-sign-enes-mahmutovic",
+"near": "Mahmutovic",
+"group": "und"
+},
+{
+"id": "5002c782ec617551",
+"url": "http://www.nufc.co.uk/news/latest-news/magpies-submit-retained-list",
+"near": "Thauvin",
+"group": "und"
+},
+{
+"id": "dda1db3e6357d4cd",
+"url": "http://www.nufc.co.uk/news/latest-news/mbabu-makes-permanent-move-to-bsc-young-boys",
+"near": "Mbabu",
+"group": "und"
+},
+{
+"id": "af52f57c56e49dd2",
+"url": "https://www.fcvolendam.nl/nieuws/item/jeugdspeler-nathangelo-markelo-naar-everton-f.c/",
+"near": "Markelo",
+"group": "und"
+},
+{
+"id": "b93584f19c951d04",
+"url": "http://www.htafc.com/news/2017/july/transfer-scott-malone-arrives-at-town/",
+"near": "Malone",
+"group": "und"
+},
+{
+"id": "547e02b11d98d9b8",
+"url": "http://www.deportivoalaves.com/noticia/ruben-sobrino-regresa-al-deportivo-alaves-para-las-proximas-4-temporadas",
+"near": "Sobrino",
+"group": "und"
+},
+{
+"id": "043d8918e49db3b7",
+"url": "http://www.evertonfc.com/news/2017/07/07/blues-sign-up-bowler",
+"near": "Bowler",
+"group": "und"
+},
+{
+"id": "596910ab12363a5f",
+"url": "http://www.hellasverona.it/2017/07/11/__1_2_3_4_5_6",
+"near": "Zuculini",
+"group": "und"
+},
+{
+"id": "0c7f7dfc8831818e",
+"url": "http://www.stokecityfc.com/news/winger-signs-for-u23s",
+"near": "Pemberton",
+"group": "und"
+},
+{
+"id": "3b770dd8a8d1f3f8",
+"url": "https://www.swanseacity.com/news/swans-seal-deal-promising-defender-harries",
+"near": "Harries",
+"group": "und"
+},
+{
+"id": "edcb9812cf83fbc0",
+"url": "http://www.nac.nl/108/newsid/11800/James-Horsfield-definitief-speler-van-NAC.html",
+"near": "Horsfield",
+"group": "und"
+},
+{
+"id": "3ad6fc60c11b00b3",
+"url": "http://www.evertonfc.com/news/2017/07/27/blues-snap-up-gibson",
+"near": "Gibson",
+"group": "und"
+},
+{
+"id": "611ceb23a2def08a",
+"url": "http://www.burnleyfootballclub.com/news/2017/august/clarets-sign-legzdins/",
+"near": "Legzdins",
+"group": "und"
+},
+{
+"id": "0d8cf43dbbf57477",
+"url": "https://www.siriusfotboll.se/valkommen-zackarias-faour-1/",
+"near": "Faour",
+"group": "und"
+},
+{
+"id": "3df3558f90407f59",
+"url": "https://www.arsenal.com/news/konstantinos-mavropanos-joins-club/",
+"near": "Mavropanos",
+"group": "und"
+},
+{
+"id": "2970e738bea804a5",
+"url": "https://www.ntfc.co.uk/news/2018/january/shay_facey/",
+"near": "Facey",
+"group": "und"
+},
+{
+"id": "6858f7a7a65b5a03",
+"url": "http://www.stokecityfc.com/news/potters-swoop-for-bauer",
+"near": "Bauer",
+"group": "und"
+},
+{
+"id": "cca8a2776fe08dec",
+"url": "https://www.oufc.co.uk/news/2018/january/brannagan-signs/",
+"near": "Brannagan",
+"group": "und"
+},
+{
+"id": "d0f7d82884ef63c0",
+"url": "https://www.nottscountyfc.co.uk/news/2018/january/husin-signs/",
+"near": "Husin",
+"group": "und"
+},
+{
+"id": "50c73406e2b7a378",
+"url": "https://www.bbc.co.uk/sport/football/42674693",
+"near": "Diabaté",
+"group": "und"
+},
+{
+"id": "e67ec2f422d45d4d",
+"url": "http://www.swindonadvertiser.co.uk/sport/15832283.Town_complete_Anderson_capture/",
+"near": "Anderson",
+"group": "und"
+},
+{
+"id": "d77e474917751033",
+"url": "https://www.bbc.co.uk/sport/football/42796432",
+"near": "Jach",
+"group": "und"
+},
+{
+"id": "923bf051f276d2a8",
+"url": "https://www.bbc.co.uk/sport/football/42792135",
+"near": "Lennon",
+"group": "und"
+},
+{
+"id": "4457467a145ff34a",
+"url": "https://www.bbc.co.uk/sport/football/42862752",
+"near": "Sakho",
+"group": "und"
+},
+{
+"id": "1f36ee90ab4056b3",
+"url": "https://www.nycfc.com/post/2018/01/30/jack-harrison-joins-manchester-city-fc-new-york-city-fc",
+"near": "Harrison",
+"group": "und"
+},
+{
+"id": "262f510afcce5d8f",
+"url": "https://www.lutontown.co.uk/news/2018/january/lloyd-jones-signs/",
+"near": "Jones",
+"group": "und"
+},
+{
+"id": "91bad9a3eb595907",
+"url": "http://www.chelseafc.com/news/latest-news/2018/01/giroud-signs-for-chelsea.html",
+"near": "Giroud",
+"group": "und"
+},
+{
+"id": "c4b03e8802a7f07c",
+"url": "http://www.uslecce.it/news/51838881287",
+"near": "Sardinha}}",
+"group": "und"
+},
+{
+"id": "6ef58ef717de8c50",
+"url": "http://www.vfb.de/en/vfb/latest/news/professionals/2018/fuenf-neuzugaenge-/",
+"near": "Maffeo",
+"group": "und"
+},
+{
+"id": "d889539e3b1ae78e",
+"url": "https://www.bbc.co.uk/sport/football/44173033",
+"near": "Bennetts",
+"group": "und"
+},
+{
+"id": "21e3b4b00287d459",
+"url": "https://www.bbc.co.uk/sport/football/46732237",
+"near": "Wang}}",
+"group": "und"
+},
+{
+"id": "4529cf14e61b939e",
+"url": "https://www.bbc.co.uk/sport/football/46757814",
+"near": "Williams",
+"group": "und"
+},
+{
+"id": "b99e5da17eb8a972",
+"url": "https://www.bbc.co.uk/sport/football/46786225",
+"near": "Iborra",
+"group": "und"
+},
+{
+"id": "93aacc189daea69c",
+"url": "https://www.bbc.co.uk/sport/football/46844972",
+"near": "Fàbregas",
+"group": "und"
+},
+{
+"id": "cc7b4b58326e149f",
+"url": "https://www.bbc.co.uk/sport/football/46918611",
+"near": "Benalouane",
+"group": "und"
+},
+{
+"id": "f8ae7f5a1a3b0b7a",
+"url": "https://www.bbc.co.uk/sport/football/46966969",
+"near": "Mepham",
+"group": "und"
+},
+{
+"id": "8ea7f3394cb754ec",
+"url": "https://www.bbc.co.uk/sport/football/47056059",
+"near": "Grant",
+"group": "und"
+},
+{
+"id": "65c60dca62306d83",
+"url": "https://www.bbc.co.uk/sport/football/47070349",
+"near": "Vokes",
+"group": "und"
+},
+{
+"id": "80d225a114158d52",
+"url": "https://www.bbc.co.uk/sport/football/47070349",
+"near": "Crouch",
+"group": "und"
+},
+{
+"id": "0cb053d928c9eb1a",
+"url": "https://www.bbc.co.uk/sport/47118880",
+"near": "Fellaini",
+"group": "und"
+},
+{
+"id": "68a9293fc2e8d138",
+"url": "https://www.bbc.co.uk/sport/47118880",
+"near": "Browning",
+"group": "und"
+},
+{
+"id": "4e9c5c91059a91f7",
+"url": "https://www.bbc.co.uk/sport/48191368",
+"near": "Ebanks-Landell",
+"group": "und"
+},
+{
+"id": "e189813c99ff875d",
+"url": "https://www.bbc.co.uk/sport/48484572",
+"near": "Pérez",
+"group": "und"
+},
+{
+"id": "6c9d235385b311ee",
+"url": "https://www.bbc.co.uk/sport/48484572",
+"near": "Fernandes",
+"group": "und"
+},
+{
+"id": "b9738dff099b28b3",
+"url": "https://www.bbc.co.uk/sport/48484572",
+"near": "Gardner",
+"group": "und"
+},
+{
+"id": "052b31f02d6a857d",
+"url": "https://www.bbc.co.uk/sport/48484572",
+"near": "Jota",
+"group": "und"
+},
+{
+"id": "cb763781d1b18c28",
+"url": "https://www.bbc.co.uk/sport/48484572",
+"near": "Ghazi",
+"group": "und"
+},
+{
+"id": "56602671ae0505c6",
+"url": "https://www.bbc.co.uk/sport/48484572",
+"near": "Aina",
+"group": "und"
+},
+{
+"id": "115b3c6f73617bde",
+"url": "https://en.pfc-cska.com/news/team-news/nikola-vlasic-completes-pfc-cska-move/",
+"near": "Vlašić",
+"group": "und"
+},
+{
+"id": "5c184ded1ff375d0",
+"url": "https://www.bbc.co.uk/sport/48484572",
+"near": "Dasilva",
+"group": "und"
+},
+{
+"id": "4990a411f20c65ed",
+"url": "https://www.bbc.co.uk/sport/48484572",
+"near": "Justin",
+"group": "und"
+},
+{
+"id": "a33befeca94d983e",
+"url": "https://www.bbc.co.uk/sport/48827145",
+"near": "Dawson",
+"group": "und"
+},
+{
+"id": "49b276b960aa8f46",
+"url": "https://www.bbc.co.uk/sport/48827145",
+"near": "Targett",
+"group": "und"
+},
+{
+"id": "c5d477d1c56ac03f",
+"url": "https://www.afcb.co.uk/news/first-team/kelly-signs-for-cherries",
+"near": "Kelly",
+"group": "und"
+},
+{
+"id": "6e78c089cced6b04",
+"url": "https://www.bbc.co.uk/sport/48827145",
+"near": "Adams",
+"group": "und"
+},
+{
+"id": "0a318d9c91a84f49",
+"url": "https://www.bbc.co.uk/sport/48827145",
+"near": "Clarke",
+"group": "und"
+},
+{
+"id": "0303dd98dfa54f47",
+"url": "https://www.mancity.com/news/first-team/first-team-news/2019/july/man-city-sign-angelino-psv-transfer-latest-update",
+"near": "Angeliño",
+"group": "und"
+},
+{
+"id": "84c361406cd8a24f",
+"url": "https://www.arsenal.com/news/david-ospina-leaves-napoli-0",
+"near": "Ospina",
+"group": "und"
+},
+{
+"id": "443d42f86ee5d90b",
+"url": "https://www.bbc.co.uk/sport/48827145",
+"near": "Pieters",
+"group": "und"
+},
+{
+"id": "aefbf158682e0847",
+"url": "https://www.bbc.co.uk/sport/48827145",
+"near": "Mahoney",
+"group": "und"
+},
+{
+"id": "b6c79ff9c70e96f2",
+"url": "https://www.columbuscrewsc.com/post/2018/12/11/columbus-crew-sc-reaches-historic-2019-secondary-transfer-window-agreement",
+"near": "Steffen",
+"group": "und"
+},
+{
+"id": "9af91ada88790dc5",
+"url": "https://www.bbc.co.uk/sport/48827145",
+"near": "Gallagher",
+"group": "und"
+},
+{
+"id": "523042f126a0b7f4",
+"url": "https://www.bbc.co.uk/sport/48827145",
+"near": "Delph",
+"group": "und"
+},
+{
+"id": "c993d4003ec3708d",
+"url": "https://www.nufc.co.uk/news/latest-news/joselu-completes-alav%C3%A9s-move/",
+"near": "Joselu",
+"group": "und"
+},
+{
+"id": "db47f1f0a27ffc75",
+"url": "https://www.avfc.co.uk/News/2019/07/16/bjorn-engels-signs-for-aston-villa",
+"near": "Engels",
+"group": "und"
+},
+{
+"id": "1d17a48f521da942",
+"url": "https://www.bbc.co.uk/sport/48827145",
+"near": "Janssen",
+"group": "und"
+},
+{
+"id": "f63a7bb527b1c4db",
+"url": "https://www.bbc.co.uk/sport/48827145",
+"near": "Obiang",
+"group": "und"
+},
+{
+"id": "a00a1e27bd8ebf11",
+"url": "https://www.bbc.co.uk/sport/48827145",
+"near": "Osborn",
+"group": "und"
+},
+{
+"id": "dba1b87966b7841c",
+"url": "https://www.bbc.co.uk/sport/48827145",
+"near": "Browne",
+"group": "und"
+},
+{
+"id": "3900eb7f9be43a50",
+"url": "https://www.bbc.co.uk/sport/48827145",
+"near": "Williams",
+"group": "und"
+},
+{
+"id": "1dcafd038b364f0d",
+"url": "https://www.bbc.co.uk/sport/football/transfers",
+"near": "Moore",
+"group": "und"
+},
+{
+"id": "10dddbd2ebfe82a1",
+"url": "https://www.bbc.co.uk/sport/football/transfers",
+"near": "Palmer",
+"group": "und"
+},
+{
+"id": "a36e90a17a21dd24",
+"url": "https://www.bbc.co.uk/sport/football/transfers",
+"near": "Nakamba",
+"group": "und"
+},
+{
+"id": "a4408f2ecfd31341",
+"url": "https://www.sslazio.it/it/news/press-release-2/54661-comunicato-02-08-2019",
+"near": "Jordão",
+"group": "und"
+},
+{
+"id": "dbb0c6be61d556c8",
+"url": "https://www.bbc.co.uk/sport/football/transfers",
+"near": "Bielik",
+"group": "und"
+},
+{
+"id": "f6af355dd67bc82d",
+"url": "https://www.sslazio.it/it/news/press-release-2/54661-comunicato-02-08-2019",
+"near": "Neto",
+"group": "und"
+},
+{
+"id": "47400ca6763e9b57",
+"url": "https://www.bbc.co.uk/sport/football/transfers",
+"near": "Oxford",
+"group": "und"
+},
+{
+"id": "1e429a15262ecbaa",
+"url": "https://www.bbc.co.uk/sport/football/transfers",
+"near": "Kean",
+"group": "und"
+},
+{
+"id": "8d1bb57716b3507d",
+"url": "https://www.bbc.co.uk/sport/football/transfers",
+"near": "Dadashov",
+"group": "und"
+},
+{
+"id": "64b663c90d52cbdd",
+"url": "https://www.bbc.co.uk/sport/football/transfers",
+"near": "Evans",
+"group": "und"
+},
+{
+"id": "0f4da4af450b6603",
+"url": "https://www.bbc.co.uk/sport/football/transfers",
+"near": "Lavery",
+"group": "und"
+},
+{
+"id": "b0e761c8b167bf24",
+"url": "https://www.bbc.co.uk/sport/football/transfers",
+"near": "Jenkinson",
+"group": "und"
+},
+{
+"id": "8ecc8c887e6bb9fa",
+"url": "https://www.lcfc.com/news/1303582/dennis-praets-journey-to-king-power-stadium/featured",
+"near": "Praet",
+"group": "und"
+},
+{
+"id": "d5dda88fc958d4f0",
+"url": "https://www.chelseafc.com/en/news/2019/08/08/david-luiz-departs-chelsea-for-arsenal?cardIndex=0-0",
+"near": "Luiz",
+"group": "und"
+},
+{
+"id": "6cc62118a505b5b4",
+"url": "https://www.bbc.co.uk/sport/football/transfers",
+"near": "Thompson",
+"group": "und"
+},
+{
+"id": "9b9304e82eaf9b10",
+"url": "https://www.bbc.co.uk/sport/football/transfers",
+"near": "Shabani",
+"group": "und"
+},
+{
+"id": "c456e58b79555e31",
+"url": "https://www.whufc.com/news/articles/2019/august/08-august/west-ham-united-sign-swiss-striker-albian-ajeti#fMbx0XReLyCfKXb0.99",
+"near": "Ajeti",
+"group": "und"
+},
+{
+"id": "fea83622cab02c96",
+"url": "https://www.arsenal.com/news/kieran-tierney-joins-long-term-deal",
+"near": "Tierney",
+"group": "und"
+},
+{
+"id": "61703d37cb5112ea",
+"url": "https://www.bbc.co.uk/sport/football/transfers",
+"near": "Elder",
+"group": "und"
+},
+{
+"id": "0e597358b41abd90",
+"url": "https://www.nufc.co.uk/news/latest-news/emil-krafth-becomes-newcastle-uniteds-fourth-summer-signing/",
+"near": "Krafth",
+"group": "und"
+},
+{
+"id": "8e5e705e264ae78e",
+"url": "https://www.bbc.co.uk/sport/49190467",
+"near": "Barker",
+"group": "und"
+},
+{
+"id": "5a7f54ef90474268",
+"url": "https://www.birminghammail.co.uk/sport/football/transfer-news/aston-villa-transfer-news-tshibola-16835251",
+"near": "Tshibola",
+"group": "und"
+},
+{
+"id": "350d84f51f32b8ac",
+"url": "https://www.bbc.co.uk/sport/49190467",
+"near": "Monreal",
+"group": "und"
+},
+{
+"id": "2f30fa6b95758e94",
+"url": "https://www.bbc.co.uk/sport/49542782",
+"near": "Darmian",
+"group": "und"
+},
+{
+"id": "0ccfed45504533cc",
+"url": "https://www.bbc.co.uk/sport/49542782",
+"near": "O'Connor",
+"group": "und"
+},
+{
+"id": "3c4c884aaa65a794",
+"url": "https://www.bbc.co.uk/sport/49542782",
+"near": "Nwakali",
+"group": "und"
+},
+{
+"id": "a4486579a5d7beb8",
+"url": "https://www.bbc.co.uk/sport/49542782",
+"near": "Hernández",
+"group": "und"
+},
+{
+"id": "42dc04aa99874973",
+"url": "https://www.bbc.co.uk/sport/49542782",
+"near": "Frimpong",
+"group": "und"
+},
+{
+"id": "b38e774bce65a18e",
+"url": "https://www.bbc.co.uk/sport/49542782",
+"near": "Edwards",
+"group": "und"
+},
+{
+"id": "8d49c63c98fecfc8",
+"url": "https://metro.co.uk/2019/09/05/chelsea-announce-michael-hector-will-join-fulham-failing-play-game-club-four-years-10693622/",
+"near": "Hector",
+"group": "und"
+},
+{
+"id": "0e9cb58ff3c23be2",
+"url": "https://www.espn.co.uk/football/soccer-transfers/story/4009512/atlanta-united-signs-emerson-hyndman-from-bournemouth-to-permanent-deal",
+"near": "Hyndman",
+"group": "und"
+},
+{
+"id": "99f0478990d34dbd",
+"url": "https://www.manutd.com/en/news/detail/ashley-young-completes-transfer-from-man-utd-to-inter-milan",
+"near": "Young",
+"group": "und"
+},
+{
+"id": "75f43946e5166181",
+"url": "https://www.bbc.co.uk/sport/football/51142447",
+"near": "Young",
+"group": "und"
+},
+{
+"id": "cd477073a3afd99b",
+"url": "https://www.expressandstar.com/sport/football/aston-villa/2020/01/20/aston-villa-confirm-signing-of-mbwana-samatta/",
+"near": "Samatta",
+"group": "und"
+},
+{
+"id": "8db87557dca7e007",
+"url": "https://www.bbc.co.uk/sport/football/51360218",
+"near": "Scully",
+"group": "und"
+},
+{
+"id": "284f412c1a8786d8",
+"url": "https://www.bbc.co.uk/sport/football/51550497",
+"near": "Burton",
+"group": "und"
+},
+{
+"id": "f7db070a0c46d778",
+"url": "https://www.bbc.co.uk/sport/football/53152385",
+"near": "Schneiderlin",
+"group": "und"
+},
+{
+"id": "5df69c241bd0f4b9",
+"url": "https://www.bbc.co.uk/sport/football/53152382",
+"near": "Soares",
+"group": "und"
+},
+{
+"id": "bf3869c10af80767",
+"url": "https://www.evertonfc.com/news/1704176/hornby-leaves-everton-for-reims",
+"near": "Hornby",
+"group": "und"
+},
+{
+"id": "fe42dcbc79dcbcc7",
+"url": "https://www.bbc.co.uk/sport/football/53420700",
+"near": "Emmerson",
+"group": "und"
+},
+{
+"id": "96b5610a251a63fc",
+"url": "https://www.wolves.co.uk/news/academy/20200716-tsun-dai-earns-move-to-shenzhen-fc/",
+"near": "Dai",
+"group": "und"
+},
+{
+"id": "1281e4ad23fb6687",
+"url": "https://www.bbc.co.uk/sport/football/53551503",
+"near": "Watt",
+"group": "und"
+},
+{
+"id": "b6b0930efcbead1f",
+"url": "https://www.bbc.co.uk/sport/football/53570429",
+"near": "Dele-Bashiru",
+"group": "und"
+},
+{
+"id": "c6e7ec0fe06b68fe",
+"url": "https://www.canaries.co.uk/News/2020/july/city-swoop-for-england-u21-and-everton-midfielder-kieran-dowell/",
+"near": "Dowell",
+"group": "und"
+},
+{
+"id": "b45848bb02e196c9",
+"url": "https://www.abola.pt/nacional/2020-08-07/gil-vicente-boubacar-hanne-chega-do-wolverhampton/85613",
+"near": "Hanne",
+"group": "und"
+},
+{
+"id": "228fe8cc55f1c533",
+"url": "https://www.yorkshireeveningpost.co.uk/sport/football/leeds-united/leeds-united-land-highly-rated-youngster-joe-gelhardt-wigan-athletic-2938359",
+"near": "Gelhardt",
+"group": "und"
+},
+{
+"id": "f187776f71fc3ac2",
+"url": "https://www.bbc.co.uk/sport/football/53734957",
+"near": "Allen",
+"group": "und"
+},
+{
+"id": "a779b18681912de5",
+"url": "https://www.chelseafc.com/en/news/2020/08/13/pantic-heads-on-loan-to-serbia--maddox-moves-on",
+"near": "Maddox",
+"group": "und"
+},
+{
+"id": "95732861c141cce6",
+"url": "https://www.bbc.co.uk/sport/football/53769408",
+"near": "Drameh",
+"group": "und"
+},
+{
+"id": "8f0f2357232033a1",
+"url": "https://www.bbc.co.uk/sport/football/53811187",
+"near": "Amos",
+"group": "und"
+},
+{
+"id": "229f4a75ff848f3c",
+"url": "https://www.bbc.co.uk/sport/football/53813044",
+"near": "Pereira",
+"group": "und"
+},
+{
+"id": "1ae7ee2981665a53",
+"url": "https://www.bbc.co.uk/sport/football/53840518",
+"near": "Chrisene",
+"group": "und"
+},
+{
+"id": "a8a2c61c03d26990",
+"url": "https://www.bbc.co.uk/sport/football/53945196",
+"near": "Leko",
+"group": "und"
+},
+{
+"id": "b6d31b483f34489f",
+"url": "https://www.bbc.co.uk/sport/football/53952423",
+"near": "Ejaria",
+"group": "und"
+},
+{
+"id": "b5d618bca6c29142",
+"url": "https://www.bbc.co.uk/sport/football/53945710",
+"near": "John",
+"group": "und"
+},
+{
+"id": "30ca1bd6b87c8242",
+"url": "https://www.bbc.co.uk/sport/football/53914263",
+"near": "Koch",
+"group": "und"
+},
+{
+"id": "b5918a1a5e7f91e2",
+"url": "https://www.bbc.co.uk/sport/football/53964105",
+"near": "Doherty",
+"group": "und"
+},
+{
+"id": "79d242fb2dcd1507",
+"url": "https://www.bbc.co.uk/sport/football/53968793",
+"near": "Reed",
+"group": "und"
+},
+{
+"id": "ead8aacdd7cb2bda",
+"url": "https://www.lutontown.co.uk/news/2020/september/lockyer-bree/",
+"near": "Bree",
+"group": "und"
+},
+{
+"id": "be3ba484e4b4b0a5",
+"url": "https://www.bbc.co.uk/sport/football/54040635",
+"near": "Button",
+"group": "und"
+},
+{
+"id": "4d6a77fa22037b2d",
+"url": "https://www.bbc.co.uk/sport/football/54054089",
+"near": "Lowe",
+"group": "und"
+},
+{
+"id": "bcadb5cc77cbd22c",
+"url": "https://www.bbc.co.uk/sport/football/54059271",
+"near": "Ashley-Seal",
+"group": "und"
+},
+{
+"id": "ee645c421fd32c37",
+"url": "https://www.bbc.co.uk/sport/football/54054089",
+"near": "Bogle",
+"group": "und"
+},
+{
+"id": "5fa33f090ee03e9f",
+"url": "https://www.bbc.co.uk/sport/football/54080698",
+"near": "Lewis",
+"group": "und"
+},
+{
+"id": "8de5eee54b9fa177",
+"url": "https://www.bbc.co.uk/sport/football/54109423",
+"near": "Tete",
+"group": "und"
+},
+{
+"id": "bcd13c5c67cc5da1",
+"url": "https://www.bbc.co.uk/sport/football/54181394",
+"near": "Hogan",
+"group": "und"
+},
+{
+"id": "7ab46a4b4d1316d6",
+"url": "https://www.bbc.co.uk/sport/football/54242122",
+"near": "Rúnarsson",
+"group": "und"
+},
+{
+"id": "8338191c879de7a0",
+"url": "https://www.bbc.co.uk/sport/football/54229966",
+"near": "Sørloth",
+"group": "und"
+},
+{
+"id": "9c40db75fa61d264",
+"url": "https://www.bbc.co.uk/sport/football/54272055",
+"near": "Llorente",
+"group": "und"
+},
+{
+"id": "9cd60d6dd3737de9",
+"url": "https://www.bbc.co.uk/sport/football/54388230",
+"near": "Fofana",
+"group": "und"
+},
+{
+"id": "b9b971c835e36bcf",
+"url": "https://www.bbc.co.uk/sport/football/54415258",
+"near": "Aït-Nouri",
+"group": "und"
+},
+{
+"id": "c26126433fbabe29",
+"url": "https://www.bbc.co.uk/sport/football/54421553",
+"near": "Adarabioyo",
+"group": "und"
+},
+{
+"id": "5d4cabb85e61939d",
+"url": "https://www.bbc.co.uk/sport/football/54426168",
+"near": "Cullen",
+"group": "und"
+},
+{
+"id": "b523517ef84a86fd",
+"url": "https://www.bbc.co.uk/sport/football/54531200",
+"near": "Inniss",
+"group": "und"
+},
+{
+"id": "d06a40b4aafa3007",
+"url": "https://www.bbc.co.uk/sport/football/54569600",
+"near": "Latibeaudiere",
+"group": "und"
+},
+{
+"id": "d111079a86f69a16",
+"url": "https://www.bbc.co.uk/sport/football/55581236",
+"near": "Aarons",
+"group": "und"
+},
+{
+"id": "ca420681251382d3",
+"url": "https://www.bbc.co.uk/sport/football/55592553",
+"near": "Snodgrass",
+"group": "und"
+},
+{
+"id": "0f39cce6fcf76d97",
+"url": "https://www.bbc.co.uk/sport/football/55652484",
+"near": "Fosu-Mensah",
+"group": "und"
+},
+{
+"id": "a2fb42c9cd4b11de",
+"url": "https://www.bbc.co.uk/sport/football/55646918",
+"near": "Brown",
+"group": "und"
+},
+{
+"id": "0fb1d5176592a92e",
+"url": "https://www.wba.co.uk/news/bond-joins-la-galaxy",
+"near": "Bond",
+"group": "und"
+},
+{
+"id": "12c5b76557fe214a",
+"url": "https://www.bbc.co.uk/sport/football/55675775",
+"near": "Piazon",
+"group": "und"
+},
+{
+"id": "7409069768b2d75c",
+"url": "https://www.bbc.co.uk/sport/football/55680995",
+"near": "Kemp",
+"group": "und"
+},
+{
+"id": "7c19d38c77bcf7d5",
+"url": "https://www.bbc.co.uk/sport/football/55708276",
+"near": "Ennis",
+"group": "und"
+},
+{
+"id": "7aab4cc7d49968b6",
+"url": "https://www.tottenhamhotspur.com/news/2021/january/ael-move-for-georgiou/",
+"near": "Georgiou",
+"group": "und"
+},
+{
+"id": "9a7a2b71bfe02dd3",
+"url": "https://www.bbc.co.uk/sport/football/55787384",
+"near": "O'Riley",
+"group": "und"
+},
+{
+"id": "b10fb1e52f5f2646",
+"url": "https://www.bbc.co.uk/sport/football/55799279",
+"near": "Ogbeta",
+"group": "und"
+},
+{
+"id": "e5e2329d7f0b37c6",
+"url": "https://www.bbc.co.uk/sport/football/55800715",
+"near": "",
+"group": "und"
+},
+{
+"id": "7d9efea719b5c1dd",
+"url": "https://www.bbc.co.uk/sport/football/55818166",
+"near": "Sanson",
+"group": "und"
+},
+{
+"id": "f1ef144e5f02f042",
+"url": "https://www.bbc.co.uk/sport/football/55880705",
+"near": "Gray",
+"group": "und"
+},
+{
+"id": "dd7b092bea15fe14",
+"url": "https://www.bbc.co.uk/sport/football/55885328",
+"near": "Lössl",
+"group": "und"
+},
+{
+"id": "f6eed162e7d7fa7c",
+"url": "https://www.bbc.co.uk/sport/football/55894931",
+"near": "Yedlin",
+"group": "und"
+},
+{
+"id": "65e177b3601baf1f",
+"url": "https://www.bbc.co.uk/sport/football/55890385",
+"near": "",
+"group": "und"
+},
+{
+"id": "7c9146e4d3e3ee74",
+"url": "https://www.bbc.co.uk/sport/football/55886904",
+"near": "Taylor",
+"group": "und"
+},
+{
+"id": "6a26bc01a45b7f56",
+"url": "https://www.bbc.co.uk/sport/football/55903234",
+"near": "Rojo",
+"group": "und"
+},
+{
+"id": "e276afcbafb12a1a",
+"url": "https://www.bbc.co.uk/sport/football/56052288",
+"near": "Angeliño",
+"group": "und"
+},
+{
+"id": "d808a67e4645fc7a",
+"url": "https://www.bbc.co.uk/sport/football/57189044",
+"near": "Field",
+"group": "und"
+},
+{
+"id": "bba6a7b88941f7c2",
+"url": "https://www.tottenhamhotspur.com/news/2021/june/foyth-move-made-permanent/",
+"near": "Foyth",
+"group": "und"
+},
+{
+"id": "d10c32a458d23c85",
+"url": "https://www.chelseafc.com/en/news/2021/06/16/pantic-departs",
+"near": "Pantić",
+"group": "und"
+},
+{
+"id": "7bd5d617cf8921af",
+"url": "https://www.avfc.co.uk/news/2021/june/Villa-reach-agreement-for-Engels-transfer/",
+"near": "Engels",
+"group": "und"
+},
+{
+"id": "e750526d9c6631d3",
+"url": "https://www.bbc.com/sport/football/57555741",
+"near": "McGuinness",
+"group": "und"
+},
+{
+"id": "f8d84d24049f0d2f",
+"url": "https://www.bbc.com/sport/football/57555741",
+"near": "Medley",
+"group": "und"
+},
+{
+"id": "eca9638e7238031b",
+"url": "https://www.bbc.com/sport/football/57555741",
+"near": "Coyle",
+"group": "und"
+},
+{
+"id": "642006d391d2ef54",
+"url": "https://www.bbc.co.uk/sport/football/57570977",
+"near": "Casey",
+"group": "und"
+},
+{
+"id": "e4b12fd284dd112a",
+"url": "https://www.bbc.co.uk/sport/football/57602611",
+"near": "Wilmot",
+"group": "und"
+},
+{
+"id": "ee85864fd3388dae",
+"url": "https://www.readingfc.co.uk/news/2021/may/nevers-set-to-sign-for-west-ham-for-undisclosed-fee/",
+"near": "",
+"group": "und"
+},
+{
+"id": "cea4ef7a321ccb29",
+"url": "https://www.bbc.co.uk/sport/football/57684144",
+"near": "Sheaf",
+"group": "und"
+},
+{
+"id": "0c2268d6da2b9db7",
+"url": "https://www.bbc.co.uk/sport/football/57696781",
+"near": "Knight",
+"group": "und"
+},
+{
+"id": "5fa94c3bb663578c",
+"url": "https://www.bbc.co.uk/sport/football/57698888",
+"near": "Moses",
+"group": "und"
+},
+{
+"id": "b4d667ec63c33e23",
+"url": "https://www.ducorsports.com/frunt/post_details/mbwana-samatta-becomes-permanent-fenerbahce-player-24912.html#:~:text=Aston%20Villa%20striker%20Mbwana,on%20a%20four%2Dyear%20deal.",
+"near": "Samatta",
+"group": "und"
+},
+{
+"id": "d8e55c89da38868e",
+"url": "https://www.liverpoolfc.com/news/first-team/437227-kamil-grabara-completes-permanent-move-to-fc-copenhagen#",
+"near": "Grabara",
+"group": "und"
+},
+{
+"id": "a35cf91fae987901",
+"url": "https://www.bbc.co.uk/sport/football/57785230",
+"near": "Aït-Nouri",
+"group": "und"
+},
+{
+"id": "66d2d84b5855bbd8",
+"url": "https://www.afcb.co.uk/news/club-news/burchall-moves-to-aston-villa/",
+"near": "Burchall",
+"group": "und"
+},
+{
+"id": "c589739a25a1d2f3",
+"url": "https://www.bbc.co.uk/sport/football/57785110",
+"near": "Gyökeres",
+"group": "und"
+},
+{
+"id": "6ea8a04d8441effc",
+"url": "https://www.bbc.co.uk/sport/football/57789935",
+"near": "Adeniran",
+"group": "und"
+},
+{
+"id": "2e960f6912a0a4ab",
+"url": "https://www.bbc.co.uk/sport/football/57816409",
+"near": "Patrício",
+"group": "und"
+},
+{
+"id": "651625563143667f",
+"url": "https://www.bbc.com/sport/football/57823047",
+"near": "Dunne",
+"group": "und"
+},
+{
+"id": "3d16ccb73f3e184e",
+"url": "https://www.bbc.co.uk/sport/football/57857395",
+"near": "Sá",
+"group": "und"
+},
+{
+"id": "3fdb4a773182dd18",
+"url": "https://www.bbc.co.uk/sport/football/57849033",
+"near": "Muskwe",
+"group": "und"
+},
+{
+"id": "980dadb31e4a6c08",
+"url": "https://www.bbc.co.uk/sport/football/57865212",
+"near": "Anderson",
+"group": "und"
+},
+{
+"id": "a3f62a32b8af529b",
+"url": "https://www.bbc.co.uk/sport/football/57870112",
+"near": "Nmecha",
+"group": "und"
+},
+{
+"id": "ff1f8d8ff43b8c64",
+"url": "https://www.wolves.co.uk/news/loan-watch/20210717-new-signing-loaned-to-grasshoppers/",
+"near": "Bolla",
+"group": "und"
+},
+{
+"id": "9ef3fd05b22343b1",
+"url": "https://www.bbc.co.uk/sport/football/57873043",
+"near": "Giroud",
+"group": "und"
+},
+{
+"id": "9df23c80f5ebc767",
+"url": "https://www.chelseafc.com/en/news/2021/07/18/marc-guehi-to-join-crystal-palace?cardIndex=0-1",
+"near": "Guéhi",
+"group": "und"
+},
+{
+"id": "27ff2b3c5cc0e74c",
+"url": "https://www.bbc.co.uk/sport/football/57893045",
+"near": "Lokonga",
+"group": "und"
+},
+{
+"id": "4c6b3f51c6f107c0",
+"url": "https://www.bbc.co.uk/sport/football/57933386",
+"near": "Lejeune",
+"group": "und"
+},
+{
+"id": "ff488ef11848e766",
+"url": "https://www.manutd.com/en/news/detail/man-utd-announce-paul-mcshane-signing-in-innovative-player-coach-role",
+"near": "McShane",
+"group": "und"
+},
+{
+"id": "efddfefb207f9677",
+"url": "https://www.bbc.co.uk/sport/football/57946017",
+"near": "Peart-Harris",
+"group": "und"
+},
+{
+"id": "cce359129e4478b9",
+"url": "https://www.bbc.co.uk/sport/football/57942316",
+"near": "Bernard",
+"group": "und"
+},
+{
+"id": "df558091be2b23a7",
+"url": "https://www.avfc.co.uk/news/2021/july/Azaz-joins-Villa-and-seals-Newport-loan/",
+"near": "Azaz",
+"group": "und"
+},
+{
+"id": "3f66cc5a92a3aaca",
+"url": "https://www.bbc.co.uk/sport/football/57934261",
+"near": "Gil",
+"group": "und"
+},
+{
+"id": "b5f299f0cbb2eaaa",
+"url": "https://www.bbc.co.uk/sport/football/57986063",
+"near": "Alderweireld",
+"group": "und"
+},
+{
+"id": "0bd3ca6d243c30e4",
+"url": "https://www.bbc.co.uk/sport/football/58019108",
+"near": "Baningime",
+"group": "und"
+},
+{
+"id": "ee01676b42e88415",
+"url": "https://www.celticfc.com/news/2021/august/Double-signing-delight-as-Joe-Hart-and-James-McCarthy-join-Celtic/",
+"near": "Hart",
+"group": "und"
+},
+{
+"id": "609506241fb06c44",
+"url": "http://www.premierleague.com/news/2206520",
+"near": "Ings",
+"group": "und"
+},
+{
+"id": "3c1c1c397834f021",
+"url": "https://www.bbc.co.uk/sport/football/58106687",
+"near": "Okedina",
+"group": "und"
+},
+{
+"id": "b150414766c8fdd2",
+"url": "https://www.bbc.co.uk/sport/football/58164406",
+"near": "Armstrong",
+"group": "und"
+},
+{
+"id": "90150fc1a0c0141a",
+"url": "https://www.bbc.co.uk/sport/football/58177901",
+"near": "Cirkin",
+"group": "und"
+},
+{
+"id": "5b235bb1e8e63059",
+"url": "https://www.lcfc.com/news/2212907/rachid-ghezzal-joins-besiktas-on-permanent-deal",
+"near": "Ghezzal",
+"group": "und"
+},
+{
+"id": "ed9d59204353ed8f",
+"url": "https://www.bbc.co.uk/sport/football/58207197",
+"near": "Vestergaard",
+"group": "und"
+},
+{
+"id": "9eae05f5604cd9a9",
+"url": "https://www.bbc.co.uk/sport/football/58200876",
+"near": "Willock",
+"group": "und"
+},
+{
+"id": "041dc04f82f55e9d",
+"url": "https://www.avfc.co.uk/news/2021/august/Caleb-Chukwuemeka-joins-Villa-Academy/",
+"near": "Chukwuemeka",
+"group": "und"
+},
+{
+"id": "da0f29d150a10168",
+"url": "https://www.bbc.co.uk/sport/football/58250633",
+"near": "Eyoma",
+"group": "und"
+},
+{
+"id": "cc79704f94a8a349",
+"url": "https://www.wolves.co.uk/news/first-team/20210819-otasowie-makes-wolves-exit/",
+"near": "Otasowie",
+"group": "und"
+},
+{
+"id": "c2840b15c90f5553",
+"url": "https://www.birminghammail.co.uk/sport/football/transfer-news/confirmed-aston-villa-sanction-permanent-21380844",
+"near": "Sylla",
+"group": "und"
+},
+{
+"id": "04ccd1749ae61d1c",
+"url": "https://www.chelseafc.com/en/news/2021/08/24/zappacosta-joins-atalanta",
+"near": "Zappacosta",
+"group": "und"
+},
+{
+"id": "441663d68e7404b3",
+"url": "https://www.chelseafc.com/en/news/2021/08/25/ugbo-leaves-chelsea-for-genk",
+"near": "Ugbo",
+"group": "und"
+},
+{
+"id": "8c74d74ec4d8d608",
+"url": "https://www.bbc.co.uk/sport/football/58350973",
+"near": "Clark",
+"group": "und"
+},
+{
+"id": "078148369304f6be",
+"url": "https://www.bbc.co.uk/sport/football/58361702",
+"near": "Sarr",
+"group": "und"
+},
+{
+"id": "eb52943d4678e157",
+"url": "https://www.bbc.co.uk/sport/football/58403286",
+"near": "Silva",
+"group": "und"
+},
+{
+"id": "154e2c83d7294db9",
+"url": "https://www.bbc.co.uk/sport/football/58388047",
+"near": "Vlašić",
+"group": "und"
+},
+{
+"id": "5e93dacb03cebcc5",
+"url": "https://www.bbc.co.uk/sport/football/58401545",
+"near": "Tomiyasu",
+"group": "und"
+},
+{
+"id": "430c964de26633f9",
+"url": "https://www.bbc.co.uk/sport/football/58401946",
+"near": "Chalobah",
+"group": "und"
+},
+{
+"id": "f7c065d2cb616cba",
+"url": "https://www.evertonfc.com/news/2264973/colombian-james-completes-qatar-move",
+"near": "Rodríguez",
+"group": "und"
+},
+{
+"id": "ce53ae286e056c3b",
+"url": "https://www.bbc.co.uk/sport/football/59847046",
+"near": "Mykolenko",
+"group": "und"
+},
+{
+"id": "9ba6d77d5e75ef3e",
+"url": "https://www.bbc.co.uk/sport/football/59879994",
+"near": "Kawabe",
+"group": "und"
+},
+{
+"id": "5300dafbe529a7fa",
+"url": "https://www.bbc.co.uk/sport/football/59915810",
+"near": "Longelo",
+"group": "und"
+},
+{
+"id": "c6cfff8172de0108",
+"url": "https://www.bbc.co.uk/sport/football/59992865",
+"near": "Rich-Baghuelou",
+"group": "und"
+},
+{
+"id": "b670f5918dd86e41",
+"url": "https://www.dundeeunitedfc.co.uk/news/7157/KERR-SMITH-MAKES-PREMIER-LEAGUE-SWITCH.html",
+"near": "Smith",
+"group": "und"
+},
+{
+"id": "c2a0b8f074dff14b",
+"url": "https://www.stokecityfc.com/news/2022/january/15/welcoming-lewis/",
+"near": "Baker",
+"group": "und"
+},
+{
+"id": "827d611c7e7a8026",
+"url": "https://www.bbc.co.uk/sport/football/60038266",
+"near": "Markanday",
+"group": "und"
+},
+{
+"id": "86f9e8429d6a2d7c",
+"url": "https://www.bbc.co.uk/sport/football/60057703",
+"near": "Walton",
+"group": "und"
+},
+{
+"id": "a2cb571f7a071272",
+"url": "https://www.bbc.co.uk/sport/football/60105675",
+"near": "Williams",
+"group": "und"
+},
+{
+"id": "6764b50cc7fb94ce",
+"url": "https://www.bbc.co.uk/sport/football/60143273",
+"near": "",
+"group": "und"
+},
+{
+"id": "110efe3b003c9cdb",
+"url": "https://www.bbc.co.uk/sport/football/60175226",
+"near": "Uwakwe",
+"group": "und"
+},
+{
+"id": "983b6868b0c168b5",
+"url": "https://www.bbc.co.uk/sport/football/60169311",
+"near": "Guimarães",
+"group": "und"
+},
+{
+"id": "8682ca42c50b201a",
+"url": "https://www.bbc.co.uk/sport/football/60208748",
+"near": "Plange",
+"group": "und"
+},
+{
+"id": "1363c88bae0b2def",
+"url": "https://www.bbc.co.uk/sport/football/60207597",
+"near": "Crellin",
+"group": "und"
+},
+{
+"id": "e2c0867e06da6400",
+"url": "https://www.lcfc.com/news/2467963/",
+"near": "",
+"group": "und"
+},
+{
+"id": "45a46aff6862ba4d",
+"url": "https://www.whufc.com/news/articles/2022/january/31-january/frederik-alves-joins-brondby-if",
+"near": "Alves",
+"group": "und"
+},
+{
+"id": "7e707bbc125d245d",
+"url": "https://www.bbc.co.uk/sport/football/60208027",
+"near": "",
+"group": "und"
+},
+{
+"id": "81c68b4ea1e6daea",
+"url": "https://www.bbc.co.uk/sport/football/60208264",
+"near": "Hughes",
+"group": "und"
+},
+{
+"id": "913fb14b40b1b83a",
+"url": "https://www.arsenal.com/news/trusty-signs-club-remains-loan",
+"near": "Trusty",
+"group": "und"
+},
+{
+"id": "8c95112639d6afd0",
+"url": "https://www.bbc.co.uk/sport/football/60204952",
+"near": "Smith",
+"group": "und"
+},
+{
+"id": "087c786acc726a4b",
+"url": "https://www.bbc.co.uk/sport/football/60208748",
+"near": "Mateta",
+"group": "und"
+},
+{
+"id": "19dd135c8878c2fa",
+"url": "https://www.bbc.co.uk/sport/football/60220511",
+"near": "Burstow",
+"group": "und"
+},
+{
+"id": "f40fb041677cfda9",
+"url": "https://www.bbc.co.uk/sport/football/61688899",
+"near": "Olsen",
+"group": "und"
+},
+{
+"id": "62d281e8cd11ac5e",
+"url": "https://www.bbc.co.uk/sport/football/61733019",
+"near": "Kelly",
+"group": "und"
+},
+{
+"id": "d0d6ac30202a4320",
+"url": "https://www.bbc.co.uk/sport/football/61736577",
+"near": "Kristensen",
+"group": "und"
+},
+{
+"id": "42b763ff2186aac9",
+"url": "https://www.bbc.co.uk/sport/football/61788100",
+"near": "Marquinhos",
+"group": "und"
+},
+{
+"id": "3791fadec62bd5b5",
+"url": "https://www.bbc.co.uk/sport/football/61874918",
+"near": "Richardson",
+"group": "und"
+},
+{
+"id": "3d312d50a3f43b8a",
+"url": "https://www.bbc.co.uk/sport/football/61888669",
+"near": "Woodman",
+"group": "und"
+},
+{
+"id": "4371a89089fb7282",
+"url": "https://www.bbc.co.uk/sport/football/61917622",
+"near": "Pope",
+"group": "und"
+},
+{
+"id": "1ea76f3324854274",
+"url": "https://www.bbc.co.uk/sport/football/61945860",
+"near": "Ebiowei",
+"group": "und"
+},
+{
+"id": "feed958cfe567594",
+"url": "https://www.bbc.co.uk/sport/football/60354447",
+"near": "Turner",
+"group": "und"
+},
+{
+"id": "809dd28197764f10",
+"url": "https://www.bbc.co.uk/sport/football/61985296",
+"near": "McCarron",
+"group": "und"
+},
+{
+"id": "9bbf6593230681b7",
+"url": "https://www.bbc.co.uk/sport/football/61599541",
+"near": "Anguissa",
+"group": "und"
+},
+{
+"id": "620653911c2ea61c",
+"url": "https://www.bbc.co.uk/sport/africa/62009011",
+"near": "Trézéguet",
+"group": "und"
+},
+{
+"id": "539528f1dbe5923b",
+"url": "https://www.bbc.co.uk/sport/football/62047767",
+"near": "Swanson",
+"group": "und"
+},
+{
+"id": "4f62a1235bce2973",
+"url": "https://www.bbc.co.uk/sport/football/62014164",
+"near": "Sherring",
+"group": "und"
+},
+{
+"id": "b6f492d154339467",
+"url": "https://www.bbc.co.uk/sport/football/62072070",
+"near": "Niakhaté",
+"group": "und"
+},
+{
+"id": "51b42aa3a65aeeb8",
+"url": "https://www.bbc.co.uk/sport/football/62080878",
+"near": "Levitt",
+"group": "und"
+},
+{
+"id": "369a9d0f7b0fbc97",
+"url": "https://www.safc.com/news/team-news/2022/july/jack-clarke-signs-for-sunderland",
+"near": "Clarke",
+"group": "und"
+},
+{
+"id": "b41c3b03ae5d85b9",
+"url": "https://www.bbc.co.uk/sport/football/62111629",
+"near": "Richards",
+"group": "und"
+},
+{
+"id": "165a50b3f1c0a5c1",
+"url": "https://www.bbc.co.uk/sport/football/62123857",
+"near": "Doucouré",
+"group": "und"
+},
+{
+"id": "47973478fbf1b2eb",
+"url": "https://www.bbc.co.uk/sport/football/62140269",
+"near": "Clayton",
+"group": "und"
+},
+{
+"id": "7d50bf0c23d1a98d",
+"url": "https://www.bbc.co.uk/sport/football/62181682",
+"near": "Hennessey",
+"group": "und"
+},
+{
+"id": "26ef0a64274e9c3e",
+"url": "https://www.bbc.co.uk/sport/football/62176181",
+"near": "Alese",
+"group": "und"
+},
+{
+"id": "a759aeadaab4eea9",
+"url": "https://www.bbc.co.uk/sport/football/62168549",
+"near": "Koulibaly",
+"group": "und"
+},
+{
+"id": "85cfdb364314776c",
+"url": "https://www.bbc.com/sport/football/62201165",
+"near": "Aguilera",
+"group": "und"
+},
+{
+"id": "1bf56d27085cf7bb",
+"url": "https://www.bbc.co.uk/sport/football/62205449",
+"near": "Rossi",
+"group": "und"
+},
+{
+"id": "6e5a2c7a4bf5b49c",
+"url": "https://www.bbc.co.uk/sport/football/62239759",
+"near": "O'Brien",
+"group": "und"
+},
+{
+"id": "ad3faff3a80f1b54",
+"url": "https://www.bbc.co.uk/sport/football/62239759",
+"near": "Toffolo",
+"group": "und"
+},
+{
+"id": "3c1e91a7864819a9",
+"url": "https://www.bbc.co.uk/sport/football/62270195",
+"near": "Muric",
+"group": "und"
+},
+{
+"id": "df9dacd8c2d338ad",
+"url": "https://www.bbc.co.uk/sport/football/62265586",
+"near": "Gayle",
+"group": "und"
+},
+{
+"id": "e79eb54ec1fa366a",
+"url": "https://www.bbc.co.uk/sport/football/62303632",
+"near": "Davis",
+"group": "und"
+},
+{
+"id": "b639291dbc454c09",
+"url": "https://www.bbc.co.uk/sport/football/62335040",
+"near": "Forss",
+"group": "und"
+},
+{
+"id": "9b0ab7971180057f",
+"url": "https://www.bbc.co.uk/sport/football/62412524",
+"near": "Schmeichel",
+"group": "und"
+},
+{
+"id": "25ce37dbbfd6b90a",
+"url": "https://www.bbc.co.uk/sport/football/62439838",
+"near": "Benteke",
+"group": "und"
+},
+{
+"id": "02abe2ce14678086",
+"url": "https://www.chelseafc.com/en/news/article/miazga-crosses-the-atlantic-web",
+"near": "Miazga",
+"group": "und"
+},
+{
+"id": "a03dd8d294e32fb8",
+"url": "https://www.bbc.co.uk/sport/football/62469350",
+"near": "Senesi",
+"group": "und"
+},
+{
+"id": "cff281687a1330f8",
+"url": "https://www.bbc.co.uk/sport/football/62544036",
+"near": "Freuler",
+"group": "und"
+},
+{
+"id": "8f836f6fc19a2e50",
+"url": "https://www.bbc.co.uk/sport/football/62673508",
+"near": "Clarke",
+"group": "und"
+},
+{
+"id": "bd29b4f4bff55ec1",
+"url": "https://www.nottinghamforest.co.uk/news/2022/august/26/reds-sign-h/",
+"near": "Ui-jo",
+"group": "und"
+},
+{
+"id": "8736e09a140adbdb",
+"url": "https://www.bbc.co.uk/sport/football/62695388",
+"near": "Maupay",
+"group": "und"
+},
+{
+"id": "29c409beef274463",
+"url": "https://www.avfc.co.uk/news/2022/august/31/el-ghazi-departs-villa/",
+"near": "Ghazi",
+"group": "und"
+},
+{
+"id": "59d2d3cdfd728a60",
+"url": "https://www.bbc.com/sport/football/62749710",
+"near": "Boly",
+"group": "und"
+},
+{
+"id": "5bb00ed03207569f",
+"url": "https://www.bbc.com/sport/football/62758551",
+"near": "Vinícius",
+"group": "und"
+},
+{
+"id": "8688072bfbbeb716",
+"url": "https://www.bbc.com/sport/football/62750467",
+"near": "Akanji",
+"group": "und"
+},
+{
+"id": "fe0a6445f6efe700",
+"url": "https://www.bbc.com/sport/football/62761912",
+"near": "Gnonto",
+"group": "und"
+},
+{
+"id": "cba996c3cca4e562",
+"url": "https://www.bbc.com/sport/football/62750312",
+"near": "Faes",
+"group": "und"
+},
+{
+"id": "929ae16450e9df65",
+"url": "https://www.bbc.com/sport/football/62761539",
+"near": "Wright",
+"group": "und"
+},
+{
+"id": "27379e9c17119a78",
+"url": "https://www.bbc.com/sport/football/62718674",
+"near": "Chong",
+"group": "und"
+},
+{
+"id": "9dd581e47c381860",
+"url": "https://www.bbc.com/sport/football/62752441",
+"near": "Gueye",
+"group": "und"
+},
+{
+"id": "d655269bdfee7dfe",
+"url": "https://www.bbc.co.uk/sport/football/64150871",
+"near": "Maximilian}}",
+"group": "und"
+},
+{
+"id": "30fcf4983d45df25",
+"url": "https://www.bbc.co.uk/sport/football/64221155",
+"near": "Broadhead",
+"group": "und"
+},
+{
+"id": "c401f41d75a46a55",
+"url": "https://www.bbc.co.uk/sport/football/64210759",
+"near": "Wright",
+"group": "und"
+},
+{
+"id": "d08ba6386e979443",
+"url": "https://www.bbc.co.uk/sport/football/64292997",
+"near": "Cain",
+"group": "und"
+},
+{
+"id": "27149cb601e076c2",
+"url": "https://www.bbc.co.uk/sport/football/teams/aston-villa",
+"near": "Frederic}}",
+"group": "und"
+},
+{
+"id": "e10a4019203f42fc",
+"url": "https://www.avfc.co.uk/news/2023/january/17/vassilev-completes-mls-move/",
+"near": "Vassilev",
+"group": "und"
+},
+{
+"id": "87cb97a6531f3919",
+"url": "https://www.bbc.co.uk/sport/football/64337729",
+"near": "Quirk",
+"group": "und"
+},
+{
+"id": "40c6a3d6dd0deed1",
+"url": "https://www.bbc.co.uk/sport/football/64344053",
+"near": "Dean",
+"group": "und"
+},
+{
+"id": "ebb8b882e2b9032b",
+"url": "https://www.bbc.co.uk/sport/football/64379973",
+"near": "Ekwah",
+"group": "und"
+},
+{
+"id": "72711cc499c1334b",
+"url": "https://www.bbc.co.uk/sport/football/64407335",
+"near": "Bentley",
+"group": "und"
+},
+{
+"id": "79c117f93ab64e58",
+"url": "https://www.bbc.co.uk/sport/football/64424283",
+"near": "Greenidge",
+"group": "und"
+},
+{
+"id": "a4c067032bb46ff9",
+"url": "https://www.bbc.co.uk/sport/football/64478779",
+"near": "Longelo",
+"group": "und"
+},
+{
+"id": "ec9c8fe5846b7a0a",
+"url": "https://www.bbc.co.uk/sport/football/64476182",
+"near": "Hayton",
+"group": "und"
+},
+{
+"id": "72d0c36b0f040224",
+"url": "https://www.bbc.co.uk/sport/articles/c880llpj4dwo",
+"near": "Opoku",
+"group": "und"
+},
+{
+"id": "c4182a478dd5f309",
+"url": "https://www.bbc.co.uk/sport/articles/cg3wm0g9x2mo",
+"near": "Monteiro",
+"group": "und"
+},
+{
+"id": "4e88c92268ae7f06",
+"url": "https://www.bbc.co.uk/sport/football/64477721",
+"near": "Shelvey",
+"group": "und"
+},
+{
+"id": "934dde2c803de09e",
+"url": "https://www.bbc.co.uk/sport/football/64468708",
+"near": "Chalobah",
+"group": "und"
+},
+{
+"id": "71daac286fe50e0a",
+"url": "https://www.bbc.co.uk/sport/football/64467184",
+"near": "Anderson",
+"group": "und"
+},
+{
+"id": "a87ba36d0041d515",
+"url": "https://www.bbc.co.uk/sport/articles/c512y12xvlxo",
+"near": "Soonsup-Bell",
+"group": "und"
+},
+{
+"id": "dd9d372d73adbf4d",
+"url": "https://www.bbc.co.uk/sport/football/64477721",
+"near": "1989}}",
+"group": "und"
+},
+{
+"id": "fd5a28cc279c8333",
+"url": "https://www.bbc.co.uk/sport/football/64463694",
+"near": "Sasa}}",
+"group": "und"
+},
+{
+"id": "94ea2f7695d59910",
+"url": "http://www.whufc.com/news/arthur-masuaku-completes-permanent-besiktas-transfer",
+"near": "Masuaku",
+"group": "und"
+},
+{
+"id": "b8c602b99761068d",
+"url": "https://www.bbc.co.uk/sport/football/65562109",
+"near": "Richards",
+"group": "und"
+},
+{
+"id": "8cfb20ba419002ae",
+"url": "https://www.bbc.co.uk/sport/football/64979501",
+"near": "Simons",
+"group": "und"
+},
+{
+"id": "fe56f0bbf04041dd",
+"url": "https://www.bbc.co.uk/sport/football/65624767",
+"near": "Swan",
+"group": "und"
+},
+{
+"id": "8368771242cee33d",
+"url": "https://www.bbc.co.uk/sport/football/65783002",
+"near": "Broadbent",
+"group": "und"
+},
+{
+"id": "75b83960949e0456",
+"url": "https://www.bbc.co.uk/sport/football/65902841",
+"near": "Saydee",
+"group": "und"
+},
+{
+"id": "fb10c2c2d0342bae",
+"url": "https://www.evertonfc.com/news/2023/june/01/nkounkou-makes-loan-move-permanent/",
+"near": "Nkounkou",
+"group": "und"
+},
+{
+"id": "ca0868fc23fa0cc0",
+"url": "https://www.nottinghamforest.co.uk/news/2023/january/20/forest-complete-signing-of-chris-wood/",
+"near": "Wood",
+"group": "und"
+},
+{
+"id": "f5fdba8dab8fcc6b",
+"url": "https://www.afcb.co.uk/news/2023/May/16/traor-completes-permanent-cherries-move",
+"near": "Hamed}}",
+"group": "und"
+},
+{
+"id": "afb9255d4c5a8b43",
+"url": "https://www.liverpoolfc.com/news/leighton-clarkson-completes-permanent-move-aberdeen",
+"near": "Clarkson",
+"group": "und"
+},
+{
+"id": "8eef92b0ef91d371",
+"url": "https://www.manutd.com/en/news/detail/zidane-iqbal-permanent-transfer-to-utrecht-from-man-utd-confirmed",
+"near": "Iqbal",
+"group": "und"
+},
+{
+"id": "3938b6e6d4ace5cf",
+"url": "https://www.bbc.co.uk/sport/football/66007735",
+"near": "Vicario",
+"group": "und"
+},
+{
+"id": "71949888fe00712d",
+"url": "https://www.bbc.co.uk/sport/football/66047650",
+"near": "Edouard}}",
+"group": "und"
+},
+{
+"id": "47656501219370c4",
+"url": "https://www.bbc.co.uk/sport/football/66041495",
+"near": "Ogungbo",
+"group": "und"
+},
+{
+"id": "574e79f7dab70628",
+"url": "https://www.bbc.co.uk/sport/football/66072176",
+"near": "Laird",
+"group": "und"
+},
+{
+"id": "37051365641645f0",
+"url": "https://www.bbc.co.uk/sport/football/66070704",
+"near": "Pablo}}",
+"group": "und"
+},
+{
+"id": "b1fda82c6a9715bf",
+"url": "https://www.wolves.co.uk/news/mens-first-team/20230201-boubacar-to-become-permanent-signing/",
+"near": "Traoré",
+"group": "und"
+},
+{
+"id": "03c6ae3f92c3f660",
+"url": "https://www.bbc.co.uk/sport/football/66099690",
+"near": "Eastwood",
+"group": "und"
+},
+{
+"id": "90d70515369f1b5e",
+"url": "https://www.mfc.co.uk/news/2023/july/07/morgan-rogers-signing-makes-it-five/",
+"near": "Rogers",
+"group": "und"
+},
+{
+"id": "4995baecde939c5a",
+"url": "https://www.bbc.com/sport/football/66126902",
+"near": "Rogers",
+"group": "und"
+},
+{
+"id": "9377b968609ff91e",
+"url": "https://www.wolves.co.uk/news/mens-first-team/20230707-kawabe-completes-move-to-belgium/",
+"near": "Kawabe",
+"group": "und"
+},
+{
+"id": "c43648b6f7fbb166",
+"url": "https://www.bbc.co.uk/sport/football/66142952",
+"near": "Pearson",
+"group": "und"
+},
+{
+"id": "2e040cc50dcd00bc",
+"url": "https://www.bbc.co.uk/sport/football/66142955",
+"near": "Slicker",
+"group": "und"
+},
+{
+"id": "25806d61bd54c5b8",
+"url": "https://www.bbc.co.uk/sport/football/66187909",
+"near": "Slimane",
+"group": "und"
+},
+{
+"id": "0c9fea1f4270fe9b",
+"url": "https://www.bbc.co.uk/sport/football/66199904",
+"near": "Siriki}}",
+"group": "und"
+},
+{
+"id": "8a2f823654cd4de4",
+"url": "https://www.bbc.co.uk/sport/football/66211489",
+"near": "Sanderson",
+"group": "und"
+},
+{
+"id": "22ceb692a8655d77",
+"url": "https://www.bbc.co.uk/sport/football/66241968",
+"near": "Benie}}",
+"group": "und"
+},
+{
+"id": "4390a88a521fe3c3",
+"url": "https://www.bbc.co.uk/sport/football/66254685",
+"near": "Kerkez",
+"group": "und"
+},
+{
+"id": "c2c74b2090e617c3",
+"url": "https://www.bbc.co.uk/sport/football/66261677",
+"near": "Nakamba",
+"group": "und"
+},
+{
+"id": "99bd3854975f5377",
+"url": "https://www.bbc.co.uk/sport/football/66269833",
+"near": "Smith",
+"group": "und"
+},
+{
+"id": "4ad10d20ecb49642",
+"url": "https://www.bbc.co.uk/sport/football/66278061",
+"near": "Savage",
+"group": "und"
+},
+{
+"id": "9bef33cb86902d47",
+"url": "https://www.bbc.co.uk/sport/football/66264153",
+"near": "Thomas",
+"group": "und"
+},
+{
+"id": "06c580a1b58e94ca",
+"url": "https://www.bbc.co.uk/sport/football/66278210",
+"near": "Stewart",
+"group": "und"
+},
+{
+"id": "544186ff56d18fb7",
+"url": "https://www.bbc.co.uk/sport/football/66282658",
+"near": "Telles",
+"group": "und"
+},
+{
+"id": "a07bd18a721644e5",
+"url": "https://www.stokecityfc.com/news/2023/july/28/wesley-moraes-moves-to-the-bet365-stadium/",
+"near": "1996}}",
+"group": "und"
+},
+{
+"id": "e9a4af756693cbc3",
+"url": "https://www.leedsunited.com/en/news/leeds-united-complete-karl-darlow-signing",
+"near": "Darlow",
+"group": "und"
+},
+{
+"id": "f6cedc38380b1fc4",
+"url": "https://www.bbc.co.uk/sport/football/66355927",
+"near": "Saint-Maximin",
+"group": "und"
+},
+{
+"id": "0986279df6fe4918",
+"url": "https://www.bbc.co.uk/sport/football/66259309",
+"near": "1993}}",
+"group": "und"
+},
+{
+"id": "ac53e155f573cc51",
+"url": "https://www.nottinghamforest.co.uk/news/2023/august/01/ojeda-departs/",
+"near": "Ojeda",
+"group": "und"
+},
+{
+"id": "448d49776baec089",
+"url": "https://www.bbc.co.uk/sport/football/66388524",
+"near": "Bishop",
+"group": "und"
+},
+{
+"id": "d5542a421ea620ba",
+"url": "https://www.bbc.co.uk/sport/football/66392906",
+"near": "Woltman",
+"group": "und"
+},
+{
+"id": "ffdc1f5ebb7412e4",
+"url": "https://www.bbc.co.uk/sport/football/66400415",
+"near": "Kaminski",
+"group": "und"
+},
+{
+"id": "311e34e0457bb298",
+"url": "https://www.bbc.co.uk/sport/football/66397358",
+"near": "Sarkic",
+"group": "und"
+},
+{
+"id": "be6b6312f451f0c9",
+"url": "https://www.bbc.co.uk/sport/football/66392858",
+"near": "Trusty",
+"group": "und"
+},
+{
+"id": "39511be229052877",
+"url": "https://www.cpfc.co.uk/news/announcement/matheus-franca-signs-crystal-palace-five-year-deal/",
+"near": "Matheus}}",
+"group": "und"
+},
+{
+"id": "e74ca79324c43f36",
+"url": "https://www.bbc.co.uk/sport/football/66432783",
+"near": "Scamacca",
+"group": "und"
+},
+{
+"id": "6b456656633721b8",
+"url": "https://www.whufc.com/news/nikola-vlasic-departs",
+"near": "Nikola}}",
+"group": "und"
+},
+{
+"id": "5001f7f44f0f8302",
+"url": "https://www.bbc.co.uk/sport/football/66447981",
+"near": "Turner",
+"group": "und"
+},
+{
+"id": "1f1e17680ad4e722",
+"url": "https://www.bbc.co.uk/sport/football/66457410",
+"near": "Cook",
+"group": "und"
+},
+{
+"id": "b98108b0d773510f",
+"url": "https://www.bbc.co.uk/sport/articles/cv2n8gwgjpvo",
+"near": "Vinicius}}",
+"group": "und"
+},
+{
+"id": "da22917c4eea266b",
+"url": "https://www.bbc.co.uk/sport/football/66461124",
+"near": "Brown",
+"group": "und"
+},
+{
+"id": "234a07aa59444282",
+"url": "https://www.losc.fr/en/node/11351",
+"near": "Cavaleiro",
+"group": "und"
+},
+{
+"id": "e2415ed80fa52ec9",
+"url": "https://www.bbc.co.uk/sport/football/66484476",
+"near": "Hamer",
+"group": "und"
+},
+{
+"id": "11e1fdacf765fd07",
+"url": "https://www.bbc.co.uk/sport/football/66515967",
+"near": "Elliott",
+"group": "und"
+},
+{
+"id": "071485f6f760029d",
+"url": "https://www.manutd.com/en/news/detail/matej-kovar-joins-bayer-leverkusen-in-permanent-transfer-from-man-utd",
+"near": "Matej}}",
+"group": "und"
+},
+{
+"id": "6d055c0fa4c240b0",
+"url": "https://www.bbc.co.uk/sport/football/66546056",
+"near": "Richards",
+"group": "und"
+},
+{
+"id": "7b0ebe3d5140aff2",
+"url": "https://www.chelseafc.com/en/news/article/ollie-harrison-joins-chelsea",
+"near": "Harrison",
+"group": "und"
+},
+{
+"id": "c061a7841da4ab45",
+"url": "https://www.bbc.co.uk/sport/football/66586908",
+"near": "Mavropanos",
+"group": "und"
+},
+{
+"id": "0d0db5ee64f09aab",
+"url": "https://www.bbc.co.uk/sport/football/66616176",
+"near": "Fornah",
+"group": "und"
+},
+{
+"id": "bb0748306efd57ca",
+"url": "https://www.bbc.co.uk/sport/football/66646303",
+"near": "Castagne",
+"group": "und"
+},
+{
+"id": "f4faaec944322c16",
+"url": "https://www.bbc.co.uk/sport/football/66665637",
+"near": "Benda",
+"group": "und"
+},
+{
+"id": "e716d154ba033efe",
+"url": "https://www.cpfc.co.uk/news/announcement/dean-henderson-joins-crystal-palace-long-term-deal/",
+"near": "Henderson",
+"group": "und"
+},
+{
+"id": "309529d10b10e016",
+"url": "https://www.bbc.co.uk/sport/football/66675097",
+"near": "Enso}}",
+"group": "und"
+},
+{
+"id": "3321649392558a63",
+"url": "https://www.lutontown.co.uk/news/2023/august/teden-mengi-signs-from-manchester-united/",
+"near": "Mengi",
+"group": "und"
+},
+{
+"id": "0b56ee8941313421",
+"url": "https://www.bbc.co.uk/sport/football/66689977",
+"near": "Philogene",
+"group": "und"
+},
+{
+"id": "5ba9c282b1702c24",
+"url": "https://www.avfc.co.uk/news/2023/september/01/keinan-davis-departs/",
+"near": "Davis",
+"group": "und"
+},
+{
+"id": "3aa9b726ee6560bc",
+"url": "https://www.bbc.co.uk/sport/football/66696019",
+"near": "White",
+"group": "und"
+},
+{
+"id": "b577d4f8dfbd82ec",
+"url": "https://www.bbc.co.uk/sport/football/66692394",
+"near": "Vlachodimos",
+"group": "und"
+},
+{
+"id": "d8cfb9617ce77e3f",
+"url": "https://www.bbc.co.uk/sport/football/66689911",
+"near": "Cannon",
+"group": "und"
+},
+{
+"id": "23974b0561d9ec07",
+"url": "https://www.bbc.co.uk/sport/football/66692394",
+"near": "Nicolas}}",
+"group": "und"
+},
+{
+"id": "6c04b6e79c395c3d",
+"url": "https://www.brightonandhovealbion.com/news/3663112/louis-flower-joins-under-21s-from-chelsea",
+"near": "Flower",
+"group": "und"
+},
+{
+"id": "f28491898bc4a0c3",
+"url": "https://www.manutd.com/en/news/detail/marc-jurado-completes-permanent-move-to-espanyol-from-man-utd",
+"near": "Jurado",
+"group": "und"
+},
+{
+"id": "e5ef2cb8e961c9c5",
+"url": "https://www.bbc.co.uk/sport/football/66714817",
+"near": "Bailly",
+"group": "und"
+},
+{
+"id": "163b33987afa8a06",
+"url": "https://www.bbc.co.uk/sport/articles/c51v5xnz39wo",
+"near": "Biancone",
+"group": "und"
+},
+{
+"id": "3ff84b137f0a078e",
+"url": "https://www.bbc.co.uk/sport/football/67882369",
+"near": "Neal",
+"group": "und"
+},
+{
+"id": "1d9c954293cacbbc",
+"url": "https://www.espn.com/soccer/story/_/id/39241066/usa-keeper-steffen-signs-colorado-rapids-man-city",
+"near": "Steffen",
+"group": "und"
+},
+{
+"id": "7cb89ea09ef7bf70",
+"url": "https://www.bbc.co.uk/sport/football/67897415",
+"near": "Azaz",
+"group": "und"
+},
+{
+"id": "3e5a16a46e5a3fd1",
+"url": "https://www.bbc.co.uk/sport/football/67956202",
+"near": "Coventry",
+"group": "und"
+},
+{
+"id": "46291c6b1a1d6607",
+"url": "https://www.bbc.co.uk/sport/football/67962287",
+"near": "Glatzel",
+"group": "und"
+},
+{
+"id": "974205a2bb59ed8c",
+"url": "https://www.bbc.co.uk/sport/football/68005850",
+"near": "Johnson",
+"group": "und"
+},
+{
+"id": "d3832d2fc11f36a6",
+"url": "https://www.bbc.co.uk/sport/football/68064786",
+"near": "Kosta}}",
+"group": "und"
+},
+{
+"id": "007cd4bf06afa614",
+"url": "https://www.bbc.co.uk/sport/football/68069205",
+"near": "O'Neill",
+"group": "und"
+},
+{
+"id": "8f126dbc48c09071",
+"url": "https://www.bbc.co.uk/sport/football/68099605",
+"near": "Curtis",
+"group": "und"
+},
+{
+"id": "38316723fee29be8",
+"url": "https://www.bbc.co.uk/sport/football/68103839",
+"near": "Ivo}}",
+"group": "und"
+},
+{
+"id": "de1c37783c9d7c4d",
+"url": "https://www.bbc.co.uk/sport/football/68132754",
+"near": "Williams",
+"group": "und"
+},
+{
+"id": "6f56937e0c3d9531",
+"url": "https://www.bbc.co.uk/sport/football/68170724",
+"near": "Horvath",
+"group": "und"
+},
+{
+"id": "6de3f9d4243875c5",
+"url": "https://www.bbc.co.uk/sport/football/68169033",
+"near": "Sousa",
+"group": "und"
+},
+{
+"id": "0b3bceb015965825",
+"url": "https://www.bbc.co.uk/sport/football/68154784",
+"near": "Gauci",
+"group": "und"
+},
+{
+"id": "8092f05bef87b2de",
+"url": "https://www.wolves.co.uk/news/mens-first-team/20240612-wolves-complete-gomes-signing/",
+"near": "Gomes",
+"group": "und"
+},
+{
+"id": "6c858255a72d3a8c",
+"url": "https://www.bbc.co.uk/sport/football/articles/c1rvrqvj7jdo",
+"near": "Sanson",
+"group": "und"
+},
+{
+"id": "4e9ae7ecf8ffd8ff",
+"url": "https://www.bbc.co.uk/sport/football/articles/cg3307y3l2ro",
+"near": "Rankine",
+"group": "und"
+},
+{
+"id": "8484df2af693fce8",
+"url": "https://www.birminghammail.co.uk/sport/football/transfer-news/cameron-archer-return-explained-unai-29194784",
+"near": "Archer",
+"group": "und"
+},
+{
+"id": "632e1dcd18a657df",
+"url": "https://www.avfc.co.uk/news/2024/june/18/amundsen-day-joins-villa-academy/",
+"near": "Amundsen-Day",
+"group": "und"
+},
+{
+"id": "e1cac0f7324633c6",
+"url": "https://www.burtonalbionfc.co.uk/news/2024/june/21/julian-larsson-joins-burton-albion/",
+"near": "Larsson",
+"group": "und"
+},
+{
+"id": "8b9d6fb20255a19c",
+"url": "https://www.bbc.co.uk/sport/football/articles/cv22y4z2wzzo",
+"near": "Webster",
+"group": "und"
+},
+{
+"id": "ff6c19e0b27d5ffb",
+"url": "https://www.bbc.co.uk/sport/football/articles/c6ppkp5x07eo",
+"near": "Marko}}",
+"group": "und"
+},
+{
+"id": "4bdb5159d798a5ea",
+"url": "https://www.whufc.com/news/trott-completes-permanent-fc-copenhagen-move",
+"near": "Trott",
+"group": "und"
+},
+{
+"id": "40c37d4153863c2e",
+"url": "https://www.bbc.co.uk/sport/football/articles/cyeeegnwgyno",
+"near": "Dobbin",
+"group": "und"
+},
+{
+"id": "f4a3b28f14c909b9",
+"url": "https://www.bbc.co.uk/sport/football/articles/cgll7rpnm0no",
+"near": "Moreira",
+"group": "und"
+},
+{
+"id": "396cc039e91e1a7d",
+"url": "https://www.chelseafc.com/en/news/article/cumming-departs-on-permanent-transfer",
+"near": "Cumming",
+"group": "und"
+},
+{
+"id": "012208502bb37752",
+"url": "https://www.avfc.co.uk/news/2023/august/14/villa-sign-egyptian-talent-khedr/",
+"near": "Khedr",
+"group": "und"
+},
+{
+"id": "40895fc27a818190",
+"url": "https://www.bbc.co.uk/sport/football/articles/c9r37n4kxqko",
+"near": "Vlachodimos",
+"group": "und"
+},
+{
+"id": "2d68cd146c9a9bb0",
+"url": "https://www.afcb.co.uk/news/2024/June/4/cherries-complete-signing-of-goalkeeper-paulsen",
+"near": "Paulsen",
+"group": "und"
+},
+{
+"id": "e77f4fe677b099cb",
+"url": "https://www.bbc.com/sport/football/articles/cw4y9egmpy2o",
+"near": "Barkley",
+"group": "und"
+},
+{
+"id": "ab2c365ac9d768bb",
+"url": "https://www.bbc.com/sport/football/articles/clwyv48gl0go",
+"near": "Fiorini",
+"group": "und"
+},
+{
+"id": "6857500f66572a5c",
+"url": "https://www.bbc.com/sport/football/articles/cevwxk2yrl5o",
+"near": "Brunt",
+"group": "und"
+},
+{
+"id": "a2e998e73eba7cf7",
+"url": "https://www.wolves.co.uk/news/mens-first-team/20240702-wolves-confirm-pedro-lima-signing/",
+"near": "Lima",
+"group": "und"
+},
+{
+"id": "18d79deec21d7a91",
+"url": "https://www.nottinghamforest.co.uk/news/2024/july/02/aguilera-joins-rio-ave/",
+"near": "Aguilera",
+"group": "und"
+},
+{
+"id": "6809f7921b4d35a2",
+"url": "https://www.charltonafc.com/news/gassan-ahadme-joins-charlton",
+"near": "Ahadme",
+"group": "und"
+},
+{
+"id": "547d7a16e8d87b34",
+"url": "https://www.fcstpauli.com/en/news/published/scott-banks-makes-move-permanent/",
+"near": "Banks",
+"group": "und"
+},
+{
+"id": "802ba7911255920c",
+"url": "https://www.chelseafc.com/en/news/article/chinonso-chibueze-departs-chelsea",
+"near": "Chibueze",
+"group": "und"
+},
+{
+"id": "fc8de6fa5415b334",
+"url": "https://www.nottinghamforest.co.uk/news/2024/july/04/niakhate-departs-for-lyon/",
+"near": "Niakhaté",
+"group": "und"
+},
+{
+"id": "7eb14e48f8889bca",
+"url": "https://www.bbc.com/sport/articles/ckmgy8ejxj6o",
+"near": "Feeney",
+"group": "und"
+},
+{
+"id": "03dd08a8cbbfac9e",
+"url": "https://www.arsenal.com/news/mika-biereth-makes-permanent-move-sturm-graz",
+"near": "Biereth",
+"group": "und"
+},
+{
+"id": "3b3a672c310aa9a4",
+"url": "https://www.bbc.com/sport/football/articles/cw0yw147d9go",
+"near": "Okoli",
+"group": "und"
+},
+{
+"id": "0fa6305efd697ae0",
+"url": "https://www.bbc.com/sport/football/articles/c1vdx411vdzo",
+"near": "Greaves",
+"group": "und"
+},
+{
+"id": "efa6aa072fb05b9b",
+"url": "https://www.bbc.com/sport/football/articles/cv2g044nj82o",
+"near": "Parrott",
+"group": "und"
+},
+{
+"id": "db8fe45d42124d99",
+"url": "https://www.bbc.com/sport/football/articles/cp08en7j59do",
+"near": "Revan",
+"group": "und"
+},
+{
+"id": "cd9cb79f5a599153",
+"url": "https://www.bbc.com/sport/football/articles/c897y7x55nro",
+"near": "Moore",
+"group": "und"
+},
+{
+"id": "9acb9ce5d2b9b541",
+"url": "https://www.manutd.com/en/news/detail/man-utd-defender-willy-kambwala-completes-move-to-la-liga-club-villarreal",
+"near": "Kambwala",
+"group": "und"
+},
+{
+"id": "fc1fb613c78d4c29",
+"url": "https://www.bbc.com/sport/football/articles/cql83ewvk9zo",
+"near": "Fatawu",
+"group": "und"
+},
+{
+"id": "c410620dcc170070",
+"url": "https://www.bbc.com/sport/football/articles/cl7y4z82z2do",
+"near": "Downes",
+"group": "und"
+},
+{
+"id": "33434f22ee25870b",
+"url": "https://www.bbc.com/sport/football/articles/cyr7m24z8m7o",
+"near": "Pivaš",
+"group": "und"
+},
+{
+"id": "80ce57fa85649f74",
+"url": "https://www.bbc.com/sport/football/articles/cx72jq102l9o",
+"near": "Wickens",
+"group": "und"
+},
+{
+"id": "88db92968d7061a6",
+"url": "https://www.arsenal.com/news/goalkeeper-tommy-setford-joins-arsenals-academy",
+"near": "Setford",
+"group": "und"
+},
+{
+"id": "8ecdb6ad30fea6fe",
+"url": "https://www.bbc.com/sport/football/articles/ckvgp08558ko",
+"near": "Leonard",
+"group": "und"
+},
+{
+"id": "57a4e2b50f93c4ef",
+"url": "https://kilmarnockfc.co.uk/news/corrie-ndaba-pens-three-year-deal/",
+"near": "Ndaba",
+"group": "und"
+},
+{
+"id": "b63e8ec80097a497",
+"url": "https://www.bbc.co.uk/sport/football/articles/c0w463el69vo",
+"near": "Chrisene",
+"group": "und"
+},
+{
+"id": "0a860fb2376d6c77",
+"url": "https://www.bbc.co.uk/sport/football/articles/c4ng10n82xdo",
+"near": "Silva",
+"group": "und"
+},
+{
+"id": "c56d584bb53192c3",
+"url": "https://www.bbc.co.uk/sport/football/articles/c28e9ydyzkxo",
+"near": "Townsend",
+"group": "und"
+},
+{
+"id": "c5aa81681cdaed5a",
+"url": "https://www.bbc.co.uk/sport/football/articles/cq5xx8ex2rqo",
+"near": "Cuenca",
+"group": "und"
+},
+{
+"id": "02b4c8a1edd106ea",
+"url": "https://www.bbc.co.uk/sport/football/articles/czd99xv5lq0o",
+"near": "Summerville",
+"group": "und"
+},
+{
+"id": "b858044ac9bd9528",
+"url": "https://www.bbc.co.uk/sport/football/articles/cz9wpy089gjo",
+"near": "Ream",
+"group": "und"
+},
+{
+"id": "f545898fa71af970",
+"url": "https://www.newcastleunited.com/en/news/magpies-complete-osula-signing",
+"near": "Osula",
+"group": "und"
+},
+{
+"id": "c14ca1cf90dc8072",
+"url": "https://www.bbc.co.uk/sport/football/articles/c0rwg74v7d7o",
+"near": "Hamilton",
+"group": "und"
+},
+{
+"id": "72ce48f586efdf46",
+"url": "https://www.bbc.co.uk/sport/football/articles/c87gdjdqdq4o",
+"near": "Royal",
+"group": "und"
+},
+{
+"id": "f097fff48673912f",
+"url": "https://www.bbc.co.uk/sport/football/articles/c07ekl7ep32o",
+"near": "Araujo",
+"group": "und"
+},
+{
+"id": "b940b44a30673c06",
+"url": "https://www.arsenal.com/news/norton-cuffy-joins-genoa-permanent-transfer",
+"near": "Norton-Cuffy",
+"group": "und"
+},
+{
+"id": "8b78ceff313b2611",
+"url": "https://www.bbc.co.uk/sport/football/articles/c8erpykxdl8o",
+"near": "Burstow",
+"group": "und"
+},
+{
+"id": "47eb8484ee3d8cf1",
+"url": "https://www.bbc.co.uk/sport/football/articles/czdp3gjpqq4o",
+"near": "Szmodics",
+"group": "und"
+},
+{
+"id": "0e615c87ac0d23f1",
+"url": "https://www.bbc.co.uk/sport/football/articles/cgkyr0n611jo",
+"near": "Worrall",
+"group": "und"
+},
+{
+"id": "36fc8b8d2c2760c8",
+"url": "https://www.bbc.com/sport/football/articles/ckgwy4v1g48o",
+"near": "Dara}}",
+"group": "und"
+},
+{
+"id": "e659e622d20039dc",
+"url": "https://www.bbc.com/sport/football/articles/c6249258ldro",
+"near": "Carmo",
+"group": "und"
+},
+{
+"id": "a6f2e368437685d0",
+"url": "https://www.bbc.co.uk/sport/football/articles/cy84jr2dd3xo",
+"near": "Mejbri",
+"group": "und"
+},
+{
+"id": "68b498a768dfe0ee",
+"url": "https://www.bbc.co.uk/sport/football/articles/cm2nyy7r23go",
+"near": "Booth",
+"group": "und"
+},
+{
+"id": "2b1a2d9e867b2269",
+"url": "https://www.bbc.co.uk/sport/football/articles/ckg12ke65jko",
+"near": "Kilkenny",
+"group": "und"
+},
+{
+"id": "d0257b6d4a5e65cd",
+"url": "https://www.chelseafc.com/en/news/article/chelsea-tino-anjorin-completes-permanent-transfer",
+"near": "Anjorin",
+"group": "und"
+},
+{
+"id": "6b1c7ab357995f0f",
+"url": "https://www.bbc.co.uk/sport/football/articles/cp9rm1ry7x8o",
+"near": "Meupiyou",
+"group": "und"
+},
+{
+"id": "cba18e16cbd86e03",
+"url": "https://www.bbc.co.uk/sport/football/articles/c4gejxkv2g1o",
+"near": "Stansfield",
+"group": "und"
+},
+{
+"id": "d146175d56ba2f08",
+"url": "https://www.avfc.co.uk/news/2024/august/30/mosquera-joins-villa-academy/",
+"near": "Mosquera",
+"group": "und"
+},
+{
+"id": "84ba31474ad7cc2c",
+"url": "https://www.chelseafc.com/en/news/article/billy-gee-leaves-chelsea-on-a-permanent-deal",
+"near": "Gee",
+"group": "und"
+},
+{
+"id": "4a28234071c53f9b",
+"url": "https://www.wolves.co.uk/news/academy/20240830-lochhead-signs-from-dundee/",
+"near": "Lochhead",
+"group": "und"
+},
+{
+"id": "247009f560b4cbba",
+"url": "https://www.bbc.co.uk/sport/articles/cy8xl2859n3o",
+"near": "Sutherland",
+"group": "und"
+},
+{
+"id": "fdbc433882fbe014",
+"url": "https://www.bbc.co.uk/sport/football/articles/c17g81dv77yo",
+"near": "Bowat",
+"group": "und"
+},
+{
+"id": "223e151a29eb01f0",
+"url": "https://www.chelseafc.com/en/news/article/saheed-olagunju-departs-on-permanent-transfer",
+"near": "Olagunju",
+"group": "und"
+},
+{
+"id": "50b23a2630f36df7",
+"url": "https://www.tottenhamhotspur.com/news/2024/july/yang-min-hyeok-to-join-spurs-from-gangwon-fc/",
+"near": "Min-hyeok}}",
+"group": "und"
+},
+{
+"id": "129525dd23771834",
+"url": "https://www.chelseafc.com/en/news/article/kai-crampton-departs-chelsea",
+"near": "Crampton",
+"group": "und"
+},
+{
+"id": "4e8f61a941240159",
+"url": "https://www.afcb.co.uk/news/2025/january/07/full-back-soler-completes-move-to-join-cherries/",
+"near": "Soler",
+"group": "und"
+},
+{
+"id": "24344e633db73261",
+"url": "https://www.chelseafc.com/en/news/article/zain-silcott-duberry-departs-chelsea",
+"near": "Silcott-Duberry",
+"group": "und"
+},
+{
+"id": "d44a5484624226c3",
+"url": "https://www.bbc.co.uk/sport/football/articles/cwypjr8d294o",
+"near": "Hill",
+"group": "und"
+},
+{
+"id": "8cd1b7cb680d3355",
+"url": "https://www.bbc.co.uk/sport/football/articles/c8630qj79pdo",
+"near": "Edmundson",
+"group": "und"
+},
+{
+"id": "ab9183ea389bb897",
+"url": "https://www.bbc.co.uk/sport/football/articles/cjdernd2dgeo",
+"near": "Foyo",
+"group": "und"
+},
+{
+"id": "87323b313d0778c6",
+"url": "https://www.bbc.co.uk/sport/football/articles/crr0kw8x7p0o",
+"near": "Cundle",
+"group": "und"
+},
+{
+"id": "1aa3356a9474d767",
+"url": "https://www.bbc.co.uk/sport/football/articles/cdxew7n6nldo",
+"near": "Mills",
+"group": "und"
+},
+{
+"id": "f92072f40490a363",
+"url": "https://www.bbc.co.uk/sport/football/articles/c05l0pryyyzo",
+"near": "Heaven",
+"group": "und"
+},
+{
+"id": "b48030d47e29ae41",
+"url": "https://www.bbc.co.uk/sport/football/articles/c0k511e6dk4o",
+"near": "Djiga",
+"group": "und"
+},
+{
+"id": "61ceb285c93bf89d",
+"url": "https://www.watfordfc.com/news/2025/february/03/academy-travis-akomeah-returns/",
+"near": "Akomeah",
+"group": "und"
+},
+{
+"id": "874e7bd34a9d879d",
+"url": "https://www.bbc.co.uk/sport/football/articles/cn57g6qp3qno",
+"near": "Boniface",
+"group": "und"
+},
+{
+"id": "d091af84ab465a06",
+"url": "https://www.bbc.co.uk/sport/football/articles/cy8xgpmggl9o",
+"near": "Kroupi",
+"group": "und"
+},
+{
+"id": "6406ae30f0fd53b6",
+"url": "https://www.bbc.co.uk/sport/football/articles/c4g351x8ppvo",
+"near": "Curley",
+"group": "und"
+},
+{
+"id": "85e7160494ca9948",
+"url": "https://www.bbc.co.uk/sport/football/articles/c0k511e6dk4o",
+"near": "Munetsi",
+"group": "und"
+},
+{
+"id": "751b2e900aeba3fe",
+"url": "https://www.bbc.co.uk/sport/football/articles/ce85we02k30o",
+"near": "Back",
+"group": "und"
+},
+{
+"id": "f8dfc617374962f0",
+"url": "https://www.bbc.co.uk/sport/football/articles/c1m5j8z45vko",
+"near": "Bindon",
+"group": "und"
+},
+{
+"id": "84315deeff15db62",
+"url": "https://www.bbc.co.uk/sport/football/articles/ckgn937gz3ro",
+"near": "Vale",
+"group": "und"
+},
+{
+"id": "c37594c663eb8468",
+"url": "https://www.tottenhamhotspur.com/news/2025/february/academy-russell-denny-move-agreed/",
+"near": "Russell-Denny",
+"group": "und"
+},
+{
+"id": "f84127373b46655b",
+"url": "https://www.bbc.co.uk/sport/football/articles/c9911x4ygjro",
+"near": "Anthony",
+"group": "und"
+},
+{
+"id": "43e72a3c22aaa2d3",
+"url": "https://www.bbc.co.uk/sport/football/articles/cdr5gm2kldpo",
+"near": "Perkins",
+"group": "und"
+},
+{
+"id": "b8a11188170cf74e",
+"url": "https://www.tottenhamhotspur.com/news/2023/september/vuskovic-to-join-spurs/",
+"near": "Vušković",
+"group": "und"
+},
+{
+"id": "a859d5eeef62874a",
+"url": "https://www.bbc.co.uk/sport/football/articles/cx2qjzq9ynlo",
+"near": "Donovan",
+"group": "und"
+},
+{
+"id": "770febced0bd26cf",
+"url": "https://onefootball.com/de/news/official-lazio-sign-nuno-tavares-from-arsenal-on-permanent-transfer-41208360",
+"near": "Tavares",
+"group": "und"
+},
+{
+"id": "2189f47ce9bb7e5f",
+"url": "https://www.flamengo.com.br/noticias/futebol/jorginho-e-do-mengao-",
+"near": "1991}}",
+"group": "und"
+},
+{
+"id": "a1c621164c897510",
+"url": "https://www.bbc.com/sport/football/articles/ce82m7257mzo",
+"near": "Pécsi",
+"group": "und"
+},
+{
+"id": "97ff6ab990128087",
+"url": "https://www.bbc.co.uk/sport/football/articles/c7803lexk45o",
+"near": "2003}}",
+"group": "und"
+},
+{
+"id": "97c7eb1648484999",
+"url": "https://www.bbc.co.uk/sport/football/articles/cr7zdmpjk2po",
+"near": "Bettinelli",
+"group": "und"
+},
+{
+"id": "d803d41f981ac54b",
+"url": "https://www.bbc.co.uk/sport/football/articles/cvgvy401p4zo",
+"near": "Campbell",
+"group": "und"
+},
+{
+"id": "29ac2796561df39e",
+"url": "https://www.bbc.com/sport/football/articles/cn5k746y1nko",
+"near": "Bijol",
+"group": "und"
+},
+{
+"id": "2534eda4968d27a0",
+"url": "https://www.bbc.co.uk/sport/football/articles/c0ep44r741jo",
+"near": "Phillips",
+"group": "und"
+},
+{
+"id": "72a04de02d58a578",
+"url": "https://www.bbc.com/sport/football/articles/c5ypekyyd2eo",
+"near": "Omobamidele",
+"group": "und"
+},
+{
+"id": "029d3ade5146bbee",
+"url": "https://www.bbc.com/sport/football/articles/c4gdp5gvrlno",
+"near": "Grehan",
+"group": "und"
+},
+{
+"id": "5899f626580e6173",
+"url": "https://www.bbc.com/sport/football/articles/cq85n20xlx9o",
+"near": "Osmand",
+"group": "und"
+},
+{
+"id": "8a1ee09161924b42",
+"url": "https://www.chelseafc.com/en/news/article/dylan-williams-completes-permanent-transfer",
+"near": "Williams",
+"group": "und"
+},
+{
+"id": "474f02d6f91f626e",
+"url": "https://www.bbc.com/sport/football/articles/ce8zzpp8p26o",
+"near": "Bishop",
+"group": "und"
+},
+{
+"id": "4fa4f6f9e4c81d7e",
+"url": "https://www.skysports.com/football/news/11788/13391554/joe-rothwell-rangers-sign-midfielder-from-bournemouth-on-three-year-deal-on-same-day-emmanuel-fernandez-joins-from-peterborough",
+"near": "Rothwell",
+"group": "und"
+},
+{
+"id": "cd3b9c78a81ae632",
+"url": "https://www.bbc.co.uk/sport/articles/cx2n07rlnz9o",
+"near": "Atherton",
+"group": "und"
+},
+{
+"id": "81478c30aaa1999e",
+"url": "https://www.bbc.com/sport/football/articles/cz6g9n7l89do",
+"near": "Coutinho",
+"group": "und"
+},
+{
+"id": "b201794c0cdd8074",
+"url": "https://www.bbc.com/sport/football/articles/cy08g24xelxo",
+"near": "León",
+"group": "und"
+},
+{
+"id": "688340753d6ac489",
+"url": "https://www.bbc.com/sport/football/articles/cvgn1yev2mgo",
+"near": "Perry",
+"group": "und"
+},
+{
+"id": "8e4330b5f034960e",
+"url": "https://www.bbc.com/sport/football/articles/cly8zn4gg9ro",
+"near": "Cunha",
+"group": "und"
+},
+{
+"id": "06480ff020a73673",
+"url": "https://www.bbc.com/sport/football/articles/c9dg35gpgggo",
+"near": "Sturge",
+"group": "und"
+},
+{
+"id": "c816b635d70ca3fd",
+"url": "https://www.bbc.com/sport/football/articles/cvgezy9nx0vo",
+"near": "Travers",
+"group": "und"
+},
+{
+"id": "06cc8bb7ee041f24",
+"url": "https://www.bbc.com/sport/football/articles/cr4wpg754vno",
+"near": "Bizot",
+"group": "und"
+},
+{
+"id": "fbcdf11a8293516b",
+"url": "https://www.bbc.com/sport/football/articles/cz6g4272qv0o",
+"near": "2001}}",
+"group": "und"
+},
+{
+"id": "69d249a63d8dd73e",
+"url": "https://www.bbc.com/sport/football/articles/c7vrp6657yro",
+"near": "Keeley",
+"group": "und"
+},
+{
+"id": "2dfe7f6c5ec20bce",
+"url": "https://www.bbc.co.uk/sport/football/articles/cvgn2x3ldgvo",
+"near": "Meupiyou",
+"group": "und"
+},
+{
+"id": "9b69b77ea999b492",
+"url": "https://www.bbc.com/sport/football/articles/cql0qzn1eppo",
+"near": "Kaleta",
+"group": "und"
+},
+{
+"id": "6c7c762d0c182ef7",
+"url": "https://www.bbc.com/sport/football/articles/cly2y4ypn2ko",
+"near": "Metcalfe",
+"group": "und"
+},
+{
+"id": "72e47369d9ae7375",
+"url": "https://www.bbc.com/sport/football/articles/cwyey3j8j8ko",
+"near": "O'Brien",
+"group": "und"
+},
+{
+"id": "01341328cff36970",
+"url": "https://www.bbc.com/sport/football/articles/c1dxpp95n6yo",
+"near": "Marschall",
+"group": "und"
+},
+{
+"id": "1857eae99cfd1e01",
+"url": "https://www.chelseafc.com/en/news/article/jesse-derry-joins-chelsea",
+"near": "Derry",
+"group": "und"
+},
+{
+"id": "82a3b86d4de1370f",
+"url": "https://www.bbc.com/sport/football/articles/cn85g955ll7o",
+"near": "Ndoye",
+"group": "und"
+},
+{
+"id": "fa292342495f733b",
+"url": "https://www.bbc.com/sport/football/articles/cn5e499wnw3o",
+"near": "Roefs",
+"group": "und"
+},
+{
+"id": "acae637e1ad8cf20",
+"url": "https://www.bbc.com/sport/football/articles/cger9e7nrp9o",
+"near": "Turner",
+"group": "und"
+},
+{
+"id": "61d75021edd9390b",
+"url": "https://www.bbc.com/sport/football/articles/ckgy8lx94gko",
+"near": "Gordon",
+"group": "und"
+},
+{
+"id": "a3bb59ef5d8ba464",
+"url": "https://www.bbc.com/sport/football/articles/c1mpe5lyljxo",
+"near": "Ebiowei",
+"group": "und"
+},
+{
+"id": "26f8665f20d84d0f",
+"url": "https://www.bbc.co.uk/sport/football/articles/c1jn5x4ygy8o",
+"near": "Taylor",
+"group": "und"
+},
+{
+"id": "5c21ee90b7042da5",
+"url": "https://www.bbc.co.uk/sport/football/articles/c4g0348y4jwo",
+"near": "Dúbravka",
+"group": "und"
+},
+{
+"id": "1bf6480c47a51ae2",
+"url": "https://www.avfc.co.uk/news/2025/august/19/dendoncker-departs/",
+"near": "Dendoncker",
+"group": "und"
+},
+{
+"id": "b0d612cbb1767445",
+"url": "https://www.bbc.com/sport/football/articles/c5ylklq576po",
+"near": "Stamenić",
+"group": "und"
+},
+{
+"id": "c20fd597d6d9c553",
+"url": "https://www.bbc.com/sport/football/articles/cgerp1n41wvo",
+"near": "Moreno",
+"group": "und"
+},
+{
+"id": "9d88a8f0e702fa44",
+"url": "https://www.bbc.com/sport/football/articles/crevl47p1d1o",
+"near": "Grant",
+"group": "und"
+},
+{
+"id": "383a06e62199b647",
+"url": "https://www.bbc.co.uk/sport/football/articles/c75406g0lw5o",
+"near": "Greenwood",
+"group": "und"
+},
+{
+"id": "3e0560ce387d6577",
+"url": "https://www.bbc.co.uk/sport/football/articles/c0ml3jy38jxo",
+"near": "Mepham",
+"group": "und"
+},
+{
+"id": "bd82944269e0e505",
+"url": "https://www.bbc.co.uk/sport/football/articles/c707pwvgwgro",
+"near": "Silva",
+"group": "und"
+},
+{
+"id": "b61de634f20fce1b",
+"url": "https://www.bbc.co.uk/sport/football/teams/fulham?post=cq87np89xvlo#post",
+"near": "Pereira",
+"group": "und"
+},
+{
+"id": "64cba3abc317c335",
+"url": "https://www.bbc.com/sport/football/articles/cx297007273o",
+"near": "Victor",
+"group": "und"
+},
+{
+"id": "95d31f3d2e416aab",
+"url": "https://www.bbc.com/sport/football/articles/ce838372lg4o",
+"near": "Samuels-Smith",
+"group": "und"
+},
+{
+"id": "0d1273bde7d7eb08",
+"url": "https://www.bbc.com/sport/football/articles/cdrkrj0g2xlo",
+"near": "Chermiti",
+"group": "und"
+},
+{
+"id": "a575a507704d3cf0",
+"url": "https://www.bbc.com/sport/football/articles/ckg4rg99r7mo",
+"near": "Canvot",
+"group": "und"
+},
+{
+"id": "5de6dd6039f83700",
+"url": "https://www.bbc.com/sport/football/articles/ckg4rg99r7mo",
+"near": "Édouard",
+"group": "und"
+},
+{
+"id": "b94a9389c41dbfd7",
+"url": "https://www.bbc.com/sport/football/articles/cp898nn50yro",
+"near": "Lokonga",
+"group": "und"
+},
+{
+"id": "2a21bb754c38e468",
+"url": "https://www.bbc.com/sport/football/articles/clydy58qw1wo",
+"near": "Chilwell",
+"group": "und"
+},
+{
+"id": "7bb139fa75178331",
+"url": "https://www.bbc.co.uk/sport/football/articles/ce839rpq59po",
+"near": "Cuiabano}}",
+"group": "und"
+},
+{
+"id": "707ec4bfe0956f91",
+"url": "https://www.bbc.co.uk/sport/football/articles/cgjyjy35e81o",
+"near": "Aguerd",
+"group": "und"
+},
+{
+"id": "e0726d088069cace",
+"url": "https://www.bbc.co.uk/sport/football/articles/cyvnv3e95m9o",
+"near": "Gil",
+"group": "und"
+},
+{
+"id": "56781ab07fa30a8e",
+"url": "https://www.bbc.com/sport/football/articles/cy4d94zeg01o",
+"near": "Palmieri",
+"group": "und"
+},
+{
+"id": "10c6cd316f797ba8",
+"url": "https://www.bbc.com/sport/football/articles/cjdy7mer9e8o",
+"near": "Matos",
+"group": "und"
+},
+{
+"id": "f8c5b3227a712fd4",
+"url": "https://www.bbc.com/sport/football/articles/cnv7vy2vny2o",
+"near": "Godo",
+"group": "und"
+},
+{
+"id": "cd571c486010b91d",
+"url": "https://www.bbc.com/sport/football/articles/cwyp5yr5yw2o",
+"near": "Umeh",
+"group": "und"
+},
+{
+"id": "c78bc33c91df5504",
+"url": "https://www.tottenhamhotspur.com/news/2025/february/deal-agreed-for-mason-melia-to-join/",
+"near": "Melia",
+"group": "und"
+},
+{
+"id": "47e8355520429f84",
+"url": "https://www.bbc.co.uk/sport/football/articles/c0417qyqkygo",
+"near": "Castellanos",
+"group": "und"
+},
+{
+"id": "a60de19c17806c46",
+"url": "https://www.whufc.com/en/news/luis-guilherme-joins-sporting-cp",
+"near": "Guilherme",
+"group": "und"
+},
+{
+"id": "42134690d633f538",
+"url": "https://www.bbc.co.uk/sport/football/articles/cj0n2v5614mo",
+"near": "Browne",
+"group": "und"
+},
+{
+"id": "f780778f358cb3cb",
+"url": "https://www.bbc.com/sport/football/articles/c3wz1x41e1zo",
+"near": "Castledine",
+"group": "und"
+},
+{
+"id": "188df7a617520014",
+"url": "https://www.bbc.co.uk/sport/football/articles/czejd96xez7o",
+"near": "Matete",
+"group": "und"
+},
+{
+"id": "2084c3600ecbaf83",
+"url": "https://www.bbc.co.uk/sport/football/articles/c2k9q9kdj5qo",
+"near": "Madjo",
+"group": "und"
+},
+{
+"id": "f47abc50a93a692a",
+"url": "https://www.bbc.co.uk/sport/football/articles/ce9yx01exlgo",
+"near": "Middlemas",
+"group": "und"
+},
+{
+"id": "487ec16d016d7307",
+"url": "https://www.bbc.co.uk/sport/football/articles/cgk8rj3p167o",
+"near": "Holman",
+"group": "und"
+},
+{
+"id": "b22669148c8d3747",
+"url": "https://www.bbc.co.uk/sport/football/articles/ckgxl6en6qeo",
+"near": "Anderson",
+"group": "und"
+},
+{
+"id": "29f370eb08e04bf1",
+"url": "https://www.bbc.co.uk/sport/football/articles/cd9ej7yj8p8o",
+"near": "Solanke",
+"group": "und"
+},
+{
+"id": "6ab07e2978f9739c",
+"url": "https://www.bbc.co.uk/sport/football/articles/cwyrp5w4vlwo",
+"near": "Dickson",
+"group": "und"
+},
+{
+"id": "8fefc7d5423175bb",
+"url": "https://www.bbc.co.uk/sport/football/articles/cjw16jdz739o",
+"near": "Tyrer",
+"group": "und"
+},
+{
+"id": "b2da7a9bf20783e7",
+"url": "https://www.bbc.co.uk/sport/football/articles/c368jg4g1x3o",
+"near": "Bi",
+"group": "und"
+},
+{
+"id": "8a0321080698d7be",
+"url": "https://www.bbc.co.uk/sport/football/articles/cx2k77lvknxo",
+"near": "Irving",
+"group": "und"
+},
+{
+"id": "3b3a4337424e371c",
+"url": "https://www.bbc.co.uk/sport/football/articles/cx2w4pjq3pwo",
+"near": "McDonnell",
+"group": "und"
+},
+{
+"id": "dcc1e0a873aa9856",
+"url": "https://www.bbc.co.uk/sport/football/articles/cr57drdrd0no",
+"near": "Naylor",
+"group": "und"
+},
+{
+"id": "04e04b7945395a58",
+"url": "https://www.bbc.co.uk/sport/football/articles/ckgl6n9211lo",
+"near": "Kacurri",
+"group": "und"
+},
+{
+"id": "1cfbb6a76874264a",
+"url": "https://www.bbc.co.uk/sport/football/articles/cvgn8nx87w8o",
+"near": "Bennett",
+"group": "und"
+},
+{
+"id": "8e2f431f7d7ae6f6",
+"url": "https://www.bbc.co.uk/sport/football/articles/c4gw772jvy4o",
+"near": "Aouchiche",
+"group": "und"
+},
+{
+"id": "5033ac6ef99f5415",
+"url": "https://www.bbc.co.uk/sport/football/articles/c23rxxy0p33o",
+"near": "Roberts",
+"group": "und"
+},
+{
+"id": "9b1a7b8ebc14cf85",
+"url": "https://www.chelseafc.com/en/news/article/yahya-idrissi-departs-chelsea-on-permanent-transfer",
+"near": "Idrissi",
+"group": "und"
+},
+{
+"id": "fbc69fb0b0f1ea85",
+"url": "https://www.chelseafc.com/en/news/article/joel-philbert-joins-tottenham-hotspur",
+"near": "Philbert",
+"group": "und"
+},
+{
+"id": "df38afb478190abc",
+"url": "https://www.chelseafc.com/en/news/article/harry-mcglinchey-completes-transfer-to-sheffield-united",
+"near": "McGlinchey",
+"group": "und"
+},
+{
+"id": "c207697fc55ed82d",
+"url": "https://www.bbc.co.uk/sport/football/articles/c2k9wk870l3o",
+"near": "Netz",
+"group": "und"
+},
+{
+"id": "b30e09dc173cadf2",
+"url": "https://www.bbc.co.uk/sport/football/articles/ce9yek20r53o",
+"near": "Mooney",
+"group": "und"
+},
+{
+"id": "42a356bbe9c40e99",
+"url": "https://www.bbc.co.uk/sport/football/articles/ckglw56w486o",
+"near": "Ampah",
+"group": "und"
+},
+{
+"id": "9ff7dedd180b5fc8",
+"url": "https://www.wolves.co.uk/news/mens-first-team/20260206-agbadou-completes-besiktas-move/",
+"near": "Agbadou",
+"group": "und"
+},
+{
+"id": "c2d71c6017b7f67a",
+"url": "https://www.wolves.co.uk/news/mens-first-team/20260207-arias-makes-wolves-departure/",
+"near": "Arias",
+"group": "und"
+},
+{
+"id": "c4d5c370a22b34a5",
+"url": "https://www.mfc.co.uk/news/2026/may/28/boro-s-retained-list-submitted/",
+"near": "Sarmiento",
+"group": "und"
+},
+{
+"id": "9a87162bbe826a7e",
+"url": "https://www.bbc.co.uk/sport/football/articles/cwyk7nxljz4o",
+"near": "Jones",
+"group": "und"
+},
+{
+"id": "9acc42756376e2ca",
+"url": "https://www.bbc.co.uk/sport/football/articles/cn07g0447jro",
+"near": "Johnson",
+"group": "und"
+},
+{
+"id": "0e0d75656316d016",
+"url": "https://www.bbc.co.uk/sport/football/articles/c36yz44yez5o",
+"near": "Kusi-Asare",
+"group": "und"
+},
+{
+"id": "d6f38eaa3853dfeb",
+"url": "https://www.bbc.co.uk/sport/football/articles/c1w2v0ez2ejo",
+"near": "Muric",
+"group": "und"
+},
+{
+"id": "aa742cb46dc87478",
+"url": "https://www.bbc.co.uk/sport/football/articles/c33y82n4xgdo",
+"near": "Onyeka",
+"group": "und"
+},
+{
+"id": "df86e9d02d8c2a7a",
+"url": "https://www.bbc.co.uk/sport/football/articles/cn9480yz4dwo",
+"near": "Véliz",
+"group": "und"
+},
+{
+"id": "df83b08fe9156cd3",
+"url": "https://www.chelseafc.com/en/news/article/frankie-runham-completes-ipswich-town-move",
+"near": "Runham",
+"group": "und"
+},
+{
+"id": "1a570190a18b44af",
+"url": "https://www.bbc.co.uk/sport/football/articles/ce8kjz7zj3no",
+"near": "Smith",
+"group": "und"
+},
+{
+"id": "66df7e3a8264306a",
+"url": "https://www.bbc.co.uk/sport/football/articles/c862eg0lg70o",
+"near": "Stephenson",
+"group": "und"
+},
+{
+"id": "8ba2197a71fc66df",
+"url": "https://www.chelseafc.com/en/news/article/wheeler-henry-joins-brentford",
+"near": "Wheeler-Henry",
+"group": "und"
+},
+{
+"id": "3132c0a0fa7be2ba",
+"url": "https://www.bbc.co.uk/sport/football/articles/c74yvzn44e8o",
+"near": "Swinkels",
+"group": "und"
+},
+{
+"id": "4a48e4a2dfee4587",
+"url": "https://www.mancity.com/news/eds-academy/jahmai-simpson-pusey-joins-fc-koln-63918503",
+"near": "Simpson-Pusey",
+"group": "und"
+},
+{
+"id": "4572de17608ed5c8",
+"url": "https://www.bbc.co.uk/sport/football/articles/c30y47yvl9lo",
+"near": "Devine",
+"group": "und"
+},
+{
+"id": "4c38af48bd52c1f1",
+"url": "https://www.bbc.co.uk/sport/football/articles/ce957en0lpdo",
+"near": "Barry",
+"group": "und"
+},
+{
+"id": "17f771c24c849d7e",
+"url": "https://www.bbc.co.uk/sport/football/articles/c8e2303y1xgo",
+"near": "Joseph",
+"group": "und"
+},
+{
+"id": "7cb2a5f48a8d2cd9",
+"url": "https://www.bbc.co.uk/sport/football/articles/c621kpjl9zxo",
+"near": "Charles",
+"group": "und"
+},
+{
+"id": "617c8d013f98993d",
+"url": "https://www.bbc.co.uk/sport/football/articles/cd0x5zg01gzo",
+"near": "Baggott",
+"group": "und"
+},
+{
+"id": "b67746feae778c64",
+"url": "https://www.bbc.co.uk/sport/football/articles/cj632yp5e0jo",
+"near": "Schmidt",
+"group": "und"
+},
+{
+"id": "0f8ed15f1f195573",
+"url": "https://www.avfc.co.uk/news/2026/july/16/news-mosquera-moves-to-vitoria/",
+"near": "Mosquera",
+"group": "und"
+},
+{
+"id": "542efe1d2b17bbe7",
+"url": "https://www.bbc.co.uk/sport/football/articles/clyjnd01247o",
+"near": "Pembélé",
+"group": "und"
+},
+{
+"id": "d7a3ff7d70badd52",
+"url": "https://www.chelseafc.com/en/news/article/chris-atherton-joins-ipswich-town",
+"near": "Atherton",
+"group": "und"
+},
+{
+"id": "f2f8aaa8cd1fc7ba",
+"url": "https://www.bbc.co.uk/sport/football/articles/cwyrd1krn09o",
+"near": "Oevelen",
+"group": "und"
+},
+{
+"id": "75c6d1e208fc6480",
+"url": "https://www.bbc.co.uk/sport/football/articles/cvgxm8le8nko",
+"near": "Warhurst",
+"group": "und"
+},
+{
+"id": "54f52227ce9a3057",
+"url": "https://www.bbc.co.uk/sport/football/articles/cx2vqxe2e08o",
+"near": "Diop",
+"group": "und"
+},
+{
+"id": "abf823490f8e0e2c",
+"url": "https://www.chelseafc.com/en/news/article/harrison-bettoni-signs-for-chelsea",
+"near": "Bettoni",
+"group": "und"
+},
+{
+"id": "a623a3ceaf0de766",
+"url": "https://www.leedsunited.com/en/news/jack-harrison-completes-move-to-new-england-revolution",
+"near": "Harrison",
+"group": "und"
+},
+{
+"id": "0e5d1ee7545d20ff",
+"url": "https://www.bbc.co.uk/sport/football/articles/c86n1ynx7zwo",
+"near": "Scherpen",
+"group": "und"
+},
+{
+"id": "993d3802c15ab53c",
+"url": "https://www.bbc.co.uk/sport/football/articles/crl7d6n6kp5o",
+"near": "Imray",
+"group": "und"
+},
+{
+"id": "5a2ae7c6c8f187c6",
+"url": "https://www.bbc.co.uk/sport/football/articles/cn9nyq2g7e0o",
+"near": "Fredricson",
+"group": "und"
+},
+{
+"id": "e24ffd45df64cc08",
+"url": "https://www.bbc.co.uk/sport/football/articles/c5yv049xqpzo",
+"near": "Palacios",
+"group": "und"
+},
+{
+"id": "32d2b75d8c4db655",
+"url": "https://www.bbc.co.uk/sport/football/articles/c9w0vnzp128o",
+"near": "Abdullahi",
+"group": "und"
+},
+{
+"id": "65ed7746418c6d8c",
+"url": "https://www.bbc.co.uk/sport/football/articles/cjrv0pxvqx1o",
+"near": "Luís",
+"group": "und"
+},
+{
+"id": "db7dbb791b26ab7c",
+"url": "https://www.bbc.co.uk/sport/football/articles/cpvwdgmgp3mo",
+"near": "Burns",
+"group": "und"
+},
+{
+"id": "fb7ebf0cfa93465f",
+"url": "https://www.bbc.co.uk/sport/football/articles/c8jnw2e7l2go",
+"near": "Harris",
+"group": "und"
+},
+{
+"id": "05f50ce84848a6d4",
+"url": "https://www.bbc.co.uk/sport/football/articles/c20edq170p2o",
+"near": "Vítek",
+"group": "und"
+},
+{
+"id": "95281ce0a081339e",
+"url": "https://www.bbc.co.uk/sport/football/articles/c2lqg5jdjn0o",
+"near": "Lukić",
+"group": "und"
+},
+{
+"id": "5fd3337f5c7d432c",
+"url": "https://www.bbc.com/sport/football/articles/cx256kz7nkko",
+"near": "Patterson",
+"group": "und"
+},
+{
+"id": "fe96f06eb5a8531f",
+"url": "https://www.bbc.co.uk/sport/football/articles/cm2g9yvd1neo",
+"near": "Johnson",
+"group": "und"
+},
+{
+"id": "1b301af0a3bcbcd0",
+"url": "https://www.bbc.co.uk/sport/football/articles/c629lp48ykwo",
+"near": "Hamer",
+"group": "und"
+},
+{
+"id": "71440e8dbfe552d3",
+"url": "https://www.bbc.co.uk/sport/football/articles/cm2g9yvd1neo",
+"near": "McNeil",
+"group": "und"
+},
+{
+"id": "20bec4a0ffa08557",
+"url": "https://www.bbc.co.uk/sport/football/articles/c5yr8z310j9o",
+"near": "Williams",
+"group": "und"
+},
+{
+"id": "0cce9acccdad7f6a",
+"url": "https://www.bbc.co.uk/sport/football/articles/czrjjgzn1r5o",
+"near": "Phillips",
+"group": "und"
+},
+{
+"id": "059006188ff6fc6a",
+"url": "https://www.bbc.co.uk/sport/football/articles/cvg8qgg7qg1o",
+"near": "Gelhardt",
+"group": "und"
+},
+{
+"id": "ba7ff9142664d17c",
+"url": "https://www.bbc.co.uk/sport/football/articles/cwymzjwypezo",
+"near": "Ouattara",
+"group": "und"
+},
+{
+"id": "b4e58b4ca0c88068",
+"url": "https://www.bbc.co.uk/sport/football/articles/cx2rzj8me55o",
+"near": "Ennis",
+"group": "und"
+},
+{
+"id": "c9f35116254328b4",
+"url": "https://www.bbc.co.uk/sport/football/articles/c62xy6ne851o",
+"near": "Araujo",
+"group": "und"
+},
+{
+"id": "25d5b39fb8892744",
+"url": "https://www.bbc.co.uk/sport/football/articles/cx2v3721ykjo",
+"near": "Cherif",
+"group": "und"
+},
+{
+"id": "d0aa4103b971ed25",
+"url": "https://www.bbc.co.uk/sport/football/articles/c20j334p20yo",
+"near": "Hirst",
+"group": "und"
+},
+{
+"id": "f72521624ecae3f4",
+"url": "https://www.bbc.co.uk/sport/football/articles/c75g2qr5n66o",
+"near": "Bentley",
+"group": "und"
+},
+{
+"id": "f251e94918cc5e45",
+"url": "https://www.chelseafc.com/en/news/article/berkeley-agyepong-joins-reading",
+"near": "Berkeley-Agyepong",
+"group": "und"
+},
+{
+"id": "c95c5248ff813a69",
+"url": "https://www.bbc.co.uk/sport/football/articles/c20ljv78rd1o",
+"near": "Dennis",
+"group": "und"
+},
+{
+"id": "15855ffdada4727c",
+"url": "https://www.bbc.com/sport/football/articles/c77048xg87jo",
+"near": "Palacios",
+"group": "und"
+},
+{
+"id": "899ca23bed18a40f",
+"url": "https://www.bbc.co.uk/sport/football/articles/cn5dr0vyd3ro",
+"near": "Kaboré",
+"group": "und"
+},
+{
+"id": "4c1a0981540cba32",
+"url": "https://www.bbc.co.uk/sport/football/articles/cg592083mr3o",
+"near": "Zetterer",
+"group": "und"
+},
+{
+"id": "5aa5bda827fda32c",
+"url": "https://www.bbc.co.uk/sport/football/articles/c62ew152y7vo",
+"near": "Collyer",
+"group": "und"
+},
+{
+"id": "38e59ab2f2f4c32b",
+"url": "https://www.bbc.co.uk/sport/football/articles/c05rl8d0mdvo",
+"near": "Bajcetic",
+"group": "und"
+},
+{
+"id": "14c3ea2d69edbad3",
+"url": "https://www.bbc.co.uk/sport/football/articles/crr4d0x0175o",
+"near": "Chilwell",
+"group": "und"
+},
+{
+"id": "402caff4b8443d30",
+"url": "https://www.bbc.co.uk/sport/football/articles/crr4d0x0175o",
+"near": "Timber",
+"group": "und"
+},
+{
+"id": "756e2618972b953b",
+"url": "https://www.bbc.co.uk/sport/football/articles/c4grzg0jzgzo",
+"near": "Affengruber",
+"group": "und"
+},
+{
+"id": "4e4b3c2cc5bce574",
+"url": "https://www.bbc.co.uk/sport/football/articles/c4grzg0jzgzo",
+"near": "Ángel",
+"group": "und"
+},
+{
+"id": "83bfd358ae29534a",
+"url": "https://www.bbc.co.uk/sport/football/articles/c780e6q84l4o",
+"near": "Maitland-Niles",
+"group": "und"
+},
+{
+"id": "64dfb30828128580",
+"url": "https://www.bbc.co.uk/sport/football/articles/c9qrjr0ex20o",
+"near": "Semedo",
+"group": "und"
+},
+{
+"id": "94270ad0c4143193",
+"url": "https://www.bbc.co.uk/sport/football/articles/cpwldr1eg87o",
+"near": "Ozoh",
+"group": "und"
+},
+{
+"id": "5e3d79ad3633f28c",
+"url": "https://www.bbc.co.uk/sport/football/articles/cjdved2ny14o",
+"near": "Whitworth",
+"group": "und"
+},
+{
+"id": "b97d3f54333bca75",
+"url": "https://www.bbc.co.uk/sport/football/articles/c0m31e8v9jgo",
+"near": "Angulo",
+"group": "und"
+},
+{
+"id": "d8b9e12e873af0b3",
+"url": "https://www.bbc.co.uk/sport/football/articles/cje8x575v51o",
+"near": "Thomas",
+"group": "und"
+},
+{
+"id": "a7b239b934b780f8",
+"url": "https://www.bbc.co.uk/sport/football/articles/c780e6q84l4o",
+"near": "Patterson",
+"group": "und"
+}
+]
+}

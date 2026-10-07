@@ -1,13 +1,13 @@
-# Metric contract — RTT-101 Premier League net transfer spend · v1.0 (data build IQ-15, phase 1) · 7 Oct 2026
+# Metric contract — RTT-101 Premier League net transfer spend · v1.1 (phase 2, IQ-15b) · 7 Oct 2026
 
-Written before the data build (DEC-036). Owner decisions: DEC-235 to DEC-240 (Luke, 4–7 Oct 2026) and DEC-245 (no contact about data). Claude's working choices, each a question for Luke: DEC-247 to DEC-250. Brief: `prompts/CODE_SESSION_IQ-15.md`.
+Written before the data build (DEC-036). Owner decisions: DEC-235 to DEC-240 (Luke, 4–7 Oct 2026) and DEC-245 (no contact about data). Claude's working choices DEC-247 to DEC-250 and DEC-254, CONFIRMED by Luke (DEC-262). Luke's answers of 7 Oct 2026: DEC-256 to DEC-263. Brief: `prompts/CODE_SESSION_IQ-15.md`.
 
 **Public claim (title wording, DEC-237 (f)):** cumulative net spend on **reported transfer fees** by every Premier League club, month by month, from the start of the first Premier League season (1992–93) to the close of the summer 2026 transfer window (1 Sep 2026, 11pm BST). Figures will be updated after the January 2027 window (on-screen/description note, DEC-237 (b)).
 
 **Unit (main bars):** pounds sterling, **nominal** (never inflation-adjusted), fees paid minus fees received, cumulative. May be negative.
 **Secondary statistic:** average CPI-adjusted net spend per PL season played, in "2026 £" (label "(2026 £)").
-**Timeline:** one value per club at every month end from 31 May 1992 to 31 Aug 2026, plus a final point at the freeze, 1 Sep 2026 23:00 BST (DEC-250 (b)).
-**Rank:** descending cumulative nominal net at each month end; ties: the club that reached the value earlier ranks higher. Bars are frozen outside the PL.
+**Timeline:** one value per club at every month end from 31 May 1992 to 31 Aug 2026, plus a final point at the freeze, 1 Sep 2026 23:00 BST (DEC-250 (b)). The film starts at July 1992, the first month end with a fee (DEC-260); the data are unchanged.
+**Rank:** descending cumulative nominal net at each month end; ties: the club that reached the value earlier ranks higher. Bars are frozen outside the PL, and a relegated club keeps its frozen bar and its rank (DEC-259).
 
 ## 1. What counts (DEC-235, DEC-237, DEC-238, DEC-240)
 
@@ -21,7 +21,7 @@ Written before the data build (DEC-036). Owner decisions: DEC-235 to DEC-240 (Lu
 | Sell-on payment to a former club | yes, when stated | deducted from the seller's receipt only when a club or grade B source states the amount; otherwise the headline fee counts. If the former club is in the PL on that date it is that club's income on the date reported (DEC-238) |
 | Part-exchange | valuation if stated | a stated player valuation counts on both sides; otherwise cash only (DEC-237 (d)) |
 | Free transfer | £0 | counted as a transfer with fee £0 |
-| Undisclosed fee | reported or £0 | a grade B reported figure is used and flagged "reported"; otherwise £0 and counted in the per-club undisclosed report (DEC-237 (g)) |
+| Undisclosed fee | reported or £0 | a grade A/B reported figure is used and flagged "reported"; otherwise £0 and counted in the per-club undisclosed report (DEC-237 (g)). On screen: "Undisclosed fees not included"; each club's undisclosed count in the description. Phase 2 searches for reported figures for undisclosed deals involving any club ever in the top 12 (DEC-257) |
 | Wages, agents' fees, signing bonuses, levies, market values | **no** | never |
 
 **PL activity only.** A transfer counts for a club only if that club plays in the PL in the season the transfer is attributed to. PL-to-PL deals count at both ends; deals with non-PL or foreign clubs count only for the PL club.
@@ -37,10 +37,10 @@ Written before the data build (DEC-036). Owner decisions: DEC-235 to DEC-240 (Lu
 - **Transfermarkt is never a source** (DEC-236): nothing from it is stored; a Wikipedia fee whose only citation is Transfermarkt is not used (DEC-250 (c)).
 - **Status:** VERIFIED (the figure was seen at its source by a script, a runner or Claude in Cowork, with a quote) / UNVERIFIED / NOT FOUND. **Only VERIFIED figures go on screen.** Phase 1 builds an UNVERIFIED preview series (not for screen); phase 2 verifies Tier 1 at source.
 
-## 4. Verification tiers (DEC-237 (f), DEC-248)
+## 4. Verification tiers (DEC-237 (f), DEC-248 as narrowed by DEC-256)
 | Tier | Which transfers | Check |
 |---|---|---|
-| 1 | fee ≥ £20m nominal; every club or British record; every disputed fee; every transfer whose removal or alternative version changes the top-12 order in any month (computed) | at source by hand (phase 2, batches from `tier1_list.csv`) |
+| 1 | fee ≥ £20m nominal; every club or British record; every disputed fee; every transfer whose removal or alternative version changes the leader or who is in the top 12 at any month end (computed; DEC-256) | at source (phase 2, batches of 50 from `tier1_list.csv`, starting with Chelsea, Manchester United, Manchester City, Arsenal, Liverpool, Newcastle, Blackburn and Everton, DEC-263) |
 | 2 | £2m to under £20m | scripted: the cited source is fetched and must state the figure |
 | 3 | under £2m | 5% random sample (fixed seed), error rate published |
 

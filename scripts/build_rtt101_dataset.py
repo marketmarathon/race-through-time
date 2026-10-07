@@ -248,7 +248,7 @@ for r in wiki_rows:
         t = seen.get(key) or hit
     else:
         tid = "T" + sha("|".join(map(str, key)))[:10]
-        t = {"transfer_id": tid, "player": r["player"], "from_club": r["from_club_id"] or r["from_name"],
+        t = {"transfer_id": tid, "player": r["player"], "player_article": r.get("player_article", ""), "from_club": r["from_club_id"] or r["from_name"],
              "to_club": r["to_club_id"] or r["to_name"], "from_club_id": r["from_club_id"], "to_club_id": r["to_club_id"],
              "type": k, "date": date, "date_basis": basis, "found_via": f"Wikipedia: {r['page']} (rev {r['revid']})",
              "parent_transfer_id": "", "_ev": []}
@@ -473,15 +473,18 @@ for me, rows in by_month.items():
 
 
 def top12_changes(club_deltas, from_date):
-    """True if shifting the clubs' values by deltas from from_date changes the top-12 order in any month."""
+    """True if shifting the clubs' values by deltas from from_date changes the leader, or who is in the top 12,
+    at any month end (DEC-256)."""
     for me in month_ends:
         if me < from_date or me not in order_cache:
             continue
         base = order_cache[me]
-        top = [c for c, _, _ in base[:12]]
+        if not any(c in club_deltas for c, _, _ in base):
+            continue
+        top = {c for c, _, _ in base[:12]}
         mod = [(c, v - club_deltas.get(c, 0.0), rch) for c, v, rch in base]
         mod.sort(key=lambda x: (-x[1], x[2], x[0]))
-        if [c for c, _, _ in mod[:12]] != top:
+        if mod[0][0] != base[0][0] or {c for c, _, _ in mod[:12]} != top:
             return True
     return False
 
@@ -505,8 +508,8 @@ for t in transfers:
             deltas[t["to_club_id"]] = f
         if t["from_club_id"] and (t["from_club_id"], s) in in_pl:
             deltas[t["from_club_id"]] = deltas.get(t["from_club_id"], 0) - f
-        if deltas and f >= 1e6 and top12_changes(deltas, t["date"]):
-            reasons.append("removal changes the top-12 order")
+        if deltas and top12_changes(deltas, t["date"]):
+            reasons.append("removal changes the leader or the top 12")
     vers = [float(v) for v in t["fee_versions_gbp"].split(";") if v]
     if f > 0 and len(vers) > 1 and not reasons:
         for alt in (min(vers), max(vers)):
@@ -516,8 +519,8 @@ for t in transfers:
                 dlt[t["to_club_id"]] = f - alt
             if t["from_club_id"] and (t["from_club_id"], s) in in_pl:
                 dlt[t["from_club_id"]] = dlt.get(t["from_club_id"], 0) - (f - alt)
-            if dlt and abs(f - alt) >= 1e6 and top12_changes(dlt, t["date"]):
-                reasons.append("alternative fee version changes the top-12 order"); break
+            if dlt and abs(f - alt) > 0 and top12_changes(dlt, t["date"]):
+                reasons.append("alternative fee version changes the leader or the top 12"); break
     if reasons:
         t["tier"], t["tier_reason"] = "1", "; ".join(reasons)
     elif f >= 2e6:
@@ -630,7 +633,7 @@ wr("pl_membership.csv", membership, ["season", "club_id", "club_name_on_page", "
 wr("seasons.csv", seasons, ["season", "first_matchday", "last_matchday", "dates_source", "dates_revid", "attribution_start", "attribution_start_basis",
                             "attribution_end", "attribution_end_basis", "window_system", "summer_window_open", "summer_window_close", "summer_window_source",
                             "january_window_open", "january_window_close", "january_window_source"])
-TCOLS = ["transfer_id", "player", "from_club", "to_club", "type", "date", "date_basis", "season_attributed", "fee_status",
+TCOLS = ["transfer_id", "player", "player_article", "from_club", "to_club", "type", "date", "date_basis", "season_attributed", "fee_status",
          "original_amount_out", "currency", "fx_rate", "fx_date", "fx_series", "fee_gbp_out", "fee_versions_gbp", "canonical_source_id",
          "grade", "tier", "tier_reason", "tier3_sample", "status", "found_via", "parent_transfer_id"]
 with open(os.path.join(DATA, "transfers.csv"), "w", newline="", encoding="utf-8") as f:

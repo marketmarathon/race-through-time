@@ -17,6 +17,15 @@ for line in raw.splitlines():
         for rec in json.loads(line.split(" RTT101CHECKS ", 1)[1]):
             checks.write(json.dumps(rec, ensure_ascii=False) + "\n")
         continue
+    hit = False
+    for tag, fn in ((" RTT101WIKIFEES ", "wikifees.jsonl"), (" RTT101PROBE ", "probe.jsonl")):
+        if tag in line:
+            with open(os.path.join(out, fn), "a", encoding="utf-8") as fh:
+                for rec in json.loads(line.split(tag, 1)[1]):
+                    fh.write(json.dumps(rec, ensure_ascii=False) + "\n")
+            hit = True
+    if hit:
+        continue
     if " RTT101B64 " not in line:
         continue
     name, st, err, sha, b64 = line.split(" RTT101B64 ", 1)[1].split(" ", 4)

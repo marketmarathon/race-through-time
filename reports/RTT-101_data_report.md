@@ -8,12 +8,12 @@ Rebuild: `python3 scripts/build_rtt101_dataset.py && python3 scripts/rtt101_repo
 
 - **12,824 transfer events** that involve a club in the Premier League that season (1992-93 to the freeze, 1 Sep 2026), of which **3,123 carry a fee** above £0. The rest are loans without a fee (5,327), free transfers (2,015), undisclosed fees with no figure, counted £0 (2,212), and fees not found (147).
 - Fee status: **VERIFIED 1,055**, UNVERIFIED 2,068. Grade of the fee used: A 17, B 1,038, C (Wikipedia pointer only) 2,015, D 53.
-- Tiers (DEC-248): Tier 1 **2,076**, Tier 2 354, Tier 3 703 (5% sample: 35).
-  Tier 1 reasons (a transfer can have several): removal changes the top-12 order 1,129; fee >= £20m 576; club or British record (research lead) 537; disputed fee (research section C) 24.
+- Tiers (DEC-248): Tier 1 **1,892**, Tier 2 661, Tier 3 580 (5% sample: 29).
+  Tier 1 reasons (a transfer can have several): removal changes the leader or the top 12 944; fee >= £20m 576; club or British record (research lead) 537; disputed fee (research section C) 24; alternative fee version changes the leader or the top 12 1.
 - 14,917 evidence rows in `fee_evidence.csv`; 1,782 sources in `sources.csv`; 272 transfers with more than one fee version (`conflicts.csv`).
 - **Scripted source check** (GitHub runner, 2,049 cited pages): VERIFIED 1,470; page fetched but figure not found near the player's name 501; blocked or gone 78.
-  Tier 2 result: 156 of 354 Tier 2 fees VERIFIED by the scripted check.
-  Tier 3 sample: 1 of 35 VERIFIED; most Tier 3 rows have no fetchable citation (error rate cannot be published yet: phase 2).
+  Tier 2 result: 222 of 661 Tier 2 fees VERIFIED by the scripted check.
+  Tier 3 sample: 0 of 29 VERIFIED; most Tier 3 rows have no fetchable citation (error rate cannot be published yet: phase 2).
 
 ## 2. Checks
 
@@ -209,7 +209,7 @@ Why the totals differ:
 
 ## 9. Questions for Luke (each with Claude's recommendation)
 
-1. **Tier 1 is too big as worded (DEC-253).** 2,076 transfers are Tier 1, mostly because of the "changes the top-12 order" test. *Recommendation:* keep £20m+, records and disputed fees, and narrow the order test to "changes the leader, or who is in the top 12, at any month end"; the rest get Tier 2's scripted check.
+1. **Tier 1 is too big as worded (DEC-253).** 1,892 transfers are Tier 1, mostly because of the "changes the top-12 order" test. *Recommendation:* keep £20m+, records and disputed fees, and narrow the order test to "changes the leader, or who is in the top 12, at any month end"; the rest get Tier 2's scripted check.
 2. **Undisclosed fees count £0 (DEC-237 (g)).** 2,212 transfers have no reported figure. *Recommendation:* keep the rule, say on screen "Undisclosed fees not included", and give each club's undisclosed count in the description.
 3. **The early years are the least complete (1992–2007).** *Recommendation:* in phase 2, Claude in Cowork uses Transfermarkt in your Chrome only as a finding list (route A, nothing stored) to spot missing 1992–2007 deals involving the bigger fees, and takes each fee from a press or club source.
 4. **Relegated clubs keep their frozen bar and their rank** (contract §1; e.g. a relegated club can sit 8th at the freeze). *Recommendation:* keep them in the ranking; how a frozen bar looks is a design question for the pilot (DEC-069).

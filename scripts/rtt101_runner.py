@@ -14,7 +14,7 @@ import base64, gzip, hashlib, html, json, re, sys, time, urllib.parse, urllib.re
 
 UA = "Mozilla/5.0 (compatible; RTT-research/1.0; +https://github.com/marketmarathon/race-through-time)"
 WUA = "RTT-research/1.0 (https://github.com/marketmarathon/race-through-time; data build IQ-15)"
-JOB = "data/rtt-101/runner_job.json"
+JOB = sys.argv[1] if len(sys.argv) > 1 else "data/rtt-101/runner_job.json"
 
 
 def get(url, ua=UA, timeout=45):
@@ -59,6 +59,78 @@ def main():
         st, body, err = get(f"https://en.wikipedia.org/w/api.php?{q}", ua=WUA)
         emit("wiki:" + t, st, body, err)
         time.sleep(1.0)
+    # "wiki_fees": player articles -> only sentences that mention a fee, with their citations (keeps the log small)
+    out = []
+    for t in job.get("wiki_fees", []):
+        q = urllib.parse.urlencode({"action": "parse", "page": t, "prop": "wikitext|revid", "redirects": 1,
+                                    "format": "json", "formatversion": 2, "maxlag": 5})
+        st, body, err = get(f"https://en.wikipedia.org/w/api.php?{q}", ua=WUA)
+        rec = {"title": t, "status": st, "err": err, "revid": None, "sentences": []}
+        try:
+            j = json.loads(body)
+            rec["revid"] = j["parse"]["revid"]
+            w = j["parse"]["wikitext"]
+            named = {}
+            for m in re.finditer(r"<ref\s+name\s*=\s*\"?([^\">/]+?)\"?\s*>(.*?)</ref>", w, re.S):
+                u = re.search(r"url\s*=\s*([^|}\s]+)", m.group(2))
+                named[m.group(1).strip()] = u.group(1) if u else ""
+            for para in re.split(r"\n\s*\n|\n(?=[*=])", w):
+                if not re.search(r"£|€|\$|undisclosed|fee|million|transfer", para, re.I):
+                    continue
+                for sent in re.split(r"(?<=[.!?])\s+(?=[A-Z\[])", para):
+                    if not re.search(r"£|€|undisclosed|fee\b|million", sent, re.I):
+                        continue
+                    urls = []
+                    for m in re.finditer(r"<ref(?:\s+name\s*=\s*\"?([^\">/]+?)\"?)?\s*(/>|>(.*?)</ref>)", sent, re.S):
+                        if m.group(3):
+                            u = re.search(r"url\s*=\s*([^|}\s]+)", m.group(3))
+                            urls.append(u.group(1) if u else "")
+                        elif m.group(1):
+                            urls.append(named.get(m.group(1).strip(), ""))
+                    txt = re.sub(r"<ref.*?(</ref>|/>)", "", sent, flags=re.S)
+                    txt = re.sub(r"\[\[(?:[^\]|]*\|)?([^\]]*)\]\]", r"\1", txt)
+                    txt = re.sub(r"\{\{[^{}]*\}\}", "", txt).replace("'", "")
+                    txt = re.sub(r"\s+", " ", txt).strip()[:400]
+                    urls = [u for u in urls if u and "transfermarkt" not in u.lower()]
+                    if txt:
+                        rec["sentences"].append({"text": txt, "urls": urls})
+        except Exception as e:  # report, never guess
+            rec["err"] = rec["err"] or type(e).__name__
+        out.append(rec)
+        if len(out) == 10:
+            print("RTT101WIKIFEES " + json.dumps(out, ensure_ascii=False)); sys.stdout.flush(); out = []
+        time.sleep(1.0)
+    if out:
+        print("RTT101WIKIFEES " + json.dumps(out, ensure_ascii=False))
+    # "probe": every money figure within 350 characters of the surname, plus the page's publication date
+    MONEY = re.compile(r"(?:£|€|\$|pounds?\s|euros?\s)\s?\d[\d,.]*\s?(?:m\b|mn\b|million|bn|billion|k\b)?|\d[\d,.]*\s?(?:million|m)\s(?:pounds|euros)", re.I)
+    out = []
+    for it in job.get("probe", []):
+        st, body, err = get(it["url"])
+        raw = body.decode("utf-8", "replace") if body else ""
+        pub = ""
+        m = re.search(r"(?:article:published_time|datePublished|dcterms.created|og:published_time)\"?\s*(?:content=|:)\s*\"([^\"]{8,40})\"", raw)
+        if m:
+            pub = m.group(1)
+        t = text_of(body) if body else ""
+        low = t.lower()
+        near = (it.get("near") or "").lower()
+        snips = []
+        if near:
+            for mm in MONEY.finditer(t):
+                win = low[max(0, mm.start() - 350): mm.end() + 350]
+                if near in win:
+                    snips.append({"money": mm.group(0).strip(), "excerpt": t[max(0, mm.start() - 120): mm.end() + 80]})
+                if len(snips) >= 6:
+                    break
+        out.append({"id": it["id"], "status": st, "err": err, "sha256": hashlib.sha256(body).hexdigest() if body else "",
+                    "published": pub, "surname_on_page": bool(near and near in low),
+                    "undisclosed_on_page": bool(near and "undisclosed" in low), "snips": snips})
+        if len(out) == 20:
+            print("RTT101PROBE " + json.dumps(out, ensure_ascii=False)); sys.stdout.flush(); out = []
+        time.sleep(job.get("delay", 1.0))
+    if out:
+        print("RTT101PROBE " + json.dumps(out, ensure_ascii=False))
     batch = []
     for it in job.get("check", []):
         st, body, err = get(it["url"])

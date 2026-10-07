@@ -50,6 +50,14 @@ def player_name(cell):
     return re.sub(r"\{\{[^}]*\}\}|'''|''", "", cell).strip()
 
 
+def player_link(cell):
+    m = re.search(r"\{\{\s*sortname\s*\|([^|}]+)\|([^|}]+)(?:\|([^|}]+))?", cell, re.I)
+    if m:
+        return (m.group(3) or f"{m.group(1).strip()} {m.group(2).strip()}").strip()
+    links = [l for l in re.findall(r"\[\[([^\]|]+)(?:\|[^\]]+)?\]\]", cell) if not l.lower().startswith(("file:", "image:"))]
+    return links[-1].strip() if links else ""
+
+
 def parse_date(cell, default_year=None):
     m = re.search(r"\{\{\s*dts\s*\|(?:format=\w+\s*\|)?\s*(\d{4})\s*\|\s*(\d{1,2})\s*\|\s*(\d{1,2})", cell, re.I)
     if m:
@@ -197,7 +205,7 @@ def window_rows(title, page):
             tm_only = bool(cites) and all("transfermarkt" in (c.get("url", "") + c.get("website", "") + c.get("work", "")).lower() for c in cites)
             cites = [c for c in cites if "transfermarkt" not in (c.get("url", "") + c.get("website", "") + c.get("work", "")).lower()]
             out.append({"window": title.replace("List of English football transfers ", ""), "page": title,
-                        "revid": page["revid"], "date": carry_date, "player": player_name(name),
+                        "revid": page["revid"], "date": carry_date, "player": player_name(name), "player_article": player_link(name),
                         "from_article": ft, "from_name": fn, "from_club_id": fid or "",
                         "to_article": tt, "to_name": tn, "to_club_id": tid or "", "fee_text": fee_text(fee),
                         "citation_only_transfermarkt": "yes" if tm_only else "no",
@@ -222,7 +230,7 @@ def window_rows(title, page):
             continue
         cites = [c for c in cell_refs(fee, refs) if "transfermarkt" not in (c.get("url", "") + c.get("website", "") + c.get("work", "")).lower()]
         out.append({"window": title.replace("List of English football transfers ", ""), "page": title,
-                    "revid": page["revid"], "date": cur_date, "player": player_name(name),
+                    "revid": page["revid"], "date": cur_date, "player": player_name(name), "player_article": player_link(name),
                     "from_article": ft, "from_name": fn, "from_club_id": fid or "",
                     "to_article": tt, "to_name": tn, "to_club_id": tid or "", "fee_text": fee_text(fee),
                     "citation_only_transfermarkt": "no",
@@ -317,7 +325,7 @@ def club_season_rows(title, page):
             frm = (ot, on, oid) if direction == "in" else ("", m.group(2), own)
             to = ("", m.group(2), own) if direction == "in" else (ot, on, oid)
             out.append({"window": f"club-season {m.group(1)}", "page": title, "revid": page["revid"], "date": date,
-                        "player": player_name(vals[c_name]), "from_article": frm[0], "from_name": frm[1], "from_club_id": frm[2] or "",
+                        "player": player_name(vals[c_name]), "player_article": player_link(vals[c_name]), "from_article": frm[0], "from_name": frm[1], "from_club_id": frm[2] or "",
                         "to_article": to[0], "to_name": to[1], "to_club_id": to[2] or "", "fee_text": ftxt,
                         "citation_only_transfermarkt": "no", "cite_urls": " ".join(c.get("url", "") for c in cites if c.get("url")),
                         "cite_publishers": " | ".join((c.get("publisher") or c.get("work") or c.get("website") or "") for c in cites),
