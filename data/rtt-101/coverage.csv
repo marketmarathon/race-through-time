@@ -1,0 +1,175 @@
+club_id,era,pl_seasons_in_era,transfers_found,fee_bearing,fee_grade_A_or_B,fee_verified,fee_unverified,undisclosed_no_figure,fee_not_found
+arsenal,1992-2002 (no window lists),10,15,15,14,0,15,0,0
+arsenal,2002-2007,5,63,24,3,0,24,9,2
+arsenal,2007-2012,5,147,19,3,0,19,27,1
+arsenal,2012-2017,5,131,19,4,0,19,17,0
+arsenal,2017-2022,5,128,23,6,0,23,32,3
+arsenal,2022-2026,5,129,36,8,0,36,18,1
+aston_villa,1992-2002 (no window lists),10,12,12,12,0,12,0,0
+aston_villa,2002-2007,5,57,21,1,0,21,4,0
+aston_villa,2007-2012,5,120,20,7,0,20,32,0
+aston_villa,2012-2017,4,125,12,1,0,12,31,0
+aston_villa,2017-2022,3,96,16,5,0,16,20,0
+aston_villa,2022-2026,5,224,51,4,0,51,32,0
+birmingham_city,2002-2007,4,51,22,4,0,22,0,0
+birmingham_city,2007-2012,3,85,17,3,0,17,11,0
+blackburn_rovers,1992-2002 (no window lists),8,15,15,12,0,15,0,0
+blackburn_rovers,2002-2007,5,59,22,1,0,22,11,0
+blackburn_rovers,2007-2012,5,141,11,2,0,11,37,0
+blackpool,2007-2012,1,25,4,3,0,4,4,0
+bolton_wanderers,1992-2002 (no window lists),3,2,2,2,0,2,0,0
+bolton_wanderers,2002-2007,5,49,8,3,0,8,5,0
+bolton_wanderers,2007-2012,5,107,13,4,0,13,31,0
+bournemouth,2012-2017,2,55,11,4,0,11,10,0
+bournemouth,2017-2022,3,49,9,3,0,9,12,1
+bournemouth,2022-2026,5,120,33,3,0,33,23,0
+bradford_city,1992-2002 (no window lists),2,2,2,0,0,2,0,0
+brentford,2017-2022,1,16,1,1,0,1,2,0
+brentford,2022-2026,5,130,24,10,0,24,23,1
+brighton,2017-2022,5,146,12,7,0,12,56,0
+brighton,2022-2026,5,193,45,6,0,45,42,1
+burnley,2007-2012,1,24,3,1,0,3,4,2
+burnley,2012-2017,2,52,6,4,0,6,11,0
+burnley,2017-2022,5,66,14,5,0,14,13,1
+burnley,2022-2026,2,67,13,3,0,13,16,0
+cardiff_city,2012-2017,1,34,6,2,0,6,7,2
+cardiff_city,2017-2022,1,14,4,0,0,4,2,0
+charlton_athletic,1992-2002 (no window lists),3,1,1,1,0,1,0,0
+charlton_athletic,2002-2007,5,43,21,1,0,21,3,0
+chelsea,1992-2002 (no window lists),10,18,18,17,0,18,0,0
+chelsea,2002-2007,5,70,39,13,0,39,8,1
+chelsea,2007-2012,5,164,22,7,0,22,32,1
+chelsea,2012-2017,5,251,46,14,0,46,21,0
+chelsea,2017-2022,5,170,34,13,0,34,28,2
+chelsea,2022-2026,5,300,106,17,0,106,40,2
+coventry_city,1992-2002 (no window lists),9,10,10,10,0,10,0,0
+coventry_city,2022-2026,1,17,6,4,0,6,4,0
+crystal_palace,1992-2002 (no window lists),3,1,1,0,0,1,0,0
+crystal_palace,2002-2007,1,3,1,0,0,1,0,0
+crystal_palace,2012-2017,4,138,14,5,0,14,34,0
+crystal_palace,2017-2022,5,62,10,1,0,10,14,0
+crystal_palace,2022-2026,5,118,24,2,0,24,20,0
+derby_county,1992-2002 (no window lists),6,7,7,3,0,7,0,0
+derby_county,2007-2012,1,43,11,1,0,11,4,0
+everton,1992-2002 (no window lists),10,10,10,7,0,10,0,0
+everton,2002-2007,5,43,17,3,0,17,7,0
+everton,2007-2012,5,114,18,5,0,18,16,0
+everton,2012-2017,5,128,24,6,0,24,24,0
+everton,2017-2022,5,125,29,5,0,29,26,0
+everton,2022-2026,5,126,28,2,0,28,17,2
+fulham,1992-2002 (no window lists),1,2,2,2,0,2,0,0
+fulham,2002-2007,5,50,10,2,0,10,16,2
+fulham,2007-2012,5,156,15,3,0,15,50,0
+fulham,2012-2017,2,71,4,2,0,4,17,0
+fulham,2017-2022,2,46,8,4,0,8,8,0
+fulham,2022-2026,5,113,21,3,0,21,25,1
+huddersfield_town,2017-2022,2,36,9,4,0,9,16,0
+hull_city,2007-2012,2,54,8,4,0,8,9,0
+hull_city,2012-2017,3,91,15,7,0,15,20,1
+hull_city,2022-2026,1,30,9,1,0,9,14,0
+ipswich_town,1992-2002 (no window lists),5,6,5,4,0,5,0,1
+ipswich_town,2022-2026,2,64,13,4,0,13,24,0
+leeds_united,1992-2002 (no window lists),10,18,18,11,0,18,0,0
+leeds_united,2002-2007,2,26,10,2,0,10,0,0
+leeds_united,2017-2022,2,34,5,1,0,5,6,0
+leeds_united,2022-2026,3,67,18,3,0,18,13,0
+leicester_city,1992-2002 (no window lists),7,5,5,2,0,5,0,0
+leicester_city,2002-2007,1,3,0,0,0,0,0,0
+leicester_city,2012-2017,3,86,17,5,0,17,13,0
+leicester_city,2017-2022,5,100,17,5,0,17,27,1
+leicester_city,2022-2026,2,42,10,1,0,10,8,0
+liverpool,1992-2002 (no window lists),10,10,10,10,0,10,0,0
+liverpool,2002-2007,5,71,26,3,0,26,11,2
+liverpool,2007-2012,5,184,30,8,0,30,62,0
+liverpool,2012-2017,5,171,49,10,0,49,16,1
+liverpool,2017-2022,5,103,40,12,0,40,5,2
+liverpool,2022-2026,5,126,40,10,0,40,12,0
+luton_town,2022-2026,1,27,2,2,0,2,10,0
+manchester_city,1992-2002 (no window lists),5,4,4,2,0,4,0,0
+manchester_city,2002-2007,5,62,24,3,0,24,7,0
+manchester_city,2007-2012,5,196,27,9,0,27,48,1
+manchester_city,2012-2017,5,153,39,8,0,39,21,1
+manchester_city,2017-2022,5,125,34,14,0,34,32,0
+manchester_city,2022-2026,5,171,63,18,0,63,16,1
+manchester_united,1992-2002 (no window lists),10,13,13,12,0,13,0,0
+manchester_united,2002-2007,5,65,29,9,0,29,4,2
+manchester_united,2007-2012,5,136,12,8,0,12,37,1
+manchester_united,2012-2017,5,177,32,10,0,32,32,0
+manchester_united,2017-2022,5,96,22,7,0,22,11,2
+manchester_united,2022-2026,5,149,36,7,0,36,23,1
+middlesbrough,1992-2002 (no window lists),7,7,7,6,0,7,0,0
+middlesbrough,2002-2007,5,59,14,2,0,14,4,0
+middlesbrough,2007-2012,2,50,12,2,0,12,8,0
+middlesbrough,2012-2017,1,39,4,0,0,4,15,0
+newcastle_united,1992-2002 (no window lists),9,13,13,12,0,13,0,0
+newcastle_united,2002-2007,5,58,27,2,0,27,6,0
+newcastle_united,2007-2012,4,92,13,4,0,13,25,0
+newcastle_united,2012-2017,4,99,11,0,0,11,28,0
+newcastle_united,2017-2022,5,87,15,4,0,15,24,0
+newcastle_united,2022-2026,5,103,32,8,0,32,12,1
+norwich_city,1992-2002 (no window lists),3,5,5,4,0,5,0,0
+norwich_city,2002-2007,1,3,1,1,0,1,1,0
+norwich_city,2007-2012,1,21,0,0,0,0,9,0
+norwich_city,2012-2017,3,81,8,2,0,8,22,2
+norwich_city,2017-2022,2,52,6,3,0,6,5,1
+nottingham_forest,1992-2002 (no window lists),5,2,2,2,0,2,0,0
+nottingham_forest,2022-2026,5,183,37,9,0,37,48,1
+oldham_athletic,1992-2002 (no window lists),2,2,2,2,0,2,0,0
+portsmouth,2002-2007,4,52,16,2,0,16,11,0
+portsmouth,2007-2012,3,102,14,3,0,14,31,1
+qpr,1992-2002 (no window lists),4,4,4,4,0,4,0,0
+qpr,2007-2012,1,43,2,2,0,2,9,0
+qpr,2012-2017,2,78,8,4,0,8,15,1
+reading,2002-2007,1,10,4,2,0,4,3,0
+reading,2007-2012,1,34,3,2,0,3,5,1
+reading,2012-2017,1,32,2,1,0,2,6,0
+sheffield_united,1992-2002 (no window lists),2,1,1,1,0,1,0,0
+sheffield_united,2002-2007,1,18,11,1,0,11,0,0
+sheffield_united,2017-2022,2,42,5,3,0,5,7,2
+sheffield_united,2022-2026,1,23,3,0,0,3,10,0
+sheffield_wednesday,1992-2002 (no window lists),8,3,3,2,0,3,0,0
+southampton,1992-2002 (no window lists),10,7,7,5,0,7,0,0
+southampton,2002-2007,3,29,15,2,0,15,3,1
+southampton,2012-2017,5,121,30,7,0,30,17,0
+southampton,2017-2022,5,85,14,4,0,14,23,0
+southampton,2022-2026,2,74,17,1,0,17,14,0
+stoke_city,2007-2012,4,108,21,4,0,21,19,1
+stoke_city,2012-2017,5,112,17,4,0,17,18,2
+stoke_city,2017-2022,1,13,6,0,0,6,4,1
+sunderland,1992-2002 (no window lists),4,4,4,2,0,4,0,0
+sunderland,2002-2007,2,28,8,1,0,8,1,0
+sunderland,2007-2012,5,186,30,7,0,30,42,0
+sunderland,2012-2017,5,158,25,3,0,25,36,0
+sunderland,2022-2026,2,57,15,4,0,15,15,0
+swansea_city,2007-2012,1,23,6,1,0,6,5,0
+swansea_city,2012-2017,5,145,24,7,0,24,36,0
+swansea_city,2017-2022,1,14,6,2,0,6,6,0
+swindon_town,1992-2002 (no window lists),1,2,2,2,0,2,0,0
+tottenham_hotspur,1992-2002 (no window lists),10,13,10,9,0,10,0,1
+tottenham_hotspur,2002-2007,5,72,28,1,0,28,15,1
+tottenham_hotspur,2007-2012,5,208,30,13,0,30,40,0
+tottenham_hotspur,2012-2017,5,175,51,14,0,51,30,0
+tottenham_hotspur,2017-2022,5,96,18,3,0,18,23,2
+tottenham_hotspur,2022-2026,5,159,45,6,0,45,18,0
+watford,1992-2002 (no window lists),1,1,1,0,0,1,0,0
+watford,2002-2007,1,13,8,1,0,8,1,0
+watford,2012-2017,2,70,13,4,0,13,25,0
+watford,2017-2022,4,77,11,3,0,11,30,0
+west_brom,2002-2007,3,22,15,2,0,15,0,0
+west_brom,2007-2012,3,104,14,3,0,14,15,0
+west_brom,2012-2017,5,119,14,5,0,14,22,0
+west_brom,2017-2022,2,43,7,3,0,7,9,2
+west_ham,1992-2002 (no window lists),9,11,10,5,0,10,0,0
+west_ham,2002-2007,3,47,16,1,0,16,9,1
+west_ham,2007-2012,4,115,15,0,0,15,27,0
+west_ham,2012-2017,5,154,19,3,0,19,29,2
+west_ham,2017-2022,5,93,24,3,0,24,28,0
+west_ham,2022-2026,4,115,31,2,0,31,18,1
+wigan_athletic,2002-2007,2,32,14,3,0,14,6,0
+wigan_athletic,2007-2012,5,113,20,5,0,20,30,0
+wigan_athletic,2012-2017,1,26,1,0,0,1,4,0
+wimbledon_fc,1992-2002 (no window lists),8,3,3,2,0,3,0,0
+wolves,2002-2007,1,5,3,0,0,3,0,0
+wolves,2007-2012,3,99,4,2,0,4,19,0
+wolves,2017-2022,4,119,19,6,0,19,28,1
+wolves,2022-2026,4,143,38,9,0,38,25,1

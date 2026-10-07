@@ -92,4 +92,7 @@ def parse_fee(text):
         return out  # "£7" with no unit is ambiguous: NOT FOUND, never guessed
     out["amount"] = round(n, 2)
     out["currency"] = cur
+    # "up to £X" applies only when the qualifier comes before the first amount ("£12m rising to £15m" = £12m guaranteed)
+    if "up_to" in out["qualifiers"] and not re.search(QUAL["up_to"], low[:m.start()]):
+        out["qualifiers"] = [q for q in out["qualifiers"] if q != "up_to"] + ["max_later"]
     return out

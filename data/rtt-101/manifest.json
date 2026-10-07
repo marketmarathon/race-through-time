@@ -1,0 +1,25 @@
+{
+ "build": "IQ-15 phase 1",
+ "cpi_base_month": "2026-08",
+ "files": {
+  "CHECKS.md": "b95d6b99ef2b5fe2b8047fe58d7a0dab76387679baae6e0ef9595b5ce06911ee",
+  "club_ledger.csv": "1afdc23824c0cc71cb5dd016e22eaf1481de267eb4885c0bd9d9c268302af4cb",
+  "club_season.csv": "c8541d1e9d47084d6e06aaaba042042c1fe0e40f775c79c8eb7a9fcdfd453497",
+  "clubs.csv": "5248094d95dc09911b071145989c08bf9c1a333090e1f8b7cc81ba9f966f4823",
+  "conflicts.csv": "a93671b3680a3422e5f8b805df57a67e753340f3244e4c32d1435d6454ba8034",
+  "coverage.csv": "1cda0b17d59a7f50e69bceeea9120998647c713bdcdcf20d006f54d3a0f1f282",
+  "cpi.csv": "4d2029d12fb9b7aa60e31b9a71e9ccdc597e16ca873b50178d35a56fe80e7e04",
+  "fee_evidence.csv": "4cc2a574f9de8fc37ecd913d6bb30b191343331b261a615e3443c5d88a76a835",
+  "fx.csv": "146e82d6b8a5001d739a360bd3b3517f478e5d6977b95ef0de2553c07d7e1d9c",
+  "fx_ecb_crosscheck.csv": "d0a04dfe0d0d032bc9dc498b5210b306d0dcf177b256256a857a7e7b15cfebfd",
+  "fx_series.csv": "27e15b5107128d5259ce7b3b75f508b3256a1409c75d5d4e39dad4c02fb5423c",
+  "pl_membership.csv": "b6489b523322332afc57e755f0bf5f2f7d7972231ea9bdea53cf6302afd1f85f",
+  "seasons.csv": "11a8ff067c642712ed412a03301dcf5ccf59fcb6a93dcfa8a67776e0c54f6d4f",
+  "series_monthly.csv": "670d1af4cdc45e63c02026ae16cce34d16db2492977a4ac0c2d45c9f8e4c6e58",
+  "sources.csv": "cbbfa3dcf867756c4c7575699bb3985028d51f1baa72721412953b624d271401",
+  "tier1_list.csv": "f29b572381bae139c94e0e23d21cf21fe42138d97646441ccb0f654fbea44514",
+  "transfers.csv": "9f2a657e8fb21270a9d64c932a19e8cd8a0ed5b7d0dbce9381e96256796a7329",
+  "window_totals.csv": "a54f3db5d11b72113703378c3ccde94625fa50676ed27ed2002e917540abffd1"
+ },
+ "freeze": "2026-09-01"
+}

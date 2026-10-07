@@ -54,12 +54,20 @@ for fn in ("BOE_MONTHLY.csv", "BOE_DAILY.csv"):
                 fx.append((code, d, v))
 fx.sort()
 with open(os.path.join(OUT, "fx.csv"), "w", newline="", encoding="utf-8") as f:
-    w = csv.writer(f)
-    w.writerow(["series_code", "currency", "kind", "date", "units_per_gbp", "source", "licence_note", "file_sha256"])
+    w = csv.writer(f, lineterminator="\n")
+    w.writerow(["series_code", "currency", "kind", "date", "units_per_gbp"])
     for code, d, v in fx:
         cur, kind = SER[code]
+        w.writerow([code, cur, kind, d, v])
+with open(os.path.join(OUT, "fx_series.csv"), "w", newline="", encoding="utf-8") as f:
+    w = csv.writer(f, lineterminator="\n")
+    w.writerow(["series_code", "currency", "kind", "unit", "first_date", "last_date", "rows", "source", "fetched_file", "file_sha256", "licence_note"])
+    for code in sorted({c for c, _, _ in fx}):
+        ds = [d for c, d, _ in fx if c == code]
+        cur, kind = SER[code]
         fn = "BOE_MONTHLY.csv" if code.startswith("XUMA") else "BOE_DAILY.csv"
-        w.writerow([code, cur, kind, d, v, "Bank of England database", "owner-accepted risk; credited (DEC-239)", idx[fn]["sha256"]])
+        w.writerow([code, cur, kind, f"{cur} per £1", ds[0], ds[-1], len(ds), "Bank of England database (fetched on a GitHub runner, 7 Oct 2026)",
+                    fn, idx[fn]["sha256"], "owner-accepted risk; credited (DEC-239)"])
 print("fx rows", len(fx), sorted({c for c, _, _ in fx}))
 
 # --- ECB GBP per EUR monthly reference rate (cross-check only)

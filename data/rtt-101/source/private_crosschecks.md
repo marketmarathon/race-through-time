@@ -1,0 +1,7 @@
+## Cross-checks against the private research files (results only; the files stay private, DEC-006)
+| Check | Result | Detail |
+|---|---|---|
+| Membership (club-seasons) matches part03b (SHA-256 `26e4627a898c4179…`) | **PASS** | 706 ours vs 706 theirs; only ours []; only theirs [] |
+| Relegated flags: part03b differs only in the two known errors plus 1996-97 | **PASS** | differences [('1992-93', 'oldham_athletic'), ('1993-94', 'ipswich_town'), ('1996-97', 'coventry_city'), ('1996-97', 'middlesbrough')]. Ours is derived from membership (in the PL in N, not in N+1). 1996-97: Middlesbrough went down after a points deduction and Coventry stayed up; part03b has them the other way round (finding: it ignores points deductions) |
+| Final positions: part03b differs only where a points deduction applied | **PASS** | 10 differences, all in 1996-97 (Middlesbrough deduction) and 2023-24 (Everton deduction): [('1996-97', 'coventry_city'), ('1996-97', 'everton'), ('1996-97', 'middlesbrough'), ('1996-97', 'southampton'), ('1996-97', 'sunderland'), ('1996-97', 'west_ham'), ('2023-24', 'bournemouth'), ('2023-24', 'everton'), ('2023-24', 'fulham'), ('2023-24', 'wolves')] |
+| Last PL matchday per season agrees with part04b (SHA-256 `1cccbef8207abf63…`) | **PASS** | 35 seasons compared; differences (season, ours, research): [('2015-16', '2016-05-17', '2016-05-15')]. 2015-16 ends 17 May 2016, the replayed match (brief section 7); part04b gives the scheduled last day |

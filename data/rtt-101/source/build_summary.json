@@ -1,0 +1,83 @@
+{
+ "checks": [
+  [
+   "22 clubs per season 1992-95, 20 after (706 club-seasons)",
+   "PASS",
+   "706 club-seasons in 35 seasons"
+  ],
+  [
+   "every season has an attribution window",
+   "PASS",
+   "1992-05-03 to 2026-09-01"
+  ],
+  [
+   "51 clubs, each with at least one PL season",
+   "PASS",
+   "51 clubs"
+  ],
+  [
+   "no transfer counted outside its club's PL seasons",
+   "PASS",
+   "3249 ledger rows frozen (club not in the PL)"
+  ],
+  [
+   "PL-to-PL deals net to zero (spend - income of PL clubs = net spend with non-PL clubs)",
+   "PASS",
+   "spend \u00a327,641,348,708 \u2212 income \u00a314,502,204,221 = \u00a313,139,144,487; net with non-PL clubs \u00a313,139,144,487"
+  ],
+  [
+   "no fee without a source row",
+   "PASS",
+   "2261 fee-bearing transfers"
+  ],
+  [
+   "no Transfermarkt figure or URL anywhere",
+   "PASS",
+   "none found"
+  ],
+  [
+   "quotes under 25 words",
+   "PASS",
+   "12533 evidence rows"
+  ],
+  [
+   "every conversion has a rate row",
+   "PASS",
+   "33 conversions"
+  ],
+  [
+   "month-end series consistent with the ledger",
+   "PASS",
+   "413 month ends \u00d7 51 clubs"
+  ],
+  [
+   "Bank of England Jan 1992 monthly averages equal Cowork's V-04 reading",
+   "PASS",
+   "7 of 7 series compared"
+  ],
+  [
+   "ECB GBP/EUR 1999-01 equals Cowork's V-06 reading (0.7029125)",
+   "PASS",
+   "333 months"
+  ],
+  [
+   "CPI base month recorded",
+   "PASS",
+   "D7BT 2026-08 = 143.6 (September 2026 not yet published at build time)"
+  ]
+ ],
+ "cpi_base_month": "2026-08",
+ "n_conflicts": 241,
+ "n_conflicts_for_luke": 61,
+ "n_fee": 2261,
+ "n_status": {
+  "UNVERIFIED": 2261
+ },
+ "n_tier": {
+  "": 9081,
+  "1": 1724,
+  "2": 351,
+  "3": 197
+ },
+ "n_transfers": 11353
+}
