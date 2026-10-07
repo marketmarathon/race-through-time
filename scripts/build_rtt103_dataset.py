@@ -150,6 +150,8 @@ def load_us(src):
     to_company = {s: c for c, v in COMPANIES.items() for s in v["src"]}
     obs = defaultdict(list)  # (company, line, start, end) -> [row,...]
     for r in rows:
+        if r["company_id"] not in to_company:
+            continue  # CoreWeave: eligibility table only (brief section 2), never in the race
         cid = to_company[r["company_id"]]
         role = r["line_role"]
         if role == "ppe_purchases":
@@ -175,6 +177,8 @@ def load_us(src):
         obs[k] = uniq
     printed_elsewhere = defaultdict(list)
     for r in elsewhere:
+        if r["company_id"] not in to_company:
+            continue
         cid = to_company[r["company_id"]]
         printed_elsewhere[(cid, r["xbrl_tag"], r["period_start"], r["period_end"])].append(r)
     return obs, printed_elsewhere

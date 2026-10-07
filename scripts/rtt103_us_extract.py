@@ -35,7 +35,7 @@ ROLES = [
     ("financing_obligation_principal", r"^principal repayments? of financing obligations|^repayments? of financing obligations|"
                                        r"^principal repayments? of finance lease obligations",
      "financing_obligation_principal_payments"),
-    ("ppe_purchases", r"^(purchases of (property and equipment|fixed assets|property, plant and equipment)|"
+    ("ppe_purchases", r"^(purchases? of (property and equipment|fixed assets|property, plant and equipment)|"
                       r"additions to property and equipment|capital expenditures$|payments for property and equipment)",
      "cash_purchases_of_ppe"),
     ("finance_lease_principal", r"^(principal (re)?payments? (on|of) (finance|capital) lease|"
@@ -55,7 +55,7 @@ TAGS_TO_CHECK = {"PaymentsToAcquirePropertyPlantAndEquipment", "PaymentsToAcquir
                  "PaymentsForProceedsFromProductiveAssets", "FinanceLeasePrincipalPayments",
                  "RepaymentsOfLongTermCapitalLeaseObligations"}
 SNAP_NAME = {"amazon": "amazon", "microsoft": "microsoft", "alphabet": "alphabet", "google": "google", "meta": "meta",
-             "oracle": "oracle"}
+             "oracle": "oracle", "coreweave": "coreweave"}
 CF_TAG = re.compile(r"Payments|Repayments|Proceeds|Productive|PropertyPlant|Lease|Capital|Financing", re.I)
 NUM = re.compile(r"(?<![\d.])(\d{1,3}(?:,\d{3})+|\d+)(?:\.\d+)?(?![\d,])")
 

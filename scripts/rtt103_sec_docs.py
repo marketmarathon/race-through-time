@@ -24,7 +24,7 @@ import urllib.request
 UA = "Race Through Time research luke@marketmarathon.com"
 FORMS = {"10-Q", "10-K", "10-KT", "10-Q/A", "10-K/A", "20-F", "20-F/A"}
 COMPANY_CIKS = {"amazon": "1018724", "microsoft": "789019", "alphabet": "1652044", "google": "1288776",
-                "meta": "1326801", "oracle": "1341439"}
+                "meta": "1326801", "oracle": "1341439", "coreweave": "1769628"}
 CF_HEAD = re.compile(r"(STATEMENTS?OF(CONSOLIDATED)?CASHFLOWS?|CASHFLOWS?STATEMENTS?)", re.I)  # matched with spaces removed
 
 

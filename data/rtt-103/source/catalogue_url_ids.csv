@@ -1,0 +1,15 @@
+url,source_id
+https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm,SRC-AMZN-006
+https://www.sec.gov/Archives/edgar/data/1018724/000119312511016253/d10k.htm,SRC-AMZN-003
+https://www.sec.gov/Archives/edgar/data/1288776/000119312510084352/dex991.htm,SRC-GOOG-003
+https://www.sec.gov/Archives/edgar/data/1288776/000119312511011026/dex991.htm,SRC-GOOG-004
+https://www.sec.gov/Archives/edgar/data/1288776/000119312511032930/d10k.htm,SRC-GOOG-002
+https://www.sec.gov/Archives/edgar/data/1326801/000132680113000003/fb-12312012x10k.htm,SRC-META-002
+https://www.sec.gov/Archives/edgar/data/1326801/000162828026003832/meta-12312025xexhibit991.htm,SRC-META-003
+https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm,SRC-META-006
+https://www.sec.gov/Archives/edgar/data/1341439/000119312510151896/d10k.htm,SRC-ORCL-001
+https://www.sec.gov/Archives/edgar/data/1341439/000119312526265848/orcl-ex99_1.htm,SRC-ORCL-003
+https://www.sec.gov/Archives/edgar/data/1341439/000119312526277521/orcl-20260531.htm,SRC-ORCL-004
+https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm,SRC-GOOG-005
+https://www.sec.gov/Archives/edgar/data/1652044/000165204426000066/googexhibit991q22026.htm,SRC-GOOG-006
+https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm,SRC-MSFT-008

@@ -316,7 +316,7 @@ def finish(v):
                     "definition_notes": "Both inputs printed under the same line and definition.",
                     "includes_finance_leases": "NO", "includes_lease_principal": "NO",
                     "notes": f"Series {ser}; inputs: " + "; ".join(f"{i['accession']} ({i['filed']})" for i in qv["inputs"])}))
-    b_rows.extend(v.get("china_b_rows", []))
+    b_rows.extend(china_b_rows(v, B, n))
     write_csv(os.path.join(out, "B_capex_observations.csv"), b_rows, v["B_COLS"])
     write_csv(os.path.join(out, "B_capex_observations_audit.csv"), b_audit,
               ["observation_id", "accession", "form", "xbrl_tag", "text_check", "period_from", "printed_row",
@@ -384,6 +384,96 @@ def base_obs(B, cid, rec, n, quarters):
             "superseded": "FALSE", "conflict_flag": "FALSE"}
 
 
+def china_b_rows(v, B, n0):
+    """Every China-listed observation read from a filing, plus each derived quarter, in B's columns."""
+    rows, n, sources = [], n0, v["sources"]
+    used = {}
+    for (cid, ser, fy, fq), rec in v["series"].items():
+        if cid in B.CN and rec.get("qv"):
+            used[(cid, rec["end"])] = rec
+    for (cid, line, start, end), lst in sorted(v["obs"].items()):
+        if cid not in B.CN:
+            continue
+        vers = []
+        for r in lst:
+            if r["value"] not in [x["value"] for x in vers]:
+                vers.append(r)
+        for k, r in enumerate(vers):
+            n += 1
+            sources.setdefault(r["source_url"], {"source_id": r["source_id"], "rec": dict(r, company=cid)})
+            days = (B.d(end) - B.d(start)).days + 1
+            rows.append({"observation_id": f"OBS-{cid.upper()}-{n:05d}", "company_id": cid,
+                         "company_name_at_time": name_at_time(cid, end), "fiscal_year": fiscal_label(cid, end, v["quarters"]),
+                         "fiscal_quarter": duration_label(days, cid, end, v["quarters"]), "period_start": start, "period_end": end,
+                         "calendar_quarter_bucket": B.bucket_label(B.bucket_of(end)), "publication_date": r["filed"],
+                         "metric_name_exact": r["metric_name_exact"], "metric_category": "company_reported_capex" + ("_broader_scope" if "broader" in line else ""),
+                         "reported_value": r["printed_value"], "reported_currency": "CNY", "reported_units": r["printed_units"],
+                         "value_local_currency": r["value"], "source_id": r["source_id"], "source_grade": r["grade"],
+                         "source_url": r["source_url"], "source_page_table": r["page_table"], "reported_or_derived": "REPORTED",
+                         "derivation_formula": "", "definition_notes": re.sub(r"source: .*", "", r["notes"]).strip("; "),
+                         "includes_finance_leases": "NOT STATED", "includes_lease_principal": "NOT STATED",
+                         "includes_intangibles": {"tencent": "YES (excluding content and game licences)", "alibaba": "YES" if "broader" in line else "NO (land use rights included)"}.get(cid, "NO"),
+                         "includes_acquisitions": "NO", "superseded": "TRUE" if (k < len(vers) - 1 and not r.get("rounded")) else "FALSE",
+                         "conflict_flag": "TRUE" if len(vers) > 1 else "FALSE",
+                         "notes": (r.get("precision_note", "") + " " if r.get("precision_note") else "") +
+                                  f"Verbatim: \"{r['quote'][:200]}\"" + (" Later print differs: rounding of an earlier text figure." if len(vers) > 1 and r.get("rounded") else "")})
+    for (cid, end), rec in sorted(used.items()):
+        qv = rec["qv"]
+        if qv["how"] != "DERIVED":
+            continue
+        n += 1
+        rows.append(dict(base_obs(B, cid, rec, n, v["quarters"]), **{
+            "publication_date": max(i["filed"] for i in qv["inputs"]), "metric_name_exact": "Capital expenditures",
+            "metric_category": "derived_quarter_company_reported_capex", "reported_value": "", "reported_currency": "CNY",
+            "reported_units": "CNY", "value_local_currency": qv["value"],
+            "source_id": ";".join(dict.fromkeys(i["source_id"] for i in qv["inputs"])), "source_grade": "A",
+            "source_url": ";".join(dict.fromkeys(i["source_url"] for i in qv["inputs"])),
+            "source_page_table": "Year-to-date and quarterly figures as cited", "reported_or_derived": "DERIVED_FROM_PRIMARY_SOURCE",
+            "derivation_formula": qv["formula"], "definition_notes": "All inputs under the same definition.",
+            "includes_finance_leases": "NOT STATED", "includes_lease_principal": "NOT STATED", "notes": ""}))
+    return rows
+
+
+def china_qa(v, B):
+    check, series, canon, ttm, obs = v["check"], v["series"], v["canon"], v["ttm"], v["obs"]
+    for cid in B.CN:
+        qs = v["quarters"][cid]
+        recs = {(r["fy"], r["fq"]): r for (c, s_, fy, fq), r in series.items() if c == cid and s_ == "A"}
+        fails, rounding, tested = [], [], 0
+        for fy in sorted({q["fy"] for q in qs}):
+            fq4 = [q for q in qs if q["fy"] == fy]
+            rr = [recs.get((fy, k)) for k in (1, 2, 3, 4)]
+            if len(fq4) != 4 or not all(r and r.get("qv") for r in rr):
+                continue
+            ann = B.first_report(obs, (cid, "company_capex", fq4[0]["start"], fq4[-1]["end"]))
+            if not ann:
+                continue
+            tested += 1
+            total = sum(r["qv"]["value"] for r in rr)
+            tol = max(B.rounding_tolerance(ann["printed_value"]) if ann.get("rounded") else 0, 0) + \
+                sum(B.rounding_tolerance(i["printed_value"]) for r in rr for i in r["qv"]["inputs"] if i.get("rounded")) + 2_000_000
+            (fails if abs(total - ann["value"]) > tol else rounding if total != ann["value"] else []).append(
+                f"FY{fy}: quarters {total:,} vs year {ann['value']:,}")
+        check(cid, "quarters sum to the fiscal year (RMB; printed rounding allowed)", not fails,
+              f"{tested} fiscal years tested; " + (f"{len(rounding)} within rounding: " + "; ".join(rounding) + ". " if rounding else "")
+              + ("FAILS: " + "; ".join(fails) if fails else "no difference beyond rounding"))
+        bad = [k for k, t in ttm.items() if k[0] == cid and t["value"] != sum(canon[(cid, B.prev_bucket(k[1], j))]["value"] for j in range(4))]
+        check(cid, "TTM equals the sum of four consecutive converted quarters", not bad, f"{sum(1 for k in ttm if k[0] == cid)} TTM points recomputed")
+        fx = [r["fx"] for r in recs.values() if r.get("fx")]
+        rates = [float(f["rate"]) for f in fx]
+        check(cid, "FX: quarterly mean CNY per USD between 5.5 and 8.5, at least 55 daily rates", all(5.5 < x < 8.5 for x in rates) and all(f["days"] >= 55 for f in fx),
+              f"{len(fx)} quarters; rates {min(rates):.4f}-{max(rates):.4f}; fewest days {min(f['days'] for f in fx)}")
+        conv = [r for r in recs.values() if r.get("qv") and "value_usd" in r["qv"]]
+        check(cid, "FX direction: US$ = RMB divided by CNY per USD (US$ smaller than RMB)", all(r["qv"]["value_usd"] < r["qv"]["value"] for r in conv),
+              f"{len(conv)} quarters converted")
+        lens = [((B.d(r["end"]) - B.d(r["start"])).days + 1) for r in recs.values()]
+        check(cid, "every quarter is 89-92 days and maps to one calendar bucket", all(89 <= x <= 92 for x in lens), f"{len(lens)} quarters")
+        neg = [k for k, c in canon.items() if k[0] == cid and c["value"] <= 0]
+        check(cid, "no zero or negative canonical quarter", not neg, f"{len(neg)} found")
+        unver = [i for r in recs.values() if r.get("qv") for i in r["qv"]["inputs"] if i.get("verified") != "VERIFIED"]
+        check(cid, "every input read at its source (VERIFIED)", not unver, f"{len(unver)} unverified inputs")
+
+
 def printed_amount(quote):
     m = re.search(r"\$\s*[\d,.]+\s*(?:billion|million)", quote.split("were", 1)[-1])
     return m.group(0) if m else ""
@@ -411,10 +501,10 @@ def write_rest(v):
     write_csv(os.path.join(out, "F_2026_capex_forecasts.csv"), f_rows, F_COLS)
     e26 = []
     for r in f_rows:
-        if r.get("forecast_period", "") not in ("FY2026", "CY2026") or r["notes"].startswith("SUPERSEDED"):
+        if r.get("forecast_period", "") not in ("FY2026", "CY2026") or r["notes"].startswith(("SUPERSEDED", "UNVERIFIED")):
             continue
-        if r["forecast_type"] not in ("GUIDANCE", "ESTIMATE", "AWS_ESTIMATE"):
-            continue
+        if r["forecast_type"] not in ("GUIDANCE", "ESTIMATE") or r["company"].startswith("Top nine"):
+            continue  # AWS_ESTIMATE, third-party restatements of guidance and industry totals stay in F only
         label = "2026 GUIDANCE" if r["forecast_type"] == "GUIDANCE" else "2026 ESTIMATE"
         amount = r["midpoint_usd_bn"] or r["single_estimate_usd_bn"]
         e26.append({"company": r["company"], "display_name": display_of(C, r["company"]), "display_label": label,
@@ -438,13 +528,14 @@ def write_rest(v):
         row = {"quarter": bucket_label(b)}
         for cid, col in col_of.items():
             c = canon.get((cid, b))
-            row[col] = c["status"] if c else not_found_status(cid, b, v.get("china_status", {}))
+            row[col] = c["status"] if c else not_found_status(cid, b, v["china_status"])
         row["ByteDance"] = "NOT_YET_EXISTED" if b < (2012, 1) else "NOT_FOUND"
         h_rows.append(row)
         for cid, col in col_of.items():
             for ser in ("A", "B"):
                 recs = [r for (c2, s2, fy, fq), r in series.items() if c2 == cid and s2 == ser and r["bucket"] == b]
-                st = "NOT_BUILT" if not recs else (status_of(recs[0]) if recs[0].get("qv") else "NOT_FOUND")
+                st = "NOT_BUILT" if not recs else (status_of(recs[0]) if recs[0].get("qv") else
+                                                   ("DEFINITION_BREAK" if recs[0].get("broad") or (cid, b) in v["china_status"] and ser == "A" else "NOT_FOUND"))
                 h_series.append({"quarter": bucket_label(b), "company": col, "series": ser, "status": st,
                                  "fiscal_period_end": recs[0]["end"] if recs else ""})
     write_csv(os.path.join(out, "H_coverage_matrix.csv"), h_rows, ["quarter"] + B.H_COLUMNS)
@@ -524,6 +615,7 @@ def write_rest(v):
         prev_rank = {c: r for r, (val, c) in enumerate(board, 1)}
     write_csv(os.path.join(out, "AI_SPENDING_RACE_MASTER.csv"), m_rows, MASTER_COLS)
     v["m_rows"], v["passed"] = m_rows, passed
+    write_checkpoints(out, m_rows, l_rows, B)
 
     # ------------------------------------------------------------------ A: catalogue of sources opened by Claude
     a_rows = []
@@ -531,6 +623,12 @@ def write_rest(v):
         a_rows.append(catalogue_row(url, s_, B, C))
     for r in read_csv(os.path.join(src, "extra_sources.csv")):
         a_rows.append({k: r.get(k, "") for k in A_COLS})
+    rel_index = {r["url"]: r for r in read_csv(os.path.join(src, "sec_release_documents.csv"))}
+    for r in read_csv(os.path.join(out, "F_2026_capex_forecasts.csv")) + read_csv(os.path.join(out, "G_AI_capex_story_events.csv")):
+        if r["url"] in rel_index and r["url"] not in sources:
+            ri = rel_index[r["url"]]
+            cid = {"google": "alphabet"}.get(ri["company"], ri["company"])
+            a_rows.append(catalogue_row(r["url"], {"source_id": r["source"], "rec": dict(ri, company=cid, release_filed=ri["filed"], doc_sha256=ri["sha256"])}, B, C))
     seen, a_out = set(), []
     for r in a_rows:
         if r["source_id"] in seen:
@@ -539,6 +637,10 @@ def write_rest(v):
         a_out.append(r)
     write_csv(os.path.join(out, "A_source_catalogue.csv"), a_out, A_COLS)
 
+    # ------------------------------------------------------------------ eligibility of additional companies (brief section 2)
+    write_eligibility(out, src, v, B)
+    # ------------------------------------------------------------------ file-format checks
+    format_checks(out, v, B)
     # ------------------------------------------------------------------ J, K, checks, manifest
     write_j(out, v, B, qa)
     with open(os.path.join(out, "checks.json"), "w", encoding="utf-8") as f:
@@ -581,6 +683,17 @@ def not_found_status(cid, b, china_status):
 
 def catalogue_row(url, s_, B, C):
     r = s_["rec"]
+    if r.get("currency") == "CNY":  # China-listed: HKEXnews, issuer IR site or sec.gov 6-K/F-1
+        cid = r["company_id"]
+        host = re.sub(r"^https?://([^/]+)/.*", r"\1", url)
+        typ = {"www.hkexnews.hk": "HKEX results announcement / report"}.get(host, "SEC filing (6-K exhibit, F-1, 424B4)" if "sec.gov" in host else "Issuer results release (IR website)")
+        return {"source_id": s_["source_id"], "company": C[cid]["name"], "source_grade": r["grade"], "source_type": typ,
+                "title": f"{name_at_time(cid, r['filed'] or '2020')} results document", "publisher": f"{name_at_time(cid, r['filed'] or '2020')} / {host}",
+                "publication_date": r["filed"], "reporting_period": "", "fiscal_year": "", "fiscal_quarter": "", "url": url,
+                "pdf_page_or_table": r["page_table"], "capex_metric_present": "YES", "cash_capex_present": "", "lease_information_present": "",
+                "AI_cloud_commentary_present": "", "guidance_present": "",
+                "notes": f"Opened and read by Claude Code (IQ-16) on 2026-10-07 ({re.sub(r'.*source: ', '', r['notes']).strip('.')}); "
+                         f"document SHA-256 {r['source_sha256']}. Source ID from the research catalogue's finding list."}
     cid = r.get("company") or r.get("company_id")
     cid = {"google": "alphabet"}.get(cid, cid)
     form = r.get("form", "")
@@ -667,8 +780,7 @@ def run_qa(v, B):
         check(cid, "finance leases neither added nor double counted in the canonical series", True,
               "canonical lines are cash purchases only; finance-lease principal and lease additions are kept as context")
     crosschecks(v, B)
-    for c in v.get("china_checks", []):
-        check(*c)
+    china_qa(v, B)
     return qa
 
 
@@ -772,6 +884,112 @@ def fyfq(v, cid, b):
         if B.bucket_of(q["end"]) == b:
             return (q["fy"], q["fq"])
     return (0, 0)
+
+
+def write_checkpoints(out, m_rows, l_rows, B):
+    """Brief section 33: turning points calculated from the master (no drama added)."""
+    rows, by = [], defaultdict(list)
+    for r in m_rows:
+        by[r["date"]].append(r)
+    leader, firsts = None, {}
+    for dte in sorted(by):
+        board = sorted(by[dte], key=lambda r: int(r["rank"]))
+        top = board[0]
+        if top["company"] != leader:
+            rows.append({"date": dte, "checkpoint": "leader" if leader is None else "new leader",
+                         "detail": f"{top['company']} first in TTM capex (US${top['capex_TTM_usd_bn']}bn)" + (f", ahead of {leader}" if leader else ""),
+                         "basis": "AI_SPENDING_RACE_MASTER.csv rank 1"})
+            leader = top["company"]
+        for r in board:
+            for t in (10, 25, 50, 100, 150):
+                if float(r["capex_TTM_usd_bn"]) >= t and t not in firsts:
+                    firsts[t] = r
+                    rows.append({"date": dte, "checkpoint": f"first company above US${t}bn TTM",
+                                 "detail": f"{r['company']} (US${r['capex_TTM_usd_bn']}bn)", "basis": "AI_SPENDING_RACE_MASTER.csv"})
+    agg_done = set()
+    for r in l_rows:
+        if not r["aggregate_TTM_capex_usd_bn"]:
+            continue
+        for t in (100, 250, 500):
+            if float(r["aggregate_TTM_capex_usd_bn"]) >= t and t not in agg_done:
+                agg_done.add(t)
+                rows.append({"date": B.bucket_end((int(r["quarter"][:4]), int(r["quarter"][-1]))), "checkpoint": f"race total above US${t}bn TTM",
+                             "detail": f"{r['number_of_companies_with_valid_data']} companies, US${r['aggregate_TTM_capex_usd_bn']}bn"
+                                       + (f" ({r['coverage_warning']})" if r["coverage_warning"] else ""), "basis": "L_aggregate_capex.csv"})
+    rows.sort(key=lambda r: (r["date"], r["checkpoint"]))
+    B.write_csv(os.path.join(out, "narrative_checkpoints.csv"), rows, ["date", "checkpoint", "detail", "basis"])
+
+
+def write_eligibility(out, src, v, B):
+    cw = {}
+    for r in B.read_csv(os.path.join(src, "us_cashflow_observations.csv")):
+        if r["company_id"] == "coreweave" and r["line_role"] == "ppe_purchases" and r["text_check"].startswith("PASS"):
+            cw.setdefault((r["period_start"], r["period_end"]), r)
+    fy25, h125, h126 = cw.get(("2025-01-01", "2025-12-31")), cw.get(("2025-01-01", "2025-06-30")), cw.get(("2026-01-01", "2026-06-30"))
+    ttm = int(fy25["value_usd"]) - int(h125["value_usd"]) + int(h126["value_usd"]) if fy25 and h125 and h126 else None
+    race_2026 = sorted((t["value"] for (c, b), t in v["ttm"].items() if b == v["latest"]), reverse=True)
+    rank = 1 + sum(1 for x in race_2026 if ttm and x > ttm)
+    rows = [
+        {"company": "CoreWeave", "why_considered": "Material AI/cloud infrastructure spender (brief section 2 names it)",
+         "listed_since": "Nasdaq, March 2025 (first 10-Q: quarter to 31 Mar 2025)",
+         "first_quarter_with_capex": "2024 Q1 (as a comparative in the Q1 2025 10-Q)",
+         "TTM_capex_usd_bn_at_latest_common_quarter": bn(ttm) if ttm else "",
+         "how_calculated": "FY2025 (10-K) minus six months to 30 Jun 2025 plus six months to 30 Jun 2026 (10-Qs); "
+                           "cash 'Purchase of property and equipment, including capitalized internal-use software'; every figure printed in the cited filing",
+         "would_rank_at_latest_common_quarter": rank if ttm else "",
+         "historical_coverage_test": "FAIL for a 2010 start: quarterly figures only from 2024 (NOT_YET_EXISTED as a public filer before)",
+         "materiality_test": "PASS (TTM above two companies in the race)", "comparable_definition": "YES (cash purchases of property and equipment)",
+         "recommendation": "Candidate only. If Luke wants it, add from 2024 Q4 (first TTM) with an 'entered the race' marker; not added without approval.",
+         "sources": ";".join(sorted({cw[k]["doc_url"] for k in cw if k in ((("2025-01-01", "2025-12-31")), ("2025-01-01", "2025-06-30"), ("2026-01-01", "2026-06-30"))}))},
+        {"company": "ByteDance", "why_considered": "In TrendForce's top nine CSPs", "listed_since": "Private",
+         "first_quarter_with_capex": "NOT FOUND (no quarterly disclosure)", "TTM_capex_usd_bn_at_latest_common_quarter": "",
+         "how_calculated": "", "would_rank_at_latest_common_quarter": "", "historical_coverage_test": "FAIL",
+         "materiality_test": "Likely (press reports of 2026 plans)", "comparable_definition": "UNKNOWN",
+         "recommendation": "Excluded from the historical race (brief section 30); press-report estimate only in 2026E, labelled, subject to Luke.",
+         "sources": "SRC-BYTE-003 (SCMP); SRC-BYTE-002 (Reuters, UNVERIFIED)"},
+        {"company": "Nvidia", "why_considered": "Benefits from AI capex", "listed_since": "Nasdaq",
+         "first_quarter_with_capex": "not assessed", "TTM_capex_usd_bn_at_latest_common_quarter": "", "how_calculated": "",
+         "would_rank_at_latest_common_quarter": "", "historical_coverage_test": "", "materiality_test": "",
+         "comparable_definition": "", "recommendation": "Excluded by the brief (section 2): a supplier receiving the spending, not a company making it.",
+         "sources": ""},
+    ]
+    B.write_csv(os.path.join(out, "eligibility_additional_companies.csv"), rows, list(rows[0].keys()))
+
+
+def format_checks(out, v, B):
+    def check(name, ok, detail):
+        v["check"]("files", name, ok, detail, kind="format")
+    spec = {"A_source_catalogue.csv": A_COLS, "B_capex_observations.csv": B_COLS, "C_capex_definitions.csv": C_COLS,
+            "D_quarterly_capex_clean.csv": D_COLS, "E_capex_TTM_race.csv": E_COLS, "F_2026_capex_forecasts.csv": F_COLS,
+            "G_AI_capex_story_events.csv": G_COLS, "H_coverage_matrix.csv": ["quarter"] + B.H_COLUMNS,
+            "I_conflicts_and_warnings.csv": I_COLS, "L_aggregate_capex.csv": L_COLS, "AI_SPENDING_RACE_MASTER.csv": MASTER_COLS}
+    for fn, cols in spec.items():
+        with open(os.path.join(out, fn), newline="", encoding="utf-8") as f:
+            head = next(csv.reader(f))
+        check(f"{fn}: exactly the brief's columns, in order", head == cols, f"{len(head)} columns")
+    h = B.read_csv(os.path.join(out, "H_coverage_matrix.csv"))
+    vocab = {"A_REPORTED", "B_REPORTED", "DERIVED_PRIMARY", "ESTIMATE_ONLY", "NOT_YET_EXISTED", "NOT_FOUND", "DEFINITION_BREAK"}
+    bad = [(r["quarter"], k, x) for r in h for k, x in r.items() if k != "quarter" and x not in vocab]
+    check("H: every cell in the brief's vocabulary", not bad, f"{len(h)} quarters x {len(B.H_COLUMNS)} columns")
+    e = B.read_csv(os.path.join(out, "E_capex_TTM_race.csv"))
+    keys = [(r["calendar_quarter"], r["company"]) for r in e]
+    check("E: one row per company per quarter", len(keys) == len(set(keys)), f"{len(e)} rows")
+    srt = sorted(e, key=lambda r: (r["calendar_quarter"], -int(r["TTM_capex_usd"])))
+    check("E: sorted by calendar quarter then descending TTM", srt == e, "")
+    check("E: TTM equals the sum of its four printed components", all(int(r["TTM_capex_usd"]) == sum(int(r[c]) for c in ("q_minus_3", "q_minus_2", "q_minus_1", "current_q")) for r in e), "")
+    d_ = B.read_csv(os.path.join(out, "D_quarterly_capex_clean.csv"))
+    k2 = [(r["company_id"], r["period_end"]) for r in d_]
+    check("D: one row per company per fiscal quarter", len(k2) == len(set(k2)), f"{len(d_)} rows")
+    m = B.read_csv(os.path.join(out, "AI_SPENDING_RACE_MASTER.csv"))
+    by = defaultdict(list)
+    for r in m:
+        by[r["date"]].append(int(r["rank"]))
+    check("Master: ranks 1..n on every date", all(sorted(x) == list(range(1, len(x) + 1)) for x in by.values()), f"{len(by)} dates")
+    check("Master: no estimate or guidance rows", all(r["data_status"] == "ACTUAL_VERIFIED_AT_SOURCE" for r in m), f"{len(m)} rows")
+    e26 = B.read_csv(os.path.join(out, "AI_SPENDING_RACE_2026E.csv"))
+    check("2026E: every row labelled 2026 GUIDANCE or 2026 ESTIMATE", all(r["display_label"] in ("2026 GUIDANCE", "2026 ESTIMATE") for r in e26), f"{len(e26)} rows")
+    blank = [r for r in e if not r["TTM_capex_usd"]]
+    check("No blank or zero-filled value in E", not blank and all(int(r["TTM_capex_usd"]) > 0 for r in e), "")
 
 
 def write_j(out, v, B, qa):

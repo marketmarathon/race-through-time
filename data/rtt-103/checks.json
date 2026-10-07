@@ -378,6 +378,293 @@
    "detail": "56 quarters compared; 2018-12-31: release 4,370,000,000 vs statement 4,301,000,000",
    "kind": "crosscheck",
    "result": "FAIL"
+  },
+  {
+   "check": "quarters sum to the fiscal year (RMB; printed rounding allowed)",
+   "company": "alibaba",
+   "detail": "11 fiscal years tested; no difference beyond rounding",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "TTM equals the sum of four consecutive converted quarters",
+   "company": "alibaba",
+   "detail": "42 TTM points recomputed",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "FX: quarterly mean CNY per USD between 5.5 and 8.5, at least 55 daily rates",
+   "company": "alibaba",
+   "detail": "70 quarters; rates 6.0901-7.2728; fewest days 59",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "FX direction: US$ = RMB divided by CNY per USD (US$ smaller than RMB)",
+   "company": "alibaba",
+   "detail": "48 quarters converted",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "every quarter is 89-92 days and maps to one calendar bucket",
+   "company": "alibaba",
+   "detail": "70 quarters",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "no zero or negative canonical quarter",
+   "company": "alibaba",
+   "detail": "0 found",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "every input read at its source (VERIFIED)",
+   "company": "alibaba",
+   "detail": "0 unverified inputs",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "quarters sum to the fiscal year (RMB; printed rounding allowed)",
+   "company": "tencent",
+   "detail": "15 fiscal years tested; 1 within rounding: FY2013: quarters 5,798,482,000 vs year 5,799,000,000. no difference beyond rounding",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "TTM equals the sum of four consecutive converted quarters",
+   "company": "tencent",
+   "detail": "59 TTM points recomputed",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "FX: quarterly mean CNY per USD between 5.5 and 8.5, at least 55 daily rates",
+   "company": "tencent",
+   "detail": "70 quarters; rates 6.0901-7.2728; fewest days 59",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "FX direction: US$ = RMB divided by CNY per USD (US$ smaller than RMB)",
+   "company": "tencent",
+   "detail": "62 quarters converted",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "every quarter is 89-92 days and maps to one calendar bucket",
+   "company": "tencent",
+   "detail": "70 quarters",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "no zero or negative canonical quarter",
+   "company": "tencent",
+   "detail": "0 found",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "every input read at its source (VERIFIED)",
+   "company": "tencent",
+   "detail": "0 unverified inputs",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "quarters sum to the fiscal year (RMB; printed rounding allowed)",
+   "company": "baidu",
+   "detail": "14 fiscal years tested; 4 within rounding: FY2011: quarters 1,762,200,000 vs year 1,762,000,000; FY2012: quarters 2,310,800,000 vs year 2,311,000,000; FY2014: quarters 4,827,163,000 vs year 4,827,000,000; FY2017: quarters 4,777,598,000 vs year 4,779,000,000. no difference beyond rounding",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "TTM equals the sum of four consecutive converted quarters",
+   "company": "baidu",
+   "detail": "66 TTM points recomputed",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "FX: quarterly mean CNY per USD between 5.5 and 8.5, at least 55 daily rates",
+   "company": "baidu",
+   "detail": "70 quarters; rates 6.0901-7.2728; fewest days 59",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "FX direction: US$ = RMB divided by CNY per USD (US$ smaller than RMB)",
+   "company": "baidu",
+   "detail": "69 quarters converted",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "every quarter is 89-92 days and maps to one calendar bucket",
+   "company": "baidu",
+   "detail": "70 quarters",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "no zero or negative canonical quarter",
+   "company": "baidu",
+   "detail": "0 found",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "every input read at its source (VERIFIED)",
+   "company": "baidu",
+   "detail": "0 unverified inputs",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "A_source_catalogue.csv: exactly the brief's columns, in order",
+   "company": "files",
+   "detail": "18 columns",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "B_capex_observations.csv: exactly the brief's columns, in order",
+   "company": "files",
+   "detail": "29 columns",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "C_capex_definitions.csv: exactly the brief's columns, in order",
+   "company": "files",
+   "detail": "13 columns",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "D_quarterly_capex_clean.csv: exactly the brief's columns, in order",
+   "company": "files",
+   "detail": "19 columns",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "E_capex_TTM_race.csv: exactly the brief's columns, in order",
+   "company": "files",
+   "detail": "14 columns",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "F_2026_capex_forecasts.csv: exactly the brief's columns, in order",
+   "company": "files",
+   "detail": "16 columns",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "G_AI_capex_story_events.csv: exactly the brief's columns, in order",
+   "company": "files",
+   "detail": "13 columns",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "H_coverage_matrix.csv: exactly the brief's columns, in order",
+   "company": "files",
+   "detail": "10 columns",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "I_conflicts_and_warnings.csv: exactly the brief's columns, in order",
+   "company": "files",
+   "detail": "13 columns",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "L_aggregate_capex.csv: exactly the brief's columns, in order",
+   "company": "files",
+   "detail": "6 columns",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "AI_SPENDING_RACE_MASTER.csv: exactly the brief's columns, in order",
+   "company": "files",
+   "detail": "13 columns",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "H: every cell in the brief's vocabulary",
+   "company": "files",
+   "detail": "66 quarters x 9 columns",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "E: one row per company per quarter",
+   "company": "files",
+   "detail": "488 rows",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "E: sorted by calendar quarter then descending TTM",
+   "company": "files",
+   "detail": "",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "E: TTM equals the sum of its four printed components",
+   "company": "files",
+   "detail": "",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "D: one row per company per fiscal quarter",
+   "company": "files",
+   "detail": "560 rows",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "Master: ranks 1..n on every date",
+   "company": "files",
+   "detail": "66 dates",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "Master: no estimate or guidance rows",
+   "company": "files",
+   "detail": "488 rows",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "2026E: every row labelled 2026 GUIDANCE or 2026 ESTIMATE",
+   "company": "files",
+   "detail": "5 rows",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "No blank or zero-filled value in E",
+   "company": "files",
+   "detail": "",
+   "kind": "format",
+   "result": "PASS"
   }
  ],
  "latest_common_complete_quarter": "2026-Q2",

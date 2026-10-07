@@ -6,6 +6,18 @@ Two kinds of check are reported separately: **file-format checks** (columns, voc
 
 ## Financial QA (gates the master file)
 
+### Alibaba: **PASS**
+
+| Check | Result | Detail |
+|---|---|---|
+| quarters sum to the fiscal year (RMB; printed rounding allowed) | PASS | 11 fiscal years tested; no difference beyond rounding |
+| TTM equals the sum of four consecutive converted quarters | PASS | 42 TTM points recomputed |
+| FX: quarterly mean CNY per USD between 5.5 and 8.5, at least 55 daily rates | PASS | 70 quarters; rates 6.0901-7.2728; fewest days 59 |
+| FX direction: US$ = RMB divided by CNY per USD (US$ smaller than RMB) | PASS | 48 quarters converted |
+| every quarter is 89-92 days and maps to one calendar bucket | PASS | 70 quarters |
+| no zero or negative canonical quarter | PASS | 0 found |
+| every input read at its source (VERIFIED) | PASS | 0 unverified inputs |
+
 ### Alphabet: **PASS**
 
 | Check | Result | Detail |
@@ -35,6 +47,18 @@ Two kinds of check are reported separately: **file-format checks** (columns, voc
 | units are recorded for every input (thousands or millions) | PASS | units seen: millions |
 | no zero or negative canonical quarter | PASS | 0 found |
 | finance leases neither added nor double counted in the canonical series | PASS | canonical lines are cash purchases only; finance-lease principal and lease additions are kept as context |
+
+### Baidu: **PASS**
+
+| Check | Result | Detail |
+|---|---|---|
+| quarters sum to the fiscal year (RMB; printed rounding allowed) | PASS | 14 fiscal years tested; 4 within rounding: FY2011: quarters 1,762,200,000 vs year 1,762,000,000; FY2012: quarters 2,310,800,000 vs year 2,311,000,000; FY2014: quarters 4,827,163,000 vs year 4,827,000,000; FY2017: quarters 4,777,598,000 vs year 4,779,000,000. no difference beyond rounding |
+| TTM equals the sum of four consecutive converted quarters | PASS | 66 TTM points recomputed |
+| FX: quarterly mean CNY per USD between 5.5 and 8.5, at least 55 daily rates | PASS | 70 quarters; rates 6.0901-7.2728; fewest days 59 |
+| FX direction: US$ = RMB divided by CNY per USD (US$ smaller than RMB) | PASS | 69 quarters converted |
+| every quarter is 89-92 days and maps to one calendar bucket | PASS | 70 quarters |
+| no zero or negative canonical quarter | PASS | 0 found |
+| every input read at its source (VERIFIED) | PASS | 0 unverified inputs |
 
 ### Meta: **PASS**
 
@@ -81,6 +105,18 @@ Two kinds of check are reported separately: **file-format checks** (columns, voc
 | no zero or negative canonical quarter | PASS | 0 found |
 | finance leases neither added nor double counted in the canonical series | PASS | canonical lines are cash purchases only; finance-lease principal and lease additions are kept as context |
 
+### Tencent: **PASS**
+
+| Check | Result | Detail |
+|---|---|---|
+| quarters sum to the fiscal year (RMB; printed rounding allowed) | PASS | 15 fiscal years tested; 1 within rounding: FY2013: quarters 5,798,482,000 vs year 5,799,000,000. no difference beyond rounding |
+| TTM equals the sum of four consecutive converted quarters | PASS | 59 TTM points recomputed |
+| FX: quarterly mean CNY per USD between 5.5 and 8.5, at least 55 daily rates | PASS | 70 quarters; rates 6.0901-7.2728; fewest days 59 |
+| FX direction: US$ = RMB divided by CNY per USD (US$ smaller than RMB) | PASS | 62 quarters converted |
+| every quarter is 89-92 days and maps to one calendar bucket | PASS | 70 quarters |
+| no zero or negative canonical quarter | PASS | 0 found |
+| every input read at its source (VERIFIED) | PASS | 0 unverified inputs |
+
 ## Independent cross-checks (informational; every difference is listed in I)
 
 ### Alphabet: **FAIL**
@@ -103,4 +139,29 @@ Two kinds of check are reported separately: **file-format checks** (columns, voc
 | cross-check: Meta's release capex equals purchases of P&E less proceeds (+ finance-lease principal from 2019), within print rounding | FAIL | 56 quarters compared; 2018-12-31: release 4,370,000,000 vs statement 4,301,000,000 |
 
 ## File-format checks
+
+### files: **PASS**
+
+| Check | Result | Detail |
+|---|---|---|
+| A_source_catalogue.csv: exactly the brief's columns, in order | PASS | 18 columns |
+| B_capex_observations.csv: exactly the brief's columns, in order | PASS | 29 columns |
+| C_capex_definitions.csv: exactly the brief's columns, in order | PASS | 13 columns |
+| D_quarterly_capex_clean.csv: exactly the brief's columns, in order | PASS | 19 columns |
+| E_capex_TTM_race.csv: exactly the brief's columns, in order | PASS | 14 columns |
+| F_2026_capex_forecasts.csv: exactly the brief's columns, in order | PASS | 16 columns |
+| G_AI_capex_story_events.csv: exactly the brief's columns, in order | PASS | 13 columns |
+| H_coverage_matrix.csv: exactly the brief's columns, in order | PASS | 10 columns |
+| I_conflicts_and_warnings.csv: exactly the brief's columns, in order | PASS | 13 columns |
+| L_aggregate_capex.csv: exactly the brief's columns, in order | PASS | 6 columns |
+| AI_SPENDING_RACE_MASTER.csv: exactly the brief's columns, in order | PASS | 13 columns |
+| H: every cell in the brief's vocabulary | PASS | 66 quarters x 9 columns |
+| E: one row per company per quarter | PASS | 488 rows |
+| E: sorted by calendar quarter then descending TTM | PASS |  |
+| E: TTM equals the sum of its four printed components | PASS |  |
+| D: one row per company per fiscal quarter | PASS | 560 rows |
+| Master: ranks 1..n on every date | PASS | 66 dates |
+| Master: no estimate or guidance rows | PASS | 488 rows |
+| 2026E: every row labelled 2026 GUIDANCE or 2026 ESTIMATE | PASS | 5 rows |
+| No blank or zero-filled value in E | PASS |  |
 
