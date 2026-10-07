@@ -13,7 +13,8 @@ for x in csv.DictReader(open("data/rtt-101/tier1_list.csv", encoding="utf-8")):
     e = E.get(x["transfer_id"])
     if x["batch"] != batch or not e or not e["check_id"] or x["status"] != "VERIFIED":
         continue
-    rej = rejects.get(x["player"] + "@" + x["to_club"]) or rejects.get(x["player"])
+    rej = (rejects.get(x["player"] + "@" + x["from_club"] + ">" + x["to_club"]) or rejects.get(x["player"] + "@" + x["to_club"])
+           or rejects.get(x["player"]))
     scope = "amount" if rej and rej.startswith("amount:") else "check"
     rows[e["check_id"]] = {"check_id": e["check_id"], "batch": batch, "transfer_id": x["transfer_id"], "player": x["player"],
                            "amount": e["amount"], "quote": e["quote"], "decision": "reject" if rej else "accept", "scope": scope,

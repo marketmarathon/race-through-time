@@ -316,14 +316,27 @@ def club_season_rows(title, page):
         c_club = col(lambda h: h == "club")
         if c_name is None:
             continue
-        if c_from is not None:
+        cap = re.search(r"^\|\+(.*)$", table, re.M)
+        hd = " ".join(heads[-1:] + ([cap.group(1)] if cap else [])).lower()
+        hd_out = bool(re.search(r"\b(out|departures|outgoing|sold|released|leaving)\b", hd))
+        hd_in = bool(re.search(r"\b(in|arrivals|incoming|signings|signed)\b", hd))
+        c_any = c_from if c_from is not None else (c_to if c_to is not None else c_club)
+        if hd_out != hd_in and c_any is not None:
+            # the section heading decides: some pages label the other-club column "From" in an "Out" table
+            direction, c_other = ("out" if hd_out else "in"), c_any
+        elif c_from is not None:
             direction, c_other = "in", c_from
         elif c_to is not None:
             direction, c_other = "out", c_to
-        elif c_club is not None and re.search(r"\b(in|arrivals|incoming|signings)\b", ctx) and not re.search(r"\b(out|departures|outgoing)\b", ctx[-120:]):
-            direction, c_other = "in", c_club
-        elif c_club is not None and re.search(r"\b(out|departures|outgoing|sold)\b", ctx):
-            direction, c_other = "out", c_club
+        elif c_club is not None:
+            # direction only from the section heading or the table caption (ordinary prose says "in" everywhere)
+            hd = " ".join(heads[-1:] + ([re.search(r"^\|\+(.*)$", table, re.M).group(1)] if re.search(r"^\|\+(.*)$", table, re.M) else [])).lower()
+            if re.search(r"\b(out|departures|outgoing|sold|released|leaving)\b", hd):
+                direction, c_other = "out", c_club
+            elif re.search(r"\b(in|arrivals|incoming|signings|signed)\b", hd):
+                direction, c_other = "in", c_club
+            else:
+                continue
         else:
             continue
         last_head = (heads[-1] if heads else "").lower()
