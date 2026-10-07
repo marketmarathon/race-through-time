@@ -295,7 +295,7 @@ def lead_date(r):
 group_new = {}
 unmatched = []
 for r in lead_rows:
-    if r["lead_section"] not in ("A", "B", "C"):
+    if r["lead_section"] not in ("A", "B", "C", "G"):
         continue
     d, basis = lead_date(r)
     fid, toid = L.club_id(r["from_club"]), L.club_id(r["to_club"])
@@ -322,7 +322,7 @@ for r in lead_rows:
     if best is None and far is not None:
         best, note = far, "research lead dated more than 120 days from the transfer date (same player and clubs)"
     if best is None:
-        early = bool(d) and (season_of(d) or "9999") < "2002-03"
+        early = bool(d) and (season_of(d) or "9999") < ("2007-08" if r["lead_section"] == "G" else "2002-03")
         if not early:
             unmatched.append({"lead_id": r["lead_id"], "section": r["lead_section"], "date": r["date"], "player": r["player"],
                               "from_club": r["from_club"], "to_club": r["to_club"], "fee_as_reported": r["fee_as_reported"],
@@ -337,8 +337,10 @@ for r in lead_rows:
         else:
             best = {"transfer_id": "T" + sha("lead|" + json.dumps(gk, ensure_ascii=False))[:10], "player": r["player"], "player_article": "",
                     "from_club": fid or r["from_club"], "to_club": toid or r["to_club"], "from_club_id": fid or "",
-                    "to_club_id": toid or "", "type": "permanent", "date": d, "date_basis": basis,
-                    "found_via": "research lead (private ChatGPT files; not in the Wikipedia lists)", "parent_transfer_id": "", "_ev": []}
+                    "to_club_id": toid or "", "type": {"part_exchange": "part_exchange", "loan": "loan"}.get(r.get("lead_type", ""), "permanent"),
+                    "date": d, "date_basis": basis,
+                    "found_via": ("ChatGPT gap list (DEC-264)" if r["lead_section"] == "G" else
+                                  "research lead (private ChatGPT files; not in the Wikipedia lists)"), "parent_transfer_id": "", "_ev": []}
             group_new[gk] = best
             transfers.append(best)
             idx[last].append(best)
@@ -354,7 +356,7 @@ for r in lead_rows:
                         "parsed": parsed, "quote": r["quote"], "url": r["url"],
                         "archive_url": r["archive_url"] if r["archive_url"].startswith("http") else "", "date": d,
                         "lead_id": r["lead_id"], "lead_section": r["lead_section"], "record_type": r["record_type"],
-                        "issue_type": r["issue_type"], "grade_note": r["grade_note"], "note": note})
+                        "issue_type": r["issue_type"], "grade_note": r["grade_note"], "note": note, "lead_published": r.get("published", "")})
 
 review = {r["check_id"]: r for r in rd("review_decisions.csv")}  # Claude's reading of each Tier 1 quote (phase 2)
 art_cites = defaultdict(list)
@@ -450,7 +452,7 @@ for t in transfers:
             e["quote"], e["retrieved"] = ck["quote"], ck["retrieved"]
         usable = e["gbp"] is not None and "up_to" not in p["qualifiers"]
         if usable:
-            e["published"] = pubdate(e["url"])
+            e["published"] = pubdate(e["url"]) or e.get("lead_published", "")
             cands.append((0 if e["status"] == "VERIFIED" else 1, GRADE_RANK.get(e["grade"], 3), 0 if e["currency"] == "GBP" else 1,
                           e["published"] or "9999", i, e))
     kinds = [kind_of(e["fee_text"]) for e in t["_ev"] if e["origin"] == "wikipedia_list"]

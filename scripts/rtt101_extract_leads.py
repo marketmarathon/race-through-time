@@ -17,6 +17,9 @@ FILES = [("part09b_prompt2_biggest_transfers_B_1992-2000.csv", "B"),
          ("part13b_premier_league_biggest_transfers_B_2022-2026_2026-10-06.csv", "B"),
          ("part14b_premier_league_transfer_conflicts_C_2026-10-06.csv", "C"),
          ("part09c_prompt2_record_transfer_evidence_A_PARTIAL_v2_777rows.csv", "A")]
+# 1992-2007 gap lists (DEC-264): every CSV named part*_gaps_*.csv, as section "G" (leads only; fees checked at source)
+import glob as _glob
+FILES += [(os.path.basename(f), "G") for f in sorted(_glob.glob(os.path.join(PRIV, "part*_gaps_*.csv")))]
 REPORTED = re.compile(r"\b(reported|believed|thought to be|understood|in the region of|around|about|some)\b", re.I)
 UEFA = re.compile(r"uefa\.com", re.I)
 
@@ -32,12 +35,16 @@ def grade(row):
 
 cols = ["lead_id", "lead_section", "lead_file_sha256_prefix", "lead_row", "transfer_ref", "date", "date_type", "player",
         "from_club", "to_club", "fee_as_reported", "currency", "guaranteed_part", "add_ons_part", "grade", "grade_note",
-        "publisher", "quote", "quote_words", "url", "archive_url", "issue_type", "record_type"]
+        "publisher", "quote", "quote_words", "url", "archive_url", "issue_type", "record_type", "published", "lead_type"]
 rows, seen_b = [], set()
 for fn, sec in FILES:
     p = os.path.join(PRIV, fn)
     sha = hashlib.sha256(open(p, "rb").read()).hexdigest()[:16]
     for r in csv.DictReader(open(p, encoding="utf-8-sig")):
+        if sec == "G":
+            r = dict(r, date=r.get("transfer_date", ""), date_type=r.get("date_basis", ""), evidence_id=r.get("row_id"))
+            if "soccerbase" in (r.get("source_url") or "").lower() or (r.get("publisher") or "").lower().startswith("soccerbase"):
+                r["grade"] = "C"  # specialist database: a pointer (brief section 7)
         url = (r.get("source_url") or "").strip()
         if "transfermarkt" in url.lower():
             continue  # DEC-236: nothing taken from Transfermarkt is stored
@@ -49,6 +56,8 @@ for fn, sec in FILES:
         g, gn = grade(r)
         q = (r.get("exact_quote") or "").strip()
         rid = r.get("evidence_id") or r.get("record_id")
+        if sec == "G":
+            rid = fn.split("_")[0] + "-" + rid  # e.g. part18b-A0001 (gap-list rows reuse letters used elsewhere)
         rows.append({"lead_id": f"L-{rid}", "lead_section": sec, "lead_file_sha256_prefix": sha, "lead_row": rid,
                      "transfer_ref": r.get("transfer_id") or r.get("related_B_transfer_id") or r.get("case_id") or "",
                      "date": r.get("date", ""), "date_type": r.get("date_type", ""), "player": r.get("player", ""),
@@ -57,7 +66,9 @@ for fn, sec in FILES:
                      "guaranteed_part": r.get("guaranteed_part", ""), "add_ons_part": r.get("add_ons_part", ""),
                      "grade": g, "grade_note": gn, "publisher": r.get("publisher", ""), "quote": q,
                      "quote_words": len(q.split()), "url": url, "archive_url": r.get("archive_url", ""),
-                     "issue_type": r.get("issue_type", ""), "record_type": r.get("record_type", "")})
+                     "issue_type": r.get("issue_type", ""), "record_type": r.get("record_type", ""),
+                     "published": (r.get("publication_date") or "") if re.match(r"\d{4}-\d{2}-\d{2}", r.get("publication_date") or "") else "",
+                     "lead_type": r.get("type", "")})
 rows.sort(key=lambda x: x["lead_id"])
 w = csv.DictWriter(open(OUT, "w", newline="", encoding="utf-8"), fieldnames=cols)
 w.writeheader(); w.writerows(rows)
