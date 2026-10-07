@@ -39,18 +39,43 @@ def link_target(cell):
     return m.group(1).strip(), (m.group(2) or m.group(1)).strip()
 
 
+def unwrap_templates(cell):
+    """Resolve templates from the innermost out: {{sort|key|shown}} -> shown, {{sortname|First|Last|...}} -> First Last,
+    anything else (flags, notes) -> nothing."""
+    def rep(m):
+        parts = [p.strip() for p in m.group(1).split("|")]
+        name = parts[0].lower()
+        args = [p for p in parts[1:] if "=" not in p]
+        if name.replace(" ", "") == "#invoke:sort" and args:
+            if args[0].lower() == "name" and len(args) >= 3:
+                return f"{args[1]} {args[2]}"
+            return args[-1]
+        if name == "sort" and args:
+            return args[-1]
+        if name == "sortname" and len(args) >= 2:
+            return f"{args[0]} {args[1]}"
+        return ""
+    prev = None
+    while prev != cell:
+        prev = cell
+        cell = re.sub(r"\{\{([^{}]*)\}\}", rep, cell)
+    return cell
+
+
 def player_name(cell):
-    m = re.search(r"\{\{\s*sortname\s*\|([^|}]+)\|([^|}]+)", cell, re.I)
-    if m:
-        return f"{m.group(1).strip()} {m.group(2).strip()}"
+    cell = unwrap_templates(re.sub(r"<ref.*?(</ref>|/>)", "", cell, flags=re.S))
     links = re.findall(r"\[\[([^\]|]+)(?:\|([^\]]+))?\]\]", cell)
     links = [l for l in links if not l[0].lower().startswith(("file:", "image:"))]
     if links:
         return (links[-1][1] or links[-1][0]).strip()
-    return re.sub(r"\{\{[^}]*\}\}|'''|''", "", cell).strip()
+    return re.sub(r"'{2,}|[{}|\[\]]", "", cell).strip()
 
 
 def player_link(cell):
+    m = re.search(r"\{\{\s*#invoke:\s*sort\s*\|\s*name\s*\|([^|}]+)\|([^|}]+)((?:\|[^|}]*)*)\}\}", cell, re.I)
+    if m:
+        extra = [x.strip() for x in m.group(3).split("|") if x.strip() and "=" not in x and "," not in x]
+        return extra[0] if extra else f"{m.group(1).strip()} {m.group(2).strip()}"
     m = re.search(r"\{\{\s*sortname\s*\|([^|}]+)\|([^|}]+)(?:\|([^|}]+))?", cell, re.I)
     if m:
         return (m.group(3) or f"{m.group(1).strip()} {m.group(2).strip()}").strip()
@@ -117,6 +142,22 @@ def fee_text(cell):
     return re.sub(r"\s+", " ", t).strip()
 
 
+def split_cells(s):
+    """Split a table line on '||' only outside {{templates}} and [[links]]."""
+    parts, cur, depth, i = [], "", 0, 0
+    while i < len(s):
+        two = s[i:i + 2]
+        if two in ("{{", "[["):
+            depth += 1; cur += two; i += 2; continue
+        if two in ("}}", "]]") and depth:
+            depth -= 1; cur += two; i += 2; continue
+        if two == "||" and depth == 0:
+            parts.append(cur); cur = ""; i += 2; continue
+        cur += s[i]; i += 1
+    parts.append(cur)
+    return parts
+
+
 def split_rows(table):
     rows = []
     for chunk in re.split(r"\n\|-[^\n]*", table):
@@ -126,8 +167,7 @@ def split_rows(table):
             if not s or s.startswith(("{|", "|}", "!", "|+")):
                 continue
             if s.startswith("|"):
-                parts = re.split(r"\|\|", s[1:])
-                cells.extend(parts)
+                cells.extend(split_cells(s[1:]))
             elif cells:
                 cells[-1] += "\n" + line
         if cells:

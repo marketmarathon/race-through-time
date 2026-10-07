@@ -53,11 +53,11 @@ for line in open(log, encoding="utf-8"):
     else:
         res = f"BLOCKED or gone ({rec['err'] or st})"
     q = short(rec["excerpt"], rec["needle"]) if rec["needle"] else ""
-    rows[rec["id"]] = {"check_id": rec["id"], "transfer_id": it["transfer_id"], "url": it["url"], "amount": it["amount"],
+    rows[rec["id"]] = {"check_id": rec["id"], "transfer_id": it["transfer_id"], "near": it.get("near", ""), "url": it["url"], "amount": it["amount"],
                        "currency": it["currency"], "http_status": st, "result": res, "status": "VERIFIED" if res == "VERIFIED" else "UNVERIFIED",
                        "needle": rec["needle"], "quote": q, "quote_words": len(q.split()), "grade_by_publisher": grade_of(it["url"]),
                        "page_sha256": rec["sha256"], "retrieved": day}
-cols = ["check_id", "transfer_id", "url", "amount", "currency", "http_status", "result", "status", "needle", "quote", "quote_words",
+cols = ["check_id", "transfer_id", "near", "url", "amount", "currency", "http_status", "result", "status", "needle", "quote", "quote_words",
         "grade_by_publisher", "page_sha256", "retrieved"]
 with open(OUT, "w", newline="", encoding="utf-8") as f:
     w = csv.DictWriter(f, fieldnames=cols, lineterminator="\n"); w.writeheader()

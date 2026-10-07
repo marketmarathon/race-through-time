@@ -214,6 +214,20 @@ def pname(s):
     return s
 
 
+def same_player(a, b):
+    """Full name equal, or same surname and same first initial, or a one-word name equal to the other's first or last word."""
+    pa, pb = pname(a), pname(b)
+    if not pa or not pb:
+        return False
+    if pa == pb:
+        return True
+    ta, tb = pa.split(), pb.split()
+    if len(ta) == 1 or len(tb) == 1:
+        one, other = (ta, tb) if len(ta) == 1 else (tb, ta)
+        return one[0] in (other[0], other[-1])
+    return ta[-1] == tb[-1] and ta[0][0] == tb[0][0]
+
+
 transfers, evidence, sources = [], [], {}
 
 
@@ -239,7 +253,7 @@ for r in wiki_rows:
     key = (pname(r["player"]), r["from_club_id"] or L.norm(r["from_name"]), r["to_club_id"] or L.norm(r["to_name"]), date, k == "loan")
     nk = key[:3] + (k == "loan",)
     hit = None
-    if key not in seen and r["page"].endswith(" season"):
+    if key not in seen:
         for t0 in near[nk]:
             if abs((dt.date.fromisoformat(t0["date"]) - dt.date.fromisoformat(date)).days) <= 60:
                 hit = t0
@@ -279,6 +293,7 @@ def lead_date(r):
 
 
 group_new = {}
+unmatched = []
 for r in lead_rows:
     if r["lead_section"] not in ("A", "B", "C"):
         continue
@@ -287,9 +302,9 @@ for r in lead_rows:
     if not (fid or toid):
         continue
     last = pname(r["player"]).split(" ")[-1] if r["player"] else ""
-    best = None
+    best, far = None, None
     for t in idx.get(last, []):
-        if pname(t["player"]) != pname(r["player"]) and not pname(t["player"]).endswith(last):
+        if not same_player(t["player"], r["player"]):
             continue
         if (fid and t["from_club_id"] != fid and toid and t["to_club_id"] != toid):
             continue
@@ -297,49 +312,78 @@ for r in lead_rows:
             continue
         if t["type"] == "loan" and "loan" not in r["fee_as_reported"].lower():
             continue
-        if d and t["date"] and abs((dt.date.fromisoformat(d) - dt.date.fromisoformat(t["date"])).days) > 120:
-            continue
-        best = t
-        break
+        gap = abs((dt.date.fromisoformat(d) - dt.date.fromisoformat(t["date"])).days) if d and t["date"] else 0
+        if gap <= 120:
+            best = t
+            break
+        if gap <= 400 and fid and toid and t["from_club_id"] == fid and t["to_club_id"] == toid and far is None:
+            far = t  # same player, same two clubs, within 400 days: the same deal reported at another stage
+    note = ""
+    if best is None and far is not None:
+        best, note = far, "research lead dated more than 120 days from the transfer date (same player and clubs)"
     if best is None:
+        early = bool(d) and (season_of(d) or "9999") < "2002-03"
+        if r["lead_section"] not in ("B", "C") or not early:
+            unmatched.append({"lead_id": r["lead_id"], "section": r["lead_section"], "date": r["date"], "player": r["player"],
+                              "from_club": r["from_club"], "to_club": r["to_club"], "fee_as_reported": r["fee_as_reported"],
+                              "grade": r["grade"], "url": r["url"],
+                              "reason": "no matching transfer in the finding list" + ("" if early else " (2002 or later: the Wikipedia lists are the finding list; review by hand)")})
+            continue
         gk = r["transfer_ref"] if r["lead_section"] == "B" and r["transfer_ref"] else (pname(r["player"]), fid or L.norm(r["from_club"]), toid or L.norm(r["to_club"]), (d or "")[:4])
         if gk in group_new:
             best = group_new[gk]
             if d and (not best["date"] or (best["date_basis"].startswith("month") and basis.startswith("research"))):
                 best["date"], best["date_basis"] = d, basis
         else:
-            best = {"transfer_id": "T" + sha("lead|" + json.dumps(gk, ensure_ascii=False))[:10], "player": r["player"],
+            best = {"transfer_id": "T" + sha("lead|" + json.dumps(gk, ensure_ascii=False))[:10], "player": r["player"], "player_article": "",
                     "from_club": fid or r["from_club"], "to_club": toid or r["to_club"], "from_club_id": fid or "",
                     "to_club_id": toid or "", "type": "permanent", "date": d, "date_basis": basis,
                     "found_via": "research lead (private ChatGPT files; not in the Wikipedia lists)", "parent_transfer_id": "", "_ev": []}
             group_new[gk] = best
             transfers.append(best)
             idx[last].append(best)
+    if any(e["url"] == r["url"] and e["fee_text"] == r["fee_as_reported"] for e in best["_ev"]):
+        continue  # the same source and figure already attached (research sections repeat each other)
     grade = r["grade"] if r["grade"] in GRADE_RANK else "D"
     sid = source_id(r["url"], r["publisher"], grade, "press_or_club")
     best["_ev"].append({"origin": "research_lead", "source_id": sid, "grade": grade, "fee_text": r["fee_as_reported"],
                         "parsed": L.parse_fee(r["fee_as_reported"]), "quote": r["quote"], "url": r["url"],
                         "archive_url": r["archive_url"] if r["archive_url"].startswith("http") else "", "date": d,
                         "lead_id": r["lead_id"], "lead_section": r["lead_section"], "record_type": r["record_type"],
-                        "issue_type": r["issue_type"], "grade_note": r["grade_note"]})
+                        "issue_type": r["issue_type"], "grade_note": r["grade_note"], "note": note})
 
+review = {r["check_id"]: r for r in rd("review_decisions.csv")}  # Claude's reading of each Tier 1 quote (phase 2)
 checks = defaultdict(list)
 for c in rd("runner_checks.csv"):
-    checks[c["transfer_id"]].append(c)
-# a figure the runner found at the cited source becomes its own evidence row (VERIFIED, graded by publisher)
+    rv = review.get(c["check_id"])
+    if rv and rv["decision"] == "reject":
+        c = dict(c, status="UNVERIFIED", result="REJECTED on review: " + rv["note"])
+    elif rv:
+        c = dict(c, reviewed=rv["decision"] + (": " + rv["note"] if rv["note"] else ""))
+    checks[c["url"]].append(c)
+# a figure the runner found at the cited source becomes its own evidence row (VERIFIED, graded by publisher). A check is
+# attached only to a transfer that cites that page itself and whose player's surname is the one the runner looked for.
 for t in transfers:
-    for c in checks.get(t["transfer_id"], []):
-        if c["status"] != "VERIFIED":
-            continue
-        e0 = next((e for e in t["_ev"] if (e["url"] == c["url"] or c["url"] in e.get("cite_urls", "").split())), None)
-        if e0 and e0["origin"] == "research_lead" and e0["url"] == c["url"]:
-            e0["checked"] = c
-            continue
-        sid = source_id(c["url"], urllib.parse.urlparse(c["url"]).netloc, c["grade_by_publisher"], "press_or_club")
-        t["_ev"].append({"origin": "runner_check", "source_id": sid, "grade": c["grade_by_publisher"],
-                         "fee_text": c["needle"], "parsed": {"amount": float(c["amount"]), "currency": c["currency"], "qualifiers": [], "kind": "fee"},
-                         "quote": c["quote"], "url": c["url"], "archive_url": "", "date": t["date"], "checked": c,
-                         "note": "figure found at the source cited by the Wikipedia row (scripted check, GitHub runner)"})
+    own = {}
+    for e in t["_ev"]:
+        for u in ([e["url"]] if e["origin"] == "research_lead" else e.get("cite_urls", "").split()):
+            own.setdefault(u, e)
+    sn = pname(t["player"]).split(" ")[-1] if t["player"] else ""
+    amounts = {money(e["parsed"]["amount"]) for e in t["_ev"] if e["parsed"]["amount"] is not None}
+    for u, e0 in list(own.items()):
+        for c in checks.get(u, []):
+            if c["status"] != "VERIFIED" or not sn or L.norm(c.get("near", "")) != sn or c["amount"] not in amounts:
+                continue
+            if e0["origin"] == "research_lead" and e0["url"] == c["url"] and money(e0["parsed"]["amount"]) == c["amount"]:
+                e0["checked"] = c
+                continue
+            if any(x.get("checked", {}).get("check_id") == c["check_id"] for x in t["_ev"]):
+                continue
+            sid = source_id(c["url"], urllib.parse.urlparse(c["url"]).netloc, c["grade_by_publisher"], "press_or_club")
+            t["_ev"].append({"origin": "runner_check", "source_id": sid, "grade": c["grade_by_publisher"],
+                             "fee_text": c["needle"], "parsed": {"amount": float(c["amount"]), "currency": c["currency"], "qualifiers": [], "kind": "fee"},
+                             "quote": c["quote"], "url": c["url"], "archive_url": "", "date": t["date"], "checked": c,
+                             "note": "figure found at the source cited by the Wikipedia row (scripted check, GitHub runner)"})
 
 # canonical fee per transfer
 for t in transfers:
@@ -364,11 +408,12 @@ for t in transfers:
             e["quote"], e["retrieved"] = ck["quote"], ck["retrieved"]
         usable = e["gbp"] is not None and "up_to" not in p["qualifiers"]
         if usable:
-            cands.append((0 if e["status"] == "VERIFIED" else 1, GRADE_RANK.get(e["grade"], 3), e["date"] or "9999", i, e))
+            cands.append((0 if e["status"] == "VERIFIED" else 1, GRADE_RANK.get(e["grade"], 3), 0 if e["currency"] == "GBP" else 1,
+                          e["date"] or "9999", i, e))
     kinds = [kind_of(e["fee_text"]) for e in t["_ev"] if e["origin"] == "wikipedia_list"]
     if cands:
-        cands.sort(key=lambda x: x[:4])
-        e = cands[0][4]
+        cands.sort(key=lambda x: x[:5])
+        e = cands[0][5]
         t["canonical"] = e
         t["fee_gbp"] = e["gbp"]
         t["original_amount"], t["currency"] = e["amount"], e["currency"]
@@ -621,7 +666,8 @@ for t in transfers:
                         "archive_url": e["archive_url"], "cited_urls": e.get("cite_urls", ""),
                         "cited_publishers": e.get("cite_publishers", ""), "retrieved": e.get("retrieved", ""),
                         "status": e["status"], "canonical": "yes" if t["canonical"] is e else "",
-                        "note": e.get("note", "") or e.get("grade_note", "")})
+                        "note": e.get("note", "") or e.get("grade_note", ""),
+                        "review": (e.get("checked") or {}).get("reviewed", ""), "check_id": (e.get("checked") or {}).get("check_id", "")})
 used_sources = {e["source_id"] for e in ev_rows}
 src_rows = sorted((s for s in sources.values() if s["source_id"] in used_sources), key=lambda s: s["source_id"])
 for t in transfers:
@@ -642,7 +688,7 @@ with open(os.path.join(DATA, "transfers.csv"), "w", newline="", encoding="utf-8"
     for t in transfers:
         w.writerow([t.get(c, "") for c in TCOLS])
 wr("fee_evidence.csv", ev_rows, ["evidence_id", "transfer_id", "source_id", "origin", "fee_text", "amount", "currency", "qualifiers", "gbp", "grade", "quote",
-                                 "quote_words", "url", "archive_url", "cited_urls", "cited_publishers", "retrieved", "status", "canonical", "note"])
+                                 "quote_words", "url", "archive_url", "cited_urls", "cited_publishers", "retrieved", "status", "canonical", "note", "check_id", "review"])
 wr("sources.csv", src_rows, ["source_id", "url", "publisher", "grade", "kind"])
 wr("club_ledger.csv", ledger, ["club_id", "date", "season", "transfer_id", "side", "player", "counterparty", "type", "net_gbp", "net_real_gbp2026",
                                "counted", "reason", "fee_status", "grade", "status", "notes"])
@@ -671,13 +717,30 @@ wr("series_monthly.csv", series, ["month_end", "club_id", "cum_net_gbp", "rank",
                                   "avg_real_net_per_season_gbp2026"])
 wr("conflicts.csv", conflicts, ["transfer_id", "player", "from_club", "to_club", "date", "canonical_gbp", "canonical_grade", "min_gbp", "max_gbp", "spread_gbp",
                                 "versions", "tier", "same_grade_gap_over_10pct_and_1m", "for_luke", "versions_detail"])
-tier1 = sorted((t for t in transfers if t["tier"] == "1"), key=lambda t: (-(t["fee_gbp"] or 0), t["transfer_id"]))
+PRIORITY = ["chelsea", "manchester_united", "manchester_city", "arsenal", "liverpool", "newcastle_united", "blackburn_rovers", "everton"]  # DEC-263
+
+
+def prio(t):
+    ids = [PRIORITY.index(c) for c in (t["to_club_id"], t["from_club_id"]) if c in PRIORITY]
+    return min(ids) if ids else len(PRIORITY)
+
+
+tier1 = sorted((t for t in transfers if t["tier"] == "1"), key=lambda t: (prio(t), -(t["fee_gbp"] or 0), t["transfer_id"]))
 for i, t in enumerate(tier1):
     t["batch"] = f"T1-{i // 50 + 1:02d}"
+    ce = t["canonical"] or {}
+    t["canonical_url"] = ce.get("url", "")
+    t["canonical_quote"] = ce.get("quote", "")
+    t["review"] = (ce.get("checked") or {}).get("reviewed", "")
 wr("tier1_list.csv", tier1, ["batch", "transfer_id", "player", "from_club", "to_club", "date", "season_attributed", "fee_gbp_out", "fee_status", "grade",
-                             "status", "tier_reason", "fee_versions_gbp", "canonical_source_id"])
+                             "status", "tier_reason", "fee_versions_gbp", "canonical_source_id", "canonical_url", "canonical_quote", "review"])
+_p = os.path.join(DATA, "tier1_list.csv")
+_s = open(_p, encoding="utf-8").read().replace("fee_gbp_out", "fee_gbp", 1)
+open(_p, "w", encoding="utf-8").write(_s)
 wr("coverage.csv", coverage, ["club_id", "era", "pl_seasons_in_era", "transfers_found", "fee_bearing", "fee_grade_A_or_B", "fee_verified", "fee_unverified",
                               "undisclosed_no_figure", "fee_not_found"])
+wr("unmatched_leads.csv", sorted(unmatched, key=lambda u: (u["date"], u["lead_id"])), ["lead_id", "section", "date", "player", "from_club", "to_club",
+                                                                                     "fee_as_reported", "grade", "url", "reason"])
 wr("window_totals.csv", window_totals, ["window", "gross_spend_gbp", "net_spend_gbp", "fee_transfers"])
 mom = rd("moments_leads.csv")
 if mom:
