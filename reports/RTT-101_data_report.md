@@ -7,10 +7,10 @@ Rebuild: `python3 scripts/build_rtt101_dataset.py && python3 scripts/rtt101_repo
 ## 1. What was built
 
 - **12,925 transfer events** that involve a club in the Premier League that season (1992-93 to the freeze, 1 Sep 2026), of which **3,211 carry a fee** above £0. The rest are loans without a fee (5,330), free transfers (2,044), undisclosed fees with no figure, counted £0 (2,208), and fees not found (132).
-- Fee status: **VERIFIED 1,115**, UNVERIFIED 2,096. Grade of the fee used: A 20, B 1,061, C (Wikipedia pointer only) 2,089, D 41.
+- Fee status: **VERIFIED 1,110**, UNVERIFIED 2,101. Grade of the fee used: A 20, B 1,058, C (Wikipedia pointer only) 2,092, D 41.
 - Tiers (DEC-248): Tier 1 **1,850**, Tier 2 703, Tier 3 665 (5% sample: 33).
   Tier 1 reasons (a transfer can have several): removal changes the leader or the top 12 947; fee >= £20m 556; club or British record (research lead) 520; disputed fee (research section C) 9.
-- 15,579 evidence rows in `fee_evidence.csv`; 1,927 sources in `sources.csv`; 316 transfers with more than one fee version (`conflicts.csv`).
+- 15,571 evidence rows in `fee_evidence.csv`; 1,923 sources in `sources.csv`; 316 transfers with more than one fee version (`conflicts.csv`).
 - **Scripted source check** (GitHub runner, 3,514 cited pages): VERIFIED 2,877; page fetched but figure not found near the player's name 559; blocked or gone 78.
   Tier 2 result: 225 of 703 Tier 2 fees VERIFIED by the scripted check.
   Tier 3 sample: 2 of 33 VERIFIED; most Tier 3 rows have no fetchable citation (error rate cannot be published yet: phase 2).
@@ -23,10 +23,10 @@ Rebuild: `python3 scripts/build_rtt101_dataset.py && python3 scripts/rtt101_repo
 | every season has an attribution window | **PASS** | 1992-05-03 to 2026-09-01 |
 | 51 clubs, each with at least one PL season | **PASS** | 51 clubs |
 | no transfer counted outside its club's PL seasons | **PASS** | 3710 ledger rows frozen (club not in the PL) |
-| PL-to-PL deals net to zero (spend - income of PL clubs = net spend with non-PL clubs) | **PASS** | spend £27,627,175,813 − income £14,472,850,732 = £13,154,325,081; net with non-PL clubs £13,154,325,081 |
+| PL-to-PL deals net to zero (spend - income of PL clubs = net spend with non-PL clubs) | **PASS** | spend £27,629,175,813 − income £14,472,850,732 = £13,156,325,081; net with non-PL clubs £13,156,325,081 |
 | no fee without a source row | **PASS** | 3211 fee-bearing transfers |
 | no Transfermarkt figure or URL anywhere | **PASS** | none found |
-| quotes under 25 words | **PASS** | 15579 evidence rows |
+| quotes under 25 words | **PASS** | 15571 evidence rows |
 | every conversion has a rate row | **PASS** | 14 conversions |
 | month-end series consistent with the ledger | **PASS** | 413 month ends × 51 clubs |
 | Bank of England Jan 1992 monthly averages equal Cowork's V-04 reading | **PASS** | 7 of 7 series compared |
@@ -92,10 +92,10 @@ Counts are club-sides (a PL-to-PL deal counts once for each club).
 |---|---|---|---|---|---|---|
 | 1992-2002 (no window lists) | 2,115 | 1,411 | 298 | 391 | 31 | 93 |
 | 2002-2007 | 1,148 | 444 | 61 | 62 | 145 | 13 |
-| 2007-2012 | 2,972 | 405 | 120 | 112 | 687 | 7 |
+| 2007-2012 | 2,972 | 405 | 120 | 110 | 687 | 7 |
 | 2012-2017 | 3,052 | 514 | 135 | 113 | 576 | 10 |
 | 2017-2022 | 2,120 | 412 | 213 | 198 | 493 | 18 |
-| 2022-2026 | 3,091 | 791 | 573 | 561 | 537 | 4 |
+| 2022-2026 | 3,091 | 791 | 569 | 557 | 537 | 4 |
 
 What the eras mean:
 - **1992–2002:** no Wikipedia window lists exist (V-10). The finding list is the clubs' season pages (200 of 210 fetched; the ten Leeds United pages are titled "Leeds United A.F.C." and were not fetched in this round) plus the research leads. About a quarter of those pages have no transfer table at all, so this era is the least complete. Transfermarkt was not used (route A says to consult it only to spot omissions; nothing from it is stored).
@@ -182,7 +182,7 @@ Our sums are **fees only, Premier League clubs only, from this preview** (gross 
 | January 2025 | £336.9m | £207.0m | — | — | around £370m / NOT FOUND (BBC Sport) |
 | summer 2025 | £2.89bn | £1.27bn | — | — | surpassed £3bn; £3.087bn / NOT FOUND (BBC Sport) |
 | January 2026 | £344.1m | £111.3m | — | — | £397m / NOT FOUND (BBC Sport) |
-| summer 2026 | £3.16bn | £1.17bn | — | — | around £3.46 billion / NOT FOUND (Reuters, syndicated ) |
+| summer 2026 | £3.16bn | £1.18bn | — | — | around £3.46 billion / NOT FOUND (Reuters, syndicated ) |
 
 Why the totals differ:
 1. **Undisclosed fees count £0 here** (DEC-237 (g)); publishers estimate them. This is the biggest reason our gross is lower, especially in January windows and before 2010.
