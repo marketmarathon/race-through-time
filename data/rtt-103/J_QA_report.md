@@ -165,3 +165,10 @@ Two kinds of check are reported separately: **file-format checks** (columns, voc
 | 2026E: every row labelled 2026 GUIDANCE or 2026 ESTIMATE | PASS | 5 rows |
 | No blank or zero-filled value in E | PASS |  |
 
+## Notes
+
+- Every US figure used was found printed in the cash-flow statement of the cited 10-Q/10-K (`B_capex_observations_audit.csv`, column `text_check`); XBRL supplied only the period. Values printed only elsewhere (MD&A, lease notes) are cross-checks.
+- 'Tautological' fiscal years: when Q2-Q4 are all year-to-date differences, the four quarters sum to the year by construction; the real tests there are the independent cross-checks (Amazon's own trailing-twelve-month columns, quarterly prints in releases and MD&A, the vendor cross-check).
+- Cross-check differences do not change any figure; each is listed in `I_conflicts_and_warnings.csv`.
+- China-listed figures were read by the extraction scripts in the companies' own filings (HKEXnews PDFs, Alibaba IR releases, SEC 6-K/F-1) and are marked VERIFIED; the research catalogue was used only to find the documents.
+

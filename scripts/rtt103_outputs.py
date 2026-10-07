@@ -637,6 +637,23 @@ def write_rest(v):
         a_out.append(r)
     write_csv(os.path.join(out, "A_source_catalogue.csv"), a_out, A_COLS)
 
+    # ------------------------------------------------------------------ K (hand-written recommendation, copied verbatim)
+    with open(os.path.join(src, "K_recommendation.md"), encoding="utf-8") as f:
+        ktext = f.read()
+    with open(os.path.join(out, "K_recommended_dataset.md"), "w", encoding="utf-8") as f:
+        f.write(ktext)
+    v["j_extra"] = [
+        "## Notes", "",
+        "- Every US figure used was found printed in the cash-flow statement of the cited 10-Q/10-K (`B_capex_observations_audit.csv`, "
+        "column `text_check`); XBRL supplied only the period. Values printed only elsewhere (MD&A, lease notes) are cross-checks.",
+        "- 'Tautological' fiscal years: when Q2-Q4 are all year-to-date differences, the four quarters sum to the year by construction; "
+        "the real tests there are the independent cross-checks (Amazon's own trailing-twelve-month columns, quarterly prints in releases "
+        "and MD&A, the vendor cross-check).",
+        "- Cross-check differences do not change any figure; each is listed in `I_conflicts_and_warnings.csv`.",
+        "- China-listed figures were read by the extraction scripts in the companies' own filings (HKEXnews PDFs, Alibaba IR "
+        "releases, SEC 6-K/F-1) and are marked VERIFIED; the research catalogue was used only to find the documents.",
+        "",
+    ]
     # ------------------------------------------------------------------ eligibility of additional companies (brief section 2)
     write_eligibility(out, src, v, B)
     # ------------------------------------------------------------------ file-format checks
@@ -1023,7 +1040,7 @@ def write_manifest(out):
         for n in sorted(names):
             p = os.path.join(root, n)
             rel = os.path.relpath(p, out)
-            if rel == "manifest.json":
+            if rel in ("manifest.json", "README.md"):
                 continue
             files[rel] = {"sha256": sha(p), "bytes": os.path.getsize(p)}
     with open(os.path.join(out, "manifest.json"), "w", encoding="utf-8") as f:

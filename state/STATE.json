@@ -1,7 +1,7 @@
 {
   "schema": "rtt-state/0.1",
-  "updated": "2026-10-04",
-  "updated_by": "Claude (Claude Code cloud session): IQ-13 + IQ-13b + IQ-13c - RTT-001 design pilot 1 (rtt-001-pilot1-82167f8-run2) and logo round (rtt-001-pilot1-f3d9e2f-run3, every browser on the board has a logo or own tile); DEC-169..DEC-183; pull request #16 merged 4 Oct 2026 22:37 UTC (main 3bb2857); brought up to date with main ed7b6e6 on 4 Oct 2026 (pull request #14, the RTT-003 record: full film APPROVED by Luke, DEC-150, and published PUBLIC 3 Oct 2026, DEC-151, video JZzvA_ZDii0)",
+  "updated": "2026-10-07",
+  "updated_by": "Claude (Claude Code cloud session): IQ-16 - RTT-103 The AI Spending Race data build, stage 1 (DEC-278..DEC-290); branch claude/gracious-meitner-aedj37 (public and private), pull request open, not merged",
   "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); starts data audit PASSED (DEC-058/DEC-059, merged PR #8); IQ-04 MERGED (PR #2); IQ-05 rounds 1-5 MERGED (PR #3-#7); round-5 pilot RENDERED and APPROVED by Luke (DEC-062, visual direction = milestone 3); pull request #9 MERGED (c378ea7); RTT-002 FINAL FILM APPROVED (DEC-078), pull request #10 MERGED (main ef01814), UPLOADED by Luke in YouTube Studio and SCHEDULED PUBLIC 30 Sep 2026 (DEC-079 early release, DEC-080): video 2fY7Bzq8Uu0 on channel UC8R47xbyBB5Z93MdMkoUOWg; IQ-09 RTT-003 DATA BUILD DONE 1 Oct 2026; Luke's answers applied 2 Oct 2026 (DEC-093..DEC-102); pull request #12 MERGED 2 Oct 2026 (main 4288f6d); IQ-10 RTT-003 DESIGN PILOT ROUND 5 (FINAL PILOT ROUND) RENDERED 3 Oct 2026 (private pre-release; not the full film), awaiting Luke's review; IQ-11 (3 Oct 2026): CLAUDE.md and reference/house_style.md added on the IQ-10 branch (DEC-145); next episode RTT-001 Browser Wars (DEC-144); IQ-10 round 6 (3 Oct 2026): RTT-003 design APPROVED (DEC-146), FULL FILM with music rendered to a private pre-release, then APPROVED by Luke (DEC-150); IQ-12 (3 Oct 2026): RTT-001 Browser Wars DATA BUILD done (data/rtt-001, 11/11 checks PASS), pull request open, awaiting Luke's answers to 12 questions; IQ-12b (4 Oct 2026): Luke answered all 12 RTT-001 questions (DEC-164..DEC-166), smoothing direction for the pilot (DEC-167), order check (DEC-168); RTT-003 record (3-4 Oct 2026, pull request #14): full film APPROVED (DEC-150), pull request #13 MERGED (main 618c6a7) and private pull request #1 MERGED (private main 4d47eb2), UPLOADED by Luke in YouTube Studio and PUBLISHED PUBLIC 3 Oct 2026 (DEC-151): video JZzvA_ZDii0; IQ-13/IQ-13b/IQ-13c (4 Oct 2026): RTT-001 DESIGN PILOT 1 rendered to a private pre-release (smoothing options A/B/C, flagged stretches, notes, marker, colours, browser logos per owner direction DEC-180, features, pacing, titles), then the logo round with every browser's logo (DEC-182/DEC-183, private pre-release rtt-001-pilot1-f3d9e2f-run3), awaiting Luke's answers; pull request #15 merged by Luke (b5a09d3); pull request #16 merged 4 Oct 2026 22:37 UTC (main 3bb2857)",
   "canonical_queue": "state/ folder on main in marketmarathon/race-through-time (this file)",
   "repo_baseline": {
@@ -650,6 +650,26 @@
       "check_level": "DESK",
       "verdict": "LICENCE_GATE",
       "blocker": "CTBUH database rights"
+    },
+    {
+      "id": "RTT-103",
+      "title": "The AI Spending Race — How Big Tech Started Spending Hundreds of Billions",
+      "state": "DATA_BUILD_STAGE_1_DONE_AWAITING_LUKE",
+      "check_level": "LIVE",
+      "verdict": "CONDITIONAL",
+      "blocker": "Luke answers the 10 questions in reports/RTT-103_data_report.md (canonical series DEC-283, Tencent, Amazon net, Alibaba gap, CoreWeave, ByteDance, 2026E frame, FX DEC-281, public source list DEC-285, unchecked 2026 guidance). Nothing rendered; no visual work before his approval (DEC-069).",
+      "decisions": "DEC-246 (owner: episode and method; on pull request #19); DEC-278..DEC-280 (owner: number/order, research split, no EODHD); DEC-281..DEC-290 (Claude working choices, proposal, findings)",
+      "dataset": {
+        "branch": "claude/gracious-meitner-aedj37 (public; pull request open, not merged) + same branch in the private repo",
+        "path": "data/rtt-103/",
+        "contract": "reference/metric_contract_RTT-103.md v1.0",
+        "build": "scripts/build_rtt103_dataset.py (rtt103-build/1.0, standard library, deterministic) + scripts/rtt103_*.py; tests/rtt103/run_tests_rtt103.py 13/13 PASS",
+        "range": "calendar quarters 2010 Q1 - 2026 Q2 (LATEST_COMMON_COMPLETE_QUARTER, DEC-288)",
+        "companies": "Amazon, Microsoft, Alphabet, Meta, Oracle, Alibaba, Tencent, Baidu; ByteDance estimates only; CoreWeave candidate only",
+        "qa": "financial QA PASS 8/8 companies (71/71 checks); file-format 20/20; cross-checks informational (2 intra-year re-presentations listed in I)",
+        "private": "research/rtt-103/ in the private repo: brief and inputs (ChatGPT catalogues, Sharadar extract), SEC snapshot sec_2026-10-07/, cash-flow sections, runner-fetched documents fetched_2026-10-07_run37698185665/, build/ (Sharadar cross-check, full appended catalogue)"
+      },
+      "prompt": "prompts/CODE_SESSION_IQ-16.md (brief, SHA-256 01871f60...) and prompts/CODE_SESSION_IQ-16_launch.md"
     }
   ],
   "episodes_not_started": "RTT-013..RTT-100 remain BRIEF (workbook Slate 100)",

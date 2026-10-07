@@ -53,8 +53,12 @@
    "bytes": 20536
   },
   "J_QA_report.md": {
-   "sha256": "b923faaba673a2c777fb85df82434544755017812d47bb8623b3688f6df01fb0",
-   "bytes": 11570
+   "sha256": "42451cdc4900084f29c0fd6634d8b608c20593c6382b3b807605a7f9364c4023",
+   "bytes": 12444
+  },
+  "K_recommended_dataset.md": {
+   "sha256": "535aee47dee89dea892b397f950cd4257532cb290330f9e84b35717cda93b8e7",
+   "bytes": 3645
   },
   "L_aggregate_capex.csv": {
    "sha256": "182f2fe0d4d720a2f9c5f53cd9588c3d0efc146c951c9f355e5bb14a0304c80e",
@@ -79,6 +83,10 @@
   "narrative_checkpoints.csv": {
    "sha256": "6d73a9bdc215ec7d4488411903d78f0380784fbeb0cd1babdb6f524c6746cded",
    "bytes": 1337
+  },
+  "source/K_recommendation.md": {
+   "sha256": "535aee47dee89dea892b397f950cd4257532cb290330f9e84b35717cda93b8e7",
+   "bytes": 3645
   },
   "source/catalogue_url_ids.csv": {
    "sha256": "da9e2cda937ef3713df962ed1a36b5a133ce0c5f4698964648c6ce8da2e1aebe",
