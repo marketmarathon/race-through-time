@@ -323,7 +323,7 @@ for r in lead_rows:
         best, note = far, "research lead dated more than 120 days from the transfer date (same player and clubs)"
     if best is None:
         early = bool(d) and (season_of(d) or "9999") < "2002-03"
-        if r["lead_section"] not in ("B", "C") or not early:
+        if not early:
             unmatched.append({"lead_id": r["lead_id"], "section": r["lead_section"], "date": r["date"], "player": r["player"],
                               "from_club": r["from_club"], "to_club": r["to_club"], "fee_as_reported": r["fee_as_reported"],
                               "grade": r["grade"], "url": r["url"],
