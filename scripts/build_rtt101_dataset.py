@@ -513,7 +513,13 @@ for t in transfers:
         elif p["amount"] is not None:
             e["gbp"], e["fx"] = convert(p["amount"], p["currency"], t["date"] or e["date"] or "")
         ck = e.get("checked")
-        e["status"] = "VERIFIED" if ck else "UNVERIFIED"
+        # DEC-274 (Luke): a figure is confirmed at source by a club or league (A), the quality press (B) or a Soccerbase row (C, labelled as a
+        # database source); a figure seen only on a weaker source (any other C, or D) is not enough
+        strong = e["grade"] in ("A", "B") or (e["grade"] == "C" and "soccerbase.com" in (e.get("url") or ""))
+        e["status"] = "VERIFIED" if ck and strong else "UNVERIFIED"
+        if ck and not strong:
+            e["note"] = ((e.get("note") or "") + "; " if e.get("note") else "") + \
+                f"seen at its source, but a grade {e['grade']} source other than Soccerbase does not confirm a fee (DEC-274)"
         if ck:
             e["quote"], e["retrieved"] = ck["quote"], ck["retrieved"]
         e["total_incl_addons"] = bool(TOTAL_RX.search(e["fee_text"] or "")) and "guaranteed_part" not in p["qualifiers"]
@@ -732,6 +738,22 @@ for t in transfers:
     rival_verified = [e for e in vs if e["status"] == "VERIFIED" and can is not None and e["grade"] == can["grade"]
                       and abs(e["gbp"] - can["gbp"]) > max(1e6, 0.1 * can["gbp"]) and not is_explained(e["gbp"])]
     settled = (can is not None and can["status"] == "VERIFIED" and not rival_verified)
+    # DEC-277 (Luke): a disagreement is settled by the contract's rule — best grade first, then the earliest report (a contemporary GBP
+    # figure from an A/B source preferred, §5). Say which step decided it.
+    if can is None or can["status"] != "VERIFIED":
+        rule = "no figure confirmed at source yet: the fee stays UNVERIFIED (not on screen) until one is"
+    else:
+        others = [e for e in vs if e is not can and e["status"] == "VERIFIED" and round(e["gbp"]) != round(can["gbp"])]
+        if not others:
+            rule = "the only figure confirmed at source"
+        elif all(GRADE_RANK.get(e["grade"], 3) > GRADE_RANK.get(can["grade"], 3) for e in others):
+            rule = f"best grade ({can['grade']})"
+        elif can["currency"] == "GBP" and any(e["currency"] != "GBP" and e["grade"] == can["grade"] for e in others) and all(
+                e["currency"] != "GBP" for e in others if e["grade"] == can["grade"] and (e.get("published") or "9999") < (can.get("published") or "9999")):
+            rule = "same grade; the contemporary sterling figure is preferred (contract §5)"
+        else:
+            rule = f"same grade; earliest report ({can.get('published') or 'date not stated: list order'})"
+    rule_text = f"£{t['fee_gbp'] / 1e6:.1f}m ({can['grade'] if can else ''}, {urllib.parse.urlparse(can['url']).netloc if can and can.get('url') else 'no source'}): {rule}"
     conflicts.append({"transfer_id": t["transfer_id"], "player": t["player"], "from_club": t["from_club"], "to_club": t["to_club"],
                       "date": t["date"], "canonical_gbp": money(t["fee_gbp"]), "canonical_grade": t["grade"],
                       "min_gbp": money(lo), "max_gbp": money(hi), "spread_gbp": money(hi - lo), "versions": len(vs),
@@ -740,6 +762,7 @@ for t in transfers:
                                             ("no: two same-grade sources confirm different figures" if rival_verified else
                                              "no: the fee used is not yet confirmed at source")),
                       "for_luke": "yes" if (flag and t["tier"] == "1" and not settled) else "",
+                      "rule_result": rule_text if (flag and t["tier"] == "1" and not settled) else "",
                       "versions_detail": " | ".join(f"{e['grade']} {e['status'][0]} {e['fee_text'][:60]} ({e['url'][:80]})" for e in vs)})
 conflicts.sort(key=lambda c: (-float(c["spread_gbp"]), c["transfer_id"]))
 
@@ -828,7 +851,10 @@ wr("seasons.csv", seasons, ["season", "first_matchday", "last_matchday", "dates_
                             "january_window_open", "january_window_close", "january_window_source"])
 TCOLS = ["transfer_id", "player", "player_article", "from_club", "to_club", "type", "date", "date_basis", "season_attributed", "fee_status",
          "original_amount_out", "currency", "fx_rate", "fx_date", "fx_series", "fee_gbp_out", "fee_versions_gbp", "canonical_source_id",
-         "grade", "tier", "tier_reason", "tier3_sample", "status", "found_via", "parent_transfer_id"]
+         "grade", "tier", "tier_reason", "tier3_sample", "status", "verified_by", "found_via", "parent_transfer_id"]
+VBY = {"A": "club or league statement (A)", "B": "press report (B)", "C": "database source: Soccerbase (C)"}
+for t in transfers:
+    t["verified_by"] = VBY.get(t["grade"], "") if t["status"] == "VERIFIED" else ""
 with open(os.path.join(DATA, "transfers.csv"), "w", newline="", encoding="utf-8") as f:
     w = csv.writer(f, lineterminator="\n")
     w.writerow([c.replace("_out", "") for c in TCOLS])
@@ -863,7 +889,7 @@ for r in series:
 wr("series_monthly.csv", series, ["month_end", "club_id", "cum_net_gbp", "rank", "in_pl", "pl_seasons_played", "cum_real_net_gbp2026",
                                   "avg_real_net_per_season_gbp2026"])
 wr("conflicts.csv", conflicts, ["transfer_id", "player", "from_club", "to_club", "date", "canonical_gbp", "canonical_grade", "min_gbp", "max_gbp", "spread_gbp",
-                                "versions", "tier", "same_grade_gap_over_10pct_and_1m", "settled_at_source", "for_luke", "versions_detail"])
+                                "versions", "tier", "same_grade_gap_over_10pct_and_1m", "settled_at_source", "for_luke", "rule_result", "versions_detail"])
 PRIORITY = ["chelsea", "manchester_united", "manchester_city", "arsenal", "liverpool", "newcastle_united", "blackburn_rovers", "everton"]  # DEC-263
 
 

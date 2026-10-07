@@ -8,7 +8,7 @@ Phase 1 preview: every fee is UNVERIFIED unless `status` says VERIFIED. Not for 
 | every season has an attribution window | **PASS** | 1992-05-03 to 2026-09-01 |
 | 51 clubs, each with at least one PL season | **PASS** | 51 clubs |
 | no transfer counted outside its club's PL seasons | **PASS** | 3734 ledger rows frozen (club not in the PL) |
-| PL-to-PL deals net to zero (spend - income of PL clubs = net spend with non-PL clubs) | **PASS** | spend £27,747,598,988 − income £14,329,495,139 = £13,418,103,849; net with non-PL clubs £13,418,103,849 |
+| PL-to-PL deals net to zero (spend - income of PL clubs = net spend with non-PL clubs) | **PASS** | spend £27,748,458,988 − income £14,330,925,139 = £13,417,533,849; net with non-PL clubs £13,417,533,849 |
 | no fee without a source row | **PASS** | 3309 fee-bearing transfers |
 | no Transfermarkt figure or URL anywhere | **PASS** | none found |
 | quotes under 25 words | **PASS** | 16575 evidence rows |

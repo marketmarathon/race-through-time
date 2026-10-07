@@ -23,7 +23,7 @@
   [
    "PL-to-PL deals net to zero (spend - income of PL clubs = net spend with non-PL clubs)",
    "PASS",
-   "spend \u00a327,747,598,988 \u2212 income \u00a314,329,495,139 = \u00a313,418,103,849; net with non-PL clubs \u00a313,418,103,849"
+   "spend \u00a327,748,458,988 \u2212 income \u00a314,330,925,139 = \u00a313,417,533,849; net with non-PL clubs \u00a313,417,533,849"
   ],
   [
    "no fee without a source row",
@@ -73,17 +73,17 @@
  ],
  "cpi_base_month": "2026-08",
  "n_conflicts": 361,
- "n_conflicts_for_luke": 30,
+ "n_conflicts_for_luke": 32,
  "n_fee": 3309,
  "n_status": {
-  "UNVERIFIED": 1786,
-  "VERIFIED": 1523
+  "UNVERIFIED": 1835,
+  "VERIFIED": 1474
  },
  "n_tier": {
   "": 9688,
-  "1": 2039,
-  "2": 663,
-  "3": 623
+  "1": 2042,
+  "2": 655,
+  "3": 628
  },
  "n_transfers": 13013
 }

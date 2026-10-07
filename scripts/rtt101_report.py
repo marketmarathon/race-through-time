@@ -207,14 +207,16 @@ p("- **Root causes found by reading the batches, and fixed in the build** (each 
   "career table read as this deal's fee (a Soccerbase figure now counts only from the row whose joining date is the transfer's); the same deal "
   "reported at two stages with a non-PL club not merged (Yobo, Baros); a reported figure attached to the same player's other moves.")
 open_c = [c for c in C if c["for_luke"]]
-p(f"\n### Same-grade fee conflicts still open (DEC-261): {len(open_c)}\n")
+p(f"\n### Same-grade fee conflicts not settled at source (DEC-261): {len(open_c)}, each settled by the contract's rule (DEC-277)\n")
 p("Settled at source = the fee used is confirmed at source and no differing same-grade figure is (totals including add-ons are not rivals). "
-  "Still open = two same-grade sources confirm different figures, or the fee used is not yet confirmed.\n")
-p("| Player | From → To | Date | Fee used | Other confirmed figure(s) | Why open |\n|---|---|---|---|---|---|")
+  "The deals below were not; Luke decided (DEC-277) that the existing rule settles them: best grade first, then the earliest report (a contemporary "
+  "sterling figure from a grade A/B source preferred, contract §5). The last column says which step decided. Where no figure is confirmed at source yet, "
+  "the fee stays UNVERIFIED (not on screen) and the deal is in the next research round.\n")
+p("| Player | From → To | Date | Fee used | Other confirmed figure(s) | Why not settled at source | Result under the rule (DEC-277) |\n|---|---|---|---|---|---|---|")
 for c in open_c:
     others = sorted({v.split(" (")[0] for v in c["versions_detail"].split(" | ") if " V " in v and not v.startswith("C ")})
     p(f"| {c['player']} | {clubs.get(c['from_club'], c['from_club'])} → {clubs.get(c['to_club'], c['to_club'])} | {c['date']} | "
-      f"{m(c['canonical_gbp'])} ({c['canonical_grade']}) | {'; '.join(o[:60] for o in others[:3])} | {c['settled_at_source'][4:]} |")
+      f"{m(c['canonical_gbp'])} ({c['canonical_grade']}) | {'; '.join(o[:60] for o in others[:3])} | {c['settled_at_source'][4:]} | {c['rule_result']} |")
 with open(OUT, "a", encoding="utf-8") as f:
     f.write("\n".join(P2) + "\n")
 
@@ -281,6 +283,7 @@ for mo in sorted(by_m):
         prev = ldr
 NAME = {r["club_id"]: r["display_name"] for r in rd("clubs.csv")}
 SRC_URL = {r["source_id"]: r["url"] for r in rd("sources.csv")}
+TI = {t["transfer_id"]: t for t in T}
 zero_rej = [r for r in RV if r["scope"] == "amount" and any(w in r["note"] for w in ("add-on", "maximum", "up to", "inclusive", "exact", "includes", "excess", "plus"))
             and r["transfer_id"] in {t["transfer_id"] for t in T if not (t["fee_gbp"] and float(t["fee_gbp"]) > 0)}]
 Q2 = [
@@ -299,7 +302,26 @@ Q2 = [
 ]
 P3 = ["\n### Leader sequence after phase 2\n",
       "Leader at each change (month end): " + "; ".join(f"{mo[:7]} {NAME.get(c, c)}" for mo, c in lead_seq) + ".\n",
-      "\n### Questions for Luke after phase 2 (each with Claude's recommendation)\n"]
+      "\n### Phase 2 questions — answered by Luke (YES to all four, 7 Oct 2026: DEC-274 to DEC-277)\n"]
 P3 += [f"{i}. {q}" for i, q in enumerate(Q2, 1)]
+P3 += ["\n**Luke's answers:** (1) a Soccerbase row counts as VERIFIED, grade C, labelled \"database source\" (`transfers.csv` column `verified_by`); "
+       "other grade C and grade D sources do not confirm a fee (DEC-274). (2) One more ChatGPT deep-research round on `tier1_needs_press_source.csv`, "
+       "starting with 1992–2002; every figure is a lead to check at source here (DEC-275). (3) The deals known only as a maximum or an approximation stay "
+       "at £0 and are listed in `data/rtt-101/tier1_max_or_approx_only.csv` for a later round (DEC-276). (4) The same-grade conflicts are settled by the "
+       "rule, with the result for each in the table above (DEC-277)."]
+# deals known only as a maximum or approximation (DEC-276)
+EV = defaultdict(list)
+for e in rd("fee_evidence.csv"):
+    EV[e["transfer_id"]].append(e)
+zt = sorted({r["transfer_id"] for r in zero_rej}, key=lambda k: (TI[k]["date"], k))
+with open(os.path.join(D, "tier1_max_or_approx_only.csv"), "w", newline="", encoding="utf-8") as f:
+    w = csv.writer(f, lineterminator="\n")
+    w.writerow(["transfer_id", "player", "from_club", "to_club", "date", "season", "figures_found", "wording_and_why_not_counted"])
+    for k in zt:
+        t = TI[k]
+        figs = sorted({f"{e['fee_text']} ({e['grade']}, {e['url']})" for e in EV[k] if e["amount"]})
+        why = sorted({r["note"] for r in zero_rej if r["transfer_id"] == k})
+        w.writerow([k, t["player"], t["from_club"], t["to_club"], t["date"], t["season_attributed"], " | ".join(figs), " | ".join(why)])
+print("tier1_max_or_approx_only.csv:", len(zt), "deals")
 with open(OUT, "a", encoding="utf-8") as f:
     f.write("\n".join(P3) + "\n")
