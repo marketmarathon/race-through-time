@@ -346,8 +346,12 @@ for r in lead_rows:
         continue  # the same source and figure already attached (research sections repeat each other)
     grade = r["grade"] if r["grade"] in GRADE_RANK else "D"
     sid = source_id(r["url"], r["publisher"], grade, "press_or_club")
+    parsed = L.parse_fee(r["fee_as_reported"])
+    gp = L.parse_fee(r.get("guaranteed_part", "")) if r.get("guaranteed_part", "").strip().upper() not in ("", "NOT FOUND") else None
+    if gp and gp["amount"] and gp["currency"] and "up_to" not in gp["qualifiers"]:
+        parsed = dict(parsed, amount=gp["amount"], currency=gp["currency"], qualifiers=[q for q in parsed["qualifiers"] if q != "up_to"] + ["guaranteed_part"])
     best["_ev"].append({"origin": "research_lead", "source_id": sid, "grade": grade, "fee_text": r["fee_as_reported"],
-                        "parsed": L.parse_fee(r["fee_as_reported"]), "quote": r["quote"], "url": r["url"],
+                        "parsed": parsed, "quote": r["quote"], "url": r["url"],
                         "archive_url": r["archive_url"] if r["archive_url"].startswith("http") else "", "date": d,
                         "lead_id": r["lead_id"], "lead_section": r["lead_section"], "record_type": r["record_type"],
                         "issue_type": r["issue_type"], "grade_note": r["grade_note"], "note": note})

@@ -54,7 +54,24 @@ QUAL = {"up_to": r"\b(up to|rising to|could rise|potential(ly)?|as much as|maxim
 NUM = r"(\d{1,3}(?:,\d{3})+(?:\.\d+)?|\d+(?:\.\d+)?)"
 
 
-def parse_fee(text):
+GUAR = [r"(?:initial|guaranteed|fixed|up-front|upfront|basic)\s+(?:fee\s+)?(?:of\s+)?(?:club[- ]record\s+fee\s+of\s+)?((?:£|€|\$)\s?[\d.,]+\s*(?:m|mn|million|bn|billion)?)",
+        r"((?:£|€|\$)\s?[\d.,]+\s*(?:m|mn|million)?)\s+(?:up front|upfront|guaranteed|fixed)",
+        r"((?:£|€|\$)\s?[\d.,]+\s*(?:m|mn|million)?)\s*(?:\(|,)?\s*(?:plus|\+|with)\s+(?:a\s+further\s+|another\s+|up\s+to\s+(?:another\s+|a\s+further\s+)?)?(?:£|€|\$)\s?[\d.,]+\s*(?:m|mn|million)?\s+(?:in\s+)?(?:potential\s+)?(?:add-ons|add ons|bonuses|performance|variable|instalments?)"]
+
+
+def guaranteed_part(text):
+    """The guaranteed amount when the text separates it from add-ons (DEC-237 (e)); None if not stated."""
+    low = (text or "").lower().replace("pounds ", "£")
+    for rx in GUAR:
+        m = re.search(rx, low)
+        if m:
+            p = parse_fee(m.group(1), _plain=True)
+            if p["amount"] is not None:
+                return p
+    return None
+
+
+def parse_fee(text, _plain=False):
     """Return dict(amount, currency, qualifiers, kind) for the FIRST money amount in text, or kind for free/loan/undisclosed.
     amount is a float in currency units; None when not exactly readable."""
     t = (text or "").strip()
@@ -92,6 +109,12 @@ def parse_fee(text):
         return out  # "£7" with no unit is ambiguous: NOT FOUND, never guessed
     out["amount"] = round(n, 2)
     out["currency"] = cur
+    if not _plain:
+        g = guaranteed_part(t)
+        if g and (g["amount"] != out["amount"] or g["currency"] != out["currency"]):
+            out["amount"], out["currency"] = g["amount"], g["currency"]
+            out["qualifiers"] = [q for q in out["qualifiers"] if q != "up_to"] + ["guaranteed_part"]
+            return out
     # "up to £X" applies only when the qualifier comes before the first amount ("£12m rising to £15m" = £12m guaranteed)
     if "up_to" in out["qualifiers"] and not re.search(QUAL["up_to"], low[:m.start()]):
         out["qualifiers"] = [q for q in out["qualifiers"] if q != "up_to"] + ["max_later"]
