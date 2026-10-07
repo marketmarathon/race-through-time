@@ -2,90 +2,8 @@
 "delay": 0.8,
 "probe": [
 {
-"id": "0fc2f0053027f7a2",
-"url": "https://www.independent.co.uk/sport/football-clough-to-make-exit-as-golden-touch-fades-after-29-seasons-the-longestserving-manager-in-the-english-game-retires-amid-disagreements-in-the-boardroom-1457800.html",
-"near": "Walker",
-"also": [
-[
-"Nottingham Forest",
-"Forest",
-"Nott'm Forest"
-],
-[
-"Sampdoria",
-"Sampdoria"
-]
-],
-"group": "gap"
-},
-{
-"id": "303c8638a2b219df",
-"url": "https://www.independent.co.uk/sport/football-chelsea-claim-fleck-prize-1540131.html",
-"near": "Fleck",
-"also": [
-[
-"Norwich City",
-"Norwich"
-],
-[
-"Chelsea"
-]
-],
-"group": "gap"
-},
-{
-"id": "34727840ca273137",
-"url": "https://www.sporting-heroes.net/football/tottenham-hotspur-fc/darren-anderton-5869/premiership-appearances_a12614/",
-"near": "Anderton",
-"also": [
-[
-"Portsmouth"
-],
-[
-"Tottenham Hotspur",
-"Tottenham",
-"Spurs"
-]
-],
-"group": "gap"
-},
-{
-"id": "7330a07e10e85287",
-"url": "https://www.independent.co.uk/news/uk/gary-lineker-bbc-england-terry-venables-alan-hansen-b2645228.html",
-"near": "Lineker",
-"also": [
-[
-"Tottenham Hotspur",
-"Tottenham",
-"Spurs"
-],
-[
-"Nagoya Grampus 8",
-"Nagoya"
-]
-],
-"group": "gap"
-},
-{
-"id": "6924c57d3e195133",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=2775",
-"near": "Gascoigne",
-"also": [
-[
-"Tottenham Hotspur",
-"Tottenham",
-"Spurs"
-],
-[
-"Lazio",
-"Lazio"
-]
-],
-"group": "gap"
-},
-{
-"id": "f1eabb043e2daad6",
-"url": "https://www.liverpoolfc.com/info/david-james",
+"id": "371f9520234f4d19",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=3869",
 "near": "James",
 "also": [
 [
@@ -98,226 +16,8 @@
 "group": "gap"
 },
 {
-"id": "ed323983cb750c7e",
-"url": "https://www.independent.co.uk/sport/football-viewers-spoilt-for-choice-as-central-move-in-1533977.html",
-"near": "Waddle",
-"also": [
-[
-"Marseille",
-"Marseille"
-],
-[
-"Sheffield Wednesday",
-"Sheff Wed"
-]
-],
-"group": "gap"
-},
-{
-"id": "a4709b085d7f7812",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=6840",
-"near": "Rocastle",
-"also": [
-[
-"Arsenal"
-],
-[
-"Leeds United",
-"Leeds"
-]
-],
-"group": "gap"
-},
-{
-"id": "9e565b68191af353",
-"url": "https://www.independent.co.uk/sport/football-shearer-s-touch-of-class-1542244.html",
-"near": "Shearer",
-"also": [
-[
-"Southampton"
-],
-[
-"Blackburn Rovers",
-"Blackburn"
-]
-],
-"group": "gap"
-},
-{
-"id": "35c4024aaa1d1392",
-"url": "https://www.independent.co.uk/sport/blackburn-masters-of-the-modern-game-1619674.html",
-"near": "Shearer",
-"also": [
-[
-"Southampton"
-],
-[
-"Blackburn Rovers",
-"Blackburn"
-]
-],
-"group": "gap"
-},
-{
-"id": "b2d8bc64780abbe0",
-"url": "https://www.independent.co.uk/sport/football-liverpool-buy-pounds-2-3m-stewart-1536103.html",
-"near": "Shearer",
-"also": [
-[
-"Southampton"
-],
-[
-"Blackburn Rovers",
-"Blackburn"
-]
-],
-"group": "gap"
-},
-{
-"id": "0fe700cc178c5444",
-"url": "https://www.independent.co.uk/sport/football-liverpool-buy-pounds-2-3m-stewart-1536103.html",
-"near": "Stewart",
-"also": [
-[
-"Tottenham Hotspur",
-"Tottenham",
-"Spurs"
-],
-[
-"Liverpool"
-]
-],
-"group": "gap"
-},
-{
-"id": "052c0b4f922b9776",
-"url": "https://www.the-independent.com/sport/graham-is-made-to-wait-1569712.html",
-"near": "Jensen",
-"also": [
-[
-"Brondby",
-"Brondby"
-],
-[
-"Arsenal"
-]
-],
-"group": "gap"
-},
-{
-"id": "4d5a07753b1f681f",
-"url": "https://www.independent.co.uk/sport/football-arsenal-fill-their-midfield-gap-with-pounds-1-1m-jensen-1533251.html",
-"near": "Jensen",
-"also": [
-[
-"Brondby",
-"Brondby"
-],
-[
-"Arsenal"
-]
-],
-"group": "gap"
-},
-{
-"id": "02f39651fda292ae",
-"url": "https://www.the-independent.com/sport/football-horne-moves-to-everton-1532187.html",
-"near": "Ripley",
-"also": [
-[
-"Middlesbrough",
-"Boro"
-],
-[
-"Blackburn Rovers",
-"Blackburn"
-]
-],
-"group": "gap"
-},
-{
-"id": "7b4e7f9bc4d04d01",
-"url": "https://www.sporting-heroes.net/football/middlesbrough-fc/stuart-ripley-10677/league-appearances_a17705/",
-"near": "Ripley",
-"also": [
-[
-"Middlesbrough",
-"Boro"
-],
-[
-"Blackburn Rovers",
-"Blackburn"
-]
-],
-"group": "gap"
-},
-{
-"id": "4c2be2f8edb7aa8b",
-"url": "https://www.independent.co.uk/sport/football-united-sign-pounds-1m-dublin-1538789.html",
-"near": "Dublin",
-"also": [
-[
-"Cambridge United",
-"Cambridge"
-],
-[
-"Manchester United",
-"Man Utd",
-"Man United"
-]
-],
-"group": "gap"
-},
-{
-"id": "919daafc3e9806d7",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=2176",
-"near": "Dublin",
-"also": [
-[
-"Cambridge United",
-"Cambridge"
-],
-[
-"Manchester United",
-"Man Utd",
-"Man United"
-]
-],
-"group": "gap"
-},
-{
-"id": "efdd1ec3f8c48c91",
-"url": "https://www.the-independent.com/sport/football-phelan-raises-city-s-stock-1542457.html",
-"near": "Phelan",
-"also": [
-[
-"Wimbledon"
-],
-[
-"Manchester City",
-"Man City"
-]
-],
-"group": "gap"
-},
-{
-"id": "8673549282512822",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=6318",
-"near": "Phelan",
-"also": [
-[
-"Wimbledon"
-],
-[
-"Manchester City",
-"Man City"
-]
-],
-"group": "gap"
-},
-{
-"id": "b031b5bc5f8d790a",
-"url": "https://www.independent.co.uk/sport/football-team-news-1543265.html",
+"id": "e84846ea7e490a05",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=7239&season_id=125",
 "near": "Sheringham",
 "also": [
 [
@@ -334,244 +34,8 @@
 "group": "gap"
 },
 {
-"id": "d03d7e0a5bbdbd30",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=235",
-"near": "Armstrong",
-"also": [
-[
-"Millwall",
-"Millwall"
-],
-[
-"Crystal Palace",
-"Palace"
-]
-],
-"group": "gap"
-},
-{
-"id": "16029d842c16665f",
-"url": "https://www.independent.co.uk/sport/football-armstrong-for-palace-1548733.html",
-"near": "Armstrong",
-"also": [
-[
-"Millwall",
-"Millwall"
-],
-[
-"Crystal Palace",
-"Palace"
-]
-],
-"group": "gap"
-},
-{
-"id": "92d96328f81d9f78",
-"url": "https://www.independent.co.uk/sport/football-on-the-move-1551025.html",
-"near": "Saunders",
-"also": [
-[
-"Liverpool"
-],
-[
-"Aston Villa",
-"Villa"
-]
-],
-"group": "gap"
-},
-{
-"id": "d0786e51b36666a2",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=7044",
-"near": "Saunders",
-"also": [
-[
-"Liverpool"
-],
-[
-"Aston Villa",
-"Villa"
-]
-],
-"group": "gap"
-},
-{
-"id": "1ea3234c62157fb7",
-"url": "https://www.independent.co.uk/sport/football-bright-bows-out-of-palace-1550984.html",
-"near": "Bright",
-"also": [
-[
-"Crystal Palace",
-"Palace"
-],
-[
-"Sheffield Wednesday",
-"Sheff Wed"
-]
-],
-"group": "gap"
-},
-{
-"id": "d01e0f654475f6f7",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=977",
-"near": "Bright",
-"also": [
-[
-"Crystal Palace",
-"Palace"
-],
-[
-"Sheffield Wednesday",
-"Sheff Wed"
-]
-],
-"group": "gap"
-},
-{
-"id": "fd6942b146d6fa5b",
-"url": "https://www.independent.co.uk/sport/football-on-the-move-1551025.html",
-"near": "Bright",
-"also": [
-[
-"Crystal Palace",
-"Palace"
-],
-[
-"Sheffield Wednesday",
-"Sheff Wed"
-]
-],
-"group": "gap"
-},
-{
-"id": "460da7dc63efc825",
-"url": "https://www.manutd.com/en/players-and-staff/detail/eric-cantona?pubDate=20250422",
-"near": "Cantona",
-"also": [
-[
-"Leeds United",
-"Leeds"
-],
-[
-"Manchester United",
-"Man Utd",
-"Man United"
-]
-],
-"group": "gap"
-},
-{
-"id": "1a292208447301c0",
-"url": "https://www.independent.co.uk/sport/football-keown-returns-to-arsenal-for-2m-pounds-1470514.html",
-"near": "Keown",
-"also": [
-[
-"Everton"
-],
-[
-"Arsenal"
-]
-],
-"group": "gap"
-},
-{
-"id": "e0380c86d8ed7990",
-"url": "https://www.independent.co.uk/sport/football-on-the-move-1500353.html",
-"near": "Gallacher",
-"also": [
-[
-"Coventry City",
-"Coventry"
-],
-[
-"Blackburn Rovers",
-"Blackburn"
-]
-],
-"group": "gap"
-},
-{
-"id": "84f9fcac3d4f2ebd",
-"url": "https://www.independent.co.uk/sport/football-quinn-shows-the-value-of-bargain-buys-judgement-delayed-on-best-signing-of-the-season-as-scotland-hail-a-talent-for-the-future-1500016.html",
-"near": "Gallacher",
-"also": [
-[
-"Coventry City",
-"Coventry"
-],
-[
-"Blackburn Rovers",
-"Blackburn"
-]
-],
-"group": "gap"
-},
-{
-"id": "32ba8d0a88146070",
-"url": "https://www.independent.co.uk/sport/football-on-the-move-1500353.html",
-"near": "Wegerle",
-"also": [
-[
-"Blackburn Rovers",
-"Blackburn"
-],
-[
-"Coventry City",
-"Coventry"
-]
-],
-"group": "gap"
-},
-{
-"id": "541b6b7982a73515",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=1524",
-"near": "Clough",
-"also": [
-[
-"Nottingham Forest",
-"Forest",
-"Nott'm Forest"
-],
-[
-"Liverpool"
-]
-],
-"group": "gap"
-},
-{
-"id": "ef2b17e6d09078db",
-"url": "https://www.the-independent.com/sport/football-batty-effect-takes-over-at-blackburn-guy-hodgson-on-the-best-and-worst-buys-of-the-season-1431365.html",
-"near": "Clough",
-"also": [
-[
-"Nottingham Forest",
-"Forest",
-"Nott'm Forest"
-],
-[
-"Liverpool"
-]
-],
-"group": "gap"
-},
-{
-"id": "2f486132d120ed62",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=5109",
-"near": "McGoldrick",
-"also": [
-[
-"Crystal Palace",
-"Palace"
-],
-[
-"Arsenal"
-]
-],
-"group": "gap"
-},
-{
-"id": "b30fcf201e60569c",
-"url": "https://www.independent.co.uk/sport/football-leeds-end-long-wait-by-signing-deane-sheffield-united-remain-divided-over-pounds-2-9m-sale-of-england-striker-to-elland-road-1484538.html",
+"id": "bd16029d4ccfcf5d",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=1983",
 "near": "Deane",
 "also": [
 [
@@ -586,284 +50,12 @@
 "group": "gap"
 },
 {
-"id": "b2cc55433e840366",
-"url": "https://www.independent.co.uk/sport/football-relentless-flo-quiets-the-dons-1463354.html",
-"near": "Deane",
-"also": [
-[
-"Sheffield United",
-"Sheff Utd"
-],
-[
-"Leeds United",
-"Leeds"
-]
-],
-"group": "gap"
-},
-{
-"id": "14e10c0d27cb1f60",
-"url": "https://www.independent.co.uk/sport/football-the-season-ahead-joe-lovejoy-football-correspondent-assesses-the-prospects-of-the-22-premier-league-clubs-1460876.html",
-"near": "Deane",
-"also": [
-[
-"Sheffield United",
-"Sheff Utd"
-],
-[
-"Leeds United",
-"Leeds"
-]
-],
-"group": "gap"
-},
-{
-"id": "f42de406a6193ce7",
-"url": "https://www.bbc.co.uk/sport/football/20469693",
-"near": "Beardsley",
-"also": [
-[
-"Everton"
-],
-[
-"Newcastle United",
-"Newcastle"
-]
-],
-"group": "gap"
-},
-{
-"id": "eb0bff791df8d33d",
-"url": "https://www.independent.co.uk/sport/football-collymore-finally-at-forest-1493567.html",
-"near": "Beardsley",
-"also": [
-[
-"Everton"
-],
-[
-"Newcastle United",
-"Newcastle"
-]
-],
-"group": "gap"
-},
-{
-"id": "0675cb7e966ac938",
+"id": "75dfba1c3f44dcb0",
 "url": "https://www.the-independent.com/sport/football-batty-effect-takes-over-at-blackburn-guy-hodgson-on-the-best-and-worst-buys-of-the-season-1431365.html",
-"near": "Beardsley",
+"near": "Flowers",
 "also": [
 [
-"Everton"
-],
-[
-"Newcastle United",
-"Newcastle"
-]
-],
-"group": "gap"
-},
-{
-"id": "debf4ba7425cfc39",
-"url": "https://www.independent.co.uk/sport/how-the-champions-have-changed-1260225.html",
-"near": "Keane",
-"also": [
-[
-"Nottingham Forest",
-"Forest",
-"Nott'm Forest"
-],
-[
-"Manchester United",
-"Man Utd",
-"Man United"
-]
-],
-"group": "gap"
-},
-{
-"id": "9fb5a466d3c91217",
-"url": "https://www.independent.co.uk/sport/football-united-complete-pounds-3-75m-signing-of-keane-1485838.html",
-"near": "Keane",
-"also": [
-[
-"Nottingham Forest",
-"Forest",
-"Nott'm Forest"
-],
-[
-"Manchester United",
-"Man Utd",
-"Man United"
-]
-],
-"group": "gap"
-},
-{
-"id": "fd7b8c565331c54d",
-"url": "https://www.the-independent.com/sport/football-calderwood-transfer-set-at-1-25m-pounds-tottenham-are-forced-to-pay-an-extra-pounds-900-000-for-former-1460531.html",
-"near": "Calderwood",
-"also": [
-[
-"Swindon Town",
-"Swindon"
-],
-[
-"Tottenham Hotspur",
-"Tottenham",
-"Spurs"
-]
-],
-"group": "gap"
-},
-{
-"id": "38544f2681a6a3f1",
-"url": "https://www.the-independent.com/sport/football-batty-effect-takes-over-at-blackburn-guy-hodgson-on-the-best-and-worst-buys-of-the-season-1431365.html",
-"near": "Ruddock",
-"also": [
-[
-"Tottenham Hotspur",
-"Tottenham",
-"Spurs"
-],
-[
-"Liverpool"
-]
-],
-"group": "gap"
-},
-{
-"id": "ca4f78b93a290cd6",
-"url": "https://www.the-independent.com/sport/football-batty-effect-takes-over-at-blackburn-guy-hodgson-on-the-best-and-worst-buys-of-the-season-1431365.html",
-"near": "Townsend",
-"also": [
-[
-"Chelsea"
-],
-[
-"Aston Villa",
-"Villa"
-]
-],
-"group": "gap"
-},
-{
-"id": "075d729e697f9ccb",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=2159",
-"near": "Dozzell",
-"also": [
-[
-"Ipswich Town",
-"Ipswich"
-],
-[
-"Tottenham Hotspur",
-"Tottenham",
-"Spurs"
-]
-],
-"group": "gap"
-},
-{
-"id": "5c86ef5d60f731e4",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=8481",
-"near": "Whittingham",
-"also": [
-[
-"Portsmouth"
-],
-[
-"Aston Villa",
-"Villa"
-]
-],
-"group": "gap"
-},
-{
-"id": "283aae55aec39abb",
-"url": "https://www.independent.co.uk/sport/football-hoddle-swoops-for-peacock-townsend-set-to-leave-chelsea-1486476.html",
-"near": "Peacock",
-"also": [
-[
-"Newcastle United",
-"Newcastle"
-],
-[
-"Chelsea"
-]
-],
-"group": "gap"
-},
-{
-"id": "4f434ed6ae4b0829",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=6198",
-"near": "Peacock",
-"also": [
-[
-"Newcastle United",
-"Newcastle"
-],
-[
-"Chelsea"
-]
-],
-"group": "gap"
-},
-{
-"id": "503fccec08d43c5a",
-"url": "https://www.the-independent.com/sport/football-sinton-opts-for-northern-delights-1462318.html",
-"near": "Sinton",
-"also": [
-[
-"Queens Park Rangers",
-"QPR"
-],
-[
-"Sheffield Wednesday",
-"Sheff Wed"
-]
-],
-"group": "gap"
-},
-{
-"id": "701eed7c69486df5",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=7322",
-"near": "Sinton",
-"also": [
-[
-"Queens Park Rangers",
-"QPR"
-],
-[
-"Sheffield Wednesday",
-"Sheff Wed"
-]
-],
-"group": "gap"
-},
-{
-"id": "bf81adee49c221df",
-"url": "https://www.the-independent.com/sport/football-batty-effect-takes-over-at-blackburn-guy-hodgson-on-the-best-and-worst-buys-of-the-season-1431365.html",
-"near": "Sinton",
-"also": [
-[
-"Queens Park Rangers",
-"QPR"
-],
-[
-"Sheffield Wednesday",
-"Sheff Wed"
-]
-],
-"group": "gap"
-},
-{
-"id": "b850f97e1af32ac4",
-"url": "https://www.the-independent.com/sport/football-batty-effect-takes-over-at-blackburn-guy-hodgson-on-the-best-and-worst-buys-of-the-season-1431365.html",
-"near": "Warhurst",
-"also": [
-[
-"Sheffield Wednesday",
-"Sheff Wed"
+"Southampton"
 ],
 [
 "Blackburn Rovers",
@@ -873,292 +65,26 @@
 "group": "gap"
 },
 {
-"id": "bae6952cd2ce0bd8",
-"url": "https://www.sporting-heroes.net/football/liverpool-fc/julian-dicks-7895/biography-of-his-liverpool-career_a11318/",
-"near": "Dicks",
-"also": [
-[
-"West Ham United",
-"West Ham"
-],
-[
-"Liverpool"
-]
-],
-"group": "gap"
-},
-{
-"id": "eedbaa06307d14cd",
-"url": "https://www.bbc.co.uk/sport/football/28403835",
-"near": "Dicks",
-"also": [
-[
-"West Ham United",
-"West Ham"
-],
-[
-"Liverpool"
-]
-],
-"group": "gap"
-},
-{
-"id": "903140c34ff78887",
-"url": "https://www.the-independent.com/sport/that-was-the-decade-that-was-1357198.html",
-"near": "Dicks",
-"also": [
-[
-"West Ham United",
-"West Ham"
-],
-[
-"Liverpool"
-]
-],
-"group": "gap"
-},
-{
-"id": "9548abafd708fc79",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=2045",
-"near": "Dicks",
-"also": [
-[
-"West Ham United",
-"West Ham"
-],
-[
-"Liverpool"
-]
-],
-"group": "gap"
-},
-{
-"id": "8f5863065cf332dc",
-"url": "https://www.the-independent.com/sport/football-united-sitting-pretty-boxing-day-preview-1469383.html",
-"near": "Dicks",
-"also": [
-[
-"West Ham United",
-"West Ham"
-],
-[
-"Liverpool"
-]
-],
-"group": "gap"
-},
-{
-"id": "c6ba6646e7e148ad",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=499",
-"near": "Batty",
-"also": [
-[
-"Leeds United",
-"Leeds"
-],
-[
-"Blackburn Rovers",
-"Blackburn"
-]
-],
-"group": "gap"
-},
-{
-"id": "3eb212c276c210a9",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=7589",
-"near": "Stein",
-"also": [
-[
-"Stoke City",
-"Stoke"
-],
-[
-"Chelsea"
-]
-],
-"group": "gap"
-},
-{
-"id": "baafdbcd8633f978",
-"url": "https://www.independent.co.uk/sport/scottish-football-durie-moves-to-rangers-for-pounds-1-2m-1506015.html",
-"near": "Durie",
-"also": [
-[
-"Tottenham Hotspur",
-"Tottenham",
-"Spurs"
-],
-[
-"Rangers",
-"Rangers"
-]
-],
-"group": "gap"
-},
-{
-"id": "10217a1bbb541c30",
-"url": "https://www.the-independent.com/sport/football-batty-effect-takes-over-at-blackburn-guy-hodgson-on-the-best-and-worst-buys-of-the-season-1431365.html",
-"near": "Rocastle",
-"also": [
-[
-"Leeds United",
-"Leeds"
-],
-[
-"Manchester City",
-"Man City"
-]
-],
-"group": "gap"
-},
-{
-"id": "bc1c0cccd8fc268b",
-"url": "https://www.the-independent.com/sport/football-leeds-and-city-exchange-rocastle-and-white-thompson-settles-local-dispute-in-south-wales-1469251.html",
-"near": "White",
-"also": [
-[
-"Manchester City",
-"Man City"
-],
-[
-"Leeds United",
-"Leeds"
-]
-],
-"group": "gap"
-},
-{
-"id": "2b4a7b0b44375565",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=2637",
-"near": "Fox",
-"also": [
-[
-"Norwich City",
-"Norwich"
-],
-[
-"Newcastle United",
-"Newcastle"
-]
-],
-"group": "gap"
-},
-{
-"id": "69a63f9592f61570",
-"url": "https://www.the-independent.com/sport/football-batty-effect-takes-over-at-blackburn-guy-hodgson-on-the-best-and-worst-buys-of-the-season-1431365.html",
-"near": "Fox",
-"also": [
-[
-"Norwich City",
-"Norwich"
-],
-[
-"Newcastle United",
-"Newcastle"
-]
-],
-"group": "gap"
-},
-{
-"id": "81a3a1d98fd9c2e9",
+"id": "91062a1e1e80a74a",
 "url": "https://www.independent.co.uk/sport/football-on-the-move-1431872.html",
-"near": "Peacock",
+"near": "Limpar",
 "also": [
-[
-"Queens Park Rangers",
-"QPR"
-],
-[
-"Newcastle United",
-"Newcastle"
-]
-],
-"group": "gap"
-},
-{
-"id": "fc6c2a2f974fe22f",
-"url": "https://www.independent.co.uk/sport/football-chelsea-spend-pounds-2-3m-on-furlong-1438538.html",
-"near": "Furlong",
-"also": [
-[
-"Watford"
-],
-[
-"Chelsea"
-]
-],
-"group": "gap"
-},
-{
-"id": "03163d8454dfa0e9",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=2694",
-"near": "Furlong",
-"also": [
-[
-"Watford"
-],
-[
-"Chelsea"
-]
-],
-"group": "gap"
-},
-{
-"id": "f1bcb3359dfa152d",
-"url": "https://www.independent.co.uk/sport/football-schwarz-signs-for-arsenal-1419955.html",
-"near": "Schwarz",
-"also": [
-[
-"Benfica",
-"Benfica"
-],
 [
 "Arsenal"
+],
+[
+"Everton"
 ]
 ],
 "group": "gap"
 },
 {
-"id": "9e3e1c5262946bba",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=7150",
-"near": "Sedgley",
+"id": "f08fca18c32d44aa",
+"url": "https://www.independent.co.uk/sport/football-on-the-move-1431872.html",
+"near": "Beagrie",
 "also": [
 [
-"Tottenham Hotspur",
-"Tottenham",
-"Spurs"
-],
-[
-"Ipswich Town",
-"Ipswich"
-]
-],
-"group": "gap"
-},
-{
-"id": "b5e5264a29a2c598",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=534",
-"near": "Beauchamp",
-"also": [
-[
-"Oxford United",
-"Oxford"
-],
-[
-"West Ham United",
-"West Ham"
-]
-],
-"group": "gap"
-},
-{
-"id": "9340b14002a62845",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=7718",
-"near": "Summerbee",
-"also": [
-[
-"Swindon Town",
-"Swindon"
+"Everton"
 ],
 [
 "Manchester City",
@@ -1168,533 +94,39 @@
 "group": "gap"
 },
 {
-"id": "496a5145ef2f7eb5",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=5534",
-"near": "Moncur",
+"id": "eb1afd37314e0c35",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=518",
+"near": "Beagrie",
 "also": [
-[
-"Swindon Town",
-"Swindon"
-],
-[
-"West Ham United",
-"West Ham"
-]
-],
-"group": "gap"
-},
-{
-"id": "b39fbf77066b8419",
-"url": "https://www.independent.co.uk/sport/football-fact-file-1425102.html",
-"near": "Moncur",
-"also": [
-[
-"Swindon Town",
-"Swindon"
-],
-[
-"West Ham United",
-"West Ham"
-]
-],
-"group": "gap"
-},
-{
-"id": "378521181a778f1d",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=5837",
-"near": "Newsome",
-"also": [
-[
-"Leeds United",
-"Leeds"
-],
-[
-"Norwich City",
-"Norwich"
-]
-],
-"group": "gap"
-},
-{
-"id": "1b722791b8143cfd",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=6082",
-"near": "Palmer",
-"also": [
-[
-"Sheffield Wednesday",
-"Sheff Wed"
-],
-[
-"Leeds United",
-"Leeds"
-]
-],
-"group": "gap"
-},
-{
-"id": "4b936075c130358a",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=4931",
-"near": "May",
-"also": [
-[
-"Blackburn Rovers",
-"Blackburn"
-],
-[
-"Manchester United",
-"Man Utd",
-"Man United"
-]
-],
-"group": "gap"
-},
-{
-"id": "e8a46079c8aebab4",
-"url": "https://www.independent.co.uk/sport/football-fa-premiership-a-new-season-dawns-on-saturday-and-english-football-will-find-a-world-of-difference-1383333.html",
-"near": "May",
-"also": [
-[
-"Blackburn Rovers",
-"Blackburn"
-],
-[
-"Manchester United",
-"Man Utd",
-"Man United"
-]
-],
-"group": "gap"
-},
-{
-"id": "ae14f587be71b27b",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=1883",
-"near": "Daley",
-"also": [
-[
-"Aston Villa",
-"Villa"
-],
-[
-"Wolverhampton Wanderers",
-"Wolves"
-]
-],
-"group": "gap"
-},
-{
-"id": "c1f6f1491f535963",
-"url": "https://www.wolves.co.uk/news/features/20190410-steve-froggatt-is-the-latest-old-gold-club-inductee/",
-"near": "Froggatt",
-"also": [
-[
-"Aston Villa",
-"Villa"
-],
-[
-"Wolverhampton Wanderers",
-"Wolves"
-]
-],
-"group": "gap"
-},
-{
-"id": "79fc2bdcf1b01567",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=7821",
-"near": "Taylor",
-"also": [
-[
-"Port Vale",
-"Port"
-],
-[
-"Sheffield Wednesday",
-"Sheff Wed"
-]
-],
-"group": "gap"
-},
-{
-"id": "ee2bfb158bf0b551",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=7732",
-"near": "Sutton",
-"also": [
-[
-"Norwich City",
-"Norwich"
-],
-[
-"Blackburn Rovers",
-"Blackburn"
-]
-],
-"group": "gap"
-},
-{
-"id": "529f4888ae282cb5",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=2161&season_id=127",
-"near": "Draper",
-"also": [
-[
-"Notts County",
-"Notts"
-],
-[
-"Leicester City",
-"Leicester"
-]
-],
-"group": "gap"
-},
-{
-"id": "01ade4fd79196235",
-"url": "https://www.independent.co.uk/sport/football-everton-seek-sosa-in-quest-for-firepower-walker-moves-for-uruguayan-while-evans-prepares-to-follow-him-into-transfer-market-with-pounds-9m-to-spend-1374303.html",
-"near": "Samways",
-"also": [
-[
-"Tottenham Hotspur",
-"Tottenham",
-"Spurs"
-],
 [
 "Everton"
-]
 ],
-"group": "gap"
-},
-{
-"id": "7f169c62286d1b40",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=4247",
-"near": "Klinsmann",
-"also": [
-[
-"Monaco",
-"Monaco"
-],
-[
-"Tottenham Hotspur",
-"Tottenham",
-"Spurs"
-]
-],
-"group": "gap"
-},
-{
-"id": "630cf3fda6f20972",
-"url": "https://www.independent.co.uk/sport/football-tottenham-sign-dumitrescu-for-pounds-2-6m-ardiles-shows-ambition-by-buying-romanian-world-cup-hero-and-chasing-two-brazilians-as-venables-prepares-for-latin-test-1416799.html",
-"near": "Dumitrescu",
-"also": [
-[
-"Steaua București",
-"Steaua"
-],
-[
-"Tottenham Hotspur",
-"Tottenham",
-"Spurs"
-]
-],
-"group": "gap"
-},
-{
-"id": "95d3292806110a2c",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=2195",
-"near": "Dumitrescu",
-"also": [
-[
-"Steaua București",
-"Steaua"
-],
-[
-"Tottenham Hotspur",
-"Tottenham",
-"Spurs"
-]
-],
-"group": "gap"
-},
-{
-"id": "d4c9cbddf389d0a9",
-"url": "https://www.avfc.co.uk/news/2025/march/17/Legacy-Numbers--Shaw--Fashanu--Hardy-and-Saward/",
-"near": "Fashanu",
-"also": [
-[
-"Wimbledon"
-],
-[
-"Aston Villa",
-"Villa"
-]
-],
-"group": "gap"
-},
-{
-"id": "6d5db50d17b84d24",
-"url": "https://www.the-independent.com/sport/from-philippe-albert-to-tony-yeboah-a-complete-guide-to-the-comings-an-d-goings-of-the-premiership-s-84-overseas-players-1361670.html",
-"near": "Roy",
-"also": [
-[
-"Foggia",
-"Foggia"
-],
-[
-"Nottingham Forest",
-"Forest",
-"Nott'm Forest"
-]
-],
-"group": "gap"
-},
-{
-"id": "6def71ed91c538d1",
-"url": "https://www.the-independent.com/sport/from-philippe-albert-to-tony-yeboah-a-complete-guide-to-the-comings-an-d-goings-of-the-premiership-s-84-overseas-players-1361670.html",
-"near": "Petrescu",
-"also": [
-[
-"Genoa",
-"Genoa"
-],
-[
-"Sheffield Wednesday",
-"Sheff Wed"
-]
-],
-"group": "gap"
-},
-{
-"id": "5e76b5f987e3eee7",
-"url": "https://www.the-independent.com/sport/petrescu-moves-to-chelsea-for-pounds-2-3m-1577609.html",
-"near": "Petrescu",
-"also": [
-[
-"Genoa",
-"Genoa"
-],
-[
-"Sheffield Wednesday",
-"Sheff Wed"
-]
-],
-"group": "gap"
-},
-{
-"id": "498d97b04d7db5fb",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=67",
-"near": "Albert",
-"also": [
-[
-"Anderlecht",
-"Anderlecht"
-],
-[
-"Newcastle United",
-"Newcastle"
-]
-],
-"group": "gap"
-},
-{
-"id": "a493662d63993dee",
-"url": "https://www.independent.co.uk/sport/football-spurs-sign-popescu-sugar-takes-outlay-to-7-5m-pounds-1447977.html",
-"near": "Popescu",
-"also": [
-[
-"PSV Eindhoven"
-],
-[
-"Tottenham Hotspur",
-"Tottenham",
-"Spurs"
-]
-],
-"group": "gap"
-},
-{
-"id": "4bc2392df1e3eabb",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=5884",
-"near": "Nolan",
-"also": [
-[
-"Tranmere Rovers",
-"Tranmere"
-],
-[
-"Sheffield Wednesday",
-"Sheff Wed"
-]
-],
-"group": "gap"
-},
-{
-"id": "bbe1b16c750d9834",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=7241",
-"near": "Sheron",
-"also": [
 [
 "Manchester City",
 "Man City"
-],
-[
-"Norwich City",
-"Norwich"
 ]
 ],
 "group": "gap"
 },
 {
-"id": "e62ef19fd1746b4d",
-"url": "https://www.independent.co.uk/sport/football-everton-move-for-nigerian-world-cup-striker-walker-agrees-pounds-3m-clubrecord-fee-for-amokachi-and-pursues-bulgaria-s-kostadinov-in-search-for-goodison-park-goal-power-1378923.html",
-"near": "Sheron",
+"id": "f631d232314446cc",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=1717",
+"near": "Cox",
 "also": [
 [
-"Manchester City",
-"Man City"
+"Aston Villa",
+"Villa"
 ],
 [
-"Norwich City",
-"Norwich"
+"Middlesbrough",
+"Boro"
 ]
 ],
 "group": "gap"
 },
 {
-"id": "ba0910e3737727e3",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=145",
-"near": "Amokachi",
-"also": [
-[
-"Club Brugge",
-"Club"
-],
-[
-"Everton"
-]
-],
-"group": "gap"
-},
-{
-"id": "cbac21a45afec95e",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=3766",
-"near": "Hutchison",
-"also": [
-[
-"Liverpool"
-],
-[
-"West Ham United",
-"West Ham"
-]
-],
-"group": "gap"
-},
-{
-"id": "7a8dad95d8e2b63e",
-"url": "https://www.independent.co.uk/sport/football-on-the-move-1446588.html",
-"near": "Babb",
-"also": [
-[
-"Coventry City",
-"Coventry"
-],
-[
-"Liverpool"
-]
-],
-"group": "gap"
-},
-{
-"id": "11c0a8b65a36be46",
-"url": "https://www.independent.co.uk/sport/football-on-the-move-1446588.html",
-"near": "Scales",
-"also": [
-[
-"Wimbledon"
-],
-[
-"Liverpool"
-]
-],
-"group": "gap"
-},
-{
-"id": "fa6c79b2bbfc6b35",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=7059",
-"near": "Scales",
-"also": [
-[
-"Wimbledon"
-],
-[
-"Liverpool"
-]
-],
-"group": "gap"
-},
-{
-"id": "38803c68e4f6b0d8",
-"url": "https://www.the-independent.com/sport/football-the-spent-force-of-goodison-1188538.html",
-"near": "Burrows",
-"also": [
-[
-"West Ham United",
-"West Ham"
-],
-[
-"Everton"
-]
-],
-"group": "gap"
-},
-{
-"id": "1f335d5b79c88e8a",
-"url": "https://www.the-independent.com/sport/football-the-spent-force-of-goodison-1188538.html",
-"near": "Cottee",
-"also": [
-[
-"Everton"
-],
-[
-"West Ham United",
-"West Ham"
-]
-],
-"group": "gap"
-},
-{
-"id": "41baa15cde4550b3",
-"url": "https://www.independent.co.uk/sport/football-dublin-moves-to-coventry-1447962.html",
-"near": "Dublin",
-"also": [
-[
-"Manchester United",
-"Man Utd",
-"Man United"
-],
-[
-"Coventry City",
-"Coventry"
-]
-],
-"group": "gap"
-},
-{
-"id": "932613f20956e41d",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=4241",
-"near": "Kitson",
-"also": [
-[
-"Derby County",
-"Derby"
-],
-[
-"Newcastle United",
-"Newcastle"
-]
-],
-"group": "gap"
-},
-{
-"id": "1c9d2bd526af1c8c",
-"url": "https://www.independent.co.uk/sport/a-wild-spirit-reborn-1387902.html",
+"id": "8c01e3ea29c7a112",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=2466",
 "near": "Ferguson",
 "also": [
 [
@@ -1708,399 +140,8 @@
 "group": "gap"
 },
 {
-"id": "68e9a61e9a281110",
-"url": "https://www.independent.co.uk/sport/ferguson-fights-as-arsenal-falter-1568042.html",
-"near": "Ferguson",
-"also": [
-[
-"Rangers",
-"Rangers"
-],
-[
-"Everton"
-]
-],
-"group": "gap"
-},
-{
-"id": "a6cd729341495bd8",
-"url": "https://www.independent.co.uk/sport/football-leeds-land-yeboah-at-last-1569455.html",
-"near": "Yeboah",
-"also": [
-[
-"Eintracht Frankfurt",
-"Eintracht"
-],
-[
-"Leeds United",
-"Leeds"
-]
-],
-"group": "gap"
-},
-{
-"id": "00a6c386a3ba8900",
-"url": "https://www.independent.co.uk/sport/yeboah-revels-in-leeds-love-affair-1601036.html",
-"near": "Yeboah",
-"also": [
-[
-"Eintracht Frankfurt",
-"Eintracht"
-],
-[
-"Leeds United",
-"Leeds"
-]
-],
-"group": "gap"
-},
-{
-"id": "2b17b681e80d9700",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=7252",
-"near": "Shipperley",
-"also": [
-[
-"Chelsea"
-],
-[
-"Southampton"
-]
-],
-"group": "gap"
-},
-{
-"id": "3bc231dd74e6eba2",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=1418",
-"near": "Charles",
-"also": [
-[
-"Derby County",
-"Derby"
-],
-[
-"Aston Villa",
-"Villa"
-]
-],
-"group": "gap"
-},
-{
-"id": "e744da4542228196",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=3951",
-"near": "Johnson",
-"also": [
-[
-"Derby County",
-"Derby"
-],
-[
-"Aston Villa",
-"Villa"
-]
-],
-"group": "gap"
-},
-{
-"id": "b20e0b24606f48a0",
-"url": "https://www.the-independent.com/sport/football-hughes-expected-to-give-way-to-163-7m-cole-1567583.html",
-"near": "Cole",
-"also": [
-[
-"Newcastle United",
-"Newcastle"
-],
-[
-"Manchester United",
-"Man Utd",
-"Man United"
-]
-],
-"group": "gap"
-},
-{
-"id": "9239669af8dfbd54",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=1542&season_id=126",
-"near": "Cole",
-"also": [
-[
-"Newcastle United",
-"Newcastle"
-],
-[
-"Manchester United",
-"Man Utd",
-"Man United"
-]
-],
-"group": "gap"
-},
-{
-"id": "6afce3e154a4ad90",
-"url": "https://www.independent.co.uk/sport/ince-set-to-join-ferdinand-in-the-pounds-6m-club-1585488.html",
-"near": "Gillespie",
-"also": [
-[
-"Manchester United",
-"Man Utd",
-"Man United"
-],
-[
-"Newcastle United",
-"Newcastle"
-]
-],
-"group": "gap"
-},
-{
-"id": "67053981435f97af",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=4243",
-"near": "Kiwomya",
-"also": [
-[
-"Ipswich Town",
-"Ipswich"
-],
-[
-"Arsenal"
-]
-],
-"group": "gap"
-},
-{
-"id": "c42e9722dda8e6c6",
-"url": "https://www.the-independent.com/sport/liverpool-want-staunton-back-1569877.html",
-"near": "Kiwomya",
-"also": [
-[
-"Ipswich Town",
-"Ipswich"
-],
-[
-"Arsenal"
-]
-],
-"group": "gap"
-},
-{
-"id": "ca2e6e2eeaabcf5c",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=6809",
-"near": "Robins",
-"also": [
-[
-"Norwich City",
-"Norwich"
-],
-[
-"Leicester City",
-"Leicester"
-]
-],
-"group": "gap"
-},
-{
-"id": "159313ac5b403ec2",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=441",
-"near": "Barrett",
-"also": [
-[
-"Aston Villa",
-"Villa"
-],
-[
-"Everton"
-]
-],
-"group": "gap"
-},
-{
-"id": "fe9c9504418aa671",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=3315",
-"near": "Hartson",
-"also": [
-[
-"Luton Town",
-"Luton"
-],
-[
-"Arsenal"
-]
-],
-"group": "gap"
-},
-{
-"id": "09d0e8674ce3b673",
-"url": "https://www.the-independent.com/sport/from-philippe-albert-to-tony-yeboah-a-complete-guide-to-the-comings-an-d-goings-of-the-premiership-s-84-overseas-players-1361670.html",
-"near": "Helder",
-"also": [
-[
-"Vitesse Arnhem",
-"Vitesse"
-],
-[
-"Arsenal"
-]
-],
-"group": "gap"
-},
-{
-"id": "a60ace165d696205",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=1158",
-"near": "Burrows",
-"also": [
-[
-"Everton"
-],
-[
-"Coventry City",
-"Coventry"
-]
-],
-"group": "gap"
-},
-{
-"id": "11980671e5d7b42f",
-"url": "https://www.independent.co.uk/sport/blackburn-masters-of-the-modern-game-1619674.html",
-"near": "Wright",
-"also": [
-[
-"Blackburn Rovers",
-"Blackburn"
-],
-[
-"Aston Villa",
-"Villa"
-]
-],
-"group": "gap"
-},
-{
-"id": "b8a31674a0119b92",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=8714",
-"near": "Wright",
-"also": [
-[
-"Blackburn Rovers",
-"Blackburn"
-],
-[
-"Aston Villa",
-"Villa"
-]
-],
-"group": "gap"
-},
-{
-"id": "c9ca9fe78ef14802",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=4118",
-"near": "Kenna",
-"also": [
-[
-"Southampton"
-],
-[
-"Blackburn Rovers",
-"Blackburn"
-]
-],
-"group": "gap"
-},
-{
-"id": "217febe4a68d241d",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=8339",
-"near": "Watson",
-"also": [
-[
-"Sheffield Wednesday",
-"Sheff Wed"
-],
-[
-"Southampton"
-]
-],
-"group": "gap"
-},
-{
-"id": "cc4546355edd1750",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=4136",
-"near": "Kennedy",
-"also": [
-[
-"Millwall",
-"Millwall"
-],
-[
-"Liverpool"
-]
-],
-"group": "gap"
-},
-{
-"id": "3bdb579956b4e42a",
-"url": "https://www.independent.co.uk/sport/football-scotland-s-striking-blow-1599609.html",
-"near": "Kennedy",
-"also": [
-[
-"Millwall",
-"Millwall"
-],
-[
-"Liverpool"
-]
-],
-"group": "gap"
-},
-{
-"id": "00f44c9842d93377",
-"url": "https://www.the-independent.com/sport/clubbyclub-guide-the-prospects-the-players-to-watch-the-arrivals-and-departures-1596119.html",
-"near": "Rieper",
-"also": [
-[
-"Brøndby",
-"Brøndby"
-],
-[
-"West Ham United",
-"West Ham"
-]
-],
-"group": "gap"
-},
-{
-"id": "a3468c56e8da3ed2",
-"url": "https://www.the-independent.com/sport/fa-carling-premiership-199596-1596957.html",
-"near": "Popescu",
-"also": [
-[
-"Tottenham Hotspur",
-"Tottenham",
-"Spurs"
-],
-[
-"Barcelona",
-"Barcelona"
-]
-],
-"group": "gap"
-},
-{
-"id": "b35ce73d05800b2a",
-"url": "https://www.the-independent.com/sport/platt-in-pounds-4-75m-move-to-arsenal-1590988.html",
-"near": "Ferdinand",
-"also": [
-[
-"Queens Park Rangers",
-"QPR"
-],
-[
-"Newcastle United",
-"Newcastle"
-]
-],
-"group": "gap"
-},
-{
-"id": "d285cc673b4535bc",
-"url": "https://www.the-independent.com/sport/clubbyclub-guide-the-prospects-the-players-to-watch-the-arrivals-and-departures-1596119.html",
+"id": "afc92f570570164d",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=3791",
 "near": "Ince",
 "also": [
 [
@@ -2116,39 +157,8 @@
 "group": "gap"
 },
 {
-"id": "24cf66028dd0a528",
-"url": "https://www.the-independent.com/sport/platt-in-pounds-4-75m-move-to-arsenal-1590988.html",
-"near": "Bergkamp",
-"also": [
-[
-"Internazionale",
-"Internazionale"
-],
-[
-"Arsenal"
-]
-],
-"group": "gap"
-},
-{
-"id": "e3da8d4fca60af95",
-"url": "https://www.the-independent.com/sport/platt-in-pounds-4-75m-move-to-arsenal-1590988.html",
-"near": "Hughes",
-"also": [
-[
-"Manchester United",
-"Man Utd",
-"Man United"
-],
-[
-"Chelsea"
-]
-],
-"group": "gap"
-},
-{
-"id": "e642024566ad33f7",
-"url": "https://www.the-independent.com/sport/platt-in-pounds-4-75m-move-to-arsenal-1590988.html",
+"id": "f893ba535b6a9450",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=5480",
 "near": "Milošević",
 "also": [
 [
@@ -2163,40 +173,8 @@
 "group": "gap"
 },
 {
-"id": "3edc9ea1e4e1e07b",
-"url": "https://www.the-independent.com/sport/platt-in-pounds-4-75m-move-to-arsenal-1590988.html",
-"near": "Barton",
-"also": [
-[
-"Wimbledon"
-],
-[
-"Newcastle United",
-"Newcastle"
-]
-],
-"group": "gap"
-},
-{
-"id": "ed17d1e2bcd35b26",
-"url": "https://www.the-independent.com/sport/platt-in-pounds-4-75m-move-to-arsenal-1590988.html",
-"near": "Armstrong",
-"also": [
-[
-"Crystal Palace",
-"Palace"
-],
-[
-"Tottenham Hotspur",
-"Tottenham",
-"Spurs"
-]
-],
-"group": "gap"
-},
-{
-"id": "028eff821d521d04",
-"url": "https://www.the-independent.com/sport/clubbyclub-guide-the-prospects-the-players-to-watch-the-arrivals-and-departures-1596119.html",
+"id": "c164c090c8ee2713",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=1273",
 "near": "Campbell",
 "also": [
 [
@@ -2211,41 +189,8 @@
 "group": "gap"
 },
 {
-"id": "5832e49ae5828f82",
-"url": "https://www.the-independent.com/sport/clubbyclub-guide-the-prospects-the-players-to-watch-the-arrivals-and-departures-1596119.html",
-"near": "Saunders",
-"also": [
-[
-"Aston Villa",
-"Villa"
-],
-[
-"Galatasaray",
-"Galatasaray"
-]
-],
-"group": "gap"
-},
-{
-"id": "3c9f27ffdddfa5c5",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=460",
-"near": "Bart-Williams",
-"also": [
-[
-"Sheffield Wednesday",
-"Sheff Wed"
-],
-[
-"Nottingham Forest",
-"Forest",
-"Nott'm Forest"
-]
-],
-"group": "gap"
-},
-{
-"id": "2dfec8bb017d11d5",
-"url": "https://www.the-independent.com/sport/platt-in-pounds-4-75m-move-to-arsenal-1590988.html",
+"id": "cb457e90c3deca10",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=7497",
 "near": "Southgate",
 "also": [
 [
@@ -2260,8 +205,8 @@
 "group": "gap"
 },
 {
-"id": "b42d46a5c9b319bd",
-"url": "https://www.the-independent.com/sport/platt-in-pounds-4-75m-move-to-arsenal-1590988.html",
+"id": "3ef496276d5ef455",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=1572&season_id=129",
 "near": "Collymore",
 "also": [
 [
@@ -2276,102 +221,8 @@
 "group": "gap"
 },
 {
-"id": "548cabac57d8a417",
-"url": "https://www.the-independent.com/sport/clubbyclub-guide-the-prospects-the-players-to-watch-the-arrivals-and-departures-1596119.html",
-"near": "Boogers",
-"also": [
-[
-"Sparta Rotterdam",
-"Sparta"
-],
-[
-"West Ham United",
-"West Ham"
-]
-],
-"group": "gap"
-},
-{
-"id": "06238c39931f1e40",
-"url": "https://www.the-independent.com/sport/fa-carling-premiership-199596-1596957.html",
-"near": "Klinsmann",
-"also": [
-[
-"Tottenham Hotspur",
-"Tottenham",
-"Spurs"
-],
-[
-"FC Bayern Munich"
-]
-],
-"group": "gap"
-},
-{
-"id": "a2a4724699c2acc9",
-"url": "https://www.the-independent.com/sport/platt-in-pounds-4-75m-move-to-arsenal-1590988.html",
-"near": "Draper",
-"also": [
-[
-"Leicester City",
-"Leicester"
-],
-[
-"Aston Villa",
-"Villa"
-]
-],
-"group": "gap"
-},
-{
-"id": "bf9063a39ca90982",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=6025",
-"near": "Osborn",
-"also": [
-[
-"Reading"
-],
-[
-"Queens Park Rangers",
-"QPR"
-]
-],
-"group": "gap"
-},
-{
-"id": "7edad107cc345618",
-"url": "https://www.the-independent.com/sport/platt-in-pounds-4-75m-move-to-arsenal-1590988.html",
-"near": "Platt",
-"also": [
-[
-"Sampdoria",
-"Sampdoria"
-],
-[
-"Arsenal"
-]
-],
-"group": "gap"
-},
-{
-"id": "c74868584984f403",
-"url": "https://www.the-independent.com/sport/clubbyclub-guide-the-prospects-the-players-to-watch-the-arrivals-and-departures-1596119.html",
-"near": "Telfer",
-"also": [
-[
-"Luton Town",
-"Luton"
-],
-[
-"Coventry City",
-"Coventry"
-]
-],
-"group": "gap"
-},
-{
-"id": "7067f32dd76b4a27",
-"url": "https://www.the-independent.com/sport/clubbyclub-guide-the-prospects-the-players-to-watch-the-arrivals-and-departures-1596119.html",
+"id": "b8867082613fe410",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=7102",
 "near": "Schwarz",
 "also": [
 [
@@ -2385,72 +236,8 @@
 "group": "gap"
 },
 {
-"id": "920cde6c385ee23a",
-"url": "https://www.independent.co.uk/sport/football-ball-seals-pounds-2m-signing-of-georgian-and-then-ball-1591578.html",
-"near": "Kinkladze",
-"also": [
-[
-"Dinamo Tbilisi",
-"Dinamo"
-],
-[
-"Manchester City",
-"Man City"
-]
-],
-"group": "gap"
-},
-{
-"id": "a9fea93be9780d39",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=4211&season_id=131",
-"near": "Kinkladze",
-"also": [
-[
-"Dinamo Tbilisi",
-"Dinamo"
-],
-[
-"Manchester City",
-"Man City"
-]
-],
-"group": "gap"
-},
-{
-"id": "0c4ff8d12491505e",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=1994",
-"near": "Degryse",
-"also": [
-[
-"Anderlecht",
-"Anderlecht"
-],
-[
-"Sheffield Wednesday",
-"Sheff Wed"
-]
-],
-"group": "gap"
-},
-{
-"id": "e9b3547082bb5fc8",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=8795",
-"near": "Zelic",
-"also": [
-[
-"Borussia Mönchengladbach",
-"Borussia"
-],
-[
-"Queens Park Rangers",
-"QPR"
-]
-],
-"group": "gap"
-},
-{
-"id": "8708ecfe5be2218c",
-"url": "https://www.the-independent.com/sport/platt-in-pounds-4-75m-move-to-arsenal-1590988.html",
+"id": "c7eb1c3cfdffb893",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=2888&season_id=125",
 "near": "Ginola",
 "also": [
 [
@@ -2465,86 +252,8 @@
 "group": "gap"
 },
 {
-"id": "1e596488f84e8bdb",
-"url": "https://www.the-independent.com/sport/clubbyclub-guide-the-prospects-the-players-to-watch-the-arrivals-and-departures-1596119.html",
-"near": "Atkinson",
-"also": [
-[
-"Aston Villa",
-"Villa"
-],
-[
-"Fenerbahçe",
-"Fenerbahçe"
-]
-],
-"group": "gap"
-},
-{
-"id": "4307101de5263529",
-"url": "https://www.the-independent.com/sport/clubbyclub-guide-the-prospects-the-players-to-watch-the-arrivals-and-departures-1596119.html",
-"near": "Taggart",
-"also": [
-[
-"Barnsley"
-],
-[
-"Bolton Wanderers",
-"Bolton"
-]
-],
-"group": "gap"
-},
-{
-"id": "ee0baad8b6b2eead",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=7256",
-"near": "Short",
-"also": [
-[
-"Derby County",
-"Derby"
-],
-[
-"Everton"
-]
-],
-"group": "gap"
-},
-{
-"id": "232a58ef19416942",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=6979",
-"near": "Salako",
-"also": [
-[
-"Crystal Palace",
-"Palace"
-],
-[
-"Coventry City",
-"Coventry"
-]
-],
-"group": "gap"
-},
-{
-"id": "ffed3764fa5d3914",
-"url": "https://www.the-independent.com/sport/fa-carling-premiership-199596-1596957.html",
-"near": "Salako",
-"also": [
-[
-"Crystal Palace",
-"Palace"
-],
-[
-"Coventry City",
-"Coventry"
-]
-],
-"group": "gap"
-},
-{
-"id": "0149c4259e3c1682",
-"url": "https://www.the-independent.com/sport/clubbyclub-guide-the-prospects-the-players-to-watch-the-arrivals-and-departures-1596119.html",
+"id": "23b15183e739af35",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=410",
 "near": "Barmby",
 "also": [
 [
@@ -2560,183 +269,8 @@
 "group": "gap"
 },
 {
-"id": "1bb88c0cd07fd99d",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=3578",
-"near": "Holmes",
-"also": [
-[
-"West Ham United",
-"West Ham"
-],
-[
-"Blackburn Rovers",
-"Blackburn"
-]
-],
-"group": "gap"
-},
-{
-"id": "ea8577f8374d4e0c",
-"url": "https://www.the-independent.com/sport/from-philippe-albert-to-tony-yeboah-a-complete-guide-to-the-comings-an-d-goings-of-the-premiership-s-84-overseas-players-1361670.html",
-"near": "Silenzi",
-"also": [
-[
-"Torino",
-"Torino"
-],
-[
-"Nottingham Forest",
-"Forest",
-"Nott'm Forest"
-]
-],
-"group": "gap"
-},
-{
-"id": "77cc9e58ffc57e85",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=7759",
-"near": "Symons",
-"also": [
-[
-"Portsmouth"
-],
-[
-"Manchester City",
-"Man City"
-]
-],
-"group": "gap"
-},
-{
-"id": "0a24c0dd0c5ed04b",
-"url": "https://www.independent.co.uk/sport/fa-carling-premiership-199596-1596957.html",
-"near": "Symons",
-"also": [
-[
-"Portsmouth"
-],
-[
-"Manchester City",
-"Man City"
-]
-],
-"group": "gap"
-},
-{
-"id": "22ee3a44be4ddf21",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=4047",
-"near": "Kanchelskis",
-"also": [
-[
-"Manchester United",
-"Man Utd",
-"Man United"
-],
-[
-"Everton"
-]
-],
-"group": "gap"
-},
-{
-"id": "4bd9cd3bbedc4bee",
-"url": "https://www.the-independent.com/sport/the-keegan-years-player-by-player-guide-to-the-signings-that-transformed-a-club-by-liam-james-1340086.html",
-"near": "Hislop",
-"also": [
-[
-"Reading"
-],
-[
-"Newcastle United",
-"Newcastle"
-]
-],
-"group": "gap"
-},
-{
-"id": "e4f06d3e0d05c052",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=4961",
-"near": "McAteer",
-"also": [
-[
-"Bolton Wanderers",
-"Bolton"
-],
-[
-"Liverpool"
-]
-],
-"group": "gap"
-},
-{
-"id": "8c5508b166d87964",
-"url": "https://www.the-independent.com/sport/from-philippe-albert-to-tony-yeboah-a-complete-guide-to-the-comings-an-d-goings-of-the-premiership-s-84-overseas-players-1361670.html",
-"near": "Bohinen",
-"also": [
-[
-"Nottingham Forest",
-"Forest",
-"Nott'm Forest"
-],
-[
-"Blackburn Rovers",
-"Blackburn"
-]
-],
-"group": "gap"
-},
-{
-"id": "586d9e12cc020712",
-"url": "https://www.the-independent.com/sport/petrescu-moves-to-chelsea-for-pounds-2-3m-1577609.html",
-"near": "Bohinen",
-"also": [
-[
-"Nottingham Forest",
-"Forest",
-"Nott'm Forest"
-],
-[
-"Blackburn Rovers",
-"Blackburn"
-]
-],
-"group": "gap"
-},
-{
-"id": "a9b3fa28e49db7ba",
-"url": "https://www.the-independent.com/sport/petrescu-moves-to-chelsea-for-pounds-2-3m-1577609.html",
-"near": "McKinlay",
-"also": [
-[
-"Dundee United",
-"Dundee"
-],
-[
-"Blackburn Rovers",
-"Blackburn"
-]
-],
-"group": "gap"
-},
-{
-"id": "de92a7aad54659c2",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=1842",
-"near": "Curcic",
-"also": [
-[
-"Partizan Belgrade",
-"Partizan"
-],
-[
-"Bolton Wanderers",
-"Bolton"
-]
-],
-"group": "gap"
-},
-{
-"id": "e6c2846ddac11d37",
-"url": "https://www.the-independent.com/sport/from-philippe-albert-to-tony-yeboah-a-complete-guide-to-the-comings-an-d-goings-of-the-premiership-s-84-overseas-players-1361670.html",
+"id": "9a8de9120324cf44",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=4031",
 "near": "Juninho",
 "also": [
 [
@@ -2750,119 +284,8 @@
 "group": "gap"
 },
 {
-"id": "cd98706f893983c3",
-"url": "https://www.independent.co.uk/sport/robson-eyes-third-brazilian-1347344.html",
-"near": "Juninho",
-"also": [
-[
-"Sao Paulo"
-],
-[
-"Middlesbrough",
-"Boro"
-]
-],
-"group": "gap"
-},
-{
-"id": "6a5ba52e7f89c4a8",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=3331",
-"near": "Hateley",
-"also": [
-[
-"Rangers",
-"Rangers"
-],
-[
-"Queens Park Rangers",
-"QPR"
-]
-],
-"group": "gap"
-},
-{
-"id": "b1b2e0f2782b9c67",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=2454",
-"near": "Fenton",
-"also": [
-[
-"Aston Villa",
-"Villa"
-],
-[
-"Blackburn Rovers",
-"Blackburn"
-]
-],
-"group": "gap"
-},
-{
-"id": "f809d929bbb092f5",
-"url": "https://www.the-independent.com/sport/leeds-wrestle-with-a-welcome-problem-1582539.html",
-"near": "Brolin",
-"also": [
-[
-"Parma",
-"Parma"
-],
-[
-"Leeds United",
-"Leeds"
-]
-],
-"group": "gap"
-},
-{
-"id": "d799b278c7a169aa",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=7215",
-"near": "Shaw",
-"also": [
-[
-"Crystal Palace",
-"Palace"
-],
-[
-"Coventry City",
-"Coventry"
-]
-],
-"group": "gap"
-},
-{
-"id": "7d767d5f7b68f858",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=8435",
-"near": "Whelan",
-"also": [
-[
-"Leeds United",
-"Leeds"
-],
-[
-"Coventry City",
-"Coventry"
-]
-],
-"group": "gap"
-},
-{
-"id": "e4365e1b45893198",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=1545",
-"near": "Coleman",
-"also": [
-[
-"Crystal Palace",
-"Palace"
-],
-[
-"Blackburn Rovers",
-"Blackburn"
-]
-],
-"group": "gap"
-},
-{
-"id": "e8c94ddc34330689",
-"url": "https://www.the-independent.com/sport/from-philippe-albert-to-tony-yeboah-a-complete-guide-to-the-comings-an-d-goings-of-the-premiership-s-84-overseas-players-1361670.html",
+"id": "19ddafa2e3c8d3da",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=7581",
 "near": "Stefanović",
 "also": [
 [
@@ -2876,533 +299,25 @@
 "group": "gap"
 },
 {
-"id": "4c44cea596157fe9",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=734",
-"near": "Blake",
+"id": "5bcfaa304ccf5ef3",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=3915",
+"near": "Joachim",
 "also": [
 [
-"Sheffield United",
-"Sheff Utd"
+"Leicester City",
+"Leicester"
 ],
 [
-"Bolton Wanderers",
-"Bolton"
+"Aston Villa",
+"Villa"
 ]
 ],
 "group": "gap"
 },
 {
-"id": "5f7274ddb226894c",
-"url": "https://www.independent.co.uk/sport/second-out-for-spurs-1527278.html",
-"near": "Blake",
-"also": [
-[
-"Sheffield United",
-"Sheff Utd"
-],
-[
-"Bolton Wanderers",
-"Bolton"
-]
-],
-"group": "gap"
-},
-{
-"id": "63d827be2de94186",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=8828",
-"near": "Bilic",
-"also": [
-[
-"Karlsruhe",
-"Karlsruhe"
-],
-[
-"West Ham United",
-"West Ham"
-]
-],
-"group": "gap"
-},
-{
-"id": "96db15426499cda3",
+"id": "fc6df019bf623929",
 "url": "https://www.the-independent.com/sport/from-philippe-albert-to-tony-yeboah-a-complete-guide-to-the-comings-an-d-goings-of-the-premiership-s-84-overseas-players-1361670.html",
-"near": "Asprilla",
-"also": [
-[
-"Parma",
-"Parma"
-],
-[
-"Newcastle United",
-"Newcastle"
-]
-],
-"group": "gap"
-},
-{
-"id": "833ec02ed13ba3d4",
-"url": "https://www.the-independent.com/sport/the-keegan-years-player-by-player-guide-to-the-signings-that-transformed-a-club-by-liam-james-1340086.html",
-"near": "Asprilla",
-"also": [
-[
-"Parma",
-"Parma"
-],
-[
-"Newcastle United",
-"Newcastle"
-]
-],
-"group": "gap"
-},
-{
-"id": "31695c33f9c03463",
-"url": "https://www.the-independent.com/sport/from-philippe-albert-to-tony-yeboah-a-complete-guide-to-the-comings-an-d-goings-of-the-premiership-s-84-overseas-players-1361670.html",
-"near": "Gudmundsson",
-"also": [
-[
-"Halmstads BK",
-"Halmstads"
-],
-[
-"Blackburn Rovers",
-"Blackburn"
-]
-],
-"group": "gap"
-},
-{
-"id": "27adab195e063187",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=8877",
-"near": "Gudmundsson",
-"also": [
-[
-"Halmstads BK",
-"Halmstads"
-],
-[
-"Blackburn Rovers",
-"Blackburn"
-]
-],
-"group": "gap"
-},
-{
-"id": "f08a3821d3b704f4",
-"url": "https://www.the-independent.com/sport/from-philippe-albert-to-tony-yeboah-a-complete-guide-to-the-comings-an-d-goings-of-the-premiership-s-84-overseas-players-1361670.html",
-"near": "Blinker",
-"also": [
-[
-"Feyenoord",
-"Feyenoord"
-],
-[
-"Sheffield Wednesday",
-"Sheff Wed"
-]
-],
-"group": "gap"
-},
-{
-"id": "9af7da65474f2d34",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=8882",
-"near": "Kavelashvili",
-"also": [
-[
-"Alania Vladikavkaz",
-"Alania"
-],
-[
-"Manchester City",
-"Man City"
-]
-],
-"group": "gap"
-},
-{
-"id": "01ff4323c26a7144",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=2557",
-"near": "Flitcroft",
-"also": [
-[
-"Manchester City",
-"Man City"
-],
-[
-"Blackburn Rovers",
-"Blackburn"
-]
-],
-"group": "gap"
-},
-{
-"id": "d29c57281ea639e1",
-"url": "https://www.independent.co.uk/sport/peschisolido-s-return-enlivens-quiet-deadline-day-1344725.html",
-"near": "Croft",
-"also": [
-[
-"Grimsby Town",
-"Grimsby"
-],
-[
-"Blackburn Rovers",
-"Blackburn"
-]
-],
-"group": "gap"
-},
-{
-"id": "9030e55873e70f77",
-"url": "https://www.the-independent.com/sport/from-philippe-albert-to-tony-yeboah-a-complete-guide-to-the-comings-an-d-goings-of-the-premiership-s-84-overseas-players-1361670.html",
-"near": "Emerson",
-"also": [
-[
-"Porto",
-"Porto"
-],
-[
-"Middlesbrough",
-"Boro"
-]
-],
-"group": "gap"
-},
-{
-"id": "99a6cbc88d382aea",
-"url": "https://www.the-independent.com/sport/vialli-eager-for-chelsea-s-pounds-2m-salary-1347494.html",
-"near": "Emerson",
-"also": [
-[
-"Porto",
-"Porto"
-],
-[
-"Middlesbrough",
-"Boro"
-]
-],
-"group": "gap"
-},
-{
-"id": "528cb076bbc0c6a4",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=6556",
-"near": "Rae",
-"also": [
-[
-"Millwall",
-"Millwall"
-],
-[
-"Sunderland"
-]
-],
-"group": "gap"
-},
-{
-"id": "4bfc3fabc8135abd",
-"url": "https://www.independent.co.uk/sport/chelsea-import-france-s-leboeuf-1338732.html",
-"near": "Leboeuf",
-"also": [
-[
-"Strasbourg",
-"Strasbourg"
-],
-[
-"Chelsea"
-]
-],
-"group": "gap"
-},
-{
-"id": "8864fb0a66205fb2",
-"url": "https://www.independent.co.uk/sport/di-matteo-seals-move-to-chelsea-1327518.html",
-"near": "Matteo",
-"also": [
-[
-"Lazio",
-"Lazio"
-],
-[
-"Chelsea"
-]
-],
-"group": "gap"
-},
-{
-"id": "c0caa1b521230a95",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=7512",
-"near": "Speed",
-"also": [
-[
-"Leeds United",
-"Leeds"
-],
-[
-"Everton"
-]
-],
-"group": "gap"
-},
-{
-"id": "e900abf5feedaa98",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=2827",
-"near": "Gerrard",
-"also": [
-[
-"Oldham Athletic",
-"Oldham"
-],
-[
-"Everton"
-]
-],
-"group": "gap"
-},
-{
-"id": "9d5066913de9b522",
-"url": "https://www.the-independent.com/sport/football-the-spent-force-of-goodison-1188538.html",
-"near": "Gerrard",
-"also": [
-[
-"Oldham Athletic",
-"Oldham"
-],
-[
-"Everton"
-]
-],
-"group": "gap"
-},
-{
-"id": "eb1adbab8f0a9e46",
-"url": "https://www.the-independent.com/sport/from-philippe-albert-to-tony-yeboah-a-complete-guide-to-the-comings-an-d-goings-of-the-premiership-s-84-overseas-players-1361670.html",
-"near": "Ravanelli",
-"also": [
-[
-"Juventus",
-"Juventus"
-],
-[
-"Middlesbrough",
-"Boro"
-]
-],
-"group": "gap"
-},
-{
-"id": "d722249ff0fc88d1",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=870&season_id=126",
-"near": "Bowyer",
-"also": [
-[
-"Charlton Athletic",
-"Charlton"
-],
-[
-"Leeds United",
-"Leeds"
-]
-],
-"group": "gap"
-},
-{
-"id": "34707199b4194064",
-"url": "https://www.independent.co.uk/sport/football-pounds-2-6m-bowyer-signs-for-leeds-1327284.html",
-"near": "Bowyer",
-"also": [
-[
-"Charlton Athletic",
-"Charlton"
-],
-[
-"Leeds United",
-"Leeds"
-]
-],
-"group": "gap"
-},
-{
-"id": "2185eabb01a209f6",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=7860",
-"near": "Thatcher",
-"also": [
-[
-"Millwall",
-"Millwall"
-],
-[
-"Wimbledon"
-]
-],
-"group": "gap"
-},
-{
-"id": "931d55386adfa2aa",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=824",
-"near": "Booth",
-"also": [
-[
-"Huddersfield Town",
-"Huddersfield"
-],
-[
-"Sheffield Wednesday",
-"Sheff Wed"
-]
-],
-"group": "gap"
-},
-{
-"id": "bc195e13688f29a6",
-"url": "https://www.the-independent.com/sport/di-matteo-seals-move-to-chelsea-1327518.html",
-"near": "Booth",
-"also": [
-[
-"Huddersfield Town",
-"Huddersfield"
-],
-[
-"Sheffield Wednesday",
-"Sheff Wed"
-]
-],
-"group": "gap"
-},
-{
-"id": "a554e4c7753ea879",
-"url": "https://www.the-independent.com/sport/from-philippe-albert-to-tony-yeboah-a-complete-guide-to-the-comings-an-d-goings-of-the-premiership-s-84-overseas-players-1361670.html",
-"near": "Johnsen",
-"also": [
-[
-"Beşiktaş",
-"Beşiktaş"
-],
-[
-"Manchester United",
-"Man Utd",
-"Man United"
-]
-],
-"group": "gap"
-},
-{
-"id": "e6f0c73911e56977",
-"url": "https://www.the-independent.com/sport/di-matteo-seals-move-to-chelsea-1327518.html",
-"near": "Johnsen",
-"also": [
-[
-"Beşiktaş",
-"Beşiktaş"
-],
-[
-"Manchester United",
-"Man Utd",
-"Man United"
-]
-],
-"group": "gap"
-},
-{
-"id": "82d13257a35e781e",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=3186",
-"near": "Hall",
-"also": [
-[
-"Southampton"
-],
-[
-"West Ham United",
-"West Ham"
-]
-],
-"group": "gap"
-},
-{
-"id": "0de8519873e46c92",
-"url": "https://www.the-independent.com/sport/from-philippe-albert-to-tony-yeboah-a-complete-guide-to-the-comings-an-d-goings-of-the-premiership-s-84-overseas-players-1361670.html",
-"near": "Poborský",
-"also": [
-[
-"Slavia Prague",
-"Slavia"
-],
-[
-"Manchester United",
-"Man Utd",
-"Man United"
-]
-],
-"group": "gap"
-},
-{
-"id": "a374078b01d47a56",
-"url": "https://www.the-independent.com/sport/from-philippe-albert-to-tony-yeboah-a-complete-guide-to-the-comings-an-d-goings-of-the-premiership-s-84-overseas-players-1361670.html",
-"near": "Jerkan",
-"also": [
-[
-"Real Oviedo",
-"Real"
-],
-[
-"Nottingham Forest",
-"Forest",
-"Nott'm Forest"
-]
-],
-"group": "gap"
-},
-{
-"id": "03206b3fb3ee70da",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=4946",
-"near": "McAllister",
-"also": [
-[
-"Leeds United",
-"Leeds"
-],
-[
-"Coventry City",
-"Coventry"
-]
-],
-"group": "gap"
-},
-{
-"id": "c5681619dab889dc",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=4875",
-"near": "Martyn",
-"also": [
-[
-"Crystal Palace",
-"Palace"
-],
-[
-"Leeds United",
-"Leeds"
-]
-],
-"group": "gap"
-},
-{
-"id": "86ced02ba42e9341",
-"url": "https://www.bbc.co.uk/sport/football/52502219",
-"near": "Shearer",
-"also": [
-[
-"Blackburn Rovers",
-"Blackburn"
-],
-[
-"Newcastle United",
-"Newcastle"
-]
-],
-"group": "gap"
-},
-{
-"id": "33862916c644ad0f",
-"url": "https://www.the-independent.com/sport/from-philippe-albert-to-tony-yeboah-a-complete-guide-to-the-comings-an-d-goings-of-the-premiership-s-84-overseas-players-1361670.html",
-"near": "Solskjaer",
+"near": "Solskjær",
 "also": [
 [
 "Molde",
@@ -3417,157 +332,8 @@
 "group": "gap"
 },
 {
-"id": "c2b6ba02d6568d24",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=9738",
-"near": "Raducioiu",
-"also": [
-[
-"Espanyol",
-"Espanyol"
-],
-[
-"West Ham United",
-"West Ham"
-]
-],
-"group": "gap"
-},
-{
-"id": "9c25d4f03953dcec",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=9734",
-"near": "Nielsen",
-"also": [
-[
-"Brondby",
-"Brondby"
-],
-[
-"Tottenham Hotspur",
-"Tottenham",
-"Spurs"
-]
-],
-"group": "gap"
-},
-{
-"id": "c6b0b29061e0dd6f",
-"url": "https://www.the-independent.com/sport/from-philippe-albert-to-tony-yeboah-a-complete-guide-to-the-comings-an-d-goings-of-the-premiership-s-84-overseas-players-1361670.html",
-"near": "Nélson",
-"also": [
-[
-"Sporting",
-"Sporting"
-],
-[
-"Aston Villa",
-"Villa"
-]
-],
-"group": "gap"
-},
-{
-"id": "984c9133bf768b76",
-"url": "https://www.the-independent.com/sport/from-philippe-albert-to-tony-yeboah-a-complete-guide-to-the-comings-an-d-goings-of-the-premiership-s-84-overseas-players-1361670.html",
-"near": "Cruyff",
-"also": [
-[
-"Barcelona",
-"Barcelona"
-],
-[
-"Manchester United",
-"Man Utd",
-"Man United"
-]
-],
-"group": "gap"
-},
-{
-"id": "8619ef4a05017670",
-"url": "https://www.independent.co.uk/sport/football-year-of-goodbyes-and-bad-buys-1275331.html",
-"near": "Cruyff",
-"also": [
-[
-"Barcelona",
-"Barcelona"
-],
-[
-"Manchester United",
-"Man Utd",
-"Man United"
-]
-],
-"group": "gap"
-},
-{
-"id": "4abb0247b3b16034",
-"url": "https://www.the-independent.com/sport/from-philippe-albert-to-tony-yeboah-a-complete-guide-to-the-comings-an-d-goings-of-the-premiership-s-84-overseas-players-1361670.html",
-"near": "Genaux",
-"also": [
-[
-"Standard Liège",
-"Standard"
-],
-[
-"Coventry City",
-"Coventry"
-]
-],
-"group": "gap"
-},
-{
-"id": "940cd02af64f3ccb",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=9696",
-"near": "Genaux",
-"also": [
-[
-"Standard Liège",
-"Standard"
-],
-[
-"Coventry City",
-"Coventry"
-]
-],
-"group": "gap"
-},
-{
-"id": "cd55cd4fce728c9f",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=7197",
-"near": "Sharpe",
-"also": [
-[
-"Manchester United",
-"Man Utd",
-"Man United"
-],
-[
-"Leeds United",
-"Leeds"
-]
-],
-"group": "gap"
-},
-{
-"id": "4f5f98ce58387643",
-"url": "https://www.independent.co.uk/sport/leeds-land-pounds-4m-sharpe-1309292.html",
-"near": "Sharpe",
-"also": [
-[
-"Manchester United",
-"Man Utd",
-"Man United"
-],
-[
-"Leeds United",
-"Leeds"
-]
-],
-"group": "gap"
-},
-{
-"id": "67fd84129e5188c9",
-"url": "https://www.the-independent.com/sport/from-philippe-albert-to-tony-yeboah-a-complete-guide-to-the-comings-an-d-goings-of-the-premiership-s-84-overseas-players-1361670.html",
+"id": "ac6993b3006e5294",
+"url": "https://www.the-independent.com/sport/overmars-over-here-and-overpaid-those-premiership-imports-in-full-1243394.html",
 "near": "Berger",
 "also": [
 [
@@ -3581,70 +347,8 @@
 "group": "gap"
 },
 {
-"id": "33ca2f02bb0987af",
-"url": "https://www.the-independent.com/sport/double-berger-with-relish-1364542.html",
-"near": "Berger",
-"also": [
-[
-"Borussia Dortmund",
-"Borussia"
-],
-[
-"Liverpool"
-]
-],
-"group": "gap"
-},
-{
-"id": "08cbbb89394c546c",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=6534",
-"near": "Quinn",
-"also": [
-[
-"Manchester City",
-"Man City"
-],
-[
-"Sunderland"
-]
-],
-"group": "gap"
-},
-{
-"id": "64cd3ff82424a3bd",
-"url": "https://www.the-independent.com/sport/from-philippe-albert-to-tony-yeboah-a-complete-guide-to-the-comings-an-d-goings-of-the-premiership-s-84-overseas-players-1361670.html",
-"near": "Ćurčić",
-"also": [
-[
-"Bolton Wanderers",
-"Bolton"
-],
-[
-"Aston Villa",
-"Villa"
-]
-],
-"group": "gap"
-},
-{
-"id": "c91a1ad58858602b",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=1842",
-"near": "Ćurčić",
-"also": [
-[
-"Bolton Wanderers",
-"Bolton"
-],
-[
-"Aston Villa",
-"Villa"
-]
-],
-"group": "gap"
-},
-{
-"id": "95ce13e76d6cf368",
-"url": "https://www.the-independent.com/sport/from-philippe-albert-to-tony-yeboah-a-complete-guide-to-the-comings-an-d-goings-of-the-premiership-s-84-overseas-players-1361670.html",
+"id": "03df7cbb4f27246d",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=9677",
 "near": "Vieira",
 "also": [
 [
@@ -3657,28 +361,43 @@
 "group": "gap"
 },
 {
-"id": "deac91d14889827d",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=9729&season_id=126",
-"near": "Gobbel",
+"id": "4784d6eeb5028104",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=8918&season_id=140",
+"near": "Upson",
 "also": [
 [
-"Galatasaray",
-"Galatasaray"
+"Luton Town",
+"Luton"
 ],
 [
-"Southampton"
+"Arsenal"
 ]
 ],
 "group": "gap"
 },
 {
-"id": "66441d5b3f0eda73",
-"url": "https://www.the-independent.com/sport/football-blues-break-speed-limit-1352856.html",
-"near": "Barmby",
+"id": "f249a6c946b63293",
+"url": "https://www.the-independent.com/sport/teambyteam-guide-to-the-premiership-1244231.html",
+"near": "Upson",
 "also": [
 [
-"Middlesbrough",
-"Boro"
+"Luton Town",
+"Luton"
+],
+[
+"Arsenal"
+]
+],
+"group": "gap"
+},
+{
+"id": "1e92069bf35a67df",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=8828",
+"near": "Bilić",
+"also": [
+[
+"West Ham United",
+"West Ham"
 ],
 [
 "Everton"
@@ -3687,43 +406,103 @@
 "group": "gap"
 },
 {
-"id": "9be67c46c565d026",
-"url": "https://www.the-independent.com/sport/football-barmby-becomes-the-catalyst-1352914.html",
-"near": "Barmby",
+"id": "4048cba2e19b97eb",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=4485",
+"near": "Leonhardsen",
 "also": [
 [
-"Middlesbrough",
-"Boro"
+"Wimbledon"
 ],
 [
-"Everton"
+"Liverpool"
 ]
 ],
 "group": "gap"
 },
 {
-"id": "7890083abe72547b",
-"url": "https://www.independent.co.uk/sport/evans-eager-to-deliver-derby-blow-1353369.html",
-"near": "Barmby",
+"id": "cb15db3177a6f9e1",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=9726&season_id=132",
+"near": "Berkovic",
 "also": [
 [
-"Middlesbrough",
-"Boro"
+"Maccabi Haifa",
+"Maccabi"
 ],
 [
-"Everton"
+"West Ham United",
+"West Ham"
 ]
 ],
 "group": "gap"
 },
 {
-"id": "cbd2adddcb514998",
-"url": "https://www.independent.co.uk/sport/football-wise-decision-does-the-trick-1352915.html",
-"near": "Zola",
+"id": "a2aae4843bc13307",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=10495&season_id=127",
+"near": "Petit",
 "also": [
 [
-"Parma",
-"Parma"
+"Monaco",
+"Monaco"
+],
+[
+"Arsenal"
+]
+],
+"group": "gap"
+},
+{
+"id": "677dcfbdea5a68c2",
+"url": "https://www.the-independent.com/sport/overmars-over-here-and-overpaid-those-premiership-imports-in-full-1243394.html",
+"near": "Petit",
+"also": [
+[
+"Monaco",
+"Monaco"
+],
+[
+"Arsenal"
+]
+],
+"group": "gap"
+},
+{
+"id": "3160cc577d7f0894",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=10496",
+"near": "Grimandi",
+"also": [
+[
+"Monaco",
+"Monaco"
+],
+[
+"Arsenal"
+]
+],
+"group": "gap"
+},
+{
+"id": "73958421e9a645cd",
+"url": "https://www.the-independent.com/sport/overmars-over-here-and-overpaid-those-premiership-imports-in-full-1243394.html",
+"near": "Grimandi",
+"also": [
+[
+"Monaco",
+"Monaco"
+],
+[
+"Arsenal"
+]
+],
+"group": "gap"
+},
+{
+"id": "c5a9f88f7246bd24",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=10532",
+"near": "Goey",
+"also": [
+[
+"Feyenoord",
+"Feyenoord"
 ],
 [
 "Chelsea"
@@ -3732,94 +511,13 @@
 "group": "gap"
 },
 {
-"id": "7d9f540b22090c40",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=7521",
-"near": "Spencer",
+"id": "9fe3dba656247be6",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=10579&season_id=134",
+"near": "Hasselbaink",
 "also": [
 [
-"Chelsea"
-],
-[
-"Queens Park Rangers",
-"QPR"
-]
-],
-"group": "gap"
-},
-{
-"id": "a51ae0d4beee1585",
-"url": "https://www.independent.co.uk/sport/football-staunton-slays-sky-blues-1354061.html",
-"near": "Huckerby",
-"also": [
-[
-"Newcastle United",
-"Newcastle"
-],
-[
-"Coventry City",
-"Coventry"
-]
-],
-"group": "gap"
-},
-{
-"id": "aa5a87a092fed899",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=3683&season_id=128",
-"near": "Huckerby",
-"also": [
-[
-"Newcastle United",
-"Newcastle"
-],
-[
-"Coventry City",
-"Coventry"
-]
-],
-"group": "gap"
-},
-{
-"id": "41f5fb050aa20a0e",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=3833",
-"near": "Iversen",
-"also": [
-[
-"Rosenborg",
-"Rosenborg"
-],
-[
-"Tottenham Hotspur",
-"Tottenham",
-"Spurs"
-]
-],
-"group": "gap"
-},
-{
-"id": "d60e2d7cf061973c",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=9951",
-"near": "Vega",
-"also": [
-[
-"Cagliari",
-"Cagliari"
-],
-[
-"Tottenham Hotspur",
-"Tottenham",
-"Spurs"
-]
-],
-"group": "gap"
-},
-{
-"id": "4b037398cf402122",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=9954",
-"near": "Molenaar",
-"also": [
-[
-"Volendam",
-"Volendam"
+"Boavista",
+"Boavista"
 ],
 [
 "Leeds United",
@@ -3829,13 +527,242 @@
 "group": "gap"
 },
 {
-"id": "e103da7c82ccc82a",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=9952",
-"near": "Festa",
+"id": "aa9235b2cb3c5c05",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=3157&season_id=130",
+"near": "Haaland",
 "also": [
 [
-"Internazionale",
-"Internazionale"
+"Nottingham Forest",
+"Forest",
+"Nott'm Forest"
+],
+[
+"Leeds United",
+"Leeds"
+]
+],
+"group": "gap"
+},
+{
+"id": "fad8f1ae693c0468",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=10534&season_id=127",
+"near": "Lambourde",
+"also": [
+[
+"Bordeaux",
+"Bordeaux"
+],
+[
+"Chelsea"
+]
+],
+"group": "gap"
+},
+{
+"id": "980fcc9b146ca213",
+"url": "https://www.the-independent.com/sport/overmars-over-here-and-overpaid-those-premiership-imports-in-full-1243394.html",
+"near": "Lambourde",
+"also": [
+[
+"Bordeaux",
+"Bordeaux"
+],
+[
+"Chelsea"
+]
+],
+"group": "gap"
+},
+{
+"id": "4999abe42a532a6a",
+"url": "https://www.independent.co.uk/sport/football-gray-begins-managerial-talks-at-everton-1256485.html",
+"near": "Hristov",
+"also": [
+[
+"FK Partizan"
+],
+[
+"Barnsley"
+]
+],
+"group": "gap"
+},
+{
+"id": "4d4283f095c81c6a",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=10497&season_id=127",
+"near": "Morte",
+"also": [
+[
+"Sporting Lisbon",
+"Sporting"
+],
+[
+"Arsenal"
+]
+],
+"group": "gap"
+},
+{
+"id": "0496c49b81d5da41",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=6043",
+"near": "Overmars",
+"also": [
+[
+"Ajax",
+"Ajax"
+],
+[
+"Arsenal"
+]
+],
+"group": "gap"
+},
+{
+"id": "dc89bd9ff6a6fbae",
+"url": "https://www.the-independent.com/sport/overmars-over-here-and-overpaid-those-premiership-imports-in-full-1243394.html",
+"near": "Overmars",
+"also": [
+[
+"Ajax",
+"Ajax"
+],
+[
+"Arsenal"
+]
+],
+"group": "gap"
+},
+{
+"id": "2ea79836e1d48e39",
+"url": "https://www.the-independent.com/sport/teambyteam-guide-to-the-premiership-1244231.html",
+"near": "Overmars",
+"also": [
+[
+"Ajax",
+"Ajax"
+],
+[
+"Arsenal"
+]
+],
+"group": "gap"
+},
+{
+"id": "70289ccebaca9802",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=10521",
+"near": "Henchoz",
+"also": [
+[
+"HSV"
+],
+[
+"Blackburn Rovers",
+"Blackburn"
+]
+],
+"group": "gap"
+},
+{
+"id": "b501954aee970baa",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=10625",
+"near": "Blondeau",
+"also": [
+[
+"AS Monaco"
+],
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+]
+],
+"group": "gap"
+},
+{
+"id": "a1b0727df81dc608",
+"url": "https://www.the-independent.com/sport/overmars-over-here-and-overpaid-those-premiership-imports-in-full-1243394.html",
+"near": "Blondeau",
+"also": [
+[
+"AS Monaco"
+],
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+]
+],
+"group": "gap"
+},
+{
+"id": "c7e7c4f20d48f406",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=3051",
+"near": "Grayson",
+"also": [
+[
+"Leicester City",
+"Leicester"
+],
+[
+"Aston Villa",
+"Villa"
+]
+],
+"group": "gap"
+},
+{
+"id": "1fe3b5a5e254b403",
+"url": "https://www.the-independent.com/sport/teambyteam-guide-to-the-premiership-1244231.html",
+"near": "Grayson",
+"also": [
+[
+"Leicester City",
+"Leicester"
+],
+[
+"Aston Villa",
+"Villa"
+]
+],
+"group": "gap"
+},
+{
+"id": "87e65ef253832281",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=2316",
+"near": "Elliott",
+"also": [
+[
+"Newcastle United",
+"Newcastle"
+],
+[
+"Bolton Wanderers",
+"Bolton"
+]
+],
+"group": "gap"
+},
+{
+"id": "58fcec8f6e8cb36f",
+"url": "https://www.the-independent.com/sport/teambyteam-guide-to-the-premiership-1244231.html",
+"near": "Elliott",
+"also": [
+[
+"Newcastle United",
+"Newcastle"
+],
+[
+"Bolton Wanderers",
+"Bolton"
+]
+],
+"group": "gap"
+},
+{
+"id": "613d31e7b57d50e4",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=5392&season_id=125",
+"near": "Merson",
+"also": [
+[
+"Arsenal"
 ],
 [
 "Middlesbrough",
@@ -3845,29 +772,385 @@
 "group": "gap"
 },
 {
-"id": "cc7821815c6cd811",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=2314&season_id=130",
-"near": "Elliott",
+"id": "63e66fb39d64f961",
+"url": "https://www.the-independent.com/sport/teambyteam-guide-to-the-premiership-1244231.html",
+"near": "Merson",
 "also": [
 [
-"Oxford United",
-"Oxford"
+"Arsenal"
 ],
 [
-"Leicester City",
-"Leicester"
+"Middlesbrough",
+"Boro"
 ]
 ],
 "group": "gap"
 },
 {
-"id": "556c9f8e15e8c3f3",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=949",
-"near": "Breen",
+"id": "a622a333d6d90fad",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=10518&season_id=127",
+"near": "Dahlin",
 "also": [
 [
-"Birmingham City",
-"Birmingham"
+"Roma",
+"Roma"
+],
+[
+"Blackburn Rovers",
+"Blackburn"
+]
+],
+"group": "gap"
+},
+{
+"id": "078536e25efd8fd6",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=5705&season_id=127",
+"near": "Murphy",
+"also": [
+[
+"Crewe Alexandra",
+"Crewe"
+],
+[
+"Liverpool"
+]
+],
+"group": "gap"
+},
+{
+"id": "c5689daf0d613e72",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=3611",
+"near": "Hopkin",
+"also": [
+[
+"Crystal Palace",
+"Palace"
+],
+[
+"Leeds United",
+"Leeds"
+]
+],
+"group": "gap"
+},
+{
+"id": "29887246f1db19c6",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=6725",
+"near": "Riedle",
+"also": [
+[
+"Borussia Dortmund",
+"Borussia"
+],
+[
+"Liverpool"
+]
+],
+"group": "gap"
+},
+{
+"id": "faaa1b8a05faab04",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=10703",
+"near": "Pistone",
+"also": [
+[
+"Inter Milan",
+"Inter"
+],
+[
+"Newcastle United",
+"Newcastle"
+]
+],
+"group": "gap"
+},
+{
+"id": "74e3311c40c6375e",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=10523",
+"near": "Tomasson",
+"also": [
+[
+"Heerenveen",
+"Heerenveen"
+],
+[
+"Newcastle United",
+"Newcastle"
+]
+],
+"group": "gap"
+},
+{
+"id": "d7b5b96cbb1c3038",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=1140&season_id=127",
+"near": "Burley",
+"also": [
+[
+"Chelsea"
+],
+[
+"Celtic",
+"Celtic"
+]
+],
+"group": "gap"
+},
+{
+"id": "1623d47d27b25b31",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=4594",
+"near": "Lombardo",
+"also": [
+[
+"Juventus",
+"Juventus"
+],
+[
+"Crystal Palace",
+"Palace"
+]
+],
+"group": "gap"
+},
+{
+"id": "e589fb7497528362",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=9529",
+"near": "Oster",
+"also": [
+[
+"Grimsby Town",
+"Grimsby"
+],
+[
+"Everton"
+]
+],
+"group": "gap"
+},
+{
+"id": "c3c6e58b5a173013",
+"url": "https://www.independent.co.uk/sport/football-plaudits-go-to-poom-for-first-points-at-pride-park-5552363.html",
+"near": "Baiano",
+"also": [
+[
+"Fiorentina",
+"Fiorentina"
+],
+[
+"Derby County",
+"Derby"
+]
+],
+"group": "gap"
+},
+{
+"id": "c4a1401e52751d1b",
+"url": "https://www.the-independent.com/sport/lombardo-moves-to-palace-1243392.html",
+"near": "Baiano",
+"also": [
+[
+"Fiorentina",
+"Fiorentina"
+],
+[
+"Derby County",
+"Derby"
+]
+],
+"group": "gap"
+},
+{
+"id": "d2fe5c954609e7ea",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=13865",
+"near": "Vivas",
+"also": [
+[
+"Boca Juniors",
+"Boca"
+],
+[
+"Arsenal"
+]
+],
+"group": "gap"
+},
+{
+"id": "07aad455cec67e34",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=1279",
+"near": "Canio",
+"also": [
+[
+"Celtic",
+"Celtic"
+],
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+]
+],
+"group": "gap"
+},
+{
+"id": "d2fed53adf7ef73e",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=1170",
+"near": "Burton",
+"also": [
+[
+"Portsmouth"
+],
+[
+"Derby County",
+"Derby"
+]
+],
+"group": "gap"
+},
+{
+"id": "8fe0a7414c129bb0",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=7048&season_id=122",
+"near": "Saux",
+"also": [
+[
+"Blackburn Rovers",
+"Blackburn"
+],
+[
+"Chelsea"
+]
+],
+"group": "gap"
+},
+{
+"id": "06e27227e06e668a",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=629",
+"near": "Berg",
+"also": [
+[
+"Blackburn Rovers",
+"Blackburn"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "gap"
+},
+{
+"id": "6cdc85fa9fd39b94",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=2326",
+"near": "Emblen",
+"also": [
+[
+"Wolverhampton Wanderers",
+"Wolves"
+],
+[
+"Crystal Palace",
+"Palace"
+]
+],
+"group": "gap"
+},
+{
+"id": "962f76221a417cd4",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=8284",
+"near": "Ward",
+"also": [
+[
+"Derby County",
+"Derby"
+],
+[
+"Barnsley"
+]
+],
+"group": "gap"
+},
+{
+"id": "c7b5df9509cca873",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=3703",
+"near": "Hughes",
+"also": [
+[
+"West Ham United",
+"West Ham"
+],
+[
+"Wimbledon"
+]
+],
+"group": "gap"
+},
+{
+"id": "0615ca8c4a840e56",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=3787",
+"near": "Impey",
+"also": [
+[
+"Queens Park Rangers",
+"QPR"
+],
+[
+"West Ham United",
+"West Ham"
+]
+],
+"group": "gap"
+},
+{
+"id": "beef3a640aa93548",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=3564",
+"near": "Holdsworth",
+"also": [
+[
+"Wimbledon"
+],
+[
+"Bolton Wanderers",
+"Bolton"
+]
+],
+"group": "gap"
+},
+{
+"id": "9f806f7afe14892b",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=3524",
+"near": "Hirst",
+"also": [
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+],
+[
+"Southampton"
+]
+],
+"group": "gap"
+},
+{
+"id": "199ebd62ae227f77",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=13615",
+"near": "Friedel",
+"also": [
+[
+"Columbus Crew",
+"Columbus"
+],
+[
+"Liverpool"
+]
+],
+"group": "gap"
+},
+{
+"id": "3e7d60cb7b616b95",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=13644",
+"near": "Moldovan",
+"also": [
+[
+"Grasshoppers",
+"Grasshoppers"
 ],
 [
 "Coventry City",
@@ -3877,28 +1160,562 @@
 "group": "gap"
 },
 {
-"id": "8e3a36244b1bddce",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=2259",
-"near": "Ebbrell",
+"id": "2204ea92f7452ec9",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=13135",
+"near": "Ismaël",
 "also": [
 [
-"Everton"
+"Strasbourg",
+"Strasbourg"
 ],
 [
-"Sheffield United",
-"Sheff Utd"
+"Crystal Palace",
+"Palace"
 ]
 ],
 "group": "gap"
 },
 {
-"id": "027ab70f1c428e37",
-"url": "https://www.independent.co.uk/sport/forest-struggle-to-make-a-point-1272478.html",
-"near": "Hooijdonk",
+"id": "ed94bd6975dd5e6c",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=7318",
+"near": "Sinclair",
 "also": [
 [
-"Celtic",
-"Celtic"
+"Queens Park Rangers",
+"QPR"
+],
+[
+"West Ham United",
+"West Ham"
+]
+],
+"group": "gap"
+},
+{
+"id": "28d32040616d7af1",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=3518",
+"near": "Hinchcliffe",
+"also": [
+[
+"Everton"
+],
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+]
+],
+"group": "gap"
+},
+{
+"id": "081a2c293060486e",
+"url": "https://www.independent.co.uk/sport/football-asprilla-ready-to-return-to-parma-for-pounds-7-3m-1138828.html",
+"near": "Asprilla",
+"also": [
+[
+"Newcastle United",
+"Newcastle"
+],
+[
+"Parma",
+"Parma"
+]
+],
+"group": "gap"
+},
+{
+"id": "76c849b17184d52c",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=9793",
+"near": "Griffin",
+"also": [
+[
+"Stoke City",
+"Stoke"
+],
+[
+"Newcastle United",
+"Newcastle"
+]
+],
+"group": "gap"
+},
+{
+"id": "cea2726255eb2246",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=7512&season_id=123",
+"near": "Speed",
+"also": [
+[
+"Everton"
+],
+[
+"Newcastle United",
+"Newcastle"
+]
+],
+"group": "gap"
+},
+{
+"id": "50977965e7207884",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=9611",
+"near": "Jansen",
+"also": [
+[
+"Carlisle United",
+"Carlisle"
+],
+[
+"Crystal Palace",
+"Palace"
+]
+],
+"group": "gap"
+},
+{
+"id": "aa9cbeb605f9d148",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=13844&season_id=128",
+"near": "Saïb",
+"also": [
+[
+"Valencia",
+"Valencia"
+],
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+]
+],
+"group": "gap"
+},
+{
+"id": "9fe4e35f4990bc90",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=627",
+"near": "Beresford",
+"also": [
+[
+"Newcastle United",
+"Newcastle"
+],
+[
+"Southampton"
+]
+],
+"group": "gap"
+},
+{
+"id": "d1356a36f5877b1d",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=786",
+"near": "Bohinen",
+"also": [
+[
+"Blackburn Rovers",
+"Blackburn"
+],
+[
+"Derby County",
+"Derby"
+]
+],
+"group": "gap"
+},
+{
+"id": "cdfb60cb14087c01",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=13917",
+"near": "Dabizas",
+"also": [
+[
+"Olympiacos",
+"Olympiacos"
+],
+[
+"Newcastle United",
+"Newcastle"
+]
+],
+"group": "gap"
+},
+{
+"id": "1b6a0ecd628cdb5f",
+"url": "https://www.independent.co.uk/sport/football-transfers-on-the-move-1157163.html",
+"near": "Carbonari",
+"also": [
+[
+"Rosario Central",
+"Rosario"
+],
+[
+"Derby County",
+"Derby"
+]
+],
+"group": "gap"
+},
+{
+"id": "9c17f5fb5a5f2663",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=1348",
+"near": "Casiraghi",
+"also": [
+[
+"Lazio",
+"Lazio"
+],
+[
+"Chelsea"
+]
+],
+"group": "gap"
+},
+{
+"id": "0ff9e72339cbb83f",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=7899",
+"near": "Thompson",
+"also": [
+[
+"Bolton Wanderers",
+"Bolton"
+],
+[
+"Aston Villa",
+"Villa"
+]
+],
+"group": "gap"
+},
+{
+"id": "8cd2a1c88ec1d9fe",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=2483",
+"near": "Ferrer",
+"also": [
+[
+"Barcelona",
+"Barcelona"
+],
+[
+"Chelsea"
+]
+],
+"group": "gap"
+},
+{
+"id": "f3827ea8f6eee7c3",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=6612",
+"near": "Redfearn",
+"also": [
+[
+"Barnsley"
+],
+[
+"Charlton Athletic",
+"Charlton"
+]
+],
+"group": "gap"
+},
+{
+"id": "401db8986dcd9365",
+"url": "https://www.independent.co.uk/sport/football-gross-from-grasshopper-to-goodbye-spurs-1196633.html",
+"near": "Tramezzani",
+"also": [
+[
+"Piacenza",
+"Piacenza"
+],
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+]
+],
+"group": "gap"
+},
+{
+"id": "ab6bdab86562273d",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=14091",
+"near": "Guivarc'h",
+"also": [
+[
+"Auxerre",
+"Auxerre"
+],
+[
+"Newcastle United",
+"Newcastle"
+]
+],
+"group": "gap"
+},
+{
+"id": "ef6104ccb96a9c70",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=12657",
+"near": "Stam",
+"also": [
+[
+"PSV Eindhoven"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "gap"
+},
+{
+"id": "70b8e3e516343be7",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=1943&season_id=126",
+"near": "Davies",
+"also": [
+[
+"Southampton"
+],
+[
+"Blackburn Rovers",
+"Blackburn"
+]
+],
+"group": "gap"
+},
+{
+"id": "36b8e7dab646efef",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=6080&season_id=122",
+"near": "Pallister",
+"also": [
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+],
+[
+"Middlesbrough",
+"Boro"
+]
+],
+"group": "gap"
+},
+{
+"id": "f884d0ea736543e9",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=9691&season_id=134",
+"near": "Beattie",
+"also": [
+[
+"Blackburn Rovers",
+"Blackburn"
+],
+[
+"Southampton"
+]
+],
+"group": "gap"
+},
+{
+"id": "e8a10002be41ab1e",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=14770",
+"near": "Materazzi",
+"also": [
+[
+"Perugia",
+"Perugia"
+],
+[
+"Everton"
+]
+],
+"group": "gap"
+},
+{
+"id": "9a52e7747f415304",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=754",
+"near": "Blomqvist",
+"also": [
+[
+"Parma",
+"Parma"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "gap"
+},
+{
+"id": "f22acf15bab58995",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=14478",
+"near": "Heggem",
+"also": [
+[
+"Rosenborg",
+"Rosenborg"
+],
+[
+"Liverpool"
+]
+],
+"group": "gap"
+},
+{
+"id": "f05e5f6ebc3d3b93",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=12296",
+"near": "Dacourt",
+"also": [
+[
+"Strasbourg",
+"Strasbourg"
+],
+[
+"Everton"
+]
+],
+"group": "gap"
+},
+{
+"id": "4820983366c24686",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=2012",
+"near": "Desailly",
+"also": [
+[
+"AC Milan"
+],
+[
+"Chelsea"
+]
+],
+"group": "gap"
+},
+{
+"id": "073bc13e7f2cb943",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=1565",
+"near": "Collins",
+"also": [
+[
+"Monaco",
+"Monaco"
+],
+[
+"Everton"
+]
+],
+"group": "gap"
+},
+{
+"id": "79aac8b53ac61a91",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=4004",
+"near": "Jonk",
+"also": [
+[
+"PSV Eindhoven"
+],
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+]
+],
+"group": "gap"
+},
+{
+"id": "65698468d4f83159",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=10491",
+"near": "Rankin",
+"also": [
+[
+"Arsenal"
+],
+[
+"Bradford City",
+"Bradford"
+]
+],
+"group": "gap"
+},
+{
+"id": "dc95c0bdc7b41e52",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=7315",
+"near": "Sinclair",
+"also": [
+[
+"Chelsea"
+],
+[
+"Leicester City",
+"Leicester"
+]
+],
+"group": "gap"
+},
+{
+"id": "6ed3cb10c109211b",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=6911",
+"near": "Rowett",
+"also": [
+[
+"Derby County",
+"Derby"
+],
+[
+"Birmingham City",
+"Birmingham"
+]
+],
+"group": "gap"
+},
+{
+"id": "6b57cebd7086f176",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=1633",
+"near": "Cooper",
+"also": [
+[
+"Nottingham Forest",
+"Forest",
+"Nott'm Forest"
+],
+[
+"Middlesbrough",
+"Boro"
+]
+],
+"group": "gap"
+},
+{
+"id": "66edc691374f21e7",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=8758&season_id=128",
+"near": "Yorke",
+"also": [
+[
+"Aston Villa",
+"Villa"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "gap"
+},
+{
+"id": "9ee3da0d5c92a500",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=1876",
+"near": "Dailly",
+"also": [
+[
+"Derby County",
+"Derby"
+],
+[
+"Blackburn Rovers",
+"Blackburn"
+]
+],
+"group": "gap"
+},
+{
+"id": "2f5800482cfb9045",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=6518&season_id=136",
+"near": "Quashie",
+"also": [
+[
+"Queens Park Rangers",
+"QPR"
 ],
 [
 "Nottingham Forest",
@@ -3909,13 +1726,216 @@
 "group": "gap"
 },
 {
-"id": "184351fc58653f59",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=4593",
-"near": "Lomas",
+"id": "3e386fdbf3a09155",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=9035",
+"near": "Hamann",
 "also": [
 [
-"Manchester City",
-"Man City"
+"Bayern Munich",
+"Bayern"
+],
+[
+"Newcastle United",
+"Newcastle"
+]
+],
+"group": "gap"
+},
+{
+"id": "922e7380138df5e2",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=15057",
+"near": "Solano",
+"also": [
+[
+"Boca Juniors",
+"Boca"
+],
+[
+"Newcastle United",
+"Newcastle"
+]
+],
+"group": "gap"
+},
+{
+"id": "e01d4ad1714babc3",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=15103",
+"near": "Ljungberg",
+"also": [
+[
+"Halmstad",
+"Halmstad"
+],
+[
+"Arsenal"
+]
+],
+"group": "gap"
+},
+{
+"id": "81c6a73bdc0f3f08",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=7252&season_id=127",
+"near": "Shipperley",
+"also": [
+[
+"Crystal Palace",
+"Palace"
+],
+[
+"Nottingham Forest",
+"Forest",
+"Nott'm Forest"
+]
+],
+"group": "gap"
+},
+{
+"id": "fb14ba7c7be9d55a",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=10723&season_id=137",
+"near": "Simonsen",
+"also": [
+[
+"Tranmere Rovers",
+"Tranmere"
+],
+[
+"Everton"
+]
+],
+"group": "gap"
+},
+{
+"id": "2af9fd90ad55fe0f",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=15213&season_id=128",
+"near": "Bakayoko",
+"also": [
+[
+"Montpellier",
+"Montpellier"
+],
+[
+"Everton"
+]
+],
+"group": "gap"
+},
+{
+"id": "0df03345d84aa583",
+"url": "https://www.independent.co.uk/sport/football-bakayoko-coasts-into-everton-1178073.html",
+"near": "Bakayoko",
+"also": [
+[
+"Montpellier",
+"Montpellier"
+],
+[
+"Everton"
+]
+],
+"group": "gap"
+},
+{
+"id": "a12fe7af8360e8dd",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=8347",
+"near": "Watson",
+"also": [
+[
+"Newcastle United",
+"Newcastle"
+],
+[
+"Aston Villa",
+"Villa"
+]
+],
+"group": "gap"
+},
+{
+"id": "7b5864bdceb0b58e",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=734&season_id=125",
+"near": "Blake",
+"also": [
+[
+"Bolton Wanderers",
+"Bolton"
+],
+[
+"Blackburn Rovers",
+"Blackburn"
+]
+],
+"group": "gap"
+},
+{
+"id": "2eac1c14021581dc",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=7801",
+"near": "Taricco",
+"also": [
+[
+"Ipswich Town",
+"Ipswich"
+],
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+]
+],
+"group": "gap"
+},
+{
+"id": "c0229d3303d390e9",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=16001&season_id=138",
+"near": "Pennant",
+"also": [
+[
+"Notts County",
+"Notts"
+],
+[
+"Arsenal"
+]
+],
+"group": "gap"
+},
+{
+"id": "df8bbf593309d35d",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=4049",
+"near": "Kanu",
+"also": [
+[
+"Internazionale",
+"Internazionale"
+],
+[
+"Arsenal"
+]
+],
+"group": "gap"
+},
+{
+"id": "535461d1fea11a9d",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=14269",
+"near": "Song",
+"also": [
+[
+"Salernitana",
+"Salernitana"
+],
+[
+"Liverpool"
+]
+],
+"group": "gap"
+},
+{
+"id": "9037ceb776d42ffb",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=14272",
+"near": "Foé",
+"also": [
+[
+"Lens",
+"Lens"
 ],
 [
 "West Ham United",
@@ -3925,9 +1945,1397 @@
 "group": "gap"
 },
 {
-"id": "61740ce8f1676aa0",
-"url": "https://www.soccerbase.com/players/player.sd?player_id=3210",
-"near": "Hamilton",
+"id": "8bf2bc5cba1fe0d6",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=16111",
+"near": "Domi",
+"also": [
+[
+"PSG"
+],
+[
+"Newcastle United",
+"Newcastle"
+]
+],
+"group": "gap"
+},
+{
+"id": "ec140d9362fb3167",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=10525",
+"near": "Gunnlaugsson",
+"also": [
+[
+"Bolton Wanderers",
+"Bolton"
+],
+[
+"Leicester City",
+"Leicester"
+]
+],
+"group": "gap"
+},
+{
+"id": "c887b1960d21d308",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=7658",
+"near": "Stone",
+"also": [
+[
+"Nottingham Forest",
+"Forest",
+"Nott'm Forest"
+],
+[
+"Aston Villa",
+"Villa"
+]
+],
+"group": "gap"
+},
+{
+"id": "a62cee82a084641b",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=1329",
+"near": "Carsley",
+"also": [
+[
+"Derby County",
+"Derby"
+],
+[
+"Blackburn Rovers",
+"Blackburn"
+]
+],
+"group": "gap"
+},
+{
+"id": "b176144daf8e4e2c",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=7692",
+"near": "Stuart",
+"also": [
+[
+"Sheffield United",
+"Sheff Utd"
+],
+[
+"Charlton Athletic",
+"Charlton"
+]
+],
+"group": "gap"
+},
+{
+"id": "600c36271a64c94e",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=14065",
+"near": "Marić",
+"also": [
+[
+"Croatia Zagreb",
+"Croatia"
+],
+[
+"Newcastle United",
+"Newcastle"
+]
+],
+"group": "gap"
+},
+{
+"id": "6dd6cde0edfe3dfe",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=9578&season_id=134",
+"near": "Johnson",
+"also": [
+[
+"Crewe Alexandra",
+"Crewe"
+],
+[
+"Derby County",
+"Derby"
+]
+],
+"group": "gap"
+},
+{
+"id": "ad252cf8c3c9ef3e",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=16775",
+"near": "Hyypia",
+"also": [
+[
+"Willem II",
+"Willem"
+],
+[
+"Liverpool"
+]
+],
+"group": "gap"
+},
+{
+"id": "2402c1af03da9cdc",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=14399",
+"near": "Chippo",
+"also": [
+[
+"Porto",
+"Porto"
+],
+[
+"Coventry City",
+"Coventry"
+]
+],
+"group": "gap"
+},
+{
+"id": "dac1b310bdaf2dfe",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=12686",
+"near": "Luzhny",
+"also": [
+[
+"Dynamo Kyiv",
+"Dynamo"
+],
+[
+"Arsenal"
+]
+],
+"group": "gap"
+},
+{
+"id": "1541c40ddbd949b5",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=16762",
+"near": "Camara",
+"also": [
+[
+"Marseille",
+"Marseille"
+],
+[
+"Liverpool"
+]
+],
+"group": "gap"
+},
+{
+"id": "05f7b6e6a3892797",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=5470",
+"near": "Mills",
+"also": [
+[
+"Charlton Athletic",
+"Charlton"
+],
+[
+"Leeds United",
+"Leeds"
+]
+],
+"group": "gap"
+},
+{
+"id": "bbd72690c307c2d0",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=16787",
+"near": "Westerveld",
+"also": [
+[
+"Vitesse Arnhem",
+"Vitesse"
+],
+[
+"Liverpool"
+]
+],
+"group": "gap"
+},
+{
+"id": "fdeec3161f331459",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=16254",
+"near": "Goma",
+"also": [
+[
+"Paris Saint-Germain",
+"Paris"
+],
+[
+"Newcastle United",
+"Newcastle"
+]
+],
+"group": "gap"
+},
+{
+"id": "78c5236075200cce",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=2014",
+"near": "Deschamps",
+"also": [
+[
+"Juventus",
+"Juventus"
+],
+[
+"Chelsea"
+]
+],
+"group": "gap"
+},
+{
+"id": "c2b1ec70a9253458",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=17118",
+"near": "Defoe",
+"also": [
+[
+"Charlton Athletic",
+"Charlton"
+],
+[
+"West Ham United",
+"West Ham"
+]
+],
+"group": "gap"
+},
+{
+"id": "881a457c50c19737",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=9029",
+"near": "Smicer",
+"also": [
+[
+"Lens",
+"Lens"
+],
+[
+"Liverpool"
+]
+],
+"group": "gap"
+},
+{
+"id": "17afd8805a92a4cb",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=6278",
+"near": "Perry",
+"also": [
+[
+"Wimbledon"
+],
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+]
+],
+"group": "gap"
+},
+{
+"id": "1bd55a7abfcda345",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=2175&season_id=134",
+"near": "Duberry",
+"also": [
+[
+"Chelsea"
+],
+[
+"Leeds United",
+"Leeds"
+]
+],
+"group": "gap"
+},
+{
+"id": "42a849377a36ccd1",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=12663",
+"near": "Bilde",
+"also": [
+[
+"PSV Eindhoven"
+],
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+]
+],
+"group": "gap"
+},
+{
+"id": "f2f8f1495f370bec",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=16833",
+"near": "Sibon",
+"also": [
+[
+"Ajax",
+"Ajax"
+],
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+]
+],
+"group": "gap"
+},
+{
+"id": "470d23248c2e2c9f",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=10633&season_id=128",
+"near": "Dyer",
+"also": [
+[
+"Ipswich Town",
+"Ipswich"
+],
+[
+"Newcastle United",
+"Newcastle"
+]
+],
+"group": "gap"
+},
+{
+"id": "c751987c2e84ee59",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=10430&season_id=128",
+"near": "Wanchope",
+"also": [
+[
+"Derby County",
+"Derby"
+],
+[
+"West Ham United",
+"West Ham"
+]
+],
+"group": "gap"
+},
+{
+"id": "cbbac649dda8eceb",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=12329",
+"near": "Hadji",
+"also": [
+[
+"Deportivo",
+"Deportivo"
+],
+[
+"Coventry City",
+"Coventry"
+]
+],
+"group": "gap"
+},
+{
+"id": "757100880d66d493",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=12675",
+"near": "Boateng",
+"also": [
+[
+"Coventry City",
+"Coventry"
+],
+[
+"Aston Villa",
+"Villa"
+]
+],
+"group": "gap"
+},
+{
+"id": "2af6517303da6e37",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=8944&season_id=128",
+"near": "Bridges",
+"also": [
+[
+"Sunderland"
+],
+[
+"Leeds United",
+"Leeds"
+]
+],
+"group": "gap"
+},
+{
+"id": "1a03661c956e53da",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=4440",
+"near": "Lazaridis",
+"also": [
+[
+"West Ham United",
+"West Ham"
+],
+[
+"Birmingham City",
+"Birmingham"
+]
+],
+"group": "gap"
+},
+{
+"id": "db849073ade61b18",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=9015",
+"near": "Ziege",
+"also": [
+[
+"A.C. Milan"
+],
+[
+"Middlesbrough",
+"Boro"
+]
+],
+"group": "gap"
+},
+{
+"id": "3e68a057d4145167",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=13501",
+"near": "Henry",
+"also": [
+[
+"Juventus",
+"Juventus"
+],
+[
+"Arsenal"
+]
+],
+"group": "gap"
+},
+{
+"id": "d02a0217949f0e33",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=10409",
+"near": "Anelka",
+"also": [
+[
+"Arsenal"
+],
+[
+"Real Madrid",
+"Real"
+]
+],
+"group": "gap"
+},
+{
+"id": "ac9fc7599aed2e4e",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=14102",
+"near": "Ambrosetti",
+"also": [
+[
+"Vicenza",
+"Vicenza"
+],
+[
+"Chelsea"
+]
+],
+"group": "gap"
+},
+{
+"id": "fb11ebf68f1d5be4",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=11957&season_id=130",
+"near": "Keane",
+"also": [
+[
+"Wolverhampton Wanderers",
+"Wolves"
+],
+[
+"Coventry City",
+"Coventry"
+]
+],
+"group": "gap"
+},
+{
+"id": "31aee151a5b03bea",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=17476",
+"near": "Taibi",
+"also": [
+[
+"Venezia",
+"Venezia"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "gap"
+},
+{
+"id": "0b1cf3e16de7392b",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=17482",
+"near": "Xavier",
+"also": [
+[
+"PSV Eindhoven"
+],
+[
+"Everton"
+]
+],
+"group": "gap"
+},
+{
+"id": "0ffa8d20d96e1d57",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=12148",
+"near": "Hreidarsson",
+"also": [
+[
+"Brentford"
+],
+[
+"Wimbledon"
+]
+],
+"group": "gap"
+},
+{
+"id": "5a62a0764c9ba09c",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=17565",
+"near": "Marinelli",
+"also": [
+[
+"Boca Juniors",
+"Boca"
+],
+[
+"Middlesbrough",
+"Boro"
+]
+],
+"group": "gap"
+},
+{
+"id": "3d864086049b3a6a",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=2253",
+"near": "Eadie",
+"also": [
+[
+"Norwich City",
+"Norwich"
+],
+[
+"Leicester City",
+"Leicester"
+]
+],
+"group": "gap"
+},
+{
+"id": "c9a7e80b450ffa81",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=4193&season_id=126",
+"near": "Kilbane",
+"also": [
+[
+"West Bromwich Albion",
+"West Brom",
+"WBA"
+],
+[
+"Sunderland"
+]
+],
+"group": "gap"
+},
+{
+"id": "d8cd235b32f48ddb",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=14020",
+"near": "Thome",
+"also": [
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+],
+[
+"Chelsea"
+]
+],
+"group": "gap"
+},
+{
+"id": "dd13930f07efd5ff",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=19042",
+"near": "Helguson",
+"also": [
+[
+"Lillestrøm",
+"Lillestrøm"
+],
+[
+"Watford"
+]
+],
+"group": "gap"
+},
+{
+"id": "61da31ee9878b9b9",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=18116",
+"near": "Roussel",
+"also": [
+[
+"AA Gent"
+],
+[
+"Coventry City",
+"Coventry"
+]
+],
+"group": "gap"
+},
+{
+"id": "555ae39edc39689a",
+"url": "https://www.theguardian.com/football/2003/jan/31/sport.comment1",
+"near": "Gavilan",
+"also": [
+[
+"Cerro Porteno",
+"Cerro"
+],
+[
+"Newcastle United",
+"Newcastle"
+]
+],
+"group": "gap"
+},
+{
+"id": "6bcb75ece2da6734",
+"url": "https://www.theguardian.com/football/2003/jan/28/newsstory.sport5",
+"near": "Gavilan",
+"also": [
+[
+"Cerro Porteno",
+"Cerro"
+],
+[
+"Newcastle United",
+"Newcastle"
+]
+],
+"group": "gap"
+},
+{
+"id": "48586df56c312015",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=3453",
+"near": "Heskey",
+"also": [
+[
+"Leicester City",
+"Leicester"
+],
+[
+"Liverpool"
+]
+],
+"group": "gap"
+},
+{
+"id": "710ca90bf254b139",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=12910&season_id=131",
+"near": "Doherty",
+"also": [
+[
+"Luton Town",
+"Luton"
+],
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+]
+],
+"group": "gap"
+},
+{
+"id": "7250bce1418f6db3",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=18230&season_id=132",
+"near": "Kanoute",
+"also": [
+[
+"Lyon",
+"Lyon"
+],
+[
+"West Ham United",
+"West Ham"
+]
+],
+"group": "gap"
+},
+{
+"id": "ecffd6ae41cef0e3",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=12306",
+"near": "Rebrov",
+"also": [
+[
+"Dynamo Kyiv",
+"Dynamo"
+],
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+]
+],
+"group": "gap"
+},
+{
+"id": "6aaed868114f8327",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=14272",
+"near": "Foe",
+"also": [
+[
+"West Ham United",
+"West Ham"
+],
+[
+"Lyon",
+"Lyon"
+]
+],
+"group": "gap"
+},
+{
+"id": "6692ff0d3d90a645",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=461",
+"near": "Barthez",
+"also": [
+[
+"Monaco",
+"Monaco"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "gap"
+},
+{
+"id": "99decf16fad494c2",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=12614",
+"near": "Curtis",
+"also": [
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+],
+[
+"Blackburn Rovers",
+"Blackburn"
+]
+],
+"group": "gap"
+},
+{
+"id": "ddb9112aeb443a63",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=16600",
+"near": "Lauren",
+"also": [
+[
+"Mallorca",
+"Mallorca"
+],
+[
+"Arsenal"
+]
+],
+"group": "gap"
+},
+{
+"id": "780df2a845dba8d1",
+"url": "https://www.theguardian.com/football/2000/jul/09/newsstory.sport5",
+"near": "Bassedas",
+"also": [
+[
+"Vélez Sársfield",
+"Vélez"
+],
+[
+"Newcastle United",
+"Newcastle"
+]
+],
+"group": "gap"
+},
+{
+"id": "05bd2d477e978748",
+"url": "https://www.theguardian.com/football/2000/jun/01/newsstory.sport3",
+"near": "Bassedas",
+"also": [
+[
+"Vélez Sársfield",
+"Vélez"
+],
+[
+"Newcastle United",
+"Newcastle"
+]
+],
+"group": "gap"
+},
+{
+"id": "baaae632abd77ca7",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=14090",
+"near": "Diomede",
+"also": [
+[
+"Auxerre",
+"Auxerre"
+],
+[
+"Liverpool"
+]
+],
+"group": "gap"
+},
+{
+"id": "33bd49b4a7c84a19",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=17415",
+"near": "Fuertes",
+"also": [
+[
+"Derby County",
+"Derby"
+],
+[
+"RC Lens"
+]
+],
+"group": "gap"
+},
+{
+"id": "513fad5f9c213343",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=15046",
+"near": "Guðjohnsen",
+"also": [
+[
+"Bolton Wanderers",
+"Bolton"
+],
+[
+"Chelsea"
+]
+],
+"group": "gap"
+},
+{
+"id": "60e826e56aecd809",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=16252",
+"near": "Reuser",
+"also": [
+[
+"Ajax",
+"Ajax"
+],
+[
+"Ipswich Town",
+"Ipswich"
+]
+],
+"group": "gap"
+},
+{
+"id": "93cc69dacb8d53d9",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=15587",
+"near": "Viduka",
+"also": [
+[
+"Celtic",
+"Celtic"
+],
+[
+"Leeds United",
+"Leeds"
+]
+],
+"group": "gap"
+},
+{
+"id": "ef4e277714b4aee0",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=14092",
+"near": "Pires",
+"also": [
+[
+"Marseille",
+"Marseille"
+],
+[
+"Arsenal"
+]
+],
+"group": "gap"
+},
+{
+"id": "eac8880647234568",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=14638&season_id=136",
+"near": "Higginbotham",
+"also": [
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+],
+[
+"Derby County",
+"Derby"
+]
+],
+"group": "gap"
+},
+{
+"id": "352a077e837e7d0f",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=9355",
+"near": "Karembeu",
+"also": [
+[
+"Real Madrid",
+"Real"
+],
+[
+"Middlesbrough",
+"Boro"
+]
+],
+"group": "gap"
+},
+{
+"id": "b74a3c5228dde603",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=10423&season_id=126",
+"near": "Cort",
+"also": [
+[
+"Wimbledon"
+],
+[
+"Newcastle United",
+"Newcastle"
+]
+],
+"group": "gap"
+},
+{
+"id": "490a0eef1f720650",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=21000",
+"near": "Bothroyd",
+"also": [
+[
+"Arsenal"
+],
+[
+"Coventry City",
+"Coventry"
+]
+],
+"group": "gap"
+},
+{
+"id": "a7c45b5f34bb5b35",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=9124",
+"near": "Benjamin",
+"also": [
+[
+"Cambridge United",
+"Cambridge"
+],
+[
+"Leicester City",
+"Leicester"
+]
+],
+"group": "gap"
+},
+{
+"id": "24d666653cc3ba90",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=15725",
+"near": "Nyarko",
+"also": [
+[
+"RC Lens"
+],
+[
+"Everton"
+]
+],
+"group": "gap"
+},
+{
+"id": "40154e74c9e68d2b",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=12516",
+"near": "Alexandersson",
+"also": [
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+],
+[
+"Everton"
+]
+],
+"group": "gap"
+},
+{
+"id": "5d9a73dea983f057",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=14680",
+"near": "Jensen",
+"also": [
+[
+"Bolton Wanderers",
+"Bolton"
+],
+[
+"Charlton Athletic",
+"Charlton"
+]
+],
+"group": "gap"
+},
+{
+"id": "eeea7a59999ff031",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=14073",
+"near": "Gravesen",
+"also": [
+[
+"Hamburg",
+"Hamburg"
+],
+[
+"Everton"
+]
+],
+"group": "gap"
+},
+{
+"id": "e21943fda00d580b",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=21296&season_id=135",
+"near": "Arca",
+"also": [
+[
+"Argentinos Juniors",
+"Argentinos"
+],
+[
+"Sunderland"
+]
+],
+"group": "gap"
+},
+{
+"id": "1ff58f1ec17be459",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=62",
+"near": "Akinbiyi",
+"also": [
+[
+"Wolverhampton Wanderers",
+"Wolves"
+],
+[
+"Leicester City",
+"Leicester"
+]
+],
+"group": "gap"
+},
+{
+"id": "2f10c86846ac8639",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=18643&season_id=131",
+"near": "Özalan",
+"also": [
+[
+"Fenerbahçe",
+"Fenerbahçe"
+],
+[
+"Aston Villa",
+"Villa"
+]
+],
+"group": "gap"
+},
+{
+"id": "7daf6d5241f39d29",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=14281",
+"near": "Job",
+"also": [
+[
+"RC Lens"
+],
+[
+"Middlesbrough",
+"Boro"
+]
+],
+"group": "gap"
+},
+{
+"id": "b72593d4327069ae",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=7902",
+"near": "Thompson",
+"also": [
+[
+"Liverpool"
+],
+[
+"Coventry City",
+"Coventry"
+]
+],
+"group": "gap"
+},
+{
+"id": "3cdf621e8629a46c",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=787",
+"near": "Bokšić",
+"also": [
+[
+"Lazio",
+"Lazio"
+],
+[
+"Middlesbrough",
+"Boro"
+]
+],
+"group": "gap"
+},
+{
+"id": "d034f78e740224ce",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=10692",
+"near": "Bellamy",
+"also": [
+[
+"Norwich City",
+"Norwich"
+],
+[
+"Coventry City",
+"Coventry"
+]
+],
+"group": "gap"
+},
+{
+"id": "cfdf666d227e17c0",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=12148",
+"near": "Hreiðarsson",
+"also": [
+[
+"Wimbledon"
+],
+[
+"Ipswich Town",
+"Ipswich"
+]
+],
+"group": "gap"
+},
+{
+"id": "0146f3676cf87ec6",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=12266",
+"near": "Wiltord",
+"also": [
+[
+"Bordeaux",
+"Bordeaux"
+],
+[
+"Arsenal"
+]
+],
+"group": "gap"
+},
+{
+"id": "65bcc5539622451e",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=3666",
+"near": "Howey",
+"also": [
+[
+"Newcastle United",
+"Newcastle"
+],
+[
+"Manchester City",
+"Man City"
+]
+],
+"group": "gap"
+},
+{
+"id": "3a8aa398e09eca91",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=19507",
+"near": "Stepanovs",
+"also": [
+[
+"Skonto Riga",
+"Skonto"
+],
+[
+"Arsenal"
+]
+],
+"group": "gap"
+},
+{
+"id": "1cd8199721aeba12",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=10583",
+"near": "Dunne",
+"also": [
+[
+"Everton"
+],
+[
+"Manchester City",
+"Man City"
+]
+],
+"group": "gap"
+},
+{
+"id": "4dd8edb6eca9a027",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=2297",
+"near": "Ehiogu",
+"also": [
+[
+"Aston Villa",
+"Villa"
+],
+[
+"Middlesbrough",
+"Boro"
+]
+],
+"group": "gap"
+},
+{
+"id": "905651b290b541b1",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=14367",
+"near": "Acuña",
+"also": [
+[
+"Universidad de Chile",
+"Universidad"
+],
+[
+"Newcastle United",
+"Newcastle"
+]
+],
+"group": "gap"
+},
+{
+"id": "429325070973ff0c",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=13768",
+"near": "Charvet",
+"also": [
+[
+"Newcastle United",
+"Newcastle"
+],
+[
+"Manchester City",
+"Man City"
+]
+],
+"group": "gap"
+},
+{
+"id": "0399e31e462b46d0",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=12118",
+"near": "Flo",
+"also": [
+[
+"Chelsea"
+],
+[
+"Rangers",
+"Rangers"
+]
+],
+"group": "gap"
+},
+{
+"id": "02986063b79f1cbd",
+"url": "https://www.soccerbase.com/players/player.sd?lang=en&player_id=8940",
+"near": "Ferdinand",
+"also": [
+[
+"West Ham United",
+"West Ham"
+],
+[
+"Leeds United",
+"Leeds"
+]
+],
+"group": "gap"
+},
+{
+"id": "2276807aeefe72c1",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=17610",
+"near": "Biscan",
+"also": [
+[
+"Dinamo Zagreb",
+"Dinamo"
+],
+[
+"Liverpool"
+]
+],
+"group": "gap"
+},
+{
+"id": "30a3ddd02cb46121",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=13841",
+"near": "Jones",
+"also": [
+[
+"Leeds United",
+"Leeds"
+],
+[
+"Leicester City",
+"Leicester"
+]
+],
+"group": "gap"
+},
+{
+"id": "87c23fad52f47197",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=19659",
+"near": "Grønkjær",
+"also": [
+[
+"Ajax",
+"Ajax"
+],
+[
+"Chelsea"
+]
+],
+"group": "gap"
+},
+{
+"id": "b8c4603a925bf4b7",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=21092",
+"near": "Ángel",
+"also": [
+[
+"River Plate",
+"River"
+],
+[
+"Aston Villa",
+"Villa"
+]
+],
+"group": "gap"
+},
+{
+"id": "dfa543c208c3dbd1",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=9719&season_id=138",
+"near": "O'Brien",
 "also": [
 [
 "Bradford City",
@@ -3941,13 +3349,13 @@
 "group": "gap"
 },
 {
-"id": "097d24d7029caf2e",
-"url": "https://www.the-independent.com/sport/babayaro-to-join-bridge-foreign-legion-1268683.html",
-"near": "Babayaro",
+"id": "cad061180f931a8e",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=17916&season_id=142",
+"near": "Gallas",
 "also": [
 [
-"Anderlecht",
-"Anderlecht"
+"Marseille",
+"Marseille"
 ],
 [
 "Chelsea"
@@ -3956,13 +3364,261 @@
 "group": "gap"
 },
 {
-"id": "a20214bc11060bd6",
-"url": "https://www.the-independent.com/sport/fa-carling-premiership-199596-1596957.html",
-"near": "Hislop",
+"id": "7cc450c5540f8124",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=15944&season_id=132",
+"near": "Bartlett",
+"also": [
+[
+"FC Zürich"
+],
+[
+"Charlton Athletic",
+"Charlton"
+]
+],
+"group": "gap"
+},
+{
+"id": "faa7a115be096c41",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=4370&season_id=138",
+"near": "Lampard",
 "also": [
 [
 "West Ham United",
 "West Ham"
+],
+[
+"Chelsea"
+]
+],
+"group": "gap"
+},
+{
+"id": "596013084240dcdf",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=13590",
+"near": "Jeffers",
+"also": [
+[
+"Everton"
+],
+[
+"Arsenal"
+]
+],
+"group": "gap"
+},
+{
+"id": "dd82f273872671ad",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=24999",
+"near": "Grabbi",
+"also": [
+[
+"Ternana",
+"Ternana"
+],
+[
+"Blackburn Rovers",
+"Blackburn"
+]
+],
+"group": "gap"
+},
+{
+"id": "9c9ab540883687d9",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=12672&season_id=131",
+"near": "Bronckhorst",
+"also": [
+[
+"Rangers",
+"Rangers"
+],
+[
+"Arsenal"
+]
+],
+"group": "gap"
+},
+{
+"id": "a7b4a7d48383bbad",
+"url": "https://www.independent.co.uk/sport/football/news/gray-to-take-over-at-saints-after-all-9131691.html",
+"near": "Laslandes",
+"also": [
+[
+"Bordeaux",
+"Bordeaux"
+],
+[
+"Sunderland"
+]
+],
+"group": "gap"
+},
+{
+"id": "7fe77a2bffb29101",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=20604",
+"near": "Bunjevcevic",
+"also": [
+[
+"Red Star Belgrade"
+],
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+]
+],
+"group": "gap"
+},
+{
+"id": "0113996de800b691",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=15858&season_id=130",
+"near": "Nistelrooy",
+"also": [
+[
+"PSV Eindhoven"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "gap"
+},
+{
+"id": "7dffe116ea16e20e",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=2353",
+"near": "Euell",
+"also": [
+[
+"Wimbledon"
+],
+[
+"Charlton Athletic",
+"Charlton"
+]
+],
+"group": "gap"
+},
+{
+"id": "cec5fa7b99b45519",
+"url": "https://www.soccerbase.com/players/player.sd?lang=en&player_id=8726&season_id=130",
+"near": "Wright",
+"also": [
+[
+"Ipswich Town",
+"Ipswich"
+],
+[
+"Arsenal"
+]
+],
+"group": "gap"
+},
+{
+"id": "cec75c556673e248",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=8234",
+"near": "Walker",
+"also": [
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+],
+[
+"Leicester City",
+"Leicester"
+]
+],
+"group": "gap"
+},
+{
+"id": "2a6a8a87bf557ce4",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=1999",
+"near": "Delap",
+"also": [
+[
+"Derby County",
+"Derby"
+],
+[
+"Southampton"
+]
+],
+"group": "gap"
+},
+{
+"id": "d7d07646190597a0",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=13876",
+"near": "Verón",
+"also": [
+[
+"Lazio",
+"Lazio"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "gap"
+},
+{
+"id": "7b34f9d965d362f0",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=21842",
+"near": "Radzinski",
+"also": [
+[
+"Anderlecht",
+"Anderlecht"
+],
+[
+"Everton"
+]
+],
+"group": "gap"
+},
+{
+"id": "9f1dd2099f715408",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=15624",
+"near": "Young",
+"also": [
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+],
+[
+"Charlton Athletic",
+"Charlton"
+]
+],
+"group": "gap"
+},
+{
+"id": "0d6366ae64c4a2c7",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=7461",
+"near": "Scowcroft",
+"also": [
+[
+"Ipswich Town",
+"Ipswich"
+],
+[
+"Leicester City",
+"Leicester"
+]
+],
+"group": "gap"
+},
+{
+"id": "f47cfbb3932b8509",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=19663",
+"near": "Robert",
+"also": [
+[
+"PSG"
 ],
 [
 "Newcastle United",
@@ -3972,9 +3628,868 @@
 "group": "gap"
 },
 {
-"id": "70df423f07d87745",
-"url": "https://www.the-independent.com/sport/football-batty-effect-takes-over-at-blackburn-guy-hodgson-on-the-best-and-worst-buys-of-the-season-1431365.html",
-"near": "Batty",
+"id": "37ceb0053ac22d84",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=7031",
+"near": "Sar",
+"also": [
+[
+"Juventus",
+"Juventus"
+],
+[
+"Fulham"
+]
+],
+"group": "gap"
+},
+{
+"id": "01c4970c7cdc5e50",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=12662",
+"near": "Zenden",
+"also": [
+[
+"Barcelona",
+"Barcelona"
+],
+[
+"Chelsea"
+]
+],
+"group": "gap"
+},
+{
+"id": "c67bc9bd48a28424",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=15818",
+"near": "Malbranque",
+"also": [
+[
+"Lyon",
+"Lyon"
+],
+[
+"Fulham"
+]
+],
+"group": "gap"
+},
+{
+"id": "be3ce28c1ee47e08",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=10769&season_id=131",
+"near": "Greening",
+"also": [
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+],
+[
+"Middlesbrough",
+"Boro"
+]
+],
+"group": "gap"
+},
+{
+"id": "d73086119342682c",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=2818",
+"near": "George",
+"also": [
+[
+"Mallorca",
+"Mallorca"
+],
+[
+"Ipswich Town",
+"Ipswich"
+]
+],
+"group": "gap"
+},
+{
+"id": "6cbb2d9a5855ce95",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=27082",
+"near": "Sereni",
+"also": [
+[
+"Sampdoria",
+"Sampdoria"
+],
+[
+"Ipswich Town",
+"Ipswich"
+]
+],
+"group": "gap"
+},
+{
+"id": "6a3bc575433876b1",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=13897",
+"near": "Legwinski",
+"also": [
+[
+"Bordeaux",
+"Bordeaux"
+],
+[
+"Fulham"
+]
+],
+"group": "gap"
+},
+{
+"id": "807e19c936f0f207",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=21527",
+"near": "Balaban",
+"also": [
+[
+"Dinamo Zagreb",
+"Dinamo"
+],
+[
+"Aston Villa",
+"Villa"
+]
+],
+"group": "gap"
+},
+{
+"id": "3c47baf2acec91c2",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=21369",
+"near": "Marlet",
+"also": [
+[
+"Lyon",
+"Lyon"
+],
+[
+"Fulham"
+]
+],
+"group": "gap"
+},
+{
+"id": "eb8cf18885520d52",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=12666",
+"near": "Dudek",
+"also": [
+[
+"Feyenoord",
+"Feyenoord"
+],
+[
+"Liverpool"
+]
+],
+"group": "gap"
+},
+{
+"id": "a7baea200dbd0a89",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=16003",
+"near": "Kirkland",
+"also": [
+[
+"Coventry City",
+"Coventry"
+],
+[
+"Liverpool"
+]
+],
+"group": "gap"
+},
+{
+"id": "55e00477c4a17305",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=8954",
+"near": "Neill",
+"also": [
+[
+"Millwall",
+"Millwall"
+],
+[
+"Blackburn Rovers",
+"Blackburn"
+]
+],
+"group": "gap"
+},
+{
+"id": "eee984f1e07cf33c",
+"url": "https://www.theguardian.com/football/2001/nov/16/newsstory.sport1",
+"near": "Pen",
+"also": [
+[
+"Lorient",
+"Lorient"
+],
+[
+"Ipswich Town",
+"Ipswich"
+]
+],
+"group": "gap"
+},
+{
+"id": "656f46cb44ead1a5",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=18959",
+"near": "Delgado",
+"also": [
+[
+"Necaxa",
+"Necaxa"
+],
+[
+"Southampton"
+]
+],
+"group": "gap"
+},
+{
+"id": "0e9b0fbc52d43fd8",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=619",
+"near": "Bent",
+"also": [
+[
+"Blackburn Rovers",
+"Blackburn"
+],
+[
+"Ipswich Town",
+"Ipswich"
+]
+],
+"group": "gap"
+},
+{
+"id": "8abaad0ffbf3c9ea",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=2634&season_id=134",
+"near": "Fowler",
+"also": [
+[
+"Liverpool"
+],
+[
+"Leeds United",
+"Leeds"
+]
+],
+"group": "gap"
+},
+{
+"id": "e0a08bd034effb47",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=2035",
+"near": "Dichio",
+"also": [
+[
+"Sunderland"
+],
+[
+"West Bromwich Albion",
+"West Brom",
+"WBA"
+]
+],
+"group": "gap"
+},
+{
+"id": "27cefef1ca53b6e1",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=12263",
+"near": "Ormerod",
+"also": [
+[
+"Blackpool"
+],
+[
+"Southampton"
+]
+],
+"group": "gap"
+},
+{
+"id": "a85fbf5ae7bade9a",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=14561&season_id=129",
+"near": "Reyna",
+"also": [
+[
+"Rangers",
+"Rangers"
+],
+[
+"Sunderland"
+]
+],
+"group": "gap"
+},
+{
+"id": "097e38f10afdd21e",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=24627&season_id=134",
+"near": "Baros",
+"also": [
+[
+"Banik Ostrava",
+"Banik"
+],
+[
+"Liverpool"
+]
+],
+"group": "gap"
+},
+{
+"id": "771069d5adfc980c",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=21323",
+"near": "Fernandes",
+"also": [
+[
+"Rennes",
+"Rennes"
+],
+[
+"Southampton"
+]
+],
+"group": "gap"
+},
+{
+"id": "a6c46efeb018b3d1",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=29892",
+"near": "Forlán",
+"also": [
+[
+"Independiente",
+"Independiente"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "gap"
+},
+{
+"id": "756642a150c8cb8c",
+"url": "https://www.theguardian.com/football/2002/jan/22/newsstory.sport7",
+"near": "Forlán",
+"also": [
+[
+"Independiente",
+"Independiente"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "gap"
+},
+{
+"id": "2594e47493e9f644",
+"url": "https://www.uefa.com/uefachampionsleague/news/0181-0e6a36c83f82-35233fefe5cc-1000--forlan-completes-united-switch/",
+"near": "Forlán",
+"also": [
+[
+"Independiente",
+"Independiente"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "gap"
+},
+{
+"id": "a949936aefd93620",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=9405",
+"near": "Björklund",
+"also": [
+[
+"Venezia",
+"Venezia"
+],
+[
+"Sunderland"
+]
+],
+"group": "gap"
+},
+{
+"id": "cb225cbc519481b9",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=20665",
+"near": "Linderoth",
+"also": [
+[
+"Stabæk",
+"Stabæk"
+],
+[
+"Everton"
+]
+],
+"group": "gap"
+},
+{
+"id": "3b914776a434dfac",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=23937&season_id=135",
+"near": "Jenas",
+"also": [
+[
+"Nottingham Forest",
+"Forest",
+"Nott'm Forest"
+],
+[
+"Newcastle United",
+"Newcastle"
+]
+],
+"group": "gap"
+},
+{
+"id": "8d736c08b7e8fab6",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=21235",
+"near": "Crouch",
+"also": [
+[
+"Portsmouth"
+],
+[
+"Aston Villa",
+"Villa"
+]
+],
+"group": "gap"
+},
+{
+"id": "73993473f6e6ef24",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=20101",
+"near": "Queudrue",
+"also": [
+[
+"Lens",
+"Lens"
+],
+[
+"Middlesbrough",
+"Boro"
+]
+],
+"group": "gap"
+},
+{
+"id": "a8270a6e2ad5ab07",
+"url": "https://www.theguardian.com/football/2002/aug/07/newsstory.sport8",
+"near": "Queudrue",
+"also": [
+[
+"Lens",
+"Lens"
+],
+[
+"Middlesbrough",
+"Boro"
+]
+],
+"group": "gap"
+},
+{
+"id": "ad71c6c61aad2cb8",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=31759",
+"near": "Sava",
+"also": [
+[
+"Gimnasia",
+"Gimnasia"
+],
+[
+"Fulham"
+]
+],
+"group": "gap"
+},
+{
+"id": "7a920aee6a12085c",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=26430",
+"near": "Cheyrou",
+"also": [
+[
+"Lille",
+"Lille"
+],
+[
+"Liverpool"
+]
+],
+"group": "gap"
+},
+{
+"id": "68b4bfe241578f71",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=22745",
+"near": "Distin",
+"also": [
+[
+"Paris Saint-Germain",
+"Paris"
+],
+[
+"Manchester City",
+"Man City"
+]
+],
+"group": "gap"
+},
+{
+"id": "6a109096aef139c5",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=7051",
+"near": "Savage",
+"also": [
+[
+"Leicester City",
+"Leicester"
+],
+[
+"Birmingham City",
+"Birmingham"
+]
+],
+"group": "gap"
+},
+{
+"id": "be62c40b1ce43225",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=32194",
+"near": "Vuoso",
+"also": [
+[
+"Independiente",
+"Independiente"
+],
+[
+"Manchester City",
+"Man City"
+]
+],
+"group": "gap"
+},
+{
+"id": "2d1d041efdc48744",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=30068",
+"near": "Viana",
+"also": [
+[
+"Sporting CP",
+"Sporting"
+],
+[
+"Newcastle United",
+"Newcastle"
+]
+],
+"group": "gap"
+},
+{
+"id": "a907122f7d5b99bb",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=21278&season_id=141",
+"near": "Diouf",
+"also": [
+[
+"Lens",
+"Lens"
+],
+[
+"Liverpool"
+]
+],
+"group": "gap"
+},
+{
+"id": "7806c6acd125de37",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=15050&season_id=129",
+"near": "Bramble",
+"also": [
+[
+"Ipswich Town",
+"Ipswich"
+],
+[
+"Newcastle United",
+"Newcastle"
+]
+],
+"group": "gap"
+},
+{
+"id": "bff3ba5f442abdb4",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=20624",
+"near": "Cruz",
+"also": [
+[
+"Hibernian",
+"Hibernian"
+],
+[
+"Aston Villa",
+"Villa"
+]
+],
+"group": "gap"
+},
+{
+"id": "6fd77f2987e556b6",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=19036",
+"near": "Silva",
+"also": [
+[
+"Atlético Mineiro",
+"Atlético"
+],
+[
+"Arsenal"
+]
+],
+"group": "gap"
+},
+{
+"id": "18876314b8679b56",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=10566&season_id=130",
+"near": "Morrison",
+"also": [
+[
+"Crystal Palace",
+"Palace"
+],
+[
+"Birmingham City",
+"Birmingham"
+]
+],
+"group": "gap"
+},
+{
+"id": "751f82f2922d79d5",
+"url": "https://www.independent.co.uk/sport/robson-eyes-third-brazilian-1347344.html",
+"near": "Paulista",
+"also": [
+[
+"Atlético Madrid",
+"Atlético"
+],
+[
+"Middlesbrough",
+"Boro"
+]
+],
+"group": "gap"
+},
+{
+"id": "937a0bdee6782a0e",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=4031",
+"near": "Paulista",
+"also": [
+[
+"Atlético Madrid",
+"Atlético"
+],
+[
+"Middlesbrough",
+"Boro"
+]
+],
+"group": "gap"
+},
+{
+"id": "b0a034bee6d9abe0",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=3076",
+"near": "Gregan",
+"also": [
+[
+"Preston North End",
+"Preston"
+],
+[
+"West Bromwich Albion",
+"West Brom",
+"WBA"
+]
+],
+"group": "gap"
+},
+{
+"id": "88ba3c7399b9fd31",
+"url": "https://www.the-independent.com/sport/football/premier-league/mcclaren-secures-deals-for-boateng-and-geremi-172296.html",
+"near": "Boateng",
+"also": [
+[
+"Aston Villa",
+"Villa"
+],
+[
+"Middlesbrough",
+"Boro"
+]
+],
+"group": "gap"
+},
+{
+"id": "54a602731bcf7815",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=27791",
+"near": "Diao",
+"also": [
+[
+"Sedan",
+"Sedan"
+],
+[
+"Liverpool"
+]
+],
+"group": "gap"
+},
+{
+"id": "ccde1e7d0e7f83c0",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=16314&season_id=132",
+"near": "Wright",
+"also": [
+[
+"Liverpool"
+],
+[
+"Sunderland"
+]
+],
+"group": "gap"
+},
+{
+"id": "0fdb3296643a6bad",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=28562",
+"near": "Piper",
+"also": [
+[
+"Leicester City",
+"Leicester"
+],
+[
+"Sunderland"
+]
+],
+"group": "gap"
+},
+{
+"id": "c76f2bdf64f6af76",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=10913",
+"near": "Niemi",
+"also": [
+[
+"Hearts",
+"Hearts"
+],
+[
+"Southampton"
+]
+],
+"group": "gap"
+},
+{
+"id": "b3d5f39730dd8e1a",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=13834",
+"near": "Koumas",
+"also": [
+[
+"Tranmere Rovers",
+"Tranmere"
+],
+[
+"West Bromwich Albion",
+"West Brom",
+"WBA"
+]
+],
+"group": "gap"
+},
+{
+"id": "356907e74073977f",
+"url": "https://www.independent.co.uk/sport/football/news/yobo-set-to-finalise-move-to-goodison-129662.html",
+"near": "Yobo",
+"also": [
+[
+"Marseille",
+"Marseille"
+],
+[
+"Everton"
+]
+],
+"group": "gap"
+},
+{
+"id": "95433e1699495faa",
+"url": "https://www.uefa.com/news-media/news/025e-0f907d644df2-e6e3ba4a2a4a-1000--everton-seal-yobo-deal/",
+"near": "Yobo",
+"also": [
+[
+"Marseille",
+"Marseille"
+],
+[
+"Everton"
+]
+],
+"group": "gap"
+},
+{
+"id": "9e53a57a7a5865e2",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=23071",
+"near": "Sommeil",
+"also": [
+[
+"Bordeaux",
+"Bordeaux"
+],
+[
+"Manchester City",
+"Man City"
+]
+],
+"group": "gap"
+},
+{
+"id": "ab604fe9a6a183cb",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=15284",
+"near": "Christie",
+"also": [
+[
+"Derby County",
+"Derby"
+],
+[
+"Middlesbrough",
+"Boro"
+]
+],
+"group": "gap"
+},
+{
+"id": "c0ff0653183657b1",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=9303",
+"near": "Ricketts",
+"also": [
+[
+"Bolton Wanderers",
+"Bolton"
+],
+[
+"Middlesbrough",
+"Boro"
+]
+],
+"group": "gap"
+},
+{
+"id": "8c6b084dfe0bea9f",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=14907",
+"near": "Woodgate",
 "also": [
 [
 "Leeds United",
@@ -3983,6 +4498,2724 @@
 [
 "Newcastle United",
 "Newcastle"
+]
+],
+"group": "gap"
+},
+{
+"id": "0dc39bf1c53525d3",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=17848",
+"near": "Prutton",
+"also": [
+[
+"Nottingham Forest",
+"Forest",
+"Nott'm Forest"
+],
+[
+"Southampton"
+]
+],
+"group": "gap"
+},
+{
+"id": "e23b914c8b0621a7",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=19218&season_id=134",
+"near": "Riggott",
+"also": [
+[
+"Derby County",
+"Derby"
+],
+[
+"Middlesbrough",
+"Boro"
+]
+],
+"group": "gap"
+},
+{
+"id": "70345a329dc6b0cb",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=28060",
+"near": "Ambrose",
+"also": [
+[
+"Ipswich Town",
+"Ipswich"
+],
+[
+"Newcastle United",
+"Newcastle"
+]
+],
+"group": "gap"
+},
+{
+"id": "b30b4c93d7531b04",
+"url": "https://www.uefa.com/news-media/news/0191-0f844d91cebb-38132fac84f3-1000--everton-seal-yobo-deal/",
+"near": "Yobo",
+"also": [
+[
+"Marseille",
+"Marseille"
+],
+[
+"Everton"
+]
+],
+"group": "gap"
+},
+{
+"id": "1bc638beab9222e8",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=22826",
+"near": "Yobo",
+"also": [
+[
+"Marseille",
+"Marseille"
+],
+[
+"Everton"
+]
+],
+"group": "gap"
+},
+{
+"id": "5be01b982ba52ab2",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=30235",
+"near": "Senderos",
+"also": [
+[
+"Servette",
+"Servette"
+],
+[
+"Arsenal"
+]
+],
+"group": "gap"
+},
+{
+"id": "086ab35302ecda52",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=2516",
+"near": "Finnan",
+"also": [
+[
+"Fulham"
+],
+[
+"Liverpool"
+]
+],
+"group": "gap"
+},
+{
+"id": "1f72e30e06b9d6aa",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=26834",
+"near": "Postiga",
+"also": [
+[
+"Porto",
+"Porto"
+],
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+]
+],
+"group": "gap"
+},
+{
+"id": "6cb69bed454582ed",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=25356",
+"near": "Bellion",
+"also": [
+[
+"Sunderland"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "gap"
+},
+{
+"id": "7cae89a20e496568",
+"url": "https://www.theguardian.com/uk/2003/jun/18/football.michaelwalker",
+"near": "Beckham",
+"also": [
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+],
+[
+"Real Madrid",
+"Real"
+]
+],
+"group": "gap"
+},
+{
+"id": "cf42b9e04da8f4ca",
+"url": "https://www.theguardian.com/football/2003/jun/18/newsstory.sport8",
+"near": "Beckham",
+"also": [
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+],
+[
+"Real Madrid",
+"Real"
+]
+],
+"group": "gap"
+},
+{
+"id": "2fc103280ce0989d",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=26517",
+"near": "Djemba-Djemba",
+"also": [
+[
+"Nantes",
+"Nantes"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "gap"
+},
+{
+"id": "42fd373a0158b991",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=8904",
+"near": "Kewell",
+"also": [
+[
+"Leeds United",
+"Leeds"
+],
+[
+"Liverpool"
+]
+],
+"group": "gap"
+},
+{
+"id": "7eb901e81b05137e",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=23499&season_id=133",
+"near": "Emerton",
+"also": [
+[
+"Feyenoord",
+"Feyenoord"
+],
+[
+"Blackburn Rovers",
+"Blackburn"
+]
+],
+"group": "gap"
+},
+{
+"id": "432ad39fa85d01d9",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=32697&season_id=134",
+"near": "Johnson",
+"also": [
+[
+"West Ham United",
+"West Ham"
+],
+[
+"Chelsea"
+]
+],
+"group": "gap"
+},
+{
+"id": "5c06bad7edb96f0d",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=29756",
+"near": "Howard",
+"also": [
+[
+"MetroStars",
+"MetroStars"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "gap"
+},
+{
+"id": "d1fdfd4dfd9f633b",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=19039",
+"near": "Geremi",
+"also": [
+[
+"Real Madrid",
+"Real"
+],
+[
+"Chelsea"
+]
+],
+"group": "gap"
+},
+{
+"id": "b71d5b9a1805885c",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=17253&season_id=140",
+"near": "Zamora",
+"also": [
+[
+"Brighton & Hove Albion",
+"Brighton",
+"Brighton and Hove Albion"
+],
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+]
+],
+"group": "gap"
+},
+{
+"id": "83b88bf42eb241e0",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=15061",
+"near": "Bridge",
+"also": [
+[
+"Southampton"
+],
+[
+"Chelsea"
+]
+],
+"group": "gap"
+},
+{
+"id": "0a25cf43a263181f",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=10515",
+"near": "Duff",
+"also": [
+[
+"Blackburn Rovers",
+"Blackburn"
+],
+[
+"Chelsea"
+]
+],
+"group": "gap"
+},
+{
+"id": "d0e95994f5c33ff2",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=9700",
+"near": "McCann",
+"also": [
+[
+"Sunderland"
+],
+[
+"Aston Villa",
+"Villa"
+]
+],
+"group": "gap"
+},
+{
+"id": "2b60f793f9bcd816",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=14611&season_id=132",
+"near": "Reid",
+"also": [
+[
+"Millwall",
+"Millwall"
+],
+[
+"Blackburn Rovers",
+"Blackburn"
+]
+],
+"group": "gap"
+},
+{
+"id": "ce0911864b99a48b",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=1724",
+"near": "Craddock",
+"also": [
+[
+"Sunderland"
+],
+[
+"Wolverhampton Wanderers",
+"Wolves"
+]
+],
+"group": "gap"
+},
+{
+"id": "41098411cbcfca1a",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=19118",
+"near": "Camara",
+"also": [
+[
+"Sedan",
+"Sedan"
+],
+[
+"Wolverhampton Wanderers",
+"Wolves"
+]
+],
+"group": "gap"
+},
+{
+"id": "bbfa1e8ac51f2d16",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=18230&season_id=132",
+"near": "Kanouté",
+"also": [
+[
+"West Ham United",
+"West Ham"
+],
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+]
+],
+"group": "gap"
+},
+{
+"id": "4b18e96bc4918bc8",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=24063",
+"near": "Faye",
+"also": [
+[
+"Auxerre",
+"Auxerre"
+],
+[
+"Portsmouth"
+]
+],
+"group": "gap"
+},
+{
+"id": "03e449f282fd2fb5",
+"url": "https://www.independent.co.uk/sport/football/premier-league/vieri-deal-collapses-as-inter-increase-fee-99498.html",
+"near": "Cole",
+"also": [
+[
+"West Ham United",
+"West Ham"
+],
+[
+"Chelsea"
+]
+],
+"group": "gap"
+},
+{
+"id": "4fe014a666a8067e",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=14684",
+"near": "Sørensen",
+"also": [
+[
+"Sunderland"
+],
+[
+"Aston Villa",
+"Villa"
+]
+],
+"group": "gap"
+},
+{
+"id": "ea547624e08976f6",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=35979",
+"near": "Ronaldo",
+"also": [
+[
+"Sporting CP",
+"Sporting"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "gap"
+},
+{
+"id": "6709ca035a203cd2",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=20376",
+"near": "Mutu",
+"also": [
+[
+"Parma",
+"Parma"
+],
+[
+"Chelsea"
+]
+],
+"group": "gap"
+},
+{
+"id": "f80e81dbeb1e80dc",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=30004",
+"near": "Kléberson",
+"also": [
+[
+"Atletico Paranaense",
+"Atletico"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "gap"
+},
+{
+"id": "e344b64affe31f09",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=6332&season_id=136",
+"near": "Phillips",
+"also": [
+[
+"Sunderland"
+],
+[
+"Southampton"
+]
+],
+"group": "gap"
+},
+{
+"id": "884f3310887e8137",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=18214",
+"near": "Smertin",
+"also": [
+[
+"Bordeaux",
+"Bordeaux"
+],
+[
+"Chelsea"
+]
+],
+"group": "gap"
+},
+{
+"id": "2957991b7b485b7b",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=13880",
+"near": "Crespo",
+"also": [
+[
+"Internazionale",
+"Internazionale"
+],
+[
+"Chelsea"
+]
+],
+"group": "gap"
+},
+{
+"id": "5bd39178db33501f",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=11073&season_id=134",
+"near": "Ferguson",
+"also": [
+[
+"Rangers",
+"Rangers"
+],
+[
+"Blackburn Rovers",
+"Blackburn"
+]
+],
+"group": "gap"
+},
+{
+"id": "eba953249fe00628",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=15790",
+"near": "Makélélé",
+"also": [
+[
+"Real Madrid",
+"Real"
+],
+[
+"Chelsea"
+]
+],
+"group": "gap"
+},
+{
+"id": "0011ca5e7e7062d3",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=16973&season_id=138",
+"near": "McFadden",
+"also": [
+[
+"Motherwell",
+"Motherwell"
+],
+[
+"Everton"
+]
+],
+"group": "gap"
+},
+{
+"id": "7ce2cae83a3b033f",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=11233",
+"near": "Horsfield",
+"also": [
+[
+"Birmingham City",
+"Birmingham"
+],
+[
+"Wigan Athletic",
+"Wigan"
+]
+],
+"group": "gap"
+},
+{
+"id": "27cda997b9ff61ed",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=16124",
+"near": "Saha",
+"also": [
+[
+"Fulham"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "gap"
+},
+{
+"id": "61ff7e1bcfba5f49",
+"url": "https://www.theguardian.com/football/2004/jan/28/newsstory.sport15",
+"near": "Reyes",
+"also": [
+[
+"Sevilla",
+"Sevilla"
+],
+[
+"Arsenal"
+]
+],
+"group": "gap"
+},
+{
+"id": "aa7b2cf142cbf8cf",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=12184",
+"near": "Parker",
+"also": [
+[
+"Charlton Athletic",
+"Charlton"
+],
+[
+"Chelsea"
+]
+],
+"group": "gap"
+},
+{
+"id": "54577fbbafe995f9",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=32552",
+"near": "Stead",
+"also": [
+[
+"Huddersfield Town",
+"Huddersfield"
+],
+[
+"Blackburn Rovers",
+"Blackburn"
+]
+],
+"group": "gap"
+},
+{
+"id": "0effbc2b1c954644",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=30289&season_id=131",
+"near": "Persie",
+"also": [
+[
+"Feyenoord",
+"Feyenoord"
+],
+[
+"Arsenal"
+]
+],
+"group": "gap"
+},
+{
+"id": "9b11f9aa48096e4a",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=19661",
+"near": "Laursen",
+"also": [
+[
+"AC Milan"
+],
+[
+"Aston Villa",
+"Villa"
+]
+],
+"group": "gap"
+},
+{
+"id": "d5a16b5264c4fb38",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=32476",
+"near": "Robben",
+"also": [
+[
+"PSV"
+],
+[
+"Chelsea"
+]
+],
+"group": "gap"
+},
+{
+"id": "f50da4c525470a73",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=26534&season_id=135",
+"near": "Čech",
+"also": [
+[
+"Rennes",
+"Rennes"
+],
+[
+"Chelsea"
+]
+],
+"group": "gap"
+},
+{
+"id": "d8aea17e08051166",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=23346",
+"near": "Heinze",
+"also": [
+[
+"Paris Saint-Germain",
+"Paris"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "gap"
+},
+{
+"id": "74c6bd8cea2ea559",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=33118&season_id=134",
+"near": "Ferreira",
+"also": [
+[
+"Porto",
+"Porto"
+],
+[
+"Chelsea"
+]
+],
+"group": "gap"
+},
+{
+"id": "3fdc29bde62020dc",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=15335",
+"near": "Smith",
+"also": [
+[
+"Leeds United",
+"Leeds"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "gap"
+},
+{
+"id": "b82f800e45599e33",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=21359",
+"near": "Cisse",
+"also": [
+[
+"Auxerre",
+"Auxerre"
+],
+[
+"Liverpool"
+]
+],
+"group": "gap"
+},
+{
+"id": "decf96fdf7bcbdc1",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=15728",
+"near": "Rommedahl",
+"also": [
+[
+"PSV"
+],
+[
+"Charlton Athletic",
+"Charlton"
+]
+],
+"group": "gap"
+},
+{
+"id": "1a41d153da974044",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=33817",
+"near": "Milner",
+"also": [
+[
+"Leeds United",
+"Leeds"
+],
+[
+"Newcastle United",
+"Newcastle"
+]
+],
+"group": "gap"
+},
+{
+"id": "fbd7b486e3d5ae50",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=34012",
+"near": "Mendes",
+"also": [
+[
+"Porto",
+"Porto"
+],
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+]
+],
+"group": "gap"
+},
+{
+"id": "bb49ae4562a6827f",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=26751",
+"near": "Karkouri",
+"also": [
+[
+"Paris Saint-Germain",
+"Paris"
+],
+[
+"Charlton Athletic",
+"Charlton"
+]
+],
+"group": "gap"
+},
+{
+"id": "efbde31b9abc3f6e",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=16597",
+"near": "Kežman",
+"also": [
+[
+"PSV"
+],
+[
+"Chelsea"
+]
+],
+"group": "gap"
+},
+{
+"id": "5340bac9e1aef8ad",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=34028",
+"near": "Tiago",
+"also": [
+[
+"Benfica",
+"Benfica"
+],
+[
+"Chelsea"
+]
+],
+"group": "gap"
+},
+{
+"id": "851d0bec2dcc85d5",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=29993",
+"near": "Drogba",
+"also": [
+[
+"Marseille",
+"Marseille"
+],
+[
+"Chelsea"
+]
+],
+"group": "gap"
+},
+{
+"id": "6f192e3c5113b0e2",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=10738&season_id=141",
+"near": "Cahill",
+"also": [
+[
+"Millwall",
+"Millwall"
+],
+[
+"Everton"
+]
+],
+"group": "gap"
+},
+{
+"id": "5fd8b5a89bea8e13",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=27862",
+"near": "Carvalho",
+"also": [
+[
+"Porto",
+"Porto"
+],
+[
+"Chelsea"
+]
+],
+"group": "gap"
+},
+{
+"id": "49a8901d13bdf385",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=1198",
+"near": "Butt",
+"also": [
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+],
+[
+"Newcastle United",
+"Newcastle"
+]
+],
+"group": "gap"
+},
+{
+"id": "5b3131bdc2adb945",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=30134",
+"near": "Gera",
+"also": [
+[
+"Ferencváros",
+"Ferencváros"
+],
+[
+"West Bromwich Albion",
+"West Brom",
+"WBA"
+]
+],
+"group": "gap"
+},
+{
+"id": "08f07ccd5b7cfa8d",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=1320&season_id=139",
+"near": "Carr",
+"also": [
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+],
+[
+"Newcastle United",
+"Newcastle"
+]
+],
+"group": "gap"
+},
+{
+"id": "d940834ca37c46aa",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=30801",
+"near": "Hall",
+"also": [
+[
+"Southampton"
+],
+[
+"Crystal Palace",
+"Palace"
+]
+],
+"group": "gap"
+},
+{
+"id": "e9caf95c357f837e",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=10509&season_id=127",
+"near": "Owen",
+"also": [
+[
+"Liverpool"
+],
+[
+"Real Madrid",
+"Real"
+]
+],
+"group": "gap"
+},
+{
+"id": "aa4a732d183c831c",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=25512",
+"near": "Alonso",
+"also": [
+[
+"Real Sociedad",
+"Real"
+],
+[
+"Liverpool"
+]
+],
+"group": "gap"
+},
+{
+"id": "fe95af1880f38b10",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=25525",
+"near": "Garcia",
+"also": [
+[
+"Barcelona",
+"Barcelona"
+],
+[
+"Liverpool"
+]
+],
+"group": "gap"
+},
+{
+"id": "abab4a5b7b4c90c4",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=17042",
+"near": "Carrick",
+"also": [
+[
+"West Ham United",
+"West Ham"
+],
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+]
+],
+"group": "gap"
+},
+{
+"id": "bd65af612177968a",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=17497",
+"near": "Pamarot",
+"also": [
+[
+"Nice",
+"Nice"
+],
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+]
+],
+"group": "gap"
+},
+{
+"id": "4f0093b01bea7d68",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=21488",
+"near": "Pedersen",
+"also": [
+[
+"Tromso",
+"Tromso"
+],
+[
+"Blackburn Rovers",
+"Blackburn"
+]
+],
+"group": "gap"
+},
+{
+"id": "144103d929df0e4d",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=13570",
+"near": "Earnshaw",
+"also": [
+[
+"Cardiff City",
+"Cardiff"
+],
+[
+"West Bromwich Albion",
+"West Brom",
+"WBA"
+]
+],
+"group": "gap"
+},
+{
+"id": "1d383b199f0a69f1",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=22116&season_id=138",
+"near": "Davenport",
+"also": [
+[
+"Coventry City",
+"Coventry"
+],
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+]
+],
+"group": "gap"
+},
+{
+"id": "4bb241ba90017baf",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=30921",
+"near": "Rooney",
+"also": [
+[
+"Everton"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "gap"
+},
+{
+"id": "d72b73ebf31a94e5",
+"url": "https://www.theguardian.com/football/2004/sep/01/newsstory.manchesterunited",
+"near": "Rooney",
+"also": [
+[
+"Everton"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "gap"
+},
+{
+"id": "c43725aa23839575",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=21126",
+"near": "Boumsong",
+"also": [
+[
+"Rangers",
+"Rangers"
+],
+[
+"Newcastle United",
+"Newcastle"
+]
+],
+"group": "gap"
+},
+{
+"id": "7482df00988342d2",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=736",
+"near": "Blake",
+"also": [
+[
+"Burnley"
+],
+[
+"Birmingham City",
+"Birmingham"
+]
+],
+"group": "gap"
+},
+{
+"id": "70b32dc1d890c8c2",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=23118",
+"near": "Ashton",
+"also": [
+[
+"Crewe Alexandra",
+"Crewe"
+],
+[
+"Norwich City",
+"Norwich"
+]
+],
+"group": "gap"
+},
+{
+"id": "75394d385fbcfed4",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=12312",
+"near": "Morientes",
+"also": [
+[
+"Real Madrid",
+"Real"
+],
+[
+"Liverpool"
+]
+],
+"group": "gap"
+},
+{
+"id": "a35bd2e228ff1bde",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=30449&season_id=135",
+"near": "Dawson",
+"also": [
+[
+"Nottingham Forest",
+"Forest",
+"Nott'm Forest"
+],
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+]
+],
+"group": "gap"
+},
+{
+"id": "a6aa17bc5bbbbf95",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=23629",
+"near": "Reid",
+"also": [
+[
+"Nottingham Forest",
+"Forest",
+"Nott'm Forest"
+],
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+]
+],
+"group": "gap"
+},
+{
+"id": "738abcec9214b94e",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=34877",
+"near": "Chaplow",
+"also": [
+[
+"Burnley"
+],
+[
+"West Bromwich Albion",
+"West Brom",
+"WBA"
+]
+],
+"group": "gap"
+},
+{
+"id": "cb6e317fd7ecb054",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=17994",
+"near": "Hulse",
+"also": [
+[
+"West Bromwich Albion",
+"West Brom",
+"WBA"
+],
+[
+"Leeds United",
+"Leeds"
+]
+],
+"group": "gap"
+},
+{
+"id": "5422c8bf67c7c070",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=10757",
+"near": "Davies",
+"also": [
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+],
+[
+"Everton"
+]
+],
+"group": "gap"
+},
+{
+"id": "6e07dd28f887f63b",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=28055",
+"near": "Bent",
+"also": [
+[
+"Ipswich Town",
+"Ipswich"
+],
+[
+"Charlton Athletic",
+"Charlton"
+]
+],
+"group": "gap"
+},
+{
+"id": "777b4609cb0c0a30",
+"url": "https://www.independent.co.uk/sport/football/premier-league/manchester-united-s-new-regime-theatre-of-schemes-515604.html",
+"near": "Sar",
+"also": [
+[
+"Fulham"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "gap"
+},
+{
+"id": "e6c8e1b775c260ab",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=15058",
+"near": "Forssell",
+"also": [
+[
+"Chelsea"
+],
+[
+"Birmingham City",
+"Birmingham"
+]
+],
+"group": "gap"
+},
+{
+"id": "efd8feed976beed2",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=25371",
+"near": "Horno",
+"also": [
+[
+"Athletic Bilbao",
+"Athletic"
+],
+[
+"Chelsea"
+]
+],
+"group": "gap"
+},
+{
+"id": "18f56ce52748063a",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=20757",
+"near": "Ji-Sung",
+"also": [
+[
+"PSV Eindhoven"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "gap"
+},
+{
+"id": "bd1179eaedb38cea",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=25836",
+"near": "Krøldrup",
+"also": [
+[
+"Udinese",
+"Udinese"
+],
+[
+"Everton"
+]
+],
+"group": "gap"
+},
+{
+"id": "e6fc522e42f93a9f",
+"url": "https://www.uefa.com/uefachampionsleague/news/01aa-0ea7c8218e3b-032efe51ce78-1000--arsenal-agree-hleb-transfer/",
+"near": "Hleb",
+"also": [
+[
+"VfB Stuttgart"
+],
+[
+"Arsenal"
+]
+],
+"group": "gap"
+},
+{
+"id": "3c9cdfdbaa3b0dd6",
+"url": "https://www.theguardian.com/football/2008/may/09/arsenal.internazionale",
+"near": "Hleb",
+"also": [
+[
+"VfB Stuttgart"
+],
+[
+"Arsenal"
+]
+],
+"group": "gap"
+},
+{
+"id": "0524464604bf2a70",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=28828",
+"near": "Routledge",
+"also": [
+[
+"Crystal Palace",
+"Palace"
+],
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+]
+],
+"group": "gap"
+},
+{
+"id": "6834961d258d863f",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=36113",
+"near": "Lennon",
+"also": [
+[
+"Leeds United",
+"Leeds"
+],
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+]
+],
+"group": "gap"
+},
+{
+"id": "b015dbd2f3640e5b",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=33696",
+"near": "Huddlestone",
+"also": [
+[
+"Derby County",
+"Derby"
+],
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+]
+],
+"group": "gap"
+},
+{
+"id": "7c5115d530da872f",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=24034&season_id=141",
+"near": "Arteta",
+"also": [
+[
+"Real Sociedad",
+"Real"
+],
+[
+"Everton"
+]
+],
+"group": "gap"
+},
+{
+"id": "bcdf7c603cbc5bd9",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=29971",
+"near": "Carter",
+"also": [
+[
+"Birmingham City",
+"Birmingham"
+],
+[
+"West Bromwich Albion",
+"West Brom",
+"WBA"
+]
+],
+"group": "gap"
+},
+{
+"id": "c46e49df15690307",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=36137",
+"near": "Gonzalez",
+"also": [
+[
+"Albacete",
+"Albacete"
+],
+[
+"Liverpool"
+]
+],
+"group": "gap"
+},
+{
+"id": "431799623217e01d",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=24340",
+"near": "Reina",
+"also": [
+[
+"Villarreal",
+"Villarreal"
+],
+[
+"Liverpool"
+]
+],
+"group": "gap"
+},
+{
+"id": "b88d31c4f7d8f25c",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=12185",
+"near": "Konchesky",
+"also": [
+[
+"Charlton Athletic",
+"Charlton"
+],
+[
+"West Ham United",
+"West Ham"
+]
+],
+"group": "gap"
+},
+{
+"id": "3a6a3382e8a6160b",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=32703&season_id=141",
+"near": "Yakubu",
+"also": [
+[
+"Portsmouth"
+],
+[
+"Middlesbrough",
+"Boro"
+]
+],
+"group": "gap"
+},
+{
+"id": "02bf585ba79b698d",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=41435",
+"near": "Sissoko",
+"also": [
+[
+"Valencia",
+"Valencia"
+],
+[
+"Liverpool"
+]
+],
+"group": "gap"
+},
+{
+"id": "90145aee9864fa38",
+"url": "https://www.uefa.com/uefachampionsleague/news/01ab-0e6ce128517b-371ab9997b70-1000--vieira-joy-for-juventus/",
+"near": "Vieira",
+"also": [
+[
+"Arsenal"
+],
+[
+"Juventus",
+"Juventus"
+]
+],
+"group": "gap"
+},
+{
+"id": "f3b80e9e51a7ab64",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=17904",
+"near": "Belözoğlu",
+"also": [
+[
+"Inter Milan",
+"Inter"
+],
+[
+"Newcastle United",
+"Newcastle"
+]
+],
+"group": "gap"
+},
+{
+"id": "f3a0582f76f4315a",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=23174",
+"near": "Borgetti",
+"also": [
+[
+"C.F. Pachuca"
+],
+[
+"Bolton Wanderers",
+"Bolton"
+]
+],
+"group": "gap"
+},
+{
+"id": "98808d22eb0aba75",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=41527&season_id=141",
+"near": "Diarra",
+"also": [
+[
+"Le Havre"
+],
+[
+"Chelsea"
+]
+],
+"group": "gap"
+},
+{
+"id": "c265ccb73e94c94f",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=19560&season_id=141",
+"near": "Benayoun",
+"also": [
+[
+"Racing de Santander",
+"Racing"
+],
+[
+"West Ham United",
+"West Ham"
+]
+],
+"group": "gap"
+},
+{
+"id": "da8be1ed21c3d296",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=14892",
+"near": "Wright-Phillips",
+"also": [
+[
+"Manchester City",
+"Man City"
+],
+[
+"Chelsea"
+]
+],
+"group": "gap"
+},
+{
+"id": "3bb6daa08169912e",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=32030&season_id=138",
+"near": "Kamara",
+"also": [
+[
+"Modena",
+"Modena"
+],
+[
+"West Bromwich Albion",
+"West Brom",
+"WBA"
+]
+],
+"group": "gap"
+},
+{
+"id": "990ecf96f3afe434",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=14156",
+"near": "Vassell",
+"also": [
+[
+"Aston Villa",
+"Villa"
+],
+[
+"Manchester City",
+"Man City"
+]
+],
+"group": "gap"
+},
+{
+"id": "b90a801cee8f5975",
+"url": "https://www.theguardian.com/football/2005/dec/12/newsstory.sport",
+"near": "Neville",
+"also": [
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+],
+[
+"Everton"
+]
+],
+"group": "gap"
+},
+{
+"id": "175d79724706d7ce",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=22177",
+"near": "Pandiani",
+"also": [
+[
+"Deportivo La Coruna",
+"Deportivo"
+],
+[
+"Birmingham City",
+"Birmingham"
+]
+],
+"group": "gap"
+},
+{
+"id": "7a441fb1a57c4090",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=30004",
+"near": "Kleberson",
+"also": [
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+],
+[
+"Beşiktaş J.K.",
+"Beşiktaş"
+]
+],
+"group": "gap"
+},
+{
+"id": "421ec4f6536bdfef",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=16401",
+"near": "Ellington",
+"also": [
+[
+"Wigan Athletic",
+"Wigan"
+],
+[
+"West Bromwich Albion",
+"West Brom",
+"WBA"
+]
+],
+"group": "gap"
+},
+{
+"id": "96e01eff23cd4a05",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=24066",
+"near": "Essien",
+"also": [
+[
+"Olympique Lyonnais",
+"Olympique"
+],
+[
+"Chelsea"
+]
+],
+"group": "gap"
+},
+{
+"id": "562f5f37da6cd00a",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=24627&season_id=134",
+"near": "Baroš",
+"also": [
+[
+"Liverpool"
+],
+[
+"Aston Villa",
+"Villa"
+]
+],
+"group": "gap"
+},
+{
+"id": "82774b5413072248",
+"url": "https://www.theguardian.com/football/2005/aug/26/newsstory.sport13",
+"near": "Luque",
+"also": [
+[
+"Deportivo de La Coruña",
+"Deportivo"
+],
+[
+"Newcastle United",
+"Newcastle"
+]
+],
+"group": "gap"
+},
+{
+"id": "bb2d503399d4654c",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=34028",
+"near": "Mendes",
+"also": [
+[
+"Chelsea"
+],
+[
+"Olympique Lyonnais",
+"Olympique"
+]
+],
+"group": "gap"
+},
+{
+"id": "ff4096e03b0e626c",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=17896",
+"near": "Bouma",
+"also": [
+[
+"PSV Eindhoven"
+],
+[
+"Aston Villa",
+"Villa"
+]
+],
+"group": "gap"
+},
+{
+"id": "e4ba35eb4160d412",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=36726",
+"near": "Davies",
+"also": [
+[
+"Luton Town",
+"Luton"
+],
+[
+"West Bromwich Albion",
+"West Brom",
+"WBA"
+]
+],
+"group": "gap"
+},
+{
+"id": "313c833a07edf61b",
+"url": "https://www.the-independent.com/sport/football/premier-league/vidic-dedicates-his-goals-to-a-poignant-memory-427829.html",
+"near": "Vidić",
+"also": [
+[
+"Spartak Moscow",
+"Spartak"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "gap"
+},
+{
+"id": "48eefe5465ab15ec",
+"url": "https://www.uefa.com/news-media/news/01b1-0e6d5b259d23-d61084037fa2-1000--vidic-clear-to-start-united-career/",
+"near": "Vidić",
+"also": [
+[
+"Spartak Moscow",
+"Spartak"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "gap"
+},
+{
+"id": "bb9a6a9a1a7a57b2",
+"url": "https://www.theguardian.com/football/2006/jan/18/newsstory.manchesterunited",
+"near": "Vidić",
+"also": [
+[
+"Spartak Moscow",
+"Spartak"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "gap"
+},
+{
+"id": "954cdf0e844fbb20",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=28179",
+"near": "Mwaruwari",
+"also": [
+[
+"Auxerre",
+"Auxerre"
+],
+[
+"Portsmouth"
+]
+],
+"group": "gap"
+},
+{
+"id": "e2eba9255486eab0",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=33416",
+"near": "Evra",
+"also": [
+[
+"AS Monaco"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "gap"
+},
+{
+"id": "f14a19a060f2ad4b",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=41328",
+"near": "Agger",
+"also": [
+[
+"Brøndby",
+"Brøndby"
+],
+[
+"Liverpool"
+]
+],
+"group": "gap"
+},
+{
+"id": "2dd361097ddd8a0c",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=29678",
+"near": "Adebayor",
+"also": [
+[
+"AS Monaco"
+],
+[
+"Arsenal"
+]
+],
+"group": "gap"
+},
+{
+"id": "856343ad506527bf",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=41643&season_id=141",
+"near": "Walcott",
+"also": [
+[
+"Southampton"
+],
+[
+"Arsenal"
+]
+],
+"group": "gap"
+},
+{
+"id": "a3d94ac9ac33dac1",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=34693&season_id=144",
+"near": "Samaras",
+"also": [
+[
+"Heerenveen",
+"Heerenveen"
+],
+[
+"Manchester City",
+"Man City"
+]
+],
+"group": "gap"
+},
+{
+"id": "1c8c3360e17e4ff6",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=17885",
+"near": "Rosický",
+"also": [
+[
+"Borussia Dortmund",
+"Borussia"
+],
+[
+"Arsenal"
+]
+],
+"group": "gap"
+},
+{
+"id": "f64915c8423cd798",
+"url": "https://www.independent.co.uk/sport/football/premier-league/johnson-deal-shows-everton-s-intent-480377.html",
+"near": "Johnson",
+"also": [
+[
+"Crystal Palace",
+"Palace"
+],
+[
+"Everton"
+]
+],
+"group": "gap"
+},
+{
+"id": "de330b7cc38ef473",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=39757",
+"near": "Kalou",
+"also": [
+[
+"Feyenoord",
+"Feyenoord"
+],
+[
+"Chelsea"
+]
+],
+"group": "gap"
+},
+{
+"id": "f1f33026fb6c61cf",
+"url": "https://www.independent.co.uk/sport/football/premier-league/chelsea-land-shevchenko-with-163-30-8m-record-deal-480555.html",
+"near": "Shevchenko",
+"also": [
+[
+"A.C. Milan"
+],
+[
+"Chelsea"
+]
+],
+"group": "gap"
+},
+{
+"id": "985fd7f917e96249",
+"url": "https://www.theguardian.com/football/2006/jul/29/newsstory.sport10",
+"near": "Shevchenko",
+"also": [
+[
+"A.C. Milan"
+],
+[
+"Chelsea"
+]
+],
+"group": "gap"
+},
+{
+"id": "040726508f3ec6fa",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=41107",
+"near": "Assou-Ekotto",
+"also": [
+[
+"Lens",
+"Lens"
+],
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+]
+],
+"group": "gap"
+},
+{
+"id": "b27ab6b44c98f285",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=20879",
+"near": "Davis",
+"also": [
+[
+"Preston North End",
+"Preston"
+],
+[
+"Sheffield United",
+"Sheff Utd"
+]
+],
+"group": "gap"
+},
+{
+"id": "060afb8caf4519fb",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=19164",
+"near": "Lescott",
+"also": [
+[
+"Wolverhampton Wanderers",
+"Wolves"
+],
+[
+"Everton"
+]
+],
+"group": "gap"
+},
+{
+"id": "c043011e07933c95",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=23360",
+"near": "Zokora",
+"also": [
+[
+"Saint-Étienne",
+"Saint-Étienne"
+],
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+]
+],
+"group": "gap"
+},
+{
+"id": "8af8d7fcddd516e5",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=44022",
+"near": "Paletta",
+"also": [
+[
+"Banfield",
+"Banfield"
+],
+[
+"Liverpool"
+]
+],
+"group": "gap"
+},
+{
+"id": "e96f45333edfd200",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=17677",
+"near": "Berbatov",
+"also": [
+[
+"Bayer Leverkusen",
+"Bayer"
+],
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+]
+],
+"group": "gap"
+},
+{
+"id": "112cbf9571f0ece4",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=20762",
+"near": "Ki-Hyeon",
+"also": [
+[
+"Wolverhampton Wanderers",
+"Wolves"
+],
+[
+"Reading"
+]
+],
+"group": "gap"
+},
+{
+"id": "9ebbbbac1b492ff1",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=13775",
+"near": "Francis",
+"also": [
+[
+"Wigan Athletic",
+"Wigan"
+],
+[
+"Watford"
+]
+],
+"group": "gap"
+},
+{
+"id": "57d08168ab96e172",
+"url": "https://www.theguardian.com/football/2006/jul/13/newsstory.sport5",
+"near": "Francis",
+"also": [
+[
+"Wigan Athletic",
+"Wigan"
+],
+[
+"Watford"
+]
+],
+"group": "gap"
+},
+{
+"id": "fd13f06a440b6310",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=14339",
+"near": "McCarthy",
+"also": [
+[
+"FC Porto"
+],
+[
+"Blackburn Rovers",
+"Blackburn"
+]
+],
+"group": "gap"
+},
+{
+"id": "558d1aae27efc8d5",
+"url": "https://www.independent.co.uk/sport/football/premier-league/carrick-s-price-was-right-says-ferguson-410294.html",
+"near": "Carrick",
+"also": [
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "gap"
+},
+{
+"id": "ec052419e6d3aceb",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=21754",
+"near": "Shittu",
+"also": [
+[
+"Queens Park Rangers",
+"QPR"
+],
+[
+"Watford"
+]
+],
+"group": "gap"
+},
+{
+"id": "5dc3676811a8b09b",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=16400&season_id=129",
+"near": "Traoré",
+"also": [
+[
+"Liverpool"
+],
+[
+"Charlton Athletic",
+"Charlton"
+]
+],
+"group": "gap"
+},
+{
+"id": "b56dd20b2c8e418c",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=22712",
+"near": "Isaksson",
+"also": [
+[
+"Rennes",
+"Rennes"
+],
+[
+"Manchester City",
+"Man City"
+]
+],
+"group": "gap"
+},
+{
+"id": "a6f7abb074b619d9",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=10709&season_id=137",
+"near": "Green",
+"also": [
+[
+"Norwich City",
+"Norwich"
+],
+[
+"West Ham United",
+"West Ham"
+]
+],
+"group": "gap"
+},
+{
+"id": "d86dcd2f3334da1c",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=36524",
+"near": "Kuyt",
+"also": [
+[
+"Feyenoord",
+"Feyenoord"
+],
+[
+"Liverpool"
+]
+],
+"group": "gap"
+},
+{
+"id": "824247be6469243e",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=40993",
+"near": "Boulahrouz",
+"also": [
+[
+"Hamburg",
+"Hamburg"
+],
+[
+"Chelsea"
+]
+],
+"group": "gap"
+},
+{
+"id": "9059a9b16ba30e60",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=34330",
+"near": "Martins",
+"also": [
+[
+"Inter Milan",
+"Inter"
+],
+[
+"Newcastle United",
+"Newcastle"
+]
+],
+"group": "gap"
+},
+{
+"id": "3f36fbb03e453a65",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=26761&season_id=138",
+"near": "Mido",
+"also": [
+[
+"A.S. Roma"
+],
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+]
+],
+"group": "gap"
+},
+{
+"id": "449dcb78af6725e8",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=32111",
+"near": "Diawara",
+"also": [
+[
+"Sochaux",
+"Sochaux"
+],
+[
+"Charlton Athletic",
+"Charlton"
+]
+],
+"group": "gap"
+},
+{
+"id": "e84642e2071ae46a",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=16791&season_id=135",
+"near": "Petrov",
+"also": [
+[
+"Celtic",
+"Celtic"
+],
+[
+"Aston Villa",
+"Villa"
+]
+],
+"group": "gap"
+},
+{
+"id": "14f5a3933b749155",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=32113",
+"near": "Chimbonda",
+"also": [
+[
+"Wigan Athletic",
+"Wigan"
+],
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+]
+],
+"group": "gap"
+},
+{
+"id": "ff5f4a8e4e2c3a0f",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=39739",
+"near": "Cotterill",
+"also": [
+[
+"Bristol City",
+"Bristol"
+],
+[
+"Wigan Athletic",
+"Wigan"
+]
+],
+"group": "gap"
+},
+{
+"id": "fcea17d1d9ac4c70",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=33545&season_id=140",
+"near": "Kranjčar",
+"also": [
+[
+"Hajduk Split",
+"Hajduk"
+],
+[
+"Portsmouth"
+]
+],
+"group": "gap"
+},
+{
+"id": "f89257d07b32581e",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=43040",
+"near": "Denílson",
+"also": [
+[
+"São Paulo"
+],
+[
+"Arsenal"
+]
+],
+"group": "gap"
+},
+{
+"id": "dd14e1c5fd95d0f0",
+"url": "https://www.the-independent.com/sport/football/premier-league/arsenal-s-late-163-3m-swoop-for-denilson-6231914.html",
+"near": "Denílson",
+"also": [
+[
+"São Paulo"
+],
+[
+"Arsenal"
+]
+],
+"group": "gap"
+},
+{
+"id": "dd2597af680d6ef7",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=30038",
+"near": "Huth",
+"also": [
+[
+"Chelsea"
+],
+[
+"Middlesbrough",
+"Boro"
+]
+],
+"group": "gap"
+},
+{
+"id": "f5da2405de2f798e",
+"url": "https://www.the-independent.com/sport/football/premier-league/arsenal-s-late-163-3m-swoop-for-denilson-6231914.html",
+"near": "Huth",
+"also": [
+[
+"Chelsea"
+],
+[
+"Middlesbrough",
+"Boro"
+]
+],
+"group": "gap"
+},
+{
+"id": "0367f7fe48a1407d",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=15278&season_id=138",
+"near": "Cole",
+"also": [
+[
+"Arsenal"
+],
+[
+"Chelsea"
+]
+],
+"group": "gap"
+},
+{
+"id": "bb1056801cd167b1",
+"url": "https://www.theguardian.com/football/2006/sep/01/newsstory.sport8",
+"near": "Cole",
+"also": [
+[
+"Arsenal"
+],
+[
+"Chelsea"
+]
+],
+"group": "gap"
+},
+{
+"id": "ebc450b0f8032c6c",
+"url": "https://www.independent.co.uk/sport/football/premier-league/cole-on-his-way-to-chelsea-as-arsenal-accept-gallas-and-163-5m-414175.html",
+"near": "Cole",
+"also": [
+[
+"Arsenal"
+],
+[
+"Chelsea"
+]
+],
+"group": "gap"
+},
+{
+"id": "cc07b65adfce3a44",
+"url": "https://www.uefa.com/uefaeuropaleague/news/01b8-0e6da3b40c9e-5c210843a7de-1000--west-ham-delight-at-double-coup/",
+"near": "Mascherano",
+"also": [
+[
+"Corinthians",
+"Corinthians"
+],
+[
+"West Ham United",
+"West Ham"
+]
+],
+"group": "gap"
+},
+{
+"id": "5b4fe9ce97e392d3",
+"url": "https://www.uefa.com/uefaeuropaleague/news/01b8-0e6da3b40c9e-5c210843a7de-1000--west-ham-delight-at-double-coup/",
+"near": "Tevez",
+"also": [
+[
+"Corinthians",
+"Corinthians"
+],
+[
+"West Ham United",
+"West Ham"
+]
+],
+"group": "gap"
+},
+{
+"id": "20a19a3f00937674",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=33425&season_id=132",
+"near": "Kilgallon",
+"also": [
+[
+"Leeds United",
+"Leeds"
+],
+[
+"Sheffield United",
+"Sheff Utd"
+]
+],
+"group": "gap"
+},
+{
+"id": "43b2cb85d442c6a0",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=41246&season_id=140",
+"near": "Dempsey",
+"also": [
+[
+"Major League Soccer",
+"Major"
+],
+[
+"Fulham"
+]
+],
+"group": "gap"
+},
+{
+"id": "fe1f2367740eeb1f",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=43928",
+"near": "Shelton",
+"also": [
+[
+"Helsingborg",
+"Helsingborg"
+],
+[
+"Sheffield United",
+"Sheff Utd"
+]
+],
+"group": "gap"
+},
+{
+"id": "c28a6043ba91e0bf",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=36330",
+"near": "Young",
+"also": [
+[
+"Watford"
+],
+[
+"Aston Villa",
+"Villa"
+]
+],
+"group": "gap"
+},
+{
+"id": "23cf8dc8cc5517b5",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=19154",
+"near": "Aghahowa",
+"also": [
+[
+"Shakhtar Donetsk",
+"Shakhtar"
+],
+[
+"Wigan Athletic",
+"Wigan"
+]
+],
+"group": "gap"
+},
+{
+"id": "4e10491de78d47a1",
+"url": "https://www.theguardian.com/football/2007/jun/12/newsstory.reading",
+"near": "Halford",
+"also": [
+[
+"Colchester United",
+"Colchester"
+],
+[
+"Reading"
+]
+],
+"group": "gap"
+},
+{
+"id": "fb5488966c9ad4bb",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=33472",
+"near": "Halford",
+"also": [
+[
+"Colchester United",
+"Colchester"
+],
+[
+"Reading"
+]
+],
+"group": "gap"
+},
+{
+"id": "51e362a607fe385e",
+"url": "https://www.uefa.com/news-media/news/01bd-0f84aabecf96-3bb3d96ac8bf-1000--reading-lure-outstanding-halford/",
+"near": "Halford",
+"also": [
+[
+"Colchester United",
+"Colchester"
+],
+[
+"Reading"
+]
+],
+"group": "gap"
+},
+{
+"id": "e5685b0e364c8026",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=32123&season_id=135",
+"near": "Pongolle",
+"also": [
+[
+"Liverpool"
+],
+[
+"Recreativo de Huelva",
+"Recreativo"
 ]
 ],
 "group": "gap"
