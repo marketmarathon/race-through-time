@@ -1,4 +1,5 @@
 source_id,url,publisher,grade,kind
+S002c092a49,https://www.soccerbase.com/players/player.sd?player_id=8539,www.soccerbase.com,C,press_or_club
 S003483d6ee,https://www.bbc.co.uk/sport/football/55894269,www.bbc.co.uk,B,press_or_club
 S003cc38928,https://www.theguardian.com/football/2008/jul/31/tottenhamhotspur.blackburn,The Guardian,B,press_or_club
 S00534d5cb8,https://www.independent.co.uk/sport/football/premier-league/arsenal-reveal-details-of-reyes-aps17-5m-deal-75888.html,The Independent,B,press_or_club
@@ -18,6 +19,7 @@ S028d1522f7,https://www.skysports.com/football/news/11095/13564944/morgan-rogers
 S028e1a2e3f,https://www.bbc.co.uk/sport/football/articles/cge41yzqenqo,www.bbc.co.uk,B,press_or_club
 S029419543b,https://www.skysports.com/transfer/news/13564492/johan-manzambi-aston-villa-sign-newcastle-target-from-freiburg-in-club-record-59-5m-deal,Sky Sports,B,press_or_club
 S02b4dabb25,https://www.bbc.co.uk/sport/football/65807884,BBC Sport,B,press_or_club
+S02b766f8c9,http://www.wsc.co.uk/the-archive/31-Players/5381-ceased-anglian,www.wsc.co.uk,D,press_or_club
 S02c5295442,https://en.wikipedia.org/w/index.php?oldid=1336821914,Wikipedia: 1998–99 Wimbledon F.C. season,C,wikipedia_pointer
 S0300b42de0,https://www.bbc.co.uk/sport/football/42826326,BBC Sport,B,press_or_club
 S034aa48306,https://en.wikipedia.org/w/index.php?oldid=1309802686,Wikipedia: List of English football transfers winter 2011–12,C,wikipedia_pointer
@@ -91,6 +93,7 @@ S0f457fa428,https://www.skysports.com/football/news/13579669/iliman-ndiaye-trans
 S0f5e0e6a9e,https://www.skysports.com/football/news/11679/13302309/man-city-hopeful-of-deadline-day-deal-for-gonzalez,Sky Sports,B,press_or_club
 S0f89338322,https://www.bbc.co.uk/sport/football/21039302,BBC Sport,B,press_or_club
 S0f8be69f27,https://www.uefa.com/uefachampionsleague/news/0199-0e6a682ec5c1-89ea9e174783-1000--reyes-ready-for-arsenal/,UEFA,B,press_or_club
+S0f92b782f9,https://www.bbc.co.uk/sport/football/articles/c28e9ydyzkxo,www.bbc.co.uk,B,press_or_club
 S0fae77232d,https://www.skysports.com/football/news/4083921/city-clinch-robinho-coup,Sky Sports,B,press_or_club
 S0faf415e98,https://www.bbc.co.uk/sport/football/27704137,BBC Sport,B,press_or_club
 S1005d3a767,https://www.bbc.co.uk/sport/football/62010793,www.bbc.co.uk,B,press_or_club
@@ -315,6 +318,7 @@ S3152c0a651,https://en.wikipedia.org/w/index.php?oldid=1336821723,Wikipedia: 199
 S316159fdca,https://www.bbc.co.uk/sport/football/41048242,BBC Sport,B,press_or_club
 S31730deaab,https://www.theguardian.com/football/2016/jul/14/bournemouth-sign-liverpool-winger-jordon-ibe-club-record,The Guardian,B,press_or_club
 S319e3520ce,https://www.theguardian.com/football/2021/dec/22/barcelona-agree-initial-55m-fee-to-sign-manchester-citys-ferran-torres,The Guardian,B,press_or_club
+S31a75b05e7,https://www.soccerbase.com/players/player.sd?player_id=4885,www.soccerbase.com,C,press_or_club
 S31b76e0097,https://www.bbc.co.uk/sport/football/41001685,BBC Sport,B,press_or_club
 S31ff6d21f4,https://www.bbc.com/sport/football/articles/cy5pdpp2p6wo,www.bbc.com,B,press_or_club
 S3232cdc8c3,https://www.bbc.co.uk/sport/football/44709129,BBC Sport,B,press_or_club
@@ -442,8 +446,10 @@ S435fbb176a,https://www.bbc.co.uk/sport/football/61845720,www.bbc.co.uk,B,press_
 S43c06f5d8b,https://www.bbc.co.uk/sport/football/62155029,www.bbc.co.uk,B,press_or_club
 S43d5a384a3,https://en.wikipedia.org/w/index.php?oldid=1353271995,Wikipedia: 1999–2000 Sunderland A.F.C. season,C,wikipedia_pointer
 S43f0f45322,https://en.wikipedia.org/w/index.php?oldid=1311385723,Wikipedia: 1999–2000 Coventry City F.C. season,C,wikipedia_pointer
+S44180572d8,https://www.bbc.co.uk/sport/football/51142447,www.bbc.co.uk,B,press_or_club
 S441987a8db,https://www.bbc.co.uk/sport/football/62121407,www.bbc.co.uk,B,press_or_club
 S444a1e3c58,https://www.bbc.com/sport/football/articles/cr4ey5z7360o,www.bbc.com,B,press_or_club
+S44906b1a11,https://www.bbc.co.uk/sport/football/articles/clynv7m9e0po,www.bbc.co.uk,B,press_or_club
 S44aa5df40b,https://en.wikipedia.org/w/index.php?oldid=1357968526,Wikipedia: 1997–98 Leicester City F.C. season,C,wikipedia_pointer
 S44fb8c57f3,https://www.theguardian.com/football/2005/jul/18/newsstory.sport,The Guardian,B,press_or_club
 S45f8d5924e,https://www.bbc.co.uk/sport/football/55579861,www.bbc.co.uk,B,press_or_club
@@ -624,6 +630,7 @@ S5f3c2be239,https://bdnews24.com/sport/a3db657e7878,bdnews24,D,press_or_club
 S5f87711033,https://www.theguardian.com/football/2004/jul/20/newsstory.chelsea,The Guardian,B,press_or_club
 S5fa30f1bd9,https://www.skysports.com/football/news/11743/11464693/bournemouth-sign-jefferson-lerma-for-gbp25m-from-levante,Sky Sports,D,press_or_club
 S5fa6abf513,https://www.bbc.co.uk/sport/football/articles/c0m7el3zr2eo,www.bbc.co.uk,B,press_or_club
+S5fe64b3e76,https://www.bbc.co.uk/sport/football/articles/cx2vqxe2e08o,www.bbc.co.uk,B,press_or_club
 S5fecf3671c,https://www.bbc.co.uk/sport/football/58372384,www.bbc.co.uk,B,press_or_club
 S5fedec297b,https://www.skysports.com/football/news/12691/12786942/mykhailo-mudryk-chelsea-sign-winger-for-88-5m-from-shakhtar-donetsk,Sky Sports,B,press_or_club
 S5ff2deff69,https://en.wikipedia.org/w/index.php?oldid=1365820424,Wikipedia: 1992–93 Manchester United F.C. season,C,wikipedia_pointer
@@ -1016,6 +1023,7 @@ S9aac6e564f,https://www.bbc.co.uk/sport/football/65984991,BBC Sport,B,press_or_c
 S9aee50a4b9,https://www.theguardian.com/football/2017/jul/07/chelsea-romelu-lukaku-offer-match-manchester-united,The Guardian,B,press_or_club
 S9b50d1074e,https://en.wikipedia.org/w/index.php?oldid=1375078044,Wikipedia: 1999–2000 Manchester United F.C. season,C,wikipedia_pointer
 S9b821ee10d,https://www.theguardian.com/football/2001/oct/16/newsstory.sport10,The Guardian,B,press_or_club
+S9bb10290b4,https://news.bbc.co.uk/sport1/hi/football/teams/l/liverpool/8186102.stm,news.bbc.co.uk,B,press_or_club
 S9bb616e92f,https://www.bbc.co.uk/sport/football/44642493,BBC Sport,B,press_or_club
 S9bb9d7ff66,https://www.independent.co.uk/news/education/education-news/football-southampton-up-the-stakes-to-pounds-5m-in-move-for-jansen-1163215.html,The Independent,B,press_or_club
 S9be09af103,https://en.wikipedia.org/w/index.php?oldid=1335716938,Wikipedia: 1992–93 Tottenham Hotspur F.C. season,C,wikipedia_pointer
@@ -1028,11 +1036,13 @@ S9ca34a6ee0,https://www.reuters.com/sports/soccer/brentford-sign-sangare-lens-cl
 S9cbd66465e,https://www.skysports.com/football/news/11669/11440849/liverpool-complete-67m-deal-for-alisson-becker,Sky Sports,B,press_or_club
 S9cd1dd5dfa,https://www.skysports.com/football/news/2187711/thatcher-turns-lilywhite,Sky Sports,D,press_or_club
 S9cffc16a2c,https://en.wikipedia.org/w/index.php?oldid=1368529229,Wikipedia: 1993–94 Manchester United F.C. season,C,wikipedia_pointer
+S9d170f576a,https://www.bbc.co.uk/sport/football/57893045,www.bbc.co.uk,B,press_or_club
 S9d29fb6ba0,https://en.wikipedia.org/w/index.php?oldid=1376913022,Wikipedia: List of English football transfers summer 2019,C,wikipedia_pointer
 S9d69e405e7,https://www.skysports.com/football/news/11095/11447594/everton-complete-deal-to-sign-richarlison-from-watford-on-five-year-deal,Sky Sports,B,press_or_club
 S9d8cd2d0ff,https://www.theguardian.com/football/2015/aug/30/manchester-city-confirm-signing-kevin-de-bruyne-wolfsburg,The Guardian,B,press_or_club
 S9dd0472253,https://www.bbc.co.uk/sport/football/articles/c30y085ey17o,www.bbc.co.uk,B,press_or_club
 S9dd690274d,https://www.bbc.co.uk/sport/football/articles/cy9lgy4gggdo,www.bbc.co.uk,B,press_or_club
+S9de375d184,https://www.bbc.co.uk/sport/football/46966969,www.bbc.co.uk,B,press_or_club
 S9dfbf93302,https://www.bbc.co.uk/sport/football/19425593,BBC Sport,B,press_or_club
 S9e00be2769,https://www.independent.co.uk/sport/letter-from-madrid-fever-pitch-real-style-1114510.html,The Independent,B,press_or_club
 S9e05311594,https://www.bbc.com/sport/football/62756374,www.bbc.com,B,press_or_club
@@ -1045,6 +1055,7 @@ S9f93c5251f,https://www.bbc.co.uk/sport/football/articles/c9dq883g9dzo,www.bbc.c
 S9f9cc79483,https://www.bbc.com/sport/football/articles/cd1x2qn4pd1o,www.bbc.com,B,press_or_club
 S9f9edf2848,https://www.bbc.co.uk/sport/football/66262753,www.bbc.co.uk,B,press_or_club
 S9fd7e98b02,https://www.bbc.co.uk/sport/football/40550934,BBC Sport,B,press_or_club
+S9fea95fce3,https://www.bbc.co.uk/sport/football/54080698,www.bbc.co.uk,B,press_or_club
 Sa00c5eda25,https://www.independent.co.uk/sport/football/tottenham-manchester-city-savinho-transfer-latest-b3038763.html,The Independent,B,press_or_club
 Sa04c44cdfb,https://www.itfc.co.uk/news/2026/august/17/julio-returns-to-town/,Ipswich Town,A,press_or_club
 Sa066b32ee7,https://www.bbc.co.uk/sport/football/27957557,BBC Sport,B,press_or_club
@@ -1080,6 +1091,7 @@ Sa4c6e5e6d0,https://www.skysports.com/football/player/9372/andriy-shevchenko,Sky
 Sa5745865d8,https://www.bvb.de/de/en/news/news-overview/news.html/eng/News/Overview/Pulisic-to-join-Chelsea-in-the-summer.html,Borussia Dortmund,A,press_or_club
 Sa5b8560977,https://www.bbc.com/sport/football/articles/c4gd9nz8wn1o,www.bbc.com,B,press_or_club
 Sa5b9163563,https://www.theguardian.com/football/2013/jun/18/andy-carroll-medical-west-ham,The Guardian,B,press_or_club
+Sa5c1ff1de4,https://www.bbc.com/sport/football/62718674,www.bbc.com,B,press_or_club
 Sa5c7641253,https://www.bbc.co.uk/sport/football/44380621,BBC Sport,B,press_or_club
 Sa6630d8aad,https://www.bbc.co.uk/sport/football/66002640,www.bbc.co.uk,B,press_or_club
 Sa675555dbd,https://www.bbc.co.uk/sport/football/48831514,BBC Sport,B,press_or_club
@@ -1113,6 +1125,7 @@ Saad1993c39,https://www.skysports.com/football/news/11095/13578279/nicolas-jacks
 Saaf90235fc,https://www.bbc.com/sport/football/articles/clyr869q022o,www.bbc.com,B,press_or_club
 Sab08612918,https://en.wikipedia.org/w/index.php?oldid=1369400570,Wikipedia: List of English football transfers winter 2012–13,C,wikipedia_pointer
 Sab294f3283,https://www.the-independent.com/sport/football/transfers/ruben-dias-transfer-man-city-fee-defender-contract-nicolas-otamendi-benfica-epl-b696761.html,The Independent,B,press_or_club
+Sab3d8bcdf1,https://www.hampshirelive.news/sport/football/paul-walsh-guy-whittingham-portsmouth-5921906,www.hampshirelive.news,D,press_or_club
 Sab50cba0b0,https://www.bbc.co.uk/sport/football/articles/cx2e7r04dpno,www.bbc.co.uk,B,press_or_club
 Sabbe097779,https://www.bbc.co.uk/sport/football/66283815,BBC Sport,B,press_or_club
 Sabc9cb012c,https://www.sporting.pt/pt/tax_noticias/clube/comunicados?page=17,Sporting CP,A,press_or_club
@@ -1160,12 +1173,14 @@ Sb3dfff9a70,https://www.bbc.co.uk/sport/football/40852639,BBC Sport,B,press_or_c
 Sb41832991a,https://en.wikipedia.org/w/index.php?oldid=1358701199,Wikipedia: 1994–95 Norwich City F.C. season,C,wikipedia_pointer
 Sb42966b38c,https://en.wikipedia.org/w/index.php?oldid=1360318037,Wikipedia: 1992–93 Queens Park Rangers F.C. season,C,wikipedia_pointer
 Sb45e3df893,https://www.bbc.co.uk/sport/football/48548361,BBC Sport,B,press_or_club
+Sb491f47aa5,https://www.soccerbase.com/players/player.sd?player_id=7916,www.soccerbase.com,C,press_or_club
 Sb4c5766912,https://www.premierleague.com/en/news/312804,Premier League,A,press_or_club
 Sb4e3414786,https://www.skysports.com/football/middlesbrough-vs-sunderland/report/11395,Sky Sports,D,press_or_club
 Sb4eb4f1552,https://www.skysports.com/football/player/4855/claude-makelele,Sky Sports,D,press_or_club
 Sb50ac595d5,https://www.theguardian.com/football/2022/jul/13/raphinha-flies-to-barcelona-to-seal-transfer-from-leeds,The Guardian,B,press_or_club
 Sb561595937,https://www.skysports.com/football/news/11678/12681193/alexander-isak-newcastle-sign-striker-from-real-sociedad-for-club-record-63m?pubDate=20250722,Sky Sports,B,press_or_club
 Sb58c2b0067,https://www.reuters.com/sports/soccer/forest-sign-forward-delap-chelsea-reported-club-record-fee-2026-08-27/,Reuters,B,press_or_club
+Sb596f58765,https://www.skysports.com/football/player/21746/dean-austin,www.skysports.com,B,press_or_club
 Sb5e9ac6cb8,https://www.theguardian.com/football/2000/aug/25/newsstory.sport4,The Guardian,B,press_or_club
 Sb60614278a,https://www.bbc.co.uk/sport/football/68172823,www.bbc.co.uk,B,press_or_club
 Sb6286e1481,https://www.bbc.co.uk/sport/football/65763042,www.bbc.co.uk,B,press_or_club
@@ -1197,6 +1212,7 @@ Sb93a3c9dfa,https://www.uefa.com/uefachampionsleague/news/019f-0e6af8dd6362-f308
 Sb93e7dec2c,https://www.skysports.com/football/news/11670/9378413/arsenal-complete-signing-of-chile-forward-alexis-sanchez-from-barcelona,Sky Sports,B,press_or_club
 Sb94674a684,https://www.the-independent.com/sport/football-dailly-in-pounds-5-5m-move-to-ewood-1173097.html,The Independent,B,press_or_club
 Sb94c47004e,https://en.wikipedia.org/w/index.php?oldid=1365984310,Wikipedia: List of English football transfers winter 2002–03,C,wikipedia_pointer
+Sb9506f4763,https://www.bbc.co.uk/sport/football/62111629,www.bbc.co.uk,B,press_or_club
 Sb9a6d2ce7d,https://www.theguardian.com/football/2014/jul/10/alexis-sanchez-signs-arsenal,The Guardian,B,press_or_club
 Sb9b5e5c3b4,https://www.skysports.com/football/news/2325508/elliott-announces-retirement,Sky Sports,D,press_or_club
 Sb9bc1541b1,https://www.bbc.co.uk/sport/football/66007461,www.bbc.co.uk,B,press_or_club
@@ -1287,6 +1303,7 @@ Sc62c59f703,https://www.independent.co.uk/sport/football-plaudits-go-to-poom-for
 Sc6a62d854f,https://www.bbc.co.uk/sport/football/68186222,www.bbc.co.uk,B,press_or_club
 Sc6d466fc81,https://www.bbc.co.uk/sport/articles/c1kv881wng8o,BBC Sport,D,press_or_club
 Sc6d7ccd85f,https://www.skysports.com/football/news/11670/12055098/gabriel-arsenal-sign-defender-from-lille,www.skysports.com,B,press_or_club
+Sc6e5a1e265,https://www.bbc.co.uk/sport/football/53813044,www.bbc.co.uk,B,press_or_club
 Sc70e863542,https://www.skysports.com/football/player/6145/tomas-repka,Sky Sports,D,press_or_club
 Sc7220519d4,https://www.bbc.co.uk/sport/football/61886984,www.bbc.co.uk,B,press_or_club
 Sc757ea2e3b,https://www.bbc.com/sport/football/articles/c3enp85lg1eo,www.bbc.com,B,press_or_club
@@ -1400,6 +1417,7 @@ Sd81153767d,https://www.uefa.com/uefachampionsleague/news/0254-0d7b34e7cabb-cbe9
 Sd83424df84,https://www.belfasttelegraph.co.uk/news/the-ten-most-expensive-english-transfers/a/119165937.html,Belfast Telegraph,D,press_or_club
 Sd83cdaef27,https://www.independent.co.uk/sport/football-cort-lays-down-law-to-newcastle-1239200.html,The Independent,D,press_or_club
 Sd83f77f254,https://en.wikipedia.org/w/index.php?oldid=1367476464,Wikipedia: 1995–96 Liverpool F.C. season,C,wikipedia_pointer
+Sd8a18c192d,https://www.bbc.co.uk/sport/football/62695388,www.bbc.co.uk,B,press_or_club
 Sd8d1e48224,https://www.independent.co.uk/sport/football-on-the-move-1234169.html,The Independent,B,press_or_club
 Sd8f4090a18,https://www.bbc.co.uk/sport/football/20633812,BBC Sport,D,press_or_club
 Sd911aeaad8,https://en.wikipedia.org/w/index.php?oldid=1357259433,Wikipedia: 1998–99 Charlton Athletic F.C. season,C,wikipedia_pointer
@@ -1532,6 +1550,7 @@ Se9229e8a0b,https://www.theguardian.com/football/2020/aug/26/chelsea-confirm-sig
 Se94390d353,https://www.independent.co.uk/sport/on-the-move-5604081.html,The Independent,B,press_or_club
 Se9730aff5d,https://www.bbc.co.uk/sport/football/articles/cqxg9e3y0dxo,www.bbc.co.uk,B,press_or_club
 Se995d36013,https://en.wikipedia.org/w/index.php?oldid=1356470605,Wikipedia: 1994–95 Coventry City F.C. season,C,wikipedia_pointer
+Se9c933d1a7,https://www.independent.co.uk/sport/nelson-finalises-move-to-villa-1328527.html,www.independent.co.uk,B,press_or_club
 Se9d4bf343c,https://www.bbc.co.uk/sport/football/53914263,BBC Sport,B,press_or_club
 Sea0bb7469c,https://www.theguardian.com/football/2013/sep/01/gareth-bale-real-madrid-transfer-tottenham,The Guardian,B,press_or_club
 Sea39961d31,https://www.skysports.com/football/news/11095/13488723/brennan-johnson-transfer-news-crystal-palace-sign-wales-winger-from-tottenham-in-club-record-lb35m-deal,www.skysports.com,B,press_or_club
