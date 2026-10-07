@@ -20,7 +20,7 @@ Outputs: clubs.csv, pl_membership.csv, seasons.csv, transfers.csv, fee_evidence.
 Rules: reference/metric_contract_RTT-101.md. Never averages, interpolates or forecasts; never uses Transfermarkt.
 Everything in phase 1 is an UNVERIFIED preview unless a row says VERIFIED.
 """
-import bisect, csv, datetime as dt, hashlib, json, os, random, re, sys
+import bisect, csv, datetime as dt, hashlib, json, os, random, re, sys, urllib.parse
 from collections import Counter, defaultdict
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -323,7 +323,23 @@ for r in lead_rows:
                         "lead_id": r["lead_id"], "lead_section": r["lead_section"], "record_type": r["record_type"],
                         "issue_type": r["issue_type"], "grade_note": r["grade_note"]})
 
-checks = {c["check_id"]: c for c in rd("runner_checks.csv")}
+checks = defaultdict(list)
+for c in rd("runner_checks.csv"):
+    checks[c["transfer_id"]].append(c)
+# a figure the runner found at the cited source becomes its own evidence row (VERIFIED, graded by publisher)
+for t in transfers:
+    for c in checks.get(t["transfer_id"], []):
+        if c["status"] != "VERIFIED":
+            continue
+        e0 = next((e for e in t["_ev"] if (e["url"] == c["url"] or c["url"] in e.get("cite_urls", "").split())), None)
+        if e0 and e0["origin"] == "research_lead" and e0["url"] == c["url"]:
+            e0["checked"] = c
+            continue
+        sid = source_id(c["url"], urllib.parse.urlparse(c["url"]).netloc, c["grade_by_publisher"], "press_or_club")
+        t["_ev"].append({"origin": "runner_check", "source_id": sid, "grade": c["grade_by_publisher"],
+                         "fee_text": c["needle"], "parsed": {"amount": float(c["amount"]), "currency": c["currency"], "qualifiers": [], "kind": "fee"},
+                         "quote": c["quote"], "url": c["url"], "archive_url": "", "date": t["date"], "checked": c,
+                         "note": "figure found at the source cited by the Wikipedia row (scripted check, GitHub runner)"})
 
 # canonical fee per transfer
 for t in transfers:
@@ -342,9 +358,9 @@ for t in transfers:
             e["quote"] = ""
         elif p["amount"] is not None:
             e["gbp"], e["fx"] = convert(p["amount"], p["currency"], t["date"] or e["date"] or "")
-        ck = checks.get(e["evidence_id"])
-        e["status"] = ck["status"] if ck else "UNVERIFIED"
-        if ck and ck["status"] == "VERIFIED":
+        ck = e.get("checked")
+        e["status"] = "VERIFIED" if ck else "UNVERIFIED"
+        if ck:
             e["quote"], e["retrieved"] = ck["quote"], ck["retrieved"]
         usable = e["gbp"] is not None and "up_to" not in p["qualifiers"]
         if usable:

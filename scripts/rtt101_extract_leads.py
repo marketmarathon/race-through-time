@@ -7,6 +7,7 @@ publisher, a quote under 25 words FROM THE CITED SOURCE, and its URL. ChatGPT's 
 Rows from part14b that repeat a section B row (same URL and fee) are matched, not added (brief section 3).
 Usage: rtt101_extract_leads.py PRIVATE_DIR OUT_CSV"""
 import csv, hashlib, os, re, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 PRIV, OUT = sys.argv[1], sys.argv[2]
 FILES = [("part09b_prompt2_biggest_transfers_B_1992-2000.csv", "B"),
@@ -61,3 +62,50 @@ rows.sort(key=lambda x: x["lead_id"])
 w = csv.DictWriter(open(OUT, "w", newline="", encoding="utf-8"), fieldnames=cols)
 w.writeheader(); w.writerows(rows)
 print(len(rows), "lead rows;", sum(1 for r in rows if r["quote_words"] >= 25), "quotes of 25+ words")
+
+# ---- dated moments (part15b, grades A/B only) -> data/rtt-101/source/moments_leads.csv (UNVERIFIED leads)
+MOM = os.path.join(os.path.dirname(OUT), "moments_leads.csv")
+mrows, done = [], set()
+fn = "part15b_premier_league_dated_moments_D_2026-10-06.csv"
+msha = hashlib.sha256(open(os.path.join(PRIV, fn), "rb").read()).hexdigest()[:16]
+for r in csv.DictReader(open(os.path.join(PRIV, fn), encoding="utf-8-sig")):
+    if r["grade"] not in ("A", "B") or r["event_id"] in done or "transfermarkt" in r["source_url"].lower():
+        continue
+    done.add(r["event_id"])
+    est = r["event_category"] == "RECORD_WINDOW"
+    mrows.append({"moment_id": "M-" + r["event_id"], "date": r["date"], "category": r["event_category"].lower(), "clubs": r["clubs"],
+                  "event": r["event"], "grade": r["grade"], "publisher": r["publisher"], "quote": r["exact_quote"],
+                  "quote_words": len(r["exact_quote"].split()), "url": r["source_url"], "status": "UNVERIFIED",
+                  "use_note": ("league-wide total from an analyst or the press: label as an estimate, never official, never split across clubs"
+                               if est else ""), "lead_file_sha256_prefix": msha})
+mrows.append({"moment_id": "M-PL-2026-09-29", "date": "2026-09-29", "category": "regulatory", "clubs": "Manchester City",
+              "event": "Premier League statement on the independent Commission's decision in the Manchester City case; sanction to be decided at a further hearing",
+              "grade": "A", "publisher": "Premier League", "quote": "the issue of sanction will be addressed separately in a further hearing with the independent Commission",
+              "quote_words": 16, "url": "https://www.premierleague.com/en/news/4727779/premier-league-statement-manchester-city-fc/",
+              "status": "VERIFIED (Claude in Cowork, web fetch, 7 Oct 2026; re-read word for word in Luke's Chrome before any on-screen use)",
+              "use_note": "topical hook only, neutral wording; the case concerns financial rules, not transfer spending: never place it so it implies spending was wrongdoing; say the club has appealed (1 Oct 2026, UNVERIFIED)",
+              "lead_file_sha256_prefix": ""})
+mrows.sort(key=lambda r: (r["date"], r["moment_id"]))
+with open(MOM, "w", newline="", encoding="utf-8") as f:
+    w = csv.DictWriter(f, fieldnames=list(mrows[0])); w.writeheader(); w.writerows(mrows)
+print(len(mrows), "moments")
+
+# ---- league-wide window totals (part17b, grades A/B) -> data/rtt-101/source/window_totals_leads.csv (cross-check only)
+WT = os.path.join(os.path.dirname(OUT), "window_totals_leads.csv")
+fn = "part17b_premier_league_season_totals_F_2026-10-07.csv"
+wsha = hashlib.sha256(open(os.path.join(PRIV, fn), "rb").read()).hexdigest()[:16]
+wrows = []
+for r in csv.DictReader(open(os.path.join(PRIV, fn), encoding="utf-8-sig")):
+    m = re.match(r"F-(\d{4})-(JAN|SUM)$", r["window_id"])
+    if not m or r["grade"] not in ("A", "B"):
+        continue
+    import rtt101_lib as L
+    g, n = L.parse_fee(r["gross_spend_as_reported"]), L.parse_fee(r["net_spend_as_reported"])
+    wrows.append({"window": ("January " if m.group(2) == "JAN" else "summer ") + m.group(1), "grade": r["grade"], "publisher": r["publisher"],
+                  "gross_as_reported": r["gross_spend_as_reported"], "gross_gbp": g["amount"] if g["currency"] == "GBP" else "",
+                  "net_as_reported": r["net_spend_as_reported"],
+                  "net_gbp": ((-n["amount"] if (re.match(r"\s*[−-]", r["net_spend_as_reported"]) or re.search(r"profit|receipts", r["net_spend_as_reported"], re.I)) else n["amount"]) if n["currency"] == "GBP" else ""),
+                  "method": r["method"][:160], "url": r["source_url"], "status": "UNVERIFIED (research lead)", "lead_file_sha256_prefix": wsha})
+with open(WT, "w", newline="", encoding="utf-8") as f:
+    w = csv.DictWriter(f, fieldnames=list(wrows[0])); w.writeheader(); w.writerows(wrows)
+print(len(wrows), "window-total lead rows")
