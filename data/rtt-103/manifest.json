@@ -1,20 +1,20 @@
 {
  "files": {
   "AI_SPENDING_RACE_2026E.csv": {
-   "sha256": "39eae3ee78525a55a46ac5d2837611b1cb68b176dddfc1e4abc578f4c131891b",
-   "bytes": 8890
+   "sha256": "c523ff10a63a5fdeb9b110ba096b56026b4099b84b0b40a59ab41a78c2a2bd31",
+   "bytes": 26522
   },
   "AI_SPENDING_RACE_FORECAST.csv": {
-   "sha256": "5768aad22026f3495bec36b405e12b9406fa9af08672b864871980d41e0ba681",
-   "bytes": 11611
+   "sha256": "e42fb908cbdaeca94ad6997888b36d1dfa4be9690d7e35aafe4aab5254d165a0",
+   "bytes": 69940
   },
   "AI_SPENDING_RACE_MASTER.csv": {
    "sha256": "f4c88db6c15220a3c7e35b4c875362e6758d9449ba66f424a630c462a81ec9ea",
    "bytes": 62901
   },
   "A_source_catalogue.csv": {
-   "sha256": "afb2d06681ca937849eac392ac6dddbd5fc2b6d9f2869cc4ac312f7eb4a54011",
-   "bytes": 310007
+   "sha256": "ed7fab7a21218aebc3e88d8a96442a86caea96ed95692245f2ff848e91058e93",
+   "bytes": 316030
   },
   "B_capex_observations.csv": {
    "sha256": "0ed83f6f20346021b9aa1fb02888a6bb1ff6df6f5f3ea4e127c55362a38c026a",
@@ -57,8 +57,8 @@
    "bytes": 23122
   },
   "J_QA_report.md": {
-   "sha256": "1cc61fe2fca65abb660493cab17ddd32ac4455c8c1242ab64b5ace04aa5aee59",
-   "bytes": 15006
+   "sha256": "ea9c10e5db8bfa44d5173eccad6cca086bfc502bf2f74f234519a35388106bd7",
+   "bytes": 15462
   },
   "K_recommended_dataset.md": {
    "sha256": "d748a73a4f7c77aadf94aab8cb6704c9b7071b4f511da2b6ee68e6f2f021dcf8",
@@ -73,8 +73,8 @@
    "bytes": 4766
   },
   "checks.json": {
-   "sha256": "984a08bee2ddad35b4581df2859e05beb42dfe40043e887400e913fda7770e1f",
-   "bytes": 24247
+   "sha256": "9bdd42d84c0eeb15939828a568b52eed3fc3f8e212d1551de19bf1ccbea15a33",
+   "bytes": 24976
   },
   "eligibility_additional_companies.csv": {
    "sha256": "37153950287d78145eff9637717c7d8dae68865cdb59c326ac53e64d170dd0f4",
@@ -113,12 +113,12 @@
    "bytes": 644
   },
   "source/extra_sources.csv": {
-   "sha256": "950ffef81b016f0e09cdc711cd94e1c08399ad13d5a81f7581a02d3594966296",
-   "bytes": 22216
+   "sha256": "db6e6036f7a9bbed3652a9e6d9427e139ea9ba73a8ea62b167ed944fa7062336",
+   "bytes": 28239
   },
   "source/forecast_lookahead_2027_2031.csv": {
-   "sha256": "2023f72b887a3607fe483395f51b9827916266a44f44cd37b19ccc0a96ec5598",
-   "bytes": 273
+   "sha256": "399d0a6965b73ffdc8f4c005d76dc39883bfc75834a7d008355a8664c6ebfedb",
+   "bytes": 68750
   },
   "source/fx_cny_per_usd_daily.csv": {
    "sha256": "4606b6807577dd219c6cd3d57f541ca91474861a50ffd3d05accf46a5c477cbc",

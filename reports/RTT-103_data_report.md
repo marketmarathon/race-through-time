@@ -1,6 +1,74 @@
-# RTT-103 The AI Spending Race — data report (IQ-16 stage 1, 7 Oct 2026; IQ-16b stage 2 and IQ-16c stage 3, 8 Oct 2026)
+# RTT-103 The AI Spending Race — data report (IQ-16 stage 1, 7 Oct 2026; IQ-16b, IQ-16c and IQ-16d stages 2–4, 8 Oct 2026)
 
-**Newest first: stage 3, then stage 2, then the stage-1 report unchanged.**
+**Newest first: stage 4, stage 3, stage 2, then the stage-1 report unchanged.**
+
+## Stage 4 (IQ-16d, 8 Oct 2026): the look-ahead to 2031, checked at source
+
+**In plain English.** I checked ChatGPT's look-ahead figures at their sources.
+- **FactSet:** the table Cowork found is exactly as ChatGPT gave it, including Microsoft's surprising 2030 figure.
+- **Visible Alpha:** a second consensus source measures the same lines as our bars, but only reaches 2027.
+- **Where coverage runs out:** after 2030 nothing exists per company, and outside the US five almost nothing could be checked.
+- **Status:** 82 verified rows are loaded with their forecaster, type, date and measure. Nothing is chosen for the screen and nothing is rendered.
+
+### What was confirmed at source
+- **FactSet consensus (Morgan Stanley PDF, 17 Sep 2026, Exhibit 13).**
+  - **How it was read:** morganstanley.com refuses our computers, so I read an Internet Archive copy of the official PDF (DEC-318).
+  - **Cells:** all 47 Capex cells match, for both the 31 Aug 2025 and the 31 Aug 2026 tables.
+  - **Units:** "Calendar Yrs; $BB". The note says "Data calendarized; Estimates are FactSet consensus."
+  - **Microsoft 2030 (312.0):** printed exactly like that. The year-on-year change cell is N/A, because the 2025 table had no Microsoft 2030 figure, and Microsoft's 2030 sales estimate jumps 25% in the same table. The source itself says these estimates "become less reliable further into the forecast horizon".
+  - **What "Capex" means:** not stated. The PDF never defines it, never mentions leases and doesn't say how it calendarises.
+  - **A clue, not proof:** FactSet's Microsoft 2026 figure (157.7) is close to Visible Alpha's cash figure (153.7), not Microsoft's own ~175 that includes leases. That suggests a cash basis.
+- **Visible Alpha consensus (S&P charts, 22 Jul 2026, read by eye).**
+  - **Lines used:** the same cash-flow lines our race uses.
+  - **History versus our figures:**
+    - Alphabet and Meta: equal to our numbers exactly.
+    - Amazon: gross purchases, about 3% above our net figure.
+    - Microsoft: its "calendar" years are the average of two fiscal years (DEC-317).
+  - **Coverage:** Amazon, Alphabet, Microsoft and Meta, 2026–2027 (Meta to 2028). No Oracle.
+- **Citi on Alibaba (Sina, 23 Sep 2026):** 258bn, 283bn and 282bn yuan for its fiscal years 2027–2029. Citi assumes the spending is shared with partners.
+- **Group views confirmed:**
+  - **Morgan Stanley Research:** "five largest U.S. technology companies", about $800bn (2026), about $1.2tn (2027) and $1.4tn (2028). The page doesn't name the five, so the SpaceX claim is unchecked.
+  - **Bain:** $780bn in 2026 for the five; $1.5tn in 2031 for all AI infrastructure worldwide.
+  - **Dell'Oro:** more than $3tn of data-centre capex worldwide by 2030.
+  - **Allianz (March):** over $600bn in 2026; growth slowing to about 5% by 2028.
+  - **DBS:** 2027 growth could slow.
+- **Could not be checked (Cowork checklist, 37 items):**
+  - BCG's chart (blocked, and it needs reading by eye);
+  - Allianz's September peak view;
+  - Fitch and S&P Ratings on CoreWeave;
+  - Citi's table for Tencent and Baidu;
+  - Goldman on Tencent;
+  - McKinsey;
+  - the single-bank figures in MarketWatch, Barron's, Investing.com and IBD.
+
+### Coverage (verified only)
+| Company | 2027 | 2028 | 2029 | 2030 | 2031 |
+|---|---|---|---|---|---|
+| Amazon, Microsoft, Alphabet, Meta, Oracle | FactSet (+ Visible Alpha, not Oracle) | FactSet (Meta also Visible Alpha) | FactSet | FactSet | none |
+| Alibaba | Citi (FY to Mar 2028) | Citi (FY to Mar 2029) | none | none | none |
+| Tencent, Baidu, CoreWeave | none verified | none | none | none | none |
+| Groups | Morgan Stanley Research, Visible Alpha, DBS (direction) | Morgan Stanley Research | (BCG unverified) | Dell'Oro (worldwide) | Bain (worldwide AI infrastructure); BCG unverified |
+
+### On the draft rule (FactSet 8/31/26, 2027–2030, US five; a group total to 2031 from one forecaster)
+- **The draft fits the coverage:** FactSet is the only consistent series for the US five, and it reaches 2030.
+- **Use FactSet for the 2026 bars too, and show company guidance only as a label.** Otherwise the bases mix: Microsoft would jump from ~175 (company figure, including leases) to 208.5 (FactSet, apparently cash). On FactSet's own basis it goes 157.7 to 208.5.
+- **The basis is not proven.** FactSet doesn't define "Capex" or say how it calendarises. Visible Alpha does match our lines, but only to 2027. Cowork could try to find FactSet's definition.
+- **Microsoft 2030 is the weakest cell.** Consider ending the per-company bars at 2029, or flag 2030 on screen.
+- **A BCG closing total would contradict the bars before it.** If Cowork confirms BCG's chart, its 2027 total (884) is far below what the FactSet five add up to (1,066; I added them only to compare). Its peak in 2029 also conflicts with FactSet still rising in 2030 and Allianz saying 2028. The honest "peak" story is that forecasters disagree.
+- **CoreWeave would leave the race at the look-ahead.** It has no verified forecast, and nor do Tencent or Baidu. Alibaba has Citi only.
+
+### Checks
+- **Financial QA:** 81/81 PASS.
+- **File-format checks:** **36/36 PASS**. New: every look-ahead figure is printed in its own quote in the source's units; fiscal years sit in the right frame; there is one current figure per forecaster, company and year.
+- **Tests:** **30/30 PASS**. New: all 25 FactSet cells; the old vintage is superseded; no unverified forecaster appears.
+- **Quotes:** each look-ahead quote was re-found in its source by script.
+
+### Next
+1. Luke picks the rule.
+2. Cowork works through the checklists.
+3. I set `selected_for_screen` to match the rule.
+4. The design session.
+
 
 ## Stage 3 (IQ-16c, 8 Oct 2026): company forecasts, the look-ahead and OpenAI
 

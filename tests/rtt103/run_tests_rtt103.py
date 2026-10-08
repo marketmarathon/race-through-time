@@ -11,6 +11,7 @@
 import csv
 import json
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -104,7 +105,7 @@ syn = {"display_style": "forecast", "display_note": "", "forecast_amount_usd_bn"
        "notes": 'SYNTHETIC. Verbatim: "we expect capex of $40 billion to $44 billion"'}
 t("SYNTHETIC: a forecast figure not printed in its quote is rejected (45 vs 44); a printed one passes",
   not figures_in_quote(syn) and figures_in_quote(dict(syn, range_high_usd_bn="44")))
-fc26 = {r["company"]: r for r in rows("AI_SPENDING_RACE_2026E.csv")}
+fc26 = {r["company"]: r for r in rows("AI_SPENDING_RACE_2026E.csv") if r["forecaster_type"] in ("COMPANY", "PRESS_REPORT")}
 t("2026 frame: Amazon $220bn, labelled as reported by Reuters (Cowork-checked), replacing about $200bn",
   fc26["Amazon"]["forecast_amount_usd_bn"] == "220" and "reported by Reuters" in fc26["Amazon"]["display_note"]
   and any(r["company"] == "Amazon" and r["single_estimate_usd_bn"] == "200" and r["notes"].startswith("SUPERSEDED") for r in rows("F_2026_capex_forecasts.csv")))
@@ -114,12 +115,12 @@ t("2026 frame: Oracle 90-95 for its fiscal year to May 2027; CoreWeave 35-39; Me
   and (fc26["Meta"]["range_low_usd_bn"], fc26["Meta"]["range_high_usd_bn"]) == ("130", "145")
   and fc26["Microsoft"]["forecast_amount_usd_bn"] == "175" and "Never show as a cut" in fc26["Microsoft"]["display_note"])
 t("2027-2028: company rows are directions or 'no outlook' only, as the companies stated (Alphabet, Microsoft, Meta); no figure",
-  {(r["company"], r["form"]) for r in fc if r["forecast_year"] in ("2027", "2028")} == {("Alphabet", "DIRECTION_ONLY"), ("Microsoft", "DIRECTION_ONLY"), ("Meta", "NO_OUTLOOK")}
-  and not any(r["forecast_amount_usd_bn"] or r["range_low_usd_bn"] for r in fc if r["forecast_year"] in ("2027", "2028")))
+  {(r["company"], r["form"]) for r in fc if r["forecast_year"] in ("2027", "2028") and r["forecaster_type"] == "COMPANY"} == {("Alphabet", "DIRECTION_ONLY"), ("Microsoft", "DIRECTION_ONLY"), ("Meta", "NO_OUTLOOK")}
+  and not any(r["forecast_amount_usd_bn"] or r["range_low_usd_bn"] for r in fc if r["forecast_year"] in ("2027", "2028") and r["forecaster_type"] == "COMPANY"))
 fF = rows("F_2026_capex_forecasts.csv")
 t("Alibaba's RMB380bn plan stays a multi-year plan in F: no annual US$ figure, never in a forecast frame",
   all(not (r["low_usd_bn"] or r["high_usd_bn"] or r["single_estimate_usd_bn"]) for r in fF if r["forecast_type"] == "MULTI_YEAR_PLAN")
-  and any(r["forecast_type"] == "MULTI_YEAR_PLAN" for r in fF) and not any(r["company"] == "Alibaba" for r in fc))
+  and any(r["forecast_type"] == "MULTI_YEAR_PLAN" for r in fF) and not any(r["company"] == "Alibaba" and r["forecaster_type"] == "COMPANY" for r in fc))
 g = rows("G_AI_capex_story_events.csv")
 oa = [r for r in g if "openai" in r["company"].lower()]
 t("OpenAI: 15 verified story moments, all COMMITMENT and never capex; OpenAI is never in F, the forecast file or the master",
@@ -135,7 +136,7 @@ with open(os.path.join(tmp_src, LOOKAHEAD_FILE), "w", encoding="utf-8") as fh:
     w = csv.DictWriter(fh, fieldnames=hdr.strip().split(","), lineterminator="\n")
     base = {"company": "Meta", "scope": "COMPANY", "forecast_year": "2028", "period_as_stated": "calendar 2028", "forecaster": "Example Bank",
             "forecaster_type": "ANALYST", "forecast_date": "2026-09-01", "measure": "SYNTHETIC capex", "form": "NUMBER", "single": "150",
-            "currency": "USD", "verification": "VERIFIED", "source_grade": "D", "source": "SRC-SYNTHETIC", "url": "https://example.invalid/",
+            "currency": "USD", "value_unit": "billion", "verification": "VERIFIED", "source_grade": "D", "source": "SRC-SYNTHETIC", "url": "https://example.invalid/",
             "verbatim_quote": "SYNTHETIC: we forecast $150bn in 2028"}
     w.writerow(base)
     w.writerow(dict(base, forecaster="Unchecked Bank", verification="UNVERIFIED"))
@@ -144,6 +145,20 @@ shutil.rmtree(tmp_src)
 t("SYNTHETIC look-ahead row: labelled '2028 ANALYST FORECAST (Example Bank)', 'not official', third-party style; unverified row dropped",
   len(syn_fc) == 1 and syn_fc[0]["display_label"] == "2028 ANALYST FORECAST (Example Bank)" and "not official" in syn_fc[0]["display_note"]
   and syn_fc[0]["display_style"] == "forecast_third_party" and syn_fc[0]["forecast_amount_usd_bn"] == "150" and figures_in_quote(syn_fc[0]))
+
+# ---------------------------------------------------------------- IQ-16d: look-ahead rows checked at source
+look = list(csv.DictReader(open(os.path.join(ROOT, "data", "rtt-103", "source", LOOKAHEAD_FILE), encoding="utf-8")))
+fs = {(r["company"], r["forecast_year"]): r["single"] for r in look if r["forecaster"] == "FactSet consensus" and not r["superseded_by"]}
+want = {"Amazon": "218.0 272.9 295.8 310.6 313.0", "Microsoft": "157.7 208.5 224.2 239.4 312.0", "Alphabet": "201.5 304.0 343.3 354.5 371.5",
+        "Meta": "137.4 188.7 205.5 206.2 237.3", "Oracle": "77.0 92.1 90.2 78.6 71.3"}
+t("FactSet consensus 8/31/26 (Morgan Stanley Exhibit 13): all 25 cells as printed, incl. Microsoft 2030 = 312.0",
+  all(fs.get((c, str(y))) == v for c, vals in want.items() for y, v in zip(range(2026, 2031), vals.split())) and len(fs) == 25)
+old = [r for r in look if r["forecaster"] == "FactSet consensus" and r["forecast_date"] == "2025-08-31"]
+t("FactSet 8/31/25 vintage: 22 cells (N/A cells skipped), all flagged superseded and absent from the forecast file",
+  len(old) == 22 and all(r["superseded_by"] for r in old)
+  and not any(r["forecaster"] == "FactSet consensus" and r["forecast_date"] == "2025-08-31" for r in fc))
+t("Unverified forecasters (BCG, Fitch, S&P Ratings, McKinsey) are not in the look-ahead file or the forecast file",
+  not any(re.search(r"BCG|Fitch|S&P Global Ratings|McKinsey", r["forecaster"]) for r in look + fc))
 
 for name, ok, detail in results:
     print(("PASS " if ok else "FAIL ") + name + ("" if ok else f"  [{detail}]"))

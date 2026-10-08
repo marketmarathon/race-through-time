@@ -719,8 +719,7 @@ def forecast_rows(f_rows, src, B, C):
         amount, note, style = r["single_estimate_usd_bn"], "", "standard"
         if press:
             # US$ at the mean of the Federal Reserve H.10 daily rates in 2026 so far (DEC-298); lower bound
-            fx = [(d_, Decimal(x)) for d_, x in ((q["date"], q["cny_per_usd"]) for q in B.read_csv_skip_comments(os.path.join(src, "fx_cny_per_usd_daily.csv"))) if x and d_ >= "2026-01-01"]
-            mean = (sum(x for _, x in fx) / len(fx)).quantize(Decimal("0.000001"), rounding=ROUND_HALF_UP)
+            mean, fx = h10_2026_mean(src, B)
             amount = money(Decimal(200) / mean, 1)
             style = "greyed"
             note = (f"Press report from unnamed sources (SCMP, 9 May 2026): more than 200 billion yuan; shown as more than US${amount}bn "
@@ -754,10 +753,10 @@ def forecast_rows(f_rows, src, B, C):
         if not press:
             out[-1]["display_style"] = "forecast"
     for r in B.read_csv(os.path.join(src, LOOKAHEAD_FILE)):
-        if r["verification"] != "VERIFIED" or r["superseded_by"]:
-            continue  # unverified and superseded rows stay in the source file only
+        if r["verification"] != "VERIFIED" or r["superseded_by"] or r["form"] in NOT_A_YEAR_FIGURE:
+            continue  # unverified, superseded, cumulative and growth-rate rows stay in the source file only
         t = r["forecaster_type"]
-        usd = (r["usd_low_bn"], r["usd_high_bn"], r["usd_single_bn"]) if r["currency"] != "USD" else (r["low"], r["high"], r["single"])
+        usd, fx_note = lookahead_usd(r, src, B)
         form = r["form"]
         rng = f" Range: show {usd[0]}-{usd[1]}, never the midpoint alone." if form == "RANGE" else ""
         out.append({"company": r["company"], "display_name": display_of(C, r["company"]) if r["scope"] == "COMPANY" else r["company"],
@@ -765,8 +764,8 @@ def forecast_rows(f_rows, src, B, C):
                     "form": form, "forecast_period": r["period_as_stated"], "forecast_type": f"{t}_FORECAST",
                     "forecast_amount_usd_bn": usd[2], "range_low_usd_bn": usd[0], "range_high_usd_bn": usd[1], "midpoint_usd_bn": "",
                     "direction_text": r["direction_text"], "display_style": "forecast" if t == "COMPANY" else "forecast_third_party",
-                    "display_note": (f"Forecast by {r['forecaster']} ({t.lower().replace('_', ' ')}), {r['forecast_date']}; not official." if t != "COMPANY" else "") + rng + (f" {r['fx_note']}" if r["fx_note"] else ""),
-                    "metric_definition": r["measure"], "source": r["source"], "source_grade": r["source_grade"],
+                    "display_note": (f"Forecast by {r['forecaster']} ({t.lower().replace('_', ' ')}), {r['forecast_date']}; not official." if t != "COMPANY" else "") + rng + (f" {fx_note}" if fx_note else ""),
+                    "metric_definition": r["measure"] + (f" [{r['group_definition']}]" if r["group_definition"] else ""), "source": r["source"], "source_grade": r["source_grade"],
                     "publication_date": r["forecast_date"], "url": r["url"], "notes": f'{r["notes"]} Verbatim: "{r["verbatim_quote"]}"'.strip(),
                     "forecaster": r["forecaster"], "forecaster_type": t, "forecast_date": r["forecast_date"], "measure": r["measure"],
                     "scope": r["scope"], "selected_for_screen": "PENDING (one figure per company per year: rule to be proposed, DEC-306)"})
@@ -786,6 +785,34 @@ def frame_year(period):
         first = 13 - MONTHS[m.group(1)]
         return m.group(2) if first > 12 - first else m.group(4)
     return re.search(r"20\d\d", period).group(0)
+
+
+NOT_A_YEAR_FIGURE = ("CUMULATIVE", "GROWTH_RATES")  # multi-year totals and growth rates: reported, never a year's bar
+UNIT_TO_BN = {"billion": Decimal(1), "million": Decimal("0.001"), "trillion": Decimal(1000), "亿元": Decimal("0.1")}
+
+
+def h10_2026_mean(src, B):
+    """Mean of the Federal Reserve H.10 daily CNY-per-USD rates in 2026 to date (DEC-298, DEC-304): the single fixed rate
+    used for every forecast in yuan (a rate for future years would itself be a forecast)."""
+    fx = [(d_, Decimal(x)) for d_, x in ((q["date"], q["cny_per_usd"]) for q in B.read_csv_skip_comments(os.path.join(src, "fx_cny_per_usd_daily.csv"))) if x and d_ >= "2026-01-01"]
+    return (sum(x for _, x in fx) / len(fx)).quantize(Decimal("0.000001"), rounding=ROUND_HALF_UP), fx
+
+
+def lookahead_usd(r, src, B):
+    """(low, high, single) in US$ bn for a look-ahead row, from its own units; plus a note when converted (IQ-16d)."""
+    unit = UNIT_TO_BN[r["value_unit"]]
+    vals = [Decimal(v) * unit if v else None for v in (r["low"], r["high"], r["single"])]
+    note = []
+    if r["value_unit"] not in ("billion",):
+        note.append(f"Source figure in {r['value_unit']}" + (" of yuan" if r["currency"] == "CNY" and r["value_unit"] != "亿元" else "") + "; shown in billions.")
+    if r["currency"] == "CNY":
+        mean, fx = h10_2026_mean(src, B)
+        vals = [v / mean if v is not None else None for v in vals]
+        note.append(f"Converted at {mean} yuan per US$ (mean of the {len(fx)} H.10 daily rates in 2026 to {fx[-1][0]}; one fixed rate, not an exchange-rate forecast).")
+    elif r["currency"] != "USD":
+        raise ValueError(f"look-ahead currency {r['currency']} not handled")
+    fmt = lambda v: "" if v is None else str(money(v, 1) if (v != v.to_integral_value() or r["currency"] != "USD") else int(v))
+    return [fmt(v) for v in vals], " ".join(note) + (" (converted)" if note else "")
 
 
 def figures_in_quote(r):
@@ -1139,8 +1166,9 @@ def format_checks(out, v, B, src):
             for r in B.read_csv(os.path.join(out, fn)) if "openai" in r["company"].lower() or "bytedance" in r["company"].lower()]
     check("OpenAI and ByteDance are never bars (DEC-301, DEC-296)", not bars, f"{len(bars)} found")
     fc = B.read_csv(os.path.join(out, "AI_SPENDING_RACE_FORECAST.csv"))
-    check("Forecast frames: companies' own guidance only, plus ByteDance greyed (DEC-296, DEC-297)",
-          all(r["forecast_type"] in FRAME_TYPES or (r["company"] == "ByteDance" and r["display_style"] == "greyed") for r in fc)
+    check("Forecast file: company guidance, ByteDance greyed, and named consensus/analyst/research-firm forecasts only (DEC-296, DEC-297, DEC-306)",
+          all(r["forecast_type"] in FRAME_TYPES or (r["company"] == "ByteDance" and r["display_style"] == "greyed")
+              or (r["forecast_type"] == f'{r["forecaster_type"]}_FORECAST' and r["forecaster_type"] in ("CONSENSUS", "ANALYST", "RESEARCH_FIRM")) for r in fc)
           and not any("trendforce" in (r["source"] + r["company"]).lower() for r in fc), f"{len(fc)} rows")
     check("Forecast file: years 2026-2031 only (DEC-306)", all(r["forecast_year"] in FORECAST_YEARS for r in fc), "")
     check("Forecast file: every row names its forecaster, forecaster type, forecast date and measure (DEC-306)",
@@ -1151,14 +1179,25 @@ def format_checks(out, v, B, src):
           all("GUIDANCE" not in r["display_label"] and r["forecaster"] in r["display_label"] and "not official" in r["display_note"]
               for r in fc if r["forecaster_type"] in ("CONSENSUS", "ANALYST", "RESEARCH_FIRM")), "")
     look = B.read_csv(os.path.join(src, LOOKAHEAD_FILE))
+    ver = [r for r in look if r["verification"] == "VERIFIED"]
     check("Look-ahead source rows: each states its own year, quote, source and URL (never extended beyond a source's years)",
           all(r["forecast_year"] in FORECAST_YEARS and r["period_as_stated"] and r["verbatim_quote"] and r["source"] and r["url"]
-              for r in look if r["verification"] == "VERIFIED"), f"{len(look)} rows")
+              and r["forecaster"] and r["forecaster_type"] in FORECASTER_TYPES and r["forecast_date"] and r["measure"]
+              and r["value_unit"] in UNIT_TO_BN and r["scope"] in ("COMPANY", "GROUP") for r in ver), f"{len(look)} rows, {len(ver)} verified")
+    nums = lambda q: {n.rstrip("0").rstrip(".") if "." in n else n for n in re.findall(r"\d+(?:\.\d+)?", q.replace(",", ""))}
+    norm = lambda v: v.rstrip("0").rstrip(".") if "." in v else v
+    badl = [f'{r["forecaster"]} {r["company"]} {r["forecast_year"]}' for r in ver if not all(norm(v) in nums(r["verbatim_quote"]) for v in (r["low"], r["high"], r["single"]) if v)]
+    check("Look-ahead source rows: every figure is printed in its own verbatim quote, in the source's own units", not badl, f"failing: {badl[:3]}")
+    badf = [f'{r["company"]} {r["period_as_stated"]}' for r in ver if re.search(r"\(\w{3} 20\d\d - \w{3} 20\d\d\)", r["period_as_stated"]) and frame_year(r["period_as_stated"]) != r["forecast_year"]]
+    check("Look-ahead source rows: a fiscal year sits in the frame of the calendar year holding most of its months (DEC-314)", not badf, f"failing: {badf[:3]}")
+    sup = {(r["forecaster"], r["company"], r["forecast_year"]) for r in ver if not r["superseded_by"] and r["form"] not in NOT_A_YEAR_FIGURE}
+    dup = [k for k in sup if sum(1 for r in ver if (r["forecaster"], r["company"], r["forecast_year"]) == k and not r["superseded_by"] and r["form"] not in NOT_A_YEAR_FIGURE) > 1]
+    check("Look-ahead: one current figure per forecaster, company and year (older vintages flagged superseded)", not dup, f"duplicates: {dup[:3]}")
     bad = [f'{r["company"]} {r["forecast_year"]} {r["forecaster"]}' for r in fc if not figures_in_quote(r)]
     check("Forecast file: every figure appears in its own verbatim quote (no number created; 2027-2028 company rows stay as stated)",
           not bad, f"{len(fc)} rows; failing: {bad[:3]}")
     check("Forecast frames: Alibaba's multi-year plan is never split into years or shown as annual guidance",
-          not any(r["company"] == "Alibaba" for r in fc), "")
+          not any(r["company"] == "Alibaba" and r["forecaster_type"] == "COMPANY" for r in fc) and not any(r["forecast_type"] == "MULTI_YEAR_PLAN" for r in fc), "")
     check("Forecast frames: guidance only press reports carry is labelled so in its display note",
           all("reported by" in r["display_note"].lower() for r in fc if r["forecast_type"].endswith("REPORTED_BY_PRESS")), "")
     g = B.read_csv(os.path.join(out, "G_AI_capex_story_events.csv"))

@@ -725,14 +725,14 @@
   {
    "check": "2026E: every row labelled 2026 and its kind (GUIDANCE, ESTIMATE or a named forecaster's FORECAST)",
    "company": "files",
-   "detail": "7 rows",
+   "detail": "22 rows",
    "kind": "format",
    "result": "PASS"
   },
   {
    "check": "Every source cited in B, F, G and the forecast file is listed in A",
    "company": "files",
-   "detail": "635 citations; missing: []",
+   "detail": "644 citations; missing: []",
    "kind": "format",
    "result": "PASS"
   },
@@ -744,9 +744,9 @@
    "result": "PASS"
   },
   {
-   "check": "Forecast frames: companies' own guidance only, plus ByteDance greyed (DEC-296, DEC-297)",
+   "check": "Forecast file: company guidance, ByteDance greyed, and named consensus/analyst/research-firm forecasts only (DEC-296, DEC-297, DEC-306)",
    "company": "files",
-   "detail": "10 rows",
+   "detail": "58 rows",
    "kind": "format",
    "result": "PASS"
   },
@@ -781,14 +781,35 @@
   {
    "check": "Look-ahead source rows: each states its own year, quote, source and URL (never extended beyond a source's years)",
    "company": "files",
-   "detail": "0 rows",
+   "detail": "82 rows, 82 verified",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "Look-ahead source rows: every figure is printed in its own verbatim quote, in the source's own units",
+   "company": "files",
+   "detail": "failing: []",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "Look-ahead source rows: a fiscal year sits in the frame of the calendar year holding most of its months (DEC-314)",
+   "company": "files",
+   "detail": "failing: []",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "Look-ahead: one current figure per forecaster, company and year (older vintages flagged superseded)",
+   "company": "files",
+   "detail": "duplicates: []",
    "kind": "format",
    "result": "PASS"
   },
   {
    "check": "Forecast file: every figure appears in its own verbatim quote (no number created; 2027-2028 company rows stay as stated)",
    "company": "files",
-   "detail": "10 rows; failing: []",
+   "detail": "58 rows; failing: []",
    "kind": "format",
    "result": "PASS"
   },
