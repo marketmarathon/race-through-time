@@ -963,7 +963,7 @@
         "session": "IQ-18b, 8 Oct 2026; brief prompts/CODE_SESSION_IQ-18b.md",
         "film_config": "kits/rtt-103/config_rtt103_film.json (5,106 frames = 2 min 50 s without music: race 3,681 frames incl. 2 s lead-in and 4 s hold; steps 1,425 frames)",
         "player": "kits/rtt-002/rtt_steps.js (new, steps after a money race) + rtt_timeline.js stepPlan + player_rtt.html drawStepFrame, story lanes; tests/player/compare_frames.js: 50 frames of RTT-001/002/003 pixel-identical with the pre-RTT-103 player",
-        "tests": "run_tests_rtt103.js 4/4 (base, film incl. 8 steps, clip 2025-end, global); phone_check_rtt103.js PASS 12/12 incl. the dated-figures check (Cowork fix (h)); RTT-002/003/001 suites: see handover",
+        "tests": "run_tests_rtt103.js 4/4 (base, film incl. 8 steps, clip 2025-end, global); phone_check_rtt103.js PASS 12/12 incl. the dated-figures check (Cowork fix (h)); RTT-002 20/20, RTT-003 5/5, RTT-001 31/31 PASS",
         "baidu_logo": "File:Baidu.svg (en.wikipedia, marked PD, author Baidu), run 37818490084, private commit 5623257 (DEC-354, DEC-368)",
         "story_cards": "five in the race, each from the first frame of its quarter (OpenAI and Oracle +0.2 s); Alphabet's share sale opens the 2026 plans step (DEC-358, DEC-370)",
         "release": "PENDING"

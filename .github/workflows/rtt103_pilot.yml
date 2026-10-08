@@ -15,6 +15,10 @@
 #   - uploads NO workflow artifact, uses NO cache, and deletes frames and videos at the end.
 # No full film is rendered (DEC-069: nothing beyond the approved look goes into a film before Luke approves it).
 # Triggers: a push that changes THIS FILE on the IQ-18 branch, or by hand (once merged).
+# Round 2 (IQ-18b, Luke's answers DEC-353..DEC-365): the film's chosen design with the steps after the race inside the
+# player; 12 stills (each also at phone size), 2 contact sheets (d01, d02) and one clip from 2025 into the end (the last
+# story cards, the hand-over into the 2026 plans step, the look-ahead, the peak step and the final table); tagged
+# rtt-103-round2-<commit>-run<n>. Still no film and no music (Luke picks the track next).
 # Run 1 (de7759e) failed at the first clip: the RTT-103 configs had no crf/preset for ffmpeg (added to config_rtt103_base.json,
 # crf 4 / slow as RTT-001; checked by tests/player/run_tests_rtt103.js). Run 2 renders the same stills, sheets and clips.
 name: rtt103-pilot
@@ -35,11 +39,11 @@ concurrency:
 env:
   PRIVATE_REPO: marketmarathon/race-through-time-private
   PRIVATE_REF: claude/magical-einstein-hguyvv
-  # Round 1 (IQ-18, DEC-342 onwards): every still and sheet in stills.json and the three pace clips in clips.txt.
+  # Round 2 (IQ-18b): every still and sheet in stills.json and the clip in clips.txt.
   # ONLY_STILLS empty = every still; ONLY_CLIPS empty = every clip in clips.txt, unless ONLY_STILLS is set (stills only).
   ONLY_STILLS: ''
   ONLY_CLIPS: ''
-  TAG_PREFIX: rtt-103-round1
+  TAG_PREFIX: rtt-103-round2
 
 jobs:
   render:
@@ -78,7 +82,7 @@ jobs:
             test -n "$f"
             echo "$c $f" | tee -a "$RUNNER_TEMP/plan.txt"
           done < <(if [ -n "$ONLY_CLIPS" ]; then printf '%s\n' $ONLY_CLIPS; elif [ -n "$ONLY_STILLS" ]; then :; else cat ../rtt-103/clips.txt; fi)
-          echo "race only, not rendered, config_rtt103_base.json: $(RTT_CONFIG=../rtt-103/config_rtt103_base.json FRAME_COUNT_ONLY=1 node rtt.js)"
+          echo "the whole design without music, not rendered, config_rtt103_film.json: $(RTT_CONFIG=../rtt-103/config_rtt103_film.json FRAME_COUNT_ONLY=1 node rtt.js)"
 
       - name: Fetch Luke's logo and the company logos from the private repo and check their hashes
         env:
@@ -133,16 +137,16 @@ jobs:
           GH_TOKEN: ${{ secrets.RTT_PRIVATE_TOKEN }}
         run: |
           O="$RUNNER_TEMP/rtt_out"; SHORT=${GITHUB_SHA::7}
-          TAG="${TAG_PREFIX:-rtt-103-round1}-${SHORT}-run${GITHUB_RUN_NUMBER}"
+          TAG="${TAG_PREFIX:-rtt-103-round2}-${SHORT}-run${GITHUB_RUN_NUMBER}"
           {
-            echo "RTT-103 The AI Spending Race, design round 1 (IQ-18): option stills, side-by-side contact sheets (c01..c13) and pace clips for Luke to choose from, rendered by GitHub Actions. No music. Not a film."
+            echo "RTT-103 The AI Spending Race, design round 2 (IQ-18b): Luke's choices built into one version - corrected stills (each also at phone size), contact sheets d01 and d02, and one clip from 2025 into the end. Rendered by GitHub Actions. No music. Not the film."
             echo
             echo "- Source: ${GITHUB_REPOSITORY} @ ${GITHUB_SHA} (${GITHUB_REF_NAME}), run ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
             while read -r c FRAMES; do
               echo "- kits/rtt-103/${c}: ${FRAMES} frames at 30 fps = $(awk -v f="$FRAMES" 'BEGIN {printf "%.1f", f / 30}') s, 1920 x 1080, x264, no audio"
             done < "$RUNNER_TEMP/plan.txt"
             echo "- Stills: kits/rtt-103/stills.json, 1920 x 1080 PNG plus the same frame at phone size (390 points wide at 3 device pixels per point); *_sheet.png = options side by side"
-            echo "- Luke's logo and the company logos (identification only; kits/rtt-103/logos.json; Baidu on our own neutral tile): race-through-time-private, every SHA-256 checked against kits/rtt-103/assets_sha256.txt before drawing"
+            echo "- Luke's logo and the company logos (identification only; kits/rtt-103/logos.json; Baidu from English Wikipedia, DEC-354): race-through-time-private, every SHA-256 checked against kits/rtt-103/assets_sha256.txt before drawing"
             echo "- Data: data/rtt-103 as merged by Luke on 8 Oct 2026 (pull request #20); no figure changed"
             echo "- File SHA-256:"
             (cd "$O" && sha256sum $(ls *.mp4 2>/dev/null) *.png | sed 's/^/  - /')
@@ -151,7 +155,7 @@ jobs:
           } > "$O/notes.md"
           cat "$O/notes.md"
           gh release create "$TAG" --repo "$PRIVATE_REPO" --target main --prerelease \
-            --title "RTT-103 design ${TAG_PREFIX:-rtt-103-round1} ${SHORT} (stills, sheets and pace clips)" --notes-file "$O/notes.md" $(ls "$O"/*.mp4 2>/dev/null) "$O"/*.png
+            --title "RTT-103 design ${TAG_PREFIX:-rtt-103-round2} ${SHORT} (stills, sheets and the 2025-to-end clip)" --notes-file "$O/notes.md" $(ls "$O"/*.mp4 2>/dev/null) "$O"/*.png
           URL="https://github.com/${PRIVATE_REPO}/releases/tag/${TAG}"
           echo "Release: $URL"
           echo "RTT-103 round 1 saved to the private repo: $URL" >> "$GITHUB_STEP_SUMMARY"

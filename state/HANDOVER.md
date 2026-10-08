@@ -5,7 +5,7 @@
 - **Private pre-release (watch this):** RELEASE_PENDING
 - **The design:** `kits/rtt-103/config_rtt103_film.json` — the race as chosen, five story cards, Alibaba leaving and returning, the running total with its line, then the steps inside the player (`kits/rtt-002/rtt_steps.js`): 2026 plans (share-sale card, then iCapital's card), look-ahead boards 2027–2030, the combined line, the peak timeline, the final table (10 s). 2 min 50 s without music.
 - **Baidu:** its own logo, `File:Baidu.svg` from English Wikipedia (marked PD), identification only (DEC-368).
-- **Tests:** RTT-103 4/4 and phone check 12/12 (with the new check that every dated still shows that quarter's master figures); 50 frames of RTT-001/002/003 pixel-identical with the pre-RTT-103 player; RTT-002/003/001 suites SUITES_PENDING.
+- **Tests:** RTT-103 4/4 and phone check 12/12 (with the new check that every dated still shows that quarter's master figures); 50 frames of RTT-001/002/003 pixel-identical with the pre-RTT-103 player; RTT-002 20/20, RTT-003 5/5, RTT-001 31/31 PASS (results files unchanged: no OCR here).
 - **Rules for the next RTT-103 session:** when Luke names the track, add `music_rtt103.json` and a new `.github/workflows/rtt103_film.yml` modelled on `rtt001_film.yml` (music hash-checked, looped if needed, -16 LUFS, true peak <= -1 dBTP, WCAG flash check first, 4K master + 1080p copy, private pre-release); render the film from `config_rtt103_film.json` unchanged unless Luke asks; Luke approves the exact file by SHA-256 (DEC-078). Record decisions from DEC-371. Never change a figure (DEC-345).
 
 
