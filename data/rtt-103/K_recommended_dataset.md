@@ -11,7 +11,7 @@
 | Alphabet, Oracle | Purchases of property and equipment / capital expenditures (cash) | The company's own capex measure is the same line (A = B). |
 | Meta | Purchases of property and equipment (cash) as printed in the statement | Meta's own measure adds finance-lease principal from 2019 (US$92.4bn vs 89.3bn for the year to June 2026). |
 | Baidu | Capital expenditures (cash; equals "acquisition of fixed assets" in every 20-F year checked) | Comparable cash measure, every quarter 2009–2026. |
-| Alibaba | Capital expenditures (cash, incl. campus land use rights and construction in progress), on its scope from Sep 2018 | FY2018 quarters rebuilt exactly on that scope from Alibaba's own re-presented figures (DEC-303); the four FY2017 quarters (Apr 2016–Mar 2017) included licensed copyrights and cannot be split (DEFINITION_BREAK); before Apr 2016 small intangibles (5–7%) are included, flagged (DEC-302). |
+| Alibaba | Capital expenditures (cash, incl. campus land use rights and construction in progress), on its scope from Sep 2018 | FY2018 quarters rebuilt exactly on that scope from Alibaba's own re-presented figures (DEC-303); the four FY2017 quarters (Apr 2016–Mar 2017) included licensed copyrights and cannot be split (DEFINITION_BREAK); before Apr 2016 small intangibles (5–7%) are included, kept as reported and flagged, with a note for the video description; no deduction (DEC-302, DEC-307). |
 | Tencent | Capital expenditures = **additions** (accrual) incl. some intangible assets | The only quarterly measure Tencent prints. Kept with an on-screen note that it is measured differently (DEC-292). |
 | CoreWeave | Purchase of property and equipment, including capitalized internal-use software (cash) | Late entrant from 2024 Q4, its first four published quarters (DEC-295). |
 
@@ -31,3 +31,8 @@ The title must name the measure, total capital spending (DEC-291), e.g. **"Big T
 - "AI spending" as a bar label: the bars are **total** capital expenditure (brief section 4); AI attribution is only in sourced statements (G).
 - AWS or Google Cloud capex: not disclosed; never relabel the company totals.
 - 2026 figures inside the historical race: guidance and estimates stay in `AI_SPENDING_RACE_2026E.csv`, labelled.
+
+## Notes for the video description (DEC-307)
+- Alibaba before April 2016: "Alibaba's figures before April 2016 also include small purchases of intangible assets (about 5–7% of the total in its fiscal years 2015 and 2016), which Alibaba did not report separately by quarter." Wording to be confirmed with Luke when the description is written.
+- Alibaba April 2016 – December 2017: no bar, because Alibaba's figures then included licensed copyrights and cannot be split (DEC-303).
+- Tencent: its figure is additions (including some intangible assets), not cash (DEC-292).

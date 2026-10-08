@@ -5,6 +5,8 @@
    text row per table row (this parsing failed twice during IQ-16).
 2. The build is deterministic: building twice gives identical manifests.
 3. Known values that must hold (each checked at source during IQ-16).
+4. IQ-16c (forecast frames to 2031, DEC-306): SYNTHETIC checks of the frame-year rule and of the rule that every forecast
+   figure is printed in its own quote, plus known forecast and OpenAI values.
 """
 import csv
 import json
@@ -93,6 +95,55 @@ t("Master ends at the latest common complete quarter (2026-06-30)", max(r["date"
 t("Master holds no 2026 estimate", all(r["data_status"] == "ACTUAL_VERIFIED_AT_SOURCE" for r in master))
 checks = json.load(open(os.path.join(ROOT, "data", "rtt-103", "checks.json")))
 t("Every financial and file-format check passes", all(c["result"] == "PASS" for c in checks["checks"] if c["kind"] != "crosscheck"))
+
+# ---------------------------------------------------------------- IQ-16c: forecasts and OpenAI commitments
+from rtt103_outputs import frame_year, figures_in_quote  # noqa: E402
+t("SYNTHETIC: Oracle FY2027 (Jun 2026 - May 2027) goes in the 2026 frame; Microsoft FY2027 (Jul 2026 - Jun 2027) in 2027",
+  frame_year("FY2027 (Jun 2026 - May 2027)") == "2026" and frame_year("FY2027 (Jul 2026 - Jun 2027)") == "2027" and frame_year("CY2026") == "2026")
+syn = {"display_style": "forecast", "display_note": "", "forecast_amount_usd_bn": "", "range_low_usd_bn": "40", "range_high_usd_bn": "45",
+       "notes": 'SYNTHETIC. Verbatim: "we expect capex of $40 billion to $44 billion"'}
+t("SYNTHETIC: a forecast figure not printed in its quote is rejected (45 vs 44); a printed one passes",
+  not figures_in_quote(syn) and figures_in_quote(dict(syn, range_high_usd_bn="44")))
+fc26 = {r["company"]: r for r in rows("AI_SPENDING_RACE_2026E.csv")}
+t("2026 frame: Amazon $220bn, labelled as reported by Reuters (Cowork-checked), replacing about $200bn",
+  fc26["Amazon"]["forecast_amount_usd_bn"] == "220" and "reported by Reuters" in fc26["Amazon"]["display_note"]
+  and any(r["company"] == "Amazon" and r["single_estimate_usd_bn"] == "200" and r["notes"].startswith("SUPERSEDED") for r in rows("F_2026_capex_forecasts.csv")))
+t("2026 frame: Oracle 90-95 for its fiscal year to May 2027; CoreWeave 35-39; Meta 130-145; Microsoft ~175 shown as an accounting change, not a cut",
+  (fc26["Oracle"]["range_low_usd_bn"], fc26["Oracle"]["range_high_usd_bn"]) == ("90", "95") and "May 2027" in fc26["Oracle"]["forecast_period"]
+  and (fc26["CoreWeave"]["range_low_usd_bn"], fc26["CoreWeave"]["range_high_usd_bn"]) == ("35", "39")
+  and (fc26["Meta"]["range_low_usd_bn"], fc26["Meta"]["range_high_usd_bn"]) == ("130", "145")
+  and fc26["Microsoft"]["forecast_amount_usd_bn"] == "175" and "Never show as a cut" in fc26["Microsoft"]["display_note"])
+t("2027-2028: company rows are directions or 'no outlook' only, as the companies stated (Alphabet, Microsoft, Meta); no figure",
+  {(r["company"], r["form"]) for r in fc if r["forecast_year"] in ("2027", "2028")} == {("Alphabet", "DIRECTION_ONLY"), ("Microsoft", "DIRECTION_ONLY"), ("Meta", "NO_OUTLOOK")}
+  and not any(r["forecast_amount_usd_bn"] or r["range_low_usd_bn"] for r in fc if r["forecast_year"] in ("2027", "2028")))
+fF = rows("F_2026_capex_forecasts.csv")
+t("Alibaba's RMB380bn plan stays a multi-year plan in F: no annual US$ figure, never in a forecast frame",
+  all(not (r["low_usd_bn"] or r["high_usd_bn"] or r["single_estimate_usd_bn"]) for r in fF if r["forecast_type"] == "MULTI_YEAR_PLAN")
+  and any(r["forecast_type"] == "MULTI_YEAR_PLAN" for r in fF) and not any(r["company"] == "Alibaba" for r in fc))
+g = rows("G_AI_capex_story_events.csv")
+oa = [r for r in g if "openai" in r["company"].lower()]
+t("OpenAI: 15 verified story moments, all COMMITMENT and never capex; OpenAI is never in F, the forecast file or the master",
+  len(oa) == 15 and all(r["event_type"] == "COMMITMENT" and "not capex" in r["amount_type"] for r in oa)
+  and not any("openai" in r["company"].lower() for r in fF + fc + master))
+
+import build_rtt103_dataset as BUILD  # noqa: E402
+from rtt103_outputs import forecast_rows, LOOKAHEAD_FILE  # noqa: E402
+tmp_src = tempfile.mkdtemp()
+hdr = open(os.path.join(ROOT, "data", "rtt-103", "source", LOOKAHEAD_FILE), encoding="utf-8").readline()
+with open(os.path.join(tmp_src, LOOKAHEAD_FILE), "w", encoding="utf-8") as fh:
+    fh.write(hdr)
+    w = csv.DictWriter(fh, fieldnames=hdr.strip().split(","), lineterminator="\n")
+    base = {"company": "Meta", "scope": "COMPANY", "forecast_year": "2028", "period_as_stated": "calendar 2028", "forecaster": "Example Bank",
+            "forecaster_type": "ANALYST", "forecast_date": "2026-09-01", "measure": "SYNTHETIC capex", "form": "NUMBER", "single": "150",
+            "currency": "USD", "verification": "VERIFIED", "source_grade": "D", "source": "SRC-SYNTHETIC", "url": "https://example.invalid/",
+            "verbatim_quote": "SYNTHETIC: we forecast $150bn in 2028"}
+    w.writerow(base)
+    w.writerow(dict(base, forecaster="Unchecked Bank", verification="UNVERIFIED"))
+syn_fc = forecast_rows([], tmp_src, BUILD, BUILD.COMPANIES)
+shutil.rmtree(tmp_src)
+t("SYNTHETIC look-ahead row: labelled '2028 ANALYST FORECAST (Example Bank)', 'not official', third-party style; unverified row dropped",
+  len(syn_fc) == 1 and syn_fc[0]["display_label"] == "2028 ANALYST FORECAST (Example Bank)" and "not official" in syn_fc[0]["display_note"]
+  and syn_fc[0]["display_style"] == "forecast_third_party" and syn_fc[0]["forecast_amount_usd_bn"] == "150" and figures_in_quote(syn_fc[0]))
 
 for name, ok, detail in results:
     print(("PASS " if ok else "FAIL ") + name + ("" if ok else f"  [{detail}]"))

@@ -44,7 +44,14 @@ MASTER_COLS = ["date", "year", "quarter", "company", "display_name", "capex_TTM_
                "previous_rank", "rank_change", "source_quality", "definition_warning", "data_status"]
 E26_COLS = ["company", "display_name", "forecast_year", "display_label", "form", "forecast_period", "forecast_type",
             "forecast_amount_usd_bn", "range_low_usd_bn", "range_high_usd_bn", "midpoint_usd_bn", "direction_text",
-            "display_style", "display_note", "metric_definition", "source", "source_grade", "publication_date", "url", "notes"]
+            "display_style", "display_note", "metric_definition", "source", "source_grade", "publication_date", "url", "notes",
+            # IQ-16c (DEC-306): the look-ahead to 2031 names every forecaster; the brief's F schema cannot hold these
+            "forecaster", "forecaster_type", "forecast_date", "measure", "scope", "selected_for_screen"]
+LOOKAHEAD_FILE = "forecast_lookahead_2027_2031.csv"  # third-party and company forecasts 2027-2031 (DEC-306), verified rows only
+FORECASTER_TYPES = ("COMPANY", "CONSENSUS", "ANALYST", "RESEARCH_FIRM", "PRESS_REPORT")
+TYPE_LABEL = {"COMPANY": "GUIDANCE", "CONSENSUS": "CONSENSUS FORECAST", "ANALYST": "ANALYST FORECAST",
+              "RESEARCH_FIRM": "RESEARCH-FIRM FORECAST", "PRESS_REPORT": "ESTIMATE"}
+FORECAST_YEARS = [str(y) for y in range(2026, 2032)]
 
 # Canonical series per company (brief section 26 option C; recommendation in K, awaiting Luke).
 CANON_LINE = {"amazon": "A", "microsoft": "B", "alphabet": "B", "meta": "B", "oracle": "B", "alibaba": "A", "tencent": "A",
@@ -647,7 +654,7 @@ def write_rest(v):
     # ------------------------------------------------------------------ eligibility of additional companies (brief section 2)
     write_eligibility(out, src, v, B)
     # ------------------------------------------------------------------ file-format checks
-    format_checks(out, v, B)
+    format_checks(out, v, B, src)
     # ------------------------------------------------------------------ J, K, checks, manifest
     write_j(out, v, B, qa)
     with open(os.path.join(out, "checks.json"), "w", encoding="utf-8") as f:
@@ -679,19 +686,36 @@ def definition_warning_for(cid, b):
     return w
 
 
+FRAME_TYPES = {  # forecast_type in F -> (form when no figure, label suffix); anything else stays in F only
+    "GUIDANCE": (None, ""),
+    "GUIDANCE_REPORTED_BY_PRESS": (None, ""),
+    "GUIDANCE_DIRECTION_ONLY": ("DIRECTION_ONLY", ""),
+    "GUIDANCE_DIRECTION_ONLY_REPORTED_BY_PRESS": ("DIRECTION_ONLY", ""),
+    "NO_OUTLOOK_GIVEN": ("NO_OUTLOOK", ""),
+}
+FRAME_BASIS = {"Meta": "includes principal payments on finance leases", "Microsoft": "includes finance leases; Microsoft's own period",
+               "Amazon": "whole of Amazon, not AWS or AI-only; definition not stated", "Alphabet": "purchases of property and equipment",
+               "Oracle": "Oracle's fiscal year June 2026 - May 2027; gross or net of customer funding not stated",
+               "CoreWeave": "definition not stated in the guidance", "Tencent": "direction only; no figure given"}
+
+
 def forecast_rows(f_rows, src, B, C):
-    """Forecast frames 2026-2028 (DEC-297): the companies' OWN latest guidance only (number, range or direction), plus
-    ByteDance as a greyed press report in 2026 (DEC-296). Research-firm estimates, superseded and unverified rows stay in F."""
+    """Forecast frames 2026-2028 (DEC-297, DEC-304, IQ-16c): the companies' OWN latest guidance only (number, range,
+    direction, or a stated refusal to give an outlook), including company guidance that only press reports of a named
+    executive carry (Amazon, Oracle: labelled so), plus ByteDance as a greyed press report in 2026 (DEC-296). Never a
+    number for 2027 or 2028 unless a company gives one. Research-firm estimates, multi-year plans (Alibaba), superseded,
+    quarterly and unverified rows stay in F only."""
     out = []
     for r in f_rows:
         n = r["notes"]
         if n.startswith(("SUPERSEDED", "UNVERIFIED")) or " Q" in r["forecast_period"] or "Jun 2025" in r["forecast_period"]:
             continue
         press = r["company"] == "ByteDance" and r["source_grade"] == "D" and n.startswith("VERIFIED")
-        if r["forecast_type"] not in ("GUIDANCE", "GUIDANCE_DIRECTION_ONLY") and not press:
+        if r["forecast_type"] not in FRAME_TYPES and not press:
             continue
-        year = re.search(r"20\d\d", r["forecast_period"]).group(0)
-        form = "DIRECTION_ONLY" if r["forecast_type"] == "GUIDANCE_DIRECTION_ONLY" else ("RANGE" if r["low_usd_bn"] else "NUMBER")
+        year = frame_year(r["forecast_period"])
+        fixed = FRAME_TYPES.get(r["forecast_type"], (None, ""))[0]
+        form = fixed or ("RANGE" if r["low_usd_bn"] else "NUMBER")
         amount, note, style = r["single_estimate_usd_bn"], "", "standard"
         if press:
             # US$ at the mean of the Federal Reserve H.10 daily rates in 2026 so far (DEC-298); lower bound
@@ -702,11 +726,15 @@ def forecast_rows(f_rows, src, B, C):
             note = (f"Press report from unnamed sources (SCMP, 9 May 2026): more than 200 billion yuan; shown as more than US${amount}bn "
                     f"at {mean} yuan per US$ (mean of {len(fx)} H.10 daily rates, {fx[0][0]} to {fx[-1][0]}). Lower bound; not company guidance.")
         direction = ""
-        if form == "DIRECTION_ONLY":
-            m = re.search(r'DIRECTION ONLY: ([^.(]+)', n)
+        if form in ("DIRECTION_ONLY", "NO_OUTLOOK"):
+            m = re.search(r'(?:DIRECTION ONLY|NO OUTLOOK): ([^.(]+)', n)
             direction = m.group(1).strip() if m else ""
-        basis = {"Meta": "includes principal payments on finance leases", "Microsoft": "includes finance leases; Microsoft's own period",
-                 "Amazon": "whole of Amazon; definition not stated", "Alphabet": "purchases of property and equipment"}.get(r["company"], "")
+        m = re.search(r"DISPLAY NOTE: (.*?)(?= Verbatim| VERIFIED| Checked|$)", n)
+        if m and not note:
+            note = m.group(1).strip()
+        if form == "RANGE":
+            note = (note + " " if note else "") + f"Range: show {r['low_usd_bn']}-{r['high_usd_bn']}, never the midpoint alone."
+        basis = FRAME_BASIS.get(r["company"], "")
         if "FY2027 (Jul 2026" in r["forecast_period"]:
             basis += " (fiscal year July 2026 - June 2027)"
         out.append({"company": r["company"], "display_name": display_of(C, r["company"]), "forecast_year": year,
@@ -714,11 +742,65 @@ def forecast_rows(f_rows, src, B, C):
                     "forecast_period": r["forecast_period"], "forecast_type": "PRESS_REPORT_ESTIMATE" if press else r["forecast_type"],
                     "forecast_amount_usd_bn": amount, "range_low_usd_bn": r["low_usd_bn"], "range_high_usd_bn": r["high_usd_bn"],
                     "midpoint_usd_bn": r["midpoint_usd_bn"], "direction_text": direction, "display_style": style,
-                    "display_note": note or (f"Range: show {r['low_usd_bn']}-{r['high_usd_bn']}, never the midpoint alone." if form == "RANGE" else ""),
+                    "display_note": note,
                     "metric_definition": r["metric_definition"] + (f" [{basis}]" if basis else ""), "source": r["source"],
-                    "source_grade": r["source_grade"], "publication_date": r["publication_date"], "url": r["url"], "notes": n})
-    out.sort(key=lambda r: (r["forecast_year"], r["display_style"] == "greyed", r["company"]))
+                    "source_grade": r["source_grade"], "publication_date": r["publication_date"], "url": r["url"], "notes": n,
+                    "forecaster": "SCMP (unnamed sources)" if press else r["company"] + (" (as reported by Reuters)" if "REPORTED_BY_PRESS" in r["forecast_type"] else ""),
+                    "forecaster_type": "PRESS_REPORT" if press else "COMPANY", "forecast_date": r["revision_date"],
+                    "measure": r["metric_definition"], "scope": "COMPANY",
+                    "selected_for_screen": ("YES (greyed press report, DEC-296)" if press else
+                                            "YES (latest company guidance, DEC-297)" if form in ("NUMBER", "RANGE") else
+                                            "PENDING (how directions are shown is Luke's question, DEC-306)")})
+        if not press:
+            out[-1]["display_style"] = "forecast"
+    for r in B.read_csv(os.path.join(src, LOOKAHEAD_FILE)):
+        if r["verification"] != "VERIFIED" or r["superseded_by"]:
+            continue  # unverified and superseded rows stay in the source file only
+        t = r["forecaster_type"]
+        usd = (r["usd_low_bn"], r["usd_high_bn"], r["usd_single_bn"]) if r["currency"] != "USD" else (r["low"], r["high"], r["single"])
+        form = r["form"]
+        rng = f" Range: show {usd[0]}-{usd[1]}, never the midpoint alone." if form == "RANGE" else ""
+        out.append({"company": r["company"], "display_name": display_of(C, r["company"]) if r["scope"] == "COMPANY" else r["company"],
+                    "forecast_year": r["forecast_year"], "display_label": f"{r['forecast_year']} {TYPE_LABEL[t]}" + ("" if t == "COMPANY" else f" ({r['forecaster']})"),
+                    "form": form, "forecast_period": r["period_as_stated"], "forecast_type": f"{t}_FORECAST",
+                    "forecast_amount_usd_bn": usd[2], "range_low_usd_bn": usd[0], "range_high_usd_bn": usd[1], "midpoint_usd_bn": "",
+                    "direction_text": r["direction_text"], "display_style": "forecast" if t == "COMPANY" else "forecast_third_party",
+                    "display_note": (f"Forecast by {r['forecaster']} ({t.lower().replace('_', ' ')}), {r['forecast_date']}; not official." if t != "COMPANY" else "") + rng + (f" {r['fx_note']}" if r["fx_note"] else ""),
+                    "metric_definition": r["measure"], "source": r["source"], "source_grade": r["source_grade"],
+                    "publication_date": r["forecast_date"], "url": r["url"], "notes": f'{r["notes"]} Verbatim: "{r["verbatim_quote"]}"'.strip(),
+                    "forecaster": r["forecaster"], "forecaster_type": t, "forecast_date": r["forecast_date"], "measure": r["measure"],
+                    "scope": r["scope"], "selected_for_screen": "PENDING (one figure per company per year: rule to be proposed, DEC-306)"})
+    out.sort(key=lambda r: (r["forecast_year"], r["display_style"] == "greyed", r["scope"], r["company"], r["forecaster_type"] != "COMPANY", r["forecaster"], r["forecast_period"]))
     return out
+
+
+MONTHS = {m: i for i, m in enumerate(["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], 1)}
+
+
+def frame_year(period):
+    """Frame year of a forecast period (IQ-16c working choice DEC-314): a fiscal year written as '(Mon YYYY - Mon YYYY)'
+    goes in the calendar year holding most of its months, the later year on a tie (Oracle FY2027, Jun 2026 - May 2027:
+    2026; Microsoft FY2027, Jul 2026 - Jun 2027: 2027); otherwise the first year named."""
+    m = re.search(r"\((\w{3}) (20\d\d) - (\w{3}) (20\d\d)\)", period)
+    if m and m.group(2) != m.group(4):
+        first = 13 - MONTHS[m.group(1)]
+        return m.group(2) if first > 12 - first else m.group(4)
+    return re.search(r"20\d\d", period).group(0)
+
+
+def figures_in_quote(r):
+    """Each figure in a forecast row must be printed in its own verbatim quote (the converted ByteDance lower bound is
+    checked against its yuan figure). Look-ahead rows in another currency are checked in the source file's own units."""
+    m = re.search(r'Verbatim(?: \(CFO\))?: "(.*)"\s*$', r["notes"])
+    quote = m.group(1) if m else ""
+    if r["display_style"] == "greyed":
+        return "200 billion yuan" in quote
+    vals = [r["forecast_amount_usd_bn"], r["range_low_usd_bn"], r["range_high_usd_bn"]]
+    if "converted" in r["display_note"].lower():
+        return True  # look-ahead rows in another currency: checked in the source file (local units) by the build's look-ahead check
+    nums = set(re.findall(r"\d+(?:\.\d+)?", quote.replace(",", "")))
+    norm = lambda v: v.rstrip("0").rstrip(".") if "." in v else v
+    return all(norm(v) in {norm(n) for n in nums} for v in vals if v)
 
 
 def display_of(C, name):
@@ -1014,7 +1096,7 @@ def write_eligibility(out, src, v, B):
     B.write_csv(os.path.join(out, "eligibility_additional_companies.csv"), rows, list(rows[0].keys()))
 
 
-def format_checks(out, v, B):
+def format_checks(out, v, B, src):
     def check(name, ok, detail):
         v["check"]("files", name, ok, detail, kind="format")
     spec = {"A_source_catalogue.csv": A_COLS, "B_capex_observations.csv": B_COLS, "C_capex_definitions.csv": C_COLS,
@@ -1045,7 +1127,8 @@ def format_checks(out, v, B):
     check("Master: ranks 1..n on every date", all(sorted(x) == list(range(1, len(x) + 1)) for x in by.values()), f"{len(by)} dates")
     check("Master: no estimate or guidance rows", all(r["data_status"] == "ACTUAL_VERIFIED_AT_SOURCE" for r in m), f"{len(m)} rows")
     e26 = B.read_csv(os.path.join(out, "AI_SPENDING_RACE_2026E.csv"))
-    check("2026E: every row labelled 2026 GUIDANCE or 2026 ESTIMATE", all(r["display_label"] in ("2026 GUIDANCE", "2026 ESTIMATE") for r in e26), f"{len(e26)} rows")
+    check("2026E: every row labelled 2026 and its kind (GUIDANCE, ESTIMATE or a named forecaster's FORECAST)",
+          all(r["display_label"] in ("2026 GUIDANCE", "2026 ESTIMATE") or (r["display_label"].startswith("2026 ") and "FORECAST (" in r["display_label"]) for r in e26), f"{len(e26)} rows")
     a_ids = {r["source_id"] for r in B.read_csv(os.path.join(out, "A_source_catalogue.csv"))}
     cited = {(fn, x) for fn, col in (("B_capex_observations.csv", "source_id"), ("F_2026_capex_forecasts.csv", "source"),
                                      ("G_AI_capex_story_events.csv", "source"), ("AI_SPENDING_RACE_FORECAST.csv", "source"))
@@ -1057,8 +1140,31 @@ def format_checks(out, v, B):
     check("OpenAI and ByteDance are never bars (DEC-301, DEC-296)", not bars, f"{len(bars)} found")
     fc = B.read_csv(os.path.join(out, "AI_SPENDING_RACE_FORECAST.csv"))
     check("Forecast frames: companies' own guidance only, plus ByteDance greyed (DEC-296, DEC-297)",
-          all(r["forecast_type"] in ("GUIDANCE", "GUIDANCE_DIRECTION_ONLY") or (r["company"] == "ByteDance" and r["display_style"] == "greyed") for r in fc)
+          all(r["forecast_type"] in FRAME_TYPES or (r["company"] == "ByteDance" and r["display_style"] == "greyed") for r in fc)
           and not any("trendforce" in (r["source"] + r["company"]).lower() for r in fc), f"{len(fc)} rows")
+    check("Forecast file: years 2026-2031 only (DEC-306)", all(r["forecast_year"] in FORECAST_YEARS for r in fc), "")
+    check("Forecast file: every row names its forecaster, forecaster type, forecast date and measure (DEC-306)",
+          all(r["forecaster"] and r["forecaster_type"] in FORECASTER_TYPES and re.fullmatch(r"20\d\d-\d\d-\d\d", r["forecast_date"]) and r["measure"] for r in fc), "")
+    check("Forecast file: one named forecaster per row, never averaged or blended (DEC-306)",
+          not any(re.search(r";|/| and |average|blend|mean|midpoint|consensus of consensus", r["forecaster"].lower()) for r in fc), "")
+    check("Forecast file: forecasts by others are labelled as forecasts with the forecaster's name, never as guidance (DEC-306)",
+          all("GUIDANCE" not in r["display_label"] and r["forecaster"] in r["display_label"] and "not official" in r["display_note"]
+              for r in fc if r["forecaster_type"] in ("CONSENSUS", "ANALYST", "RESEARCH_FIRM")), "")
+    look = B.read_csv(os.path.join(src, LOOKAHEAD_FILE))
+    check("Look-ahead source rows: each states its own year, quote, source and URL (never extended beyond a source's years)",
+          all(r["forecast_year"] in FORECAST_YEARS and r["period_as_stated"] and r["verbatim_quote"] and r["source"] and r["url"]
+              for r in look if r["verification"] == "VERIFIED"), f"{len(look)} rows")
+    bad = [f'{r["company"]} {r["forecast_year"]} {r["forecaster"]}' for r in fc if not figures_in_quote(r)]
+    check("Forecast file: every figure appears in its own verbatim quote (no number created; 2027-2028 company rows stay as stated)",
+          not bad, f"{len(fc)} rows; failing: {bad[:3]}")
+    check("Forecast frames: Alibaba's multi-year plan is never split into years or shown as annual guidance",
+          not any(r["company"] == "Alibaba" for r in fc), "")
+    check("Forecast frames: guidance only press reports carry is labelled so in its display note",
+          all("reported by" in r["display_note"].lower() for r in fc if r["forecast_type"].endswith("REPORTED_BY_PRESS")), "")
+    g = B.read_csv(os.path.join(out, "G_AI_capex_story_events.csv"))
+    oa = [r for r in g if "openai" in r["company"].lower()]
+    check("G: every OpenAI row is a COMMITMENT story moment, never capex (DEC-301)",
+          all(r["event_type"] == "COMMITMENT" and "not capex" in r["amount_type"] for r in oa), f"{len(oa)} OpenAI rows")
     check("Forecast frames: every range has its low and high (never a midpoint alone)",
           all(r["range_low_usd_bn"] and r["range_high_usd_bn"] for r in fc if r["form"] == "RANGE"), "")
     blank = [r for r in e if not r["TTM_capex_usd"]]

@@ -1,6 +1,91 @@
-# RTT-103 The AI Spending Race — data report (IQ-16 stage 1, 7 Oct 2026; IQ-16b stage 2, 8 Oct 2026)
+# RTT-103 The AI Spending Race — data report (IQ-16 stage 1, 7 Oct 2026; IQ-16b stage 2 and IQ-16c stage 3, 8 Oct 2026)
 
-**Stage 2 (8 Oct 2026) is at the top; the stage-1 report follows unchanged below it.**
+**Newest first: stage 3, then stage 2, then the stage-1 report unchanged.**
+
+## Stage 3 (IQ-16c, 8 Oct 2026): company forecasts, the look-ahead and OpenAI
+
+**In plain English.** ChatGPT's forecast and OpenAI lists were checked against the original pages wherever we could reach them. The 2026 frame now has the latest company figures for six companies, plus ByteDance greyed. The data files can now hold your look-ahead to 2031, with every figure's forecaster named; they are ready for ChatGPT's analyst results. OpenAI now has 15 checked story moments, all labelled COMMITMENT. Nothing is rendered or published. The historical race is unchanged.
+
+### Your decisions recorded
+- **DEC-306:** a look-ahead to 2031, using analyst forecasts where a company gives no figure. This is an exception for the closing section only.
+- **DEC-307:** Alibaba's figures before April 2016 are kept as reported, flagged, with a note for the description. Draft wording is in `K_recommended_dataset.md`.
+- **DEC-308:** absent bars and late entrants will be decided in the design session.
+- **DEC-309:** ByteDance is shown as "more than US$29.3bn".
+- **DEC-310:** Cowork's checks.
+
+### The 2026 frame (each company's latest figure)
+| Company | 2026 figure | What it is |
+|---|---|---|
+| Alphabet | US$195–205bn | company guidance (22 Jul call) |
+| Amazon | US$220bn | as reported by Reuters from the CEO (30 Jul); Amazon publishes no written transcript |
+| Microsoft | about US$175bn | calendar 2026, including finance leases. Lower than April's US$190bn only because of a lease-accounting change; **never shown as a cut** |
+| Meta | US$130–145bn | including finance-lease payments |
+| Oracle | US$90–95bn | its fiscal year June 2026 – May 2027, as reported by Reuters (10 Sep). Oracle's own releases print no figure |
+| CoreWeave | US$35–39bn | from its 11 Aug call transcript; its release has no capex figure |
+| ByteDance (greyed) | more than US$29.3bn | press report, unnamed sources |
+
+- **Not in the frame:**
+  - **Alibaba:** it gives only a multi-year plan (at least RMB380bn over three years from February 2025, since said to be "overshot"). It is never divided into years.
+  - **Tencent:** its press quotes could not be checked; its own announcements give no outlook.
+  - **Baidu:** gives no outlook.
+- **Oracle's measure (DEC-312):** Oracle now also reports a "net cash outlay" figure, which deducts customer prepayments: US$47.7bn against US$55.7bn of capex last year. The report does not say which measure its US$90–95bn uses.
+- **Oracle's placement:** its fiscal year runs June 2026 to May 2027, so it sits in the 2026 frame (DEC-314). It is labelled as its own fiscal year.
+
+### 2027 and later
+- **Company statements so far:**
+  - Alphabet: "increase significantly" in 2027.
+  - Microsoft: its fiscal 2027 (to June 2027) "will grow".
+  - Meta: said it is not giving a 2027 outlook.
+  - Nothing for 2028–2031.
+- **How these rows are held:** as stated, with no figures.
+- **The data files** (DEC-314):
+  - `F` keeps the brief's columns.
+  - A companion input, `source/forecast_lookahead_2027_2031.csv`, holds the look-ahead: one row per forecaster, company and year, with its quote. It is empty until ChatGPT's results are checked.
+  - The forecast file gains these columns: forecaster, forecaster type (company, consensus, analyst, research firm), forecast date, measure, scope (company or group) and "selected for screen".
+- **Labels:** analyst figures will be labelled, for example, "2028 ANALYST FORECAST (bank name)" and "not official", in their own style.
+- **New checks block:**
+  - any average or blend of forecasters;
+  - any figure that is not printed in its own quote;
+  - any year outside 2026–2031;
+  - any analyst figure labelled as guidance.
+
+### OpenAI (story moments only)
+- **15 moments, checked from partner releases and SEC filings:**
+  - Microsoft (2023 investment; the US$250bn Azure purchase, Oct 2025);
+  - Oracle (2024);
+  - CoreWeave (up to US$11.9bn, US$4.0bn and US$6.5bn; "approximately $22.4 billion" in total);
+  - AMD (6 GW);
+  - NVIDIA (at least 10 GW);
+  - Cerebras (750 MW);
+  - Tata (100 MW, option to 1 GW);
+  - Amazon (US$100bn added to a US$38bn AWS deal; a US$50bn investment);
+  - SB Energy and NVIDIA (an 8 GW site in Ohio leased to OpenAI; NVIDIA guarantees capped at US$105bn);
+  - Firmus (Malaysia).
+- **How they are labelled:** all COMMITMENT; never capex, never a bar and never added up, because the totals overlap.
+- **Still to check:** openai.com refuses our computers, so 22 rows, including the Stargate announcements, are on a checklist for Cowork in the private repo. The 3 rows ChatGPT marked not eligible stay out.
+
+### Checks
+- **Financial QA:** 81/81 PASS.
+- **File-format checks:** 33/33 PASS (9 new).
+- **Tests:** 27/27 PASS, including a byte-identical rebuild.
+- **Quotes:** every quote written into F and G was re-found word for word in its source document by script (35 of 35).
+- **ChatGPT's files:** the hashes and row counts of all four matched your message.
+
+### Questions for Luke (stage 3; Claude's recommendation)
+- **D. How should press-reported company figures (Amazon US$220bn, Oracle US$90–95bn) be labelled on screen?**
+  - *Recommendation:* show them like the other company figures, with a small "as reported by Reuters" note.
+  - *If unanswered:* that note.
+- **E. Should Oracle sit in the 2026 frame, given that its fiscal year runs June 2026 to May 2027?**
+  - *Recommendation:* yes, labelled "fiscal year to May 2027".
+  - *If unanswered:* as recommended.
+- **F. Look-ahead selection rule:** this will be proposed once ChatGPT's coverage is checked (DEC-306). No question yet.
+
+### Next
+1. Cowork works through the 28 checks on the private checklist.
+2. ChatGPT's look-ahead results arrive and are checked at source.
+3. Claude proposes the one-figure-per-company-per-year rule.
+4. Design session.
+
 
 ## Stage 2 (IQ-16b, 8 Oct 2026): Luke's answers applied
 

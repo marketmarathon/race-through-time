@@ -177,10 +177,19 @@ Two kinds of check are reported separately: **file-format checks** (columns, voc
 | D: one row per company per fiscal quarter | PASS | 571 rows |
 | Master: ranks 1..n on every date | PASS | 66 dates |
 | Master: no estimate or guidance rows | PASS | 496 rows |
-| 2026E: every row labelled 2026 GUIDANCE or 2026 ESTIMATE | PASS | 5 rows |
-| Every source cited in B, F, G and the forecast file is listed in A | PASS | 602 citations; missing: [] |
+| 2026E: every row labelled 2026 and its kind (GUIDANCE, ESTIMATE or a named forecaster's FORECAST) | PASS | 7 rows |
+| Every source cited in B, F, G and the forecast file is listed in A | PASS | 635 citations; missing: [] |
 | OpenAI and ByteDance are never bars (DEC-301, DEC-296) | PASS | 0 found |
-| Forecast frames: companies' own guidance only, plus ByteDance greyed (DEC-296, DEC-297) | PASS | 7 rows |
+| Forecast frames: companies' own guidance only, plus ByteDance greyed (DEC-296, DEC-297) | PASS | 10 rows |
+| Forecast file: years 2026-2031 only (DEC-306) | PASS |  |
+| Forecast file: every row names its forecaster, forecaster type, forecast date and measure (DEC-306) | PASS |  |
+| Forecast file: one named forecaster per row, never averaged or blended (DEC-306) | PASS |  |
+| Forecast file: forecasts by others are labelled as forecasts with the forecaster's name, never as guidance (DEC-306) | PASS |  |
+| Look-ahead source rows: each states its own year, quote, source and URL (never extended beyond a source's years) | PASS | 0 rows |
+| Forecast file: every figure appears in its own verbatim quote (no number created; 2027-2028 company rows stay as stated) | PASS | 10 rows; failing: [] |
+| Forecast frames: Alibaba's multi-year plan is never split into years or shown as annual guidance | PASS |  |
+| Forecast frames: guidance only press reports carry is labelled so in its display note | PASS |  |
+| G: every OpenAI row is a COMMITMENT story moment, never capex (DEC-301) | PASS | 15 OpenAI rows |
 | Forecast frames: every range has its low and high (never a midpoint alone) | PASS |  |
 | No blank or zero-filled value in E | PASS |  |
 

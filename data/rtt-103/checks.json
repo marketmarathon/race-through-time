@@ -723,16 +723,16 @@
    "result": "PASS"
   },
   {
-   "check": "2026E: every row labelled 2026 GUIDANCE or 2026 ESTIMATE",
+   "check": "2026E: every row labelled 2026 and its kind (GUIDANCE, ESTIMATE or a named forecaster's FORECAST)",
    "company": "files",
-   "detail": "5 rows",
+   "detail": "7 rows",
    "kind": "format",
    "result": "PASS"
   },
   {
    "check": "Every source cited in B, F, G and the forecast file is listed in A",
    "company": "files",
-   "detail": "602 citations; missing: []",
+   "detail": "635 citations; missing: []",
    "kind": "format",
    "result": "PASS"
   },
@@ -746,7 +746,70 @@
   {
    "check": "Forecast frames: companies' own guidance only, plus ByteDance greyed (DEC-296, DEC-297)",
    "company": "files",
-   "detail": "7 rows",
+   "detail": "10 rows",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "Forecast file: years 2026-2031 only (DEC-306)",
+   "company": "files",
+   "detail": "",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "Forecast file: every row names its forecaster, forecaster type, forecast date and measure (DEC-306)",
+   "company": "files",
+   "detail": "",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "Forecast file: one named forecaster per row, never averaged or blended (DEC-306)",
+   "company": "files",
+   "detail": "",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "Forecast file: forecasts by others are labelled as forecasts with the forecaster's name, never as guidance (DEC-306)",
+   "company": "files",
+   "detail": "",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "Look-ahead source rows: each states its own year, quote, source and URL (never extended beyond a source's years)",
+   "company": "files",
+   "detail": "0 rows",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "Forecast file: every figure appears in its own verbatim quote (no number created; 2027-2028 company rows stay as stated)",
+   "company": "files",
+   "detail": "10 rows; failing: []",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "Forecast frames: Alibaba's multi-year plan is never split into years or shown as annual guidance",
+   "company": "files",
+   "detail": "",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "Forecast frames: guidance only press reports carry is labelled so in its display note",
+   "company": "files",
+   "detail": "",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "G: every OpenAI row is a COMMITMENT story moment, never capex (DEC-301)",
+   "company": "files",
+   "detail": "15 OpenAI rows",
    "kind": "format",
    "result": "PASS"
   },
