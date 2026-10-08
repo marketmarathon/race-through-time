@@ -1,0 +1,7 @@
+{ "extends": "config_rtt001_approved_fit.json", "kit_version": "rtt001_era_A",
+  "time_label": { "mode": "none" },
+  "date_block": { "enabled": true, "mode": "beside", "right": 1630, "year_y": 990, "year_size": 112, "month_y": 872, "month_size": 40, "roll_sec": 0.5 },
+  "era": { "enabled": true, "x": 1652, "y": 800, "w": 240, "h": 200, "fade_sec": 2.0,
+    "eras": [ { "from": "1994-01-31", "device": "crt" }, { "from": "2000-01-31", "device": "tower" }, { "from": "2006-01-31", "device": "laptop" },
+              { "from": "2009-01-31", "device": "phone_early" }, { "from": "2015-01-31", "device": "phone_modern" } ] },
+  "notes": ["OPTION A for Luke (DEC-214, DEC-215; proposal DEC-216, DEC-217): the date moves from the top-right line to a big bold year (112 px) with the month (40 px) above it, bottom right, directly left of our own era picture (240 x 200 px): beige CRT and dial-up modem from January 1994, desktop tower from January 2000, laptop from January 2006, early touch phone from January 2009, modern phone from January 2015, each change crossfading over 2 s. The year rolls up over 0.5 s when it changes."] }
