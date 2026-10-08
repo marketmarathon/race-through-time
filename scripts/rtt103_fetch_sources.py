@@ -54,8 +54,9 @@ def part05_urls(src, files=PART05, cols=("source_url", "related_source_url")):
                     yield f"{prefix}-{n:03d}", u.rstrip(".,")
 
 
-def part06_urls(src):
-    yield from part05_urls(src, PART06, ("source_url", "notes"))
+def part06_urls(src, extra_only=False):
+    if not extra_only:
+        yield from part05_urls(src, PART06, ("source_url", "notes"))
     extra = os.path.join(src, "fetch_extra_part06.csv")
     if os.path.exists(extra):
         for row in csv.DictReader(open(extra, encoding="utf-8")):
@@ -85,7 +86,7 @@ def fetch(url, tries=2):
     last = None
     for i in range(tries):
         try:
-            req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "*/*",
+            req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "application/pdf,text/html,image/*;q=0.9,*/*;q=0.8",
                                                        "Accept-Language": "en-GB,en;q=0.9,zh;q=0.6"})
             with urllib.request.urlopen(req, timeout=40) as r:
                 return r.status, r.headers.get("Content-Type", ""), r.read()
@@ -106,8 +107,9 @@ def main():
     urls = {}  # url -> list of source_ids
     fset = os.environ.get("FETCH_SET", "")
     part05 = fset in ("part05", "part06")
-    keep_raw = fset == "part06"
-    for sid, u in (part05_urls(src) if fset == "part05" else part06_urls(src) if fset == "part06" else []):
+    part05 = part05 or fset == "part06x"
+    keep_raw = fset in ("part06", "part06x")  # part06x: only the URLs in fetch_extra_part06.csv (retries, archive copies)
+    for sid, u in (part05_urls(src) if fset == "part05" else part06_urls(src, fset == "part06x") if keep_raw else []):
         if urllib.parse.urlparse(u).hostname not in SKIP_HOSTS:
             urls.setdefault(u, []).append(sid)
     for name in ([] if part05 else INPUTS):
@@ -119,7 +121,7 @@ def main():
     for sid, u in ([] if part05 else EXTRA):
         urls.setdefault(u, []).append(sid)
     print(f"{len(urls)} URLs to fetch")
-    manifest, last_host_time, host_fails = [], {}, {}
+    manifest, last_host_time, host_fails, used_names = [], {}, {}, set()
     deadline = time.time() + 60 * float(os.environ.get("BUDGET_MINUTES", "70"))
     for n, (u, sids) in enumerate(sorted(urls.items(), key=lambda kv: kv[1][0])):
         host = urllib.parse.urlparse(u).hostname
@@ -145,6 +147,9 @@ def main():
         host_fails[host] = 0
         sha = hashlib.sha256(body).hexdigest()
         base = safe_name(sids[0])
+        while base in used_names:  # two URLs cited by the same first row must not overwrite each other (IQ-16d)
+            base += "_b"
+        used_names.add(base)
         is_pdf = body[:5] == b"%PDF-" or "pdf" in ctype.lower()
         img = {"image/png": ".png", "image/jpeg": ".jpg", "image/webp": ".webp", "image/gif": ".gif", "image/svg+xml": ".svg"}.get(ctype.split(";")[0].strip().lower())
         rec.update({"ok": True, "http_status": status, "content_type": ctype, "bytes": len(body), "sha256": sha,

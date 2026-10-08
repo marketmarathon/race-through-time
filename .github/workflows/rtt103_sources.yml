@@ -44,7 +44,7 @@ jobs:
           GH_TOKEN: ${{ secrets.RTT_PRIVATE_TOKEN }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
           BUDGET_MINUTES: "75"
-          FETCH_SET: part06  # IQ-16d: look-ahead files part06a-d plus private fetch_extra_part06.csv (part05 = IQ-16c; empty = the IQ-16 catalogues)
+          FETCH_SET: part06x  # IQ-16d: part06 = look-ahead files part06a-d plus private fetch_extra_part06.csv; part06x = that extra list only (part05 = IQ-16c; empty = the IQ-16 catalogues)
         run: |
           set -euo pipefail
           if [ -z "$GH_TOKEN" ]; then echo "::error::secret RTT_PRIVATE_TOKEN is not available to this run"; exit 1; fi
