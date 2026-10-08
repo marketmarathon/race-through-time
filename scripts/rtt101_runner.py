@@ -10,7 +10,7 @@ The job is described by data/rtt-101/runner_job.json:
   "check": [{"id", "url", "needles": [...]}]   fetch a cited source; report which figures appear, with an excerpt
 Never fetches Transfermarkt (DEC-236).
 """
-import base64, gzip, hashlib, html, json, re, sys, time, urllib.parse, urllib.request
+import base64, gzip, hashlib, html, json, re, sys, time, unicodedata, urllib.parse, urllib.request
 
 UA = "Mozilla/5.0 (compatible; RTT-research/1.0; +https://github.com/marketmarathon/race-through-time)"
 WUA = "RTT-research/1.0 (https://github.com/marketmarathon/race-through-time; data build IQ-15)"
@@ -38,6 +38,11 @@ def emit(name, st, body, err=""):
     b64 = base64.b64encode(gzip.compress(body, 9)).decode()
     print(f"RTT101B64 {name.replace(' ', '_')} {st} {err or '-'} {hashlib.sha256(body).hexdigest()} {b64 or '-'}")
     sys.stdout.flush()
+
+
+def fold(s):
+    """lower case, accents and apostrophes removed (for the club-name check)"""
+    return "".join(c for c in unicodedata.normalize("NFKD", s.lower()) if not unicodedata.combining(c)).replace("'", "").replace("\u2019", "")
 
 
 def text_of(body):
@@ -113,20 +118,29 @@ def main():
         if m:
             pub = m.group(1)
         t = text_of(body) if body else ""
-        low = t.lower()
-        near = (it.get("near") or "").lower()
-        snips = []
+        # accents folded without changing positions (Zúñiga = Zuniga); apostrophes dropped only for the club check (Queen's = Queens)
+        low = "".join((unicodedata.normalize("NFKD", c) or " ")[0] for c in t.lower())
+        near = "".join((unicodedata.normalize("NFKD", c) or " ")[0] for c in (it.get("near") or "").lower())
+        snips, seen = [], set()
         if near:
             for mm in MONEY.finditer(t):
                 win = low[max(0, mm.start() - 350): mm.end() + 350]
                 if near in win:
                     snips.append({"money": mm.group(0).strip(), "excerpt": t[max(0, mm.start() - 120): mm.end() + 80]})
+                    seen.add(mm.start())
                 if len(snips) >= 6:
                     break
+            if job.get("anchored"):
+                # long lists: also every figure within 350 characters after (or 120 before) each mention of the name, up to 16 in all
+                for nm in list(re.finditer(re.escape(near), low))[:8]:
+                    for mm in MONEY.finditer(t, max(0, nm.start() - 120), min(len(t), nm.end() + 350)):
+                        if mm.start() not in seen and len(snips) < 16:
+                            seen.add(mm.start())
+                            snips.append({"money": mm.group(0).strip(), "excerpt": t[max(0, mm.start() - 120): mm.end() + 80]})
         out.append({"id": it["id"], "status": st, "err": err, "sha256": hashlib.sha256(body).hexdigest() if body else "",
                     "published": pub, "surname_on_page": bool(near and near in low),
                     "undisclosed_on_page": bool(near and "undisclosed" in low), "snips": snips,
-                    "also_found": [any(v.lower() in low for v in grp) for grp in it.get("also", [])]})
+                    "also_found": [any(fold(v) in fold(t) for v in grp) for grp in it.get("also", [])]})
         if len(out) == 20:
             print("RTT101PROBE " + json.dumps(out, ensure_ascii=False)); sys.stdout.flush(); out = []
         time.sleep(job.get("delay", 1.0))

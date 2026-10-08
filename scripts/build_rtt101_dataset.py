@@ -513,8 +513,12 @@ for r in DS:
         t["date"], t["date_basis"] = r["date"], r["date_basis"]
 
 NO_DEC404 = os.environ.get("RTT101_NO_DEC404") == "1"  # only for listing what DEC-404 changes (report section 12)
-COMPLETED_RX = re.compile(r"(?<!to )(?<!will )(?<!would )(?<!could )(?<!may )(?<!might )\b(signed|signs|completed|completes|completion|joined|joins|sealed|secured?|snapped up|landed|lands|clinched|"
-                          r"has moved|moved to|moved from|arrived|unveiled|bought|capture|recruit|debut|finally left|rubber-stamped|registered)\b", re.I)
+# a completion report: "completed", "joined", "signed" (strong) or "capture", "clinched", "the £Xm signing" (weaker: such headlines can
+# come before the formal completion); a strong report beats a weaker one, and either beats a bid, an agreed or an expected figure
+COMPLETED_RX = re.compile(r"(?<!to )(?<!will )(?<!would )(?<!could )(?<!may )(?<!might )\b(signed|signs|completed|completes|completion|joined|joins|"
+                          r"has moved|moved to|moved from|unveiled|finally left|rubber-stamped|registered|finalised)\b", re.I)
+WEAK_DONE_RX = re.compile(r"(?<!to )(?<!will )(?<!would )(?<!could )(?<!may )(?<!might )\b(sealed|secured?|snapped up|landed|lands|clinched|"
+                          r"arrived|bought|capture|recruit|debut)\b", re.I)
 # "the new £1.3m signing", "Boro's pounds 3.5m signing from Benfica": a signing already made ("proposed £3.4m signing" is not)
 SIGNING_RX = re.compile(r"(?:\bnew\s+(?:(?:£|pounds\s?)[\d.,]+\s*(?:m|mn|million|k)?\s+)?|(?<!proposed )(?<!planned )(?<!potential )(?<!prospective )(?<!would-be )(?:£|\bpounds\s?)[\d.,]+\s*(?:m|mn|million|k)?\s+)signing\b(?!\s+(?:target|bid|attempt))", re.I)
 PRECONTRACT_RX = re.compile(r"\b(bid|bids|offer|offered|agreed|agree|agreement|expected|expects|likely|poised|set to|close to|talks|negotiat\w*|"
@@ -531,15 +535,17 @@ def completion_kind(e, surname=""):
     """'completed' if the report says this player's deal was done; 'pre' if it reports a bid, an agreed fee or an expected figure;
     else ''. A completion word counts only within 120 characters of the player's surname when the text names him (a list sentence
     can describe a neighbouring deal)."""
-    txt = f"{e.get('fee_text') or ''} {e.get('quote') or ''}"
+    txt = f"{e.get('fee_text') or ''} {e.get('quote') or ''} {(e.get('checked') or {}).get('quote') or ''}"  # with the page's own sentence
     low = "".join((unicodedata.normalize("NFKD", c) or " ")[0] for c in txt.lower())  # same length as txt, accents dropped
     spots = [m.start() for m in re.finditer(re.escape(surname), low)] if surname else []
     def near(m):
         return not spots or any(abs(m.start() - p) <= 120 for p in spots)
     if STILL_PRE_RX.search(txt):
         return "pre"
-    if any(near(m) for rx in (COMPLETED_RX, SIGNING_RX) for m in rx.finditer(txt)):
+    if any(near(m) for m in COMPLETED_RX.finditer(txt)):
         return "completed"
+    if any(near(m) for rx in (WEAK_DONE_RX, SIGNING_RX) for m in rx.finditer(txt)):
+        return "completed_weak"
     if PRECONTRACT_RX.search(txt):
         return "pre"
     return ""
@@ -601,14 +607,20 @@ for t in transfers:
         cands.sort(key=lambda x: x[:5])
         # DEC-404 (Luke, 8 Oct): among the best figures (same confirmation status and grade), a report that the deal was completed
         # beats earlier reports of bids, agreed fees or expected figures; the earliest report is used only when none says completed
-        # (a figure within 2% of the one already chosen is the same fee, for example the euro amount of a sterling fee: no change)
+        # (a figure within 2% of the one already chosen, or 5% when one of the two is converted from another currency, is the same fee
+        # reported twice: no change)
         top = [c for c in cands if c[:2] == cands[0][:2]]
-        done = [c for c in top if completion_kind(c[5], sn0) == "completed"]
-        if (done and done[0] is not top[0] and completion_kind(top[0][5], sn0) != "completed" and not NO_DEC404
-                and abs(done[0][5]["gbp"] - top[0][5]["gbp"]) > 0.02 * max(top[0][5]["gbp"], 1)):
-            cands.remove(done[0])
-            cands.insert(0, done[0])
-            done[0][5]["dec404"] = True
+        kinds_ = [completion_kind(c[5], sn0) for c in top]
+        pick = None
+        if kinds_[0] != "completed":
+            pick = next((c for c, k in zip(top, kinds_) if k == "completed"), None)
+            if pick is None and kinds_[0] != "completed_weak":
+                pick = next((c for c, k in zip(top, kinds_) if k == "completed_weak"), None)
+        if (pick is not None and not NO_DEC404
+                and abs(pick[5]["gbp"] - top[0][5]["gbp"]) > (0.02 if pick[5]["currency"] == top[0][5]["currency"] else 0.05) * max(top[0][5]["gbp"], 1)):
+            cands.remove(pick)
+            cands.insert(0, pick)
+            pick[5]["dec404"] = True
         e = cands[0][5]
         t["canonical"] = e
         t["fee_gbp"] = e["gbp"]
