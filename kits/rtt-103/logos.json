@@ -87,6 +87,23 @@
     "File:CoreWeave logo.svg"
    ],
    "search": "CoreWeave logo"
+  },
+  {
+   "id": "baidu_company",
+   "site": "en.wikipedia.org",
+   "page": "Baidu",
+   "candidates": [],
+   "exclude": [
+    "Cloud",
+    "Yi OS",
+    "Baike",
+    "Tieba",
+    "Maps",
+    "Apollo",
+    "Ernie",
+    "Wiki"
+   ],
+   "why": "IQ-18b (Luke's answer 5 B): Baidu the company's own logo, identification only; never the Baidu Cloud product logo"
   }
  ],
  "fetched": {

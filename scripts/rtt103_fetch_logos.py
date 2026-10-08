@@ -6,7 +6,9 @@ cloud container (8 Oct 2026, as for RTT-001). Standard library only.
     python scripts/rtt103_fetch_logos.py kits/rtt-103/logos.json OUT_DIR
 
 For every entry: the first `candidates` title that exists on Commons, else the first search hit (namespace File)
-whose title contains "logo". The API gives the file's URL, SHA-1, licence, author and restrictions; the file is kept
+whose title contains "logo". IQ-18b: an entry may name another wiki (`site`, e.g. en.wikipedia.org for its local
+non-free files) and a `page` whose images are searched instead (its lead image first, then any image whose title
+contains "logo"), skipping titles that contain any of `exclude` (e.g. "Cloud": never the Baidu Cloud product logo). The API gives the file's URL, SHA-1, licence, author and restrictions; the file is kept
 only if the downloaded SHA-1 equals the API's. Writes OUT_DIR/<id>.<ext> and OUT_DIR/manifest.csv (id, file, page,
 title, licence, author, restrictions, sha1, sha256, bytes, width, height). Prints only titles, names, sizes and
 hashes. Exit 1 if a required entry is missing or differs (entries with "optional": true may be missing).
@@ -42,10 +44,10 @@ def get(url, tries=7):
             raise
 
 
-def api(**p):
+def api(site=None, **p):
     p.update(format='json', formatversion='2')
     time.sleep(2)
-    return json.loads(get(API + '?' + urllib.parse.urlencode(p)))
+    return json.loads(get(('https://%s/w/api.php' % site if site else API) + '?' + urllib.parse.urlencode(p)))
 
 
 def plain(s):
@@ -57,17 +59,26 @@ def main():
     os.makedirs(out, exist_ok=True)
     rows, bad = [], []
     for L in json.load(open(spec, encoding='utf-8'))['logos']:
-        info = None
-        for t in L['candidates']:
-            pg = api(action='query', titles=t, prop='imageinfo', iiprop='url|sha1|size|extmetadata')['query']['pages'][0]
+        info, site = None, L.get('site')
+        bad_t = lambda t: any(x.lower() in t.lower() for x in L.get('exclude', []))
+        cands = list(L.get('candidates', []))
+        if L.get('page'):                                   # IQ-18b: the images on a wiki page (lead image first)
+            pg = api(site, action='query', titles=L['page'], prop='pageimages|images', piprop='name', imlimit=100)['query']['pages'][0]
+            imgs = [i['title'] for i in pg.get('images', [])]
+            lead = ('File:' + pg['pageimage'].replace('_', ' ')) if pg.get('pageimage') else None
+            print('%s: page %s on %s: lead image %s; images %s' % (L['id'], L['page'], site, lead, ' | '.join(imgs)))
+            cands += ([lead] if lead else []) + [t for t in imgs if 'logo' in t.lower() and t != lead]
+        cands = [t for t in cands if not bad_t(t)]
+        for t in cands:
+            pg = api(site, action='query', titles=t, prop='imageinfo', iiprop='url|sha1|size|extmetadata')['query']['pages'][0]
             if pg.get('imageinfo'):
                 info = (t, pg['imageinfo'][0]); break
             print('%s: no file %s' % (L['id'], t))
-        if not info and L.get('search'):
+        if not info and L.get('search') and not site:
             hits = [h['title'] for h in api(action='query', list='search', srsearch=L['search'], srnamespace=6, srlimit=10)['query']['search']]
             print('%s: search "%s" -> %s' % (L['id'], L['search'], ' | '.join(hits)))
             for t in hits:
-                if 'logo' in t.lower() and t.lower().endswith(('.svg', '.png')):
+                if 'logo' in t.lower() and t.lower().endswith(('.svg', '.png')) and not bad_t(t):
                     pg = api(action='query', titles=t, prop='imageinfo', iiprop='url|sha1|size|extmetadata')['query']['pages'][0]
                     if pg.get('imageinfo'):
                         info = (t, pg['imageinfo'][0]); break
@@ -85,10 +96,11 @@ def main():
             f.write(b)
         m = ii.get('extmetadata', {})
         rows.append({'id': L['id'], 'file': name, 'title': title,
-                     'page': 'https://commons.wikimedia.org/wiki/' + urllib.parse.quote(title.replace(' ', '_')),
+                     'page': 'https://%s/wiki/' % (site or 'commons.wikimedia.org') + urllib.parse.quote(title.replace(' ', '_')),
                      'licence': plain(m.get('LicenseShortName', {}).get('value')),
                      'author': plain(m.get('Artist', {}).get('value'))[:200],
-                     'restrictions': plain(m.get('Restrictions', {}).get('value')),
+                     'restrictions': plain(m.get('Restrictions', {}).get('value')), 'site': site or 'commons.wikimedia.org',
+                     'nonfree': plain(m.get('NonFree', {}).get('value')),
                      'sha1': s1, 'sha256': hashlib.sha256(b).hexdigest(), 'bytes': len(b),
                      'width': ii.get('width'), 'height': ii.get('height')})
         print('%s  %s  %d bytes  %s  licence: %s' % (rows[-1]['sha256'], name, len(b), title, rows[-1]['licence']))
