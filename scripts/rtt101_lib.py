@@ -86,7 +86,9 @@ def parse_fee(text, _plain=False):
             out["qualifiers"].append(q)
     if not t or low in ("not found", "n/a", "-", "—", "?"):
         out["kind"] = "none"; return out
-    if re.fullmatch(r"(free|free transfer|nominal|released|end of contract|bosman)\b.*", low) and not re.search(r"\d", low):
+    if re.search(r"\bnominal\b", low) and not re.search(r"\d", low):
+        out["kind"] = "undisclosed"; out["qualifiers"].append("nominal"); return out  # a nominal fee is a fee of unstated size, not a free transfer
+    if re.fullmatch(r"(free|free transfer|released|end of contract|bosman)\b.*", low) and not re.search(r"\d", low):
         out["kind"] = "free"; out["amount"] = 0.0; out["currency"] = "GBP"; return out
     if re.search(r"combined|joint fee|for both players|together with", low):
         out["qualifiers"].append("combined")  # a fee for more than one player is never one deal's fee
@@ -109,6 +111,9 @@ def parse_fee(text, _plain=False):
         unit = m.group(2)
         cur = {"pounds": "GBP", "pound": "GBP", "gbp": "GBP", "euros": "EUR", "euro": "EUR", "eur": "EUR",
                "usd": "USD", "dollars": "USD"}[m.group(3)]
+    if re.search(r"(below|under|less than|short of|lower than)\W*(the\s+)?\W*$", low[:m.start()]):
+        out["kind"] = "undisclosed" if "undisclosed" in low else "fee"; out["qualifiers"].append("bound")
+        return out  # "way below the £1m figure" is a bound, not the fee
     if unit:
         n *= UNITS[unit]
     elif n < 1000:

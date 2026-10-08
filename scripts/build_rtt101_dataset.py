@@ -20,7 +20,7 @@ Outputs: clubs.csv, pl_membership.csv, seasons.csv, transfers.csv, fee_evidence.
 Rules: reference/metric_contract_RTT-101.md. Never averages, interpolates or forecasts; never uses Transfermarkt.
 Everything in phase 1 is an UNVERIFIED preview unless a row says VERIFIED.
 """
-import bisect, csv, datetime as dt, hashlib, json, os, random, re, sys, urllib.parse
+import bisect, csv, datetime as dt, hashlib, json, os, random, re, sys, unicodedata, urllib.parse
 from collections import Counter, defaultdict
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -200,9 +200,9 @@ def kind_of(fee_text):
         return "loan"
     if re.search(r"swap|exchange|part[- ]exchange|in exchange", t):
         return "part_exchange"
-    if re.search(r"\bfree\b|released|nominal|bosman|end of contract", t):
+    if re.search(r"\bfree\b|released|bosman|end of contract", t):
         return "free"
-    if re.search(r"undisclosed|not disclosed", t):
+    if re.search(r"undisclosed|not disclosed|nominal", t):  # a nominal fee is a fee of unstated size, not a free transfer
         return "undisclosed"
     if re.search(r"tribunal|compensation", t):
         return "compensation"
@@ -512,11 +512,50 @@ for r in DS:
     if t and r.get("date"):
         t["date"], t["date_basis"] = r["date"], r["date_basis"]
 
+NO_DEC404 = os.environ.get("RTT101_NO_DEC404") == "1"  # only for listing what DEC-404 changes (report section 12)
+COMPLETED_RX = re.compile(r"(?<!to )(?<!will )(?<!would )(?<!could )(?<!may )(?<!might )\b(signed|signs|completed|completes|completion|joined|joins|sealed|secured?|snapped up|landed|lands|clinched|"
+                          r"has moved|moved to|moved from|arrived|unveiled|bought|capture|recruit|debut|finally left|rubber-stamped|registered)\b", re.I)
+# "the new £1.3m signing", "Boro's pounds 3.5m signing from Benfica": a signing already made ("proposed £3.4m signing" is not)
+SIGNING_RX = re.compile(r"(?:\bnew\s+(?:(?:£|pounds\s?)[\d.,]+\s*(?:m|mn|million|k)?\s+)?|(?<!proposed )(?<!planned )(?<!potential )(?<!prospective )(?<!would-be )(?:£|\bpounds\s?)[\d.,]+\s*(?:m|mn|million|k)?\s+)signing\b(?!\s+(?:target|bid|attempt))", re.I)
+PRECONTRACT_RX = re.compile(r"\b(bid|bids|offer|offered|agreed|agree|agreement|expected|expects|likely|poised|set to|close to|talks|negotiat\w*|"
+                            r"proposed|will cost|would cost|hoping|hopes|target|tipped|about to|on the verge|prospective|rumou?r\w*|"
+                            r"is to|are to|will pay|will receive|set for|in line)\b", re.I)
+
+
+# wording that the deal was still to be done, even where a completion word appears ("the £3m capture of Domi is apparently imminent")
+STILL_PRE_RX = re.compile(r"\b(imminent|on the verge|about to (?:complete|sign|join)|close to (?:completing|signing|joining)|poised to|"
+                          r"set to (?:complete|sign|join)|yet to|awaiting|subject to|pending|proposed)\b", re.I)
+
+
+def completion_kind(e, surname=""):
+    """'completed' if the report says this player's deal was done; 'pre' if it reports a bid, an agreed fee or an expected figure;
+    else ''. A completion word counts only within 120 characters of the player's surname when the text names him (a list sentence
+    can describe a neighbouring deal)."""
+    txt = f"{e.get('fee_text') or ''} {e.get('quote') or ''}"
+    low = "".join((unicodedata.normalize("NFKD", c) or " ")[0] for c in txt.lower())  # same length as txt, accents dropped
+    spots = [m.start() for m in re.finditer(re.escape(surname), low)] if surname else []
+    def near(m):
+        return not spots or any(abs(m.start() - p) <= 120 for p in spots)
+    if STILL_PRE_RX.search(txt):
+        return "pre"
+    if any(near(m) for rx in (COMPLETED_RX, SIGNING_RX) for m in rx.finditer(txt)):
+        return "completed"
+    if PRECONTRACT_RX.search(txt):
+        return "pre"
+    return ""
+
+
 # canonical fee per transfer
 for t in transfers:
     t["season_attributed"] = season_of(t["date"]) or ""
     cands = []
     wiki_undisclosed = any(e["origin"] == "wikipedia_list" and kind_of(e["fee_text"]) == "undisclosed" for e in t["_ev"])
+    # DEC-405 (a): a club, league or quality-press (A/B) report that names the player and calls the fee undisclosed or nominal
+    # has the same effect as a Wikipedia "undisclosed" row: only an A/B figure can then be the fee (DEC-237 (g))
+    sn0 = pname(t["player"]).split(" ")[-1] if t["player"] else ""
+    press_undisclosed = any(e["origin"] != "wikipedia_list" and e["grade"] in ("A", "B") and e["parsed"]["kind"] == "undisclosed"
+                            and sn0 and sn0 in L.norm(e.get("quote") or "") for e in t["_ev"])
+    wiki_undisclosed = wiki_undisclosed or press_undisclosed
     for i, e in enumerate(t["_ev"]):
         e["evidence_id"] = f"{t['transfer_id']}-E{i + 1:02d}"
         p = e["parsed"]
@@ -560,6 +599,16 @@ for t in transfers:
     kinds = [kind_of(e["fee_text"]) for e in t["_ev"] if e["origin"] == "wikipedia_list"]
     if cands:
         cands.sort(key=lambda x: x[:5])
+        # DEC-404 (Luke, 8 Oct): among the best figures (same confirmation status and grade), a report that the deal was completed
+        # beats earlier reports of bids, agreed fees or expected figures; the earliest report is used only when none says completed
+        # (a figure within 2% of the one already chosen is the same fee, for example the euro amount of a sterling fee: no change)
+        top = [c for c in cands if c[:2] == cands[0][:2]]
+        done = [c for c in top if completion_kind(c[5], sn0) == "completed"]
+        if (done and done[0] is not top[0] and completion_kind(top[0][5], sn0) != "completed" and not NO_DEC404
+                and abs(done[0][5]["gbp"] - top[0][5]["gbp"]) > 0.02 * max(top[0][5]["gbp"], 1)):
+            cands.remove(done[0])
+            cands.insert(0, done[0])
+            done[0][5]["dec404"] = True
         e = cands[0][5]
         t["canonical"] = e
         t["fee_gbp"] = e["gbp"]
@@ -583,6 +632,10 @@ for t in transfers:
         t["original_amount"] = t["currency"] = t["fx_rate"] = t["fx_date"] = t["fx_series"] = ""
         if any(e.get("tm_only") for e in t["_ev"]):
             t["fee_status"] = "NOT FOUND (only citation is Transfermarkt); counted £0"
+        elif press_undisclosed:
+            t["fee_status"] = "undisclosed, no figure: counted £0"
+            if t["type"] in ("free", "permanent"):
+                t["type"] = "undisclosed"
         elif t["type"] == "free" or "free" in kinds:
             t["fee_status"] = "free"
         elif t["type"] == "loan":
@@ -805,6 +858,8 @@ for t in transfers:
         elif can["currency"] == "GBP" and any(e["currency"] != "GBP" and e["grade"] == can["grade"] for e in others) and all(
                 e["currency"] != "GBP" for e in others if e["grade"] == can["grade"] and (e.get("published") or "9999") < (can.get("published") or "9999")):
             rule = "same grade; the contemporary sterling figure is preferred (contract §5)"
+        elif can.get("dec404"):
+            rule = f"same grade; the report that the deal was completed beats earlier bids, agreed or expected figures (DEC-404; {can.get('published') or 'date not stated'})"
         else:
             rule = f"same grade; earliest report ({can.get('published') or 'date not stated: list order'})"
     rule_text = f"£{t['fee_gbp'] / 1e6:.1f}m ({can['grade'] if can else ''}, {urllib.parse.urlparse(can['url']).netloc if can and can.get('url') else 'no source'}): {rule}"

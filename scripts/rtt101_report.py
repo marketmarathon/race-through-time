@@ -422,3 +422,137 @@ if BASE:
     with open(OUT, "a", encoding="utf-8") as f:
         f.write("\n".join(R) + "\n")
     print("section 11:", v0, "->", v1, "VERIFIED;", len(fees), "fees changed;", len(lead_ch), "leader changes")
+
+# ---------------------------------------------------------------- source round 1 (DEC-275): list B, 1997-98 to 2001-02 (IQ-15f), and DEC-404
+BASEB = rd("source_round1_baseline_B.csv", os.path.join(D, "source"))
+if BASEB:
+    LB = [b for b in BASEB if b["deal_id"].startswith("B")]
+    DSR = {r["transfer_id"]: r for r in rd("deal_structure.csv", os.path.join(D, "source"))}
+    D404 = rd("dec404_changes.csv", os.path.join(D, "source"))
+    d404 = {r["transfer_id"]: r for r in D404}
+    chg, up, down = [], 0.0, 0.0
+    for b in LB:
+        t = TI.get(b["transfer_id"])
+        if not t:
+            continue
+        f0, f1 = float(b["fee_gbp"] or 0), float(t["fee_gbp"] or 0)
+        if abs(f1 - f0) >= 1 or b["date"] != t["date"]:
+            chg.append((b, t, f0, f1))
+            up += max(0.0, f1 - f0)
+            down += max(0.0, f0 - f1)
+    nB = len({b["transfer_id"] for b in LB})
+    v0 = sum(1 for b in LB if b["status"] == "VERIFIED")
+    v1 = sum(1 for b in LB if TI.get(b["transfer_id"], {}).get("status") == "VERIFIED")
+    vb = sum(1 for b in LB if TI.get(b["transfer_id"], {}).get("status") == "VERIFIED" and TI[b["transfer_id"]]["grade"] in ("A", "B"))
+    vz = sum(1 for b in LB if TI.get(b["transfer_id"], {}).get("status") != "VERIFIED" and not float(TI.get(b["transfer_id"], {}).get("fee_gbp") or 0))
+    fees = [c for c in chg if abs(c[3] - c[2]) >= 1]
+
+    def why_of(t, f0, f1):
+        k = t["transfer_id"]
+        if k in DSR and DSR[k]["fee_amount"] != "":
+            return DSR[k]["rule"]
+        if k in d404:
+            return "DEC-404: the report that the deal was completed beats an earlier bid, agreed or expected figure"
+        if abs(f1 - f0) < 1:
+            return DSR[k]["rule"] if k in DSR else ""
+        if t["fee_status"].startswith("undisclosed"):
+            return "an A/B report calls the fee undisclosed or nominal: only an A/B figure counts (DEC-405 (a), DEC-237 (g))"
+        return f"confirmed at source: higher grade or earlier report ({t['grade']}, {urllib.parse.urlparse(SRC_URL.get(t['canonical_source_id'], '')).netloc})"
+
+    R = ["\n## 12. Source round 1, list B: 1997–98 to 2001–02 (DEC-275, IQ-15f), and the completion-report rule (DEC-404)\n",
+         f"- **Deals:** 342 (B0001–B0342; {nB} of our transfers), mapped by player and date (`source/source_round1_map.csv`). ChatGPT's answers (private "
+         "part21a–r, every SHA-256 matched its README) were added as leads (`found_via`: \"ChatGPT source round 1 (DEC-264 route)\") and every cited page was read "
+         "on the GitHub runner: the figure next to the player's name, and both clubs named on the page. Wikipedia and Transfermarkt pages are never fee sources and "
+         "were not fetched.",
+         f"- **VERIFIED:** {v1} of the {nB} transfers now have a fee confirmed at source ({vb} by a club, league or press source; the rest by a Soccerbase row), "
+         f"up from {v0} before this round. {vz} more count £0 (undisclosed, nominal, free, or known only as a maximum or approximation).",
+         f"- **Changed:** {len(fees)} fees changed (£{up / 1e6:.1f}m up, £{down / 1e6:.1f}m down; net {m(up - down)}) and "
+         f"{sum(1 for c in chg if c[0]['date'] != c[1]['date'])} completion dates moved to the date a grade B report gives (`source/deal_structure.csv` "
+         "for the dates set by hand).\n",
+         "| Deal | Player | Move | Date before → after | Fee before | Fee after | Why |", "|---|---|---|---|---|---|---|"]
+    for b, t, f0, f1 in sorted(chg, key=lambda c: c[0]["deal_id"]):
+        R.append(f"| {b['deal_id']} | {t['player']} | {clubs.get(t['from_club'], t['from_club'])} → {clubs.get(t['to_club'], t['to_club'])} | "
+                 f"{b['date']}{' → ' + t['date'] if b['date'] != t['date'] else ''} | £{f0:,.0f} | £{f1:,.0f} | {why_of(t, f0, f1)[:140]} |")
+    # deal structures applied in list B
+    lbt = {b["transfer_id"] for b in LB}
+    R += ["\n**Deal structures applied in list B** (one row each in `source/deal_structure.csv`, with source, quote and rule):\n",
+          "| Player | Fee booked | Rule | Note |", "|---|---|---|---|"]
+    for r in rd("deal_structure.csv", os.path.join(D, "source")):
+        if r["lead_row"].startswith("part21") and r["fee_amount"] != "":
+            R.append(f"| {r['player']} | £{float(r['fee_amount']):,.0f} | {r['rule']} | {r['note'][:160]} |")
+    # DEC-404 effect everywhere
+    from collections import Counter as _C
+    cnt = _C(r["on_list"] for r in D404)
+    R += [f"\n**DEC-404 (Luke, 8 Oct 2026): a report that the deal was completed beats earlier reports of bids, agreed fees or \"expected\" figures of the "
+          f"same grade; the earliest report is used only when none says the deal was completed.** Applied to the whole build, it changes **{len(D404)} fees** "
+          f"(`source/dec404_changes.csv`): {cnt.get('source round 1 list A', 0)} on list A, {sum(v for k, v in cnt.items() if 'phase 2' in k)} of the 32 "
+          f"phase 2 same-grade conflicts, {cnt.get('source round 1 list B', 0)} on list B and {cnt.get('other', 0)} elsewhere. A completion word counts only "
+          "next to the player's name; wording such as \"imminent\", \"subject to\" or \"proposed\" means not completed; a figure within 2% of the one already "
+          "used (the same fee in another currency) changes nothing.\n",
+          "| Date | Player | Move | Fee without DEC-404 | Fee with DEC-404 | On | Completion report |", "|---|---|---|---|---|---|---|"]
+    for r in D404:
+        R.append(f"| {r['date']} | {r['player']} | {clubs.get(r['from_club'], r['from_club'])} → {clubs.get(r['to_club'], r['to_club'])} | "
+                 f"£{float(r['fee_without_dec404']):,.0f} | £{float(r['fee_with_dec404']):,.0f} | {r['on_list']} | {r['completion_report'][:90]} |")
+    # same-grade conflicts within list B and the step that settled each
+    small = []
+    for b in LB:
+        t = TI.get(b["transfer_id"])
+        if not t or not t["fee_gbp"] or t["status"] != "VERIFIED" or (t["transfer_id"] in DSR and DSR[t["transfer_id"]]["fee_amount"] != ""):
+            continue
+        can = next((e for e in EV[t["transfer_id"]] if e["canonical"] == "yes"), None)
+        rv = {}
+        for e in EV[t["transfer_id"]]:
+            if e["status"] == "VERIFIED" and e["grade"] == t["grade"] and e["gbp"] and abs(float(e["gbp"]) - float(t["fee_gbp"])) >= 1:
+                k = round(float(e["gbp"]))
+                rv[k] = min(rv.get(k, "9999"), e["published"] or "9999")
+        if rv:
+            if t["transfer_id"] in d404:
+                step = "DEC-404 (completion report)"
+            elif ((can or {}).get("published") or "9999") <= min(rv.values()):
+                step = "earliest report (DEC-277), or the completion report when it is also the earliest"
+            else:
+                step = "sterling figure before a converted one (contract rule)"
+            small.append((b, t, sorted(rv.items()), (can or {}).get("published") or "", step))
+    R += [f"\n**Same-grade disagreements within list B** ({len(small)} deals) and the step that settled each:\n",
+          "| Deal | Player | Fee used (grade, report date) | Other confirmed figure(s), same grade (report date) | Settled by |", "|---|---|---|---|---|"]
+    for b, t, rv, pub, step in small:
+        R.append(f"| {b['deal_id']} | {t['player']} | £{float(t['fee_gbp']):,.0f} ({t['grade']}, {pub or 'no date'}) | "
+                 f"{', '.join(f'£{x:,.0f} ({nodate(d)})' for x, d in rv)} | {step} |")
+    # window totals 1997-2002 against part17b
+    WB = {w["window"]: w for w in rd("window_totals_before_source_round1_B.csv", os.path.join(D, "source"))}
+    R += ["\n**League-wide spending by window, 1997–2002** (before = commit c62ca6b, the end of IQ-15e; published totals from part17b are research leads, "
+          "UNVERIFIED, and exist only from summer 2002):\n", "| Window | Gross before | Gross after | Change | Published gross | Net before | Net after |",
+          "|---|---|---|---|---|---|---|"]
+    tb = ta = 0.0
+    for win in sorted(set(WB) | set(WT), key=wkey):
+        y = int(win.split()[1])
+        if (1997 <= y <= 2002) and not (y == 1997 and win.startswith("January")):
+            a, b0 = WT.get(win, {}), WB.get(win, {})
+            ga, gb = float(a.get("gross_spend_gbp") or 0), float(b0.get("gross_spend_gbp") or 0)
+            tb += gb; ta += ga
+            pub = next((r for r in sorted(lead_by.get(win, []), key=lambda r: r["grade"]) if r["gross_gbp"]), None)
+            R.append(f"| {win} | {m(gb)} | {m(ga)} | {m(ga - gb)} | {(m(pub['gross_gbp']) + ' (' + pub['grade'] + ')') if pub else '—'} | "
+                     f"{m(b0.get('net_spend_gbp'))} | {m(a.get('net_spend_gbp'))} |")
+    R.append(f"\nTotal gross summer 1997 to summer 2002: {m(tb)} before, {m(ta)} after ({m(ta - tb)}).")
+    # leader and top 12 against the snapshot before list B
+    TB = {r["month_end"]: r["top12_in_rank_order"].split(";") for r in rd("top12_before_source_round1_B.csv", os.path.join(D, "source"))}
+    now = defaultdict(list)
+    for r in SM:
+        if r["rank"] and int(r["rank"]) <= 12:
+            now[r["month_end"]].append((int(r["rank"]), r["club_id"]))
+    NOW = {mo: [c for _, c in sorted(v)] for mo, v in now.items()}
+    lead_ch = [mo for mo in sorted(NOW) if TB.get(mo) and TB[mo][0] != NOW[mo][0]]
+    set_ch = [mo for mo in sorted(NOW) if TB.get(mo) and set(TB[mo]) != set(NOW[mo])]
+    ord_ch = [mo for mo in sorted(NOW) if TB.get(mo) and TB[mo] != NOW[mo]]
+    R.append(f"\n**Effect on the race** (against the build at c62ca6b): the leader changes at {len(lead_ch)} month ends"
+             + (" (" + "; ".join(f"{mo[:7]}: {NAME.get(TB[mo][0], TB[mo][0])} → {NAME.get(NOW[mo][0], NOW[mo][0])}" for mo in lead_ch[:16]) + (" …" if len(lead_ch) > 16 else "") + ")" if lead_ch else "")
+             + f"; who is in the top 12 changes at {len(set_ch)} month ends"
+             + (" (" + "; ".join(f"{mo[:7]}: in {', '.join(NAME.get(c, c) for c in sorted(set(NOW[mo]) - set(TB[mo])))}, out "
+                                 f"{', '.join(NAME.get(c, c) for c in sorted(set(TB[mo]) - set(NOW[mo])))}" for mo in set_ch[:10]) + (" …" if len(set_ch) > 10 else "") + ")" if set_ch else "")
+             + f"; the order within the top 12 changes at {len(ord_ch)} month ends.")
+    QB = [l.strip() for l in open(os.path.join(D, "source", "questions_listB.md"), encoding="utf-8") if l.strip()] \
+        if os.path.exists(os.path.join(D, "source", "questions_listB.md")) else []
+    R += ["\n**Questions for Luke on list B (each with Claude's recommendation)**\n"] + QB
+    with open(OUT, "a", encoding="utf-8") as f:
+        f.write("\n".join(R) + "\n")
+    print("section 12:", v0, "->", v1, "VERIFIED of", nB, ";", len(fees), "fees changed;", len(D404), "DEC-404 changes;", len(lead_ch), "leader changes")
