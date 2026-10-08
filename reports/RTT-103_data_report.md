@@ -24,7 +24,7 @@
 ### Alibaba: stage 1 got the dates wrong, now corrected (DEC-303)
 - Alibaba's capex included licensed copyrights (from the Youku deal) from **April 2016**, not January 2017 as stage 1 said.
 - Alibaba's FY2019 annual report (20-F) re-presents FY2017 and FY2018 on its later, narrower scope. Its quarterly releases from Sep 2018 to Jun 2019 re-present each earlier quarter the same way. From these, the five quarters Jun 2017 to Jun 2018 are rebuilt exactly; they add up to Alibaba's own FY2018 total (RMB19,628m).
-- The four quarters Apr 2016–Mar 2017 cannot be split, so they stay out. **Alibaba now has no bar for seven TTM points (2016 Q2 to 2017 Q4)**, down from nine. Stage 1 wrongly showed bars for 2016 Q2–Q4.
+- The four quarters Apr 2016–Mar 2017 cannot be split, so they stay out. **Alibaba now has no bar for seven TTM points (2016 Q2 to 2017 Q4)**, instead of stage 1’s eight (2017 Q1 to 2018 Q4). Stage 1 wrongly showed bars for 2016 Q2–Q4; the four 2018 points now have bars.
 - Before April 2016, Alibaba's figure also includes small intangible purchases (5.2% in FY2015, 6.6% in FY2016). These quarters are kept and flagged (DEC-302; question A below).
 
 ### Alphabet's equity raise (DEC-305)
