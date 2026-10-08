@@ -1,0 +1,68 @@
+obs_id,origin,pub_id,month,relative_label,assistant_id,site_as_recorded,visits_as_published,qualifier,measure,quote_as_recorded,note
+M001,V20 (Cowork check),S23_BDAY,2023-05,,chatgpt,chat.openai.com,1.8 billion,,monthly visits,As traffic drops from 1.8 billion in May to 1.6 billion in June,May 2023 figure inside the wording Cowork verified for June (V20)
+M002,part02 B (research lead),S23_BDAY,2023-01,,chatgpt,chat.openai.com,617 million,,monthly visits,617 million,Lead from the source-discovery answer; not in the quarter-end dossier
+M003,V23 note (Cowork check),SW24_APR,2024-04,,chatgpt,chat.openai.com,1.8 billion,,monthly visits,ChatGPT attracted 1.8 billion visits in April,Key takeaway of the post (April 2024)
+M004,dossier D05,SW24_OCT,2024-10,,chatgpt,chatgpt.com,3.7 billion,,monthly visits,3.7 billion,D05: the November 2024 product round-up gives 3.7 billion for November with the same growth figure
+M005,dossier D05,SW24_NOV_LABEL,2024-11,,chatgpt,chatgpt.com,3.7 billion,,monthly visits,3.7 billion,D05: month mismatch with SW24_OCT; not used as an October or December figure
+M006,dossier D06,S25_MONTHLY,2025-07,,grok,grok.com,201M,,monthly visits,201M,D06: prose figure; the same page's comparison table says 38K
+M007,dossier D06,S25_MONTHLY,2025-07,,grok,grok.com,38K,,monthly visits,38K,D06: comparison-table figure; contradicts the prose on the same page
+M008,dossier D10,S25_CARR_OCT,2025-10,,chatgpt,chatgpt.com,topped 6 billion,topped,monthly visits,topped 6 billion,D10: lower bound
+M009,dossier D10,S25_CARR_OCT,2025-10,,chatgpt,chatgpt.com,6.2M,,monthly visits,6.2M,D10: unit inconsistent with 'topped 6 billion'; never repaired (UNIT_INCONSISTENT)
+M010,dossier D10,S25_CARR_OCT,2025-10,,gemini,gemini.google.com,1.2M,,monthly visits,1.2M,D10: unit inconsistent; never repaired (UNIT_INCONSISTENT)
+M011,dossier D10,Q26_IPO_PDF,2025-10,,chatgpt,chatgpt.com,6.17B,,monthly visits,6.17B,D10
+M012,dossier D11,P25_ET_DEC,2025-12,,perplexity,perplexity.ai [product name; domain NOT STATED],154.9 million,,monthly visits,154.9 million,D11/E: press device and geography filters NOT FOUND
+M013,dossier D11,P25_ET_DEC,2025-12,,grok,grok.com [product name; domain NOT STATED],247 million,,monthly visits,247 million,D11/E: press device and geography filters NOT FOUND
+M014,dossier D11,P25_ET_DEC,2025-12,,deepseek,DeepSeek [domain NOT STATED],282 million,,monthly visits,282 million,D11/E: press device and geography filters NOT FOUND
+M015,dossier D12,S25_GEM_DEC,2025-12,,gemini,gemini.google.com,1.735B,,monthly visits,1.735B total website visits,D12/E: device and geography not explicit in the post
+M016,dossier D13,Q26_IPO_PDF,2026-01,,claude,claude.ai,203M,,monthly visits,203M,D13: the report assigns 203M to January
+M017,dossier D13,Q26_IPO_BLOG,2026-02,,claude,claude.ai,203 million,,monthly visits,203 million,D13: the blog assigns 203 million to February
+M018,dossier D13,Q26_FEB_NEWS,2026-02,,claude,claude.ai,290.3M,,monthly visits,IMAGE,D13: chart label
+M019,dossier D13,Q26_IPO_PDF,2026-02,,claude,claude.ai,290M,,monthly visits,290M,D13
+M020,V31 (Cowork check),Q26_DECODER,2026-02,,chatgpt,chatgpt.com [product name; domain NOT STATED],5.35 billion,,monthly visits,ChatGPT recorded 5.35 billion visits in February,Press quoting Similarweb ('Image: Similarweb')
+M021,V31 (Cowork check),Q26_DECODER,2026-02,,gemini,gemini.google.com [product name; domain NOT STATED],2.11 billion,,monthly visits,2.11 billion,Press quoting Similarweb
+M022,V31 (Cowork check),Q26_DECODER,2026-02,,grok,grok.com [product name; domain NOT STATED],298.5 million,,monthly visits,298.5 million,Press quoting Similarweb
+M023,V31 (Cowork check),Q26_DECODER,2026-02,,claude,claude.ai [product name; domain NOT STATED],290.3 million,,monthly visits,290.3 million,Press quoting Similarweb
+M024,V31 (Cowork check),Q26_DECODER,2026-02,,deepseek,DeepSeek [domain NOT STATED],246.4 million,,monthly visits,"Deepseek at 246.4 million, and Perplexity at 153.8 million",Conflicts with Similarweb's own deepseek.com 273.2M (D14)
+M025,V28 (Cowork check),Q26_APRIL_NEWS,2026-04,,gemini,gemini.google.com,2.76 billion,,monthly visits,2.76 billion,V28: Mar 2.60 billion / Apr 2.76 billion
+M026,dossier D16,Q26_APRIL_NEWS,2026-04,,gemini,gemini.google.com,2.761B,,monthly visits,IMAGE,D16: chart label
+M027,V28 (Cowork check),Q26_APRIL_NEWS,2026-04,,claude,claude.ai,823.5 million,,monthly visits,823.5 million,V28
+M028,dossier D16,Q26_IPO_PDF,2026-04,,claude,claude.ai,824M,,monthly visits,824M,D16
+M029,dossier D16,Q26_IPO_BLOG,2026-04,,claude,claude.ai,824 million,,monthly visits,824 million,D16
+M030,dossier D17,Q26_JUNE_NEWS,2026-05,,claude,claude.ai,952.5M,,monthly visits,IMAGE,D17: chart label
+M031,dossier D17,Q26_CLAUDE_COMPARE,2026-05,,claude,claude.ai,953 million,,monthly visits,953 million,D17
+M032,dossier D17,Q26_IPO_PDF,2026-05,,claude,claude.ai,953M,,monthly visits,953M,D17
+M033,dossier D17,Q26_JUNE_NEWS,2026-05,,gemini,gemini.google.com,2.903B,,monthly visits,IMAGE,D17: chart label
+M034,dossier D17,Q26_IPO_PDF,2026-05,,gemini,gemini.google.com,2.90B,,monthly visits,2.90B,D17
+M035,dossier E,R24_PERP_JAN,2022-12,,perplexity,perplexity.ai,2.2 million,,monthly visits,2.2 million,E: website and mobile-web visits; geography NOT FOUND; Similarweb export NOT FOUND
+M036,dossier E,R24_PERP_JAN,2023-12,,perplexity,perplexity.ai,45 million,,monthly visits,45 million,E/D03: geography NOT FOUND
+M037,dossier E,R24_PERP_FEB,2023-12,,perplexity,perplexity.ai,45.6 million,,monthly visits,45.6 million,E/D03: geography NOT FOUND
+M038,dossier E,DR24_JUN,2024-06,,chatgpt,chatgpt.com,almost 2.9 billion,almost,monthly visits,almost 2.9 billion,E: DataReportal attributes it to Similarweb's paid platform; filter NOT FOUND
+M039,dossier E,DR24_JUN,2024-06,,gemini,gemini.google.com,more than 340 million,more than,monthly visits,more than 340 million,E: filter NOT FOUND
+M040,dossier F02,SW24_JUN_PROJECT,2024-06,,chatgpt,chatgpt.com,2.9 billion,projection,projection,NOT FOUND,F02: forecast for June made with data to 24 June; excluded (no forecasts)
+M041,dossier E,SW25_DEEPSEEK_DEC,2024-12,,deepseek,deepseek.com,around 300K,around,average daily visits,around 300K daily visits,Other measure (daily average); never multiplied up
+M042,dossier E,P25_TC,2025-03,,copilot,Copilot [domain NOT STATED],2.4 million,,average daily visits,2.4 million,Other measure (daily average)
+M043,dossier E,S23_BDAY,2023-10,,chatgpt,chat.openai.com,140.7 million,,unique visitors,140.7 million,Other measure (unique visitors)
+M044,dossier E,S23_MAY,2023-04,,gemini,bard.google.com,49.7 million,preliminary,monthly visits,"Google’s Bard chatbot attracted 142.6 million visitors in May, up from 49.7 million in April, according to preliminary data.","Wording conflict as for May 2023: the same post says May was 142.6 million visits, up 187.2% from April (V14)"
+M045,dossier F04,ROW_2023,2023-11,,chatgpt,ChatGPT [product name],1.7 billion,by the end of November,monthly visits,by the end of November,F04: its linked Similarweb infographic labels 1.70B for October; month mismatch
+M046,runner R1,S23_BILLION,2023-01,,chatgpt,chat.openai.com,616 million,,monthly visits,up 62.5% from 616 million in January,Conflicts with 617 million in S23_BDAY (Nov 2023)
+M047,runner R1,S23_BILLION,2023-02,,chatgpt,chat.openai.com,more than 1 billion,more than,monthly visits,The chat.openai.com website attracted more than 1 billion visits in February,Lower bound
+M048,runner R1,S23_MARCH,2023-02,,chatgpt,chat.openai.com,just over 1 billion,just over,monthly visits,up from just over 1 billion in February,Lower bound
+M049,runner R1,S23_BDAY,2023-02,,chatgpt,chat.openai.com,tops 1 billion,tops,monthly visits,February 2023: Similarweb data in the news ChatGPT tops 1 billion visits.,Lower bound
+M050,runner R1,S23_APRIL,2023-04,,chatgpt,chat.openai.com,about 1.76 billion,about,monthly visits,"In April, ChatGPT attracted about 1.76 billion visits worldwide, up 12.6% from March.",
+M051,runner R1,S23_MAY,2023-04,,chatgpt,chat.openai.com,1.76 billion,,monthly visits,"in April, 206.7 million ChatGPT unique visitors generated 1.76 billion visits",
+M052,runner R1,S23_COMEBACK,2023-04,,chatgpt,chat.openai.com,nearly 1.7 billion,nearly,monthly visits,ChatGPT attracted 1.5 billion worldwide visits compared with nearly 1.7 billion in April,
+M053,runner R1,S23_BDAY,2023-04,,chatgpt,chat.openai.com,1.77 billion,,monthly visits,April 2023: ChatGPT eclipses other major websites Now up to 1.77 billion visits,
+M054,runner R1,S23_MAY,2023-05,,chatgpt,chat.openai.com,1.8 billion,preliminary,monthly visits,"ChatGPT (chat.openai.com) attracted 1.8 billion worldwide visits in May, up 2.8% from April.",The post says its May figures are preliminary estimates
+M055,runner R1,S23_COMEBACK,2023-05,,chatgpt,chat.openai.com,1.8 billion,,monthly visits,ChatGPT peaked at 1.8 billion worldwide visits in May before dropping to 1.4 billion in August.,
+M056,runner R1,SW24_MAR,2023-05,,chatgpt,chat.openai.com,1.81 billion,,monthly visits,"its peak traffic record of 1.81 billion visits worldwide, set in May 2023",
+M057,runner R1,SW24_APR,2023-05,,chatgpt,chat.openai.com,1.81 billion,,monthly visits,putting it right around its May 2023 peak of 1.81 billion visits,
+M058,runner R1,SW24_FEB,2023-05,,chatgpt,chat.openai.com,1.8 billion,,monthly visits,the volume of worldwide traffic it hit in May 2023 – 1.8 billion visits,
+M059,runner R1,S23_PERP,2023-07,,chatgpt,chat.openai.com,about 1.5 billion,about,monthly visits,"ChatGPT, which attracted about 1.5 billion worldwide visitors to its website in July",Wording says visitors (as for Bard in May 2023)
+M060,runner R1,S23_COMEBACK,2023-08,,chatgpt,chat.openai.com,1.4 billion,,monthly visits,ChatGPT peaked at 1.8 billion worldwide visits in May before dropping to 1.4 billion in August.,
+M061,runner R1,S23_BDAY,2023-08,,chatgpt,chat.openai.com,1.4 billion,,monthly visits,finishing September with 1.5 billion visits compared with 1.4 billion in August,
+M062,runner R1,S23_COMEBACK,2023-10,,chatgpt,chat.openai.com,as high as 1.7 billion,projection,projection,it could reach as high as 1.7 billion visits in October,Projection made before the month ended; excluded (no forecasts)
+M063,runner R1,SW24_FEB,2024-02,,chatgpt,chat.openai.com,1.6 billion,,monthly visits,"With 1.6 billion visits in February, ChatGPT (chat.openai.com) has yet to match",
+M064,runner R1,S25_MONTHLY,2025-07,,chatgpt,chatgpt.com,5.72B,,monthly visits,Visits 5.72B,Engagement table of the post
+M065,runner R1,S25_MONTHLY,2025-07,,gemini,gemini.google.com,almost 700 million,almost,monthly visits,Reaching almost 700 million visits in July 2025,
+M066,runner R1,S25_MONTHLY,2025-07,,perplexity,perplexity.ai,140 million,,monthly visits,is up to 140 million visits in July 2025,'is up to' here means 'has risen to'
+M067,runner R1,Q26_CLAUDE_COMPARE,2025-05,,claude,claude.ai,100 million,,monthly visits,Claude went from 100 million visits in May 2025 to 953 million in May 2026,

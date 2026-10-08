@@ -1,7 +1,7 @@
 {
   "schema": "rtt-state/0.1",
-  "updated": "2026-10-04",
-  "updated_by": "Claude (Claude Code cloud session): IQ-13 + IQ-13b + IQ-13c - RTT-001 design pilot 1 (rtt-001-pilot1-82167f8-run2) and logo round (rtt-001-pilot1-f3d9e2f-run3, every browser on the board has a logo or own tile); DEC-169..DEC-183; pull request #16 merged 4 Oct 2026 22:37 UTC (main 3bb2857); brought up to date with main ed7b6e6 on 4 Oct 2026 (pull request #14, the RTT-003 record: full film APPROVED by Luke, DEC-150, and published PUBLIC 3 Oct 2026, DEC-151, video JZzvA_ZDii0)",
+  "updated": "2026-10-08",
+  "updated_by": "Claude (Claude Code cloud session): IQ-17 - RTT-102 AI assistant websites race, data build phase 1 (Similarweb monthly website visits, Dec 2022 - Sep 2026); DEC-500..DEC-514; branch claude/nice-wozniak-f62eio, public pull request open, not merged (DEC-057)",
   "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); starts data audit PASSED (DEC-058/DEC-059, merged PR #8); IQ-04 MERGED (PR #2); IQ-05 rounds 1-5 MERGED (PR #3-#7); round-5 pilot RENDERED and APPROVED by Luke (DEC-062, visual direction = milestone 3); pull request #9 MERGED (c378ea7); RTT-002 FINAL FILM APPROVED (DEC-078), pull request #10 MERGED (main ef01814), UPLOADED by Luke in YouTube Studio and SCHEDULED PUBLIC 30 Sep 2026 (DEC-079 early release, DEC-080): video 2fY7Bzq8Uu0 on channel UC8R47xbyBB5Z93MdMkoUOWg; IQ-09 RTT-003 DATA BUILD DONE 1 Oct 2026; Luke's answers applied 2 Oct 2026 (DEC-093..DEC-102); pull request #12 MERGED 2 Oct 2026 (main 4288f6d); IQ-10 RTT-003 DESIGN PILOT ROUND 5 (FINAL PILOT ROUND) RENDERED 3 Oct 2026 (private pre-release; not the full film), awaiting Luke's review; IQ-11 (3 Oct 2026): CLAUDE.md and reference/house_style.md added on the IQ-10 branch (DEC-145); next episode RTT-001 Browser Wars (DEC-144); IQ-10 round 6 (3 Oct 2026): RTT-003 design APPROVED (DEC-146), FULL FILM with music rendered to a private pre-release, then APPROVED by Luke (DEC-150); IQ-12 (3 Oct 2026): RTT-001 Browser Wars DATA BUILD done (data/rtt-001, 11/11 checks PASS), pull request open, awaiting Luke's answers to 12 questions; IQ-12b (4 Oct 2026): Luke answered all 12 RTT-001 questions (DEC-164..DEC-166), smoothing direction for the pilot (DEC-167), order check (DEC-168); RTT-003 record (3-4 Oct 2026, pull request #14): full film APPROVED (DEC-150), pull request #13 MERGED (main 618c6a7) and private pull request #1 MERGED (private main 4d47eb2), UPLOADED by Luke in YouTube Studio and PUBLISHED PUBLIC 3 Oct 2026 (DEC-151): video JZzvA_ZDii0; IQ-13/IQ-13b/IQ-13c (4 Oct 2026): RTT-001 DESIGN PILOT 1 rendered to a private pre-release (smoothing options A/B/C, flagged stretches, notes, marker, colours, browser logos per owner direction DEC-180, features, pacing, titles), then the logo round with every browser's logo (DEC-182/DEC-183, private pre-release rtt-001-pilot1-f3d9e2f-run3), awaiting Luke's answers; pull request #15 merged by Luke (b5a09d3); pull request #16 merged 4 Oct 2026 22:37 UTC (main 3bb2857)",
   "canonical_queue": "state/ folder on main in marketmarathon/race-through-time (this file)",
   "repo_baseline": {
@@ -650,6 +650,27 @@
       "check_level": "DESK",
       "verdict": "LICENCE_GATE",
       "blocker": "CTBUH database rights"
+    },
+    {
+      "id": "RTT-102",
+      "title": "AI assistant websites race (Most-Visited AI Assistant Websites, 2022-2026)",
+      "state": "DATA_BUILD_PHASE_1_DONE_AWAITING_LUKE",
+      "check_level": "LIVE",
+      "verdict": "CONDITIONAL",
+      "blocker": "Luke answers the 8 questions in reports/RTT-102_data_report.md section 9 (end of the race after June 2026; Claude Feb 2026 203m v 290.3m; a fourth rule step for two 2023 leftovers). Cowork checks the UNVERIFIED list (report section 5), the eight September 2026 Similarweb profiles first. Then a design session (DEC-069; DEC-514 proposals).",
+      "decisions": "DEC-243, DEC-244, DEC-245 (owner, on pull request #19); DEC-500..DEC-504 (owner: route D, answers 2-4, data questions, parallel start, DEC block 500+); DEC-505..DEC-511 (Claude working choices); DEC-512, DEC-513 (findings); DEC-514 (design proposals, not built)",
+      "dataset": {
+        "branch": "claude/nice-wozniak-f62eio (public pull request, open, not merged); private repo untouched",
+        "path": "data/rtt-102/",
+        "contract": "reference/metric_contract_RTT-102.md v1.0",
+        "build": "scripts/build_rtt102_dataset.py (deterministic, standard library); scripts/rtt102_import_research.py (private research -> public source tables); tests/rtt102/run_tests_rtt102.py 19/19 PASS; build checks 11/11 PASS",
+        "range": "monthly, Dec 2022 - Sep 2026",
+        "bars": "ChatGPT, Gemini (Bard to 7 Feb 2024), Claude, Copilot, Perplexity, DeepSeek (deepseek.com incl. chat.deepseek.com), Grok (grok.com), Meta AI; Le Chat left out",
+        "numbers": "233 figure rows from 52 publications; 183 VERIFIED (Cowork V01-V42 incl. the 84-cell 2025 table; GitHub runner round R1 47); 137 points used (125 Similarweb, 12 press); 203 bar-months (137 published, 66 straight lines); 17 conflict cases (2 leftovers: ChatGPT Jan and Apr 2023)",
+        "runner": "rtt102-sources run 37790576703 (no secrets, no artifacts, no cache; robots.txt obeyed; Similarweb profiles and IPO PDF not fetched): 28/41 pages read; LinkedIn closed by robots.txt",
+        "private_inputs": "research/rtt-102/ in the private repo: 11 files match 00_README.md SHA-256; brief 8,744 bytes 28bf52ab...e569; hashes in data/rtt-102/source/inputs_sha256.csv"
+      },
+      "prompt": "prompts/CODE_SESSION_IQ-17.md (brief, SHA-256 28bf52ab...e569) and prompts/CODE_SESSION_IQ-17_start.md (Luke's start message, 8 Oct 2026)"
     }
   ],
   "episodes_not_started": "RTT-013..RTT-100 remain BRIEF (workbook Slate 100)",

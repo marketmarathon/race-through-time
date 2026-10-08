@@ -151,6 +151,18 @@ Principle: rights before use. The video uses a handful of published percentages 
 | OpenCV (opencv-python-headless), Pillow, NumPy (RTT-003 icon preparation, `scripts/rtt003_prepare_pictures.py`; run in the Claude Code container) | pip, 2 Oct 2026 | Apache-2.0 / MIT-CMU (HPND) / BSD-3-Clause |
 | FFmpeg with libx264 (encodes the video; installed on the render runner from Ubuntu 24.04 packages) | Ubuntu 24.04 package | GPL (Ubuntu package); used as a tool, not shipped |
 
+## RTT-102 AI assistant websites data sources (IQ-17, recorded 8 Oct 2026)
+
+A record of the terms position, not legal advice; Isle of Man law has not been checked. The private research files (private repo `research/rtt-102/`) are leads only and are never committed here (DEC-006). No pictures or logos are in scope yet (DEC-069).
+
+| Source | What we use | Terms position | Obligations / open points | Committed? |
+|---|---|---|---|---|
+| **Similarweb** (blog posts, LinkedIn posts and newsletters, the 2025 "Winners and Losers in the Gen AI Market" table, free website profiles, the September 2026 IPO report) | Every bar value: published monthly visit estimates, as facts with short quotes | **No licence. Owner-accepted risk (DEC-244):** used without asking, credited on screen and in the description, and the video is stopped if Similarweb objects. No contact about data (DEC-245). Similarweb's free search limit is not worked around; its robots.txt is obeyed by our runner | Credit "Similarweb" on screen (source line) and in the description. About 200 published figures sit in `data/rtt-102/` with their sources (question 7 in the report) | Yes (figures, URLs, short quotes) |
+| Digiday (1 Dec 2023; 20 Oct 2025), The Decoder (12 Mar 2026) | Figures they quote from Similarweb, where they are the only or the winning version (report §7) | Each publisher's copyright; figures used as facts, short quotes only | Credit each article in the description | Yes (facts, short quotes) |
+| The Economic Times, DataReportal, Reuters, Rest of World, TechCrunch | Cross-checks only: not on screen (lost under the rule, set aside, other measure or UNVERIFIED) | As above | None while unused | Yes (facts, short quotes) |
+| Company announcements (Google, Microsoft, Anthropic, Meta, OpenAI, DeepSeek, xAI) | Dates of names and web addresses (`identities.csv`) | Facts, short quotes | None | Yes (facts) |
+| Sensor Tower, Semrush, OECD.AI, Ofcom and other panels | **Not used** (DEC-500 chose Similarweb only) | — | — | — |
+
 ## Not used
 
 Market Marathon's Archivo TTFs (no licence file in that kit, DEC-016), any formula1.com material (DEC-008), Jolpica/Ergast data (non-commercial, DEC-003), team or sponsor logos as separate graphics (the car photo shows them on the car, see above), any music other than "Ego Chall" (RTT-002, DEC-073) and "Powerup!" (RTT-003, DEC-147), above.

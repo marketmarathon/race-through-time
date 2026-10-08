@@ -1,4 +1,44 @@
-# HANDOVER — 4 Oct 2026 (session 15, Claude Code cloud session: IQ-13, the RTT-001 Browser Wars design pilot 1; IQ-13b and IQ-13c, browser logos). The previous session's notes (IQ-12, IQ-12b) follow below.
+# HANDOVER — 8 Oct 2026 (Claude Code cloud session: IQ-17, the RTT-102 AI assistant websites race, data build phase 1). Earlier sessions' notes follow below; open pull requests #19 (RTT-101) and #20 (RTT-103) carry their own newer handover sections.
+
+## RTT-102 AI assistant websites race: data build phase 1 (IQ-17, 8 Oct 2026), awaiting Luke
+- **Branch** `claude/nice-wozniak-f62eio` (public), pull request open, **not merged** (DEC-057). The private repo is untouched: its `research/rtt-102/` inputs were only read. Brief: `prompts/CODE_SESSION_IQ-17.md` (8,744 bytes, SHA-256 `28bf52ab…e569`). Luke's start message: `prompts/CODE_SESSION_IQ-17_start.md`. The build ran in parallel with IQ-16 (DEC-503). **DEC numbers: IQ-17 uses DEC-500 onwards only (DEC-504); this session used DEC-500 to DEC-514**, so the next RTT-102 DEC is DEC-515.
+- **Owner decisions recorded:**
+  - DEC-500: route D, Similarweb monthly website visits.
+  - DEC-501: answers 2–4 of 7 Oct (older estimates marked; title states the measure; straight lines; Le Chat out).
+  - DEC-502: every published month; the conflict rule; DeepSeek = deepseek.com.
+  - DEC-503: the build runs in parallel with IQ-16.
+  - DEC-504: the DEC-500+ block.
+- **Claude's records:**
+  - Working choices DEC-505 to DEC-511.
+  - Findings DEC-512 and DEC-513.
+  - Design proposals DEC-514 (not built).
+- **Built:**
+  - Contract `reference/metric_contract_RTT-102.md` and the data in `data/rtt-102/`: identities, points, conflicts, series_monthly, place_changes, turns and the source tables.
+  - Report `reports/RTT-102_data_report.md`, with the coverage grid, place changes, conflicts, sharp turns, the Cowork list, press credits and 8 questions.
+  - Rights-ledger section.
+  - Runner workflow `.github/workflows/rtt102_sources.yml` (run https://github.com/marketmarathon/race-through-time/actions/runs/37790576703). It read 28 of 41 pages; LinkedIn is closed to it by robots.txt.
+- **Checks:**
+  - Build 11/11 PASS.
+  - `python3 tests/rtt102/run_tests_rtt102.py` 19/19 PASS, including two byte-identical rebuilds and a re-import of the private inputs against their SHA-256.
+- **Numbers:**
+  - 137 verified points are used, giving 203 bar-months.
+  - ChatGPT leads every month.
+  - Second place: DeepSeek takes it from Gemini in January–April 2025.
+  - Third place: Claude from March 2026.
+  - **Only ChatGPT is verified after June 2026** (question 1).
+- **Rules for the next RTT-102 session:**
+  - (1) Rebuild with `python3 scripts/build_rtt102_dataset.py data/rtt-102 reports/RTT-102_data_report.md`; never edit the outputs by hand (test T02).
+  - (2) A new check from Cowork goes into `data/rtt-102/source/verification_map.csv`, or into a new row in `observations_manual.csv` plus the map; a new set-aside goes into `exclusions.csv` with a DEC.
+  - (3) `rtt102_sources.yml` runs only on a push that changes it or `scripts/rtt102_check_sources.py` on this branch. Keep robots.txt obeyed and never fetch Similarweb's website profiles from a runner.
+  - (4) Expect merge conflicts in `state/` with pull requests #19 and #20: keep both sides. The DEC blocks do not overlap (≤399, 400–499, 500+).
+  - (5) Do not touch the RTT-101 or RTT-103 files.
+- **Next:**
+  1. Luke answers report §9.
+  2. Cowork checks report §5 in Luke's Chrome, the September 2026 profiles first.
+  3. Rebuild.
+  4. Design session (DEC-069) with the DEC-514 proposals side by side, including monthly against quarterly playback for smoothness.
+
+## (4 Oct 2026, session 15: IQ-13, IQ-13b, IQ-13c)
 
 ## RTT-001 — design pilot 1 (IQ-13 + IQ-13b + IQ-13c, 4 Oct 2026) — awaiting Luke's answers
 - **Logo round (IQ-13c, owner decisions DEC-182; findings DEC-183) — watch this too:** https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-001-pilot1-f3d9e2f-run3 (run https://github.com/marketmarathon/race-through-time/actions/runs/37215599659, stills only, 0 artifacts): `s16_logos` (every browser on the board, its logo as drawn and larger, with its status), boards with logos for January 1994, June 2005, June 2013 and June 2022, each also at phone size, and `c08` (the four boards side by side). SHA-256 of all 11 files in the release notes and `state/STATE.json` (`pilot1.run3_logos`). **All 29 browsers that reach the top 10 now have a logo or our own tile** (the test fails otherwise): 27 real files (13 new: Safari, NCSA Mosaic, UC Browser, QQ Browser, 360 Safe Browser, Mozilla Suite, Nokia, Sony PS3, Instabridge, Samba, Cello, the IE6 "e" for Internet Explorer and IE Mobile); **own neutral tiles for Lynx and NetFront** (no real logo found; listed for Claude in Cowork in `kits/rtt-001/logos.json` `for_cowork`). Non-free files used for identification only: Safari, Mosaic, UC Browser, QQ Browser, Samba, Cello. QQ Browser's file carries its Chinese wordmark and is shown whole (only the IE crop is approved). Dolfin never reaches the board, so it has no logo. Files: private branch `claude/compassionate-cray-tlnnkm` (commits `630aacd`, `3d784d1`) — Luke merges it when convenient. The run-3 release notes' header still says "15 browser logos … name only" (stale workflow wording; files and hashes are right): fix it with the next render push of `rtt001_pilot.yml`, never on its own.
