@@ -1,0 +1,12 @@
+{
+ "extends": "config_rtt103_base.json",
+ "kit_version": "rtt103_r1_comb_bar",
+ "combined": {
+  "mode": "bar",
+  "h": 250,
+  "y": 690
+ },
+ "notes": [
+  "Running total option C: one small bar, split by company, on a fixed scale up to the June 2026 total."
+ ]
+}

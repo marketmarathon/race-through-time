@@ -1,0 +1,12 @@
+# RTT-103 private assets read by .github/workflows/rtt103_pilot.yml - SHA-256 checked before any render (DEC-060, DEC-061).
+# Files live only in marketmarathon/race-through-time-private (logos: branch claude/magical-einstein-hguyvv until merged); never committed here.
+# Company logos: identification only; sources, licences and status in kits/rtt-103/logos.json and reference/rights_ledger.md.
+e3db46119b52648c84eae5f6acd682bd7be855819818856e695592b20572eeca  assets/rtt-002/rtt_logo.png
+60a60cfd55864e76a5fec5c851ca9898363bac5027e081b9ce6c4a4325fd197a  assets/rtt-103/logos/amazon.svg
+34ec1619e4a62515d67c5240fe5762ef5a1838fe67d2fb1fb0b001099cebf1db  assets/rtt-103/logos/microsoft.svg
+a33a47a20c0ec6b0c13af43ae681bf73023e4a35f792cb055700e94d467f236d  assets/rtt-103/logos/alphabet.svg
+b536f39ac80d6b93477ce158e9e0f963504a407da8c35caf5ded3ac072b49176  assets/rtt-103/logos/meta.svg
+305d310fda8165fb38e24273c643f2c61107e2440e12abc3c209bd49c2deff15  assets/rtt-103/logos/oracle.svg
+7902655038ecf095e3df91423f83a45b1f3815345c4c88ed6a67227ef8563c54  assets/rtt-103/logos/alibaba.svg
+a0f0d2d0d2e259e646f3fb78ccec18148072de8482fddbb178bf0ebff164a1db  assets/rtt-103/logos/tencent.svg
+972cd6c39431968004073c73fbf618065cf9d8012f1d0b32e16471692a45f16f  assets/rtt-103/logos/coreweave.svg

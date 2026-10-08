@@ -255,7 +255,7 @@
   }
   function shareRace(race, cfg) {
     const S = Object.assign({ mode: 'none', handover_months: 12, include_flagged: false }, cfg.smoothing || {});
-    const SC = dayNum(race.sc_start), label = {};
+    const SC = race.sc_start ? dayNum(race.sc_start) : Infinity, label = {};   // IQ-18: a money race has no source hand-overs
     for (const e of race.entrants) label[e.id] = e.label;
     const evs = race.events.map(ev => Object.assign({}, ev, { values: Object.assign({}, ev.values), series_values: ev.values }));
     const windows = [];
@@ -314,8 +314,26 @@
     return Object.assign({}, race, { events: evs, crown, windows, smoothing: S });
   }
 
+  /* IQ-18 (RTT-103): a MONEY series (race.kind "money", scripts/rtt103_adapter.py) is drawn as the share kind is
+     (bars that start or stop fade in and out, board.fit), with whole US dollars instead of hundredths of a percent and
+     no smoothing. cfg.gaps {mode: "leave" | "hold"}: "leave" (the data as it is) - a company with no figure leaves the
+     board and comes back; "hold" (an option for Luke) - during a gap listed in race.gaps the bar stays on the board at
+     the length of its last figure, marked held (the player dims it and shows no number). A held length is never a
+     figure: it is excluded from the combined total (race events' `combined`, the data's sum of the bars). */
+  function holdGaps(race, cfg) {
+    if (race.kind !== 'money' || !cfg.gaps || cfg.gaps.mode !== 'hold') return race;
+    const evs = race.events.map(ev => Object.assign({}, ev, { values: Object.assign({}, ev.values), style: Object.assign({}, ev.style),
+                                                             prov: Object.assign({}, ev.prov), held: [] }));
+    for (const g of race.gaps || []) for (const ev of evs) if (ev.date >= g.from && ev.date <= g.to) {
+      if (g.id in ev.values) throw new Error('gap ' + g.id + ' ' + ev.date + ': the data has a figure');
+      ev.values[g.id] = g.last_value; ev.style[g.id] = 'official'; ev.prov[g.id] = 'o'; ev.held.push(g.id);
+    }
+    return Object.assign({}, race, { events: evs });
+  }
+
   function buildSeries(race, cfg) {
-    const SHARE = race.kind === 'share';
+    const SHARE = race.kind === 'share' || race.kind === 'money', MONEY = race.kind === 'money';
+    if (MONEY) race = holdGaps(race, cfg);
     if (SHARE) race = shareRace(race, cfg);
     const fps = cfg.fps, rows = cfg.rows, P = cfg.pacing;
     checkPacing(P);
@@ -335,7 +353,8 @@
       const order = SHARE ? ev.order : Object.keys(ev.values).sort((a, b) => (ev.values[b] - ev.values[a]) || (r[a] < r[b] ? -1 : r[a] > r[b] ? 1 : 0) || (launch[a] < launch[b] ? -1 : launch[a] > launch[b] ? 1 : 0));
       const plus = {}; for (const id of ev.plus) plus[id] = true;
       const mplus = {}; for (const m of ev.maker_plus || []) mplus[m] = true;
-      all.push({ ev, st: { order, totals: Object.assign({}, ev.values), style: Object.assign({}, ev.style), plus, status: Object.assign({}, ev.status || {}),
+      const held = {}; for (const id of ev.held || []) held[id] = true;            // IQ-18: hold option only
+      all.push({ ev, st: { order, totals: Object.assign({}, ev.values), style: Object.assign({}, ev.style), plus, status: Object.assign({}, ev.status || {}), held,
                            maker_totals: Object.assign({}, ev.maker_totals), maker_style: Object.assign({}, ev.maker_style), maker_plus: mplus } });
     });
     let first = all.findIndex(x => x.ev.date >= from);
@@ -513,6 +532,7 @@
     /* IQ-13 (RTT-001, share): the hand-over windows used, the "new source" markers and the dated notes */
     if (SHARE) {
       tl.share = true; tl.windows = race.windows; tl.smoothing = race.smoothing; tl.scStart = race.sc_start;
+      if (MONEY) { tl.allCombined = all.map(x => ({ date: x.ev.date, c: x.ev.combined })); tl.money = true; tl.gaps = race.gaps || []; tl.story = race.story || []; tl.steps = race.steps || {}; tl.notesData = race.notes || {}; }
       tl.crownAll = race.crown;
       const srcs = ev => ev.smooth ? [ev.smooth.from, ev.smooth.to] : String(ev.source_id || '').split('>').filter(Boolean);
       tl.markers = [];

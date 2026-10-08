@@ -1,0 +1,22 @@
+{
+ "extends": "config_rtt103_base.json",
+ "kit_version": "rtt103_r1_tencent_B",
+ "bar_tags": [
+  {
+   "id": "tencent",
+   "mode": "mark",
+   "mark": "*",
+   "text": "measured differently",
+   "foot": "Tencent: measured differently (additions, including some intangible assets)"
+  }
+ ],
+ "tag_foot": {
+  "x": 1880,
+  "y": 690,
+  "size": 28,
+  "align": "right"
+ },
+ "notes": [
+  "Tencent option B: a mark after its value and a footnote line; option A (base) is '· measured differently' after its value."
+ ]
+}

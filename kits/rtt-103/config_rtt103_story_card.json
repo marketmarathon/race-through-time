@@ -1,0 +1,86 @@
+{
+ "extends": "config_rtt103_base.json",
+ "kit_version": "rtt103_r1_story_card",
+ "story": {
+  "enabled": true,
+  "mode": "card",
+  "sec": 3.5,
+  "size": 30,
+  "marker_size": 30,
+  "card": {
+   "x": 1300,
+   "y": 420,
+   "w": 580,
+   "size": 30
+  },
+  "items": [
+   {
+    "at": "2023-03-31",
+    "when": "23 Jan 2023",
+    "who": "Microsoft and OpenAI",
+    "text": "“a multiyear, multibillion dollar investment”",
+    "short": "Microsoft–OpenAI: multibillion deal",
+    "tag": "commitment · not capital spending",
+    "colour": "#0F7FD6"
+   },
+   {
+    "at": "2024-09-30",
+    "when": "30 Jul 2024",
+    "who": "Microsoft",
+    "text": "“Cloud and AI related spend represents nearly all of total capital expenditures.”",
+    "short": "Microsoft: “nearly all” is cloud and AI",
+    "tag": "company statement",
+    "colour": "#0F7FD6"
+   },
+   {
+    "at": "2025-03-31",
+    "when": "21 Jan 2025",
+    "who": "Stargate (OpenAI, SoftBank, Oracle, MGX)",
+    "text": "“intends to invest $500 billion over the next four years”",
+    "short": "Stargate: $500bn over four years",
+    "tag": "commitment · not capital spending",
+    "colour": "#D2352B"
+   },
+   {
+    "at": "2025-03-31",
+    "delay": 3.8,
+    "when": "6 Feb 2025",
+    "who": "Amazon",
+    "text": "the “vast majority” of about $100 billion for AI (CEO Andy Jassy, as reported by TechCrunch)",
+    "short": "Amazon: “vast majority” for AI",
+    "tag": "company statement",
+    "colour": "#D9740A"
+   },
+   {
+    "at": "2025-09-30",
+    "when": "23 Sep 2025",
+    "who": "OpenAI and Oracle",
+    "text": "“exceeds $300 billion between the two companies over the next five years”",
+    "short": "Oracle–OpenAI: over $300bn, five years",
+    "tag": "commitment · not capital spending",
+    "colour": "#D2352B"
+   },
+   {
+    "at": "2026-03-31",
+    "when": "18 Mar 2026",
+    "who": "Tencent",
+    "text": "capital spending “primarily to support our AI efforts”",
+    "short": "Tencent: “primarily” for AI",
+    "tag": "company statement",
+    "colour": "#12A7B5"
+   },
+   {
+    "at": "2026-06-30",
+    "when": "29 Apr 2026",
+    "who": "Alphabet",
+    "text": "“the overwhelming majority of this spend in technical infrastructure to support the AI opportunities we see”",
+    "short": "Alphabet: “overwhelming majority” for AI",
+    "tag": "company statement",
+    "colour": "#2E9E4A"
+   }
+  ]
+ },
+ "notes": [
+  "Story moments shown as 'card' (option for Luke): seven of Claude's eight shortlisted moments in the race (DEC-322 company statements, OpenAI COMMITMENT moments never added together); the eighth, Alphabet's share sale (2 Jun 2026), does not fit before the race ends at 1.5 s per quarter and is proposed for the start of the 2026 plans step. Moments never overlap: one that falls while another is showing waits (each shows its own date)."
+ ]
+}

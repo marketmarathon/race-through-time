@@ -1,0 +1,216 @@
+{
+ "kit_version": "rtt103_round1_base",
+ "race_file": "../rtt-103/race_rtt103.json",
+ "out": "rtt103_clip.mp4",
+ "title": "The AI Spending Race: Big Tech's Capital Spending",
+ "subtitle": "",
+ "fps": 30,
+ "rows": 9,
+ "intro_sec": 0,
+ "outro_sec": 0,
+ "look": "navy",
+ "fonts": {
+  "family": "Archivo",
+  "source": "npm:@fontsource/archivo"
+ },
+ "overlays": [
+  {
+   "name": "logo",
+   "file": "rtt_logo.png",
+   "x": 1702,
+   "y": 12,
+   "w": 154,
+   "h": 154
+  }
+ ],
+ "overlay_gap": 12,
+ "sizes": {
+  "axis": 34,
+  "date": 34,
+  "footer": 26
+ },
+ "board": {
+  "bar_gap": 10,
+  "name_frac": 0.72,
+  "value_frac": 0.72,
+  "stripes": "screen",
+  "fit": {
+   "enabled": true,
+   "min_slots": 5,
+   "sec": 2
+  }
+ },
+ "board_top": 232,
+ "glide": {
+  "bar_sec": 0.35,
+  "rank_sec": 0.55,
+  "entry_sec": 0.1,
+  "bar_mode": "beat"
+ },
+ "pacing": {
+  "sec_per_event": 1.5,
+  "bounds": [
+   0.8,
+   1.4
+  ],
+  "mult": {
+   "rank_change": 1.4,
+   "visible_change": 1,
+   "quiet": 0.8
+  },
+  "settled_run_after": 3,
+  "lead_in_sec": 2,
+  "end_hold_sec": 3,
+  "judge_rows": 9,
+  "final_board_sec": 10
+ },
+ "time_label": {
+  "mode": "none",
+  "season_prefix": "",
+  "months": [
+   "January",
+   "February",
+   "March",
+   "April",
+   "May",
+   "June",
+   "July",
+   "August",
+   "September",
+   "October",
+   "November",
+   "December"
+  ],
+  "format": "ttm",
+  "x": 64,
+  "y": 124,
+  "align": "left",
+  "size": 34
+ },
+ "date_block": {
+  "enabled": true,
+  "mode": "beside",
+  "right": 1680,
+  "month_y": 60,
+  "month_size": 40,
+  "year_y": 160,
+  "year_size": 112,
+  "roll_sec": 0.5,
+  "label": "ttm",
+  "months_short": [
+   "Jan",
+   "Feb",
+   "Mar",
+   "Apr",
+   "May",
+   "Jun",
+   "Jul",
+   "Aug",
+   "Sep",
+   "Oct",
+   "Nov",
+   "Dec"
+  ]
+ },
+ "footer": "Race Through Time · Data: company filings (SEC, HKEX) and releases · US$ at Federal Reserve H.10 rates",
+ "valw": 260,
+ "barend": 1420,
+ "namemode": "bar",
+ "nameoverflow": true,
+ "valout": true,
+ "count": {
+  "enabled": true
+ },
+ "crown": {
+  "enabled": true,
+  "colour": "#F5C542"
+ },
+ "callout": {
+  "enabled": false
+ },
+ "record_hold": {
+  "enabled": false,
+  "sec": 2,
+  "types": [
+   "CROWN"
+  ]
+ },
+ "values": {
+  "money": {
+   "prefix": "$",
+   "suffix": "bn",
+   "decimals": 1
+  }
+ },
+ "axis_prefix": "$",
+ "axis_suffix": "bn",
+ "gaps": {
+  "mode": "leave"
+ },
+ "maker_order": [
+  "amazon",
+  "microsoft",
+  "alphabet",
+  "meta",
+  "oracle",
+  "alibaba",
+  "tencent",
+  "baidu",
+  "coreweave"
+ ],
+ "palette": [
+  "#D9740A",
+  "#0F7FD6",
+  "#2E9E4A",
+  "#7B4FE0",
+  "#D2352B",
+  "#A89030",
+  "#12A7B5",
+  "#C2407E",
+  "#8C8C9E"
+ ],
+ "pictures": {
+  "enabled": true,
+  "dir": "logos",
+  "files": {
+   "amazon": "amazon.svg",
+   "microsoft": "microsoft.svg",
+   "alphabet": "alphabet.svg",
+   "meta": "meta.svg",
+   "oracle": "oracle.svg",
+   "alibaba": "alibaba.svg",
+   "tencent": "tencent.svg",
+   "coreweave": "coreweave.svg"
+  },
+  "tile": true,
+  "tile_pad": 8,
+  "placeholder": false,
+  "height_frac": 0.62,
+  "aspect": 2.6,
+  "gap": 14,
+  "own": {
+   "baidu": {
+    "text": "Baidu",
+    "year": ""
+   }
+  }
+ },
+ "bar_tags": [
+  {
+   "id": "tencent",
+   "mode": "after",
+   "text": "measured differently"
+  }
+ ],
+ "combined": {
+  "enabled": true,
+  "mode": "number",
+  "x": 1380,
+  "y": 710,
+  "w": 500,
+  "h": 220
+ },
+ "notes": [
+  "IQ-18 round 1 base (DEC-342 onwards): the RTT-001 approved layout (board sized to the entries, date top right, logo tiles) on RTT-103's data; every option config extends this file."
+ ]
+}

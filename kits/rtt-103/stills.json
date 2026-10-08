@@ -1,0 +1,619 @@
+{
+ "stills": [
+  {
+   "name": "a01_values_A",
+   "config": "config_rtt103_base.json",
+   "at": "2026-06-30"
+  },
+  {
+   "name": "a01_values_B",
+   "config": "config_rtt103_values_B.json",
+   "at": "2026-06-30"
+  },
+  {
+   "name": "a01_values_C",
+   "config": "config_rtt103_values_C.json",
+   "at": "2026-06-30"
+  },
+  {
+   "name": "a02_board_2010",
+   "config": "config_rtt103_base.json",
+   "at": "2010-03-31"
+  },
+  {
+   "name": "a02_board_2016",
+   "config": "config_rtt103_base.json",
+   "at": "2016-12-31"
+  },
+  {
+   "name": "a03_date_A",
+   "config": "config_rtt103_base.json",
+   "at": "2020-09-30"
+  },
+  {
+   "name": "a03_date_B",
+   "config": "config_rtt103_date_B.json",
+   "at": "2020-09-30"
+  },
+  {
+   "name": "a03_date_C",
+   "config": "config_rtt103_date_C.json",
+   "at": "2020-09-30"
+  },
+  {
+   "name": "a04_title_B",
+   "config": "config_rtt103_title_B.json",
+   "at": "2020-09-30"
+  },
+  {
+   "name": "a04_title_C",
+   "config": "config_rtt103_title_C.json",
+   "at": "2020-09-30"
+  },
+  {
+   "name": "b01_names_2026",
+   "config": "config_rtt103_names_only.json",
+   "at": "2026-06-30"
+  },
+  {
+   "name": "b02_logos_2014",
+   "config": "config_rtt103_base.json",
+   "at": "2014-12-31"
+  },
+  {
+   "name": "b02_names_2014",
+   "config": "config_rtt103_names_only.json",
+   "at": "2014-12-31"
+  },
+  {
+   "name": "c01_meta_join_A",
+   "config": "config_rtt103_base.json",
+   "at": "2012-06-30",
+   "after_sec": 0.9
+  },
+  {
+   "name": "c01_meta_join_B",
+   "config": "config_rtt103_entry_B.json",
+   "at": "2012-06-30",
+   "after_sec": 0.9
+  },
+  {
+   "name": "c01_alibaba_join_A",
+   "config": "config_rtt103_base.json",
+   "at": "2014-03-31",
+   "after_sec": 0.9
+  },
+  {
+   "name": "c01_alibaba_join_B",
+   "config": "config_rtt103_entry_B.json",
+   "at": "2014-03-31",
+   "after_sec": 0.9
+  },
+  {
+   "name": "c01_coreweave_join_A",
+   "config": "config_rtt103_base.json",
+   "at": "2024-12-31",
+   "after_sec": 0.9
+  },
+  {
+   "name": "c01_coreweave_join_B",
+   "config": "config_rtt103_entry_B.json",
+   "at": "2024-12-31",
+   "after_sec": 0.9
+  },
+  {
+   "name": "c02_gap_A_hold",
+   "config": "config_rtt103_gap_hold.json",
+   "at": "2016-09-30"
+  },
+  {
+   "name": "c02_gap_B_leave",
+   "config": "config_rtt103_gap_leave.json",
+   "at": "2016-06-30",
+   "after_sec": 1.6
+  },
+  {
+   "name": "c03_return_A_hold",
+   "config": "config_rtt103_gap_hold.json",
+   "at": "2018-03-31",
+   "after_sec": 0.9
+  },
+  {
+   "name": "c03_return_B_leave",
+   "config": "config_rtt103_gap_leave.json",
+   "at": "2018-03-31",
+   "after_sec": 1.6
+  },
+  {
+   "name": "d01_tencent_B",
+   "config": "config_rtt103_tencent_B.json",
+   "at": "2026-06-30"
+  },
+  {
+   "name": "e01_ms_line",
+   "config": "config_rtt103_story_line.json",
+   "at": "2024-09-30",
+   "after_sec": 1.4
+  },
+  {
+   "name": "e02_stargate_line",
+   "config": "config_rtt103_story_line.json",
+   "at": "2025-03-31",
+   "after_sec": 1.4
+  },
+  {
+   "name": "e01_ms_card",
+   "config": "config_rtt103_story_card.json",
+   "at": "2024-09-30",
+   "after_sec": 1.4
+  },
+  {
+   "name": "e02_stargate_card",
+   "config": "config_rtt103_story_card.json",
+   "at": "2025-03-31",
+   "after_sec": 1.4
+  },
+  {
+   "name": "e01_ms_marker",
+   "config": "config_rtt103_story_marker.json",
+   "at": "2024-09-30",
+   "after_sec": 1.4
+  },
+  {
+   "name": "e02_stargate_marker",
+   "config": "config_rtt103_story_marker.json",
+   "at": "2025-03-31",
+   "after_sec": 1.4
+  },
+  {
+   "name": "f01_join_A_number",
+   "config": "config_rtt103_base.json",
+   "at": "2024-12-31",
+   "after_sec": 1.0
+  },
+  {
+   "name": "f02_gap_A_number",
+   "config": "config_rtt103_base.json",
+   "at": "2017-06-30"
+  },
+  {
+   "name": "f03_end_A_number",
+   "config": "config_rtt103_base.json",
+   "at": "2026-06-30"
+  },
+  {
+   "name": "f01_join_B_line",
+   "config": "config_rtt103_comb_line.json",
+   "at": "2024-12-31",
+   "after_sec": 1.0
+  },
+  {
+   "name": "f02_gap_B_line",
+   "config": "config_rtt103_comb_line.json",
+   "at": "2017-06-30"
+  },
+  {
+   "name": "f03_end_B_line",
+   "config": "config_rtt103_comb_line.json",
+   "at": "2026-06-30"
+  },
+  {
+   "name": "f01_join_C_bar",
+   "config": "config_rtt103_comb_bar.json",
+   "at": "2024-12-31",
+   "after_sec": 1.0
+  },
+  {
+   "name": "f02_gap_C_bar",
+   "config": "config_rtt103_comb_bar.json",
+   "at": "2017-06-30"
+  },
+  {
+   "name": "f03_end_C_bar",
+   "config": "config_rtt103_comb_bar.json",
+   "at": "2026-06-30"
+  },
+  {
+   "name": "g01_plans_A",
+   "sheet": "plans_A",
+   "config": "config_rtt103_base.json"
+  },
+  {
+   "name": "g01_plans_B",
+   "sheet": "plans_B",
+   "config": "config_rtt103_base.json"
+  },
+  {
+   "name": "h01_look_A_2028",
+   "sheet": "look_A",
+   "config": "config_rtt103_base.json",
+   "opts": {
+    "year": 2028
+   }
+  },
+  {
+   "name": "h01_look_A_2030",
+   "sheet": "look_A",
+   "config": "config_rtt103_base.json",
+   "opts": {
+    "year": 2030
+   }
+  },
+  {
+   "name": "h02_look_B",
+   "sheet": "look_B",
+   "config": "config_rtt103_base.json"
+  },
+  {
+   "name": "i01_peaks_A",
+   "sheet": "peaks_A",
+   "config": "config_rtt103_base.json"
+  },
+  {
+   "name": "i01_peaks_B",
+   "sheet": "peaks_B",
+   "config": "config_rtt103_base.json"
+  },
+  {
+   "name": "j01_icap_A_line",
+   "sheet": "icap_line",
+   "config": "config_rtt103_base.json",
+   "at": "2026-06-30"
+  },
+  {
+   "name": "j01_icap_B_bracket",
+   "sheet": "icap_bracket",
+   "config": "config_rtt103_base.json",
+   "at": "2026-06-30"
+  },
+  {
+   "name": "j01_icap_C_card",
+   "sheet": "icap_card",
+   "config": "config_rtt103_base.json"
+  },
+  {
+   "name": "l01_final_A",
+   "sheet": "final_A",
+   "config": "config_rtt103_base.json",
+   "at": "final"
+  },
+  {
+   "name": "l01_final_B",
+   "sheet": "final_B",
+   "config": "config_rtt103_base.json"
+  },
+  {
+   "name": "c01_board_values",
+   "compose": {
+    "title": "c01 · a. All nine companies, value labels (12 months to June 2026) and the board early on",
+    "cols": 2,
+    "items": [
+     {
+      "still": "a01_values_A",
+      "caption": "A · \"$169.0bn\" (one decimal) — recommended"
+     },
+     {
+      "still": "a01_values_B",
+      "caption": "B · \"$169bn\" (whole billions from $10bn)"
+     },
+     {
+      "still": "a01_values_C",
+      "caption": "C · \"US$169.0bn\""
+     },
+     {
+      "still": "a02_board_2010",
+      "caption": "Board sized to the entries: March 2010, five companies"
+     }
+    ]
+   }
+  },
+  {
+   "name": "c02_date_title",
+   "compose": {
+    "title": "c02 · a. Date line and title (12 months to September 2020)",
+    "cols": 2,
+    "items": [
+     {
+      "still": "a03_date_A",
+      "caption": "Date A · \"12 months to September\" over the year — recommended"
+     },
+     {
+      "still": "a03_date_B",
+      "caption": "Date B · \"Q3\" over the year"
+     },
+     {
+      "still": "a03_date_C",
+      "caption": "Date C · small line under the title, no big date"
+     },
+     {
+      "still": "a04_title_B",
+      "caption": "Title B · \"Big Tech's Capital Spending, 2010–2026\""
+     },
+     {
+      "still": "a04_title_C",
+      "caption": "Title C · \"The AI Spending Race (capital spending, last 12 months)\""
+     },
+     {
+      "still": "a03_date_A",
+      "caption": "Title A (as A above) · \"The AI Spending Race: Big Tech's Capital Spending\" — recommended"
+     }
+    ]
+   }
+  },
+  {
+   "name": "c03_identity",
+   "compose": {
+    "title": "c03 · b. A logo per bar or the name only",
+    "cols": 2,
+    "items": [
+     {
+      "still": "a01_values_A",
+      "caption": "A · logo tiles, June 2026 (Baidu: our own tile, no Commons logo) — recommended"
+     },
+     {
+      "still": "b01_names_2026",
+      "caption": "B · name only, June 2026"
+     },
+     {
+      "still": "b02_logos_2014",
+      "caption": "A · logo tiles, December 2014"
+     },
+     {
+      "still": "b02_names_2014",
+      "caption": "B · name only, December 2014"
+     }
+    ]
+   }
+  },
+  {
+   "name": "c04_late_entrants",
+   "compose": {
+    "title": "c04 · c. Late entrants join at their first figure (DEC-295)",
+    "cols": 2,
+    "items": [
+     {
+      "still": "c01_meta_join_A",
+      "caption": "A · Meta, June 2012: fades in at its value"
+     },
+     {
+      "still": "c01_meta_join_B",
+      "caption": "B · plus \"· joins the race\" for 3 s"
+     },
+     {
+      "still": "c01_alibaba_join_A",
+      "caption": "A · Alibaba, March 2014"
+     },
+     {
+      "still": "c01_alibaba_join_B",
+      "caption": "B · Alibaba, March 2014"
+     },
+     {
+      "still": "c01_coreweave_join_A",
+      "caption": "A · CoreWeave, December 2024"
+     },
+     {
+      "still": "c01_coreweave_join_B",
+      "caption": "B · CoreWeave, December 2024"
+     }
+    ]
+   }
+  },
+  {
+   "name": "c05_alibaba_gap",
+   "compose": {
+    "title": "c05 · c. Alibaba's seven-point gap (mid-2016 to end-2017)",
+    "cols": 2,
+    "items": [
+     {
+      "still": "c02_gap_A_hold",
+      "caption": "A · held, dimmed, no number, short note (Sep 2016)"
+     },
+     {
+      "still": "c02_gap_B_leave",
+      "caption": "B · leaves the board, one line under the title (Jun 2016) — recommended"
+     },
+     {
+      "still": "c03_return_A_hold",
+      "caption": "A · back with a figure (Mar 2018)"
+     },
+     {
+      "still": "c03_return_B_leave",
+      "caption": "B · returns, one line under the title (Mar 2018)"
+     }
+    ]
+   }
+  },
+  {
+   "name": "c06_tencent",
+   "compose": {
+    "title": "c06 · d. Tencent \"measured differently\" (DEC-292); its 2026 note is in c09",
+    "cols": 2,
+    "items": [
+     {
+      "still": "a01_values_A",
+      "caption": "A · \"· measured differently\" after its value — recommended"
+     },
+     {
+      "still": "d01_tencent_B",
+      "caption": "B · \"*\" after its value and a footnote"
+     }
+    ]
+   }
+  },
+  {
+   "name": "c07_story_moments",
+   "compose": {
+    "title": "c07 · e. How a dated story moment appears (Microsoft, Jul 2024; Stargate, Jan 2025)",
+    "cols": 2,
+    "items": [
+     {
+      "still": "e01_ms_line",
+      "caption": "A · one line under the title"
+     },
+     {
+      "still": "e02_stargate_line",
+      "caption": "A · one line under the title"
+     },
+     {
+      "still": "e01_ms_card",
+      "caption": "B · a small card, right — recommended"
+     },
+     {
+      "still": "e02_stargate_card",
+      "caption": "B · a small card, right"
+     },
+     {
+      "still": "e01_ms_marker",
+      "caption": "C · a marker under the date"
+     },
+     {
+      "still": "e02_stargate_marker",
+      "caption": "C · a marker under the date"
+     }
+    ]
+   }
+  },
+  {
+   "name": "c08_combined",
+   "compose": {
+    "title": "c08 · f. \"Combined capital spending\" bottom right: CoreWeave joins (Dec 2024), Alibaba gap (Jun 2017), end (Jun 2026)",
+    "cols": 3,
+    "items": [
+     {
+      "still": "f01_join_A_number",
+      "caption": "A · number"
+     },
+     {
+      "still": "f01_join_B_line",
+      "caption": "B · line that grows"
+     },
+     {
+      "still": "f01_join_C_bar",
+      "caption": "C · single bar by company"
+     },
+     {
+      "still": "f02_gap_A_number",
+      "caption": "A · during the gap"
+     },
+     {
+      "still": "f02_gap_B_line",
+      "caption": "B · during the gap"
+     },
+     {
+      "still": "f02_gap_C_bar",
+      "caption": "C · during the gap"
+     },
+     {
+      "still": "f03_end_A_number",
+      "caption": "A · June 2026"
+     },
+     {
+      "still": "f03_end_B_line",
+      "caption": "B · June 2026 — recommended"
+     },
+     {
+      "still": "f03_end_C_bar",
+      "caption": "C · June 2026"
+     }
+    ]
+   }
+  },
+  {
+   "name": "c09_plans_2026",
+   "compose": {
+    "title": "c09 · g. The \"2026 plans\" step (and Tencent's 2026 note, d)",
+    "cols": 2,
+    "items": [
+     {
+      "still": "g01_plans_A",
+      "caption": "A · ranges as ranges, period under each bar, Tencent note in line — recommended"
+     },
+     {
+      "still": "g01_plans_B",
+      "caption": "B · as A plus the last 12 months as an outline; Tencent note as a footnote"
+     }
+    ]
+   }
+  },
+  {
+   "name": "c10_lookahead",
+   "compose": {
+    "title": "c10 · h. The look-ahead 2027–2030 (Race Through Time estimates)",
+    "cols": 2,
+    "items": [
+     {
+      "still": "h01_look_A_2028",
+      "caption": "A · estimate board, 2028"
+     },
+     {
+      "still": "h01_look_A_2030",
+      "caption": "A · estimate board, 2030 (least reliable)"
+     },
+     {
+      "still": "h02_look_B",
+      "caption": "B · combined total as a line, estimates as a band — recommended as the closing view"
+     },
+     {
+      "still": "g01_plans_A",
+      "caption": "(for comparison: the 2026 plans step)"
+     }
+    ]
+   }
+  },
+  {
+   "name": "c11_peaks",
+   "compose": {
+    "title": "c11 · i. Forecasters disagree on the peak (DEC-328)",
+    "cols": 2,
+    "items": [
+     {
+      "still": "i01_peaks_A",
+      "caption": "A · three cards"
+     },
+     {
+      "still": "i01_peaks_B",
+      "caption": "B · one timeline — recommended"
+     }
+    ]
+   }
+  },
+  {
+   "name": "c12_icapital",
+   "compose": {
+    "title": "c12 · j. iCapital's \"an estimated 70–75%\" (once, labelled as an estimate)",
+    "cols": 2,
+    "items": [
+     {
+      "still": "j01_icap_A_line",
+      "caption": "A · one line under the title on the June 2026 board"
+     },
+     {
+      "still": "j01_icap_B_bracket",
+      "caption": "B · a bracket beside the four US bars — recommended"
+     },
+     {
+      "still": "j01_icap_C_card",
+      "caption": "C · a card on the 2026 plans step"
+     }
+    ]
+   }
+  },
+  {
+   "name": "c13_final_table",
+   "compose": {
+    "title": "c13 · l. The final table (10 s hold) and draft footer credits",
+    "cols": 2,
+    "items": [
+     {
+      "still": "l01_final_A",
+      "caption": "A · June 2026 actuals with a one-line summary — recommended"
+     },
+     {
+      "still": "l01_final_B",
+      "caption": "B · the 2030 look-ahead board"
+     }
+    ]
+   }
+  }
+ ]
+}

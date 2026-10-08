@@ -1,0 +1,15 @@
+{
+ "extends": "config_rtt103_base.json",
+ "kit_version": "rtt103_r1_values_C",
+ "values": {
+  "money": {
+   "prefix": "US$",
+   "suffix": "bn",
+   "decimals": 1
+  }
+ },
+ "axis_prefix": "US$",
+ "notes": [
+  "Value labels option C: 'US$169.0bn'."
+ ]
+}

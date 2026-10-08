@@ -1,0 +1,24 @@
+{
+ "extends": "config_rtt103_base.json",
+ "kit_version": "rtt103_r1_gap_leave",
+ "story": {
+  "enabled": true,
+  "mode": "line",
+  "sec": 4.0,
+  "items": [
+   {
+    "at": "2016-06-30",
+    "plain": true,
+    "text": "Alibaba leaves the board: its figures for mid-2016 to 2017 are not comparable"
+   },
+   {
+    "at": "2018-03-31",
+    "plain": true,
+    "text": "Alibaba is back: comparable figures again from 2018"
+   }
+  ]
+ },
+ "notes": [
+  "Alibaba gap option B: the bar leaves and returns (the data as it is), with one plain line under the title each time."
+ ]
+}

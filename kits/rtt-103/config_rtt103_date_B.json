@@ -1,0 +1,10 @@
+{
+ "extends": "config_rtt103_base.json",
+ "kit_version": "rtt103_r1_date_B",
+ "date_block": {
+  "label": "quarter"
+ },
+ "notes": [
+  "Date option B: 'Q2' over the year (the bars are still the last 12 months)."
+ ]
+}

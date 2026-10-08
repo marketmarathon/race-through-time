@@ -1,0 +1,12 @@
+{
+ "extends": "config_rtt103_base.json",
+ "kit_version": "rtt103_r1_comb_line",
+ "combined": {
+  "mode": "line",
+  "h": 280,
+  "y": 660
+ },
+ "notes": [
+  "Running total option B: a small line that grows."
+ ]
+}
