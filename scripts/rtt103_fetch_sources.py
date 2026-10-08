@@ -18,6 +18,7 @@ Usage: rtt103_fetch_sources.py <private_repo_dir> <out_dir>
 Standard library only (plus the pdftotext command).
 """
 import csv
+import gzip
 import hashlib
 import io
 import json
@@ -89,7 +90,10 @@ def fetch(url, tries=2):
             req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "application/pdf,text/html,image/*;q=0.9,*/*;q=0.8",
                                                        "Accept-Language": "en-GB,en;q=0.9,zh;q=0.6"})
             with urllib.request.urlopen(req, timeout=40) as r:
-                return r.status, r.headers.get("Content-Type", ""), r.read()
+                body = r.read()
+                if body[:2] == b"\x1f\x8b":  # gzip-encoded body (Internet Archive copies, IQ-16d)
+                    body = gzip.decompress(body)
+                return r.status, r.headers.get("Content-Type", ""), body
         except urllib.error.HTTPError as e:
             last = f"HTTP {e.code}"
             if e.code in (403, 404, 410):
