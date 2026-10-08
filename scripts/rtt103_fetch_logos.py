@@ -7,8 +7,7 @@ cloud container (8 Oct 2026, as for RTT-001). Standard library only.
 
 For every entry: the first `candidates` title that exists on Commons, else the first search hit (namespace File)
 whose title contains "logo". IQ-18b: an entry may name another wiki (`site`, e.g. en.wikipedia.org for its local
-non-free files) and a `page` whose images are searched instead (its lead image first, then any image whose title
-contains "logo"), skipping titles that contain any of `exclude` (e.g. "Cloud": never the Baidu Cloud product logo). The API gives the file's URL, SHA-1, licence, author and restrictions; the file is kept
+non-free files) and a `page` whose images are searched after the candidates (only titles containing "logo"), skipping titles that contain any of `exclude` (e.g. "Cloud": never the Baidu Cloud product logo). The API gives the file's URL, SHA-1, licence, author and restrictions; the file is kept
 only if the downloaded SHA-1 equals the API's. Writes OUT_DIR/<id>.<ext> and OUT_DIR/manifest.csv (id, file, page,
 title, licence, author, restrictions, sha1, sha256, bytes, width, height). Prints only titles, names, sizes and
 hashes. Exit 1 if a required entry is missing or differs (entries with "optional": true may be missing).
@@ -67,7 +66,7 @@ def main():
             imgs = [i['title'] for i in pg.get('images', [])]
             lead = ('File:' + pg['pageimage'].replace('_', ' ')) if pg.get('pageimage') else None
             print('%s: page %s on %s: lead image %s; images %s' % (L['id'], L['page'], site, lead, ' | '.join(imgs)))
-            cands += ([lead] if lead else []) + [t for t in imgs if 'logo' in t.lower() and t != lead]
+            cands += [t for t in [lead] + imgs if t and 'logo' in t.lower()]   # IQ-18b run 3: logo titles only (run 2 took a lead photo)
         cands = [t for t in cands if not bad_t(t)]
         for t in cands:
             pg = api(site, action='query', titles=t, prop='imageinfo', iiprop='url|sha1|size|extmetadata')['query']['pages'][0]

@@ -11,6 +11,7 @@
 #   - deletes everything it downloaded from the runner at the end.
 # Trigger: a push that changes this file or the fetch script on the IQ-18 branch, or by hand.
 # Run 2 (IQ-18b): Baidu the company's logo from its English Wikipedia page (Luke's answer 5 B; never the Baidu Cloud logo).
+# Run 3: run 2 took the page's lead photo (a building, not drawn); now File:Baidu.svg, logo titles only.
 name: rtt103-assets
 
 on:

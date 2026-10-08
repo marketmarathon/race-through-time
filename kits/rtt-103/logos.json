@@ -92,7 +92,9 @@
    "id": "baidu_company",
    "site": "en.wikipedia.org",
    "page": "Baidu",
-   "candidates": [],
+   "candidates": [
+    "File:Baidu.svg"
+   ],
    "exclude": [
     "Cloud",
     "Yi OS",
