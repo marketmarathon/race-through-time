@@ -315,7 +315,7 @@
     "items": [
      {
       "still": "a03_date_A",
-      "caption": "Date A · \"12 months to September\" over the year — recommended"
+      "caption": "Date A · \"12 months to Sep\" over the year — recommended"
      },
      {
       "still": "a03_date_B",
@@ -331,7 +331,7 @@
      },
      {
       "still": "a04_title_C",
-      "caption": "Title C · \"The AI Spending Race (capital spending, last 12 months)\""
+      "caption": "Title C · \"The AI Spending Race (capital spending, last 12 months)\" (too long beside the date)"
      },
      {
       "still": "a03_date_A",
