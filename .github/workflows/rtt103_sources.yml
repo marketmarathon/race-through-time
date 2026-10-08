@@ -8,6 +8,7 @@
 #     never printing it;
 #   - uploads NO workflow artifact, uses NO cache and prints only source IDs, sizes and hashes;
 #   - deletes everything it downloaded from the runner at the end.
+# IQ-16c (8 Oct 2026): FETCH_SET=part05 fetches the URLs of ChatGPT's forecast and OpenAI files instead.
 # Trigger: a push that changes this file or the fetch script on the IQ-16 branch, or by hand. Fail-fast per host and a
 # 75-minute fetch budget, so whatever was fetched is always committed; a newer run cancels an older one.
 name: rtt103-sources
@@ -43,6 +44,7 @@ jobs:
           GH_TOKEN: ${{ secrets.RTT_PRIVATE_TOKEN }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
           BUDGET_MINUTES: "75"
+          FETCH_SET: part05  # IQ-16c: ChatGPT's forecast and OpenAI files (private); empty = the IQ-16 catalogues
         run: |
           set -euo pipefail
           if [ -z "$GH_TOKEN" ]; then echo "::error::secret RTT_PRIVATE_TOKEN is not available to this run"; exit 1; fi
@@ -59,7 +61,7 @@ jobs:
           git config user.email "rtt103-sources@users.noreply.github.com"
           git add "$OUT"
           if git diff --cached --quiet; then echo "nothing new to commit"; exit 0; fi
-          git commit -q -m "RTT-103: source documents fetched on a GitHub runner (IQ-16; run ${RUN_URL})"
+          git commit -q -m "RTT-103: source documents fetched on a GitHub runner (IQ-16, set ${FETCH_SET:-catalogues}; run ${RUN_URL})"
           git push -q origin "HEAD:$PRIVATE_BRANCH"
           echo "committed $(git rev-parse --short HEAD) to ${PRIVATE_REPO} ${PRIVATE_BRANCH} under ${OUT}"
 

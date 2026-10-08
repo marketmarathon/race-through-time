@@ -8,6 +8,9 @@ manifest records the URL, the catalogue source_ids that cite it, HTTP status, by
 PDFs are converted to layout text with pdftotext and only the text is kept (the PDF's own SHA-256 is recorded);
 HTML and CSV are kept as downloaded. Output goes to the private repo only. The log prints IDs, sizes and hashes only.
 
+IQ-16c: with FETCH_SET=part05 the URL lists are instead ChatGPT's forecast and OpenAI files (part05a-c, private); each URL
+is identified as P05A-<row>, P05B-<row> or P05C-<row> (row number in the private file), and the FX sources are skipped.
+
 Usage: rtt103_fetch_sources.py <private_repo_dir> <out_dir>
 Standard library only (plus the pdftotext command).
 """
@@ -31,7 +34,19 @@ EXTRA = [  # FX (brief: Federal Reserve H.10, FRED DEXCHUS as distributor) - not
     ("FX-H10-HIST-CHINA", "https://www.federalreserve.gov/releases/h10/hist/dat00_ch.htm"),
     ("FX-FRED-DEXCHUS-PAGE", "https://fred.stlouisfed.org/series/DEXCHUS"),
 ]
+PART05 = [("P05A", "part05a_forecasts_part1_forward_capex.csv"), ("P05B", "part05b_forecasts_part2_openai_commitments.csv"),
+          ("P05C", "part05c_forecasts_part3_conflicts_and_warnings.csv")]
 SKIP_HOSTS = {"www.sec.gov"}  # fetched directly from the container
+
+
+def part05_urls(src):
+    """(source_id, url) for every source_url / related_source_url in ChatGPT's part05 files (IQ-16c)."""
+    for prefix, name in PART05:
+        rows = csv.DictReader(io.StringIO(open(os.path.join(src, name), encoding="utf-8-sig").read()))
+        for n, row in enumerate(rows, 1):
+            for col in ("source_url", "related_source_url"):
+                for u in re.findall(r"https?://[^\s;\"]+", row.get(col) or ""):
+                    yield f"{prefix}-{n:03d}", u
 
 
 def catalogue_rows(path):
@@ -76,13 +91,17 @@ def main():
     src = os.path.join(priv, "research", "rtt-103")
     os.makedirs(os.path.join(out, "docs"), exist_ok=True)
     urls = {}  # url -> list of source_ids
-    for name in INPUTS:
+    part05 = os.environ.get("FETCH_SET") == "part05"
+    for sid, u in (part05_urls(src) if part05 else []):
+        if urllib.parse.urlparse(u).hostname not in SKIP_HOSTS:
+            urls.setdefault(u, []).append(sid)
+    for name in ([] if part05 else INPUTS):
         for row in catalogue_rows(os.path.join(src, name)):
             for u in re.findall(r"https?://[^\s;\"]+", row.get("url", "")):
                 if urllib.parse.urlparse(u).hostname in SKIP_HOSTS:
                     continue
                 urls.setdefault(u, []).append(row["source_id"])
-    for sid, u in EXTRA:
+    for sid, u in ([] if part05 else EXTRA):
         urls.setdefault(u, []).append(sid)
     print(f"{len(urls)} URLs to fetch")
     manifest, last_host_time, host_fails = [], {}, {}
