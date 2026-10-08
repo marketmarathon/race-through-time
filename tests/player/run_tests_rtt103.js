@@ -165,7 +165,7 @@ async function runCase(name) {
     for (let i = 1; i < rows.length; i++) if (BigInt(fig[rows[i]]) > BigInt(fig[rows[i - 1]])) add(d + ': ' + rows[i] + ' below ' + rows[i - 1] + ' with a larger figure');
     /* 4. combined */
     if (S.C) { if (String(S.C.value) !== L[q] || !S.C.exact) add(d + ': combined ' + S.C.value + ', L_aggregate_capex.csv ' + L[q]);
-      const lab = S.L.find(l => l.kind === 'comb_value'); if (!lab || lab.text !== moneyText(L[q])) add(d + ': combined label "' + (lab && lab.text) + '", want ' + moneyText(L[q]));
+      const lab = S.L.find(l => l.kind === 'comb_value'); if (!lab || lab.text !== moneyText(L[q], M)) add(d + ': combined label "' + (lab && lab.text) + '", want ' + moneyText(L[q], M));
       prevComb = { a: +L[q], b: k + 1 < info.dates.length ? +L[qOf(info.dates[k + 1])] : +L[q] }; }
     /* 5. date */
     if (cfg.date_block && cfg.date_block.enabled !== false) {
