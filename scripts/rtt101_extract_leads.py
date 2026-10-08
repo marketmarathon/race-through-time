@@ -58,6 +58,8 @@ for fn, sec in FILES:
             if "soccerbase" in (r.get("source_url") or "").lower() or (r.get("publisher") or "").lower().startswith("soccerbase"):
                 r["grade"] = "C"  # specialist database: a pointer (brief section 7)
         if sec == "S":
+            if not r.get("grade") and r.get("grade (A/B/C)"):
+                r = dict(r, grade=r["grade (A/B/C)"])  # list B files label the column "grade (A/B/C)"
             if (r.get("fee_as_reported") or "").strip().upper() in ("", "NOT FOUND"):
                 continue  # deal not found: nothing to check
             _n = _seq.setdefault(r["deal_id"], 0) + 1
