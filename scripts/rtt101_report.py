@@ -351,7 +351,7 @@ if BASE:
          "figure next to the player's name, and both clubs named on the page.",
          f"- **VERIFIED:** {v1} of the 211 deals now have a fee confirmed at source ({vb} by a club, league or press source; the rest by a Soccerbase row), "
          f"up from {v0} before this round.",
-         f"- **Changed:** {len(fees)} fees changed (£{up / 1e6:.1f}m up, £{down / 1e6:.1f}m down; net £{(up - down) / 1e6:+.1f}m) and "
+         f"- **Changed:** {len(fees)} fees changed (£{up / 1e6:.1f}m up, £{down / 1e6:.1f}m down; net {m(up - down)}) and "
          f"{sum(1 for c in chg if c[0]['date'] != c[1]['date'])} completion dates moved to the date a grade B report gives.",
          "- **Deal structures** (`source/deal_structure.csv`, one row per transfer with its source, quote and rule): a combined fee is booked once on one transfer "
          "of the pair and the partner counts £0 (no split invented); a part-exchange counts a player valuation on both sides only where a source states it, "
@@ -361,7 +361,32 @@ if BASE:
         why = DSR[t["transfer_id"]]["rule"] if t["transfer_id"] in DSR else (
             f"higher grade or earlier report ({t['grade']}, {urllib.parse.urlparse(SRC_URL.get(t['canonical_source_id'], '')).netloc})" if abs(f1 - f0) >= 1 else "")
         R.append(f"| {b['deal_id']} | {t['player']} | {clubs.get(t['from_club'], t['from_club'])} → {clubs.get(t['to_club'], t['to_club'])} | "
-                 f"{b['date']}{' → ' + t['date'] if b['date'] != t['date'] else ''} | {m(f0)} | {m(f1)} | {why[:120]} |")
+                 f"{b['date']}{' → ' + t['date'] if b['date'] != t['date'] else ''} | £{f0:,.0f} | £{f1:,.0f} | {why[:120]} |")
+    # smaller same-grade disagreements (below the 10% and £1m threshold of the conflict list): result under the rule (DEC-277)
+    CF = {c["transfer_id"]: c for c in C}
+    small = []
+
+    def nodate(d):
+        return "no date" if d == "9999" else d
+
+    for b in LA:
+        t = TI.get(b["transfer_id"])
+        if not t or not t["fee_gbp"] or t["status"] != "VERIFIED" or t["transfer_id"] in DSR:
+            continue  # deal-structure rows are explained in the table above
+        can = next((e for e in EV[t["transfer_id"]] if e["canonical"] == "yes"), None)
+        rv = {}
+        for e in EV[t["transfer_id"]]:
+            if (e["status"] == "VERIFIED" and e["grade"] == t["grade"] and e["gbp"] and abs(float(e["gbp"]) - float(t["fee_gbp"])) >= 1):
+                k = round(float(e["gbp"]))
+                rv[k] = min(rv.get(k, "9999"), e["published"] or "9999")
+        if rv:
+            small.append((b, t, sorted(rv.items()), (can or {}).get("published") or ""))
+    R += [f"\n**Same-grade disagreements within list A** ({len(small)} deals; all below the 10% and £1m threshold of Luke's conflict list, so the rule settles "
+          "them: best grade, then the earliest report, DEC-277; a report with no stated date ranks after a dated one):\n",
+          "| Deal | Player | Fee used (report date) | Other confirmed figure(s), same grade (report date) |", "|---|---|---|---|"]
+    for b, t, rv, pub in small:
+        R.append(f"| {b['deal_id']} | {t['player']} | £{float(t['fee_gbp']):,.0f} ({t['grade']}, {pub or 'no date'}) | "
+                 f"{', '.join(f'£{x:,.0f} ({nodate(d)})' for x, d in rv)} |")
     # window totals 1992-97
     WB = {w["window"]: w for w in rd("window_totals_before_source_round1.csv", os.path.join(D, "source"))}
     R += ["\n**League-wide spending by window, 1992–97** (before = commit 111a018; there are no published window totals for these years, "
@@ -387,6 +412,13 @@ if BASE:
              + (" (" + "; ".join(f"{mo[:7]}: in {', '.join(NAME.get(c, c) for c in sorted(set(NOW[mo]) - set(TB[mo])))}, out "
                                  f"{', '.join(NAME.get(c, c) for c in sorted(set(TB[mo]) - set(NOW[mo])))}" for mo in set_ch[:10]) + (" …" if len(set_ch) > 10 else "") + ")" if set_ch else "")
              + f"; the order within the top 12 changes at {len(ord_ch)} month ends.")
+    R += ["\n**Questions for Luke on list A (each with Claude's recommendation)**\n",
+          "1. **Combined fees.** One payment for two players (Charles and Tommy Johnson £2.9m; McKee and Whitworth £530,000; Billington and McKeever £500,000) "
+          "is booked once, on one transfer of the pair, and the partner counts £0. Each club's total is exact and no split is invented. *Recommendation:* keep it.",
+          "2. **Parker and Carr (Villa ↔ Leicester, Feb 1995).** The only source values \"the deal\" at £550,000 without saying how much was cash. We count £550,000 "
+          "for Parker and £0 for Carr. *Recommendation:* keep it, and ask the next research round for the cash figure.",
+          "3. **Andy Cole (Feb 1995).** A grade B source values Keith Gillespie at £1m in the deal, so under DEC-237 (d) Cole counts £7m (£6m cash plus Gillespie) and "
+          "Gillespie £1m; Manchester United's net is still the £6m cash. *Recommendation:* keep it (it follows the rule Luke approved)."]
     with open(OUT, "a", encoding="utf-8") as f:
         f.write("\n".join(R) + "\n")
     print("section 11:", v0, "->", v1, "VERIFIED;", len(fees), "fees changed;", len(lead_ch), "leader changes")

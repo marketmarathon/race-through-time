@@ -378,6 +378,7 @@ for r in lead_rows:
                                   "research lead (private ChatGPT files; not in the Wikipedia lists)"), "parent_transfer_id": "", "_ev": []}
             group_new[gk] = best
             transfers.append(best)
+            by_tid[best["transfer_id"]] = best  # a source-round row may name a transfer the gap list created earlier in this loop
             for tok in set(pname(r["player"]).split(" ")):
                 idx[tok].append(best)
     if any(e["url"] == r["url"] and e["fee_text"] == r["fee_as_reported"] for e in best["_ev"]):
@@ -538,7 +539,12 @@ for t in transfers:
             e["note"] = ((e.get("note") or "") + "; " if e.get("note") else "") + \
                 f"seen at its source, but a grade {e['grade']} source other than Soccerbase does not confirm a fee (DEC-274)"
         if ck:
-            e["quote"], e["retrieved"] = ck["quote"], ck["retrieved"]
+            # keep a research lead's own sentence from that page when it names the player (the runner's snippet can open on a
+            # neighbouring deal in a list); otherwise the runner's snippet is the quote
+            sn_ = pname(t["player"]).split(" ")[-1] if t["player"] else ""
+            if not (e["origin"] == "research_lead" and sn_ and sn_ in L.norm(e.get("quote") or "")):
+                e["quote"] = ck["quote"]
+            e["retrieved"] = ck["retrieved"]
         e["total_incl_addons"] = bool(TOTAL_RX.search(e["fee_text"] or "")) and "guaranteed_part" not in p["qualifiers"]
         if re.search(r"sell-on|sell on", e["fee_text"] or "", re.I):
             e["total_incl_addons"] = True  # a sell-on payment to a former club is not this deal's fee (DEC-238 handles it)

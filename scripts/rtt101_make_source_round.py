@@ -13,11 +13,17 @@ A = {r["club_id"]: [r["display_name"]] + [x for x in r["other_names"].split("|")
      for r in csv.DictReader(open("data/rtt-101/source/club_aliases.csv", encoding="utf-8"))}
 
 
+GENERIC = {"united", "city", "town", "rovers", "athletic", "wanderers", "albion", "real", "sporting", "club", "football", "county", "fc", "afc",
+           "the", "de", "sc", "bk", "if", "fk", "ac", "cf", "cd", "sv", "vfb", "vfl", "kv"}
+
+
 def names(c):
+    """The club as a page may name it: our aliases for PL clubs; for others the full name plus each distinctive word of four or more
+    letters (AC Milan -> Milan, Red Star Belgrade -> Belgrade/Star, FC Sion -> Sion), so a short form on the page still counts."""
     if c in A:
         return A[c]
-    first = re.split(r"[ .]", c)[0]
-    return [c] + ([first] if len(first) > 3 else [])
+    words = [w for w in re.split(r"[ .]", c) if len(w) >= 4 and w.lower() not in GENERIC]
+    return [c] + [w for w in words if w != c]
 
 
 def near_word(player, quote):
