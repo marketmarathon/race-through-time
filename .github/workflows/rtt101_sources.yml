@@ -1,0 +1,32 @@
+# Race Through Time - RTT-101 (IQ-15): fetch reference data and check cited sources that the Claude Code cloud
+# container cannot reach (ONS, Bank of England, ECB, press sites). Renders nothing.
+# This repository is PUBLIC (DEC-006, DEC-061): no secret is used, NO workflow artifact is uploaded, NO cache;
+# the log prints only the fetched reference CSVs (open data / owner-accepted, DEC-239) and short excerpts.
+# Never fetches Transfermarkt (DEC-236).
+# Trigger: a push that changes this file, the script or the job file on the IQ-15 branch, or by hand.
+name: rtt101-sources
+
+on:
+  push:
+    branches: [claude/nice-davinci-guln5e]
+    paths: [.github/workflows/rtt101_sources.yml, scripts/rtt101_runner.py, data/rtt-101/runner_job.json, data/rtt-101/runner_job_b.json]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  fetch:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 340
+    strategy:
+      fail-fast: false
+      matrix:
+        jobfile: [data/rtt-101/runner_job.json, data/rtt-101/runner_job_b.json]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Run the job file
+        run: |
+          if [ -f "${{ matrix.jobfile }}" ]; then python3 scripts/rtt101_runner.py "${{ matrix.jobfile }}"; else echo "no job file"; fi

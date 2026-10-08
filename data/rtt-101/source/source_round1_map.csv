@@ -1,0 +1,554 @@
+deal_id,list,season,approx_date,player,from_club,to_club,transfer_id
+A0001,A,1992-93,1992-07-01,Darren Anderton,Portsmouth,Tottenham Hotspur,T560d831ff8
+A0002,A,1992-93,1992-07-01,Gary Lineker,Tottenham Hotspur,Nagoya Grampus 8,T74cde4065a
+A0003,A,1992-93,1992-07-01,Geraint Williams,Derby County,Ipswich Town,T2ca4dc7670
+A0004,A,1992-93,1992-07-01,Mal Donaghy,Manchester United,Chelsea,T3e5c18bef0
+A0005,A,1992-93,1992-07-01,Paul Gascoigne,Tottenham Hotspur,Lazio,Tf5a46d2a74
+A0006,A,1992-93,1992-07-01,Scott Sellars,Blackburn Rovers,Leeds United,T8264c2855e
+A0007,A,1992-93,1992-07-02,Jason Cundy,Chelsea,Tottenham Hotspur,T05a6485462
+A0008,A,1992-93,1992-07-07,Ian Olney,Aston Villa,Oldham Athletic,T7d83c171ad
+A0009,A,1992-93,1992-07-13,David Lowe,Ipswich Town,Leicester City,Tfb137fbff4
+A0010,A,1992-93,1992-07-28,Ray Houghton,Liverpool,Aston Villa,T2cc215b683
+A0011,A,1992-93,1992-07-29,Neil Ruddock,Southampton,Tottenham Hotspur,T9be5c2dcf0
+A0012,A,1992-93,1992-08-01,Pat McGibbon,Portadown,Manchester United,Tbb7ed51458
+A0013,A,1992-93,1992-08-01,Torben Piechnik,FCK,Liverpool,T51fdd488df
+A0014,A,1992-93,1992-08-14,Mark Robins,Manchester United,Norwich City,T44562d4898
+A0015,A,1992-93,1992-08-24,Derek Brazil,Manchester United,Cardiff City,Tbc20b7764f
+A0016,A,1992-93,1992-11-12,Eric Cantona,Leeds United,Manchester United,Tbef51418fe
+A0017,A,1992-93,1992-11-23,Neil Webb,Manchester United,Nottingham Forest,T55b5318c28
+A0018,A,1992-93,1992-12-11,Boncho Genchev,Sporting CP,Ipswich Town,T1190481dd3
+A0019,A,1992-93,1992-12-18,Stig Inge Bjørnebye,Rosenborg,Liverpool,Tc1d9706074
+A0020,A,1992-93,1993-03-09,Scott Sellars,Leeds United,Newcastle United,T62c34718f5
+A0021,A,1992-93,1993-03-19,Kieran Toal,Manchester United,Motherwell,Tacc588aa9a
+A0022,A,1993-94,1993-06-18,Andy Hunt,Newcastle United,West Bromwich Albion,T53c0b218d7
+A0023,A,1993-94,1993-06-18,Eddie McGoldrick,Crystal Palace,Arsenal,T218e7a7d43
+A0024,A,1993-94,1993-06-18,Paul Mason,Aberdeen,Ipswich Town,T3d7f7db92b
+A0025,A,1993-94,1993-06-23,David Kelly,Newcastle United,Wolverhampton Wanderers,T1a53b27316
+A0026,A,1993-94,1993-06-29,Russell Beardsmore,Manchester United,AFC Bournemouth,Td178b8510b
+A0027,A,1993-94,1993-07-20,Luc Nijholt,Motherwell,Swindon Town,T19e9c396d8
+A0028,A,1993-94,1993-07-23,Mark Stimson,Newcastle United,Portsmouth,Tf21d87cdee
+A0029,A,1993-94,1993-07-30,Adrian Whitbread,Leyton Orient,Swindon Town,T3bbf7032c2
+A0030,A,1993-94,1993-07-30,Alex Mathie,Greenock Morton,Newcastle United,T0beaab258d
+A0031,A,1993-94,1993-08-01,Jason Dozzell,Ipswich Town,Tottenham Hotspur,Taaabe82b7f
+A0032,A,1993-94,1993-08-03,Guy Whittingham,Portsmouth,Aston Villa,Td8785e03ad
+A0033,A,1993-94,1993-08-05,Alan Thompson,Newcastle United,Bolton Wanderers,T9befee6c2a
+A0034,A,1993-94,1993-08-13,Malcolm Allen,Millwall,Newcastle United,Tc8306a7c62
+A0035,A,1993-94,1993-08-20,Andy Mutch,Wolverhampton Wanderers,Swindon Town,T99d02867d3
+A0036,A,1993-94,1993-09-01,David Kerslake,Leeds United,Tottenham Hotspur,T439b00e0fd
+A0037,A,1993-94,1993-09-23,Mike Hooper,Liverpool,Newcastle United,T64c3cd1b11
+A0038,A,1993-94,1993-09-24,Tommy Wright,Newcastle United,Nottingham Forest,T425d6e6204
+A0039,A,1993-94,1993-10-28,Mark Stein,Stoke City,Chelsea,Tc32480406d
+A0040,A,1993-94,1993-11-04,Tim Flowers,Southampton,Blackburn Rovers,T28f671a93d
+A0041,A,1993-94,1993-11-18,Keith Scott,Wycombe Wanderers,Swindon Town,T02777c1104
+A0042,A,1993-94,1993-11-30,Brian Carey,Manchester United,Leicester City,Te963ca084a
+A0043,A,1993-94,1993-12-20,David Rocastle,Leeds United,Manchester City,T583d8062a1
+A0044,A,1993-94,1994-01-13,Darren Ferguson,Manchester United,Wolverhampton Wanderers,Td5f05a7816
+A0045,A,1993-94,1994-01-20,Brian Kilcline,Newcastle United,Swindon Town,T35f89d57f7
+A0046,A,1993-94,1994-01-21,Liam O'Brien,Newcastle United,Tranmere Rovers,T52bdcd3e71
+A0047,A,1993-94,1994-02-01,Kevin Scott,Newcastle United,Tottenham Hotspur,T75b1336138
+A0048,A,1993-94,1994-02-07,Craig Maskell,Swindon Town,Southampton,T4fdee676a5
+A0049,A,1993-94,1994-03-31,Peter Beagrie,Everton,Manchester City,T851582e971
+A0050,A,1994-95,1994-05-20,Julian Dicks,Liverpool,West Ham United,T0a759ed8fe
+A0051,A,1994-95,1994-06-01,Michael Stensgaard,Hvidovre IF,Liverpool,T3ac47c9b7c
+A0052,A,1994-95,1994-06-01,Peter Atherton,Coventry City,Sheffield Wednesday,T7be298b98e
+A0053,A,1994-95,1994-06-15,Claus Thomsen,AGF Aarhus,Ipswich Town,T9da30c48e2
+A0054,A,1994-95,1994-06-15,Steve Sedgley,Tottenham Hotspur,Ipswich Town,T0f78bc3ea8
+A0055,A,1994-95,1994-06-22,Joey Beauchamp,Oxford United,West Ham United,Tb924abebfa
+A0056,A,1994-95,1994-06-23,Andy Preece,Stockport County,Crystal Palace,Tf2ebc99104
+A0057,A,1994-95,1994-06-24,Nicky Summerbee,Swindon Town,Manchester City,T4c7734f677
+A0058,A,1994-95,1994-07-07,Nicky Mohan,Middlesbrough,Leicester City,T5b000895cb
+A0059,A,1994-95,1994-07-12,Ian Taylor,Port Vale,Sheffield Wednesday,T77ea456705
+A0060,A,1994-95,1994-07-19,Nigel Pearson,Sheffield Wednesday,Middlesbrough,T816bda5538
+A0061,A,1994-95,1994-07-22,Mark Draper,Notts County,Leicester City,T12e0137b7d
+A0062,A,1994-95,1994-07-22,Mark Robinson,Newcastle United,Swindon Town,T7801f14099
+A0063,A,1994-95,1994-08-01,Marc Hottiger,FC Sion,Newcastle United,T13161f728e
+A0064,A,1994-95,1994-08-01,Phil King,Sheffield Wednesday,Aston Villa,T9124a49e2b
+A0065,A,1994-95,1994-08-02,Lee Glover,Nottingham Forest,Port Vale,Tfb1a19685c
+A0066,A,1994-95,1994-08-03,Jason Drysdale,Watford,Newcastle United,Tbb8c03e615
+A0067,A,1994-95,1994-08-03,Jürgen Klinsmann,Monaco,Tottenham Hotspur,T47ff974155
+A0068,A,1994-95,1994-08-03,Nii Lamptey,PSV Eindhoven,Aston Villa,Ta20eceaf55
+A0069,A,1994-95,1994-08-04,John Fashanu,Wimbledon,Aston Villa,T78954c811a
+A0070,A,1994-95,1994-08-06,Dan Petrescu,Genoa,Sheffield Wednesday,T4cb409711f
+A0071,A,1994-95,1994-08-10,Philippe Albert,Anderlecht,Newcastle United,T0d649c961a
+A0072,A,1994-95,1994-08-12,David Rocastle,Manchester City,Chelsea,Td946d44653
+A0073,A,1994-95,1994-08-17,Adrian Whitbread,Swindon Town,West Ham United,T671dd46979
+A0074,A,1994-95,1994-08-17,Ian Nolan,Tranmere Rovers,Sheffield Wednesday,T2010784815
+A0075,A,1994-95,1994-08-18,Joey Beauchamp,West Ham United,Swindon Town,T5684234e68
+A0076,A,1994-95,1994-09-01,Klas Ingesson,PSV Eindhoven,Sheffield Wednesday,T2578836c29
+A0077,A,1994-95,1994-09-02,John Scales,Wimbledon,Liverpool,Taee2e24c3b
+A0078,A,1994-95,1994-09-05,Colin McKee,Manchester United,Kilmarnock,T5f7c29efd9
+A0079,A,1994-95,1994-09-06,David Burrows,West Ham United,Everton,Tbce7ec7ad2
+A0080,A,1994-95,1994-09-07,Tony Cottee,Everton,West Ham United,Ta4975f1a0d
+A0081,A,1994-95,1994-09-09,Mauricio Taricco,Argentinos Juniors,Ipswich Town,T7cd6025b33
+A0082,A,1994-95,1994-09-26,Paul Kitson,Derby County,Newcastle United,Td1579c4045
+A0083,A,1994-95,1994-10-04,Peter Butler,West Ham United,Notts County,T1254ca2eba
+A0084,A,1994-95,1994-10-11,Franz Carr,Sheffield United,Leicester City,T61343acdde
+A0085,A,1994-95,1994-10-14,Efan Ekoku,Norwich City,Wimbledon,T33c571dfa2
+A0086,A,1994-95,1994-10-19,Steven Pressley,Rangers,Coventry City,Tf0769c07c1
+A0087,A,1994-95,1994-10-21,Steve Jones,West Ham United,AFC Bournemouth,Tfd7a12b533
+A0088,A,1994-95,1994-11-25,Steve Guppy,Newcastle United,Port Vale,Tb9e55e359c
+A0089,A,1994-95,1994-12-21,Guy Whittingham,Aston Villa,Sheffield Wednesday,T2e0650c06d
+A0090,A,1994-95,1994-12-21,Ian Taylor,Sheffield Wednesday,Aston Villa,T6c622839d3
+A0091,A,1994-95,1994-12-30,Mike Marsh,West Ham United,Coventry City,T314fbbcf82
+A0092,A,1994-95,1995-01-06,Gary Charles,Derby County,Aston Villa,Tcd5f80a410
+A0093,A,1994-95,1995-01-06,Jamie Lawrence,Doncaster Rovers,Leicester City,T07b0a550ba
+A0094,A,1994-95,1995-01-06,Neil Shipperley,Chelsea,Southampton,T9678387bc8
+A0095,A,1994-95,1995-01-06,Tommy Johnson,Derby County,Aston Villa,Tffe255bced
+A0096,A,1994-95,1995-01-10,Keith Gillespie,Manchester United,Newcastle United,T51fde8f0e7
+A0097,A,1994-95,1995-01-11,Steve Agnew,Leicester City,Sunderland,T82a90882df
+A0098,A,1994-95,1995-01-16,Mark Robins,Norwich City,Leicester City,T4e9294dec5
+A0099,A,1994-95,1995-01-19,Lee Chapman,West Ham United,Ipswich Town,T7802ede06f
+A0100,A,1994-95,1995-01-30,Earl Barrett,Aston Villa,Everton,T16d0462023
+A0101,A,1994-95,1995-02-10,Franz Carr,Leicester City,Aston Villa,T452fd91ab6
+A0102,A,1994-95,1995-02-10,Garry Parker,Aston Villa,Leicester City,T1a5ab511b5
+A0103,A,1994-95,1995-02-16,Kevin Richardson,Aston Villa,Coventry City,T4fa473faac
+A0104,A,1994-95,1995-02-24,Alex Mathie,Newcastle United,Ipswich Town,T51cbbbf1c1
+A0105,A,1994-95,1995-03-02,David Burrows,Everton,Coventry City,Tcc71bf00f0
+A0106,A,1994-95,1995-03-02,John Filan,Cambridge United,Coventry City,Tb00bce2ff7
+A0107,A,1994-95,1995-03-03,Phil Whelan,Ipswich Town,Middlesbrough,T87d41a4d4b
+A0108,A,1994-95,1995-03-15,Jeff Kenna,Southampton,Blackburn Rovers,Tc075bb3a03
+A0109,A,1994-95,1995-03-17,Gordon Watson,Sheffield Wednesday,Southampton,T4a1b31ffa9
+A0110,A,1994-95,1995-03-23,Brett Angell,Everton,Sunderland,T78841fb359
+A0111,A,1994-95,1995-03-23,Chris Swailes,Doncaster Rovers,Ipswich Town,Tdabe14f3d5
+A0112,A,1994-95,1995-03-23,Jason Drysdale,Newcastle United,Swindon Town,T85391e50fb
+A0113,A,1995-96,1995-06-07,Calita,Farense,Coventry City,T31f44f3b3c
+A0114,A,1995-96,1995-06-23,Mark Hughes,Manchester United,Chelsea,Tdfd2648435
+A0115,A,1995-96,1995-06-26,Mike Marsh,Coventry City,Galatasaray,T3e618995a9
+A0116,A,1995-96,1995-06-26,Savo Milošević,Partizan,Aston Villa,T6ce7e8adbe
+A0117,A,1995-96,1995-07-01,Chris Bart-Williams,Sheffield Wednesday,Nottingham Forest,T4f332c854c
+A0118,A,1995-96,1995-07-01,Dean Saunders,Aston Villa,Galatasaray,T287e4eed66
+A0119,A,1995-96,1995-07-01,Gareth Southgate,Crystal Palace,Aston Villa,T6255ff41f5
+A0120,A,1995-96,1995-07-04,Chris Fairclough,Leeds United,Bolton Wanderers,Tabe6511932
+A0121,A,1995-96,1995-07-05,Isaías,Benfica,Coventry City,Te3f920132f
+A0122,A,1995-96,1995-07-05,Mark Draper,Leicester City,Aston Villa,Tbaeef9bee4
+A0123,A,1995-96,1995-07-14,Georgi Kinkladze,Dinamo Tbilisi,Manchester City,T9ad27b6c62
+A0124,A,1995-96,1995-07-19,Marc Degryse,Anderlecht,Sheffield Wednesday,Td3e8b59e19
+A0125,A,1995-96,1995-07-19,Mark Pembridge,Derby County,Sheffield Wednesday,T6f4ab45cd5
+A0126,A,1995-96,1995-07-20,Gary Rowett,Everton,Derby County,Tb567462e28
+A0127,A,1995-96,1995-07-25,Steven Pressley,Coventry City,Dundee United,T59d67192c8
+A0128,A,1995-96,1995-07-28,Sandy Robertson,Coventry City,Dundee United,T9073b7db82
+A0129,A,1995-96,1995-08-01,Craig Short,Derby County,Everton,Tf765dc1b01
+A0130,A,1995-96,1995-08-06,Paul Williams,Derby County,Coventry City,T2ae0c2b6f3
+A0131,A,1995-96,1995-08-09,Adam Reed,Darlington,Blackburn Rovers,T4ee9701dfa
+A0132,A,1995-96,1995-08-11,Gary Walsh,Manchester United,Middlesbrough,T349238d318
+A0133,A,1995-96,1995-08-11,Sean Flynn,Coventry City,Derby County,T024dc0e9dc
+A0134,A,1995-96,1995-08-14,Robbie Slater,Blackburn Rovers,West Ham United,Td55851dba3
+A0135,A,1995-96,1995-08-15,Matty Holmes,West Ham United,Blackburn Rovers,T9a687a3bf4
+A0136,A,1995-96,1995-08-18,Matthew Rush,West Ham United,Norwich City,T6272837f65
+A0137,A,1995-96,1995-09-07,Jeroen Boere,West Ham United,Crystal Palace,T058de83757
+A0138,A,1995-96,1995-09-08,Iain Dowie,Crystal Palace,West Ham United,Tae244bbe17
+A0139,A,1995-96,1995-09-08,Stan Lazaridis,West Adelaide,West Ham United,T5ee05dd376
+A0140,A,1995-96,1995-09-10,Mark Atkins,Blackburn Rovers,Wolverhampton Wanderers,Tffff4ecf8a
+A0141,A,1995-96,1995-09-15,John Williams,Coventry City,Wycombe Wanderers,Ta07fc58388
+A0142,A,1995-96,1995-10-06,Ruel Fox,Newcastle United,Tottenham Hotspur,T51087d7215
+A0143,A,1995-96,1995-10-14,Graham Coughlan,Bray Wanderers,Blackburn Rovers,T3bc20698bb
+A0144,A,1995-96,1995-10-26,Richard Jobson,Oldham Athletic,Leeds United,T1e11dc69f5
+A0145,A,1995-96,1995-10-28,Carl Tiler,Nottingham Forest,Aston Villa,T25d8b58573
+A0146,A,1995-96,1995-11-02,David White,Leeds United,Sheffield United,Te63df8a099
+A0147,A,1995-96,1995-11-06,Graham Fenton,Aston Villa,Blackburn Rovers,Tf518854fe8
+A0148,A,1995-96,1995-11-15,Klas Ingesson,Sheffield Wednesday,Bari,Te491b7b6e9
+A0149,A,1995-96,1995-11-17,Richard Shaw,Crystal Palace,Coventry City,T81fc316200
+A0150,A,1995-96,1995-11-20,Stuart Barlow,Everton,Oldham Athletic,T1eab2450b0
+A0151,A,1995-96,1995-11-24,Julian Darby,Coventry City,West Bromwich Albion,T8f25e23f28
+A0152,A,1995-96,1995-12-16,Ian Feuer,West Ham United,Luton Town,T0bdfa0d6c1
+A0153,A,1995-96,1995-12-16,Noel Whelan,Leeds United,Coventry City,T6bacf0b295
+A0154,A,1995-96,1995-12-21,Chris Coleman,Crystal Palace,Blackburn Rovers,T01f9901b2d
+A0155,A,1995-96,1995-12-22,Darko Kovačević,Red Star Belgrade,Sheffield Wednesday,T41c216be34
+A0156,A,1995-96,1995-12-22,Dejan Stefanović,Red Star Belgrade,Sheffield Wednesday,Tad02469104
+A0157,A,1995-96,1996-01-10,Don Hutchison,West Ham United,Sheffield United,Tb01f480557
+A0158,A,1995-96,1996-01-23,Andy Sinton,Sheffield Wednesday,Tottenham Hotspur,T8a64cc0952
+A0159,A,1995-96,1996-01-24,Nigel Clough,Liverpool,Manchester City,Tb6da223c4b
+A0160,A,1995-96,1996-02-04,Slaven Bilic,Karlsruhe,West Ham United,T2025f32e7a
+A0161,A,1995-96,1996-02-07,Darren Currie,West Ham United,Shrewsbury Town,T4d42a9129f
+A0162,A,1995-96,1996-02-12,Liam Daish,Birmingham City,Coventry City,T179c63ad5b
+A0163,A,1995-96,1996-02-22,Martin Allen,West Ham United,Portsmouth,Tfb14ca03d5
+A0164,A,1995-96,1996-02-24,David Batty,Blackburn Rovers,Newcastle United,Ta1a27c9a4b
+A0165,A,1995-96,1996-02-24,Julian Joachim,Leicester City,Aston Villa,T4ce764200d
+A0166,A,1995-96,1996-02-29,Paul Cook,Coventry City,Tranmere Rovers,Tcc8614149a
+A0167,A,1995-96,1996-03-01,Niklas Gudmundsson,Halmstads BK,Blackburn Rovers,T4502c9aa96
+A0168,A,1995-96,1996-03-04,Regi Blinker,Feyenoord,Sheffield Wednesday,Te70da31d71
+A0169,A,1995-96,1996-03-09,Ilie Dumitrescu,Tottenham Hotspur,West Ham United,T0180c4e71e
+A0170,A,1995-96,1996-03-16,Jon Newsome,Norwich City,Sheffield Wednesday,Te43659a4d6
+A0171,A,1995-96,1996-03-28,Garry Flitcroft,Manchester City,Blackburn Rovers,T500fdc7c25
+A0172,A,1995-96,1996-03-28,Mikhail Kavelashvili,Alania Vladikavkaz,Manchester City,T066ddf82b5
+A0173,A,1996-97,1996-06-01,Alex Rae,Millwall,Sunderland,T56ac95a8ea
+A0174,A,1996-97,1996-07-01,Gary Speed,Leeds United,Everton,Te56d23b1c1
+A0175,A,1996-97,1996-07-01,Paul Gerrard,Oldham Athletic,Everton,Tf7d3c2ef57
+A0176,A,1996-97,1996-07-05,Ben Thatcher,Millwall,Wimbledon,Te4adf0afff
+A0177,A,1996-97,1996-07-11,Matt Clarke,Rotherham United,Sheffield Wednesday,T10ef332fa5
+A0178,A,1996-97,1996-07-19,Richard Hall,Southampton,West Ham United,Tdf68af1cfe
+A0179,A,1996-97,1996-07-20,Karel Poborský,Slavia Prague,Manchester United,Tea5a5e75af
+A0180,A,1996-97,1996-07-26,Nigel Martyn,Crystal Palace,Leeds United,Tec82a874e6
+A0181,A,1996-97,1996-07-31,Florin Raducioiu,Espanyol,West Ham United,Tad4578b774
+A0182,A,1996-97,1996-08-01,Allan Nielsen,Brondby,Tottenham Hotspur,T3a0828b7a9
+A0183,A,1996-97,1996-08-02,Fernando Nélson,Sporting,Aston Villa,T18cc07bd45
+A0184,A,1996-97,1996-08-07,Scott Oakes,Luton Town,Sheffield Wednesday,Tc80392709d
+A0185,A,1996-97,1996-08-09,Wayne Collins,Crewe Alexandra,Sheffield Wednesday,T919ef40bde
+A0186,A,1996-97,1996-08-15,Ally Pickering,Coventry City,Stoke City,Tec53508c5f
+A0187,A,1996-97,1996-08-20,Orlando Trustfull,Feyenoord,Sheffield Wednesday,Tf91ea308a3
+A0188,A,1996-97,1996-08-23,Saša Ćurčić,Bolton Wanderers,Aston Villa,T4c7ffd25f1
+A0189,A,1996-97,1996-08-31,Patrick Vieira,AC Milan,Arsenal,Tc61a2ad382
+A0190,A,1996-97,1996-11-21,John Spencer,Chelsea,Queens Park Rangers,T95728c6fe1
+A0191,A,1996-97,1996-12-02,Steffen Iversen,Rosenborg,Tottenham Hotspur,T5fd03471f4
+A0192,A,1996-97,1996-12-11,John Scales,Liverpool,Tottenham Hotspur,T4acfbccdc2
+A0193,A,1996-97,1996-12-30,Terry Phelan,Chelsea,Everton,T27f0610aeb
+A0194,A,1996-97,1997-01-07,Ramon Vega,Cagliari,Tottenham Hotspur,T31a8ab694e
+A0195,A,1996-97,1997-01-11,Robert Molenaar,Volendam,Leeds United,T15a84b4865
+A0196,A,1996-97,1997-01-14,Gianluca Festa,Internazionale,Middlesbrough,Tc6b016c13c
+A0197,A,1996-97,1997-01-15,Florin Raducioiu,West Ham United,Espanyol,Tba876a7d4a
+A0198,A,1996-97,1997-01-16,Matt Elliott,Oxford United,Leicester City,T12f2a2eb01
+A0199,A,1996-97,1997-01-28,Régis Genaux,Coventry City,Udinese,T4bc1b9580f
+A0200,A,1996-97,1997-01-29,Andrei Kanchelskis,Everton,Fiorentina,Tda2eaa805f
+A0201,A,1996-97,1997-01-30,Gary Breen,Birmingham City,Coventry City,T5f90ff93b6
+A0202,A,1996-97,1997-01-30,Oleksandr Yevtushok,Dnipro Dnipropetrovsk,Coventry City,Tb55fdca454
+A0203,A,1996-97,1997-02-06,Paul Kitson,Newcastle United,West Ham United,T199d31e43b
+A0204,A,1996-97,1997-02-07,Paul Beesley,Leeds United,Manchester City,Tef4c707593
+A0205,A,1996-97,1997-02-14,John Hartson,Arsenal,West Ham United,Te0845b68d2
+A0206,A,1996-97,1997-02-25,John Ebbrell,Everton,Sheffield United,Tc3ed15ec5e
+A0207,A,1996-97,1997-03-04,Tommy Wright,Nottingham Forest,Manchester City,T5114596f7e
+A0208,A,1996-97,1997-03-27,Des Hamilton,Bradford City,Newcastle United,Tf766ec1b4a
+A0209,A,1996-97,1997-03-27,Steve Lomas,Manchester City,West Ham United,Tc0ac025c19
+A0210,A,1996-97,1997-04-03,David Billington,Peterborough United,Sheffield Wednesday,T236dc9bac7
+A0211,A,1996-97,1997-04-15,Mark McKeever,Peterborough United,Sheffield Wednesday,T945a8ab766
+B0001,B,1997-98,1997-05-14,Slaven Bilić,West Ham United,Everton,T076586e54d
+B0002,B,1997-98,1997-05-21,Simon Haworth,Cardiff City,Coventry City,T2a0b5a6ecc
+B0003,B,1997-98,1997-06-02,Eyal Berkovic,Maccabi Haifa,West Ham United,Ta53df96718
+B0004,B,1997-98,1997-06-02,Øyvind Leonhardsen,Wimbledon,Liverpool,T6a6de4e269
+B0005,B,1997-98,1997-06-04,Emmanuel Petit,Monaco,Arsenal,T1d53cb56b5
+B0006,B,1997-98,1997-06-04,Gilles Grimandi,Monaco,Arsenal,Tc45d6f52b1
+B0007,B,1997-98,1997-06-12,Alf-Inge Haaland,Nottingham Forest,Leeds United,T48b4c062b6
+B0008,B,1997-98,1997-06-12,Jimmy Floyd Hasselbaink,Boavista,Leeds United,T34d4665356
+B0009,B,1997-98,1997-06-14,Luis Boa Morte,Sporting Lisbon,Arsenal,Tf047797199
+B0010,B,1997-98,1997-06-17,Stéphane Henchoz,HSV,Blackburn Rovers,T33accece00
+B0011,B,1997-98,1997-06-19,Trond Egil Soltvedt,Rosenborg,Coventry City,T6ccaad4673
+B0012,B,1997-98,1997-06-30,Lee Clark,Newcastle United,Sunderland,Tdf6382ff1b
+B0013,B,1997-98,1997-06-30,Shay Given,Blackburn Rovers,Newcastle United,Td7ac5ae816
+B0014,B,1997-98,1997-07-01,Scott Green,Bolton Wanderers,Wigan Athletic,T653b8486f9
+B0015,B,1997-98,1997-07-02,Erik Nevland,Viking,Manchester United,T5c30b03861
+B0016,B,1997-98,1997-07-04,Eoin Jess,Coventry City,Aberdeen,Tf86aa6d344
+B0017,B,1997-98,1997-07-04,Kyle Lightbourne,Walsall,Coventry City,T7549ff8876
+B0018,B,1997-98,1997-07-08,Anders Andersson,Malmö FF,Blackburn Rovers,T5e30a589c3
+B0019,B,1997-98,1997-07-08,Martin Dahlin,Roma,Blackburn Rovers,T42de4b5d8b
+B0020,B,1997-98,1997-07-10,Paul Ince,Internazionale,Liverpool,T51c1f75da4
+B0021,B,1997-98,1997-07-14,David Lee,Bolton Wanderers,Wigan Athletic,T063646551c
+B0022,B,1997-98,1997-07-14,Peter Ndlovu,Coventry City,Birmingham City,T95c05927d5
+B0023,B,1997-98,1997-07-15,Danny Murphy,Crewe Alexandra,Liverpool,T9db69b2d7d
+B0024,B,1997-98,1997-07-21,Craig Forrest,Ipswich Town,West Ham United,Te4de46394d
+B0025,B,1997-98,1997-07-21,David Hopkin,Crystal Palace,Leeds United,Tc77dfc1171
+B0026,B,1997-98,1997-07-22,Jon Macken,Manchester United,Preston North End,T7e81fdf5a9
+B0027,B,1997-98,1997-07-28,Pat McGibbon,Manchester United,Wigan Athletic,T06589ad9d6
+B0028,B,1997-98,1997-07-30,Karlheinz Riedle,Borussia Dortmund,Liverpool,T1db8851edc
+B0029,B,1997-98,1997-07-31,Alessandro Pistone,Inter Milan,Newcastle United,T369a7ce91c
+B0030,B,1997-98,1997-07-31,David Ginola,Newcastle United,Tottenham Hotspur,T099fb33f54
+B0031,B,1997-98,1997-07-31,Jon Dahl Tomasson,Heerenveen,Newcastle United,Te25562c73e
+B0032,B,1997-98,1997-08-01,Brian Deane,Leeds United,Sheffield United,T2eea3c9d9a
+B0033,B,1997-98,1997-08-01,John Oster,Grimsby Town,Everton,T57ffa1122a
+B0034,B,1997-98,1997-08-05,Nelson Vivas,Boca Juniors,Arsenal,T29d830f20d
+B0035,B,1997-98,1997-08-05,Orlando Trustfull,Sheffield Wednesday,Vitesse Arnhem,Tc476183328
+B0036,B,1997-98,1997-08-06,Regi Blinker,Sheffield Wednesday,Celtic,Td774e11082
+B0037,B,1997-98,1997-08-08,Michael Appleton,Manchester United,Preston North End,T36b603144b
+B0038,B,1997-98,1997-09-08,Tore Pedersen,FC St. Pauli,Blackburn Rovers,T91d254a985
+B0039,B,1997-98,1997-09-09,Jim Magilton,Southampton,Sheffield Wednesday,T90129a707d
+B0040,B,1997-98,1997-09-10,Alan Fettis,Nottingham Forest,Blackburn Rovers,T547adf8ad0
+B0041,B,1997-98,1997-09-12,Marc Rieper,West Ham United,Celtic,T61f79037d8
+B0042,B,1997-98,1997-09-19,Mike Whitlow,Leicester City,Bolton Wanderers,Tcb86fd9bba
+B0043,B,1997-98,1997-09-23,Carlton Palmer,Leeds United,Southampton,T85a4cdb117
+B0044,B,1997-98,1997-09-23,Tony Yeboah,Leeds United,Hamburger SV,Tfaca2bd496
+B0045,B,1997-98,1997-09-26,Andrew Impey,Queens Park Rangers,West Ham United,Tb2e1bed02f
+B0046,B,1997-98,1997-10-02,Dean Holdsworth,Wimbledon,Bolton Wanderers,T083a83c202
+B0047,B,1997-98,1997-10-02,Petter Rudi,Molde,Sheffield Wednesday,T8dbc485c96
+B0048,B,1997-98,1997-10-21,Dougie Freedman,Crystal Palace,Wolverhampton Wanderers,T7355201432
+B0049,B,1997-98,1997-10-28,Samassi Abou,Cannes,West Ham United,T7d292393e0
+B0050,B,1997-98,1997-11-06,John McGinlay,Bolton Wanderers,Bradford City,T0922240a1d
+B0051,B,1997-98,1997-11-27,David Curtolo,Västerås,Aston Villa,T5000e89bd3
+B0052,B,1997-98,1997-11-27,Thomas Myhre,Viking,Everton,Tf8fb0d9c2f
+B0053,B,1997-98,1997-11-28,Graham Stuart,Everton,Sheffield United,T2730a53b62
+B0054,B,1997-98,1997-12-01,Chris Coleman,Blackburn Rovers,Fulham,T6ad2c62203
+B0055,B,1997-98,1997-12-05,Niclas Alexandersson,IFK Göteborg,Sheffield Wednesday,T3333138785
+B0056,B,1997-98,1997-12-30,Karel Poborský,Manchester United,Benfica,Te0efadec9b
+B0057,B,1997-98,1998-01-02,Viorel Moldovan,Grasshoppers,Coventry City,Ta027b5fe7b
+B0058,B,1997-98,1998-01-05,Pierre Laurent,Leeds United,Bastia,Tcf38c16486
+B0059,B,1997-98,1998-01-14,Patrick Blondeau,Sheffield Wednesday,Bordeaux,T802bc0d5f1
+B0060,B,1997-98,1998-01-15,Valérien Ismaël,Strasbourg,Crystal Palace,T2c394e8e82
+B0061,B,1997-98,1998-01-28,John O'Kane,Manchester United,Everton,T9b79574fbd
+B0062,B,1997-98,1998-01-29,Iain Dowie,West Ham United,Queens Park Rangers,Td16f7b8a9e
+B0063,B,1997-98,1998-01-29,Trevor Sinclair,Queens Park Rangers,West Ham United,T92b1fc29ae
+B0064,B,1997-98,1998-01-30,Andy Hinchcliffe,Everton,Sheffield Wednesday,T81e5fb633f
+B0065,B,1997-98,1998-01-31,Andreas Andersson,Milan,Newcastle United,T607e6477a6
+B0066,B,1997-98,1998-01-31,Andy Griffin,Stoke City,Newcastle United,Te30953d430
+B0067,B,1997-98,1998-02-06,Gary Speed,Everton,Newcastle United,Ta4949fd792
+B0068,B,1997-98,1998-02-10,Callum Davidson,St Johnstone,Blackburn Rovers,T3cd0fd2fc5
+B0069,B,1997-98,1998-02-16,Kyle Lightbourne,Coventry City,Stoke City,Tadc90d1c5f
+B0070,B,1997-98,1998-02-19,Goce Sedloski,Hajduk Split,Sheffield Wednesday,T646696721a
+B0071,B,1997-98,1998-02-20,Stephen Bywater,Rochdale,West Ham United,T414d5c20dd
+B0072,B,1997-98,1998-02-23,Moussa Saïb,Valencia,Tottenham Hotspur,Tf7e645dff6
+B0073,B,1997-98,1998-02-25,Martin Hiden,Rapid Vienna,Leeds United,Tf94a44784d
+B0074,B,1997-98,1998-02-26,Don Hutchison,Sheffield United,Everton,T2a550b7fcc
+B0075,B,1997-98,1998-02-28,John Beresford,Newcastle United,Southampton,T6f724c9c3e
+B0076,B,1997-98,1998-03-03,Claus Thomsen,Everton,AB,T23a3bc63bc
+B0077,B,1997-98,1998-03-09,Andy Roberts,Crystal Palace,Wimbledon,T93c704d90b
+B0078,B,1997-98,1998-03-20,Jamie Pollock,Bolton Wanderers,Manchester City,Tb7c7c09dfb
+B0079,B,1997-98,1998-03-25,Lars Bohinen,Blackburn Rovers,Derby County,T71e4e2b144
+B0080,B,1997-98,1998-03-26,Philippe Clement,Racing Genk,Coventry City,Tffd5779e1f
+B0081,B,1997-98,1998-03-26,Steve Claridge,Leicester City,Wolverhampton Wanderers,Ta695b8fc9d
+B0082,B,1997-98,1998-03-31,James Coppinger,Darlington,Newcastle United,Tdaa5632634
+B0083,B,1997-98,1998-03-31,Paul Robinson,Darlington,Newcastle United,T1b7d45787d
+B0084,B,1997-98,1998-03-31,Stephen Glass,Aberdeen,Newcastle United,T863218712a
+B0085,B,1998-99,1998-05-16,Clyde Wijnhard,Willem II,Leeds United,T58be74324f
+B0086,B,1998-99,1998-05-21,Jimmy Corbett,Gillingham,Blackburn Rovers,Tf66edb0e1f
+B0087,B,1998-99,1998-06-01,John Spencer,Queens Park Rangers,Everton,Tadc5fb0d06
+B0088,B,1998-99,1998-06-05,Alan Thompson,Bolton Wanderers,Aston Villa,T5a848b7f4d
+B0089,B,1998-99,1998-06-19,Danny Granville,Chelsea,Leeds United,Tc667d5fd27
+B0090,B,1998-99,1998-06-22,Chris Powell,Derby County,Charlton Athletic,Tc6140b1551
+B0091,B,1998-99,1998-06-30,Georgios Georgiadis,Panathinaikos,Newcastle United,T9feba158f5
+B0092,B,1998-99,1998-06-30,Jon Dahl Tomasson,Newcastle United,Feyenoord,T3d6abd14f4
+B0093,B,1998-99,1998-06-30,Stéphane Guivarc'h,Auxerre,Newcastle United,T76d9a18f9f
+B0094,B,1998-99,1998-07-01,Savo Milošević,Aston Villa,Real Zaragoza,T6e9c8ca51c
+B0095,B,1998-99,1998-07-06,Dean Gordon,Crystal Palace,Middlesbrough,T564df9764e
+B0096,B,1998-99,1998-07-09,Gary Pallister,Manchester United,Middlesbrough,T67ce25786e
+B0097,B,1998-99,1998-07-15,Marco Materazzi,Perugia,Everton,T5585c50896
+B0098,B,1998-99,1998-07-16,Viorel Moldovan,Coventry City,Fenerbahçe,Tfaf6ade070
+B0099,B,1998-99,1998-07-21,Jesper Blomqvist,Parma,Manchester United,T2790f82714
+B0100,B,1998-99,1998-07-21,Sébastien Pérez,SC Bastia,Blackburn Rovers,T76b92dc3e8
+B0101,B,1998-99,1998-07-21,Vegard Heggem,Rosenborg,Liverpool,Tde4dc2d791
+B0102,B,1998-99,1998-07-27,Olivier Dacourt,Strasbourg,Everton,T0135f25228
+B0103,B,1998-99,1998-07-29,Kevin Campbell,Nottingham Forest,Trabzonspor,Ta6761de25f
+B0104,B,1998-99,1998-07-30,Javier Margas,Universidad Católica,West Ham United,Tee853e9954
+B0105,B,1998-99,1998-07-31,Carl Serrant,Oldham Athletic,Newcastle United,Td7a0968e9e
+B0106,B,1998-99,1998-07-31,Garry Brady,Tottenham Hotspur,Newcastle United,T1ca60ef330
+B0107,B,1998-99,1998-07-31,Laurent Charvet,Cannes,Newcastle United,T1c045c8f4f
+B0108,B,1998-99,1998-08-01,Ian Thomas-Moore,Nottingham Forest,Stockport County,Tf2409a059d
+B0109,B,1998-99,1998-08-01,John Collins,Monaco,Everton,T86d6b1675a
+B0110,B,1998-99,1998-08-01,Marcel Desailly,AC Milan,Chelsea,T11c118f8e1
+B0111,B,1998-99,1998-08-01,Robert Jarni,Real Betis,Coventry City,Tbb2d8ab8f1
+B0112,B,1998-99,1998-08-04,Colin Hendry,Blackburn Rovers,Rangers,T737ba0eed2
+B0113,B,1998-99,1998-08-06,Wim Jonk,PSV Eindhoven,Sheffield Wednesday,T630695cc9a
+B0114,B,1998-99,1998-08-07,Paul Hall,Portsmouth,Coventry City,T07a53c1121
+B0115,B,1998-99,1998-08-15,Robert Jarni,Coventry City,Real Madrid,T8867d9a8f1
+B0116,B,1998-99,1998-08-18,Colin Cooper,Nottingham Forest,Middlesbrough,T9a427e4068
+B0117,B,1998-99,1998-08-21,Spencer Prior,Leicester City,Derby County,T0bbf61d3fb
+B0118,B,1998-99,1998-08-26,Marc Edworthy,Crystal Palace,Coventry City,Taf410a5f69
+B0119,B,1998-99,1998-08-31,Dietmar Hamann,Bayern Munich,Newcastle United,Tc967a65adf
+B0120,B,1998-99,1998-09-12,Fredrik Ljungberg,Halmstad,Arsenal,Tc060ca6f99
+B0121,B,1998-99,1998-09-18,Stuart Balmer,Charlton Athletic,Wigan Athletic,T9601b950a1
+B0122,B,1998-99,1998-09-23,Steve Simonsen,Tranmere Rovers,Everton,T69a17aa844
+B0123,B,1998-99,1998-09-29,Carl Tiler,Everton,Charlton Athletic,T2dcc13116b
+B0124,B,1998-99,1998-10-01,Steve Froggatt,Wolverhampton Wanderers,Coventry City,T8cb4bc4ef2
+B0125,B,1998-99,1998-10-02,Simon Haworth,Coventry City,Wigan Athletic,T8106986011
+B0126,B,1998-99,1998-10-12,Brian Deane,Benfica,Middlesbrough,T51d6c04ee5
+B0127,B,1998-99,1998-10-12,Laurent Delorge,Gent,Coventry City,T07daba2c36
+B0128,B,1998-99,1998-10-26,Oumar Kondé,FC Basel,Blackburn Rovers,Tc400d7fd2a
+B0129,B,1998-99,1998-10-30,Nathan Blake,Bolton Wanderers,Blackburn Rovers,T26819d9836
+B0130,B,1998-99,1998-11-04,Chris Casper,Manchester United,Reading,T40b7fc4161
+B0131,B,1998-99,1998-11-06,Stephane Guivarc'h,Newcastle United,Rangers,Tbc13f7a8d6
+B0132,B,1998-99,1998-12-08,David Batty,Newcastle United,Leeds United,Tc53c86086a
+B0133,B,1998-99,1998-12-16,Keith Gillespie,Newcastle United,Blackburn Rovers,T6356b61012
+B0134,B,1998-99,1998-12-17,John Aloisi,Portsmouth,Coventry City,T288e5d9185
+B0135,B,1998-99,1998-12-29,Ashley Ward,Barnsley,Blackburn Rovers,T57ee5d676c
+B0136,B,1998-99,1999-01-08,Jermaine Pennant,Notts County,Arsenal,Tb80e4a238b
+B0137,B,1998-99,1999-01-13,Muhamed Konjić,AS Monaco,Coventry City,T1a4e8fae52
+B0138,B,1998-99,1999-01-15,Nwankwo Kanu,Internazionale,Arsenal,T8a33680cd3
+B0139,B,1998-99,1999-01-18,Matt Jansen,Crystal Palace,Blackburn Rovers,T77d3b07b5d
+B0140,B,1998-99,1999-01-22,Rigobert Song,Salernitana,Liverpool,T8d177aa936
+B0141,B,1998-99,1999-01-27,Jason McAteer,Liverpool,Blackburn Rovers,Tca08fbee50
+B0142,B,1998-99,1999-01-27,Paolo Di Canio,Sheffield Wednesday,West Ham United,T24c63f1f8d
+B0143,B,1998-99,1999-01-31,Didier Domi,PSG,Newcastle United,T25942689ca
+B0144,B,1998-99,1999-02-01,Peter Enckelman,TPS,Aston Villa,Tb7cc88d006
+B0145,B,1998-99,1999-02-04,Tim Sherwood,Blackburn Rovers,Tottenham Hotspur,T8bae1e8415
+B0146,B,1998-99,1999-02-05,Arnar Gunnlaugsson,Bolton Wanderers,Leicester City,T90b559123b
+B0147,B,1998-99,1999-02-20,Craig Armstrong,Nottingham Forest,Huddersfield Town,Td0951ee3fa
+B0148,B,1998-99,1999-03-05,Martin Pringle,Benfica,Charlton Athletic,T2494657fb3
+B0149,B,1998-99,1999-03-09,Mark Delaney,Cardiff City,Aston Villa,Ta03fcc4aa9
+B0150,B,1998-99,1999-03-11,Steve Stone,Nottingham Forest,Aston Villa,Tdaef027582
+B0151,B,1998-99,1999-03-18,Keith O'Neill,Norwich City,Middlesbrough,Tba68cd5b1f
+B0152,B,1998-99,1999-03-22,Jim Magilton,Sheffield Wednesday,Ipswich Town,T6cb5503e1b
+B0153,B,1998-99,1999-03-22,Lee Carsley,Derby County,Blackburn Rovers,T5697146ef3
+B0154,B,1998-99,1999-03-23,Colin Calderwood,Tottenham Hotspur,Aston Villa,T9fd824527b
+B0155,B,1998-99,1999-03-23,Graham Stuart,Sheffield United,Charlton Athletic,T298b3696e4
+B0156,B,1998-99,1999-03-25,Philip Mulryne,Manchester United,Norwich City,T866ff1b201
+B0157,B,1998-99,1999-03-25,Richard Cresswell,York City,Sheffield Wednesday,T2853f2b383
+B0158,B,1998-99,1999-03-31,Silvio Marić,Croatia Zagreb,Newcastle United,T4f53a82acd
+B0159,B,1998-99,1999-04-16,Terry Cooke,Manchester United,Manchester City,T9ead2e2223
+B0160,B,1998-99,1999-04-28,Neil Tarrant,Ross County,Aston Villa,Tb3739f63e0
+B0161,B,1999-00,1999-05-18,Sami Hyypia,Willem II,Liverpool,T83e1ee02a9
+B0162,B,1999-00,1999-05-18,Seth Johnson,Crewe Alexandra,Derby County,T226e83b846
+B0163,B,1999-00,1999-05-25,Eirik Bakke,Sogndal,Leeds United,Td6ef6358d0
+B0164,B,1999-00,1999-05-28,Oleg Luzhny,Dynamo Kyiv,Arsenal,T4e4498150b
+B0165,B,1999-00,1999-05-28,Youssef Chippo,Porto,Coventry City,T4a5e2dd35d
+B0166,B,1999-00,1999-06-02,Titi Camara,Marseille,Liverpool,Tf4307cd12e
+B0167,B,1999-00,1999-06-03,Stephane Henchoz,Blackburn Rovers,Liverpool,T7311e27416
+B0168,B,1999-00,1999-06-15,Alain Goma,Paris Saint-Germain,Newcastle United,T543a44f017
+B0169,B,1999-00,1999-06-15,Danny Mills,Charlton Athletic,Leeds United,T11a5c99945
+B0170,B,1999-00,1999-06-15,Sander Westerveld,Vitesse Arnhem,Liverpool,T369208182e
+B0171,B,1999-00,1999-06-17,David James,Liverpool,Aston Villa,T8e6a8fe866
+B0172,B,1999-00,1999-06-21,Didier Deschamps,Juventus,Chelsea,T5bf6beb5ff
+B0173,B,1999-00,1999-06-22,Ibrahima Bakayoko,Everton,Marseille,T63a01def0d
+B0174,B,1999-00,1999-06-29,Olivier Dacourt,Everton,Lens,Tce144add8a
+B0175,B,1999-00,1999-06-29,Philippe Clement,Coventry City,Club Brugge,T78751a7624
+B0176,B,1999-00,1999-06-30,David Wetherall,Leeds United,Bradford City,Td0804c9b4a
+B0177,B,1999-00,1999-07-01,Vladimir Smicer,Lens,Liverpool,Tad1ed70849
+B0178,B,1999-00,1999-07-07,Lee Clark,Sunderland,Fulham,T7fec135dc8
+B0179,B,1999-00,1999-07-08,Eyal Berkovic,West Ham United,Celtic,Td9514cf753
+B0180,B,1999-00,1999-07-08,Marco Materazzi,Everton,Perugia,Tdd2840c45d
+B0181,B,1999-00,1999-07-09,Michael Duberry,Chelsea,Leeds United,T7a1819c164
+B0182,B,1999-00,1999-07-10,Gerald Sibon,Ajax,Sheffield Wednesday,T49a10b54a2
+B0183,B,1999-00,1999-07-10,Gilles De Bilde,PSV Eindhoven,Sheffield Wednesday,T3ac411e3f0
+B0184,B,1999-00,1999-07-14,Kevin Campbell,Trabzonspor,Everton,T4aafd66733
+B0185,B,1999-00,1999-07-16,Clyde Wijnhard,Leeds United,Huddersfield Town,T63092d4b86
+B0186,B,1999-00,1999-07-16,Paulo Wanchope,Derby County,West Ham United,T43ed1ffb14
+B0187,B,1999-00,1999-07-20,Najwan Ghrayib,Hapoel Haifa,Aston Villa,T2a227adec7
+B0188,B,1999-00,1999-07-23,Michael Bridges,Sunderland,Leeds United,Td5ce353a86
+B0189,B,1999-00,1999-07-26,Stefano Gioacchini,Venezia,Coventry City,T952aeac71a
+B0190,B,1999-00,1999-07-30,Craig Short,Everton,Blackburn Rovers,Ta4d200f913
+B0191,B,1999-00,1999-07-30,Paul Ince,Liverpool,Middlesbrough,T5ade3aa3f1
+B0192,B,1999-00,1999-07-30,Tim Flowers,Blackburn Rovers,Leicester City,T530bf93e3a
+B0193,B,1999-00,1999-07-31,Christian Ziege,A.C. Milan,Middlesbrough,T54d0ddd7c6
+B0194,B,1999-00,1999-07-31,Runar Normann,Lillestrøm,Coventry City,T2b24256749
+B0195,B,1999-00,1999-08-05,Mark Pembridge,Benfica,Everton,T8e51863348
+B0196,B,1999-00,1999-08-06,John Oster,Everton,Sunderland,T2d6d7e8342
+B0197,B,1999-00,1999-08-06,Øyvind Leonhardsen,Liverpool,Tottenham Hotspur,Tee4be26274
+B0198,B,1999-00,1999-08-11,Darren Huckerby,Coventry City,Leeds United,T05bae9a47f
+B0199,B,1999-00,1999-08-14,Gabriele Ambrosetti,Vicenza,Chelsea,T01b4eb0b78
+B0200,B,1999-00,1999-08-31,Massimo Taibi,Venezia,Manchester United,T6a21ab9b3b
+B0201,B,1999-00,1999-09-03,Abel Xavier,PSV Eindhoven,Everton,Tc6a185cbe6
+B0202,B,1999-00,1999-09-10,Mikaël Silvestre,Inter Milan,Manchester United,T9ca00bad33
+B0203,B,1999-00,1999-09-17,Carlton Palmer,Nottingham Forest,Coventry City,Ta64e8edc9e
+B0204,B,1999-00,1999-10-20,Benito Carbone,Sheffield Wednesday,Aston Villa,T7340e9b7ab
+B0205,B,1999-00,1999-10-22,Bruno Ribeiro,Leeds United,Sheffield United,T6fb210eeda
+B0206,B,1999-00,1999-10-27,Carlos Marinelli,Boca Juniors,Middlesbrough,T7535818c8a
+B0207,B,1999-00,1999-11-12,Danny Granville,Leeds United,Manchester City,T0780e6c287
+B0208,B,1999-00,1999-11-18,Guy Branston,Leicester City,Rotherham United,T7540f28110
+B0209,B,1999-00,1999-12-08,Tomas Gustafsson,AIK,Coventry City,T2c7047dc3a
+B0210,B,1999-00,1999-12-10,Darren Eadie,Norwich City,Leicester City,T221424b3df
+B0211,B,1999-00,1999-12-15,Kevin Kilbane,West Bromwich Albion,Sunderland,T8dec021e0d
+B0212,B,1999-00,1999-12-17,Jason Wilcox,Blackburn Rovers,Leeds United,T4ebcc70718
+B0213,B,1999-00,1999-12-20,Erik Nevland,Manchester United,Viking,Te72de3114e
+B0214,B,1999-00,1999-12-23,Emerson Thome,Sheffield Wednesday,Chelsea,Td1aa311c0e
+B0215,B,1999-00,1999-12-24,Tony Grant,Everton,Manchester City,T42bbc9458e
+B0216,B,1999-00,2000-01-11,Heiðar Helguson,Lillestrøm,Watford,Tec5ae11ac9
+B0217,B,1999-00,2000-01-20,Cedric Roussel,AA Gent,Coventry City,T33d9bb77c2
+B0218,B,1999-00,2000-01-20,Michael Branch,Everton,Wolverhampton Wanderers,Tdce31cfe88
+B0219,B,1999-00,2000-01-21,Ysrael Zúñiga,FBC Melgar,Coventry City,T559fc41ba3
+B0220,B,1999-00,2000-01-28,Diego Gavilan,Cerro Porteno,Newcastle United,Tdbc01d4240
+B0221,B,1999-00,2000-02-24,Colin Hendry,Rangers,Coventry City,T3489177939
+B0222,B,1999-00,2000-03-07,Stephen Hughes,Arsenal,Everton,T8408e260ad
+B0223,B,1999-00,2000-03-23,Milton Núñez,PAOK,Sunderland,Tf2e634352e
+B0224,B,1999-00,2000-04-19,Georgi Kinkladze,Ajax,Derby County,Tceb54c25cf
+B0225,B,2000-01,2000-05-15,Frederic Kanoute,Lyon,West Ham United,Td14afa65dd
+B0226,B,2000-01,2000-05-18,Marc-Vivien Foe,West Ham United,Lyon,Ta9263033d0
+B0227,B,2000-01,2000-05-25,Martin Hiden,Leeds United,Salzburg,T8783654a57
+B0228,B,2000-01,2000-05-31,John Curtis,Manchester United,Blackburn Rovers,T87c5c3a1dd
+B0229,B,2000-01,2000-06-01,Darren Holloway,Sunderland,Wimbledon,Td4b24fee0b
+B0230,B,2000-01,2000-06-08,Bernard Diomede,Auxerre,Liverpool,Tf1a549b132
+B0231,B,2000-01,2000-06-13,Alf-Inge Haaland,Leeds United,Manchester City,Tc47f91366c
+B0232,B,2000-01,2000-06-19,Eiður Guðjohnsen,Bolton Wanderers,Chelsea,Tc6e0adb485
+B0233,B,2000-01,2000-06-26,Daniel Cordone,Racing Club,Newcastle United,T7bb9645a5d
+B0234,B,2000-01,2000-06-28,Mario Stanić,Parma,Chelsea,T1eebd4699b
+B0235,B,2000-01,2000-06-30,Alessandro Pistone,Newcastle United,Everton,T1d7c4c312d
+B0236,B,2000-01,2000-07-04,Gary Rowett,Birmingham City,Leicester City,T75c8039621
+B0237,B,2000-01,2000-07-04,Steve Watson,Aston Villa,Everton,T68e93a78f4
+B0238,B,2000-01,2000-07-05,Christian Karembeu,Real Madrid,Middlesbrough,Tf169e35d28
+B0239,B,2000-01,2000-07-05,Danny Higginbotham,Manchester United,Derby County,Tc8a08627ae
+B0240,B,2000-01,2000-07-07,David Hopkin,Leeds United,Bradford City,Tba31d29c8c
+B0241,B,2000-01,2000-07-08,Massimo Taibi,Manchester United,Reggina,Tc2ed58cb1d
+B0242,B,2000-01,2000-07-12,Jay Bothroyd,Arsenal,Coventry City,T84c8a0ffcc
+B0243,B,2000-01,2000-07-13,Alex Nyarko,RC Lens,Everton,Tbe72609c46
+B0244,B,2000-01,2000-07-14,Don Hutchison,Everton,Sunderland,Tc749dfed02
+B0245,B,2000-01,2000-07-14,John Collins,Everton,Fulham,T79e7cf1b8d
+B0246,B,2000-01,2000-07-19,Niclas Alexandersson,Sheffield Wednesday,Everton,Tc74318cc29
+B0247,B,2000-01,2000-07-21,Silvio Marić,Newcastle United,Porto,T856c88c629
+B0248,B,2000-01,2000-07-24,Thomas Gravesen,Hamburg,Everton,T821aae03e9
+B0249,B,2000-01,2000-07-25,Julio Arca,Argentinos Juniors,Sunderland,T7897f683cb
+B0250,B,2000-01,2000-07-26,Ade Akinbiyi,Wolverhampton Wanderers,Leicester City,Td8503c7fc9
+B0251,B,2000-01,2000-07-28,Alpay Özalan,Fenerbahçe,Aston Villa,T08de1a0cfc
+B0252,B,2000-01,2000-07-28,Didier Deschamps,Chelsea,Valencia,T60ac9cf904
+B0253,B,2000-01,2000-07-30,David Ginola,Tottenham Hotspur,Aston Villa,T653714cbb1
+B0254,B,2000-01,2000-07-31,Jonatan Johansson,Rangers,Charlton Athletic,T91a7d9dbf4
+B0255,B,2000-01,2000-07-31,Joseph-Désiré Job,RC Lens,Middlesbrough,T75035dd407
+B0256,B,2000-01,2000-07-31,Noel Whelan,Coventry City,Middlesbrough,T3c5be8f094
+B0257,B,2000-01,2000-07-31,Paul Robinson,Newcastle United,Wimbledon,Te5d97ee8e7
+B0258,B,2000-01,2000-08-02,David Thompson,Liverpool,Coventry City,T5b32fd5abf
+B0259,B,2000-01,2000-08-07,Alen Bokšić,Lazio,Middlesbrough,T86370b5613
+B0260,B,2000-01,2000-08-17,Dominic Matteo,Liverpool,Leeds United,T215deecd20
+B0261,B,2000-01,2000-08-17,Duncan Ferguson,Newcastle United,Everton,T6c5d0d7b4b
+B0262,B,2000-01,2000-08-18,Hermann Hreiðarsson,Wimbledon,Ipswich Town,T5cdaf04638
+B0263,B,2000-01,2000-08-25,Christian Ziege,Middlesbrough,Liverpool,Te11e277017
+B0264,B,2000-01,2000-08-31,Steve Howey,Newcastle United,Manchester City,T19ccc3a152
+B0265,B,2000-01,2000-08-31,Temur Ketsbaia,Newcastle United,Wolverhampton Wanderers,T8fa9d49e7e
+B0266,B,2000-01,2000-09-04,Igor Stepanovs,Skonto Riga,Arsenal,T83f756e6b7
+B0267,B,2000-01,2000-09-30,Lomana LuaLua,Colchester United,Newcastle United,Td11441e3fe
+B0268,B,2000-01,2000-10-16,Richard Dunne,Everton,Manchester City,Tc485dfada0
+B0269,B,2000-01,2000-10-31,Clarence Acuña,Universidad de Chile,Newcastle United,T2f6e5b1049
+B0270,B,2000-01,2000-11-08,Mark Fish,Bolton Wanderers,Charlton Athletic,T9f0582e884
+B0271,B,2000-01,2000-11-28,Alex Notman,Manchester United,Norwich City,T896053a874
+B0272,B,2000-01,2000-11-28,Rigobert Song,Liverpool,West Ham United,Tc70a66c9bd
+B0273,B,2000-01,2000-12-01,Robert Molenaar,Leeds United,Bradford City,Tf18155f167
+B0274,B,2000-01,2000-12-07,Igor Biscan,Dinamo Zagreb,Liverpool,T3db19c1465
+B0275,B,2000-01,2000-12-14,Matt Jones,Leeds United,Leicester City,T0a71ac5fdc
+B0276,B,2000-01,2000-12-15,Henning Berg,Manchester United,Blackburn Rovers,Td9a8496aa5
+B0277,B,2000-01,2000-12-21,Titi Camara,Liverpool,West Ham United,T1145b94ece
+B0278,B,2000-01,2000-12-29,Darren Huckerby,Leeds United,Manchester City,T209d790dff
+B0279,B,2000-01,2001-01-03,David Healy,Manchester United,Preston North End,T190a68cdee
+B0280,B,2000-01,2001-01-13,Juan Pablo Ángel,River Plate,Aston Villa,Td4d67c6541
+B0281,B,2000-01,2001-01-18,Christian Dailly,Blackburn Rovers,West Ham United,Te6f03968a2
+B0282,B,2000-01,2001-01-31,Didier Domi,Newcastle United,Paris Saint-Germain,T1a3553cb57
+B0283,B,2000-01,2001-01-31,Paul Butler,Sunderland,Wolverhampton Wanderers,T22a92aa89d
+B0284,B,2000-01,2001-02-28,Wayne Quinn,Sheffield United,Newcastle United,T21ba7765ce
+B0285,B,2000-01,2001-03-07,Chris Makin,Sunderland,Ipswich Town,T2de816a352
+B0286,B,2000-01,2001-03-08,Dean Windass,Bradford City,Middlesbrough,T4ae34bddbf
+B0287,B,2000-01,2001-03-13,Carl Tiler,Charlton Athletic,Portsmouth,T8f26aafb09
+B0288,B,2000-01,2001-03-19,Andy O'Brien,Bradford City,Newcastle United,T956ec7c8b0
+B0289,B,2000-01,2001-05-18,Nicolas Medina,Argentinos Juniors,Sunderland,Tae117e3ff5
+B0290,B,2001-02,2001-05-21,William Gallas,Marseille,Chelsea,T4f74d0bd37
+B0291,B,2001-02,2001-05-22,Shaun Bartlett,FC Zürich,Charlton Athletic,Tdfc7fcd337
+B0292,B,2001-02,2001-06-14,Francis Jeffers,Everton,Arsenal,T3e65fe3a38
+B0293,B,2001-02,2001-06-14,Frank Lampard,West Ham United,Chelsea,T0d4103295e
+B0294,B,2001-02,2001-06-14,Luis Boa Morte,Southampton,Fulham,Tc9185f7ee3
+B0295,B,2001-02,2001-06-18,Corrado Grabbi,Ternana,Blackburn Rovers,T28b2b8c29f
+B0296,B,2001-02,2001-06-19,Giovanni van Bronckhorst,Rangers,Arsenal,T86f0f204ef
+B0297,B,2001-02,2001-06-20,John Arne Riise,Monaco,Liverpool,Tc1a4590744
+B0298,B,2001-02,2001-06-25,Dennis Wise,Chelsea,Leicester City,T7c0cdd2585
+B0299,B,2001-02,2001-06-26,Emmanuel Petit,Barcelona,Chelsea,T7787c9bb13
+B0300,B,2001-02,2001-06-29,Alan Mahon,Sporting CP,Blackburn Rovers,T6e95e72a1c
+B0301,B,2001-02,2001-06-30,Craig Bellamy,Coventry City,Newcastle United,Tc9fd0225c1
+B0302,B,2001-02,2001-07-01,Carsten Fredgaard,Sunderland,FC Copenhagen,T893f4b5d1d
+B0303,B,2001-02,2001-07-07,Mustapha Hadji,Coventry City,Aston Villa,T58af80b99d
+B0304,B,2001-02,2001-07-09,Ian Walker,Tottenham Hotspur,Leicester City,Ta6234958bd
+B0305,B,2001-02,2001-07-10,Rory Delap,Derby County,Southampton,Tdef035e283
+B0306,B,2001-02,2001-07-11,David James,Aston Villa,West Ham United,Tba138caf79
+B0307,B,2001-02,2001-07-11,Gareth Southgate,Aston Villa,Middlesbrough,Tdf883470d5
+B0308,B,2001-02,2001-07-12,Juan Sebastián Verón,Lazio,Manchester United,T46ae7f9da4
+B0309,B,2001-02,2001-07-17,Tomasz Radzinski,Anderlecht,Everton,Tebcd9d65b0
+B0310,B,2001-02,2001-07-19,Christian Karembeu,Middlesbrough,Olympiacos,Td59e232ad5
+B0311,B,2001-02,2001-07-19,Olof Mellberg,Racing Santander,Aston Villa,T376c60f00d
+B0312,B,2001-02,2001-07-25,Luke Young,Tottenham Hotspur,Charlton Athletic,T0069cfd7e1
+B0313,B,2001-02,2001-07-26,Milan Baroš,Baník Ostrava,Liverpool,Tbdcfc81f91
+B0314,B,2001-02,2001-07-31,James Scowcroft,Ipswich Town,Leicester City,Tc172053ced
+B0315,B,2001-02,2001-08-01,Abdeslam Ouaddou,Nancy,Fulham,Tf003f739a9
+B0316,B,2001-02,2001-08-01,Laurent Robert,PSG,Newcastle United,T2590ace874
+B0317,B,2001-02,2001-08-02,Boudewijn Zenden,Barcelona,Chelsea,Tcf27805fb6
+B0318,B,2001-02,2001-08-08,Jon Harley,Chelsea,Fulham,T9e19c2d56d
+B0319,B,2001-02,2001-08-09,Jonathan Greening,Manchester United,Middlesbrough,Tf289fbafdc
+B0320,B,2001-02,2001-08-09,Mark Wilson,Manchester United,Middlesbrough,Tabb04bd45a
+B0321,B,2001-02,2001-08-17,Matteo Sereni,Sampdoria,Ipswich Town,T0dd4b2fff4
+B0322,B,2001-02,2001-08-17,Michael Ball,Everton,Rangers,Tdc9bdce94c
+B0323,B,2001-02,2001-08-24,Boško Balaban,Dinamo Zagreb,Aston Villa,T8883ce4d69
+B0324,B,2001-02,2001-08-30,Don Hutchison,Sunderland,West Ham United,T3cca703aa8
+B0325,B,2001-02,2001-08-31,Jerzy Dudek,Feyenoord,Liverpool,T47b31fdf74
+B0326,B,2001-02,2001-09-07,Lucas Neill,Millwall,Blackburn Rovers,T8cb9f6a3f7
+B0327,B,2001-02,2001-09-09,Allan Johnston,Rangers,Middlesbrough,Tf9bb0d3eb3
+B0328,B,2001-02,2001-09-11,Sylvain Distin,PSG,Newcastle United,Tf229574974
+B0329,B,2001-02,2001-09-13,Nathan Blake,Blackburn Rovers,Wolverhampton Wanderers,T926196c050
+B0330,B,2001-02,2001-09-14,Tomáš Řepka,Fiorentina,West Ham United,T3424d33547
+B0331,B,2001-02,2001-09-19,Alex Rae,Sunderland,Wolverhampton Wanderers,T96f8bcc399
+B0332,B,2001-02,2001-11-15,Thomas Myhre,Everton,Beşiktaş,Td88aa3283f
+B0333,B,2001-02,2001-11-30,Danny Dichio,Sunderland,West Bromwich Albion,Tb90db1a94e
+B0334,B,2001-02,2001-12-11,Chris Lumsdon,Sunderland,Barnsley,Tcea7ef8a71
+B0335,B,2001-02,2002-01-07,Danny Shittu,Charlton Athletic,Queens Park Rangers,T9045bbc5f3
+B0336,B,2001-02,2002-01-22,Diego Forlán,Independiente,Manchester United,T5bf9501895
+B0337,B,2001-02,2002-01-28,Joachim Björklund,Venezia,Sunderland,Tabff4f3b4c
+B0338,B,2001-02,2002-01-30,Abel Xavier,Everton,Liverpool,Td7dbd3ee82
+B0339,B,2001-02,2002-01-31,Tobias Linderoth,Stabæk,Everton,T5035b42a7a
+B0340,B,2001-02,2002-02-05,Ade Akinbiyi,Leicester City,Crystal Palace,T484a42687f
+B0341,B,2001-02,2002-02-08,Lee Carsley,Coventry City,Everton,Td2fbe31d82
+B0342,B,2001-02,2002-03-27,Peter Crouch,Portsmouth,Aston Villa,T442cffad68
