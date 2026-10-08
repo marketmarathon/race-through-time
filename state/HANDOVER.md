@@ -1,7 +1,7 @@
 # HANDOVER — 8 Oct 2026 (Claude Code cloud session: IQ-17, the RTT-102 AI assistant websites race, data build phase 1). Earlier sessions' notes follow below; open pull requests #19 (RTT-101) and #20 (RTT-103) carry their own newer handover sections.
 
 ## RTT-102 AI assistant websites race: data build phase 1 (IQ-17, 8 Oct 2026), awaiting Luke
-- **Branch** `claude/nice-wozniak-f62eio` (public), pull request open, **not merged** (DEC-057). The private repo is untouched: its `research/rtt-102/` inputs were only read. Brief: `prompts/CODE_SESSION_IQ-17.md` (8,744 bytes, SHA-256 `28bf52ab…e569`). Luke's start message: `prompts/CODE_SESSION_IQ-17_start.md`. The build ran in parallel with IQ-16 (DEC-503). **DEC numbers: IQ-17 uses DEC-500 onwards only (DEC-504); this session used DEC-500 to DEC-514**, so the next RTT-102 DEC is DEC-515.
+- **Branch** `claude/nice-wozniak-f62eio` (public), pull request https://github.com/marketmarathon/race-through-time/pull/21 open, **not merged** (DEC-057). The private repo is untouched: its `research/rtt-102/` inputs were only read. Brief: `prompts/CODE_SESSION_IQ-17.md` (8,744 bytes, SHA-256 `28bf52ab…e569`). Luke's start message: `prompts/CODE_SESSION_IQ-17_start.md`. The build ran in parallel with IQ-16 (DEC-503). **DEC numbers: IQ-17 uses DEC-500 onwards only (DEC-504); this session used DEC-500 to DEC-514**, so the next RTT-102 DEC is DEC-515.
 - **Owner decisions recorded:**
   - DEC-500: route D, Similarweb monthly website visits.
   - DEC-501: answers 2–4 of 7 Oct (older estimates marked; title states the measure; straight lines; Le Chat out).
