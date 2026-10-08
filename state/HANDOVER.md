@@ -3,6 +3,18 @@
 ## DEC number blocks (owner DEC-339, 8 Oct 2026) — read before recording any decision
 - Each parallel Code session uses its own block: **IQ-16 (RTT-103) DEC-331–DEC-399**; IQ-15 (RTT-101) DEC-400–DEC-499; IQ-17 (RTT-102) DEC-500 onwards. DEC-278..DEC-280 on this branch (RTT-103, 7 Oct) keep their numbers; the RTT-101 session renumbers its own three to DEC-400–DEC-402.
 
+## RTT-102 update (IQ-17c, 8 Oct 2026): Luke's last three answers
+- **Brief:** `prompts/CODE_SESSION_IQ-17c.md`. "All as recommended."
+- **Recorded:**
+  - DEC-528: step 5 approved, so ChatGPT December 2022 = 265M and January 2023 = 615M.
+  - DEC-529: Perplexity starts in December 2022 at 2.2 million.
+  - DEC-530: if the September 2026 profiles cannot be read, the race ends in August 2026, with Copilot and Meta AI as "latest figure".
+- **Numbering:** the brief said "from DEC-523", but DEC-523 to DEC-527 were already used in IQ-17b, so the next free numbers were used. **The next RTT-102 DEC is DEC-531.**
+- **Build:** no data value changed. Only the step-5 label (conflicts.csv, points.csv) and report §9 changed. No question is open.
+- **Next:**
+  1. Cowork's September 2026 profiles (9 Oct): add or map them as rows (see the IQ-17b note below), then rebuild and run `python3 tests/rtt102/run_tests_rtt102.py`.
+  2. Design session (DEC-069).
+
 ## RTT-102 update (IQ-17b, 8 Oct 2026): Luke's answers and Cowork's checks applied
 - **Brief:** `prompts/CODE_SESSION_IQ-17b.md`. Cowork's file `cowork_similarweb_verification_2026-10-08_IQ17.csv` (V43–V101) and the new `00_README.md` match the hashes in the brief (private commit `8d41c57`).
 - **Luke's answers** ("All as recommended") are DEC-515 to DEC-522. The rule now has his step 4, "the later publication over the earlier".
@@ -22,7 +34,7 @@
   1. Cowork reads the seven September 2026 profiles (9 Oct). Add each as a row in `source/observations_manual.csv`, or map the existing `B07x` rows in `source/verification_map.csv`; then rebuild and run the tests.
   2. Luke answers the 3 open questions in report §9.
   3. Design session.
-- **The next RTT-102 DEC is DEC-528.**
+- (Superseded by IQ-17c: the next RTT-102 DEC is DEC-531.)
 
 ## RTT-102 AI assistant websites race: data build phase 1 (IQ-17, 8 Oct 2026), awaiting Luke
 - **Branch** `claude/nice-wozniak-f62eio` (public), pull request https://github.com/marketmarathon/race-through-time/pull/21 open, **not merged** (DEC-057). The private repo is untouched: its `research/rtt-102/` inputs were only read. Brief: `prompts/CODE_SESSION_IQ-17.md` (8,744 bytes, SHA-256 `28bf52ab…e569`). Luke's start message: `prompts/CODE_SESSION_IQ-17_start.md`. The build ran in parallel with IQ-16 (DEC-503). **DEC numbers: IQ-17 uses DEC-500 onwards only (DEC-504); this session used DEC-500 to DEC-514** (IQ-17b then used DEC-515 to DEC-527).

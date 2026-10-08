@@ -3,10 +3,10 @@
  "files": {
   "CHECKS.md": "fb1b3b58978fe1c995206e4ad648b03c4dec346263ac5f2270668e1802dd65a3",
   "checks.json": "925eed8bccd251836509c4dc2507003254d5e39799c8596f8177a01d84f45230",
-  "conflicts.csv": "b938ab9bda4520ce992d7a3f79d3758a8297dbd27565695b49ef0a1094df4ed1",
+  "conflicts.csv": "9d2b7f3b71bb4f93fbd5c858bbc5216367929ff28a47de1c2ab87a3a0438ba77",
   "identities.csv": "275edafdb809a3820b0e00bea9d8493910183ea3b1bdfad181711bd2b7bd5b72",
   "place_changes.csv": "225f411ebfae16168ac7e67d31c203d9ee58c598437626f0188f91cbe7c49f4a",
-  "points.csv": "77693caabe99ae53f5cf63ad0105a04633cc3dd7b2142790d6c9a63e2fca9650",
+  "points.csv": "06280b0a35af06cd6f767a9e1526b0ff2bc077932e0e61728751cbe25a57f991",
   "series_monthly.csv": "75495b74dad664ffaf85fb11f0217734243a351ee982463efefa68e6617a53e3",
   "source/exclusions.csv": "824b9d6b472fc86b2dbd57ede6b1fea0f50c552f3ef647c02e96a08f22d6bfc9",
   "source/inputs_sha256.csv": "c987104d2b86b0e5a75ee95fe767dcb80315bbb08a6d9ec43f2ea94871b82bd9",

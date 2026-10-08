@@ -157,7 +157,7 @@ def _latest(rows):
 
 
 def _chart_in_one_publication(rows):
-    """Step 5 (Claude proposal, DEC-524): within ONE publication, its labelled month-by-month chart or table over its prose."""
+    """Step 5 (Claude proposal DEC-524, approved by Luke DEC-528): within ONE publication, its labelled month-by-month chart or table over its prose."""
     if len({r["pub_id"] for r in rows}) != 1:
         return rows
     return [r for r in rows if r["quote_as_recorded"] == "IMAGE"] or rows
@@ -167,7 +167,7 @@ STEPS = [("1: current data version over older", _keep(lambda r: r["data_version"
          ("2: Similarweb's own publication over press", _keep(lambda r: r["source_type"] == "S")),
          ("3: final over preliminary", _keep(lambda r: r["preliminary"] != "yes")),
          ("4: the later publication over the earlier (DEC-517)", _latest),
-         ("5: within one publication, its labelled chart over its prose (Claude proposal, DEC-524)", _chart_in_one_publication)]
+         ("5: within one publication, its labelled chart over its prose (DEC-528)", _chart_in_one_publication)]
 
 
 def apply_rule(rows):
@@ -551,7 +551,7 @@ def report(path, pts, used, conflicts, series, changes, ranks, trn, checks, runn
     # conflicts
     w("## 3. Conflicts: what Luke's rule settles, what is pending, what is left over")
     w("")
-    w("Rule (DEC-502 (2), DEC-517): Similarweb's current data version (published on or after 28 Jul 2024) over the older one; then Similarweb's own publication over press quoting it; then final over preliminary; then the later publication over the earlier. **Step 5 is Claude's proposal (DEC-524, question 1):** within one publication, its labelled month-by-month chart or table over a figure in its prose. Never averaged. Applied to VERIFIED, eligible figures only; the same rule over every version (verified or not) shows what would change once the rest is checked. Versions that are the same number printed at a coarser precision (rounded or cut, e.g. 2.6 billion and 2.595B) agree and are not conflicts; agreement is tested between every pair (DEC-523).")
+    w("Rule (DEC-502 (2), DEC-517): Similarweb's current data version (published on or after 28 Jul 2024) over the older one; then Similarweb's own publication over press quoting it; then final over preliminary; then the later publication over the earlier. then (step 5, Claude's proposal approved by Luke, DEC-528) within one publication, its labelled month-by-month chart or table over a figure in its prose. Never averaged. Applied to VERIFIED, eligible figures only; the same rule over every version (verified or not) shows what would change once the rest is checked. Versions that are the same number printed at a coarser precision (rounded or cut, e.g. 2.6 billion and 2.595B) agree and are not conflicts; agreement is tested between every pair (DEC-523).")
     w("")
     w("| Case | Bar, month | Status | Used | Rule on verified figures | If every version were verified | Versions |")
     w("|---|---|---|---|---|---|---|")
@@ -563,7 +563,7 @@ def report(path, pts, used, conflicts, series, changes, ranks, trn, checks, runn
     w("- **ChatGPT, May 2024:** 2.2 billion (Nov 2024 post, current version, VERIFIED) is used. The June 2024 post's \"2.5 billion\" is NOT FOUND (V54: no printed figure, chart without labels); it would lose at step 1 anyway.")
     w("- **DeepSeek, February 2026:** Similarweb's own 273.2M for deepseek.com (February table, VERIFIED V62) is used. The Decoder's 246.4 million names no address, so it does not count for DeepSeek (DEC-507).")
     w("- **Claude, February and January 2026:** February = 290.3M (Similarweb's dated February table, +43.07% month on month, V61; The Decoder and the IPO report's 290M agree; DEC-516). The IPO blog's \"203 million\" for February is set aside as January's figure (DEC-525); January 2026 = 203M from the IPO report, \"between January and April 2026 (203M to 824M visits a month)\" (V86).")
-    w("- **ChatGPT, December 2022 and January 2023:** the birthday post prints 265M and 615M in its infographic and \"266 million\" and \"617 million\" in its text (the March 2023 post says 616 million for January). Step 4 keeps the birthday post (the latest); step 5, Claude's proposal, picks its infographic (question 1).")
+    w("- **ChatGPT, December 2022 and January 2023:** the birthday post prints 265M and 615M in its infographic and \"266 million\" and \"617 million\" in its text (the March 2023 post says 616 million for January). Step 4 keeps the birthday post (the latest); step 5 (DEC-528) picks its infographic.")
     w("- **Small differences:** Claude May 2026 952.6M (Sep newsletter, later) over 952.5M (Jul newsletter image); Claude June 2026 946.8M (Sep newsletter) over the July image's 946.7M; ChatGPT September 2025 Similarweb's 2025 table (5,904,115,522, Jan 2026) over Carr's 5.6 billion (Oct 2025), all by step 4; Perplexity December 2023: Reuters' 45.6 million and 45 million agree (45.6 cut to 45), so the more precise one is used.")
     w("- **Bard, April and May 2023, ChatGPT July 2023:** \"visitors\" in Similarweb's text, used as visits (DEC-518).")
     w("- **Copilot, September 2024:** only Digiday's 37 million (press quoting Similarweb, VERIFIED V25) exists and is used. It fits Similarweb's own October post (\"growth of 87.6% MoM to 69.4 million\"). Copilot and Meta AI are not in the IPO report, so their last figures stay September 2025 and December 2025 until the September 2026 profiles are read.")
@@ -647,11 +647,7 @@ def report(path, pts, used, conflicts, series, changes, ranks, trn, checks, runn
 
 QUESTIONS = """## 9. Questions for Luke
 
-Luke's answers to the eight questions of 8 Oct are recorded as DEC-515 to DEC-522 ("All as recommended"). Still open, each with Claude's recommendation and what happens if there is no answer:
-
-1. **Step 5 of the conflict rule (Claude's proposal, DEC-524): "within one publication, its labelled month-by-month chart or table over a figure in its prose".** It decides two months that your fourth step cannot, because both versions are in the same post: ChatGPT **December 2022 = 265M** (infographic) rather than \"266 million\" (text, also in three earlier posts), and **January 2023 = 615M** rather than \"617 million\" (the March 2023 post's 616 million loses at step 4). The infographic is the post's own month-by-month series, labelled \"Monthly Visits | All Traffic | Worldwide\", and it supplies all eleven months to October 2023. *Recommendation:* approve. *If no answer:* it stays applied. If you say no, both months become leftovers and ChatGPT's bar starts in February 2023 (1.00B).
-2. **Perplexity from December 2022.** Reuters (4 Jan 2024, via Investing.com) quotes Similarweb: \"45 million visits in December, up from 2.2 million when the service became available in December 2022\" (website and mobile web; \"worldwide\" is not stated). With it, Perplexity's bar starts at 2.2 million in December 2022: second place until Bard arrives in March 2023, then third until January 2025. *Recommendation:* keep it (press quoting Similarweb, checked at source, and consistent with Similarweb's own March 2024 figure). *If no answer:* kept.
-3. **If the September 2026 profiles still cannot be read.** Six bars are verified to August 2026 (the IPO report and the September newsletter); Copilot and Meta AI end in September 2025 and December 2025. *Recommendation:* if Cowork cannot read the profiles on 9 Oct, end the race at **August 2026** and show Copilot and Meta AI as \"latest figure\". *If no answer:* the build keeps ChatGPT's September 2026 point, and the design session ends the film in August 2026.
+All answered "as recommended" (8 Oct 2026): the first eight as DEC-515 to DEC-522; the three IQ-17b questions as DEC-528 (step 5: within one publication, its labelled chart beats its text), DEC-529 (Perplexity from December 2022 at 2.2 million) and DEC-530 (if the September 2026 profiles cannot be read, the race ends in August 2026, with Copilot and Meta AI as "latest figure"). No question is open. Next: Cowork reads the seven September 2026 profiles (9 Oct), then a small rebuild.
 """
 
 
