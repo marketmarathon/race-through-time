@@ -2,7 +2,7 @@
 
 ## RTT-103 — design round 2 (IQ-18b, 8 Oct 2026) — awaiting Luke's music choice
 - **Same branch and pull request** https://github.com/marketmarathon/race-through-time/pull/22 (not merged, DEC-057; Luke merges #18 first, DEC-364). Brief: `prompts/CODE_SESSION_IQ-18b.md`. Decisions DEC-353..DEC-365 (Luke's answers, "all as recommended", and Cowork's fixes (a)-(i)), DEC-366..DEC-370 (Claude). **Next free RTT-103 number: DEC-371.**
-- **Private pre-release (watch this):** RELEASE_PENDING
+- **Private pre-release (watch this):** https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-103-round2-aea95a9-run3 (run https://github.com/marketmarathon/race-through-time/actions/runs/37823371543): contact sheets d01 (race) and d02 (steps), 12 stills each also at phone size, and one clip from 2025 into the end (62 s, no audio); every SHA-256 in the release notes and `state/STATE.json` (`design_round2`).
 - **The design:** `kits/rtt-103/config_rtt103_film.json` — the race as chosen, five story cards, Alibaba leaving and returning, the running total with its line, then the steps inside the player (`kits/rtt-002/rtt_steps.js`): 2026 plans (share-sale card, then iCapital's card), look-ahead boards 2027–2030, the combined line, the peak timeline, the final table (10 s). 2 min 50 s without music.
 - **Baidu:** its own logo, `File:Baidu.svg` from English Wikipedia (marked PD), identification only (DEC-368).
 - **Tests:** RTT-103 4/4 and phone check 12/12 (with the new check that every dated still shows that quarter's master figures); 50 frames of RTT-001/002/003 pixel-identical with the pre-RTT-103 player; RTT-002 20/20, RTT-003 5/5, RTT-001 31/31 PASS (results files unchanged: no OCR here).

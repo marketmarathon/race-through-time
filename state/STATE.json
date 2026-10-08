@@ -966,7 +966,36 @@
         "tests": "run_tests_rtt103.js 4/4 (base, film incl. 8 steps, clip 2025-end, global); phone_check_rtt103.js PASS 12/12 incl. the dated-figures check (Cowork fix (h)); RTT-002 20/20, RTT-003 5/5, RTT-001 31/31 PASS",
         "baidu_logo": "File:Baidu.svg (en.wikipedia, marked PD, author Baidu), run 37818490084, private commit 5623257 (DEC-354, DEC-368)",
         "story_cards": "five in the race, each from the first frame of its quarter (OpenAI and Oracle +0.2 s); Alphabet's share sale opens the 2026 plans step (DEC-358, DEC-370)",
-        "release": "PENDING"
+        "release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-103-round2-aea95a9-run3 (pre-release, run https://github.com/marketmarathon/race-through-time/actions/runs/37823371543; 27 files: clip 2025-to-end 1866 frames = 62.2 s, 1920x1080, no audio; sheets d01, d02; 12 stills + 12 phone copies; 0 workflow artifacts)",
+        "sha256": {
+          "rtt103_clip_2025_end_aea95a9_1920x1080.mp4": "f538c64678c70e66837acfb1401ae8a9be5c2c15517bd100dd4efdaafc4cade9",
+          "d01_race_round2_sheet.png": "e32e955ed0c6461bd4df9f0bcf2b76c341628b0bc6a56c05bb9d2116daf7cccf",
+          "d02_steps_round2_sheet.png": "8143c124b398fc38d390eb7828d25cda3b1bf02f1ad6f5a62ecc9ed65934c117",
+          "r01_board_jun2026_1920x1080.png": "dac087c8339bd9c31ee5208f39db417a2f2f2b4702dcea4f5b89325ab3171f89",
+          "r01_board_jun2026_phone_390pt.png": "a052cbbd2301866e30bd7485fbe5a7abb72fb010a4b58551f484ba62e9d7f9e1",
+          "r02_story_card_stargate_1920x1080.png": "1557c2118b9aeba3469ced1c7ac3ba0fcd0b51c036c32ff3872a9ad414d7da9d",
+          "r02_story_card_stargate_phone_390pt.png": "1a946cf7ccb911332fb97890a82a8f1b0cc15dbe9329a02726655bf3d44e09c6",
+          "r03_alibaba_leaves_1920x1080.png": "338d3213e4367eb331a8f7b3bb2d156a89973d08081cde1d72577500c428bf6f",
+          "r03_alibaba_leaves_phone_390pt.png": "1fa246c8f5b3b47648441f6201912915e48646f506da8b4dfa84de21f748b826",
+          "r04_gap_panel_1920x1080.png": "44fe9735b6fbb3b468662c75ebf45bf650bf63f0f8b9f8fb0b84ebb0698fdc01",
+          "r04_gap_panel_phone_390pt.png": "7456b62960de8d8b017f61e9431a0ef9ea054d00e6c3e356bf6a736eeb8e028e",
+          "r05_alibaba_returns_1920x1080.png": "381127e007d9e7b11eca13b06198d7a8b8f5b68ff3d790da23edf6c5887115fe",
+          "r05_alibaba_returns_phone_390pt.png": "0c5205ed52ca21a8aa479e4b3f38e078203dcf97e0e4b52befdb2c2fee4a2b35",
+          "r06_plans_share_sale_1920x1080.png": "c8adb2d7cd76d0494b7080f31e14a65e898f5d27e85363989b417faeb8f86c87",
+          "r06_plans_share_sale_phone_390pt.png": "89c1cb5a7981b68032356546a4a4e779b082b290f10a8f697339d65dc609d50f",
+          "r07_plans_icapital_1920x1080.png": "d63aa754c0d8a9b2a7be52c635a7d72f8a0ec62ef7f2c472697c1311b9f40aad",
+          "r07_plans_icapital_phone_390pt.png": "ae15b88a8b84c9157b3ec616a694e53f3ea68a1487e3210ec9cea3b4c6a10853",
+          "r08_look_2027_1920x1080.png": "253d4d099a67e8494f34ea1b1ca15720a521bd63cf7164ac28878ce9daf29cee",
+          "r08_look_2027_phone_390pt.png": "102648f77342345b9d8293541b568ebb54b04da45d5cdfbc47df28ff6e103fd1",
+          "r09_look_2030_1920x1080.png": "3e839b2778872cbd56b43cd1e6c350ae11b94ed514ea22beb322f3979f036c05",
+          "r09_look_2030_phone_390pt.png": "fcf4f9dad7479faaefdf37e641653102cbead460ef4d759d3daa5799387ff17f",
+          "r10_line_1920x1080.png": "d61a7820298934b2bce47298d976193fc3db1003dc9538ff3718de0fab271ef9",
+          "r10_line_phone_390pt.png": "76d36d3ab1cb446ed45fc91420b455427ea8fafd424c4465f28b7808f9a7c06f",
+          "r11_peaks_1920x1080.png": "0fef973cb2d21ea822678c92e3b4f5980893ca7d7e3c465429d4ae7a07e8de54",
+          "r11_peaks_phone_390pt.png": "69a4b05b71f6846033e22730c55e33609c5854f451a659616b5cb1ae8fc5e5c5",
+          "r12_final_table_1920x1080.png": "52b5a7e8cb8f2ce61069e46012ebf9c12ac31f5e1c903946f42d217863fcc64f",
+          "r12_final_table_phone_390pt.png": "df5bf3fd46ebbde11eec8bb7b967907f444fa0e011b33fb9aad0dccac280ad2e"
+        }
       }
     }
   ],
