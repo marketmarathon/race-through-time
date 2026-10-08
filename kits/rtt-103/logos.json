@@ -1,0 +1,17 @@
+{
+ "note": "RTT-103 company logos (IQ-18, design round 1). Purpose: identification of each company on its bar only (as RTT-001, DEC-180/DEC-182; house style section 7). Files live ONLY in the private repo (assets/rtt-103/logos/), fetched on a GitHub runner by .github/workflows/rtt103_assets.yml with scripts/rtt103_fetch_logos.py, because Wikimedia answers HTTP 429 to the Claude Code container (8 Oct 2026). For each company the runner takes the first candidate title that exists on Commons (else the first search hit whose title contains 'logo'), records the file page, licence, author, restrictions and SHA-1 from the Commons API, and keeps the file only if the downloaded SHA-1 equals the API's. Hashes are then copied into `fetched` below and into assets_sha256.txt; every render checks them. Never redrawn or recoloured; crops only where Luke allows.",
+ "logos": [
+  {"id": "amazon",    "candidates": ["File:Amazon logo.svg"], "search": "Amazon logo"},
+  {"id": "microsoft", "candidates": ["File:Microsoft logo (2012).svg"], "search": "Microsoft logo 2012"},
+  {"id": "alphabet",  "candidates": ["File:Google 2015 logo.svg"], "search": "Google 2015 logo", "why": "the bar reads 'Alphabet (Google)'; Google's wordmark is what viewers recognise (Alphabet's own wordmark fetched as an alternative)"},
+  {"id": "alphabet_wordmark", "candidates": ["File:Alphabet Inc Logo 2016.svg", "File:Alphabet Inc. Logo 2016.svg", "File:Alphabet Inc.svg"], "search": "Alphabet Inc logo", "optional": true},
+  {"id": "meta",      "candidates": ["File:Meta Platforms Inc. logo.svg"], "search": "Meta Platforms logo"},
+  {"id": "facebook_f", "candidates": ["File:Facebook f logo (2019).svg"], "search": "Facebook f logo", "optional": true, "why": "alternative for the years before the 2021 rename (a question for Luke, not drawn in round 1)"},
+  {"id": "oracle",    "candidates": ["File:Oracle logo.svg"], "search": "Oracle logo"},
+  {"id": "alibaba",   "candidates": ["File:Alibaba en logo.svg", "File:Alibaba Group logo.svg"], "search": "Alibaba Group logo"},
+  {"id": "tencent",   "candidates": ["File:Tencent Logo.svg"], "search": "Tencent logo"},
+  {"id": "baidu",     "candidates": ["File:Baidu Logo.svg", "File:Baidu logo.svg", "File:Baidu.com logo.svg", "File:Baidu logo 2012.svg"], "search": "Baidu logo"},
+  {"id": "coreweave", "candidates": ["File:CoreWeave logo.svg"], "search": "CoreWeave logo"}
+ ],
+ "fetched": {}
+}

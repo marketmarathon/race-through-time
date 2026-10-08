@@ -1,0 +1,64 @@
+# Race Through Time - RTT-103 company logos (IQ-18, design round 1). Its own workflow: nothing here can start a
+# render of any episode.
+#
+# Wikimedia answers HTTP 429 to the Claude Code cloud container, so the logos listed in kits/rtt-103/logos.json are
+# looked up and downloaded here, on a GitHub-hosted runner, and committed straight into the PRIVATE repo (DEC-060).
+# This repository is PUBLIC (DEC-006, DEC-061), so this workflow:
+#   - pushes to the private repo with the secret RTT_PRIVATE_TOKEN, never printing it;
+#   - keeps a file only if its downloaded SHA-1 equals the Commons API's, and records page, licence, author,
+#     restrictions, SHA-1 and SHA-256 in a manifest next to the files (copied into kits/rtt-103/logos.json afterwards);
+#   - uploads NO workflow artifact, uses NO cache and prints only titles, names, sizes and hashes;
+#   - deletes everything it downloaded from the runner at the end.
+# Trigger: a push that changes this file or the fetch script on the IQ-18 branch, or by hand.
+name: rtt103-assets
+
+on:
+  push:
+    branches: [claude/magical-einstein-hguyvv]
+    paths: [.github/workflows/rtt103_assets.yml, scripts/rtt103_fetch_logos.py]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rtt103-assets
+  cancel-in-progress: false
+
+env:
+  PRIVATE_REPO: marketmarathon/race-through-time-private
+  PRIVATE_BRANCH: claude/magical-einstein-hguyvv
+
+jobs:
+  fetch:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Look up and download from Commons, check SHA-1, commit to the private repo
+        env:
+          GH_TOKEN: ${{ secrets.RTT_PRIVATE_TOKEN }}
+        run: |
+          set -euo pipefail
+          if [ -z "$GH_TOKEN" ]; then echo "::error::secret RTT_PRIVATE_TOKEN is not available to this run"; exit 1; fi
+          W="$RUNNER_TEMP/rtt103"; mkdir -p "$W"
+          git clone -q "https://x-access-token:${GH_TOKEN}@github.com/${PRIVATE_REPO}.git" "$W/private"
+          cd "$W/private"
+          if git ls-remote --exit-code --heads origin "$PRIVATE_BRANCH" > /dev/null; then git checkout -q "$PRIVATE_BRANCH"; else git checkout -q -b "$PRIVATE_BRANCH" origin/main; fi
+          cd "$GITHUB_WORKSPACE"
+          python3 scripts/rtt103_fetch_logos.py kits/rtt-103/logos.json "$W/private/assets/rtt-103/logos"
+          cd "$W/private"
+          git config user.name "rtt103-assets workflow"
+          git config user.email "rtt103-assets@users.noreply.github.com"
+          git add assets/rtt-103/logos
+          if git diff --cached --quiet; then echo "nothing new to commit"; exit 0; fi
+          git commit -q -m "RTT-103: company logos from Wikimedia Commons, SHA-1 checked (IQ-18; source run ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID})"
+          git push -q origin "HEAD:$PRIVATE_BRANCH"
+          echo "committed $(git rev-parse --short HEAD) to ${PRIVATE_REPO} ${PRIVATE_BRANCH}"
+
+      - name: Delete the downloads from the runner
+        if: always()
+        run: rm -rf "$RUNNER_TEMP/rtt103"
