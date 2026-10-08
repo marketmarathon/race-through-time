@@ -15,6 +15,8 @@
 #   - uploads NO workflow artifact, uses NO cache, and deletes frames and videos at the end.
 # No full film is rendered (DEC-069: nothing beyond the approved look goes into a film before Luke approves it).
 # Triggers: a push that changes THIS FILE on the IQ-18 branch, or by hand (once merged).
+# Run 1 (de7759e) failed at the first clip: the RTT-103 configs had no crf/preset for ffmpeg (added to config_rtt103_base.json,
+# crf 4 / slow as RTT-001; checked by tests/player/run_tests_rtt103.js). Run 2 renders the same stills, sheets and clips.
 name: rtt103-pilot
 
 on:

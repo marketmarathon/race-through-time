@@ -91,6 +91,11 @@ function global() {
   for (const l of fs.readFileSync(path.join(K103, 'dataset_hashes.txt'), 'utf8').split('\n').filter(l => / input /.test(l))) {
     const [h, , p] = l.split(' '); if (sha(path.join(ROOT, p)) !== h) fails.push('0: ' + p + ' changed since the adapter ran');
   }
+  /* render settings: every clip config carries the encoder settings rtt.js passes to ffmpeg (run 1 of rtt103_pilot.yml
+     failed without them, IQ-18) */
+  for (const c of fs.readFileSync(path.join(K103, 'clips.txt'), 'utf8').split('\n').filter(Boolean)) {
+    const cf = rtt.loadConfig(path.join(K103, c)); if (cf.crf == null || !cf.preset) fails.push('0: ' + c + ' has no crf/preset for ffmpeg');
+  }
   /* 9. colours */
   const base = rtt.loadConfig(path.join(K103, 'config_rtt103_base.json'));
   const cols = base.palette.map(c => TLM.drawnColour(c));

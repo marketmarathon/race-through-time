@@ -212,5 +212,7 @@
  },
  "notes": [
   "IQ-18 round 1 base (DEC-342 onwards): the RTT-001 approved layout (board sized to the entries, date top right, logo tiles) on RTT-103's data; every option config extends this file."
- ]
+ ],
+ "crf": 4,
+ "preset": "slow"
 }
