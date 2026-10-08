@@ -42,13 +42,13 @@ L_COLS = ["quarter", "number_of_companies_with_valid_data", "aggregate_TTM_capex
           "YoY_change_pct", "coverage_warning"]
 MASTER_COLS = ["date", "year", "quarter", "company", "display_name", "capex_TTM_usd", "capex_TTM_usd_bn", "rank",
                "previous_rank", "rank_change", "source_quality", "definition_warning", "data_status"]
-E26_COLS = ["company", "display_name", "display_label", "forecast_period", "forecast_type", "forecast_amount_usd_bn",
-            "range_low_usd_bn", "range_high_usd_bn", "midpoint_usd_bn", "metric_definition", "source", "source_grade",
-            "publication_date", "url", "notes"]
+E26_COLS = ["company", "display_name", "forecast_year", "display_label", "form", "forecast_period", "forecast_type",
+            "forecast_amount_usd_bn", "range_low_usd_bn", "range_high_usd_bn", "midpoint_usd_bn", "direction_text",
+            "display_style", "display_note", "metric_definition", "source", "source_grade", "publication_date", "url", "notes"]
 
 # Canonical series per company (brief section 26 option C; recommendation in K, awaiting Luke).
 CANON_LINE = {"amazon": "A", "microsoft": "B", "alphabet": "B", "meta": "B", "oracle": "B", "alibaba": "A", "tencent": "A",
-              "baidu": "A"}
+              "baidu": "A", "coreweave": "B"}
 CANON_LABEL = ("C: cash spent on property and equipment as printed in each company's cash-flow statement "
                "(Amazon: purchases net of proceeds from sales and incentives, its own capex measure; others: purchases "
                "of / additions to property and equipment). Finance leases excluded for every company.")
@@ -59,6 +59,7 @@ SERIES_TEXT = {
     "meta": "Meta purchases of property and equipment (cash; printed 'net' from the 2024 filings)",
     "oracle": "Oracle capital expenditures (cash purchases of property and equipment)",
     "alibaba": "Alibaba cash capital expenditure (see C)", "tencent": "Tencent (see C)", "baidu": "Baidu (see C)",
+    "coreweave": "CoreWeave purchase of property and equipment, including capitalized internal-use software (cash)",
 }
 
 
@@ -354,7 +355,8 @@ def name_at_time(cid, end):
     if cid == "meta":
         return "Facebook, Inc." if end < "2021-10-28" else "Meta Platforms, Inc."
     return {"amazon": "Amazon.com, Inc.", "microsoft": "Microsoft Corporation", "oracle": "Oracle Corporation",
-            "alibaba": "Alibaba Group Holding Limited", "tencent": "Tencent Holdings Limited", "baidu": "Baidu, Inc."}[cid]
+            "alibaba": "Alibaba Group Holding Limited", "tencent": "Tencent Holdings Limited", "baidu": "Baidu, Inc.",
+            "coreweave": "CoreWeave, Inc."}[cid]
 
 
 def fiscal_label(cid, end, quarters):
@@ -499,21 +501,9 @@ def write_rest(v):
     # ------------------------------------------------------------------ F and 2026E (curated, verbatim quotes)
     f_rows = read_csv(os.path.join(src, "guidance_2026.csv"))
     write_csv(os.path.join(out, "F_2026_capex_forecasts.csv"), f_rows, F_COLS)
-    e26 = []
-    for r in f_rows:
-        if r.get("forecast_period", "") not in ("FY2026", "CY2026") or r["notes"].startswith(("SUPERSEDED", "UNVERIFIED")):
-            continue
-        if r["forecast_type"] not in ("GUIDANCE", "ESTIMATE") or r["company"].startswith("Top nine"):
-            continue  # AWS_ESTIMATE, third-party restatements of guidance and industry totals stay in F only
-        label = "2026 GUIDANCE" if r["forecast_type"] == "GUIDANCE" else "2026 ESTIMATE"
-        amount = r["midpoint_usd_bn"] or r["single_estimate_usd_bn"]
-        e26.append({"company": r["company"], "display_name": display_of(C, r["company"]), "display_label": label,
-                    "forecast_period": r["forecast_period"], "forecast_type": r["forecast_type"],
-                    "forecast_amount_usd_bn": r["single_estimate_usd_bn"] or "",
-                    "range_low_usd_bn": r["low_usd_bn"], "range_high_usd_bn": r["high_usd_bn"],
-                    "midpoint_usd_bn": r["midpoint_usd_bn"], "metric_definition": r["metric_definition"],
-                    "source": r["source"], "source_grade": r["source_grade"], "publication_date": r["publication_date"],
-                    "url": r["url"], "notes": ("Range: show low-high, never the midpoint alone. " if r["low_usd_bn"] else "") + r["notes"]})
+    e26 = forecast_rows(f_rows, src, B, C)
+    write_csv(os.path.join(out, "AI_SPENDING_RACE_FORECAST.csv"), e26, E26_COLS)
+    e26 = [r for r in e26 if r["forecast_year"] == "2026"]
     write_csv(os.path.join(out, "AI_SPENDING_RACE_2026E.csv"), e26, E26_COLS)
 
     # ------------------------------------------------------------------ G (curated)
@@ -521,7 +511,7 @@ def write_rest(v):
 
     # ------------------------------------------------------------------ H: coverage
     col_of = {"amazon": "Amazon", "microsoft": "Microsoft", "alphabet": "Alphabet", "meta": "Meta", "oracle": "Oracle",
-              "alibaba": "Alibaba", "tencent": "Tencent", "baidu": "Baidu"}
+              "alibaba": "Alibaba", "tencent": "Tencent", "baidu": "Baidu", "coreweave": "CoreWeave"}
     h_rows, h_series = [], []
     last = latest or (2026, 2)
     for b in B.buckets(B.FIRST_BUCKET, last):
@@ -610,7 +600,7 @@ def write_rest(v):
                            "display_name": C[c]["display"], "capex_TTM_usd": val, "capex_TTM_usd_bn": bn(val),
                            "rank": rank, "previous_rank": pr or "", "rank_change": (pr - rank) if pr else "",
                            "source_quality": f"Grade {ttm[(c, b)]['quality']}",
-                           "definition_warning": DEF_WARN.get(c, "") + (" Window spans a presentation change." if ttm[(c, b)]["brk"] else ""),
+                           "definition_warning": definition_warning_for(c, b) + (" Window spans a presentation change." if ttm[(c, b)]["brk"] else ""),
                            "data_status": "ACTUAL_VERIFIED_AT_SOURCE"})
         prev_rank = {c: r for r, (val, c) in enumerate(board, 1)}
     write_csv(os.path.join(out, "AI_SPENDING_RACE_MASTER.csv"), m_rows, MASTER_COLS)
@@ -677,7 +667,58 @@ RESTATE_WHY = {
 DEF_WARN = {
     "amazon": "Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.",
     "meta": "",
+    "tencent": "ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",
 }
+
+
+def definition_warning_for(cid, b):
+    w = DEF_WARN.get(cid, "")
+    if cid == "alibaba" and b <= (2016, 1):
+        w = ("Alibaba before April 2016 includes acquisitions of licensed copyrights and intangible assets "
+             "(5.2% of FY2015 and 6.6% of FY2016 capex, per its FY2019 Form 20-F); from 2018 its later scope (property and equipment incl. campus land).")
+    return w
+
+
+def forecast_rows(f_rows, src, B, C):
+    """Forecast frames 2026-2028 (DEC-297): the companies' OWN latest guidance only (number, range or direction), plus
+    ByteDance as a greyed press report in 2026 (DEC-296). Research-firm estimates, superseded and unverified rows stay in F."""
+    out = []
+    for r in f_rows:
+        n = r["notes"]
+        if n.startswith(("SUPERSEDED", "UNVERIFIED")) or " Q" in r["forecast_period"] or "Jun 2025" in r["forecast_period"]:
+            continue
+        press = r["company"] == "ByteDance" and r["source_grade"] == "D" and n.startswith("VERIFIED")
+        if r["forecast_type"] not in ("GUIDANCE", "GUIDANCE_DIRECTION_ONLY") and not press:
+            continue
+        year = re.search(r"20\d\d", r["forecast_period"]).group(0)
+        form = "DIRECTION_ONLY" if r["forecast_type"] == "GUIDANCE_DIRECTION_ONLY" else ("RANGE" if r["low_usd_bn"] else "NUMBER")
+        amount, note, style = r["single_estimate_usd_bn"], "", "standard"
+        if press:
+            # US$ at the mean of the Federal Reserve H.10 daily rates in 2026 so far (DEC-298); lower bound
+            fx = [(d_, Decimal(x)) for d_, x in ((q["date"], q["cny_per_usd"]) for q in B.read_csv_skip_comments(os.path.join(src, "fx_cny_per_usd_daily.csv"))) if x and d_ >= "2026-01-01"]
+            mean = (sum(x for _, x in fx) / len(fx)).quantize(Decimal("0.000001"), rounding=ROUND_HALF_UP)
+            amount = money(Decimal(200) / mean, 1)
+            style = "greyed"
+            note = (f"Press report from unnamed sources (SCMP, 9 May 2026): more than 200 billion yuan; shown as more than US${amount}bn "
+                    f"at {mean} yuan per US$ (mean of {len(fx)} H.10 daily rates, {fx[0][0]} to {fx[-1][0]}). Lower bound; not company guidance.")
+        direction = ""
+        if form == "DIRECTION_ONLY":
+            m = re.search(r'DIRECTION ONLY: ([^.(]+)', n)
+            direction = m.group(1).strip() if m else ""
+        basis = {"Meta": "includes principal payments on finance leases", "Microsoft": "includes finance leases; Microsoft's own period",
+                 "Amazon": "whole of Amazon; definition not stated", "Alphabet": "purchases of property and equipment"}.get(r["company"], "")
+        if "FY2027 (Jul 2026" in r["forecast_period"]:
+            basis += " (fiscal year July 2026 - June 2027)"
+        out.append({"company": r["company"], "display_name": display_of(C, r["company"]), "forecast_year": year,
+                    "display_label": f"{year} {'ESTIMATE' if press else 'GUIDANCE'}", "form": form,
+                    "forecast_period": r["forecast_period"], "forecast_type": "PRESS_REPORT_ESTIMATE" if press else r["forecast_type"],
+                    "forecast_amount_usd_bn": amount, "range_low_usd_bn": r["low_usd_bn"], "range_high_usd_bn": r["high_usd_bn"],
+                    "midpoint_usd_bn": r["midpoint_usd_bn"], "direction_text": direction, "display_style": style,
+                    "display_note": note or (f"Range: show {r['low_usd_bn']}-{r['high_usd_bn']}, never the midpoint alone." if form == "RANGE" else ""),
+                    "metric_definition": r["metric_definition"] + (f" [{basis}]" if basis else ""), "source": r["source"],
+                    "source_grade": r["source_grade"], "publication_date": r["publication_date"], "url": r["url"], "notes": n})
+    out.sort(key=lambda r: (r["forecast_year"], r["display_style"] == "greyed", r["company"]))
+    return out
 
 
 def display_of(C, name):
@@ -955,8 +996,8 @@ def write_eligibility(out, src, v, B):
                            "cash 'Purchase of property and equipment, including capitalized internal-use software'; every figure printed in the cited filing",
          "would_rank_at_latest_common_quarter": rank if ttm else "",
          "historical_coverage_test": "FAIL for a 2010 start: quarterly figures only from 2024 (NOT_YET_EXISTED as a public filer before)",
-         "materiality_test": "PASS (TTM above two companies in the race)", "comparable_definition": "YES (cash purchases of property and equipment)",
-         "recommendation": "Candidate only. If Luke wants it, add from 2024 Q4 (first TTM) with an 'entered the race' marker; not added without approval.",
+         "materiality_test": "PASS (TTM above Tencent and Baidu at 2026 Q2)", "comparable_definition": "YES (cash purchases of property and equipment)",
+         "recommendation": "ADDED to the race by Luke (DEC-295) as a late entrant from its first valid TTM point, 2024 Q4 (four consecutive quarters from its own filings); nothing before its first published quarter (2024 Q1).",
          "sources": ";".join(sorted({cw[k]["doc_url"] for k in cw if k in ((("2025-01-01", "2025-12-31")), ("2025-01-01", "2025-06-30"), ("2026-01-01", "2026-06-30"))}))},
         {"company": "ByteDance", "why_considered": "In TrendForce's top nine CSPs", "listed_since": "Private",
          "first_quarter_with_capex": "NOT FOUND (no quarterly disclosure)", "TTM_capex_usd_bn_at_latest_common_quarter": "",
@@ -1005,13 +1046,28 @@ def format_checks(out, v, B):
     check("Master: no estimate or guidance rows", all(r["data_status"] == "ACTUAL_VERIFIED_AT_SOURCE" for r in m), f"{len(m)} rows")
     e26 = B.read_csv(os.path.join(out, "AI_SPENDING_RACE_2026E.csv"))
     check("2026E: every row labelled 2026 GUIDANCE or 2026 ESTIMATE", all(r["display_label"] in ("2026 GUIDANCE", "2026 ESTIMATE") for r in e26), f"{len(e26)} rows")
+    a_ids = {r["source_id"] for r in B.read_csv(os.path.join(out, "A_source_catalogue.csv"))}
+    cited = {(fn, x) for fn, col in (("B_capex_observations.csv", "source_id"), ("F_2026_capex_forecasts.csv", "source"),
+                                     ("G_AI_capex_story_events.csv", "source"), ("AI_SPENDING_RACE_FORECAST.csv", "source"))
+             for r in B.read_csv(os.path.join(out, fn)) for x in r[col].split(";") if x}
+    missing = sorted(x for x in cited if x[1] not in a_ids)
+    check("Every source cited in B, F, G and the forecast file is listed in A", not missing, f"{len(cited)} citations; missing: {missing[:3]}")
+    bars = [r["company"] for fn in ("AI_SPENDING_RACE_MASTER.csv", "E_capex_TTM_race.csv", "D_quarterly_capex_clean.csv")
+            for r in B.read_csv(os.path.join(out, fn)) if "openai" in r["company"].lower() or "bytedance" in r["company"].lower()]
+    check("OpenAI and ByteDance are never bars (DEC-301, DEC-296)", not bars, f"{len(bars)} found")
+    fc = B.read_csv(os.path.join(out, "AI_SPENDING_RACE_FORECAST.csv"))
+    check("Forecast frames: companies' own guidance only, plus ByteDance greyed (DEC-296, DEC-297)",
+          all(r["forecast_type"] in ("GUIDANCE", "GUIDANCE_DIRECTION_ONLY") or (r["company"] == "ByteDance" and r["display_style"] == "greyed") for r in fc)
+          and not any("trendforce" in (r["source"] + r["company"]).lower() for r in fc), f"{len(fc)} rows")
+    check("Forecast frames: every range has its low and high (never a midpoint alone)",
+          all(r["range_low_usd_bn"] and r["range_high_usd_bn"] for r in fc if r["form"] == "RANGE"), "")
     blank = [r for r in e if not r["TTM_capex_usd"]]
     check("No blank or zero-filled value in E", not blank and all(int(r["TTM_capex_usd"]) > 0 for r in e), "")
 
 
 def write_j(out, v, B, qa):
     C = B.COMPANIES
-    lines = ["# J. QA report - RTT-103 The AI Spending Race (stage 1)", "",
+    lines = ["# J. QA report - RTT-103 The AI Spending Race (stages 1-2)", "",
              f"Build `{B.BUILD}`. Generated by `scripts/build_rtt103_dataset.py`; every result below is recomputed on each build.", "",
              "Two kinds of check are reported separately: **file-format checks** (columns, vocabularies, one row per key) and "
              "**financial QA** (brief section 25: reconciliation, TTM recomputation, units, signs, wrong lines, restatements).", ""]

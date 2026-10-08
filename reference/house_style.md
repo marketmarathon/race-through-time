@@ -54,6 +54,10 @@ The reference frame is 1920 × 1080. Masters are rendered at 3840 × 2160.
   - The bar stays on the board, lightly dimmed (alpha 0.55, text 0.8) (DEC-131; values DEC-135, *working choice*).
   - It reads "· retired" when the bar ends on the manufacturer's own final total, or from a documented end of production. It reads "· latest figure" only where our figures run out with neither (DEC-140, refining DEC-132). A bar counts as stopped from the last period in which it added at least 10,000 units (DEC-142, *working choice*).
 - **A source disagreement worth mentioning** gets a short footnote on the final table only, not during the race. Example: RTT-003's PS2 note (DEC-117).
+- **Name the measure in the title** when the story is about something narrower: RTT-103's bars are total capital spending, so the title says so and AI is the story told around it (DEC-291).
+- **Late entrants** join the race at their first valid point from their own figures, with nothing before it (RTT-103: Meta 2012, Alibaba 2014, CoreWeave 2024 Q4; DEC-295).
+- **A company measured differently** stays in the race with a short on-screen note saying how (RTT-103: Tencent, DEC-292).
+- **Forecast frames** come after the historical race, clearly labelled ("2026 GUIDANCE"), from the companies' own forecasts only; ranges are shown as ranges, never as a midpoint alone; research-firm forecasts are never on screen. A press report from unnamed sources may appear only greyed out and labelled as such, after the article has been read at source (RTT-103; DEC-296, DEC-297). How these frames look is still a design question for Luke (DEC-069).
 
 ## 6. Sound, delivery and approval
 - **Music:**

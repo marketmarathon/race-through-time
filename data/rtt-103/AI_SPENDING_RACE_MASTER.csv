@@ -37,13 +37,13 @@ date,year,quarter,company,display_name,capex_TTM_usd,capex_TTM_usd_bn,rank,previ
 2011-12-31,2011,Q4,Alphabet,Alphabet (Google),3438000000,3.438,1,1,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2011-12-31,2011,Q4,Microsoft,Microsoft,2234000000,2.234,2,2,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2011-12-31,2011,Q4,Amazon,Amazon,1810000000,1.810,3,3,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
-2011-12-31,2011,Q4,Tencent,Tencent,571633760,0.572,4,,,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2011-12-31,2011,Q4,Tencent,Tencent,571633760,0.572,4,,,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
 2011-12-31,2011,Q4,Oracle,Oracle,500000000,0.500,5,4,-1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2011-12-31,2011,Q4,Baidu,Baidu,273124411,0.273,6,5,-1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2012-03-31,2012,Q1,Alphabet,Alphabet (Google),3155000000,3.155,1,1,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2012-03-31,2012,Q1,Microsoft,Microsoft,2325000000,2.325,2,2,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2012-03-31,2012,Q1,Amazon,Amazon,1898000000,1.898,3,3,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
-2012-03-31,2012,Q1,Tencent,Tencent,566995313,0.567,4,4,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2012-03-31,2012,Q1,Tencent,Tencent,566995313,0.567,4,4,0,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
 2012-03-31,2012,Q1,Oracle,Oracle,509000000,0.509,5,5,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2012-03-31,2012,Q1,Baidu,Baidu,261568879,0.262,6,6,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2012-06-30,2012,Q2,Alphabet,Alphabet (Google),3012000000,3.012,1,1,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
@@ -51,216 +51,217 @@ date,year,quarter,company,display_name,capex_TTM_usd,capex_TTM_usd_bn,rank,previ
 2012-06-30,2012,Q2,Amazon,Amazon,2122000000,2.122,3,3,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
 2012-06-30,2012,Q2,Meta,Meta (Facebook),1187000000,1.187,4,,,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2012-06-30,2012,Q2,Oracle,Oracle,648000000,0.648,5,5,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2012-06-30,2012,Q2,Tencent,Tencent,566442760,0.566,6,4,-2,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2012-06-30,2012,Q2,Tencent,Tencent,566442760,0.566,6,4,-2,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
 2012-06-30,2012,Q2,Baidu,Baidu,316576388,0.317,7,6,-1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2012-09-30,2012,Q3,Alphabet,Alphabet (Google),3204000000,3.204,1,1,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2012-09-30,2012,Q3,Microsoft,Microsoft,2472000000,2.472,2,2,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2012-09-30,2012,Q3,Amazon,Amazon,2309000000,2.309,3,3,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
 2012-09-30,2012,Q3,Meta,Meta (Facebook),1222000000,1.222,4,4,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2012-09-30,2012,Q3,Oracle,Oracle,627000000,0.627,5,5,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2012-09-30,2012,Q3,Tencent,Tencent,568058194,0.568,6,6,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2012-09-30,2012,Q3,Tencent,Tencent,568058194,0.568,6,6,0,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
 2012-09-30,2012,Q3,Baidu,Baidu,319611789,0.320,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2012-12-31,2012,Q4,Amazon,Amazon,3785000000,3.785,1,3,2,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
 2012-12-31,2012,Q4,Alphabet,Alphabet (Google),3273000000,3.273,2,1,-1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2012-12-31,2012,Q4,Microsoft,Microsoft,2904000000,2.904,3,2,-1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2012-12-31,2012,Q4,Meta,Meta (Facebook),1235000000,1.235,4,4,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2012-12-31,2012,Q4,Tencent,Tencent,713470624,0.713,5,6,1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2012-12-31,2012,Q4,Tencent,Tencent,713470624,0.713,5,6,1,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
 2012-12-31,2012,Q4,Oracle,Oracle,710000000,0.710,6,5,-1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2012-12-31,2012,Q4,Baidu,Baidu,366642331,0.367,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2013-03-31,2013,Q1,Amazon,Amazon,4069000000,4.069,1,1,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
 2013-03-31,2013,Q1,Alphabet,Alphabet (Google),3869000000,3.869,2,2,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2013-03-31,2013,Q1,Microsoft,Microsoft,3085000000,3.085,3,3,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2013-03-31,2013,Q1,Meta,Meta (Facebook),1109000000,1.109,4,4,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2013-03-31,2013,Q1,Tencent,Tencent,774794925,0.775,5,5,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2013-03-31,2013,Q1,Tencent,Tencent,774794925,0.775,5,5,0,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
 2013-03-31,2013,Q1,Oracle,Oracle,684000000,0.684,6,6,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2013-03-31,2013,Q1,Baidu,Baidu,394638626,0.395,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2013-06-30,2013,Q2,Alphabet,Alphabet (Google),4706000000,4.706,1,2,1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2013-06-30,2013,Q2,Amazon,Amazon,4267000000,4.267,2,1,-1,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
 2013-06-30,2013,Q2,Microsoft,Microsoft,4257000000,4.257,3,3,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2013-06-30,2013,Q2,Meta,Meta (Facebook),964000000,0.964,4,4,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2013-06-30,2013,Q2,Tencent,Tencent,868106635,0.868,5,5,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2013-06-30,2013,Q2,Tencent,Tencent,868106635,0.868,5,5,0,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
 2013-06-30,2013,Q2,Oracle,Oracle,650000000,0.650,6,6,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2013-06-30,2013,Q2,Baidu,Baidu,369594392,0.370,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2013-09-30,2013,Q3,Alphabet,Alphabet (Google),6123000000,6.123,1,1,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2013-09-30,2013,Q3,Microsoft,Microsoft,4885000000,4.885,2,3,1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2013-09-30,2013,Q3,Amazon,Amazon,4589000000,4.589,3,2,-1,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
 2013-09-30,2013,Q3,Meta,Meta (Facebook),1077000000,1.077,4,4,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2013-09-30,2013,Q3,Tencent,Tencent,954453000,0.954,5,5,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2013-09-30,2013,Q3,Tencent,Tencent,954453000,0.954,5,5,0,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
 2013-09-30,2013,Q3,Oracle,Oracle,664000000,0.664,6,6,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2013-09-30,2013,Q3,Baidu,Baidu,417472830,0.417,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2013-12-31,2013,Q4,Alphabet,Alphabet (Google),7358000000,7.358,1,1,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2013-12-31,2013,Q4,Microsoft,Microsoft,5687000000,5.687,2,2,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2013-12-31,2013,Q4,Amazon,Amazon,3442000000,3.442,3,3,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
 2013-12-31,2013,Q4,Meta,Meta (Facebook),1362000000,1.362,4,4,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2013-12-31,2013,Q4,Tencent,Tencent,944447016,0.944,5,5,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2013-12-31,2013,Q4,Tencent,Tencent,944447016,0.944,5,5,0,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
 2013-12-31,2013,Q4,Oracle,Oracle,578000000,0.578,6,6,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2013-12-31,2013,Q4,Baidu,Baidu,449319598,0.449,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2014-03-31,2014,Q1,Alphabet,Alphabet (Google),8500000000,8.500,1,1,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2014-03-31,2014,Q1,Microsoft,Microsoft,5949000000,5.949,2,2,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2014-03-31,2014,Q1,Amazon,Amazon,3852000000,3.852,3,3,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
 2014-03-31,2014,Q1,Meta,Meta (Facebook),1398000000,1.398,4,4,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2014-03-31,2014,Q1,Tencent,Tencent,964669040,0.965,5,5,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2014-03-31,2014,Q1,Alibaba,Alibaba,780258217,0.780,6,,,Grade B,,ACTUAL_VERIFIED_AT_SOURCE
+2014-03-31,2014,Q1,Tencent,Tencent,964669040,0.965,5,5,0,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
+2014-03-31,2014,Q1,Alibaba,Alibaba,780258217,0.780,6,,,Grade B,"Alibaba before April 2016 includes acquisitions of licensed copyrights and intangible assets (5.2% of FY2015 and 6.6% of FY2016 capex, per its FY2019 Form 20-F); from 2018 its later scope (property and equipment incl. campus land).",ACTUAL_VERIFIED_AT_SOURCE
 2014-03-31,2014,Q1,Oracle,Oracle,609000000,0.609,7,6,-1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2014-03-31,2014,Q1,Baidu,Baidu,544981872,0.545,8,7,-1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2014-06-30,2014,Q2,Alphabet,Alphabet (Google),9535000000,9.535,1,1,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2014-06-30,2014,Q2,Microsoft,Microsoft,5485000000,5.485,2,2,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2014-06-30,2014,Q2,Amazon,Amazon,4287000000,4.287,3,3,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
 2014-06-30,2014,Q2,Meta,Meta (Facebook),1599000000,1.599,4,4,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2014-06-30,2014,Q2,Tencent,Tencent,873962654,0.874,5,5,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2014-06-30,2014,Q2,Alibaba,Alibaba,730860825,0.731,6,6,0,Grade B,,ACTUAL_VERIFIED_AT_SOURCE
+2014-06-30,2014,Q2,Tencent,Tencent,873962654,0.874,5,5,0,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
+2014-06-30,2014,Q2,Alibaba,Alibaba,730860825,0.731,6,6,0,Grade B,"Alibaba before April 2016 includes acquisitions of licensed copyrights and intangible assets (5.2% of FY2015 and 6.6% of FY2016 capex, per its FY2019 Form 20-F); from 2018 its later scope (property and equipment incl. campus land).",ACTUAL_VERIFIED_AT_SOURCE
 2014-06-30,2014,Q2,Baidu,Baidu,594592076,0.595,7,8,1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2014-06-30,2014,Q2,Oracle,Oracle,580000000,0.580,8,7,-1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2014-09-30,2014,Q3,Alphabet,Alphabet (Google),9663000000,9.663,1,1,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2014-09-30,2014,Q3,Microsoft,Microsoft,5536000000,5.536,2,2,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2014-09-30,2014,Q3,Amazon,Amazon,4627000000,4.627,3,3,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
 2014-09-30,2014,Q3,Meta,Meta (Facebook),1797000000,1.797,4,4,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2014-09-30,2014,Q3,Alibaba,Alibaba,1095674988,1.096,5,6,1,Grade B,,ACTUAL_VERIFIED_AT_SOURCE
-2014-09-30,2014,Q3,Tencent,Tencent,781305972,0.781,6,5,-1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2014-09-30,2014,Q3,Alibaba,Alibaba,1095674988,1.096,5,6,1,Grade B,"Alibaba before April 2016 includes acquisitions of licensed copyrights and intangible assets (5.2% of FY2015 and 6.6% of FY2016 capex, per its FY2019 Form 20-F); from 2018 its later scope (property and equipment incl. campus land).",ACTUAL_VERIFIED_AT_SOURCE
+2014-09-30,2014,Q3,Tencent,Tencent,781305972,0.781,6,5,-1,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
 2014-09-30,2014,Q3,Baidu,Baidu,691197925,0.691,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2014-09-30,2014,Q3,Oracle,Oracle,628000000,0.628,8,8,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2014-12-31,2014,Q4,Alphabet,Alphabet (Google),10959000000,10.959,1,1,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2014-12-31,2014,Q4,Microsoft,Microsoft,5294000000,5.294,2,2,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2014-12-31,2014,Q4,Amazon,Amazon,4893000000,4.893,3,3,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
 2014-12-31,2014,Q4,Meta,Meta (Facebook),1831000000,1.831,4,4,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2014-12-31,2014,Q4,Alibaba,Alibaba,1078929972,1.079,5,5,0,Grade B,,ACTUAL_VERIFIED_AT_SOURCE
+2014-12-31,2014,Q4,Alibaba,Alibaba,1078929972,1.079,5,5,0,Grade B,"Alibaba before April 2016 includes acquisitions of licensed copyrights and intangible assets (5.2% of FY2015 and 6.6% of FY2016 capex, per its FY2019 Form 20-F); from 2018 its later scope (property and equipment incl. campus land).",ACTUAL_VERIFIED_AT_SOURCE
 2014-12-31,2014,Q4,Baidu,Baidu,784012535,0.784,6,7,1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2014-12-31,2014,Q4,Tencent,Tencent,766394831,0.766,7,6,-1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2014-12-31,2014,Q4,Tencent,Tencent,766394831,0.766,7,6,-1,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
 2014-12-31,2014,Q4,Oracle,Oracle,727000000,0.727,8,8,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2015-03-31,2015,Q1,Alphabet,Alphabet (Google),11541000000,11.541,1,1,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2015-03-31,2015,Q1,Microsoft,Microsoft,5493000000,5.493,2,2,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2015-03-31,2015,Q1,Amazon,Amazon,4684000000,4.684,3,3,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
 2015-03-31,2015,Q1,Meta,Meta (Facebook),1970000000,1.970,4,4,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2015-03-31,2015,Q1,Alibaba,Alibaba,1245602150,1.246,5,5,0,Grade B,,ACTUAL_VERIFIED_AT_SOURCE
+2015-03-31,2015,Q1,Alibaba,Alibaba,1245602150,1.246,5,5,0,Grade B,"Alibaba before April 2016 includes acquisitions of licensed copyrights and intangible assets (5.2% of FY2015 and 6.6% of FY2016 capex, per its FY2019 Form 20-F); from 2018 its later scope (property and equipment incl. campus land).",ACTUAL_VERIFIED_AT_SOURCE
 2015-03-31,2015,Q1,Oracle,Oracle,948000000,0.948,6,8,2,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2015-03-31,2015,Q1,Tencent,Tencent,793510716,0.794,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2015-03-31,2015,Q1,Tencent,Tencent,793510716,0.794,7,7,0,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
 2015-03-31,2015,Q1,Baidu,Baidu,776891463,0.777,8,6,-2,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2015-06-30,2015,Q2,Alphabet,Alphabet (Google),11410000000,11.410,1,1,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2015-06-30,2015,Q2,Microsoft,Microsoft,5944000000,5.944,2,2,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2015-06-30,2015,Q2,Amazon,Amazon,4607000000,4.607,3,3,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
 2015-06-30,2015,Q2,Meta,Meta (Facebook),2050000000,2.050,4,4,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2015-06-30,2015,Q2,Oracle,Oracle,1391000000,1.391,5,6,1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2015-06-30,2015,Q2,Alibaba,Alibaba,1323919823,1.324,6,5,-1,Grade B,,ACTUAL_VERIFIED_AT_SOURCE
-2015-06-30,2015,Q2,Tencent,Tencent,1104331169,1.104,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2015-06-30,2015,Q2,Alibaba,Alibaba,1323919823,1.324,6,5,-1,Grade B,"Alibaba before April 2016 includes acquisitions of licensed copyrights and intangible assets (5.2% of FY2015 and 6.6% of FY2016 capex, per its FY2019 Form 20-F); from 2018 its later scope (property and equipment incl. campus land).",ACTUAL_VERIFIED_AT_SOURCE
+2015-06-30,2015,Q2,Tencent,Tencent,1104331169,1.104,7,7,0,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
 2015-06-30,2015,Q2,Baidu,Baidu,787091931,0.787,8,8,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2015-09-30,2015,Q3,Alphabet,Alphabet (Google),11366000000,11.366,1,1,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2015-09-30,2015,Q3,Microsoft,Microsoft,6018000000,6.018,2,2,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2015-09-30,2015,Q3,Amazon,Amazon,4424000000,4.424,3,3,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
 2015-09-30,2015,Q3,Meta,Meta (Facebook),2348000000,2.348,4,4,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2015-09-30,2015,Q3,Oracle,Oracle,1636000000,1.636,5,5,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2015-09-30,2015,Q3,Alibaba,Alibaba,1277016149,1.277,6,6,0,Grade B,,ACTUAL_VERIFIED_AT_SOURCE
-2015-09-30,2015,Q3,Tencent,Tencent,1194613959,1.195,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2015-09-30,2015,Q3,Alibaba,Alibaba,1277016149,1.277,6,6,0,Grade B,"Alibaba before April 2016 includes acquisitions of licensed copyrights and intangible assets (5.2% of FY2015 and 6.6% of FY2016 capex, per its FY2019 Form 20-F); from 2018 its later scope (property and equipment incl. campus land).",ACTUAL_VERIFIED_AT_SOURCE
+2015-09-30,2015,Q3,Tencent,Tencent,1194613959,1.195,7,7,0,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
 2015-09-30,2015,Q3,Baidu,Baidu,858549531,0.859,8,8,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2015-12-31,2015,Q4,Alphabet,Alphabet (Google),9915000000,9.915,1,1,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2015-12-31,2015,Q4,Microsoft,Microsoft,6552000000,6.552,2,2,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2015-12-31,2015,Q4,Amazon,Amazon,4588000000,4.588,3,3,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
 2015-12-31,2015,Q4,Meta,Meta (Facebook),2523000000,2.523,4,4,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2015-12-31,2015,Q4,Alibaba,Alibaba,1797116569,1.797,5,6,1,Grade B,,ACTUAL_VERIFIED_AT_SOURCE
+2015-12-31,2015,Q4,Alibaba,Alibaba,1797116569,1.797,5,6,1,Grade B,"Alibaba before April 2016 includes acquisitions of licensed copyrights and intangible assets (5.2% of FY2015 and 6.6% of FY2016 capex, per its FY2019 Form 20-F); from 2018 its later scope (property and equipment incl. campus land).",ACTUAL_VERIFIED_AT_SOURCE
 2015-12-31,2015,Q4,Oracle,Oracle,1606000000,1.606,6,5,-1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2015-12-31,2015,Q4,Tencent,Tencent,1228527828,1.229,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2015-12-31,2015,Q4,Tencent,Tencent,1228527828,1.229,7,7,0,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
 2015-12-31,2015,Q4,Baidu,Baidu,830724779,0.831,8,8,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2016-03-31,2016,Q1,Alphabet,Alphabet (Google),9416000000,9.416,1,1,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2016-03-31,2016,Q1,Microsoft,Microsoft,7469000000,7.469,2,2,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2016-03-31,2016,Q1,Amazon,Amazon,4896000000,4.896,3,3,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
 2016-03-31,2016,Q1,Meta,Meta (Facebook),3153000000,3.153,4,4,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2016-03-31,2016,Q1,Alibaba,Alibaba,1708968027,1.709,5,5,0,Grade B,,ACTUAL_VERIFIED_AT_SOURCE
-2016-03-31,2016,Q1,Tencent,Tencent,1642664183,1.643,6,7,1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2016-03-31,2016,Q1,Alibaba,Alibaba,1708968027,1.709,5,5,0,Grade B,"Alibaba before April 2016 includes acquisitions of licensed copyrights and intangible assets (5.2% of FY2015 and 6.6% of FY2016 capex, per its FY2019 Form 20-F); from 2018 its later scope (property and equipment incl. campus land).",ACTUAL_VERIFIED_AT_SOURCE
+2016-03-31,2016,Q1,Tencent,Tencent,1642664183,1.643,6,7,1,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
 2016-03-31,2016,Q1,Oracle,Oracle,1606000000,1.606,7,6,-1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2016-03-31,2016,Q1,Baidu,Baidu,793188738,0.793,8,8,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2016-06-30,2016,Q2,Alphabet,Alphabet (Google),9024000000,9.024,1,1,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2016-06-30,2016,Q2,Microsoft,Microsoft,8343000000,8.343,2,2,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2016-06-30,2016,Q2,Amazon,Amazon,5394000000,5.394,3,3,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
 2016-06-30,2016,Q2,Meta,Meta (Facebook),3599000000,3.599,4,4,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2016-06-30,2016,Q2,Alibaba,Alibaba,1919888230,1.920,5,5,0,Grade B,,ACTUAL_VERIFIED_AT_SOURCE
-2016-06-30,2016,Q2,Tencent,Tencent,1415111193,1.415,6,6,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2016-06-30,2016,Q2,Oracle,Oracle,1189000000,1.189,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2016-06-30,2016,Q2,Baidu,Baidu,794366584,0.794,8,8,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2016-06-30,2016,Q2,Tencent,Tencent,1415111193,1.415,5,6,1,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
+2016-06-30,2016,Q2,Oracle,Oracle,1189000000,1.189,6,7,1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2016-06-30,2016,Q2,Baidu,Baidu,794366584,0.794,7,8,1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2016-09-30,2016,Q3,Alphabet,Alphabet (Google),9234000000,9.234,1,1,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2016-09-30,2016,Q3,Microsoft,Microsoft,9150000000,9.150,2,2,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2016-09-30,2016,Q3,Amazon,Amazon,6040000000,6.040,3,3,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
 2016-09-30,2016,Q3,Meta,Meta (Facebook),3914000000,3.914,4,4,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2016-09-30,2016,Q3,Alibaba,Alibaba,1952939676,1.953,5,5,0,Grade B,,ACTUAL_VERIFIED_AT_SOURCE
-2016-09-30,2016,Q3,Tencent,Tencent,1700746685,1.701,6,6,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2016-09-30,2016,Q3,Oracle,Oracle,1042000000,1.042,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2016-09-30,2016,Q3,Baidu,Baidu,676495955,0.676,8,8,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2016-09-30,2016,Q3,Tencent,Tencent,1700746685,1.701,5,5,0,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
+2016-09-30,2016,Q3,Oracle,Oracle,1042000000,1.042,6,6,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2016-09-30,2016,Q3,Baidu,Baidu,676495955,0.676,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2016-12-31,2016,Q4,Alphabet,Alphabet (Google),10212000000,10.212,1,1,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2016-12-31,2016,Q4,Microsoft,Microsoft,9114000000,9.114,2,2,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2016-12-31,2016,Q4,Amazon,Amazon,6737000000,6.737,3,3,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
 2016-12-31,2016,Q4,Meta,Meta (Facebook),4491000000,4.491,4,4,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2016-12-31,2016,Q4,Alibaba,Alibaba,2255417477,2.255,5,5,0,Grade B,,ACTUAL_VERIFIED_AT_SOURCE
-2016-12-31,2016,Q4,Tencent,Tencent,1821622853,1.822,6,6,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2016-12-31,2016,Q4,Oracle,Oracle,1604000000,1.604,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2016-12-31,2016,Q4,Baidu,Baidu,629563845,0.630,8,8,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2016-12-31,2016,Q4,Tencent,Tencent,1821622853,1.822,5,5,0,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
+2016-12-31,2016,Q4,Oracle,Oracle,1604000000,1.604,6,6,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2016-12-31,2016,Q4,Baidu,Baidu,629563845,0.630,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2017-03-31,2017,Q1,Alphabet,Alphabet (Google),10292000000,10.292,1,1,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2017-03-31,2017,Q1,Microsoft,Microsoft,8501000000,8.501,2,2,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2017-03-31,2017,Q1,Amazon,Amazon,7419000000,7.419,3,3,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
 2017-03-31,2017,Q1,Meta,Meta (Facebook),4630000000,4.630,4,4,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2017-03-31,2017,Q1,Oracle,Oracle,1676000000,1.676,5,7,2,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2017-03-31,2017,Q1,Tencent,Tencent,1500047842,1.500,6,6,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2017-03-31,2017,Q1,Baidu,Baidu,672897133,0.673,7,8,1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2017-03-31,2017,Q1,Oracle,Oracle,1676000000,1.676,5,6,1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2017-03-31,2017,Q1,Tencent,Tencent,1500047842,1.500,6,5,-1,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
+2017-03-31,2017,Q1,Baidu,Baidu,672897133,0.673,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2017-06-30,2017,Q2,Alphabet,Alphabet (Google),11000000000,11.000,1,1,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2017-06-30,2017,Q2,Amazon,Amazon,8209000000,8.209,2,3,1,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
 2017-06-30,2017,Q2,Microsoft,Microsoft,8129000000,8.129,3,2,-1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2017-06-30,2017,Q2,Meta,Meta (Facebook),5079000000,5.079,4,4,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2017-06-30,2017,Q2,Oracle,Oracle,2021000000,2.021,5,5,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2017-06-30,2017,Q2,Tencent,Tencent,1708477264,1.708,6,6,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2017-06-30,2017,Q2,Tencent,Tencent,1708477264,1.708,6,6,0,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
 2017-06-30,2017,Q2,Baidu,Baidu,686929488,0.687,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2017-09-30,2017,Q3,Alphabet,Alphabet (Google),11955000000,11.955,1,1,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2017-09-30,2017,Q3,Amazon,Amazon,9027000000,9.027,2,2,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
 2017-09-30,2017,Q3,Microsoft,Microsoft,8098000000,8.098,3,3,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2017-09-30,2017,Q3,Meta,Meta (Facebook),5739000000,5.739,4,4,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2017-09-30,2017,Q3,Oracle,Oracle,2195000000,2.195,5,5,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2017-09-30,2017,Q3,Tencent,Tencent,1684260535,1.684,6,6,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2017-09-30,2017,Q3,Tencent,Tencent,1684260535,1.684,6,6,0,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
 2017-09-30,2017,Q3,Baidu,Baidu,703960180,0.704,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2017-12-31,2017,Q4,Alphabet,Alphabet (Google),13184000000,13.184,1,1,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2017-12-31,2017,Q4,Amazon,Amazon,10057000000,10.057,2,2,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
 2017-12-31,2017,Q4,Microsoft,Microsoft,8696000000,8.696,3,3,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2017-12-31,2017,Q4,Meta,Meta (Facebook),6733000000,6.733,4,4,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2017-12-31,2017,Q4,Oracle,Oracle,2037000000,2.037,5,5,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2017-12-31,2017,Q4,Tencent,Tencent,2020985833,2.021,6,6,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2017-12-31,2017,Q4,Tencent,Tencent,2020985833,2.021,6,6,0,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
 2017-12-31,2017,Q4,Baidu,Baidu,707749465,0.708,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2018-03-31,2018,Q1,Alphabet,Alphabet (Google),17975000000,17.975,1,1,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2018-03-31,2018,Q1,Amazon,Amazon,10923000000,10.923,2,2,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
 2018-03-31,2018,Q1,Microsoft,Microsoft,9935000000,9.935,3,3,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2018-03-31,2018,Q1,Meta,Meta (Facebook),8274000000,8.274,4,4,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2018-03-31,2018,Q1,Tencent,Tencent,2709233383,2.709,5,6,1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2018-03-31,2018,Q1,Oracle,Oracle,1883000000,1.883,6,5,-1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2018-03-31,2018,Q1,Baidu,Baidu,848234773,0.848,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2018-03-31,2018,Q1,Alibaba,Alibaba,2977230085,2.977,5,,,Grade B,,ACTUAL_VERIFIED_AT_SOURCE
+2018-03-31,2018,Q1,Tencent,Tencent,2709233383,2.709,6,6,0,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
+2018-03-31,2018,Q1,Oracle,Oracle,1883000000,1.883,7,5,-2,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2018-03-31,2018,Q1,Baidu,Baidu,848234773,0.848,8,7,-1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2018-06-30,2018,Q2,Alphabet,Alphabet (Google),20621000000,20.621,1,1,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2018-06-30,2018,Q2,Microsoft,Microsoft,11632000000,11.632,2,3,1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2018-06-30,2018,Q2,Amazon,Amazon,11371000000,11.371,3,2,-1,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
 2018-06-30,2018,Q2,Meta,Meta (Facebook),10290000000,10.290,4,4,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2018-06-30,2018,Q2,Tencent,Tencent,3381363015,3.381,5,5,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2018-06-30,2018,Q2,Oracle,Oracle,1736000000,1.736,6,6,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2018-06-30,2018,Q2,Baidu,Baidu,920205267,0.920,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2018-06-30,2018,Q2,Alibaba,Alibaba,3749691838,3.750,5,5,0,Grade B,,ACTUAL_VERIFIED_AT_SOURCE
+2018-06-30,2018,Q2,Tencent,Tencent,3381363015,3.381,6,6,0,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
+2018-06-30,2018,Q2,Oracle,Oracle,1736000000,1.736,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2018-06-30,2018,Q2,Baidu,Baidu,920205267,0.920,8,8,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2018-09-30,2018,Q3,Alphabet,Alphabet (Google),22365000000,22.365,1,1,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2018-09-30,2018,Q3,Microsoft,Microsoft,13102000000,13.102,2,2,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2018-09-30,2018,Q3,Meta,Meta (Facebook),11877000000,11.877,3,4,1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2018-09-30,2018,Q3,Amazon,Amazon,11239000000,11.239,4,3,-1,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
-2018-09-30,2018,Q3,Tencent,Tencent,3735546054,3.736,5,5,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2018-09-30,2018,Q3,Oracle,Oracle,1646000000,1.646,6,6,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2018-09-30,2018,Q3,Baidu,Baidu,1051775847,1.052,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2018-09-30,2018,Q3,Alibaba,Alibaba,4672206556,4.672,5,5,0,Grade B,,ACTUAL_VERIFIED_AT_SOURCE
+2018-09-30,2018,Q3,Tencent,Tencent,3735546054,3.736,6,6,0,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
+2018-09-30,2018,Q3,Oracle,Oracle,1646000000,1.646,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2018-09-30,2018,Q3,Baidu,Baidu,1051775847,1.052,8,8,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2018-12-31,2018,Q4,Alphabet,Alphabet (Google),25139000000,25.139,1,1,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2018-12-31,2018,Q4,Microsoft,Microsoft,14223000000,14.223,2,2,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2018-12-31,2018,Q4,Meta,Meta (Facebook),13915000000,13.915,3,3,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2018-12-31,2018,Q4,Amazon,Amazon,11323000000,11.323,4,4,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
-2018-12-31,2018,Q4,Tencent,Tencent,3643325698,3.643,5,5,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2018-12-31,2018,Q4,Oracle,Oracle,1468000000,1.468,6,6,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2018-12-31,2018,Q4,Baidu,Baidu,1317293334,1.317,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2018-12-31,2018,Q4,Alibaba,Alibaba,4944988625,4.945,5,5,0,Grade B,,ACTUAL_VERIFIED_AT_SOURCE
+2018-12-31,2018,Q4,Tencent,Tencent,3643325698,3.643,6,6,0,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
+2018-12-31,2018,Q4,Oracle,Oracle,1468000000,1.468,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2018-12-31,2018,Q4,Baidu,Baidu,1317293334,1.317,8,8,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2019-03-31,2019,Q1,Alphabet,Alphabet (Google),22478000000,22.478,1,1,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2019-03-31,2019,Q1,Meta,Meta (Facebook),14940000000,14.940,2,3,1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2019-03-31,2019,Q1,Microsoft,Microsoft,13854000000,13.854,3,2,-1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2019-03-31,2019,Q1,Amazon,Amazon,11317000000,11.317,4,4,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
-2019-03-31,2019,Q1,Alibaba,Alibaba,5262744189,5.263,5,,,Grade B,,ACTUAL_VERIFIED_AT_SOURCE
-2019-03-31,2019,Q1,Tencent,Tencent,3316997894,3.317,6,5,-1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2019-03-31,2019,Q1,Oracle,Oracle,1625000000,1.625,7,6,-1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2019-03-31,2019,Q1,Baidu,Baidu,1448019583,1.448,8,7,-1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2019-03-31,2019,Q1,Alibaba,Alibaba,5262744189,5.263,5,5,0,Grade B,,ACTUAL_VERIFIED_AT_SOURCE
+2019-03-31,2019,Q1,Tencent,Tencent,3316997894,3.317,6,6,0,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
+2019-03-31,2019,Q1,Oracle,Oracle,1625000000,1.625,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2019-03-31,2019,Q1,Baidu,Baidu,1448019583,1.448,8,8,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2019-06-30,2019,Q2,Alphabet,Alphabet (Google),23127000000,23.127,1,1,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2019-06-30,2019,Q2,Meta,Meta (Facebook),15113000000,15.113,2,2,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2019-06-30,2019,Q2,Microsoft,Microsoft,13925000000,13.925,3,3,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2019-06-30,2019,Q2,Amazon,Amazon,11011000000,11.011,4,4,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
 2019-06-30,2019,Q2,Alibaba,Alibaba,5187012488,5.187,5,5,0,Grade B,,ACTUAL_VERIFIED_AT_SOURCE
-2019-06-30,2019,Q2,Tencent,Tencent,2845639521,2.846,6,6,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2019-06-30,2019,Q2,Tencent,Tencent,2845639521,2.846,6,6,0,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
 2019-06-30,2019,Q2,Oracle,Oracle,1660000000,1.660,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2019-06-30,2019,Q2,Baidu,Baidu,1411302904,1.411,8,8,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2019-09-30,2019,Q3,Alphabet,Alphabet (Google),24577000000,24.577,1,1,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
@@ -268,14 +269,14 @@ date,year,quarter,company,display_name,capex_TTM_usd,capex_TTM_usd_bn,rank,previ
 2019-09-30,2019,Q3,Microsoft,Microsoft,13708000000,13.708,3,3,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2019-09-30,2019,Q3,Amazon,Amazon,11869000000,11.869,4,4,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
 2019-09-30,2019,Q3,Alibaba,Alibaba,4766488604,4.766,5,5,0,Grade B,,ACTUAL_VERIFIED_AT_SOURCE
-2019-09-30,2019,Q3,Tencent,Tencent,2913191570,2.913,6,6,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2019-09-30,2019,Q3,Tencent,Tencent,2913191570,2.913,6,6,0,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
 2019-09-30,2019,Q3,Oracle,Oracle,1663000000,1.663,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2019-09-30,2019,Q3,Baidu,Baidu,1258004834,1.258,8,8,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2019-12-31,2019,Q4,Alphabet,Alphabet (Google),23548000000,23.548,1,1,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2019-12-31,2019,Q4,Meta,Meta (Facebook),15102000000,15.102,2,2,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2019-12-31,2019,Q4,Microsoft,Microsoft,13546000000,13.546,3,3,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2019-12-31,2019,Q4,Amazon,Amazon,12689000000,12.689,4,4,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
-2019-12-31,2019,Q4,Tencent,Tencent,4647638713,4.648,5,6,1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2019-12-31,2019,Q4,Tencent,Tencent,4647638713,4.648,5,6,1,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
 2019-12-31,2019,Q4,Alibaba,Alibaba,4250990022,4.251,6,5,-1,Grade B,,ACTUAL_VERIFIED_AT_SOURCE
 2019-12-31,2019,Q4,Oracle,Oracle,1591000000,1.591,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2019-12-31,2019,Q4,Baidu,Baidu,938325449,0.938,8,8,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
@@ -283,7 +284,7 @@ date,year,quarter,company,display_name,capex_TTM_usd,capex_TTM_usd_bn,rank,previ
 2020-03-31,2020,Q1,Amazon,Amazon,15396000000,15.396,2,4,2,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
 2020-03-31,2020,Q1,Meta,Meta (Facebook),14823000000,14.823,3,2,-1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2020-03-31,2020,Q1,Microsoft,Microsoft,14748000000,14.748,4,3,-1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2020-03-31,2020,Q1,Tencent,Tencent,4860969668,4.861,5,5,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2020-03-31,2020,Q1,Tencent,Tencent,4860969668,4.861,5,5,0,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
 2020-03-31,2020,Q1,Alibaba,Alibaba,4669315471,4.669,6,6,0,Grade B,,ACTUAL_VERIFIED_AT_SOURCE
 2020-03-31,2020,Q1,Oracle,Oracle,1544000000,1.544,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2020-03-31,2020,Q1,Baidu,Baidu,575631670,0.576,8,8,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
@@ -292,7 +293,7 @@ date,year,quarter,company,display_name,capex_TTM_usd,capex_TTM_usd_bn,rank,previ
 2020-06-30,2020,Q2,Microsoft,Microsoft,15441000000,15.441,3,4,1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2020-06-30,2020,Q2,Meta,Meta (Facebook),14445000000,14.445,4,3,-1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2020-06-30,2020,Q2,Alibaba,Alibaba,5658617643,5.659,5,6,1,Grade B,,ACTUAL_VERIFIED_AT_SOURCE
-2020-06-30,2020,Q2,Tencent,Tencent,5557559327,5.558,6,5,-1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2020-06-30,2020,Q2,Tencent,Tencent,5557559327,5.558,6,5,-1,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
 2020-06-30,2020,Q2,Oracle,Oracle,1564000000,1.564,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2020-06-30,2020,Q2,Baidu,Baidu,496901286,0.497,8,8,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2020-09-30,2020,Q3,Amazon,Amazon,25791000000,25.791,1,2,1,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
@@ -300,7 +301,7 @@ date,year,quarter,company,display_name,capex_TTM_usd,capex_TTM_usd_bn,rank,previ
 2020-09-30,2020,Q3,Microsoft,Microsoft,16963000000,16.963,3,3,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2020-09-30,2020,Q3,Meta,Meta (Facebook),14602000000,14.602,4,4,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2020-09-30,2020,Q3,Alibaba,Alibaba,6322892032,6.323,5,5,0,Grade B,,ACTUAL_VERIFIED_AT_SOURCE
-2020-09-30,2020,Q3,Tencent,Tencent,5867923686,5.868,6,6,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2020-09-30,2020,Q3,Tencent,Tencent,5867923686,5.868,6,6,0,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
 2020-09-30,2020,Q3,Oracle,Oracle,1614000000,1.614,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2020-09-30,2020,Q3,Baidu,Baidu,542051419,0.542,8,8,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2020-12-31,2020,Q4,Amazon,Amazon,35045000000,35.045,1,1,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
@@ -308,7 +309,7 @@ date,year,quarter,company,display_name,capex_TTM_usd,capex_TTM_usd_bn,rank,previ
 2020-12-31,2020,Q4,Microsoft,Microsoft,17592000000,17.592,3,3,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2020-12-31,2020,Q4,Meta,Meta (Facebook),15115000000,15.115,4,4,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2020-12-31,2020,Q4,Alibaba,Alibaba,6259970959,6.260,5,5,0,Grade B,,ACTUAL_VERIFIED_AT_SOURCE
-2020-12-31,2020,Q4,Tencent,Tencent,4931690269,4.932,6,6,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2020-12-31,2020,Q4,Tencent,Tencent,4931690269,4.932,6,6,0,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
 2020-12-31,2020,Q4,Oracle,Oracle,1833000000,1.833,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2020-12-31,2020,Q4,Baidu,Baidu,745398024,0.745,8,8,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2021-03-31,2021,Q1,Amazon,Amazon,40804000000,40.804,1,1,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
@@ -316,7 +317,7 @@ date,year,quarter,company,display_name,capex_TTM_usd,capex_TTM_usd_bn,rank,previ
 2021-03-31,2021,Q1,Microsoft,Microsoft,18914000000,18.914,3,3,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2021-03-31,2021,Q1,Meta,Meta (Facebook),15829000000,15.829,4,4,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2021-03-31,2021,Q1,Alibaba,Alibaba,6058556222,6.059,5,5,0,Grade B,,ACTUAL_VERIFIED_AT_SOURCE
-2021-03-31,2021,Q1,Tencent,Tencent,5243491757,5.243,6,6,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2021-03-31,2021,Q1,Tencent,Tencent,5243491757,5.243,6,6,0,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
 2021-03-31,2021,Q1,Oracle,Oracle,1851000000,1.851,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2021-03-31,2021,Q1,Baidu,Baidu,898569671,0.899,8,8,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2021-06-30,2021,Q2,Amazon,Amazon,47177000000,47.177,1,1,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
@@ -324,7 +325,7 @@ date,year,quarter,company,display_name,capex_TTM_usd,capex_TTM_usd_bn,rank,previ
 2021-06-30,2021,Q2,Microsoft,Microsoft,20622000000,20.622,3,3,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2021-06-30,2021,Q2,Meta,Meta (Facebook),17186000000,17.186,4,4,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2021-06-30,2021,Q2,Alibaba,Alibaba,6071358032,6.071,5,5,0,Grade B,,ACTUAL_VERIFIED_AT_SOURCE
-2021-06-30,2021,Q2,Tencent,Tencent,4981049017,4.981,6,6,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2021-06-30,2021,Q2,Tencent,Tencent,4981049017,4.981,6,6,0,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
 2021-06-30,2021,Q2,Oracle,Oracle,2135000000,2.135,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2021-06-30,2021,Q2,Baidu,Baidu,1164431943,1.164,8,8,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2021-09-30,2021,Q3,Amazon,Amazon,52120000000,52.120,1,1,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
@@ -332,7 +333,7 @@ date,year,quarter,company,display_name,capex_TTM_usd,capex_TTM_usd_bn,rank,previ
 2021-09-30,2021,Q3,Microsoft,Microsoft,21525000000,21.525,3,3,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2021-09-30,2021,Q3,Meta,Meta (Facebook),17811000000,17.811,4,4,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2021-09-30,2021,Q3,Alibaba,Alibaba,6469786993,6.470,5,5,0,Grade B,,ACTUAL_VERIFIED_AT_SOURCE
-2021-09-30,2021,Q3,Tencent,Tencent,4816648608,4.817,6,6,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2021-09-30,2021,Q3,Tencent,Tencent,4816648608,4.817,6,6,0,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
 2021-09-30,2021,Q3,Oracle,Oracle,2761000000,2.761,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2021-09-30,2021,Q3,Baidu,Baidu,1358263266,1.358,8,8,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2021-12-31,2021,Q4,Amazon,Amazon,55396000000,55.396,1,1,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
@@ -340,7 +341,7 @@ date,year,quarter,company,display_name,capex_TTM_usd,capex_TTM_usd_bn,rank,previ
 2021-12-31,2021,Q4,Microsoft,Microsoft,23216000000,23.216,3,3,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2021-12-31,2021,Q4,Meta,Meta (Facebook),18567000000,18.567,4,4,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2021-12-31,2021,Q4,Alibaba,Alibaba,7676362913,7.676,5,5,0,Grade B,,ACTUAL_VERIFIED_AT_SOURCE
-2021-12-31,2021,Q4,Tencent,Tencent,5182829472,5.183,6,6,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2021-12-31,2021,Q4,Tencent,Tencent,5182829472,5.183,6,6,0,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
 2021-12-31,2021,Q4,Oracle,Oracle,3118000000,3.118,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2021-12-31,2021,Q4,Baidu,Baidu,1692352451,1.692,8,8,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2022-03-31,2022,Q1,Amazon,Amazon,57951000000,57.951,1,1,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
@@ -348,7 +349,7 @@ date,year,quarter,company,display_name,capex_TTM_usd,capex_TTM_usd_bn,rank,previ
 2022-03-31,2022,Q1,Microsoft,Microsoft,23467000000,23.467,3,3,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2022-03-31,2022,Q1,Meta,Meta (Facebook),19736000000,19.736,4,4,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2022-03-31,2022,Q1,Alibaba,Alibaba,8302214826,8.302,5,5,0,Grade B,,ACTUAL_VERIFIED_AT_SOURCE
-2022-03-31,2022,Q1,Tencent,Tencent,5087793841,5.088,6,6,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2022-03-31,2022,Q1,Tencent,Tencent,5087793841,5.088,6,6,0,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
 2022-03-31,2022,Q1,Oracle,Oracle,3805000000,3.805,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2022-03-31,2022,Q1,Baidu,Baidu,1772846376,1.773,8,8,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2022-06-30,2022,Q2,Amazon,Amazon,59061000000,59.061,1,1,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
@@ -357,7 +358,7 @@ date,year,quarter,company,display_name,capex_TTM_usd,capex_TTM_usd_bn,rank,previ
 2022-06-30,2022,Q2,Meta,Meta (Facebook),22696000000,22.696,4,4,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2022-06-30,2022,Q2,Alibaba,Alibaba,8156382511,8.156,5,5,0,Grade B,,ACTUAL_VERIFIED_AT_SOURCE
 2022-06-30,2022,Q2,Oracle,Oracle,4511000000,4.511,6,7,1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2022-06-30,2022,Q2,Tencent,Tencent,4470249087,4.470,7,6,-1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2022-06-30,2022,Q2,Tencent,Tencent,4470249087,4.470,7,6,-1,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
 2022-06-30,2022,Q2,Baidu,Baidu,1717830214,1.718,8,8,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2022-09-30,2022,Q3,Amazon,Amazon,59351000000,59.351,1,1,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
 2022-09-30,2022,Q3,Alphabet,Alphabet (Google),30273000000,30.273,2,2,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
@@ -365,7 +366,7 @@ date,year,quarter,company,display_name,capex_TTM_usd,capex_TTM_usd_bn,rank,previ
 2022-09-30,2022,Q3,Microsoft,Microsoft,24359000000,24.359,4,3,-1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2022-09-30,2022,Q3,Alibaba,Alibaba,7460629007,7.461,5,5,0,Grade B,,ACTUAL_VERIFIED_AT_SOURCE
 2022-09-30,2022,Q3,Oracle,Oracle,5168000000,5.168,6,6,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2022-09-30,2022,Q3,Tencent,Tencent,3725791810,3.726,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2022-09-30,2022,Q3,Tencent,Tencent,3725791810,3.726,7,7,0,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
 2022-09-30,2022,Q3,Baidu,Baidu,1625399271,1.625,8,8,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2022-12-31,2022,Q4,Amazon,Amazon,58321000000,58.321,1,1,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
 2022-12-31,2022,Q4,Alphabet,Alphabet (Google),31485000000,31.485,2,2,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
@@ -373,7 +374,7 @@ date,year,quarter,company,display_name,capex_TTM_usd,capex_TTM_usd_bn,rank,previ
 2022-12-31,2022,Q4,Microsoft,Microsoft,24768000000,24.768,4,4,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2022-12-31,2022,Q4,Oracle,Oracle,6678000000,6.678,5,6,1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2022-12-31,2022,Q4,Alibaba,Alibaba,6341508401,6.342,6,5,-1,Grade B,,ACTUAL_VERIFIED_AT_SOURCE
-2022-12-31,2022,Q4,Tencent,Tencent,2695890922,2.696,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2022-12-31,2022,Q4,Tencent,Tencent,2695890922,2.696,7,7,0,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
 2022-12-31,2022,Q4,Baidu,Baidu,1233712414,1.234,8,8,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2023-03-31,2023,Q1,Amazon,Amazon,57649000000,57.649,1,1,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
 2023-03-31,2023,Q1,Meta,Meta (Facebook),32832000000,32.832,2,3,1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
@@ -381,7 +382,7 @@ date,year,quarter,company,display_name,capex_TTM_usd,capex_TTM_usd_bn,rank,previ
 2023-03-31,2023,Q1,Microsoft,Microsoft,26035000000,26.035,4,4,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2023-03-31,2023,Q1,Oracle,Oracle,8205000000,8.205,5,5,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2023-03-31,2023,Q1,Alibaba,Alibaba,5037851031,5.038,6,6,0,Grade B,,ACTUAL_VERIFIED_AT_SOURCE
-2023-03-31,2023,Q1,Tencent,Tencent,2242381914,2.242,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2023-03-31,2023,Q1,Tencent,Tencent,2242381914,2.242,7,7,0,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
 2023-03-31,2023,Q1,Baidu,Baidu,1111214841,1.111,8,8,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2023-06-30,2023,Q2,Amazon,Amazon,53963000000,53.963,1,1,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
 2023-06-30,2023,Q2,Meta,Meta (Facebook),31476000000,31.476,2,2,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
@@ -389,7 +390,7 @@ date,year,quarter,company,display_name,capex_TTM_usd,capex_TTM_usd_bn,rank,previ
 2023-06-30,2023,Q2,Alphabet,Alphabet (Google),28048000000,28.048,4,3,-1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2023-06-30,2023,Q2,Oracle,Oracle,8695000000,8.695,5,5,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2023-06-30,2023,Q2,Alibaba,Alibaba,4233472807,4.233,6,6,0,Grade B,,ACTUAL_VERIFIED_AT_SOURCE
-2023-06-30,2023,Q2,Tencent,Tencent,2349812065,2.350,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2023-06-30,2023,Q2,Tencent,Tencent,2349812065,2.350,7,7,0,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
 2023-06-30,2023,Q2,Baidu,Baidu,1165673360,1.166,8,8,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2023-09-30,2023,Q3,Amazon,Amazon,50220000000,50.220,1,1,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
 2023-09-30,2023,Q3,Microsoft,Microsoft,31741000000,31.741,2,3,1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
@@ -397,7 +398,7 @@ date,year,quarter,company,display_name,capex_TTM_usd,capex_TTM_usd_bn,rank,previ
 2023-09-30,2023,Q3,Meta,Meta (Facebook),28644000000,28.644,4,2,-2,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2023-09-30,2023,Q3,Oracle,Oracle,8290000000,8.290,5,5,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2023-09-30,2023,Q3,Alibaba,Alibaba,3176701286,3.177,6,6,0,Grade B,,ACTUAL_VERIFIED_AT_SOURCE
-2023-09-30,2023,Q3,Tencent,Tencent,3107884781,3.108,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2023-09-30,2023,Q3,Tencent,Tencent,3107884781,3.108,7,7,0,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
 2023-09-30,2023,Q3,Baidu,Baidu,1333480015,1.333,8,8,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2023-12-31,2023,Q4,Amazon,Amazon,48133000000,48.133,1,1,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
 2023-12-31,2023,Q4,Microsoft,Microsoft,35202000000,35.202,2,2,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
@@ -405,14 +406,14 @@ date,year,quarter,company,display_name,capex_TTM_usd,capex_TTM_usd_bn,rank,previ
 2023-12-31,2023,Q4,Meta,Meta (Facebook),27266000000,27.266,4,4,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2023-12-31,2023,Q4,Oracle,Oracle,6935000000,6.935,5,5,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2023-12-31,2023,Q4,Alibaba,Alibaba,3432871088,3.433,6,6,0,Grade B,,ACTUAL_VERIFIED_AT_SOURCE
-2023-12-31,2023,Q4,Tencent,Tencent,3354744544,3.355,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2023-12-31,2023,Q4,Tencent,Tencent,3354744544,3.355,7,7,0,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
 2023-12-31,2023,Q4,Baidu,Baidu,1568845908,1.569,8,8,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2024-03-31,2024,Q1,Amazon,Amazon,48998000000,48.998,1,1,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
 2024-03-31,2024,Q1,Microsoft,Microsoft,39547000000,39.547,2,2,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2024-03-31,2024,Q1,Alphabet,Alphabet (Google),37974000000,37.974,3,3,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2024-03-31,2024,Q1,Meta,Meta (Facebook),26824000000,26.824,4,4,0,Grade A, Window spans a presentation change.,ACTUAL_VERIFIED_AT_SOURCE
 2024-03-31,2024,Q1,Oracle,Oracle,5981000000,5.981,5,5,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2024-03-31,2024,Q1,Tencent,Tencent,4707579086,4.708,6,7,1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2024-03-31,2024,Q1,Tencent,Tencent,4707579086,4.708,6,7,1,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
 2024-03-31,2024,Q1,Alibaba,Alibaba,4476072085,4.476,7,6,-1,Grade B,,ACTUAL_VERIFIED_AT_SOURCE
 2024-03-31,2024,Q1,Baidu,Baidu,1663091057,1.663,8,8,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2024-06-30,2024,Q2,Amazon,Amazon,54979000000,54.979,1,1,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
@@ -420,7 +421,7 @@ date,year,quarter,company,display_name,capex_TTM_usd,capex_TTM_usd_bn,rank,previ
 2024-06-30,2024,Q2,Alphabet,Alphabet (Google),44272000000,44.272,3,3,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2024-06-30,2024,Q2,Meta,Meta (Facebook),28781000000,28.781,4,4,0,Grade A, Window spans a presentation change.,ACTUAL_VERIFIED_AT_SOURCE
 2024-06-30,2024,Q2,Oracle,Oracle,6866000000,6.866,5,5,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2024-06-30,2024,Q2,Tencent,Tencent,5349405724,5.349,6,6,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2024-06-30,2024,Q2,Tencent,Tencent,5349405724,5.349,6,6,0,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
 2024-06-30,2024,Q2,Alibaba,Alibaba,5158542544,5.159,7,7,0,Grade B,,ACTUAL_VERIFIED_AT_SOURCE
 2024-06-30,2024,Q2,Baidu,Baidu,1569736074,1.570,8,8,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2024-09-30,2024,Q3,Amazon,Amazon,64959000000,64.959,1,1,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
@@ -429,61 +430,68 @@ date,year,quarter,company,display_name,capex_TTM_usd,capex_TTM_usd_bn,rank,previ
 2024-09-30,2024,Q3,Meta,Meta (Facebook),30496000000,30.496,4,4,0,Grade A, Window spans a presentation change.,ACTUAL_VERIFIED_AT_SOURCE
 2024-09-30,2024,Q3,Oracle,Oracle,7855000000,7.855,5,5,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2024-09-30,2024,Q3,Alibaba,Alibaba,6889120757,6.889,6,7,1,Grade B,,ACTUAL_VERIFIED_AT_SOURCE
-2024-09-30,2024,Q3,Tencent,Tencent,6630476259,6.630,7,6,-1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2024-09-30,2024,Q3,Tencent,Tencent,6630476259,6.630,7,6,-1,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
 2024-09-30,2024,Q3,Baidu,Baidu,1312222642,1.312,8,8,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2024-12-31,2024,Q4,Amazon,Amazon,77658000000,77.658,1,1,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
 2024-12-31,2024,Q4,Microsoft,Microsoft,55552000000,55.552,2,2,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2024-12-31,2024,Q4,Alphabet,Alphabet (Google),52535000000,52.535,3,3,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2024-12-31,2024,Q4,Meta,Meta (Facebook),37256000000,37.256,4,4,0,Grade A, Window spans a presentation change.,ACTUAL_VERIFIED_AT_SOURCE
 2024-12-31,2024,Q4,Oracle,Oracle,10745000000,10.745,5,5,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2024-12-31,2024,Q4,Tencent,Tencent,10676701911,10.677,6,7,1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2024-12-31,2024,Q4,Tencent,Tencent,10676701911,10.677,6,7,1,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
 2024-12-31,2024,Q4,Alibaba,Alibaba,10082787695,10.083,7,6,-1,Grade B,,ACTUAL_VERIFIED_AT_SOURCE
-2024-12-31,2024,Q4,Baidu,Baidu,1130123991,1.130,8,8,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2024-12-31,2024,Q4,CoreWeave,CoreWeave,8702000000,8.702,8,,,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2024-12-31,2024,Q4,Baidu,Baidu,1130123991,1.130,9,8,-1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2025-03-31,2025,Q1,Amazon,Amazon,87978000000,87.978,1,1,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
 2025-03-31,2025,Q1,Microsoft,Microsoft,61345000000,61.345,2,2,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2025-03-31,2025,Q1,Alphabet,Alphabet (Google),57720000000,57.720,3,3,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2025-03-31,2025,Q1,Meta,Meta (Facebook),43797000000,43.797,4,4,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2025-03-31,2025,Q1,Oracle,Oracle,14933000000,14.933,5,5,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2025-03-31,2025,Q1,Tencent,Tencent,12457126358,12.457,6,6,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2025-03-31,2025,Q1,Tencent,Tencent,12457126358,12.457,6,6,0,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
 2025-03-31,2025,Q1,Alibaba,Alibaba,11915405974,11.915,7,7,0,Grade B,,ACTUAL_VERIFIED_AT_SOURCE
-2025-03-31,2025,Q1,Baidu,Baidu,1245362298,1.245,8,8,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2025-03-31,2025,Q1,CoreWeave,CoreWeave,8367424000,8.367,8,8,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2025-03-31,2025,Q1,Baidu,Baidu,1245362298,1.245,9,9,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2025-06-30,2025,Q2,Amazon,Amazon,102953000000,102.953,1,1,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
 2025-06-30,2025,Q2,Alphabet,Alphabet (Google),66980000000,66.980,2,3,1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2025-06-30,2025,Q2,Microsoft,Microsoft,64551000000,64.551,3,2,-1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2025-06-30,2025,Q2,Meta,Meta (Facebook),52162000000,52.162,4,4,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2025-06-30,2025,Q2,Oracle,Oracle,21215000000,21.215,5,5,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2025-06-30,2025,Q2,Alibaba,Alibaba,15592297254,15.592,6,7,1,Grade B,,ACTUAL_VERIFIED_AT_SOURCE
-2025-06-30,2025,Q2,Tencent,Tencent,13893244864,13.893,7,6,-1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2025-06-30,2025,Q2,Baidu,Baidu,1478225672,1.478,8,8,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2025-06-30,2025,Q2,Tencent,Tencent,13893244864,13.893,7,6,-1,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
+2025-06-30,2025,Q2,CoreWeave,CoreWeave,8573255000,8.573,8,8,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2025-06-30,2025,Q2,Baidu,Baidu,1478225672,1.478,9,9,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2025-09-30,2025,Q3,Amazon,Amazon,115903000000,115.903,1,1,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
 2025-09-30,2025,Q3,Alphabet,Alphabet (Google),77872000000,77.872,2,2,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2025-09-30,2025,Q3,Microsoft,Microsoft,69022000000,69.022,3,3,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2025-09-30,2025,Q3,Meta,Meta (Facebook),62733000000,62.733,4,4,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2025-09-30,2025,Q3,Oracle,Oracle,27414000000,27.414,5,5,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2025-09-30,2025,Q3,Alibaba,Alibaba,17552248271,17.552,6,6,0,Grade B,,ACTUAL_VERIFIED_AT_SOURCE
-2025-09-30,2025,Q3,Tencent,Tencent,13321219920,13.321,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2025-09-30,2025,Q3,Baidu,Baidu,1723807973,1.724,8,8,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2025-09-30,2025,Q3,Tencent,Tencent,13321219920,13.321,7,7,0,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
+2025-09-30,2025,Q3,CoreWeave,CoreWeave,9746988000,9.747,8,8,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2025-09-30,2025,Q3,Baidu,Baidu,1723807973,1.724,9,9,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2025-12-31,2025,Q4,Amazon,Amazon,128320000000,128.320,1,1,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
 2025-12-31,2025,Q4,Alphabet,Alphabet (Google),91447000000,91.447,2,2,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2025-12-31,2025,Q4,Microsoft,Microsoft,83094000000,83.094,3,3,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2025-12-31,2025,Q4,Meta,Meta (Facebook),69691000000,69.691,4,4,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2025-12-31,2025,Q4,Oracle,Oracle,35477000000,35.477,5,5,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2025-12-31,2025,Q4,Alibaba,Alibaba,17223389051,17.223,6,6,0,Grade B,,ACTUAL_VERIFIED_AT_SOURCE
-2025-12-31,2025,Q4,Tencent,Tencent,11002952346,11.003,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2025-12-31,2025,Q4,Baidu,Baidu,1677489826,1.677,8,8,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2025-12-31,2025,Q4,Tencent,Tencent,11002952346,11.003,7,7,0,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
+2025-12-31,2025,Q4,CoreWeave,CoreWeave,10309000000,10.309,8,8,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2025-12-31,2025,Q4,Baidu,Baidu,1677489826,1.677,9,9,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2026-03-31,2026,Q1,Amazon,Amazon,147299000000,147.299,1,1,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
 2026-03-31,2026,Q1,Alphabet,Alphabet (Google),109924000000,109.924,2,2,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2026-03-31,2026,Q1,Microsoft,Microsoft,97225000000,97.225,3,3,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2026-03-31,2026,Q1,Meta,Meta (Facebook),75747000000,75.747,4,4,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2026-03-31,2026,Q1,Oracle,Oracle,48250000000,48.250,5,5,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2026-03-31,2026,Q1,Alibaba,Alibaba,17723643803,17.724,6,6,0,Grade B,,ACTUAL_VERIFIED_AT_SOURCE
-2026-03-31,2026,Q1,Tencent,Tencent,11838842061,11.839,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2026-03-31,2026,Q1,Baidu,Baidu,2133430895,2.133,8,8,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2026-03-31,2026,Q1,CoreWeave,CoreWeave,16596641000,16.597,7,8,1,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2026-03-31,2026,Q1,Tencent,Tencent,11838842061,11.839,8,7,-1,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
+2026-03-31,2026,Q1,Baidu,Baidu,2133430895,2.133,9,9,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2026-06-30,2026,Q2,Amazon,Amazon,169007000000,169.007,1,1,0,Grade A,Amazon: net of proceeds from property and equipment sales and incentives; other US companies gross.,ACTUAL_VERIFIED_AT_SOURCE
 2026-06-30,2026,Q2,Alphabet,Alphabet (Google),132402000000,132.402,2,2,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2026-06-30,2026,Q2,Microsoft,Microsoft,115948000000,115.948,3,3,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2026-06-30,2026,Q2,Meta,Meta (Facebook),89325000000,89.325,4,4,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2026-06-30,2026,Q2,Oracle,Oracle,55663000000,55.663,5,5,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
 2026-06-30,2026,Q2,Alibaba,Alibaba,22322188227,22.322,6,6,0,Grade B,,ACTUAL_VERIFIED_AT_SOURCE
-2026-06-30,2026,Q2,Tencent,Tencent,16954120393,16.954,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
-2026-06-30,2026,Q2,Baidu,Baidu,3281888407,3.282,8,8,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2026-06-30,2026,Q2,CoreWeave,CoreWeave,20565649000,20.566,7,7,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE
+2026-06-30,2026,Q2,Tencent,Tencent,16954120393,16.954,8,8,0,Grade A,"ON-SCREEN NOTE (DEC-292): Tencent's figure is measured differently - additions, including some intangible assets.",ACTUAL_VERIFIED_AT_SOURCE
+2026-06-30,2026,Q2,Baidu,Baidu,3281888407,3.282,9,9,0,Grade A,,ACTUAL_VERIFIED_AT_SOURCE

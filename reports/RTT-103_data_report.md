@@ -1,4 +1,83 @@
-# RTT-103 The AI Spending Race — data report (IQ-16, stage 1) · 7 Oct 2026
+# RTT-103 The AI Spending Race — data report (IQ-16 stage 1, 7 Oct 2026; IQ-16b stage 2, 8 Oct 2026)
+
+**Stage 2 (8 Oct 2026) is at the top; the stage-1 report follows unchanged below it.**
+
+## Stage 2 (IQ-16b, 8 Oct 2026): Luke's answers applied
+
+**In plain English.** All ten answers are recorded (DEC-291 to DEC-301) and applied. The race now has nine companies, with CoreWeave joining at the end of 2024. Alibaba's gap is smaller and its 2017–2018 figures are now rebuilt from Alibaba's own numbers. The forecast frames hold only the companies' own guidance, plus ByteDance greyed as a press report. Nothing is rendered or published.
+
+### What each answer led to
+| # | Your answer | What was done |
+|---|---|---|
+| 1 | Option C; the title names total capital spending (DEC-291) | K marked APPROVED; title rule added to the metric contract and `reference/house_style.md` (example: "Big Tech's Capital Spending, 2010–2026"). |
+| 2 | Tencent kept with a note (DEC-292) | Every Tencent row in the master carries the note "measured differently - additions, including some intangible assets". Exact on-screen wording is a design question. |
+| 3 | Amazon net (DEC-293) | No change needed. |
+| 4 | Alibaba: its own re-presented figures (DEC-294) | Found and used (see below, DEC-303). |
+| 5 | CoreWeave as a late entrant (DEC-295) | Added from its first published quarter (Q1 2024); first bar at **2024 Q4**, once four quarters exist. Eligibility table says ADDED. |
+| 6 | ByteDance only in the 2026 frame, greyed, after reading the SCMP article (DEC-296) | The article was read at source (9 May 2026): "more than 200 billion yuan (US$30 billion), according to two people familiar with the matter". In the 2026 frame only, greyed, as "more than US$29.3bn" (converted at the 2026 average H.10 rate to date). Never in the historical race. |
+| 7 | 2026 frame with ranges; roll forward to 2027–2028 with companies' own forecasts (DEC-297) | New `AI_SPENDING_RACE_FORECAST.csv` (DEC-304); `AI_SPENDING_RACE_2026E.csv` is its 2026 part. Ranges always carry both ends. 2027 holds only Alphabet ("increase significantly") and Microsoft (year to June 2027, "grow year-over-year"); 2028 is empty until company statements are checked. No analyst forecasts. |
+| 8 | H.10, everything in US$ (DEC-298) | Confirmed; no change. |
+| 9 | Catalogue private (DEC-299) | Confirmed; no change. |
+| 10 | Cowork's checks (DEC-300) | Alphabet 2026 guidance now **$195–205bn** (22 Jul 2026 call); $175–185bn and $180–190bn kept as superseded. Amazon stays "about $200 billion". |
+| — | OpenAI never a bar or capex (DEC-301) | A new format check fails the build if OpenAI or ByteDance ever appears as a bar. |
+
+### Alibaba: stage 1 got the dates wrong, now corrected (DEC-303)
+- Alibaba's capex included licensed copyrights (from the Youku deal) from **April 2016**, not January 2017 as stage 1 said.
+- Alibaba's FY2019 annual report (20-F) re-presents FY2017 and FY2018 on its later, narrower scope. Its quarterly releases from Sep 2018 to Jun 2019 re-present each earlier quarter the same way. From these, the five quarters Jun 2017 to Jun 2018 are rebuilt exactly; they add up to Alibaba's own FY2018 total (RMB19,628m).
+- The four quarters Apr 2016–Mar 2017 cannot be split, so they stay out. **Alibaba now has no bar for seven TTM points (2016 Q2 to 2017 Q4)**, down from nine. Stage 1 wrongly showed bars for 2016 Q2–Q4.
+- Before April 2016, Alibaba's figure also includes small intangible purchases (5.2% in FY2015, 6.6% in FY2016). These quarters are kept and flagged (DEC-302; question A below).
+
+### Alphabet's equity raise (DEC-305)
+- Alphabet's 8-K of 4 Jun 2026 was read at source. It describes an equity raise "to fund investments in its world-class AI compute infrastructure", priced on 2 Jun 2026 at **$84.75bn** in total (this includes a $40bn at-the-market programme sold over time).
+- It is added to the story moments (G) as financing, not capex.
+
+### At the end of June 2026 (12 months to the latest quarter)
+| Rank | Company | US$ bn |
+|---|---|---|
+| 1 | Amazon | 169.0 |
+| 2 | Alphabet | 132.4 |
+| 3 | Microsoft | 115.9 |
+| 4 | Meta | 89.3 |
+| 5 | Oracle | 55.7 |
+| 6 | Alibaba | 22.3 |
+| 7 | CoreWeave | 20.6 |
+| 8 | Tencent | 17.0 |
+| 9 | Baidu | 3.3 |
+
+- **Race total:** US$625.5bn, up 80.0% on a year earlier. CoreWeave pushes Tencent and Baidu down one place each; the order of the top six is unchanged.
+- **Turning points:**
+  - The leader and first-past-the-mark moments are unchanged from stage 1.
+  - The total passed US$100bn at the end of 2020, US$250bn at the end of 2024 (US$264.3bn, with CoreWeave's first bar) and US$500bn in Q1 2026 (US$526.7bn).
+
+### Checks
+- **Financial QA:** PASS for all nine companies, 81 of 81 checks.
+- **File-format checks:** PASS, 24 of 24. The four new checks are:
+  - every cited source is listed in A;
+  - OpenAI and ByteDance never appear as bars;
+  - the forecast frames hold company guidance only, plus the greyed ByteDance row;
+  - every range has both a low and a high.
+- **Tests:** 19 of 19 pass (`python tests/rtt103/run_tests_rtt103.py`), including a byte-identical rebuild.
+- **Master:** 496 bars.
+- **Cross-checks** (for information): unchanged. The same two intra-year restatements are listed in I. Private vendor data agrees for all five CoreWeave quarters.
+
+### Questions for Luke (stage 2)
+- **A. Alibaba before April 2016** (DEC-302): its figure includes 5–7% intangible purchases, which cannot be split by quarter. Should these quarters be kept, flagged?
+  - *Recommendation:* keep them with the data flag. The effect is small, and leaving them out would remove Alibaba from 2014 to 2016.
+  - *If unanswered:* kept, flagged.
+- **B. How absent bars look** (Alibaba 2016 Q2–2017 Q4) and how a late entrant arrives (CoreWeave at 2024 Q4): this is a design question (DEC-069).
+  - *Recommendation:* decide it in the design session, with options side by side.
+  - *If unanswered:* nothing is built.
+- **C. ByteDance's figure in the frame:** show "more than US$29.3bn" (converted by us) or SCMP's own "US$30 billion"?
+  - *Recommendation:* US$29.3bn. It uses the same exchange-rate method as every other figure (DEC-298), and the note quotes the yuan figure.
+  - *If unanswered:* US$29.3bn.
+
+### Still to do
+- **ChatGPT's results** (2026–2028 company forecasts, OpenAI commitments): awaited. When they arrive, each will be checked at source before any row is filled. 2028 is empty until then.
+- **The design session:** logos, colours, notes, absent bars, frames. Nothing is built without your approval.
+
+---
+
+# Stage 1 report (IQ-16, 7 Oct 2026)
 
 **For Luke, in plain English.** The data for the AI Spending Race is built for all eight companies, from 2010 to the end of June 2026, and every figure in the race was read in the company's own filing. Nothing has been rendered or published. Below: what was built, what passed, what is missing, and ten questions (each with Claude's recommendation).
 

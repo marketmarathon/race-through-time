@@ -14,7 +14,7 @@ import sys
 from collections import defaultdict
 
 TICKER = {"AMZN": "amazon", "MSFT": "microsoft", "GOOGL": "alphabet", "META": "meta", "ORCL": "oracle",
-          "BABA": "alibaba", "BIDU": "baidu"}
+          "BABA": "alibaba", "BIDU": "baidu", "CRWV": "coreweave"}
 
 
 def main():

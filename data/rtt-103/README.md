@@ -1,10 +1,10 @@
-# RTT-103 — The AI Spending Race: How Big Tech Started Spending Hundreds of Billions (data, stage 1)
+# RTT-103 — The AI Spending Race: How Big Tech Started Spending Hundreds of Billions (data, stages 1–2)
 
-Status: **DATA BUILD (IQ-16), 7 Oct 2026 — pull request open, not merged (DEC-057). Nothing rendered or published.**
-Owner decisions: DEC-246 (episode, method), DEC-278 to DEC-280. Claude working choices, proposals and findings: DEC-281 to DEC-290.
+Status: **DATA BUILD stage 1 (IQ-16, 7 Oct 2026) and stage 2 after Luke's answers (IQ-16b, 8 Oct 2026) — pull request #20 open, not merged (DEC-057). Nothing rendered or published.**
+Owner decisions: DEC-246 (episode, method), DEC-278 to DEC-280, DEC-291 to DEC-301 (Luke's answers). Claude working choices, proposals and findings: DEC-281 to DEC-290, DEC-302 to DEC-305.
 Report for Luke: `reports/RTT-103_data_report.md`. Contract: `reference/metric_contract_RTT-103.md`. Brief: `prompts/CODE_SESSION_IQ-16.md`.
 
-**Metric:** trailing-12-month capital expenditure, nominal US$, by calendar quarter, 2010 Q1 to **2026 Q2** (the latest quarter every race company has reported). Eight companies: Amazon, Microsoft, Alphabet, Meta, Oracle, Alibaba, Tencent, Baidu. ByteDance is out of the historical race (private; estimates only, in 2026E). CoreWeave is a candidate only (`eligibility_additional_companies.csv`).
+**Metric:** trailing-12-month capital expenditure, nominal US$, by calendar quarter, 2010 Q1 to **2026 Q2** (the latest quarter every race company has reported). Nine companies: Amazon, Microsoft, Alphabet, Meta, Oracle, Alibaba, Tencent, Baidu, and CoreWeave from 2024 Q4 (late entrant, DEC-295). The bars are total capital spending, not AI-only spending; the title must say so (DEC-291). ByteDance only in the 2026 forecast frame, greyed (DEC-296); OpenAI never a bar (DEC-301).
 
 ## Files (brief sections 16–28 and 34; exact columns)
 
@@ -23,7 +23,8 @@ Report for Luke: `reports/RTT-103_data_report.md`. Contract: `reference/metric_c
 | `K_recommended_dataset.md` | Recommended series and chart label (Claude proposal, awaiting Luke). |
 | `L_aggregate_capex.csv`, `L_aggregate_capex_constant_company.csv` | Race total and the constant-company total (companies present for the whole race). |
 | `AI_SPENDING_RACE_MASTER.csv` | Video-ready: QA-passed actuals only, rank and rank change. |
-| `AI_SPENDING_RACE_2026E.csv` | Separate 2026 frame: every row labelled 2026 GUIDANCE or 2026 ESTIMATE. |
+| `AI_SPENDING_RACE_FORECAST.csv`, `AI_SPENDING_RACE_2026E.csv` | Forecast frames 2026–2028 (companies' own guidance: number, range or direction; ByteDance greyed press report in 2026); the 2026E file is the 2026 subset, every row labelled 2026 GUIDANCE or 2026 ESTIMATE. |
+| `source/alibaba_rescope_components.csv` | Alibaba's own re-presented figures used to rebuild its FY2018 quarters and June 2018 on its later scope (DEC-303). |
 | `entity_name_history.csv`, `eligibility_additional_companies.csv`, `narrative_checkpoints.csv` | Name history; CoreWeave/ByteDance/Nvidia eligibility; turning points computed from the master. |
 | `checks.json`, `manifest.json` | All checks; SHA-256 of every output. |
 

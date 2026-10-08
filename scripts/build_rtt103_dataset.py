@@ -49,9 +49,13 @@ COMPANIES = {
     "alibaba": {"name": "Alibaba", "display": "Alibaba", "fye": 3, "ccy": "CNY", "src": ["alibaba"]},
     "tencent": {"name": "Tencent", "display": "Tencent", "fye": 12, "ccy": "CNY", "src": ["tencent"]},
     "baidu": {"name": "Baidu", "display": "Baidu", "fye": 12, "ccy": "CNY", "src": ["baidu"]},
+    # late entrant (DEC-295): in the race from its first valid TTM point; nothing before its first published quarter
+    "coreweave": {"name": "CoreWeave", "display": "CoreWeave", "fye": 12, "ccy": "USD", "src": ["coreweave"],
+                  "first_quarter": "2024-03-31"},
 }
-H_COLUMNS = ["Amazon", "Microsoft", "Alphabet", "Meta", "Oracle", "Alibaba", "Tencent", "Baidu", "ByteDance"]
-US = ["amazon", "microsoft", "alphabet", "meta", "oracle"]
+H_COLUMNS = ["Amazon", "Microsoft", "Alphabet", "Meta", "Oracle", "Alibaba", "Tencent", "Baidu", "ByteDance",
+             "CoreWeave"]  # CoreWeave: approved additional company (brief section 23; DEC-295)
+US = ["amazon", "microsoft", "alphabet", "meta", "oracle", "coreweave"]
 CN = ["alibaba", "tencent", "baidu"]
 
 # Amazon re-presented its cash-flow statement from the FY2017 10-K: purchases of property and equipment GROSS, with
@@ -252,6 +256,12 @@ def load_china(src):
             scope = re.search(r"scope=(\w+)", r["notes"]).group(1)
             if scope != ALIBABA_CANON_SCOPE:
                 line = "company_capex_broader_scope"
+            # Apr 2016 - Jun 2018: Alibaba's "capital expenditures" included licensed copyrights and intangible assets even
+            # where the release did not say so (the four FY2017 quarters sum exactly to the broad FY2017 total, RMB17,546m;
+            # the FY2019 20-F re-presents FY2017 on the later scope as RMB11,006m). DEC-296 / stage 2.
+            if "2016-04-01" <= r["period_end"] <= "2018-06-30" and r["duration"] in ("3M", "12M") and \
+                    not (r["duration"] == "12M" and r["period_end"] < "2017-01-01"):
+                line = "company_capex_broader_scope"
         rec = dict(r, company=r["company_id"], line=line, value=int(r["value_local"]), filed=r["publication_date"],
                    doc_url=r["source_url"], accession=r["source_id"], printed_label=r["metric_name_exact"], text_check="PASS",
                    rounded="rounded" in r["printed_units"], printed_negative="")
@@ -273,6 +283,43 @@ def load_china(src):
                 uniq = [e] + [r for r in uniq if r is not exact[0]]
         obs[k] = uniq
     return obs
+
+
+def load_alibaba_rescope(src):
+    """Components that rebuild Alibaba's quarters Jun 2017 - Jun 2018 on its later scope (from Sep 2018): purchases of
+    property and equipment excluding campus (re-presented comparatives) plus campus land use rights and construction in
+    progress (each quarter's own release). Also the FY2019 20-F's re-presented annual totals."""
+    comp = {}
+    for r in read_csv(os.path.join(src, "alibaba_rescope_components.csv")):
+        rec = dict(r, value=int(r["value_rmb_m"]) * 10 ** 6, filed=r["publication_date"], doc_url=r["source_url"],
+                   accession=r["source_id"], printed_label=r["component"], printed_value=f"RMB{int(r['value_rmb_m']):,} million",
+                   printed_units="RMB millions", grade="A" if "sec.gov" in r["source_url"] else "B", verified="VERIFIED",
+                   rounded=False, page_table="free-cash-flow reconciliation / investing activities text" if "sec.gov" not in r["source_url"]
+                   else "Form 20-F FY2019, Capital Expenditures", text_check="PASS", printed_negative="", company="alibaba",
+                   company_id="alibaba", source_sha256=r["source_sha256"], metric_name_exact=r["component"], currency="CNY",
+                   notes=r["notes"], line="alibaba_" + r["component"])
+        comp[(r["component"], r["period_start"], r["period_end"])] = rec
+    return comp
+
+
+def alibaba_rescope(comp, q):
+    ppe = comp.get(("ppe_excl_campus", q["start"], q["end"]))
+    land = comp.get(("land_use_rights_and_cip_campus", q["start"], q["end"]))
+    if not land:
+        return None
+    inputs, ftxt = [], ""
+    if ppe:
+        inputs, ftxt = [ppe], f"purchases of property and equipment excluding campus ({ppe['value']})"
+    else:  # first quarter of the fiscal year from the six-month figure minus the second quarter
+        h1 = comp.get(("ppe_excl_campus", q["start"], f"{q['end'][:4]}-09-30"))
+        q2 = comp.get(("ppe_excl_campus", f"{q['end'][:4]}-07-01", f"{q['end'][:4]}-09-30"))
+        if not (h1 and q2):
+            return None
+        ppe_v = h1["value"] - q2["value"]
+        inputs, ftxt = [h1, q2], f"purchases of property and equipment excluding campus, six months ({h1['value']}) minus three months to {q2['period_end']} ({q2['value']})"
+        ppe = {"value": ppe_v}
+    return {"value": ppe["value"] + land["value"], "how": "DERIVED", "inputs": inputs + [land],
+            "formula": f"{ftxt} plus campus land use rights and construction in progress ({land['value']}); Alibaba's capex scope from Sep 2018"}
 
 
 def china_quarter(obs, cid, line, qs, q):
@@ -324,6 +371,10 @@ def main():
     quarters = {cid: fiscal_quarters(c["fye"]) for cid, c in COMPANIES.items()}
     cobs = load_china(src)
     obs.update(cobs)
+    baba_comp = load_alibaba_rescope(src)
+    for rec in baba_comp.values():  # the components and the 20-F's re-presented totals are observations too
+        line = "company_capex" if rec["component"] == "capex_new_scope_annual" else rec["line"]
+        obs.setdefault(("alibaba", line, rec["period_start"], rec["period_end"]), []).insert(0, dict(rec, line=line))
     fx = fx_rates([r for r in read_csv_skip_comments(os.path.join(src, "fx_cny_per_usd_daily.csv"))])
     china_status = {}
     series = {}  # (cid, series 'A'|'B', fy, fq) -> record
@@ -333,6 +384,8 @@ def main():
             b = bucket_of(q["end"])
             if b < prev_bucket(FIRST_BUCKET, 3) or b > LAST_BUCKET_CANDIDATE:
                 continue
+            if q["end"] < COMPANIES[cid].get("first_quarter", ""):
+                continue  # before the company's first published quarter: no row at all
             base = {"company_id": cid, "fy": q["fy"], "fq": q["fq"], "start": q["start"], "end": q["end"], "bucket": b}
             # ---- Series B: cash purchases of property and equipment (gross where the company prints it gross)
             bline = "amazon_ppe_gross" if cid == "amazon" else "cash_ppe"
@@ -342,7 +395,7 @@ def main():
             if cid in ("alphabet", "oracle"):
                 a = quarter_value(obs, cid, "cash_ppe", qs, q)
                 series[(cid, "A", q["fy"], q["fq"])] = dict(base, series="A", line="cash_ppe", qv=a)
-            elif cid == "microsoft":
+            elif cid in ("microsoft", "coreweave"):
                 series[(cid, "A", q["fy"], q["fq"])] = dict(base, series="A", line="", qv=None,
                                                             why="NOT_FOUND: no company-defined capex figure in SEC filings or SEC-furnished releases")
             elif cid == "meta":
@@ -382,6 +435,8 @@ def main():
                 continue
             base = {"company_id": cid, "fy": q["fy"], "fq": q["fq"], "start": q["start"], "end": q["end"], "bucket": b}
             a = china_quarter(obs, cid, "company_capex", qs, q)
+            if not a and cid == "alibaba":
+                a = alibaba_rescope(baba_comp, q)
             broad = None if a else china_quarter(obs, cid, "company_capex_broader_scope", qs, q)
             rate = fx_mean(fx, q["start"], q["end"])
             for v in (a, broad):
@@ -391,9 +446,8 @@ def main():
                         v["how"] = "REPORTED_RELEASE"
             rec = dict(base, series="A", line="company_capex", qv=a, fx=rate)
             if broad:
-                rec["why"] = ("DEFINITION_BREAK: Alibaba printed 'capital expenditures and (acquisition of) intangible assets"
-                              f"{' and licensed copyrights' if 'licensed' in broad['inputs'][0]['printed_label'].lower() else ''}' "
-                              f"of RMB{broad['value']:,} for this quarter, a broader scope than its capex before and after; not spliced")
+                rec["why"] = (f"DEFINITION_BREAK: Alibaba's figure for this quarter (RMB{broad['value']:,}, '{broad['inputs'][0]['printed_label']}') "
+                              "includes licensed copyrights and intangible assets; no quarterly split on its later scope was found; not spliced")
                 rec["broad"] = broad
                 china_status[(cid, b)] = "DEFINITION_BREAK"
             series[(cid, "A", q["fy"], q["fq"])] = rec

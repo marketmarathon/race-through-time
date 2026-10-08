@@ -1,67 +1,67 @@
 quarter,number_of_companies_with_valid_data,aggregate_TTM_capex_usd,aggregate_TTM_capex_usd_bn,YoY_change_pct,coverage_warning
-2010-Q1,5,3596677759,3.597,,"missing: Meta, Alibaba, Tencent"
-2010-Q2,5,3988135811,3.988,,"missing: Meta, Alibaba, Tencent"
-2010-Q3,5,4981215000,4.981,,"missing: Meta, Alibaba, Tencent"
-2010-Q4,5,7719822683,7.720,,"missing: Meta, Alibaba, Tencent"
-2011-Q1,5,8894197898,8.894,147.3,"missing: Meta, Alibaba, Tencent"
-2011-Q2,5,9497628338,9.498,138.1,"missing: Meta, Alibaba, Tencent"
-2011-Q3,5,9587598724,9.588,92.5,"missing: Meta, Alibaba, Tencent"
-2011-Q4,6,8826758171,8.827,14.3,"missing: Meta, Alibaba; company set differs from a year earlier; YoY not like-for-like"
-2012-Q1,6,8715564192,8.716,-2.0,"missing: Meta, Alibaba; company set differs from a year earlier; YoY not like-for-like"
-2012-Q2,7,10157019148,10.157,6.9,missing: Alibaba; company set differs from a year earlier; YoY not like-for-like
-2012-Q3,7,10721669983,10.722,11.8,missing: Alibaba; company set differs from a year earlier; YoY not like-for-like
-2012-Q4,7,12987112955,12.987,47.1,missing: Alibaba; company set differs from a year earlier; YoY not like-for-like
-2013-Q1,7,13985433551,13.985,60.5,missing: Alibaba; company set differs from a year earlier; YoY not like-for-like
-2013-Q2,7,16081701027,16.082,58.3,missing: Alibaba
-2013-Q3,7,18709925830,18.710,74.5,missing: Alibaba
-2013-Q4,7,19820766614,19.821,52.6,missing: Alibaba
-2014-Q1,8,22597909129,22.598,61.6,company set differs from a year earlier; YoY not like-for-like
-2014-Q2,8,23685415555,23.685,47.3,company set differs from a year earlier; YoY not like-for-like
-2014-Q3,8,24819178885,24.819,32.7,company set differs from a year earlier; YoY not like-for-like
-2014-Q4,8,26333337338,26.333,32.9,company set differs from a year earlier; YoY not like-for-like
-2015-Q1,8,27452004329,27.452,21.5,
-2015-Q2,8,28617342923,28.617,20.8,
-2015-Q3,8,29122179639,29.122,17.3,
-2015-Q4,8,29040369176,29.040,10.3,
-2016-Q1,8,30684820948,30.685,11.8,
-2016-Q2,8,31678366007,31.678,10.7,
-2016-Q3,8,33710182316,33.710,15.8,
-2016-Q4,8,36864604175,36.865,26.9,
-2017-Q1,7,34690944975,34.691,13.1,missing: Alibaba; company set differs from a year earlier; YoY not like-for-like
-2017-Q2,7,36833406752,36.833,16.3,missing: Alibaba; company set differs from a year earlier; YoY not like-for-like
-2017-Q3,7,39402220715,39.402,16.9,missing: Alibaba; company set differs from a year earlier; YoY not like-for-like
-2017-Q4,7,43435735298,43.436,17.8,missing: Alibaba; company set differs from a year earlier; YoY not like-for-like
-2018-Q1,7,52547468156,52.547,51.5,missing: Alibaba
-2018-Q2,7,59951568282,59.952,62.8,missing: Alibaba
-2018-Q3,7,65016321901,65.016,65.0,missing: Alibaba
-2018-Q4,7,71028619032,71.029,63.5,missing: Alibaba
-2019-Q1,8,74241761666,74.242,41.3,company set differs from a year earlier; YoY not like-for-like
-2019-Q2,8,74279954913,74.280,23.9,company set differs from a year earlier; YoY not like-for-like
-2019-Q3,8,76057685008,76.058,17.0,company set differs from a year earlier; YoY not like-for-like
-2019-Q4,8,76312954184,76.313,7.4,company set differs from a year earlier; YoY not like-for-like
-2020-Q1,8,81531916809,81.532,9.8,
-2020-Q2,8,86711078256,86.711,16.7,
-2020-Q3,8,94556867137,94.557,24.3,
-2020-Q4,8,103803059252,103.803,36.0,
-2021-Q1,8,111816617650,111.817,37.1,
-2021-Q2,8,121659838992,121.660,40.3,
-2021-Q3,8,130597698867,130.598,38.1,
-2021-Q4,8,139488544836,139.489,34.4,
-2022-Q1,8,148605855043,148.606,32.9,
-2022-Q2,8,154314461812,154.314,26.8,
-2022-Q3,8,159719820088,159.720,22.3,
-2022-Q4,8,162954111737,162.954,16.8,
-2023-Q1,8,161100447786,161.100,8.4,
-2023-Q2,8,158037958232,158.038,2.4,
-2023-Q3,8,155340066082,155.340,-2.7,
-2023-Q4,8,158143461540,158.143,-3.0,
-2024-Q1,8,170170742228,170.171,5.6,
-2024-Q2,8,191452684342,191.453,21.1,
-2024-Q3,8,216902819658,216.903,39.6,
-2024-Q4,8,255635613597,255.636,61.6,
-2025-Q1,8,291390894630,291.391,71.2,
-2025-Q2,8,338824767790,338.825,77.0,
-2025-Q3,8,385541276164,385.541,77.7,
-2025-Q4,8,437932831223,437.933,71.3,
-2026-Q1,8,510140916759,510.141,75.1,
-2026-Q2,8,604903197027,604.903,78.5,
+2010-Q1,5,3596677759,3.597,,"missing: Meta, CoreWeave, Alibaba, Tencent"
+2010-Q2,5,3988135811,3.988,,"missing: Meta, CoreWeave, Alibaba, Tencent"
+2010-Q3,5,4981215000,4.981,,"missing: Meta, CoreWeave, Alibaba, Tencent"
+2010-Q4,5,7719822683,7.720,,"missing: Meta, CoreWeave, Alibaba, Tencent"
+2011-Q1,5,8894197898,8.894,147.3,"missing: Meta, CoreWeave, Alibaba, Tencent"
+2011-Q2,5,9497628338,9.498,138.1,"missing: Meta, CoreWeave, Alibaba, Tencent"
+2011-Q3,5,9587598724,9.588,92.5,"missing: Meta, CoreWeave, Alibaba, Tencent"
+2011-Q4,6,8826758171,8.827,14.3,"missing: Meta, CoreWeave, Alibaba; company set differs from a year earlier; YoY not like-for-like"
+2012-Q1,6,8715564192,8.716,-2.0,"missing: Meta, CoreWeave, Alibaba; company set differs from a year earlier; YoY not like-for-like"
+2012-Q2,7,10157019148,10.157,6.9,"missing: CoreWeave, Alibaba; company set differs from a year earlier; YoY not like-for-like"
+2012-Q3,7,10721669983,10.722,11.8,"missing: CoreWeave, Alibaba; company set differs from a year earlier; YoY not like-for-like"
+2012-Q4,7,12987112955,12.987,47.1,"missing: CoreWeave, Alibaba; company set differs from a year earlier; YoY not like-for-like"
+2013-Q1,7,13985433551,13.985,60.5,"missing: CoreWeave, Alibaba; company set differs from a year earlier; YoY not like-for-like"
+2013-Q2,7,16081701027,16.082,58.3,"missing: CoreWeave, Alibaba"
+2013-Q3,7,18709925830,18.710,74.5,"missing: CoreWeave, Alibaba"
+2013-Q4,7,19820766614,19.821,52.6,"missing: CoreWeave, Alibaba"
+2014-Q1,8,22597909129,22.598,61.6,missing: CoreWeave; company set differs from a year earlier; YoY not like-for-like
+2014-Q2,8,23685415555,23.685,47.3,missing: CoreWeave; company set differs from a year earlier; YoY not like-for-like
+2014-Q3,8,24819178885,24.819,32.7,missing: CoreWeave; company set differs from a year earlier; YoY not like-for-like
+2014-Q4,8,26333337338,26.333,32.9,missing: CoreWeave; company set differs from a year earlier; YoY not like-for-like
+2015-Q1,8,27452004329,27.452,21.5,missing: CoreWeave
+2015-Q2,8,28617342923,28.617,20.8,missing: CoreWeave
+2015-Q3,8,29122179639,29.122,17.3,missing: CoreWeave
+2015-Q4,8,29040369176,29.040,10.3,missing: CoreWeave
+2016-Q1,8,30684820948,30.685,11.8,missing: CoreWeave
+2016-Q2,7,29758477777,29.758,4.0,"missing: CoreWeave, Alibaba; company set differs from a year earlier; YoY not like-for-like"
+2016-Q3,7,31757242640,31.757,9.0,"missing: CoreWeave, Alibaba; company set differs from a year earlier; YoY not like-for-like"
+2016-Q4,7,34609186698,34.609,19.2,"missing: CoreWeave, Alibaba; company set differs from a year earlier; YoY not like-for-like"
+2017-Q1,7,34690944975,34.691,13.1,"missing: CoreWeave, Alibaba; company set differs from a year earlier; YoY not like-for-like"
+2017-Q2,7,36833406752,36.833,23.8,"missing: CoreWeave, Alibaba"
+2017-Q3,7,39402220715,39.402,24.1,"missing: CoreWeave, Alibaba"
+2017-Q4,7,43435735298,43.436,25.5,"missing: CoreWeave, Alibaba"
+2018-Q1,8,55524698241,55.525,60.1,missing: CoreWeave; company set differs from a year earlier; YoY not like-for-like
+2018-Q2,8,63701260120,63.701,72.9,missing: CoreWeave; company set differs from a year earlier; YoY not like-for-like
+2018-Q3,8,69688528457,69.689,76.9,missing: CoreWeave; company set differs from a year earlier; YoY not like-for-like
+2018-Q4,8,75973607657,75.974,74.9,missing: CoreWeave; company set differs from a year earlier; YoY not like-for-like
+2019-Q1,8,74241761666,74.242,33.7,missing: CoreWeave
+2019-Q2,8,74279954913,74.280,16.6,missing: CoreWeave
+2019-Q3,8,76057685008,76.058,9.1,missing: CoreWeave
+2019-Q4,8,76312954184,76.313,0.4,missing: CoreWeave
+2020-Q1,8,81531916809,81.532,9.8,missing: CoreWeave
+2020-Q2,8,86711078256,86.711,16.7,missing: CoreWeave
+2020-Q3,8,94556867137,94.557,24.3,missing: CoreWeave
+2020-Q4,8,103803059252,103.803,36.0,missing: CoreWeave
+2021-Q1,8,111816617650,111.817,37.1,missing: CoreWeave
+2021-Q2,8,121659838992,121.660,40.3,missing: CoreWeave
+2021-Q3,8,130597698867,130.598,38.1,missing: CoreWeave
+2021-Q4,8,139488544836,139.489,34.4,missing: CoreWeave
+2022-Q1,8,148605855043,148.606,32.9,missing: CoreWeave
+2022-Q2,8,154314461812,154.314,26.8,missing: CoreWeave
+2022-Q3,8,159719820088,159.720,22.3,missing: CoreWeave
+2022-Q4,8,162954111737,162.954,16.8,missing: CoreWeave
+2023-Q1,8,161100447786,161.100,8.4,missing: CoreWeave
+2023-Q2,8,158037958232,158.038,2.4,missing: CoreWeave
+2023-Q3,8,155340066082,155.340,-2.7,missing: CoreWeave
+2023-Q4,8,158143461540,158.143,-3.0,missing: CoreWeave
+2024-Q1,8,170170742228,170.171,5.6,missing: CoreWeave
+2024-Q2,8,191452684342,191.453,21.1,missing: CoreWeave
+2024-Q3,8,216902819658,216.903,39.6,missing: CoreWeave
+2024-Q4,9,264337613597,264.338,67.2,company set differs from a year earlier; YoY not like-for-like
+2025-Q1,9,299758318630,299.758,76.2,company set differs from a year earlier; YoY not like-for-like
+2025-Q2,9,347398022790,347.398,81.5,company set differs from a year earlier; YoY not like-for-like
+2025-Q3,9,395288264164,395.288,82.2,company set differs from a year earlier; YoY not like-for-like
+2025-Q4,9,448241831223,448.242,69.6,
+2026-Q1,9,526737557759,526.738,75.7,
+2026-Q2,9,625468846027,625.469,80.0,

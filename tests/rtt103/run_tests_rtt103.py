@@ -74,8 +74,20 @@ t("Amazon Q1 2017: gross 2,148 minus proceeds 287 = net 1,861 as first printed",
   and d[("amazon", "2017-03-31")]["cash_capex_usd"] == "2148000000")
 fy26 = sum(int(d[("alibaba", e_)]["capex_local_currency"]) for e_ in ("2025-06-30", "2025-09-30", "2025-12-31", "2026-03-31"))
 t("Alibaba FY2026 quarters sum to the printed RMB126,063m", fy26 == 126063000000, fy26)
-t("Alibaba Mar 2017 - Mar 2018 are DEFINITION_BREAK (five quarters)",
-  sum(1 for r in rows("H_coverage_matrix.csv") if r["Alibaba"] == "DEFINITION_BREAK") == 5)
+t("Alibaba Apr 2016 - Mar 2017 (fiscal 2017) are DEFINITION_BREAK (four quarters; stage-2 correction)",
+  sum(1 for r in rows("H_coverage_matrix.csv") if r["Alibaba"] == "DEFINITION_BREAK") == 4)
+fy18 = sum(int(d[("alibaba", e_)]["capex_local_currency"]) for e_ in ("2017-06-30", "2017-09-30", "2017-12-31", "2018-03-31"))
+t("Alibaba FY2018 quarters rebuilt on the later scope sum to the 20-F's RMB19,628m", fy18 == 19628000000, fy18)
+t("Alibaba June 2018 rebuilt from components (5,005 + 1,446) equals the FY2019-derived 6,451", d[("alibaba", "2018-06-30")]["capex_local_currency"] == "6451000000")
+cw = [r for r in rows("E_capex_TTM_race.csv") if r["company"] == "CoreWeave"]
+t("CoreWeave enters at 2024 Q4 (first four published quarters), nothing earlier", cw and cw[0]["calendar_quarter"] == "2024-Q4"
+  and not any(r["company_id"] == "coreweave" and r["period_end"] < "2024-03-31" for r in rows("D_quarterly_capex_clean.csv")))
+t("CoreWeave TTM to June 2026 within $1m of FY2025 - H1 2025 + H1 2026 = $20,566m (2025 inputs printed in thousands)",
+  abs(int(e[("2026-Q2", "CoreWeave")]["TTM_capex_usd"]) - 20566000000) <= 1_000_000, e[("2026-Q2", "CoreWeave")]["TTM_capex_usd"])
+fc = rows("AI_SPENDING_RACE_FORECAST.csv")
+t("Forecast: Alphabet 2026 latest range 195-205 (Cowork-checked Q2 call)", any(r["company"] == "Alphabet" and r["forecast_year"] == "2026" and r["range_low_usd_bn"] == "195" and r["range_high_usd_bn"] == "205" for r in fc))
+t("Forecast: ByteDance only greyed, labelled 2026 ESTIMATE", all(r["display_style"] == "greyed" and r["display_label"] == "2026 ESTIMATE" for r in fc if r["company"] == "ByteDance")
+  and any(r["company"] == "ByteDance" for r in fc))
 master = rows("AI_SPENDING_RACE_MASTER.csv")
 t("Master ends at the latest common complete quarter (2026-06-30)", max(r["date"] for r in master) == "2026-06-30")
 t("Master holds no 2026 estimate", all(r["data_status"] == "ACTUAL_VERIFIED_AT_SOURCE" for r in master))
