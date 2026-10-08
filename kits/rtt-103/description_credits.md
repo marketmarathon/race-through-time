@@ -1,9 +1,10 @@
-# RTT-103 — footer and description credits (IQ-18 round 1 draft; IQ-18b round 2 with Cowork's fixes (a) and (i), DEC-363, DEC-365)
+# RTT-103 — footer and description credits (IQ-18 round 1 draft; IQ-18b round 2 with Cowork's fixes (a) and (i), DEC-363, DEC-365; IQ-18c round 3, DEC-371)
 
 ## On screen (footer, bottom strip; house style 3, DEC-065)
 - **Race and final table:** "Race Through Time · Data: company filings (SEC, HKEX) and releases · US$ at Federal Reserve H.10 rates"
-- **2026 plans step:** "2026 plans: company calls and releases · Amazon, Oracle: as reported by Reuters · Alibaba: Citi estimate · ByteDance: SCMP, unnamed sources"
-- **Look-ahead boards:** "Race Through Time estimates · growth: FactSet consensus as of 31 Aug 2026, published by Morgan Stanley Investment Management, 17 Sep 2026 · Alibaba to March 2029: Citi" (two lines)
+- **2026 board (the race carrying on, DEC-371):** "2026 plans: company calls and releases · Amazon, Oracle: as reported by Reuters · Alibaba: Citi estimate · ByteDance: SCMP, unnamed sources"; under the title: "2026: company plans and latest figures · Alibaba: Citi estimate · ByteDance: press report"
+- **2027–2030 boards:** "Growth: FactSet consensus as of 31 Aug 2026, published by Morgan Stanley Investment Management, 17 Sep 2026 · Alibaba to Mar 2029: Citi"; under the title: "Race Through Time estimates · growth: FactSet consensus" (2030: "… · 2030: least reliable year")
+- **Explanation page:** "2026: company calls and releases, Reuters, Citi, SCMP · CoreWeave: Fitch (17 Jul 2026), S&P Global Ratings (9 Apr 2026) · Estimates: FactSet consensus as of 31 Aug 2026, published by Morgan Stanley Investment Management, 17 Sep 2026" (two lines)
 - **Combined line:** "Actual: company filings · 2026: company plans (Amazon, Oracle as reported by Reuters; Alibaba: Citi) · 2027–2030: Race Through Time estimates"
 - **Peak step:** "BCG (12 Jun 2026, chart read by eye) · FactSet consensus as of 31 Aug 2026, published by Morgan Stanley Investment Management, 17 Sep 2026 · Allianz Research (28 Sep 2026)" (two lines)
 
@@ -22,4 +23,4 @@ When does it peak? BCG (12 Jun 2026), FactSet consensus (as of 31 Aug 2026, publ
 
 Company names and logos are trademarks of their owners and are shown only to identify the companies; Race Through Time is not affiliated with or endorsed by them.
 
-Music: chosen by Luke next (YouTube Audio Library), credited here.
+Music: "The Fifth Quadrant" by Dan "Lebo" Lebowitz, Tone Seeker (YouTube Audio Library; chosen by Luke, DEC-372). Credited here only, as for RTT-001 (DEC-230); the licence asks for no attribution.

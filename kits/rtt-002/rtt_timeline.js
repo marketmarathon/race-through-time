@@ -163,7 +163,8 @@
        from the first frame of the last race. Without it, the last race keeps its beat and
        end_hold_sec is added (IQ-04/IQ-05 behaviour, unchanged for config.json). */
     const lastK = events.length - 1;
-    const raceFrames = P.final_board_sec != null
+    const raceFrames = events[lastK].beat_sec != null ? startFrame[lastK] + Math.round(events[lastK].beat_sec * fps)   // IQ-18c
+      : P.final_board_sec != null
       ? startFrame[lastK] + Math.round(P.final_board_sec * fps)
       : Math.round((sec + (hold[lastK] ? RH.sec : P.sec_per_event * mult[lastK]) + P.end_hold_sec) * fps);
     for (let k = 1; k < startFrame.length; k++)
@@ -331,10 +332,56 @@
     return Object.assign({}, race, { events: evs });
   }
 
+  /* IQ-18c (RTT-103, Luke's direction DEC-371): after June 2026 the race carries straight on, on the same board, through
+     the 2026 plans and the 2027-2030 estimates. cfg.forward {enabled, count_sec, boards:[{year, kind "plans"|"estimate",
+     sec, count_sec?, month, source_line, footer, comb_note, notes{id: text}, prefix{id: text}}], extra{id: {label,
+     colour}}}. One event per board is appended after the data's last quarter, built from race.steps.lookahead (the
+     look-ahead file, copied by scripts/rtt103_adapter.py unchanged; whole dollars from its tenths of a billion): the
+     bar's length is the top of its range (`values`, so the order is by the top of the range) and `lo` the bottom;
+     style "official" (a company plan or a 12-month actual), "estimated" (a Race Through Time estimate, striped) or
+     "analyst_estimate" (Citi); an extra row (ByteDance, a press report on the 2026 board only) has style "press" and
+     is never in `combined`. Each board holds for `sec`, counting from the board before over count_sec. Off (and
+     nothing appended) unless configured. */
+  function forwardBoards(race, cfg) {
+    const F = cfg.forward;
+    if (race.kind !== 'money' || !F || !F.enabled) return race;
+    const LA = (race.steps || {}).lookahead || [], label = {};
+    for (const e of race.entrants) label[e.id] = e.label;
+    for (const [id, x] of Object.entries(F.extra || {})) label[id] = x.label;
+    const D = s => { const t = String(s).trim(); if (!/^\d+(\.\d)?$/.test(t)) throw new Error('forward: not a figure in tenths of a billion: ' + s);
+      const [a, b] = t.split('.'); return (Number(a) * 10 + Number(b || 0)) * 100000000; };
+    const evs = race.events.slice();
+    let prevOrder = evs[evs.length - 1].order || [];
+    for (const B of F.boards) {
+      const y = String(B.year), rows = LA.filter(r => r.frame_year === y && r.row_type !== 'COMBINED'), C = LA.find(r => r.frame_year === y && r.row_type === 'COMBINED');
+      if (!rows.length || !C) throw new Error('forward: no look-ahead rows for ' + y);
+      const values = {}, lo = {}, style = {}, mode = {}, prov = {};
+      for (const r of rows) { const id = r.company.toLowerCase();
+        if (!(id in label)) throw new Error('forward: ' + r.company + ' is not in the race');
+        values[id] = D(r.estimate_high_usd_bn); lo[id] = D(r.estimate_low_usd_bn); prov[id] = 'o';
+        const citi = r.row_type === 'CITI_ESTIMATE' || r.label === 'Citi estimate';
+        style[id] = citi ? 'analyst_estimate' : B.kind === 'estimate' ? 'estimated' : 'official';
+        mode[id] = B.kind === 'estimate' ? (citi ? 'actual' : 'est') : (r.label === 'actual' ? 'actual' : 'plan'); }
+      let sum = 0, sumLo = 0; for (const id of Object.keys(values)) { sum += values[id]; sumLo += lo[id]; }
+      if (Math.abs(sum - D(C.estimate_high_usd_bn)) > 1e8 * rows.length || Math.abs(sumLo - D(C.estimate_low_usd_bn)) > 1e8 * rows.length)
+        throw new Error('forward ' + y + ': the bars do not add up to the combined row');
+      for (const [id, x] of Object.entries(F.extra || {})) if ((x.years || []).includes(B.year)) {
+        const src = (race.steps || {})[x.source]; if (!src) throw new Error('forward: no ' + x.source + ' in the race file');
+        values[id] = lo[id] = D(src[x.field]); style[id] = 'press'; mode[id] = 'actual'; prov[id] = 'o'; }
+      const order = shareOrder(values, prevOrder, label); prevOrder = order;
+      evs.push({ date: y + '-12-31', quarter: y + '-F', values, lo, style, prov, plus: [], order,
+                 combined: D(C.estimate_high_usd_bn), combined_lo: D(C.estimate_low_usd_bn),
+                 beat_sec: B.sec, count_sec: B.count_sec != null ? B.count_sec : (F.count_sec || 1.5),
+                 fwd: Object.assign({ mode, extra: Object.keys(F.extra || {}).filter(id => id in values) }, B) });
+    }
+    return Object.assign({}, race, { events: evs });
+  }
+
   function buildSeries(race, cfg) {
     const SHARE = race.kind === 'share' || race.kind === 'money', MONEY = race.kind === 'money';
     if (MONEY) race = holdGaps(race, cfg);
     if (SHARE) race = shareRace(race, cfg);
+    if (MONEY) race = forwardBoards(race, cfg);                  // IQ-18c: off unless cfg.forward
     const fps = cfg.fps, rows = cfg.rows, P = cfg.pacing;
     checkPacing(P);
     const from = (cfg.window && cfg.window.from) || '0000-00-00';
@@ -354,7 +401,8 @@
       const plus = {}; for (const id of ev.plus) plus[id] = true;
       const mplus = {}; for (const m of ev.maker_plus || []) mplus[m] = true;
       const held = {}; for (const id of ev.held || []) held[id] = true;            // IQ-18: hold option only
-      all.push({ ev, st: { order, totals: Object.assign({}, ev.values), style: Object.assign({}, ev.style), plus, status: Object.assign({}, ev.status || {}), held,
+      const fx = ev.fwd ? { lo: Object.assign({}, ev.lo), fwd: true } : {};   // IQ-18c
+      all.push({ ev, st: { order, totals: Object.assign({}, ev.values), style: Object.assign({}, ev.style), plus, status: Object.assign({}, ev.status || {}), held, ...fx,
                            maker_totals: Object.assign({}, ev.maker_totals), maker_style: Object.assign({}, ev.maker_style), maker_plus: mplus } });
     });
     let first = all.findIndex(x => x.ev.date >= from);
@@ -397,7 +445,7 @@
        record_hold.sec, so the pause follows the overtake; without counting (round 1) the hold replaces
        the beat, as RTT-002's record pauses do. */
     const CNT = !!(cfg.count && cfg.count.enabled);
-    const beatSec = k => CNT ? base(events[k]) * mult[k] + (hold[k] ? RH.sec : 0) : (hold[k] ? RH.sec : base(events[k]) * mult[k]);
+    const beatSec = k => events[k].beat_sec != null ? events[k].beat_sec : CNT ? base(events[k]) * mult[k] + (hold[k] ? RH.sec : 0) : (hold[k] ? RH.sec : base(events[k]) * mult[k]);
     const startFrame = [];
     let sec = P.lead_in_sec;
     for (let k = 0; k < events.length; k++) {
@@ -429,7 +477,8 @@
        countFrames[k] frames (its whole beat; a held quarter and the last quarter: one normal beat, then the
        board holds),
        reaching the exact series.csv value on the LAST frame of that count (the quarter-end frame). */
-    const countFrames = events.map((ev, k) => k < lastK && !hold[k] ? startFrame[k + 1] - startFrame[k] : Math.max(1, Math.round(base(ev) * mult[k] * fps)));
+    const countFrames = events.map((ev, k) => ev.count_sec != null ? Math.min(Math.round(ev.count_sec * fps), k < lastK ? startFrame[k + 1] - startFrame[k] : Infinity)   // IQ-18c
+                                         : k < lastK && !hold[k] ? startFrame[k + 1] - startFrame[k] : Math.max(1, Math.round(base(ev) * mult[k] * fps)));
     const tl = { series: true, events, states, opening, openingEvent, startFrame, raceFrames, mult, kind, fps, rows,
                  colours: { index, used: MO.length, sets: [], fadeRaces: 0, minDeltaE: 0, rows }, hold, records,
                  highlight: events.map(() => []), hasStarts: false, fade, makers: race.makers, entrants: race.entrants,
@@ -532,7 +581,8 @@
     /* IQ-13 (RTT-001, share): the hand-over windows used, the "new source" markers and the dated notes */
     if (SHARE) {
       tl.share = true; tl.windows = race.windows; tl.smoothing = race.smoothing; tl.scStart = race.sc_start;
-      if (MONEY) { tl.allCombined = all.map(x => ({ date: x.ev.date, c: x.ev.combined })); tl.money = true; tl.gaps = race.gaps || []; tl.story = race.story || []; tl.steps = race.steps || {}; tl.notesData = race.notes || {}; }
+      if (MONEY && events.some(ev => ev.fwd)) { tl.forward = true; tl.lastActual = events.findIndex(ev => ev.fwd) - 1; }   // IQ-18c: the index of June 2026 (-1: before the window)
+      if (MONEY) { tl.allCombined = all.filter(x => !x.ev.fwd).map(x => ({ date: x.ev.date, c: x.ev.combined })); tl.money = true; tl.gaps = race.gaps || []; tl.story = race.story || []; tl.steps = race.steps || {}; tl.notesData = race.notes || {}; }
       tl.crownAll = race.crown;
       const srcs = ev => ev.smooth ? [ev.smooth.from, ev.smooth.to] : String(ev.source_id || '').split('>').filter(Boolean);
       tl.markers = [];
@@ -569,7 +619,15 @@
       else { u[id] = b; alpha[id] = g; } });
     if (g < 1) prev.order.forEach((id, i) => { if (!(id in cur.totals)) { u[id] = prev.totals[id]; alpha[id] = 1 - g; idx[id] = 1e6 + i; } });
     const order = Object.keys(u).sort((x, y) => (u[y] - u[x]) || (idx[x] - idx[y]));
-    return { g, u, order, plus: {}, mu: {}, mplus: {}, alpha };
+    if (!cur.lo && !prev.lo) return { g, u, order, plus: {}, mu: {}, mplus: {}, alpha };
+    /* IQ-18c: a forward board's ranges - the bottom of each range counted like the top (from the previous board's
+       bottom, or from the June 2026 figure) */
+    const lo = {}, L0 = id => prev.lo && id in prev.lo ? prev.lo[id] : prev.totals[id];
+    for (const id of Object.keys(u)) {
+      if (!(id in cur.totals)) lo[id] = L0(id);
+      else if (!(id in prev.totals)) lo[id] = cur.lo ? cur.lo[id] : cur.totals[id];
+      else { const a = L0(id), b = cur.lo ? cur.lo[id] : cur.totals[id]; lo[id] = g >= 1 ? b : Math.round(a + (b - a) * g); } }
+    return { g, u, order, plus: {}, mu: {}, mplus: {}, alpha, lo };
   }
 
   /* IQ-10 round 4: a bar's status at frame f: {kind, dimFrom} (dimFrom: frame it stopped being live,

@@ -1,6 +1,6 @@
 {
  "extends": "config_rtt103_base.json",
- "kit_version": "rtt103_round2_film",
+ "kit_version": "rtt103_round3_film",
  "out": "rtt103_film.mp4",
  "pacing": {
   "sec_per_event": 1.5,
@@ -79,6 +79,26 @@
     "text": "“…the overwhelming majority of this spend … to support the AI opportunities…”",
     "tag": "company statement",
     "colour": "#2E9E4A"
+   },
+   {
+    "when": "2 Jun 2026",
+    "who": "Alphabet",
+    "text": "“…a total equity raise of $84.75 billion.”",
+    "tag": "financing · not capital spending",
+    "colour": "#2E9E4A",
+    "at": "2026-12-31"
+   },
+   {
+    "when": "30 Apr 2026",
+    "who": "iCapital estimate",
+    "text": "“…70–75% of that spend now tied directly to AI infrastructure”",
+    "sub": "about Amazon, Microsoft, Alphabet and Meta's projected 2026 spending",
+    "tag": "estimate · not in the bars",
+    "colour": "#E8B44A",
+    "tagColour": "#E8B44A",
+    "at": "2026-12-31",
+    "sec": 4.5,
+    "card_y": 236
    }
   ]
  },
@@ -88,35 +108,9 @@
   "final_line": "Combined: {now} in the 12 months to June 2026, up from {before} a year earlier",
   "sequence": [
    {
-    "name": "plans",
-    "sec": 10.5,
+    "name": "explain",
+    "sec": 14.0,
     "dip_in": 0.5,
-    "dip_out": 0.4
-   },
-   {
-    "name": "look",
-    "year": 2027,
-    "from": 2026,
-    "sec": 3.5,
-    "dip_in": 0.5
-   },
-   {
-    "name": "look",
-    "year": 2028,
-    "from": 2027,
-    "sec": 3.0
-   },
-   {
-    "name": "look",
-    "year": 2029,
-    "from": 2028,
-    "sec": 3.0
-   },
-   {
-    "name": "look",
-    "year": 2030,
-    "from": 2029,
-    "sec": 3.5,
     "dip_out": 0.4
    },
    {
@@ -137,36 +131,6 @@
     "dip_in": 0.5
    }
   ],
-  "plans": {
-   "tencent_note": "aims to boost spending in 2026 (Reuters)",
-   "cards": [
-    {
-     "from": 0.5,
-     "to": 4.8,
-     "when": "2 Jun 2026",
-     "who": "Alphabet",
-     "text": "“…a total equity raise of $84.75 billion.”",
-     "tag": "financing · not capital spending",
-     "colour": "#2E9E4A"
-    },
-    {
-     "from": 5.0,
-     "to": 10.4,
-     "when": "30 Apr 2026",
-     "who": "iCapital estimate",
-     "text": "“…an estimated 70–75% of that spend now tied directly to AI infrastructure”",
-     "sub": "about Amazon, Microsoft, Alphabet and Meta's projected 2026 spending",
-     "tag": "estimate · never applied to a bar",
-     "colour": "#E8B44A",
-     "tagColour": "#E8B44A"
-    }
-   ],
-   "footer": "2026 plans: company calls and releases · Amazon, Oracle: as reported by Reuters · Alibaba: Citi estimate · ByteDance: SCMP, unnamed sources"
-  },
-  "look": {
-   "move_sec": 1.2,
-   "footer": "Race Through Time estimates · growth: FactSet consensus as of 31 Aug 2026, published by Morgan Stanley Investment Management, 17 Sep 2026 · Alibaba to March 2029: Citi"
-  },
   "line": {
    "band_sec": 1.0,
    "footer": "Actual: company filings · 2026: company plans (Amazon, Oracle as reported by Reuters; Alibaba: Citi) · 2027–2030: Race Through Time estimates"
@@ -174,9 +138,126 @@
   "peaks": {
    "row_gap_sec": 1.2,
    "footer": "BCG (12 Jun 2026, chart read by eye) · FactSet consensus as of 31 Aug 2026, published by Morgan Stanley Investment Management, 17 Sep 2026 · Allianz Research (28 Sep 2026)"
+  },
+  "explain": {
+   "pill": "ABOUT THE ESTIMATES",
+   "title": "What the 2026–2030 bars show",
+   "row_gap_sec": 0.5,
+   "items": [
+    {
+     "lead": "2026",
+     "text": "Company plans, from results calls and releases. Amazon's and Oracle's as reported by Reuters; Oracle's year runs to May 2027; Microsoft's and Meta's include finance leases. Alibaba: Citi's estimate. Tencent and Baidu gave no 2026 figure (Tencent said it aims to boost spending, Reuters): their latest 12 months, to June 2026. ByteDance: a press report from unnamed sources, not in the total."
+    },
+    {
+     "lead": "2027–2030",
+     "text": "Race Through Time estimates, not company forecasts: each company's 2026 figure grown at FactSet consensus growth rates (Alibaba to March 2029: Citi's estimates)."
+    },
+    {
+     "lead": "Least reliable",
+     "text": "2030 is the least reliable year. Oracle's 2027 and 2028 estimates are probably high: its 2026 figure already runs to May 2027."
+    },
+    {
+     "lead": "CoreWeave",
+     "text": "Both rating agencies expect its spending to dip in 2027 (Fitch, S&P Global Ratings); our estimate does not."
+    }
+   ],
+   "footer": "2026: company calls and releases, Reuters, Citi, SCMP · CoreWeave: Fitch (17 Jul 2026), S&P Global Ratings (9 Apr 2026) · Estimates: FactSet consensus as of 31 Aug 2026, published by Morgan Stanley Investment Management, 17 Sep 2026"
   }
  },
  "notes": [
-  "IQ-18b round 2 (Luke's answers DEC-353..DEC-364, Cowork fixes DEC-365): the race with the chosen options and the steps after it. Not rendered as a film yet (music first)."
- ]
+  "IQ-18c round 3 (Luke's direction DEC-371): the race carries straight on after June 2026 through the 2026 plans and the 2027-2030 estimates on the same board (forward), then the explanation, the combined line, the peak timeline and the final June 2026 table. Not rendered as a film yet (music first)."
+ ],
+ "board": {
+  "fit": {
+   "max_slots": 10
+  }
+ },
+ "forward": {
+  "enabled": true,
+  "count_sec": 1.5,
+  "extra": {
+   "bytedance": {
+    "label": "ByteDance",
+    "colour": "#5A6375",
+    "years": [
+     2026
+    ],
+    "source": "bytedance_2026",
+    "field": "forecast_amount_usd_bn"
+   }
+  },
+  "boards": [
+   {
+    "year": 2026,
+    "kind": "plans",
+    "sec": 10.8,
+    "month": "company plans",
+    "source_line": "2026: company plans and latest figures · Alibaba: Citi estimate · ByteDance: press report",
+    "footer": "2026 plans: company calls and releases · Amazon, Oracle: as reported by Reuters · Alibaba: Citi estimate · ByteDance: SCMP, unnamed sources",
+    "comb_note": "sum of 9 companies · not ByteDance",
+    "notes": {
+     "amazon": "plan, as reported by Reuters",
+     "alphabet": "plan",
+     "microsoft": "plan",
+     "meta": "plan",
+     "oracle": "year to May 2027, as reported by Reuters",
+     "coreweave": "plan",
+     "alibaba": "Citi estimate, year to Mar 2027",
+     "tencent": "actual to Jun 2026",
+     "baidu": "actual to Jun 2026",
+     "bytedance": "press report"
+    },
+    "prefix": {
+     "microsoft": "~",
+     "bytedance": "more than "
+    }
+   },
+   {
+    "year": 2027,
+    "kind": "estimate",
+    "sec": 3.5,
+    "month": "estimate",
+    "source_line": "Race Through Time estimates · growth: FactSet consensus",
+    "footer": "Growth: FactSet consensus as of 31 Aug 2026, published by Morgan Stanley Investment Management, 17 Sep 2026 · Alibaba to Mar 2029: Citi",
+    "comb_note": "sum of the 9 bars",
+    "notes": {
+     "oracle": "probably high",
+     "alibaba": "Citi estimate, year to Mar 2028"
+    }
+   },
+   {
+    "year": 2028,
+    "kind": "estimate",
+    "sec": 3.0,
+    "month": "estimate",
+    "source_line": "Race Through Time estimates · growth: FactSet consensus",
+    "footer": "Growth: FactSet consensus as of 31 Aug 2026, published by Morgan Stanley Investment Management, 17 Sep 2026 · Alibaba to Mar 2029: Citi",
+    "comb_note": "sum of the 9 bars",
+    "notes": {
+     "oracle": "probably high",
+     "alibaba": "Citi estimate, year to Mar 2029"
+    }
+   },
+   {
+    "year": 2029,
+    "kind": "estimate",
+    "sec": 3.0,
+    "month": "estimate",
+    "source_line": "Race Through Time estimates · growth: FactSet consensus",
+    "footer": "Growth: FactSet consensus as of 31 Aug 2026, published by Morgan Stanley Investment Management, 17 Sep 2026 · Alibaba to Mar 2029: Citi",
+    "comb_note": "sum of the 9 bars",
+    "notes": {}
+   },
+   {
+    "year": 2030,
+    "kind": "estimate",
+    "sec": 4.0,
+    "month": "estimate",
+    "source_line": "Race Through Time estimates · growth: FactSet consensus · 2030: least reliable year",
+    "footer": "Growth: FactSet consensus as of 31 Aug 2026, published by Morgan Stanley Investment Management, 17 Sep 2026 · Alibaba to Mar 2029: Citi",
+    "comb_note": "sum of the 9 bars",
+    "notes": {}
+   }
+  ]
+ }
 }

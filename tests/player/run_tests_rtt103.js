@@ -25,8 +25,17 @@
  *   9. colours: no two companies closer than CIEDE2000 18 (DEC-023); every colour at least 25 from the background
  *  10. pacing: each quarter counts over 0.8-1.4 x its base
  *  11. (IQ-18b) the total panel's text stays inside the panel; a story card's text is at least the names' size (DEC-357)
- *  12. (IQ-18b) the steps after the race: no card over a value, label or panel; plans, look-ahead, line and final-table
- *      figures as the look-ahead file and L give them (display rounding only); the cards quote G word for word (check 7)
+ *  12. (IQ-18b) the steps after the race: no card over a value, label or panel; the line and final-table figures as the
+ *      look-ahead file and L give them (display rounding only); the cards quote G word for word (check 7); (IQ-18c) the
+ *      explanation's points all drawn inside the frame
+ *  13. (IQ-18c, DEC-371) the race carrying on after June 2026: on each forward board's landing frame every bar's value
+ *      is the look-ahead file's range for that year (display rounding as rtt_steps.js bn(); Microsoft "~" in 2026,
+ *      ByteDance "more than" from the race file's press report, 2026 board only); exactly those companies are on the
+ *      board, ordered by the top of their range; Race Through Time estimates striped ("estimated"), Citi's in the
+ *      analyst look, plans and actuals solid; Oracle's "probably high" exactly where the file's notes say so, Citi's
+ *      note on Citi rows; the total is the file's combined range and never includes ByteDance; the date block reads the
+ *      board's label and year; the source line under the title is on screen; every footer and source line stays
+ *      inside the margins and the date block never meets the title (all frames)
  * Results: tests/player/RESULTS_RTT103.md. Exit 1 on any failure.
  *
  *   node tests/player/run_tests_rtt103.js [case ...]
@@ -70,6 +79,8 @@ const master = readCSV(path.join(D, 'AI_SPENDING_RACE_MASTER.csv'));
 const byDate = {}; for (const r of master) (byDate[r.date] = byDate[r.date] || {})[r.company.toLowerCase()] = r.capex_TTM_usd;
 const L = {}; for (const r of readCSV(path.join(D, 'L_aggregate_capex.csv'))) L[r.quarter] = r.aggregate_TTM_capex_usd;
 const G = readCSV(path.join(D, 'G_AI_capex_story_events.csv'));
+const LOOK = readCSV(path.join(D, 'AI_SPENDING_RACE_LOOKAHEAD.csv'));
+const FORECAST = readCSV(path.join(D, 'AI_SPENDING_RACE_FORECAST.csv'));
 const storyLate = {};
 const qOf = d => d.slice(0, 4) + '-Q' + Math.ceil(+d.slice(5, 7) / 3);
 
@@ -124,7 +135,9 @@ async function runCase(name) {
   process.env.RTT_LOCAL_ASSETS = dir;
   const { br, pg } = await rtt.openPlayer({ cfg, data, raster: 1, chrome: CHROME });
   delete process.env.RTT_LOCAL_ASSETS;
-  const info = await pg.evaluate(() => ({ dates: TL.events.map(e => e.date), start: TL.startFrame, qe: TL.quarterEndFrame, frames: RACE_FRAMES, opening: TL.openingEvent.date, mult: TL.mult, gaps: TL.gaps }));
+  const info = await pg.evaluate(() => ({ dates: TL.events.map(e => e.date), start: TL.startFrame, qe: TL.quarterEndFrame, frames: RACE_FRAMES, opening: TL.openingEvent.date, mult: TL.mult, gaps: TL.gaps, fwd: TL.events.map(e => !!e.fwd) }));
+  const boards = {}; for (const b of (cfg.forward && cfg.forward.enabled ? cfg.forward.boards : [])) boards[b.year + '-12-31'] = b;
+  let fwdChecked = 0;
   const fails = [], add = m => { if (fails.length < 40) fails.push(m); };
   const M = (cfg.values || {}).money, hold = cfg.gaps && cfg.gaps.mode === 'hold';
   const inGap = (id, d) => (info.gaps || []).some(g => g.id === id && d >= g.from && d <= g.to);
@@ -132,15 +145,21 @@ async function runCase(name) {
   let checked = 0, prevComb = null;
   const tagOn = (cfg.bar_tags || []).find(t => t.id === 'tencent');
   const steps = await pg.evaluate(() => TL.stepPlan ? { end: TL.raceEnd, plan: TL.stepPlan } : null);
+  if (steps) steps.cfg = cfg.steps;
   const stepSeen = {};
   for (let f = 0; f < info.frames; f++) {
     await rtt.drawFrame(pg, f, cfg);
     const k = qeAt[f];
     const S = await pg.evaluate(() => ({ L: window.__LABELS, B: window.__BARS, C: window.__COMBINED, ST: window.__STORY, DB: window.__DATEBLOCK, TF: window.__TAGFOOT, R: window.__RANK, CB: window.__CARDBOX, STEP: window.__STEP, CARDS: window.__CARDS, PANELS: window.__PANELS }));
     for (const l of S.L) if (l.x < -1 || l.x + l.w > 1921 || l.y > 1081 || l.y < 0) add(f + ': label outside the frame: ' + l.kind + ' "' + l.text + '"');
+    /* 13. footers and source lines inside the margins; the date block clear of the title */
+    for (const l of S.L) if (['footer', 'source_line'].includes(l.kind) && l.alpha > 0.05 && l.x + l.w > 1920 - 64 + 1) add(f + ': ' + l.kind + ' past the right margin: "' + l.text.slice(0, 40) + '"');
+    const tl_ = S.L.find(l => l.kind === 'title'), dm_ = S.L.find(l => l.kind === 'date_month');
+    if (tl_ && dm_ && overlap(lbox(tl_), lbox(dm_))) add(f + ': the date block "' + dm_.text + '" meets the title');
     if (steps && f >= steps.end) { stepChecks(f, S, steps, stepSeen, add); continue; }
     /* 11. the panel's own text stays inside it (Cowork fix (g)); a story card's text is at least the names' size (DEC-357) */
     if (S.C) for (const l of S.L) if (/^comb_/.test(l.kind) && l.kind !== 'comb_axis' && l.alpha > 0.05 && (l.x < S.C.box.x || l.x + l.w > S.C.box.x + S.C.box.w + 1)) add(f + ': ' + l.kind + ' "' + l.text + '" outside the total panel');
+    if (S.CB) for (const l of S.L) if (/^story_/.test(l.kind) && l.alpha > 0.05 && (l.x < S.CB.x || l.x + l.w > S.CB.x + S.CB.w + 1)) add(f + ': ' + l.kind + ' "' + l.text + '" outside its card');
     if (S.CB) { const nm = S.L.filter(l => l.kind === 'name' && l.alpha > 0.5).map(l => l.size), st = S.L.filter(l => /^story_(text|who)$/.test(l.kind)).map(l => l.size);
       if (nm.length && st.length && Math.min(...st) < Math.min(...nm)) add(f + ': story card text ' + Math.min(...st) + ' px, smaller than the names ' + Math.min(...nm) + ' px'); }
     const drawn = S.B.filter(b => b.alpha > 0.02 && b.rect.y < 1034);
@@ -149,12 +168,20 @@ async function runCase(name) {
     if (S.ST && S.ST.mode === 'card' && S.CB) boxes.push(['story card', S.CB]);
     for (const [nm, bx] of boxes) {
       for (const b of drawn) if (b.rect.x < bx.x + bx.w && b.rect.x + b.rect.w > bx.x && b.rect.y < bx.y + bx.h && b.rect.y + b.rect.h > bx.y) add(f + ': bar ' + b.id + ' under the ' + nm);
-      for (const l of S.L) if (['name', 'value', 'bar_tag', 'gap_note', 'entry_tag'].includes(l.kind) && l.alpha > 0.05 && l.x < bx.x + bx.w && l.x + l.w > bx.x && l.y > bx.y && l.y - l.size * 0.8 < bx.y + bx.h) add(f + ': ' + l.kind + ' "' + l.text + '" under the ' + nm);
+      for (const l of S.L) if (['name', 'value', 'bar_tag', 'gap_note', 'entry_tag', 'fwd_note'].includes(l.kind) && l.alpha > 0.05 && l.x < bx.x + bx.w && l.x + l.w > bx.x && l.y > bx.y && l.y - l.size * 0.8 < bx.y + bx.h) add(f + ': ' + l.kind + ' "' + l.text + '" under the ' + nm);
     }
     /* 6. Tencent's note */
     if (tagOn && drawn.some(b => b.id === 'tencent' && b.alpha > 0.5)) {
       if ((tagOn.mode || 'after') === 'after' && !S.L.some(l => l.kind === 'bar_tag' && l.id === 'tencent')) add(f + ': Tencent drawn without its note');
       if (tagOn.mode === 'mark' && !(S.L.some(l => l.kind === 'value' && l.id === 'tencent' && l.text.endsWith(tagOn.mark)) && (S.TF || []).length)) add(f + ': Tencent drawn without its mark and footnote');
+    }
+    const kk0 = RTT_eventAt(info, f);
+    if (kk0 >= 0 && info.fwd[kk0]) {   // 13. a forward board (IQ-18c)
+      const d = info.dates[kk0], B = boards[d], dp = info.dates[kk0 - 1];
+      if (k == null) { const ok = new Set(fwdIds(d).concat(info.fwd[kk0 - 1] ? fwdIds(dp) : Object.keys(byDate[dp] || {})));
+        for (const b of drawn) if (!ok.has(b.id)) add(f + ': bar ' + b.id + ' drawn with no figure in ' + dp + ' or ' + d);
+        continue; }
+      fwdChecked++; fwdCheck(d, B, S, drawn, add); continue;
     }
     if (k == null) {          // between quarter ends: every bar has a figure now or at the quarter before (or is held)
       const kk = RTT_eventAt(info, f), d = kk >= 0 ? info.dates[kk] : info.opening, dp = kk > 0 ? info.dates[kk - 1] : info.opening;
@@ -189,12 +216,12 @@ async function runCase(name) {
   /* 7. story windows: each moment from its own quarter (+ delay) or later, never two on one lane at once, shown whole
      before the race ends; lateness = seconds after its own quarter's first frame (DEC-358: reported) */
   if (cfg.story && cfg.story.enabled) {
-    const Q = await pg.evaluate(() => storySchedule().map(q => ({ when: q.it.when, at: q.it.at, plain: !!q.it.plain, delay: q.it.delay || 0, f0: q.f0 })));
+    const Q = await pg.evaluate(() => storySchedule().map(q => ({ when: q.it.when, at: q.it.at, plain: !!q.it.plain, delay: q.it.delay || 0, sec: q.it.sec, f0: q.f0 })));
     const prevEnd = {}, late = [];
     for (const q of Q) { const kk = info.dates.indexOf(q.at), own = info.start[kk] + Math.round(q.delay * 30), lane = q.plain ? 'plain' : 'card';
       if (q.f0 < own) add('story ' + (q.when || q.at) + ': shown before its quarter');
       if (q.f0 < (prevEnd[lane] || -1)) add('story ' + (q.when || q.at) + ': overlaps the moment before');
-      prevEnd[lane] = q.f0 + Math.round(cfg.story.sec * 30);
+      prevEnd[lane] = q.f0 + Math.round((q.sec != null ? q.sec : cfg.story.sec) * 30);
       if (steps && prevEnd[lane] > steps.end) add('story ' + (q.when || q.at) + ': still showing when the race ends');
       if (!q.plain) late.push(q.when + ' ' + ((q.f0 - own) / 30).toFixed(1) + ' s');
       await rtt.drawFrame(pg, q.f0 + 6, cfg); const st = await pg.evaluate(() => window.__STORY);
@@ -203,15 +230,15 @@ async function runCase(name) {
   }
   /* 10. pacing */
   const P = cfg.pacing, base = d => { for (const s of P.segments || []) if ((s.to == null || d <= s.to) && (s.from == null || d >= s.from)) return s.sec_per_event; return P.sec_per_event; };
-  for (let kk = 0; kk + 1 < info.start.length; kk++) { const sec = (info.start[kk + 1] - info.start[kk]) / 30, b = base(info.dates[kk]);
+  for (let kk = 0; kk + 1 < info.start.length; kk++) { if (info.fwd[kk]) continue; const sec = (info.start[kk + 1] - info.start[kk]) / 30, b = base(info.dates[kk]);
     if (sec < 0.8 * b - 0.04 || sec > 1.4 * b + 0.04) add('pacing ' + info.dates[kk] + ': ' + sec.toFixed(2) + ' s, base ' + b); }
   await br.close();
-  if (steps) for (const p of steps.plan) { const key = p.name === 'look' ? 'look' + p.year : p.name; if (['plans', 'line', 'final', 'look'].includes(p.name) && !stepSeen[key]) add('step ' + key + ': never checked'); }
-  return { name, config: C.config, frames: info.frames, quarters: checked, fails, late: storyLate[name], steps: steps ? steps.plan.length : 0 };
+  if (steps) for (const p of steps.plan) if (['explain', 'line', 'final'].includes(p.name) && !stepSeen[p.name]) add('step ' + p.name + ': never checked');
+  if (Object.keys(boards).length && fwdChecked !== info.fwd.filter(Boolean).length) add('forward boards: ' + fwdChecked + ' landing frames checked of ' + info.fwd.filter(Boolean).length);
+  return { name, config: C.config, frames: info.frames, quarters: checked, fwd: fwdChecked, fails, late: storyLate[name], steps: steps ? steps.plan.length : 0 };
 }
 /* 12. the steps after the race (IQ-18b): no card over a value, label or panel; the panel's text inside it; the figures as
    the look-ahead file gives them (display rounding as rtt_steps.js documents it); the final line from L */
-const LOOK = readCSV(path.join(D, 'AI_SPENDING_RACE_LOOKAHEAD.csv'));
 function bnT(lo, hi, mode) {
   const big = mode === 'est' && Math.max(lo, hi) >= 1000, f = v => { const t = Math.round(v * 10);
     if (big) return (Math.floor((t + 50) / 100) / 100).toFixed(2);
@@ -230,21 +257,50 @@ function stepChecks(f, S, steps, seen, add) {
   for (const p of S.PANELS || []) for (const l of S.L) if (/^comb_/.test(l.kind) && l.x >= p.x - 1 && l.x < p.x + p.w && l.x + l.w > p.x + p.w + 1) add(f + ': ' + l.kind + ' "' + l.text + '" outside its panel');
   if (!plan || st.dip > 0.01) return;
   const vals = {}; for (const l of S.L) if (l.kind === 'value' && l.id) vals[l.id] = l.text;
-  if (plan.name === 'plans' && u > 0.6 && !seen.plans) { seen.plans = 1;
-    for (const r of LOOK.filter(r => r.frame_year === '2026' && r.row_type !== 'COMBINED')) { const id = r.company.toLowerCase(), lo = +r.estimate_low_usd_bn, hi = +r.estimate_high_usd_bn;
-      const want = (id === 'microsoft' ? '~' : '') + bnT(lo, hi, r.label === 'actual' ? 'actual' : 'plan'); if (vals[id] !== want) add('plans ' + id + ': "' + vals[id] + '", want "' + want + '"'); }
-    if (vals.bytedance !== 'more than $29.3bn') add('plans ByteDance: "' + vals.bytedance + '"');
-    const c = LOOK.find(r => r.frame_year === '2026' && r.row_type === 'COMBINED'), cv = S.L.find(l => l.kind === 'comb_value');
-    if (!cv || cv.text !== bnT(+c.estimate_low_usd_bn, +c.estimate_high_usd_bn, 'whole')) add('plans combined: "' + (cv && cv.text) + '"');
-    const tp = S.L.find(l => l.kind === 'period' && l.id === 'tencent'); if (!tp || !/aims to boost/.test(tp.text)) add('plans: Tencent\'s 2026 note missing (DEC-343)'); }
-  if (plan.name === 'look' && st.landed && !seen['look' + plan.year]) { seen['look' + plan.year] = 1;
-    for (const r of LOOK.filter(r => r.frame_year === String(plan.year) && r.row_type !== 'COMBINED')) { const id = r.company.toLowerCase();
-      const want = bnT(+r.estimate_low_usd_bn, +r.estimate_high_usd_bn, r.row_type === 'CITI_ESTIMATE' ? 'actual' : 'est'); if (vals[id] !== want) add('look ' + plan.year + ' ' + id + ': "' + vals[id] + '", want "' + want + '"'); } }
+  if (plan.name === 'explain' && u > 3.0 && !seen.explain) { seen.explain = 1; const want = (steps.cfg.explain || {}).items || [];
+    const leads = S.L.filter(l => l.kind === 'explain_lead' && l.alpha > 0.9).map(l => l.text);
+    if (leads.join('|') !== want.map(i => i.lead).join('|')) add('explain: points drawn ' + leads.join(', '));
+    if (!(S.STEP.bottom < 1080 - 80)) add('explain: the points run into the footer (' + S.STEP.bottom + ')'); }
   if (plan.name === 'line' && u > 1.5 && !seen.line) { seen.line = 1; if (!S.L.some(l => l.kind === 'value' && l.text === '$903–937bn')) add('line: the 2026 plans label is not "$903–937bn"'); }
   if (plan.name === 'final' && !seen.final) { seen.final = 1; const fl = S.L.find(l => l.kind === 'final_line');
     const want = 'Combined: ' + moneyText(L['2026-Q2']) + ' in the 12 months to June 2026, up from ' + moneyText(L['2025-Q2']) + ' a year earlier';
     if (!fl || fl.text !== want) add('final line: "' + (fl && fl.text) + '", want "' + want + '"');
     if ((S.CARDS || []).length || (S.ST && S.ST.at)) add('final table: a story card is showing'); }
+}
+/* 13. the forward boards (IQ-18c), read from the look-ahead file here, independently of rtt_timeline.js */
+const BD = FORECAST.find(r => r.company === 'ByteDance' && r.forecast_year === '2026');
+function fwdRows(d) { return LOOK.filter(r => r.frame_year === d.slice(0, 4) && r.row_type !== 'COMBINED'); }
+function fwdIds(d) { return fwdRows(d).map(r => r.company.toLowerCase()).concat(d.slice(0, 4) === '2026' ? ['bytedance'] : []); }
+function fwdCheck(d, B, S, drawn, add) {
+  const y = d.slice(0, 4), est = B.kind === 'estimate', rows = fwdRows(d), vals = {}, notes = {};
+  for (const l of S.L) if (l.kind === 'value' && l.id) vals[l.id] = l.text;
+  for (const l of S.L) if (l.kind === 'fwd_note' && l.id) notes[l.id] = l.text;
+  const want = fwdIds(d).sort(), got = drawn.filter(b => b.alpha > 0.5).map(b => b.id).sort();
+  if (want.join() !== got.join()) add(y + ': board ' + got.join(',') + ', the look-ahead file has ' + want.join(','));
+  for (const r of rows) { const id = r.company.toLowerCase(), citi = r.row_type === 'CITI_ESTIMATE' || r.label === 'Citi estimate';
+    const mode = est ? (citi ? 'actual' : 'est') : (r.label === 'actual' ? 'actual' : 'plan');
+    const w = (!est && id === 'microsoft' ? '~' : '') + bnT(+r.estimate_low_usd_bn, +r.estimate_high_usd_bn, mode);
+    if (vals[id] !== w) add(y + ' ' + id + ': value "' + vals[id] + '", want "' + w + '"');
+    const bar = drawn.find(b => b.id === id), st = citi ? 'analyst_estimate' : est ? 'estimated' : 'official';
+    if (!bar || bar.style !== st) add(y + ' ' + id + ': drawn as ' + (bar && bar.style) + ', want ' + st);
+    const ph = /Probably high/i.test(r.notes || '');
+    if (ph !== /probably high/.test(notes[id] || '')) add(y + ' ' + id + ': "probably high" ' + (ph ? 'missing' : 'where the file does not say so'));
+    if (citi && !/Citi estimate/.test(notes[id] || '')) add(y + ' ' + id + ': Citi row without "Citi estimate"'); }
+  if (y === '2026') { const wb = 'more than ' + bnT(+BD.forecast_amount_usd_bn, +BD.forecast_amount_usd_bn, 'actual');
+    if (vals.bytedance !== wb) add('2026 ByteDance: "' + vals.bytedance + '", want "' + wb + '"');
+    const b = drawn.find(b => b.id === 'bytedance'); if (!b || b.style !== 'press' || !/press report/.test(notes.bytedance || '')) add('2026 ByteDance not greyed and marked "press report"'); }
+  const order = S.R.filter(id => id !== 'bytedance'), top = id => +(rows.find(r => r.company.toLowerCase() === id) || {}).estimate_high_usd_bn;
+  for (let i = 1; i < order.length; i++) if (top(order[i]) > top(order[i - 1])) add(y + ': ' + order[i] + ' below ' + order[i - 1] + ' with a higher top of range');
+  const C = LOOK.find(r => r.frame_year === y && r.row_type === 'COMBINED'), cv = S.L.find(l => l.kind === 'comb_value');
+  const wc = bnT(+C.estimate_low_usd_bn, +C.estimate_high_usd_bn, est ? 'est' : 'whole');
+  if (!cv || cv.text !== wc) add(y + ': combined "' + (cv && cv.text) + '", want "' + wc + '"');
+  const sum = rows.reduce((a, r) => a + Math.round(+r.estimate_high_usd_bn * 10), 0) * 1e8;
+  if (!S.C || Math.abs(S.C.value - sum) > 1e8 * rows.length || Math.abs(S.C.value - Math.round(+C.estimate_high_usd_bn * 10) * 1e8) > 1) add(y + ': the total is not the file\'s combined row (or includes ByteDance)');
+  const ml = S.L.find(l => l.kind === 'date_month'), yl = S.L.find(l => l.kind === 'date_year');
+  if (!ml || ml.text !== B.month || !yl || yl.text !== y) add(y + ': date block "' + (ml && ml.text) + ' ' + (yl && yl.text) + '"');
+  if (!S.L.some(l => l.kind === 'source_line' && l.alpha > 0.9)) add(y + ': no source line under the title');
+  if (est && !/estimates/.test((S.L.find(l => l.kind === 'source_line') || {}).text || '')) add(y + ': the source line does not say these are estimates');
+  if (y === '2030' && !S.L.some(l => /least reliable/.test(l.text))) add('2030: "least reliable" not on screen');
 }
 function RTT_eventAt(info, f) { let k = -1; for (let i = 0; i < info.start.length; i++) if (info.start[i] <= f) k = i; else break; return k; }
 
@@ -255,10 +311,10 @@ function RTT_eventAt(info, f) { let k = -1; for (let i = 0; i < info.start.lengt
     console.log((r.fails.length ? 'FAIL ' : 'PASS ') + n + ' (' + r.frames + ' frames, ' + r.quarters + ' quarter ends)'); r.fails.slice(0, 8).forEach(m => console.log('   ' + m)); }
   const ok = !g.fails.length && res.every(r => !r.fails.length);
   g.fails.forEach(m => console.log('FAIL ' + m));
-  const out = ['# RTT-103 player tests (IQ-18 round 1, IQ-18b round 2)', '', 'Run: `node tests/player/run_tests_rtt103.js`. Checks 0-12 are listed at the top of the script.', '',
+  const out = ['# RTT-103 player tests (IQ-18 round 1, IQ-18b round 2, IQ-18c round 3)', '', 'Run: `node tests/player/run_tests_rtt103.js`. Checks 0-12 are listed at the top of the script.', '',
     '- Data untouched and player input as recorded (check 0), colours (check 9: closest pair CIEDE2000 ' + g.minDE.toFixed(1) + ', closest to the background ' + g.minBG.toFixed(1) + '), story and step cards quoted word for word from G (check 7): ' + (g.fails.length ? 'FAIL' : 'PASS'), '',
     '| Case | Config | Frames | Quarter ends checked | Result |', '|---|---|---|---|---|',
-    ...res.map(r => `| ${r.name} | \`${r.config}\` | ${r.frames} | ${r.quarters} | ${r.fails.length ? 'FAIL: ' + r.fails.slice(0, 3).join('; ') : 'PASS'}${r.late != null ? ' (story cards start after their own quarter by: ' + r.late + ')' : ''}${r.steps ? ' · ' + r.steps + ' steps after the race checked' : ''} |`), '',
+    ...res.map(r => `| ${r.name} | \`${r.config}\` | ${r.frames} | ${r.quarters}${r.fwd ? ' + ' + r.fwd + ' forward boards' : ''} | ${r.fails.length ? 'FAIL: ' + r.fails.slice(0, 3).join('; ') : 'PASS'}${r.late != null ? ' (story cards start after their own quarter by: ' + r.late + ')' : ''}${r.steps ? ' · ' + r.steps + ' steps after the race checked' : ''} |`), '',
     `**${ok ? 'PASS' : 'FAIL'}**: ${res.filter(r => !r.fails.length).length + (g.fails.length ? 0 : 1)}/${res.length + 1}`];
   if (!only.length) fs.writeFileSync(path.join(__dirname, 'RESULTS_RTT103.md'), out.join('\n') + '\n');
   console.log(ok ? 'ALL PASS' : 'FAILURES');

@@ -179,13 +179,23 @@
        - combined {enabled, mode "number"|"line"|"bar", x, y, w, h, label}: the running total "Combined capital spending"
          (DEC-324), counted with the bars from the race file's `combined` (the data's sum of the bars).
      Changed in IQ-18b (RTT-103 round 2, Luke's answers DEC-353..DEC-365), money races only:
-       - steps {enabled, sequence [{name plans|look|line|peaks|final, sec, year, from, dip_in, dip_out}], ...}: the steps
+       - steps {enabled, sequence [{name explain|line|peaks|final, sec, dip_in, dip_out}], ...}: the steps
          after the race, scheduled by rtt_timeline.js (tl.stepPlan) and drawn by rtt_steps.js; a step can fade in from and
          out to the background (dip_in / dip_out seconds), and the race fades out over steps.race_dip_out before them;
          "final" redraws the race's last board with steps.final_line under the title.
        - story: an item with plain true is a plain line under the title on its own lane (Alibaba leaving and returning,
          DEC-355); cards (mode "card") queue among themselves; story.card.size "names" = the board's name size (DEC-357).
        - combined.gap_text: the panel's note during a gap ("{id}" = the company).
+     Changed in IQ-18c (RTT-103 round 3, Luke's direction DEC-371), money races only; nothing changes without the keys:
+       - forward {enabled, count_sec, boards [{year, kind plans|estimate, sec, month, source_line, footer, comb_note,
+         notes{id}, prefix{id}}], extra{id: {label, colour, years, source, field}}}: the race carries on after its last
+         quarter with one board per year (rtt_timeline.js forwardBoards): ranges (drawRangeExt), the board's notes after
+         the values, a source line under the title, the board's footer, its date-block label, one scale for every forward
+         board (fwdNeed), the total as a range; an extra row (ByteDance) is drawn in the "press" look and never counted.
+         steps: "explain" (rtt_steps.js) replaces round 2's "plans" and "look"; "final" redraws the last REAL quarter.
+       - board.fit.max_slots: more bars than `rows` may share the board (the text sizes stay those of `rows`).
+       - story items: sec (a longer card), card_y (a card placed higher), sub (a line under the quote), tagColour; card
+         labels wrap inside the card.
      Removed as unused: the Format C / C2-1 picture column and story cards, the prototype
      driver block that followed </html> in the C2-2 file.
 
@@ -241,6 +251,7 @@ let COUNT=false, BLOGO=null, FFOOT=null, FINAL_ON=false, LIVE=false, FINAL_LBL=f
 let SERIES=false, PIC=null, PICIMG={}, LOGOIMG={}, MKEY=null, FADE=null, CROWN=null, CALLOUT=null, NOTES=null, GLIDE_BEAT=false, AXU=1, MAKERS=[], MAKERNAME={};
 let SHARE=false, VAL=null, SRCL=null, MARK=null, NOTEL=null;
 let STEPSON=false, FINALDRAW=false;   // IQ-18b (RTT-103): the steps after a money race
+let FWD=null, FWDNEED={}, ROWCAP=10;   // IQ-18c (RTT-103): the race carries on through the 2026 plans and the 2027-2030 estimates
 let MONEY=false, MONEYF=null, GAPS=null, TAGS=null, TAGFOOT=null, ENTRY=null, ENTRYK={}, STORY=null, COMB=null;   // IQ-18 (RTT-103): all off for RTT-001/002/003   // IQ-13 (RTT-001): all off for RTT-002 and RTT-003
 let DATEBLK=null, ERA=null, ERAST=null, ERAIMG={};                          // RTT-001 date/era round (DEC-214..): off unless configured
 let TOP=150; const BOTTOM=1080-46;            // IQ-10: TOP from config board_top (RTT-003); 150 for RTT-002
@@ -279,6 +290,7 @@ function setup(o){
   SZ=Object.assign({axis:20, date:28, footer:17, winner:34}, CFG.sizes||{});
   BOARD=Object.assign({bar_gap:22, name_frac:0.56, value_frac:0.54}, CFG.board||{});
   BOARDFIT = BOARD.fit && BOARD.fit.enabled ? Object.assign({min_slots:5, sec:2.0}, BOARD.fit) : null; FITS=null;
+  ROWCAP = BOARDFIT && BOARDFIT.max_slots ? BOARDFIT.max_slots : NROWS;   // IQ-18c: board.fit.max_slots - more bars than `rows` (text sizes stay those of `rows`)
   HL = CFG.highlight && CFG.highlight.enabled ? Object.assign({sec:0.4, mix:0.3, glow:22}, CFG.highlight) : null;
   WINLINE = CFG.winner_line && CFG.winner_line.enabled ? CFG.winner_line : null;
   if(WINLINE && CFG.time_label.mode==='line') throw new Error('winner_line needs time_label mode "board" or "block"; the date line (mode "line") has no room for it');
@@ -319,7 +331,8 @@ function setup(o){
   COMB = MONEY && CFG.combined && CFG.combined.enabled ? Object.assign({mode:'number', x:1380, y:730, w:500, h:210, label:'Combined capital spending'}, CFG.combined) : null;
   ENTRYK={};
   STEPSON = MONEY && !!TL.stepPlan;
-  if(MONEY){ let pv=TL.opening; TL.states.forEach((st,k)=>{ for(const id of Object.keys(st.totals)) if(!(id in pv.totals) && !st.held[id]) (ENTRYK[id]=ENTRYK[id]||[]).push(k); pv=st; }); }
+  FWD = MONEY && TL.forward ? Object.assign({source_y:124, source_size:30}, CFG.forward) : null; FWDNEED={};
+  if(MONEY){ let pv=TL.opening; TL.states.forEach((st,k)=>{ if(st.fwd) return; for(const id of Object.keys(st.totals)) if(!(id in pv.totals) && !st.held[id]) (ENTRYK[id]=ENTRYK[id]||[]).push(k); pv=st; }); }
   VAL = SHARE ? Object.assign({decimals:1, approx:false}, CFG.values||{}) : null;
   SRCL = SHARE && CFG.source_line && CFG.source_line.enabled ? Object.assign({y:120, size:30, prefix:'Source: ', names:{}, measure:{}, estimated:' · estimated', changing:'changing from {from} to {to}'}, CFG.source_line) : null;
   MARK = SHARE && CFG.marker && CFG.marker.enabled ? Object.assign({sec:3.0, text:'New source', fade_in:0.25, fade_out:0.4}, CFG.marker) : null;
@@ -358,6 +371,7 @@ function setup(o){
   o.data.entrants.forEach(e=>{ ENT[e.id]={id:e.id,label:(CFG.labels&&CFG.labels[e.id])||e.label,colour:pal[TL.colours.index[e.id]],_y:null,maker:e.maker}; ENT[e.id].short=ENT[e.id].label; });
   if(SERIES && CFG.maker_in_name && CFG.maker_in_name.enabled)        // round 3 alternative (still only)
     for(const e of o.data.entrants) ENT[e.id].label += (CFG.maker_in_name.sep||' · ') + MAKERNAME[e.maker];
+  if(FWD) for(const [id,x] of Object.entries(FWD.extra||{})) ENT[id]={id, label:x.label, short:x.label, colour:x.colour, _y:null, maker:null, extra:true};   // IQ-18c: ByteDance, 2026 board only
   NAME_PX=null; NAME_TRUNC=false;
 }
 window.setup=setup;
@@ -471,7 +485,7 @@ function fitSlots(fr){
        over this month while one that starts fades in, so both are drawn) */
     const n=new Float64Array(RACE_FRAMES+1);
     for(let f=0; f<=RACE_FRAMES; f++){ const k=RTT_TIMELINE.eventAt(TL,Math.min(f,RACE_FRAMES)), s=k>=0?TL.states[k]:TL.opening, p=k>0?TL.states[k-1]:TL.opening;
-      n[f]=Math.max(F.min_slots, Math.min(NROWS, new Set(k>=0?s.order.concat(p.order):s.order).size)); }
+      n[f]=Math.max(F.min_slots, Math.min(ROWCAP, new Set(k>=0?s.order.concat(p.order):s.order).size)); }
     /* the largest count within half a window either side, then the raised-cosine smoothing: every value under
        the window is at least n[f], so the slots never fall below the bars on the board. The room opens before
        browsers arrive and closes only after they have gone. */
@@ -500,13 +514,13 @@ function nameSize(){
   const seen={}, seenS={};
   const take=s=>{ s.order.slice(0,NROWS+1).forEach(id=>{ seen[id]=Math.max(seen[id]||0,s.totals[id]);
     if(STATS){ ctx.font='500 '+g.VALF+'px '+FONT; seenS[id]=Math.max(seenS[id]||0, g.VALF*0.35+tabWidth(statsText(s.totals[id],s.starts[id]),pitch())); } }); };
-  take(TL.opening); TL.states.forEach(take);
+  take(TL.opening); TL.states.forEach(s=>{ if(!s.fwd) take(s); });   // IQ-18c: the forward boards never change the race's name size
   const ids=Object.keys(seen);
   ctx.font=(STATS?'700 ':'600 ')+g.VALF+'px '+FONT; const p=pitch();
   /* IQ-10: in a series the value is "118.7m+" (widest case: plus and any note mark), then maybe
      "· analyst estimate", then maybe the crown */
   let everA={}, estW=0;
-  if(SERIES){ [TL.opening].concat(TL.states).forEach(s=>s.order.slice(0,NROWS+1).forEach(id=>{ if(s.style[id]==='analyst_estimate') everA[id]=true; }));
+  if(SERIES){ [TL.opening].concat(TL.states.filter(s=>!s.fwd)).forEach(s=>s.order.slice(0,NROWS+1).forEach(id=>{ if(s.style[id]==='analyst_estimate') everA[id]=true; }));
     ctx.font='500 '+g.VALF+'px '+FONT; estW=g.VALF*0.35+tabWidth('· analyst estimate',pitch()); ctx.font=(STATS?'700 ':'600 ')+g.VALF+'px '+FONT; }
   const valOf=id=>MONEY ? tabWidth(money(seen[id])+'*',p)+(CROWN?g.VALF*1.6:0) : SHARE ? Math.max(tabWidth(pct(seen[id],'official'),p), VAL.approx ? tabWidth(pct(seen[id],'estimated'),p) : 0)+(CROWN?g.VALF*1.6:0)
                : SERIES ? tabWidth(fmtS(seen[id],true,id)+(FFOOT&&FFOOT.id===id?FFOOT.mark:''),p)+(everA[id]?estW:0)+(CROWN?g.VALF*1.6:0)
@@ -634,6 +648,11 @@ function mixGround(hex,a){                       // the colour moved part of the
 /* The estimated look (DEC-090): "estimated" = the maker colour with dark diagonal stripes;
    "analyst_estimate" (DEC-084) = the colour at half strength with a dashed outline. */
 function drawStyledBar(x,y,w,h,colour,st){
+  if(st==='press'){                              // IQ-18c: a press report (ByteDance), greyed with a dashed outline, never added
+    ctx.save(); ctx.globalAlpha*=0.6; ctx.fillStyle=colour; rr(x,y,w,h,2); ctx.fill(); ctx.restore();
+    if(w>4){ ctx.save(); ctx.strokeStyle='#8492A6'; ctx.setLineDash([8,6]); ctx.lineWidth=2; rr(x+1,y+1,w-2,h-2,2); ctx.stroke(); ctx.restore(); }
+    return;
+  }
   if(st==='analyst_estimate'){
     ctx.fillStyle=mixGround(colour,0.5); rr(x,y,w,h,2); ctx.fill();
     if(w>4){ ctx.save(); ctx.setLineDash([9,6]); ctx.lineWidth=2.5; ctx.strokeStyle=mixWhite(colour,0.3);
@@ -754,7 +773,7 @@ function drawYear(yNow, yOld, p, xr, base, size, align, band){
 function drawDateEra(k, fr){
   var dbox=null;
   const ST=eraState(), ev=k>=0?TL.events[k]:TL.openingEvent, y=+ev.date.slice(0,4), m=+ev.date.slice(5,7);
-  const month = DATEBLK && DATEBLK.label==='ttm' ? (DATEBLK.ttm_prefix||'12 months to ')+(DATEBLK.months_short||CFG.time_label.months)[m-1]   // IQ-18
+  const month = ev.fwd && ev.fwd.month ? ev.fwd.month : DATEBLK && DATEBLK.label==='ttm' ? (DATEBLK.ttm_prefix||'12 months to ')+(DATEBLK.months_short||CFG.time_label.months)[m-1]   // IQ-18
               : DATEBLK && DATEBLK.label==='quarter' ? 'Q'+Math.ceil(m/3) : CFG.time_label.months[m-1];
   const ys=k>=0?ST.yearStart[k]:null, rollF=DATEBLK?Math.max(1,DATEBLK.roll_sec*FPS):1;
   const p = ys && ys.from!=null && fr-ys.f<rollF ? ease((fr-ys.f)/rollF) : 1, yOld = p<1 ? ys.from : null;
@@ -972,7 +991,7 @@ function drawAt(t){
   const prev= k>0 ? TL.states[k-1] : TL.opening;
   const ev  = k>=0 ? TL.events[k] : (TL.openingEvent || {season:TL.events[0].season});
   window.__EVENT = k>=0 ? {k, race_index:ev.race_index} : {k:-1, race_index: TL.openingEvent?TL.openingEvent.race_index:null};
-  window.__RANK = cur.order.slice(0,NROWS);
+  window.__RANK = cur.order.slice(0,ROWCAP);
 
   /* (b) the count steps at the event; only the bar's length moves, over glide.bar_sec */
   const since = k>=0 ? fr-TL.startFrame[k] : 0;
@@ -987,17 +1006,17 @@ function drawAt(t){
   const FTU = FINAL ? Math.min(1, (fr-TL.finalFrom)/Math.max(1,TL.finalTransition)) : 0;
   FINAL_LBL = FINAL;
   const ORD = SF ? (LIVE && !FINAL ? SF.order.filter(id=>RTT_TIMELINE.isLive(TL,id,fr)) : SF.order) : cur.order;
-  if(SF) window.__RANK = ORD.slice(0,NROWS);
+  if(SF) window.__RANK = ORD.slice(0,ROWCAP);
   if(LIVE) for(const id in ENT) if(!ORD.includes(id)) ENT[id]._y=null;     // a console that left re-enters at its place
   const exitA = id => { const x=LIVE && TL.exit[id]; if(!x || x==='gone' || fr<x.start || fr>=x.end) return null;
     return fr < x.fadeFrom ? 1 : 1-ease((fr-x.fadeFrom)/Math.max(1,TL.exitFade)); };
   const REC = RECLINE ? {id:SF.order[0], u:SF.u[SF.order[0]], plus:!!SF.plus[SF.order[0]]} : null;   // round 4: the record line without live_only too
   /* IQ-18 gaps "hold": how far a bar has gone into (or come out of) its held look this beat (0 = a figure, 1 = held) */
   const heldOf = id => !MONEY || GAPS.mode!=='hold' ? 0 : (cur.held[id] ? (prev.held && prev.held[id] ? 1 : SF.g) : (prev.held && prev.held[id] ? 1-SF.g : 0));
-  const rows = SF ? ORD.map(id=>({c:ENT[id], n:SF.u[id], s:null, len:SF.u[id], st:SHARE&&!(id in cur.style)?prev.style[id]:cur.style[id], pl:SF.plus[id], a:SF.alpha?SF.alpha[id]:null, held:heldOf(id)}))
+  const rows = SF ? ORD.map(id=>({c:ENT[id], n:SF.u[id], s:null, len:SF.u[id], st:SHARE&&!(id in cur.style)?prev.style[id]:cur.style[id], pl:SF.plus[id], a:SF.alpha?SF.alpha[id]:null, held:heldOf(id), lo:SF.lo?SF.lo[id]:null}))
                   : cur.order.map(id=>({c:ENT[id], n:cur.totals[id], s:cur.starts?cur.starts[id]:null, len:lerp(prev.totals[id]||0, cur.totals[id], g),
                                    st:SERIES?cur.style[id]:null, pl:SERIES?!!cur.plus[id]:false}));
-  const top = rows.slice(0,NROWS+3);
+  const top = rows.slice(0,ROWCAP+3);
 
   ctx.fillStyle=T.ground; ctx.fillRect(0,0,1920,1080);
   ctx.textBaseline='alphabetic'; ctx.textAlign='left';
@@ -1005,6 +1024,7 @@ function drawAt(t){
   let titleTxt=CFG.title;
   if(CFG.time_label.mode==='title') titleTxt+=' · '+ev.season+(ev.grand_prix?' · '+ev.grand_prix:'');
   text('title',null,titleTxt,LEFT,74,'left');
+  if(FWD && k>=0 && ev.fwd && ev.fwd.source_line) drawFwdSource(k, fr);   // IQ-18c
   const tsec=fr/FPS, CO=calloutAt(fr);
   FINAL_ON = COUNT && !CO && TL.isDataEnd && k===TL.events.length-1 && fr>=(LIVE && TL.finalTable ? TL.finalLineFrom : TL.finalFrom) && !!(TL.finalLine||FFOOT);
   const subA=CO ? 0 : Math.max(0,Math.min(1,(CFG.subtitle_sec||0)-tsec));
@@ -1018,10 +1038,11 @@ function drawAt(t){
   drawTime(ev);
 
   // scale: follows the longest bar as drawn, so it glides with the bars
-  const G=BOARDFIT ? fitGeom(geom(),fitSlots(fr)) : geom(), x0=G.x0, W=G.W;
+  const G=BOARDFIT ? fitGeom(geom(), FINALDRAW&&FWD ? Math.max(BOARDFIT.min_slots,Math.min(ROWCAP,cur.order.length)) : fitSlots(fr)) : geom(), x0=G.x0, W=G.W;   // IQ-18c: the final table at rest
   window.__SLOTS = BOARDFIT ? G.slots : NROWS;
   const lead=top.slice(0,NROWS).reduce((m,r)=>Math.max(m,r.len),0);
-  const smoothMax=Math.max(1,lead,REC?REC.u:0)*1.06;                // round 3: the record is always on the scale
+  let smoothMax=Math.max(1,lead,REC?REC.u:0)*1.06;
+  if(FWD && k>=0 && ev.fwd) smoothMax=Math.max(smoothMax, lerp(TL.events[k-1].fwd ? fwdNeed(k-1) : Math.max(...Object.values(prev.totals))*1.06, fwdNeed(k), 1-Math.pow(1-Math.min(1,SF.g*2),2)));   // IQ-18c: room for each board's labels, made in the first half of the count (fast at first, so the wider range labels never meet a card)                // round 3: the record is always on the scale
   const step=niceStepInt(smoothMax/AXU/4)*AXU;            // IQ-10: whole millions in a series (AXU 1e6); AXU 1 for RTT-002
   ctx.font='400 '+SZ.axis+'px '+FONT;
   for(let v=0;v<=smoothMax+1e-9;v+=step){
@@ -1041,9 +1062,9 @@ function drawAt(t){
      shorter glide.entry_sec, so it is clearly visible within a few frames of its race. Every
      other move keeps C2-2's rank glide. */
   const KE=CFG.glide.entry_sec ? 1-Math.exp(-1/(CFG.glide.entry_sec*FPS)) : K;
-  rows.forEach((r,i)=>{const c=r.c,tgt=Math.min(i,NROWS+2); if(c._y==null)c._y=tgt;
-    const entering = tgt<=NROWS-1 && c._y>NROWS-1;
-    if(entering && CFG.glide.entry_sec) c._y=Math.min(c._y,NROWS);
+  rows.forEach((r,i)=>{const c=r.c,tgt=Math.min(i,ROWCAP+2); if(c._y==null || (FINALDRAW&&FWD))c._y=tgt;   // IQ-18c: the final table jumps back to June 2026 at rest
+    const entering = tgt<=ROWCAP-1 && c._y>ROWCAP-1;
+    if(entering && CFG.glide.entry_sec) c._y=Math.min(c._y,ROWCAP);
     c._y+=(tgt-c._y)*(entering?KE:K);});
 
   const nf=nameSize();
@@ -1066,7 +1087,7 @@ function drawAt(t){
   ctx.save(); ctx.beginPath(); ctx.rect(0, TOP, 1920, BOTTOM-TOP); ctx.clip();
   top.forEach(r=>{
     const c=r.c, y=TOP+14+c._y*ROWH; if(y>BOTTOM-4) return;
-    ctx.globalAlpha=c._y>NROWS-1?Math.max(0,1-(c._y-(NROWS-1))/0.75):1;
+    ctx.globalAlpha=c._y>ROWCAP-1?Math.max(0,1-(c._y-(ROWCAP-1))/0.75):1;
     if(r.a!=null) ctx.globalAlpha*=r.a;            // IQ-13: a browser entering or leaving the data fades
     const XA = exitA(c.id);                         // round 3: retiring (null = not exiting)
     if(XA!=null) ctx.globalAlpha*=XA;
@@ -1077,7 +1098,7 @@ function drawAt(t){
     /* IQ-10 fade: fa scales the bar and picture, ta the text */
     const RA=ctx.globalAlpha, fa=fadeOf(c.id,k,fr)*(r.held ? 1-(1-GAPS.alpha)*ease(r.held) : 1), ta=FADE ? 1-(1-FADE.text_alpha)*(1-fa)/(1-FADE.alpha) : (r.held ? 1-0.3*ease(r.held) : 1);
     const SK = STATUS ? RTT_TIMELINE.statusAt(TL,c.id,fr) : null;   // round 4
-    window.__BARS.push({id:c.id, y:c._y, alpha:ctx.globalAlpha, colour, hl, rect:{x:x0,y:by,w,h:BARH}, style:r.st, fade:fa, plus:r.pl, units:r.n, exiting:XA!=null, status:SK?SK.kind:null, enter_leave:r.a!=null&&r.a<1, held:r.held||0});
+    window.__BARS.push({id:c.id, y:c._y, alpha:ctx.globalAlpha, colour, hl, rect:{x:x0,y:by,w,h:BARH}, style:r.st, lo:r.lo, fade:fa, plus:r.pl, units:r.n, exiting:XA!=null, status:SK?SK.kind:null, enter_leave:r.a!=null&&r.a<1, held:r.held||0});
     if(ctx.globalAlpha<=0){ ctx.globalAlpha=1; return; }
     if(PIC){                                     // IQ-10 picture, in the column left of the bar
       const im=PICIMG[c.id], bx=LEFT, byy=mid-G.PH/2;
@@ -1134,7 +1155,8 @@ function drawAt(t){
     if(hl>0){
       ctx.save(); ctx.shadowColor=mixWhite(colour,0.5); ctx.shadowBlur=HL.glow*hl*RASTER;
       ctx.fillStyle=mixWhite(colour,HL.mix*hl); rr(x0,by,w,BARH,2); ctx.fill(); ctx.restore();
-    } else if(SERIES){ drawStyledBar(x0,by,w,BARH,colour,r.st); }
+    } else if(SERIES){ if(r.lo!=null && r.lo<r.len){ const wl=Math.max(3,W*r.lo/smoothMax); drawStyledBar(x0,by,wl,BARH,colour,r.st); drawRangeExt(x0+wl,by,w-wl,BARH,colour,r.st); }   // IQ-18c: a range
+                       else drawStyledBar(x0,by,w,BARH,colour,r.st); }
     else { ctx.fillStyle=colour; rr(x0,by,w,BARH,2); ctx.fill(); }
     if(SERIES) ctx.globalAlpha=RA*ta;
 
@@ -1156,7 +1178,8 @@ function drawAt(t){
 
     ctx.font=(STATS?'700 ':'600 ')+VALF+'px '+FONT;          // IQ-05e: the win count in bold
     const HELD = MONEY && r.held>=0.5, MT = MONEY ? tagOf(c.id,'mark',ev.date) : null;    // IQ-18: a held bar shows no number
-    const txt=HELD ? '' : SERIES ? fmtS(r.n,r.pl,c.id,r.st)+(MT?MT.mark:'')+(FINAL_ON&&FFOOT&&FFOOT.id===c.id?FFOOT.mark:'') : fmt(r.n), tw=tabWidth(txt,pitch());
+    const FV = FWD && k>=0 && SF && SF.lo && (ev.fwd || TL.events[k-1].fwd) ? fwdValue(c.id, r.lo, r.len, k, SF.g) : null;   // IQ-18c
+    const txt=HELD ? '' : FV!=null ? FV : SERIES ? fmtS(r.n,r.pl,c.id,r.st)+(MT?MT.mark:'')+(FINAL_ON&&FFOOT&&FFOOT.id===c.id?FFOOT.mark:'') : fmt(r.n), tw=tabWidth(txt,pitch());
     let after;                                   // where anything after the value may start
     if(HELD){ after=x0+w+18+nameOut; }                // IQ-18: a held bar has no number at all
     else if(!VALOUT && !nameOut && w>tw+40+ctx.measureText(nm).width+24){ ctx.fillStyle='#F4F6FA'; tabText(txt,x0+w-18,mid+VALF*0.35,'right','value',c.id); after=x0+w+18; }
@@ -1164,6 +1187,9 @@ function drawAt(t){
     if(MONEY){                                    // IQ-18: the held note, a company's note, the late-entrant tag
       ctx.fillStyle=T.cap||T.muted; ctx.font='500 '+VALF+'px '+FONT;
       if(HELD){ after+=tabText(GAPS.text,after,mid+VALF*0.35,'left','gap_note',c.id)+VALF*0.35; }
+      const FN = FWD && k>=0 && ev.fwd ? fwdNote(c.id, k) : null;   // IQ-18c: the bar's period or source note
+      if(FN){ const same=TL.events[k-1].fwd && fwdNote(c.id,k-1)===FN, a0=ctx.globalAlpha; ctx.globalAlpha=a0*(same?1:ease((SF.g-0.5)/0.5));   // a new note fades in once the board has made room
+        after+=(ctx.globalAlpha>0 ? tabText('· '+FN,after,mid+VALF*0.35,'left','fwd_note',c.id) : tabWidth('· '+FN,pitch()))+VALF*0.35; ctx.globalAlpha=a0; }   // its room is kept while hidden, so the tag after it never jumps
       const AT=tagOf(c.id,'after',ev.date);
       if(AT){ after+=tabText('· '+AT.text,after,mid+VALF*0.35,'left','bar_tag',c.id)+VALF*0.35; }
       if(ENTRY && ENTRYK[c.id]){ for(const [i,kk] of ENTRYK[c.id].entries()){ const u=(fr-TL.startFrame[kk])/FPS;
@@ -1183,7 +1209,7 @@ function drawAt(t){
       ctx.fillStyle=T.cap||T.muted; ctx.font='500 '+VALF+'px '+FONT;
       tabText(statsText(r.n,r.s),after,mid+VALF*0.35,'left','stats',c.id);
     }
-    if(SERIES && r.st==='analyst_estimate'){     // IQ-10 (DEC-084): the analyst-estimate label
+    if(SERIES && r.st==='analyst_estimate' && !(FWD && k>=0 && ev.fwd)){     // IQ-10 (DEC-084): the analyst-estimate label (IQ-18c: a forward board says whose estimate in its note)
       ctx.fillStyle=T.cap||T.muted; ctx.font='500 '+VALF+'px '+FONT;
       after+=tabText('· analyst estimate',after,mid+VALF*0.35,'left','est_label',c.id)+VALF*0.35;
     }
@@ -1238,7 +1264,7 @@ function drawAt(t){
   }
 
   ctx.fillStyle=T.foot; ctx.font='400 '+SZ.footer+'px '+FONT;
-  text('footer',null,CFG.footer||'',LEFT,1080-20,'left');
+  text('footer',null,(FWD&&k>=0&&ev.fwd&&ev.fwd.footer)||CFG.footer||'',LEFT,1080-20,'left');
 
   if(SERIES){ drawCallout(CO, cur, SF, fr); drawMakerKey(cur, SF); }   // IQ-10
   if(MONEY){ drawTagFoot(cur, ev); drawStory(fr); drawCombined(k, SF, fr, cur, prev); }   // IQ-18 (RTT-103)
@@ -1267,7 +1293,7 @@ function drawStepFrame(f){
   const P=TL.stepPlan; let i=P.length-1; while(i>0 && P[i].first>f) i--;
   const st=P[i], u=(f-st.first)/FPS, sec=st.frames/FPS;
   if(st.name==='final'){                          // the race's last board again, with its one-line summary
-    FINALDRAW=true; drawAt((TL.raceEnd-1)/FPS); FINALDRAW=false;
+    FINALDRAW=true; drawAt((TL.forward ? TL.quarterEndFrame[TL.lastActual] : TL.raceEnd-1)/FPS); FINALDRAW=false;   // IQ-18c: June 2026, not 2030
     const A=TL.allCombined, e=A[A.length-1], y4=A[A.length-5];
     const line=(CFG.steps.final_line||'').replace('{now}',money(e.c)).replace('{before}',money(y4.c));
     ctx.fillStyle=T.ground; ctx.fillRect(LEFT-4,92,1300,46);
@@ -1275,12 +1301,73 @@ function drawStepFrame(f){
     window.__STEP={name:'final', line};
   } else if(st.name==='plans') RTT_STEPS.plans(u);
   else if(st.name==='look') RTT_STEPS.lookBoard(st.year, st.from==null?null:st.from, u);
+  else if(st.name==='explain') RTT_STEPS.explain(u);   // IQ-18c
   else if(st.name==='line') RTT_STEPS.line(u);
   else if(st.name==='peaks') RTT_STEPS.peaks(u);
   else throw new Error('unknown step '+st.name);
   const a=Math.max(st.dip_in && u<st.dip_in ? 1-u/st.dip_in : 0, st.dip_out && sec-u<st.dip_out ? 1-(sec-u)/st.dip_out : 0);
   if(a>0){ baseTransform(); ctx.save(); ctx.globalAlpha=a; ctx.fillStyle=T.ground; ctx.fillRect(0,0,1920,1080); ctx.restore(); }
   window.__STEP=Object.assign(window.__STEP||{}, {index:i, u, dip:a});
+}
+
+
+/* ---- IQ-18c (RTT-103, DEC-371): the race carries on through the 2026 plans and the 2027-2030 estimates ----
+   One board per year after June 2026 (rtt_timeline.js forwardBoards, cfg.forward), drawn by drawAt as a race quarter:
+   same title, logos, colours, date block and total panel. A range is drawn solid (or striped, or in the analyst look)
+   to its bottom and at half strength with a dashed outline to its top (drawRangeExt, the look Cowork reviewed in round
+   2); the value reads as rtt_steps.js's bn() gives it ("$195–205bn", "~$294–309bn"); the bar's note follows the value
+   ("· plan"); one source line sits under the title; the footer names the board's sources. The board's scale leaves
+   room for every label, clear of the total panel and of any story card shown during the board (fwdNeed). */
+function drawRangeExt(x,y,w,h,colour,st){
+  if(w<=2) return;
+  ctx.fillStyle=mixGround(colour, st==='analyst_estimate'?0.72:0.55); ctx.fillRect(x,y,w,h);
+  ctx.save(); ctx.strokeStyle=mixWhite(colour,0.35); ctx.lineWidth=2.5; ctx.setLineDash([8,6]); ctx.strokeRect(x+1.25,y+1.25,w-2.5,h-2.5); ctx.restore();
+  ctx.fillStyle=mixWhite(colour,0.4); ctx.fillRect(x+w-3,y-6,3,h+12);
+}
+function fwdOf(id,k){ const ev=TL.events[k]; return ev.fwd && id in ev.fwd.mode ? ev.fwd : (k>0 && TL.events[k-1].fwd ? TL.events[k-1].fwd : null); }
+function fwdValue(id,lo,hi,k,g){
+  const F=fwdOf(id,k); if(!F) return money(hi);
+  let m=F.mode[id]; if(g<1 && m==='plan') m='actual';      // while counting: one decimal, as the race; landed: as the company gives it
+  return ((F.prefix||{})[id]||'')+RTT_STEPS.bn(lo/1e9,hi/1e9,m);
+}
+function fwdNote(id,k){ const F=TL.events[k].fwd; return F && F.notes && id in F.mode ? F.notes[id]||null : null; }
+function drawFwdSource(k,fr){
+  const ev=TL.events[k], pv=TL.events[k-1], same=pv.fwd && pv.fwd.source_line===ev.fwd.source_line;
+  const a=same ? 1 : ease((fr-TL.startFrame[k])/(0.4*FPS));
+  ctx.save(); ctx.globalAlpha=a; ctx.fillStyle=T.cap||T.muted; ctx.font='500 '+FWD.source_size+'px '+FONT;
+  tabText(ev.fwd.source_line,LEFT,FWD.source_y,'left','source_line',null); ctx.restore();
+  window.__SOURCE={text:ev.fwd.source_line, alpha:a};
+}
+/* the width of everything after a landed forward bar: value, note, tag, crown */
+function fwdLabelWidth(k,id,VALF,leader){
+  const ev=TL.events[k]; let w=0;
+  ctx.font='600 '+VALF+'px '+FONT; w+=tabWidth(fwdValue(id,ev.lo[id],ev.values[id],k,1),pitch())+VALF*0.35;
+  ctx.font='500 '+VALF+'px '+FONT; const n=fwdNote(id,k); if(n) w+=tabWidth('· '+n,pitch())+VALF*0.35;
+  const t=tagOf(id,'after',ev.date); if(t) w+=tabWidth('· '+t.text,pitch())+VALF*0.35;
+  if(CROWN && leader) w+=VALF*1.3+2;
+  return w;
+}
+/* the smallest scale (dollars across the board's width) at which every landed label of board k ends inside the frame
+   and clear of the total panel and of the story cards shown during the board; fwdNeed takes the largest over the boards */
+function fwdNeed(k){   // one scale for every forward board (the largest any of them needs): the axis holds while the bars grow
+  if(FWDNEED.all==null){ let m=0; TL.events.forEach((e,j)=>{ if(e.fwd) m=Math.max(m,fwdNeedOne(j)); }); FWDNEED.all=m; }
+  return FWDNEED.all;
+}
+function fwdNeedOne(k){
+  if(FWDNEED[k]!=null) return FWDNEED[k];
+  const st=TL.states[k], G=BOARDFIT?fitGeom(geom(),fitSlots(TL.quarterEndFrame[k])):geom(), nf=nameSize();
+  const lead=Math.max(...Object.values(st.totals))*1.06, boxes=[];
+  if(COMB) boxes.push({x:COMB.x,y:COMB.y,w:COMB.w,h:COMB.h});
+  const f0=TL.startFrame[k], f1=k+1<TL.startFrame.length?TL.startFrame[k+1]:RACE_FRAMES;
+  if(STORY && STORY.mode==='card') for(const q of storySchedule()) if(!q.it.plain && q.f0<f1 && q.f0+storySec(q.it)*FPS>f0) boxes.push({x:STORY.card.x,y:q.it.card_y!=null?q.it.card_y:STORY.card.y,w:STORY.card.w,h:cardLayout(q.it).h});
+  const nx=G.x0+18, rows=st.order.map((id,i)=>{ const by=TOP+14+i*G.ROWH+(G.ROWH-G.BARH)/2;
+    ctx.font='600 '+nf+'px '+FONT; const nmW=ctx.measureText(ENT[id].label).width;
+    let lim=1920-64; for(const b of boxes) if(by<b.y+b.h && by+G.BARH>b.y) lim=Math.min(lim,b.x-16);
+    return {len:st.totals[id], nmW, rest:fwdLabelWidth(k,id,G.VALF,i===0), lim}; });
+  const ok=S=>rows.every(r=>nx+r.nmW+18+r.rest>r.lim || Math.max(G.x0+G.W*r.len/S, nx+r.nmW)+18+r.rest<=r.lim);   // a row that cannot fit at any scale is left to the tests
+  let lo=lead, hi=lead*8;
+  if(!ok(lo)){ for(let i=0;i<40;i++){ const m=(lo+hi)/2; if(ok(m)) hi=m; else lo=m; } lo=hi; }
+  return FWDNEED[k]=lo;
 }
 
 /* ---- IQ-18 (RTT-103) ---- */
@@ -1297,22 +1384,31 @@ function wrapLines(str,maxw){ const out=[]; let line=''; for(const w of String(s
    overlap: one that falls while another is showing waits until it has gone (STORY.gap seconds later); each shows its
    own date. The schedule is fixed once per config (a pure function of the frame). */
 let STORYQ=null;
+const storySec=it=>it.sec!=null?it.sec:STORY.sec;   // IQ-18c: a card may hold longer (iCapital)
 function storySchedule(){
   if(STORYQ) return STORYQ;
   const dates=TL.events.map(e=>e.date), free={}; STORYQ=[];   // IQ-18b: plain lines and cards queue on their own lanes
   for(const it of STORY.items){ const k=dates.indexOf(it.at); if(k<0) continue; const lane=it.plain?'plain':'card';
     const f0=Math.max(TL.startFrame[k]+Math.round((it.delay||0)*FPS), free[lane]!=null?free[lane]:-Infinity); STORYQ.push({it, f0});
-    free[lane]=f0+Math.round((STORY.sec+(STORY.gap!=null?STORY.gap:0.3))*FPS); }
+    free[lane]=f0+Math.round((storySec(it)+(STORY.gap!=null?STORY.gap:0.3))*FPS); }
   return STORYQ;
 }
 let STORYDONE=null;
+/* a story card's lines and height (IQ-18b's card; IQ-18c: an optional `sub` line under the quote) */
+function cardLayout(it){
+  const C=STORY.card, pad=22, sz=C.size==='names' ? nameSize() : (C.size||28);
+  ctx.font='700 '+sz+'px '+FONT; const who=wrapLines(it.who, C.w-2*pad);
+  ctx.font='500 '+sz+'px '+FONT; const body=wrapLines(it.text, C.w-2*pad), sub=it.sub ? wrapLines(it.sub, C.w-2*pad) : [];
+  ctx.font='600 26px '+FONT; const tags=it.tag ? wrapLines(it.tag.toUpperCase(), C.w-2*pad) : [];   // IQ-18c: a long label wraps inside the card
+  return {sz, who, body, sub, tags, h:pad*2+26+(who.length+body.length+sub.length)*(sz+8)+(tags.length?sz+10+(tags.length-1)*34:0)};
+}
 function drawStory(fr){
   window.__STORY=null; window.__CARDBOX=null; STORYDONE=null;
   if(!STORY || FINALDRAW) return;                   // IQ-18b: no story on the final table
   for(const {it, f0} of storySchedule()){
-    const u=(fr-f0)/FPS; if(u<0 || u>=STORY.sec) continue;
+    const u=(fr-f0)/FPS, SEC=storySec(it); if(u<0 || u>=SEC) continue;
     if(STORYDONE && STORYDONE[it.plain?'plain':'card']) continue; STORYDONE=STORYDONE||{}; STORYDONE[it.plain?'plain':'card']=true;
-    const a=Math.max(0,Math.min(1,u/STORY.fade_in)*Math.min(1,(STORY.sec-u)/STORY.fade_out));
+    const a=Math.max(0,Math.min(1,u/STORY.fade_in)*Math.min(1,(SEC-u)/STORY.fade_out));
     ctx.save(); ctx.globalAlpha=a;
     if(it.plain){             // a plain note line (no date, no speaker)
       ctx.fillStyle=T.cap||T.muted; ctx.font='500 '+STORY.size+'px '+FONT; tabText(it.text,LEFT,STORY.y,'left','story_note',null);
@@ -1322,18 +1418,16 @@ function drawStory(fr){
       ctx.fillStyle=T.ink; ctx.font='600 '+sz+'px '+FONT; x+=tabText(it.short||it.text,x,y,'left','story_text',null);
       if(it.tag){ ctx.fillStyle=T.cap||T.muted; ctx.font='500 '+sz+'px '+FONT; tabText(' · '+it.tag,x,y,'left','story_tag',null); }
     } else if(STORY.mode==='card'){
-      const C=STORY.card, pad=22, sz=C.size==='names' ? nameSize() : (C.size||28);
-      ctx.font='700 '+sz+'px '+FONT; const who=wrapLines(it.who, C.w-2*pad);
-      ctx.font='500 '+sz+'px '+FONT; const body=wrapLines(it.text, C.w-2*pad);
-      const h=pad*2+26+(who.length+body.length)*(sz+8)+(it.tag?sz+10:0);
+      const C=Object.assign({}, STORY.card, it.card_y!=null?{y:it.card_y}:{}), pad=22, {sz, who, body, sub, tags, h}=cardLayout(it);   // IQ-18c: a card may sit higher (card_y)
       ctx.fillStyle=T.panel; rr(C.x,C.y,C.w,h,12); ctx.fill();
       ctx.fillStyle=it.colour||T.rule; rr(C.x,C.y,6,h,3); ctx.fill();
       let y=C.y+pad+22;
       ctx.fillStyle=T.cap||T.muted; ctx.font='600 26px '+FONT; tabText(it.when,C.x+pad,y,'left','story_when',null);
       ctx.fillStyle=T.ink; ctx.font='700 '+sz+'px '+FONT; for(const l of who){ y+=sz+8; text('story_who',null,l,C.x+pad,y,'left'); }
       ctx.font='500 '+sz+'px '+FONT; for(const l of body){ y+=sz+8; tabText(l,C.x+pad,y,'left','story_text',null); }
+      ctx.fillStyle=T.cap||T.muted; for(const l of sub){ y+=sz+8; tabText(l,C.x+pad,y,'left','story_sub',null); }   // IQ-18c: what an estimate is about
       window.__CARDBOX={x:C.x,y:C.y,w:C.w,h};
-      if(it.tag){ y+=sz+10; ctx.fillStyle=T.cap||T.muted; ctx.font='600 26px '+FONT; text('story_tag',null,it.tag.toUpperCase(),C.x+pad,y,'left'); }
+      if(tags.length){ ctx.fillStyle=it.tagColour||T.cap||T.muted; ctx.font='600 26px '+FONT; tags.forEach((l,i)=>{ y+=i?34:sz+10; text('story_tag',null,l,C.x+pad,y,'left'); }); }
     } else {                                        // marker: under the date top right
       const R=(DATEBLK?DATEBLK.right:1880), y=(DATEBLK?DATEBLK.year_y:160)+(STORY.marker_dy||46), sz=STORY.marker_size||26;
       ctx.font='600 '+sz+'px '+FONT; const t1=it.short||it.text, w1=ctx.measureText(t1).width;
@@ -1352,7 +1446,11 @@ function drawCombined(k, SF, fr, cur, prev){
   if(!COMB) return;
   const C=COMB, evC=k>=0?TL.events[k]:TL.openingEvent, evP=k>0?TL.events[k-1]:TL.openingEvent;
   const g=SF?SF.g:1, tot = g>=1 ? evC.combined : Math.round(evP.combined+(evC.combined-evP.combined)*g);
-  const nNow=Object.keys(cur.totals).filter(id=>!cur.held[id]).length;
+  const nNow=Object.keys(cur.totals).filter(id=>!cur.held[id] && !(ENT[id] && ENT[id].extra)).length;   // IQ-18c: ByteDance is never counted
+  const FC=FWD && k>=0 && evC.fwd ? evC.fwd : null;   // IQ-18c: a forward board's total is a range
+  let valTxt=money(tot), totLo=tot;
+  if(FC){ const l0=evP.combined_lo!=null?evP.combined_lo:evP.combined; totLo=g>=1?evC.combined_lo:Math.round(l0+(evC.combined_lo-l0)*g);
+    valTxt=RTT_STEPS.bn(totLo/1e9, tot/1e9, FC.kind==='estimate'?'est':'whole'); }
   ctx.save(); ctx.fillStyle=T.panel; rr(C.x,C.y,C.w,C.h,12); ctx.fill();
   const pad=20;
   ctx.fillStyle=T.cap||T.muted; ctx.font='600 26px '+FONT; text('comb_label',null,C.label,C.x+pad,C.y+pad+22,'left');
@@ -1361,21 +1459,29 @@ function drawCombined(k, SF, fr, cur, prev){
   if(ENTRY||C.join_note!==false){ for(const [id,ks] of Object.entries(ENTRYK)) for(const kk of ks){ const u=(fr-TL.startFrame[kk])/FPS; if(u>=0 && u<3) note='+ '+ENT[id].short+(ks.indexOf(kk)>0?' again':'')+' from this quarter'; } }
   for(const gp of TL.gaps||[]) if(evC.date>=gp.from && evC.date<=gp.to) note=(C.gap_text||'{id} not included: figures not comparable').replace('{id}',ENT[gp.id].short);
   const big = C.mode==='number' ? 72 : 52;
-  ctx.fillStyle=T.ink; ctx.font='800 '+big+'px '+FONT; const tw=tabText(money(tot),C.x+pad,C.y+pad+30+big,'left','comb_value',null);
+  ctx.fillStyle=T.ink; ctx.font='800 '+big+'px '+FONT; const tw=tabText(valTxt,C.x+pad,C.y+pad+30+big,'left','comb_value',null);
 
   const y0=C.y+pad+30+big+16;
   if(C.mode==='line' && TL.allCombined){
-    const A=TL.allCombined, d0=+new Date(A[0].date), d1=+new Date(A[A.length-1].date), x0=C.x+pad, w=C.w-2*pad, h=C.y+C.h-NOTE_H-40-y0;
+    const A=TL.allCombined, d0=+new Date(A[0].date), x0=C.x+pad, w=C.w-2*pad, h=C.y+C.h-NOTE_H-40-y0;
     const pts=A.filter(p=>p.date<=(k>=0?TL.events[k-1>=0?k-1:0].date:TL.openingEvent.date) || (k<0 && p.date<=TL.openingEvent.date));
-    if(k>=0) pts.push({date:null, t:+new Date(evP.date)+(+new Date(evC.date)-(+new Date(evP.date)))*g, c:tot});
+    if(FWD && k>=0) for(const e of TL.events) if(e.fwd && e.date<=evP.date) pts.push({date:e.date, c:e.combined, lo:e.combined_lo});   // IQ-18c
+    if(k>=0) pts.push({date:null, t:+new Date(evP.date)+(+new Date(evC.date)-(+new Date(evP.date)))*g, c:tot, lo:FC?totLo:undefined});
+    const d1=Math.max(+new Date(A[A.length-1].date), FC ? pts[pts.length-1].t : 0);   // IQ-18c: the panel's years run on with the boards
     const X=p=>x0+w*(((p.t!=null?p.t:+new Date(p.date))-d0)/(d1-d0)), mx=Math.max(1,...pts.map(p=>p.c))*1.08, Y=p=>y0+h-h*p.c/mx;
     for(const gp of TL.gaps||[]) if(pts.length && (k<0?TL.openingEvent.date:evC.date)>=gp.from){ ctx.fillStyle='rgba(244,246,250,0.07)';
       const xa=X({date:gp.last}), xb=Math.min(X({date:gp.returns}), X(pts[pts.length-1])); if(xb>xa) ctx.fillRect(xa,y0,xb-xa,h); }
     ctx.strokeStyle=T.grid; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(x0,y0+h); ctx.lineTo(x0+w,y0+h); ctx.stroke();
-    ctx.strokeStyle=T.rule; ctx.lineWidth=4; ctx.lineJoin='round'; ctx.beginPath(); pts.forEach((p,i)=>i?ctx.lineTo(X(p),Y(p)):ctx.moveTo(X(p),Y(p))); ctx.stroke();
+    const nA=FWD ? pts.filter(p=>p.lo==null).length : pts.length, PA=FWD && nA<pts.length ? pts.slice(0,nA) : pts;
+    ctx.strokeStyle=T.rule; ctx.lineWidth=4; ctx.lineJoin='round'; ctx.beginPath(); PA.forEach((p,i)=>i?ctx.lineTo(X(p),Y(p)):ctx.moveTo(X(p),Y(p))); ctx.stroke();
+    if(PA!==pts){                                   // IQ-18c: plans and estimates - dashed, with the range as a band
+      const PF=pts.slice(nA-1), lo=p=>p.lo!=null?p.lo:p.c;
+      ctx.save(); ctx.fillStyle=mixGround(T.rule,0.6); ctx.beginPath(); PF.forEach((p,i)=>i?ctx.lineTo(X(p),Y(p)):ctx.moveTo(X(p),Y(p)));
+      PF.slice().reverse().forEach(p=>ctx.lineTo(X(p),Y({c:lo(p)}))); ctx.closePath(); ctx.fill();
+      ctx.strokeStyle=T.rule; ctx.lineWidth=4; ctx.setLineDash([10,8]); ctx.beginPath(); PF.forEach((p,i)=>i?ctx.lineTo(X(p),Y(p)):ctx.moveTo(X(p),Y(p))); ctx.stroke(); ctx.restore(); }
     for(const [id,ks] of Object.entries(ENTRYK)) for(const kk of ks){ const p=A.find(q=>q.date===TL.events[kk].date); if(!p || kk>k) continue;
       ctx.fillStyle=darkenForWhite(ENT[id].colour); ctx.beginPath(); ctx.arc(X(p),Y({c:p.c}),6,0,Math.PI*2); ctx.fill(); }
-    ctx.fillStyle=T.cap||T.muted; ctx.font='500 26px '+FONT; tabText(A[0].date.slice(0,4),x0,y0+h+30,'left','comb_axis',null); tabText(A[A.length-1].date.slice(0,4),x0+w,y0+h+30,'right','comb_axis',null);
+    ctx.fillStyle=T.cap||T.muted; ctx.font='500 26px '+FONT; tabText(A[0].date.slice(0,4),x0,y0+h+30,'left','comb_axis',null); tabText(FC ? evC.date.slice(0,4) : A[A.length-1].date.slice(0,4),x0+w,y0+h+30,'right','comb_axis',null);
   } else if(C.mode==='bar'){
     const x0=C.x+pad, w=C.w-2*pad, bh=Math.min(40,C.y+C.h-NOTE_H-34-y0), max=C.scale_max||Math.max(...(TL.allCombined||[{c:tot}]).map(p=>p.c))*1.04;
     ctx.fillStyle='rgba(244,246,250,0.06)'; rr(x0,y0,w,bh,4); ctx.fill();
@@ -1384,9 +1490,9 @@ function drawCombined(k, SF, fr, cur, prev){
     ctx.fillStyle=T.cap||T.muted; ctx.font='500 26px '+FONT; tabText('$0',x0,y0+bh+24,'left','comb_axis',null); tabText(money(Math.round(max/1e10)*1e10).replace('.0',''),x0+w,y0+bh+24,'right','comb_axis',null);
   }
   if(note){ ctx.fillStyle=T.ink; ctx.font='500 26px '+FONT; text('comb_note',null,note,C.x+pad,C.y+C.h-16,'left'); }
-  else { ctx.fillStyle=T.cap||T.muted; ctx.font='500 26px '+FONT; text('comb_count',null,'sum of '+nNow+' companies',C.x+pad,C.y+C.h-16,'left'); }
+  else { ctx.fillStyle=T.cap||T.muted; ctx.font='500 26px '+FONT; text('comb_count',null,FC&&FC.comb_note ? FC.comb_note : 'sum of '+nNow+' companies',C.x+pad,C.y+C.h-16,'left'); }
   ctx.restore();
-  window.__COMBINED={value:tot, exact:g>=1, companies:nNow, note, box:{x:C.x,y:C.y,w:C.w,h:C.h}};
+  window.__COMBINED={value:tot, lo:FC?totLo:null, text:valTxt, exact:g>=1, companies:nNow, note, box:{x:C.x,y:C.y,w:C.w,h:C.h}};
 }
 
 function drawOutro(o){

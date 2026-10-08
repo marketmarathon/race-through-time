@@ -6,128 +6,71 @@
    "at": "2026-06-30"
   },
   {
-   "name": "r02_story_card_stargate",
+   "name": "r02_2026_board_share_sale",
    "config": "config_rtt103_film.json",
-   "at": "2025-03-31"
+   "at": "2026-12-31",
+   "after_sec": 4.5
   },
   {
-   "name": "r03_alibaba_leaves",
+   "name": "r03_2026_board_icapital",
    "config": "config_rtt103_film.json",
-   "at": "2016-06-30"
+   "at": "2026-12-31",
+   "after_sec": 9.0
   },
   {
-   "name": "r04_gap_panel",
+   "name": "r04_2027_estimates",
    "config": "config_rtt103_film.json",
-   "at": "2017-06-30"
+   "at": "2027-12-31"
   },
   {
-   "name": "r05_alibaba_returns",
+   "name": "r05_2030_estimates",
    "config": "config_rtt103_film.json",
-   "at": "2018-03-31"
+   "at": "2030-12-31"
   },
   {
-   "name": "r06_plans_share_sale",
-   "config": "config_rtt103_film.json",
-   "step": 0,
-   "step_sec": 3.0
-  },
-  {
-   "name": "r07_plans_icapital",
+   "name": "r06_explanation",
    "config": "config_rtt103_film.json",
    "step": 0,
-   "step_sec": 8.0
+   "step_sec": 6.0
   },
   {
-   "name": "r08_look_2027",
-   "config": "config_rtt103_film.json",
-   "step": 1,
-   "step_sec": 3.0
-  },
-  {
-   "name": "r09_look_2030",
-   "config": "config_rtt103_film.json",
-   "step": 4,
-   "step_sec": 2.8
-  },
-  {
-   "name": "r10_line",
-   "config": "config_rtt103_film.json",
-   "step": 5,
-   "step_sec": 4.0
-  },
-  {
-   "name": "r11_peaks",
-   "config": "config_rtt103_film.json",
-   "step": 6,
-   "step_sec": 6.5
-  },
-  {
-   "name": "r12_final_table",
+   "name": "r07_final_table",
    "config": "config_rtt103_film.json",
    "at": "final"
   },
   {
-   "name": "d01_race_round2",
+   "name": "d01_round3",
    "compose": {
-    "title": "d01 · RTT-103 round 2: the race with Luke's choices and the final table (stills on the frames where each quarter's figures land)",
+    "title": "d01 · RTT-103 round 3: the race carries on after June 2026 (Luke's direction, DEC-371)",
     "cols": 2,
     "items": [
      {
       "still": "r01_board_jun2026",
-      "caption": "June 2026 board: Baidu logo, Tencent \"includes some intangibles\", the last story card"
+      "caption": "June 2026, the last real quarter (stills on the frames where the figures land)"
      },
      {
-      "still": "r02_story_card_stargate",
-      "caption": "A story card (Stargate, 21 Jan 2025) at the names size"
+      "still": "r02_2026_board_share_sale",
+      "caption": "2026 board: company plans as race bars, Alphabet's share-sale card"
      },
      {
-      "still": "r03_alibaba_leaves",
-      "caption": "Alibaba leaves the board (June 2016), one plain line; total panel note"
+      "still": "r03_2026_board_icapital",
+      "caption": "2026 board with iCapital's card"
      },
      {
-      "still": "r04_gap_panel",
-      "caption": "During the gap (June 2017): the total panel's note fits"
+      "still": "r04_2027_estimates",
+      "caption": "2027: Race Through Time estimates, striped, on the same board"
      },
      {
-      "still": "r05_alibaba_returns",
-      "caption": "Alibaba returns (March 2018), one plain line"
+      "still": "r05_2030_estimates",
+      "caption": "2030: least reliable estimate"
      },
      {
-      "still": "r12_final_table",
-      "caption": "The final table (10 s hold) with its one-line summary"
-     }
-    ]
-   }
-  },
-  {
-   "name": "d02_steps_round2",
-   "compose": {
-    "title": "d02 · RTT-103 round 2: the steps after the race",
-    "cols": 2,
-    "items": [
-     {
-      "still": "r06_plans_share_sale",
-      "caption": "2026 plans step with Alphabet's share-sale card"
+      "still": "r06_explanation",
+      "caption": "The explanation after 2030"
      },
      {
-      "still": "r07_plans_icapital",
-      "caption": "2026 plans step with iCapital's card"
-     },
-     {
-      "still": "r08_look_2027",
-      "caption": "Look-ahead board 2027 (after the move from 2026)"
-     },
-     {
-      "still": "r09_look_2030",
-      "caption": "Look-ahead board 2030, least reliable year"
-     },
-     {
-      "still": "r10_line",
-      "caption": "The combined line, closing view of the look-ahead"
-     },
-     {
-      "still": "r11_peaks",
-      "caption": "Forecasters disagree: one timeline"
+      "still": "r07_final_table",
+      "caption": "The final June 2026 table (10 s hold), as built in round 2"
      }
     ]
    }
