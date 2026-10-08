@@ -1,7 +1,7 @@
-# Metric contract — RTT-103 The AI Spending Race · v1.3 (IQ-16d, stage 4) · 8 Oct 2026
+# Metric contract — RTT-103 The AI Spending Race · v1.4 (IQ-16e, stage 5) · 8 Oct 2026
 
 Owner decisions: DEC-246 (episode and method), DEC-278 (number and order), DEC-279 (research split), DEC-280 (no EODHD upgrade).
-Claude working choices, proposals and findings: DEC-281 to DEC-290. Luke's answers: DEC-291 to DEC-301 and DEC-306 to DEC-310 (8 Oct 2026); Claude, stages 2–4: DEC-302 to DEC-305, DEC-311 to DEC-320. Data: `data/rtt-103/` (README there).
+Claude working choices, proposals and findings: DEC-281 to DEC-290. Luke's answers: DEC-291 to DEC-301, DEC-306 to DEC-310 and DEC-321 to DEC-328 (8 Oct 2026); Claude, stages 2–5: DEC-302 to DEC-305, DEC-311 to DEC-320, DEC-329, DEC-330. Data: `data/rtt-103/` (README there).
 **Stages 1–2 are data only. No player, renderer, render or visual change (DEC-069).**
 
 ## Universe (DEC-246)
@@ -36,9 +36,12 @@ A: SEC 10-K/10-Q/20-F/F-1/6-K results, HKEX filings. B: company earnings release
 | Tencent on-screen note: "measured differently - additions, including some intangible assets" (DEC-292) | Master `definition_warning` |
 | Forecast frames 2026: latest company guidance (NUMBER / RANGE; Amazon and Oracle "as reported by Reuters", DEC-311; Oracle's fiscal year to May 2027 in the 2026 frame, DEC-314); ranges never as a midpoint alone; ByteDance greyed as a press report | `AI_SPENDING_RACE_FORECAST.csv` (2026 subset: `AI_SPENDING_RACE_2026E.csv`) |
 | Look-ahead 2027–2031 (owner exception DEC-306): company directions as stated (Alphabet, Microsoft; Meta: no outlook) and, where a company gives no figure, named consensus, analyst or research-firm forecasts, each with forecaster, forecaster type, forecast date and measure; never averaged, blended or extended; visibly different from the race; one figure per company per year chosen by a rule Luke approves. Verified so far (DEC-316..DEC-320): FactSet consensus 2026–2030 for the US five (capex definition and calendarisation not stated by the source), Visible Alpha 2026–2027 (cash-flow lines as ours; Microsoft calendarised by averaging fiscal years), Citi on Alibaba FY2027–29, group and industry views; nothing per company for 2031 | `AI_SPENDING_RACE_FORECAST.csv` (input for third-party rows: `source/forecast_lookahead_2027_2031.csv`) |
-| Story moments: OpenAI infrastructure commitments labelled COMMITMENT (never capex, never a bar, never summed) | G |
+| Story moments: OpenAI infrastructure commitments labelled COMMITMENT (never capex, never a bar, never summed); companies' own statements that most capex is for AI (COMPANY STATEMENT, DEC-322); iCapital's 70–75% AI-share estimate, once, never applied (DEC-323) | G |
+| Running total "Combined capital spending" = sum of the bars on screen, start to end of the look-ahead; no AI-only forecast in it (DEC-324) | L (history); `AI_SPENDING_RACE_LOOKAHEAD_DRAFT.csv` (look-ahead) |
+| Look-ahead 2027–2030 bars: Race Through Time estimates (owner exception DEC-326), 2026 base x one named growth source, 2030 marked least reliable (DEC-327); DRAFT until Luke answers DEC-330's questions | `AI_SPENDING_RACE_LOOKAHEAD_DRAFT.csv` |
+| Peak views side by side (DEC-328) | `AI_SPENDING_RACE_PEAK_VIEWS.csv` |
 | Annotations (sourced statements) | G (narration only) |
 | Logos / colours | Not built in stage 1 (design session, Luke's approval first) |
 
 ## Claims this data cannot support
-Any look-ahead figure as official or as a company's own when it is an analyst's; an average of forecasters; Alibaba's multi-year plan as annual spending; OpenAI commitments as capex or as a total; "AI spending" as the bar label or title measure; AWS or Google Cloud capex; any forecast as an actual; research-firm forecasts on screen; ByteDance history; OpenAI as a bar; Alibaba bars for the TTM points 2016 Q2–2017 Q4 (definition break); CoreWeave before 2024 Q4; Tencent cash capex by quarter; Microsoft's "capex including finance leases" history.
+An AI-only capex figure for any company or year (none is reported, DEC-321); any look-ahead figure as official or as a company's own when it is an analyst's; an average of forecasters; Alibaba's multi-year plan as annual spending; OpenAI commitments as capex or as a total; "AI spending" as the bar label or title measure; AWS or Google Cloud capex; any forecast as an actual; research-firm forecasts on screen; ByteDance history; OpenAI as a bar; Alibaba bars for the TTM points 2016 Q2–2017 Q4 (definition break); CoreWeave before 2024 Q4; Tencent cash capex by quarter; Microsoft's "capex including finance leases" history.

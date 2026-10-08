@@ -178,7 +178,7 @@ Two kinds of check are reported separately: **file-format checks** (columns, voc
 | Master: ranks 1..n on every date | PASS | 66 dates |
 | Master: no estimate or guidance rows | PASS | 496 rows |
 | 2026E: every row labelled 2026 and its kind (GUIDANCE, ESTIMATE or a named forecaster's FORECAST) | PASS | 22 rows |
-| Every source cited in B, F, G and the forecast file is listed in A | PASS | 644 citations; missing: [] |
+| Every source cited in B, F, G and the forecast file is listed in A | PASS | 649 citations; missing: [] |
 | OpenAI and ByteDance are never bars (DEC-301, DEC-296) | PASS | 0 found |
 | Forecast file: company guidance, ByteDance greyed, and named consensus/analyst/research-firm forecasts only (DEC-296, DEC-297, DEC-306) | PASS | 58 rows |
 | Forecast file: years 2026-2031 only (DEC-306) | PASS |  |
@@ -194,6 +194,11 @@ Two kinds of check are reported separately: **file-format checks** (columns, voc
 | Forecast frames: guidance only press reports carry is labelled so in its display note | PASS |  |
 | G: every OpenAI row is a COMMITMENT story moment, never capex (DEC-301) | PASS | 15 OpenAI rows |
 | Forecast frames: every range has its low and high (never a midpoint alone) | PASS |  |
+| Look-ahead draft: every estimate is labelled as Race Through Time's, names its growth source, and is marked DRAFT (DEC-326, DEC-330) | PASS | 36 estimates |
+| Look-ahead draft: runs 2026-2030, all nine companies every year, 2030 marked least reliable (DEC-326, DEC-327) | PASS |  |
+| Look-ahead draft: 'Combined capital spending' is the sum of the bars on screen; no AI-only forecast in it (DEC-324) | PASS |  |
+| Look-ahead draft: no estimate in the master, E or the forecast file | PASS |  |
+| Peak views: each verified view cites a source in A; unverified views (BCG, Allianz Sep) are not allowed on screen | PASS | 7 views |
 | No blank or zero-filled value in E | PASS |  |
 
 ## Notes

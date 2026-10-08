@@ -160,6 +160,24 @@ t("FactSet 8/31/25 vintage: 22 cells (N/A cells skipped), all flagged superseded
 t("Unverified forecasters (BCG, Fitch, S&P Ratings, McKinsey) are not in the look-ahead file or the forecast file",
   not any(re.search(r"BCG|Fitch|S&P Global Ratings|McKinsey", r["forecaster"]) for r in look + fc))
 
+# ---------------------------------------------------------------- IQ-16e: draft look-ahead and AI story moments
+from decimal import Decimal as Dm  # noqa: E402
+dr = rows("AI_SPENDING_RACE_LOOKAHEAD_DRAFT.csv")
+cell = {(r["company"], r["frame_year"]): r for r in dr}
+t("Draft: Alphabet 2027 = its 2026 guidance x FactSet growth 304.0/201.5 (294.2-309.3); Microsoft keeps its own 175 base",
+  (cell[("Alphabet", "2027")]["estimate_low_usd_bn"], cell[("Alphabet", "2027")]["estimate_high_usd_bn"]) == ("294.2", "309.3")
+  and cell[("Microsoft", "2026")]["estimate_low_usd_bn"] == "175.0" and cell[("Microsoft", "2027")]["growth_factor"] == "1.3221")
+t("Draft: Alibaba grows with Citi (2027 x 2830/2580) then FactSet five-company growth; Tencent, Baidu, CoreWeave with FactSet five-company growth",
+  cell[("Alibaba", "2027")]["growth_factor"] == "1.0969" and "five US companies" in cell[("Alibaba", "2029")]["growth_source"]
+  and all("five US companies" in cell[(c, "2027")]["growth_source"] for c in ("Tencent", "Baidu", "CoreWeave")))
+t("Draft: combined = sum of the nine bars each year; 2030 least reliable; nothing labelled as AI-only",
+  all(Dm(cell[("Combined capital spending", y)]["estimate_low_usd_bn"]) == sum(Dm(r["estimate_low_usd_bn"]) for r in dr if r["frame_year"] == y and r["row_type"] != "COMBINED") for y in ("2026", "2027", "2028", "2029", "2030"))
+  and cell[("Combined capital spending", "2030")]["reliability"] == "least reliable year" and not any("AI-only" in r["label"] for r in dr))
+st = [r for r in g if r["event_type"] == "COMPANY STATEMENT"]
+t("G: company statements that most capex is for AI (Microsoft, Amazon via TechCrunch, Tencent, Alphabet) and iCapital's 70-75% as an ESTIMATE, never applied",
+  {r["company"] for r in st} == {"Microsoft", "Amazon", "Tencent", "Alphabet"}
+  and any(r["event_type"] == "ESTIMATE (third party)" and "70–75%" in r["event"] and "never applied" in r["amount_type"] for r in g))
+
 for name, ok, detail in results:
     print(("PASS " if ok else "FAIL ") + name + ("" if ok else f"  [{detail}]"))
 n_ok = sum(1 for _, ok, _ in results if ok)

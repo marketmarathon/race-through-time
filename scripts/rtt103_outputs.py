@@ -654,6 +654,7 @@ def write_rest(v):
     # ------------------------------------------------------------------ eligibility of additional companies (brief section 2)
     write_eligibility(out, src, v, B)
     # ------------------------------------------------------------------ file-format checks
+    write_lookahead_draft(out, src, B, C)
     format_checks(out, v, B, src)
     # ------------------------------------------------------------------ J, K, checks, manifest
     write_j(out, v, B, qa)
@@ -813,6 +814,95 @@ def lookahead_usd(r, src, B):
         raise ValueError(f"look-ahead currency {r['currency']} not handled")
     fmt = lambda v: "" if v is None else str(money(v, 1) if (v != v.to_integral_value() or r["currency"] != "USD") else int(v))
     return [fmt(v) for v in vals], " ".join(note) + (" (converted)" if note else "")
+
+
+DRAFT_COLS = ["frame_year", "company", "display_name", "row_type", "estimate_low_usd_bn", "estimate_high_usd_bn", "label",
+              "base_low_usd_bn", "base_high_usd_bn", "base_source", "growth_factor", "growth_source", "alt_group_low_usd_bn",
+              "alt_group_high_usd_bn", "alt_group_source", "directional_check", "reliability", "status", "notes"]
+DRAFT_YEARS = ["2026", "2027", "2028", "2029", "2030"]
+DRAFT_STATUS = "DRAFT for Luke (DEC-330); not approved, not for screen"
+US_FIVE = ["Amazon", "Microsoft", "Alphabet", "Meta", "Oracle"]
+OTHERS = ["Alibaba", "CoreWeave", "Tencent", "Baidu"]
+DIRECTIONS = {("Alphabet", "2027"): ("increase significantly", "Alphabet, 22 Jul 2026 call"),
+              ("Microsoft", "2027"): ("grow year-over-year (fiscal year to June 2027)", "Microsoft, 29 Jul 2026 call")}
+
+
+def write_lookahead_draft(out, src, B, C):
+    """Draft look-ahead 2026-2030 (owner method DEC-326, years DEC-327; Claude's working choices DEC-330, shown to Luke as questions).
+    2026 = each company's figure in the 2026 frame: its own latest guidance (range kept) or, where none, its latest actual
+    12 months. 2027-2030 = Race Through Time estimate: the base grown year by year by one named published projection:
+    US five, the company's own FactSet consensus growth (8/31/26); Alibaba, Citi's growth as far as it reaches; then,
+    and for Tencent, Baidu and CoreWeave, the growth of FactSet's five-company consensus. Alternative column: one group
+    uplift (FactSet five-company growth) for every company. Growth rates only carry over, never levels; nothing is averaged."""
+    D = Decimal
+    g26 = {r["company"]: r for r in B.read_csv(os.path.join(out, "AI_SPENDING_RACE_2026E.csv")) if r["forecaster_type"] == "COMPANY"}
+    ttm = {r["company"]: D(r["capex_TTM_usd_bn"]) for r in B.read_csv(os.path.join(out, "AI_SPENDING_RACE_MASTER.csv")) if r["date"] == "2026-06-30"}
+    look = [r for r in B.read_csv(os.path.join(src, LOOKAHEAD_FILE)) if r["verification"] == "VERIFIED" and not r["superseded_by"]]
+    fs = {(r["company"], r["forecast_year"]): D(r["single"]) for r in look if r["forecaster"] == "FactSet consensus"}
+    citi = {r["forecast_year"]: D(r["single"]) for r in look if r["forecaster"] == "Citi" and r["company"] == "Alibaba"}
+    five = {y: sum(fs[(c, y)] for c in US_FIVE) for y in DRAFT_YEARS}
+    group_growth = {y: five[y] / five[str(int(y) - 1)] for y in DRAFT_YEARS[1:]}
+    rows = []
+    for co in US_FIVE + OTHERS:
+        g = g26.get(co)
+        if g and g["form"] in ("NUMBER", "RANGE"):
+            lo = D(g["range_low_usd_bn"] or g["forecast_amount_usd_bn"]); hi = D(g["range_high_usd_bn"] or g["forecast_amount_usd_bn"])
+            base_src = f"{g['forecaster']}, {g['forecast_period']} ({g['forecast_date']}); {g['metric_definition']}"
+            label26 = "company guidance" + (" as reported by Reuters" if "Reuters" in g["forecaster"] else "")
+        else:
+            lo = hi = ttm[co].quantize(D("0.1"), rounding=ROUND_HALF_UP)
+            base_src = f"actual trailing 12 months to 30 Jun 2026 ({co} in AI_SPENDING_RACE_MASTER.csv)"
+            label26 = "actual, 12 months to June 2026"
+        rows.append({"frame_year": "2026", "company": co, "display_name": display_of(C, co), "row_type": "BASE",
+                     "estimate_low_usd_bn": money(lo, 1), "estimate_high_usd_bn": money(hi, 1), "label": label26,
+                     "base_low_usd_bn": money(lo, 1), "base_high_usd_bn": money(hi, 1), "base_source": base_src, "growth_factor": "",
+                     "growth_source": "", "alt_group_low_usd_bn": money(lo, 1), "alt_group_high_usd_bn": money(hi, 1), "alt_group_source": "",
+                     "directional_check": "", "reliability": "", "status": DRAFT_STATUS,
+                     "notes": "2026 frame figure (not our estimate)." + (" Microsoft's includes finance leases; FactSet's growth rates only are applied to it." if co == "Microsoft" else "")
+                              + (" Oracle's fiscal year June 2026 - May 2027, own year label (DEC-325)." if co == "Oracle" else "")})
+        e_lo, e_hi, a_lo, a_hi = lo, hi, lo, hi
+        for y in DRAFT_YEARS[1:]:
+            prev = str(int(y) - 1)
+            if co in US_FIVE:
+                f = fs[(co, y)] / fs[(co, prev)]; gsrc = f"FactSet consensus 8/31/26, {co} {y}/{prev} ({fs[(co, y)]} / {fs[(co, prev)]})"
+            elif co == "Alibaba" and y in citi and prev in citi:
+                f = citi[y] / citi[prev]; gsrc = f"Citi (Sina Finance, 23 Sep 2026), Alibaba fiscal year in frame {y} / frame {prev} ({citi[y]} / {citi[prev]} hundred-million yuan)"
+            else:
+                f = group_growth[y]; gsrc = f"FactSet consensus 8/31/26, five US companies combined, {y}/{prev} ({five[y]} / {five[prev]}; a growth rate from one provider's figures, not a forecast for {co})"
+            e_lo, e_hi = e_lo * f, e_hi * f
+            a_lo, a_hi = a_lo * group_growth[y], a_hi * group_growth[y]
+            dc = DIRECTIONS.get((co, y))
+            check = ""
+            if dc:
+                check = f'{dc[1]}: "{dc[0]}"; estimate {"rises" if f > 1 else "falls"} {money((f - 1) * 100, 1)}% ({"consistent" if f > 1 else "INCONSISTENT"})'
+            rows.append({"frame_year": y, "company": co, "display_name": display_of(C, co), "row_type": "ESTIMATE",
+                         "estimate_low_usd_bn": money(e_lo, 1), "estimate_high_usd_bn": money(e_hi, 1),
+                         "label": f"Race Through Time estimate (growth: {gsrc.split(' (')[0].split(',')[0] if co in US_FIVE else gsrc.split(' (')[0]})",
+                         "base_low_usd_bn": money(lo, 1), "base_high_usd_bn": money(hi, 1), "base_source": base_src,
+                         "growth_factor": money(f, 4), "growth_source": gsrc,
+                         "alt_group_low_usd_bn": money(a_lo, 1), "alt_group_high_usd_bn": money(a_hi, 1),
+                         "alt_group_source": f"FactSet consensus 8/31/26, five US companies combined, {y}/{prev}",
+                         "directional_check": check, "reliability": "least reliable year" if y == "2030" else "",
+                         "status": DRAFT_STATUS, "notes": ("Microsoft 2030/2029 FactSet growth is the weakest cell (DEC-316)." if (co == "Microsoft" and y == "2030") else "")})
+    for y in DRAFT_YEARS:
+        yr = [r for r in rows if r["frame_year"] == y]
+        rows.append({"frame_year": y, "company": "Combined capital spending", "display_name": "Combined capital spending", "row_type": "COMBINED",
+                     "estimate_low_usd_bn": money(sum(D(r["estimate_low_usd_bn"]) for r in yr), 1),
+                     "estimate_high_usd_bn": money(sum(D(r["estimate_high_usd_bn"]) for r in yr), 1),
+                     "label": "Combined capital spending (sum of the nine bars on screen)" + ("" if y == "2026" else "; Race Through Time estimate"),
+                     "alt_group_low_usd_bn": money(sum(D(r["alt_group_low_usd_bn"]) for r in yr), 1),
+                     "alt_group_high_usd_bn": money(sum(D(r["alt_group_high_usd_bn"]) for r in yr), 1),
+                     "alt_group_source": "sum of the alternative column", "reliability": "least reliable year" if y == "2030" else "",
+                     "status": DRAFT_STATUS, "base_low_usd_bn": "", "base_high_usd_bn": "", "base_source": "", "growth_factor": "",
+                     "growth_source": "", "directional_check": "",
+                     "notes": ("2026 mixes company guidance for calendar 2026 (Oracle: fiscal year to May 2027) with actual 12 months to June 2026 "
+                               "for Alibaba, Tencent and Baidu. " if y == "2026" else "") + "No AI-only forecast is included (DEC-324)."})
+    B.write_csv(os.path.join(out, "AI_SPENDING_RACE_LOOKAHEAD_DRAFT.csv"), rows, DRAFT_COLS)
+    # forecasters disagree on the peak (owner DEC-328): their views side by side, with their status
+    pv = B.read_csv(os.path.join(src, "peak_views.csv"))
+    for r in pv:
+        r["on_screen_allowed"] = "YES" if r["status"] == "VERIFIED" else "NO (unverified)"
+    B.write_csv(os.path.join(out, "AI_SPENDING_RACE_PEAK_VIEWS.csv"), pv, list(pv[0].keys()))
 
 
 def figures_in_quote(r):
@@ -1124,6 +1214,8 @@ def write_eligibility(out, src, v, B):
 
 
 def format_checks(out, v, B, src):
+    D_ = Decimal
+
     def check(name, ok, detail):
         v["check"]("files", name, ok, detail, kind="format")
     spec = {"A_source_catalogue.csv": A_COLS, "B_capex_observations.csv": B_COLS, "C_capex_definitions.csv": C_COLS,
@@ -1206,6 +1298,21 @@ def format_checks(out, v, B, src):
           all(r["event_type"] == "COMMITMENT" and "not capex" in r["amount_type"] for r in oa), f"{len(oa)} OpenAI rows")
     check("Forecast frames: every range has its low and high (never a midpoint alone)",
           all(r["range_low_usd_bn"] and r["range_high_usd_bn"] for r in fc if r["form"] == "RANGE"), "")
+    dr = B.read_csv(os.path.join(out, "AI_SPENDING_RACE_LOOKAHEAD_DRAFT.csv"))
+    est = [r for r in dr if r["row_type"] == "ESTIMATE"]
+    check("Look-ahead draft: every estimate is labelled as Race Through Time's, names its growth source, and is marked DRAFT (DEC-326, DEC-330)",
+          all(r["label"].startswith("Race Through Time estimate") and r["growth_source"] and r["status"].startswith("DRAFT") for r in est), f"{len(est)} estimates")
+    check("Look-ahead draft: runs 2026-2030, all nine companies every year, 2030 marked least reliable (DEC-326, DEC-327)",
+          {r["frame_year"] for r in dr} == set(DRAFT_YEARS) and all(sum(1 for r in dr if r["frame_year"] == y and r["row_type"] != "COMBINED") == 9 for y in DRAFT_YEARS)
+          and all(r["reliability"] == "least reliable year" for r in dr if r["frame_year"] == "2030"), "")
+    comb_ok = all(D_(c["estimate_low_usd_bn"]) == sum(D_(r["estimate_low_usd_bn"]) for r in dr if r["frame_year"] == c["frame_year"] and r["row_type"] != "COMBINED")
+                  for c in dr if c["row_type"] == "COMBINED")
+    check("Look-ahead draft: 'Combined capital spending' is the sum of the bars on screen; no AI-only forecast in it (DEC-324)",
+          comb_ok and not any(re.search(r"allianz|ai capex|ai infrastructure", (r["growth_source"] + r["base_source"]).lower()) for r in dr), "")
+    check("Look-ahead draft: no estimate in the master, E or the forecast file", not any("Race Through Time estimate" in json.dumps(r) for fn in ("AI_SPENDING_RACE_MASTER.csv", "E_capex_TTM_race.csv", "AI_SPENDING_RACE_FORECAST.csv") for r in B.read_csv(os.path.join(out, fn))), "")
+    pv = B.read_csv(os.path.join(out, "AI_SPENDING_RACE_PEAK_VIEWS.csv"))
+    check("Peak views: each verified view cites a source in A; unverified views (BCG, Allianz Sep) are not allowed on screen",
+          all((r["status"] == "VERIFIED" and r["source"] in a_ids and r["on_screen_allowed"] == "YES") or (r["status"] == "UNVERIFIED" and r["on_screen_allowed"].startswith("NO")) for r in pv), f"{len(pv)} views")
     blank = [r for r in e if not r["TTM_capex_usd"]]
     check("No blank or zero-filled value in E", not blank and all(int(r["TTM_capex_usd"]) > 0 for r in e), "")
 

@@ -1,6 +1,102 @@
-# RTT-103 The AI Spending Race — data report (IQ-16 stage 1, 7 Oct 2026; IQ-16b, IQ-16c and IQ-16d stages 2–4, 8 Oct 2026)
+# RTT-103 The AI Spending Race — data report (IQ-16 stage 1, 7 Oct 2026; IQ-16b to IQ-16e, stages 2–5, 8 Oct 2026)
 
-**Newest first: stage 4, stage 3, stage 2, then the stage-1 report unchanged.**
+**Newest first: stages 5, 4, 3 and 2, then the stage-1 report unchanged.**
+
+## Stage 5 (IQ-16e, 8 Oct 2026): your decisions on the measure and a draft look-ahead
+
+**In plain English.** Your decisions A to H are recorded as DEC-321 to DEC-328. The bars stay total capital spending.
+- **AI statements:** the companies' own "most of our spending is for AI" statements are now dated story moments. I read all four word for word, Tencent's included, which Cowork couldn't reach.
+- **iCapital:** its 70–75% AI-share estimate is stored as an estimate that is never applied to any figure.
+- **The look-ahead:** built as a **draft** worked table, with every 2027–2030 figure labelled as our estimate and its growth source named. Nothing is chosen for the screen or rendered.
+
+### What was done
+- **The part07 files:** all seven, and the prompt, match the hashes in the private README (DEC-329). They confirm that no company reports AI-only capex, so an AI-only race would need invented figures (DEC-321).
+- **Story moments added to G** (COMPANY STATEMENT):
+  - Microsoft, 30 Jul 2024: "nearly all", cloud and AI combined.
+  - Amazon, as reported by TechCrunch, 6 Feb 2025: "vast majority" of about $100bn.
+  - Tencent, 18 Mar 2026: RMB22.4bn in Q4 2025 "primarily to support our AI efforts". This is a cash figure; our Tencent bars use additions.
+  - Alphabet, 29 Apr 2026: "the overwhelming majority".
+  - iCapital, 30 Apr 2026: 70–75%, stored as ESTIMATE (third party).
+- **Peaks** (`AI_SPENDING_RACE_PEAK_VIEWS.csv`, DEC-328): the forecasters' peak views side by side. Only verified views may go on screen; BCG and Allianz's September view are marked "not allowed" until Cowork confirms them.
+- **Draft look-ahead** (`AI_SPENDING_RACE_LOOKAHEAD_DRAFT.csv`, DEC-330): the worked table below. 2026 is each company's own figure. 2027–2030 are Race Through Time estimates: the 2026 base grown year by year by one named source, so only growth rates carry over. Nothing is averaged.
+- **Checks:** financial QA 81/81; format checks **41/41** (5 new); tests **34/34** (4 new).
+
+### Draft worked table (US$ bn; ranges where the company gave a range)
+| Company | 2026 (base) | 2027 | 2028 | 2029 | 2030 (least reliable) | Growth source |
+|---|---|---|---|---|---|---|
+| Amazon | 220.0 | 275.4 | 298.5 | 313.4 | 315.9 | own FactSet growth |
+| Microsoft | 175.0 | 231.4 | 248.8 | 265.7 | 346.2 | own FactSet growth |
+| Alphabet | 195.0–205.0 | 294.2–309.3 | 332.2–349.3 | 343.1–360.7 | 359.5–378.0 | own FactSet growth |
+| Meta | 130.0–145.0 | 178.5–199.1 | 194.4–216.9 | 195.1–217.6 | 224.5–250.4 | own FactSet growth |
+| Oracle | 90.0–95.0 | 107.6–113.6 | 105.4–111.3 | 91.9–97.0 | 83.3–88.0 | own FactSet growth |
+| Alibaba | 22.3 | 24.5 | 24.4 | 25.0 | 27.4 | Citi, then FactSet five |
+| CoreWeave | 35.0–39.0 | 47.1–52.5 | 51.2–57.1 | 52.6–58.6 | 57.7–64.3 | FactSet five |
+| Tencent | 17.0 | 22.9 | 24.9 | 25.5 | 28.0 | FactSet five |
+| Baidu | 3.3 | 4.4 | 4.8 | 5.0 | 5.4 | FactSet five |
+| **Combined capital spending** | 887.6–921.6 | 1186.0–1233.1 | 1284.6–1336.0 | 1317.3–1368.5 | 1447.9–1503.6 | sum of the bars |
+
+
+- **2026 is not our estimate.** It shows company guidance: Amazon and Oracle as reported by Reuters; Oracle is its fiscal year to May 2027. For Alibaba, Tencent and Baidu, where there is no guidance, it shows the actual 12 months to June 2026.
+- **Checks against what the companies said:**
+  - Alphabet 2027 is up 50.9%, consistent with its "increase significantly".
+  - Microsoft 2027 is up 32.2%, consistent with "grow" (its fiscal year to June 2027).
+- **Alternative to compare:** one group uplift (FactSet's five-company growth) applied to every US company.
+
+| Company | 2027 | 2028 | 2029 | 2030 |
+|---|---|---|---|---|
+| Amazon | 296.3 | 322.1 | 330.5 | 362.7 |
+| Microsoft | 235.7 | 256.2 | 262.9 | 288.5 |
+| Alphabet | 262.6–276.1 | 285.5–300.1 | 293.0–308.0 | 321.5–338.0 |
+| Meta | 175.1–195.3 | 190.3–212.3 | 195.3–217.8 | 214.3–239.1 |
+| Oracle | 121.2–128.0 | 131.8–139.1 | 135.2–142.7 | 148.4–156.6 |
+| Combined capital spending | 1195.3–1241.2 | 1299.4–1349.2 | 1333.5–1384.5 | 1463.3–1519.4 |
+
+
+  The main difference is Oracle: FactSet sees it peaking in 2027 and falling, while a group uplift makes it rise to 2030.
+
+### Sources I would use, and why
+- **US five: each company's own FactSet growth** (consensus as of 31 Aug 2026).
+  - It is the only verified multi-year forecast for each company, from one provider, for 2027–2030.
+  - Only its growth rates carry over, so the companies' own 2026 figures stay and there is no false jump. Microsoft starts from its 175, not FactSet's 157.7.
+- **Alibaba: Citi** (23 Sep 2026) for as far as it reaches, then FactSet's five-company growth.
+- **Tencent, Baidu and CoreWeave: FactSet's five-company growth.**
+  - It is a consensus of many analysts, covers every year 2027–2030, and is verified.
+  - Dell'Oro's July release gives only an end point ("more than $3 trillion by 2030"). A yearly rate from it would mix two forecast vintages, so I didn't use it.
+- **Not used:** AI-only forecasts (Allianz's AI capex peak), BCG (unverified), single-bank figures (unverified).
+
+### Questions for Luke (Claude's recommendation; what happens if unanswered)
+1. **US five: each company's own FactSet growth, or one group uplift for all?**
+   - *Recommendation:* own growth. It keeps FactSet's view that Oracle peaks in 2027 and that the companies grow at different speeds.
+   - *If unanswered:* own growth.
+2. **Alibaba's starting point.** Your method (actual 12 months to June 2026, $22.3bn, plus Citi's growth) gives $24–27bn a year. Citi's own levels are far higher: about $37.8bn (2026 frame), $41.5bn and $41.4bn. Continued with FactSet's five-company growth, that path reaches about $42.4bn (2029) and $46.6bn (2030).
+   - *Recommendation:* use Citi's levels for 2026–2028. Alibaba's spending is ramping fast (CEO: will "overshoot" its RMB380bn plan), so the 12-month actual understates it. Label them "Citi estimate".
+   - *If unanswered:* your method as built, with Citi's levels in the notes.
+3. **Tencent, Baidu and CoreWeave: FactSet's five-company growth, or something else?**
+   - Dell'Oro's "nearly 60 percent" yearly growth for AI-specialised clouds (neoclouds such as CoreWeave; period not stated) would take CoreWeave to about $229–256bn by 2030, against $58–64bn as built.
+   - *Recommendation:* FactSet's five-company growth for all three, with Dell'Oro's rate mentioned in narration at most.
+   - *If unanswered:* as built.
+4. **Oracle's 2027.** Its base is its fiscal year to May 2027 ($90–95bn). Growing that by FactSet's calendar growth gives $108–114bn for 2027, while FactSet's own Oracle 2027 is $92.1bn, so the method probably overstates Oracle in 2027–2028.
+   - *Recommendation:* keep one rule for everyone and flag Oracle's 2027 in the notes.
+   - *If unanswered:* as built.
+5. **The 2026 frame mixes periods:** full-year guidance for the US companies and CoreWeave; actual 12 months to June 2026 for Alibaba, Tencent and Baidu.
+   - *Recommendation:* accept it and label each bar's period.
+   - *If unanswered:* as built.
+6. **Microsoft 2030** ($346bn) rests on FactSet's weakest cell (+30% in one year).
+   - *Recommendation:* keep it, inside the "least reliable year" marking you asked for.
+   - *If unanswered:* kept and marked.
+7. **2031:** no authoritative growth projection covering 2031 has been verified. BCG's chart is waiting on Cowork; Bain's 2031 figure is one worldwide AI-infrastructure level, a different measure.
+   - *Recommendation:* stop at 2030. Revisit only if Cowork confirms BCG, and even then BCG's group change would have to be applied to every company.
+   - *If unanswered:* stop at 2030.
+8. **The look-ahead's starting point.** The race ends at June 2026 (12-month total $625.5bn); the 2026 frame totals $888–922bn, because it shows full-year plans.
+   - *Recommendation:* show the 2026 frame as its own step, labelled "2026 plans", so the jump is explained.
+   - *If unanswered:* a design-session question.
+
+### Next
+1. Your answers to 1–8.
+2. Cowork's checklist results (BCG and FactSet's definition first).
+3. I finalise the look-ahead and mark what goes on screen.
+4. The design session for the story moments, the iCapital estimate, the running total, the look-ahead's look and the peak views.
+
 
 ## Stage 4 (IQ-16d, 8 Oct 2026): the look-ahead to 2031, checked at source
 
