@@ -833,7 +833,7 @@
         "player": "kits/rtt-002 shared player + PR #18's RTT-001 work merged in (DEC-346) + race kind 'money' and new keys (DEC-347); tests/player/compare_frames.js: 50 frames of RTT-001/002/003 pixel-identical before and after",
         "tests": "tests/player/run_tests_rtt103.js 13/13 PASS (RESULTS_RTT103.md); phone_check_rtt103.js PASS 51/51 (PHONE_RTT103.md); RTT-002 run_tests.js 20/20, RTT-003 5/5, RTT-001 31/31 PASS (results files unchanged: this container has no OCR and differs by 1 px on one RTT-003 spacing measure on the old player too)",
         "logos": "8 Commons files (public domain, trademarked; identification only), private branch claude/magical-einstein-hguyvv commit 35609bb (run 37798451797); Baidu: own neutral tile (no company logo on Commons); kits/rtt-103/logos.json, assets_sha256.txt, rights ledger",
-        "render_run": "https://github.com/marketmarathon/race-through-time/actions/runs/37807755662",
+        "render_run": "run 1 https://github.com/marketmarathon/race-through-time/actions/runs/37807755662 failed at the first clip (no crf/preset in the RTT-103 configs; fixed); run 2 https://github.com/marketmarathon/race-through-time/actions/runs/37808184527",
         "release": "PENDING",
         "running_time_estimate": "race 80 / 119 / 158 s at 1.0 / 1.5 / 2.0 s per quarter (+10 s hold); with the steps after the race about 2 min 0 s / 2 min 40 s / 3 min 20 s (Claude's estimate)",
         "questions": "19 numbered questions in the pull request and the handover"
