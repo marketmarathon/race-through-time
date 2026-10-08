@@ -556,7 +556,7 @@ for t in transfers:
     t["season_attributed"] = season_of(t["date"]) or ""
     cands = []
     wiki_undisclosed = any(e["origin"] == "wikipedia_list" and kind_of(e["fee_text"]) == "undisclosed" for e in t["_ev"])
-    # DEC-405 (a): a club, league or quality-press (A/B) report that names the player and calls the fee undisclosed or nominal
+    # DEC-408 (a): a club, league or quality-press (A/B) report that names the player and calls the fee undisclosed or nominal
     # has the same effect as a Wikipedia "undisclosed" row: only an A/B figure can then be the fee (DEC-237 (g))
     sn0 = pname(t["player"]).split(" ")[-1] if t["player"] else ""
     press_undisclosed = any(e["origin"] != "wikipedia_list" and e["grade"] in ("A", "B") and e["parsed"]["kind"] == "undisclosed"
@@ -644,6 +644,9 @@ for t in transfers:
         t["original_amount"] = t["currency"] = t["fx_rate"] = t["fx_date"] = t["fx_series"] = ""
         if any(e.get("tm_only") for e in t["_ev"]):
             t["fee_status"] = "NOT FOUND (only citation is Transfermarkt); counted £0"
+        elif any(e.get("figure_rejected") for e in t["_ev"]) and not any(e["gbp"] for e in t["_ev"] if not e.get("figure_rejected")
+                                                                           and e["origin"] != "wikipedia_list"):
+            t["fee_status"] = "only a maximum, a total with add-ons or a combined fee found: counted £0 (DEC-276)"
         elif press_undisclosed:
             t["fee_status"] = "undisclosed, no figure: counted £0"
             if t["type"] in ("free", "permanent"):

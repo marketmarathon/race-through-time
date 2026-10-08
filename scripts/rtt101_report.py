@@ -313,14 +313,16 @@ P3 += ["\n**Luke's answers:** (1) a Soccerbase row counts as VERIFIED, grade C, 
 EV = defaultdict(list)
 for e in rd("fee_evidence.csv"):
     EV[e["transfer_id"]].append(e)
-zt = sorted({r["transfer_id"] for r in zero_rej}, key=lambda k: (TI[k]["date"], k))
+# plus the deal-structure rows that set a fee to £0 under DEC-276 (source rounds: Sereni, Windass, Magilton)
+DS276 = {r["transfer_id"]: r for r in rd("deal_structure.csv", os.path.join(D, "source")) if "DEC-276" in r["rule"] and r["transfer_id"] in TI}
+zt = sorted({r["transfer_id"] for r in zero_rej} | set(DS276), key=lambda k: (TI[k]["date"], k))
 with open(os.path.join(D, "tier1_max_or_approx_only.csv"), "w", newline="", encoding="utf-8") as f:
     w = csv.writer(f, lineterminator="\n")
     w.writerow(["transfer_id", "player", "from_club", "to_club", "date", "season", "figures_found", "wording_and_why_not_counted"])
     for k in zt:
         t = TI[k]
         figs = sorted({f"{e['fee_text']} ({e['grade']}, {e['url']})" for e in EV[k] if e["amount"]})
-        why = sorted({r["note"] for r in zero_rej if r["transfer_id"] == k})
+        why = sorted({r["note"] for r in zero_rej if r["transfer_id"] == k} | ({DS276[k]["fee_status"] + ": " + DS276[k]["note"]} if k in DS276 else set()))
         w.writerow([k, t["player"], t["from_club"], t["to_club"], t["date"], t["season_attributed"], " | ".join(figs), " | ".join(why)])
 print("tier1_max_or_approx_only.csv:", len(zt), "deals")
 with open(OUT, "a", encoding="utf-8") as f:
@@ -418,7 +420,8 @@ if BASE:
           "2. **Parker and Carr (Villa ↔ Leicester, Feb 1995).** The only source values \"the deal\" at £550,000 without saying how much was cash. We count £550,000 "
           "for Parker and £0 for Carr. *Recommendation:* keep it, and ask the next research round for the cash figure.",
           "3. **Andy Cole (Feb 1995).** A grade B source values Keith Gillespie at £1m in the deal, so under DEC-237 (d) Cole counts £7m (£6m cash plus Gillespie) and "
-          "Gillespie £1m; Manchester United's net is still the £6m cash. *Recommendation:* keep it (it follows the rule Luke approved)."]
+          "Gillespie £1m; Manchester United's net is still the £6m cash. *Recommendation:* keep it (it follows the rule Luke approved).",
+          "\n**Answered by Luke (Cowork chat, 8 Oct 2026): yes to all three, kept as built (DEC-405, DEC-406, DEC-407).**"]
     with open(OUT, "a", encoding="utf-8") as f:
         f.write("\n".join(R) + "\n")
     print("section 11:", v0, "->", v1, "VERIFIED;", len(fees), "fees changed;", len(lead_ch), "leader changes")
@@ -447,8 +450,15 @@ if BASEB:
     vz = sum(1 for b in LB if TI.get(b["transfer_id"], {}).get("status") != "VERIFIED" and not float(TI.get(b["transfer_id"], {}).get("fee_gbp") or 0))
     fees = [c for c in chg if abs(c[3] - c[2]) >= 1]
 
+    REJ = defaultdict(list)
+    for r in rd("review_decisions.csv", os.path.join(D, "source")):
+        if r["batch"].startswith("SR1-B") and r["decision"] == "reject" and r["scope"] == "amount":
+            REJ[r["transfer_id"]].append(f"£{float(r['amount']):,.0f} not counted: {r['note'].split('; weighed')[0]}")
+
     def why_of(t, f0, f1):
         k = t["transfer_id"]
+        if k in REJ and not (k in DSR and DSR[k]["fee_amount"] != "") and k not in d404:
+            return "; ".join(REJ[k])
         if k in DSR and DSR[k]["fee_amount"] != "":
             return DSR[k]["rule"]
         if k in d404:
@@ -456,7 +466,7 @@ if BASEB:
         if abs(f1 - f0) < 1:
             return DSR[k]["rule"] if k in DSR else ""
         if t["fee_status"].startswith("undisclosed"):
-            return "an A/B report calls the fee undisclosed or nominal: only an A/B figure counts (DEC-405 (a), DEC-237 (g))"
+            return "an A/B report calls the fee undisclosed or nominal: only an A/B figure counts (DEC-408 (a), DEC-237 (g))"
         return f"confirmed at source: higher grade or earlier report ({t['grade']}, {urllib.parse.urlparse(SRC_URL.get(t['canonical_source_id'], '')).netloc})"
 
     R = ["\n## 12. Source round 1, list B: 1997–98 to 2001–02 (DEC-275, IQ-15f), and the completion-report rule (DEC-404)\n",
@@ -521,7 +531,7 @@ if BASEB:
     # window totals 1997-2002 against part17b
     WB = {w["window"]: w for w in rd("window_totals_before_source_round1_B.csv", os.path.join(D, "source"))}
     R += ["\n**League-wide spending by window, 1997–2002** (before = commit c62ca6b, the end of IQ-15e; published totals from part17b are research leads, "
-          "UNVERIFIED, and exist only from summer 2002):\n", "| Window | Gross before | Gross after | Change | Published gross | Net before | Net after |",
+          "UNVERIFIED; the list has no gross total for any of these windows, so there is nothing to compare against):\n", "| Window | Gross before | Gross after | Change | Published gross | Net before | Net after |",
           "|---|---|---|---|---|---|---|"]
     tb = ta = 0.0
     for win in sorted(set(WB) | set(WT), key=wkey):
@@ -550,6 +560,13 @@ if BASEB:
              + (" (" + "; ".join(f"{mo[:7]}: in {', '.join(NAME.get(c, c) for c in sorted(set(NOW[mo]) - set(TB[mo])))}, out "
                                  f"{', '.join(NAME.get(c, c) for c in sorted(set(TB[mo]) - set(NOW[mo])))}" for mo in set_ch[:10]) + (" …" if len(set_ch) > 10 else "") + ")" if set_ch else "")
              + f"; the order within the top 12 changes at {len(ord_ch)} month ends.")
+    R += ["\n**Luke's answers to the list A questions (report section 11; Cowork chat, 8 Oct 2026): yes to all three, kept as built.**\n",
+          "- **DEC-405:** two players sold for one fee: the fee is booked once, on one transfer of the pair, and the partner counts £0; a split is never "
+          "invented (Charles and Tommy Johnson £2.9m; McKee and Whitworth £530,000; Billington and McKeever £500,000). The same rule is applied in list B "
+          "(Robinson and Coppinger £500,000; Zúñiga and Zevallos £800,000; the £500,000 cash in the Stuart, Tiler and Ward swap).",
+          "- **DEC-406:** Parker and Carr (Aston Villa ↔ Leicester City, Feb 1995): £550,000 for Parker and £0 for Carr; the cash figure goes into the next research round.",
+          "- **DEC-407:** Andy Cole (Feb 1995): Cole counts £7m (£6m cash plus Keith Gillespie, valued at £1m by a grade B source) and Gillespie £1m, under the "
+          "approved swap rule; Manchester United's net spend still reflects the £6m cash."]
     QB = [l.strip() for l in open(os.path.join(D, "source", "questions_listB.md"), encoding="utf-8") if l.strip()] \
         if os.path.exists(os.path.join(D, "source", "questions_listB.md")) else []
     R += ["\n**Questions for Luke on list B (each with Claude's recommendation)**\n"] + QB
