@@ -177,7 +177,7 @@ Luke asked for real photographs of the devices of each era instead of drawings (
 
 **Trademarks (not legal advice; Isle of Man law not checked).** Every logo is a trademark of its owner, and some owners' brand guidelines (e.g. Microsoft's, Google's) ask for permission to use their logos. Proposed description line, as RTT-001: "Company names and logos are trademarks of their owners and are shown only to identify the companies; Race Through Time is not affiliated with or endorsed by them."
 
-**Baidu:** Commons has no file of Baidu the company's logo (the search found only the Baidu Cloud product logo, a Baidu Yi OS logo and an icon-set drawing). Round 1 draws our own neutral tile for Baidu (name on the bar colour, as RTT-001 did for Lynx and NetFront, DEC-182 (5)); the Baidu Cloud file is kept privately but **not drawn**. Question for Luke in the IQ-18 pull request.
+**Baidu (updated IQ-18b, 8 Oct 2026; Luke's answer 5 B, DEC-354):** Commons has no file of Baidu the company's logo, so round 1 drew our own neutral tile. Round 2 uses `File:Baidu.svg` from English Wikipedia (the logo on its Baidu article: the paw with "Bai du 百度"), which the file page marks **PD** (author Baidu; not a non-free file), fetched on a runner (run https://github.com/marketmarathon/race-through-time/actions/runs/37818490084, private commit `5623257`), identification only. Never drawn: the Baidu Cloud product logo (round 1's fetch) and a building photo that run 37817708073 took by mistake from the article's lead image.
 
 | Company | File (site) | Licence (file page) | Status | Author (file page) | SHA-1 | SHA-256 |
 |---|---|---|---|---|---|---|
@@ -192,6 +192,8 @@ Luke asked for real photographs of the devices of each era instead of drawings (
 | tencent | [Tencent Logo.svg](https://commons.wikimedia.org/wiki/File%3ATencent_Logo.svg) (commons.wikimedia.org) | Public domain | **drawn, identification only**; Commons marks it "trademarked" | Tencent | `4f1f0777d96b6ff2e8a4967d4165c374e11af795` | `a0f0d2d0d2e259e646f3fb78ccec18148072de8482fddbb178bf0ebff164a1db` |
 | baidu | [Baidu Cloud Logo (Sep 2012) logo.png](https://commons.wikimedia.org/wiki/File%3ABaidu_Cloud_Logo_%28Sep_2012%29_logo.png) (commons.wikimedia.org) | Public domain | **not drawn** (wrong company: Baidu Cloud product logo); Commons marks it "trademarked" | Baidu Cloud | `d102036e1e8ed790322d6dc0f69ef15fb5a99713` | `985d1b343c5fed3e9ead383896a24bdb0926b4a1f31a38b9aebccb935d63233f` |
 | coreweave | [CoreWeave logo.svg](https://commons.wikimedia.org/wiki/File%3ACoreWeave_logo.svg) (commons.wikimedia.org) | Public domain | **drawn, identification only**; Commons marks it "trademarked" | CoreWeave, Inc. | `73ae21364543c2a787f6fad641586471d0b2acdd` | `972cd6c39431968004073c73fbf618065cf9d8012f1d0b32e16471692a45f16f` |
+| baidu_company | [Baidu.svg](https://en.wikipedia.org/wiki/File:Baidu.svg) (en.wikipedia.org) | PD | **drawn, identification only** (from IQ-18b) | Baidu | `b822bab3b7878f6bd975f81f2b6fd04c099a7939` | `6ebed5d0a7aa790394a14a9cb207dcfa6c70adac59ecf31c817098b6bb5e0b49` |
+| baidu_company_photo_run2 | Baidu Technology Park at ZPark Phase II (20220502113650).jpg (Commons, via the en.wikipedia article) | CC BY-SA 4.0 | **not drawn** (fetched by mistake) | — | — | `dd14c7589f8fa66622c9e40bbbf5f32cbac9893e1b443c77fc4b70fd3ecfd16a` |
 
 ## Tools used to make the video (not drawn, not shipped)
 

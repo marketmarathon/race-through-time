@@ -178,6 +178,14 @@
          from the first frame of quarter `at` for sec - one line under the title, a small card, or a marker under the date.
        - combined {enabled, mode "number"|"line"|"bar", x, y, w, h, label}: the running total "Combined capital spending"
          (DEC-324), counted with the bars from the race file's `combined` (the data's sum of the bars).
+     Changed in IQ-18b (RTT-103 round 2, Luke's answers DEC-353..DEC-365), money races only:
+       - steps {enabled, sequence [{name plans|look|line|peaks|final, sec, year, from, dip_in, dip_out}], ...}: the steps
+         after the race, scheduled by rtt_timeline.js (tl.stepPlan) and drawn by rtt_steps.js; a step can fade in from and
+         out to the background (dip_in / dip_out seconds), and the race fades out over steps.race_dip_out before them;
+         "final" redraws the race's last board with steps.final_line under the title.
+       - story: an item with plain true is a plain line under the title on its own lane (Alibaba leaving and returning,
+         DEC-355); cards (mode "card") queue among themselves; story.card.size "names" = the board's name size (DEC-357).
+       - combined.gap_text: the panel's note during a gap ("{id}" = the company).
      Removed as unused: the Format C / C2-1 picture column and story cards, the prototype
      driver block that followed </html> in the C2-2 file.
 
@@ -191,6 +199,7 @@
      =========================================================================== -->
 <style>html,body{margin:0;background:#000}canvas{display:block}</style>
 <script src="rtt_timeline.js"></script>
+<script src="rtt_steps.js"></script>
 </head><body>
 <canvas id="c" width="1920" height="1080"></canvas>
 <script>
@@ -231,6 +240,7 @@ let FLAGCOL=null, FLAGS=false, FLAGIMG={}, FLAGCODE={}, EVL=null, OVL=[], OVLGAP
 let COUNT=false, BLOGO=null, FFOOT=null, FINAL_ON=false, LIVE=false, FINAL_LBL=false, STATUS=null, RECLINE=false;
 let SERIES=false, PIC=null, PICIMG={}, LOGOIMG={}, MKEY=null, FADE=null, CROWN=null, CALLOUT=null, NOTES=null, GLIDE_BEAT=false, AXU=1, MAKERS=[], MAKERNAME={};
 let SHARE=false, VAL=null, SRCL=null, MARK=null, NOTEL=null;
+let STEPSON=false, FINALDRAW=false;   // IQ-18b (RTT-103): the steps after a money race
 let MONEY=false, MONEYF=null, GAPS=null, TAGS=null, TAGFOOT=null, ENTRY=null, ENTRYK={}, STORY=null, COMB=null;   // IQ-18 (RTT-103): all off for RTT-001/002/003   // IQ-13 (RTT-001): all off for RTT-002 and RTT-003
 let DATEBLK=null, ERA=null, ERAST=null, ERAIMG={};                          // RTT-001 date/era round (DEC-214..): off unless configured
 let TOP=150; const BOTTOM=1080-46;            // IQ-10: TOP from config board_top (RTT-003); 150 for RTT-002
@@ -308,6 +318,7 @@ function setup(o){
   STORY = MONEY && CFG.story && CFG.story.enabled ? Object.assign({mode:'line', sec:3.5, fade_in:0.3, fade_out:0.5, y:116, size:30, card:{x:1300, y:520, w:580}, items:[]}, CFG.story) : null;
   COMB = MONEY && CFG.combined && CFG.combined.enabled ? Object.assign({mode:'number', x:1380, y:730, w:500, h:210, label:'Combined capital spending'}, CFG.combined) : null;
   ENTRYK={};
+  STEPSON = MONEY && !!TL.stepPlan;
   if(MONEY){ let pv=TL.opening; TL.states.forEach((st,k)=>{ for(const id of Object.keys(st.totals)) if(!(id in pv.totals) && !st.held[id]) (ENTRYK[id]=ENTRYK[id]||[]).push(k); pv=st; }); }
   VAL = SHARE ? Object.assign({decimals:1, approx:false}, CFG.values||{}) : null;
   SRCL = SHARE && CFG.source_line && CFG.source_line.enabled ? Object.assign({y:120, size:30, prefix:'Source: ', names:{}, measure:{}, estimated:' · estimated', changing:'changing from {from} to {to}'}, CFG.source_line) : null;
@@ -951,8 +962,9 @@ function drawMakerKey(cur, SF){
 
 /* ---- one race frame. t is seconds into the race; the frame index is what matters ---- */
 function drawAt(t){
-  baseTransform(); window.__LABELS=[]; window.__GRID=[];
+  baseTransform(); window.__LABELS=[]; window.__GRID=[]; window.__CARDS=[]; window.__PANELS=[];
   const f=Math.round(t*FPS);
+  if(STEPSON && f>=TL.raceEnd && !FINALDRAW) return drawStepFrame(f);   // IQ-18b: after the race
   const outroF=Math.max(0,f-RACE_FRAMES);
   const fr=Math.min(f,RACE_FRAMES);
   const k=RTT_TIMELINE.eventAt(TL,fr);
@@ -1244,9 +1256,32 @@ function drawAt(t){
     return {name:b.name, box:{x:b.x,y:b.y,w:b.w,h:b.h}, drawn};
   });
 
+  /* IQ-18b: the race fades to the background before the first step */
+  if(STEPSON && !FINALDRAW){ const D=(CFG.steps.race_dip_out||0.4)*FPS, d=TL.raceEnd-f; if(d<D){ ctx.save(); ctx.globalAlpha=1-d/D; ctx.fillStyle=T.ground; ctx.fillRect(0,0,1920,1080); ctx.restore(); } }
   if(outroF>0 && CFG.outro_sec>0) drawOutro(outroF/FPS);   // outro_sec 0 = no closing card (pilots)
 }
 window.drawAt=drawAt;
+
+/* IQ-18b (RTT-103): one frame of the steps after the race (TL.stepPlan, rtt_steps.js) */
+function drawStepFrame(f){
+  const P=TL.stepPlan; let i=P.length-1; while(i>0 && P[i].first>f) i--;
+  const st=P[i], u=(f-st.first)/FPS, sec=st.frames/FPS;
+  if(st.name==='final'){                          // the race's last board again, with its one-line summary
+    FINALDRAW=true; drawAt((TL.raceEnd-1)/FPS); FINALDRAW=false;
+    const A=TL.allCombined, e=A[A.length-1], y4=A[A.length-5];
+    const line=(CFG.steps.final_line||'').replace('{now}',money(e.c)).replace('{before}',money(y4.c));
+    ctx.fillStyle=T.ground; ctx.fillRect(LEFT-4,92,1300,46);
+    ctx.fillStyle=T.ink; ctx.font='600 30px '+FONT; tabText(line, LEFT, 124, 'left', 'final_line', null);
+    window.__STEP={name:'final', line};
+  } else if(st.name==='plans') RTT_STEPS.plans(u);
+  else if(st.name==='look') RTT_STEPS.lookBoard(st.year, st.from==null?null:st.from, u);
+  else if(st.name==='line') RTT_STEPS.line(u);
+  else if(st.name==='peaks') RTT_STEPS.peaks(u);
+  else throw new Error('unknown step '+st.name);
+  const a=Math.max(st.dip_in && u<st.dip_in ? 1-u/st.dip_in : 0, st.dip_out && sec-u<st.dip_out ? 1-(sec-u)/st.dip_out : 0);
+  if(a>0){ baseTransform(); ctx.save(); ctx.globalAlpha=a; ctx.fillStyle=T.ground; ctx.fillRect(0,0,1920,1080); ctx.restore(); }
+  window.__STEP=Object.assign(window.__STEP||{}, {index:i, u, dip:a});
+}
 
 /* ---- IQ-18 (RTT-103) ---- */
 function drawTagFoot(cur, ev){
@@ -1264,19 +1299,22 @@ function wrapLines(str,maxw){ const out=[]; let line=''; for(const w of String(s
 let STORYQ=null;
 function storySchedule(){
   if(STORYQ) return STORYQ;
-  const dates=TL.events.map(e=>e.date); let free=-Infinity; STORYQ=[];
-  for(const it of STORY.items){ const k=dates.indexOf(it.at); if(k<0) continue;
-    const f0=Math.max(TL.startFrame[k]+Math.round((it.delay||0)*FPS), free); STORYQ.push({it, f0}); free=f0+Math.round((STORY.sec+(STORY.gap!=null?STORY.gap:0.3))*FPS); }
+  const dates=TL.events.map(e=>e.date), free={}; STORYQ=[];   // IQ-18b: plain lines and cards queue on their own lanes
+  for(const it of STORY.items){ const k=dates.indexOf(it.at); if(k<0) continue; const lane=it.plain?'plain':'card';
+    const f0=Math.max(TL.startFrame[k]+Math.round((it.delay||0)*FPS), free[lane]!=null?free[lane]:-Infinity); STORYQ.push({it, f0});
+    free[lane]=f0+Math.round((STORY.sec+(STORY.gap!=null?STORY.gap:0.3))*FPS); }
   return STORYQ;
 }
+let STORYDONE=null;
 function drawStory(fr){
-  window.__STORY=null; window.__CARDBOX=null;
-  if(!STORY) return;
+  window.__STORY=null; window.__CARDBOX=null; STORYDONE=null;
+  if(!STORY || FINALDRAW) return;                   // IQ-18b: no story on the final table
   for(const {it, f0} of storySchedule()){
     const u=(fr-f0)/FPS; if(u<0 || u>=STORY.sec) continue;
+    if(STORYDONE && STORYDONE[it.plain?'plain':'card']) continue; STORYDONE=STORYDONE||{}; STORYDONE[it.plain?'plain':'card']=true;
     const a=Math.max(0,Math.min(1,u/STORY.fade_in)*Math.min(1,(STORY.sec-u)/STORY.fade_out));
     ctx.save(); ctx.globalAlpha=a;
-    if(STORY.mode==='line' && it.plain){             // a plain note line (no date, no speaker)
+    if(it.plain){             // a plain note line (no date, no speaker)
       ctx.fillStyle=T.cap||T.muted; ctx.font='500 '+STORY.size+'px '+FONT; tabText(it.text,LEFT,STORY.y,'left','story_note',null);
     } else if(STORY.mode==='line'){                  // one line: date · the moment's short wording · its tag
       let x=LEFT; const y=STORY.y, sz=STORY.size;
@@ -1284,7 +1322,7 @@ function drawStory(fr){
       ctx.fillStyle=T.ink; ctx.font='600 '+sz+'px '+FONT; x+=tabText(it.short||it.text,x,y,'left','story_text',null);
       if(it.tag){ ctx.fillStyle=T.cap||T.muted; ctx.font='500 '+sz+'px '+FONT; tabText(' · '+it.tag,x,y,'left','story_tag',null); }
     } else if(STORY.mode==='card'){
-      const C=STORY.card, pad=22, sz=STORY.card.size||28;
+      const C=STORY.card, pad=22, sz=C.size==='names' ? nameSize() : (C.size||28);
       ctx.font='700 '+sz+'px '+FONT; const who=wrapLines(it.who, C.w-2*pad);
       ctx.font='500 '+sz+'px '+FONT; const body=wrapLines(it.text, C.w-2*pad);
       const h=pad*2+26+(who.length+body.length)*(sz+8)+(it.tag?sz+10:0);
@@ -1304,7 +1342,7 @@ function drawStory(fr){
       ctx.fillStyle=T.cap||T.muted; ctx.font='500 '+(sz-4)+'px '+FONT; tabText(it.when+(it.tag?' · '+it.tag:''),R,y+sz+6,'right','story_when',null);
     }
     ctx.restore();
-    window.__STORY={at:it.at, when:it.when, mode:STORY.mode, alpha:a, from:f0}; break;
+    window.__STORY=Object.assign(window.__STORY||{}, it.plain ? {plain:{at:it.at, text:it.text, alpha:a, from:f0}} : {at:it.at, when:it.when, mode:STORY.mode, alpha:a, from:f0});
   }
 }
 /* the running total "Combined capital spending" (DEC-324): the data's sum of the bars (race events' `combined`),
@@ -1327,7 +1365,7 @@ function drawCombined(k, SF, fr, cur, prev){
 
   const y0=C.y+pad+30+big+16;
   if(C.mode==='line' && TL.allCombined){
-    const A=TL.allCombined, d0=+new Date(A[0].date), d1=+new Date(A[A.length-1].date), x0=C.x+pad, w=C.w-2*pad, h=C.y+C.h-NOTE_H-30-y0;
+    const A=TL.allCombined, d0=+new Date(A[0].date), d1=+new Date(A[A.length-1].date), x0=C.x+pad, w=C.w-2*pad, h=C.y+C.h-NOTE_H-40-y0;
     const pts=A.filter(p=>p.date<=(k>=0?TL.events[k-1>=0?k-1:0].date:TL.openingEvent.date) || (k<0 && p.date<=TL.openingEvent.date));
     if(k>=0) pts.push({date:null, t:+new Date(evP.date)+(+new Date(evC.date)-(+new Date(evP.date)))*g, c:tot});
     const X=p=>x0+w*(((p.t!=null?p.t:+new Date(p.date))-d0)/(d1-d0)), mx=Math.max(1,...pts.map(p=>p.c))*1.08, Y=p=>y0+h-h*p.c/mx;
@@ -1337,7 +1375,7 @@ function drawCombined(k, SF, fr, cur, prev){
     ctx.strokeStyle=T.rule; ctx.lineWidth=4; ctx.lineJoin='round'; ctx.beginPath(); pts.forEach((p,i)=>i?ctx.lineTo(X(p),Y(p)):ctx.moveTo(X(p),Y(p))); ctx.stroke();
     for(const [id,ks] of Object.entries(ENTRYK)) for(const kk of ks){ const p=A.find(q=>q.date===TL.events[kk].date); if(!p || kk>k) continue;
       ctx.fillStyle=darkenForWhite(ENT[id].colour); ctx.beginPath(); ctx.arc(X(p),Y({c:p.c}),6,0,Math.PI*2); ctx.fill(); }
-    ctx.fillStyle=T.cap||T.muted; ctx.font='500 26px '+FONT; tabText(A[0].date.slice(0,4),x0,y0+h+22,'left','comb_axis',null); tabText(A[A.length-1].date.slice(0,4),x0+w,y0+h+22,'right','comb_axis',null);
+    ctx.fillStyle=T.cap||T.muted; ctx.font='500 26px '+FONT; tabText(A[0].date.slice(0,4),x0,y0+h+30,'left','comb_axis',null); tabText(A[A.length-1].date.slice(0,4),x0+w,y0+h+30,'right','comb_axis',null);
   } else if(C.mode==='bar'){
     const x0=C.x+pad, w=C.w-2*pad, bh=Math.min(40,C.y+C.h-NOTE_H-34-y0), max=C.scale_max||Math.max(...(TL.allCombined||[{c:tot}]).map(p=>p.c))*1.04;
     ctx.fillStyle='rgba(244,246,250,0.06)'; rr(x0,y0,w,bh,4); ctx.fill();

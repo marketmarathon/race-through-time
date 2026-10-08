@@ -542,6 +542,15 @@
       tl.notes = [];
       for (const n of cfg.notes_at || []) { const k = events.findIndex(ev => ev.date === n.date); if (k >= 0) tl.notes.push({ k, date: n.date, frame: startFrame[k], text: n.text }); }
     }
+    /* IQ-18b (RTT-103, money): the steps after the race (cfg.steps.sequence [{name, sec, ...}], drawn by rtt_steps.js),
+       scheduled from the race's last frame; only when the window reaches the end of the data. tl.raceEnd = the first
+       frame after the race; tl.stepPlan[i] = {name, ..., first, frames}; tl.raceFrames then covers the steps too. */
+    if (MONEY && cfg.steps && cfg.steps.enabled && tl.isDataEnd) {
+      tl.raceEnd = tl.raceFrames; tl.stepPlan = [];
+      let f = tl.raceFrames;
+      for (const st of cfg.steps.sequence) { const n = Math.round(st.sec * fps); tl.stepPlan.push(Object.assign({}, st, { first: f, frames: n })); f += n; }
+      tl.raceFrames = f;
+    }
     return tl;
   }
 

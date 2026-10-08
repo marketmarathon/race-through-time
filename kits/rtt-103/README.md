@@ -1,30 +1,28 @@
-# RTT kit — RTT-103 The AI Spending Race (Big Tech's capital spending, last 12 months, 2010–2026) · design round 1 (IQ-18)
+# RTT kit — RTT-103 The AI Spending Race (Big Tech's capital spending, last 12 months, 2010–2026) · design round 2 (IQ-18b)
 
-**Round 1 only: option stills, side-by-side contact sheets (c01–c13) and three pace clips for Luke to choose from.** No full film, no music, nothing published (brief `prompts/CODE_SESSION_IQ-18.md`; DEC-069). Decisions DEC-342 onwards in `state/DECISIONS.md`. **The data is not changed:** `data/rtt-103/` as merged by Luke on 8 Oct 2026 (pull request #20, DEC-345).
+**Round 2: Luke's answers built into one version (DEC-353..DEC-365), reviewed as stills and one clip.** No film and no music yet (Luke picks the track next), nothing published (briefs `prompts/CODE_SESSION_IQ-18.md`, `prompts/CODE_SESSION_IQ-18b.md`). Decisions DEC-342 onwards in `state/DECISIONS.md`. **The data is not changed:** `data/rtt-103/` as merged by Luke on 8 Oct 2026 (pull request #20, DEC-345).
 
 This kit has **no player of its own**: it is drawn by the RTT-002 player (`kits/rtt-002/player_rtt.html`, `rtt_timeline.js`, `rtt.js`) with RTT-001's approved additions brought in by merging pull request #18's branch (DEC-346), extended in IQ-18 with a **money** race kind (DEC-347). Every RTT-103 feature is switched on by a key in these configs or by the race file's `kind: "money"`, and is off for every other episode: 50 frames of RTT-001, RTT-002 and RTT-003 configs are pixel-identical before and after (`tests/player/compare_frames.js`).
 
 | File | What it is |
 |---|---|
-| `race_rtt103.json` | Player input ("rtt-series/1", kind "money"), written by `scripts/rtt103_adapter.py` from `data/rtt-103/`: one event per quarter end (66), every company's 12-month capital spending in whole US dollars exactly as `AI_SPENDING_RACE_MASTER.csv`; `combined` per quarter (checked to the dollar against `L_aggregate_capex.csv`); Alibaba's gap; and, for the step stills, the 2026 plans and look-ahead rows, ByteDance's greyed row, the peak views with BCG's chart values to 2030 and the story-moment candidates of G |
+| `race_rtt103.json` | Player input ("rtt-series/1", kind "money"), written by `scripts/rtt103_adapter.py` from `data/rtt-103/`: one event per quarter end (66), every company's 12-month capital spending in whole US dollars exactly as `AI_SPENDING_RACE_MASTER.csv`; `combined` per quarter (checked to the dollar against `L_aggregate_capex.csv`); Alibaba's gap; the 2026 plans and look-ahead rows, ByteDance's greyed row, the peak views with BCG's chart values to 2030 and the story-moment candidates of G |
 | `dataset_hashes.txt` | SHA-256 of the adapter's inputs and output (the render and the tests check them) |
-| `config_rtt103_base.json` | Option A of everything (recommended unless a question says otherwise): RTT-001's approved layout, all nine companies, "$169.0bn", "12 months to Jun" over the year top right, logo tiles (Baidu: our own tile), "· measured differently" after Tencent's value, the running total as a number, 1.5 s per quarter. Every other config extends it |
-| `config_rtt103_values_B/C`, `date_B/C`, `title_B/C`, `names_only` | Item a and b options: "$169bn" / "US$169.0bn"; "Q2" / a small date line; two other titles; name only |
-| `config_rtt103_entry_B`, `gap_hold`, `gap_leave` | Item c: "· joins the race" for 3 s; Alibaba held dimmed with no number / leaving and returning with one plain line |
-| `config_rtt103_tencent_B` | Item d: a mark and a footnote instead of the in-line note |
-| `config_rtt103_story_line/card/marker` | Item e: seven shortlisted story moments as one line under the title / a small card / a marker under the date (the eighth, Alphabet's share sale, does not fit before the race ends, DEC-350) |
-| `config_rtt103_comb_line/bar` | Item f: the running total as a growing line / one bar split by company |
-| `config_rtt103_clip_pace_2020_2026_1p0/1p5/2p0` | Item k: 2020–2026 (Amazon takes the lead in the 12 months to September 2020) at 1.0, 1.5 and 2.0 s per quarter; `clips.txt` lists them |
-| `steps.js` | Items g–j and l: the steps after the race, drawn as option stills in the player page (2026 plans A/B, look-ahead A/B, peaks A/B, iCapital A/B/C, final table A/B) |
-| `stills.json`, `render_stills.js` | 51 stills (each also at phone size) and 13 contact sheets c01–c13 (copied from RTT-001's still renderer; a step may be drawn over a board frame) |
-| `logos.json`, `assets_sha256.txt` | The company logos (Commons title, page, licence, author, SHA-1, SHA-256, status; identification only) and the SHA-256 of every private file the render reads |
+| `config_rtt103_base.json` | The race's look as Luke chose it (DEC-353): all nine companies, "$169.0bn", "12 months to Jun" over the year top right, a logo tile per bar (Baidu's own logo, DEC-354), Tencent "· includes some intangibles" (DEC-356), 1.5 s per quarter (DEC-362) |
+| `config_rtt103_film.json` | **The design, round 2 (IQ-18b)**: the base plus Alibaba leaving and returning with a plain line each time (DEC-355), five story cards in the race (DEC-357, DEC-358), the running total as a number with a growing line (DEC-359), and the steps after the race inside the player (`steps`, drawn by `kits/rtt-002/rtt_steps.js`): the 2026 plans step with Alphabet's share-sale card then iCapital's card (DEC-358, DEC-361), the look-ahead boards 2027–2030 then the combined line (DEC-360), the peak timeline, and the final table with its one-line summary held 10 s (DEC-363). 5,106 frames = 2 min 50 s without music; not rendered as a film yet |
+| `config_rtt103_clip_2025_end.json` | Round-2 motion clip: 2025 into the end; `clips.txt` lists it |
+| `stills.json`, `render_stills.js` | Round 2: 12 stills (each also at phone size) and contact sheets d01 (race) and d02 (steps); a still dated with a quarter is taken on the frame where that quarter's figures land (Cowork fix (h)); a step still names its step and the second within it |
+| `logos.json`, `assets_sha256.txt` | The company logos (wiki title, page, licence, author, SHA-1, SHA-256, status; identification only) and the SHA-256 of every private file the render reads |
+| `description_credits.md` | Footer lines as drawn and the draft video description (Cowork fixes (a), (i)) |
+
+Round 1 (IQ-18) showed each question's options from configs and a `steps.js` that are no longer in the kit (git history and the private pre-release `rtt-103-round1-0500062-run2` keep them); the player still supports those options behind their keys.
 
 ## Run
 
 ```
 cd kits/rtt-002 && PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 npm ci
 python scripts/rtt103_adapter.py data/rtt-103 kits/rtt-103/race_rtt103.json --hash-file kits/rtt-103/dataset_hashes.txt   # from the repo root
-RTT_CONFIG=../rtt-103/config_rtt103_base.json FRAME_COUNT_ONLY=1 node rtt.js        # FRAMES 3861 = 2 min 9 s (race incl. 10 s hold)
+RTT_CONFIG=../rtt-103/config_rtt103_film.json FRAME_COUNT_ONLY=1 node rtt.js        # FRAMES 5106 = 2 min 50 s (race and the steps after it)
 RTT_LOCAL_ASSETS=<folder with rtt_logo.png and logos/> node ../rtt-103/render_stills.js OUT_DIR   # stills and sheets (outside the repo)
 node tests/player/run_tests_rtt103.js ; node tests/player/phone_check_rtt103.js      # from the repo root
 node tests/player/compare_frames.js <a checkout of the commit before a player change>

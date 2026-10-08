@@ -1,8 +1,0 @@
-{
- "extends": "config_rtt103_base.json",
- "kit_version": "rtt103_r1_title_B",
- "title": "Big Tech's Capital Spending, 2010–2026",
- "notes": [
-  "Title option B (DEC-291's example)."
- ]
-}

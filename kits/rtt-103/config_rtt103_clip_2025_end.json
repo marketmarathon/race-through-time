@@ -1,0 +1,11 @@
+{
+ "extends": "config_rtt103_film.json",
+ "kit_version": "rtt103_round2_clip_2025_end",
+ "window": {
+  "from": "2025-03-31",
+  "to": "2026-06-30"
+ },
+ "notes": [
+  "Round-2 motion clip: 2025 into the end (the last story cards, the hand-over into the 2026 plans step, the look-ahead, the peak step and the final table)."
+ ]
+}

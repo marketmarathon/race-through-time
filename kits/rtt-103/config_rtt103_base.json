@@ -180,26 +180,21 @@
    "oracle": "oracle.svg",
    "alibaba": "alibaba.svg",
    "tencent": "tencent.svg",
-   "coreweave": "coreweave.svg"
+   "coreweave": "coreweave.svg",
+   "baidu": "baidu_company.svg"
   },
   "tile": true,
   "tile_pad": 8,
   "placeholder": false,
   "height_frac": 0.62,
   "aspect": 2.6,
-  "gap": 14,
-  "own": {
-   "baidu": {
-    "text": "Baidu",
-    "year": ""
-   }
-  }
+  "gap": 14
  },
  "bar_tags": [
   {
    "id": "tencent",
    "mode": "after",
-   "text": "measured differently"
+   "text": "includes some intangibles"
   }
  ],
  "combined": {
@@ -208,10 +203,11 @@
   "x": 1380,
   "y": 710,
   "w": 500,
-  "h": 220
+  "h": 220,
+  "gap_text": "{id} left out: not comparable"
  },
  "notes": [
-  "IQ-18 round 1 base (DEC-342 onwards): the RTT-001 approved layout (board sized to the entries, date top right, logo tiles) on RTT-103's data; every option config extends this file."
+  "IQ-18 round 1 base (option A of each question), updated in IQ-18b: Tencent's note says how (DEC-356, Cowork fix (d)); the panel's gap note fits (fix (g)). The film is config_rtt103_film.json."
  ],
  "crf": 4,
  "preset": "slow"

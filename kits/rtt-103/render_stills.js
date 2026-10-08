@@ -11,7 +11,7 @@
  *       instead takes the frame that many seconds after the month's first frame (a note or marker on screen), after_moment_sec
  *       that many seconds after the frame a callout's figures cross
  *       (overrides are merged into the config key by key, as "extends" does)
- *   {name, sheet}                                   a design sheet drawn in the player page (steps.js)
+ *   {name, config, step, step_sec}                  a step after the race (IQ-18b), step_sec seconds into step `step`
  *   {name, compose: {title, cols, items: [{still, caption}]}}   earlier stills side by side with captions, so
  *       options can be compared in one picture (house style: options side by side in the same round)
  * Board stills and sheets also get a phone-size version; compositions do not (each of their parts has one).
@@ -30,9 +30,11 @@ function merge(base, over) {
 }
 function stillConfig(s) { return merge(rtt.loadConfig('../rtt-103/' + s.config), s.overrides); }
 
-/* the frame a still shows: the last frame of month `at`'s beat, or the film's last frame */
+/* the frame a still shows: the frame where quarter `at`'s figures land (IQ-18b, Cowork fix (h): never mid-move), a
+   step after the race (`step` index, `step_sec` seconds into it), or the film's last frame */
 async function targetFrame(pg, s) {
-  const info = await pg.evaluate(() => ({ dates: TL.events.map(e => e.date), start: TL.startFrame, raceFrames: RACE_FRAMES, opening: TL.openingEvent.date }));
+  const info = await pg.evaluate(() => ({ dates: TL.events.map(e => e.date), start: TL.startFrame, qe: TL.quarterEndFrame, raceFrames: RACE_FRAMES, opening: TL.openingEvent.date, steps: TL.stepPlan || null }));
+  if (s.step != null) { const st = info.steps[s.step]; return st.first + Math.round((s.step_sec || 0) * 30); }
   if (s.at === 'final') return info.raceFrames - 1;
   if (s.at === info.opening && !info.dates.includes(s.at)) return info.start[0] - 1;   // the opening board (e.g. January 1994)
   const k = info.dates.indexOf(s.at);
@@ -42,8 +44,8 @@ async function targetFrame(pg, s) {
     if (!m) throw new Error(s.name + ': no callout moment in ' + s.at);
     return m.frame + Math.round(s.after_moment_sec * 30);
   }
-  if (s.after_sec != null) return info.start[k] + Math.round(s.after_sec * 30);     // a moment inside the month's beat
-  return (k + 1 < info.start.length ? info.start[k + 1] : info.raceFrames) - 1;
+  if (s.after_sec != null) return info.start[k] + Math.round(s.after_sec * 30);     // a moment inside the beat (motion stills only)
+  return info.qe[k];
 }
 
 async function main() {
@@ -54,24 +56,17 @@ async function main() {
   const { chromium } = require(require.resolve('playwright', { paths: [rtt.KIT] }));
   const res = [], full = {};
   for (const s of list.filter(s => !s.compose)) {
-    const cfg = stillConfig(s.sheet ? Object.assign({ config: 'config_rtt103_base.json' }, s) : s);
+    const cfg = stillConfig(s);
     const data = JSON.parse(fs.readFileSync(path.resolve(rtt.KIT, cfg.race_file), 'utf8'));
     const { br, pg } = await rtt.openPlayer({ cfg, data, raster: 1, chrome: CHROME });
-    if (s.sheet) {
-      /* RTT-103: a step drawn by steps.js, either on its own or over a board frame (s.at: the board first, settled) */
-      if (s.at) { const target = await targetFrame(pg, s);
-        for (let f = 0; f <= target; f++) await rtt.drawFrame(pg, f, cfg);
-        for (let i = 0; i < (s.settle != null ? s.settle : 45); i++) await rtt.drawFrame(pg, target, cfg); }
-      await pg.addScriptTag({ path: path.join(__dirname, 'steps.js') });
-      const meta = JSON.parse(fs.readFileSync(path.join(__dirname, 'race_rtt103.json'), 'utf8'));
-      await pg.evaluate(([n, m, o]) => window.RTT103_STEPS[n](m, o || {}), [s.sheet, meta, s.opts || null]);
-    } else {
+    {
       const target = await targetFrame(pg, s);
       for (let f = 0; f <= target; f++) await rtt.drawFrame(pg, f, cfg);
       /* the rows glide (0.55 s) and a monthly beat is shorter than that, so a still taken on a frame can catch two
          rows mid-overtake. Redrawing the same frame lets the glide settle, as a paused video would after a moment;
          values, colours and text are those of the target frame. */
-      for (let i = 0; i < (s.settle != null ? s.settle : 45); i++) await rtt.drawFrame(pg, target, cfg);
+      const steps = await pg.evaluate(() => TL.raceEnd || null);
+      if (!steps || target < steps) for (let i = 0; i < (s.settle != null ? s.settle : 45); i++) await rtt.drawFrame(pg, target, cfg);
     }
     const file = path.join(out, s.name + '_1920x1080.png');
     await (await pg.$('#c')).screenshot({ path: file });

@@ -257,7 +257,7 @@
    "width": "220",
    "height": "119",
    "private_path": "assets/rtt-103/logos/baidu.png",
-   "status": "NOT DRAWN: the only Commons file found is the Baidu Cloud product logo (Sep 2012), not Baidu the company; round 1 uses our own neutral tile (as RTT-001 Lynx/NetFront, DEC-182). Question for Luke: Baidu's logo from English Wikipedia (likely a non-free file, identification use) or keep the own tile."
+   "status": "NOT DRAWN: Baidu Cloud product logo, never used (DEC-354)"
   },
   "coreweave": {
    "file": "coreweave.svg",
@@ -273,7 +273,32 @@
    "height": "104",
    "private_path": "assets/rtt-103/logos/coreweave.svg",
    "status": "drawn in round 1 (identification only)"
+  },
+  "baidu_company": {
+   "file": "baidu_company.svg",
+   "title": "File:Baidu.svg",
+   "page": "https://en.wikipedia.org/wiki/File%3ABaidu.svg",
+   "licence": "PD",
+   "author": "Baidu",
+   "restrictions": "",
+   "sha1": "b822bab3b7878f6bd975f81f2b6fd04c099a7939",
+   "sha256": "6ebed5d0a7aa790394a14a9cb207dcfa6c70adac59ecf31c817098b6bb5e0b49",
+   "bytes": "5363",
+   "width": "231",
+   "height": "79",
+   "site": "en.wikipedia.org",
+   "private_path": "assets/rtt-103/logos/baidu_company.svg",
+   "status": "drawn from IQ-18b round 2 (Luke's answer 5 B, DEC-354): Baidu the company's logo, identification only"
+  },
+  "baidu_company_photo_run2": {
+   "file": "baidu_company.jpg",
+   "title": "File:Baidu Technology Park at ZPark Phase II (20220502113650).jpg",
+   "site": "commons via en.wikipedia.org",
+   "licence": "CC BY-SA 4.0",
+   "sha256": "dd14c7589f8fa66622c9e40bbbf5f32cbac9893e1b443c77fc4b70fd3ecfd16a",
+   "private_path": "assets/rtt-103/logos/baidu_company.jpg",
+   "status": "NOT DRAWN: a building photo taken by mistake by rtt103_assets.yml run 2 (the page's lead image); kept privately, never used"
   }
  },
- "fetched_by": ".github/workflows/rtt103_assets.yml run https://github.com/marketmarathon/race-through-time/actions/runs/37798451797 (8 Oct 2026); private repo branch claude/magical-einstein-hguyvv commit 35609bb"
+ "fetched_by": ".github/workflows/rtt103_assets.yml run https://github.com/marketmarathon/race-through-time/actions/runs/37798451797 (8 Oct 2026); private repo branch claude/magical-einstein-hguyvv commit 35609bb; Baidu: runs https://github.com/marketmarathon/race-through-time/actions/runs/37817708073 (photo, not used) and https://github.com/marketmarathon/race-through-time/actions/runs/37818490084 (File:Baidu.svg), private commit 5623257"
 }

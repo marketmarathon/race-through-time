@@ -1,8 +1,0 @@
-{
- "extends": "config_rtt103_base.json",
- "kit_version": "rtt103_r1_title_C",
- "title": "The AI Spending Race (capital spending, last 12 months)",
- "notes": [
-  "Title option C."
- ]
-}
