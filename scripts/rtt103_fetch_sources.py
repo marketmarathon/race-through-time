@@ -8,6 +8,9 @@ manifest records the URL, the catalogue source_ids that cite it, HTTP status, by
 PDFs are converted to layout text with pdftotext and only the text is kept (the PDF's own SHA-256 is recorded);
 HTML and CSV are kept as downloaded. Output goes to the private repo only. The log prints IDs, sizes and hashes only.
 
+IQ-16d: with FETCH_SET=part06 the URL lists are ChatGPT's look-ahead files (part06a-d) plus any URLs (chart images, PDFs
+linked from fetched pages) listed in the private fetch_extra_part06.csv (source_id,url); PDFs and images are also kept
+as downloaded (private repo only), so tables and charts can be read cell by cell or by eye.
 IQ-16c: with FETCH_SET=part05 the URL lists are instead ChatGPT's forecast and OpenAI files (part05a-c, private); each URL
 is identified as P05A-<row>, P05B-<row> or P05C-<row> (row number in the private file), and the FX sources are skipped.
 
@@ -36,17 +39,27 @@ EXTRA = [  # FX (brief: Federal Reserve H.10, FRED DEXCHUS as distributor) - not
 ]
 PART05 = [("P05A", "part05a_forecasts_part1_forward_capex.csv"), ("P05B", "part05b_forecasts_part2_openai_commitments.csv"),
           ("P05C", "part05c_forecasts_part3_conflicts_and_warnings.csv")]
+PART06 = [("P06A", "part06a_to2031_part1_company_forecasts.csv"), ("P06B", "part06b_to2031_part2_group_forecasts.csv"),
+          ("P06C", "part06c_to2031_part3_peak_and_slowdown.csv"), ("P06D", "part06d_to2031_part4_coverage_and_warnings.csv")]
 SKIP_HOSTS = {"www.sec.gov"}  # fetched directly from the container
 
 
-def part05_urls(src):
-    """(source_id, url) for every source_url / related_source_url in ChatGPT's part05 files (IQ-16c)."""
-    for prefix, name in PART05:
+def part05_urls(src, files=PART05, cols=("source_url", "related_source_url")):
+    """(source_id, url) for every URL in the given columns of ChatGPT's part05 (IQ-16c) or part06 (IQ-16d) files."""
+    for prefix, name in files:
         rows = csv.DictReader(io.StringIO(open(os.path.join(src, name), encoding="utf-8-sig").read()))
         for n, row in enumerate(rows, 1):
-            for col in ("source_url", "related_source_url"):
-                for u in re.findall(r"https?://[^\s;\"]+", row.get(col) or ""):
-                    yield f"{prefix}-{n:03d}", u
+            for col in cols:
+                for u in re.findall(r"https?://[^\s;\"()]+", row.get(col) or ""):
+                    yield f"{prefix}-{n:03d}", u.rstrip(".,")
+
+
+def part06_urls(src):
+    yield from part05_urls(src, PART06, ("source_url", "notes"))
+    extra = os.path.join(src, "fetch_extra_part06.csv")
+    if os.path.exists(extra):
+        for row in csv.DictReader(open(extra, encoding="utf-8")):
+            yield row["source_id"], row["url"]
 
 
 def catalogue_rows(path):
@@ -91,8 +104,10 @@ def main():
     src = os.path.join(priv, "research", "rtt-103")
     os.makedirs(os.path.join(out, "docs"), exist_ok=True)
     urls = {}  # url -> list of source_ids
-    part05 = os.environ.get("FETCH_SET") == "part05"
-    for sid, u in (part05_urls(src) if part05 else []):
+    fset = os.environ.get("FETCH_SET", "")
+    part05 = fset in ("part05", "part06")
+    keep_raw = fset == "part06"
+    for sid, u in (part05_urls(src) if fset == "part05" else part06_urls(src) if fset == "part06" else []):
         if urllib.parse.urlparse(u).hostname not in SKIP_HOSTS:
             urls.setdefault(u, []).append(sid)
     for name in ([] if part05 else INPUTS):
@@ -131,9 +146,16 @@ def main():
         sha = hashlib.sha256(body).hexdigest()
         base = safe_name(sids[0])
         is_pdf = body[:5] == b"%PDF-" or "pdf" in ctype.lower()
+        img = {"image/png": ".png", "image/jpeg": ".jpg", "image/webp": ".webp", "image/gif": ".gif", "image/svg+xml": ".svg"}.get(ctype.split(";")[0].strip().lower())
         rec.update({"ok": True, "http_status": status, "content_type": ctype, "bytes": len(body), "sha256": sha,
                     "is_pdf": is_pdf})
-        if is_pdf:
+        if keep_raw and (is_pdf or img):
+            raw = os.path.join(out, "docs", base + (".pdf" if is_pdf else img))
+            open(raw, "wb").write(body)
+            rec["raw_file"] = f"docs/{base}{'.pdf' if is_pdf else img}"
+        if img:
+            rec["kept_file"], rec["kept_sha256"] = rec["raw_file"], sha
+        elif is_pdf:
             tmp = os.path.join(out, "tmp.pdf")
             open(tmp, "wb").write(body)
             txt = os.path.join(out, "docs", base + ".pdf.txt")
