@@ -19,6 +19,10 @@
 # player; 12 stills (each also at phone size), 2 contact sheets (d01, d02) and one clip from 2025 into the end (the last
 # story cards, the hand-over into the 2026 plans step, the look-ahead, the peak step and the final table); tagged
 # rtt-103-round2-<commit>-run<n>. Still no film and no music (Luke picks the track next).
+# Round 3 (IQ-18c, Luke's direction DEC-371): the race carries straight on after June 2026 through the 2026 plans and
+# the 2027-2030 estimates on the same board, then the explanation and the end as built; 7 stills (each also at phone
+# size), one contact sheet (d01) and one clip from 2025 through 2030 into the end; tagged rtt-103-round3-<commit>-run<n>.
+# Still no film and no music (the track is chosen, DEC-372; the film waits for Luke's OK of this look).
 # Run 1 (de7759e) failed at the first clip: the RTT-103 configs had no crf/preset for ffmpeg (added to config_rtt103_base.json,
 # crf 4 / slow as RTT-001; checked by tests/player/run_tests_rtt103.js). Run 2 renders the same stills, sheets and clips.
 name: rtt103-pilot
@@ -43,7 +47,7 @@ env:
   # ONLY_STILLS empty = every still; ONLY_CLIPS empty = every clip in clips.txt, unless ONLY_STILLS is set (stills only).
   ONLY_STILLS: ''
   ONLY_CLIPS: ''
-  TAG_PREFIX: rtt-103-round2
+  TAG_PREFIX: rtt-103-round3
 
 jobs:
   render:
@@ -137,9 +141,9 @@ jobs:
           GH_TOKEN: ${{ secrets.RTT_PRIVATE_TOKEN }}
         run: |
           O="$RUNNER_TEMP/rtt_out"; SHORT=${GITHUB_SHA::7}
-          TAG="${TAG_PREFIX:-rtt-103-round2}-${SHORT}-run${GITHUB_RUN_NUMBER}"
+          TAG="${TAG_PREFIX:-rtt-103-round3}-${SHORT}-run${GITHUB_RUN_NUMBER}"
           {
-            echo "RTT-103 The AI Spending Race, design round 2 (IQ-18b): Luke's choices built into one version - corrected stills (each also at phone size), contact sheets d01 and d02, and one clip from 2025 into the end. Rendered by GitHub Actions. No music. Not the film."
+            echo "RTT-103 The AI Spending Race, design round 3 (IQ-18c): the race carries on after June 2026 through the 2026 plans and the 2027-2030 estimates in its own style (Luke's direction, DEC-371) - stills (each also at phone size), contact sheet d01, and one clip from 2025 through 2030 into the end. Rendered by GitHub Actions. No music. Not the film."
             echo
             echo "- Source: ${GITHUB_REPOSITORY} @ ${GITHUB_SHA} (${GITHUB_REF_NAME}), run ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
             while read -r c FRAMES; do
@@ -155,7 +159,7 @@ jobs:
           } > "$O/notes.md"
           cat "$O/notes.md"
           gh release create "$TAG" --repo "$PRIVATE_REPO" --target main --prerelease \
-            --title "RTT-103 design ${TAG_PREFIX:-rtt-103-round2} ${SHORT} (stills, sheets and the 2025-to-end clip)" --notes-file "$O/notes.md" $(ls "$O"/*.mp4 2>/dev/null) "$O"/*.png
+            --title "RTT-103 design ${TAG_PREFIX:-rtt-103-round3} ${SHORT} (stills, sheet and the 2025-to-end clip)" --notes-file "$O/notes.md" $(ls "$O"/*.mp4 2>/dev/null) "$O"/*.png
           URL="https://github.com/${PRIVATE_REPO}/releases/tag/${TAG}"
           echo "Release: $URL"
           echo "RTT-103 round 1 saved to the private repo: $URL" >> "$GITHUB_STEP_SUMMARY"
