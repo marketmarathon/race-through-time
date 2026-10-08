@@ -177,27 +177,28 @@ Two kinds of check are reported separately: **file-format checks** (columns, voc
 | D: one row per company per fiscal quarter | PASS | 571 rows |
 | Master: ranks 1..n on every date | PASS | 66 dates |
 | Master: no estimate or guidance rows | PASS | 496 rows |
-| 2026E: every row labelled 2026 and its kind (GUIDANCE, ESTIMATE or a named forecaster's FORECAST) | PASS | 22 rows |
-| Every source cited in B, F, G and the forecast file is listed in A | PASS | 649 citations; missing: [] |
+| 2026E: every row labelled 2026 and its kind (GUIDANCE, ESTIMATE or a named forecaster's FORECAST) | PASS | 29 rows |
+| Every source cited in B, F, G and the forecast file is listed in A | PASS | 681 citations; missing: [] |
 | OpenAI and ByteDance are never bars (DEC-301, DEC-296) | PASS | 0 found |
-| Forecast file: company guidance, ByteDance greyed, and named consensus/analyst/research-firm forecasts only (DEC-296, DEC-297, DEC-306) | PASS | 58 rows |
+| Forecast file: company guidance, ByteDance greyed, and named consensus/analyst/research-firm forecasts only (DEC-296, DEC-297, DEC-306) | PASS | 76 rows |
 | Forecast file: years 2026-2031 only (DEC-306) | PASS |  |
 | Forecast file: every row names its forecaster, forecaster type, forecast date and measure (DEC-306) | PASS |  |
 | Forecast file: one named forecaster per row, never averaged or blended (DEC-306) | PASS |  |
 | Forecast file: forecasts by others are labelled as forecasts with the forecaster's name, never as guidance (DEC-306) | PASS |  |
-| Look-ahead source rows: each states its own year, quote, source and URL (never extended beyond a source's years) | PASS | 82 rows, 82 verified |
+| Look-ahead source rows: each states its own year, quote, source and URL (never extended beyond a source's years) | PASS | 102 rows, 102 verified |
 | Look-ahead source rows: every figure is printed in its own verbatim quote, in the source's own units | PASS | failing: [] |
 | Look-ahead source rows: a fiscal year sits in the frame of the calendar year holding most of its months (DEC-314) | PASS | failing: [] |
 | Look-ahead: one current figure per forecaster, company and year (older vintages flagged superseded) | PASS | duplicates: [] |
-| Forecast file: every figure appears in its own verbatim quote (no number created; 2027-2028 company rows stay as stated) | PASS | 58 rows; failing: [] |
+| Forecast file: every figure appears in its own verbatim quote (no number created; 2027-2028 company rows stay as stated) | PASS | 76 rows; failing: [] |
 | Forecast frames: Alibaba's multi-year plan is never split into years or shown as annual guidance | PASS |  |
 | Forecast frames: guidance only press reports carry is labelled so in its display note | PASS |  |
-| G: every OpenAI row is a COMMITMENT story moment, never capex (DEC-301) | PASS | 15 OpenAI rows |
+| G: every OpenAI row is a COMMITMENT story moment, never capex (DEC-301) | PASS | 36 OpenAI rows |
 | Forecast frames: every range has its low and high (never a midpoint alone) | PASS |  |
-| Look-ahead draft: every estimate is labelled as Race Through Time's, names its growth source, and is marked DRAFT (DEC-326, DEC-330) | PASS | 36 estimates |
-| Look-ahead draft: runs 2026-2030, all nine companies every year, 2030 marked least reliable (DEC-326, DEC-327) | PASS |  |
-| Look-ahead draft: 'Combined capital spending' is the sum of the bars on screen; no AI-only forecast in it (DEC-324) | PASS |  |
-| Look-ahead draft: no estimate in the master, E or the forecast file | PASS |  |
+| Look-ahead: every 2027-2030 figure is labelled as Race Through Time's or Citi's estimate and names its source (DEC-326, DEC-331..DEC-333) | PASS | 36 estimates |
+| Look-ahead: 2026-2030 only, all nine companies every year, every bar labelled with its period, 2030 marked least reliable (DEC-327, DEC-335..DEC-337) | PASS |  |
+| Look-ahead: 'Combined capital spending' is the sum of the bars on screen; no AI-only forecast in it (DEC-324) | PASS |  |
+| Look-ahead: no estimate in the master, E or the forecast file | PASS |  |
+| Look-ahead uses only the approved, verified sources: company plans, actuals, Citi (Alibaba) and FactSet consensus growth (DEC-331..DEC-333); nothing unverified selected (BCG and Allianz stay peak views only) | PASS |  |
 | Peak views: each verified view cites a source in A; unverified views (BCG, Allianz Sep) are not allowed on screen | PASS | 7 views |
 | No blank or zero-filled value in E | PASS |  |
 

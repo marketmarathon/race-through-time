@@ -725,14 +725,14 @@
   {
    "check": "2026E: every row labelled 2026 and its kind (GUIDANCE, ESTIMATE or a named forecaster's FORECAST)",
    "company": "files",
-   "detail": "22 rows",
+   "detail": "29 rows",
    "kind": "format",
    "result": "PASS"
   },
   {
    "check": "Every source cited in B, F, G and the forecast file is listed in A",
    "company": "files",
-   "detail": "649 citations; missing: []",
+   "detail": "681 citations; missing: []",
    "kind": "format",
    "result": "PASS"
   },
@@ -746,7 +746,7 @@
   {
    "check": "Forecast file: company guidance, ByteDance greyed, and named consensus/analyst/research-firm forecasts only (DEC-296, DEC-297, DEC-306)",
    "company": "files",
-   "detail": "58 rows",
+   "detail": "76 rows",
    "kind": "format",
    "result": "PASS"
   },
@@ -781,7 +781,7 @@
   {
    "check": "Look-ahead source rows: each states its own year, quote, source and URL (never extended beyond a source's years)",
    "company": "files",
-   "detail": "82 rows, 82 verified",
+   "detail": "102 rows, 102 verified",
    "kind": "format",
    "result": "PASS"
   },
@@ -809,7 +809,7 @@
   {
    "check": "Forecast file: every figure appears in its own verbatim quote (no number created; 2027-2028 company rows stay as stated)",
    "company": "files",
-   "detail": "58 rows; failing: []",
+   "detail": "76 rows; failing: []",
    "kind": "format",
    "result": "PASS"
   },
@@ -830,7 +830,7 @@
   {
    "check": "G: every OpenAI row is a COMMITMENT story moment, never capex (DEC-301)",
    "company": "files",
-   "detail": "15 OpenAI rows",
+   "detail": "36 OpenAI rows",
    "kind": "format",
    "result": "PASS"
   },
@@ -842,28 +842,35 @@
    "result": "PASS"
   },
   {
-   "check": "Look-ahead draft: every estimate is labelled as Race Through Time's, names its growth source, and is marked DRAFT (DEC-326, DEC-330)",
+   "check": "Look-ahead: every 2027-2030 figure is labelled as Race Through Time's or Citi's estimate and names its source (DEC-326, DEC-331..DEC-333)",
    "company": "files",
    "detail": "36 estimates",
    "kind": "format",
    "result": "PASS"
   },
   {
-   "check": "Look-ahead draft: runs 2026-2030, all nine companies every year, 2030 marked least reliable (DEC-326, DEC-327)",
+   "check": "Look-ahead: 2026-2030 only, all nine companies every year, every bar labelled with its period, 2030 marked least reliable (DEC-327, DEC-335..DEC-337)",
    "company": "files",
    "detail": "",
    "kind": "format",
    "result": "PASS"
   },
   {
-   "check": "Look-ahead draft: 'Combined capital spending' is the sum of the bars on screen; no AI-only forecast in it (DEC-324)",
+   "check": "Look-ahead: 'Combined capital spending' is the sum of the bars on screen; no AI-only forecast in it (DEC-324)",
    "company": "files",
    "detail": "",
    "kind": "format",
    "result": "PASS"
   },
   {
-   "check": "Look-ahead draft: no estimate in the master, E or the forecast file",
+   "check": "Look-ahead: no estimate in the master, E or the forecast file",
+   "company": "files",
+   "detail": "",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "Look-ahead uses only the approved, verified sources: company plans, actuals, Citi (Alibaba) and FactSet consensus growth (DEC-331..DEC-333); nothing unverified selected (BCG and Allianz stay peak views only)",
    "company": "files",
    "detail": "",
    "kind": "format",

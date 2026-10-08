@@ -1,6 +1,76 @@
-# RTT-103 The AI Spending Race — data report (IQ-16 stage 1, 7 Oct 2026; IQ-16b to IQ-16e, stages 2–5, 8 Oct 2026)
+# RTT-103 The AI Spending Race — data report (IQ-16 stage 1, 7 Oct 2026; IQ-16b to IQ-16f, stages 2–6, 8 Oct 2026)
 
-**Newest first: stages 5, 4, 3 and 2, then the stage-1 report unchanged.**
+**Newest first: stages 6 to 2, then the stage-1 report unchanged.**
+
+## Stage 6 (IQ-16f, 8 Oct 2026): your answers applied; the look-ahead finalised; Cowork's checks recorded
+
+**In plain English.** Your eight answers are recorded as DEC-331 to DEC-338. The numbering rule for parallel sessions is DEC-339: this session uses DEC-331–399.
+- **The look-ahead is final** (`AI_SPENDING_RACE_LOOKAHEAD.csv`): a "2026 plans" step after the race, then 2027–2030. Every bar is labelled with its period, and 2030 is marked least reliable.
+- **Cowork's 38 checks are recorded as verification records** (DEC-340). They don't change your method.
+- Nothing is rendered; the design session comes first.
+
+### The look-ahead (US$ bn; ranges where the company gave a range)
+| Company | 2026 plans (period) | 2027 | 2028 | 2029 | 2030 (least reliable) | Source of 2027–30 |
+|---|---|---|---|---|---|---|
+| Amazon | 220.0 (calendar 2026 plan, as reported by Reuters) | 275.4 | 298.5 | 313.4 | 315.9 | own FactSet growth |
+| Microsoft | 175.0 (calendar 2026 plan, including finance leases) | 231.4 | 248.8 | 265.7 | 346.2 | own FactSet growth |
+| Alphabet | 195.0–205.0 (calendar 2026 plan) | 294.2–309.3 | 332.2–349.3 | 343.1–360.7 | 359.5–378.0 | own FactSet growth |
+| Meta | 130.0–145.0 (calendar 2026 plan, including finance-lease principal) | 178.5–199.1 | 194.4–216.9 | 195.1–217.6 | 224.5–250.4 | own FactSet growth |
+| Oracle | 90.0–95.0 (fiscal year to May 2027 plan, as reported by Reuters) | 107.6–113.6 | 105.4–111.3 | 91.9–97.0 | 83.3–88.0 | own FactSet growth (2027–28 probably high) |
+| Alibaba | 37.8 (Citi estimate, fiscal year to March 2027) | 41.5 | 41.4 | 42.4 | 46.6 | Citi estimate to 2028, then FactSet five-company growth |
+| CoreWeave | 35.0–39.0 (calendar 2026 plan) | 47.1–52.5 | 51.2–57.1 | 52.6–58.6 | 57.7–64.3 | FactSet five-company growth |
+| Tencent | 17.0 (actual, 12 months to June 2026) | 22.9 | 24.9 | 25.5 | 28.0 | FactSet five-company growth |
+| Baidu | 3.3 (actual, 12 months to June 2026) | 4.4 | 4.8 | 5.0 | 5.4 | FactSet five-company growth |
+| **Combined capital spending** | 903.1–937.1 | 1203.0–1250.1 | 1301.6–1353.0 | 1334.7–1385.9 | 1467.1–1522.8 | sum of the nine bars |
+
+- **Growth sources:**
+  - "Own FactSet growth" = that company's FactSet consensus growth (31 Aug 2026).
+  - "FactSet five-company growth" = the growth of FactSet's figures for the five US companies together.
+  - Only growth rates carry over; FactSet's own levels are never shown.
+- **Labels:**
+  - Amazon's and Oracle's 2026 figures are labelled "as reported by Reuters".
+  - Alibaba's figures are labelled "Citi estimate".
+  - Every 2027–2030 bar that is ours is labelled "Race Through Time estimate".
+- **Checks against what the companies said:** Alphabet 2027 is up 50.9% (it said "increase significantly"); Microsoft is up 32.2% (it said "grow"). Tencent said it "aims to boost capital expenditure in 2026, though he did not say by how much" (Reuters, 18 Mar 2026). Tencent's 2026 bar is its actual 12 months to June 2026, so that statement is shown as a named check, not a number.
+
+### What Cowork's checks confirmed (records only; your answers decide the method)
+- **BCG** (12 Jun 2026, read by eye): the five companies at 755bn (2026), rising to 977bn in 2029, then 950bn and 937bn. It is now allowed in the peak step, but never shown as the same thing as FactSet's company figures.
+- **Allianz** (28 Sep 2026): "AI capex ... peak at USD1trn in 2028". It doesn't say which companies are covered. It stays out of the combined total.
+- **FactSet's basis:** FactSet's own commentary speaks of "cash capex" and says Microsoft's guidance is "higher as it includes items such as finance leases". So its consensus looks like cash spending without finance leases, close to our bars. This is an inference; no formal definition is public.
+- **Also recorded:**
+  - Citi's December 2025 table for Alibaba, Tencent and Baidu;
+  - Fitch's and S&P's CoreWeave figures;
+  - McKinsey's cumulative figures;
+  - Oracle's June figures, now superseded by September's;
+  - Reuters on Alibaba's plan as "2026-29" (Alibaba itself said "over the next three years"; never divided);
+  - Baidu: no outlook;
+  - 21 more OpenAI announcements and Sam Altman's reported "$1.4 trillion" of obligations. OpenAI now has 36 story moments, all labelled COMMITMENT and never added up.
+- **Still unverified:** SCMP (paywall; Tencent "substantial increase", Goldman's RMB165bn) and Broadcom's investor release. Both stay off screen.
+
+### Checks
+- **Financial QA:** 81/81.
+- **File-format checks:** 42/42.
+- **Tests:** 37/37, including a byte-identical rebuild.
+
+### What the checks leave open (Claude's recommendation; what happens if unanswered)
+1. **CoreWeave's 2027.**
+   - **What the agencies say:** both rating agencies expect CoreWeave to spend less in 2027 than in 2026:
+     - Fitch: about $41bn, then $37bn.
+     - S&P: about $31bn, then $25bn.
+   - **What our estimate shows:** a rise to $47–53bn (FactSet five-company growth, your answer 3).
+   - **Disagreement:** the two agencies also disagree with each other, and are never averaged.
+   - *Recommendation:* keep your rule, and add a line in the notes or narration that rating agencies expect CoreWeave's spending to dip in 2027.
+   - *If unanswered:* rule kept, with the note in the data.
+2. **Tencent's "boost" statement.**
+   - *Recommendation:* show it as a named check on Tencent's bar (company statement, as reported by Reuters). Don't turn it into a number, because no amount was given.
+   - *If unanswered:* as recommended.
+3. **Allianz's AI-only peak in the "forecasters disagree" step.**
+   - *Recommendation:* include it, labelled "AI capex (Allianz)", alongside BCG's group peak (2029) and FactSet (still rising in 2030 for four of the five US companies). It is never added to "Combined capital spending".
+   - *If unanswered:* included, labelled.
+
+### Next
+- The design session (nothing is built before you approve it): the race, the "2026 plans" step, the look-ahead's look, the running total, the story moments and the peak views.
+
 
 ## Stage 5 (IQ-16e, 8 Oct 2026): your decisions on the measure and a draft look-ahead
 
