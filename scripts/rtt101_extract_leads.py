@@ -25,6 +25,13 @@ for f in sorted(_glob.glob(os.path.join(PRIV, "part*_gaps_*.csv"))):
     if m:
         _latest[m.group(1)] = f  # a later part replaces an earlier one (part19b replaces part18b)
 FILES += [(os.path.basename(f), "G") for _, f in sorted(_latest.items())]
+# source rounds (DEC-275): ChatGPT's press/club sources for named deals, section "S"; each row carries our deal_id, mapped to a
+# transfer_id by data/rtt-101/source/source_round1_map.csv (built from the lists Cowork sent, player + date)
+FILES += [(os.path.basename(f), "S") for f in sorted(_glob.glob(os.path.join(PRIV, "part2*_sources_round*_*.csv")))]
+_MAP = {}
+_mp = os.path.join(os.path.dirname(os.path.abspath(OUT)), "source_round1_map.csv")
+if os.path.exists(_mp):
+    _MAP = {r["deal_id"]: r["transfer_id"] for r in csv.DictReader(open(_mp, encoding="utf-8"))}
 REPORTED = re.compile(r"\b(reported|believed|thought to be|understood|in the region of|around|about|some)\b", re.I)
 UEFA = re.compile(r"uefa\.com", re.I)
 
@@ -41,7 +48,7 @@ def grade(row):
 cols = ["lead_id", "lead_section", "lead_file_sha256_prefix", "lead_row", "transfer_ref", "date", "date_type", "player",
         "from_club", "to_club", "fee_as_reported", "currency", "guaranteed_part", "add_ons_part", "grade", "grade_note",
         "publisher", "quote", "quote_words", "url", "archive_url", "issue_type", "record_type", "published", "lead_type"]
-rows, seen_b = [], set()
+rows, seen_b, _seq = [], set(), {}
 for fn, sec in FILES:
     p = os.path.join(PRIV, fn)
     sha = hashlib.sha256(open(p, "rb").read()).hexdigest()[:16]
@@ -50,9 +57,17 @@ for fn, sec in FILES:
             r = dict(r, date=r.get("transfer_date", ""), date_type=r.get("date_basis", ""), evidence_id=r.get("row_id"))
             if "soccerbase" in (r.get("source_url") or "").lower() or (r.get("publisher") or "").lower().startswith("soccerbase"):
                 r["grade"] = "C"  # specialist database: a pointer (brief section 7)
+        if sec == "S":
+            if (r.get("fee_as_reported") or "").strip().upper() in ("", "NOT FOUND"):
+                continue  # deal not found: nothing to check
+            _n = _seq.setdefault(r["deal_id"], 0) + 1
+            _seq[r["deal_id"]] = _n
+            r = dict(r, evidence_id=f"{r['deal_id']}-{_n:02d}", transfer_id=_MAP.get(r["deal_id"], ""), date=r.get("transfer_date_reported", ""))
+            if "soccerbase" in (r.get("source_url") or "").lower() or (r.get("publisher") or "").lower().startswith("soccerbase"):
+                r["grade"] = "C"
         url = (r.get("source_url") or "").strip()
-        if "transfermarkt" in url.lower():
-            continue  # DEC-236: nothing taken from Transfermarkt is stored
+        if "transfermarkt" in url.lower() or "wikipedia.org" in url.lower():
+            continue  # DEC-236: nothing taken from Transfermarkt is stored; Wikipedia is never the source of a fee
         key = (url, (r.get("fee_as_reported") or "").strip())
         if sec == "B":
             seen_b.add(key)
@@ -61,7 +76,7 @@ for fn, sec in FILES:
         g, gn = grade(r)
         q = (r.get("exact_quote") or "").strip()
         rid = r.get("evidence_id") or r.get("record_id")
-        if sec == "G":
+        if sec in ("G", "S"):
             rid = fn.split("_")[0] + "-" + rid  # e.g. part18b-A0001 (gap-list rows reuse letters used elsewhere)
         rows.append({"lead_id": f"L-{rid}", "lead_section": sec, "lead_file_sha256_prefix": sha, "lead_row": rid,
                      "transfer_ref": r.get("transfer_id") or r.get("related_B_transfer_id") or r.get("case_id") or "",

@@ -66,7 +66,8 @@ for line in open(log, encoding="utf-8"):
         key = (round(p["amount"] / 1e4), p["currency"])
         q = short(s["excerpt"], s["money"])
         for tid in tids:
-            if key in amounts.get(tid, set()) and (tid not in gap_tids or clubs_ok):
+            # a probe that asked for both clubs (gap list, source rounds) counts only if the page names them; gap-list moves always need it
+            if key in amounts.get(tid, set()) and (clubs_ok is not False) and (tid not in gap_tids or clubs_ok):
                 cid = f"P{rec['id']}-{key[0]}{key[1]}"
                 checks[cid] = {"check_id": cid, "transfer_id": tid, "near": it["near"], "url": it["url"], "amount": f"{p['amount']:.2f}",
                                "currency": p["currency"], "http_status": rec["status"], "result": "VERIFIED", "status": "VERIFIED",

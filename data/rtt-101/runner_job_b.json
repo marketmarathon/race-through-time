@@ -2,106 +2,4637 @@
 "delay": 0.8,
 "probe": [
 {
-"id": "d1c105487a58cbb2",
-"url": "http://www.liverweb.org.uk/season.asp?season=199394",
+"id": "2771224c80a95c47",
+"url": "https://www.independent.co.uk/sport/football-premier-pair-plead-poverty-1540553.html",
+"near": "Anderton",
+"also": [
+[
+"Portsmouth"
+],
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+]
+],
+"group": "src"
+},
+{
+"id": "a46c00222d62c881",
+"url": "https://www.independent.co.uk/sport/football-anderton-follows-route-96-1158845.html",
+"near": "Anderton",
+"also": [
+[
+"Portsmouth"
+],
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+]
+],
+"group": "src"
+},
+{
+"id": "d757af6e6eed6cbe",
+"url": "https://www.standard.co.uk/sport/anderton-future-hit-by-delay-over-contract-6940844.html",
+"near": "Anderton",
+"also": [
+[
+"Portsmouth"
+],
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+]
+],
+"group": "src"
+},
+{
+"id": "492c3def669e5d1c",
+"url": "https://www.fourfourtwo.com/features/foreign-players-who-played-in-japan",
+"near": "Lineker",
+"also": [
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+],
+[
+"Nagoya Grampus 8",
+"Nagoya"
+]
+],
+"group": "src"
+},
+{
+"id": "c28bc1dc646a088a",
+"url": "https://www.independent.co.uk/sport/football-sunderland-open-the-door-for-butcher-1532402.html",
+"near": "Williams",
+"also": [
+[
+"Derby County",
+"Derby"
+],
+[
+"Ipswich Town",
+"Ipswich"
+]
+],
+"group": "src"
+},
+{
+"id": "114584ab03af1752",
+"url": "https://www.independent.co.uk/sport/football-1-5-million-pound-slater-set-to-sign-for-celtic-1540208.html",
+"near": "Donaghy",
+"also": [
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+],
+[
+"Chelsea"
+]
+],
+"group": "src"
+},
+{
+"id": "0817659c02badfc0",
+"url": "https://www.independent.co.uk/sport/football-turbulent-times-at-tottenham-hotspur-1491853.html",
+"near": "Gascoigne",
+"also": [
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+],
+[
+"Lazio",
+"Lazio"
+]
+],
+"group": "src"
+},
+{
+"id": "ae3cc9469b430900",
+"url": "https://www.bbc.co.uk/sport/football/61004110",
+"near": "Gascoigne",
+"also": [
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+],
+[
+"Lazio",
+"Lazio"
+]
+],
+"group": "src"
+},
+{
+"id": "93ec4960928c88ba",
+"url": "https://www.independent.co.uk/sport/football-leeds-buy-old-boy-sellars-1531188.html",
+"near": "Sellars",
+"also": [
+[
+"Blackburn Rovers",
+"Blackburn"
+],
+[
+"Leeds United",
+"Leeds"
+]
+],
+"group": "src"
+},
+{
+"id": "6a31460ee573c528",
+"url": "https://www.independent.co.uk/sport/football-threat-of-smaller-premier-1550226.html",
+"near": "Sellars",
+"also": [
+[
+"Blackburn Rovers",
+"Blackburn"
+],
+[
+"Leeds United",
+"Leeds"
+]
+],
+"group": "src"
+},
+{
+"id": "77f131064fc4d2a3",
+"url": "https://www.independent.co.uk/sport/blackburn-masters-of-the-modern-game-1619674.html",
+"near": "Sellars",
+"also": [
+[
+"Blackburn Rovers",
+"Blackburn"
+],
+[
+"Leeds United",
+"Leeds"
+]
+],
+"group": "src"
+},
+{
+"id": "37a9bb29f4a57c80",
+"url": "https://www.independent.co.uk/sport/that-was-the-weekend-that-was-1525128.html",
+"near": "Cundy",
+"also": [
+[
+"Chelsea"
+],
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+]
+],
+"group": "src"
+},
+{
+"id": "de116dea80e56cde",
+"url": "https://www.independent.co.uk/sport/football-villa-pay-pounds-2-3m-for-saunders-1550782.html",
+"near": "Olney",
+"also": [
+[
+"Aston Villa",
+"Villa"
+],
+[
+"Oldham Athletic",
+"Oldham"
+]
+],
+"group": "src"
+},
+{
+"id": "6e9d441948bdf2f6",
+"url": "https://www.the-independent.com/sport/sport-in-short-football-1534815.html",
+"near": "Lowe",
+"also": [
+[
+"Ipswich Town",
+"Ipswich"
+],
+[
+"Leicester City",
+"Leicester"
+]
+],
+"group": "src"
+},
+{
+"id": "6beef5f191cc0a00",
+"url": "https://www.independent.co.uk/sport/football-keegan-quandry-1538974.html",
+"near": "Lowe",
+"also": [
+[
+"Ipswich Town",
+"Ipswich"
+],
+[
+"Leicester City",
+"Leicester"
+]
+],
+"group": "src"
+},
+{
+"id": "591afb69302709c1",
+"url": "https://www.independent.co.uk/sport/football-villa-pay-pounds-2-3m-for-saunders-1550782.html",
+"near": "Houghton",
+"also": [
+[
+"Liverpool"
+],
+[
+"Aston Villa",
+"Villa"
+]
+],
+"group": "src"
+},
+{
+"id": "06cdff2c49ddf398",
+"url": "https://www.independent.co.uk/sport/football-souness-bows-out-at-anfield-1403257.html",
+"near": "Houghton",
+"also": [
+[
+"Liverpool"
+],
+[
+"Aston Villa",
+"Villa"
+]
+],
+"group": "src"
+},
+{
+"id": "923d0f1783f84a98",
+"url": "https://www.independent.co.uk/sport/football-premier-pair-plead-poverty-1540553.html",
+"near": "Ruddock",
+"also": [
+[
+"Southampton"
+],
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+]
+],
+"group": "src"
+},
+{
+"id": "f46834c967378628",
+"url": "https://www.fourfourtwo.com/features/the-worst-ever-manchester-united-signings",
+"near": "McGibbon",
+"also": [
+[
+"Portadown",
+"Portadown"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "src"
+},
+{
+"id": "dd522c7d7d077866",
+"url": "https://www.independent.co.uk/sport/football-liverpool-still-seeking-their-old-authority-1552146.html",
+"near": "Piechnik",
+"also": [
+[
+"FCK"
+],
+[
+"Liverpool"
+]
+],
+"group": "src"
+},
+{
+"id": "c793b6da3c197720",
+"url": "https://www.independent.co.uk/sport/football-souness-bows-out-at-anfield-1403257.html",
+"near": "Piechnik",
+"also": [
+[
+"FCK"
+],
+[
+"Liverpool"
+]
+],
+"group": "src"
+},
+{
+"id": "068174fb72943a17",
+"url": "https://www.independent.co.uk/sport/football-norwich-s-lastsecond-ekoku-deal-1500048.html",
+"near": "Robins",
+"also": [
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+],
+[
+"Norwich City",
+"Norwich"
+]
+],
+"group": "src"
+},
+{
+"id": "7c7964c2d2bf6493",
+"url": "https://www.independent.co.uk/sport/football-on-the-move-1541911.html",
+"near": "Brazil",
+"also": [
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+],
+[
+"Cardiff City",
+"Cardiff"
+]
+],
+"group": "src"
+},
+{
+"id": "dbec09c3e300a0ea",
+"url": "https://www.independent.co.uk/sport/football-united-spurn-keegan-s-pursuit-of-hughes-1560908.html",
+"near": "Cantona",
+"also": [
+[
+"Leeds United",
+"Leeds"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "src"
+},
+{
+"id": "a214b33f13f7649e",
+"url": "https://www.theguardian.com/football/2002/oct/21/sport.comment1",
+"near": "Cantona",
+"also": [
+[
+"Leeds United",
+"Leeds"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "src"
+},
+{
+"id": "10dbd1d821f15567",
+"url": "https://www.independent.co.uk/sport/ferguson-focused-on-the-next-10-years-1351004.html",
+"near": "Webb",
+"also": [
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+],
+[
+"Nottingham Forest",
+"Forest",
+"Nott'm Forest"
+]
+],
+"group": "src"
+},
+{
+"id": "988027b5cd264907",
+"url": "https://www.independent.co.uk/sport/football-kiwomya-delivers-suffolk-punch-1565871.html",
+"near": "Genchev",
+"also": [
+[
+"Sporting CP",
+"Sporting"
+],
+[
+"Ipswich Town",
+"Ipswich"
+]
+],
+"group": "src"
+},
+{
+"id": "869cd84c581541b5",
+"url": "https://www.independent.co.uk/sport/football-fry-returns-to-barnet-again-1563014.html",
+"near": "Bjørnebye",
+"also": [
+[
+"Rosenborg",
+"Rosenborg"
+],
+[
+"Liverpool"
+]
+],
+"group": "src"
+},
+{
+"id": "adbefde9437f9fb9",
+"url": "https://www.independent.co.uk/sport/football-souness-bows-out-at-anfield-1403257.html",
+"near": "Bjørnebye",
+"also": [
+[
+"Rosenborg",
+"Rosenborg"
+],
+[
+"Liverpool"
+]
+],
+"group": "src"
+},
+{
+"id": "44de78cd352f4b6a",
+"url": "https://www.independent.co.uk/sport/football-on-the-move-1497525.html",
+"near": "Sellars",
+"also": [
+[
+"Leeds United",
+"Leeds"
+],
+[
+"Newcastle United",
+"Newcastle"
+]
+],
+"group": "src"
+},
+{
+"id": "bff3e39ed628f001",
+"url": "https://www.independent.co.uk/sport/football-on-the-move-1500353.html",
+"near": "Toal",
+"also": [
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+],
+[
+"Motherwell",
+"Motherwell"
+]
+],
+"group": "src"
+},
+{
+"id": "3d5958f96db67078",
+"url": "https://www.independent.co.uk/sport/football-playoff-albion-exploit-vale-s-misfortune-swan-s-dismissal-opens-the-door-to-the-first-division-for-ardiles-men-2316240.html",
+"near": "Hunt",
+"also": [
+[
+"Newcastle United",
+"Newcastle"
+],
+[
+"West Bromwich Albion",
+"West Brom",
+"WBA"
+]
+],
+"group": "src"
+},
+{
+"id": "04fca0f7c4fe754b",
+"url": "https://www.independent.co.uk/sport/football-mcgoldrick-moves-to-arsenal-for-1m-pounds-1491856.html",
+"near": "McGoldrick",
+"also": [
+[
+"Crystal Palace",
+"Palace"
+],
+[
+"Arsenal"
+]
+],
+"group": "src"
+},
+{
+"id": "5857a9e454110e08",
+"url": "https://www.independent.co.uk/sport/football-hoddle-leaves-town-for-the-bright-lights-of-chelsea-swindon-lose-the-man-who-brought-them-promotion-while-souness-begins-rebuilding-at-liverpool-by-spending-pounds-2m-on-nigel-clough-1489660.html",
+"near": "Mason",
+"also": [
+[
+"Aberdeen",
+"Aberdeen"
+],
+[
+"Ipswich Town",
+"Ipswich"
+]
+],
+"group": "src"
+},
+{
+"id": "bec2ca8d98210045",
+"url": "https://www.independent.co.uk/sport/football-wolves-sign-thomas-for-pounds-800-000-1491882.html",
+"near": "Kelly",
+"also": [
+[
+"Newcastle United",
+"Newcastle"
+],
+[
+"Wolverhampton Wanderers",
+"Wolves"
+]
+],
+"group": "src"
+},
+{
+"id": "fa53f9a9b1709073",
+"url": "https://www.the-independent.com/sport/sporting-digest-football-1493557.html",
+"near": "Beardsmore",
+"also": [
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+],
+[
+"AFC Bournemouth",
+"Bournemouth",
+"A.F.C. Bournemouth"
+]
+],
+"group": "src"
+},
+{
+"id": "c277991786aae91d",
+"url": "https://www.independent.co.uk/sport/football-the-season-ahead-joe-lovejoy-football-correspondent-assesses-the-prospects-of-the-22-premier-league-clubs-1460876.html",
+"near": "Nijholt",
+"also": [
+[
+"Motherwell",
+"Motherwell"
+],
+[
+"Swindon Town",
+"Swindon"
+]
+],
+"group": "src"
+},
+{
+"id": "a49cd425e2e62f73",
+"url": "https://www.independent.co.uk/sport/football-the-season-ahead-joe-lovejoy-football-correspondent-assesses-the-prospects-of-the-22-premier-league-clubs-1460876.html",
+"near": "Stimson",
+"also": [
+[
+"Newcastle United",
+"Newcastle"
+],
+[
+"Portsmouth"
+]
+],
+"group": "src"
+},
+{
+"id": "14532b2ff5ec5100",
+"url": "https://www.independent.co.uk/sport/football-swindon-lack-steel-1461169.html",
+"near": "Whitbread",
+"also": [
+[
+"Leyton Orient",
+"Leyton"
+],
+[
+"Swindon Town",
+"Swindon"
+]
+],
+"group": "src"
+},
+{
+"id": "b2b724c8d0b52078",
+"url": "https://www.independent.co.uk/sport/the-keegan-years-player-by-player-guide-to-the-signings-that-transformed-a-club-by-liam-james-1340086.html",
+"near": "Mathie",
+"also": [
+[
+"Greenock Morton",
+"Greenock"
+],
+[
+"Newcastle United",
+"Newcastle"
+]
+],
+"group": "src"
+},
+{
+"id": "66a7105caaab5678",
+"url": "https://www.independent.co.uk/sport/football-keegan-a-master-of-grand-populist-gesture-1282368.html",
+"near": "Mathie",
+"also": [
+[
+"Greenock Morton",
+"Greenock"
+],
+[
+"Newcastle United",
+"Newcastle"
+]
+],
+"group": "src"
+},
+{
+"id": "2d8049cd11ed4915",
+"url": "https://www.independent.co.uk/sport/football-reid-pays-the-ultimate-price-football-for-poor-start-manchester-city-sack-manager-1463753.html",
+"near": "Dozzell",
+"also": [
+[
+"Ipswich Town",
+"Ipswich"
+],
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+]
+],
+"group": "src"
+},
+{
+"id": "4c53ec133f38c0a8",
+"url": "https://www.independent.co.uk/sport/football-dozzell-jumps-at-chance-to-join-spurs-ipswich-schemer-takes-on-the-hoddle-role-at-white-hart-lane-1459172.html",
+"near": "Whittingham",
+"also": [
+[
+"Portsmouth"
+],
+[
+"Aston Villa",
+"Villa"
+]
+],
+"group": "src"
+},
+{
+"id": "03409d031ee6570a",
+"url": "https://www.independent.co.uk/sport/football-chapman-in-demand-as-leeds-rebuild-1459332.html",
+"near": "Whittingham",
+"also": [
+[
+"Portsmouth"
+],
+[
+"Aston Villa",
+"Villa"
+]
+],
+"group": "src"
+},
+{
+"id": "ba18f3e8d1e61145",
+"url": "https://www.the-independent.com/sport/football-the-season-ahead-joe-lovejoy-football-correspondent-assesses-the-prospects-of-the-22-premier-league-clubs-1460876.html",
+"near": "Whittingham",
+"also": [
+[
+"Portsmouth"
+],
+[
+"Aston Villa",
+"Villa"
+]
+],
+"group": "src"
+},
+{
+"id": "a83c1d9cbfa4d0f8",
+"url": "https://www.independent.co.uk/sport/football-keegan-a-master-of-grand-populist-gesture-1282368.html",
+"near": "Thompson",
+"also": [
+[
+"Newcastle United",
+"Newcastle"
+],
+[
+"Bolton Wanderers",
+"Bolton"
+]
+],
+"group": "src"
+},
+{
+"id": "36a97b9044a9d51f",
+"url": "https://www.independent.co.uk/sport/football-on-the-move-1461186.html",
+"near": "Allen",
+"also": [
+[
+"Millwall",
+"Millwall"
+],
+[
+"Newcastle United",
+"Newcastle"
+]
+],
+"group": "src"
+},
+{
+"id": "20e783e86fec7670",
+"url": "https://www.independent.co.uk/sport/football-kendall-suffers-more-rejection-1462098.html",
+"near": "Mutch",
+"also": [
+[
+"Wolverhampton Wanderers",
+"Wolves"
+],
+[
+"Swindon Town",
+"Swindon"
+]
+],
+"group": "src"
+},
+{
+"id": "dfe5a811a58825b7",
+"url": "https://www.independent.co.uk/sport/football-team-news-1508269.html",
+"near": "Kerslake",
+"also": [
+[
+"Leeds United",
+"Leeds"
+],
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+]
+],
+"group": "src"
+},
+{
+"id": "ba3b5c5e42abc394",
+"url": "https://www.independent.co.uk/sport/football-souness-bows-out-at-anfield-1403257.html",
+"near": "Hooper",
+"also": [
+[
+"Liverpool"
+],
+[
+"Newcastle United",
+"Newcastle"
+]
+],
+"group": "src"
+},
+{
+"id": "819741b8bbb3c145",
+"url": "https://www.independent.co.uk/sport/football-hoddle-s-grand-design-betrayed-by-basic-errors-1467248.html",
+"near": "Stein",
+"also": [
+[
+"Stoke City",
+"Stoke"
+],
+[
+"Chelsea"
+]
+],
+"group": "src"
+},
+{
+"id": "f84c95bbd4f39995",
+"url": "https://www.independent.co.uk/sport/football-flowers-to-ewood-for-2-4m-pounds-1502317.html",
+"near": "Flowers",
+"also": [
+[
+"Southampton"
+],
+[
+"Blackburn Rovers",
+"Blackburn"
+]
+],
+"group": "src"
+},
+{
+"id": "87cf5db33910d177",
+"url": "https://www.independent.co.uk/sport/sporting-digest-football-1505353.html",
+"near": "Scott",
+"also": [
+[
+"Wycombe Wanderers",
+"Wycombe"
+],
+[
+"Swindon Town",
+"Swindon"
+]
+],
+"group": "src"
+},
+{
+"id": "997504a272161277",
+"url": "https://www.independent.co.uk/sport/football-the-season-ahead-joe-lovejoy-football-correspondent-assesses-the-prospects-of-the-22-premier-league-clubs-1460876.html",
+"near": "Carey",
+"also": [
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+],
+[
+"Leicester City",
+"Leicester"
+]
+],
+"group": "src"
+},
+{
+"id": "7bd512d9102c77f2",
+"url": "https://www.independent.co.uk/sport/football-batty-effect-takes-over-at-blackburn-guy-hodgson-on-the-best-and-worst-buys-of-the-season-1431365.html",
+"near": "Rocastle",
+"also": [
+[
+"Leeds United",
+"Leeds"
+],
+[
+"Manchester City",
+"Man City"
+]
+],
+"group": "src"
+},
+{
+"id": "b560e0b4075f28a2",
+"url": "https://www.independent.co.uk/sport/football-on-the-move-1400308.html",
+"near": "Ferguson",
+"also": [
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+],
+[
+"Wolverhampton Wanderers",
+"Wolves"
+]
+],
+"group": "src"
+},
+{
+"id": "a94cd3c258afb8e0",
+"url": "https://www.independent.co.uk/sport/football-williams-joins-b-men-1401349.html",
+"near": "Kilcline",
+"also": [
+[
+"Newcastle United",
+"Newcastle"
+],
+[
+"Swindon Town",
+"Swindon"
+]
+],
+"group": "src"
+},
+{
+"id": "42cc2812595fcaae",
+"url": "https://www.independent.co.uk/sport/football-kilcline-s-cutting-edge-1408754.html",
+"near": "Kilcline",
+"also": [
+[
+"Newcastle United",
+"Newcastle"
+],
+[
+"Swindon Town",
+"Swindon"
+]
+],
+"group": "src"
+},
+{
+"id": "f7b41cc08e2e6138",
+"url": "https://www.independent.co.uk/sport/the-keegan-years-player-by-player-guide-to-the-signings-that-transformed-a-club-by-liam-james-1340086.html",
+"near": "Kilcline",
+"also": [
+[
+"Newcastle United",
+"Newcastle"
+],
+[
+"Swindon Town",
+"Swindon"
+]
+],
+"group": "src"
+},
+{
+"id": "58050a07ce804a31",
+"url": "https://www.independent.co.uk/sport/football-rosenthal-rejects-move-to-tottenham-1401577.html",
+"near": "O'Brien",
+"also": [
+[
+"Newcastle United",
+"Newcastle"
+],
+[
+"Tranmere Rovers",
+"Tranmere"
+]
+],
+"group": "src"
+},
+{
+"id": "4f056e3de079f9ae",
+"url": "https://www.independent.co.uk/sport/football-newcastle-close-to-signing-fox-for-pounds-2-25m-magpies-swoop-for-canary-winger-while-yorath-s-sadness-and-humiliation-at-welsh-departure-turns-to-desire-for-compensation-1391518.html",
+"near": "Scott",
+"also": [
+[
+"Newcastle United",
+"Newcastle"
+],
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+]
+],
+"group": "src"
+},
+{
+"id": "305c28cfc17529fb",
+"url": "https://www.independent.co.uk/sport/football-fa-s-threat-to-take-games-away-from-wembley-1393037.html",
+"near": "Maskell",
+"also": [
+[
+"Swindon Town",
+"Swindon"
+],
+[
+"Southampton"
+]
+],
+"group": "src"
+},
+{
+"id": "0d7a015c78a10fd2",
+"url": "https://www.independent.co.uk/sport/football-peacock-goes-but-francis-stays-mixed-day-at-queen-s-park-rangers-while-limpar-joins-everton-and-beagrie-hops-to-city-1431375.html",
+"near": "Beagrie",
+"also": [
+[
+"Everton"
+],
+[
+"Manchester City",
+"Man City"
+]
+],
+"group": "src"
+},
+{
+"id": "7536b41f3aa004fa",
+"url": "https://www.independent.co.uk/sport/football-no-boundary-to-ineptitude-oldham-s-grim-stalemate-1432226.html",
+"near": "Beagrie",
+"also": [
+[
+"Everton"
+],
+[
+"Manchester City",
+"Man City"
+]
+],
+"group": "src"
+},
+{
+"id": "06eac91dc7da9e2c",
+"url": "https://www.independent.co.uk/sport/football-dicks-back-at-west-ham-1444244.html",
+"near": "Dicks",
+"also": [
+[
+"Liverpool"
+],
+[
+"West Ham United",
+"West Ham"
+]
+],
+"group": "src"
+},
+{
+"id": "9d892514eedb19af",
+"url": "https://www.independent.co.uk/sport/football-tottenham-pounce-on-klinsmann-for-2m-sugar-signs-one-of-the-best-players-in-the-world-on-his-yacht-in-monte-carlo-after-lengthy-pursuit-of-german-forward-1417142.html",
+"near": "Stensgaard",
+"also": [
+[
+"Hvidovre IF",
+"Hvidovre"
+],
+[
+"Liverpool"
+]
+],
+"group": "src"
+},
+{
+"id": "63fa0691542e7645",
+"url": "https://www.independent.co.uk/sport/sporting-digest-football-1413751.html",
+"near": "Atherton",
+"also": [
+[
+"Coventry City",
+"Coventry"
+],
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+]
+],
+"group": "src"
+},
+{
+"id": "981a1ad1cb39ab5f",
+"url": "https://www.independent.co.uk/sport/football-us-confirm-visit-to-wembley-one-world-cup-defender-meets-coventry-as-another-rejects-spurs-1415730.html",
+"near": "Thomsen",
+"also": [
+[
+"AGF Aarhus"
+],
+[
+"Ipswich Town",
+"Ipswich"
+]
+],
+"group": "src"
+},
+{
+"id": "472647568108c49b",
+"url": "https://www.independent.co.uk/sport/football-tottenham-to-appeal-against-fa-punishment-sugar-continues-his-war-of-words-with-lancaster-gate-while-burns-golac-and-mcghee-lead-the-list-of-paradise-favourites-1423237.html",
+"near": "Sedgley",
+"also": [
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+],
+[
+"Ipswich Town",
+"Ipswich"
+]
+],
+"group": "src"
+},
+{
+"id": "bc1773b14bef1b77",
+"url": "https://www.independent.co.uk/sport/football-bonds-pays-pounds-1m-for-beauchamp-1424371.html",
+"near": "Beauchamp",
+"also": [
+[
+"Oxford United",
+"Oxford"
+],
+[
+"West Ham United",
+"West Ham"
+]
+],
+"group": "src"
+},
+{
+"id": "c32138a67e5ddc57",
+"url": "https://www.independent.co.uk/sport/sporting-digest-football-1424968.html",
+"near": "Preece",
+"also": [
+[
+"Stockport County",
+"Stockport"
+],
+[
+"Crystal Palace",
+"Palace"
+]
+],
+"group": "src"
+},
+{
+"id": "4cbd6432e61109c4",
+"url": "https://www.independent.co.uk/sport/football-everton-fall-under-weight-of-expectation-crystal-palace-post-first-home-win-forest-stay-in-touch-newcastle-maintain-premiership-lead-misery-continues-for-spurs-1444766.html",
+"near": "Preece",
+"also": [
+[
+"Stockport County",
+"Stockport"
+],
+[
+"Crystal Palace",
+"Palace"
+]
+],
+"group": "src"
+},
+{
+"id": "95c91739f826eb51",
+"url": "https://www.independent.co.uk/sport/football-fact-file-1425102.html",
+"near": "Summerbee",
+"also": [
+[
+"Swindon Town",
+"Swindon"
+],
+[
+"Manchester City",
+"Man City"
+]
+],
+"group": "src"
+},
+{
+"id": "fea26dd6c6ffb14b",
+"url": "https://www.independent.co.uk/sport/sporting-digest-football-1377017.html",
+"near": "Mohan",
+"also": [
+[
+"Middlesbrough",
+"Boro"
+],
+[
+"Leicester City",
+"Leicester"
+]
+],
+"group": "src"
+},
+{
+"id": "479b1b3ef6c29349",
+"url": "https://www.independent.co.uk/sport/football-rocastle-off-to-chelsea-for-1-25m-pounds-1383053.html",
+"near": "Taylor",
+"also": [
+[
+"Port Vale",
+"Port"
+],
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+]
+],
+"group": "src"
+},
+{
+"id": "74f73e7cef5bdc24",
+"url": "https://www.independent.co.uk/sport/little-refuses-to-be-critical-1614473.html",
+"near": "Taylor",
+"also": [
+[
+"Port Vale",
+"Port"
+],
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+]
+],
+"group": "src"
+},
+{
+"id": "f6160c8b7eba15ee",
+"url": "https://www.independent.co.uk/sport/football-villa-sign-ghana-s-lamptey-1412040.html",
+"near": "Pearson",
+"also": [
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+],
+[
+"Middlesbrough",
+"Boro"
+]
+],
+"group": "src"
+},
+{
+"id": "82623acbfec06a91",
+"url": "https://www.independent.co.uk/sport/football-fact-file-the-transfer-trail-1412804.html",
+"near": "Pearson",
+"also": [
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+],
+[
+"Middlesbrough",
+"Boro"
+]
+],
+"group": "src"
+},
+{
+"id": "b6f441fe0df8483f",
+"url": "https://www.independent.co.uk/sport/football-cantona-put-straight-back-into-the-fray-premiership-managers-start-to-ring-the-changes-as-returning-strikers-challenge-for-firstteam-places-1386869.html",
+"near": "Draper",
+"also": [
+[
+"Notts County",
+"Notts"
+],
+[
+"Leicester City",
+"Leicester"
+]
+],
+"group": "src"
+},
+{
+"id": "5353a31703a288b6",
+"url": "https://www.independent.co.uk/sport/football-fact-file-the-transfer-trail-1412804.html",
+"near": "Robinson",
+"also": [
+[
+"Newcastle United",
+"Newcastle"
+],
+[
+"Swindon Town",
+"Swindon"
+]
+],
+"group": "src"
+},
+{
+"id": "5ece003677436c42",
+"url": "https://www.independent.co.uk/sport/football-factfile-1417273.html",
+"near": "Hottiger",
+"also": [
+[
+"FC Sion"
+],
+[
+"Newcastle United",
+"Newcastle"
+]
+],
+"group": "src"
+},
+{
+"id": "fe8b02a071ea4d12",
+"url": "https://www.independent.co.uk/sport/the-keegan-years-player-by-player-guide-to-the-signings-that-transformed-a-club-by-liam-james-1340086.html",
+"near": "Hottiger",
+"also": [
+[
+"FC Sion"
+],
+[
+"Newcastle United",
+"Newcastle"
+]
+],
+"group": "src"
+},
+{
+"id": "61e3dcb77e2d73eb",
+"url": "https://www.independent.co.uk/sport/football-tottenham-sign-dumitrescu-for-pounds-2-6m-ardiles-shows-ambition-by-buying-romanian-world-cup-hero-and-chasing-two-brazilians-as-venables-prepares-for-latin-test-1416799.html",
+"near": "King",
+"also": [
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+],
+[
+"Aston Villa",
+"Villa"
+]
+],
+"group": "src"
+},
+{
+"id": "ec0863b3c7d72d9f",
+"url": "https://www.independent.co.uk/sport/sporting-digest-football-5642721.html",
+"near": "King",
+"also": [
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+],
+[
+"Aston Villa",
+"Villa"
+]
+],
+"group": "src"
+},
+{
+"id": "5ca9105708227556",
+"url": "https://www.independent.co.uk/sport/football-ins-and-outs-in-the-first-division-who-went-where-and-for-how-much-1383059.html",
+"near": "Glover",
+"also": [
+[
+"Nottingham Forest",
+"Forest",
+"Nott'm Forest"
+],
+[
+"Port Vale",
+"Port"
+]
+],
+"group": "src"
+},
+{
+"id": "6a9a767c2aba6465",
+"url": "https://www.independent.co.uk/sport/football-fa-premiership-a-new-season-dawns-on-saturday-and-english-football-will-find-a-world-of-difference-1383333.html",
+"near": "Drysdale",
+"also": [
+[
+"Watford"
+],
+[
+"Newcastle United",
+"Newcastle"
+]
+],
+"group": "src"
+},
+{
+"id": "6b928a32e42de8e0",
+"url": "https://www.independent.co.uk/sport/football-factfile-1417273.html",
+"near": "Klinsmann",
+"also": [
+[
+"Monaco",
+"Monaco"
+],
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+]
+],
+"group": "src"
+},
+{
+"id": "61b6bca05eb17403",
+"url": "https://www.independent.co.uk/sport/football-villa-sign-ghana-s-lamptey-1412040.html",
+"near": "Lamptey",
+"also": [
+[
+"PSV Eindhoven"
+],
+[
+"Aston Villa",
+"Villa"
+]
+],
+"group": "src"
+},
+{
+"id": "99df0efd01d1d356",
+"url": "https://www.independent.co.uk/sport/villa-may-part-with-lamptey-1567584.html",
+"near": "Lamptey",
+"also": [
+[
+"PSV Eindhoven"
+],
+[
+"Aston Villa",
+"Villa"
+]
+],
+"group": "src"
+},
+{
+"id": "d1a5313f67ec6f0e",
+"url": "https://www.independent.co.uk/sport/football-fashanu-joins-villa-for-1-35m-pounds-virus-makes-shearer-likely-to-miss-blackburn-s-first-two-premiership-games-1374502.html",
+"near": "Fashanu",
+"also": [
+[
+"Wimbledon"
+],
+[
+"Aston Villa",
+"Villa"
+]
+],
+"group": "src"
+},
+{
+"id": "9015546ac69e0d6d",
+"url": "https://www.independent.co.uk/sport/football-petrescu-prepares-for-english-adventure-1382243.html",
+"near": "Petrescu",
+"also": [
+[
+"Genoa",
+"Genoa"
+],
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+]
+],
+"group": "src"
+},
+{
+"id": "a9c18ec99cae806e",
+"url": "https://www.independent.co.uk/sport/from-philippe-albert-to-tony-yeboah-a-complete-guide-to-the-comings-an-d-goings-of-the-premiership-s-84-overseas-players-1361670.html",
+"near": "Petrescu",
+"also": [
+[
+"Genoa",
+"Genoa"
+],
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+]
+],
+"group": "src"
+},
+{
+"id": "fb8a40926524900c",
+"url": "https://www.independent.co.uk/sport/football-premiership-kickoff-search-for-the-happy-medium-starts-here-influx-of-foreign-players-and-new-fifa-guidelines-give-unfamiliar-look-to-new-season-phil-shaw-reports-5325842.html",
+"near": "Albert",
+"also": [
+[
+"Anderlecht",
+"Anderlecht"
+],
+[
+"Newcastle United",
+"Newcastle"
+]
+],
+"group": "src"
+},
+{
+"id": "55eb03fefeb9f5f1",
+"url": "https://www.independent.co.uk/sport/lee-holds-key-to-contest-1340175.html",
+"near": "Albert",
+"also": [
+[
+"Anderlecht",
+"Anderlecht"
+],
+[
+"Newcastle United",
+"Newcastle"
+]
+],
+"group": "src"
+},
+{
+"id": "8c410b071c9a53a0",
+"url": "https://www.independent.co.uk/sport/football-rocastle-off-to-chelsea-for-1-25m-pounds-1383053.html",
+"near": "Rocastle",
+"also": [
+[
+"Manchester City",
+"Man City"
+],
+[
+"Chelsea"
+]
+],
+"group": "src"
+},
+{
+"id": "a10e87d0ddb83b72",
+"url": "https://www.independent.co.uk/sport/football-coventry-ask-babb-bidders-to-raise-offers-liverpool-made-to-wait-1377205.html",
+"near": "Whitbread",
+"also": [
+[
+"Swindon Town",
+"Swindon"
+],
+[
+"West Ham United",
+"West Ham"
+]
+],
+"group": "src"
+},
+{
+"id": "f2cc9ba788dbaa0c",
+"url": "https://www.independent.co.uk/sport/football-commentary-tranmere-ride-a-new-mersey-beat-1442139.html",
+"near": "Nolan",
+"also": [
+[
+"Tranmere Rovers",
+"Tranmere"
+],
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+]
+],
+"group": "src"
+},
+{
+"id": "b55ddad92623ba2d",
+"url": "https://www.independent.co.uk/sport/football-coventry-ask-babb-bidders-to-raise-offers-liverpool-made-to-wait-1377205.html",
+"near": "Beauchamp",
+"also": [
+[
+"West Ham United",
+"West Ham"
+],
+[
+"Swindon Town",
+"Swindon"
+]
+],
+"group": "src"
+},
+{
+"id": "c7c50382a3dc1b25",
+"url": "https://www.independent.co.uk/sport/football-team-news-1449336.html",
+"near": "Ingesson",
+"also": [
+[
+"PSV Eindhoven"
+],
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+]
+],
+"group": "src"
+},
+{
+"id": "11c0a8b65a36be46",
+"url": "https://www.independent.co.uk/sport/football-on-the-move-1446588.html",
+"near": "Scales",
+"also": [
+[
+"Wimbledon"
+],
+[
+"Liverpool"
+]
+],
+"group": "src"
+},
+{
+"id": "d0d90968458a9772",
+"url": "https://www.independent.co.uk/sport/football-holdsworth-asks-for-a-transfer-wimbledon-setback-1447139.html",
+"near": "Scales",
+"also": [
+[
+"Wimbledon"
+],
+[
+"Liverpool"
+]
+],
+"group": "src"
+},
+{
+"id": "0afbe2efba04b9eb",
+"url": "https://www.independent.co.uk/sport/sporting-digest-football-1447134.html",
+"near": "McKee",
+"also": [
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+],
+[
+"Kilmarnock",
+"Kilmarnock"
+]
+],
+"group": "src"
+},
+{
+"id": "a19ac8de0f049244",
+"url": "https://www.independent.co.uk/sport/football-the-spent-force-of-goodison-1188538.html",
+"near": "Burrows",
+"also": [
+[
+"West Ham United",
+"West Ham"
+],
+[
+"Everton"
+]
+],
+"group": "src"
+},
+{
+"id": "d2d99a2ae83f2204",
+"url": "https://www.independent.co.uk/sport/football-the-spent-force-of-goodison-1188538.html",
+"near": "Cottee",
+"also": [
+[
+"Everton"
+],
+[
+"West Ham United",
+"West Ham"
+]
+],
+"group": "src"
+},
+{
+"id": "a7ff36ed22918c27",
+"url": "https://www.theguardian.com/football/2001/may/09/newsstory.sport9",
+"near": "Cottee",
+"also": [
+[
+"Everton"
+],
+[
+"West Ham United",
+"West Ham"
+]
+],
+"group": "src"
+},
+{
+"id": "e1592531663d3eb4",
+"url": "https://www.wsc.co.uk/book-reviews/ceased-anglian/",
+"near": "Taricco",
+"also": [
+[
+"Argentinos Juniors",
+"Argentinos"
+],
+[
+"Ipswich Town",
+"Ipswich"
+]
+],
+"group": "src"
+},
+{
+"id": "94bf9da658a1b0f7",
+"url": "https://www.independent.co.uk/sport/football-albert-off-as-rush-makes-point-1450912.html",
+"near": "Kitson",
+"also": [
+[
+"Derby County",
+"Derby"
+],
+[
+"Newcastle United",
+"Newcastle"
+]
+],
+"group": "src"
+},
+{
+"id": "df6ecae2611e147c",
+"url": "https://www.independent.co.uk/sport/football-wednesday-hit-by-yardstick-1444768.html",
+"near": "Kitson",
+"also": [
+[
+"Derby County",
+"Derby"
+],
+[
+"Newcastle United",
+"Newcastle"
+]
+],
+"group": "src"
+},
+{
+"id": "bf917a93b362656f",
+"url": "https://www.independent.co.uk/sport/football-stevens-set-for-tranmere-1441086.html",
+"near": "Butler",
+"also": [
+[
+"West Ham United",
+"West Ham"
+],
+[
+"Notts County",
+"Notts"
+]
+],
+"group": "src"
+},
+{
+"id": "37b2796b6f723381",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=1318",
+"near": "Carr",
+"also": [
+[
+"Sheffield United",
+"Sheff Utd"
+],
+[
+"Leicester City",
+"Leicester"
+]
+],
+"group": "src"
+},
+{
+"id": "57367db5f9d70684",
+"url": "https://www.independent.co.uk/sport/football-pounds-2-6m-bowyer-signs-for-leeds-1327284.html",
+"near": "Ekoku",
+"also": [
+[
+"Norwich City",
+"Norwich"
+],
+[
+"Wimbledon"
+]
+],
+"group": "src"
+},
+{
+"id": "9e2017f2572434d6",
+"url": "https://www.independent.co.uk/sport/from-philippe-albert-to-tony-yeboah-a-complete-guide-to-the-comings-an-d-goings-of-the-premiership-s-84-overseas-players-1361670.html",
+"near": "Ekoku",
+"also": [
+[
+"Norwich City",
+"Norwich"
+],
+[
+"Wimbledon"
+]
+],
+"group": "src"
+},
+{
+"id": "5379763aebfd18d1",
+"url": "https://www.bbc.co.uk/sport/football/articles/cly3wj02vlno",
+"near": "Ekoku",
+"also": [
+[
+"Norwich City",
+"Norwich"
+],
+[
+"Wimbledon"
+]
+],
+"group": "src"
+},
+{
+"id": "db531cfc199d9100",
+"url": "https://www.independent.co.uk/sport/football-walker-moving-for-reiper-everton-and-leeds-scouring-scandinavia-to-strengthen-their-sides-1444047.html",
+"near": "Pressley",
+"also": [
+[
+"Rangers",
+"Rangers"
+],
+[
+"Coventry City",
+"Coventry"
+]
+],
+"group": "src"
+},
+{
+"id": "6288d97a65198c30",
+"url": "https://www.theguardian.com/football/2001/may/09/newsstory.sport9",
+"near": "Jones",
+"also": [
+[
+"West Ham United",
+"West Ham"
+],
+[
+"AFC Bournemouth",
+"Bournemouth",
+"A.F.C. Bournemouth"
+]
+],
+"group": "src"
+},
+{
+"id": "4b151ba80ab5575e",
+"url": "https://www.independent.co.uk/sport/the-keegan-years-player-by-player-guide-to-the-signings-that-transformed-a-club-by-liam-james-1340086.html",
+"near": "Guppy",
+"also": [
+[
+"Newcastle United",
+"Newcastle"
+],
+[
+"Port Vale",
+"Port"
+]
+],
+"group": "src"
+},
+{
+"id": "ecacd32c5e7339eb",
+"url": "https://www.independent.co.uk/sport/clough-denies-bung-claims-1388440.html",
+"near": "Whittingham",
+"also": [
+[
+"Aston Villa",
+"Villa"
+],
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+]
+],
+"group": "src"
+},
+{
+"id": "bda548c46e66c69b",
+"url": "https://www.independent.co.uk/sport/little-refuses-to-be-critical-1614473.html",
+"near": "Whittingham",
+"also": [
+[
+"Aston Villa",
+"Villa"
+],
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+]
+],
+"group": "src"
+},
+{
+"id": "e7aa6d7175f7c56a",
+"url": "https://www.independent.co.uk/sport/clough-denies-bung-claims-1388440.html",
+"near": "Taylor",
+"also": [
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+],
+[
+"Aston Villa",
+"Villa"
+]
+],
+"group": "src"
+},
+{
+"id": "e82cf6bab538c874",
+"url": "https://www.independent.co.uk/sport/united-hope-to-celebrate-city-success-1390658.html",
+"near": "Taylor",
+"also": [
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+],
+[
+"Aston Villa",
+"Villa"
+]
+],
+"group": "src"
+},
+{
+"id": "41d32557056c83f1",
+"url": "https://www.independent.co.uk/sport/football-lure-for-merson-1391058.html",
+"near": "Marsh",
+"also": [
+[
+"West Ham United",
+"West Ham"
+],
+[
+"Coventry City",
+"Coventry"
+]
+],
+"group": "src"
+},
+{
+"id": "14bf6aeb847dc65e",
+"url": "https://www.independent.co.uk/sport/little-s-double-derby-deal-1566965.html",
+"near": "Charles",
+"also": [
+[
+"Derby County",
+"Derby"
+],
+[
+"Aston Villa",
+"Villa"
+]
+],
+"group": "src"
+},
+{
+"id": "25585eedf5e0c101",
+"url": "https://www.theguardian.com/football/1999/jan/14/newsstory.benfica",
+"near": "Charles",
+"also": [
+[
+"Derby County",
+"Derby"
+],
+[
+"Aston Villa",
+"Villa"
+]
+],
+"group": "src"
+},
+{
+"id": "324a1f3bc26f28d8",
+"url": "https://www.skysports.com/football/player/76319/gary-charles",
+"near": "Charles",
+"also": [
+[
+"Derby County",
+"Derby"
+],
+[
+"Aston Villa",
+"Villa"
+]
+],
+"group": "src"
+},
+{
+"id": "9ceae22fa4dd9202",
+"url": "https://www.independent.co.uk/sport/little-s-double-derby-deal-1566965.html",
+"near": "Lawrence",
+"also": [
+[
+"Doncaster Rovers",
+"Doncaster"
+],
+[
+"Leicester City",
+"Leicester"
+]
+],
+"group": "src"
+},
+{
+"id": "1fbc9cf63910e243",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=4426&season_id=126",
+"near": "Lawrence",
+"also": [
+[
+"Doncaster Rovers",
+"Doncaster"
+],
+[
+"Leicester City",
+"Leicester"
+]
+],
+"group": "src"
+},
+{
+"id": "33efb2ffda4af33c",
+"url": "https://www.independent.co.uk/sport/little-s-double-derby-deal-1566965.html",
+"near": "Shipperley",
+"also": [
+[
+"Chelsea"
+],
+[
+"Southampton"
+]
+],
+"group": "src"
+},
+{
+"id": "2b54ec849c10cca3",
+"url": "https://www.independent.co.uk/sport/shipperley-joins-palace-for-pounds-1m-1360089.html",
+"near": "Shipperley",
+"also": [
+[
+"Chelsea"
+],
+[
+"Southampton"
+]
+],
+"group": "src"
+},
+{
+"id": "7cefee62b07f244c",
+"url": "https://www.independent.co.uk/sport/little-s-double-derby-deal-1566965.html",
+"near": "Johnson",
+"also": [
+[
+"Derby County",
+"Derby"
+],
+[
+"Aston Villa",
+"Villa"
+]
+],
+"group": "src"
+},
+{
+"id": "18682fc732de2a8e",
+"url": "https://www.independent.co.uk/sport/gillespie-dominant-football-1569869.html",
+"near": "Gillespie",
+"also": [
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+],
+[
+"Newcastle United",
+"Newcastle"
+]
+],
+"group": "src"
+},
+{
+"id": "f6f75aab2a93e4ba",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=38",
+"near": "Agnew",
+"also": [
+[
+"Leicester City",
+"Leicester"
+],
+[
+"Sunderland"
+]
+],
+"group": "src"
+},
+{
+"id": "939cc0c3a0ab0606",
+"url": "https://www.independent.co.uk/sport/robins-still-finishing-in-style-1573385.html",
+"near": "Robins",
+"also": [
+[
+"Norwich City",
+"Norwich"
+],
+[
+"Leicester City",
+"Leicester"
+]
+],
+"group": "src"
+},
+{
+"id": "647557e4f9dc21b7",
+"url": "https://www.theguardian.com/football/2001/may/09/newsstory.sport9",
+"near": "Chapman",
+"also": [
+[
+"West Ham United",
+"West Ham"
+],
+[
+"Ipswich Town",
+"Ipswich"
+]
+],
+"group": "src"
+},
+{
+"id": "36f31db5c253ad47",
+"url": "https://www.independent.co.uk/sport/two-dismissed-for-everton-1571208.html",
+"near": "Barrett",
+"also": [
+[
+"Aston Villa",
+"Villa"
+],
+[
+"Everton"
+]
+],
+"group": "src"
+},
+{
+"id": "f169a48d627e53f6",
+"url": "https://www.independent.co.uk/sport/parry-denies-bung-inquiry-whitewash-1572601.html",
+"near": "Carr",
+"also": [
+[
+"Leicester City",
+"Leicester"
+],
+[
+"Aston Villa",
+"Villa"
+]
+],
+"group": "src"
+},
+{
+"id": "750e9da4827d954a",
+"url": "https://www.independent.co.uk/sport/parry-denies-bung-inquiry-whitewash-1572601.html",
+"near": "Parker",
+"also": [
+[
+"Aston Villa",
+"Villa"
+],
+[
+"Leicester City",
+"Leicester"
+]
+],
+"group": "src"
+},
+{
+"id": "61a7bf7ae8682e1f",
+"url": "https://www.independent.co.uk/sport/atkinson-moves-for-richardson-1573562.html",
+"near": "Richardson",
+"also": [
+[
+"Aston Villa",
+"Villa"
+],
+[
+"Coventry City",
+"Coventry"
+]
+],
+"group": "src"
+},
+{
+"id": "fd89ab29f3c78c70",
+"url": "https://www.independent.co.uk/sport/football/premier-league/the-big-spender-who-rarely-got-his-fingers-burnt-770960.html",
+"near": "Mathie",
+"also": [
+[
+"Newcastle United",
+"Newcastle"
+],
+[
+"Ipswich Town",
+"Ipswich"
+]
+],
+"group": "src"
+},
+{
+"id": "b8733a9013ebd3c0",
+"url": "https://www.independent.co.uk/sport/from-philippe-albert-to-tony-yeboah-a-complete-guide-to-the-comings-an-d-goings-of-the-premiership-s-84-overseas-players-1361670.html",
+"near": "Filan",
+"also": [
+[
+"Cambridge United",
+"Cambridge"
+],
+[
+"Coventry City",
+"Coventry"
+]
+],
+"group": "src"
+},
+{
+"id": "5204717fa5933e31",
+"url": "https://www.skysports.com/football/player/21445/john-filan",
+"near": "Filan",
+"also": [
+[
+"Cambridge United",
+"Cambridge"
+],
+[
+"Coventry City",
+"Coventry"
+]
+],
+"group": "src"
+},
+{
+"id": "6e95ac362c07db13",
+"url": "https://www.independent.co.uk/sport/blackburn-stage-coup-with-witschge-loan-1612614.html",
+"near": "Whelan",
+"also": [
+[
+"Ipswich Town",
+"Ipswich"
+],
+[
+"Middlesbrough",
+"Boro"
+]
+],
+"group": "src"
+},
+{
+"id": "c7b7081cdfa854c7",
+"url": "https://www.independent.co.uk/sport/kenna-set-for-blackburn-1611479.html",
+"near": "Kenna",
+"also": [
+[
+"Southampton"
+],
+[
+"Blackburn Rovers",
+"Blackburn"
+]
+],
+"group": "src"
+},
+{
+"id": "f16c2affe62cde6a",
+"url": "https://www.the-independent.com/sport/united-s-ground-all-set-to-swell-1611770.html",
+"near": "Watson",
+"also": [
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+],
+[
+"Southampton"
+]
+],
+"group": "src"
+},
+{
+"id": "d10ad8b16be396a0",
+"url": "https://www.independent.co.uk/sport/football-horton-s-day-of-decision-at-city-1612458.html",
+"near": "Angell",
+"also": [
+[
+"Everton"
+],
+[
+"Sunderland"
+]
+],
+"group": "src"
+},
+{
+"id": "151005c95c220e2a",
+"url": "https://www.independent.co.uk/sport/blackburn-stage-coup-with-witschge-loan-1612614.html",
+"near": "Angell",
+"also": [
+[
+"Everton"
+],
+[
+"Sunderland"
+]
+],
+"group": "src"
+},
+{
+"id": "dff520b20312c5a5",
+"url": "https://www.the-independent.com/sport/on-the-move-1612804.html",
+"near": "Swailes",
+"also": [
+[
+"Doncaster Rovers",
+"Doncaster"
+],
+[
+"Ipswich Town",
+"Ipswich"
+]
+],
+"group": "src"
+},
+{
+"id": "21ec5185ddad417b",
+"url": "https://cdn.hatters.dev.silvertoad.co.uk/1995-96%2BSeason%2BDONE%2FMatches%2FM4213%2BLuton%2BTown%2Bv%2BIpswich%2BTown%2FProgramme%2FProgramme.pdf",
+"near": "Swailes",
+"also": [
+[
+"Doncaster Rovers",
+"Doncaster"
+],
+[
+"Ipswich Town",
+"Ipswich"
+]
+],
+"group": "src"
+},
+{
+"id": "b83b0dcf7e0990f9",
+"url": "https://www.independent.co.uk/sport/blackburn-stage-coup-with-witschge-loan-1612614.html",
+"near": "Drysdale",
+"also": [
+[
+"Newcastle United",
+"Newcastle"
+],
+[
+"Swindon Town",
+"Swindon"
+]
+],
+"group": "src"
+},
+{
+"id": "953c540048754a46",
+"url": "https://www.independent.co.uk/sport/the-keegan-years-player-by-player-guide-to-the-signings-that-transformed-a-club-by-liam-james-1340086.html",
+"near": "Drysdale",
+"also": [
+[
+"Newcastle United",
+"Newcastle"
+],
+[
+"Swindon Town",
+"Swindon"
+]
+],
+"group": "src"
+},
+{
+"id": "da808fc5263b805c",
+"url": "https://www.independent.co.uk/sport/fa-carling-premiership-199596-1596957.html",
+"near": "Calita",
+"also": [
+[
+"Farense",
+"Farense"
+],
+[
+"Coventry City",
+"Coventry"
+]
+],
+"group": "src"
+},
+{
+"id": "c974e7832f9bc267",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=8889",
+"near": "Calita",
+"also": [
+[
+"Farense",
+"Farense"
+],
+[
+"Coventry City",
+"Coventry"
+]
+],
+"group": "src"
+},
+{
+"id": "5c500f8eb28c94d2",
+"url": "https://www.independent.co.uk/sport/football-hughes-move-to-chelsea-criticised-1588109.html",
+"near": "Hughes",
+"also": [
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+],
+[
+"Chelsea"
+]
+],
+"group": "src"
+},
+{
+"id": "127c02698eeb80e0",
+"url": "https://www.independent.co.uk/sport/clubbyclub-guide-the-prospects-the-players-to-watch-the-arrivals-and-departures-1596119.html",
+"near": "Marsh",
+"also": [
+[
+"Coventry City",
+"Coventry"
+],
+[
+"Galatasaray",
+"Galatasaray"
+]
+],
+"group": "src"
+},
+{
+"id": "5ba5109b290c8ca9",
+"url": "https://www.independent.co.uk/sport/edwards-calls-halt-1588187.html",
+"near": "Marsh",
+"also": [
+[
+"Coventry City",
+"Coventry"
+],
+[
+"Galatasaray",
+"Galatasaray"
+]
+],
+"group": "src"
+},
+{
+"id": "1272a6a9c7ff0bd5",
+"url": "https://www.independent.co.uk/sport/villa-sign-pounds-3-5m-yugoslav-striker-1588608.html",
+"near": "Milošević",
+"also": [
+[
+"Partizan",
+"Partizan"
+],
+[
+"Aston Villa",
+"Villa"
+]
+],
+"group": "src"
+},
+{
+"id": "c1a2a96b2c2abe0a",
+"url": "https://www.independent.co.uk/sport/cantona-s-transfer-demand-stuns-united-1595489.html",
+"near": "Bart-Williams",
+"also": [
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+],
+[
+"Nottingham Forest",
+"Forest",
+"Nott'm Forest"
+]
+],
+"group": "src"
+},
+{
+"id": "1ec4d858173f92ef",
+"url": "https://www.independent.co.uk/sport/fa-carling-premiership-199596-1596957.html",
+"near": "Saunders",
+"also": [
+[
+"Aston Villa",
+"Villa"
+],
+[
+"Galatasaray",
+"Galatasaray"
+]
+],
+"group": "src"
+},
+{
+"id": "47b7ff679f7c9278",
+"url": "https://www.independent.co.uk/sport/football-saunders-set-to-link-up-with-liverpool-old-boys-a3152241.html",
+"near": "Saunders",
+"also": [
+[
+"Aston Villa",
+"Villa"
+],
+[
+"Galatasaray",
+"Galatasaray"
+]
+],
+"group": "src"
+},
+{
+"id": "4b6d1eb60d153834",
+"url": "https://www.independent.co.uk/sport/football-hughes-move-to-chelsea-criticised-1588109.html",
+"near": "Southgate",
+"also": [
+[
+"Crystal Palace",
+"Palace"
+],
+[
+"Aston Villa",
+"Villa"
+]
+],
+"group": "src"
+},
+{
+"id": "e6cee92354f42048",
+"url": "https://www.the-independent.com/sport/transfers-1590550.html",
+"near": "Fairclough",
+"also": [
+[
+"Leeds United",
+"Leeds"
+],
+[
+"Bolton Wanderers",
+"Bolton"
+]
+],
+"group": "src"
+},
+{
+"id": "6846418d8c4e1ff0",
+"url": "https://www.the-independent.com/sport/transfers-1590550.html",
+"near": "Isaías",
+"also": [
+[
+"Benfica",
+"Benfica"
+],
+[
+"Coventry City",
+"Coventry"
+]
+],
+"group": "src"
+},
+{
+"id": "08e5efc8a3919605",
+"url": "https://www.independent.co.uk/sport/football-united-step-up-chase-for-anderton-1590162.html",
+"near": "Draper",
+"also": [
+[
+"Leicester City",
+"Leicester"
+],
+[
+"Aston Villa",
+"Villa"
+]
+],
+"group": "src"
+},
+{
+"id": "920cde6c385ee23a",
+"url": "https://www.independent.co.uk/sport/football-ball-seals-pounds-2m-signing-of-georgian-and-then-ball-1591578.html",
+"near": "Kinkladze",
+"also": [
+[
+"Dinamo Tbilisi",
+"Dinamo"
+],
+[
+"Manchester City",
+"Man City"
+]
+],
+"group": "src"
+},
+{
+"id": "b9d4b187c166ff18",
+"url": "https://www.independent.co.uk/sport/football-smith-is-forced-to-retire-by-injury-1592370.html",
+"near": "Degryse",
+"also": [
+[
+"Anderlecht",
+"Anderlecht"
+],
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+]
+],
+"group": "src"
+},
+{
+"id": "81bf20bf30b9d3ae",
+"url": "https://www.independent.co.uk/sport/football-ball-seals-pounds-2m-signing-of-georgian-and-then-ball-1591578.html",
+"near": "Degryse",
+"also": [
+[
+"Anderlecht",
+"Anderlecht"
+],
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+]
+],
+"group": "src"
+},
+{
+"id": "fc019291ce231265",
+"url": "https://www.independent.co.uk/sport/graham-ban-is-widened-by-fifa-1592227.html",
+"near": "Pembridge",
+"also": [
+[
+"Derby County",
+"Derby"
+],
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+]
+],
+"group": "src"
+},
+{
+"id": "02b09b27f15cd7a7",
+"url": "https://www.independent.co.uk/sport/clubbyclub-guide-the-prospects-the-players-to-watch-the-arrivals-and-departures-1596119.html",
+"near": "Rowett",
+"also": [
+[
+"Everton"
+],
+[
+"Derby County",
+"Derby"
+]
+],
+"group": "src"
+},
+{
+"id": "636a97d7f57c7d41",
+"url": "https://www.independent.co.uk/sport/football-the-spent-force-of-goodison-1188538.html",
+"near": "Rowett",
+"also": [
+[
+"Everton"
+],
+[
+"Derby County",
+"Derby"
+]
+],
+"group": "src"
+},
+{
+"id": "ac782e8d2317f604",
+"url": "https://www.independent.co.uk/sport/noheadline-1593862.html",
+"near": "Pressley",
+"also": [
+[
+"Coventry City",
+"Coventry"
+],
+[
+"Dundee United",
+"Dundee"
+]
+],
+"group": "src"
+},
+{
+"id": "3cd773fdb8457e9e",
+"url": "https://www.the-independent.com/sport/frustrated-rangers-pull-out-of-raducioiu-transfer-1593328.html",
+"near": "Pressley",
+"also": [
+[
+"Coventry City",
+"Coventry"
+],
+[
+"Dundee United",
+"Dundee"
+]
+],
+"group": "src"
+},
+{
+"id": "0e498cb11a68e726",
+"url": "https://www.independent.co.uk/sport/noheadline-1593862.html",
+"near": "Robertson",
+"also": [
+[
+"Coventry City",
+"Coventry"
+],
+[
+"Dundee United",
+"Dundee"
+]
+],
+"group": "src"
+},
+{
+"id": "35a55d6f36cd6e7d",
+"url": "https://www.the-independent.com/sport/frustrated-rangers-pull-out-of-raducioiu-transfer-1593328.html",
+"near": "Robertson",
+"also": [
+[
+"Coventry City",
+"Coventry"
+],
+[
+"Dundee United",
+"Dundee"
+]
+],
+"group": "src"
+},
+{
+"id": "7a5602d0e3e25f95",
+"url": "https://www.independent.co.uk/sport/everton-to-sign-short-for-pounds-2-7m-1592062.html",
+"near": "Short",
+"also": [
+[
+"Derby County",
+"Derby"
+],
+[
+"Everton"
+]
+],
+"group": "src"
+},
+{
+"id": "3808664547b3627f",
+"url": "https://www.independent.co.uk/sport/lee-upstages-new-recruits-1597155.html",
+"near": "Williams",
+"also": [
+[
+"Derby County",
+"Derby"
+],
+[
+"Coventry City",
+"Coventry"
+]
+],
+"group": "src"
+},
+{
+"id": "c6b261c16df98a8a",
+"url": "https://www.independent.co.uk/sport/closeup-new-man-in-the-mask-1596112.html",
+"near": "Reed",
+"also": [
+[
+"Darlington",
+"Darlington"
+],
+[
+"Blackburn Rovers",
+"Blackburn"
+]
+],
+"group": "src"
+},
+{
+"id": "beed7903fe4b5c0a",
+"url": "https://www.independent.co.uk/sport/fifa-acts-to-halt-hauge-dealings-1595935.html",
+"near": "Walsh",
+"also": [
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+],
+[
+"Middlesbrough",
+"Boro"
+]
+],
+"group": "src"
+},
+{
+"id": "587db0c81d95255b",
+"url": "https://www.independent.co.uk/sport/bald-eagle-prepares-rams-for-top-flight-1595898.html",
+"near": "Flynn",
+"also": [
+[
+"Coventry City",
+"Coventry"
+],
+[
+"Derby County",
+"Derby"
+]
+],
+"group": "src"
+},
+{
+"id": "009e175332e4e993",
+"url": "https://www.independent.co.uk/sport/west-ham-turning-australian-1596395.html",
+"near": "Slater",
+"also": [
+[
+"Blackburn Rovers",
+"Blackburn"
+],
+[
+"West Ham United",
+"West Ham"
+]
+],
+"group": "src"
+},
+{
+"id": "82ff23809653972b",
+"url": "https://www.theguardian.com/football/2001/may/09/newsstory.sport9",
+"near": "Slater",
+"also": [
+[
+"Blackburn Rovers",
+"Blackburn"
+],
+[
+"West Ham United",
+"West Ham"
+]
+],
+"group": "src"
+},
+{
+"id": "15da4ae35705e9f2",
+"url": "https://www.independent.co.uk/sport/west-ham-turning-australian-1596395.html",
+"near": "Holmes",
+"also": [
+[
+"West Ham United",
+"West Ham"
+],
+[
+"Blackburn Rovers",
+"Blackburn"
+]
+],
+"group": "src"
+},
+{
+"id": "8c8939988947c5d6",
+"url": "https://www.independent.co.uk/sport/kanchelskis-pleads-for-a-solution-1596962.html",
+"near": "Rush",
+"also": [
+[
+"West Ham United",
+"West Ham"
+],
+[
+"Norwich City",
+"Norwich"
+]
+],
+"group": "src"
+},
+{
+"id": "f3507d195eccace5",
+"url": "https://www.independent.co.uk/sport/walsh-and-ellis-pay-the-price-1599608.html",
+"near": "Boere",
+"also": [
+[
+"West Ham United",
+"West Ham"
+],
+[
+"Crystal Palace",
+"Palace"
+]
+],
+"group": "src"
+},
+{
+"id": "7ca4244f73a4b727",
+"url": "https://www.independent.co.uk/sport/walsh-and-ellis-pay-the-price-1599608.html",
+"near": "Dowie",
+"also": [
+[
+"Crystal Palace",
+"Palace"
+],
+[
+"West Ham United",
+"West Ham"
+]
+],
+"group": "src"
+},
+{
+"id": "4c63778d9e46ce75",
+"url": "https://www.independent.co.uk/sport/fa-carling-premiership-199596-1596957.html",
+"near": "Lazaridis",
+"also": [
+[
+"West Adelaide",
+"West"
+],
+[
+"West Ham United",
+"West Ham"
+]
+],
+"group": "src"
+},
+{
+"id": "51a06a36efd6c3ba",
+"url": "https://www.theguardian.com/football/2001/may/09/newsstory.sport9",
+"near": "Lazaridis",
+"also": [
+[
+"West Adelaide",
+"West"
+],
+[
+"West Ham United",
+"West Ham"
+]
+],
+"group": "src"
+},
+{
+"id": "740042ac6cdeee49",
+"url": "https://www.independent.co.uk/sport/football-sunderland-set-to-land-waddle-1602351.html",
+"near": "Atkins",
+"also": [
+[
+"Blackburn Rovers",
+"Blackburn"
+],
+[
+"Wolverhampton Wanderers",
+"Wolves"
+]
+],
+"group": "src"
+},
+{
+"id": "7bca96febb0501d2",
+"url": "https://www.independent.co.uk/sport/palace-accelerate-quest-for-taylor-1601208.html",
+"near": "Williams",
+"also": [
+[
+"Coventry City",
+"Coventry"
+],
+[
+"Wycombe Wanderers",
+"Wycombe"
+]
+],
+"group": "src"
+},
+{
+"id": "b24d76d49bb6f718",
+"url": "https://www.the-independent.com/sport/keegan-profits-as-fox-joins-spurs-for-pounds-4m-1603645.html",
+"near": "Fox",
+"also": [
+[
+"Newcastle United",
+"Newcastle"
+],
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+]
+],
+"group": "src"
+},
+{
+"id": "eb8c4db95d1c3eb4",
+"url": "https://www.independent.co.uk/sport/spurs-caught-on-the-counter-1577964.html",
+"near": "Fox",
+"also": [
+[
+"Newcastle United",
+"Newcastle"
+],
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+]
+],
+"group": "src"
+},
+{
+"id": "c7112a056f3514ad",
+"url": "https://www.irishtimes.com/business/spurs-lose-on-transfer-dealings-1.123236",
+"near": "Fox",
+"also": [
+[
+"Newcastle United",
+"Newcastle"
+],
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+]
+],
+"group": "src"
+},
+{
+"id": "02ff098e0f5fe7e5",
+"url": "https://www.the-independent.com/sport/football-harford-in-for-mckinlay-1576457.html",
+"near": "Coughlan",
+"also": [
+[
+"Bray Wanderers",
+"Bray"
+],
+[
+"Blackburn Rovers",
+"Blackburn"
+]
+],
+"group": "src"
+},
+{
+"id": "1d9d6e2979190b46",
+"url": "https://www.the-independent.com/sport/leeds-stirred-by-mcallister-1580053.html",
+"near": "Jobson",
+"also": [
+[
+"Oldham Athletic",
+"Oldham"
+],
+[
+"Leeds United",
+"Leeds"
+]
+],
+"group": "src"
+},
+{
+"id": "3ddfd02de369abce",
+"url": "https://www.independent.co.uk/sport/yorke-keeps-spotlight-off-import-1580211.html",
+"near": "Tiler",
+"also": [
+[
+"Nottingham Forest",
+"Forest",
+"Nott'm Forest"
+],
+[
+"Aston Villa",
+"Villa"
+]
+],
+"group": "src"
+},
+{
+"id": "162bda2a1f215ed6",
+"url": "https://www.independent.co.uk/sport/three-more-for-blades-1527869.html",
+"near": "White",
+"also": [
+[
+"Leeds United",
+"Leeds"
+],
+[
+"Sheffield United",
+"Sheff Utd"
+]
+],
+"group": "src"
+},
+{
+"id": "a4e2fde55a103db6",
+"url": "https://www.independent.co.uk/sport/fa-inquiry-into-st-andrew-s-clashes-1580830.html",
+"near": "Fenton",
+"also": [
+[
+"Aston Villa",
+"Villa"
+],
+[
+"Blackburn Rovers",
+"Blackburn"
+]
+],
+"group": "src"
+},
+{
+"id": "13785ff346f84c62",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=3793",
+"near": "Ingesson",
+"also": [
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+],
+[
+"Bari",
+"Bari"
+]
+],
+"group": "src"
+},
+{
+"id": "0be10da170eeb11f",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=7215&season_id=125",
+"near": "Shaw",
+"also": [
+[
+"Crystal Palace",
+"Palace"
+],
+[
+"Coventry City",
+"Coventry"
+]
+],
+"group": "src"
+},
+{
+"id": "5cea8ebd5a882763",
+"url": "https://www.independent.co.uk/sport/dalglish-linked-with-wolves-vacancy-1582555.html",
+"near": "Barlow",
+"also": [
+[
+"Everton"
+],
+[
+"Oldham Athletic",
+"Oldham"
+]
+],
+"group": "src"
+},
+{
+"id": "35372fdc14be67f8",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=1908",
+"near": "Darby",
+"also": [
+[
+"Coventry City",
+"Coventry"
+],
+[
+"West Bromwich Albion",
+"West Brom",
+"WBA"
+]
+],
+"group": "src"
+},
+{
+"id": "88ffd393773c6db6",
+"url": "https://www.independent.co.uk/sport/kendall-takes-over-at-sheffield-united-after-bassett-reign-ends-1525567.html",
+"near": "Feuer",
+"also": [
+[
+"West Ham United",
+"West Ham"
+],
+[
+"Luton Town",
+"Luton"
+]
+],
+"group": "src"
+},
+{
+"id": "00371b43c9c47fdc",
+"url": "https://www.theguardian.com/football/2001/may/09/newsstory.sport9",
+"near": "Feuer",
+"also": [
+[
+"West Ham United",
+"West Ham"
+],
+[
+"Luton Town",
+"Luton"
+]
+],
+"group": "src"
+},
+{
+"id": "a5f06aa5dbca84b4",
+"url": "https://www.independent.co.uk/sport/blackburn-poised-to-win-race-for-coleman-1525410.html",
+"near": "Whelan",
+"also": [
+[
+"Leeds United",
+"Leeds"
+],
+[
+"Coventry City",
+"Coventry"
+]
+],
+"group": "src"
+},
+{
+"id": "adbee72f28374002",
+"url": "https://www.independent.co.uk/sport/jones-may-leave-dons-1525865.html",
+"near": "Coleman",
+"also": [
+[
+"Crystal Palace",
+"Palace"
+],
+[
+"Blackburn Rovers",
+"Blackburn"
+]
+],
+"group": "src"
+},
+{
+"id": "f60799b316bec570",
+"url": "https://www.independent.co.uk/sport/football-wonder-of-waddle-whips-wilkinson-1526292.html",
+"near": "Kovačević",
+"also": [
+[
+"Red Star Belgrade"
+],
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+]
+],
+"group": "src"
+},
+{
+"id": "a2c4d959e1920c39",
+"url": "https://www.independent.co.uk/sport/blackburn-poised-to-win-race-for-coleman-1525410.html",
+"near": "Kovačević",
+"also": [
+[
+"Red Star Belgrade"
+],
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+]
+],
+"group": "src"
+},
+{
+"id": "20a02d8866b972d4",
+"url": "https://www.independent.co.uk/sport/waddle-s-magic-casts-leeds-adrift-1526210.html",
+"near": "Kovačević",
+"also": [
+[
+"Red Star Belgrade"
+],
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+]
+],
+"group": "src"
+},
+{
+"id": "9e2efbff5f598d54",
+"url": "https://www.independent.co.uk/sport/football-wonder-of-waddle-whips-wilkinson-1526292.html",
+"near": "Stefanović",
+"also": [
+[
+"Red Star Belgrade"
+],
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+]
+],
+"group": "src"
+},
+{
+"id": "8733513dacfbf385",
+"url": "https://www.independent.co.uk/sport/blackburn-poised-to-win-race-for-coleman-1525410.html",
+"near": "Stefanović",
+"also": [
+[
+"Red Star Belgrade"
+],
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+]
+],
+"group": "src"
+},
+{
+"id": "8fdee9cc00652624",
+"url": "https://www.independent.co.uk/sport/waddle-s-magic-casts-leeds-adrift-1526210.html",
+"near": "Stefanović",
+"also": [
+[
+"Red Star Belgrade"
+],
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+]
+],
+"group": "src"
+},
+{
+"id": "bb83be7ce44747a8",
+"url": "https://www.independent.co.uk/sport/kendall-relights-the-fire-1326256.html",
+"near": "Hutchison",
+"also": [
+[
+"West Ham United",
+"West Ham"
+],
+[
+"Sheffield United",
+"Sheff Utd"
+]
+],
+"group": "src"
+},
+{
+"id": "3ff13bce39b054af",
+"url": "https://www.independent.co.uk/sport/clough-takes-pay-cut-to-move-to-maine-road-1324922.html",
+"near": "Sinton",
+"also": [
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+],
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+]
+],
+"group": "src"
+},
+{
+"id": "2e59bc52fb37b5fc",
+"url": "https://www.independent.co.uk/sport/clough-takes-pay-cut-to-move-to-maine-road-1324922.html",
 "near": "Clough",
-"group": "article"
+"also": [
+[
+"Liverpool"
+],
+[
+"Manchester City",
+"Man City"
+]
+],
+"group": "src"
 },
 {
-"id": "b063b5a9c5e855f0",
-"url": "http://news.bbc.co.uk/sport1/hi/football/1708081.stm",
-"near": "Westerveld",
-"group": "article"
+"id": "cca2c8eeaca8d36c",
+"url": "https://www.independent.co.uk/sport/todd-brings-in-porterfield-as-bolton-no-2-1322384.html",
+"near": "Bilic",
+"also": [
+[
+"Karlsruhe",
+"Karlsruhe"
+],
+[
+"West Ham United",
+"West Ham"
+]
+],
+"group": "src"
 },
 {
-"id": "a2c4f4881f0bf94a",
-"url": "https://news.bbc.co.uk/sport2/hi/football/teams/n/notts_county/8276493.stm",
-"near": "Akinbiyi",
-"group": "article"
+"id": "2fc7034d6a5ffbf9",
+"url": "https://www.independent.co.uk/sport/euro-96-hope-for-cantona-and-ginola-1324652.html",
+"near": "Bilic",
+"also": [
+[
+"Karlsruhe",
+"Karlsruhe"
+],
+[
+"West Ham United",
+"West Ham"
+]
+],
+"group": "src"
 },
 {
-"id": "e98c1869fbb6abf0",
-"url": "https://news.bbc.co.uk/sport2/hi/football/teams/l/leicester_city/850372.stm",
-"near": "Akinbiyi",
-"group": "article"
+"id": "9e07fe4ee5f9fee0",
+"url": "https://www.independent.co.uk/sport/from-philippe-albert-to-tony-yeboah-a-complete-guide-to-the-comings-an-d-goings-of-the-premiership-s-84-overseas-players-1361670.html",
+"near": "Bilic",
+"also": [
+[
+"Karlsruhe",
+"Karlsruhe"
+],
+[
+"West Ham United",
+"West Ham"
+]
+],
+"group": "src"
 },
 {
-"id": "409a8ac1c860e5d3",
-"url": "https://news.bbc.co.uk/sport1/hi/football/teams/b/burnley/4448704.stm",
-"near": "Akinbiyi",
-"group": "article"
+"id": "283e2744c7cea123",
+"url": "https://www.theguardian.com/football/2001/may/09/newsstory.sport9",
+"near": "Bilic",
+"also": [
+[
+"Karlsruhe",
+"Karlsruhe"
+],
+[
+"West Ham United",
+"West Ham"
+]
+],
+"group": "src"
 },
 {
-"id": "7485ee60038079ff",
-"url": "https://news.bbc.co.uk/sport2/hi/football/teams/c/crystal_palace/1801306.stm",
-"near": "Akinbiyi",
-"group": "article"
+"id": "e45a26d642caeb07",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=1856",
+"near": "Currie",
+"also": [
+[
+"West Ham United",
+"West Ham"
+],
+[
+"Shrewsbury Town",
+"Shrewsbury"
+]
+],
+"group": "src"
 },
 {
-"id": "a6e4e2c6268a8313",
-"url": "https://news.bbc.co.uk/sport2/hi/football/teams/l/leeds_united/2181229.stm",
-"near": "Barmby",
-"group": "article"
+"id": "010270b73805a6f5",
+"url": "https://www.independent.co.uk/sport/prize-draw-for-boro-1321026.html",
+"near": "Daish",
+"also": [
+[
+"Birmingham City",
+"Birmingham"
+],
+[
+"Coventry City",
+"Coventry"
+]
+],
+"group": "src"
 },
 {
-"id": "67252475e303a82a",
-"url": "https://news.bbc.co.uk/sport2/hi/football/eng_prem/2196579.stm",
-"near": "Barmby",
-"group": "article"
+"id": "12cc032fa745987d",
+"url": "https://www.theguardian.com/football/2001/may/09/newsstory.sport9",
+"near": "Allen",
+"also": [
+[
+"West Ham United",
+"West Ham"
+],
+[
+"Portsmouth"
+]
+],
+"group": "src"
 },
 {
-"id": "23ab5c5078ae933d",
-"url": "http://www.skysports.com/football/news/11715/2304391/barmby-makes-leeds-exit",
-"near": "Barmby",
-"group": "article"
+"id": "606dcb4f2528449b",
+"url": "https://www.independent.co.uk/sport/sherwood-to-placate-blackburn-protesters-1600747.html",
+"near": "Allen",
+"also": [
+[
+"West Ham United",
+"West Ham"
+],
+[
+"Portsmouth"
+]
+],
+"group": "src"
 },
 {
-"id": "1a71a13bb1e31002",
-"url": "https://news.bbc.co.uk/sport2/hi/football/teams/n/nottm_forest/3491214.stm",
-"near": "Barmby",
-"group": "article"
+"id": "51a4d96b4201bd48",
+"url": "https://www.independent.co.uk/sport/everton-find-forest-wanting-1321088.html",
+"near": "Batty",
+"also": [
+[
+"Blackburn Rovers",
+"Blackburn"
+],
+[
+"Newcastle United",
+"Newcastle"
+]
+],
+"group": "src"
 },
 {
-"id": "00fea246015ff3fb",
-"url": "https://news.bbc.co.uk/sport2/hi/football/eng_div_1/3495444.stm",
-"near": "Barmby",
-"group": "article"
+"id": "0f46a4edba7ff7cc",
+"url": "https://www.independent.co.uk/sport/mccarthy-s-irish-springbok-1339751.html",
+"near": "Batty",
+"also": [
+[
+"Blackburn Rovers",
+"Blackburn"
+],
+[
+"Newcastle United",
+"Newcastle"
+]
+],
+"group": "src"
 },
 {
-"id": "98d32551d096c437",
-"url": "https://news.bbc.co.uk/sport2/hi/football/teams/h/hull_city/3852967.stm",
-"near": "Barmby",
-"group": "article"
+"id": "82b8f9a190643391",
+"url": "https://www.independent.co.uk/sport/batty-finally-set-for-newcastle-1320850.html",
+"near": "Joachim",
+"also": [
+[
+"Leicester City",
+"Leicester"
+],
+[
+"Aston Villa",
+"Villa"
+]
+],
+"group": "src"
 },
 {
-"id": "556e6ace1d194236",
-"url": "https://www.usatoday.com/sports/soccer/world/2004-01-22-howard_x.htm",
-"near": "Howard",
-"group": "article"
+"id": "73fa7a554b3266e4",
+"url": "https://www.independent.co.uk/sport/peschisolido-s-return-enlivens-quiet-deadline-day-1344725.html",
+"near": "Cook",
+"also": [
+[
+"Coventry City",
+"Coventry"
+],
+[
+"Tranmere Rovers",
+"Tranmere"
+]
+],
+"group": "src"
 },
 {
-"id": "edbd6be57d2e2162",
-"url": "http://www.derbycounty-mad.co.uk/news/tmnw/rams_ready_to_cash_in_on_hulse_527487/index.shtml",
-"near": "Hulse",
-"group": "article"
+"id": "70c1326921dd421f",
+"url": "https://www.independent.co.uk/sport/football-seven-days-in-the-life-of-a-game-that-rarely-sleeps-1363430.html",
+"near": "Gudmundsson",
+"also": [
+[
+"Halmstads BK",
+"Halmstads"
+],
+[
+"Blackburn Rovers",
+"Blackburn"
+]
+],
+"group": "src"
 },
 {
-"id": "50fe11994a4ae621",
-"url": "http://www.givemesport.com/128002-leeds-boosted-in-striker-chase",
-"near": "Hulse",
-"group": "article"
+"id": "35b9fb754711f68c",
+"url": "https://www.independent.co.uk/sport/from-philippe-albert-to-tony-yeboah-a-complete-guide-to-the-comings-an-d-goings-of-the-premiership-s-84-overseas-players-1361670.html",
+"near": "Gudmundsson",
+"also": [
+[
+"Halmstads BK",
+"Halmstads"
+],
+[
+"Blackburn Rovers",
+"Blackburn"
+]
+],
+"group": "src"
 },
 {
-"id": "24fb39dca1c0e5e0",
-"url": "https://news.bbc.co.uk/sport2/hi/football/teams/d/derby_county/8739039.stm",
-"near": "Hulse",
-"group": "article"
+"id": "b72a19a335b68d5b",
+"url": "https://www.independent.co.uk/sport/football-wednesday-waste-vision-of-blinker-1340807.html",
+"near": "Blinker",
+"also": [
+[
+"Feyenoord",
+"Feyenoord"
+],
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+]
+],
+"group": "src"
 },
 {
-"id": "8ab1e2f497651044",
-"url": "http://www.mirrorfootball.co.uk/news/Blackpool-transfer-news-Ian-Holloway-closes-in-on-record-1m-striker-deal-for-Derby-s-Rob-Hulse-article530007.html",
-"near": "Hulse",
-"group": "article"
+"id": "f2315b2c0b28cb16",
+"url": "https://www.independent.co.uk/sport/football-platt-to-undergo-more-surgery-1324820.html",
+"near": "Dumitrescu",
+"also": [
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+],
+[
+"West Ham United",
+"West Ham"
+]
+],
+"group": "src"
+},
+{
+"id": "424b77ba7a00fb8d",
+"url": "https://www.independent.co.uk/sport/asprilla-and-curle-to-face-fa-charges-1321384.html",
+"near": "Dumitrescu",
+"also": [
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+],
+[
+"West Ham United",
+"West Ham"
+]
+],
+"group": "src"
+},
+{
+"id": "e3dfe25165a97ade",
+"url": "https://www.independent.co.uk/sport/redknapp-s-foreign-affair-hits-trouble-1312607.html",
+"near": "Dumitrescu",
+"also": [
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+],
+[
+"West Ham United",
+"West Ham"
+]
+],
+"group": "src"
+},
+{
+"id": "a762204d27ea1400",
+"url": "https://www.independent.co.uk/sport/fa-investigates-wolves-signings-1342004.html",
+"near": "Newsome",
+"also": [
+[
+"Norwich City",
+"Norwich"
+],
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+]
+],
+"group": "src"
+},
+{
+"id": "6a508adbff0901e9",
+"url": "https://www.independent.co.uk/sport/flitcroft-sale-angers-city-fans-1343489.html",
+"near": "Flitcroft",
+"also": [
+[
+"Manchester City",
+"Man City"
+],
+[
+"Blackburn Rovers",
+"Blackburn"
+]
+],
+"group": "src"
+},
+{
+"id": "258ed68812cd1d2c",
+"url": "https://www.independent.co.uk/sport/peschisolido-s-return-enlivens-quiet-deadline-day-1344725.html",
+"near": "Kavelashvili",
+"also": [
+[
+"Alania Vladikavkaz",
+"Alania"
+],
+[
+"Manchester City",
+"Man City"
+]
+],
+"group": "src"
+},
+{
+"id": "b231fc1d0bc5b053",
+"url": "https://www.independent.co.uk/sport/rae-becomes-a-rokerman-1335886.html",
+"near": "Rae",
+"also": [
+[
+"Millwall",
+"Millwall"
+],
+[
+"Sunderland"
+]
+],
+"group": "src"
+},
+{
+"id": "f3327d66c3efd6d3",
+"url": "https://www.independent.co.uk/sport/walker-reappointed-as-megson-resigns-at-norwich-1338264.html",
+"near": "Speed",
+"also": [
+[
+"Leeds United",
+"Leeds"
+],
+[
+"Everton"
+]
+],
+"group": "src"
+},
+{
+"id": "832fa7301d51b579",
+"url": "https://www.independent.co.uk/sport/big-stage-beckons-shearer-1331260.html",
+"near": "Gerrard",
+"also": [
+[
+"Oldham Athletic",
+"Oldham"
+],
+[
+"Everton"
+]
+],
+"group": "src"
+},
+{
+"id": "a7f04a19b2d90532",
+"url": "https://www.independent.co.uk/sport/football-boro-offer-ajax-pounds-6m-for-kluivert-1327288.html",
+"near": "Thatcher",
+"also": [
+[
+"Millwall",
+"Millwall"
+],
+[
+"Wimbledon"
+]
+],
+"group": "src"
+},
+{
+"id": "0fd8aa7c61e7ad7a",
+"url": "https://www.independent.co.uk/sport/di-matteo-seals-move-to-chelsea-1327518.html",
+"near": "Clarke",
+"also": [
+[
+"Rotherham United",
+"Rotherham"
+],
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+]
+],
+"group": "src"
+},
+{
+"id": "6b53f14bd58b7ea3",
+"url": "https://www.independent.co.uk/sport/football-ravanelli-rants-raves-and-rallies-1266342.html",
+"near": "Hall",
+"also": [
+[
+"Southampton"
+],
+[
+"West Ham United",
+"West Ham"
+]
+],
+"group": "src"
+},
+{
+"id": "01a5dcb83ab15c86",
+"url": "https://www.independent.co.uk/sport/briefly-poborsky-signs-at-last-1329803.html",
+"near": "Poborský",
+"also": [
+[
+"Slavia Prague",
+"Slavia"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "src"
+},
+{
+"id": "6697a2606afd2d42",
+"url": "https://www.independent.co.uk/sport/shearer-goes-home-for-pounds-15m-1331235.html",
+"near": "Poborský",
+"also": [
+[
+"Slavia Prague",
+"Slavia"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "src"
+},
+{
+"id": "8c5bbf77d4f987cd",
+"url": "https://www.independent.co.uk/sport/football-rioch-s-pursuit-of-elliott-held-up-by-dein-s-absence-1330565.html",
+"near": "Martyn",
+"also": [
+[
+"Crystal Palace",
+"Palace"
+],
+[
+"Leeds United",
+"Leeds"
+]
+],
+"group": "src"
+},
+{
+"id": "a0c7515eeccc5450",
+"url": "https://www.independent.co.uk/sport/big-stage-beckons-shearer-1331260.html",
+"near": "Martyn",
+"also": [
+[
+"Crystal Palace",
+"Palace"
+],
+[
+"Leeds United",
+"Leeds"
+]
+],
+"group": "src"
+},
+{
+"id": "ea5b45ee860eff87",
+"url": "https://www.independent.co.uk/sport/middlesbrough-spend-pounds-7m-on-ravanelli-1327422.html",
+"near": "Raducioiu",
+"also": [
+[
+"Espanyol",
+"Espanyol"
+],
+[
+"West Ham United",
+"West Ham"
+]
+],
+"group": "src"
+},
+{
+"id": "aacd30878b9dd045",
+"url": "https://www.independent.co.uk/sport/liverpool-finally-seal-berger-deal-1307855.html",
+"near": "Raducioiu",
+"also": [
+[
+"Espanyol",
+"Espanyol"
+],
+[
+"West Ham United",
+"West Ham"
+]
+],
+"group": "src"
+},
+{
+"id": "0075d1aa7456888a",
+"url": "https://www.independent.co.uk/sport/gullit-wins-battle-of-the-imports-1315746.html",
+"near": "Raducioiu",
+"also": [
+[
+"Espanyol",
+"Espanyol"
+],
+[
+"West Ham United",
+"West Ham"
+]
+],
+"group": "src"
+},
+{
+"id": "caef2eed7db100b8",
+"url": "https://www.independent.co.uk/sport/ferguson-close-to-signing-cruyff-1330152.html",
+"near": "Nielsen",
+"also": [
+[
+"Brondby",
+"Brondby"
+],
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+]
+],
+"group": "src"
+},
+{
+"id": "832b4ae56c9d7d2d",
+"url": "https://www.independent.co.uk/sport/from-philippe-albert-to-tony-yeboah-a-complete-guide-to-the-comings-an-d-goings-of-the-premiership-s-84-overseas-players-1361670.html",
+"near": "Nélson",
+"also": [
+[
+"Sporting",
+"Sporting"
+],
+[
+"Aston Villa",
+"Villa"
+]
+],
+"group": "src"
+},
+{
+"id": "42899db68089fc31",
+"url": "https://www.independent.co.uk/sport/liverpool-finally-seal-berger-deal-1307855.html",
+"near": "Oakes",
+"also": [
+[
+"Luton Town",
+"Luton"
+],
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+]
+],
+"group": "src"
+},
+{
+"id": "3de83e7d12d6f40b",
+"url": "https://www.independent.co.uk/sport/ferguson-close-to-signing-cruyff-1330152.html",
+"near": "Oakes",
+"also": [
+[
+"Luton Town",
+"Luton"
+],
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+]
+],
+"group": "src"
+},
+{
+"id": "3e5590d3087c44b8",
+"url": "https://www.independent.co.uk/sport/big-stage-beckons-shearer-1331260.html",
+"near": "Collins",
+"also": [
+[
+"Crewe Alexandra",
+"Crewe"
+],
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+]
+],
+"group": "src"
+},
+{
+"id": "9d07e03c6500efbb",
+"url": "https://www.theguardian.com/football/2002/oct/31/sport.comment2",
+"near": "Collins",
+"also": [
+[
+"Crewe Alexandra",
+"Crewe"
+],
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+]
+],
+"group": "src"
+},
+{
+"id": "5809e196349f115e",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=6347",
+"near": "Pickering",
+"also": [
+[
+"Coventry City",
+"Coventry"
+],
+[
+"Stoke City",
+"Stoke"
+]
+],
+"group": "src"
+},
+{
+"id": "8dcf0443663e1527",
+"url": "https://www.independent.co.uk/sport/from-philippe-albert-to-tony-yeboah-a-complete-guide-to-the-comings-an-d-goings-of-the-premiership-s-84-overseas-players-1361670.html",
+"near": "Trustfull",
+"also": [
+[
+"Feyenoord",
+"Feyenoord"
+],
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+]
+],
+"group": "src"
+},
+{
+"id": "ebf49f8cb24f06d1",
+"url": "https://www.independent.co.uk/sport/villa-limitations-are-exposed-by-humphreys-1310384.html",
+"near": "Trustfull",
+"also": [
+[
+"Feyenoord",
+"Feyenoord"
+],
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+]
+],
+"group": "src"
+},
+{
+"id": "1f84a8f3ddee1412",
+"url": "https://www.independent.co.uk/sport/humphreys-comes-of-age-1310332.html",
+"near": "Trustfull",
+"also": [
+[
+"Feyenoord",
+"Feyenoord"
+],
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+]
+],
+"group": "src"
+},
+{
+"id": "61ed3b7d6b29b6e9",
+"url": "https://www.theguardian.com/football/2002/oct/31/sport.comment2",
+"near": "Trustfull",
+"also": [
+[
+"Feyenoord",
+"Feyenoord"
+],
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+]
+],
+"group": "src"
+},
+{
+"id": "a6303a6208d0cc7d",
+"url": "https://www.independent.co.uk/sport/football-elliott-move-to-blackburn-is-blocked-1309991.html",
+"near": "Ćurčić",
+"also": [
+[
+"Bolton Wanderers",
+"Bolton"
+],
+[
+"Aston Villa",
+"Villa"
+]
+],
+"group": "src"
+},
+{
+"id": "77aff2b972b10a19",
+"url": "https://www.independent.co.uk/sport/on-the-move-5604081.html",
+"near": "Vieira",
+"also": [
+[
+"AC Milan"
+],
+[
+"Arsenal"
+]
+],
+"group": "src"
+},
+{
+"id": "70a1f9814f91973d",
+"url": "https://www.independent.co.uk/sport/arsenal-manage-double-signing-1309843.html",
+"near": "Vieira",
+"also": [
+[
+"AC Milan"
+],
+[
+"Arsenal"
+]
+],
+"group": "src"
+},
+{
+"id": "79af0cdcad989378",
+"url": "https://www.independent.co.uk/sport/football/premier-league/wenger-pleads-poverty-before-summit-meeting-683422.html",
+"near": "Vieira",
+"also": [
+[
+"AC Milan"
+],
+[
+"Arsenal"
+]
+],
+"group": "src"
+},
+{
+"id": "d1a49821e4472efa",
+"url": "https://www.independent.co.uk/sport/football-spencer-joins-qpr-for-pounds-2-5m-1353677.html",
+"near": "Spencer",
+"also": [
+[
+"Chelsea"
+],
+[
+"Queens Park Rangers",
+"QPR"
+]
+],
+"group": "src"
+},
+{
+"id": "3c1ba4f15b828c81",
+"url": "https://www.independent.co.uk/sport/football-wright-to-right-the-wrongs-1092451.html",
+"near": "Spencer",
+"also": [
+[
+"Chelsea"
+],
+[
+"Queens Park Rangers",
+"QPR"
+]
+],
+"group": "src"
+},
+{
+"id": "f7d1fa48eba91612",
+"url": "https://www.independent.co.uk/sport/iversen-arrives-at-spurs-1313253.html",
+"near": "Iversen",
+"also": [
+[
+"Rosenborg",
+"Rosenborg"
+],
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+]
+],
+"group": "src"
+},
+{
+"id": "d4838a013389ee24",
+"url": "https://www.independent.co.uk/sport/football-spurs-beat-leeds-to-sign-pounds-2-6m-scales-1313649.html",
+"near": "Scales",
+"also": [
+[
+"Liverpool"
+],
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+]
+],
+"group": "src"
+},
+{
+"id": "0fce675014e984a5",
+"url": "https://www.independent.co.uk/sport/everton-move-ends-phelan-s-misery-1316598.html",
+"near": "Phelan",
+"also": [
+[
+"Chelsea"
+],
+[
+"Everton"
+]
+],
+"group": "src"
+},
+{
+"id": "8a30ebe68cbbdf8a",
+"url": "https://www.independent.co.uk/sport/spurs-secure-swiss-defender-vega-for-pounds-3m-1282102.html",
+"near": "Vega",
+"also": [
+[
+"Cagliari",
+"Cagliari"
+],
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+]
+],
+"group": "src"
+},
+{
+"id": "9b58fae9a8c4ef55",
+"url": "https://www.independent.co.uk/sport/beckham-s-drive-cuts-at-the-heart-of-spurs-faithful-1282925.html",
+"near": "Vega",
+"also": [
+[
+"Cagliari",
+"Cagliari"
+],
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+]
+],
+"group": "src"
+},
+{
+"id": "0b6505965470da87",
+"url": "https://www.the-independent.com/sport/football-forest-capitalise-on-vega-s-dismissal-1284112.html",
+"near": "Vega",
+"also": [
+[
+"Cagliari",
+"Cagliari"
+],
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+]
+],
+"group": "src"
+},
+{
+"id": "c2c571a415888313",
+"url": "https://www.skysports.com/football/news/9002348/sky-sports-vault",
+"near": "Vega",
+"also": [
+[
+"Cagliari",
+"Cagliari"
+],
+[
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
+]
+],
+"group": "src"
+},
+{
+"id": "96926fdc83f1b977",
+"url": "https://www.independent.co.uk/sport/football-graham-goes-dutch-to-stiffen-defence-1282512.html",
+"near": "Molenaar",
+"also": [
+[
+"Volendam",
+"Volendam"
+],
+[
+"Leeds United",
+"Leeds"
+]
+],
+"group": "src"
+},
+{
+"id": "4e2138539cc4739c",
+"url": "https://www.independent.co.uk/sport/football-noises-off-5584526.html",
+"near": "Festa",
+"also": [
+[
+"Internazionale",
+"Internazionale"
+],
+[
+"Middlesbrough",
+"Boro"
+]
+],
+"group": "src"
+},
+{
+"id": "c2b6ba02d6568d24",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=9738",
+"near": "Raducioiu",
+"also": [
+[
+"West Ham United",
+"West Ham"
+],
+[
+"Espanyol",
+"Espanyol"
+]
+],
+"group": "src"
+},
+{
+"id": "e47c033c3465741b",
+"url": "https://www.the-independent.com/sport/vialli-vexed-by-life-on-the-chelsea-bench-1283622.html",
+"near": "Elliott",
+"also": [
+[
+"Oxford United",
+"Oxford"
+],
+[
+"Leicester City",
+"Leicester"
+]
+],
+"group": "src"
+},
+{
+"id": "940cd02af64f3ccb",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=9696",
+"near": "Genaux",
+"also": [
+[
+"Coventry City",
+"Coventry"
+],
+[
+"Udinese",
+"Udinese"
+]
+],
+"group": "src"
+},
+{
+"id": "f287f6f137c8f0d5",
+"url": "https://www.independent.co.uk/sport/on-the-move-1276421.html",
+"near": "Kanchelskis",
+"also": [
+[
+"Everton"
+],
+[
+"Fiorentina",
+"Fiorentina"
+]
+],
+"group": "src"
+},
+{
+"id": "af2016b5bb0c4e6f",
+"url": "https://www.independent.co.uk/sport/on-the-move-1276421.html",
+"near": "Breen",
+"also": [
+[
+"Birmingham City",
+"Birmingham"
+],
+[
+"Coventry City",
+"Coventry"
+]
+],
+"group": "src"
+},
+{
+"id": "dd196db5cd97005f",
+"url": "https://www.independent.co.uk/sport/on-the-move-1276421.html",
+"near": "Yevtushok",
+"also": [
+[
+"Dnipro Dnipropetrovsk",
+"Dnipro"
+],
+[
+"Coventry City",
+"Coventry"
+]
+],
+"group": "src"
+},
+{
+"id": "e256304b8dcafbe3",
+"url": "https://www.independent.co.uk/sport/west-ham-pay-pounds-2-3m-for-kitson-1277392.html",
+"near": "Kitson",
+"also": [
+[
+"Newcastle United",
+"Newcastle"
+],
+[
+"West Ham United",
+"West Ham"
+]
+],
+"group": "src"
+},
+{
+"id": "f94356afbf64fbeb",
+"url": "https://www.the-independent.com/sport/football-reading-prepared-for-the-bolton-backlash-1277582.html",
+"near": "Beesley",
+"also": [
+[
+"Leeds United",
+"Leeds"
+],
+[
+"Manchester City",
+"Man City"
+]
+],
+"group": "src"
+},
+{
+"id": "27d80e51333fa49b",
+"url": "https://www.the-independent.com/sport/football-west-ham-capture-hartson-for-pounds-5m-1278812.html",
+"near": "Hartson",
+"also": [
+[
+"Arsenal"
+],
+[
+"West Ham United",
+"West Ham"
+]
+],
+"group": "src"
+},
+{
+"id": "3b5ab51533be6d91",
+"url": "https://www.independent.co.uk/sport/football-hartson-and-kitson-silence-pleat-s-lambs-1259815.html",
+"near": "Hartson",
+"also": [
+[
+"Arsenal"
+],
+[
+"West Ham United",
+"West Ham"
+]
+],
+"group": "src"
+},
+{
+"id": "6053e8682fdba801",
+"url": "https://www.independent.co.uk/sport/premier-leader-sought-1280915.html",
+"near": "Ebbrell",
+"also": [
+[
+"Everton"
+],
+[
+"Sheffield United",
+"Sheff Utd"
+]
+],
+"group": "src"
+},
+{
+"id": "69515fe5f2a2e203",
+"url": "https://www.soccerbase.com/players/player.sd?player_id=8729",
+"near": "Wright",
+"also": [
+[
+"Nottingham Forest",
+"Forest",
+"Nott'm Forest"
+],
+[
+"Manchester City",
+"Man City"
+]
+],
+"group": "src"
+},
+{
+"id": "218fa406c884a644",
+"url": "https://www.independent.co.uk/sport/football-dalglish-snaps-up-hamilton-for-pounds-2-5m-1275353.html",
+"near": "Hamilton",
+"also": [
+[
+"Bradford City",
+"Bradford"
+],
+[
+"Newcastle United",
+"Newcastle"
+]
+],
+"group": "src"
+},
+{
+"id": "c732c03a2472c71c",
+"url": "https://www.independent.co.uk/sport/football-ravanelli-rants-raves-and-rallies-1266342.html",
+"near": "Lomas",
+"also": [
+[
+"Manchester City",
+"Man City"
+],
+[
+"West Ham United",
+"West Ham"
+]
+],
+"group": "src"
+},
+{
+"id": "f8e3f6ad7406368a",
+"url": "https://www.independent.co.uk/sport/football-city-paying-lomas-to-go-1275534.html",
+"near": "Lomas",
+"also": [
+[
+"Manchester City",
+"Man City"
+],
+[
+"West Ham United",
+"West Ham"
+]
+],
+"group": "src"
+},
+{
+"id": "b8d97a561868b181",
+"url": "https://www.independent.co.uk/sport/football-city-paying-lomas-to-go-1275534.html",
+"near": "Billington",
+"also": [
+[
+"Peterborough United",
+"Peterborough"
+],
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+]
+],
+"group": "src"
+},
+{
+"id": "53296a4ee7bec31c",
+"url": "https://www.independent.co.uk/sport/everton-call-on-donachie-as-standin-1275746.html",
+"near": "Billington",
+"also": [
+[
+"Peterborough United",
+"Peterborough"
+],
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+]
+],
+"group": "src"
+},
+{
+"id": "1eb3816545cef886",
+"url": "https://www.theguardian.com/football/2002/oct/31/sport.comment2",
+"near": "Billington",
+"also": [
+[
+"Peterborough United",
+"Peterborough"
+],
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+]
+],
+"group": "src"
+},
+{
+"id": "eff6fa8c9aba0aa8",
+"url": "https://www.independent.co.uk/sport/everton-call-on-donachie-as-standin-1275746.html",
+"near": "McKeever",
+"also": [
+[
+"Peterborough United",
+"Peterborough"
+],
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+]
+],
+"group": "src"
+},
+{
+"id": "2825e736accd406c",
+"url": "https://www.theguardian.com/football/2002/oct/31/sport.comment2",
+"near": "McKeever",
+"also": [
+[
+"Peterborough United",
+"Peterborough"
+],
+[
+"Sheffield Wednesday",
+"Sheff Wed"
+]
+],
+"group": "src"
 }
 ]
 }

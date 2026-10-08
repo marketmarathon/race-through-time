@@ -314,18 +314,27 @@ def lead_date(r):
 
 group_new = {}
 unmatched = []
+by_tid = {t["transfer_id"]: t for t in transfers}
 for r in lead_rows:
-    if r["lead_section"] not in ("A", "B", "C", "G"):
+    if r["lead_section"] not in ("A", "B", "C", "G", "S"):
         continue
     d, basis = lead_date(r)
-    fid, toid = L.club_id(r["from_club"]), L.club_id(r["to_club"])
-    if not (fid or toid):
-        continue
-    last = pname(r["player"]).split(" ")[-1] if r["player"] else ""
     best, far = None, None
     pool = []
-    for tok in sorted(set(pname(r["player"]).split(" "))):  # sorted: the match must not depend on set order (build is deterministic)
-        pool += [x for x in idx.get(tok, []) if x not in pool]
+    if r["lead_section"] == "S":
+        # source rounds (DEC-275): the row names our deal, so it attaches to that transfer directly (no name or date matching)
+        best, fid, toid = by_tid.get(r["transfer_ref"]), None, None
+        if best is None:
+            unmatched.append({"lead_id": r["lead_id"], "section": "S", "date": r["date"], "player": r["player"], "from_club": r["from_club"],
+                              "to_club": r["to_club"], "fee_as_reported": r["fee_as_reported"], "grade": r["grade"], "url": r["url"],
+                              "reason": f"deal's transfer {r['transfer_ref']} not in the build"})
+            continue
+    else:
+        fid, toid = L.club_id(r["from_club"]), L.club_id(r["to_club"])
+        if not (fid or toid):
+            continue
+        for tok in sorted(set(pname(r["player"]).split(" "))):  # sorted: the match must not depend on set order (build is deterministic)
+            pool += [x for x in idx.get(tok, []) if x not in pool]
     pool.sort(key=lambda x: (x["date"], x["transfer_id"]))
     for t in pool:
         if not same_player(t["player"], r["player"]):
