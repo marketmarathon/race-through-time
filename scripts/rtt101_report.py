@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """RTT-101 (IQ-15): write reports/RTT-101_data_report.md from the built data (deterministic).
 Usage: python3 scripts/rtt101_report.py [DATA_DIR] [REPORT_PATH]"""
-import csv, json, os, sys
+import csv, json, os, sys, urllib.parse
 from collections import Counter, defaultdict
 
 D = sys.argv[1] if len(sys.argv) > 1 else "data/rtt-101"
@@ -325,3 +325,68 @@ with open(os.path.join(D, "tier1_max_or_approx_only.csv"), "w", newline="", enco
 print("tier1_max_or_approx_only.csv:", len(zt), "deals")
 with open(OUT, "a", encoding="utf-8") as f:
     f.write("\n".join(P3) + "\n")
+
+# ---------------------------------------------------------------- source round 1 (DEC-275): list A, 1992-93 to 1996-97
+BASE = rd("source_round1_baseline.csv", os.path.join(D, "source"))
+if BASE:
+    LA = [b for b in BASE if b["deal_id"].startswith("A")]
+    DSR = {r["transfer_id"]: r for r in rd("deal_structure.csv", os.path.join(D, "source"))}
+    rows11, chg, up, down = [], [], 0.0, 0.0
+    for b in LA:
+        t = TI.get(b["transfer_id"])
+        if not t:
+            continue
+        f0, f1 = float(b["fee_gbp"] or 0), float(t["fee_gbp"] or 0)
+        if abs(f1 - f0) >= 1 or b["date"] != t["date"]:
+            chg.append((b, t, f0, f1))
+            up += max(0.0, f1 - f0)
+            down += max(0.0, f0 - f1)
+    v0 = sum(1 for b in LA if b["status"] == "VERIFIED")
+    v1 = sum(1 for b in LA if TI.get(b["transfer_id"], {}).get("status") == "VERIFIED")
+    vb = sum(1 for b in LA if TI.get(b["transfer_id"], {}).get("status") == "VERIFIED" and TI[b["transfer_id"]]["grade"] in ("A", "B"))
+    fees = [c for c in chg if abs(c[3] - c[2]) >= 1]
+    R = ["\n## 11. Source round 1, list A: 1992–93 to 1996–97 (DEC-275, IQ-15d)\n",
+         f"- **Deals:** 211 (A0001–A0211), mapped to our transfers by player and date (`source/source_round1_map.csv`). ChatGPT's answers (private part20b/d/f) "
+         "were added as leads (`found_via` of each evidence row: \"ChatGPT source round 1 (DEC-264 route)\") and every cited page was read on the GitHub runner: the "
+         "figure next to the player's name, and both clubs named on the page.",
+         f"- **VERIFIED:** {v1} of the 211 deals now have a fee confirmed at source ({vb} by a club, league or press source; the rest by a Soccerbase row), "
+         f"up from {v0} before this round.",
+         f"- **Changed:** {len(fees)} fees changed (£{up / 1e6:.1f}m up, £{down / 1e6:.1f}m down; net £{(up - down) / 1e6:+.1f}m) and "
+         f"{sum(1 for c in chg if c[0]['date'] != c[1]['date'])} completion dates moved to the date a grade B report gives.",
+         "- **Deal structures** (`source/deal_structure.csv`, one row per transfer with its source, quote and rule): a combined fee is booked once on one transfer "
+         "of the pair and the partner counts £0 (no split invented); a part-exchange counts a player valuation on both sides only where a source states it, "
+         "otherwise cash only; add-ons count only when reported as payable; a loan fee is a loan fee.\n",
+         "| Deal | Player | Move | Date before → after | Fee before | Fee after | Why |", "|---|---|---|---|---|---|---|"]
+    for b, t, f0, f1 in sorted(chg, key=lambda c: c[0]["deal_id"]):
+        why = DSR[t["transfer_id"]]["rule"] if t["transfer_id"] in DSR else (
+            f"higher grade or earlier report ({t['grade']}, {urllib.parse.urlparse(SRC_URL.get(t['canonical_source_id'], '')).netloc})" if abs(f1 - f0) >= 1 else "")
+        R.append(f"| {b['deal_id']} | {t['player']} | {clubs.get(t['from_club'], t['from_club'])} → {clubs.get(t['to_club'], t['to_club'])} | "
+                 f"{b['date']}{' → ' + t['date'] if b['date'] != t['date'] else ''} | {m(f0)} | {m(f1)} | {why[:120]} |")
+    # window totals 1992-97
+    WB = {w["window"]: w for w in rd("window_totals_before_source_round1.csv", os.path.join(D, "source"))}
+    R += ["\n**League-wide spending by window, 1992–97** (before = commit 111a018; there are no published window totals for these years, "
+          "when there were no transfer windows, so nothing to compare against):\n", "| Window | Gross before | Gross after | Change |", "|---|---|---|---|"]
+    for win in sorted(set(WB) | set(WT), key=wkey):
+        y = int(win.split()[1])
+        if 1992 <= y <= 1997 and not (y == 1997 and win.startswith("summer")):
+            a, b0 = float(WT.get(win, {}).get("gross_spend_gbp") or 0), float(WB.get(win, {}).get("gross_spend_gbp") or 0)
+            R.append(f"| {win} | {m(b0)} | {m(a)} | {m(a - b0)} |")
+    # leader and top 12
+    TB = {r["month_end"]: r["top12_in_rank_order"].split(";") for r in rd("top12_before_source_round1.csv", os.path.join(D, "source"))}
+    now = defaultdict(list)
+    for r in SM:
+        if r["rank"] and int(r["rank"]) <= 12:
+            now[r["month_end"]].append((int(r["rank"]), r["club_id"]))
+    NOW = {mo: [c for _, c in sorted(v)] for mo, v in now.items()}
+    lead_ch = [mo for mo in sorted(NOW) if TB.get(mo) and TB[mo][0] != NOW[mo][0]]
+    set_ch = [mo for mo in sorted(NOW) if TB.get(mo) and set(TB[mo]) != set(NOW[mo])]
+    ord_ch = [mo for mo in sorted(NOW) if TB.get(mo) and TB[mo] != NOW[mo]]
+    R.append(f"\n**Effect on the race:** the leader changes at {len(lead_ch)} month ends"
+             + (" (" + "; ".join(f"{mo[:7]}: {NAME.get(TB[mo][0], TB[mo][0])} → {NAME.get(NOW[mo][0], NOW[mo][0])}" for mo in lead_ch[:12]) + ")" if lead_ch else "")
+             + f"; who is in the top 12 changes at {len(set_ch)} month ends"
+             + (" (" + "; ".join(f"{mo[:7]}: in {', '.join(NAME.get(c, c) for c in sorted(set(NOW[mo]) - set(TB[mo])))}, out "
+                                 f"{', '.join(NAME.get(c, c) for c in sorted(set(TB[mo]) - set(NOW[mo])))}" for mo in set_ch[:10]) + (" …" if len(set_ch) > 10 else "") + ")" if set_ch else "")
+             + f"; the order within the top 12 changes at {len(ord_ch)} month ends.")
+    with open(OUT, "a", encoding="utf-8") as f:
+        f.write("\n".join(R) + "\n")
+    print("section 11:", v0, "->", v1, "VERIFIED;", len(fees), "fees changed;", len(lead_ch), "leader changes")

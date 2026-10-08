@@ -6,14 +6,14 @@ Rebuild: `python3 scripts/build_rtt101_dataset.py && python3 scripts/rtt101_repo
 
 ## 1. What was built
 
-- **13,013 transfer events** that involve a club in the Premier League that season (1992-93 to the freeze, 1 Sep 2026), of which **3,309 carry a fee** above £0. The rest are loans without a fee (5,330), free transfers (2,046), undisclosed fees with no figure, counted £0 (2,179), and fees not found (149).
-- Fee status: **VERIFIED 1,474**, UNVERIFIED 1,835. Grade of the fee used: A 20, B 1,312, C (Wikipedia pointer only) 1,977, D 0.
-- Tiers (DEC-248): Tier 1 **2,042**, Tier 2 655, Tier 3 628 (5% sample: 31).
-  Tier 1 reasons (a transfer can have several): removal changes the leader or the top 12 1,135; fee >= £20m 548; club or British record (research lead) 526; disputed fee (research section C) 10; alternative fee version changes the leader or the top 12 2.
-- 16,575 evidence rows in `fee_evidence.csv`; 2,748 sources in `sources.csv`; 361 transfers with more than one fee version (`conflicts.csv`).
+- **13,013 transfer events** that involve a club in the Premier League that season (1992-93 to the freeze, 1 Sep 2026), of which **3,298 carry a fee** above £0. The rest are loans without a fee (5,330), free transfers (2,048), undisclosed fees with no figure, counted £0 (2,179), and fees not found (149).
+- Fee status: **VERIFIED 1,470**, UNVERIFIED 1,828. Grade of the fee used: A 20, B 1,424, C (Wikipedia pointer only) 1,854, D 0.
+- Tiers (DEC-248): Tier 1 **2,030**, Tier 2 657, Tier 3 627 (5% sample: 31).
+  Tier 1 reasons (a transfer can have several): removal changes the leader or the top 12 1,117; fee >= £20m 548; club or British record (research lead) 526; disputed fee (research section C) 10; alternative fee version changes the leader or the top 12 8.
+- 16,850 evidence rows in `fee_evidence.csv`; 2,921 sources in `sources.csv`; 420 transfers with more than one fee version (`conflicts.csv`).
 - **Scripted source check** (GitHub runner, 4,299 cited pages): VERIFIED 3,662; page fetched but figure not found near the player's name 559; blocked or gone 78.
-  Tier 2 result: 309 of 655 Tier 2 fees VERIFIED by the scripted check.
-  Tier 3 sample: 0 of 31 VERIFIED; most Tier 3 rows have no fetchable citation (error rate cannot be published yet: phase 2).
+  Tier 2 result: 301 of 657 Tier 2 fees VERIFIED by the scripted check.
+  Tier 3 sample: 3 of 31 VERIFIED; most Tier 3 rows have no fetchable citation (error rate cannot be published yet: phase 2).
 
 ## 2. Checks
 
@@ -23,10 +23,10 @@ Rebuild: `python3 scripts/build_rtt101_dataset.py && python3 scripts/rtt101_repo
 | every season has an attribution window | **PASS** | 1992-05-03 to 2026-09-01 |
 | 51 clubs, each with at least one PL season | **PASS** | 51 clubs |
 | no transfer counted outside its club's PL seasons | **PASS** | 3734 ledger rows frozen (club not in the PL) |
-| PL-to-PL deals net to zero (spend - income of PL clubs = net spend with non-PL clubs) | **PASS** | spend £27,748,458,988 − income £14,330,925,139 = £13,417,533,849; net with non-PL clubs £13,417,533,849 |
-| no fee without a source row | **PASS** | 3309 fee-bearing transfers |
+| PL-to-PL deals net to zero (spend - income of PL clubs = net spend with non-PL clubs) | **PASS** | spend £27,743,643,188 − income £14,325,044,339 = £13,418,598,849; net with non-PL clubs £13,418,598,849 |
+| no fee without a source row | **PASS** | 3298 fee-bearing transfers |
 | no Transfermarkt figure or URL anywhere | **PASS** | none found |
-| quotes under 25 words | **PASS** | 16575 evidence rows |
+| quotes under 25 words | **PASS** | 16850 evidence rows |
 | every conversion has a rate row | **PASS** | 16 conversions |
 | month-end series consistent with the ledger | **PASS** | 413 month ends × 51 clubs |
 | Bank of England Jan 1992 monthly averages equal Cowork's V-04 reading | **PASS** | 7 of 7 series compared |
@@ -43,51 +43,48 @@ First place at each month end, nominal cumulative net spend; a change is listed 
 | From month end | Leader | Value then |
 |---|---|---|
 | 1992-05-31 | Arsenal | £0.0m |
-| 1992-07-31 | Blackburn Rovers | £3.9m |
+| 1992-07-31 | Blackburn Rovers | £4.0m |
 | 1993-07-31 | Liverpool | £5.7m |
-| 1993-09-30 | Blackburn Rovers | £8.1m |
-| 1995-07-31 | Liverpool | £22.4m |
-| 1996-07-31 | Newcastle United | £38.5m |
-| 1997-07-31 | Liverpool | £31.8m |
-| 1998-02-28 | Newcastle United | £33.1m |
-| 1999-07-31 | Liverpool | £55.6m |
-| 2000-01-31 | Newcastle United | £53.2m |
-| 2000-03-31 | Liverpool | £63.6m |
-| 2000-06-30 | Chelsea | £69.2m |
-| 2000-07-31 | Liverpool | £72.7m |
-| 2001-07-31 | Manchester United | £81.7m |
-| 2001-08-31 | Liverpool | £80.2m |
-| 2001-11-30 | Leeds United | £86.3m |
-| 2002-07-31 | Manchester United | £89.4m |
-| 2003-03-31 | Newcastle United | £91.2m |
-| 2003-07-31 | Chelsea | £114.6m |
-| 2015-08-31 | Manchester City | £627.0m |
-| 2016-07-31 | Chelsea | £661.9m |
-| 2016-08-31 | Manchester City | £788.6m |
+| 1993-09-30 | Blackburn Rovers | £8.2m |
+| 1995-07-31 | Liverpool | £23.3m |
+| 1996-07-31 | Newcastle United | £37.5m |
+| 1997-07-31 | Liverpool | £33.2m |
+| 1998-03-31 | Newcastle United | £35.1m |
+| 1999-07-31 | Liverpool | £57.0m |
+| 2000-06-30 | Chelsea | £69.3m |
+| 2000-07-31 | Liverpool | £74.0m |
+| 2001-07-31 | Manchester United | £83.2m |
+| 2001-08-31 | Liverpool | £81.7m |
+| 2001-11-30 | Leeds United | £86.2m |
+| 2002-07-31 | Manchester United | £91.0m |
+| 2003-07-31 | Chelsea | £114.7m |
+| 2015-08-31 | Manchester City | £626.8m |
+| 2016-07-31 | Chelsea | £662.0m |
+| 2016-08-31 | Manchester City | £788.4m |
 | 2022-08-31 | Chelsea | £1.19bn |
 | 2026-09-01 | Manchester United | £1.73bn |
 
 ## 4. Top 12 at key dates (UNVERIFIED preview)
 
-**1993-05-31:** 1. Blackburn Rovers £5.4m; 2. Aston Villa £2.5m; 3. Manchester City £2.5m; 4. Sheffield Wednesday £2.0m; 5. Leeds United £1.9m; 6. Liverpool £0.9m; 7. Oldham Athletic £0.7m; 8. Chelsea £0.6m; 9. Ipswich Town £0.5m; 10. Arsenal £0.3m; 11. Manchester United £0.0m; 12. Newcastle United £0.0m
+**1993-05-31:** 1. Blackburn Rovers £5.5m; 2. Aston Villa £2.5m; 3. Manchester City £2.5m; 4. Sheffield Wednesday £2.0m; 5. Leeds United £1.9m; 6. Liverpool £0.9m; 7. Oldham Athletic £0.7m; 8. Chelsea £0.7m; 9. Ipswich Town £0.6m; 10. Manchester United £0.4m; 11. Arsenal £0.3m; 12. Newcastle United £0.0m
 
-**1997-05-31:** 1. Newcastle United £36.7m; 2. Aston Villa £20.7m; 3. Everton £20.5m; 4. Liverpool £19.3m; 5. Middlesbrough £16.9m (out of the PL); 6. Arsenal £16.7m; 7. Chelsea £16.1m; 8. Coventry City £14.7m; 9. Leeds United £13.9m; 10. Sheffield Wednesday £12.1m; 11. Blackburn Rovers £10.1m; 12. Tottenham Hotspur £8.7m
+**1997-05-31:** 1. Newcastle United £35.8m; 2. Everton £20.8m; 3. Liverpool £20.7m; 4. Aston Villa £19.8m; 5. Middlesbrough £16.9m (out of the PL); 6. Arsenal £16.7m; 7. Chelsea £16.2m; 8. Coventry City £14.6m; 9. Leeds United £13.8m; 10. Sheffield Wednesday £12.8m; 11. Blackburn Rovers £9.9m; 12. Leicester City £8.9m
 
-**2002-05-31:** 1. Leeds United £86.3m; 2. Chelsea £78.6m; 3. Liverpool £70.6m; 4. Newcastle United £67.7m; 5. Manchester United £61.4m; 6. Tottenham Hotspur £52.8m; 7. Middlesbrough £48.1m; 8. Aston Villa £46.2m; 9. Blackburn Rovers £45.5m; 10. Fulham £37.0m; 11. Arsenal £32.0m; 12. Manchester City £25.6m
+**2002-05-31:** 1. Leeds United £86.2m; 2. Chelsea £78.7m; 3. Liverpool £72.0m; 4. Newcastle United £66.7m; 5. Manchester United £63.0m; 6. Tottenham Hotspur £52.8m; 7. Middlesbrough £48.1m; 8. Aston Villa £45.4m; 9. Blackburn Rovers £45.3m; 10. Fulham £37.0m; 11. Arsenal £32.0m; 12. Manchester City £25.4m
 
-**2005-05-31:** 1. Chelsea £282.8m; 2. Manchester United £118.5m; 3. Liverpool £100.9m; 4. Newcastle United £86.3m; 5. Tottenham Hotspur £80.3m; 6. Middlesbrough £78.3m; 7. Aston Villa £53.2m; 8. Manchester City £49.6m; 9. Sunderland £39.8m; 10. Blackburn Rovers £39.4m; 11. Arsenal £36.8m; 12. Birmingham City £28.9m
+**2005-05-31:** 1. Chelsea £282.9m; 2. Manchester United £120.0m; 3. Liverpool £102.3m; 4. Newcastle United £85.3m; 5. Tottenham Hotspur £80.3m; 6. Middlesbrough £78.3m; 7. Aston Villa £52.3m; 8. Manchester City £49.4m; 9. Sunderland £39.6m; 10. Blackburn Rovers £39.2m; 11. Arsenal £36.8m; 12. Birmingham City £28.9m
 
-**2008-08-31:** 1. Chelsea £362.0m; 2. Liverpool £172.2m; 3. Manchester United £159.8m; 4. Tottenham Hotspur £124.7m; 5. Middlesbrough £121.8m; 6. Aston Villa £115.0m; 7. Newcastle United £104.9m; 8. Sunderland £80.0m; 9. Manchester City £79.8m; 10. Everton £48.7m; 11. Birmingham City £46.9m (out of the PL); 12. Fulham £46.6m
+**2008-08-31:** 1. Chelsea £362.1m; 2. Liverpool £173.6m; 3. Manchester United £161.4m; 4. Tottenham Hotspur £124.8m; 5. Middlesbrough £121.8m; 6. Aston Villa £114.2m; 7. Newcastle United £103.9m; 8. Sunderland £79.7m; 9. Manchester City £79.6m; 10. Everton £49.0m; 11. Birmingham City £46.9m (out of the PL); 12. Fulham £46.6m
 
-**2012-05-31:** 1. Chelsea £474.1m; 2. Manchester City £364.9m; 3. Liverpool £157.6m; 4. Tottenham Hotspur £132.0m; 5. Aston Villa £122.0m; 6. Manchester United £121.9m; 7. Middlesbrough £121.7m (out of the PL); 8. Sunderland £94.7m; 9. Birmingham City £75.4m (out of the PL); 10. Newcastle United £71.9m; 11. Everton £67.0m; 12. Stoke City £58.4m
+**2012-05-31:** 1. Chelsea £474.2m; 2. Manchester City £364.7m; 3. Liverpool £159.0m; 4. Tottenham Hotspur £132.1m; 5. Manchester United £123.5m; 6. Middlesbrough £121.7m (out of the PL); 7. Aston Villa £121.2m; 8. Sunderland £94.4m; 9. Birmingham City £75.4m (out of the PL); 10. Newcastle United £70.9m; 11. Everton £67.3m; 12. Stoke City £58.4m
 
-**2016-08-31:** 1. Manchester City £788.6m; 2. Chelsea £704.4m; 3. Manchester United £538.9m; 4. Liverpool £285.2m; 5. Tottenham Hotspur £157.2m; 6. Arsenal £154.8m; 7. Sunderland £145.9m; 8. Middlesbrough £139.5m; 9. Aston Villa £117.2m (out of the PL); 10. West Ham United £117.1m; 11. Stoke City £112.7m; 12. Everton £98.6m
+**2016-08-31:** 1. Manchester City £788.4m; 2. Chelsea £704.5m; 3. Manchester United £540.4m; 4. Liverpool £286.6m; 5. Tottenham Hotspur £157.2m; 6. Arsenal £154.8m; 7. Sunderland £145.7m; 8. Middlesbrough £139.5m; 9. Aston Villa £116.3m (out of the PL); 10. West Ham United £116.3m; 11. Stoke City £112.7m; 12. Everton £98.9m
 
-**2020-10-31:** 1. Manchester City £1.13bn; 2. Chelsea £980.8m; 3. Manchester United £841.3m; 4. Liverpool £417.7m; 5. Everton £395.2m; 6. Arsenal £359.2m; 7. Tottenham Hotspur £305.2m; 8. Aston Villa £284.0m; 9. West Ham United £233.6m; 10. Newcastle United £190.7m; 11. West Bromwich Albion £161.1m; 12. Fulham £148.8m
+**2020-10-31:** 1. Manchester City £1.12bn; 2. Chelsea £980.9m; 3. Manchester United £842.8m; 4. Liverpool £419.1m; 5. Everton £395.5m; 6. Arsenal £359.2m; 7. Tottenham Hotspur £305.2m; 8. Aston Villa £283.1m; 9. West Ham United £232.8m; 10. Newcastle United £189.8m; 11. West Bromwich Albion £161.1m; 12. Fulham £148.8m
 
-**2023-09-30:** 1. Chelsea £1.67bn; 2. Manchester United £1.30bn; 3. Manchester City £1.21bn; 4. Arsenal £744.8m; 5. Liverpool £627.0m; 6. Newcastle United £554.0m; 7. Tottenham Hotspur £499.5m; 8. West Ham United £423.5m; 9. Aston Villa £377.6m; 10. Everton £370.4m; 11. AFC Bournemouth £242.6m; 12. Fulham £183.5m
+**2023-09-30:** 1. Chelsea £1.67bn; 2. Manchester United £1.30bn; 3. Manchester City £1.21bn; 4. Arsenal £744.8m; 5. Liverpool £628.4m; 6. Newcastle United £553.0m; 7. Tottenham Hotspur £499.5m; 8. West Ham United £422.7m; 9. Aston Villa £376.7m; 10. Everton £370.7m; 11. AFC Bournemouth £242.6m; 12. Fulham £183.5m
 
-**2026-09-01:** 1. Manchester United £1.73bn; 2. Chelsea £1.67bn; 3. Manchester City £1.62bn; 4. Arsenal £1.17bn; 5. Liverpool £985.5m; 6. Tottenham Hotspur £947.5m; 7. Newcastle United £675.1m; 8. West Ham United £537.1m (out of the PL); 9. Everton £413.1m; 10. Fulham £334.3m; 11. Sunderland £306.3m; 12. Aston Villa £267.8m
+**2026-09-01:** 1. Manchester United £1.73bn; 2. Chelsea £1.67bn; 3. Manchester City £1.62bn; 4. Arsenal £1.17bn; 5. Liverpool £986.9m; 6. Tottenham Hotspur £947.5m; 7. Newcastle United £674.1m; 8. West Ham United £536.3m (out of the PL); 9. Everton £413.4m; 10. Fulham £334.3m; 11. Sunderland £306.0m; 12. Nottingham Forest £267.6m
 
 ## 5. Coverage by era
 
@@ -95,7 +92,7 @@ Counts are club-sides (a PL-to-PL deal counts once for each club).
 
 | Era | Transfers found | With a fee | Fee grade A/B | Fee VERIFIED | Undisclosed, no figure | Fee not found |
 |---|---|---|---|---|---|---|
-| 1992-2002 (no window lists) | 2,178 | 1,471 | 345 | 512 | 33 | 94 |
+| 1992-2002 (no window lists) | 2,178 | 1,456 | 487 | 507 | 33 | 94 |
 | 2002-2007 | 1,179 | 473 | 92 | 177 | 143 | 13 |
 | 2007-2012 | 2,972 | 419 | 179 | 165 | 670 | 10 |
 | 2012-2017 | 3,052 | 523 | 269 | 247 | 567 | 10 |
@@ -208,7 +205,7 @@ Why the totals differ:
 
 ## 9. Questions for Luke (each with Claude's recommendation)
 
-1. **Tier 1 is too big as worded (DEC-253).** 2,042 transfers are Tier 1, mostly because of the "changes the top-12 order" test. *Recommendation:* keep £20m+, records and disputed fees, and narrow the order test to "changes the leader, or who is in the top 12, at any month end"; the rest get Tier 2's scripted check.
+1. **Tier 1 is too big as worded (DEC-253).** 2,030 transfers are Tier 1, mostly because of the "changes the top-12 order" test. *Recommendation:* keep £20m+, records and disputed fees, and narrow the order test to "changes the leader, or who is in the top 12, at any month end"; the rest get Tier 2's scripted check.
 2. **Undisclosed fees count £0 (DEC-237 (g)).** 2,179 transfers have no reported figure. *Recommendation:* keep the rule, say on screen "Undisclosed fees not included", and give each club's undisclosed count in the description.
 3. **The early years are the least complete (1992–2007).** *Recommendation:* in phase 2, Claude in Cowork uses Transfermarkt in your Chrome only as a finding list (route A, nothing stored) to spot missing 1992–2007 deals involving the bigger fees, and takes each fee from a press or club source.
 4. **Relegated clubs keep their frozen bar and their rank** (contract §1; e.g. a relegated club can sit 8th at the freeze). *Recommendation:* keep them in the ranking; how a frozen bar looks is a design question for the pilot (DEC-069).
@@ -219,8 +216,8 @@ Why the totals differ:
 
 ## 10. Phase 2 (IQ-15b): verification at source
 
-- **Tier 1 (DEC-256):** 2,026 fee-bearing Tier 1 transfers; **1,124 VERIFIED at source** (956 by a club, league or press source, grade A/B; 168 only by a database such as Soccerbase, grade C; 0 only by a grade D site), each quote read by Claude (1,460 quotes accepted, 169 rejected; `source/review_decisions.csv`). The rest have no page that states the figure next to the player's name yet (mostly 1990s–2000s deals whose only sources are Wikipedia figures or dead links).
-- **Tier 2:** 309 of 655 VERIFIED by the scripted check. **Tier 3 sample:** 0 of 31 VERIFIED.
+- **Tier 1 (DEC-256):** 2,014 fee-bearing Tier 1 transfers; **1,127 VERIFIED at source** (965 by a club, league or press source, grade A/B; 162 only by a database such as Soccerbase, grade C; 0 only by a grade D site), each quote read by Claude (1,460 quotes accepted, 169 rejected; `source/review_decisions.csv`). The rest have no page that states the figure next to the player's name yet (mostly 1990s–2000s deals whose only sources are Wikipedia figures or dead links).
+- **Tier 2:** 301 of 657 VERIFIED by the scripted check. **Tier 3 sample:** 3 of 31 VERIFIED.
 - **Undisclosed fees (DEC-257):** 47 grade A/B reported figures found at the cited source and read by Claude, used and flagged "reported" (45 transfers; 33 close candidates rejected on reading: another deal, grade D, not a fee, or a total with add-ons; `source/reported_fees.csv`); every other candidate figure on those pages belonged to another deal, a wage, an offer or a fine.
 - **1992–2007 gap list (DEC-264), sections A v2, B and C (1992–2007):** 137 new moves added, 59 VERIFIED (the page names the player, both clubs and the fee); the rest matched transfers already in the build. 6 gap rows have no transfer date (retrospective articles only) and are listed in `unmatched_leads.csv`.
 - **Leeds United 1992–2002** pages added; **last 1991–92 First Division matchday 2 May 1992** confirmed by eight club fixture lists (pointers, grade C).
@@ -274,7 +271,7 @@ Our sums count fees paid by PL clubs (gross) and fees paid to minus received fro
 | Window | Gross before | Gross after | Change | of which gap list | Published gross (first A/B source) | Gap left | Net before | Net after |
 |---|---|---|---|---|---|---|---|---|
 | January 1997 | £41.5m | £41.5m | £0.0m | £14.3m | — | — | £12.4m | £12.4m |
-| summer 1997 | £116.2m | £144.9m | £28.6m | £28.6m | — | — | £30.9m | £59.5m |
+| summer 1997 | £116.2m | £144.4m | £28.1m | £28.6m | — | — | £30.9m | £59.0m |
 | January 1998 | £49.6m | £51.2m | £1.6m | £1.0m | — | — | £10.5m | £12.1m |
 | summer 1998 | £128.7m | £162.6m | £33.9m | £32.9m | — | — | £49.4m | £80.7m |
 | January 1999 | £82.6m | £93.7m | £11.1m | £11.1m | — | — | £28.6m | £36.2m |
@@ -296,18 +293,103 @@ Our sums count fees paid by PL clubs (gross) and fees paid to minus received fro
 | January 2007 | £37.5m | £39.8m | £2.4m | £3.0m | — | — | £17.9m | £17.2m |
 | summer 2007 | £324.6m | £321.0m | −£3.6m | £0.0m | — | — | £166.2m | £162.6m |
 
-Total gross 1997–2007: £2.76bn before, £2.96bn after (£200.5m net change, of which £262.9m paid in moves the gap list added). Where a published total exists, our sum stays below it mainly because undisclosed fees count £0 and the early Wikipedia window lists are short; the gap list narrows the gap but does not close it, and no figure is forced to match.
+Total gross 1997–2007: £2.76bn before, £2.96bn after (£200.0m net change, of which £262.9m paid in moves the gap list added). Where a published total exists, our sum stays below it mainly because undisclosed fees count £0 and the early Wikipedia window lists are short; the gap list narrows the gap but does not close it, and no figure is forced to match.
 
 ### Leader sequence after phase 2
 
-Leader at each change (month end): 1992-05 Arsenal; 1992-07 Blackburn Rovers; 1993-07 Liverpool; 1993-09 Blackburn Rovers; 1995-07 Liverpool; 1996-07 Newcastle United; 1997-07 Liverpool; 1998-02 Newcastle United; 1999-07 Liverpool; 2000-01 Newcastle United; 2000-03 Liverpool; 2000-06 Chelsea; 2000-07 Liverpool; 2001-07 Manchester United; 2001-08 Liverpool; 2001-11 Leeds United; 2002-07 Manchester United; 2003-03 Newcastle United; 2003-07 Chelsea; 2015-08 Manchester City; 2016-07 Chelsea; 2016-08 Manchester City; 2022-08 Chelsea; 2026-09 Manchester United.
+Leader at each change (month end): 1992-05 Arsenal; 1992-07 Blackburn Rovers; 1993-07 Liverpool; 1993-09 Blackburn Rovers; 1995-07 Liverpool; 1996-07 Newcastle United; 1997-07 Liverpool; 1998-03 Newcastle United; 1999-07 Liverpool; 2000-06 Chelsea; 2000-07 Liverpool; 2001-07 Manchester United; 2001-08 Liverpool; 2001-11 Leeds United; 2002-07 Manchester United; 2003-07 Chelsea; 2015-08 Manchester City; 2016-07 Chelsea; 2016-08 Manchester City; 2022-08 Chelsea; 2026-09 Manchester United.
 
 
 ### Phase 2 questions — answered by Luke (YES to all four, 7 Oct 2026: DEC-274 to DEC-277)
 
-1. **Database-only Tier 1 figures.** 168 Tier 1 fees are confirmed only by a grade C source (168 of them a Soccerbase row for that move) and 0 only by a source graded D (mostly later retrospective articles). May a Soccerbase row count as VERIFIED for screen? *Recommendation:* yes for Soccerbase rows (they are dated career tables, checked row by row), no for grade D; keep looking for press sources for both.
-2. **Next research round.** 1,070 Tier 1 fees still have no VERIFIED club, league or press source (`data/rtt-101/tier1_needs_press_source.csv`, mostly 1992–2007). *Recommendation:* one more ChatGPT deep-research round on that list (a press or club URL and a short quote per deal, leads only; every figure checked at source here), starting with 1992–2002.
+1. **Database-only Tier 1 figures.** 162 Tier 1 fees are confirmed only by a grade C source (162 of them a Soccerbase row for that move) and 0 only by a source graded D (mostly later retrospective articles). May a Soccerbase row count as VERIFIED for screen? *Recommendation:* yes for Soccerbase rows (they are dated career tables, checked row by row), no for grade D; keep looking for press sources for both.
+2. **Next research round.** 1,049 Tier 1 fees still have no VERIFIED club, league or press source (`data/rtt-101/tier1_needs_press_source.csv`, mostly 1992–2007). *Recommendation:* one more ChatGPT deep-research round on that list (a press or club URL and a short quote per deal, leads only; every figure checked at source here), starting with 1992–2002.
 3. **Fees known only as a maximum or an approximation.** 14 deals count £0 because every figure found is a maximum, a total including add-ons, or an approximation ("just under £30m", "in excess of £13m", "£40m-plus"). *Recommendation:* keep £0 (DEC-237 (e)) and add these deals to the next research round to find the guaranteed fee.
 4. **Same-grade conflicts.** 32 remain (table above). *Recommendation:* use the rule already in the contract (highest grade, then the earliest contemporary report) for all of them, and list them in the description notes; Luke can overrule any single deal.
 
 **Luke's answers:** (1) a Soccerbase row counts as VERIFIED, grade C, labelled "database source" (`transfers.csv` column `verified_by`); other grade C and grade D sources do not confirm a fee (DEC-274). (2) One more ChatGPT deep-research round on `tier1_needs_press_source.csv`, starting with 1992–2002; every figure is a lead to check at source here (DEC-275). (3) The deals known only as a maximum or an approximation stay at £0 and are listed in `data/rtt-101/tier1_max_or_approx_only.csv` for a later round (DEC-276). (4) The same-grade conflicts are settled by the rule, with the result for each in the table above (DEC-277).
+
+## 11. Source round 1, list A: 1992–93 to 1996–97 (DEC-275, IQ-15d)
+
+- **Deals:** 211 (A0001–A0211), mapped to our transfers by player and date (`source/source_round1_map.csv`). ChatGPT's answers (private part20b/d/f) were added as leads (`found_via` of each evidence row: "ChatGPT source round 1 (DEC-264 route)") and every cited page was read on the GitHub runner: the figure next to the player's name, and both clubs named on the page.
+- **VERIFIED:** 37 of the 211 deals now have a fee confirmed at source (0 by a club, league or press source; the rest by a Soccerbase row), up from 41 before this round.
+- **Changed:** 48 fees changed (£4.4m up, £11.0m down; net £-6.6m) and 13 completion dates moved to the date a grade B report gives.
+- **Deal structures** (`source/deal_structure.csv`, one row per transfer with its source, quote and rule): a combined fee is booked once on one transfer of the pair and the partner counts £0 (no split invented); a part-exchange counts a player valuation on both sides only where a source states it, otherwise cash only; add-ons count only when reported as payable; a loan fee is a loan fee.
+
+| Deal | Player | Move | Date before → after | Fee before | Fee after | Why |
+|---|---|---|---|---|---|---|
+| A0001 | Darren Anderton | Portsmouth → Tottenham Hotspur | 1992-07-01 | £1.8m | £1.7m | higher grade or earlier report (B, www.independent.co.uk) |
+| A0004 | Mal Donaghy | Manchester United → Chelsea | 1992-07-01 | £0.1m | £0.1m | higher grade or earlier report (B, www.independent.co.uk) |
+| A0006 | Scott Sellars | Blackburn Rovers → Leeds United | 1992-07-01 | £0.8m | £0.7m | sell-on (DEC-238): the buyer was the former club holding the sell-on share, so the cash both clubs saw was £720,000 |
+| A0007 | Jason Cundy | Chelsea → Tottenham Hotspur | 1992-07-02 | £0.8m | £0.8m | higher grade or earlier report (C, www.independent.co.uk) |
+| A0009 | David Lowe | Ipswich Town → Leicester City | 1992-07-13 | £0.3m | £0.2m | higher grade or earlier report (B, www.the-independent.com) |
+| A0014 | Mark Robins | Manchester United → Norwich City | 1992-08-14 | £0.8m | £0.8m | higher grade or earlier report (B, www.independent.co.uk) |
+| A0015 | Derek Brazil | Manchester United → Cardiff City | 1992-08-24 | £0.2m | £0.1m | higher grade or earlier report (B, www.independent.co.uk) |
+| A0021 | Kieran Toal | Manchester United → Motherwell | 1993-03-19 | £0.3m | £0.0m | higher grade or earlier report (B, www.independent.co.uk) |
+| A0026 | Russell Beardsmore | Manchester United → AFC Bournemouth | 1993-06-29 | £0.2m | £0.0m | higher grade or earlier report (B, www.the-independent.com) |
+| A0030 | Alex Mathie | Greenock Morton → Newcastle United | 1993-07-30 | £0.2m | £0.3m | higher grade or earlier report (C, www.independent.co.uk) |
+| A0032 | Guy Whittingham | Portsmouth → Aston Villa | 1993-08-03 → 1993-08-04 | £1.2m | £0.9m | part-exchange (DEC-237 (d)): a stated player valuation counts on both sides, otherwise cash only |
+| A0036 | David Kerslake | Leeds United → Tottenham Hotspur | 1993-09-01 | £0.5m | £0.5m | higher grade or earlier report (B, www.independent.co.uk) |
+| A0044 | Darren Ferguson | Manchester United → Wolverhampton Wanderers | 1994-01-13 | £0.3m | £0.2m | higher grade or earlier report (B, www.independent.co.uk) |
+| A0046 | Liam O'Brien | Newcastle United → Tranmere Rovers | 1994-01-21 | £0.3m | £0.2m | higher grade or earlier report (B, www.independent.co.uk) |
+| A0050 | Julian Dicks | Liverpool → West Ham United | 1994-05-20 → 1994-10-20 | £1.0m | £0.1m | add-ons only when reported as triggered (DEC-237 (e)) |
+| A0052 | Peter Atherton | Coventry City → Sheffield Wednesday | 1994-06-01 → 1994-07-13 | £0.8m | £0.8m | completion date from a grade B report (contract §2) |
+| A0055 | Joey Beauchamp | Oxford United → West Ham United | 1994-06-22 → 1994-06-21 | £1.0m | £1.0m | completion date from a grade B report (contract §2) |
+| A0058 | Nicky Mohan | Middlesbrough → Leicester City | 1994-07-07 → 1994-08-16 | £0.3m | £0.3m | completion date from a grade B report (contract §2) |
+| A0067 | Jürgen Klinsmann | Monaco → Tottenham Hotspur | 1994-08-03 | £2.3m | £2.0m | higher grade or earlier report (B, www.independent.co.uk) |
+| A0070 | Dan Petrescu | Genoa → Sheffield Wednesday | 1994-08-06 → 1994-08-07 | £1.3m | £1.3m | completion date from a grade B report (contract §2) |
+| A0071 | Philippe Albert | Anderlecht → Newcastle United | 1994-08-10 | £2.7m | £2.6m | higher grade or earlier report (B, www.independent.co.uk) |
+| A0072 | David Rocastle | Manchester City → Chelsea | 1994-08-12 → 1994-08-11 | £1.2m | £1.2m | completion date from a grade B report (contract §2) |
+| A0073 | Adrian Whitbread | Swindon Town → West Ham United | 1994-08-17 | £0.5m | £0.8m | part-exchange (DEC-237 (d)): a stated player valuation counts on both sides, otherwise cash only |
+| A0075 | Joey Beauchamp | West Ham United → Swindon Town | 1994-08-18 | £0.8m | £1.1m | part-exchange (DEC-237 (d)): a stated player valuation counts on both sides, otherwise cash only |
+| A0076 | Klas Ingesson | PSV Eindhoven → Sheffield Wednesday | 1994-09-01 | £0.8m | £2.0m | higher grade or earlier report (B, www.independent.co.uk) |
+| A0078 | Colin McKee | Manchester United → Kilmarnock | 1994-09-05 | £0.3m | £0.5m | combined fee (DEC-237 (e)): booked once on one transfer of the pair; no split is invented |
+| A0079 | David Burrows | West Ham United → Everton | 1994-09-06 | £1.1m | £0.0m | part-exchange (DEC-237 (d)): a stated player valuation counts on both sides, otherwise cash only |
+| A0080 | Tony Cottee | Everton → West Ham United | 1994-09-07 | £1.0m | £0.0m | part-exchange (DEC-237 (d)): a stated player valuation counts on both sides, otherwise cash only |
+| A0085 | Efan Ekoku | Norwich City → Wimbledon | 1994-10-14 | £0.9m | £0.9m | higher grade or earlier report (C, www.independent.co.uk) |
+| A0089 | Guy Whittingham | Aston Villa → Sheffield Wednesday | 1994-12-21 | £0.7m | £0.0m | part-exchange (DEC-237 (d)): a stated player valuation counts on both sides, otherwise cash only |
+| A0090 | Ian Taylor | Sheffield Wednesday → Aston Villa | 1994-12-21 | £1.0m | £0.2m | part-exchange (DEC-237 (d)): a stated player valuation counts on both sides, otherwise cash only |
+| A0092 | Gary Charles | Derby County → Aston Villa | 1995-01-06 | £1.4m | £2.9m | combined fee (DEC-237 (e)): booked once on one transfer of the pair; no split is invented |
+| A0093 | Jamie Lawrence | Doncaster Rovers → Leicester City | 1995-01-06 | £0.1m | £0.2m | higher grade or earlier report (B, www.independent.co.uk) |
+| A0095 | Tommy Johnson | Derby County → Aston Villa | 1995-01-06 | £1.4m | £0.0m | combined fee (DEC-237 (e)): booked once on one transfer of the pair; no split is invented |
+| A0101 | Franz Carr | Leicester City → Aston Villa | 1995-02-10 | £0.2m | £0.0m | part-exchange (DEC-237 (d)): a stated player valuation counts on both sides, otherwise cash only |
+| A0102 | Garry Parker | Aston Villa → Leicester City | 1995-02-10 | £0.3m | £0.6m | part-exchange (DEC-237 (d)): a stated player valuation counts on both sides, otherwise cash only |
+| A0106 | John Filan | Cambridge United → Coventry City | 1995-03-02 | £0.3m | £0.3m | higher grade or earlier report (C, www.independent.co.uk) |
+| A0110 | Brett Angell | Everton → Sunderland | 1995-03-23 | £0.6m | £0.5m | higher grade or earlier report (B, www.independent.co.uk) |
+| A0111 | Chris Swailes | Doncaster Rovers → Ipswich Town | 1995-03-23 | £0.2m | £0.1m | guaranteed fee where the other figure is the 'rising to' total (DEC-265 (d)) |
+| A0113 | Calita | Farense → Coventry City | 1995-06-07 | £0.2m | £0.1m | higher grade or earlier report (B, www.independent.co.uk) |
+| A0117 | Chris Bart-Williams | Sheffield Wednesday → Nottingham Forest | 1995-07-01 → 1995-08-08 | £2.5m | £2.5m | completion date from a grade B report (contract §2) |
+| A0126 | Gary Rowett | Everton → Derby County | 1995-07-20 | £0.3m | £0.0m | part-exchange (DEC-237 (d)): a stated player valuation counts on both sides, otherwise cash only |
+| A0133 | Sean Flynn | Coventry City → Derby County | 1995-08-11 | £0.2m | £0.2m | higher grade or earlier report (B, www.independent.co.uk) |
+| A0137 | Jeroen Boere | West Ham United → Crystal Palace | 1995-09-07 | £0.4m | £0.3m | higher grade or earlier report (B, www.independent.co.uk) |
+| A0138 | Iain Dowie | Crystal Palace → West Ham United | 1995-09-08 → 1995-09-04 | £0.5m | £0.5m | completion date from a grade B report (contract §2) |
+| A0153 | Noel Whelan | Leeds United → Coventry City | 1995-12-16 → 1995-12-11 | £2.0m | £2.0m | completion date from a grade B report (contract §2) |
+| A0154 | Chris Coleman | Crystal Palace → Blackburn Rovers | 1995-12-21 → 1995-12-14 | £2.8m | £2.8m | completion date from a grade B report (contract §2) |
+| A0155 | Darko Kovačević | Red Star Belgrade → Sheffield Wednesday | 1995-12-22 | £3.0m | £2.5m | higher grade or earlier report (B, www.independent.co.uk) |
+| A0159 | Nigel Clough | Liverpool → Manchester City | 1996-01-24 | £1.5m | £1.0m | higher grade or earlier report (B, www.independent.co.uk) |
+| A0165 | Julian Joachim | Leicester City → Aston Villa | 1996-02-24 | £1.9m | £1.5m | higher grade or earlier report (B, www.independent.co.uk) |
+| A0171 | Garry Flitcroft | Manchester City → Blackburn Rovers | 1996-03-28 | £3.5m | £3.2m | higher grade or earlier report (B, www.independent.co.uk) |
+| A0173 | Alex Rae | Millwall → Sunderland | 1996-06-01 | £1.0m | £0.8m | higher grade or earlier report (B, www.independent.co.uk) |
+| A0174 | Gary Speed | Leeds United → Everton | 1996-07-01 → 1996-06-21 | £3.5m | £3.5m | completion date from a grade B report (contract §2) |
+| A0176 | Ben Thatcher | Millwall → Wimbledon | 1996-07-05 → 1996-07-03 | £1.7m | £1.7m | completion date from a grade B report (contract §2) |
+| A0177 | Matt Clarke | Rotherham United → Sheffield Wednesday | 1996-07-11 | £0.3m | £0.3m | higher grade or earlier report (B, www.independent.co.uk) |
+| A0184 | Scott Oakes | Luton Town → Sheffield Wednesday | 1996-08-07 | £0.4m | £0.7m | higher grade or earlier report (B, www.independent.co.uk) |
+| A0187 | Orlando Trustfull | Feyenoord → Sheffield Wednesday | 1996-08-20 | £0.8m | £1.0m | higher grade or earlier report (B, www.independent.co.uk) |
+| A0211 | Mark McKeever | Peterborough United → Sheffield Wednesday | 1997-04-15 | £0.5m | £0.0m | combined fee (DEC-237 (e)): booked once on one transfer of the pair; no split is invented |
+
+**League-wide spending by window, 1992–97** (before = commit 111a018; there are no published window totals for these years, when there were no transfer windows, so nothing to compare against):
+
+| Window | Gross before | Gross after | Change |
+|---|---|---|---|
+| summer 1992 | £34.1m | £33.9m | −£0.2m |
+| January 1993 | £9.1m | £9.1m | £0.0m |
+| summer 1993 | £39.6m | £39.3m | −£0.2m |
+| January 1994 | £16.2m | £16.2m | £0.0m |
+| summer 1994 | £73.3m | £71.4m | −£1.9m |
+| January 1995 | £41.6m | £41.2m | −£0.4m |
+| summer 1995 | £109.4m | £109.3m | −£0.1m |
+| January 1996 | £54.6m | £52.9m | −£1.7m |
+| summer 1996 | £102.8m | £103.0m | £0.2m |
+| January 1997 | £41.5m | £41.5m | £0.0m |
+
+**Effect on the race:** the leader changes at 7 month ends (1998-02: Newcastle United → Liverpool; 2000-01: Newcastle United → Liverpool; 2000-02: Newcastle United → Liverpool; 2003-03: Newcastle United → Manchester United; 2003-04: Newcastle United → Manchester United; 2003-05: Newcastle United → Manchester United; 2003-06: Newcastle United → Manchester United); who is in the top 12 changes at 31 month ends (1992-08: in Manchester United, out Everton; 1992-09: in Manchester United, out Sheffield United; 1992-10: in Manchester United, out Sheffield United; 1993-06: in Manchester United, out Swindon Town; 1994-06: in Swindon Town, out West Ham United; 1994-07: in Crystal Palace, out West Ham United; 1994-08: in Leicester City, out West Ham United; 1994-09: in Leicester City, out West Ham United; 1995-03: in Sheffield Wednesday, out Ipswich Town; 1995-04: in Sheffield Wednesday, out Ipswich Town …); the order within the top 12 changes at 140 month ends.

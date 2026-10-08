@@ -503,6 +503,14 @@ def pubdate(url):
 TOTAL_RX = re.compile(r"(with|including|incl\.?|inclusive of|plus)\s+(all\s+)?(the\s+)?(add-ons|add ons|bonuses|extras)|in total|overall|total (fee|package|cost|deal)|package", re.I)
 
 
+# deal structures (IQ-15d): combined fees, part-exchanges, conditional sums, loans and completion dates read at source and set out
+# in data/rtt-101/source/deal_structure.csv (one row per transfer, with its source, quote and the rule applied). Dates first.
+DS = rd("deal_structure.csv")
+for r in DS:
+    t = by_tid.get(r["transfer_id"])
+    if t and r.get("date"):
+        t["date"], t["date_basis"] = r["date"], r["date_basis"]
+
 # canonical fee per transfer
 for t in transfers:
     t["season_attributed"] = season_of(t["date"]) or ""
@@ -582,6 +590,37 @@ for t in transfers:
         t["status"] = "UNVERIFIED"
     amts = sorted({round(e["gbp"]) for e in t["_ev"] if e["gbp"] is not None})
     t["fee_versions_gbp"] = ";".join(str(a) for a in amts)
+
+# deal structures: the fee set by the row's rule replaces the canonical figure (no split is invented: a combined fee sits on one
+# transfer of the pair, the partner counts £0; a part-exchange counts cash only unless a source values the player, DEC-237 (d))
+for r in DS:
+    t = by_tid.get(r["transfer_id"])
+    if not t or r["fee_amount"] == "":
+        continue  # a date-only row (completion date from a grade B report): the fee follows the normal rule
+    amt, cur = float(r["fee_amount"] or 0), (r["currency"] or "GBP")
+    gbp, fx = convert(amt, cur, t["date"]) if amt else (0.0, None)
+    grade = r["grade"]
+    strong = grade in ("A", "B") or (grade == "C" and "soccerbase.com" in r["url"])
+    conf = [c for c in checks.get(r["url"], []) if c["status"] == "VERIFIED" and c["amount"] in r["confirm_amounts"].split(";")]
+    sid = source_id(r["url"], r["publisher"] or urllib.parse.urlparse(r["url"]).netloc, grade, "press_or_club") if r["url"] else ""
+    e = {"origin": "deal_structure", "source_id": sid, "grade": grade, "fee_text": r["fee_text"],
+         "parsed": {"amount": amt, "currency": cur, "qualifiers": ["deal_structure"], "kind": "fee"}, "amount": amt, "currency": cur,
+         "qualifiers": "deal_structure", "gbp": gbp, "fx": fx, "quote": r["quote"], "url": r["url"], "archive_url": "", "date": t["date"],
+         "status": "VERIFIED" if (conf and strong) else "UNVERIFIED", "note": f"{r['rule']}: {r['note']}", "published": r["published"],
+         "evidence_id": f"{t['transfer_id']}-E{len(t['_ev']) + 1:02d}", "total_incl_addons": False, "figure_rejected": False}
+    if conf and strong:
+        e["checked"] = {"check_id": conf[0]["check_id"], "quote": r["quote"], "retrieved": conf[0]["retrieved"], "reviewed": "accept: " + r["rule"]}
+        e["retrieved"] = conf[0]["retrieved"]
+    t["_ev"].append(e)
+    t["canonical"], t["fee_gbp"] = e, gbp
+    t["original_amount"], t["currency"] = (amt if amt else ""), (cur if amt else "")
+    t["fx_rate"] = fx["fx_rate"] if fx else ""
+    t["fx_date"] = fx["fx_date"] if fx else ""
+    t["fx_series"] = fx["fx_series"] if fx else ""
+    t["fee_status"] = r["fee_status"]
+    t["type"] = r["type"] or t["type"]
+    t["grade"], t["canonical_source_id"], t["status"] = grade, sid, e["status"]
+    t["fee_versions_gbp"] = ";".join(str(a) for a in sorted({round(x["gbp"]) for x in t["_ev"] if x["gbp"] is not None}))
 
 transfers = [t for t in transfers if t["season_attributed"] and (
     (t["from_club_id"], t["season_attributed"]) in in_pl or (t["to_club_id"], t["season_attributed"]) in in_pl)]
