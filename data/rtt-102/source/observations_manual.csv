@@ -66,3 +66,26 @@ M064,runner R1,S25_MONTHLY,2025-07,,chatgpt,chatgpt.com,5.72B,,monthly visits,Vi
 M065,runner R1,S25_MONTHLY,2025-07,,gemini,gemini.google.com,almost 700 million,almost,monthly visits,Reaching almost 700 million visits in July 2025,
 M066,runner R1,S25_MONTHLY,2025-07,,perplexity,perplexity.ai,140 million,,monthly visits,is up to 140 million visits in July 2025,'is up to' here means 'has risen to'
 M067,runner R1,Q26_CLAUDE_COMPARE,2025-05,,claude,claude.ai,100 million,,monthly visits,Claude went from 100 million visits in May 2025 to 953 million in May 2026,
+M068,Cowork V44,S23_BDAY,2023-01,,chatgpt,chat.openai.com,615M,,monthly visits,IMAGE,"Infographic of the post (month-by-month series; footer ""Monthly Visits | All Traffic | Worldwide"")"
+M069,Cowork V45,S23_BDAY,2023-02,,chatgpt,chat.openai.com,1.00B,,monthly visits,IMAGE,Infographic of the post
+M070,Cowork V47,S23_BDAY,2023-04,,chatgpt,chat.openai.com,1.77B,,monthly visits,IMAGE,Infographic of the post
+M071,Cowork V48,S23_BDAY,2023-05,,chatgpt,chat.openai.com,1.81B,,monthly visits,IMAGE,Infographic of the post
+M072,Cowork V50,S23_BDAY,2023-07,,chatgpt,chat.openai.com,1.47B,,monthly visits,IMAGE,Infographic of the post
+M073,Cowork V51,S23_BDAY,2023-08,,chatgpt,chat.openai.com,1.42B,,monthly visits,IMAGE,Infographic of the post
+M074,Cowork V68,Q26_APRIL_NEWS,2026-04,,chatgpt,ChatGPT [product name; domain NOT STATED],5.5 billion,,monthly visits,"ChatGPT, of course, still owns the room at 5.5 billion visits",Similarweb newsletter; domain not named
+M075,Cowork V80,Q26_SEP_NEWS,2026-05,,claude,claude.ai,952.6M,,monthly visits,"Since May, Claude's monthly visits have landed at 952.6M, 946.8M, 969.3M, and 950.2M.","May, in a sequence May to August"
+M076,Cowork V78,Q26_SEP_NEWS,2026-06,,claude,claude.ai,946.8M,,monthly visits,"Since May, Claude's monthly visits have landed at 952.6M, 946.8M, 969.3M, and 950.2M.","June, in the same sequence"
+M077,Cowork V78,Q26_SEP_NEWS,2026-07,,claude,claude.ai,969.3M,,monthly visits,"Since May, Claude's monthly visits have landed at 952.6M, 946.8M, 969.3M, and 950.2M.","July, in the same sequence"
+M078,Cowork V79,Q26_SEP_NEWS,2026-08,,claude,claude.ai,950.2M,,monthly visits,"August closed at 950.2M visits, down 2.0% from July",
+M079,Cowork V81,Q26_SEP_NEWS,2026-08,,gemini,Gemini [product name; domain NOT STATED],2.62B,,monthly visits,"Gemini closed the summer at 2.62B visits, compared with a May peak of 2.90B.",Gemini's July 2026 figure is not printed
+M080,Cowork V82,Q26_SEP_NEWS,2026-08,,chatgpt,ChatGPT [product name; domain NOT STATED],5.64B,,monthly visits,"ChatGPT added 1.3% in July and 3.5% in August, finishing at 5.64B visits.",ChatGPT's July 2026 figure is not printed
+M081,Cowork V83,Q26_SEP_NEWS,2026-08,,chatgpt,chatgpt.com,5.638B,,monthly visits,IMAGE,"Table image ""The Most-Visited Websites in the World | August 2026 | Worldwide | All Traffic"""
+M082,Cowork V92,Q26_IPO_PDF,2026-07,,claude,claude.ai,969M,,monthly visits,Jul-26 $65B 969M 108M 135M,Exhibit 3 (p13)
+M083,Cowork V96,Q26_IPO_PDF,2026-08,,claude,claude.ai,950M,,monthly visits,claude.ai 950M +540%,Aug-26 snapshot (p18)
+M084,Cowork V97,Q26_IPO_PDF,2026-08,,chatgpt,chatgpt.com,5.64B,,monthly visits,chatgpt.com 5.64B,Aug-26 snapshot (p18)
+M085,Cowork V98,Q26_IPO_PDF,2026-08,,gemini,gemini.google.com,2.62B,,monthly visits,gemini.google.com 2.62B,Aug-26 snapshot (p18)
+M086,Cowork V99,Q26_IPO_PDF,2026-08,,deepseek,deepseek.com,354M,,monthly visits,deepseek.com 354M,Aug-26 snapshot (p18)
+M087,Cowork V99,Q26_IPO_PDF,2025-02,,deepseek,deepseek.com,615M,,monthly visits,615M (Feb-25),Peak column of the Aug-26 snapshot: highest monthly visits in the 36-month window
+M088,Cowork V100,Q26_IPO_PDF,2026-08,,grok,grok.com,210M,,monthly visits,grok.com 210M,Aug-26 snapshot (p18)
+M089,Cowork V101,Q26_IPO_PDF,2026-08,,perplexity,perplexity.ai,95.2M,,monthly visits,perplexity.ai 95.2M,Aug-26 snapshot (p18)
+M090,Cowork V101,Q26_IPO_PDF,2025-10,,perplexity,perplexity.ai,219M,,monthly visits,219M (Oct-25),Peak column of the Aug-26 snapshot

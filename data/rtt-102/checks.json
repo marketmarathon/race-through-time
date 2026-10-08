@@ -3,13 +3,13 @@
   "id": "K01",
   "name": "Every on-screen value rests on a VERIFIED figure with its URL and the wording seen at source",
   "result": "PASS",
-  "detail": "137 points used; problems: none"
+  "detail": "153 points used; problems: none"
  },
  {
   "id": "K02",
   "name": "No averaging: each published month shows one printed figure exactly; each other month is the straight line between its two points",
   "result": "PASS",
-  "detail": "203 series rows; mismatches: none; used values not printed: none"
+  "detail": "236 series rows; mismatches: none; used values not printed: none"
  },
  {
   "id": "K03",
@@ -27,7 +27,7 @@
   "id": "K05",
   "name": "DeepSeek: deepseek.com only; never deepseek.com + chat.deepseek.com",
   "result": "PASS",
-  "detail": "13 DeepSeek points used; problems: none"
+  "detail": "15 DeepSeek points used; problems: none"
  },
  {
   "id": "K06",
@@ -57,7 +57,7 @@
   "id": "K10",
   "name": "Leftover conflicts use no figure until Luke decides",
   "result": "PASS",
-  "detail": "2 leftovers; problems: none"
+  "detail": "0 leftovers; problems: none"
  },
  {
   "id": "K11",

@@ -123,6 +123,18 @@ test("T16 no extrapolation: bars run only between their first and last published
 confl = rows("conflicts.csv")
 test("T17 leftover conflicts use no figure", all(not c["used_point"] for c in confl if c["status"].startswith("LEFTOVER")))
 
+# IQ-17b rules
+v = lambda a, m: int(used[(a, m)]["visits"]) if (a, m) in used else None
+test("T20 Claude Feb 2026 = 290.3M and Jan 2026 = 203M; the IPO blog's February 203 million never used",
+     v("claude", "2026-02") == 290300000 and v("claude", "2026-01") == 203000000 and byid["M017"]["used"] == "no")
+test("T21 the later publication wins (step 4): Claude May/Jun 2026, ChatGPT Sep 2025",
+     v("claude", "2026-05") == 952600000 and v("claude", "2026-06") == 946800000 and v("chatgpt", "2025-09") == 5904115522)
+jul = {s["assistant_id"]: s for s in ser if s["month"] == "2026-07"}
+test("T22 July 2026 for ChatGPT and Gemini is a straight line (never derived from percentages or quarterly sums)",
+     jul["chatgpt"]["provenance"] == "interpolated" and jul["gemini"]["provenance"] == "interpolated")
+test("T23 NOT FOUND figures are never used (ChatGPT May 2024 '2.5 billion')", all(r["used"] == "no" for r in pts if r["status"] == "NOT FOUND") and byid["B024"]["status"] == "NOT FOUND")
+test("T24 Copilot and Meta AI have no figure from the IPO report (six sites only)", not [r for r in pts if r["pub_id"] == "Q26_IPO_PDF" and r["assistant_id"] in ("copilot", "meta_ai")])
+
 listed = subprocess.run(["git", "ls-files"], cwd=ROOT, capture_output=True, text=True).stdout.split()
 private_names = ("part01_", "part02_", "part03_", "part04a_", "part04b_", "part05a_", "part05b_", "part05c_", "cowork_", "RTT-102_chatgpt_", "00_README.md")
 bad = [p for p in listed if os.path.basename(p).startswith(private_names) and "rtt-102" in p]

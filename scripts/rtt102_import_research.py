@@ -12,7 +12,7 @@ Outputs (in the out folder):
   publications.csv          dossier section A (59 publications), plus the data version each falls in
   observations_research.csv dossier section B (110 visits rows) with the 28 S25_TABLE quarter-end rows replaced by
                             all 84 cells of Cowork's copy of the 2025 table
-  verification.csv          Cowork's checks at source, V01-V42, as recorded
+  verification.csv          Cowork's checks at source, V01-V42 and V43-V101, as recorded
   inputs_sha256.csv         the private inputs and their SHA-256 (checked)
 """
 import csv
@@ -23,6 +23,8 @@ import re
 import sys
 
 BRIEF = ("CODE_SESSION_IQ-17_RTT-102_data.md", "28bf52abc316ba4ecf891341345fde4db62fb129b3ff3533f0df677d58a2e569")
+# Files whose hash is given in a brief rather than in the README's table (IQ-17b: Cowork's checks V43-V101)
+BRIEF_HASHED = [("cowork_similarweb_verification_2026-10-08_IQ17.csv", "eda8fdd8157c6429ba42aca4b667fbd08cf43b9b534927ec9678e2f38d45d3ed")]
 DATA_VERSION_DATE = "2024-07-28"  # Similarweb's new data version launched (V32)
 TABLE_SITES = {"chatgpt.com": "chatgpt", "gemini.google.com": "gemini", "deepseek.com": "deepseek", "grok.com": "grok",
                "perplexity.ai": "perplexity", "claude.ai": "claude", "meta.ai": "meta_ai"}
@@ -42,11 +44,11 @@ def check_hashes(src):
     if len(rows) != 11:
         sys.exit(f"expected 11 hashed files in 00_README.md, found {len(rows)}")
     out = []
-    for name, want in rows + [BRIEF]:
+    for name, want in rows + [BRIEF] + BRIEF_HASHED:
         got = sha256(os.path.join(src, name))
         if got != want:
             sys.exit(f"SHA-256 mismatch for {name}: {got} != {want}")
-        out.append((name, os.path.getsize(os.path.join(src, name)), got, "matches 00_README.md" if (name, want) != BRIEF else "matches the IQ-17 start prompt"))
+        out.append((name, os.path.getsize(os.path.join(src, name)), got, "matches 00_README.md" if (name, want) in rows else "matches the hash in the IQ-17 / IQ-17b brief"))
     for name in sorted(os.listdir(src)):  # the three prompts carry no hash in the README: record theirs
         if name.startswith("RTT-102_chatgpt_") or name == "00_README.md":
             out.append((name, os.path.getsize(os.path.join(src, name)), sha256(os.path.join(src, name)), "recorded here (no hash in 00_README.md)"))
@@ -113,6 +115,9 @@ def main():
 
     ver = list(csv.reader(open(os.path.join(src, "cowork_similarweb_verification_2026-10-07.csv"), encoding="utf-8")))
     assert ver[0][0] == "check_id" and len(ver) == 43, len(ver)
+    ver2 = list(csv.reader(open(os.path.join(src, BRIEF_HASHED[0][0]), encoding="utf-8")))
+    assert ver2[0] == ver[0] and len(ver2) == 60, len(ver2)
+    ver += ver2[1:]  # V01-V42 (7-8 Oct) then V43-V101 (IQ-17b)
     with open(os.path.join(out, "verification.csv"), "w", newline="", encoding="utf-8") as f:
         csv.writer(f, lineterminator="\n").writerows(ver)
 

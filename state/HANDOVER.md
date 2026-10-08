@@ -1,7 +1,28 @@
 # HANDOVER — 8 Oct 2026 (Claude Code cloud session: IQ-17, the RTT-102 AI assistant websites race, data build phase 1). Earlier sessions' notes follow below; open pull requests #19 (RTT-101) and #20 (RTT-103) carry their own newer handover sections.
 
+## RTT-102 update (IQ-17b, 8 Oct 2026): Luke's answers and Cowork's checks applied
+- **Brief:** `prompts/CODE_SESSION_IQ-17b.md`. Cowork's file `cowork_similarweb_verification_2026-10-08_IQ17.csv` (V43–V101) and the new `00_README.md` match the hashes in the brief (private commit `8d41c57`).
+- **Luke's answers** ("All as recommended") are DEC-515 to DEC-522. The rule now has his step 4, "the later publication over the earlier".
+- **Claude's records:**
+  - DEC-523: how step 4 is applied, with agreement tested between every pair.
+  - DEC-524: **step 5, a proposal applied until Luke decides**. Within one publication, its labelled chart beats its prose. This gives ChatGPT December 2022 = 265M and January 2023 = 615M.
+  - DEC-525: Claude January 2026 = 203M and February = 290.3M; the IPO blog's February "203 million" is set aside.
+  - DEC-526: the import.
+  - DEC-527: the findings.
+- **Now:**
+  - 153 points used and 236 bar-months; six bars verified to August 2026.
+  - No leftover conflicts.
+  - Third place: Grok in February 2026, Claude from March 2026.
+  - Perplexity starts in December 2022 (Reuters quoting Similarweb).
+- **Checks:** tests 24/24 PASS; build checks 11/11 PASS.
+- **Next:**
+  1. Cowork reads the seven September 2026 profiles (9 Oct). Add each as a row in `source/observations_manual.csv`, or map the existing `B07x` rows in `source/verification_map.csv`; then rebuild and run the tests.
+  2. Luke answers the 3 open questions in report §9.
+  3. Design session.
+- **The next RTT-102 DEC is DEC-528.**
+
 ## RTT-102 AI assistant websites race: data build phase 1 (IQ-17, 8 Oct 2026), awaiting Luke
-- **Branch** `claude/nice-wozniak-f62eio` (public), pull request https://github.com/marketmarathon/race-through-time/pull/21 open, **not merged** (DEC-057). The private repo is untouched: its `research/rtt-102/` inputs were only read. Brief: `prompts/CODE_SESSION_IQ-17.md` (8,744 bytes, SHA-256 `28bf52ab…e569`). Luke's start message: `prompts/CODE_SESSION_IQ-17_start.md`. The build ran in parallel with IQ-16 (DEC-503). **DEC numbers: IQ-17 uses DEC-500 onwards only (DEC-504); this session used DEC-500 to DEC-514**, so the next RTT-102 DEC is DEC-515.
+- **Branch** `claude/nice-wozniak-f62eio` (public), pull request https://github.com/marketmarathon/race-through-time/pull/21 open, **not merged** (DEC-057). The private repo is untouched: its `research/rtt-102/` inputs were only read. Brief: `prompts/CODE_SESSION_IQ-17.md` (8,744 bytes, SHA-256 `28bf52ab…e569`). Luke's start message: `prompts/CODE_SESSION_IQ-17_start.md`. The build ran in parallel with IQ-16 (DEC-503). **DEC numbers: IQ-17 uses DEC-500 onwards only (DEC-504); this session used DEC-500 to DEC-514** (IQ-17b then used DEC-515 to DEC-527).
 - **Owner decisions recorded:**
   - DEC-500: route D, Similarweb monthly website visits.
   - DEC-501: answers 2–4 of 7 Oct (older estimates marked; title states the measure; straight lines; Le Chat out).
