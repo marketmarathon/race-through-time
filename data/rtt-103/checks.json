@@ -1,0 +1,917 @@
+{
+ "build": "rtt103-build/1.0",
+ "checks": [
+  {
+   "check": "every input printed in its cited filing",
+   "company": "amazon",
+   "detail": "0 inputs without a text check",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "quarters sum to the fiscal year (rounding of printed millions allowed, up to $2m)",
+   "company": "amazon",
+   "detail": "16 fiscal years tested; 8 tautological (Q2-Q4 all derived from year-to-date figures); 5 rounding differences: FY2011: quarters 1,810,000,000 vs year 1,811,000,000; FY2013: quarters 3,442,000,000 vs year 3,444,000,000; FY2015: quarters 4,588,000,000 vs year 4,589,000,000; FY2017: quarters 10,057,000,000 vs year 10,058,000,000; FY2020: quarters 35,045,000,000 vs year 35,044,000,000. no difference above $2m",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "TTM equals the sum of four consecutive quarters",
+   "company": "amazon",
+   "detail": "66 TTM points recomputed",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "every quarter is 89-92 days and maps to one calendar bucket",
+   "company": "amazon",
+   "detail": "140 quarter records; lengths 90-92 days",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "no duplicate quarters",
+   "company": "amazon",
+   "detail": "69 canonical quarters",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "purchases printed as cash outflows (in parentheses)",
+   "company": "amazon",
+   "detail": "0 exceptions",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "no free cash flow, depreciation or acquisition line used",
+   "company": "amazon",
+   "detail": "130 inputs checked by label",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "units are recorded for every input (thousands or millions)",
+   "company": "amazon",
+   "detail": "units seen: millions",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "no zero or negative canonical quarter",
+   "company": "amazon",
+   "detail": "0 found",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "finance leases neither added nor double counted in the canonical series",
+   "company": "amazon",
+   "detail": "canonical lines are cash purchases only; finance-lease principal and lease additions are kept as context",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "every input printed in its cited filing",
+   "company": "microsoft",
+   "detail": "0 inputs without a text check",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "quarters sum to the fiscal year (rounding of printed millions allowed, up to $2m)",
+   "company": "microsoft",
+   "detail": "17 fiscal years tested; 0 tautological (Q2-Q4 all derived from year-to-date figures); no difference above $2m",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "TTM equals the sum of four consecutive quarters",
+   "company": "microsoft",
+   "detail": "66 TTM points recomputed",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "every quarter is 89-92 days and maps to one calendar bucket",
+   "company": "microsoft",
+   "detail": "140 quarter records; lengths 90-92 days",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "no duplicate quarters",
+   "company": "microsoft",
+   "detail": "69 canonical quarters",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "purchases printed as cash outflows (in parentheses)",
+   "company": "microsoft",
+   "detail": "0 exceptions",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "no free cash flow, depreciation or acquisition line used",
+   "company": "microsoft",
+   "detail": "87 inputs checked by label",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "units are recorded for every input (thousands or millions)",
+   "company": "microsoft",
+   "detail": "units seen: millions",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "no zero or negative canonical quarter",
+   "company": "microsoft",
+   "detail": "0 found",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "finance leases neither added nor double counted in the canonical series",
+   "company": "microsoft",
+   "detail": "canonical lines are cash purchases only; finance-lease principal and lease additions are kept as context",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "every input printed in its cited filing",
+   "company": "alphabet",
+   "detail": "0 inputs without a text check",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "quarters sum to the fiscal year (rounding of printed millions allowed, up to $2m)",
+   "company": "alphabet",
+   "detail": "16 fiscal years tested; 16 tautological (Q2-Q4 all derived from year-to-date figures); no difference above $2m",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "TTM equals the sum of four consecutive quarters",
+   "company": "alphabet",
+   "detail": "66 TTM points recomputed",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "every quarter is 89-92 days and maps to one calendar bucket",
+   "company": "alphabet",
+   "detail": "140 quarter records; lengths 90-92 days",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "no duplicate quarters",
+   "company": "alphabet",
+   "detail": "69 canonical quarters",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "purchases printed as cash outflows (in parentheses)",
+   "company": "alphabet",
+   "detail": "0 exceptions",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "no free cash flow, depreciation or acquisition line used",
+   "company": "alphabet",
+   "detail": "121 inputs checked by label",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "units are recorded for every input (thousands or millions)",
+   "company": "alphabet",
+   "detail": "units seen: millions, thousands",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "no zero or negative canonical quarter",
+   "company": "alphabet",
+   "detail": "0 found",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "finance leases neither added nor double counted in the canonical series",
+   "company": "alphabet",
+   "detail": "canonical lines are cash purchases only; finance-lease principal and lease additions are kept as context",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "every input printed in its cited filing",
+   "company": "meta",
+   "detail": "0 inputs without a text check",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "quarters sum to the fiscal year (rounding of printed millions allowed, up to $2m)",
+   "company": "meta",
+   "detail": "14 fiscal years tested; 14 tautological (Q2-Q4 all derived from year-to-date figures); no difference above $2m",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "TTM equals the sum of four consecutive quarters",
+   "company": "meta",
+   "detail": "57 TTM points recomputed",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "every quarter is 89-92 days and maps to one calendar bucket",
+   "company": "meta",
+   "detail": "140 quarter records; lengths 90-92 days",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "no duplicate quarters",
+   "company": "meta",
+   "detail": "60 canonical quarters",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "purchases printed as cash outflows (in parentheses)",
+   "company": "meta",
+   "detail": "0 exceptions",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "no free cash flow, depreciation or acquisition line used",
+   "company": "meta",
+   "detail": "105 inputs checked by label",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "units are recorded for every input (thousands or millions)",
+   "company": "meta",
+   "detail": "units seen: millions",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "no zero or negative canonical quarter",
+   "company": "meta",
+   "detail": "0 found",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "finance leases neither added nor double counted in the canonical series",
+   "company": "meta",
+   "detail": "canonical lines are cash purchases only; finance-lease principal and lease additions are kept as context",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "every input printed in its cited filing",
+   "company": "oracle",
+   "detail": "0 inputs without a text check",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "quarters sum to the fiscal year (rounding of printed millions allowed, up to $2m)",
+   "company": "oracle",
+   "detail": "17 fiscal years tested; 17 tautological (Q2-Q4 all derived from year-to-date figures); no difference above $2m",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "TTM equals the sum of four consecutive quarters",
+   "company": "oracle",
+   "detail": "66 TTM points recomputed",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "every quarter is 89-92 days and maps to one calendar bucket",
+   "company": "oracle",
+   "detail": "140 quarter records; lengths 90-92 days",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "no duplicate quarters",
+   "company": "oracle",
+   "detail": "70 canonical quarters",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "purchases printed as cash outflows (in parentheses)",
+   "company": "oracle",
+   "detail": "0 exceptions",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "no free cash flow, depreciation or acquisition line used",
+   "company": "oracle",
+   "detail": "122 inputs checked by label",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "units are recorded for every input (thousands or millions)",
+   "company": "oracle",
+   "detail": "units seen: millions",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "no zero or negative canonical quarter",
+   "company": "oracle",
+   "detail": "0 found",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "finance leases neither added nor double counted in the canonical series",
+   "company": "oracle",
+   "detail": "canonical lines are cash purchases only; finance-lease principal and lease additions are kept as context",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "every input printed in its cited filing",
+   "company": "coreweave",
+   "detail": "0 inputs without a text check",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "quarters sum to the fiscal year (rounding of printed millions allowed, up to $2m)",
+   "company": "coreweave",
+   "detail": "2 fiscal years tested; 2 tautological (Q2-Q4 all derived from year-to-date figures); no difference above $2m",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "TTM equals the sum of four consecutive quarters",
+   "company": "coreweave",
+   "detail": "7 TTM points recomputed",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "every quarter is 89-92 days and maps to one calendar bucket",
+   "company": "coreweave",
+   "detail": "22 quarter records; lengths 90-92 days",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "no duplicate quarters",
+   "company": "coreweave",
+   "detail": "10 canonical quarters",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "purchases printed as cash outflows (in parentheses)",
+   "company": "coreweave",
+   "detail": "0 exceptions",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "no free cash flow, depreciation or acquisition line used",
+   "company": "coreweave",
+   "detail": "17 inputs checked by label",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "units are recorded for every input (thousands or millions)",
+   "company": "coreweave",
+   "detail": "units seen: millions, thousands",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "no zero or negative canonical quarter",
+   "company": "coreweave",
+   "detail": "0 found",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "finance leases neither added nor double counted in the canonical series",
+   "company": "coreweave",
+   "detail": "canonical lines are cash purchases only; finance-lease principal and lease additions are kept as context",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "cross-check: Amazon's own printed twelve-month figures equal our four-quarter sums (within $3m rounding)",
+   "company": "amazon",
+   "detail": "50 printed TTM figures compared; all agree",
+   "kind": "crosscheck",
+   "result": "PASS"
+  },
+  {
+   "check": "cross-check: three-month figures printed outside the cash-flow statement (MD&A) equal our quarters",
+   "company": "amazon",
+   "detail": "2 compared; all agree",
+   "kind": "crosscheck",
+   "result": "PASS"
+  },
+  {
+   "check": "cross-check: three-month figures printed outside the cash-flow statement (MD&A) equal our quarters",
+   "company": "alphabet",
+   "detail": "10 compared; 2016-09-30: printed 2,554,000,000 vs ours 2,583,000,000",
+   "kind": "crosscheck",
+   "result": "FAIL"
+  },
+  {
+   "check": "cross-check: Meta's release capex equals purchases of P&E less proceeds (+ finance-lease principal from 2019), within print rounding",
+   "company": "meta",
+   "detail": "56 quarters compared; 2018-12-31: release 4,370,000,000 vs statement 4,301,000,000",
+   "kind": "crosscheck",
+   "result": "FAIL"
+  },
+  {
+   "check": "quarters sum to the fiscal year (RMB; printed rounding allowed)",
+   "company": "alibaba",
+   "detail": "12 fiscal years tested; no difference beyond rounding",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "TTM equals the sum of four consecutive converted quarters",
+   "company": "alibaba",
+   "detail": "43 TTM points recomputed",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "FX: quarterly mean CNY per USD between 5.5 and 8.5, at least 55 daily rates",
+   "company": "alibaba",
+   "detail": "70 quarters; rates 6.0901-7.2728; fewest days 59",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "FX direction: US$ = RMB divided by CNY per USD (US$ smaller than RMB)",
+   "company": "alibaba",
+   "detail": "49 quarters converted",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "every quarter is 89-92 days and maps to one calendar bucket",
+   "company": "alibaba",
+   "detail": "70 quarters",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "no zero or negative canonical quarter",
+   "company": "alibaba",
+   "detail": "0 found",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "every input read at its source (VERIFIED)",
+   "company": "alibaba",
+   "detail": "0 unverified inputs",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "quarters sum to the fiscal year (RMB; printed rounding allowed)",
+   "company": "tencent",
+   "detail": "15 fiscal years tested; 1 within rounding: FY2013: quarters 5,798,482,000 vs year 5,799,000,000. no difference beyond rounding",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "TTM equals the sum of four consecutive converted quarters",
+   "company": "tencent",
+   "detail": "59 TTM points recomputed",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "FX: quarterly mean CNY per USD between 5.5 and 8.5, at least 55 daily rates",
+   "company": "tencent",
+   "detail": "70 quarters; rates 6.0901-7.2728; fewest days 59",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "FX direction: US$ = RMB divided by CNY per USD (US$ smaller than RMB)",
+   "company": "tencent",
+   "detail": "62 quarters converted",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "every quarter is 89-92 days and maps to one calendar bucket",
+   "company": "tencent",
+   "detail": "70 quarters",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "no zero or negative canonical quarter",
+   "company": "tencent",
+   "detail": "0 found",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "every input read at its source (VERIFIED)",
+   "company": "tencent",
+   "detail": "0 unverified inputs",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "quarters sum to the fiscal year (RMB; printed rounding allowed)",
+   "company": "baidu",
+   "detail": "14 fiscal years tested; 4 within rounding: FY2011: quarters 1,762,200,000 vs year 1,762,000,000; FY2012: quarters 2,310,800,000 vs year 2,311,000,000; FY2014: quarters 4,827,163,000 vs year 4,827,000,000; FY2017: quarters 4,777,598,000 vs year 4,779,000,000. no difference beyond rounding",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "TTM equals the sum of four consecutive converted quarters",
+   "company": "baidu",
+   "detail": "66 TTM points recomputed",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "FX: quarterly mean CNY per USD between 5.5 and 8.5, at least 55 daily rates",
+   "company": "baidu",
+   "detail": "70 quarters; rates 6.0901-7.2728; fewest days 59",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "FX direction: US$ = RMB divided by CNY per USD (US$ smaller than RMB)",
+   "company": "baidu",
+   "detail": "69 quarters converted",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "every quarter is 89-92 days and maps to one calendar bucket",
+   "company": "baidu",
+   "detail": "70 quarters",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "no zero or negative canonical quarter",
+   "company": "baidu",
+   "detail": "0 found",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "every input read at its source (VERIFIED)",
+   "company": "baidu",
+   "detail": "0 unverified inputs",
+   "kind": "financial",
+   "result": "PASS"
+  },
+  {
+   "check": "A_source_catalogue.csv: exactly the brief's columns, in order",
+   "company": "files",
+   "detail": "18 columns",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "B_capex_observations.csv: exactly the brief's columns, in order",
+   "company": "files",
+   "detail": "29 columns",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "C_capex_definitions.csv: exactly the brief's columns, in order",
+   "company": "files",
+   "detail": "13 columns",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "D_quarterly_capex_clean.csv: exactly the brief's columns, in order",
+   "company": "files",
+   "detail": "19 columns",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "E_capex_TTM_race.csv: exactly the brief's columns, in order",
+   "company": "files",
+   "detail": "14 columns",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "F_2026_capex_forecasts.csv: exactly the brief's columns, in order",
+   "company": "files",
+   "detail": "16 columns",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "G_AI_capex_story_events.csv: exactly the brief's columns, in order",
+   "company": "files",
+   "detail": "13 columns",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "H_coverage_matrix.csv: exactly the brief's columns, in order",
+   "company": "files",
+   "detail": "11 columns",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "I_conflicts_and_warnings.csv: exactly the brief's columns, in order",
+   "company": "files",
+   "detail": "13 columns",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "L_aggregate_capex.csv: exactly the brief's columns, in order",
+   "company": "files",
+   "detail": "6 columns",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "AI_SPENDING_RACE_MASTER.csv: exactly the brief's columns, in order",
+   "company": "files",
+   "detail": "13 columns",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "H: every cell in the brief's vocabulary",
+   "company": "files",
+   "detail": "66 quarters x 10 columns",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "E: one row per company per quarter",
+   "company": "files",
+   "detail": "496 rows",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "E: sorted by calendar quarter then descending TTM",
+   "company": "files",
+   "detail": "",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "E: TTM equals the sum of its four printed components",
+   "company": "files",
+   "detail": "",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "D: one row per company per fiscal quarter",
+   "company": "files",
+   "detail": "571 rows",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "Master: ranks 1..n on every date",
+   "company": "files",
+   "detail": "66 dates",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "Master: no estimate or guidance rows",
+   "company": "files",
+   "detail": "496 rows",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "2026E: every row labelled 2026 and its kind (GUIDANCE, ESTIMATE or a named forecaster's FORECAST)",
+   "company": "files",
+   "detail": "29 rows",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "Every source cited in B, F, G and the forecast file is listed in A",
+   "company": "files",
+   "detail": "681 citations; missing: []",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "OpenAI and ByteDance are never bars (DEC-301, DEC-296)",
+   "company": "files",
+   "detail": "0 found",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "Forecast file: company guidance, ByteDance greyed, and named consensus/analyst/research-firm forecasts only (DEC-296, DEC-297, DEC-306)",
+   "company": "files",
+   "detail": "76 rows",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "Forecast file: years 2026-2031 only (DEC-306)",
+   "company": "files",
+   "detail": "",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "Forecast file: every row names its forecaster, forecaster type, forecast date and measure (DEC-306)",
+   "company": "files",
+   "detail": "",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "Forecast file: one named forecaster per row, never averaged or blended (DEC-306)",
+   "company": "files",
+   "detail": "",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "Forecast file: forecasts by others are labelled as forecasts with the forecaster's name, never as guidance (DEC-306)",
+   "company": "files",
+   "detail": "",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "Look-ahead source rows: each states its own year, quote, source and URL (never extended beyond a source's years)",
+   "company": "files",
+   "detail": "102 rows, 102 verified",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "Look-ahead source rows: every figure is printed in its own verbatim quote, in the source's own units",
+   "company": "files",
+   "detail": "failing: []",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "Look-ahead source rows: a fiscal year sits in the frame of the calendar year holding most of its months (DEC-314)",
+   "company": "files",
+   "detail": "failing: []",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "Look-ahead: one current figure per forecaster, company and year (older vintages flagged superseded)",
+   "company": "files",
+   "detail": "duplicates: []",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "Forecast file: every figure appears in its own verbatim quote (no number created; 2027-2028 company rows stay as stated)",
+   "company": "files",
+   "detail": "76 rows; failing: []",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "Forecast frames: Alibaba's multi-year plan is never split into years or shown as annual guidance",
+   "company": "files",
+   "detail": "",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "Forecast frames: guidance only press reports carry is labelled so in its display note",
+   "company": "files",
+   "detail": "",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "G: every OpenAI row is a COMMITMENT story moment, never capex (DEC-301)",
+   "company": "files",
+   "detail": "36 OpenAI rows",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "Forecast frames: every range has its low and high (never a midpoint alone)",
+   "company": "files",
+   "detail": "",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "Look-ahead: every 2027-2030 figure is labelled as Race Through Time's or Citi's estimate and names its source (DEC-326, DEC-331..DEC-333)",
+   "company": "files",
+   "detail": "36 estimates",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "Look-ahead: 2026-2030 only, all nine companies every year, every bar labelled with its period, 2030 marked least reliable (DEC-327, DEC-335..DEC-337)",
+   "company": "files",
+   "detail": "",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "Look-ahead: 'Combined capital spending' is the sum of the bars on screen; no AI-only forecast in it (DEC-324)",
+   "company": "files",
+   "detail": "",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "Look-ahead: no estimate in the master, E or the forecast file",
+   "company": "files",
+   "detail": "",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "Look-ahead uses only the approved, verified sources: company plans, actuals, Citi (Alibaba) and FactSet consensus growth (DEC-331..DEC-333); nothing unverified selected (BCG and Allianz stay peak views only)",
+   "company": "files",
+   "detail": "",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "Peak views: each verified view cites a source in A; unverified views (BCG, Allianz Sep) are not allowed on screen",
+   "company": "files",
+   "detail": "7 views",
+   "kind": "format",
+   "result": "PASS"
+  },
+  {
+   "check": "No blank or zero-filled value in E",
+   "company": "files",
+   "detail": "",
+   "kind": "format",
+   "result": "PASS"
+  }
+ ],
+ "latest_common_complete_quarter": "2026-Q2",
+ "qa_passed": [
+  "Alibaba",
+  "Alphabet",
+  "Amazon",
+  "Baidu",
+  "CoreWeave",
+  "Meta",
+  "Microsoft",
+  "Oracle",
+  "Tencent"
+ ],
+ "race_companies": [
+  "Amazon",
+  "Microsoft",
+  "Alphabet",
+  "Meta",
+  "Oracle",
+  "CoreWeave",
+  "Alibaba",
+  "Tencent",
+  "Baidu"
+ ]
+}

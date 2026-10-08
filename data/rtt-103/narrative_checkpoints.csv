@@ -1,0 +1,14 @@
+date,checkpoint,detail,basis
+2010-03-31,leader,Microsoft first in TTM capex (US$2.086bn),AI_SPENDING_RACE_MASTER.csv rank 1
+2010-12-31,new leader,"Alphabet first in TTM capex (US$4.018bn), ahead of Microsoft",AI_SPENDING_RACE_MASTER.csv rank 1
+2012-12-31,new leader,"Amazon first in TTM capex (US$3.785bn), ahead of Alphabet",AI_SPENDING_RACE_MASTER.csv rank 1
+2013-06-30,new leader,"Alphabet first in TTM capex (US$4.706bn), ahead of Amazon",AI_SPENDING_RACE_MASTER.csv rank 1
+2014-12-31,first company above US$10bn TTM,Alphabet (US$10.959bn),AI_SPENDING_RACE_MASTER.csv
+2018-12-31,first company above US$25bn TTM,Alphabet (US$25.139bn),AI_SPENDING_RACE_MASTER.csv
+2020-09-30,new leader,"Amazon first in TTM capex (US$25.791bn), ahead of Alphabet",AI_SPENDING_RACE_MASTER.csv rank 1
+2020-12-31,race total above US$100bn TTM,"8 companies, US$103.803bn (missing: CoreWeave)",L_aggregate_capex.csv
+2021-09-30,first company above US$50bn TTM,Amazon (US$52.120bn),AI_SPENDING_RACE_MASTER.csv
+2024-12-31,race total above US$250bn TTM,"9 companies, US$264.338bn (company set differs from a year earlier; YoY not like-for-like)",L_aggregate_capex.csv
+2025-06-30,first company above US$100bn TTM,Amazon (US$102.953bn),AI_SPENDING_RACE_MASTER.csv
+2026-03-31,race total above US$500bn TTM,"9 companies, US$526.738bn",L_aggregate_capex.csv
+2026-06-30,first company above US$150bn TTM,Amazon (US$169.007bn),AI_SPENDING_RACE_MASTER.csv
