@@ -570,6 +570,25 @@ if BASEB:
     QB = [l.strip() for l in open(os.path.join(D, "source", "questions_listB.md"), encoding="utf-8") if l.strip()] \
         if os.path.exists(os.path.join(D, "source", "questions_listB.md")) else []
     R += ["\n**Questions for Luke on list B (each with Claude's recommendation)**\n"] + QB
+    R += ["\n**Answered by Luke (Cowork chat, 8 Oct 2026): yes to all seven, recommendations applied (DEC-410 to DEC-416).** Murphy now counts the £1.5m "
+          "initial payment and Normann £0; the fees resting on a \"reported\"-type completion figure are listed in `source/dec404_soft_figures.csv` "
+          "and go to research round 2. Detailed data and method questions are now decided by Claude within the agreed rules (DEC-417)."]
     with open(OUT, "a", encoding="utf-8") as f:
         f.write("\n".join(R) + "\n")
     print("section 12:", v0, "->", v1, "VERIFIED of", nB, ";", len(fees), "fees changed;", len(D404), "DEC-404 changes;", len(lead_ch), "leader changes")
+
+
+# ---------------------------------------------------------------- research round 2 list (IQ-15g, DEC-418)
+R2 = rd("source_round2_list.csv")
+if R2:
+    from collections import Counter as _C2
+    bys = _C2(r["season"] for r in R2)
+    why = _C2(w for r in R2 for w in r["what_we_need"].split("; "))
+    R = ["\n## 13. Research round 2: the list (IQ-15g, DEC-418)\n",
+         f"`data/rtt-101/source_round2_list.csv` holds **{len(R2)} deals** (R0001 onwards, in date order, all seasons 1992–2026) that still need research; "
+         "it carries no fee figures. Each deal maps to its transfer(s) in `data/rtt-101/source/source_round2_map.csv`. What each needs:\n"]
+    R += [f"- {k}: {v}" for k, v in why.most_common()]
+    R += ["\n| Season | Deals |", "|---|---|"] + [f"| {k} | {v} |" for k, v in sorted(bys.items())]
+    with open(OUT, "a", encoding="utf-8") as f:
+        f.write("\n".join(R) + "\n")
+    print("section 13:", len(R2), "round 2 deals")

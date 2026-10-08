@@ -1,0 +1,756 @@
+deal_id,season,approx_date,player,from_club,to_club,what_we_need
+R0001,1992-93,1992-07-01,Gary Lineker,Tottenham Hotspur,Nagoya Grampus 8,fee from a page naming both clubs
+R0002,1992-93,1992-07-01,Paul Gascoigne,Tottenham Hotspur,Lazio,press or club source for the fee (only a database confirms it)
+R0003,1992-93,1992-07-02,Jason Cundy,Chelsea,Tottenham Hotspur,fee from a page naming both clubs
+R0004,1992-93,1992-07-07,Ian Olney,Aston Villa,Oldham Athletic,fee from a page naming both clubs
+R0005,1992-93,1992-08-01,Torben Piechnik,FCK,Liverpool,fee from a page naming both clubs
+R0006,1992-93,1992-08-01,Pat McGibbon,Portadown,Manchester United,fee from a page naming both clubs
+R0007,1992-93,1992-11-23,Neil Webb,Manchester United,Nottingham Forest,fee from a page naming both clubs
+R0008,1992-93,1992-12-18,Stig Inge Bjørnebye,Rosenborg,Liverpool,fee from a page naming both clubs
+R0009,1992-93,1993-03-01,Glenn Pennyfather,Ipswich Town,Bristol City,fee from a page naming both clubs
+R0010,1993-94,1993-05-31,Nayim,Tottenham Hotspur,Real Zaragoza,fee from a page naming both clubs
+R0011,1993-94,1993-07-30,Alex Mathie,Greenock Morton,Newcastle United,fee from a page naming both clubs
+R0012,1993-94,1993-07-31,Nikki Papavasiliou,OFI,Newcastle United,fee from a page naming both clubs
+R0013,1993-94,1993-08-01,David Tuttle,Tottenham Hotspur,Sheffield United,fee from a page naming both clubs
+R0014,1993-94,1993-08-05,Alan Thompson,Newcastle United,Bolton Wanderers,fee from a page naming both clubs
+R0015,1993-94,1993-09-16,Paul Allen,Tottenham Hotspur,Southampton,fee from a page naming both clubs
+R0016,1993-94,1993-09-23,Mike Hooper,Liverpool,Newcastle United,fee from a page naming both clubs
+R0017,1993-94,1993-09-24,Tommy Wright,Newcastle United,Nottingham Forest,fee from a page naming both clubs
+R0018,1993-94,1993-10-04,Mike Jeffrey,Doncaster Rovers,Newcastle United,fee from a page naming both clubs
+R0019,1993-94,1993-10-28,Mark Stein,Stoke City,Chelsea,fee from a page naming both clubs
+R0020,1993-94,1993-12-20,David Rocastle,Leeds United,Manchester City,press or club source for the fee (only a database confirms it)
+R0021,1993-94,1994-01-20,Chris Holland,Preston North End,Newcastle United,fee from a page naming both clubs
+R0022,1993-94,1994-01-21,Liam O'Brien,Newcastle United,Tranmere Rovers,fee from a page naming both clubs
+R0023,1994-95,1994-06-01,Michael Stensgaard,Hvidovre IF,Liverpool,fee from a page naming both clubs
+R0024,1994-95,1994-07-04,Nigel Worthington,Sheffield Wednesday,Leeds United,fee from a page naming both clubs
+R0025,1994-95,1994-07-05,Darren Pitcher,Charlton Athletic,Crystal Palace,fee from a page naming both clubs
+R0026,1994-95,1994-07-06,Tony Daley,Aston Villa,Wolverhampton Wanderers,fee from a page naming both clubs
+R0027,1994-95,1994-07-11,Steve Froggatt,Aston Villa,Wolverhampton Wanderers,fee from a page naming both clubs
+R0028,1994-95,1994-07-19,Neil Cox,Aston Villa,Middlesbrough,press or club source for the fee (only a database confirms it)
+R0029,1994-95,1994-08-02,Steve Guppy,Wycombe Wanderers,Newcastle United,fee from a page naming both clubs
+R0030,1994-95,1994-08-03,Nii Lamptey,PSV Eindhoven,Aston Villa,fee from a page naming both clubs
+R0031,1994-95,1994-09-01,Klas Ingesson,PSV Eindhoven,Sheffield Wednesday,fee from a page naming both clubs
+R0032,1994-95,1994-09-09,Mauricio Taricco,Argentinos Juniors,Ipswich Town,fee from a page naming both clubs
+R0033,1994-95,1994-10-11,Franz Carr,Sheffield United,Leicester City,fee from a page naming both clubs
+R0034,1994-95,1994-10-14,Efan Ekoku,Norwich City,Wimbledon,fee from a page naming both clubs
+R0035,1994-95,1994-10-21,Steve Jones,West Ham United,AFC Bournemouth,fee from a page naming both clubs
+R0036,1994-95,1994-11-25,Steve Guppy,Newcastle United,Port Vale,fee from a page naming both clubs
+R0037,1994-95,1995-01-10,Keith Gillespie,Manchester United,Newcastle United,fee from a page naming both clubs
+R0038,1994-95,1995-01-11,Steve Agnew,Leicester City,Sunderland,press or club source for the fee (only a database confirms it)
+R0039,1994-95,1995-01-19,Lee Chapman,West Ham United,Ipswich Town,fee from a page naming both clubs
+R0040,1994-95,1995-02-10,Garry Parker and Franz Carr (exchange),Aston Villa,Leicester City,cash part of a part-exchange
+R0041,1994-95,1995-02-24,Steve Thompson,Leicester City,Burnley,fee from a page naming both clubs
+R0042,1994-95,1995-02-24,Alex Mathie,Newcastle United,Ipswich Town,fee from a page naming both clubs
+R0043,1994-95,1995-03-01,Jimmy Crawford,Bohemians,Newcastle United,fee from a page naming both clubs
+R0044,1994-95,1995-03-02,John Filan,Cambridge United,Coventry City,fee from a page naming both clubs
+R0045,1994-95,1995-03-02,David Burrows,Everton,Coventry City,fee from a page naming both clubs
+R0046,1994-95,1995-03-23,Chris Swailes,Doncaster Rovers,Ipswich Town,fee from a page naming both clubs
+R0047,1995-96,1995-06-07,Calita,Farense,Coventry City,fee from a page naming both clubs
+R0048,1995-96,1995-06-26,Mike Marsh,Coventry City,Galatasaray,fee from a page naming both clubs
+R0049,1995-96,1995-06-26,Savo Milošević,Partizan,Aston Villa,fee from a page naming both clubs
+R0050,1995-96,1995-07-01,Jürgen Klinsmann,Tottenham Hotspur,FC Bayern Munich,fee from a page naming both clubs
+R0051,1995-96,1995-07-05,Isaías,Benfica,Coventry City,fee from a page naming both clubs
+R0052,1995-96,1995-07-11,John Hendry,Tottenham Hotspur,Motherwell,fee from a page naming both clubs
+R0053,1995-96,1995-07-14,Georgi Kinkladze,Dinamo Tbilisi,Manchester City,press or club source for the fee (only a database confirms it)
+R0054,1995-96,1995-07-19,Richard Irving,Manchester United,Nottingham Forest,fee from a page naming both clubs
+R0055,1995-96,1995-07-25,Steven Pressley,Coventry City,Dundee United,fee from a page naming both clubs
+R0056,1995-96,1995-07-26,Ashley Westwood,Manchester United,Crewe Alexandra,fee from a page naming both clubs
+R0057,1995-96,1995-07-28,Sandy Robertson,Coventry City,Dundee United,fee from a page naming both clubs
+R0058,1995-96,1995-07-31,Nii Lamptey,Aston Villa,Coventry City,fee from a page naming both clubs
+R0059,1995-96,1995-08-01,Dalian Atkinson,Aston Villa,Fenerbahçe,fee from a page naming both clubs
+R0060,1995-96,1995-08-06,Paul Williams,Derby County,Coventry City,fee from a page naming both clubs
+R0061,1995-96,1995-08-08,Chris Bart-Williams,Sheffield Wednesday,Nottingham Forest,fee from a page naming both clubs
+R0062,1995-96,1995-08-14,Shaun Teale,Aston Villa,Tranmere Rovers,fee from a page naming both clubs
+R0063,1995-96,1995-10-06,Ruel Fox,Newcastle United,Tottenham Hotspur,press or club source for the fee (only a database confirms it)
+R0064,1995-96,1995-10-13,Lee Makel,Blackburn Rovers,Huddersfield Town,fee from a page naming both clubs
+R0065,1995-96,1995-10-26,Richard Jobson,Oldham Athletic,Leeds United,fee from a page naming both clubs
+R0066,1995-96,1995-11-09,Frank Talia,Blackburn Rovers,Swindon Town,fee from a page naming both clubs
+R0067,1995-96,1995-11-15,Klas Ingesson,Sheffield Wednesday,Bari,press or club source for the fee (only a database confirms it)
+R0068,1995-96,1995-11-17,Richard Shaw,Crystal Palace,Coventry City,fee from a page naming both clubs
+R0069,1995-96,1995-11-22,Andy Pearce,Sheffield Wednesday,Wimbledon,fee from a page naming both clubs
+R0070,1995-96,1995-11-24,Julian Darby,Coventry City,West Bromwich Albion,press or club source for the fee (only a database confirms it)
+R0071,1995-96,1995-12-16,Ian Feuer,West Ham United,Luton Town,fee from a page naming both clubs
+R0072,1995-96,1995-12-22,Darko Kovačević,Red Star Belgrade,Sheffield Wednesday,fee from a page naming both clubs
+R0073,1995-96,1995-12-22,Dejan Stefanović,Red Star Belgrade,Sheffield Wednesday,fee from a page naming both clubs
+R0074,1995-96,1996-01-31,Tony Coton,Manchester City,Manchester United,fee from a page naming both clubs
+R0075,1995-96,1996-02-07,Darren Currie,West Ham United,Shrewsbury Town,fee from a page naming both clubs
+R0076,1995-96,1996-02-28,Darren Caskey,Tottenham Hotspur,Reading,fee from a page naming both clubs
+R0077,1995-96,1996-03-01,Niklas Gudmundsson,Halmstads BK,Blackburn Rovers,fee from a page naming both clubs
+R0078,1996-97,1996-07-03,Ben Thatcher,Millwall,Wimbledon,press or club source for the fee (only a database confirms it)
+R0079,1996-97,1996-07-08,Muzzy Izzet,Chelsea,Leicester City,fee from a page naming both clubs
+R0080,1996-97,1996-07-17,Paul Furlong,Chelsea,Birmingham City,fee from a page naming both clubs
+R0081,1996-97,1996-07-19,Richard Hall,Southampton,West Ham United,press or club source for the fee (only a database confirms it)
+R0082,1996-97,1996-07-20,Karel Poborský,Slavia Prague,Manchester United,fee from a page naming both clubs
+R0083,1996-97,1996-07-31,Florin Raducioiu,Espanyol,West Ham United,press or club source for the fee (only a database confirms it)
+R0084,1996-97,1996-08-01,Anthony Barness,Chelsea,Charlton Athletic,fee from a page naming both clubs
+R0085,1996-97,1996-08-01,Lionel Perez,Bordeaux,Sunderland,fee from a page naming both clubs
+R0086,1996-97,1996-08-02,Fernando Nélson,Sporting,Aston Villa,fee from a page naming both clubs
+R0087,1996-97,1996-08-15,Ally Pickering,Coventry City,Stoke City,fee from a page naming both clubs
+R0088,1996-97,1996-08-17,Spencer Prior,Norwich City,Leicester City,fee from a page naming both clubs
+R0089,1996-97,1996-08-17,Kasey Keller,Millwall,Leicester City,fee from a page naming both clubs
+R0090,1996-97,1996-08-23,Saša Ćurčić,Bolton Wanderers,Aston Villa,press or club source for the fee (only a database confirms it)
+R0091,1996-97,1996-08-31,Ian Marshall,Ipswich Town,Leicester City,fee from a page naming both clubs
+R0092,1996-97,1996-12-23,Gavin Peacock,Chelsea,Queens Park Rangers,fee from a page naming both clubs
+R0093,1996-97,1997-01-07,Jan Eriksson,Helsingborgs IF,Sunderland,fee from a page naming both clubs
+R0094,1996-97,1997-01-14,Gianluca Festa,Internazionale,Middlesbrough,fee from a page naming both clubs
+R0095,1996-97,1997-01-15,Florin Raducioiu,West Ham United,Espanyol,press or club source for the fee (only a database confirms it)
+R0096,1996-97,1997-01-28,Régis Genaux,Coventry City,Udinese,press or club source for the fee (only a database confirms it)
+R0097,1996-97,1997-01-30,Oleksandr Yevtushok,Dnipro Dnipropetrovsk,Coventry City,fee from a page naming both clubs
+R0098,1996-97,1997-02-17,Robert Ullathorne,Osasuna,Leicester City,fee from a page naming both clubs
+R0099,1996-97,1997-02-28,Steve Guppy,Port Vale,Leicester City,fee from a page naming both clubs
+R0100,1996-97,1997-03-04,Tommy Wright,Nottingham Forest,Manchester City,fee from a page naming both clubs
+R0101,1996-97,1997-03-17,Chris Waddle,Bradford City,Sunderland,fee from a page naming both clubs
+R0102,1996-97,1997-03-21,Kim Heiselberg,Esbjerg fB,Sunderland,fee from a page naming both clubs
+R0103,1996-97,1997-03-26,Carl Tiler,Aston Villa,Sheffield United,fee from a page naming both clubs
+R0104,1996-97,1997-03-27,Tommy Johnson,Aston Villa,Celtic,fee from a page naming both clubs
+R0105,1996-97,1997-04-01,Allan Johnston,Rennes,Sunderland,fee from a page naming both clubs
+R0106,1997-98,1997-05-15,Colin Murdock,Manchester United,Preston North End,fee from a page naming both clubs
+R0107,1997-98,1997-06-04,Emmanuel Petit,Monaco,Arsenal,press or club source for the fee (only a database confirms it)
+R0108,1997-98,1997-06-04,Gilles Grimandi,Monaco,Arsenal,fee from a page naming both clubs
+R0109,1997-98,1997-06-12,Alf-Inge Haaland,Nottingham Forest,Leeds United,press or club source for the fee (only a database confirms it)
+R0110,1997-98,1997-06-17,Stéphane Henchoz,HSV,Blackburn Rovers,press or club source for the fee (only a database confirms it)
+R0111,1997-98,1997-06-19,Trond Egil Soltvedt,Rosenborg,Coventry City,fee from a page naming both clubs
+R0112,1997-98,1997-07-01,Gareth Farrelly,Aston Villa,Everton,fee from a page naming both clubs
+R0113,1997-98,1997-07-21,Matty Holmes,Blackburn Rovers,Charlton Athletic,fee from a page naming both clubs
+R0114,1997-98,1997-07-29,Roland Nilsson,Helsingborg,Coventry City,fee from a page naming both clubs
+R0115,1997-98,1997-08-01,Graham Fenton,Blackburn Rovers,Leicester City,fee from a page naming both clubs
+R0116,1997-98,1997-08-01,Simon Davies,Manchester United,Luton Town,fee from a page naming both clubs
+R0117,1997-98,1997-08-18,Peter Beardsley,Newcastle United,Bolton Wanderers,fee from a page naming both clubs
+R0118,1997-98,1997-08-29,Andy Townsend,Aston Villa,Middlesbrough,fee from a page naming both clubs
+R0119,1997-98,1997-09-23,Tony Yeboah,Leeds United,Hamburger SV,fee from a page naming both clubs
+R0120,1997-98,1997-12-05,Niclas Alexandersson,IFK Göteborg,Sheffield Wednesday,fee from a page naming both clubs
+R0121,1997-98,1997-12-19,Brad Friedel,Columbus Crew,Liverpool,press or club source for the fee (only a database confirms it)
+R0122,1997-98,1998-01-02,Viorel Moldovan,Grasshoppers,Coventry City,fee from a page naming both clubs
+R0123,1997-98,1998-01-22,Wayne Collins,Sheffield Wednesday,Fulham,fee from a page naming both clubs
+R0124,1997-98,1998-01-28,John O'Kane,Manchester United,Everton,fee from a page naming both clubs
+R0125,1997-98,1998-01-30,Frode Grodås,Chelsea,Tottenham Hotspur,fee from a page naming both clubs
+R0126,1997-98,1998-03-26,Saša Ćurčić,Aston Villa,Crystal Palace,fee from a page naming both clubs
+R0127,1998-99,1998-06-12,Grant Brebner,Manchester United,Reading,fee from a page naming both clubs
+R0128,1998-99,1998-06-30,Stéphane Guivarc'h,Auxerre,Newcastle United,fee from a page naming both clubs
+R0129,1998-99,1998-07-03,Ben Thornley,Manchester United,Huddersfield Town,fee from a page naming both clubs
+R0130,1998-99,1998-07-07,Fernando Nélson,Aston Villa,Porto,fee from a page naming both clubs
+R0131,1998-99,1998-07-10,James Beattie,Blackburn Rovers,Southampton,press or club source for the fee (only a database confirms it)
+R0132,1998-99,1998-07-13,Ian Wright,Arsenal,West Ham United,fee from a page naming both clubs
+R0133,1998-99,1998-07-30,Javier Margas,Universidad Católica,West Ham United,fee from a page naming both clubs
+R0134,1998-99,1998-08-01,Per Pedersen,Blackburn Rovers,Strasbourg,fee from a page naming both clubs
+R0135,1998-99,1998-08-01,Ian Thomas-Moore,Nottingham Forest,Stockport County,fee from a page naming both clubs
+R0136,1998-99,1998-08-06,Nelson Vivas,Boca Juniors,Arsenal,fee from a page naming both clubs
+R0137,1998-99,1998-08-13,Isaiah Rankin,Arsenal,Bradford City,press or club source for the fee (only a database confirms it)
+R0138,1998-99,1998-10-26,Tore Pedersen,Blackburn Rovers,Eintracht Frankfurt,fee from a page naming both clubs
+R0139,1998-99,1998-10-26,Oumar Kondé,FC Basel,Blackburn Rovers,fee from a page naming both clubs
+R0140,1998-99,1998-11-04,Chris Casper,Manchester United,Reading,fee from a page naming both clubs
+R0141,1998-99,1998-11-06,Stephane Guivarc'h,Newcastle United,Rangers,fee from a page naming both clubs
+R0142,1998-99,1998-11-24,Andy Impey,West Ham United,Leicester City,fee from a page naming both clubs
+R0143,1998-99,1998-12-30,Morten Hyldgaard,Ikast FS,Coventry City,fee from a page naming both clubs
+R0144,1998-99,1999-01-14,Gary Charles,Aston Villa,Benfica,fee from a page naming both clubs
+R0145,1998-99,1999-01-15,Nwankwo Kanu,Internazionale,Arsenal,"firmer figure, reports disagree"
+R0146,1998-99,1999-02-01,Peter Enckelman,TPS,Aston Villa,fee from a page naming both clubs
+R0147,1998-99,1999-03-18,Keith O'Neill,Norwich City,Middlesbrough,fee from a page naming both clubs
+R0148,1998-99,1999-03-22,Jim Magilton,Sheffield Wednesday,Ipswich Town,"exact guaranteed fee, only a maximum or approximation found"
+R0149,1998-99,1999-03-25,Mikkel Beck,Middlesbrough,Derby County,fee from a page naming both clubs
+R0150,1998-99,1999-04-16,Terry Cooke,Manchester United,Manchester City,fee from a page naming both clubs
+R0151,1999-00,1999-06-03,Stephane Henchoz,Blackburn Rovers,Liverpool,fee from a page naming both clubs
+R0152,1999-00,1999-06-15,Sander Westerveld,Vitesse Arnhem,Liverpool,press or club source for the fee (only a database confirms it)
+R0153,1999-00,1999-06-29,Philippe Clement,Coventry City,Club Brugge,fee from a page naming both clubs
+R0154,1999-00,1999-07-02,Steve Bould,Arsenal,Sunderland,fee from a page naming both clubs
+R0155,1999-00,1999-07-08,Andy Myers,Chelsea,Bradford City,fee from a page naming both clubs
+R0156,1999-00,1999-07-20,Najwan Ghrayib,Hapoel Haifa,Aston Villa,fee from a page naming both clubs
+R0157,1999-00,1999-07-22,Riccardo Scimeca,Aston Villa,Nottingham Forest,fee from a page naming both clubs
+R0158,1999-00,1999-07-28,Stan Lazaridis,West Ham United,Birmingham City,press or club source for the fee (only a database confirms it)
+R0159,1999-00,1999-07-29,Simon Grayson,Aston Villa,Blackburn Rovers,fee from a page naming both clubs
+R0160,1999-00,1999-07-31,Runar Normann,Lillestrøm,Coventry City,"fee from a page naming both clubs; fee, one report says undisclosed and another gives a figure"
+R0161,1999-00,1999-08-10,Phil Gilchrist,Oxford United,Leicester City,fee from a page naming both clubs
+R0162,1999-00,1999-08-15,Éric Roy,Marseille,Sunderland,fee from a page naming both clubs
+R0163,1999-00,1999-10-29,Michael Oakes,Aston Villa,Wolverhampton Wanderers,fee from a page naming both clubs
+R0164,1999-00,1999-12-20,Erik Nevland,Manchester United,Viking,fee from a page naming both clubs
+R0165,1999-00,2000-01-11,Heiðar Helguson,Lillestrøm,Watford,press or club source for the fee (only a database confirms it)
+R0166,1999-00,2000-01-20,Cedric Roussel,AA Gent,Coventry City,press or club source for the fee (only a database confirms it)
+R0167,1999-00,2000-01-20,Michael Branch,Everton,Wolverhampton Wanderers,fee from a page naming both clubs
+R0168,1999-00,2000-01-21,Ysrael Zúñiga,FBC Melgar,Coventry City,fee from a page naming both clubs
+R0169,1999-00,2000-03-07,Stephen Hughes,Arsenal,Everton,"exact guaranteed fee, only a maximum or approximation found"
+R0170,1999-00,2000-03-23,Jon Kennedy,Worksop Town,Sunderland,fee from a page naming both clubs
+R0171,2000-01,2000-06-19,Eiður Guðjohnsen,Bolton Wanderers,Chelsea,fee from a page naming both clubs
+R0172,2000-01,2000-07-12,Trevor Benjamin,Cambridge United,Leicester City,fee from a page naming both clubs
+R0173,2000-01,2000-07-14,Tom Peeters,KV Mechelen,Sunderland,fee from a page naming both clubs
+R0174,2000-01,2000-07-17,Mark Draper,Aston Villa,Southampton,fee from a page naming both clubs
+R0175,2000-01,2000-07-27,Stanislav Varga,Slovan Bratislava,Sunderland,fee from a page naming both clubs
+R0176,2000-01,2000-08-05,Radostin Kishishev,Litex Lovech,Charlton Athletic,fee from a page naming both clubs
+R0177,2000-01,2000-08-14,Karim Bagheri,Persepolis,Charlton Athletic,fee from a page naming both clubs
+R0178,2000-01,2000-08-18,Hermann Hreiðarsson,Wimbledon,Ipswich Town,fee from a page naming both clubs
+R0179,2000-01,2000-08-31,Temur Ketsbaia,Newcastle United,Wolverhampton Wanderers,fee from a page naming both clubs
+R0180,2000-01,2000-09-01,Alan Thompson,Aston Villa,Celtic,fee from a page naming both clubs
+R0181,2000-01,2000-09-30,Lomana LuaLua,Colchester United,Newcastle United,fee from a page naming both clubs
+R0182,2000-01,2000-10-17,Gary Naysmith,Hearts,Everton,fee from a page naming both clubs
+R0183,2000-01,2000-11-28,Alex Notman,Manchester United,Norwich City,fee from a page naming both clubs
+R0184,2000-01,2000-12-07,Alun Armstrong,Middlesbrough,Ipswich Town,fee from a page naming both clubs
+R0185,2000-01,2001-01-03,David Healy,Manchester United,Preston North End,fee from a page naming both clubs
+R0186,2000-01,2001-03-13,Carl Tiler,Charlton Athletic,Portsmouth,press or club source for the fee (only a database confirms it)
+R0187,2000-01,2001-03-16,Dean Windass,Bradford City,Middlesbrough,"exact guaranteed fee, only a maximum or approximation found"
+R0188,2000-01,2001-03-19,Andy O'Brien,Bradford City,Newcastle United,fee from a page naming both clubs
+R0189,2001-02,2001-06-29,Alan Mahon,Sporting CP,Blackburn Rovers,fee from a page naming both clubs
+R0190,2001-02,2001-07-06,Phil Jevons,Everton,Grimsby Town,fee from a page naming both clubs
+R0191,2001-02,2001-07-19,Christian Karembeu,Middlesbrough,Olympiacos,press or club source for the fee (only a database confirms it)
+R0192,2001-02,2001-08-03,Bernt Haas,Grasshopper,Sunderland,fee from a page naming both clubs
+R0193,2001-02,2001-08-17,Matteo Sereni,Sampdoria,Ipswich Town,"exact guaranteed fee, only a maximum or approximation found"
+R0194,2001-02,2001-09-07,Lucas Neill,Millwall,Blackburn Rovers,press or club source for the fee (only a database confirms it)
+R0195,2001-02,2001-09-12,Sylvain Distin,PSG,Newcastle United,fee from a page naming both clubs
+R0196,2001-02,2001-12-11,Chris Lumsdon,Sunderland,Barnsley,fee from a page naming both clubs
+R0197,2001-02,2001-12-14,Steve Vickers,Middlesbrough,Birmingham City,fee from a page naming both clubs
+R0198,2001-02,2001-12-14,John Filan,Blackburn Rovers,Wigan Athletic,fee from a page naming both clubs
+R0199,2001-02,2002-01-31,Tobias Linderoth,Stabæk,Everton,fee from a page naming both clubs
+R0200,2002-03,2002-05-15,Mikkel Bischoff,AB,Manchester City,fee from a page naming both clubs
+R0201,2002-03,2002-05-16,Facundo Sava,Gimnasia,Fulham,fee from a page naming both clubs
+R0202,2002-03,2002-05-16,Bruno Cheyrou,Lille,Liverpool,fee from a page naming both clubs
+R0203,2002-03,2002-05-17,Paul Rachubka,Manchester United,Charlton Athletic,fee from a page naming both clubs
+R0204,2002-03,2002-05-20,Sylvain Distin,Paris Saint-Germain,Manchester City,press or club source for the fee (only a database confirms it)
+R0205,2002-03,2002-05-22,Andy Todd,Charlton Athletic,Blackburn Rovers,fee from a page naming both clubs
+R0206,2002-03,2002-05-30,Robbie Savage,Leicester City,Birmingham City,fee from a page naming both clubs
+R0207,2002-03,2002-06-06,Vicente Matías Vuoso,Independiente,Manchester City,fee from a page naming both clubs
+R0208,2002-03,2002-06-25,El Hadji Diouf,Lens,Liverpool,fee from a page naming both clubs
+R0209,2002-03,2002-07-03,Tyrone Mears,Manchester City,Preston North End,fee from a page naming both clubs
+R0210,2002-03,2002-07-08,Aliou Cissé,Montpellier,Birmingham City,fee from a page naming both clubs
+R0211,2002-03,2002-07-11,Pascal Cygan,Lille,Arsenal,fee from a page naming both clubs
+R0212,2002-03,2002-07-12,Titus Bramble,Ipswich Town,Newcastle United,press or club source for the fee (only a database confirms it)
+R0213,2002-03,2002-07-16,Ben Burgess,Blackburn Rovers,Stockport County,fee from a page naming both clubs
+R0214,2002-03,2002-07-24,Richard Wright,Arsenal,Everton,press or club source for the fee (only a database confirms it)
+R0215,2002-03,2002-07-26,Dwight Yorke,Manchester United,Blackburn Rovers,fee from a page naming both clubs
+R0216,2002-03,2002-07-28,Gilberto Silva,Atlético Mineiro,Arsenal,press or club source for the fee (only a database confirms it)
+R0217,2002-03,2002-07-30,Andy Johnson,Birmingham City,Crystal Palace,fee from a page naming both clubs
+R0218,2002-03,2002-07-30,Chris Killen,Manchester City,Oldham Athletic,fee from a page naming both clubs
+R0219,2002-03,2002-08-01,Rodrigo,Santos,Everton,fee from a page naming both clubs
+R0220,2002-03,2002-08-02,Juninho Paulista,Atlético Madrid,Middlesbrough,press or club source for the fee (only a database confirms it)
+R0221,2002-03,2002-08-05,Sean Gregan,Preston North End,West Bromwich Albion,press or club source for the fee (only a database confirms it)
+R0222,2002-03,2002-08-13,Lee Marshall,Leicester City,West Bromwich Albion,fee from a page naming both clubs
+R0223,2002-03,2002-08-15,Stephen Wright,Liverpool,Sunderland,fee from a page naming both clubs
+R0224,2002-03,2002-08-21,Matt Piper,Leicester City,Sunderland,fee from a page naming both clubs
+R0225,2002-03,2002-08-23,Mark Kinsella,Charlton Athletic,Aston Villa,fee from a page naming both clubs
+R0226,2002-03,2002-08-29,Jason Koumas,Tranmere Rovers,West Bromwich Albion,press or club source for the fee (only a database confirms it)
+R0227,2002-03,2002-08-29,Lee Hughes,Coventry City,West Bromwich Albion,fee from a page naming both clubs
+R0228,2002-03,2002-08-30,Ricardo,Real Valladolid,Manchester United,fee from a page naming both clubs
+R0229,2002-03,2002-08-30,Marcus Stewart,Ipswich Town,Sunderland,fee from a page naming both clubs
+R0230,2002-03,2002-08-31,Robbie Keane,Leeds United,Tottenham Hotspur,fee from a page naming both clubs
+R0231,2002-03,2003-01-10,Stephen Clemence,Tottenham Hotspur,Birmingham City,fee from a page naming both clubs
+R0232,2002-03,2003-01-10,Jamie Clapham,Ipswich Town,Birmingham City,fee from a page naming both clubs
+R0233,2002-03,2003-01-10,Mart Poom,Derby County,Sunderland,fee from a page naming both clubs
+R0234,2002-03,2003-01-22,Matthew Upson,Arsenal,Birmingham City,fee from a page naming both clubs
+R0235,2002-03,2003-01-24,David Sommeil,Bordeaux,Manchester City,fee from a page naming both clubs
+R0236,2002-03,2003-01-30,Robbie Fowler,Leeds United,Manchester City,press or club source for the fee (only a database confirms it)
+R0237,2002-03,2003-01-31,Malcolm Christie,Derby County,Middlesbrough,press or club source for the fee (only a database confirms it)
+R0238,2002-03,2003-01-31,Michael Ricketts,Bolton Wanderers,Middlesbrough,press or club source for the fee (only a database confirms it)
+R0239,2002-03,2003-01-31,Jonathan Woodgate,Leeds United,Newcastle United,press or club source for the fee (only a database confirms it)
+R0240,2002-03,2003-01-31,Chris Riggott,Derby County,Middlesbrough,fee from a page naming both clubs
+R0241,2002-03,2003-03-25,Darren Ambrose,Ipswich Town,Newcastle United,press or club source for the fee (only a database confirms it)
+R0242,2003-04,2003-06-16,Matt Holland,Ipswich Town,Charlton Athletic,fee from a page naming both clubs
+R0243,2003-04,2003-07-07,David Dunn,Blackburn Rovers,Birmingham City,fee from a page naming both clubs
+R0244,2003-04,2003-07-09,Harry Kewell,Leeds United,Liverpool,fee from a page naming both clubs
+R0245,2003-04,2003-07-15,Glen Johnson,West Ham United,Chelsea,press or club source for the fee (only a database confirms it)
+R0246,2003-04,2003-07-15,Olivier Dacourt,Leeds United,Roma,fee from a page naming both clubs
+R0247,2003-04,2003-07-16,Geremi,Real Madrid,Chelsea,fee from a page naming both clubs
+R0248,2003-04,2003-07-21,Wayne Bridge,Southampton,Chelsea,press or club source for the fee (only a database confirms it)
+R0249,2003-04,2003-07-21,Trevor Sinclair,West Ham United,Manchester City,press or club source for the fee (only a database confirms it)
+R0250,2003-04,2003-07-23,Luciano Figueroa,Rosario Central,Birmingham City,fee from a page naming both clubs
+R0251,2003-04,2003-07-24,Gavin McCann,Sunderland,Aston Villa,press or club source for the fee (only a database confirms it)
+R0252,2003-04,2003-07-28,Steven Reid,Millwall,Blackburn Rovers,fee from a page naming both clubs
+R0253,2003-04,2003-08-01,Shaun Goater,Manchester City,Reading,fee from a page naming both clubs
+R0254,2003-04,2003-08-04,Antoine Sibierski,Lens,Manchester City,fee from a page naming both clubs
+R0255,2003-04,2003-08-06,Juan Sebastián Verón,Manchester United,Chelsea,fee from a page naming both clubs
+R0256,2003-04,2003-08-08,Thomas Sørensen,Sunderland,Aston Villa,fee from a page naming both clubs
+R0257,2003-04,2003-08-15,Kevin Horlock,Manchester City,West Ham United,fee from a page naming both clubs
+R0258,2003-04,2003-08-29,Barry Ferguson,Rangers,Blackburn Rovers,press or club source for the fee (only a database confirms it)
+R0259,2003-04,2003-08-29,Claudio Reyna,Sunderland,Manchester City,press or club source for the fee (only a database confirms it)
+R0260,2003-04,2003-09-01,Kevin Kilbane,Sunderland,Everton,fee from a page naming both clubs
+R0261,2003-04,2003-09-01,Claude Makélélé,Real Madrid,Chelsea,fee from a page naming both clubs
+R0262,2003-04,2003-09-05,Geoff Horsfield,Birmingham City,Wigan Athletic,fee from a page naming both clubs
+R0263,2003-04,2004-01-14,David James,West Ham United,Manchester City,fee from a page naming both clubs
+R0264,2003-04,2004-02-02,Jerome Thomas,Arsenal,Charlton Athletic,fee from a page naming both clubs
+R0265,2003-04,2004-02-02,Martin Taylor,Blackburn Rovers,Birmingham City,fee from a page naming both clubs
+R0266,2004-05,2004-05-17,Robin Van Persie,Feyenoord,Arsenal,press or club source for the fee (only a database confirms it)
+R0267,2004-05,2004-05-21,Martin Laursen,AC Milan,Aston Villa,fee from a page naming both clubs
+R0268,2004-05,2004-06-03,Martin Albrechtsen,FC Copenhagen,West Bromwich Albion,fee from a page naming both clubs
+R0269,2004-05,2004-06-08,Arjen Robben,PSV,Chelsea,fee from a page naming both clubs
+R0270,2004-05,2004-06-08,Petr Čech,Rennes,Chelsea,fee from a page naming both clubs
+R0271,2004-05,2004-06-18,Darren Purse,Birmingham City,West Bromwich Albion,fee from a page naming both clubs
+R0272,2004-05,2004-07-01,Dennis Rommedahl,PSV,Charlton Athletic,fee from a page naming both clubs
+R0273,2004-05,2004-07-08,Mark Viduka,Leeds United,Middlesbrough,press or club source for the fee (only a database confirms it)
+R0274,2004-05,2004-07-09,Peter Crouch,Aston Villa,Southampton,fee from a page naming both clubs
+R0275,2004-05,2004-07-11,Talal El Karkouri,Paris Saint-Germain,Charlton Athletic,fee from a page naming both clubs
+R0276,2004-05,2004-07-12,Jesper Grønkjær,Chelsea,Birmingham City,fee from a page naming both clubs
+R0277,2004-05,2004-07-12,Mateja Kežman,PSV,Chelsea,fee from a page naming both clubs
+R0278,2004-05,2004-07-12,Lomana LuaLua,Newcastle United,Portsmouth,fee from a page naming both clubs
+R0279,2004-05,2004-07-20,Tiago,Benfica,Chelsea,press or club source for the fee (only a database confirms it)
+R0280,2004-05,2004-07-23,Claus Jensen,Charlton Athletic,Fulham,press or club source for the fee (only a database confirms it)
+R0281,2004-05,2004-07-23,Tim Cahill,Millwall,Everton,fee from a page naming both clubs
+R0282,2004-05,2004-07-29,Nicky Butt,Manchester United,Newcastle United,fee from a page naming both clubs
+R0283,2004-05,2004-07-29,Jonathan Greening,Middlesbrough,West Bromwich Albion,fee from a page naming both clubs
+R0284,2004-05,2004-07-30,Zoltan Gera,Ferencváros,West Bromwich Albion,fee from a page naming both clubs
+R0285,2004-05,2004-08-10,Danny Murphy,Liverpool,Charlton Athletic,fee from a page naming both clubs
+R0286,2004-05,2004-08-10,Francis Jeffers,Arsenal,Charlton Athletic,fee from a page naming both clubs
+R0287,2004-05,2004-08-31,Paulo Wanchope,Manchester City,Málaga CF,fee from a page naming both clubs
+R0288,2004-05,2005-01-05,Robbie Blake,Burnley,Birmingham City,fee from a page naming both clubs
+R0289,2004-05,2005-01-07,Emmanuel Eboué,Beveren,Arsenal,fee from a page naming both clubs
+R0290,2004-05,2005-01-14,Thomas Gravesen,Everton,Real Madrid,fee from a page naming both clubs
+R0291,2004-05,2005-01-19,Robbie Savage,Birmingham City,Blackburn Rovers,fee from a page naming both clubs
+R0292,2004-05,2005-01-25,Amady Faye,Portsmouth,Newcastle United,fee from a page naming both clubs
+R0293,2004-05,2005-01-31,Barry Ferguson,Blackburn Rovers,Rangers,press or club source for the fee (only a database confirms it)
+R0294,2004-05,2005-01-31,Richard Chaplow,Burnley,West Bromwich Albion,fee from a page naming both clubs
+R0295,2004-05,2005-04-25,Jermaine Pennant,Arsenal,Birmingham City,fee from a page naming both clubs
+R0296,2004-05,2005-05-09,Rob Hulse,West Bromwich Albion,Leeds United,fee from a page naming both clubs
+R0297,2005-06,2005-05-26,Simon Davies,Tottenham Hotspur,Everton,press or club source for the fee (only a database confirms it)
+R0298,2005-06,2005-06-01,Darren Bent,Ipswich Town,Charlton Athletic,press or club source for the fee (only a database confirms it)
+R0299,2005-06,2005-06-10,Mikael Forssell,Chelsea,Birmingham City,fee from a page naming both clubs
+R0300,2005-06,2005-06-13,Andy O'Brien,Newcastle United,Portsmouth,fee from a page naming both clubs
+R0301,2005-06,2005-06-13,Jonathan Stead,Blackburn Rovers,Sunderland,press or club source for the fee (only a database confirms it)
+R0302,2005-06,2005-06-14,Kelvin Davis,Ipswich Town,Sunderland,fee from a page naming both clubs
+R0303,2005-06,2005-06-21,Asier del Horno,Athletic Bilbao,Chelsea,press or club source for the fee (only a database confirms it)
+R0304,2005-06,2005-06-27,Per Krøldrup,Udinese,Everton,fee from a page naming both clubs
+R0305,2005-06,2005-06-27,Heiðar Helguson,Watford,Fulham,press or club source for the fee (only a database confirms it)
+R0306,2005-06,2005-06-27,Alexander Hleb,VfB Stuttgart,Arsenal,fee from a page naming both clubs
+R0307,2005-06,2005-06-28,Emanuel Pogatetz,Bayer Leverkusen,Middlesbrough,fee from a page naming both clubs
+R0308,2005-06,2005-06-29,Mateja Kežman,Chelsea,Atlético Madrid,fee from a page naming both clubs
+R0309,2005-06,2005-07-01,Mikel Arteta,Real Sociedad,Everton,press or club source for the fee (only a database confirms it)
+R0310,2005-06,2005-07-04,Darren Carter,Birmingham City,West Bromwich Albion,fee from a page naming both clubs
+R0311,2005-06,2005-07-07,Yakubu,Portsmouth,Middlesbrough,fee from a page naming both clubs
+R0312,2005-06,2005-07-08,Darren Ambrose,Newcastle United,Charlton Athletic,press or club source for the fee (only a database confirms it)
+R0313,2005-06,2005-07-14,Emre Belözoğlu,Inter Milan,Newcastle United,fee from a page naming both clubs
+R0314,2005-06,2005-07-18,Shaun Wright-Phillips,Manchester City,Chelsea,fee from a page naming both clubs
+R0315,2005-06,2005-07-26,Diomansy Kamara,Modena,West Bromwich Albion,press or club source for the fee (only a database confirms it)
+R0316,2005-06,2005-07-27,Darius Vassell,Aston Villa,Manchester City,fee from a page naming both clubs
+R0317,2005-06,2005-08-05,Walter Pandiani,Deportivo de La Coruña,Birmingham City,fee from a page naming both clubs
+R0318,2005-06,2005-08-05,Walter Pandiani,Deportivo La Coruna,Birmingham City,fee from a page naming both clubs
+R0319,2005-06,2005-08-11,Andy Gray,Sheffield United,Sunderland,fee from a page naming both clubs
+R0320,2005-06,2005-08-23,Milan Baroš,Liverpool,Aston Villa,press or club source for the fee (only a database confirms it)
+R0321,2005-06,2005-08-27,Tiago Mendes,Chelsea,Olympique Lyonnais,fee from a page naming both clubs
+R0322,2005-06,2005-08-28,Nuno Valente,FC Porto,Everton,fee from a page naming both clubs
+R0323,2005-06,2005-08-30,Wilfred Bouma,PSV Eindhoven,Aston Villa,fee from a page naming both clubs
+R0324,2005-06,2005-08-31,Nolberto Solano,Aston Villa,Newcastle United,press or club source for the fee (only a database confirms it)
+R0325,2005-06,2005-08-31,Jermaine Jenas,Newcastle United,Tottenham Hotspur,press or club source for the fee (only a database confirms it)
+R0326,2005-06,2005-08-31,Curtis Davies,Luton Town,West Bromwich Albion,press or club source for the fee (only a database confirms it)
+R0327,2005-06,2006-01-06,Benjani Mwaruwari,Auxerre,Portsmouth,fee from a page naming both clubs
+R0328,2005-06,2006-01-10,Antti Niemi,Southampton,Fulham,fee from a page naming both clubs
+R0329,2005-06,2006-01-12,Abou Diaby,Auxerre,Arsenal,fee from a page naming both clubs
+R0330,2005-06,2006-01-12,Walter Pandiani,Birmingham City,Espanyol,fee from a page naming both clubs
+R0331,2005-06,2006-01-17,Marcus Bent,Everton,Charlton Athletic,fee from a page naming both clubs
+R0332,2005-06,2006-01-20,Theo Walcott,Southampton,Arsenal,press or club source for the fee (only a database confirms it)
+R0333,2005-06,2006-01-31,Danny Murphy,Charlton Athletic,Tottenham Hotspur,fee from a page naming both clubs
+R0334,2005-06,2006-01-31,Nigel Quashie,Southampton,West Bromwich Albion,fee from a page naming both clubs
+R0335,2005-06,2006-05-06,DJ Campbell,Brentford,Birmingham City,fee from a page naming both clubs
+R0336,2006-07,2006-05-23,Tomáš Rosický,Borussia Dortmund,Arsenal,fee from a page naming both clubs
+R0337,2006-07,2006-06-02,Mikel John Obi,Manchester United,Chelsea,fee from a page naming both clubs
+R0338,2006-07,2006-06-08,Lee Bowyer,Newcastle United,West Ham United,fee from a page naming both clubs
+R0339,2006-07,2006-06-14,Joleon Lescott,Wolverhampton Wanderers,Everton,press or club source for the fee (only a database confirms it)
+R0340,2006-07,2006-06-14,Eiður Guðjohnsen,Chelsea,Barcelona,fee from a page naming both clubs
+R0341,2006-07,2006-07-11,Seol Ki-Hyeon,Wolverhampton Wanderers,Reading,fee from a page naming both clubs
+R0342,2006-07,2006-07-11,Gabriel Zakuani,Leyton Orient,Fulham,fee from a page naming both clubs
+R0343,2006-07,2006-07-22,Damien Duff,Chelsea,Newcastle United,press or club source for the fee (only a database confirms it)
+R0344,2006-07,2006-07-26,Julio Arca,Sunderland,Middlesbrough,press or club source for the fee (only a database confirms it)
+R0345,2006-07,2006-07-31,Lee Croft,Manchester City,Norwich City,fee from a page naming both clubs
+R0346,2006-07,2006-08-06,Danny Shittu,Queens Park Rangers,Watford,fee from a page naming both clubs
+R0347,2006-07,2006-08-08,Djimi Traoré,Liverpool,Charlton Athletic,fee from a page naming both clubs
+R0348,2006-07,2006-08-08,Amady Faye,Newcastle United,Charlton Athletic,press or club source for the fee (only a database confirms it)
+R0349,2006-07,2006-08-11,David James,Manchester City,Portsmouth,fee from a page naming both clubs
+R0350,2006-07,2006-08-15,Andreas Isaksson,Rennes,Manchester City,fee from a page naming both clubs
+R0351,2006-07,2006-08-16,Andy Reid,Tottenham Hotspur,Charlton Athletic,press or club source for the fee (only a database confirms it)
+R0352,2006-07,2006-08-22,Kevin Phillips,Aston Villa,West Bromwich Albion,fee from a page naming both clubs
+R0353,2006-07,2006-08-22,Jean-Alain Boumsong,Newcastle United,Juventus,fee from a page naming both clubs
+R0354,2006-07,2006-08-24,Obafemi Martins,Inter Milan,Newcastle United,press or club source for the fee (only a database confirms it)
+R0355,2006-07,2006-08-30,Souleymane Diawara,Sochaux,Charlton Athletic,fee from a page naming both clubs
+R0356,2006-07,2006-08-30,Stiliyan Petrov,Celtic,Aston Villa,press or club source for the fee (only a database confirms it)
+R0357,2006-07,2006-08-31,Pascal Chimbonda,Wigan Athletic,Tottenham Hotspur,fee from a page naming both clubs
+R0358,2006-07,2006-08-31,Denílson,São Paulo,Arsenal,fee from a page naming both clubs
+R0359,2006-07,2006-08-31,Andy Cole,Manchester City,Portsmouth,fee from a page naming both clubs
+R0360,2006-07,2006-08-31,Jason Euell,Charlton Athletic,Middlesbrough,fee from a page naming both clubs
+R0361,2006-07,2006-08-31,Kevin Kilbane,Everton,Wigan Athletic,fee from a page naming both clubs
+R0362,2006-07,2007-01-10,Clint Dempsey,Major League Soccer,Fulham,press or club source for the fee (only a database confirms it)
+R0363,2006-07,2007-01-11,Ben Thatcher,Manchester City,Charlton Athletic,fee from a page naming both clubs
+R0364,2006-07,2007-01-11,Djimi Traoré,Charlton Athletic,Portsmouth,fee from a page naming both clubs
+R0365,2006-07,2007-01-28,Madjid Bougherra,Sheffield Wednesday,Charlton Athletic,fee from a page naming both clubs
+R0366,2006-07,2007-01-31,Matthew Upson,Birmingham City,West Ham United,fee from a page naming both clubs
+R0367,2006-07,2007-02-14,Tim Howard,Manchester United,Everton,press or club source for the fee (only a database confirms it)
+R0368,2006-07,2007-04-26,Jonathan Woodgate,Real Madrid,Middlesbrough,fee from a page naming both clubs
+R0369,2007-08,2007-06-06,Scott Parker,Newcastle United,West Ham United,fee from a page naming both clubs
+R0370,2007-08,2007-06-11,Greg Halford,Reading,Sunderland,fee from a page naming both clubs
+R0371,2007-08,2007-06-12,Gavin McCann,Aston Villa,Bolton Wanderers,fee from a page naming both clubs
+R0372,2007-08,2007-06-14,Joey Barton,Manchester City,Newcastle United,fee from a page naming both clubs
+R0373,2007-08,2007-06-27,Aaron Hughes,Aston Villa,Fulham,fee from a page naming both clubs
+R0374,2007-08,2007-06-27,Russell Anderson,Aberdeen,Sunderland,fee from a page naming both clubs
+R0375,2007-08,2007-06-28,Garry O'Connor,Lokomotiv Moscow,Birmingham City,fee from a page naming both clubs
+R0376,2007-08,2007-06-29,David Rozehnal,Paris Saint-Germain,Newcastle United,fee from a page naming both clubs
+R0377,2007-08,2007-07-01,Jérémie Aliadière,Arsenal,Middlesbrough,fee from a page naming both clubs
+R0378,2007-08,2007-07-01,Julien Faubert,Bordeaux,West Ham United,fee from a page naming both clubs
+R0379,2007-08,2007-07-01,Darren Bent,Charlton Athletic,Tottenham Hotspur,"exact guaranteed fee, only a maximum or approximation found"
+R0380,2007-08,2007-07-04,Phil Jagielka,Sheffield United,Everton,fee from a page naming both clubs
+R0381,2007-08,2007-07-05,Nigel Reo-Coker,West Ham United,Aston Villa,fee from a page naming both clubs
+R0382,2007-08,2007-07-05,Gary Naysmith,Everton,Sheffield United,fee from a page naming both clubs
+R0383,2007-08,2007-07-10,Craig Bellamy,Liverpool,West Ham United,fee from a page naming both clubs
+R0384,2007-08,2007-07-13,Paul Konchesky,West Ham United,Fulham,fee from a page naming both clubs
+R0385,2007-08,2007-07-13,Rolando Bianchi,Reggina,Manchester City,fee from a page naming both clubs
+R0386,2007-08,2007-07-13,David Healy,Leeds United,Fulham,fee from a page naming both clubs
+R0387,2007-08,2007-07-17,Dickson Etuhu,Norwich City,Sunderland,fee from a page naming both clubs
+R0388,2007-08,2007-07-26,Paul McShane,West Bromwich Albion,Sunderland,fee from a page naming both clubs
+R0389,2007-08,2007-07-26,Luke Young,Charlton Athletic,Middlesbrough,fee from a page naming both clubs
+R0390,2007-08,2007-08-02,Emerse Faé,Nantes,Reading,fee from a page naming both clubs
+R0391,2007-08,2007-08-02,Elano,Shakhtar Donetsk,Manchester City,fee from a page naming both clubs
+R0392,2007-08,2007-08-03,Alan Smith,Manchester United,Newcastle United,fee from a page naming both clubs
+R0393,2007-08,2007-08-03,Liam Ridgewell,Aston Villa,Birmingham City,fee from a page naming both clubs
+R0394,2007-08,2007-08-04,James Beattie,Everton,Sheffield United,fee from a page naming both clubs
+R0395,2007-08,2007-08-06,José Enrique Sánchez,Villarreal,Newcastle United,fee from a page naming both clubs
+R0396,2007-08,2007-08-07,James Morrison,Middlesbrough,West Bromwich Albion,fee from a page naming both clubs
+R0397,2007-08,2007-08-16,Kieron Dyer,Newcastle United,West Ham United,fee from a page naming both clubs
+R0398,2007-08,2007-08-29,Zat Knight,Fulham,Aston Villa,fee from a page naming both clubs
+R0399,2007-08,2007-08-29,Danny Higginbotham,Stoke City,Sunderland,fee from a page naming both clubs
+R0400,2007-08,2007-08-29,Yakubu,Middlesbrough,Everton,fee from a page naming both clubs
+R0401,2007-08,2007-08-31,Dejan Stefanović,Portsmouth,Fulham,fee from a page naming both clubs
+R0402,2007-08,2007-08-31,Mohamed Shawky,Al Ahly,Middlesbrough,fee from a page naming both clubs
+R0403,2007-08,2008-01-15,Dan Gosling,Plymouth Argyle,Everton,fee from a page naming both clubs
+R0404,2007-08,2008-01-18,James McFadden,Everton,Birmingham City,fee from a page naming both clubs
+R0405,2007-08,2008-01-22,Phil Bardsley,Manchester United,Sunderland,fee from a page naming both clubs
+R0406,2007-08,2008-01-23,Rade Prica,Aalborg BK,Sunderland,fee from a page naming both clubs
+R0407,2007-08,2008-01-31,Andy Reid,Charlton Athletic,Sunderland,fee from a page naming both clubs
+R0408,2007-08,2008-04-22,Steven Pienaar,Borussia Dortmund,Everton,fee from a page naming both clubs
+R0409,2007-08,2008-04-29,Luka Modrić,Dinamo Zagreb,Tottenham Hotspur,fee from a page naming both clubs
+R0410,2008-09,2008-05-28,Luke Moore,Aston Villa,West Bromwich Albion,fee from a page naming both clubs
+R0411,2008-09,2008-05-30,Roman Bednář,Hearts,West Bromwich Albion,fee from a page naming both clubs
+R0412,2008-09,2008-06-10,David Rozehnal,Newcastle United,Lazio,fee from a page naming both clubs
+R0413,2008-09,2008-07-02,Jô,CSKA Moscow,Manchester City,fee from a page naming both clubs
+R0414,2008-09,2008-07-03,Gianni Zuiverloon,SC Heerenveen,West Bromwich Albion,fee from a page naming both clubs
+R0415,2008-09,2008-07-04,Didier Digard,Paris Saint-Germain,Middlesbrough,fee from a page naming both clubs
+R0416,2008-09,2008-07-04,Marvin Emnes,Sparta Rotterdam,Middlesbrough,fee from a page naming both clubs
+R0417,2008-09,2008-07-10,Steve Sidwell,Chelsea,Aston Villa,fee from a page naming both clubs
+R0418,2008-09,2008-07-11,Peter Crouch,Liverpool,Portsmouth,fee from a page naming both clubs
+R0419,2008-09,2008-07-15,Marek Čech,Porto,West Bromwich Albion,fee from a page naming both clubs
+R0420,2008-09,2008-07-16,Alexander Hleb,Arsenal,Barcelona,fee from a page naming both clubs
+R0421,2008-09,2008-07-18,Scott Carson,Liverpool,West Bromwich Albion,fee from a page naming both clubs
+R0422,2008-09,2008-07-23,Valon Behrami,Lazio,West Ham United,fee from a page naming both clubs
+R0423,2008-09,2008-07-26,Seyi Olofinjana,Wolverhampton Wanderers,Stoke City,fee from a page naming both clubs
+R0424,2008-09,2008-07-28,Sulley Muntari,Portsmouth,Internazionale,fee from a page naming both clubs
+R0425,2008-09,2008-08-10,Abdoulaye Méïté,Bolton Wanderers,West Bromwich Albion,fee from a page naming both clubs
+R0426,2008-09,2008-08-12,Carlos Cuéllar,Rangers,Aston Villa,fee from a page naming both clubs
+R0427,2008-09,2008-08-16,Justin Hoyte,Arsenal,Middlesbrough,fee from a page naming both clubs
+R0428,2008-09,2008-08-19,Andrew Davies,Southampton,Stoke City,fee from a page naming both clubs
+R0429,2008-09,2008-08-21,Steven Davis,Fulham,Rangers,fee from a page naming both clubs
+R0430,2008-09,2008-08-29,Ibrahima Sonko,Reading,Stoke City,fee from a page naming both clubs
+R0431,2008-09,2008-08-31,Jonas Olsson,NEC,West Bromwich Albion,fee from a page naming both clubs
+R0432,2008-09,2008-09-01,Tom Soares,Crystal Palace,Stoke City,fee from a page naming both clubs
+R0433,2008-09,2008-09-01,Michael Tonge,Sheffield United,Stoke City,fee from a page naming both clubs
+R0434,2008-09,2008-09-01,Vedran Ćorluka,Manchester City,Tottenham Hotspur,fee from a page naming both clubs
+R0435,2008-09,2009-01-23,Emile Heskey,Wigan Athletic,Aston Villa,fee from a page naming both clubs
+R0436,2008-09,2009-02-02,Robbie Keane,Liverpool,Tottenham Hotspur,fee from a page naming both clubs
+R0437,2008-09,2009-02-02,Charles N'Zogbia,Newcastle United,Wigan Athletic,fee from a page naming both clubs
+R0438,2009-10,2009-06-03,Christian Benítez,Santos Laguna,Birmingham City,fee from a page naming both clubs
+R0439,2009-10,2009-07-04,Michael Chopra,Sunderland,Cardiff City,fee from a page naming both clubs
+R0440,2009-10,2009-08-06,Seyi Olofinjana,Stoke City,Hull City,fee from a page naming both clubs
+R0441,2009-10,2009-08-12,Lee Cattermole,Wigan Athletic,Sunderland,fee from a page naming both clubs
+R0442,2009-10,2009-08-28,Tuncay,Middlesbrough,Stoke City,fee from a page naming both clubs
+R0443,2009-10,2009-08-31,Diego Arismendi,Club Nacional,Stoke City,fee from a page naming both clubs
+R0444,2009-10,2009-09-01,Danny Collins,Sunderland,Stoke City,fee from a page naming both clubs
+R0445,2009-10,2009-09-01,Richard Dunne,Manchester City,Aston Villa,fee from a page naming both clubs
+R0446,2009-10,2010-01-18,Lucas Neill,Everton,Galatasaray,fee from a page naming both clubs
+R0447,2009-10,2010-01-26,Craig Gardner,Aston Villa,Birmingham City,fee from a page naming both clubs
+R0448,2009-10,2010-01-27,Leon Cort,Stoke City,Burnley,fee from a page naming both clubs
+R0449,2009-10,2010-02-01,Asmir Begović,Portsmouth,Stoke City,fee from a page naming both clubs
+R0450,2010-11,2010-05-26,Nikola Žigić,Valencia,Birmingham City,fee from a page naming both clubs
+R0451,2010-11,2010-06-03,Steven Fletcher,Burnley,Wolverhampton Wanderers,fee from a page naming both clubs
+R0452,2010-11,2010-07-02,Yaya Touré,Barcelona,Manchester City,fee from a page naming both clubs
+R0453,2010-11,2010-07-14,David Silva,Valencia,Manchester City,fee from a page naming both clubs
+R0454,2010-11,2010-07-16,Daryl Murphy,Sunderland,Celtic,fee from a page naming both clubs
+R0455,2010-11,2010-07-30,Boaz Myhill,Hull City,West Bromwich Albion,fee from a page naming both clubs
+R0456,2010-11,2010-08-24,Alessandro Diamanti,West Ham United,Brescia,fee from a page naming both clubs
+R0457,2010-11,2010-08-31,Asamoah Gyan,Rennes,Sunderland,"exact guaranteed fee, only a maximum or approximation found"
+R0458,2010-11,2010-08-31,Martyn Waghorn,Sunderland,Leicester City,fee from a page naming both clubs
+R0459,2010-11,2011-01-31,Luis Suárez,Ajax,Liverpool,fee from a page naming both clubs
+R0460,2011-12,2011-07-04,Gaël Clichy,Arsenal,Manchester City,fee from a page naming both clubs
+R0461,2011-12,2011-07-18,Jonathan Greening,Fulham,Nottingham Forest,fee from a page naming both clubs
+R0462,2011-12,2011-08-09,James McClean,Derry City,Sunderland,fee from a page naming both clubs
+R0463,2011-12,2011-08-15,Cesc Fàbregas,Arsenal,Barcelona,fee from a page naming both clubs
+R0464,2011-12,2011-08-15,Ishmael Miller,West Bromwich Albion,Nottingham Forest,fee from a page naming both clubs
+R0465,2011-12,2011-08-31,Mikel Arteta,Everton,Arsenal,fee from a page naming both clubs
+R0466,2011-12,2011-08-31,Bryan Ruiz,FC Twente,Fulham,fee from a page naming both clubs
+R0467,2011-12,2011-08-31,Jermaine Beckford,Everton,Leicester City,fee from a page naming both clubs
+R0468,2011-12,2012-01-17,Papiss Cissé,SC Freiburg,Newcastle United,fee from a page naming both clubs
+R0469,2011-12,2012-01-31,Djibril Cissé,Lazio,Queens Park Rangers,fee from a page naming both clubs
+R0470,2011-12,2012-01-31,Nikica Jelavić,Rangers,Everton,fee from a page naming both clubs
+R0471,2011-12,2012-04-28,Marko Marin,Werder Bremen,Chelsea,fee from a page naming both clubs
+R0472,2012-13,2012-06-07,Niko Kranjčar,Tottenham Hotspur,Dynamo Kyiv,fee from a page naming both clubs
+R0473,2012-13,2012-06-10,Jay Rodriguez,Burnley,Southampton,firmer figure than 'reported'
+R0474,2012-13,2012-06-26,Olivier Giroud,Montpellier,Arsenal,fee from a page naming both clubs
+R0475,2012-13,2012-07-02,Leon Best,Newcastle United,Blackburn Rovers,fee from a page naming both clubs
+R0476,2012-13,2012-07-06,Matthew Lowton,Sheffield United,Aston Villa,fee from a page naming both clubs
+R0477,2012-13,2012-07-06,Gaël Bigirimana,Coventry City,Newcastle United,fee from a page naming both clubs
+R0478,2012-13,2012-07-18,Modibo Maïga,Sochaux,West Ham United,fee from a page naming both clubs
+R0479,2012-13,2012-07-31,Steven Pienaar,Tottenham Hotspur,Everton,fee from a page naming both clubs
+R0480,2012-13,2012-08-01,James Collins,Aston Villa,West Ham United,fee from a page naming both clubs
+R0481,2012-13,2012-08-17,Robin van Persie,Arsenal,Manchester United,fee from a page naming both clubs
+R0482,2012-13,2012-08-21,Emmanuel Adebayor,Manchester City,Tottenham Hotspur,fee from a page naming both clubs
+R0483,2012-13,2012-08-24,César Azpilicueta,Marseille,Chelsea,fee from a page naming both clubs
+R0484,2012-13,2012-08-27,Luka Modrić,Tottenham Hotspur,Real Madrid,fee from a page naming both clubs
+R0485,2012-13,2012-08-29,Mousa Dembélé,Fulham,Tottenham Hotspur,fee from a page naming both clubs
+R0486,2012-13,2012-08-31,Rafael van der Vaart,Tottenham Hotspur,Hamburg SV,fee from a page naming both clubs
+R0487,2012-13,2012-08-31,Pablo Hernández,Valencia,Swansea City,fee from a page naming both clubs
+R0488,2012-13,2012-08-31,Charlie Adam,Liverpool,Stoke City,fee from a page naming both clubs
+R0489,2012-13,2012-08-31,Javi García,Benfica,Manchester City,fee from a page naming both clubs
+R0490,2012-13,2012-08-31,Matija Nastasić,Fiorentina,Manchester City,fee from a page naming both clubs
+R0491,2012-13,2012-08-31,Nicky Maynard,West Ham United,Cardiff City,fee from a page naming both clubs
+R0492,2012-13,2013-01-16,Loïc Rémy,Marseille,Queens Park Rangers,fee from a page naming both clubs
+R0493,2012-13,2013-01-31,Danny Graham,Swansea City,Sunderland,fee from a page naming both clubs
+R0494,2013-14,2013-06-25,André Schürrle,Bayer Leverkusen,Chelsea,fee from a page naming both clubs
+R0495,2013-14,2013-06-28,Ahmed Elmohamady,Sunderland,Hull City,fee from a page naming both clubs
+R0496,2013-14,2013-07-01,Andreas Cornelius,Copenhagen,Cardiff City,fee from a page naming both clubs
+R0497,2013-14,2013-07-05,Marco van Ginkel,Vitesse Arnhem,Chelsea,fee from a page naming both clubs
+R0498,2013-14,2013-07-08,Arouna Koné,Wigan Athletic,Everton,fee from a page naming both clubs
+R0499,2013-14,2013-07-16,Emanuele Giaccherini,Juventus,Sunderland,fee from a page naming both clubs
+R0500,2013-14,2013-07-19,Álvaro Negredo,Sevilla,Manchester City,fee from a page naming both clubs
+R0501,2013-14,2013-07-19,Stevan Jovetić,Fiorentina,Manchester City,fee from a page naming both clubs
+R0502,2013-14,2013-07-31,Steven Caulker,Tottenham Hotspur,Cardiff City,fee from a page naming both clubs
+R0503,2013-14,2013-08-08,Gervinho,Arsenal,Roma,fee from a page naming both clubs
+R0504,2013-14,2013-08-08,James McClean,Sunderland,Wigan Athletic,fee from a page naming both clubs
+R0505,2013-14,2013-09-02,Mesut Özil,Real Madrid,Arsenal,fee from a page naming both clubs
+R0506,2013-14,2013-09-02,Victor Anichebe,Everton,West Bromwich Albion,fee from a page naming both clubs
+R0507,2013-14,2013-09-02,Libor Kozák,Lazio,Aston Villa,fee from a page naming both clubs
+R0508,2013-14,2014-01-15,Nemanja Matić,Benfica,Chelsea,fee from a page naming both clubs
+R0509,2013-14,2014-01-15,Nikica Jelavić,Everton,Hull City,fee from a page naming both clubs
+R0510,2013-14,2014-01-31,Kurt Zouma,Saint-Étienne,Chelsea,fee from a page naming both clubs
+R0511,2013-14,2014-01-31,Jason Puncheon,Sunderland,Crystal Palace,fee from a page naming both clubs
+R0512,2014-15,2014-06-12,Cesc Fàbregas,Barcelona,Chelsea,fee from a page naming both clubs
+R0513,2014-15,2014-06-27,Luke Shaw,Southampton,Manchester United,firmer figure than 'reported'
+R0514,2014-15,2014-07-08,Gareth Barry,Manchester City,Everton,fee from a page naming both clubs
+R0515,2014-15,2014-07-15,Lazar Marković,Benfica,Liverpool,fee from a page naming both clubs
+R0516,2014-15,2014-07-18,Filipe Luís,Atlético Madrid,Chelsea,fee from a page naming both clubs
+R0517,2014-15,2014-07-27,Dejan Lovren,Southampton,Liverpool,fee from a page naming both clubs
+R0518,2014-15,2014-08-31,Loïc Rémy,Queens Park Rangers,Chelsea,fee from a page naming both clubs
+R0519,2014-15,2014-09-01,Abel Hernández,Palermo,Hull City,fee from a page naming both clubs
+R0520,2014-15,2014-09-01,Sandro,Tottenham Hotspur,Queens Park Rangers,fee from a page naming both clubs
+R0521,2014-15,2015-01-13,Carles Gil,Valencia,Aston Villa,fee from a page naming both clubs
+R0522,2014-15,2015-01-16,Andrej Kramarić,Rijeka,Leicester City,fee from a page naming both clubs
+R0523,2014-15,2015-01-27,Mapou Yanga-Mbiwa,Newcastle United,Roma,fee from a page naming both clubs
+R0524,2014-15,2015-01-28,Callum McManaman,Wigan Athletic,West Bromwich Albion,fee from a page naming both clubs
+R0525,2014-15,2015-02-02,André Schürrle,Chelsea,VfL Wolfsburg,fee from a page naming both clubs
+R0526,2014-15,2015-03-16,Davide Santon,Newcastle United,Inter Milan,fee from a page naming both clubs
+R0527,2014-15,2015-05-21,Philipp Wollscheid,Bayer Leverkusen,Stoke City,fee from a page naming both clubs
+R0528,2015-16,2015-06-12,Memphis Depay,PSV,Manchester United,fee from a page naming both clubs
+R0529,2015-16,2015-06-22,James McClean,Wigan Athletic,West Bromwich Albion,fee from a page naming both clubs
+R0530,2015-16,2015-06-24,Robert Huth,Stoke City,Leicester City,fee from a page naming both clubs
+R0531,2015-16,2015-06-25,Gerard Deulofeu,Barcelona,Everton,fee from a page naming both clubs
+R0532,2015-16,2015-06-26,Shinji Okazaki,1. FSV Mainz 05,Leicester City,fee from a page naming both clubs
+R0533,2015-16,2015-06-29,Paulinho,Tottenham Hotspur,Guangzhou Evergrande,fee from a page naming both clubs
+R0534,2015-16,2015-06-29,Petr Čech,Chelsea,Arsenal,fee from a page naming both clubs
+R0535,2015-16,2015-07-01,Chris Wood,Leicester City,Leeds United,fee from a page naming both clubs
+R0536,2015-16,2015-07-01,Thorgan Hazard,Chelsea,Borussia Mönchengladbach,fee from a page naming both clubs
+R0537,2015-16,2015-07-03,Adam Matthews,Celtic,Sunderland,fee from a page naming both clubs
+R0538,2015-16,2015-07-13,Asmir Begović,Stoke City,Chelsea,fee from a page naming both clubs
+R0539,2015-16,2015-07-15,Jeremain Lens,Dynamo Kyiv,Sunderland,fee from a page naming both clubs
+R0540,2015-16,2015-07-16,Younès Kaboul,Tottenham Hotspur,Sunderland,fee from a page naming both clubs
+R0541,2015-16,2015-07-21,Aleksandar Mitrović,Anderlecht,Newcastle United,fee from a page naming both clubs
+R0542,2015-16,2015-07-28,Filipe Luís,Chelsea,Atlético Madrid,fee from a page naming both clubs
+R0543,2015-16,2015-07-31,Rickie Lambert,Liverpool,West Bromwich Albion,fee from a page naming both clubs
+R0544,2015-16,2015-08-03,N'Golo Kanté,Caen,Leicester City,fee from a page naming both clubs
+R0545,2015-16,2015-08-04,Lee Tomlin,Middlesbrough,AFC Bournemouth,fee from a page naming both clubs
+R0546,2015-16,2015-08-06,Ángel Di María,Manchester United,Paris Saint-Germain,fee from a page naming both clubs
+R0547,2015-16,2015-08-10,Salomón Rondón,Zenit Saint Petersburg,West Bromwich Albion,fee from a page naming both clubs
+R0548,2015-16,2015-08-14,Adama Traoré,Barcelona,Aston Villa,fee from a page naming both clubs
+R0549,2015-16,2015-08-16,Baba Rahman,FC Augsburg,Chelsea,fee from a page naming both clubs
+R0550,2015-16,2015-08-18,Roberto Soldado,Tottenham Hotspur,Villarreal,fee from a page naming both clubs
+R0551,2015-16,2015-08-19,Florian Thauvin,Marseille,Newcastle United,fee from a page naming both clubs
+R0552,2015-16,2015-08-19,Gökhan Inler,Napoli,Leicester City,fee from a page naming both clubs
+R0553,2015-16,2015-08-20,Pedro,Barcelona,Chelsea,fee from a page naming both clubs
+R0554,2015-16,2015-08-22,Kenedy,Fluminense,Chelsea,fee from a page naming both clubs
+R0555,2015-16,2015-08-28,Son Heung-min,Bayer Leverkusen,Tottenham Hotspur,fee from a page naming both clubs
+R0556,2015-16,2015-08-31,Glenn Murray,Crystal Palace,AFC Bournemouth,fee from a page naming both clubs
+R0557,2015-16,2015-09-01,Ramiro Funes Mori,River Plate,Everton,fee from a page naming both clubs
+R0558,2015-16,2015-09-01,Michael Hector,Reading,Chelsea,fee from a page naming both clubs
+R0559,2015-16,2015-09-01,Joleon Lescott,West Bromwich Albion,Aston Villa,fee from a page naming both clubs
+R0560,2015-16,2016-01-07,Jan Kirchhoff,Bayern Munich,Sunderland,fee from a page naming both clubs
+R0561,2015-16,2016-01-11,Lewis Grabban,Norwich City,AFC Bournemouth,fee from a page naming both clubs
+R0562,2015-16,2016-01-22,Daniel Amartey,Copenhagen,Leicester City,fee from a page naming both clubs
+R0563,2015-16,2016-01-22,Mauro Zárate,West Ham United,Fiorentina,fee from a page naming both clubs
+R0564,2015-16,2016-02-01,Abdoulaye Doucouré,Stade Rennais,Watford,fee from a page naming both clubs
+R0565,2016-17,2016-05-25,Granit Xhaka,Borussia Mönchengladbach,Arsenal,firmer figure than 'reported'
+R0566,2016-17,2016-05-26,Viktor Fischer,Ajax,Middlesbrough,fee from a page naming both clubs
+R0567,2016-17,2016-06-02,İlkay Gündoğan,Borussia Dortmund,Manchester City,fee from a page naming both clubs
+R0568,2016-17,2016-07-01,Santiago Vergini,Sunderland,Boca Juniors,fee from a page naming both clubs
+R0569,2016-17,2016-07-01,Dwight Gayle,Crystal Palace,Newcastle United,fee from a page naming both clubs
+R0570,2016-17,2016-07-03,Nampalys Mendy,Nice,Leicester City,fee from a page naming both clubs
+R0571,2016-17,2016-07-05,James Tomkins,West Ham United,Crystal Palace,fee from a page naming both clubs
+R0572,2016-17,2016-07-06,Henrikh Mkhitaryan,Borussia Dortmund,Manchester United,firmer figure than 'reported'
+R0573,2016-17,2016-07-06,Matt Phillips,Queens Park Rangers,West Bromwich Albion,fee from a page naming both clubs
+R0574,2016-17,2016-07-16,N'Golo Kanté,Leicester City,Chelsea,fee from a page naming both clubs
+R0575,2016-17,2016-07-22,Georginio Wijnaldum,Newcastle United,Liverpool,fee from a page naming both clubs
+R0576,2016-17,2016-07-27,Brad Smith,Liverpool,AFC Bournemouth,fee from a page naming both clubs
+R0577,2016-17,2016-08-02,Leroy Sané,Schalke 04,Manchester City,fee from a page naming both clubs
+R0578,2016-17,2016-08-02,Idrissa Gueye,Aston Villa,Everton,fee from a page naming both clubs
+R0579,2016-17,2016-08-10,Ashley Williams,Swansea City,Everton,fee from a page naming both clubs
+R0580,2016-17,2016-08-11,Donald Love,Manchester United,Sunderland,fee from a page naming both clubs
+R0581,2016-17,2016-08-11,Paddy McNair,Manchester United,Sunderland,fee from a page naming both clubs
+R0582,2016-17,2016-08-11,Borja,Atlético Madrid,Swansea City,fee from a page naming both clubs
+R0583,2016-17,2016-08-12,Fábio,Cardiff City,Middlesbrough,fee from a page naming both clubs
+R0584,2016-17,2016-08-15,Marc Wilson,Stoke City,AFC Bournemouth,fee from a page naming both clubs
+R0585,2016-17,2016-08-19,Younès Kaboul,Sunderland,Watford,fee from a page naming both clubs
+R0586,2016-17,2016-08-31,Marcos Alonso,Fiorentina,Chelsea,fee from a page naming both clubs
+R0587,2016-17,2016-08-31,Didier N'Dong,Lorient,Sunderland,fee from a page naming both clubs
+R0588,2016-17,2017-01-05,Wilfred Ndidi,Genk,Leicester City,fee from a page naming both clubs
+R0589,2016-17,2017-01-13,Jeffrey Schlupp,Leicester City,Crystal Palace,fee from a page naming both clubs
+R0590,2017-18,2017-06-14,Victor Lindelöf,Benfica,Manchester United,fee from a page naming both clubs
+R0591,2017-18,2017-06-16,Mathew Ryan,Valencia,Brighton & Hove Albion,fee from a page naming both clubs
+R0592,2017-18,2017-06-30,Nathan Aké,Chelsea,AFC Bournemouth,fee from a page naming both clubs
+R0593,2017-18,2017-07-01,Ethan Ampadu,Exeter City,Chelsea,fee from a page naming both clubs
+R0594,2017-18,2017-07-04,Florian Lejeune,Eibar,Newcastle United,fee from a page naming both clubs
+R0595,2017-18,2017-07-05,Steve Mounié,Montpellier,Huddersfield Town,fee from a page naming both clubs
+R0596,2017-18,2017-07-07,Jonathan Walters,Stoke City,Burnley,fee from a page naming both clubs
+R0597,2017-18,2017-07-09,Antonio Rüdiger,Roma,Chelsea,fee from a page naming both clubs
+R0598,2017-18,2017-07-19,Jacob Murphy,Norwich City,Newcastle United,fee from a page naming both clubs
+R0599,2017-18,2017-07-20,Glenn Whelan,Stoke City,Aston Villa,fee from a page naming both clubs
+R0600,2017-18,2017-07-22,Marko Arnautović,Stoke City,West Ham United,fee from a page naming both clubs
+R0601,2017-18,2017-07-22,Darren Randolph,West Ham United,Middlesbrough,fee from a page naming both clubs
+R0602,2017-18,2017-07-24,Javier Hernández,Bayer Leverkusen,West Ham United,fee from a page naming both clubs
+R0603,2017-18,2017-07-28,Ashley Fletcher,West Ham United,Middlesbrough,fee from a page naming both clubs
+R0604,2017-18,2017-07-31,Nemanja Matić,Chelsea,Manchester United,fee from a page naming both clubs
+R0605,2017-18,2017-08-14,Sofiane Feghouli,West Ham United,Galatasaray,fee from a page naming both clubs
+R0606,2017-18,2017-08-15,Tom Lawrence,Leicester City,Derby County,fee from a page naming both clubs
+R0607,2017-18,2017-08-23,Davinson Sánchez,Ajax,Tottenham Hotspur,fee from a page naming both clubs
+R0608,2017-18,2017-08-28,Siem de Jong,Newcastle United,Ajax,fee from a page naming both clubs
+R0609,2017-18,2017-08-31,Alex Oxlade-Chamberlain,Arsenal,Liverpool,fee from a page naming both clubs
+R0610,2017-18,2018-01-17,Theo Walcott,Arsenal,Everton,fee from a page naming both clubs
+R0611,2017-18,2018-01-30,Emerson,Roma,Chelsea,fee from a page naming both clubs
+R0612,2017-18,2018-01-31,Lucas Moura,Paris Saint-Germain,Tottenham Hotspur,fee from a page naming both clubs
+R0613,2018-19,2018-06-01,Willy Boly,Porto,Wolverhampton Wanderers,fee from a page naming both clubs
+R0614,2018-19,2018-06-08,Jonny Evans,West Bromwich Albion,Leicester City,fee from a page naming both clubs
+R0615,2018-19,2018-07-10,Lucas Torreira,Sampdoria,Arsenal,fee from a page naming both clubs
+R0616,2018-19,2018-07-30,Aleksandar Mitrović,Newcastle United,Fulham,fee from a page naming both clubs
+R0617,2018-19,2018-08-02,Alfie Mawson,Swansea City,Fulham,fee from a page naming both clubs
+R0618,2018-19,2018-08-08,Adama Traoré,Middlesbrough,Wolverhampton Wanderers,fee from a page naming both clubs
+R0619,2018-19,2018-08-09,Yerry Mina,Barcelona,Everton,fee from a page naming both clubs
+R0620,2018-19,2019-04-04,Raúl Jiménez,Benfica,Wolverhampton Wanderers,fee from a page naming both clubs
+R0621,2019-20,2019-06-28,Aaron Wan-Bissaka,Crystal Palace,Manchester United,fee from a page naming both clubs
+R0622,2019-20,2019-07-01,Mateo Kovačić,Real Madrid,Chelsea,fee from a page naming both clubs
+R0623,2019-20,2019-07-07,Marko Arnautović,West Ham United,Shanghai SIPG,fee from a page naming both clubs
+R0624,2019-20,2019-07-24,Trézéguet,Kasımpaşa,Aston Villa,fee from a page naming both clubs
+R0625,2019-20,2019-08-01,Tom Heaton,Burnley,Aston Villa,fee from a page naming both clubs
+R0626,2019-20,2019-08-02,Allan Saint-Maximin,Nice,Newcastle United,fee from a page naming both clubs
+R0627,2019-20,2020-01-30,Steven Bergwijn,PSV Eindhoven,Tottenham Hotspur,fee from a page naming both clubs
+R0628,2019-20,2020-02-24,Hakim Ziyech,Ajax,Chelsea,fee from a page naming both clubs
+R0629,2019-20,2020-07-03,Leroy Sané,Manchester City,Bayern Munich,fee from a page naming both clubs
+R0630,2020-21,2020-08-05,Nathan Aké,AFC Bournemouth,Manchester City,fee from a page naming both clubs
+R0631,2020-21,2020-09-03,Timothy Castagne,Atalanta,Leicester City,fee from a page naming both clubs
+R0632,2020-21,2020-09-04,Cédric Kipré,Wigan Athletic,West Bromwich Albion,fee from a page naming both clubs
+R0633,2020-21,2020-09-08,Abdoulaye Doucouré,Watford,Everton,fee from a page naming both clubs
+R0634,2020-21,2020-09-16,Emiliano Martínez,Arsenal,Aston Villa,fee from a page naming both clubs
+R0635,2020-21,2020-09-19,Sergio Reguilón,Real Madrid,Tottenham Hotspur,fee from a page naming both clubs
+R0636,2020-21,2020-09-19,Bertrand Traoré,Lyon,Aston Villa,fee from a page naming both clubs
+R0637,2020-21,2020-09-23,Nélson Semedo,Barcelona,Wolverhampton Wanderers,fee from a page naming both clubs
+R0638,2020-21,2021-01-08,Sébastien Haller,West Ham United,Ajax,fee from a page naming both clubs
+R0639,2020-21,2021-01-29,Saïd Benrahma,Brentford,West Ham United,fee from a page naming both clubs
+R0640,2021-22,2021-06-10,Emiliano Buendía,Norwich City,Aston Villa,fee from a page naming both clubs
+R0641,2021-22,2021-07-01,Ibrahima Konaté,RB Leipzig,Liverpool,fee from a page naming both clubs
+R0642,2021-22,2021-07-21,Kristoffer Ajer,Celtic,Brentford,fee from a page naming both clubs
+R0643,2021-22,2021-08-04,Leon Bailey,Bayer Leverkusen,Aston Villa,fee from a page naming both clubs
+R0644,2021-22,2021-08-20,Martin Ødegaard,Real Madrid,Arsenal,fee from a page naming both clubs
+R0645,2021-22,2021-08-20,Rafa Mir,Wolverhampton Wanderers,Sevilla,fee from a page naming both clubs
+R0646,2021-22,2022-01-26,Hwang Hee-chan,RB Leipzig,Wolverhampton Wanderers,fee from a page naming both clubs
+R0647,2021-22,2022-01-30,Luis Díaz,Porto,Liverpool,fee from a page naming both clubs
+R0648,2022-23,2022-05-26,Brenden Aaronson,Red Bull Salzburg,Leeds United,fee from a page naming both clubs
+R0649,2022-23,2022-06-14,Darwin Núñez,Benfica,Liverpool,fee from a page naming both clubs
+R0650,2022-23,2022-06-22,Sadio Mané,Liverpool,Bayern Munich,fee from a page naming both clubs
+R0651,2022-23,2022-07-08,Steven Bergwijn,Tottenham Hotspur,Ajax,fee from a page naming both clubs
+R0652,2022-23,2022-07-11,Andreas Pereira,Manchester United,Fulham,"exact guaranteed fee, only a maximum or approximation found"
+R0653,2022-23,2022-07-12,Keane Lewis-Potter,Hull City,Brentford,fee from a page naming both clubs
+R0654,2022-23,2022-07-19,Djed Spence,Middlesbrough,Tottenham Hotspur,fee from a page naming both clubs
+R0655,2022-23,2022-07-27,Lisandro Martínez,Ajax,Manchester United,fee from a page naming both clubs
+R0656,2022-23,2022-08-19,Morgan Gibbs-White,Wolverhampton Wanderers,Nottingham Forest,fee from a page naming both clubs
+R0657,2022-23,2022-08-26,Alexander Isak,Real Sociedad,Newcastle United,firmer figure than 'reported'
+R0658,2022-23,2022-08-31,Saša Kalajdžić,VfB Stuttgart,Wolverhampton Wanderers,fee from a page naming both clubs
+R0659,2022-23,2023-01-14,Georginio Rutter,TSG 1899 Hoffenheim,Leeds United,"exact guaranteed fee, only a maximum or approximation found"
+R0660,2022-23,2023-01-20,Danny Ings,Aston Villa,West Ham United,"exact guaranteed fee, only a maximum or approximation found"
+R0661,2022-23,2023-01-23,Jhon Durán,Chicago Fire,Aston Villa,fee from a page naming both clubs
+R0662,2022-23,2023-01-27,Antoine Semenyo,Bristol City,AFC Bournemouth,fee from a page naming both clubs
+R0663,2023-24,2023-06-14,João Pedro,Watford,Brighton & Hove Albion,"exact guaranteed fee, only a maximum or approximation found"
+R0664,2023-24,2023-06-27,Mateo Kovačić,Chelsea,Manchester City,fee from a page naming both clubs
+R0665,2023-24,2023-07-01,Pedro Porro,Sporting CP,Tottenham Hotspur,fee from a page naming both clubs
+R0666,2023-24,2023-07-01,Conor Coady,Wolverhampton Wanderers,Leicester City,fee from a page naming both clubs
+R0667,2023-24,2023-07-25,Raúl Jiménez,Wolverhampton Wanderers,Fulham,fee from a page naming both clubs
+R0668,2023-24,2023-07-25,Sam Surridge,Nottingham Forest,Nashville,fee from a page naming both clubs
+R0669,2023-24,2023-07-28,Calvin Bassey,Ajax,Fulham,fee from a page naming both clubs
+R0670,2023-24,2023-08-04,Axel Disasi,Monaco,Chelsea,fee from a page naming both clubs
+R0671,2023-24,2023-08-05,Robert Sánchez,Brighton & Hove Albion,Chelsea,fee from a page naming both clubs
+R0672,2023-24,2023-08-05,Rasmus Højlund,Atalanta,Manchester United,fee from a page naming both clubs
+R0673,2023-24,2023-08-08,Micky van de Ven,VfL Wolfsburg,Tottenham Hotspur,fee from a page naming both clubs
+R0674,2023-24,2023-08-10,Edson Álvarez,Ajax,West Ham United,fee from a page naming both clubs
+R0675,2023-24,2023-08-14,James Ward-Prowse,Southampton,West Ham United,fee from a page naming both clubs
+R0676,2023-24,2023-08-29,Beto,Udinese,Everton,fee from a page naming both clubs
+R0677,2023-24,2023-09-01,Alex Iwobi,Everton,Fulham,fee from a page naming both clubs
+R0678,2023-24,2024-01-01,Gustavo Scarpa,Nottingham Forest,Atlético Mineiro,fee from a page naming both clubs
+R0679,2023-24,2024-01-11,Radu Drăgușin,Genoa,Tottenham Hotspur,fee from a page naming both clubs
+R0680,2024-25,2024-06-14,Enes Ünal,Getafe,AFC Bournemouth,fee from a page naming both clubs
+R0681,2024-25,2024-06-14,Taylor Harwood-Bellis,Manchester City,Southampton,fee from a page naming both clubs
+R0682,2024-25,2024-06-30,Douglas Luiz,Aston Villa,Juventus,fee from a page naming both clubs
+R0683,2024-25,2024-07-01,Enzo Barrenechea,Juventus,Aston Villa,fee from a page naming both clubs
+R0684,2024-25,2024-07-01,Samuel Iling-Junior,Juventus,Aston Villa,fee from a page naming both clubs
+R0685,2024-25,2024-07-02,Kiernan Dewsbury-Hall,Leicester City,Chelsea,fee from a page naming both clubs
+R0686,2024-25,2024-07-02,Archie Gray,Leeds United,Tottenham Hotspur,fee from a page naming both clubs
+R0687,2024-25,2024-07-10,Daniel Jebbison,Sheffield United,AFC Bournemouth,fee from a page naming both clubs
+R0688,2024-25,2024-07-18,Mason Greenwood,Manchester United,Marseille,"exact guaranteed fee, only a maximum or approximation found"
+R0689,2024-25,2024-07-18,Sávio,Troyes,Manchester City,fee from a page naming both clubs
+R0690,2024-25,2024-07-18,Nikola Milenković,Fiorentina,Nottingham Forest,fee from a page naming both clubs
+R0691,2024-25,2024-07-24,Moussa Diaby,Aston Villa,Al-Ittihad,fee from a page naming both clubs
+R0692,2024-25,2024-07-29,Riccardo Calafiori,Bologna,Arsenal,fee from a page naming both clubs
+R0693,2024-25,2024-07-30,Filip Jörgensen,Villarreal,Chelsea,fee from a page naming both clubs
+R0694,2024-25,2024-08-05,Niclas Füllkrug,Borussia Dortmund,West Ham United,fee from a page naming both clubs
+R0695,2024-25,2024-08-12,Julián Álvarez,Manchester City,Atlético Madrid,fee from a page naming both clubs
+R0696,2024-25,2024-08-19,Oliver Skipp,Tottenham Hotspur,Leicester City,fee from a page naming both clubs
+R0697,2024-25,2024-08-26,Matt O'Riley,Celtic,Brighton & Hove Albion,fee from a page naming both clubs
+R0698,2024-25,2024-08-27,Ferdi Kadıoğlu,Fenerbahçe,Brighton & Hove Albion,fee from a page naming both clubs
+R0699,2024-25,2024-08-30,Manuel Ugarte,Paris Saint-Germain,Manchester United,fee from a page naming both clubs
+R0700,2024-25,2025-01-14,Donyell Malen,Borussia Dortmund,Aston Villa,fee from a page naming both clubs
+R0701,2024-25,2025-01-21,Andrés García,Levante,Aston Villa,fee from a page naming both clubs
+R0702,2024-25,2025-01-31,Jhon Durán,Aston Villa,Al Nassr,fee from a page naming both clubs
+R0703,2024-25,2025-02-03,Nico González,Porto,Manchester City,fee from a page naming both clubs
+R0704,2025-26,2025-06-01,Giorgi Mamardashvili,Valencia,Liverpool,fee from a page naming both clubs
+R0705,2025-26,2025-06-01,Yasin Özcan,Kasımpaşa,Aston Villa,fee from a page naming both clubs
+R0706,2025-26,2025-06-09,Rayan Aït-Nouri,Wolverhampton Wanderers,Manchester City,fee from a page naming both clubs
+R0707,2025-26,2025-07-01,Enzo Le Fée,Roma,Sunderland,fee from a page naming both clubs
+R0708,2025-26,2025-07-01,Jean-Clair Todibo,Nice,West Ham United,fee from a page naming both clubs
+R0709,2025-26,2025-07-02,João Pedro,Brighton & Hove Albion,Chelsea,fee from a page naming both clubs
+R0710,2025-26,2025-07-16,Đorđe Petrović,Chelsea,AFC Bournemouth,fee from a page naming both clubs
+R0711,2025-26,2025-07-26,Viktor Gyökeres,Sporting CP,Arsenal,fee from a page naming both clubs
+R0712,2025-26,2025-07-29,João Félix,Chelsea,Al-Nassr,fee from a page naming both clubs
+R0713,2025-26,2025-07-30,Luis Díaz,Liverpool,Bayern Munich,fee from a page naming both clubs
+R0714,2025-26,2025-08-06,Kiernan Dewsbury-Hall,Chelsea,Everton,fee from a page naming both clubs
+R0715,2025-26,2025-08-06,Lesley Ugochukwu,Chelsea,Burnley,fee from a page naming both clubs
+R0716,2025-26,2025-08-08,Armando Broja,Chelsea,Burnley,fee from a page naming both clubs
+R0717,2025-26,2025-08-09,Benjamin Šeško,RB Leipzig,Manchester United,fee from a page naming both clubs
+R0718,2025-26,2025-08-09,Darwin Núñez,Liverpool,Al Hilal,fee from a page naming both clubs
+R0719,2025-26,2025-08-12,Malick Thiaw,AC Milan,Newcastle United,"exact guaranteed fee, only a maximum or approximation found"
+R0720,2025-26,2025-08-13,Bafodé Diakité,Lille,AFC Bournemouth,fee from a page naming both clubs
+R0721,2025-26,2025-08-21,Amine Adli,Bayer Leverkusen,AFC Bournemouth,fee from a page naming both clubs
+R0722,2025-26,2025-08-29,Yeremy Pino,Villarreal,Crystal Palace,fee from a page naming both clubs
+R0723,2025-26,2025-08-29,Mateus Fernandes,Southampton,West Ham United,"exact guaranteed fee, only a maximum or approximation found"
+R0724,2025-26,2025-09-01,Dilane Bakwa,RC Strasbourg,Nottingham Forest,fee from a page naming both clubs
+R0725,2025-26,2026-01-19,Marc Guéhi,Crystal Palace,Manchester City,fee from a page naming both clubs
+R0726,2025-26,2026-01-30,Lucas Paquetá,West Ham United,Flamengo,fee from a page naming both clubs
+R0727,2025-26,2026-02-02,Jørgen Strand Larsen,Wolverhampton Wanderers,Crystal Palace,fee from a page naming both clubs
+R0728,2026-27,2026-06-15,Modou Kéba Cissé,LASK,Aston Villa,fee from a page naming both clubs
+R0729,2026-27,2026-06-18,Víctor Muñoz,Osasuna,Liverpool,fee from a page naming both clubs
+R0730,2026-27,2026-06-25,Piero Hincapié,Bayer Leverkusen,Arsenal,fee from a page naming both clubs
+R0731,2026-27,2026-06-29,Rasmus Højlund,Manchester United,Napoli,fee from a page naming both clubs
+R0732,2026-27,2026-06-29,Donyell Malen,Aston Villa,Roma,fee from a page naming both clubs
+R0733,2026-27,2026-07-01,Emmanuel Emegha,Strasbourg,Chelsea,fee from a page naming both clubs
+R0734,2026-27,2026-07-01,Anthony Gordon,Newcastle United,Barcelona,"exact guaranteed fee, only a maximum or approximation found"
+R0735,2026-27,2026-07-05,Eliezer Mayenda,Sunderland,Rennes,"exact guaranteed fee, only a maximum or approximation found"
+R0736,2026-27,2026-07-05,Bazoumana Touré,TSG Hoffenheim,Newcastle United,fee from a page naming both clubs
+R0737,2026-27,2026-07-14,Álvaro Rodríguez,Elche,AFC Bournemouth,fee from a page naming both clubs
+R0738,2026-27,2026-07-14,Luka Vušković,Tottenham Hotspur,Brighton & Hove Albion,fee from a page naming both clubs
+R0739,2026-27,2026-07-17,Tarik Muharemović,Sassuolo,Leeds United,fee from a page naming both clubs
+R0740,2026-27,2026-08-01,Mamadou Sangaré,Lens,Brentford,fee from a page naming both clubs
+R0741,2026-27,2026-08-01,António Silva,Benfica,AFC Bournemouth,fee from a page naming both clubs
+R0742,2026-27,2026-08-02,Valentín Barco,Strasbourg,Chelsea,fee from a page naming both clubs
+R0743,2026-27,2026-08-03,Gonzalo García,Real Madrid,Fulham,fee from a page naming both clubs
+R0744,2026-27,2026-08-03,Lukáš Horníček,Braga,Newcastle United,fee from a page naming both clubs
+R0745,2026-27,2026-08-06,James Trafford,Manchester City,Leeds United,"exact guaranteed fee, only a maximum or approximation found"
+R0746,2026-27,2026-08-08,Bruno Guimarães,Newcastle United,Arsenal,fee from a page naming both clubs
+R0747,2026-27,2026-08-18,Amar Dedić,Benfica,Newcastle United,fee from a page naming both clubs
+R0748,2026-27,2026-08-21,Curtis Jones,Liverpool,Inter Milan,"exact guaranteed fee, only a maximum or approximation found"
+R0749,2026-27,2026-08-25,Sávio,Manchester City,Tottenham Hotspur,fee from a page naming both clubs
+R0750,2026-27,2026-08-26,Nico González,Manchester City,Newcastle United,fee from a page naming both clubs
+R0751,2026-27,2026-08-31,Daniel Muñoz,Crystal Palace,Nottingham Forest,fee from a page naming both clubs
+R0752,2026-27,2026-09-01,Matias Fernandez-Pardo,Lille,Newcastle United,fee from a page naming both clubs
+R0753,2026-27,2026-09-01,Lucca Brughmans,Genk,Liverpool,"exact guaranteed fee, only a maximum or approximation found"
+R0754,2026-27,2026-09-01,Taylor Harwood-Bellis,Southampton,Aston Villa,fee from a page naming both clubs
+R0755,2026-27,2026-09-01,Enzo Fernández,Chelsea,Manchester City,fee from a page naming both clubs

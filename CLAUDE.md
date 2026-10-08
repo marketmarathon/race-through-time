@@ -40,6 +40,7 @@ These are the standing rules. The detail and history are in `state/DECISIONS.md`
 
 ## Recording the work
 - Record decisions from the next free DEC number, checking `main` **and** every open pull request. Label each one as Owner, Claude working choice, Claude proposal or Claude finding.
+- **Detailed data and method questions are Claude's to decide (DEC-417):** which source or figure, deal structures, same-grade conflicts, dates, what goes to the next research round. Apply the recommendation within the agreed rules, record it as a Claude decision citing DEC-417, and list it in the summary under "Decided for you". Ask Luke only about what the video shows or claims, title and scope, rights, money, anything irreversible, or a choice the rules do not settle that would change who leads.
 - Update `state/STATE.json` and `state/HANDOVER.md`: status, open items for Luke, and rules for the next session.
 - When Luke approves a design choice that later episodes should reuse, add it to `reference/house_style.md` in the same pull request.
 - The pull request description lists: what was built, links to every private release, test results, numbered questions for Luke (each with Claude's recommendation), proposals beyond the approved design, and anything blocked.
