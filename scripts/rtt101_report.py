@@ -734,7 +734,131 @@ if BASE2:
           "Chelsea ahead of Manchester City from September to December 2015 (by £3.5m). *Recommendation:* count the £12m package as Nastasić's fee with "
           "Savić at £0, the closest figure to what City paid (it overstates City's outlay by Savić's unknown value rather than understating it by the cash), "
           "and ask the next round for the cash part.",
+          "\n**Answered by Luke (9 Oct 2026, DEC-423): count the £12m package as Nastasić's fee, Savić £0, until a contemporary cash figure is confirmed.**",
           "\n**Worth knowing:** from March to June 2003 Manchester United lead Newcastle United by about £10,000, so any small correction can swap them."]
     with open(OUT, "a", encoding="utf-8") as f:
         f.write("\n".join(R) + "\n")
     print("section 14:", len(rs), "deals researched;", v0, "->", v1, "VERIFIED;", len(fees), "fees changed;", len(lead_ch), "leader changes;", len(yes), "order-test deals")
+
+# ---------------------------------------------------------------- source round 3 (IQ-15i): undisclosed fees and the leader deals
+BASE3 = rd("source_round3_baseline.csv", os.path.join(D, "source"))
+if BASE3:
+    from collections import Counter as _C4
+    MAP3 = {r["deal_id"]: r for r in rd("source_round3_map.csv", os.path.join(D, "source"))}
+    B3 = {r["deal_id"]: r for r in BASE3}
+    LEADS3 = [l for l in rd("leads_evidence.csv", os.path.join(D, "source")) if l["lead_row"].startswith("part24")]
+    names3 = {l["lead_row"].split("-")[1] for l in LEADS3}
+    ever = {c["club_id"] for c in rd("clubs.csv")}
+
+    def ptype(d):
+        m_ = MAP3[d]; t = TI.get(m_["transfer_id"], {})
+        if m_["pl_side"] == "buyer+seller":
+            return "P1 both clubs in the PL"
+        if m_["pl_side"] == "buyer":
+            return "P2 PL purchase from an ever-PL club" if t.get("from_club") in ever else "P4 PL purchase from another club"
+        return "P3/P5 PL sale"
+    rev3 = [r for r in rd("review_decisions.csv", os.path.join(D, "source")) if r["batch"].startswith("SR3-")]
+    U_all = list(MAP3)
+    # every deal the four sweep files cover (with or without a figure): source/round3_researched.csv (scripts/rtt101_round3_lists.py)
+    resd = [r["deal_id"] for r in rd("round3_researched.csv", os.path.join(D, "source"))] or [d for d in U_all if d in names3]
+    fig = [d for d in resd if float(TI[MAP3[d]["transfer_id"]]["fee_gbp"] or 0) > 0]
+    ver = [d for d in fig if TI[MAP3[d]["transfer_id"]]["status"] == "VERIFIED"]
+    bytype = _C4(ptype(d) for d in resd)
+    figtype = _C4(ptype(d) for d in fig)
+    vertype = _C4(ptype(d) for d in ver)
+    add_total = sum(float(TI[MAP3[d]["transfer_id"]]["fee_gbp"] or 0) for d in fig)
+    left_all = sum(1 for d in U_all if not float(TI.get(MAP3[d]["transfer_id"], {}).get("fee_gbp") or 0))
+    R = ["\n## 15. Source round 3: undisclosed fees and the leader deals (IQ-15i; DEC-422 to DEC-428)\n",
+         "- **Why:** 2,205 deals with a Premier League side were counted £0 as \"undisclosed, no figure\" (fe3dd9e), many of them well known; the press printed "
+         "a figure for many, and the rule already uses a grade B reported figure for an undisclosed fee (DEC-237 (g)). Luke asked how close our window totals "
+         "are to the published ones.",
+         f"- **Inputs:** Claude helper research on {len(resd)} of those deals (part24a summer 2009, part24e/f/g: all P1 deals between two clubs both in the PL "
+         "that season and all P2 purchases from clubs that have been in the PL), and the 13 leader deals plus Nastasić's cash part read by Cowork in Luke's "
+         "Chrome (part24d) and by a helper (part24b). Every data file's SHA-256 matched `00_README.md`.",
+         "- **Checked at source:** all 481 cited pages read on the runner (https://github.com/marketmarathon/race-through-time/actions/runs/37904336661: 421 "
+         "loaded; 16 refused, 14 not found, 11 server errors); 6 pages re-read after the runner learnt to match ð, ø and similar letters "
+         "(https://github.com/marketmarathon/race-through-time/actions/runs/37906441423).",
+         f"- **Quotes read:** {len(rev3)} newly confirmed quotes ({sum(1 for r in rev3 if r['decision'] == 'reject')} rejected: another deal's figure, a "
+         "contract value, a valuation or release clause, a bid or offer, a maximum, a total with add-ons, a combined figure that did not complete, or one "
+         "resting on a weaker outlet).",
+         f"- **Undisclosed deals now carrying a reported figure:** {len(fig)} of the {len(resd)} researched ({len(ver)} confirmed at source; the rest a grade B "
+         f"figure not yet confirmed, counted as a preview), adding {m(add_total)} of fees. By type: "
+         + "; ".join(f"{k}: {figtype.get(k, 0)} of {v} ({vertype.get(k, 0)} confirmed)" for k, v in sorted(bytype.items())) + ". "
+         f"{len(resd) - len(fig)} researched deals stay £0 (the fee is undisclosed in every source found, a free transfer, a loan, a nominal fee, a swap with no "
+         f"stated value, or only a maximum). Of all 2,205, {left_all} are still £0; P4 (purchases from other clubs) and the sales were not researched."]
+    # leader deals
+    M2 = {r["deal_id"]: r["transfer_id"] for r in rd("source_round2_map.csv", os.path.join(D, "source"))}
+    R += ["\n**The 13 leader deals and Nastasić** (order test of IQ-15h):\n", "| Deal | Player | Fee before | Fee after | Status | Basis |", "|---|---|---|---|---|---|"]
+    for d in ["R0063", "R0082", "R0117", "R0121", "R0141", "R0150", "R0151", "R0152", "R0171", "R0179", "R0183", "R0202", "R0228", "R0490"]:
+        t = TI.get(M2.get(d, ""), {})
+        if t:
+            R.append(f"| {d} | {t['player']} | £{float(B3.get(d, {}).get('fee_gbp') or 0):,.0f} | £{float(t['fee_gbp'] or 0):,.0f} | {t['status']} | {t['fee_status'][:80]} |")
+    # windows against published
+    WB = {w["window"]: w for w in rd("window_totals_before_source_round3.csv", os.path.join(D, "source"))}
+    R += ["\n**How close we are to the published window totals** (gross spending by PL clubs; before = fe3dd9e; published = the first grade A/B total in part17b, "
+          "research leads, UNVERIFIED). \"Share\" is our total as a share of the published one:\n",
+          "| Window | Gross before | Gross after | Published | Share before | Share after | Undisclosed still £0 (PL buys) |", "|---|---|---|---|---|---|---|"]
+    und_left = _C4()
+    for d in U_all:
+        t = TI.get(MAP3[d]["transfer_id"], {})
+        if t and not float(t["fee_gbp"] or 0) and MAP3[d]["pl_side"] in ("buyer", "buyer+seller"):
+            mo, yr = int(t["date"][5:7]), int(t["date"][:4])
+            und_left[f"summer {yr}" if 4 <= mo <= 10 else (f"January {yr}" if mo <= 3 else f"January {yr + 1}")] += 1
+    shares = []
+    for win in sorted(set(WT), key=wkey):
+        pub = next((r for r in sorted(lead_by.get(win, []), key=lambda r: r["grade"]) if r["gross_gbp"]), None)
+        if not pub:
+            continue
+        a, b0, p_ = float(WT[win]["gross_spend_gbp"] or 0), float(WB.get(win, {}).get("gross_spend_gbp") or 0), float(pub["gross_gbp"])
+        shares.append((win, b0 / p_, a / p_))
+        R.append(f"| {win} | {m(b0)} | {m(a)} | {m(p_)} ({pub['grade']}) | {b0 / p_:.0%} | {a / p_:.0%} | {und_left.get(win, 0)} |")
+    if shares:
+        R.append(f"\nAcross the {len(shares)} windows with a published total, our sum averages {sum(s[1] for s in shares) / len(shares):.0%} of the published "
+                 f"figure before this round and {sum(s[2] for s in shares) / len(shares):.0%} after. **What is left:** (1) undisclosed deals still counted £0, "
+                 "above all PL purchases from clubs outside the PL (P4, 685 deals, not yet researched) and loans with an obligation booked only when the fee "
+                 "is reported; (2) add-ons, which published totals usually include and we count only when reported as paid; (3) figures we count only "
+                 "when confirmed or reported in the quality press, while some published totals use agency or club-reported estimates; (4) differences in "
+                 "what a window covers (published totals often include deals agreed in the window but completed later, and some count fees in euros at "
+                 "other rates).")
+    # race effects and standings
+    TB = {r["month_end"]: r["top12_in_rank_order"].split(";") for r in rd("top12_before_source_round3.csv", os.path.join(D, "source"))}
+    now = defaultdict(list)
+    for r in SM:
+        if r["rank"] and int(r["rank"]) <= 12:
+            now[r["month_end"]].append((int(r["rank"]), r["club_id"]))
+    NOW = {mo: [c for _, c in sorted(v)] for mo, v in now.items()}
+    lead_ch = [mo for mo in sorted(NOW) if TB.get(mo) and TB[mo][0] != NOW[mo][0]]
+    set_ch = [mo for mo in sorted(NOW) if TB.get(mo) and set(TB[mo]) != set(NOW[mo])]
+    R.append(f"\n**Effect on the race** (against fe3dd9e): the leader changes at {len(lead_ch)} month ends"
+             + (" (" + "; ".join(f"{mo[:7]}: {NAME.get(TB[mo][0], TB[mo][0])} → {NAME.get(NOW[mo][0], NOW[mo][0])}" for mo in lead_ch[:24]) + (" …" if len(lead_ch) > 24 else "") + ")" if lead_ch else "")
+             + f"; who is in the top 12 changes at {len(set_ch)} month ends.")
+    SB = {r["club_id"]: (int(r["rank"]), float(r["cum_net_gbp"])) for r in rd("standings_before_source_round3.csv", os.path.join(D, "source"))}
+    last = max(NOW)
+    SA = {r["club_id"]: (int(r["rank"]), float(r["cum_net_gbp"])) for r in SM if r["month_end"] == last and r["rank"]}
+    R += [f"\n**Standings at the freeze ({last}), cumulative net spend:**\n", "| Rank after | Club | Net before (rank) | Net after | Change |", "|---|---|---|---|---|"]
+    for c, (rk, v) in sorted(SA.items(), key=lambda x: x[1][0])[:20]:
+        b_ = SB.get(c, (0, 0.0))
+        R.append(f"| {rk} | {NAME.get(c, c)} | {m(b_[1])} ({b_[0]}) | {m(v)} | {m(v - b_[1])} |")
+    # order test re-run
+    OT = rd("round2_order_test.csv", os.path.join(D, "source"))
+    yes = [r for r in OT if r["could_change"] == "yes"]
+    R += [f"\n**Order test re-run on the {len(OT)} round 2 deals still not researched** (`source/round2_order_test.csv`): {len(yes)} could change who is in "
+          f"the top 12 at some month end, {sum(1 for r in yes if r['what_changes'] == 'leader')} of them the leader:\n",
+          "| Deal | Player | Date | Fee in use | First month end affected |", "|---|---|---|---|---|"]
+    for r in sorted((r for r in yes if r["what_changes"] == "leader"), key=lambda r: r["date"]):
+        R.append(f"| {r['deal_id']} | {r['player']} | {r['date']} | £{float(r['fee_gbp']):,.0f} | {r['first_month_end']} |")
+    # still unverified
+    unv = sorted((TI[MAP3[d]["transfer_id"]] for d in fig if TI[MAP3[d]["transfer_id"]]["status"] != "VERIFIED"), key=lambda t: -float(t["fee_gbp"]))
+    R += [f"\n**Still UNVERIFIED among the round 3 figures: {len(unv)}** (a grade B figure the runner could not confirm: page refused or missing, or the club "
+          "names not both on the page). The largest:\n", "| Player | Move | Date | Fee in use |", "|---|---|---|---|"]
+    for t in unv[:20]:
+        R.append(f"| {t['player']} | {clubs.get(t['from_club'], t['from_club'])} → {clubs.get(t['to_club'], t['to_club'])} | {t['date']} | £{float(t['fee_gbp']):,.0f} |")
+    NF = rd("round3_unreadable.csv", os.path.join(D, "source"))
+    if NF:
+        R.append(f"\n**For Cowork to read in Luke's Chrome:** {len(NF)} rows the helpers saw only as a search snippet and the runner could not confirm (`source/round3_unreadable.csv`).")
+    QB3 = [l.strip() for l in open(os.path.join(D, "source", "decided_round3.md"), encoding="utf-8") if l.strip()] \
+        if os.path.exists(os.path.join(D, "source", "decided_round3.md")) else []
+    R += QB3
+    with open(OUT, "a", encoding="utf-8") as f:
+        f.write("\n".join(R) + "\n")
+    print("section 15:", len(resd), "researched;", len(fig), "with a figure;", len(ver), "verified;", len(lead_ch), "leader changes;", len(yes), "order-test deals")

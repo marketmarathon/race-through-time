@@ -8,11 +8,11 @@ Phase 1 preview: every fee is UNVERIFIED unless `status` says VERIFIED. Not for 
 | every season has an attribution window | **PASS** | 1992-05-03 to 2026-09-01 |
 | 51 clubs, each with at least one PL season | **PASS** | 51 clubs |
 | no transfer counted outside its club's PL seasons | **PASS** | 3734 ledger rows frozen (club not in the PL) |
-| PL-to-PL deals net to zero (spend - income of PL clubs = net spend with non-PL clubs) | **PASS** | spend £27,731,064,070 − income £14,404,591,997 = £13,326,472,073; net with non-PL clubs £13,326,472,073 |
-| no fee without a source row | **PASS** | 3285 fee-bearing transfers |
+| PL-to-PL deals net to zero (spend - income of PL clubs = net spend with non-PL clubs) | **PASS** | spend £28,935,918,232 − income £15,111,370,286 = £13,824,547,946; net with non-PL clubs £13,824,547,946 |
+| no fee without a source row | **PASS** | 3457 fee-bearing transfers |
 | no Transfermarkt figure or URL anywhere | **PASS** | none found |
-| quotes under 25 words | **PASS** | 18652 evidence rows |
-| every conversion has a rate row | **PASS** | 81 conversions |
+| quotes under 25 words | **PASS** | 19151 evidence rows |
+| every conversion has a rate row | **PASS** | 98 conversions |
 | month-end series consistent with the ledger | **PASS** | 413 month ends × 51 clubs |
 | Bank of England Jan 1992 monthly averages equal Cowork's V-04 reading | **PASS** | 7 of 7 series compared |
 | ECB GBP/EUR 1999-01 equals Cowork's V-06 reading (0.7029125) | **PASS** | 333 months |

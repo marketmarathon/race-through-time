@@ -1,6 +1,12 @@
-# HANDOVER — 8 Oct 2026 (session 16, Claude Code cloud session: IQ-15 to IQ-15h, RTT-101 Premier League net transfer spend: data build, phase 2 and source round 1). Earlier sessions' notes follow below.
+# HANDOVER — 8 Oct 2026 (session 16, Claude Code cloud session: IQ-15 to IQ-15i, RTT-101 Premier League net transfer spend: data build, phase 2 and source round 1). Earlier sessions' notes follow below.
 
-## RTT-101 source round 2, priority list (IQ-15h, 9 Oct 2026) — done; one question for Luke
+## RTT-101 source round 3, undisclosed fees P1/P2 and leader deals (IQ-15i, 9 Oct 2026) — done; one question for Luke
+- **Done:** part24a/b/d/e/f/g attached (U IDs via `source/source_round3_map.csv`, R IDs via `source_round2_map.csv`); runner runs 37904336661 and 37906441423; 230 quotes read (25 rejected). 172 of 507 undisclosed deals now carry a reported figure (131 confirmed); window totals average 82% of the published ones (78% before). Luke's Nastasić decision applied (DEC-423). Report section 15; DEC-422 to DEC-428.
+- **Open for Luke:** photo finish at the freeze (United £1,659.0m, Chelsea £1,652.5m, City £1,650.6m) with about 2,000 undisclosed deals still £0: run the P4 sweep before the final order is settled?
+- **Next:** P4 sweep (685 PL purchases from other clubs, `RTT-101_round3_undisclosed_list_U0001-U2205.csv` in the private repo); 12 snippet-only rows for Cowork (`source/round3_unreadable.csv`); the 205 unresearched round 2 deals that could change a top-12 place (`source/round2_order_test.csv`).
+- **Rules learned:** (1) after extracting new leads, rebuild before `rtt101_ingest_probe.py` (the ingest matches pages to transfers through the last build's evidence). (2) The runner now folds ð, ø, æ, ß, ł (one letter each). (3) `scripts/rtt101_round3_lists.py PRIVATE` writes the researched and snippet-only lists. (4) Next free DEC: DEC-429.
+
+## RTT-101 source round 2, priority list (IQ-15h, 9 Oct 2026) — done; Luke answered (DEC-423)
 - **Done:** ChatGPT instalment 1 (part22b) and the Claude helper research on the 323 priority deals (part23g) attached by R deal ID and every cited page read on the runner (run 37888858665). 402 new quotes read (42 rejected). **263 of 352 researched deals VERIFIED** (from 24); 165 fees changed. Decisions DEC-419 (Cowork), DEC-420 (Claude, under DEC-417), findings DEC-421; report section 14.
 - **Open for Luke:** Nastasić 2012 (£12m package including Savić, unvalued): counts £0 under the rules and that puts Chelsea ahead of Manchester City Sep–Dec 2015; recommendation: count the £12m.
 - **Next:** a later round for the 265 unresearched round 2 deals that could change a top-12 place (`data/rtt-101/source/round2_order_test.csv`, 13 of them the leader) and the 76 researched deals still UNVERIFIED.

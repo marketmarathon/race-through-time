@@ -533,6 +533,8 @@ WEAK_DONE_RX = re.compile(r"(?<!to )(?<!will )(?<!would )(?<!could )(?<!may )(?<
                           r"arrived|bought|capture|recruit|debut)\b", re.I)
 # "the new £1.3m signing", "Boro's pounds 3.5m signing from Benfica": a signing already made ("proposed £3.4m signing" is not)
 SIGNING_RX = re.compile(r"(?:\bnew\s+(?:(?:£|pounds\s?)[\d.,]+\s*(?:m|mn|million|k)?\s+)?|(?<!proposed )(?<!planned )(?<!potential )(?<!prospective )(?<!would-be )(?:£|\bpounds\s?)[\d.,]+\s*(?:m|mn|million|k)?\s+)signing\b(?!\s+(?:target|bid|attempt))", re.I)
+# "since his £1.3m move from Columbus Crew": a move already made (IQ-15i, Friedel); "a possible £5m move" is not
+MOVE_RX = re.compile(r"\b(?:his|her)\s+(?:£|pounds\s?)[\d.,]+\s*(?:m|mn|million|k)?\s+(?:move|switch|transfer)\b", re.I)
 PRECONTRACT_RX = re.compile(r"\b(bid|bids|offer|offered|agreed|agree|agreement|expected|expects|likely|poised|set to|close to|talks|negotiat\w*|"
                             r"proposed|will cost|would cost|hoping|hopes|target|tipped|about to|on the verge|prospective|rumou?r\w*|"
                             r"is to|are to|will pay|will receive|set for|in line)\b", re.I)
@@ -540,7 +542,7 @@ PRECONTRACT_RX = re.compile(r"\b(bid|bids|offer|offered|agreed|agree|agreement|e
 
 # wording that the deal was still to be done, even where a completion word appears ("the £3m capture of Domi is apparently imminent")
 STILL_PRE_RX = re.compile(r"\b(imminent|on the verge|about to (?:complete|sign|join)|close to (?:completing|signing|joining)|poised to|"
-                          r"set to (?:complete|sign|join)|yet to|awaiting|subject to|pending|proposed)\b", re.I)
+                          r"set to (?:complete|sign|join)|yet to (?:complete|sign|agree|be completed|be finalised)|awaiting|subject to|pending|proposed)\b", re.I)
 
 
 def completion_kind(e, surname=""):
@@ -556,7 +558,7 @@ def completion_kind(e, surname=""):
         return "pre"
     if any(near(m) for m in COMPLETED_RX.finditer(txt)):
         return "completed"
-    if any(near(m) for rx in (WEAK_DONE_RX, SIGNING_RX) for m in rx.finditer(txt)):
+    if any(near(m) for rx in (WEAK_DONE_RX, SIGNING_RX, MOVE_RX) for m in rx.finditer(txt)):
         return "completed_weak"
     if PRECONTRACT_RX.search(txt):
         return "pre"
