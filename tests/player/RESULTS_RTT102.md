@@ -8,11 +8,14 @@ Run: node tests/player/run_tests_rtt102.js · ALL PASS
 
 | Case | Config | Frames | Result |
 |---|---|---|---|
-| film | config_rtt102_film.json | 2448 | PASS |
-| film_linear | config_rtt102_film.json | 2448 | PASS |
-| clip_r2_oct2024_end | config_rtt102_clip_r2_oct2024_end.json | 1539 | PASS |
+| film | config_rtt102_film.json | 2333 | PASS |
+| film_linear | config_rtt102_film.json | 2333 | PASS |
+| clip_r2_oct2024_end | config_rtt102_clip_r2_oct2024_end.json | 1424 | PASS |
 
 Notes:
 - film: panel on landing frames: 2023-01 ~620m; 2023-07 ~1.7bn; 2024-01 ~2.1bn; 2024-07 ~3.1bn; 2025-01 ~4.7bn; 2025-07 ~7.3bn; 2026-01 ~8.3bn (not counting Copilot, Meta AI); 2026-07 ~9.9bn (not counting Copilot, Meta AI); 2026-08 ~9.9bn (not counting Copilot, Meta AI)
+- film: end: 150 frames (5.0 s) from August 2026's landing frame to the last frame
 - film_linear: panel on landing frames: 2023-01 ~620m; 2023-07 ~1.7bn; 2024-01 ~2.1bn; 2024-07 ~3.1bn; 2025-01 ~4.7bn; 2025-07 ~7.3bn; 2026-01 ~8.3bn (not counting Copilot, Meta AI); 2026-07 ~9.9bn (not counting Copilot, Meta AI); 2026-08 ~9.9bn (not counting Copilot, Meta AI)
+- film_linear: end: 150 frames (5.0 s) from August 2026's landing frame to the last frame
 - clip_r2_oct2024_end: panel on landing frames: 2024-10 ~4.2bn; 2025-04 ~6.5bn; 2025-10 ~8.3bn (Copilot not counted after Sep 2025); 2026-04 ~9.9bn (not counting Copilot, Meta AI); 2026-08 ~9.9bn (not counting Copilot, Meta AI)
+- clip_r2_oct2024_end: end: 150 frames (5.0 s) from August 2026's landing frame to the last frame

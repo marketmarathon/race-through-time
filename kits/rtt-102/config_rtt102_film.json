@@ -4,7 +4,8 @@
  "out": "rtt102_film.mp4",
  "notes": [
   "RTT-102 round 2 (IQ-19b, IQ-19c): the design with Luke's round-1 answers (DEC-543..DEC-551), Luke's round-2 picks (DEC-552..DEC-554) and Cowork's fixes (DEC-555): title B 'ChatGPT vs Its Rivals (2022–2026)' with the measure in the line under it; estimates said once in that line; Similarweb's older estimates striped, with the note on screen while the stripes are; '~' on every value, billions to one decimal, a number that is not a published figure to two significant figures, 'latest figure, Sep 2025'; eased motion; a monthly clock at 1.5 s per month; a logo per bar, Bard's while the bar is Bard; no story cards; the combined monthly visits panel (option A) bottom right; no closing line. One plain line under the title when Copilot's and Meta AI's figures end (as RTT-103's Alibaba line).",
-  "IQ-19d (owner DEC-562, DEC-563): the eased motion's knots are every month of series_monthly.csv (smoothing.knots 'all'), so every landing frame shows the data file's value; the combined panel grows upwards (combined.y 680, h 260) so its line is about 66 px tall instead of about 26 px."
+  "IQ-19d (owner DEC-562, DEC-563): the eased motion's knots are every month of series_monthly.csv (smoothing.knots 'all'), so every landing frame shows the data file's value; the combined panel grows upwards (combined.y 680, h 260) so its line is about 66 px tall instead of about 26 px.",
+  "IQ-19e (owner DEC-566): no long hang at the end. final_board_sec counts from the first frame of August 2026's move (1.2 s, 36 frames at x0.8), so 6.1667 s = 185 frames leaves exactly 150 frames = 5.0 s from the frame where August 2026's figures land to the last frame (YouTube's minimum end-screen window); all of it is the still final board, with no separate hold (DEC-567). final_after_landing_sec documents the target; tests/player/run_tests_rtt102.js checks it. end_hold_sec is not used when final_board_sec is set."
  ],
  "title": "ChatGPT vs Its Rivals (2022–2026)",
  "source_line": {
@@ -13,7 +14,9 @@
   }
  },
  "pacing": {
-  "sec_per_event": 1.5
+  "sec_per_event": 1.5,
+  "final_board_sec": 6.1667,
+  "final_after_landing_sec": 5
  },
  "smoothing": {
   "mode": "eased",

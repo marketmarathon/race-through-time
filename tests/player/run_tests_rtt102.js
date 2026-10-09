@@ -210,6 +210,10 @@ async function runCase(name, C) {
   }
   if (panelRows.length) notes.push('panel on landing frames: ' + panelRows.filter((_, i) => i % 6 === 0 || i === panelRows.length - 1).join('; '));
   for (const [at, s] of Object.entries(lateness)) notes.push(`card dated ${at.slice(0, 7)} first on screen ${s.toFixed(1)} s after its month starts`);
+  // IQ-19e (owner DEC-566): the still final board after August 2026 lands - pacing.final_after_landing_sec exactly, landing frame included
+  const FAL = cfg.pacing.final_after_landing_sec;
+  if (FAL != null && tl.isDataEnd) { const n = total - tl.quarterEndFrame[tl.events.length - 1];
+    if (n !== Math.round(FAL * 30)) fail(`end: ${n} frames from August 2026's landing to the end, want ${Math.round(FAL * 30)}`); else notes.push(`end: ${n} frames (${(n / 30).toFixed(1)} s) from August 2026's landing frame to the last frame`); }
   // 10. pacing
   const base = cfg.pacing.sec_per_event;
   for (let i = 0; i + 1 < tl.startFrame.length; i++) { const n = tl.startFrame[i + 1] - tl.startFrame[i];   // whole frames: one frame of rounding allowed
