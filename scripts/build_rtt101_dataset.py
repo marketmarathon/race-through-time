@@ -1023,10 +1023,10 @@ for k in sorted(wt, key=lambda w: (w.split()[1], 0 if w.startswith("January") el
 # windows the deal-count check knows are short, with the reason (DEC-431). Each one's club-season pages list the missing deals
 # (source/club_page_rows_unused.csv); they are not in the build because no brief has approved that window's change yet.
 KNOWN_SPARSE = {
-    "January 1993": "1992-93 club-season pages: 19 more rows readable with the newer table reading, not used",
-    "January 1994": "1993-94 club-season pages: 15 more rows readable with the newer table reading, not used",
-    "January 2004": "the winter 2003-04 list page misses most deals; 2003-04 club-season pages list 52 more, not used",
-    "January 2005": "the winter 2004-05 list page misses most deals; 2004-05 club-season pages list 36 more, not used",
+    "January 1993": "1992-93 club-season pages: more rows readable with the newer table reading, not used",
+    "January 1994": "1993-94 club-season pages: more rows readable with the newer table reading, not used",
+    "January 2004": "the winter 2003-04 list page misses most deals; the 2003-04 club-season pages list them, not used",
+    "January 2005": "the winter 2004-05 list page misses most deals; the 2004-05 club-season pages list them, not used",
 }
 wdeals = Counter()
 for t in transfers:

@@ -862,3 +862,116 @@ if BASE3:
     with open(OUT, "a", encoding="utf-8") as f:
         f.write("\n".join(R) + "\n")
     print("section 15:", len(resd), "researched;", len(fig), "with a figure;", len(ver), "verified;", len(lead_ch), "leader changes;", len(yes), "order-test deals")
+
+# ---- section 16: January 2020 and the window deal-count check (IQ-15j)
+BASE16 = rd("standings_before_iq15j.csv", os.path.join(D, "source"))
+if BASE16:
+    from collections import Counter as _C5
+    import subprocess as _sp
+
+    def win_of(d):
+        mo, yr = int(d[5:7]), int(d[:4])
+        return f"summer {yr}" if 4 <= mo <= 10 else (f"January {yr}" if mo <= 3 else f"January {yr + 1}")
+    PLM = {(r["club_id"], r["season"]) for r in rd("pl_membership.csv")}
+    WB16 = {w["window"]: w for w in rd("window_totals_before_iq15j.csv", os.path.join(D, "source"))}
+    WC = rd("window_deal_counts.csv", os.path.join(D, "source"))
+    UNUSED = rd("club_page_rows_unused.csv", os.path.join(D, "source"))
+    J20 = [t for t in T if t["date"] and win_of(t["date"]) == "January 2020"
+           and any((c, t["season_attributed"]) in PLM for c in (t["from_club"], t["to_club"]))]
+    newj = [t for t in J20 if t["found_via"].startswith("Wikipedia: 2019–20 ")]
+    J20U = rd("jan2020_unsourced.csv", os.path.join(D, "source"))
+    pub = next((r for r in sorted(lead_by.get("January 2020", []), key=lambda r: r["grade"]) if r["gross_gbp"]), None)
+    g0, g1 = float(WB16.get("January 2020", {}).get("gross_spend_gbp") or 0), float(WT["January 2020"]["gross_spend_gbp"])
+    R = ["\n## 16. January 2020 and the window deal-count check (IQ-15j; DEC-429 to DEC-434)\n",
+         "- **Why January 2020 was missing (DEC-430):** the build reads each window's Wikipedia list page. The winter 2019-20 page we use "
+         "(rev 1371935139) has 70 transfer rows, only 5 of them in January 2020; its edit history (runner, "
+         "https://github.com/marketmarathon/race-through-time/actions/runs/37950422012) shows it never exceeded 67,150 bytes, so Wikipedia never "
+         "listed most of that window's deals. A second fault turned up on the way: list tables with four columns (loans without a fee column) lost the "
+         "date of every row, so 573 rows of summers 2017 and 2018 were dropped.",
+         "- **Fix at the root:** (1) the four-column tables now keep their dates; (2) the 2019-20 club-season page of every PL club (and the 2003-04 and "
+         "2004-05 pages) was read on the runner (https://github.com/marketmarathon/race-through-time/actions/runs/37950909967) and its In/Out and loan "
+         "tables parsed (headings, bold labels, loan tables under season sub-headings, dates spanning rows); a club-page row is used only when no list "
+         "page already has that player at that club within 60 days, and only for a window listed in `CLUB_PAGE_WINDOWS` (January 2020, as the brief "
+         "approved; DEC-431); every other club-page row is listed in `source/club_page_rows_unused.csv`. Two new build checks: **no window has under "
+         "half the PL deals of the same-type windows either side** (documented exceptions only), and **every list-page row has a date**. The 1992-2002 "
+         "club-season rows are byte-for-byte unchanged.",
+         f"- **January 2020 deals added:** {len(newj)} deals with a PL club (by type: "
+         + ", ".join(f"{k} {v}" for k, v in sorted(_C5(t["type"] for t in newj).items())) + f"). The window now has {len(J20)} such deals "
+         f"(it had 14; the same-type windows either side have a median of 111.5). With a fee:\n",
+         "| Date | Player | Move | Fee in use | Status | Basis |", "|---|---|---|---|---|---|"]
+    for t in sorted(J20, key=lambda t: t["date"]):
+        if float(t["fee_gbp"] or 0) > 0:
+            R.append(f"| {t['date']} | {t['player']} | {clubs.get(t['from_club'], t['from_club'])} → {clubs.get(t['to_club'], t['to_club'])} | "
+                     f"£{float(t['fee_gbp']):,.0f} | {t['status']} | {'added in IQ-15j' if t in newj else 'already in the build'}; {t['fee_status'][:40]} |")
+    spot = ["Berge", "Bowen", "Podence", "Pussetto", "Brownhill", "Randolph", "Lamptey", "Eriksen", "Ighalo", "Cédric", "Marí", "Souček", "Lazaro"]
+    R += ["\n**Cowork's spot list:** all present now.\n", "| Player | Move | Date | Type | Fee in use | Status |", "|---|---|---|---|---|---|"]
+    for s in spot:
+        for t in J20:
+            if s.lower() in t["player"].lower():
+                R.append(f"| {t['player']} | {clubs.get(t['from_club'], t['from_club'])} → {clubs.get(t['to_club'], t['to_club'])} | {t['date']} | {t['type']} | "
+                         f"£{float(t['fee_gbp'] or 0):,.0f} | {t['status']}: {t['fee_status'][:40]} |")
+    R += ["\n- **Fees read at source (runner, https://github.com/marketmarathon/race-through-time/actions/runs/37952043572 and /37952723663):** 95 pages "
+          "cited for the new deals. Confirmed: Pussetto €8m (Watford Observer, completed signing). Rejected: Louie Barry's BBC figure (\"about 1m euros "
+          "(£880,000)\", an approximation; Barcelona's exact €1,048,000 is quoted only on a grade D page), Bowen's \"worth up to £22million\" (a "
+          "maximum), and four undisclosed-fee candidates (grade D pages, another player's fee, an earlier move). Lamptey: Chelsea's club-season page "
+          "gives £2,970,000 but Chelsea's own announcement gives no figure and Brighton's says undisclosed, so he stays undisclosed at £0 (DEC-433).",
+          f"- **Not sourced:** {len(J20U)} January 2020 deals ({', '.join(f'{k} {v}' for k, v in sorted(_C5(r['type'] for r in J20U).items()))}) keep the "
+          "build's normal status and are listed for Cowork in `source/jan2020_unsourced.csv` (no figures in the list).",
+          "- **Minamino (brief 2(d)):** BBC Sport (grade B, confirmed on the runner) says \"Deal to be completed on 1 January\", and Liverpool's 2019-20 page "
+          "gives entry date 1 January 2020. The build now dates the deal **1 January 2020** (was 19 December 2019, the day it was agreed; DEC-432). "
+          "Same window and season, so no total changes.",
+          f"- **January 2020 total (gross spending by PL clubs):** {m(g0)} before, **{m(g1)} after**"
+          + (f"; published {m(float(pub['gross_gbp']))} ({pub['publisher']}, grade {pub['grade']}, research lead): {g0 / float(pub['gross_gbp']):.0%} → "
+             f"{g1 / float(pub['gross_gbp']):.0%}" if pub else "")
+          + ". The rest of the gap is mainly the undisclosed deals still counted £0 (among the purchases Lo Celso, Podence, Samatta, Brownhill, Mooy "
+          "and Randolph) and Bowen's guaranteed fee. Also to check in a later round: Ziyech's £33m is in this window (dated 24 February 2020, when "
+          "the deal was agreed), which a published January total may not include."]
+    flagged = [w for w in WC if w["flag"]]
+    R += ["\n**Windows the deal-count check flags** (deals with a PL club; neighbours = the two same-type windows either side):\n",
+          "| Window | Deals | Neighbours' median | Why | Club-page rows listed, not used |", "|---|---|---|---|---|"]
+    why = {"January 1993": "early club-season pages read with the old table reading", "January 1994": "early club-season pages read with the old table reading",
+           "January 2004": "the winter 2003-04 list page misses most deals", "January 2005": "the winter 2004-05 list page misses most deals"}
+    unc = _C5(win_of(r["date"]) for r in UNUSED if r["date"])
+    for w in flagged:
+        R.append(f"| {w['window']} | {w['deals_with_pl_side']} | {float(w['neighbour_median']):g} | {why.get(w['window'], '?')} | {unc.get(w['window'], 0)} |")
+    R += [f"\nAll four would clear the check with their listed club-page rows; they are documented exceptions in the build (`KNOWN_SPARSE`, DEC-431) until "
+          "a brief approves adding them. Summer 2017 (175 deals before the date fix, 371 now) clears. Summer 2019 is not flagged, but its club-season "
+          f"pages list {unc.get('summer 2019', 0)} moves the list page lacks (mostly releases, loans and youth moves); the page histories show three list pages "
+          "much shorter now than at their largest (summer 2007, 2013 and 2019), so those windows are candidates for the same club-page reading."]
+    # race effects
+    TB16 = {r["month_end"]: r["top12_in_rank_order"].split(";") for r in rd("top12_before_iq15j.csv", os.path.join(D, "source"))}
+    now = defaultdict(list)
+    for r in SM:
+        if r["rank"] and int(r["rank"]) <= 12:
+            now[r["month_end"]].append((int(r["rank"]), r["club_id"]))
+    NOW = {mo: [c for _, c in sorted(v)] for mo, v in now.items()}
+    lead_ch = [mo for mo in sorted(NOW) if TB16.get(mo) and TB16[mo][0] != NOW[mo][0]]
+    set_ch = [mo for mo in sorted(NOW) if TB16.get(mo) and set(TB16[mo]) != set(NOW[mo])]
+    ord_ch = [mo for mo in sorted(NOW) if TB16.get(mo) and TB16[mo] != NOW[mo]]
+    R.append(f"\n**Effect on the race** (against 398abbf, the end of IQ-15i): the leader changes at {len(lead_ch)} month ends; who is in the top 12 "
+             f"changes at {len(set_ch)} month ends"
+             + (" (" + "; ".join(f"{mo[:7]}: {', '.join(NAME.get(c, c) for c in sorted(set(NOW[mo]) - set(TB16[mo])))} in for "
+                                  f"{', '.join(NAME.get(c, c) for c in sorted(set(TB16[mo]) - set(NOW[mo])))}" for mo in set_ch[:12]) + (" …" if len(set_ch) > 12 else "") + ")" if set_ch else "")
+             + f"; the order within the top 12 changes at {len(ord_ch)} month ends. Wolves' entries (2019 and 2023) come from Jonny's £18m permanent move "
+             "(a research lead that had no deal to attach to until his loan row came back with the date fix; dated 31 January 2019, DEC-432).")
+    SB16 = {r["club_id"]: (int(r["rank"]), float(r["cum_net_gbp"])) for r in BASE16}
+    last = max(NOW)
+    SA16 = {r["club_id"]: (int(r["rank"]), float(r["cum_net_gbp"])) for r in SM if r["month_end"] == last and r["rank"]}
+    R += [f"\n**Standings at the freeze ({last}), cumulative net spend:**\n", "| Rank after | Club | Net before (rank) | Net after | Change |", "|---|---|---|---|---|"]
+    for c, (rk, v) in sorted(SA16.items(), key=lambda x: x[1][0])[:12]:
+        b_ = SB16.get(c, (0, 0.0))
+        R.append(f"| {rk} | {NAME.get(c, c)} | £{b_[1] / 1e6:,.1f}m ({b_[0]}) | £{v / 1e6:,.1f}m | {m(v - b_[1])} |")
+    top3 = [c for c, _ in sorted(SA16.items(), key=lambda x: x[1][0])[:3]]
+    R.append(f"\nThe three leaders are now within {m(SA16[top3[0]][1] - SA16[top3[2]][1])} of each other ({m(SB16[top3[0]][1] - min(SB16[c][1] for c in top3))} before): "
+             f"{NAME[top3[0]]} lead {NAME[top3[1]]} by {m(SA16[top3[0]][1] - SA16[top3[1]][1])} and {NAME[top3[2]]} by {m(SA16[top3[0]][1] - SA16[top3[2]][1])}. "
+             "Chelsea fall from second to third because of three January 2020 sales known only from Chelsea's 2019-20 Wikipedia page: Michael Hector to "
+             "Fulham (£5,310,000), Clinton Mola to Stuttgart (£360,000) and Victor Moses's loan to Inter (£190,000), less Bryan Fiabema's £540,000 purchase; "
+             "none is confirmed at source yet (all in `source/jan2020_unsourced.csv` or loans). Under DEC-429 the final order is not settled until the "
+             "IQ-15k round on the leaders' undisclosed deals.")
+    OT = rd("round2_order_test.csv", os.path.join(D, "source"))
+    yes = [r for r in OT if r["could_change"] == "yes"]
+    R.append(f"\n**Order test re-run** (`source/round2_order_test.csv`): {len(yes)} of {len(OT)} unresearched round 2 deals could change who is in the top 12 at "
+             f"some month end, {sum(1 for r in yes if r['what_changes'] == 'leader')} of them the leader.")
+    with open(OUT, "a", encoding="utf-8") as f:
+        f.write("\n".join(R) + "\n")
+    print("section 16:", len(newj), "January 2020 deals added;", len(lead_ch), "leader changes;", len(set_ch), "top-12 changes")
