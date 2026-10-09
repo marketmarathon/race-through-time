@@ -38,6 +38,9 @@ FILES += [(os.path.basename(f), "S") for f in sorted(_glob.glob(os.path.join(PRI
 # and the six January 2020 leader deals (part25d; deal_id = our transfer_id). part25b (Cowork's Chrome reads of the 12 round 3 pages
 # the runner could not read) is recorded in source/round4_chrome_reads.csv instead: it gives no grade A/B figure
 FILES += [(os.path.basename(f), "S") for f in sorted(_glob.glob(os.path.join(PRIV, "part25[acd]_*.csv")))]
+# source round 5 (IQ-15l): the fees that decide the finish (part26a, deal_id = our transfer_id) and Cowork's reads of the cited pages in
+# Luke's Chrome (part26b, keyed by transfer_id; its columns are mapped to the research columns below)
+FILES += [(os.path.basename(f), "S") for f in sorted(_glob.glob(os.path.join(PRIV, "part26[ab]_*.csv")))]
 _MAP = {"Tf8a5f7e6ee": "T6403be737e"}  # IQ-15k: Hector's club-season duplicate is dropped; his one Chelsea -> Fulham move (DEC-436)
 for _name in ("source_round1_map.csv", "source_round2_map.csv", "source_round3_map.csv"):
     _mp = os.path.join(os.path.dirname(os.path.abspath(OUT)), _name)
@@ -63,8 +66,20 @@ SI90 = re.compile(r"(^|//|\.)si\.com/", re.I)  # Sports Illustrated's own report
 AGENCY = re.compile(r"syndicated copy of (?:PA|Reuters|AFP|AP|the Press Association|Associated Press)\b")  # the page itself is agency copy
 
 
+# round 5 (IQ-15l): agency copy on a foreign site keeps the agency's grade B only where the page credits the agency (the helper's or
+# Cowork's note says so: "page credits Reuters", "text credited to AFP", "dateline LONDON (AP)", "'— Reuters' at the end")
+FOREIGN = re.compile(r"(omanobserver|thejakartapost|tsn\.ca|supersport|malaymail|morungexpress|ahram\.org|gulfnews|iol\.co\.za|channelstv|"
+                     r"aljazeera|mg\.co\.za|tribune\.com\.pk|the-star\.co\.ke)", re.I)
+CREDITED = re.compile(r"(syndicated copy of|(?:Reuters|AFP|AP|Sapa-AP) copy|credit|dateline|footer shows|ends '|— ?Reuters|- AFP|\(AP\)|"
+                      r"byline[^.;]*(?:Reuters|Agence France|AFP))", re.I)
+UNCREDITED = re.compile(r"no agency credit|NOT confirmed", re.I)
+
+
 def grade(row):
     g = (row.get("grade") or "").strip().upper()
+    if row.get("_round5") and g in ("A", "B") and FOREIGN.search(row.get("source_url", "")) and (
+            not CREDITED.search(row.get("notes", "")) or UNCREDITED.search(row.get("notes", ""))):
+        return "C", "agency copy on a foreign site without an agency credit on the page: a pointer (C) (IQ-15l)"
     if row.get("_round2") and g in ("A", "B") and AGGREGATOR.search(row.get("source_url", "")):
         return "C", "aggregator, scores, blog or fan site: a pointer (C), whatever the research file says"
     agg4 = AGGREGATOR4.search(row.get("source_url", "")) or (SI90.search(row.get("source_url", "")) and re.search(r"90 ?min", row.get("notes", ""), re.I))
@@ -84,7 +99,26 @@ rows, seen_b, _seq = [], set(), {}
 for fn, sec in FILES:
     p = os.path.join(PRIV, fn)
     sha = hashlib.sha256(open(p, "rb").read()).hexdigest()[:16]
+    _r26a = {}
+    if fn.startswith("part26b"):  # grade each Chrome read like the research row citing the same page, else by its publisher
+        for _x in csv.DictReader(open(os.path.join(PRIV, next(f for f, _ in FILES if f.startswith("part26a"))), encoding="utf-8-sig")):
+            _r26a.setdefault(_x["source_url"].strip(), (_x.get("grade (A/B/C)") or _x.get("grade"), _x.get("notes", "")))
     for r in csv.DictReader(open(p, encoding="utf-8-sig")):
+        if fn.startswith("part26b"):
+            import rtt101_lib as _L
+            _u = (r.get("url") or "").strip()
+            if _u and not _u.startswith("http"):
+                _u = "https://n" + _u if _u.startswith("ews.bbc.co.uk") else "https://" + _u
+            _g, _hn = _r26a.get(_u) or ({"A": "A", "B": "B"}.get(_L.grade_of(_u), "C"), "")
+            if _g == "C" and FOREIGN.search(_u) and CREDITED.search(r.get("note", "")):
+                _g = "B"  # Cowork's note says the page credits the agency
+            r = {"deal_id": r["transfer_id"], "player": r["player"], "from_club": "", "to_club": "", "fee_as_reported": r["fee_as_read"],
+                 "currency": "", "guaranteed_part": "", "add_ons_part": "", "transfer_date_reported": "", "publisher": r["publisher"],
+                 "publication_date": r["publication_date"], "grade": _g, "exact_quote": r["exact_quote"], "source_url": _u,
+                 "archive_url": "", "notes": r["note"] + " (" + r["read_id"] + ", read by Cowork in Luke's Chrome " + r["read_on"] + ")"
+                 + (" | helper's note on the same page: " + _hn if _hn else "")}
+            if r["fee_as_reported"].strip().upper().startswith("NOT READ"):
+                continue
         if sec == "G":
             r = dict(r, date=r.get("transfer_date", ""), date_type=r.get("date_basis", ""), evidence_id=r.get("row_id"))
             if "soccerbase" in (r.get("source_url") or "").lower() or (r.get("publisher") or "").lower().startswith("soccerbase"):
@@ -102,8 +136,10 @@ for fn, sec in FILES:
                 r["grade"] = "C"
             if fn.startswith(("part22", "part23", "part24", "part25")):
                 r["_round2"] = True
-            if fn.startswith("part25"):
+            if fn.startswith(("part25", "part26")):
                 r["_round4"] = True
+            if fn.startswith("part26"):
+                r["_round5"] = True
         url = (r.get("source_url") or "").strip()
         url = re.sub(r"^https?://acc-english\.ajax\.nl", "https://english.ajax.nl", url)  # a copy of the same Ajax page (Cowork, IQ-15h)
         if "transfermarkt" in url.lower() or "wikipedia.org" in url.lower():

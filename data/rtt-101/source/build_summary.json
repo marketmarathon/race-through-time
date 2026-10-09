@@ -23,12 +23,12 @@
   [
    "PL-to-PL deals net to zero (spend - income of PL clubs = net spend with non-PL clubs)",
    "PASS",
-   "spend \u00a329,170,192,607 \u2212 income \u00a315,269,699,327 = \u00a313,900,493,281; net with non-PL clubs \u00a313,900,493,281"
+   "spend \u00a329,168,185,841 \u2212 income \u00a315,269,699,327 = \u00a313,898,486,514; net with non-PL clubs \u00a313,898,486,514"
   ],
   [
    "no fee without a source row",
    "PASS",
-   "3509 fee-bearing transfers"
+   "3508 fee-bearing transfers"
   ],
   [
    "no Transfermarkt figure or URL anywhere",
@@ -38,12 +38,12 @@
   [
    "quotes under 25 words",
    "PASS",
-   "19973 evidence rows"
+   "20060 evidence rows"
   ],
   [
    "every conversion has a rate row",
    "PASS",
-   "110 conversions"
+   "111 conversions"
   ],
   [
    "month-end series consistent with the ledger",
@@ -82,18 +82,18 @@
   ]
  ],
  "cpi_base_month": "2026-08",
- "n_conflicts": 838,
+ "n_conflicts": 853,
  "n_conflicts_for_luke": 47,
- "n_fee": 3509,
+ "n_fee": 3508,
  "n_status": {
-  "UNVERIFIED": 1298,
+  "UNVERIFIED": 1297,
   "VERIFIED": 2211
  },
  "n_tier": {
-  "": 10074,
-  "1": 1924,
-  "2": 865,
-  "3": 734
+  "": 10075,
+  "1": 1917,
+  "2": 847,
+  "3": 758
  },
  "n_transfers": 13597
 }
