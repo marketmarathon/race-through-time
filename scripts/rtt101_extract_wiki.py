@@ -284,6 +284,15 @@ def window_rows(title, page):
     return out
 
 
+def heading_path(w, pos, cap):
+    """the headings (and bold labels, deepest) above position pos, outermost first, plus the table caption"""
+    stack = []
+    for a, b, c in re.findall(r"^(?:(=+)\s*(.*?)\s*=+|'''([^'\n]+)''')\s*$", w[:pos], re.M):
+        lv = len(a) if a else 99
+        stack = [x for x in stack if x[0] < lv] + [(lv, (b or c).lower())]
+    return [x[1] for x in stack] + ([cap.group(1).lower()] if cap else [])
+
+
 def club_season_rows(title, page, modern=None):
     """One-sided In/Out tables of a club-season page (1992-2002, and since IQ-15j the windows a list page misses); the page's club is the
     other side."""
@@ -309,7 +318,7 @@ def club_season_rows(title, page, modern=None):
             hdr += [re.sub(r"^[^|]*\|(?!\|)", "", h).strip().lower() for h in hl.split("!!")]
         hdr = [h for h in hdr if h]
         cap0 = re.search(r"^\|\+(.*)$", table, re.M)
-        loan_only = modern and "loan" in " ".join(heads[-1:] + ([cap0.group(1)] if cap0 else [])).lower()
+        loan_only = modern and any("loan" in h for h in heading_path(w, tm.start(), cap0))
         if not any(h.startswith("fee") for h in hdr) and not loan_only:
             continue
 
@@ -329,6 +338,12 @@ def club_season_rows(title, page, modern=None):
             continue
         cap = re.search(r"^\|\+(.*)$", table, re.M)
         hd = " ".join(heads[-1:] + ([cap.group(1)] if cap else [])).lower()
+        path = []
+        if modern:
+            # the heading path, not only the nearest heading ("===Loan out===" then "====Winter====": 2019-20 Chelsea, IQ-15j);
+            # the deepest heading (or the caption) that says in or out decides the direction
+            path = heading_path(w, tm.start(), cap)
+            hd = next((h for h in reversed(path) if re.search(r"\b(out|departures|outgoing|sold|released|leaving|in|arrivals|incoming|signings|signed)\b", h)), "")
         hd_out = bool(re.search(r"\b(out|departures|outgoing|sold|released|leaving)\b", hd))
         hd_in = bool(re.search(r"\b(in|arrivals|incoming|signings|signed)\b", hd))
         c_any = c_from if c_from is not None else (c_to if c_to is not None else c_club)
@@ -341,7 +356,8 @@ def club_season_rows(title, page, modern=None):
             direction, c_other = "out", c_to
         elif c_club is not None:
             # direction only from the section heading or the table caption (ordinary prose says "in" everywhere)
-            hd = " ".join(heads[-1:] + ([re.search(r"^\|\+(.*)$", table, re.M).group(1)] if re.search(r"^\|\+(.*)$", table, re.M) else [])).lower()
+            if not modern:
+                hd = " ".join(heads[-1:] + ([re.search(r"^\|\+(.*)$", table, re.M).group(1)] if re.search(r"^\|\+(.*)$", table, re.M) else [])).lower()
             if re.search(r"\b(out|departures|outgoing|sold|released|leaving)\b", hd):
                 direction, c_other = "out", c_club
             elif re.search(r"\b(in|arrivals|incoming|signings|signed)\b", hd):
@@ -351,6 +367,8 @@ def club_season_rows(title, page, modern=None):
         else:
             continue
         last_head = (heads[-1] if heads else "").lower()
+        if modern and any("loan" in h for h in path):
+            last_head = "loan"
         cap = re.search(r"^\|\+(.*)$", table, re.M)
         loan = "loan" in last_head or bool(cap and "loan" in cap.group(1).lower())
         ncols = max(c_name, c_fee if c_fee is not None else 0, c_other, c_date or 0) + 1
@@ -361,7 +379,8 @@ def club_season_rows(title, page, modern=None):
                 c2, rs = strip_attr(c)
                 vals.append(c2)
                 spans.append(rs)
-            if len(vals) == ncols - 1 and c_date == 0 and carry_left > 0:
+            # a row under a date that spans rows has one cell fewer than the header (pages since 2002-03 may end in a source column)
+            if c_date == 0 and carry_left > 0 and (len(vals) == ncols - 1 or (modern and len(vals) == len(hdr) - 1)):
                 vals = [""] + vals
                 carry_left -= 1
                 date = carry_date

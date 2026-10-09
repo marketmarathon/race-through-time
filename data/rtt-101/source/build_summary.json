@@ -18,7 +18,7 @@
   [
    "no transfer counted outside its club's PL seasons",
    "PASS",
-   "3899 ledger rows frozen (club not in the PL)"
+   "3900 ledger rows frozen (club not in the PL)"
   ],
   [
    "PL-to-PL deals net to zero (spend - income of PL clubs = net spend with non-PL clubs)",
@@ -38,7 +38,7 @@
   [
    "quotes under 25 words",
    "PASS",
-   "19754 evidence rows"
+   "19752 evidence rows"
   ],
   [
    "every conversion has a rate row",
@@ -86,14 +86,14 @@
  "n_conflicts_for_luke": 48,
  "n_fee": 3468,
  "n_status": {
-  "UNVERIFIED": 1289,
-  "VERIFIED": 2179
+  "UNVERIFIED": 1288,
+  "VERIFIED": 2180
  },
  "n_tier": {
-  "": 10123,
+  "": 10119,
   "1": 1992,
   "2": 754,
   "3": 736
  },
- "n_transfers": 13605
+ "n_transfers": 13601
 }
