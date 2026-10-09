@@ -1188,7 +1188,8 @@ function drawAt(t){
       ctx.fillStyle=T.cap||T.muted; ctx.font='500 '+VALF+'px '+FONT;
       if(HELD){ after+=tabText(GAPS.text,after,mid+VALF*0.35,'left','gap_note',c.id)+VALF*0.35; }
       const FN = FWD && k>=0 && ev.fwd ? fwdNote(c.id, k) : null;   // IQ-18c: the bar's period or source note
-      if(FN){ const same=TL.events[k-1].fwd && fwdNote(c.id,k-1)===FN, a0=ctx.globalAlpha; ctx.globalAlpha=a0*(same?1:ease((SF.g-0.5)/0.5));   // a new note fades in once the board has made room
+      if(FN){ const same=TL.events[k-1].fwd && fwdNote(c.id,k-1)===FN, a0=ctx.globalAlpha;   // a new note fades in once the board has made room (IQ-18e: early in a slow, continuous move)
+        ctx.globalAlpha=a0*(same?1:TL.events[k-1].fwd ? ease(since/(0.4*FPS)) : ease((SF.g-0.4)/0.15));
         after+=(ctx.globalAlpha>0 ? tabText('· '+FN,after,mid+VALF*0.35,'left','fwd_note',c.id) : tabWidth('· '+FN,pitch()))+VALF*0.35; ctx.globalAlpha=a0; }   // its room is kept while hidden, so the tag after it never jumps
       const AT=tagOf(c.id,'after',ev.date);
       if(AT){ after+=tabText('· '+AT.text,after,mid+VALF*0.35,'left','bar_tag',c.id)+VALF*0.35; }

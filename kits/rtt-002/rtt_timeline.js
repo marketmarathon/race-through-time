@@ -163,8 +163,7 @@
        from the first frame of the last race. Without it, the last race keeps its beat and
        end_hold_sec is added (IQ-04/IQ-05 behaviour, unchanged for config.json). */
     const lastK = events.length - 1;
-    const raceFrames = events[lastK].beat_sec != null ? startFrame[lastK] + Math.round(events[lastK].beat_sec * fps)   // IQ-18c
-      : P.final_board_sec != null
+    const raceFrames = P.final_board_sec != null
       ? startFrame[lastK] + Math.round(P.final_board_sec * fps)
       : Math.round((sec + (hold[lastK] ? RH.sec : P.sec_per_event * mult[lastK]) + P.end_hold_sec) * fps);
     for (let k = 1; k < startFrame.length; k++)
@@ -453,7 +452,8 @@
       if (k < events.length - 1) sec += beatSec(k);
     }
     const lastK = events.length - 1;
-    const raceFrames = P.final_board_sec != null
+    const raceFrames = events[lastK].beat_sec != null ? startFrame[lastK] + Math.round(events[lastK].beat_sec * fps)   // IQ-18c/18e: the last forward board's own length
+      : P.final_board_sec != null
       ? startFrame[lastK] + Math.round(P.final_board_sec * fps)
       : Math.round((sec + beatSec(lastK) + P.end_hold_sec) * fps);
     for (let k = 1; k < startFrame.length; k++)

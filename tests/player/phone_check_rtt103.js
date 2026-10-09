@@ -62,7 +62,7 @@ const PHONE_PT = 390, FLOOR = 5.0, NAMES = 5.9, k = PHONE_PT / 1920, pt = px => 
     const others = vis.filter(l => !['name', 'value', 'axis', 'time_line', 'date_month', 'date_year'].includes(l.kind));
     const small = others.length ? others.reduce((a, b) => (b.size < a.size ? b : a)) : null;
     const fails = []; let figs = '—';
-    const atD = s.at === 'final' ? Object.keys(byDate).sort().pop() : s.at;   // the final table is the last quarter's board
+    const atD = s.after_sec != null ? null : s.at === 'final' ? Object.keys(byDate).sort().pop() : s.at;   // the final table is the last quarter's board; a still taken mid-move (after_sec, IQ-18e) shows figures still counting
     if (atD && !byDate[atD]) {   // IQ-18c: a forward board - its figures as the look-ahead file gives them (rounding as rtt_steps.js bn())
       const y = atD.slice(0, 4), est = y !== '2026', bad = [];
       for (const r of LOOK.filter(r => r.frame_year === y && r.row_type !== 'COMBINED')) { const id = r.company.toLowerCase(), citi = r.row_type === 'CITI_ESTIMATE' || r.label === 'Citi estimate';
