@@ -1020,6 +1020,14 @@ for k in sorted(wt, key=lambda w: (w.split()[1], 0 if w.startswith("January") el
 
 # deals with a PL side per window, against the two windows of the same type either side (IQ-15j: January 2020 had been cut short by a
 # shortened Wikipedia list revision); a window under half the median of its neighbours is flagged and the check below fails
+# windows the deal-count check knows are short, with the reason (DEC-431). Each one's club-season pages list the missing deals
+# (source/club_page_rows_unused.csv); they are not in the build because no brief has approved that window's change yet.
+KNOWN_SPARSE = {
+    "January 1993": "1992-93 club-season pages: 19 more rows readable with the newer table reading, not used",
+    "January 1994": "1993-94 club-season pages: 15 more rows readable with the newer table reading, not used",
+    "January 2004": "the winter 2003-04 list page misses most deals; 2003-04 club-season pages list 52 more, not used",
+    "January 2005": "the winter 2004-05 list page misses most deals; 2004-05 club-season pages list 36 more, not used",
+}
 wdeals = Counter()
 for t in transfers:
     s = t["season_attributed"]
@@ -1179,8 +1187,16 @@ for c in club_ids:
     if abs(tot - last.get(c, 0.0)) > 0.5:
         ser_ok = False
 check("month-end series consistent with the ledger", ser_ok, f"{len(month_ends)} month ends × {len(club_ids)} clubs")
-_lowwin = [f"{w['window']} ({w['deals_with_pl_side']} deals; neighbours' median {w['neighbour_median']:g})" for w in window_counts if w["flag"]]
-check("no window has under half the PL deals of the same-type windows either side", not _lowwin, "; ".join(_lowwin) or f"{len(window_counts)} windows compared")
+_lowwin = [f"{w['window']} ({w['deals_with_pl_side']} deals; neighbours' median {w['neighbour_median']:g})" for w in window_counts
+           if w["flag"] and w["window"] not in KNOWN_SPARSE]
+_known = [w["window"] for w in window_counts if w["flag"] and w["window"] in KNOWN_SPARSE]
+_stale = sorted(set(KNOWN_SPARSE) - set(_known))
+check("no window has under half the PL deals of the same-type windows either side (bar documented gaps)", not _lowwin and not _stale,
+      "; ".join(_lowwin + [f"{w} documented but no longer flagged: remove it from KNOWN_SPARSE" for w in _stale])
+      or f"{len(window_counts)} windows compared; documented gaps (DEC-431): {', '.join(_known) or 'none'}")
+_undated = [r for r in rd("wiki_window_rows.csv") if not r["date"]]
+check("every list-page row has a date (IQ-15j: undated rows are dropped from the build)", not _undated,
+      f"{len(_undated)} undated rows" if _undated else f"{len(rd('wiki_window_rows.csv'))} rows")
 v04 = {"XUMADMS": "2.8564", "XUMAFFS": "9.7433", "XUMAILS": "2152.4916", "XUMASPS": "181.055", "XUMANGS": "3.217", "XUMAPES": "247.3737", "XUMAUSS": "1.8127"}
 got = {r["series_code"]: r["units_per_gbp"] for r in rd("fx.csv", DATA) if r["date"] == "1992-01-31" and r["series_code"] in v04}
 check("Bank of England Jan 1992 monthly averages equal Cowork's V-04 reading", all(abs(float(got.get(k, "nan")) - float(v)) < 1e-9 for k, v in v04.items()),

@@ -18,17 +18,17 @@
   [
    "no transfer counted outside its club's PL seasons",
    "PASS",
-   "3734 ledger rows frozen (club not in the PL)"
+   "3899 ledger rows frozen (club not in the PL)"
   ],
   [
    "PL-to-PL deals net to zero (spend - income of PL clubs = net spend with non-PL clubs)",
    "PASS",
-   "spend \u00a328,935,918,232 \u2212 income \u00a315,111,370,286 = \u00a313,824,547,946; net with non-PL clubs \u00a313,824,547,946"
+   "spend \u00a329,006,427,008 \u2212 income \u00a315,120,430,286 = \u00a313,885,996,722; net with non-PL clubs \u00a313,885,996,722"
   ],
   [
    "no fee without a source row",
    "PASS",
-   "3457 fee-bearing transfers"
+   "3468 fee-bearing transfers"
   ],
   [
    "no Transfermarkt figure or URL anywhere",
@@ -38,17 +38,27 @@
   [
    "quotes under 25 words",
    "PASS",
-   "19151 evidence rows"
+   "19754 evidence rows"
   ],
   [
    "every conversion has a rate row",
    "PASS",
-   "98 conversions"
+   "99 conversions"
   ],
   [
    "month-end series consistent with the ledger",
    "PASS",
    "413 month ends \u00d7 51 clubs"
+  ],
+  [
+   "no window has under half the PL deals of the same-type windows either side (bar documented gaps)",
+   "PASS",
+   "69 windows compared; documented gaps (DEC-431): January 1993, January 1994, January 2004, January 2005"
+  ],
+  [
+   "every list-page row has a date (IQ-15j: undated rows are dropped from the build)",
+   "PASS",
+   "20905 rows"
   ],
   [
    "Bank of England Jan 1992 monthly averages equal Cowork's V-04 reading",
@@ -73,17 +83,17 @@
  ],
  "cpi_base_month": "2026-08",
  "n_conflicts": 822,
- "n_conflicts_for_luke": 47,
- "n_fee": 3457,
+ "n_conflicts_for_luke": 48,
+ "n_fee": 3468,
  "n_status": {
-  "UNVERIFIED": 1279,
-  "VERIFIED": 2178
+  "UNVERIFIED": 1289,
+  "VERIFIED": 2179
  },
  "n_tier": {
-  "": 9543,
-  "1": 1995,
-  "2": 751,
-  "3": 724
+  "": 10123,
+  "1": 1992,
+  "2": 754,
+  "3": 736
  },
- "n_transfers": 13013
+ "n_transfers": 13605
 }

@@ -7,13 +7,15 @@ Phase 1 preview: every fee is UNVERIFIED unless `status` says VERIFIED. Not for 
 | 22 clubs per season 1992-95, 20 after (706 club-seasons) | **PASS** | 706 club-seasons in 35 seasons |
 | every season has an attribution window | **PASS** | 1992-05-03 to 2026-09-01 |
 | 51 clubs, each with at least one PL season | **PASS** | 51 clubs |
-| no transfer counted outside its club's PL seasons | **PASS** | 3734 ledger rows frozen (club not in the PL) |
-| PL-to-PL deals net to zero (spend - income of PL clubs = net spend with non-PL clubs) | **PASS** | spend £28,935,918,232 − income £15,111,370,286 = £13,824,547,946; net with non-PL clubs £13,824,547,946 |
-| no fee without a source row | **PASS** | 3457 fee-bearing transfers |
+| no transfer counted outside its club's PL seasons | **PASS** | 3899 ledger rows frozen (club not in the PL) |
+| PL-to-PL deals net to zero (spend - income of PL clubs = net spend with non-PL clubs) | **PASS** | spend £29,006,427,008 − income £15,120,430,286 = £13,885,996,722; net with non-PL clubs £13,885,996,722 |
+| no fee without a source row | **PASS** | 3468 fee-bearing transfers |
 | no Transfermarkt figure or URL anywhere | **PASS** | none found |
-| quotes under 25 words | **PASS** | 19151 evidence rows |
-| every conversion has a rate row | **PASS** | 98 conversions |
+| quotes under 25 words | **PASS** | 19754 evidence rows |
+| every conversion has a rate row | **PASS** | 99 conversions |
 | month-end series consistent with the ledger | **PASS** | 413 month ends × 51 clubs |
+| no window has under half the PL deals of the same-type windows either side (bar documented gaps) | **PASS** | 69 windows compared; documented gaps (DEC-431): January 1993, January 1994, January 2004, January 2005 |
+| every list-page row has a date (IQ-15j: undated rows are dropped from the build) | **PASS** | 20905 rows |
 | Bank of England Jan 1992 monthly averages equal Cowork's V-04 reading | **PASS** | 7 of 7 series compared |
 | ECB GBP/EUR 1999-01 equals Cowork's V-06 reading (0.7029125) | **PASS** | 333 months |
 | no amount rejection silently removes a research lead that quotes the player with that figure | **PASS** | all such rejections were weighed against the lead |

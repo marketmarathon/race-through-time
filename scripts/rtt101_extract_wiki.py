@@ -9,7 +9,9 @@ Outputs:
                            window, date, player, from/to (linked article + club_id), fee text as the list states it,
                            and each citation (url, publisher, date). A Transfermarkt citation is never stored (DEC-236).
 Nothing is interpreted beyond the page's own text; fees stay as text here (the build parses them)."""
-import csv, glob, hashlib, json, os, re, sys
+import csv, glob, hashlib, json, os, re, sys, unicodedata
+import datetime as dt
+from collections import defaultdict
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import rtt101_lib as L  # noqa: E402
@@ -282,27 +284,33 @@ def window_rows(title, page):
     return out
 
 
-def club_season_rows(title, page):
-    """One-sided In/Out tables of a 1992-2002 club-season page; the page's club is the other side."""
+def club_season_rows(title, page, modern=None):
+    """One-sided In/Out tables of a club-season page (1992-2002, and since IQ-15j the windows a list page misses); the page's club is the
+    other side."""
     m = re.match(r"(\d{4}–(?:\d{2}|2000)) (.+) season$", title)
     if not m:
         return []
     own = L.club_id(m.group(2))
     if not own:
         return []
+    if modern is None:
+        modern = m.group(1) >= "2002"
     w = page["wikitext"]
     refs = named_refs(w)
     out = []
     for tm in re.finditer(r"\{\|.*?\n\|\}", w, re.S):
         table = tm.group(0)
         before = w[max(0, tm.start() - 600):tm.start()]
-        heads = re.findall(r"^=+\s*(.*?)\s*=+\s*$", before, re.M)
-        ctx = (" ".join(heads[-2:]) + " " + before[-200:]).lower()
+        # a section heading, or a bold label on its own line ('''Players loaned in''': 2019-20 Southampton, IQ-15j)
+        # pages since 2002-03 only (IQ-15j kept the reading of the 1992-2002 pages unchanged; see club_page_rows_unused.csv)
+        heads = [a or b for a, b in re.findall(r"^(?:=+\s*(.*?)\s*=+|'''([^'\n]+)''')\s*$", before, re.M) if a or modern]
         hdr = []
         for hl in re.findall(r"^!(.*)$", table, re.M):
             hdr += [re.sub(r"^[^|]*\|(?!\|)", "", h).strip().lower() for h in hl.split("!!")]
         hdr = [h for h in hdr if h]
-        if not any(h.startswith("fee") for h in hdr):
+        cap0 = re.search(r"^\|\+(.*)$", table, re.M)
+        loan_only = modern and "loan" in " ".join(heads[-1:] + ([cap0.group(1)] if cap0 else [])).lower()
+        if not any(h.startswith("fee") for h in hdr) and not loan_only:
             continue
 
         def col(pred):
@@ -312,9 +320,10 @@ def club_season_rows(title, page):
             return None
         c_name = col(lambda h: h in ("name", "player"))
         c_fee = col(lambda h: h.startswith("fee"))
-        c_date = col(lambda h: h.startswith("date"))
-        c_from = col(lambda h: h in ("from", "transferred from", "previous club", "club from"))
-        c_to = col(lambda h: h in ("to", "transferred to", "new club", "club to"))
+        # modern club-season pages say "Entry date"/"Exit date", "From club"/"To club" (IQ-15j: 2019-20 Liverpool, Southampton)
+        c_date = col(lambda h: h.startswith("date") or h in ("entry date", "exit date", "date in", "date out", "start date"))
+        c_from = col(lambda h: h in ("from", "transferred from", "previous club", "club from", "from club", "moving from"))
+        c_to = col(lambda h: h in ("to", "transferred to", "new club", "club to", "to club", "moving to"))
         c_club = col(lambda h: h == "club")
         if c_name is None:
             continue
@@ -344,7 +353,7 @@ def club_season_rows(title, page):
         last_head = (heads[-1] if heads else "").lower()
         cap = re.search(r"^\|\+(.*)$", table, re.M)
         loan = "loan" in last_head or bool(cap and "loan" in cap.group(1).lower())
-        ncols = max(c_name, c_fee, c_other, c_date or 0) + 1
+        ncols = max(c_name, c_fee if c_fee is not None else 0, c_other, c_date or 0) + 1
         carry_date, carry_left = "", 0
         for cells in split_rows(table):
             vals, spans = [], []
@@ -372,7 +381,7 @@ def club_season_rows(title, page):
             low = (ot + on).lower()
             if "wimbledon" in low and ("afc" in low or "milton" in low):
                 oid = None
-            ftxt = fee_text(vals[c_fee]) or ""
+            ftxt = (fee_text(vals[c_fee]) or "") if c_fee is not None else ""  # a loans table without a fee column
             if loan and "loan" not in ftxt.lower():
                 ftxt = ("Loan " + ftxt).strip()
             cites = [c for c in cell_refs(" ".join(vals), refs)
@@ -431,6 +440,58 @@ def season_tables(pages):
     return rows
 
 
+def _fold(name):
+    s = unicodedata.normalize("NFKD", re.sub(r"\(.*?\)", " ", name or "")).encode("ascii", "ignore").decode().lower()
+    return re.sub(r"[^a-z ]", " ", s).split()
+
+
+def _day(d):
+    return dt.date.fromisoformat(d if len(d) == 10 else d + "-15")
+
+
+# windows whose list page is known to miss most deals and whose club-season rows the build uses (IQ-15j brief, DEC-430)
+CLUB_PAGE_WINDOWS = {"January 2020"}
+
+
+def window_of(d):
+    m, y = int(d[5:7]), int(d[:4])
+    return f"summer {y}" if 4 <= m <= 10 else (f"January {y}" if m <= 3 else f"January {y + 1}")
+
+
+def drop_listed(cs, rows):
+    """IQ-15j: club-season pages since 2002-03 repeat most deals of the window list pages, often naming the other club differently
+    ("Genk" / "K.R.C. Genk"), so a club-season row is kept only if no list-page row has the same player (same full name, or the
+    same surname) at the same club within 60 days, and only for a window in CLUB_PAGE_WINDOWS (the rest are listed, not used).
+    Pages before 2002-03 are kept as they were."""
+    idx = defaultdict(list)
+    for r in rows:
+        if not r["date"]:
+            continue
+        for c in (r["from_club_id"], r["to_club_id"]):
+            if c:
+                idx[c].append((_fold(r["player"]), _day(r["date"])))
+    keep, dropped, unused = [], 0, []
+    for r in cs:
+        if r["window"] < "club-season 2002":
+            keep.append(r)  # pages before 2002-03 are used as they always were (the build merges their repeats of list rows)
+            continue
+        own = L.club_id(re.match(r"\d{4}–(?:\d{2}|2000) (.+) season$", r["page"]).group(1))
+        nm = _fold(r["player"])
+        hit = False
+        if r["date"] and nm:
+            for n2, d2 in idx.get(own, ()):
+                if (n2 == nm or (n2 and n2[-1] == nm[-1])) and abs((d2 - _day(r["date"])).days) <= 60:
+                    hit = True
+                    break
+        if hit:
+            dropped += 1
+        elif r["window"] >= "club-season 2002" and not (r["date"] and window_of(r["date"]) in CLUB_PAGE_WINDOWS):
+            unused.append(dict(r, reason="not on a list page; window not approved for club-season rows (listed for the next round)"))
+        else:
+            keep.append(r)
+    return keep, dropped, unused
+
+
 def main():
     pages = load_pages(sys.argv[1:])
     with open(os.path.join(OUT, "wiki_pages.csv"), "w", newline="", encoding="utf-8") as f:
@@ -473,10 +534,19 @@ def main():
     for t in sorted(pages):
         if t.endswith(" season"):
             cs += club_season_rows(t, pages[t])
+    cs, n_dup, unused = drop_listed(cs, rows)
+    # what the 2002-03+ reading (bold labels, loans tables without a fee) would add on the 1992-2002 pages: listed, not used
+    for t in sorted(pages):
+        if t.endswith(" season") and re.match(r"(199\d|2000|2001)–", t):
+            was = {tuple(r.values()) for r in club_season_rows(t, pages[t])}
+            unused += [dict(r, reason="1992-2002 page: readable with the 2002-03+ reading; not used (listed for the next round)")
+                       for r in club_season_rows(t, pages[t], modern=True) if tuple(r.values()) not in was]
+    with open(os.path.join(OUT, "club_page_rows_unused.csv"), "w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=list(unused[0])); w.writeheader(); w.writerows(unused)
     if cs:
         with open(os.path.join(OUT, "wiki_club_season_rows.csv"), "w", newline="", encoding="utf-8") as f:
             w = csv.DictWriter(f, fieldnames=list(cs[0])); w.writeheader(); w.writerows(cs)
-    print(len(pages), "pages;", len(st), "club-season rows;", len(rows), "window rows with a PL-history club;", len(cs), "club-season page rows")
+    print(len(pages), "pages;", len(st), "club-season rows;", len(rows), "window rows with a PL-history club;", len(cs), "club-season page rows (", n_dup, "dropped as already on a list page;", len(unused), "listed as unused)")
 
 
 if __name__ == "__main__":
