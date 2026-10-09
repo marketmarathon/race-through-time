@@ -359,6 +359,21 @@
    "sha256": "dd14c7589f8fa66622c9e40bbbf5f32cbac9893e1b443c77fc4b70fd3ecfd16a",
    "private_path": "assets/rtt-103/logos/baidu_company.jpg",
    "status": "NOT DRAWN: a building photo taken by mistake by rtt103_assets.yml run 2 (the page's lead image); kept privately, never used"
+  },
+  "bytedance": {
+   "file": "bytedance.svg",
+   "title": "File:ByteDance logo.svg",
+   "page": "https://commons.wikimedia.org/wiki/File%3AByteDance_logo.svg",
+   "licence": "Public domain",
+   "author": "ByteDance",
+   "restrictions": "trademarked",
+   "sha1": "b3fcc612ada1a7623a174411c5a4437cd87e04fd",
+   "sha256": "062b0eb7f19fd38d590600a244e61b609c0f76d4578bf464c892b638abee86c2",
+   "bytes": "6886",
+   "width": "1622",
+   "height": "280",
+   "private_path": "assets/rtt-103/logos/bytedance.svg",
+   "status": "drawn from IQ-18f on the 2026 board (identification only; DEC-381); fetched by run https://github.com/marketmarathon/race-through-time/actions/runs/37894842957, private commit d7e1209. English Wikipedia's ByteDance article shows the same Commons file (bytedance_company.svg, identical SHA-256, not used)."
   }
  },
  "fetched_by": ".github/workflows/rtt103_assets.yml run https://github.com/marketmarathon/race-through-time/actions/runs/37798451797 (8 Oct 2026); private repo branch claude/magical-einstein-hguyvv commit 35609bb; Baidu: runs https://github.com/marketmarathon/race-through-time/actions/runs/37817708073 (photo, not used) and https://github.com/marketmarathon/race-through-time/actions/runs/37818490084 (File:Baidu.svg), private commit 5623257"
