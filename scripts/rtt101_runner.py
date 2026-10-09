@@ -40,9 +40,13 @@ def emit(name, st, body, err=""):
     sys.stdout.flush()
 
 
+# letters that Unicode does not decompose, mapped one-to-one so text positions stay the same (Guðjohnsen = Gudjohnsen)
+_ONE = str.maketrans({"ð": "d", "đ": "d", "ø": "o", "ł": "l", "þ": "t", "æ": "a", "ß": "s", "ı": "i"})
+
+
 def fold(s):
     """lower case, accents and apostrophes removed (for the club-name check)"""
-    return "".join(c for c in unicodedata.normalize("NFKD", s.lower()) if not unicodedata.combining(c)).replace("'", "").replace("\u2019", "")
+    return "".join(c for c in unicodedata.normalize("NFKD", s.lower().translate(_ONE)) if not unicodedata.combining(c)).replace("'", "").replace("\u2019", "")
 
 
 def text_of(body):
@@ -119,8 +123,8 @@ def main():
             pub = m.group(1)
         t = text_of(body) if body else ""
         # accents folded without changing positions (Zúñiga = Zuniga); apostrophes dropped only for the club check (Queen's = Queens)
-        low = "".join((unicodedata.normalize("NFKD", c) or " ")[0] for c in t.lower())
-        near = "".join((unicodedata.normalize("NFKD", c) or " ")[0] for c in (it.get("near") or "").lower())
+        low = "".join((unicodedata.normalize("NFKD", c) or " ")[0] for c in t.lower().translate(_ONE))
+        near = "".join((unicodedata.normalize("NFKD", c) or " ")[0] for c in (it.get("near") or "").lower().translate(_ONE))
         snips, seen = [], set()
         if near:
             for mm in MONEY.finditer(t):
