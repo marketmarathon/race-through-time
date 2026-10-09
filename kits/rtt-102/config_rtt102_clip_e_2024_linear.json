@@ -1,0 +1,18 @@
+{
+ "extends": "config_rtt102_base.json",
+ "kit_version": "rtt102_round1_clip_e_linear",
+ "out": "rtt102_clip_e_2024_linear.mp4",
+ "notes": [
+  "Item e (motion), straight lines between published months (DEC-501 (4), as built): January to December 2024 (opening board December 2023), across Similarweb's re-estimate; film pace."
+ ],
+ "window": {
+  "from": "2024-01-31",
+  "to": "2024-12-31"
+ },
+ "smoothing": {
+  "mode": "none"
+ },
+ "pacing": {
+  "final_board_sec": 2
+ }
+}

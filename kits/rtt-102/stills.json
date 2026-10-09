@@ -1,0 +1,435 @@
+{
+ "stills": [
+  {
+   "name": "a1_title_A",
+   "config": "config_rtt102_base.json",
+   "at": "2025-02-28"
+  },
+  {
+   "name": "a2_title_B",
+   "config": "config_rtt102_base.json",
+   "at": "2025-02-28",
+   "overrides": {
+    "title": "AI Chatbot Websites by Monthly Visits (2022–2026)"
+   }
+  },
+  {
+   "name": "a3_title_C",
+   "config": "config_rtt102_base.json",
+   "at": "2025-02-28",
+   "overrides": {
+    "title": "AI Assistant Websites: Monthly Visits (2022–2026)"
+   }
+  },
+  {
+   "name": "b1_estimates_A_solid",
+   "config": "config_rtt102_base.json",
+   "at": "2025-09-30"
+  },
+  {
+   "name": "b2_estimates_B_analyst_look",
+   "config": "config_rtt102_base.json",
+   "at": "2025-09-30",
+   "overrides": {
+    "values": {
+     "visits": {
+      "look": "analyst"
+     }
+    }
+   }
+  },
+  {
+   "name": "c1_older_A_stripes_note_aug2024",
+   "config": "config_rtt102_base.json",
+   "at": "2024-08-31"
+  },
+  {
+   "name": "c2_older_B_note_only_aug2024",
+   "config": "config_rtt102_base.json",
+   "at": "2024-08-31",
+   "overrides": {
+    "values": {
+     "visits": {
+      "older": "none"
+     }
+    },
+    "notes_at": [
+     {
+      "date": "2024-08-31",
+      "text": "Similarweb re-estimated its figures in July 2024; earlier months are its older estimates"
+     }
+    ]
+   }
+  },
+  {
+   "name": "c3_older_A_mar2024",
+   "config": "config_rtt102_base.json",
+   "at": "2024-03-31"
+  },
+  {
+   "name": "c4_older_A_sep2024",
+   "config": "config_rtt102_base.json",
+   "at": "2024-09-30"
+  },
+  {
+   "name": "d1_values_tilde_all_1dp",
+   "config": "config_rtt102_base.json",
+   "at": "2026-06-30"
+  },
+  {
+   "name": "d2_values_tilde_all_2dp",
+   "config": "config_rtt102_base.json",
+   "at": "2026-06-30",
+   "overrides": {
+    "values": {
+     "visits": {
+      "bn_decimals": 2
+     }
+    }
+   }
+  },
+  {
+   "name": "d3_values_tilde_between_1dp",
+   "config": "config_rtt102_base.json",
+   "at": "2026-06-30",
+   "overrides": {
+    "values": {
+     "visits": {
+      "approx": "between"
+     }
+    }
+   }
+  },
+  {
+   "name": "d4_latest_figure_plain",
+   "config": "config_rtt102_base.json",
+   "at": "2026-06-30",
+   "overrides": {
+    "status": {
+     "latest_figure": "latest figure"
+    }
+   }
+  },
+  {
+   "name": "e1_motion_linear_mid_jun2024",
+   "config": "config_rtt102_clip_e_2024_linear.json",
+   "at": "2024-06-30",
+   "after_sec": 0.5
+  },
+  {
+   "name": "e2_motion_eased_mid_jun2024",
+   "config": "config_rtt102_clip_e_2024_eased.json",
+   "at": "2024-06-30",
+   "after_sec": 0.5
+  },
+  {
+   "name": "f1_clock_month_feb2025",
+   "config": "config_rtt102_clip_f_month_1p0.json",
+   "at": "2025-02-28"
+  },
+  {
+   "name": "f2_clock_quarter_dec2024",
+   "config": "config_rtt102_clip_f_quarter_3p0.json",
+   "at": "2024-12-31"
+  },
+  {
+   "name": "f3_clock_quarter_mar2025",
+   "config": "config_rtt102_clip_f_quarter_3p0.json",
+   "at": "2025-03-31"
+  },
+  {
+   "name": "g1_scale_linear_feb2025",
+   "config": "config_rtt102_base.json",
+   "at": "2025-02-28"
+  },
+  {
+   "name": "g2_scale_linear_aug2026",
+   "config": "config_rtt102_base.json",
+   "at": "2026-08-31"
+  },
+  {
+   "name": "h1_logo_bard_then_gemini_dec2023",
+   "config": "config_rtt102_base.json",
+   "at": "2023-12-31"
+  },
+  {
+   "name": "h2_logo_gemini_throughout_dec2023",
+   "config": "config_rtt102_base.json",
+   "at": "2023-12-31",
+   "overrides": {
+    "pictures": {
+     "switch": {
+      "gemini": []
+     }
+    }
+   }
+  },
+  {
+   "name": "h3_gemini_from_feb2024",
+   "config": "config_rtt102_base.json",
+   "at": "2024-03-31"
+  },
+  {
+   "name": "i_copilot_card",
+   "config": "config_rtt102_story.json",
+   "at": "2023-11-30",
+   "after_sec": 1.5,
+   "card": true
+  },
+  {
+   "name": "i_gemini_card",
+   "config": "config_rtt102_story_bard.json",
+   "at": "2024-02-29",
+   "after_sec": 1.5,
+   "card": true
+  },
+  {
+   "name": "i_meta_ai_card",
+   "config": "config_rtt102_story.json",
+   "at": "2024-04-30",
+   "after_sec": 1.5,
+   "card": true
+  },
+  {
+   "name": "i_chatgpt_card",
+   "config": "config_rtt102_story.json",
+   "at": "2024-05-31",
+   "after_sec": 1.5,
+   "card": true
+  },
+  {
+   "name": "i_grok_card",
+   "config": "config_rtt102_story.json",
+   "at": "2025-02-28",
+   "after_sec": 1.5,
+   "card": true
+  },
+  {
+   "name": "j1_final_no_line",
+   "config": "config_rtt102_base.json",
+   "at": "final"
+  },
+  {
+   "name": "j2_final_with_line",
+   "config": "config_rtt102_base.json",
+   "at": "final",
+   "overrides": {
+    "final_line": {
+     "enabled": true,
+     "y": 172,
+     "text": "ChatGPT still leads; Gemini's visits more than tripled from August 2025 to August 2026"
+    }
+   }
+  },
+  {
+   "name": "sheet_a_title",
+   "compose": {
+    "title": "a · Title (the source line is fixed)",
+    "cols": 2,
+    "items": [
+     {
+      "still": "a1_title_A",
+      "caption": "A · Most-Visited AI Assistant Websites (2022–2026)"
+     },
+     {
+      "still": "a2_title_B",
+      "caption": "B · AI Chatbot Websites by Monthly Visits (2022–2026)"
+     },
+     {
+      "still": "a3_title_C",
+      "caption": "C · AI Assistant Websites: Monthly Visits (2022–2026)"
+     }
+    ]
+   }
+  },
+  {
+   "name": "sheet_b_estimates",
+   "compose": {
+    "title": "b · How \"estimates\" is shown (September 2025)",
+    "cols": 2,
+    "items": [
+     {
+      "still": "b1_estimates_A_solid",
+      "caption": "A · once, in the source line; solid bars and \"~\" values (recommended)"
+     },
+     {
+      "still": "b2_estimates_B_analyst_look",
+      "caption": "B · every bar in the analyst-estimate look"
+     }
+    ]
+   }
+  },
+  {
+   "name": "sheet_c_older",
+   "compose": {
+    "title": "c · Similarweb's older estimates (before its 28 Jul 2024 re-estimate) and the note",
+    "cols": 2,
+    "items": [
+     {
+      "still": "c1_older_A_stripes_note_aug2024",
+      "caption": "A · August 2024: stripes on older estimates + the note (recommended)"
+     },
+     {
+      "still": "c2_older_B_note_only_aug2024",
+      "caption": "B · August 2024: the note only"
+     },
+     {
+      "still": "c3_older_A_mar2024",
+      "caption": "A · March 2024: Gemini 434m (older estimate)"
+     },
+     {
+      "still": "c4_older_A_sep2024",
+      "caption": "A · September 2024: Gemini 247m (current version)"
+     }
+    ]
+   }
+  },
+  {
+   "name": "sheet_d_values",
+   "compose": {
+    "title": "d · Value labels (June 2026: published, straight-line and held bars)",
+    "cols": 2,
+    "items": [
+     {
+      "still": "d1_values_tilde_all_1dp",
+      "caption": "\"~\" on every value, billions to 1 decimal (recommended)"
+     },
+     {
+      "still": "d2_values_tilde_all_2dp",
+      "caption": "\"~\" on every value, billions to 2 decimals"
+     },
+     {
+      "still": "d3_values_tilde_between_1dp",
+      "caption": "\"~\" only where the number is not a published figure"
+     },
+     {
+      "still": "d4_latest_figure_plain",
+      "caption": "\"latest figure\" without its month"
+     }
+    ]
+   }
+  },
+  {
+   "name": "sheet_e_motion",
+   "compose": {
+    "title": "e · Motion: the same frame half a second into June 2024",
+    "cols": 2,
+    "items": [
+     {
+      "still": "e1_motion_linear_mid_jun2024",
+      "caption": "Straight lines between published months (as decided)"
+     },
+     {
+      "still": "e2_motion_eased_mid_jun2024",
+      "caption": "Eased through the same published figures"
+     }
+    ]
+   }
+  },
+  {
+   "name": "sheet_f_clock",
+   "compose": {
+    "title": "f · Month-by-month vs quarter-by-quarter clock",
+    "cols": 3,
+    "items": [
+     {
+      "still": "f1_clock_month_feb2025",
+      "caption": "Monthly clock: February 2025, DeepSeek at its peak (~615m)"
+     },
+     {
+      "still": "f2_clock_quarter_dec2024",
+      "caption": "Quarterly clock: December 2024 (no DeepSeek yet)"
+     },
+     {
+      "still": "f3_clock_quarter_mar2025",
+      "caption": "Quarterly clock: March 2025, DeepSeek arrives after its peak"
+     }
+    ]
+   }
+  },
+  {
+   "name": "sheet_g_scale",
+   "compose": {
+    "title": "g · The honest linear scale (see the phone copies)",
+    "cols": 2,
+    "items": [
+     {
+      "still": "g1_scale_linear_feb2025",
+      "caption": "February 2025: ChatGPT about six times DeepSeek"
+     },
+     {
+      "still": "g2_scale_linear_aug2026",
+      "caption": "August 2026: the final board"
+     }
+    ]
+   }
+  },
+  {
+   "name": "sheet_h_logos",
+   "compose": {
+    "title": "h · Names and logos: Bard's logo of the time vs today's Gemini logo throughout",
+    "cols": 3,
+    "items": [
+     {
+      "still": "h1_logo_bard_then_gemini_dec2023",
+      "caption": "December 2023: \"Bard\" with Bard's logo (recommended)"
+     },
+     {
+      "still": "h2_logo_gemini_throughout_dec2023",
+      "caption": "December 2023: \"Bard\" with today's Gemini logo"
+     },
+     {
+      "still": "h3_gemini_from_feb2024",
+      "caption": "March 2024: \"Gemini\" with the Gemini logo (both options)"
+     }
+    ]
+   }
+  },
+  {
+   "name": "sheet_i_story",
+   "compose": {
+    "title": "i · Story cards (RTT-103's card), 1.5 s into each",
+    "cols": 3,
+    "items": [
+     {
+      "still": "i_copilot_card",
+      "caption": "15 Nov 2023 · Microsoft: Copilot"
+     },
+     {
+      "still": "i_gemini_card",
+      "caption": "8 Feb 2024 · Google: Bard becomes Gemini (not recommended: the board shows it)"
+     },
+     {
+      "still": "i_meta_ai_card",
+      "caption": "18 Apr 2024 · Meta: meta.ai"
+     },
+     {
+      "still": "i_chatgpt_card",
+      "caption": "13 May 2024 · OpenAI: chatgpt.com"
+     },
+     {
+      "still": "i_grok_card",
+      "caption": "19 Feb 2025 · xAI: Grok 3 on Grok.com"
+     }
+    ]
+   }
+  },
+  {
+   "name": "sheet_j_final",
+   "compose": {
+    "title": "j · Final table, August 2026 (held for 10 s)",
+    "cols": 2,
+    "items": [
+     {
+      "still": "j1_final_no_line",
+      "caption": "Without a summary line"
+     },
+     {
+      "still": "j2_final_with_line",
+      "caption": "With a one-line summary"
+     }
+    ]
+   }
+  }
+ ]
+}

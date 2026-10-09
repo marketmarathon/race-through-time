@@ -1,0 +1,18 @@
+{
+ "extends": "config_rtt102_base.json",
+ "kit_version": "rtt102_round1_clip_f_month_1p5",
+ "out": "rtt102_clip_f_month_1p5.mp4",
+ "notes": [
+  "Item f (clock): October 2024 to June 2025 (opening board September 2024; DeepSeek's surge and fall, Gemini retaking second), monthly clock at 1.5 s per month, straight lines."
+ ],
+ "window": {
+  "from": "2024-10-31",
+  "to": "2025-06-30"
+ },
+ "clock": "month",
+ "pacing": {
+  "sec_per_event": 1.5,
+  "final_board_sec": 2
+ },
+ "notes_at": []
+}

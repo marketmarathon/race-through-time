@@ -13,6 +13,7 @@ skipping titles that contain any of `exclude`. The first `keep` (default 3) cand
 first as OUT_DIR/<id>.<ext> (the one the render uses unless the config names another), the others as
 OUT_DIR/alt/<id>__<n>.<ext> so the choice can be checked by eye before the config names a file. The API gives each
 file's URL, SHA-1, licence, author and restrictions; a file is kept only if its downloaded SHA-1 equals the API's.
+Run 2: an entry with `site` en.wikipedia.org looks its candidates up there first (a local file), then on Commons.
 Writes OUT_DIR/manifest.csv (every kept file). Prints only titles, names, sizes, licences and hashes. Exit 1 if a
 required entry has no file (entries with "optional": true may have none).
 """

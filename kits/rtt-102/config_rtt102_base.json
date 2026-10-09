@@ -1,0 +1,240 @@
+{
+ "series": "Race Through Time",
+ "episode": "RTT-102",
+ "kit_version": "rtt102_round1_base",
+ "notes": [
+  "RTT-102 design round 1 (IQ-19): the base look every option config extends. House defaults (house_style sections 1-6) applied without asking: no intro or outro, final table 10 s, no running captions, big date top right beside the RTT logo, board sized to the bars on it (board.fit, at least 4 slots = at most twice the 8-row thickness), values follow the bar, counting smoothly and landing exactly on each month, one colour per assistant (CIEDE2000 >= 20 apart as drawn; protan/deutan simulation >= 10), bars from their first published figure, Similarweb in the footer. Options for Luke are in the other configs and in stills.json overrides; the race file is kits/rtt-102/race_rtt102.json (scripts/rtt102_adapter.py)."
+ ],
+ "format_version": "RTT-1 player (kits/rtt-002), quarter-end series mode (IQ-10) with the monthly visits kind (IQ-19)",
+ "out": "rtt102_clip.mp4",
+ "renderer_file": "player_rtt.html",
+ "race_file": "../rtt-102/race_rtt102.json",
+ "fps": 30,
+ "intro_sec": 0,
+ "outro_sec": 0,
+ "crf": 4,
+ "preset": "slow",
+ "rows": 8,
+ "window": {
+  "from": null,
+  "to": null
+ },
+ "pacing": {
+  "sec_per_event": 1.0,
+  "bounds": [
+   0.8,
+   1.4
+  ],
+  "mult": {
+   "rank_change": 1.4,
+   "visible_change": 1,
+   "quiet": 0.8
+  },
+  "settled_run_after": 3,
+  "lead_in_sec": 2,
+  "end_hold_sec": 3,
+  "judge_rows": 8,
+  "final_board_sec": 10
+ },
+ "glide": {
+  "bar_sec": 0.35,
+  "rank_sec": 0.55,
+  "entry_sec": 0.1,
+  "bar_mode": "beat"
+ },
+ "unit": "visits",
+ "title": "Most-Visited AI Assistant Websites (2022–2026)",
+ "subtitle": "",
+ "subtitle_sec": 0,
+ "kicker": "RACE THROUGH TIME",
+ "range": "2022 – 2026",
+ "footer": "Race Through Time · Data: Similarweb, published estimates of monthly website visits (desktop and mobile web, worldwide)",
+ "look": "navy",
+ "sizes": {
+  "axis": 34,
+  "date": 34,
+  "footer": 26
+ },
+ "barend": 1420,
+ "nameoverflow": true,
+ "namemode": "bar",
+ "namescale": 0.9,
+ "valout": true,
+ "valw": 260,
+ "yearsize": 112,
+ "fonts": {
+  "family": "Archivo",
+  "source": "npm:@fontsource/archivo"
+ },
+ "board_top": 232,
+ "record_hold": {
+  "enabled": false,
+  "sec": 2,
+  "types": [
+   "CROWN"
+  ]
+ },
+ "count": {
+  "enabled": true
+ },
+ "values": {
+  "visits": {
+   "approx": "all",
+   "bn_decimals": 1,
+   "older": "stripes",
+   "look": "solid",
+   "est_label": "· estimate"
+  }
+ },
+ "smoothing": {
+  "mode": "none"
+ },
+ "clock": "month",
+ "source_line": {
+  "enabled": true,
+  "y": 124,
+  "size": 30,
+  "prefix": "",
+  "names": {
+   "SW": "Similarweb estimates of monthly website visits, worldwide"
+  },
+  "measure": {},
+  "estimated": "",
+  "changing": ""
+ },
+ "marker": {
+  "enabled": false
+ },
+ "note_line": {
+  "y": 172,
+  "size": 30,
+  "sec": 4
+ },
+ "notes_at": [
+  {
+   "date": "2024-08-31",
+   "text": "Similarweb re-estimated its figures in July 2024; striped bars are its older estimates"
+  }
+ ],
+ "maker_order": [
+  "chatgpt",
+  "gemini",
+  "claude",
+  "copilot",
+  "perplexity",
+  "deepseek",
+  "grok",
+  "meta_ai"
+ ],
+ "palette": [
+  "#1E9666",
+  "#0084F6",
+  "#BA4824",
+  "#9672B4",
+  "#30787E",
+  "#484EEA",
+  "#6C605A",
+  "#DE1E8A"
+ ],
+ "board": {
+  "bar_gap": 10,
+  "name_frac": 0.72,
+  "value_frac": 0.72,
+  "stripes": "screen",
+  "fit": {
+   "enabled": true,
+   "min_slots": 4,
+   "sec": 2
+  }
+ },
+ "pictures": {
+  "enabled": true,
+  "dir": "logos",
+  "files": {},
+  "tile": true,
+  "tile_pad": 6,
+  "placeholder": false,
+  "height_frac": 0.92,
+  "aspect": 1,
+  "gap": 14,
+  "own": {},
+  "switch": {
+   "gemini": [
+    {
+     "until": "2024-01-31",
+     "key": "bard"
+    }
+   ]
+  }
+ },
+ "fade": {
+  "enabled": true,
+  "alpha": 0.55,
+  "text_alpha": 0.8,
+  "sec": 0.6
+ },
+ "status": {
+  "enabled": true,
+  "sink": true,
+  "sec": 0.6,
+  "latest_figure": "latest figure, {month}",
+  "retired": "retired"
+ },
+ "crown": {
+  "enabled": false
+ },
+ "callout": {
+  "enabled": false
+ },
+ "moments": [],
+ "story": {
+  "enabled": false
+ },
+ "final_line": {
+  "enabled": false
+ },
+ "overlays": [
+  {
+   "name": "logo",
+   "file": "rtt_logo.png",
+   "x": 1702,
+   "y": 12,
+   "w": 154,
+   "h": 154
+  }
+ ],
+ "overlay_gap": 12,
+ "time_label": {
+  "mode": "none",
+  "season_prefix": "",
+  "months": [
+   "January",
+   "February",
+   "March",
+   "April",
+   "May",
+   "June",
+   "July",
+   "August",
+   "September",
+   "October",
+   "November",
+   "December"
+  ],
+  "format": "month",
+  "x": 64,
+  "y": 124,
+  "align": "left",
+  "size": 34
+ },
+ "date_block": {
+  "enabled": true,
+  "mode": "beside",
+  "right": 1680,
+  "month_y": 60,
+  "month_size": 40,
+  "year_y": 160,
+  "year_size": 112,
+  "roll_sec": 0.5
+ }
+}
