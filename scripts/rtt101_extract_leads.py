@@ -77,6 +77,8 @@ UNCREDITED = re.compile(r"no agency credit|NOT confirmed", re.I)
 
 def grade(row):
     g = (row.get("grade") or "").strip().upper()
+    if row.get("_round5") and g == "B" and "eredivisie.com" in row.get("source_url", "") and "Ajax" in row.get("notes", "") and "statement" in row.get("notes", ""):
+        return "A", "the club's own statement (Ajax), reproduced word for word by the league with its credit: grade A (contract §3, IQ-15l)"
     if row.get("_round5") and g in ("A", "B") and FOREIGN.search(row.get("source_url", "")) and (
             not CREDITED.search(row.get("notes", "")) or UNCREDITED.search(row.get("notes", ""))):
         return "C", "agency copy on a foreign site without an agency credit on the page: a pointer (C) (IQ-15l)"

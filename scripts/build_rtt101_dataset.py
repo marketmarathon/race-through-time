@@ -840,6 +840,9 @@ for t in transfers:
 _r2map = os.path.join(SRC, "source_round2_map.csv")
 if os.path.exists(_r2map):
     _researched = set()
+    _r_of_t = {r["transfer_id"]: r["deal_id"] for r in rd("source_round2_map.csv")}
+    # round 5 (IQ-15l) researched the deals on its list (source_round5_map.csv, keyed by our transfer ID), found a figure or not
+    _researched |= {_r_of_t[r["deal_id"]] for r in rd("source_round5_map.csv") if r["deal_id"] in _r_of_t}
     for _l in rd("leads_evidence.csv"):
         _m = re.match(r"part2(?:2b|3g|4b|4d)-(R\d{4})-", _l["lead_row"])
         if _m:

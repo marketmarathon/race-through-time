@@ -8,11 +8,11 @@ Phase 1 preview: every fee is UNVERIFIED unless `status` says VERIFIED. Not for 
 | every season has an attribution window | **PASS** | 1992-05-03 to 2026-09-01 |
 | 51 clubs, each with at least one PL season | **PASS** | 51 clubs |
 | no transfer counted outside its club's PL seasons | **PASS** | 3898 ledger rows frozen (club not in the PL) |
-| PL-to-PL deals net to zero (spend - income of PL clubs = net spend with non-PL clubs) | **PASS** | spend £29,168,185,841 − income £15,269,699,327 = £13,898,486,514; net with non-PL clubs £13,898,486,514 |
-| no fee without a source row | **PASS** | 3508 fee-bearing transfers |
+| PL-to-PL deals net to zero (spend - income of PL clubs = net spend with non-PL clubs) | **PASS** | spend £29,161,743,531 − income £15,269,229,096 = £13,892,514,434; net with non-PL clubs £13,892,514,434 |
+| no fee without a source row | **PASS** | 3507 fee-bearing transfers |
 | no Transfermarkt figure or URL anywhere | **PASS** | none found |
-| quotes under 25 words | **PASS** | 20060 evidence rows |
-| every conversion has a rate row | **PASS** | 111 conversions |
+| quotes under 25 words | **PASS** | 20066 evidence rows |
+| every conversion has a rate row | **PASS** | 117 conversions |
 | month-end series consistent with the ledger | **PASS** | 413 month ends × 51 clubs |
 | no window has under half the PL deals of the same-type windows either side (bar documented gaps) | **PASS** | 69 windows compared; documented gaps (DEC-431): January 1993, January 1994, January 2004, January 2005 |
 | every list-page row has a date (IQ-15j: undated rows are dropped from the build) | **PASS** | 20905 rows |

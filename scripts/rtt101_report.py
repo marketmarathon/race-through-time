@@ -1012,7 +1012,7 @@ if BASE4:
          "186 loaded; 15 refused, 6 not found, the rest server errors or redirects).",
          f"- **Quotes read:** {len(rev4)} newly confirmed quotes ({sum(1 for r in rev4 if r['decision'] == 'reject')} rejected: a pre-completion figure "
          "where a completion report exists, a lower bound, an asking price, a total with add-ons, a maximum, and the Mikel settlement booked elsewhere).",
-         f"- **Result: {nfig} of the 258 deals now carry a figure ({nver} confirmed at source); none did before; {258 - nfig} stay £0** (undisclosed in "
+         f"- **Result (as now built, after round 5 too; at the end of IQ-15k: 43 with a figure, 30 confirmed): {nfig} of the 258 deals carry a figure ({nver} confirmed at source); none did before; {258 - nfig} stay £0** (undisclosed in "
          "every source found, free, a loan, training compensation, a nominal fee, or only a maximum, lower bound or grade C figure). By leader and side "
          "(a deal between two leaders counts on both sides):\n",
          "| Club | Side | Deals | With a figure | Confirmed at source | Fees added |", "|---|---|---|---|---|---|"]
@@ -1038,6 +1038,9 @@ if BASE4:
         if r["rank"] and int(r["rank"]) <= 12:
             now[r["month_end"]].append((int(r["rank"]), r["club_id"]))
     NOW = {mo: [c for _, c in sorted(v)] for mo, v in now.items()}
+    # IQ-15l: this section records the race as built at the end of IQ-15k (1b01d81); section 18 has the current figures
+    if rd("top12_before_round5.csv", os.path.join(D, "source")):
+        NOW = {r["month_end"]: r["top12_in_rank_order"].split(";") for r in rd("top12_before_round5.csv", os.path.join(D, "source"))}
 
     def crowns(seqmap):
         out = []
@@ -1050,7 +1053,7 @@ if BASE4:
     set_ch = [mo for mo in sorted(NOW) if TB4.get(mo) and set(TB4[mo]) != set(NOW[mo])]
     R += ["\n**Who leads, through time** (month the lead changes hands; from 2003):\n",
           "- Before (193580c): " + " → ".join(f"{NAME.get(c, c)} ({mo})" for mo, c in cb if mo >= "2003"),
-          "- After: " + " → ".join(f"{NAME.get(c, c)} ({mo})" for mo, c in ca if mo >= "2003"),
+          "- After (end of IQ-15k, 1b01d81; section 18 has the current figures): " + " → ".join(f"{NAME.get(c, c)} ({mo})" for mo, c in ca if mo >= "2003"),
           f"\nThe leader differs at {len(lead_ch)} month ends; who is in the top 12 differs at {len(set_ch)} month ends"
           + (" (" + "; ".join(f"{mo[:7]}: {', '.join(NAME.get(c, c) for c in sorted(set(NOW[mo]) - set(TB4[mo])))} in for "
                                 f"{', '.join(NAME.get(c, c) for c in sorted(set(TB4[mo]) - set(NOW[mo])))}" for mo in set_ch[:10]) + ")" if set_ch else "")
@@ -1058,7 +1061,9 @@ if BASE4:
     SB4 = {r["club_id"]: (int(r["rank"]), float(r["cum_net_gbp"])) for r in rd("standings_before_round4.csv", os.path.join(D, "source"))}
     last = max(NOW)
     SA4 = {r["club_id"]: (int(r["rank"]), float(r["cum_net_gbp"])) for r in SM if r["month_end"] == last and r["rank"]}
-    R += [f"\n**Standings at the freeze ({last}), cumulative net spend:**\n", "| Rank after | Club | Net before (rank) | Net after | Change |", "|---|---|---|---|---|"]
+    if rd("standings_before_round5.csv", os.path.join(D, "source")):
+        SA4 = {r["club_id"]: (int(r["rank"]), float(r["cum_net_gbp"])) for r in rd("standings_before_round5.csv", os.path.join(D, "source"))}
+    R += [f"\n**Standings at the freeze ({last}), cumulative net spend, at the end of IQ-15k:**\n", "| Rank after | Club | Net before (rank) | Net after | Change |", "|---|---|---|---|---|"]
     for c, (rk, v) in sorted(SA4.items(), key=lambda x: x[1][0])[:12]:
         b_ = SB4.get(c, (0, 0.0))
         R.append(f"| {rk} | {NAME.get(c, c)} | £{b_[1] / 1e6:,.1f}m ({b_[0]}) | £{v / 1e6:,.1f}m | {m(v - b_[1])} |")
@@ -1069,8 +1074,8 @@ if BASE4:
              f"{m(SB4[b3[0]][1] - SB4[b3[2]][1])}. Manchester United take the lead only in the final month (the summer 2026 window).")
     OT = rd("round2_order_test.csv", os.path.join(D, "source"))
     yes = [r for r in OT if r["could_change"] == "yes"]
-    R.append(f"\n**Order test re-run** (`source/round2_order_test.csv`): {len(yes)} of {len(OT)} unresearched round 2 deals could change who is in the top 12 "
-             f"at some month end, {sum(1 for r in yes if r['what_changes'] == 'leader')} of them the leader (201 and 5 before this round): with the "
+    R.append(f"\n**Order test re-run** (at the end of IQ-15k): 206 of 392 unresearched round 2 deals could change who is in the top 12 "
+             f"at some month end, 14 of them the leader (201 and 5 before this round): with the "
              "finish this close, the P4 sweep (DEC-429) can still matter.")
     unv = sorted((TI[r["transfer_id"]] for r in MAP4 if float(TI.get(r["transfer_id"], {}).get("fee_gbp") or 0) > 0 and TI[r["transfer_id"]]["status"] != "VERIFIED"),
                  key=lambda t: -float(t["fee_gbp"]))
@@ -1084,3 +1089,85 @@ if BASE4:
     with open(OUT, "a", encoding="utf-8") as f:
         f.write("\n".join(R) + "\n")
     print("section 17:", nfig, "with a figure;", nver, "verified;", len(lead_ch), "leader changes;", len(yes), "order-test deals")
+
+# ---- section 18: source round 5, the fees that decide the finish (IQ-15l)
+BASE5 = rd("source_round5_baseline.csv", os.path.join(D, "source"))
+if BASE5:
+    SRCS = {s["source_id"]: s for s in rd("sources.csv")}
+    MAP5 = {r["deal_id"]: r for r in rd("source_round5_map.csv", os.path.join(D, "source"))}
+    rev5 = [r for r in rd("review_decisions.csv", os.path.join(D, "source")) if r["batch"] == "SR5-01"]
+    chrome = [c for c in rd("runner_checks.csv", os.path.join(D, "source")) if c["check_id"].startswith("C26b-")]
+    v0 = sum(1 for r in BASE5 if r["status"] == "VERIFIED")
+    v1 = sum(1 for r in BASE5 if TI.get(r["transfer_id"], {}).get("status") == "VERIFIED")
+    BAT = {"c01": "Sporting Life fees", "c02": "Sporting Life and single-source fees", "c03": "round 4 UNVERIFIED",
+           "c04": "round 2 leader-test deals", "c05": "round 2 leader-test deals"}
+    R = ["\n## 18. Source round 5: the fees that decide the finish (IQ-15l; DEC-440 to DEC-444)\n",
+         "- **Why:** Luke's DEC-440: keep Sporting Life at grade B, find other sources for the Sporting Life fees that decide the finish, re-try the "
+         "13 unconfirmed round 4 figures and research the 14 round 2 deals that could change the leader; treat the order at the freeze as settled "
+         "only once those are checked.",
+         "- **Inputs:** the 34-deal work list (`source/source_round5_map.csv`), Claude helper research on all 34 (part26a) and 41 page reads by Cowork "
+         "in Luke's Chrome (part26b). Every file's SHA-256 matched `00_README.md`.",
+         "- **Checked at source:** the 73 pages cited read on the runner (https://github.com/marketmarathon/race-through-time/actions/runs/38000399943: "
+         f"61 loaded; 6 refused, 3 server errors, 1 gone, 1 not found, 1 still loading); {len(chrome)} pages the runner could not read or could not read "
+         "the figure on were taken from Cowork's Chrome reads.",
+         f"- **Quotes read:** {len(rev5)} newly confirmed quotes ({sum(1 for r in rev5 if r['decision'] == 'reject')} rejected: totals with add-ons, a "
+         "maximum, another move's fee, and a figure that includes a friendly match).",
+         f"- **Result: {v1} of the 34 deals are now VERIFIED ({v0} before).** Each deal, before and after:\n",
+         "| Group | Player | Move | Date | Before | After | Status | Source of the figure in use |", "|---|---|---|---|---|---|---|---|"]
+    for r in BASE5:
+        t = TI.get(r["transfer_id"], {})
+        s = SRCS.get(t.get("canonical_source_id", ""), {})
+        amt = f"{t['currency']} {float(t['original_amount']):,.0f} = £{float(t['fee_gbp']):,.0f}" if t.get("currency") and t["currency"] != "GBP" and t.get("original_amount") else f"£{float(t.get('fee_gbp') or 0):,.0f}"
+        R.append(f"| {BAT.get(MAP5.get(r['transfer_id'], {}).get('batch', ''), '')} | {t.get('player', '')} | {clubs.get(t.get('from_club'), t.get('from_club'))} → "
+                 f"{clubs.get(t.get('to_club'), t.get('to_club'))} | {t.get('date', '')} | £{float(r['fee_gbp'] or 0):,.0f} ({r['status']}) | {amt} | "
+                 f"{t.get('status', '')} ({t.get('grade', '')}) | {s.get('publisher', '') or t.get('fee_status', '')[:40]} |")
+    R.append("\nWhere the figure in use still rests on Sporting Life (Courtois, Henderson, Guéhi, Aké), the same figure is now confirmed by the BBC "
+             "(Henderson £15m, Aké £20m), The Independent (Guéhi £18m) or Reuters and AFP (Courtois €35m, £31.47m).")
+    TB5 = {r["month_end"]: r["top12_in_rank_order"].split(";") for r in rd("top12_before_round5.csv", os.path.join(D, "source"))}
+    now = defaultdict(list)
+    for r in SM:
+        if r["rank"] and int(r["rank"]) <= 12:
+            now[r["month_end"]].append((int(r["rank"]), r["club_id"]))
+    NOW = {mo: [c for _, c in sorted(v)] for mo, v in now.items()}
+
+    def crowns5(seqmap):
+        out = []
+        for mo in sorted(seqmap):
+            if not out or out[-1][1] != seqmap[mo][0]:
+                out.append((mo[:7], seqmap[mo][0]))
+        return out
+    lead_ch = [mo for mo in sorted(NOW) if TB5.get(mo) and TB5[mo][0] != NOW[mo][0]]
+    set_ch = [mo for mo in sorted(NOW) if TB5.get(mo) and set(TB5[mo]) != set(NOW[mo])]
+    R += ["\n**Who leads, through time** (month the lead changes hands; from 2003):\n",
+          "- Before (1b01d81): " + " → ".join(f"{NAME.get(c, c)} ({mo})" for mo, c in crowns5(TB5) if mo >= "2003"),
+          "- After: " + " → ".join(f"{NAME.get(c, c)} ({mo})" for mo, c in crowns5(NOW) if mo >= "2003"),
+          f"\nThe leader differs at {len(lead_ch)} month end{'' if len(lead_ch) == 1 else 's'}" + (" (" + ", ".join(mo[:7] for mo in lead_ch) + ")" if lead_ch else "")
+          + f"; who is in the top 12 differs at {len(set_ch)} month end{'' if len(set_ch) == 1 else 's'}" + (" (" + "; ".join(f"{mo[:7]}: {', '.join(NAME.get(c, c) for c in sorted(set(NOW[mo]) - set(TB5[mo])))} in for "
+                                f"{', '.join(NAME.get(c, c) for c in sorted(set(TB5[mo]) - set(NOW[mo])))}" for mo in set_ch[:8]) + ")" if set_ch else "") + "."]
+    SB5 = {r["club_id"]: (int(r["rank"]), float(r["cum_net_gbp"])) for r in rd("standings_before_round5.csv", os.path.join(D, "source"))}
+    last = max(NOW)
+    SA5 = {r["club_id"]: (int(r["rank"]), float(r["cum_net_gbp"])) for r in SM if r["month_end"] == last and r["rank"]}
+    R += [f"\n**Standings at the freeze ({last}), cumulative net spend:**\n", "| Rank after | Club | Net before (rank) | Net after | Change |", "|---|---|---|---|---|"]
+    for c, (rk, v) in sorted(SA5.items(), key=lambda x: x[1][0])[:12]:
+        b_ = SB5.get(c, (0, 0.0))
+        R.append(f"| {rk} | {NAME.get(c, c)} | £{b_[1] / 1e6:,.2f}m ({b_[0]}) | £{v / 1e6:,.2f}m | {m(v - b_[1])} |")
+    t3 = [c for c, _ in sorted(SA5.items(), key=lambda x: x[1][0])[:3]]
+    b3 = [c for c, _ in sorted(SB5.items(), key=lambda x: x[1][0])[:3]]
+    R.append(f"\n**Gaps between the three leaders:** after, {NAME[t3[0]]} lead {NAME[t3[1]]} by £{(SA5[t3[0]][1] - SA5[t3[1]][1]) / 1e6:,.2f}m and "
+             f"{NAME[t3[2]]} by £{(SA5[t3[0]][1] - SA5[t3[2]][1]) / 1e6:,.2f}m; before, {NAME[b3[0]]} led {NAME[b3[1]]} by "
+             f"£{(SB5[b3[0]][1] - SB5[b3[1]][1]) / 1e6:,.2f}m and {NAME[b3[2]]} by £{(SB5[b3[0]][1] - SB5[b3[2]][1]) / 1e6:,.2f}m.")
+    OT = rd("round2_order_test.csv", os.path.join(D, "source"))
+    yes = [r for r in OT if r["could_change"] == "yes"]
+    R.append(f"\n**Order test re-run** (`source/round2_order_test.csv`, the round 5 deals now counted as researched): {len(yes)} of {len(OT)} unresearched "
+             f"round 2 deals could change who is in the top 12 at some month end, **{sum(1 for r in yes if r['what_changes'] == 'leader')} the leader** "
+             "(14 before this round). Of the five round 5 deals with no grade A/B source, only Guivarc'h (Newcastle → Rangers, 1998, £3.5m) changes the "
+             "leader if removed, at August 1999 (tested in a scratch copy). Undisclosed fees counted £0 cannot be tested this way: there is no figure to try.")
+    unv = [TI[r["transfer_id"]] for r in BASE5 if TI.get(r["transfer_id"], {}).get("status") != "VERIFIED" and float(TI[r["transfer_id"]]["fee_gbp"] or 0) > 0]
+    R += [f"\n**Still UNVERIFIED among the 34: {len(unv)}** (no grade A/B page found): "
+          + "; ".join(f"{t['player']} £{float(t['fee_gbp']):,.0f} ({t['date'][:4]})" for t in unv) + ". Hernández and David James now count £0."]
+    QB5 = [l.rstrip("\n") for l in open(os.path.join(D, "source", "decided_round5.md"), encoding="utf-8")] \
+        if os.path.exists(os.path.join(D, "source", "decided_round5.md")) else []
+    R += QB5
+    with open(OUT, "a", encoding="utf-8") as f:
+        f.write("\n".join(R) + "\n")
+    print("section 18:", v1, "of 34 verified;", len(lead_ch), "leader changes;", sum(1 for r in yes if r["what_changes"] == "leader"), "order-test leader deals")
