@@ -31,8 +31,11 @@ FILES += [(os.path.basename(f), "S") for f in sorted(_glob.glob(os.path.join(PRI
 # source round 2 (IQ-15h): Claude helper research on the priority list, all rows combined in part23g (part22c and part23a-f are the same
 # rows split by batch, so only part23g is read); deal IDs R0001-R0755 map through source_round2_map.csv
 FILES += [(os.path.basename(f), "S") for f in sorted(_glob.glob(os.path.join(PRIV, "part23g_claude_round2_ALL_*.csv")))]
+# source round 3 (IQ-15i): the undisclosed-fee sweep (part24a/e/f/g, U deal IDs via source_round3_map.csv) and the leader deals read by Cowork in
+# Luke's Chrome (part24d) or by a helper (part24b), R deal IDs via source_round2_map.csv; part24c (round-up pages) is context only, not read
+FILES += [(os.path.basename(f), "S") for f in sorted(_glob.glob(os.path.join(PRIV, "part24[abdefg]_*.csv")))]
 _MAP = {}
-for _name in ("source_round1_map.csv", "source_round2_map.csv"):
+for _name in ("source_round1_map.csv", "source_round2_map.csv", "source_round3_map.csv"):
     _mp = os.path.join(os.path.dirname(os.path.abspath(OUT)), _name)
     if os.path.exists(_mp):
         for _r in csv.DictReader(open(_mp, encoding="utf-8")):
@@ -82,7 +85,7 @@ for fn, sec in FILES:
             r = dict(r, evidence_id=f"{r['deal_id']}-{_n:02d}", transfer_id=_MAP.get(r["deal_id"], ""), date=r.get("transfer_date_reported", ""))
             if "soccerbase" in (r.get("source_url") or "").lower() or (r.get("publisher") or "").lower().startswith("soccerbase"):
                 r["grade"] = "C"
-            if fn.startswith(("part22", "part23")):
+            if fn.startswith(("part22", "part23", "part24")):
                 r["_round2"] = True
         url = (r.get("source_url") or "").strip()
         url = re.sub(r"^https?://acc-english\.ajax\.nl", "https://english.ajax.nl", url)  # a copy of the same Ajax page (Cowork, IQ-15h)

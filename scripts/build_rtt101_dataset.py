@@ -839,7 +839,7 @@ _r2map = os.path.join(SRC, "source_round2_map.csv")
 if os.path.exists(_r2map):
     _researched = set()
     for _l in rd("leads_evidence.csv"):
-        _m = re.match(r"part2(?:2b|3g)-(R\d{4})-", _l["lead_row"])
+        _m = re.match(r"part2(?:2b|3g|4b|4d)-(R\d{4})-", _l["lead_row"])
         if _m:
             _researched.add(_m.group(1))
     _tby = {t["transfer_id"]: t for t in transfers}
