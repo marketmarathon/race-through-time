@@ -57,7 +57,9 @@ AGGREGATOR = re.compile(r"(flashscore|sportskeeda|90min\.com|getfootballnews|foo
 
 
 # round 4 (IQ-15k, DEC-420 (a)): the sites batch 1's helpers graded B are aggregators too, unless the helper's note says the page itself is syndicated agency copy
-AGGREGATOR4 = re.compile(r"(goal\.com|90min|(^|//|\.)si\.com|fourfourtwo|thescore\.com|football-espana|teamtalk|sportinglife)", re.I)
+# Sporting Life is not in this list: the build has always graded it B (15 fees in use rest on it); Luke decides (DEC-438, question 1)
+AGGREGATOR4 = re.compile(r"(goal\.com|90min|fourfourtwo|thescore\.com|football-espana|teamtalk)", re.I)
+SI90 = re.compile(r"(^|//|\.)si\.com/", re.I)  # Sports Illustrated's own reporting stays as graded; its pages carrying 90min copy are C
 AGENCY = re.compile(r"syndicated copy of (?:PA|Reuters|AFP|AP|the Press Association|Associated Press)\b")  # the page itself is agency copy
 
 
@@ -65,7 +67,8 @@ def grade(row):
     g = (row.get("grade") or "").strip().upper()
     if row.get("_round2") and g in ("A", "B") and AGGREGATOR.search(row.get("source_url", "")):
         return "C", "aggregator, scores, blog or fan site: a pointer (C), whatever the research file says"
-    if row.get("_round4") and g in ("A", "B") and AGGREGATOR4.search(row.get("source_url", "")) and not AGENCY.search(row.get("notes", "")):
+    agg4 = AGGREGATOR4.search(row.get("source_url", "")) or (SI90.search(row.get("source_url", "")) and re.search(r"90 ?min", row.get("notes", ""), re.I))
+    if row.get("_round4") and g in ("A", "B") and agg4 and not AGENCY.search(row.get("notes", "")):
         return "C", "aggregator site with no agency named: a pointer (C), whatever the research file says (DEC-420 (a), IQ-15k)"
     q = (row.get("exact_quote", "") + " " + row.get("fee_as_reported", ""))
     # brief section 7: UEFA.com news of another party's fee = B; "reported"/"thought to be" rows = reported (B)

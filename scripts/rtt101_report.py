@@ -945,10 +945,14 @@ if BASE16:
         if r["rank"] and int(r["rank"]) <= 12:
             now[r["month_end"]].append((int(r["rank"]), r["club_id"]))
     NOW = {mo: [c for _, c in sorted(v)] for mo, v in now.items()}
+    # IQ-15k: this section records the race as built at the end of IQ-15j (193580c); section 17 has the current figures
+    _T4 = rd("top12_before_round4.csv", os.path.join(D, "source"))
+    if _T4:
+        NOW = {r["month_end"]: r["top12_in_rank_order"].split(";") for r in _T4}
     lead_ch = [mo for mo in sorted(NOW) if TB16.get(mo) and TB16[mo][0] != NOW[mo][0]]
     set_ch = [mo for mo in sorted(NOW) if TB16.get(mo) and set(TB16[mo]) != set(NOW[mo])]
     ord_ch = [mo for mo in sorted(NOW) if TB16.get(mo) and TB16[mo] != NOW[mo]]
-    R.append(f"\n**Effect on the race** (against 398abbf, the end of IQ-15i): the leader changes at {len(lead_ch)} month ends; who is in the top 12 "
+    R.append(f"\n**Effect on the race** (against 398abbf, the end of IQ-15i; as built at the end of IQ-15j, 193580c; section 17 has the current figures): the leader changes at {len(lead_ch)} month ends; who is in the top 12 "
              f"changes at {len(set_ch)} month ends"
              + (" (" + "; ".join(f"{mo[:7]}: {', '.join(NAME.get(c, c) for c in sorted(set(NOW[mo]) - set(TB16[mo])))} in for "
                                   f"{', '.join(NAME.get(c, c) for c in sorted(set(TB16[mo]) - set(NOW[mo])))}" for mo in set_ch[:12]) + (" …" if len(set_ch) > 12 else "") + ")" if set_ch else "")
@@ -957,7 +961,9 @@ if BASE16:
     SB16 = {r["club_id"]: (int(r["rank"]), float(r["cum_net_gbp"])) for r in BASE16}
     last = max(NOW)
     SA16 = {r["club_id"]: (int(r["rank"]), float(r["cum_net_gbp"])) for r in SM if r["month_end"] == last and r["rank"]}
-    R += [f"\n**Standings at the freeze ({last}), cumulative net spend:**\n", "| Rank after | Club | Net before (rank) | Net after | Change |", "|---|---|---|---|---|"]
+    if rd("standings_before_round4.csv", os.path.join(D, "source")):
+        SA16 = {r["club_id"]: (int(r["rank"]), float(r["cum_net_gbp"])) for r in rd("standings_before_round4.csv", os.path.join(D, "source"))}
+    R += [f"\n**Standings at the freeze ({last}), cumulative net spend, at the end of IQ-15j:**\n", "| Rank after | Club | Net before (rank) | Net after | Change |", "|---|---|---|---|---|"]
     for c, (rk, v) in sorted(SA16.items(), key=lambda x: x[1][0])[:12]:
         b_ = SB16.get(c, (0, 0.0))
         R.append(f"| {rk} | {NAME.get(c, c)} | £{b_[1] / 1e6:,.1f}m ({b_[0]}) | £{v / 1e6:,.1f}m | {m(v - b_[1])} |")
@@ -967,7 +973,7 @@ if BASE16:
              "Chelsea fall from second to third because of three January 2020 sales known only from Chelsea's 2019-20 Wikipedia page: Michael Hector to "
              "Fulham (£5,310,000), Clinton Mola to Stuttgart (£360,000) and Victor Moses's loan to Inter (£190,000), less Bryan Fiabema's £540,000 purchase; "
              "none is confirmed at source yet (all in `source/jan2020_unsourced.csv` or loans). Under DEC-429 the final order is not settled until the "
-             "IQ-15k round on the leaders' undisclosed deals.")
+             "IQ-15k round on the leaders' undisclosed deals. (IQ-15k: Hector's £5.31m was a duplicate of his September 2019 move and is gone, DEC-436.)")
     OT = rd("round2_order_test.csv", os.path.join(D, "source"))
     yes = [r for r in OT if r["could_change"] == "yes"]
     R.append(f"\n**Order test re-run** (`source/round2_order_test.csv`): {len(yes)} of {len(OT)} unresearched round 2 deals could change who is in the top 12 at "
@@ -975,3 +981,106 @@ if BASE16:
     with open(OUT, "a", encoding="utf-8") as f:
         f.write("\n".join(R) + "\n")
     print("section 16:", len(newj), "January 2020 deals added;", len(lead_ch), "leader changes;", len(set_ch), "top-12 changes")
+
+# ---- section 17: source round 4, the three leaders' undisclosed deals (IQ-15k)
+BASE4 = rd("source_round4_baseline.csv", os.path.join(D, "source"))
+if BASE4:
+    from collections import Counter as _C6
+    B4 = {r["transfer_id"]: r for r in BASE4}
+    MAP4 = rd("source_round4_map.csv", os.path.join(D, "source"))
+    rev4 = [r for r in rd("review_decisions.csv", os.path.join(D, "source")) if r["batch"] == "SR4-01"]
+    J6 = [r for r in BASE4 if r["deal_id"].startswith("T")]
+    cnt, amt = _C6(), _C6()
+    for r in MAP4:
+        t = TI.get(r["transfer_id"], {})
+        club, side = r["leader_side"].split(":")
+        f = float(t.get("fee_gbp") or 0)
+        cnt[(club, side, "all")] += 1
+        if f > 0:
+            cnt[(club, side, "fig")] += 1
+            amt[(club, side)] += f
+            if t.get("status") == "VERIFIED":
+                cnt[(club, side, "ver")] += 1
+    nfig = len({r["transfer_id"] for r in MAP4 if float(TI.get(r["transfer_id"], {}).get("fee_gbp") or 0) > 0})
+    nver = len({r["transfer_id"] for r in MAP4 if float(TI.get(r["transfer_id"], {}).get("fee_gbp") or 0) > 0 and TI[r["transfer_id"]]["status"] == "VERIFIED"})
+    R = ["\n## 17. Source round 4: the three leaders' undisclosed deals (IQ-15k; DEC-435 to DEC-439)\n",
+         "- **Why:** Luke's DEC-429: the order at the freeze is not settled while the three leaders' undisclosed deals are counted £0.",
+         "- **Inputs:** the work list of 258 deals (Manchester United 16 purchases and 61 sales, Chelsea 24 and 63, Manchester City 27 and 67; "
+         "`source/source_round4_map.csv`), Claude helper research on all of them (part25a, part25c), the six January 2020 leader deals (part25d) and "
+         "Cowork's Chrome reads of the 12 round 3 pages the runner could not read (part25b). Every file's SHA-256 matched `00_README.md`.",
+         "- **Checked at source:** the 213 pages cited read on the runner (https://github.com/marketmarathon/race-through-time/actions/runs/37962899786: "
+         "186 loaded; 15 refused, 6 not found, the rest server errors or redirects).",
+         f"- **Quotes read:** {len(rev4)} newly confirmed quotes ({sum(1 for r in rev4 if r['decision'] == 'reject')} rejected: a pre-completion figure "
+         "where a completion report exists, a lower bound, an asking price, a total with add-ons, a maximum, and the Mikel settlement booked elsewhere).",
+         f"- **Result: {nfig} of the 258 deals now carry a figure ({nver} confirmed at source); none did before; {258 - nfig} stay £0** (undisclosed in "
+         "every source found, free, a loan, training compensation, a nominal fee, or only a maximum, lower bound or grade C figure). By leader and side "
+         "(a deal between two leaders counts on both sides):\n",
+         "| Club | Side | Deals | With a figure | Confirmed at source | Fees added |", "|---|---|---|---|---|---|"]
+    for club in ("manchester_united", "chelsea", "manchester_city"):
+        for side, lab in (("buyer", "purchases"), ("seller", "sales")):
+            R.append(f"| {NAME.get(club, club)} | {lab} | {cnt[(club, side, 'all')]} | {cnt[(club, side, 'fig')]} | {cnt[(club, side, 'ver')]} | {m(amt[(club, side)])} |")
+    R.append("\n**The figures now in use** (largest first):\n")
+    R += ["| Deal | Player | Move | Date | Fee in use | Status | Basis |", "|---|---|---|---|---|---|---|"]
+    for r in sorted(MAP4, key=lambda r: -float(TI.get(r["transfer_id"], {}).get("fee_gbp") or 0)):
+        t = TI.get(r["transfer_id"], {})
+        if float(t.get("fee_gbp") or 0) > 0:
+            R.append(f"| {r['deal_id']} | {t['player']} | {clubs.get(t['from_club'], t['from_club'])} → {clubs.get(t['to_club'], t['to_club'])} | {t['date']} | "
+                     f"£{float(t['fee_gbp']):,.0f} | {t['status']} ({t['grade']}) | {t['fee_status'][:60]} |")
+    R.append(f"\n**The six January 2020 leader deals (part25d):** "
+             + "; ".join(f"{TI[r['transfer_id']]['player']} {('£' + format(float(TI[r['transfer_id']]['fee_gbp'] or 0), ',.0f')) if float(TI[r['transfer_id']]['fee_gbp'] or 0) else '£0'} ({TI[r['transfer_id']]['fee_status'][:30]})"
+                         for r in J6 if r["transfer_id"] in TI)
+             + ". Hector's duplicate (Tf8a5f7e6ee) is gone; his one move is T6403be737e. No grade A/B figure was found for any of them; Fiabema, Mola "
+             "and Moses keep their Wikipedia figures as unconfirmed.")
+    # race
+    TB4 = {r["month_end"]: r["top12_in_rank_order"].split(";") for r in rd("top12_before_round4.csv", os.path.join(D, "source"))}
+    now = defaultdict(list)
+    for r in SM:
+        if r["rank"] and int(r["rank"]) <= 12:
+            now[r["month_end"]].append((int(r["rank"]), r["club_id"]))
+    NOW = {mo: [c for _, c in sorted(v)] for mo, v in now.items()}
+
+    def crowns(seqmap):
+        out = []
+        for mo in sorted(seqmap):
+            if not out or out[-1][1] != seqmap[mo][0]:
+                out.append((mo[:7], seqmap[mo][0]))
+        return out
+    cb, ca = crowns(TB4), crowns(NOW)
+    lead_ch = [mo for mo in sorted(NOW) if TB4.get(mo) and TB4[mo][0] != NOW[mo][0]]
+    set_ch = [mo for mo in sorted(NOW) if TB4.get(mo) and set(TB4[mo]) != set(NOW[mo])]
+    R += ["\n**Who leads, through time** (month the lead changes hands; from 2003):\n",
+          "- Before (193580c): " + " → ".join(f"{NAME.get(c, c)} ({mo})" for mo, c in cb if mo >= "2003"),
+          "- After: " + " → ".join(f"{NAME.get(c, c)} ({mo})" for mo, c in ca if mo >= "2003"),
+          f"\nThe leader differs at {len(lead_ch)} month ends; who is in the top 12 differs at {len(set_ch)} month ends"
+          + (" (" + "; ".join(f"{mo[:7]}: {', '.join(NAME.get(c, c) for c in sorted(set(NOW[mo]) - set(TB4[mo])))} in for "
+                                f"{', '.join(NAME.get(c, c) for c in sorted(set(TB4[mo]) - set(NOW[mo])))}" for mo in set_ch[:10]) + ")" if set_ch else "")
+          + ". The top-12 changes are Wolves leaving it again in 2019 and 2023: Jonny's £18m no longer has a deal (DEC-436)."]
+    SB4 = {r["club_id"]: (int(r["rank"]), float(r["cum_net_gbp"])) for r in rd("standings_before_round4.csv", os.path.join(D, "source"))}
+    last = max(NOW)
+    SA4 = {r["club_id"]: (int(r["rank"]), float(r["cum_net_gbp"])) for r in SM if r["month_end"] == last and r["rank"]}
+    R += [f"\n**Standings at the freeze ({last}), cumulative net spend:**\n", "| Rank after | Club | Net before (rank) | Net after | Change |", "|---|---|---|---|---|"]
+    for c, (rk, v) in sorted(SA4.items(), key=lambda x: x[1][0])[:12]:
+        b_ = SB4.get(c, (0, 0.0))
+        R.append(f"| {rk} | {NAME.get(c, c)} | £{b_[1] / 1e6:,.1f}m ({b_[0]}) | £{v / 1e6:,.1f}m | {m(v - b_[1])} |")
+    t3 = [c for c, _ in sorted(SA4.items(), key=lambda x: x[1][0])[:3]]
+    b3 = [c for c, _ in sorted(SB4.items(), key=lambda x: x[1][0])[:3]]
+    R.append(f"\n**Gaps between the three leaders:** after, {NAME[t3[0]]} lead {NAME[t3[1]]} by {m(SA4[t3[0]][1] - SA4[t3[1]][1])} and {NAME[t3[2]]} by "
+             f"{m(SA4[t3[0]][1] - SA4[t3[2]][1])}; before, {NAME[b3[0]]} led {NAME[b3[1]]} by {m(SB4[b3[0]][1] - SB4[b3[1]][1])} and {NAME[b3[2]]} by "
+             f"{m(SB4[b3[0]][1] - SB4[b3[2]][1])}. Manchester United take the lead only in the final month (the summer 2026 window).")
+    OT = rd("round2_order_test.csv", os.path.join(D, "source"))
+    yes = [r for r in OT if r["could_change"] == "yes"]
+    R.append(f"\n**Order test re-run** (`source/round2_order_test.csv`): {len(yes)} of {len(OT)} unresearched round 2 deals could change who is in the top 12 "
+             f"at some month end, {sum(1 for r in yes if r['what_changes'] == 'leader')} of them the leader (201 and 5 before this round): with the "
+             "finish this close, the P4 sweep (DEC-429) can still matter.")
+    unv = sorted((TI[r["transfer_id"]] for r in MAP4 if float(TI.get(r["transfer_id"], {}).get("fee_gbp") or 0) > 0 and TI[r["transfer_id"]]["status"] != "VERIFIED"),
+                 key=lambda t: -float(t["fee_gbp"]))
+    R += [f"\n**Still UNVERIFIED among the round 4 figures: {len(unv)}** (a grade B figure the runner could not confirm: page refused, gone or "
+          "changed, or the clubs not both named):\n", "| Player | Move | Date | Fee in use |", "|---|---|---|---|"]
+    for t in unv:
+        R.append(f"| {t['player']} | {clubs.get(t['from_club'], t['from_club'])} → {clubs.get(t['to_club'], t['to_club'])} | {t['date']} | £{float(t['fee_gbp']):,.0f} |")
+    QB4 = [l.rstrip("\n") for l in open(os.path.join(D, "source", "decided_round4.md"), encoding="utf-8")] \
+        if os.path.exists(os.path.join(D, "source", "decided_round4.md")) else []
+    R += QB4
+    with open(OUT, "a", encoding="utf-8") as f:
+        f.write("\n".join(R) + "\n")
+    print("section 17:", nfig, "with a figure;", nver, "verified;", len(lead_ch), "leader changes;", len(yes), "order-test deals")

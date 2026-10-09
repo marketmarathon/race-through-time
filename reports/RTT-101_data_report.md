@@ -6,13 +6,13 @@ Rebuild: `python3 scripts/build_rtt101_dataset.py && python3 scripts/rtt101_repo
 
 ## 1. What was built
 
-- **13,601 transfer events** that involve a club in the Premier League that season (1992-93 to the freeze, 1 Sep 2026), of which **3,468 carry a fee** above £0. The rest are loans without a fee (5,502), free transfers (2,044), undisclosed fees with no figure, counted £0 (2,062), and fees not found (475).
-- Fee status: **VERIFIED 2,180**, UNVERIFIED 1,288. Grade of the fee used: A 33, B 2,192, C (Wikipedia pointer only) 1,243, D 0.
-- Tiers (DEC-248): Tier 1 **1,992**, Tier 2 754, Tier 3 736 (5% sample: 37).
-  Tier 1 reasons (a transfer can have several): removal changes the leader or the top 12 1,064; fee >= £20m 555; club or British record (research lead) 529; alternative fee version changes the leader or the top 12 16; disputed fee (research section C) 10.
-- 19,752 evidence rows in `fee_evidence.csv`; 4,819 sources in `sources.csv`; 822 transfers with more than one fee version (`conflicts.csv`).
-- **Scripted source check** (GitHub runner, 6,009 cited pages): VERIFIED 5,372; page fetched but figure not found near the player's name 559; blocked or gone 78.
-  Tier 2 result: 387 of 754 Tier 2 fees VERIFIED by the scripted check.
+- **13,597 transfer events** that involve a club in the Premier League that season (1992-93 to the freeze, 1 Sep 2026), of which **3,509 carry a fee** above £0. The rest are loans without a fee (5,848), free transfers (2,048), undisclosed fees with no figure, counted £0 (2,008), and fees not found (130).
+- Fee status: **VERIFIED 2,211**, UNVERIFIED 1,298. Grade of the fee used: A 33, B 2,235, C (Wikipedia pointer only) 1,241, D 0.
+- Tiers (DEC-248): Tier 1 **1,924**, Tier 2 865, Tier 3 734 (5% sample: 37).
+  Tier 1 reasons (a transfer can have several): removal changes the leader or the top 12 987; fee >= £20m 558; club or British record (research lead) 528; alternative fee version changes the leader or the top 12 23; disputed fee (research section C) 10.
+- 19,973 evidence rows in `fee_evidence.csv`; 5,024 sources in `sources.csv`; 838 transfers with more than one fee version (`conflicts.csv`).
+- **Scripted source check** (GitHub runner, 6,094 cited pages): VERIFIED 5,457; page fetched but figure not found near the player's name 559; blocked or gone 78.
+  Tier 2 result: 470 of 865 Tier 2 fees VERIFIED by the scripted check.
   Tier 3 sample: 7 of 37 VERIFIED; most Tier 3 rows have no fetchable citation (error rate cannot be published yet: phase 2).
 
 ## 2. Checks
@@ -22,12 +22,12 @@ Rebuild: `python3 scripts/build_rtt101_dataset.py && python3 scripts/rtt101_repo
 | 22 clubs per season 1992-95, 20 after (706 club-seasons) | **PASS** | 706 club-seasons in 35 seasons |
 | every season has an attribution window | **PASS** | 1992-05-03 to 2026-09-01 |
 | 51 clubs, each with at least one PL season | **PASS** | 51 clubs |
-| no transfer counted outside its club's PL seasons | **PASS** | 3900 ledger rows frozen (club not in the PL) |
-| PL-to-PL deals net to zero (spend - income of PL clubs = net spend with non-PL clubs) | **PASS** | spend £29,006,427,008 − income £15,120,430,286 = £13,885,996,722; net with non-PL clubs £13,885,996,722 |
-| no fee without a source row | **PASS** | 3468 fee-bearing transfers |
+| no transfer counted outside its club's PL seasons | **PASS** | 3898 ledger rows frozen (club not in the PL) |
+| PL-to-PL deals net to zero (spend - income of PL clubs = net spend with non-PL clubs) | **PASS** | spend £29,170,192,607 − income £15,269,699,327 = £13,900,493,281; net with non-PL clubs £13,900,493,281 |
+| no fee without a source row | **PASS** | 3509 fee-bearing transfers |
 | no Transfermarkt figure or URL anywhere | **PASS** | none found |
-| quotes under 25 words | **PASS** | 19752 evidence rows |
-| every conversion has a rate row | **PASS** | 99 conversions |
+| quotes under 25 words | **PASS** | 19973 evidence rows |
+| every conversion has a rate row | **PASS** | 110 conversions |
 | month-end series consistent with the ledger | **PASS** | 413 month ends × 51 clubs |
 | no window has under half the PL deals of the same-type windows either side (bar documented gaps) | **PASS** | 69 windows compared; documented gaps (DEC-431): January 1993, January 1994, January 2004, January 2005 |
 | every list-page row has a date (IQ-15j: undated rows are dropped from the build) | **PASS** | 20905 rows |
@@ -61,11 +61,9 @@ First place at each month end, nominal cumulative net spend; a change is listed 
 | 2002-06-30 | Liverpool | £84.1m |
 | 2002-07-31 | Manchester United | £93.7m |
 | 2003-07-31 | Chelsea | £108.4m |
-| 2011-07-31 | Manchester City | £428.6m |
-| 2011-08-31 | Chelsea | £465.3m |
-| 2015-07-31 | Manchester City | £634.6m |
-| 2023-01-31 | Chelsea | £1.46bn |
-| 2026-09-01 | Manchester United | £1.66bn |
+| 2015-08-31 | Manchester City | £706.2m |
+| 2022-08-31 | Chelsea | £1.21bn |
+| 2026-09-01 | Manchester United | £1.68bn |
 
 ## 4. Top 12 at key dates (UNVERIFIED preview)
 
@@ -77,17 +75,17 @@ First place at each month end, nominal cumulative net spend; a change is listed 
 
 **2005-05-31:** 1. Chelsea £276.1m; 2. Manchester United £126.7m; 3. Liverpool £104.4m; 4. Newcastle United £88.1m; 5. Tottenham Hotspur £82.9m; 6. Middlesbrough £78.4m; 7. Aston Villa £54.9m; 8. Manchester City £46.0m; 9. Sunderland £39.2m; 10. Blackburn Rovers £37.9m; 11. Arsenal £35.6m; 12. Birmingham City £29.2m
 
-**2008-08-31:** 1. Chelsea £340.9m; 2. Liverpool £181.1m; 3. Manchester United £162.5m; 4. Aston Villa £122.7m; 5. Tottenham Hotspur £122.2m; 6. Middlesbrough £109.5m; 7. Newcastle United £107.5m; 8. Sunderland £93.4m; 9. Manchester City £89.6m; 10. Fulham £55.5m; 11. Birmingham City £47.2m (out of the PL); 12. Everton £45.6m
+**2008-08-31:** 1. Chelsea £361.5m; 2. Liverpool £181.1m; 3. Manchester United £155.8m; 4. Aston Villa £122.7m; 5. Tottenham Hotspur £122.2m; 6. Middlesbrough £109.5m; 7. Newcastle United £107.5m; 8. Sunderland £93.4m; 9. Manchester City £88.1m; 10. Fulham £55.5m; 11. Birmingham City £47.2m (out of the PL); 12. Everton £45.6m
 
-**2012-05-31:** 1. Chelsea £482.6m; 2. Manchester City £453.6m; 3. Liverpool £192.5m; 4. Tottenham Hotspur £144.7m; 5. Manchester United £143.9m; 6. Sunderland £131.9m; 7. Aston Villa £113.5m; 8. Middlesbrough £109.4m (out of the PL); 9. Birmingham City £80.9m (out of the PL); 10. Newcastle United £72.5m; 11. Stoke City £58.4m; 12. Fulham £52.0m
+**2012-05-31:** 1. Chelsea £535.2m; 2. Manchester City £439.9m; 3. Liverpool £192.5m; 4. Manchester United £165.0m; 5. Tottenham Hotspur £144.7m; 6. Sunderland £131.9m; 7. Aston Villa £113.5m; 8. Middlesbrough £109.4m (out of the PL); 9. Birmingham City £80.9m (out of the PL); 10. Newcastle United £72.5m; 11. Stoke City £58.4m; 12. Fulham £52.0m
 
-**2016-08-31:** 1. Manchester City £875.7m; 2. Chelsea £727.2m; 3. Manchester United £542.8m; 4. Liverpool £311.3m; 5. Sunderland £187.6m; 6. Tottenham Hotspur £158.8m; 7. Arsenal £129.8m; 8. Middlesbrough £127.2m; 9. Aston Villa £114.9m (out of the PL); 10. Stoke City £111.7m; 11. West Bromwich Albion £104.8m; 12. Leicester City £87.6m
+**2016-08-31:** 1. Manchester City £867.8m; 2. Chelsea £782.2m; 3. Manchester United £580.9m; 4. Liverpool £311.3m; 5. Sunderland £187.6m; 6. Tottenham Hotspur £158.8m; 7. Arsenal £129.8m; 8. Middlesbrough £127.2m; 9. Aston Villa £114.9m (out of the PL); 10. Stoke City £111.7m; 11. West Bromwich Albion £104.8m; 12. Leicester City £87.6m
 
-**2020-10-31:** 1. Manchester City £1.19bn; 2. Chelsea £987.1m; 3. Manchester United £844.9m; 4. Liverpool £441.6m; 5. Everton £368.7m; 6. Tottenham Hotspur £334.3m; 7. Arsenal £329.3m; 8. Aston Villa £293.7m; 9. West Ham United £216.2m; 10. Sunderland £195.1m (out of the PL); 11. Newcastle United £186.8m; 12. West Bromwich Albion £172.2m
+**2020-10-31:** 1. Manchester City £1.19bn; 2. Chelsea £1.03bn; 3. Manchester United £883.0m; 4. Liverpool £441.6m; 5. Everton £368.7m; 6. Tottenham Hotspur £334.3m; 7. Arsenal £329.3m; 8. Aston Villa £293.7m; 9. West Ham United £216.2m; 10. Sunderland £195.1m (out of the PL); 11. Newcastle United £186.8m; 12. West Bromwich Albion £172.2m
 
-**2023-09-30:** 1. Chelsea £1.67bn; 2. Manchester City £1.27bn; 3. Manchester United £1.27bn; 4. Arsenal £699.9m; 5. Liverpool £658.7m; 6. Newcastle United £543.1m; 7. Tottenham Hotspur £540.2m; 8. West Ham United £420.9m; 9. Aston Villa £392.1m; 10. Everton £339.7m; 11. AFC Bournemouth £269.3m; 12. Fulham £225.2m
+**2023-09-30:** 1. Chelsea £1.68bn; 2. Manchester United £1.29bn; 3. Manchester City £1.27bn; 4. Arsenal £699.9m; 5. Liverpool £658.7m; 6. Newcastle United £543.1m; 7. Tottenham Hotspur £540.2m; 8. West Ham United £420.9m; 9. Aston Villa £392.1m; 10. Everton £339.7m; 11. AFC Bournemouth £269.3m; 12. Fulham £225.2m
 
-**2026-09-01:** 1. Manchester United £1.66bn; 2. Manchester City £1.65bn; 3. Chelsea £1.65bn; 4. Arsenal £1.13bn; 5. Liverpool £988.9m; 6. Tottenham Hotspur £985.0m; 7. Newcastle United £702.6m; 8. West Ham United £590.5m (out of the PL); 9. Everton £376.1m; 10. Fulham £367.3m; 11. Sunderland £338.4m; 12. Aston Villa £313.1m
+**2026-09-01:** 1. Manchester United £1.68bn; 2. Chelsea £1.66bn; 3. Manchester City £1.65bn; 4. Arsenal £1.13bn; 5. Liverpool £988.9m; 6. Tottenham Hotspur £985.0m; 7. Newcastle United £702.6m; 8. West Ham United £590.5m (out of the PL); 9. Everton £376.1m; 10. Fulham £367.3m; 11. Sunderland £338.4m; 12. Aston Villa £313.1m
 
 ## 5. Coverage by era
 
@@ -96,11 +94,11 @@ Counts are club-sides (a PL-to-PL deal counts once for each club).
 | Era | Transfers found | With a fee | Fee grade A/B | Fee VERIFIED | Undisclosed, no figure | Fee not found |
 |---|---|---|---|---|---|---|
 | 1992-2002 (no window lists) | 2,178 | 1,434 | 951 | 941 | 52 | 91 |
-| 2002-2007 | 1,179 | 480 | 133 | 205 | 139 | 13 |
-| 2007-2012 | 2,972 | 537 | 340 | 284 | 539 | 7 |
-| 2012-2017 | 3,052 | 566 | 387 | 361 | 523 | 9 |
-| 2017-2022 | 2,736 | 480 | 372 | 353 | 479 | 378 |
-| 2022-2026 | 3,091 | 827 | 712 | 680 | 495 | 4 |
+| 2002-2007 | 1,179 | 480 | 133 | 205 | 138 | 13 |
+| 2007-2012 | 2,972 | 551 | 354 | 293 | 524 | 7 |
+| 2012-2017 | 3,052 | 578 | 399 | 370 | 508 | 9 |
+| 2017-2022 | 2,732 | 487 | 381 | 360 | 469 | 19 |
+| 2022-2026 | 3,091 | 835 | 720 | 686 | 482 | 4 |
 
 What the eras mean:
 - **1992–2002:** no Wikipedia window lists exist (V-10). The finding list is the clubs' season pages (200 of 210 fetched; the ten Leeds United pages are titled "Leeds United A.F.C." and were not fetched in this round) plus the research leads. About a quarter of those pages have no transfer table at all, so this era is the least complete. Transfermarkt was not used (route A says to consult it only to spot omissions; nothing from it is stored).
@@ -139,7 +137,7 @@ Transfers whose sources give different fees (never averaged; the canonical fee i
 | Luka Modrić | Tottenham Hotspur → Real Madrid | 2012-08-27 | £27.9m (B) | £23.7m–£33.0m | 1 | yes |
 | Casemiro | Real Madrid → Manchester United | 2022-08-22 | £60.0m (B) | £50.7m–£60.0m | 1 |  |
 
-48 conflicts are for Luke in total (`conflicts.csv`, column `for_luke`).
+47 conflicts are for Luke in total (`conflicts.csv`, column `for_luke`).
 
 ## 7. League-wide window totals: our sums against published totals
 
@@ -151,41 +149,41 @@ Our sums are **fees only, Premier League clubs only, from this preview** (gross 
 | summer 2003 | £195.1m | £113.2m | — | — | £215m / NOT FOUND (The Independent) |
 | summer 2005 | £231.2m | £110.8m | — | — | £235m / NOT FOUND (The Independent) |
 | summer 2006 | £239.5m | £122.0m | — | — | £300m / NOT FOUND (BBC News) |
-| summer 2008 | £396.2m | £168.8m | — | — | 500 million pounds / NOT FOUND (Reuters (via Rediff)) |
+| summer 2008 | £404.2m | £175.2m | — | — | 500 million pounds / NOT FOUND (Reuters (via Rediff)) |
 | January 2009 | £110.4m | £9.8m | — | — | about £160m / NOT FOUND (The Guardian (report) |
 | summer 2009 | £404.4m | £57.3m | — | — | £460.4m / NOT FOUND (The Guardian) |
 | January 2010 | £28.5m | £9.9m | £36.0m | £7.0m | £30m / NOT FOUND (The Guardian (report) |
-| summer 2010 | £207.3m | £113.9m | — | — | around £350million / NOT FOUND (Sky Sports (reportin) |
-| January 2011 | £195.6m | £76.3m | £209.3m | £77.3m | £225m / NOT FOUND (The Guardian (table ) |
-| summer 2011 | £346.3m | £125.7m | — | — | NOT FOUND / £194m (The Guardian) |
-| January 2012 | £48.2m | £6.2m | £67.4m | £24.5m | — |
-| summer 2012 | £347.1m | £160.1m | — | — | around £490m / NOT FOUND (Sky News (reporting ) |
+| summer 2010 | £231.3m | £137.9m | — | — | around £350million / NOT FOUND (Sky Sports (reportin) |
+| January 2011 | £199.1m | £79.8m | £209.3m | £77.3m | £225m / NOT FOUND (The Guardian (table ) |
+| summer 2011 | £392.3m | £146.4m | — | — | NOT FOUND / £194m (The Guardian) |
+| January 2012 | £48.2m | £5.5m | £67.4m | £24.5m | — |
+| summer 2012 | £374.4m | £187.3m | — | — | around £490m / NOT FOUND (Sky News (reporting ) |
 | January 2013 | £87.6m | £44.6m | £123.4m | £72.5m | £120m / £70m (Press Association (v) |
-| summer 2013 | £558.9m | £354.4m | — | — | £630m / NOT FOUND (BBC Sport) |
+| summer 2013 | £558.9m | £351.4m | — | — | £630m / NOT FOUND (BBC Sport) |
 | January 2014 | £120.0m | £36.2m | £128.8m | £26.9m | — |
-| summer 2014 | £668.3m | £306.0m | £809.6m | £386.5m | £835m / £410m (Press Association (v) |
+| summer 2014 | £671.3m | £301.7m | £809.6m | £386.5m | £835m / £410m (Press Association (v) |
 | January 2015 | £96.8m | £28.7m | £118.2m | £36.4m | £130million / around £40million (The Independent (Age) |
-| summer 2015 | £739.6m | £374.1m | £858.6m | £432.6m | £870m / £460m (BBC Sport) |
-| January 2016 | £120.5m | £47.5m | £177.5m | £108.9m | £175m / NOT FOUND (BBC Sport) |
+| summer 2015 | £741.6m | £375.9m | £858.6m | £432.6m | £870m / £460m (BBC Sport) |
+| January 2016 | £124.0m | £51.0m | £177.5m | £108.9m | £175m / NOT FOUND (BBC Sport) |
 | summer 2016 | £1.09bn | £724.6m | £1.12bn | £635.6m | £1.165bn / NOT FOUND (Sky Sports (reportin) |
 | January 2017 | £163.5m | −£53.2m | £236.7m | −£4.0m | £215m / net £40m profit (Sky Sports) |
-| summer 2017 | £1.37bn | £655.6m | £1.41bn | £665.0m | £1.43bn / NOT FOUND (Sky News) |
+| summer 2017 | £1.40bn | £684.6m | £1.41bn | £665.0m | £1.43bn / NOT FOUND (Sky News) |
 | January 2018 | £375.8m | £109.8m | £419.5m | £147.6m | £430m / NOT FOUND (BBC Sport / Deloitte) |
-| summer 2018 | £963.5m | £753.0m | — | — | £1.23bn / £865m (Sky News) |
-| January 2019 | £129.6m | £74.5m | — | — | £180m / NOT FOUND (Sky Sports) |
-| summer 2019 | £1.14bn | £518.4m | — | — | £1.41billion / £625m (PA, syndicated by Ex) |
-| January 2020 | £164.8m | £154.4m | — | — | £230m / £165m (BBC Sport) |
+| summer 2018 | £963.5m | £721.5m | — | — | £1.23bn / £865m (Sky News) |
+| January 2019 | £111.6m | £56.5m | — | — | £180m / NOT FOUND (Sky Sports) |
+| summer 2019 | £1.14bn | £509.2m | — | — | £1.41billion / £625m (PA, syndicated by Ex) |
+| January 2020 | £164.8m | £159.9m | — | — | £230m / £165m (BBC Sport) |
 | summer 2020 | £1.09bn | £683.8m | — | — | £1.24bn / £813million (PA (Tom White), synd) |
-| January 2021 | £50.0m | £29.7m | — | — | £70m / NOT FOUND (Sky News) |
-| summer 2021 | £887.7m | £432.1m | — | — | £1.1billion / £560m (PA, syndicated by Fo) |
+| January 2021 | £50.0m | £13.4m | — | — | £70m / NOT FOUND (Sky News) |
+| summer 2021 | £887.7m | £422.7m | — | — | £1.1billion / £560m (PA, syndicated by Fo) |
 | January 2022 | £188.0m | £78.7m | — | — | £295m / £180m (Sky News) |
-| summer 2022 | £1.75bn | £997.3m | — | — | Estimates from Deloitte’s spor / NOT FOUND (The Guardian / Deloi) |
+| summer 2022 | £1.76bn | £1.01bn | — | — | Estimates from Deloitte’s spor / NOT FOUND (The Guardian / Deloi) |
 | January 2023 | £663.3m | £567.0m | — | — | around £780.1m / £675m (Sky Sports) |
-| summer 2023 | £2.26bn | £1.06bn | — | — | £2.44bn / £1.07bn (Sky Sports) |
+| summer 2023 | £2.26bn | £1.03bn | — | — | £2.44bn / £1.07bn (Sky Sports) |
 | January 2024 | £87.7m | £76.9m | — | — | £96.2m / NOT FOUND (Sky Sports) |
-| summer 2024 | £1.90bn | £640.1m | — | — | £2.08bn / £627.4m (Sky Sports) |
+| summer 2024 | £1.90bn | £630.2m | — | — | £2.08bn / £627.4m (Sky Sports) |
 | January 2025 | £341.4m | £217.5m | — | — | around £370m / NOT FOUND (BBC Sport) |
-| summer 2025 | £2.89bn | £1.25bn | — | — | surpassed £3bn; £3.087bn / NOT FOUND (BBC Sport) |
+| summer 2025 | £2.89bn | £1.26bn | — | — | surpassed £3bn; £3.087bn / NOT FOUND (BBC Sport) |
 | January 2026 | £336.6m | £110.3m | — | — | £397m / NOT FOUND (BBC Sport) |
 | summer 2026 | £3.13bn | £1.21bn | — | — | around £3.46 billion / NOT FOUND (Reuters, syndicated ) |
 
@@ -208,25 +206,25 @@ Why the totals differ:
 
 ## 9. Questions for Luke (each with Claude's recommendation)
 
-1. **Tier 1 is too big as worded (DEC-253).** 1,992 transfers are Tier 1, mostly because of the "changes the top-12 order" test. *Recommendation:* keep £20m+, records and disputed fees, and narrow the order test to "changes the leader, or who is in the top 12, at any month end"; the rest get Tier 2's scripted check.
-2. **Undisclosed fees count £0 (DEC-237 (g)).** 2,062 transfers have no reported figure. *Recommendation:* keep the rule, say on screen "Undisclosed fees not included", and give each club's undisclosed count in the description.
+1. **Tier 1 is too big as worded (DEC-253).** 1,924 transfers are Tier 1, mostly because of the "changes the top-12 order" test. *Recommendation:* keep £20m+, records and disputed fees, and narrow the order test to "changes the leader, or who is in the top 12, at any month end"; the rest get Tier 2's scripted check.
+2. **Undisclosed fees count £0 (DEC-237 (g)).** 2,008 transfers have no reported figure. *Recommendation:* keep the rule, say on screen "Undisclosed fees not included", and give each club's undisclosed count in the description.
 3. **The early years are the least complete (1992–2007).** *Recommendation:* in phase 2, Claude in Cowork uses Transfermarkt in your Chrome only as a finding list (route A, nothing stored) to spot missing 1992–2007 deals involving the bigger fees, and takes each fee from a press or club source.
 4. **Relegated clubs keep their frozen bar and their rank** (contract §1; e.g. a relegated club can sit 8th at the freeze). *Recommendation:* keep them in the ranking; how a frozen bar looks is a design question for the pilot (DEC-069).
 5. **Start of the race.** At 31 May 1992 every bar is £0 (the leader that month is only a tie-break). *Recommendation:* the film starts at the first month end with a fee (July 1992); the data stay as they are.
-6. **Same-grade fee disagreements on Tier 1 transfers:** 48 are listed in `conflicts.csv` (column `for_luke`). *Recommendation:* phase 2 settles each at source; the ones still open after that come back to you as a short list.
+6. **Same-grade fee disagreements on Tier 1 transfers:** 47 are listed in `conflicts.csv` (column `for_luke`). *Recommendation:* phase 2 settles each at source; the ones still open after that come back to you as a short list.
 7. **Claude's working choices** DEC-247 (finding list), DEC-248 (tiers), DEC-249 (board size later), DEC-250 (build details) and DEC-254 (how the scripted check marks a fee VERIFIED, and publisher grades). *Recommendation:* confirm them.
 8. **Phase 2 first batch.** *Recommendation:* verify the Tier 1 fees of the clubs that lead or reach the top 3 (Chelsea, Manchester United, Manchester City, Arsenal, Liverpool, Newcastle, Blackburn, Everton) first, in batches of 50 (`tier1_list.csv`, column `batch`).
 
 ## 10. Phase 2 (IQ-15b): verification at source
 
-- **Tier 1 (DEC-256):** 1,978 fee-bearing Tier 1 transfers; **1,625 VERIFIED at source** (1,570 by a club, league or press source, grade A/B; 55 only by a database such as Soccerbase, grade C; 0 only by a grade D site), each quote read by Claude (2,607 quotes accepted, 320 rejected; `source/review_decisions.csv`). The rest have no page that states the figure next to the player's name yet (mostly 1990s–2000s deals whose only sources are Wikipedia figures or dead links).
-- **Tier 2:** 387 of 754 VERIFIED by the scripted check. **Tier 3 sample:** 7 of 37 VERIFIED.
+- **Tier 1 (DEC-256):** 1,910 fee-bearing Tier 1 transfers; **1,570 VERIFIED at source** (1,514 by a club, league or press source, grade A/B; 56 only by a database such as Soccerbase, grade C; 0 only by a grade D site), each quote read by Claude (2,639 quotes accepted, 325 rejected; `source/review_decisions.csv`). The rest have no page that states the figure next to the player's name yet (mostly 1990s–2000s deals whose only sources are Wikipedia figures or dead links).
+- **Tier 2:** 470 of 865 VERIFIED by the scripted check. **Tier 3 sample:** 7 of 37 VERIFIED.
 - **Undisclosed fees (DEC-257):** 47 grade A/B reported figures found at the cited source and read by Claude, used and flagged "reported" (45 transfers; 37 close candidates rejected on reading: another deal, grade D, not a fee, or a total with add-ons; `source/reported_fees.csv`); every other candidate figure on those pages belonged to another deal, a wage, an offer or a fine.
 - **1992–2007 gap list (DEC-264), sections A v2, B and C (1992–2007):** 137 new moves added, 101 VERIFIED (the page names the player, both clubs and the fee); the rest matched transfers already in the build. 6 gap rows have no transfer date (retrospective articles only) and are listed in `unmatched_leads.csv`.
 - **Leeds United 1992–2002** pages added; **last 1991–92 First Division matchday 2 May 1992** confirmed by eight club fixture lists (pointers, grade C).
 - **Root causes found by reading the batches, and fixed in the build** (each fix applies to every row, not only the one seen): player names inside Wikipedia sort templates; the same deal listed twice; research leads matched on surname only (Kylian Hazard had been given Eden Hazard's fee); club-season tables whose direction was read from prose, plus a Wikipedia table labelled "From" in an "Out" section (Newcastle 1998–99); figures that are maxima, offers, valuations, instalments, combined fees or totals including add-ons; a regression that had dropped pre-2002 research-lead transfers (restored); accented names not matched (ø, æ, ß and others); Soccerbase "Totals" lines and other rows of a career table read as this deal's fee (a Soccerbase figure now counts only from the row whose joining date is the transfer's); the same deal reported at two stages with a non-PL club not merged (Yobo, Baros); a reported figure attached to the same player's other moves.
 
-### Same-grade fee conflicts not settled at source (DEC-261): 48, each settled by the contract's rule (DEC-277)
+### Same-grade fee conflicts not settled at source (DEC-261): 47, each settled by the contract's rule (DEC-277)
 
 Settled at source = the fee used is confirmed at source and no differing same-grade figure is (totals including add-ons are not rivals). The deals below were not; Luke decided (DEC-277) that the existing rule settles them: best grade first, then the earliest report (a contemporary sterling figure from a grade A/B source preferred, contract §5). The last column says which step decided. Where no figure is confirmed at source yet, the fee stays UNVERIFIED (not on screen) and the deal is in the next research round.
 
@@ -265,7 +263,6 @@ Settled at source = the fee used is confirmed at source and no differing same-gr
 | Robbie Fowler | Leeds United → Manchester City | 2003-01-30 | £3.0m (B) | B V around £7million; B V £3m cash [€4.5m] agreed fee with further payments of up ; B V €9m | two same-grade sources confirm different figures | £3.0m (B, www.uefa.com): same grade; the report that the deal was completed beats earlier bids, agreed or expected figures (DEC-404; 2003-01-30) |
 | Robbie Keane | Liverpool → Tottenham Hotspur | 2009-02-02 | £15.0m (B) |  | the fee used is not yet confirmed at source | £15.0m (B, www.theguardian.com): no figure confirmed at source yet: the fee stays UNVERIFIED (not on screen) until one is |
 | Kiernan Dewsbury-Hall | Chelsea → Everton | 2025-08-06 | £24.8m (B) |  | the fee used is not yet confirmed at source | £24.8m (B, www.thescore.com): no figure confirmed at source yet: the fee stays UNVERIFIED (not on screen) until one is |
-| Christian Bassedas | Vélez Sársfield → Newcastle United | 2000-06-01 | £3.5m (B) | B V £0.5m; B V £3.5m | two same-grade sources confirm different figures | £3.5m (B, www.theguardian.com): same grade; earliest report (2000-06-01) |
 | Matthew Upson | Arsenal → Birmingham City | 2003-01-22 | £3.0m (C) |  | the fee used is not yet confirmed at source | £3.0m (C, en.wikipedia.org): no figure confirmed at source yet: the fee stays UNVERIFIED (not on screen) until one is |
 | James Milner | Newcastle United → Aston Villa | 2008-08-29 | £12.0m (B) | B V believed to be in the region of £10m; B V £12m | two same-grade sources confirm different figures | £12.0m (B, www.theguardian.com): same grade; earliest report (2008-08-29) |
 | Igor Biscan | Dinamo Zagreb → Liverpool | 2000-12-07 | £7.0m (B) | B V £5.5m; B V £5m; B V £7m | two same-grade sources confirm different figures | £7.0m (B, www.theguardian.com): same grade; earliest report (2000-10-13) |
@@ -310,21 +307,21 @@ Our sums count fees paid by PL clubs (gross) and fees paid to minus received fro
 | January 2006 | £51.2m | £58.1m | £6.9m | £0.0m | — | — | £41.7m | £41.6m |
 | summer 2006 | £239.8m | £239.5m | −£0.4m | £4.7m | £300.0m (B, BBC News) | £60.5m | £118.4m | £122.0m |
 | January 2007 | £37.5m | £41.3m | £3.9m | £3.0m | — | — | £17.9m | £17.2m |
-| summer 2007 | £324.6m | £345.9m | £21.2m | £0.0m | — | — | £166.2m | £164.7m |
+| summer 2007 | £324.6m | £349.6m | £25.0m | £0.0m | — | — | £166.2m | £161.7m |
 
-Total gross 1997–2007: £2.76bn before, £2.97bn after (£209.3m net change, of which £260.5m paid in moves the gap list added). Where a published total exists, our sum stays below it mainly because undisclosed fees count £0 and the early Wikipedia window lists are short; the gap list narrows the gap but does not close it, and no figure is forced to match.
+Total gross 1997–2007: £2.76bn before, £2.98bn after (£213.0m net change, of which £260.5m paid in moves the gap list added). Where a published total exists, our sum stays below it mainly because undisclosed fees count £0 and the early Wikipedia window lists are short; the gap list narrows the gap but does not close it, and no figure is forced to match.
 
 ### Leader sequence after phase 2
 
-Leader at each change (month end): 1992-05 Arsenal; 1992-07 Blackburn Rovers; 1993-07 Liverpool; 1993-09 Blackburn Rovers; 1995-07 Liverpool; 1996-07 Newcastle United; 1997-12 Liverpool; 1998-02 Newcastle United; 1999-07 Liverpool; 2000-06 Chelsea; 2000-07 Liverpool; 2001-07 Manchester United; 2001-08 Liverpool; 2001-11 Leeds United; 2002-06 Liverpool; 2002-07 Manchester United; 2003-07 Chelsea; 2011-07 Manchester City; 2011-08 Chelsea; 2015-07 Manchester City; 2023-01 Chelsea; 2026-09 Manchester United.
+Leader at each change (month end): 1992-05 Arsenal; 1992-07 Blackburn Rovers; 1993-07 Liverpool; 1993-09 Blackburn Rovers; 1995-07 Liverpool; 1996-07 Newcastle United; 1997-12 Liverpool; 1998-02 Newcastle United; 1999-07 Liverpool; 2000-06 Chelsea; 2000-07 Liverpool; 2001-07 Manchester United; 2001-08 Liverpool; 2001-11 Leeds United; 2002-06 Liverpool; 2002-07 Manchester United; 2003-07 Chelsea; 2015-08 Manchester City; 2022-08 Chelsea; 2026-09 Manchester United.
 
 
 ### Phase 2 questions — answered by Luke (YES to all four, 7 Oct 2026: DEC-274 to DEC-277)
 
-1. **Database-only Tier 1 figures.** 55 Tier 1 fees are confirmed only by a grade C source (55 of them a Soccerbase row for that move) and 0 only by a source graded D (mostly later retrospective articles). May a Soccerbase row count as VERIFIED for screen? *Recommendation:* yes for Soccerbase rows (they are dated career tables, checked row by row), no for grade D; keep looking for press sources for both.
-2. **Next research round.** 408 Tier 1 fees still have no VERIFIED club, league or press source (`data/rtt-101/tier1_needs_press_source.csv`, mostly 1992–2007). *Recommendation:* one more ChatGPT deep-research round on that list (a press or club URL and a short quote per deal, leads only; every figure checked at source here), starting with 1992–2002.
-3. **Fees known only as a maximum or an approximation.** 9 deals count £0 because every figure found is a maximum, a total including add-ons, or an approximation ("just under £30m", "in excess of £13m", "£40m-plus"). *Recommendation:* keep £0 (DEC-237 (e)) and add these deals to the next research round to find the guaranteed fee.
-4. **Same-grade conflicts.** 48 remain (table above). *Recommendation:* use the rule already in the contract (highest grade, then the earliest contemporary report) for all of them, and list them in the description notes; Luke can overrule any single deal.
+1. **Database-only Tier 1 figures.** 56 Tier 1 fees are confirmed only by a grade C source (56 of them a Soccerbase row for that move) and 0 only by a source graded D (mostly later retrospective articles). May a Soccerbase row count as VERIFIED for screen? *Recommendation:* yes for Soccerbase rows (they are dated career tables, checked row by row), no for grade D; keep looking for press sources for both.
+2. **Next research round.** 396 Tier 1 fees still have no VERIFIED club, league or press source (`data/rtt-101/tier1_needs_press_source.csv`, mostly 1992–2007). *Recommendation:* one more ChatGPT deep-research round on that list (a press or club URL and a short quote per deal, leads only; every figure checked at source here), starting with 1992–2002.
+3. **Fees known only as a maximum or an approximation.** 10 deals count £0 because every figure found is a maximum, a total including add-ons, or an approximation ("just under £30m", "in excess of £13m", "£40m-plus"). *Recommendation:* keep £0 (DEC-237 (e)) and add these deals to the next research round to find the guaranteed fee.
+4. **Same-grade conflicts.** 47 remain (table above). *Recommendation:* use the rule already in the contract (highest grade, then the earliest contemporary report) for all of them, and list them in the description notes; Luke can overrule any single deal.
 
 **Luke's answers:** (1) a Soccerbase row counts as VERIFIED, grade C, labelled "database source" (`transfers.csv` column `verified_by`); other grade C and grade D sources do not confirm a fee (DEC-274). (2) One more ChatGPT deep-research round on `tier1_needs_press_source.csv`, starting with 1992–2002; every figure is a lead to check at source here (DEC-275). (3) The deals known only as a maximum or an approximation stay at £0 and are listed in `data/rtt-101/tier1_max_or_approx_only.csv` for a later round (DEC-276). (4) The same-grade conflicts are settled by the rule, with the result for each in the table above (DEC-277).
 
@@ -434,7 +431,7 @@ Leader at each change (month end): 1992-05 Arsenal; 1992-07 Blackburn Rovers; 19
 | summer 1996 | £102.8m | £103.1m | £0.3m |
 | January 1997 | £41.5m | £44.2m | £2.8m |
 
-**Effect on the race:** the leader changes at 20 month ends (1997-07: Liverpool → Newcastle United; 1997-08: Liverpool → Newcastle United; 1997-09: Liverpool → Newcastle United; 1997-10: Liverpool → Newcastle United; 1997-11: Liverpool → Newcastle United; 2000-01: Newcastle United → Liverpool; 2000-02: Newcastle United → Liverpool; 2002-06: Leeds United → Liverpool; 2003-03: Newcastle United → Manchester United; 2003-04: Newcastle United → Manchester United; 2003-05: Newcastle United → Manchester United; 2003-06: Newcastle United → Manchester United); who is in the top 12 changes at 173 month ends (1992-08: in Manchester United, out Everton; 1992-09: in Manchester United, out Sheffield United; 1992-10: in Manchester United, out Sheffield United; 1993-06: in Manchester United, out Swindon Town; 1993-08: in Ipswich Town, out Oldham Athletic; 1994-06: in Swindon Town, out West Ham United; 1994-07: in Crystal Palace, out West Ham United; 1994-08: in Leicester City, out West Ham United; 1994-09: in Leicester City, out West Ham United; 1995-02: in Ipswich Town, out Newcastle United …); the order within the top 12 changes at 369 month ends.
+**Effect on the race:** the leader changes at 13 month ends (1997-07: Liverpool → Newcastle United; 1997-08: Liverpool → Newcastle United; 1997-09: Liverpool → Newcastle United; 1997-10: Liverpool → Newcastle United; 1997-11: Liverpool → Newcastle United; 2000-01: Newcastle United → Liverpool; 2000-02: Newcastle United → Liverpool; 2002-06: Leeds United → Liverpool; 2003-03: Newcastle United → Manchester United; 2003-04: Newcastle United → Manchester United; 2003-05: Newcastle United → Manchester United; 2003-06: Newcastle United → Manchester United); who is in the top 12 changes at 173 month ends (1992-08: in Manchester United, out Everton; 1992-09: in Manchester United, out Sheffield United; 1992-10: in Manchester United, out Sheffield United; 1993-06: in Manchester United, out Swindon Town; 1993-08: in Ipswich Town, out Oldham Athletic; 1994-06: in Swindon Town, out West Ham United; 1994-07: in Crystal Palace, out West Ham United; 1994-08: in Leicester City, out West Ham United; 1994-09: in Leicester City, out West Ham United; 1995-02: in Ipswich Town, out Newcastle United …); the order within the top 12 changes at 363 month ends.
 
 **Questions for Luke on list A (each with Claude's recommendation)**
 
@@ -600,7 +597,7 @@ Leader at each change (month end): 1992-05 Arsenal; 1992-07 Blackburn Rovers; 19
 | Danny Murphy | £1,500,000 | guaranteed fee only; add-ons count only when reported as paid (DEC-412, Luke's answer to list B question 3) | the completion report says the deal 'could eventually be worth £3m'; the £2m was the fee Crewe agreed with both clubs before Murphy chose Liverpool; no source s |
 | Runar Normann | £0 | a same-grade source disputes the only figure: counted £0 until a figure is confirmed (DEC-414, Luke's answer to list B question 5) | the Guardian's season list gives £1m; the Independent says the fee was undisclosed and 'way below' that figure; research round 2 |
 
-**DEC-404 (Luke, 8 Oct 2026): a report that the deal was completed beats earlier reports of bids, agreed fees or "expected" figures of the same grade; the earliest report is used only when none says the deal was completed.** Applied to the whole build, it changes **65 fees** (`source/dec404_changes.csv`): 5 on list A, 4 of the 32 phase 2 same-grade conflicts, 18 on list B and 20 elsewhere. A completion word counts only next to the player's name; wording such as "imminent", "subject to" or "proposed" means not completed; a figure within 2% of the one already used (the same fee in another currency) changes nothing.
+**DEC-404 (Luke, 8 Oct 2026): a report that the deal was completed beats earlier reports of bids, agreed fees or "expected" figures of the same grade; the earliest report is used only when none says the deal was completed.** Applied to the whole build, it changes **66 fees** (`source/dec404_changes.csv`): 5 on list A, 4 of the 32 phase 2 same-grade conflicts, 18 on list B and 21 elsewhere. A completion word counts only next to the player's name; wording such as "imminent", "subject to" or "proposed" means not completed; a figure within 2% of the one already used (the same fee in another currency) changes nothing.
 
 | Date | Player | Move | Fee without DEC-404 | Fee with DEC-404 | On | Completion report |
 |---|---|---|---|---|---|---|
@@ -656,6 +653,7 @@ Leader at each change (month end): 1992-05 Arsenal; 1992-07 Blackburn Rovers; 19
 | 2019-06-28 | Aaron Wan-Bissaka | Crystal Palace → Manchester United | £45,000,000 | £50,000,000 | source round 2 | Manchester United have completed the signing of Crystal Palace full-back Aaron Wan-Bissaka |
 | 2019-07-02 | Jack Clarke | Leeds United → Tottenham Hotspur | £10,000,000 | £9,000,000 | other | Tottenham Hotspur have completed the permanent signing of Leeds United winger Jack Clarke  |
 | 2019-07-04 | Rodri | Atlético Madrid → Manchester City | £68,200,000 | £62,800,000 | other | team after moving from Atletico Madrid for a club record £62.8m. Rodri, 23, joins on a fiv |
+| 2020-01-31 | Clinton Mola | Chelsea → Stuttgart | £360,000 | £168,110 | other | joined the German club for a fee believed to be €200,000, beating off interest from AC Mil |
 | 2020-09-19 | Diogo Jota | Wolverhampton Wanderers → Liverpool | £40,000,000 | £41,000,000 | other | signing of Portugal forward Diogo Jota from Wolves in a £41m deal that could rise to £45m  |
 | 2021-07-18 | Marc Guéhi | Chelsea → Crystal Palace | £20,000,000 | £18,000,000 | other | Marc Guehi has completed his £18million switch from Chelsea to Crystal Palace, signing a f |
 | 2021-07-21 | Kristoffer Ajer | Celtic → Brentford | £13,000,000 | £13,500,000 | source round 2 | Premier League side Brentford have signed Kristoffer Ajer from Celtic for £13.5 million. |
@@ -779,7 +777,7 @@ Leader at each change (month end): 1992-05 Arsenal; 1992-07 Blackburn Rovers; 19
 
 Total gross summer 1997 to summer 2002: £1.50bn before, £1.48bn after (−£20.5m).
 
-**Effect on the race** (against the build at c62ca6b): the leader changes at 15 month ends (1997-07: Liverpool → Newcastle United; 1997-08: Liverpool → Newcastle United; 1997-09: Liverpool → Newcastle United; 1997-10: Liverpool → Newcastle United; 1997-11: Liverpool → Newcastle United; 1998-02: Liverpool → Newcastle United; 2002-06: Leeds United → Liverpool; 2011-07: Chelsea → Manchester City; 2015-07: Chelsea → Manchester City; 2016-07: Chelsea → Manchester City; 2022-08: Chelsea → Manchester City; 2022-09: Chelsea → Manchester City; 2022-10: Chelsea → Manchester City; 2022-11: Chelsea → Manchester City; 2022-12: Chelsea → Manchester City); who is in the top 12 changes at 163 month ends (1995-02: in Ipswich Town, out Newcastle United; 1995-03: in Ipswich Town, out Newcastle United; 1995-04: in Ipswich Town, out Newcastle United; 1995-05: in Ipswich Town, out Newcastle United; 1998-07: in West Ham United, out Coventry City; 1998-09: in West Ham United, out Coventry City; 1998-10: in Coventry City, out Blackburn Rovers; 1999-12: in Leicester City, out Arsenal; 2000-01: in Everton, out Arsenal; 2000-02: in Everton, out Arsenal …); the order within the top 12 changes at 352 month ends.
+**Effect on the race** (against the build at c62ca6b): the leader changes at 8 month ends (1997-07: Liverpool → Newcastle United; 1997-08: Liverpool → Newcastle United; 1997-09: Liverpool → Newcastle United; 1997-10: Liverpool → Newcastle United; 1997-11: Liverpool → Newcastle United; 1998-02: Liverpool → Newcastle United; 2002-06: Leeds United → Liverpool; 2016-07: Chelsea → Manchester City); who is in the top 12 changes at 163 month ends (1995-02: in Ipswich Town, out Newcastle United; 1995-03: in Ipswich Town, out Newcastle United; 1995-04: in Ipswich Town, out Newcastle United; 1995-05: in Ipswich Town, out Newcastle United; 1998-07: in West Ham United, out Coventry City; 1998-09: in West Ham United, out Coventry City; 1998-10: in Coventry City, out Blackburn Rovers; 1999-12: in Leicester City, out Arsenal; 2000-01: in Everton, out Arsenal; 2000-02: in Everton, out Arsenal …); the order within the top 12 changes at 347 month ends.
 
 **Luke's answers to the list A questions (report section 11; Cowork chat, 8 Oct 2026): yes to all three, kept as built.**
 
@@ -1077,47 +1075,47 @@ Total gross summer 1997 to summer 2002: £1.50bn before, £1.48bn after (−£20
 | January 2006 | £51.1m | £58.1m | £7.0m | — | £41.6m | £41.6m |
 | summer 2006 | £240.9m | £239.5m | −£1.5m | £300.0m (B) | £122.0m | £122.0m |
 | January 2007 | £39.8m | £41.3m | £1.5m | — | £17.2m | £17.2m |
-| summer 2007 | £320.5m | £345.9m | £25.3m | — | £162.1m | £164.7m |
-| January 2008 | £92.2m | £110.5m | £18.3m | — | £51.6m | £51.6m |
-| summer 2008 | £338.6m | £396.2m | £57.6m | £500.0m (B) | £162.6m | £168.8m |
+| summer 2007 | £320.5m | £349.6m | £29.1m | — | £162.1m | £161.7m |
+| January 2008 | £92.2m | £119.5m | £27.3m | — | £51.6m | £60.6m |
+| summer 2008 | £338.6m | £404.2m | £65.5m | £500.0m (B) | £162.6m | £175.2m |
 | January 2009 | £92.9m | £110.4m | £17.5m | £160.0m (B) | £6.3m | £9.8m |
 | summer 2009 | £239.1m | £404.4m | £165.3m | £460.4m (B) | £7.5m | £57.3m |
 | January 2010 | £26.0m | £28.5m | £2.5m | £36.0m (A) | £9.9m | £9.9m |
-| summer 2010 | £181.8m | £207.3m | £25.5m | £350.0m (B) | £108.4m | £113.9m |
-| January 2011 | £195.4m | £195.6m | £0.2m | £209.3m (A) | £76.1m | £76.3m |
-| summer 2011 | £205.3m | £346.3m | £141.0m | — | £96.5m | £125.7m |
-| January 2012 | £42.7m | £48.2m | £5.5m | £67.4m (A) | £0.7m | £6.2m |
-| summer 2012 | £325.9m | £347.1m | £21.3m | £490.0m (B) | £147.7m | £160.1m |
+| summer 2010 | £181.8m | £231.3m | £49.5m | £350.0m (B) | £108.4m | £137.9m |
+| January 2011 | £195.4m | £199.1m | £3.7m | £209.3m (A) | £76.1m | £79.8m |
+| summer 2011 | £205.3m | £392.3m | £186.9m | — | £96.5m | £146.4m |
+| January 2012 | £42.7m | £48.2m | £5.5m | £67.4m (A) | £0.7m | £5.5m |
+| summer 2012 | £325.9m | £374.4m | £48.5m | £490.0m (B) | £147.7m | £187.3m |
 | January 2013 | £80.6m | £87.6m | £7.0m | £123.4m (A) | £44.6m | £44.6m |
 | January 2014 | £118.8m | £120.0m | £1.2m | £128.8m (A) | £36.0m | £36.2m |
-| summer 2014 | £638.9m | £668.3m | £29.5m | £809.6m (A) | £292.6m | £306.0m |
+| summer 2014 | £638.9m | £671.3m | £32.5m | £809.6m (A) | £292.6m | £301.7m |
 | January 2015 | £90.6m | £96.8m | £6.2m | £118.2m (A) | £29.8m | £28.7m |
-| summer 2015 | £735.5m | £739.6m | £4.2m | £858.6m (A) | £373.5m | £374.1m |
-| January 2016 | £103.6m | £120.5m | £16.9m | £177.5m (A) | £43.6m | £47.5m |
+| summer 2015 | £735.5m | £741.6m | £6.2m | £858.6m (A) | £373.5m | £375.9m |
+| January 2016 | £103.6m | £124.0m | £20.4m | £177.5m (A) | £43.6m | £51.0m |
 | summer 2016 | £1.08bn | £1.09bn | £10.6m | £1.12bn (A) | £713.0m | £724.6m |
 | January 2017 | £140.5m | £163.5m | £23.0m | £236.7m (A) | −£64.2m | −£53.2m |
-| summer 2017 | £1.32bn | £1.37bn | £51.0m | £1.41bn (A) | £643.1m | £655.6m |
+| summer 2017 | £1.32bn | £1.40bn | £84.7m | £1.41bn (A) | £643.1m | £684.6m |
 | January 2018 | £346.2m | £375.8m | £29.6m | £419.5m (A) | £98.2m | £109.8m |
-| summer 2018 | £907.9m | £963.5m | £55.6m | £1.23bn (B) | £706.9m | £753.0m |
-| January 2019 | £109.6m | £129.6m | £20.0m | £180.0m (B) | £54.5m | £74.5m |
-| summer 2019 | £1.07bn | £1.14bn | £68.0m | £1.41bn (B) | £483.9m | £518.4m |
-| January 2020 | £121.0m | £164.8m | £43.8m | £230.0m (B) | £119.7m | £154.4m |
+| summer 2018 | £907.9m | £963.5m | £55.6m | £1.23bn (B) | £706.9m | £721.5m |
+| January 2019 | £109.6m | £111.6m | £2.0m | £180.0m (B) | £54.5m | £56.5m |
+| summer 2019 | £1.07bn | £1.14bn | £68.0m | £1.41bn (B) | £483.9m | £509.2m |
+| January 2020 | £121.0m | £164.8m | £43.8m | £230.0m (B) | £119.7m | £159.9m |
 | summer 2020 | £1.07bn | £1.09bn | £23.2m | £1.24bn (B) | £688.1m | £683.8m |
-| January 2021 | £45.0m | £50.0m | £5.0m | £70.0m (B) | £24.8m | £29.7m |
-| summer 2021 | £829.4m | £887.7m | £58.3m | £1.10bn (B) | £435.1m | £432.1m |
-| summer 2022 | £1.73bn | £1.75bn | £13.7m | £1.90bn (B) | £986.3m | £997.3m |
+| January 2021 | £45.0m | £50.0m | £5.0m | £70.0m (B) | £24.8m | £13.4m |
+| summer 2021 | £829.4m | £887.7m | £58.3m | £1.10bn (B) | £435.1m | £422.7m |
+| summer 2022 | £1.73bn | £1.76bn | £28.7m | £1.90bn (B) | £986.3m | £1.01bn |
 | January 2023 | £654.8m | £663.3m | £8.5m | £780.1m (B) | £570.5m | £567.0m |
-| summer 2023 | £2.15bn | £2.26bn | £113.1m | £2.44bn (B) | £990.9m | £1.06bn |
+| summer 2023 | £2.15bn | £2.26bn | £113.1m | £2.44bn (B) | £990.9m | £1.03bn |
 | January 2024 | £86.0m | £87.7m | £1.7m | £96.2m (B) | £75.2m | £76.9m |
-| summer 2024 | £1.81bn | £1.90bn | £84.3m | £2.08bn (B) | £592.4m | £640.1m |
+| summer 2024 | £1.81bn | £1.90bn | £84.3m | £2.08bn (B) | £592.4m | £630.2m |
 | January 2025 | £343.5m | £341.4m | −£2.1m | £370.0m (B) | £213.6m | £217.5m |
-| summer 2025 | £2.83bn | £2.89bn | £59.4m | £3.00bn (B) | £1.19bn | £1.25bn |
+| summer 2025 | £2.83bn | £2.89bn | £62.7m | £3.00bn (B) | £1.19bn | £1.26bn |
 | January 2026 | £341.6m | £336.6m | −£5.0m | £397.0m (B) | £111.3m | £110.3m |
 | summer 2026 | £3.07bn | £3.13bn | £62.1m | £3.46bn (B) | £1.26bn | £1.21bn |
 
-Total gross, all windows: £27.74bn before, £29.01bn after (£1.27bn).
+Total gross, all windows: £27.74bn before, £29.17bn after (£1.43bn).
 
-**Effect on the race** (against the build at 4b0f91c): the leader changes at 12 month ends (2003-03: Newcastle United → Manchester United; 2003-04: Newcastle United → Manchester United; 2003-05: Newcastle United → Manchester United; 2003-06: Newcastle United → Manchester United; 2011-07: Chelsea → Manchester City; 2015-07: Chelsea → Manchester City; 2016-07: Chelsea → Manchester City; 2022-08: Chelsea → Manchester City; 2022-09: Chelsea → Manchester City; 2022-10: Chelsea → Manchester City; 2022-11: Chelsea → Manchester City; 2022-12: Chelsea → Manchester City); who is in the top 12 changes at 139 month ends (1995-02: in Ipswich Town, out Newcastle United; 2005-01: in Leeds United, out Birmingham City; 2005-02: in Leeds United, out Birmingham City; 2005-03: in Leeds United, out Birmingham City; 2005-07: in Leeds United, out Manchester City; 2005-08: in Everton, out Manchester City; 2005-09: in Everton, out Manchester City; 2005-10: in Everton, out Manchester City; 2005-11: in Everton, out Manchester City; 2005-12: in Everton, out Manchester City; 2006-05: in Birmingham City, out Manchester City; 2006-06: in Blackburn Rovers, out Manchester City …). Final point: Manchester United £1.66bn, Manchester City £1.65bn, Chelsea £1.65bn.
+**Effect on the race** (against the build at 4b0f91c): the leader changes at 5 month ends (2003-03: Newcastle United → Manchester United; 2003-04: Newcastle United → Manchester United; 2003-05: Newcastle United → Manchester United; 2003-06: Newcastle United → Manchester United; 2016-07: Chelsea → Manchester City); who is in the top 12 changes at 139 month ends (1995-02: in Ipswich Town, out Newcastle United; 2005-01: in Leeds United, out Birmingham City; 2005-02: in Leeds United, out Birmingham City; 2005-03: in Leeds United, out Birmingham City; 2005-07: in Leeds United, out Manchester City; 2005-08: in Everton, out Manchester City; 2005-09: in Everton, out Manchester City; 2005-10: in Everton, out Manchester City; 2005-11: in Everton, out Manchester City; 2005-12: in Everton, out Manchester City; 2006-05: in Birmingham City, out Manchester City; 2006-06: in Blackburn Rovers, out Manchester City …). Final point: Manchester United £1.68bn, Chelsea £1.66bn, Manchester City £1.65bn.
 
 **Still UNVERIFIED among the researched deals: 76** (their fee is a preview, not for screen; mostly pages the runner could not load or that do not name both clubs). The largest:
 
@@ -1128,38 +1126,47 @@ Total gross, all windows: £27.74bn before, £29.01bn after (£1.27bn).
 | Matias Fernandez-Pardo | Lille → Newcastle United | 2026-09-01 | £51,000,000 | B |
 | Aaron Wan-Bissaka | Crystal Palace → Manchester United | 2019-06-28 | £50,000,000 | B |
 | Rasmus Højlund | Manchester United → Napoli | 2026-06-29 | £43,850,510 | B |
-| Nemanja Matić | Chelsea → Manchester United | 2017-07-31 | £35,000,000 | B |
 | Alex Oxlade-Chamberlain | Arsenal → Liverpool | 2017-08-31 | £35,000,000 | B |
+| Nemanja Matić | Chelsea → Manchester United | 2017-07-31 | £35,000,000 | B |
 | Sávio | Troyes → Manchester City | 2024-07-18 | £33,638,887 | B |
 | Rayan Aït-Nouri | Wolverhampton Wanderers → Manchester City | 2025-06-09 | £31,000,000 | B |
-| Martin Ødegaard | Real Madrid → Arsenal | 2021-08-20 | £30,000,000 | B |
 | Dilane Bakwa | RC Strasbourg → Nottingham Forest | 2025-09-01 | £30,000,000 | C |
-| Kiernan Dewsbury-Hall | Leicester City → Chelsea | 2024-07-02 | £30,000,000 | B |
 | James Ward-Prowse | Southampton → West Ham United | 2023-08-14 | £30,000,000 | B |
+| Kiernan Dewsbury-Hall | Leicester City → Chelsea | 2024-07-02 | £30,000,000 | B |
+| Martin Ødegaard | Real Madrid → Arsenal | 2021-08-20 | £30,000,000 | B |
 | Yeremy Pino | Villarreal → Crystal Palace | 2025-08-29 | £26,000,000 | C |
 | Ferdi Kadıoğlu | Fenerbahçe → Brighton & Hove Albion | 2024-08-27 | £25,357,008 | B |
-| Archie Gray | Leeds United → Tottenham Hotspur | 2024-07-02 | £25,000,000 | B |
-| Morgan Gibbs-White | Wolverhampton Wanderers → Nottingham Forest | 2022-08-19 | £25,000,000 | B |
 | Taylor Harwood-Bellis | Southampton → Aston Villa | 2026-09-01 | £25,000,000 | B |
-| Donyell Malen | Aston Villa → Roma | 2026-06-29 | £25,000,000 | B |
+| Morgan Gibbs-White | Wolverhampton Wanderers → Nottingham Forest | 2022-08-19 | £25,000,000 | B |
 | Matt O'Riley | Celtic → Brighton & Hove Albion | 2024-08-26 | £25,000,000 | B |
+| Donyell Malen | Aston Villa → Roma | 2026-06-29 | £25,000,000 | B |
+| Archie Gray | Leeds United → Tottenham Hotspur | 2024-07-02 | £25,000,000 | B |
 | Kiernan Dewsbury-Hall | Chelsea → Everton | 2025-08-06 | £24,754,332 | B |
 | Son Heung-min | Bayer Leverkusen → Tottenham Hotspur | 2015-08-28 | £22,000,000 | B |
 | Shaun Wright-Phillips | Manchester City → Chelsea | 2005-07-18 | £21,000,000 | B |
+| Taylor Harwood-Bellis | Manchester City → Southampton | 2024-06-14 | £20,000,000 | B |
 | Enzo Le Fée | Roma → Sunderland | 2025-07-01 | £20,000,000 | B |
-| Keane Lewis-Potter | Hull City → Brentford | 2022-07-12 | £20,000,000 | B |
 
-**Order test on the 392 round 2 deals not researched** (`source/round2_order_test.csv`; the Tier 1 test of DEC-256: does removing the fee, or using another version of it, change the leader or who is in the top 12 at any month end?): **201 could** (5 the leader, the rest a top-12 place) and go to a later round; 191 could not. By season: 1994-95 10, 1995-96 16, 1996-97 18, 1997-98 10, 1998-99 10, 1999-00 6, 2000-01 4, 2001-02 2, 2002-03 17, 2003-04 5, 2004-05 17, 2005-06 17, 2006-07 13, 2007-08 12, 2008-09 12, 2009-10 5, 2010-11 4, 2011-12 2, 2012-13 5, 2013-14 3, 2014-15 3, 2015-16 8, 2016-17 2.
+**Order test on the 392 round 2 deals not researched** (`source/round2_order_test.csv`; the Tier 1 test of DEC-256: does removing the fee, or using another version of it, change the leader or who is in the top 12 at any month end?): **206 could** (14 the leader, the rest a top-12 place) and go to a later round; 186 could not. By season: 1994-95 10, 1995-96 16, 1996-97 20, 1997-98 10, 1998-99 9, 1999-00 7, 2000-01 4, 2001-02 2, 2002-03 18, 2003-04 9, 2004-05 17, 2005-06 17, 2006-07 13, 2007-08 11, 2008-09 12, 2009-10 5, 2010-11 4, 2011-12 2, 2012-13 5, 2013-14 3, 2014-15 3, 2015-16 7, 2016-17 2.
 
 Deals that could change the leader:
 
 | Deal | Player | Date | Fee in use | First month end affected |
 |---|---|---|---|---|
+| R0080 | Paul Furlong | 1996-07-17 | £1,500,000 | 2016-07-31 |
+| R0092 | Gavin Peacock | 1996-12-23 | £800,000 | 2016-07-31 |
 | R0141 | Stephane Guivarc'h | 1998-11-06 | £3,500,000 | 1999-08-31 |
-| R0204 | Sylvain Distin | 2002-05-20 | £4,000,000 | 2011-07-31 |
-| R0207 | Vicente Matías Vuoso | 2002-06-06 | £3,500,000 | 2011-07-31 |
-| R0235 | David Sommeil | 2003-01-24 | £3,500,000 | 2011-07-31 |
-| R0345 | Lee Croft | 2006-07-31 | £600,000 | 2010-08-31 |
+| R0155 | Andy Myers | 1999-07-08 | £800,000 | 2016-07-31 |
+| R0200 | Mikkel Bischoff | 2002-05-15 | £700,000 | 2016-07-31 |
+| R0204 | Sylvain Distin | 2002-05-20 | £4,000,000 | 2016-07-31 |
+| R0207 | Vicente Matías Vuoso | 2002-06-06 | £3,500,000 | 2016-07-31 |
+| R0235 | David Sommeil | 2003-01-24 | £3,500,000 | 2016-07-31 |
+| R0249 | Trevor Sinclair | 2003-07-21 | £2,500,000 | 2016-07-31 |
+| R0254 | Antoine Sibierski | 2003-08-04 | £700,000 | 2016-07-31 |
+| R0259 | Claudio Reyna | 2003-08-29 | £2,500,000 | 2016-07-31 |
+| R0263 | David James | 2004-01-14 | £2,000,000 | 2016-07-31 |
+| R0316 | Darius Vassell | 2005-07-27 | £2,000,000 | 2016-07-31 |
+| R0350 | Andreas Isaksson | 2006-08-15 | £2,000,000 | 2016-07-31 |
 
 **Decided under DEC-417 (Claude, DEC-420; details in `state/DECISIONS.md`)**
 
@@ -1184,7 +1191,7 @@ Deals that could change the leader:
 - **Inputs:** Claude helper research on 507 of those deals (part24a summer 2009, part24e/f/g: all P1 deals between two clubs both in the PL that season and all P2 purchases from clubs that have been in the PL), and the 13 leader deals plus Nastasić's cash part read by Cowork in Luke's Chrome (part24d) and by a helper (part24b). Every data file's SHA-256 matched `00_README.md`.
 - **Checked at source:** all 481 cited pages read on the runner (https://github.com/marketmarathon/race-through-time/actions/runs/37904336661: 421 loaded; 16 refused, 14 not found, 11 server errors); 6 pages re-read after the runner learnt to match ð, ø and similar letters (https://github.com/marketmarathon/race-through-time/actions/runs/37906441423).
 - **Quotes read:** 230 newly confirmed quotes (25 rejected: another deal's figure, a contract value, a valuation or release clause, a bid or offer, a maximum, a total with add-ons, a combined figure that did not complete, or one resting on a weaker outlet).
-- **Undisclosed deals now carrying a reported figure:** 172 of the 507 researched (131 confirmed at source; the rest a grade B figure not yet confirmed, counted as a preview), adding £1.20bn of fees. By type: P1 both clubs in the PL: 88 of 260 (67 confirmed); P2 PL purchase from an ever-PL club: 75 of 191 (56 confirmed); P3/P5 PL sale: 2 of 27 (2 confirmed); P4 PL purchase from another club: 7 of 29 (6 confirmed). 335 researched deals stay £0 (the fee is undisclosed in every source found, a free transfer, a loan, a nominal fee, a swap with no stated value, or only a maximum). Of all 2,205, 2032 are still £0; P4 (purchases from other clubs) and the sales were not researched.
+- **Undisclosed deals now carrying a reported figure:** 172 of the 507 researched (131 confirmed at source; the rest a grade B figure not yet confirmed, counted as a preview), adding £1.20bn of fees. By type: P1 both clubs in the PL: 88 of 260 (67 confirmed); P2 PL purchase from an ever-PL club: 75 of 191 (56 confirmed); P3/P5 PL sale: 2 of 27 (2 confirmed); P4 PL purchase from another club: 7 of 29 (6 confirmed). 335 researched deals stay £0 (the fee is undisclosed in every source found, a free transfer, a loan, a nominal fee, a swap with no stated value, or only a maximum). Of all 2,205, 1989 are still £0; P4 (purchases from other clubs) and the sales were not researched.
 
 **The 13 leader deals and Nastasić** (order test of IQ-15h):
 
@@ -1213,54 +1220,54 @@ Deals that could change the leader:
 | summer 2003 | £195.1m | £195.1m | £215.0m (B) | 91% | 91% | 14 |
 | summer 2005 | £229.2m | £231.2m | £235.0m (B) | 98% | 98% | 4 |
 | summer 2006 | £239.5m | £239.5m | £300.0m (B) | 80% | 80% | 19 |
-| summer 2008 | £339.0m | £396.2m | £500.0m (B) | 68% | 79% | 43 |
+| summer 2008 | £339.0m | £404.2m | £500.0m (B) | 68% | 81% | 42 |
 | January 2009 | £92.9m | £110.4m | £160.0m (B) | 58% | 69% | 19 |
 | summer 2009 | £238.3m | £404.4m | £460.4m (B) | 52% | 88% | 38 |
 | January 2010 | £26.0m | £28.5m | £36.0m (A) | 72% | 79% | 8 |
-| summer 2010 | £181.8m | £207.3m | £350.0m (B) | 52% | 59% | 45 |
-| January 2011 | £195.1m | £195.6m | £209.3m (A) | 93% | 93% | 11 |
+| summer 2010 | £181.8m | £231.3m | £350.0m (B) | 52% | 66% | 43 |
+| January 2011 | £195.1m | £199.1m | £209.3m (A) | 93% | 95% | 10 |
 | January 2012 | £42.7m | £48.2m | £67.4m (A) | 63% | 71% | 17 |
-| summer 2012 | £315.0m | £347.1m | £490.0m (B) | 64% | 71% | 41 |
+| summer 2012 | £315.0m | £374.4m | £490.0m (B) | 64% | 76% | 36 |
 | January 2013 | £80.6m | £87.6m | £123.4m (A) | 65% | 71% | 18 |
 | summer 2013 | £556.9m | £558.9m | £630.0m (B) | 88% | 89% | 33 |
 | January 2014 | £120.0m | £120.0m | £128.8m (A) | 93% | 93% | 16 |
-| summer 2014 | £645.3m | £668.3m | £809.6m (A) | 80% | 83% | 51 |
+| summer 2014 | £645.3m | £671.3m | £809.6m (A) | 80% | 83% | 50 |
 | January 2015 | £90.6m | £96.8m | £118.2m (A) | 77% | 82% | 12 |
-| summer 2015 | £724.6m | £739.6m | £858.6m (A) | 84% | 86% | 25 |
-| January 2016 | £104.6m | £120.5m | £177.5m (A) | 59% | 68% | 20 |
+| summer 2015 | £724.6m | £741.6m | £858.6m (A) | 84% | 86% | 24 |
+| January 2016 | £104.6m | £124.0m | £177.5m (A) | 59% | 70% | 19 |
 | summer 2016 | £1.07bn | £1.09bn | £1.12bn (A) | 95% | 98% | 25 |
 | January 2017 | £141.0m | £163.5m | £236.7m (A) | 60% | 69% | 10 |
-| summer 2017 | £1.30bn | £1.37bn | £1.41bn (A) | 92% | 97% | 27 |
+| summer 2017 | £1.30bn | £1.40bn | £1.41bn (A) | 92% | 99% | 25 |
 | January 2018 | £343.8m | £375.8m | £419.5m (A) | 82% | 90% | 9 |
 | summer 2018 | £906.5m | £963.5m | £1.23bn (B) | 74% | 78% | 37 |
-| January 2019 | £109.6m | £129.6m | £180.0m (B) | 61% | 72% | 4 |
+| January 2019 | £109.6m | £111.6m | £180.0m (B) | 61% | 62% | 4 |
 | summer 2019 | £1.08bn | £1.14bn | £1.41bn (B) | 76% | 81% | 23 |
 | January 2020 | £112.2m | £164.8m | £230.0m (B) | 49% | 72% | 1 |
 | summer 2020 | £1.07bn | £1.09bn | £1.24bn (B) | 86% | 88% | 22 |
 | January 2021 | £50.0m | £50.0m | £70.0m (B) | 71% | 71% | 3 |
 | summer 2021 | £824.7m | £887.7m | £1.10bn (B) | 75% | 81% | 24 |
 | January 2022 | £187.0m | £188.0m | £295.0m (B) | 63% | 64% | 15 |
-| summer 2022 | £1.72bn | £1.75bn | £1.90bn (B) | 91% | 92% | 24 |
+| summer 2022 | £1.72bn | £1.76bn | £1.90bn (B) | 91% | 93% | 23 |
 | January 2023 | £662.5m | £663.3m | £780.1m (B) | 85% | 85% | 11 |
 | summer 2023 | £2.18bn | £2.26bn | £2.44bn (B) | 89% | 93% | 28 |
 | January 2024 | £87.7m | £87.7m | £96.2m (B) | 91% | 91% | 9 |
 | summer 2024 | £1.79bn | £1.90bn | £2.08bn (B) | 86% | 91% | 23 |
 | January 2025 | £341.4m | £341.4m | £370.0m (B) | 92% | 92% | 12 |
-| summer 2025 | £2.88bn | £2.89bn | £3.00bn (B) | 96% | 96% | 23 |
+| summer 2025 | £2.88bn | £2.89bn | £3.00bn (B) | 96% | 96% | 22 |
 | January 2026 | £336.6m | £336.6m | £397.0m (B) | 85% | 85% | 9 |
 | summer 2026 | £3.09bn | £3.13bn | £3.46bn (B) | 89% | 90% | 35 |
 
-Across the 40 windows with a published total, our sum averages 78% of the published figure before this round and 83% after. **What is left:** (1) undisclosed deals still counted £0, above all PL purchases from clubs outside the PL (P4, 685 deals, not yet researched) and loans with an obligation booked only when the fee is reported; (2) add-ons, which published totals usually include and we count only when reported as paid; (3) figures we count only when confirmed or reported in the quality press, while some published totals use agency or club-reported estimates; (4) differences in what a window covers (published totals often include deals agreed in the window but completed later, and some count fees in euros at other rates).
+Across the 40 windows with a published total, our sum averages 78% of the published figure before this round and 84% after. **What is left:** (1) undisclosed deals still counted £0, above all PL purchases from clubs outside the PL (P4, 685 deals, not yet researched) and loans with an obligation booked only when the fee is reported; (2) add-ons, which published totals usually include and we count only when reported as paid; (3) figures we count only when confirmed or reported in the quality press, while some published totals use agency or club-reported estimates; (4) differences in what a window covers (published totals often include deals agreed in the window but completed later, and some count fees in euros at other rates).
 
-**Effect on the race** (against fe3dd9e): the leader changes at 12 month ends (2011-07: Chelsea → Manchester City; 2015-07: Chelsea → Manchester City; 2015-09: Chelsea → Manchester City; 2015-10: Chelsea → Manchester City; 2015-11: Chelsea → Manchester City; 2015-12: Chelsea → Manchester City; 2016-07: Chelsea → Manchester City; 2022-08: Chelsea → Manchester City; 2022-09: Chelsea → Manchester City; 2022-10: Chelsea → Manchester City; 2022-11: Chelsea → Manchester City; 2022-12: Chelsea → Manchester City); who is in the top 12 changes at 124 month ends.
+**Effect on the race** (against fe3dd9e): the leader changes at 5 month ends (2015-09: Chelsea → Manchester City; 2015-10: Chelsea → Manchester City; 2015-11: Chelsea → Manchester City; 2015-12: Chelsea → Manchester City; 2016-07: Chelsea → Manchester City); who is in the top 12 changes at 124 month ends.
 
 **Standings at the freeze (2026-09-01), cumulative net spend:**
 
 | Rank after | Club | Net before (rank) | Net after | Change |
 |---|---|---|---|---|
-| 1 | Manchester United | £1.67bn (1) | £1.66bn | −£10.6m |
-| 2 | Manchester City | £1.56bn (3) | £1.65bn | £90.5m |
-| 3 | Chelsea | £1.65bn (2) | £1.65bn | −£4.3m |
+| 1 | Manchester United | £1.67bn (1) | £1.68bn | £9.7m |
+| 2 | Chelsea | £1.65bn (2) | £1.66bn | £13.4m |
+| 3 | Manchester City | £1.56bn (3) | £1.65bn | £84.9m |
 | 4 | Arsenal | £1.16bn (4) | £1.13bn | −£37.0m |
 | 5 | Liverpool | £962.4m (5) | £988.9m | £26.6m |
 | 6 | Tottenham Hotspur | £947.9m (6) | £985.0m | £37.1m |
@@ -1279,15 +1286,24 @@ Across the 40 windows with a published total, our sum averages 78% of the publis
 | 19 | West Bromwich Albion | £160.7m (19) | £172.2m | £11.5m |
 | 20 | Brentford | £163.5m (18) | £163.5m | £0.0m |
 
-**Order test re-run on the 392 round 2 deals still not researched** (`source/round2_order_test.csv`): 201 could change who is in the top 12 at some month end, 5 of them the leader:
+**Order test re-run on the 392 round 2 deals still not researched** (`source/round2_order_test.csv`): 206 could change who is in the top 12 at some month end, 14 of them the leader:
 
 | Deal | Player | Date | Fee in use | First month end affected |
 |---|---|---|---|---|
+| R0080 | Paul Furlong | 1996-07-17 | £1,500,000 | 2016-07-31 |
+| R0092 | Gavin Peacock | 1996-12-23 | £800,000 | 2016-07-31 |
 | R0141 | Stephane Guivarc'h | 1998-11-06 | £3,500,000 | 1999-08-31 |
-| R0204 | Sylvain Distin | 2002-05-20 | £4,000,000 | 2011-07-31 |
-| R0207 | Vicente Matías Vuoso | 2002-06-06 | £3,500,000 | 2011-07-31 |
-| R0235 | David Sommeil | 2003-01-24 | £3,500,000 | 2011-07-31 |
-| R0345 | Lee Croft | 2006-07-31 | £600,000 | 2010-08-31 |
+| R0155 | Andy Myers | 1999-07-08 | £800,000 | 2016-07-31 |
+| R0200 | Mikkel Bischoff | 2002-05-15 | £700,000 | 2016-07-31 |
+| R0204 | Sylvain Distin | 2002-05-20 | £4,000,000 | 2016-07-31 |
+| R0207 | Vicente Matías Vuoso | 2002-06-06 | £3,500,000 | 2016-07-31 |
+| R0235 | David Sommeil | 2003-01-24 | £3,500,000 | 2016-07-31 |
+| R0249 | Trevor Sinclair | 2003-07-21 | £2,500,000 | 2016-07-31 |
+| R0254 | Antoine Sibierski | 2003-08-04 | £700,000 | 2016-07-31 |
+| R0259 | Claudio Reyna | 2003-08-29 | £2,500,000 | 2016-07-31 |
+| R0263 | David James | 2004-01-14 | £2,000,000 | 2016-07-31 |
+| R0316 | Darius Vassell | 2005-07-27 | £2,000,000 | 2016-07-31 |
+| R0350 | Andreas Isaksson | 2006-08-15 | £2,000,000 | 2016-07-31 |
 
 **Still UNVERIFIED among the round 3 figures: 41** (a grade B figure the runner could not confirm: page refused or missing, or the club names not both on the page). The largest:
 
@@ -1330,24 +1346,23 @@ Across the 40 windows with a published total, our sum averages 78% of the publis
 
 - **Why January 2020 was missing (DEC-430):** the build reads each window's Wikipedia list page. The winter 2019-20 page we use (rev 1371935139) has 70 transfer rows, only 5 of them in January 2020; its edit history (runner, https://github.com/marketmarathon/race-through-time/actions/runs/37950422012) shows it never exceeded 67,150 bytes, so Wikipedia never listed most of that window's deals. A second fault turned up on the way: list tables with four columns (loans without a fee column) lost the date of every row, so 573 rows of summers 2017 and 2018 were dropped.
 - **Fix at the root:** (1) the four-column tables now keep their dates; (2) the 2019-20 club-season page of every PL club (and the 2003-04 and 2004-05 pages) was read on the runner (https://github.com/marketmarathon/race-through-time/actions/runs/37950909967) and its In/Out and loan tables parsed (headings, bold labels, loan tables under season sub-headings, dates spanning rows); a club-page row is used only when no list page already has that player at that club within 60 days, and only for a window listed in `CLUB_PAGE_WINDOWS` (January 2020, as the brief approved; DEC-431); every other club-page row is listed in `source/club_page_rows_unused.csv`. Two new build checks: **no window has under half the PL deals of the same-type windows either side** (documented exceptions only), and **every list-page row has a date**. The 1992-2002 club-season rows are byte-for-byte unchanged.
-- **January 2020 deals added:** 242 deals with a PL club (by type: free 11, loan 174, permanent 9, undisclosed 48). The window now has 256 such deals (it had 14; the same-type windows either side have a median of 111.5). With a fee:
+- **January 2020 deals added:** 238 deals with a PL club (by type: free 11, loan 171, permanent 8, undisclosed 48). The window now has 253 such deals (it had 14; the same-type windows either side have a median of 111.5). With a fee:
 
 | Date | Player | Move | Fee in use | Status | Basis |
 |---|---|---|---|---|---|
 | 2020-01-01 | Takumi Minamino | Red Bull Salzburg → Liverpool | £7,250,000 | VERIFIED | already in the build; stated |
-| 2020-01-01 | Michael Hector | Chelsea → Fulham | £5,310,000 | UNVERIFIED | added in IQ-15j; stated |
 | 2020-01-01 | Bryan Fiabema | Tromsø → Chelsea | £540,000 | UNVERIFIED | added in IQ-15j; stated |
 | 2020-01-09 | Liam Smith | Kilmarnock → Manchester City | £250,000 | UNVERIFIED | added in IQ-15j; stated |
 | 2020-01-09 | Allan | Liverpool → Atlético Mineiro | £3,200,000 | UNVERIFIED | added in IQ-15j; stated |
 | 2020-01-14 | Ignacio Pussetto | Udinese → Watford | £6,838,776 | VERIFIED | added in IQ-15j; stated |
 | 2020-01-17 | Ashley Young | Manchester United → Inter Milan | £1,280,000 | VERIFIED | already in the build; reported |
 | 2020-01-23 | Victor Moses | Chelsea → Inter Milan | £190,000 | UNVERIFIED | added in IQ-15j; stated |
-| 2020-01-23 | Louie Barry | Barcelona → Aston Villa | £880,000 | UNVERIFIED | added in IQ-15j; stated |
+| 2020-01-23 | Louie Barry | Barcelona → Aston Villa | £880,000 | VERIFIED | added in IQ-15j; stated |
 | 2020-01-30 | Sander Berge | Genk → Sheffield United | £22,000,000 | VERIFIED | added in IQ-15j; reported |
 | 2020-01-30 | Steven Bergwijn | PSV Eindhoven → Tottenham Hotspur | £25,000,000 | VERIFIED | already in the build; reported |
 | 2020-01-30 | Bruno Fernandes | Sporting Lisbon → Manchester United | £47,000,000 | VERIFIED | already in the build; reported |
 | 2020-01-31 | Jarrod Bowen | Hull City → West Ham United | £22,000,000 | UNVERIFIED | added in IQ-15j; stated |
-| 2020-01-31 | Clinton Mola | Chelsea → Stuttgart | £360,000 | UNVERIFIED | added in IQ-15j; stated |
+| 2020-01-31 | Clinton Mola | Chelsea → Stuttgart | £168,110 | UNVERIFIED | added in IQ-15j; reported |
 | 2020-02-24 | Hakim Ziyech | Ajax → Chelsea | £33,000,000 | VERIFIED | already in the build; stated |
 
 **Cowork's spot list:** all present now.
@@ -1369,7 +1384,7 @@ Across the 40 windows with a published total, our sum averages 78% of the publis
 | Valentino Lazaro | Inter Milan → Newcastle United | 2020-01-24 | loan | £0 | UNVERIFIED: loan, no fee stated |
 
 - **Fees read at source (runner, https://github.com/marketmarathon/race-through-time/actions/runs/37952043572 and /37952723663):** 95 pages cited for the new deals. Confirmed: Pussetto €8m (Watford Observer, completed signing). Rejected: Louie Barry's BBC figure ("about 1m euros (£880,000)", an approximation; Barcelona's exact €1,048,000 is quoted only on a grade D page), Bowen's "worth up to £22million" (a maximum), and four undisclosed-fee candidates (grade D pages, another player's fee, an earlier move). Lamptey: Chelsea's club-season page gives £2,970,000 but Chelsea's own announcement gives no figure and Brighton's says undisclosed, so he stays undisclosed at £0 (DEC-433).
-- **Not sourced:** 57 January 2020 deals (permanent 5, undisclosed 52) keep the build's normal status and are listed for Cowork in `source/jan2020_unsourced.csv` (no figures in the list).
+- **Not sourced:** 56 January 2020 deals (permanent 3, undisclosed 53) keep the build's normal status and are listed for Cowork in `source/jan2020_unsourced.csv` (no figures in the list).
 - **Minamino (brief 2(d)):** BBC Sport (grade B, confirmed on the runner) says "Deal to be completed on 1 January", and Liverpool's 2019-20 page gives entry date 1 January 2020. The build now dates the deal **1 January 2020** (was 19 December 2019, the day it was agreed; DEC-432). Same window and season, so no total changes.
 - **January 2020 total (gross spending by PL clubs):** £112.2m before, **£164.8m after**; published £230.0m (BBC Sport, grade B, research lead): 49% → 72%. The rest of the gap is mainly the undisclosed deals still counted £0 (among the purchases Lo Celso, Podence, Samatta, Brownhill, Mooy and Randolph) and Bowen's guaranteed fee. Also to check in a later round: Ziyech's £33m is in this window (dated 24 February 2020, when the deal was agreed), which a published January total may not include.
 
@@ -1382,11 +1397,11 @@ Across the 40 windows with a published total, our sum averages 78% of the publis
 | January 2004 | 23 | 65 | the winter 2003-04 list page misses most deals | 54 |
 | January 2005 | 32 | 72 | the winter 2004-05 list page misses most deals | 36 |
 
-All four would clear the check with their listed club-page rows; they are documented exceptions in the build (`KNOWN_SPARSE`, DEC-431) until a brief approves adding them. Summer 2017 (175 deals before the date fix, 371 now) clears. Summer 2019 is not flagged, but its club-season pages list 357 moves the list page lacks (mostly releases, loans and youth moves); the page histories show three list pages much shorter now than at their largest (summer 2007, 2013 and 2019), so those windows are candidates for the same club-page reading.
+All four would clear the check with their listed club-page rows; they are documented exceptions in the build (`KNOWN_SPARSE`, DEC-431) until a brief approves adding them. Summer 2017 (175 deals before the date fix, 371 now) clears. Summer 2019 is not flagged, but its club-season pages list 354 moves the list page lacks (mostly releases, loans and youth moves); the page histories show three list pages much shorter now than at their largest (summer 2007, 2013 and 2019), so those windows are candidates for the same club-page reading.
 
-**Effect on the race** (against 398abbf, the end of IQ-15i): the leader changes at 0 month ends; who is in the top 12 changes at 4 month ends (2019-04: Wolverhampton Wanderers in for West Bromwich Albion; 2019-05: Wolverhampton Wanderers in for West Bromwich Albion; 2023-06: Wolverhampton Wanderers in for AFC Bournemouth; 2023-08: Wolverhampton Wanderers in for Fulham); the order within the top 12 changes at 36 month ends. Wolves' entries (2019 and 2023) come from Jonny's £18m permanent move (a research lead that had no deal to attach to until his loan row came back with the date fix; dated 31 January 2019, DEC-432).
+**Effect on the race** (against 398abbf, the end of IQ-15i; as built at the end of IQ-15j, 193580c; section 17 has the current figures): the leader changes at 0 month ends; who is in the top 12 changes at 4 month ends (2019-04: Wolverhampton Wanderers in for West Bromwich Albion; 2019-05: Wolverhampton Wanderers in for West Bromwich Albion; 2023-06: Wolverhampton Wanderers in for AFC Bournemouth; 2023-08: Wolverhampton Wanderers in for Fulham); the order within the top 12 changes at 36 month ends. Wolves' entries (2019 and 2023) come from Jonny's £18m permanent move (a research lead that had no deal to attach to until his loan row came back with the date fix; dated 31 January 2019, DEC-432).
 
-**Standings at the freeze (2026-09-01), cumulative net spend:**
+**Standings at the freeze (2026-09-01), cumulative net spend, at the end of IQ-15j:**
 
 | Rank after | Club | Net before (rank) | Net after | Change |
 |---|---|---|---|---|
@@ -1403,6 +1418,132 @@ All four would clear the check with their listed club-page rows; they are docume
 | 11 | Sunderland | £338.4m (11) | £338.4m | £0.0m |
 | 12 | Aston Villa | £312.2m (12) | £313.1m | £0.9m |
 
-The three leaders are now within £11.8m of each other (£8.3m before): Manchester United lead Manchester City by £8.1m and Chelsea by £11.8m. Chelsea fall from second to third because of three January 2020 sales known only from Chelsea's 2019-20 Wikipedia page: Michael Hector to Fulham (£5,310,000), Clinton Mola to Stuttgart (£360,000) and Victor Moses's loan to Inter (£190,000), less Bryan Fiabema's £540,000 purchase; none is confirmed at source yet (all in `source/jan2020_unsourced.csv` or loans). Under DEC-429 the final order is not settled until the IQ-15k round on the leaders' undisclosed deals.
+The three leaders are now within £11.8m of each other (£8.3m before): Manchester United lead Manchester City by £8.1m and Chelsea by £11.8m. Chelsea fall from second to third because of three January 2020 sales known only from Chelsea's 2019-20 Wikipedia page: Michael Hector to Fulham (£5,310,000), Clinton Mola to Stuttgart (£360,000) and Victor Moses's loan to Inter (£190,000), less Bryan Fiabema's £540,000 purchase; none is confirmed at source yet (all in `source/jan2020_unsourced.csv` or loans). Under DEC-429 the final order is not settled until the IQ-15k round on the leaders' undisclosed deals. (IQ-15k: Hector's £5.31m was a duplicate of his September 2019 move and is gone, DEC-436.)
 
-**Order test re-run** (`source/round2_order_test.csv`): 201 of 392 unresearched round 2 deals could change who is in the top 12 at some month end, 5 of them the leader.
+**Order test re-run** (`source/round2_order_test.csv`): 206 of 392 unresearched round 2 deals could change who is in the top 12 at some month end, 14 of them the leader.
+
+## 17. Source round 4: the three leaders' undisclosed deals (IQ-15k; DEC-435 to DEC-439)
+
+- **Why:** Luke's DEC-429: the order at the freeze is not settled while the three leaders' undisclosed deals are counted £0.
+- **Inputs:** the work list of 258 deals (Manchester United 16 purchases and 61 sales, Chelsea 24 and 63, Manchester City 27 and 67; `source/source_round4_map.csv`), Claude helper research on all of them (part25a, part25c), the six January 2020 leader deals (part25d) and Cowork's Chrome reads of the 12 round 3 pages the runner could not read (part25b). Every file's SHA-256 matched `00_README.md`.
+- **Checked at source:** the 213 pages cited read on the runner (https://github.com/marketmarathon/race-through-time/actions/runs/37962899786: 186 loaded; 15 refused, 6 not found, the rest server errors or redirects).
+- **Quotes read:** 37 newly confirmed quotes (6 rejected: a pre-completion figure where a completion report exists, a lower bound, an asking price, a total with add-ons, a maximum, and the Mikel settlement booked elsewhere).
+- **Result: 43 of the 258 deals now carry a figure (30 confirmed at source); none did before; 215 stay £0** (undisclosed in every source found, free, a loan, training compensation, a nominal fee, or only a maximum, lower bound or grade C figure). By leader and side (a deal between two leaders counts on both sides):
+
+| Club | Side | Deals | With a figure | Confirmed at source | Fees added |
+|---|---|---|---|---|---|
+| Manchester United | purchases | 16 | 8 | 3 | £55.0m |
+| Manchester United | sales | 61 | 7 | 3 | £34.7m |
+| Chelsea | purchases | 24 | 8 | 8 | £92.0m |
+| Chelsea | sales | 63 | 7 | 7 | £79.8m |
+| Manchester City | purchases | 27 | 5 | 3 | £34.7m |
+| Manchester City | sales | 67 | 8 | 6 | £40.3m |
+
+**The figures now in use** (largest first):
+
+| Deal | Player | Move | Date | Fee in use | Status | Basis |
+|---|---|---|---|---|---|---|
+| U1427 | Thibaut Courtois | Chelsea → Real Madrid | 2018-08-09 | £31,500,000 | VERIFIED (B) | reported |
+| U1318 | Davide Zappacosta | Torino → Chelsea | 2017-08-31 | £23,000,000 | VERIFIED (B) | reported |
+| U0662 | Romelu Lukaku | Anderlecht → Chelsea | 2011-08-18 | £20,000,000 | VERIFIED (B) | reported |
+| U0612 | David de Gea | Atlético Madrid → Manchester United | 2011-06-29 | £18,000,000 | UNVERIFIED (B) | reported |
+| U0535 | Ramires | Benfica → Chelsea | 2010-08-13 | £17,000,000 | VERIFIED (B) | reported |
+| U1595 | Angeliño | Manchester City → RB Leipzig | 2021-02-13 | £16,300,000 | UNVERIFIED (B) | stated |
+| U1812 | Édouard Mendy | Chelsea → Al Ahli | 2023-06-28 | £16,000,000 | VERIFIED (B) | reported |
+| U1758 | Manuel Akanji | Borussia Dortmund → Manchester City | 2022-09-01 | £15,000,000 | VERIFIED (B) | stated |
+| U0655 | Yuri Zhirkov | Chelsea → Anzhi Makhachkala | 2011-08-06 | £13,000,000 | VERIFIED (B) | stated |
+| U0633 | Jérôme Boateng | Manchester City → Bayern Munich | 2011-07-18 | £12,258,121 | VERIFIED (B) | reported |
+| U0738 | Shinji Kagawa | Borussia Dortmund → Manchester United | 2012-06-22 | £11,826,713 | UNVERIFIED (B) | reported |
+| U1279 | Douglas Luiz | Vasco da Gama → Manchester City | 2017-07-15 | £10,700,000 | UNVERIFIED (B) | stated |
+| U1940 | Willy Kambwala | Manchester United → Villarreal | 2024-07-15 | £9,900,000 | VERIFIED (B) | stated |
+| U0255 | Branislav Ivanović | Lokomotiv Moscow → Chelsea | 2008-01-16 | £8,967,940 | VERIFIED (B) | reported |
+| U1452 | Ola Aina | Chelsea → Torino | 2019-06-11 | £8,900,000 | VERIFIED (B) | stated |
+| U1661 | Davide Zappacosta | Chelsea → Atalanta | 2021-08-24 | £8,563,843 | VERIFIED (B) | stated |
+| U0644 | Thibaut Courtois | Racing Genk → Chelsea | 2011-07-26 | £7,954,746 | VERIFIED (B) | reported |
+| U0289 | Deco | Barcelona → Chelsea | 2008-06-30 | £7,916,403 | VERIFIED (B) | reported |
+| U0500 | Javier Hernández | Guadalajara → Manchester United | 2010-05-27 | £7,000,000 | UNVERIFIED (B) | reported |
+| U0209 | Giuseppe Rossi | Manchester United → Villarreal | 2007-07-31 | £6,700,000 | UNVERIFIED (B) | reported |
+| U0998 | Shinji Kagawa | Manchester United → Borussia Dortmund | 2014-08-31 | £6,300,000 | VERIFIED (B) | stated |
+| U1835 | Alex Telles | Manchester United → Al Nassr | 2023-07-23 | £6,000,000 | UNVERIFIED (B) | reported |
+| U1298 | Fernando | Manchester City → Galatasaray | 2017-08-04 | £4,700,000 | VERIFIED (B) | reported |
+| U1861 | Matěj Kovář | Manchester United → Bayer Leverkusen | 2023-08-15 | £4,292,582 | UNVERIFIED (B) | stated |
+| U0806 | Maicon | Internazionale → Manchester City | 2012-08-31 | £4,000,000 | VERIFIED (B) | stated |
+| U0735 | Nick Powell | Crewe Alexandra → Manchester United | 2012-06-12 | £4,000,000 | VERIFIED (B) | stated |
+| U0784 | Alexander Büttner | Vitesse Arnhem → Manchester United | 2012-08-21 | £3,900,000 | VERIFIED (B) | stated |
+| U0226 | Juliano Belletti | FC Barcelona → Chelsea | 2007-08-23 | £3,722,504 | VERIFIED (B) | reported |
+| U0813 | Ángelo Henríquez | Universidad de Chile → Manchester United | 2012-09-05 | £3,500,000 | UNVERIFIED (B) | stated |
+| U0570 | Anders Lindegaard | Aalesund → Manchester United | 2010-11-27 | £3,500,000 | UNVERIFIED (B) | reported |
+| U1132 | Matt Miazga | New York Red Bulls → Chelsea | 2016-01-30 | £3,477,293 | VERIFIED (B) | reported |
+| U2034 | Diego León | Cerro Porteño → Manchester United | 2025-07-05 | £3,300,000 | VERIFIED (B) | stated |
+| U0976 | Bruno Zuculini | Racing Club → Manchester City | 2014-08-08 | £3,000,000 | UNVERIFIED (B) | reported |
+| U0874 | Maicon | Manchester City → Roma | 2013-07-18 | £3,000,000 | VERIFIED (B) | reported |
+| U2188 | Issa Kaboré | Manchester City → Wrexham | 2026-08-27 | £2,000,000 | VERIFIED (B) | stated |
+| U1063 | Enes Ünal | Bursaspor → Manchester City | 2015-07-06 | £2,000,000 | VERIFIED (B) | reported |
+| U0303 | Georgios Samaras | Manchester City → Celtic | 2008-07-15 | £1,500,000 | VERIFIED (B) | stated |
+| U0990 | George Saville | Chelsea → Wolverhampton Wanderers | 2014-08-26 | £1,000,000 | VERIFIED (B) | reported |
+| U1635 | Olivier Giroud | Chelsea → AC Milan | 2021-07-17 | £856,384 | VERIFIED (B) | reported |
+| U1808 | Zidane Iqbal | Manchester United → Utrecht | 2023-06-26 | £850,000 | VERIFIED (B) | stated |
+| U0728 | Ravel Morrison | Manchester United → West Ham United | 2012-01-31 | £650,000 | UNVERIFIED (B) | stated |
+| U1509 | Jeremie Frimpong | Manchester City → Celtic | 2019-09-01 | £350,000 | UNVERIFIED (B) | stated |
+| U1070 | Jordy Hiwula | Manchester City → Huddersfield Town | 2015-07-17 | £150,000 | VERIFIED (B) | stated |
+
+**The six January 2020 leader deals (part25d):** Bryan Fiabema £540,000 (stated); Henri Ogunby £0 (undisclosed, no figure: counte); Clinton Mola £168,110 (reported); Nathan Bishop £0 (undisclosed, no figure: counte); Tariq Lamptey £0 (undisclosed, no figure: counte). Hector's duplicate (Tf8a5f7e6ee) is gone; his one move is T6403be737e. No grade A/B figure was found for any of them; Fiabema, Mola and Moses keep their Wikipedia figures as unconfirmed.
+
+**Who leads, through time** (month the lead changes hands; from 2003):
+
+- Before (193580c): Chelsea (2003-07) → Manchester City (2011-07) → Chelsea (2011-08) → Manchester City (2015-07) → Chelsea (2023-01) → Manchester United (2026-09)
+- After: Chelsea (2003-07) → Manchester City (2015-08) → Chelsea (2022-08) → Manchester United (2026-09)
+
+The leader differs at 7 month ends; who is in the top 12 differs at 4 month ends (2019-04: West Bromwich Albion in for Wolverhampton Wanderers; 2019-05: West Bromwich Albion in for Wolverhampton Wanderers; 2023-06: AFC Bournemouth in for Wolverhampton Wanderers; 2023-08: Fulham in for Wolverhampton Wanderers). The top-12 changes are Wolves leaving it again in 2019 and 2023: Jonny's £18m no longer has a deal (DEC-436).
+
+**Standings at the freeze (2026-09-01), cumulative net spend:**
+
+| Rank after | Club | Net before (rank) | Net after | Change |
+|---|---|---|---|---|
+| 1 | Manchester United | £1,659.0m (1) | £1,679.3m | £20.3m |
+| 2 | Chelsea | £1,647.1m (3) | £1,664.8m | £17.7m |
+| 3 | Manchester City | £1,650.9m (2) | £1,645.3m | −£5.6m |
+| 4 | Arsenal | £1,126.9m (4) | £1,126.9m | £0.0m |
+| 5 | Liverpool | £988.9m (5) | £988.9m | £0.0m |
+| 6 | Tottenham Hotspur | £985.0m (6) | £985.0m | £0.0m |
+| 7 | Newcastle United | £702.6m (7) | £702.6m | £0.0m |
+| 8 | West Ham United | £590.5m (8) | £590.5m | £0.0m |
+| 9 | Everton | £376.1m (9) | £376.1m | £0.0m |
+| 10 | Fulham | £367.3m (10) | £367.3m | £0.0m |
+| 11 | Sunderland | £338.4m (11) | £338.4m | £0.0m |
+| 12 | Aston Villa | £313.1m (12) | £313.1m | £0.0m |
+
+**Gaps between the three leaders:** after, Manchester United lead Chelsea by £14.4m and Manchester City by £34.0m; before, Manchester United led Manchester City by £8.1m and Chelsea by £11.8m. Manchester United take the lead only in the final month (the summer 2026 window).
+
+**Order test re-run** (`source/round2_order_test.csv`): 206 of 392 unresearched round 2 deals could change who is in the top 12 at some month end, 14 of them the leader (201 and 5 before this round): with the finish this close, the P4 sweep (DEC-429) can still matter.
+
+**Still UNVERIFIED among the round 4 figures: 13** (a grade B figure the runner could not confirm: page refused, gone or changed, or the clubs not both named):
+
+| Player | Move | Date | Fee in use |
+|---|---|---|---|
+| David de Gea | Atlético Madrid → Manchester United | 2011-06-29 | £18,000,000 |
+| Angeliño | Manchester City → RB Leipzig | 2021-02-13 | £16,300,000 |
+| Shinji Kagawa | Borussia Dortmund → Manchester United | 2012-06-22 | £11,826,713 |
+| Douglas Luiz | Vasco da Gama → Manchester City | 2017-07-15 | £10,700,000 |
+| Javier Hernández | Guadalajara → Manchester United | 2010-05-27 | £7,000,000 |
+| Giuseppe Rossi | Manchester United → Villarreal | 2007-07-31 | £6,700,000 |
+| Alex Telles | Manchester United → Al Nassr | 2023-07-23 | £6,000,000 |
+| Matěj Kovář | Manchester United → Bayer Leverkusen | 2023-08-15 | £4,292,582 |
+| Ángelo Henríquez | Universidad de Chile → Manchester United | 2012-09-05 | £3,500,000 |
+| Anders Lindegaard | Aalesund → Manchester United | 2010-11-27 | £3,500,000 |
+| Bruno Zuculini | Racing Club → Manchester City | 2014-08-08 | £3,000,000 |
+| Ravel Morrison | Manchester United → West Ham United | 2012-01-31 | £650,000 |
+| Jeremie Frimpong | Manchester City → Celtic | 2019-09-01 | £350,000 |
+
+**Decided under DEC-417 (Claude, DEC-436 and DEC-437):**
+- **Grading (DEC-420 (a)):** Goal, 90min, FourFourTwo, theScore, Football España and TeamTalk rows are grade C whatever the research file says, as are SI pages carrying 90min copy; SI's own reporting and pages that are syndicated agency copy (Courtois 2011, Reuters) keep their grade. Sporting Life stays B, as for the 15 fees already in the build that rest on it (Aké, Ziyech, Guéhi, Henderson, Bony and others): see question 1.
+- **DEC-404 as written:** a report that the deal was completed beats a bid, an agreed or an expected figure of the same grade; where no report of that grade says the deal was completed, the earliest report stands. So Zhirkov's sale (£13m, City AM, "poised to rake in"), Miazga's purchase ($5m, "expected", the only grade B figure) and Boateng's sale to Bayern (€14m agreed, UEFA.com) count, and Courtois 2011 counts Reuters' "nine million euro" (signed) instead of the £8m from the day of his medical. Louie Barry's BBC "about 1m euros (£880,000)" is now accepted too (reversing IQ-15j): a reported "about"/"around" figure counts as a reported figure; DEC-276 covers maxima, totals with add-ons and lower bounds.
+- **Not the fee:** Lukaku "at least €20m" (a lower bound; the completion report's £20m counts), Muric £3m (an asking price), Akanji £17m (total with add-ons; the initial £15m counts), Vítek "up to £14m" and Rafael "up to £2.5m" (maxima), Robbie Brady "in excess of £2million" (a lower bound), Kalas "$7.8m" (what Olomouc "could get"; the radio.cz $8m page refused the runner), Tošić 2009 "?3.5 million" (currency lost; never guessed) and the $40m for Tošić and Ljajić together (a combined figure, DEC-405), Boateng to City 2010 "12.5m" (no currency on the page), Collyer's "guaranteed £3million" (Football365 only, grade C), Angeliño's €12m and £5.3m buy-back figures (both grade C; kept as versions).
+- **Mikel 2006:** the Irish Times figure (£12m to Manchester United and £4m to Lyn) stays booked once, as £16m on the Manchester United → Chelsea move (DEC-420 (h)); the Lyn → Chelsea row stays £0.
+- **Corrections applied:** Huws to Wigan 2014 (club statement), Cameron Stewart to Hull 2011 and Matt Smith to MK Dons 2022 (Yorkshire Post over a grade C "permanent") are loans; Billy Gee to Norwich 2024 is a free transfer plus add-ons; Josh Harrop to Preston 2017 is undisclosed training compensation (£0).
+- **Corrections that change nothing:** Torres to Milan 2015, Razak to Anzhi 2013, Simpson to Newcastle 2010 and Bellion to Nice 2006 are the permanent steps of moves that began as loans, at undisclosed fees (£0); Bailly 2023, Mikel to Tianjin 2017 and Miazga 2022 were already free; Rojo 2021 "free" rests on a grade C page only (stays undisclosed, £0); Arzani 2018 a nominal fee with no figure (£0); Michael Ball 2007 a six-month contract, no fee (£0); Delač keeps the list date, 31 August 2010 (no source dates the completion; the 18 September 2009 announcement was of an agreement for a later move; £0 either way, the date goes to the next round); Samuels-Smith's £6.5m is already on the July 2025 sale, and his return stays £0.
+- **The 12 pages read in Luke's Chrome (part25b):** none gives a grade A/B figure (`source/round4_chrome_reads.csv`); Crouch keeps his confirmed £9m (City AM).
+- **IQ-15j clean-up (DEC-436):** Hector's club-page row (£5,310,000) was a duplicate of his Chelsea → Fulham move: one deal now, undisclosed (Fulham's and Chelsea's statements), dated 1 January 2020 (completed in the January window); Sporting Life's later "£8million" is not used. The widened duplicate test (same player, same two clubs, both loans or both not, within 180 days or the season) found three more among the club-page rows, all loans: Charlie Brown to Union SG, Nat Phillips to Stuttgart, Ryan Giles to Coventry. The four-column tables of summers 2017 and 2018 sit under a "Loans" heading: their 621 rows are now loans (Hector to Hull 2017 and Sheffield Wednesday 2018 among them). Jonny's £18m (Wolves, January 2019) again has no deal to attach to: his permanent move is not on Wikipedia's lists; it is listed for the next round.
+
+**Question for Luke (it decides who leads at the freeze; the rules do not settle it):**
+1. **Should Sporting Life count as quality press (grade B)?** The build has always graded it B, and 15 fees in use rest on it. Round 4 adds Courtois's sale to Real Madrid (2018, £31.5m), whose only figure is on Sporting Life. With Sporting Life as B, Manchester United lead at the freeze by £14.45m over Chelsea (£1,679.29m to £1,664.85m); as C everywhere (rebuilt in a scratch copy), Chelsea lead by £0.35m (£1,694.65m to £1,694.29m); as C for round 4 only, Chelsea lead by about £17m (inconsistent, not recommended). **Recommendation:** keep it B for now, as the build always has, and have Cowork find a BBC, Sky, PA or club source for the Sporting Life figures that decide the finish (Courtois 2018 first, then Henderson, Aké, Guéhi, Ziyech) before the order at the freeze is treated as settled. A second single-source figure matters too: Zhirkov's £13m sale (City AM, before completion): without it United still lead, by £1.45m.
