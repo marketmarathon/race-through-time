@@ -28,16 +28,31 @@ FILES += [(os.path.basename(f), "G") for _, f in sorted(_latest.items())]
 # source rounds (DEC-275): ChatGPT's press/club sources for named deals, section "S"; each row carries our deal_id, mapped to a
 # transfer_id by data/rtt-101/source/source_round1_map.csv (built from the lists Cowork sent, player + date)
 FILES += [(os.path.basename(f), "S") for f in sorted(_glob.glob(os.path.join(PRIV, "part2*_sources_round*_*.csv")))]
+# source round 2 (IQ-15h): Claude helper research on the priority list, all rows combined in part23g (part22c and part23a-f are the same
+# rows split by batch, so only part23g is read); deal IDs R0001-R0755 map through source_round2_map.csv
+FILES += [(os.path.basename(f), "S") for f in sorted(_glob.glob(os.path.join(PRIV, "part23g_claude_round2_ALL_*.csv")))]
 _MAP = {}
-_mp = os.path.join(os.path.dirname(os.path.abspath(OUT)), "source_round1_map.csv")
-if os.path.exists(_mp):
-    _MAP = {r["deal_id"]: r["transfer_id"] for r in csv.DictReader(open(_mp, encoding="utf-8"))}
+for _name in ("source_round1_map.csv", "source_round2_map.csv"):
+    _mp = os.path.join(os.path.dirname(os.path.abspath(OUT)), _name)
+    if os.path.exists(_mp):
+        for _r in csv.DictReader(open(_mp, encoding="utf-8")):
+            _MAP.setdefault(_r["deal_id"], _r["transfer_id"])  # a part-exchange pair maps to two transfers: the first carries the deal
 REPORTED = re.compile(r"\b(reported|believed|thought to be|understood|in the region of|around|about|some)\b", re.I)
 UEFA = re.compile(r"uefa\.com", re.I)
 
 
+# round 2 (IQ-15h): aggregator, scores, blog and fan sites are pointers (C) whatever grade the research file gives; a contemporary agency
+# copy or regional paper stays B (the helpers' notes name the agency); a post resting only on social media is C
+AGGREGATOR = re.compile(r"(flashscore|sportskeeda|90min\.com|getfootballnews|football-espana|worldsoccertalk|soccernews\.com|sportsmole|newswav|"
+                        r"hitc\.com|footballtransfers|vavel|fichajes|thehardtackle|sixonefivesoccer|lastwordonsports|planetfootball|fotmob|"
+                        r"sofascore|soccerway|bleacherreport|foot01|maxifoot|sporting-heroes|africasoccer|soccernet\.ng|kahawatungu|"
+                        r"football365|myfootball\.com\.au|sportsnews\.com\.au)", re.I)
+
+
 def grade(row):
     g = (row.get("grade") or "").strip().upper()
+    if row.get("_round2") and g in ("A", "B") and AGGREGATOR.search(row.get("source_url", "")):
+        return "C", "aggregator, scores, blog or fan site: a pointer (C), whatever the research file says"
     q = (row.get("exact_quote", "") + " " + row.get("fee_as_reported", ""))
     # brief section 7: UEFA.com news of another party's fee = B; "reported"/"thought to be" rows = reported (B)
     if g == "A" and (UEFA.search(row.get("source_url", "")) or REPORTED.search(q)):
@@ -67,7 +82,10 @@ for fn, sec in FILES:
             r = dict(r, evidence_id=f"{r['deal_id']}-{_n:02d}", transfer_id=_MAP.get(r["deal_id"], ""), date=r.get("transfer_date_reported", ""))
             if "soccerbase" in (r.get("source_url") or "").lower() or (r.get("publisher") or "").lower().startswith("soccerbase"):
                 r["grade"] = "C"
+            if fn.startswith(("part22", "part23")):
+                r["_round2"] = True
         url = (r.get("source_url") or "").strip()
+        url = re.sub(r"^https?://acc-english\.ajax\.nl", "https://english.ajax.nl", url)  # a copy of the same Ajax page (Cowork, IQ-15h)
         if "transfermarkt" in url.lower() or "wikipedia.org" in url.lower():
             continue  # DEC-236: nothing taken from Transfermarkt is stored; Wikipedia is never the source of a fee
         key = (url, (r.get("fee_as_reported") or "").strip())
