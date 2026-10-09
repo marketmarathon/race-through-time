@@ -196,6 +196,20 @@
        - board.fit.max_slots: more bars than `rows` may share the board (the text sizes stay those of `rows`).
        - story items: sec (a longer card), card_y (a card placed higher), sub (a line under the quote), tagColour; card
          labels wrap inside the card.
+     Changed in IQ-19 (RTT-102 design round 1), only for a VISITS series (race kind "visits", scripts/rtt102_adapter.py),
+     so every RTT-001, RTT-002, RTT-003 and RTT-103 config draws exactly as before (tests/player/compare_frames.js):
+       - values: whole visits -> "~5.6bn" / "~950m" / "~84.1m" (values.visits {approx "all"|"between"|"none", bn_decimals 1|2};
+         rounded half up on the integers; "between" = "~" only where the number on screen is not a published figure:
+         on a month between two published months, or while counting); the axis reads "250m", "1bn", "1.5bn".
+       - values.visits.older "stripes"|"none": Similarweb's older estimates (before its 28 Jul 2024 re-estimate) in the
+         estimated look (frame-anchored stripes, board.stripes "screen") or plain; values.visits.look "analyst": every bar
+         in the analyst-estimate look with values.visits.est_label after the value (an option for Luke).
+       - names: the bar's name at that date (race events' labels: "Bard" until January 2024, then "Gemini").
+       - pictures.switch {id: [{until, key}]}: a different logo file (pictures.files key) up to that date, crossfaded over
+         the first month after it.
+       - status (DEC-132) with status.sink: a bar after its last published month is held at that figure, ranked below the
+         live bars, dimmed, "· latest figure"; "{month}" in status.latest_figure = its last published month ("Sep 2025").
+       - story cards (RTT-103's, DEC-357) and final_line {text, y} (a fixed line on the final table) for visits too.
      Removed as unused: the Format C / C2-1 picture column and story cards, the prototype
      driver block that followed </html> in the C2-2 file.
 
@@ -252,6 +266,7 @@ let SERIES=false, PIC=null, PICIMG={}, LOGOIMG={}, MKEY=null, FADE=null, CROWN=n
 let SHARE=false, VAL=null, SRCL=null, MARK=null, NOTEL=null;
 let STEPSON=false, FINALDRAW=false;   // IQ-18b (RTT-103): the steps after a money race
 let FWD=null, FWDNEED={}, ROWCAP=10;   // IQ-18c (RTT-103): the race carries on through the 2026 plans and the 2027-2030 estimates
+let VISITS=false, VISF=null, LASTM={};   // IQ-19 (RTT-102): all off for every other episode
 let MONEY=false, MONEYF=null, GAPS=null, TAGS=null, TAGFOOT=null, ENTRY=null, ENTRYK={}, STORY=null, COMB=null;   // IQ-18 (RTT-103): all off for RTT-001/002/003   // IQ-13 (RTT-001): all off for RTT-002 and RTT-003
 let DATEBLK=null, ERA=null, ERAST=null, ERAIMG={};                          // RTT-001 date/era round (DEC-214..): off unless configured
 let TOP=150; const BOTTOM=1080-46;            // IQ-10: TOP from config board_top (RTT-003); 150 for RTT-002
@@ -320,14 +335,16 @@ function setup(o){
   if(STATS && EVL) throw new Error('stats_label replaces the event label; switch event_label off');
   /* IQ-10 (RTT-003): series mode and its switches */
   TOP = CFG.board_top!=null ? CFG.board_top : 150;
-  SERIES = !!TL.series; SHARE = !!TL.share; MONEY = !!TL.money; AXU = MONEY ? 1e9 : SHARE ? 100 : SERIES ? 1e6 : 1;
+  SERIES = !!TL.series; SHARE = !!TL.share; MONEY = !!TL.money; VISITS = !!TL.visits; AXU = MONEY ? 1e9 : VISITS ? 1 : SHARE ? 100 : SERIES ? 1e6 : 1;
+  VISF = VISITS ? Object.assign({approx:'all', bn_decimals:1, older:'stripes', look:'solid', est_label:'· analyst estimate'}, (CFG.values||{}).visits||{}) : null;
+  LASTM = {}; if(VISITS) for(const e of o.data.entrants){ const [y,m]=e.last_month.split('-').map(Number); LASTM[e.id]=(CFG.date_block&&CFG.date_block.months_short||['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'])[m-1]+' '+y; }
   MONEYF = MONEY ? Object.assign({prefix:'$', suffix:'bn', decimals:1, whole_from:null}, (CFG.values||{}).money||{}) : null;
   GAPS = MONEY ? Object.assign({mode:'leave', alpha:0.45, text:'figures not comparable'}, CFG.gaps||{}) : null;
   TAGS = MONEY && Array.isArray(CFG.bar_tags) && CFG.bar_tags.length ? CFG.bar_tags : null;
   TAGFOOT = MONEY && CFG.tag_foot ? Object.assign({x:1880, y:690, size:24, align:'right'}, CFG.tag_foot) : null;
   ENTRY = MONEY && CFG.entry_tag && CFG.entry_tag.enabled ? Object.assign({text:'joins the race', return_text:null, sec:3.0}, CFG.entry_tag) : null;
   STORYQ=null;
-  STORY = MONEY && CFG.story && CFG.story.enabled ? Object.assign({mode:'line', sec:3.5, fade_in:0.3, fade_out:0.5, y:116, size:30, card:{x:1300, y:520, w:580}, items:[]}, CFG.story) : null;
+  STORY = (MONEY||VISITS) && CFG.story && CFG.story.enabled ? Object.assign({mode:'line', sec:3.5, fade_in:0.3, fade_out:0.5, y:116, size:30, card:{x:1300, y:520, w:580}, items:[]}, CFG.story) : null;
   COMB = MONEY && CFG.combined && CFG.combined.enabled ? Object.assign({mode:'number', x:1380, y:730, w:500, h:210, label:'Combined capital spending'}, CFG.combined) : null;
   ENTRYK={};
   STEPSON = MONEY && !!TL.stepPlan;
@@ -418,8 +435,24 @@ function money(u){
   if(M.decimals===0 && (M.whole_from==null || u>=M.whole_from*1e9)){ const b=Math.floor((u+5e8)/1e9); return M.prefix+b.toLocaleString('en-GB')+M.suffix; }
   const t=Math.floor((u+5e7)/1e8); return M.prefix+Math.floor(t/10).toLocaleString('en-GB')+'.'+(t%10)+M.suffix;
 }
+/* IQ-19: whole visits -> "5.6bn" / "5.64bn" (billions, VISF.bn_decimals), "950m" (100 million and over, whole millions),
+   "84.1m" (one decimal), rounded half up on the integers; a value that rounds up to the next band takes that band's form
+   ("1.0bn", not "1,000m"). "~" in front unless the number on screen is a published figure and VISF.approx is "between". */
+function visitsText(u,pub){
+  if(!Number.isInteger(u) || u<0) console.error('BAD VISITS '+u);
+  const D=VISF.bn_decimals===2?2:1, P=Math.pow(10,D), bn=Math.floor((u+5e8/P)/(1e9/P)), m=Math.floor((u+5e5)/1e6), t=Math.floor((u+5e4)/1e5);
+  let s;
+  if(u>=1e9 || m>=1000) s=Math.floor(bn/P)+'.'+String(bn%P).padStart(D,'0')+'bn';
+  else if(u>=1e8 || t>=1000) s=m+'m';
+  else s=Math.floor(t/10)+'.'+(t%10)+'m';
+  const tilde = VISF.approx==='all' || (VISF.approx==='between' && !pub);
+  return (tilde?'~':'')+s;
+}
+function visitsAxis(v){ return v>=1e9 ? String(+(v/1e9).toFixed(2))+'bn' : String(+(v/1e6).toFixed(1))+'m'; }
+function visitsStyle(st){ return VISF.look==='analyst' ? 'analyst_estimate' : VISF.older==='none' ? 'official' : st; }
 function tagOf(id,mode,date){ return TAGS ? TAGS.find(t=>t.id===id && (t.mode||'after')===mode && (!t.from || date>=t.from) && (!t.to || date<=t.to)) : null; }
-function fmtS(u,plus,id,st){
+function fmtS(u,plus,id,st,pub){
+  if(VISITS) return visitsText(u,pub);
   if(MONEY) return money(u);
   if(SHARE) return pct(u,st);
   const n=NOTES && NOTES.find(x=>x.id===id);
@@ -522,7 +555,8 @@ function nameSize(){
   let everA={}, estW=0;
   if(SERIES){ [TL.opening].concat(TL.states.filter(s=>!s.fwd)).forEach(s=>s.order.slice(0,NROWS+1).forEach(id=>{ if(s.style[id]==='analyst_estimate') everA[id]=true; }));
     ctx.font='500 '+g.VALF+'px '+FONT; estW=g.VALF*0.35+tabWidth('· analyst estimate',pitch()); ctx.font=(STATS?'700 ':'600 ')+g.VALF+'px '+FONT; }
-  const valOf=id=>MONEY ? tabWidth(money(seen[id])+'*',p)+(CROWN?g.VALF*1.6:0) : SHARE ? Math.max(tabWidth(pct(seen[id],'official'),p), VAL.approx ? tabWidth(pct(seen[id],'estimated'),p) : 0)+(CROWN?g.VALF*1.6:0)
+  if(VISITS && VISF.look==='analyst'){ ctx.font='500 '+g.VALF+'px '+FONT; estW=g.VALF*0.35+tabWidth(VISF.est_label,pitch()); ctx.font='600 '+g.VALF+'px '+FONT; for(const id of ids) everA[id]=true; }
+  const valOf=id=>VISITS ? tabWidth(visitsText(seen[id],false),p)+(everA[id]?estW:0)+(CROWN?g.VALF*1.6:0) : MONEY ? tabWidth(money(seen[id])+'*',p)+(CROWN?g.VALF*1.6:0) : SHARE ? Math.max(tabWidth(pct(seen[id],'official'),p), VAL.approx ? tabWidth(pct(seen[id],'estimated'),p) : 0)+(CROWN?g.VALF*1.6:0)
                : SERIES ? tabWidth(fmtS(seen[id],true,id)+(FFOOT&&FFOOT.id===id?FFOOT.mark:''),p)+(everA[id]?estW:0)+(CROWN?g.VALF*1.6:0)
                          : tabWidth(fmt(seen[id]),p)+(seenS[id]||0);   // IQ-05e: plus the stats label
   const nx=g.x0+18, limit=1920-64;
@@ -808,6 +842,9 @@ function drawDateEra(k, fr){
   /* the area the date block may draw in (the rolling year is clipped to it): beside = its own box, screen = the device */
   window.__DATEBLOCK={year:y, month, rolling:p<1, from:yOld, box: DATEBLK ? (DATEBLK.mode==='screen' ? (ERA?{x:ERA.x,y:ERA.y,w:ERA.w,h:ERA.h}:null) : dbox) : null};
 }
+/* IQ-19: the picture key of bar id at a date (pictures.switch {id: [{until, key}]}: the first entry whose `until` is on or
+   after the date; else the bar's own file) */
+function picKey(id,date){ for(const s of PIC.switch[id]) if(date<=s.until) return s.key; return id; }
 function drawCrown(x,y,w,h,col){
   ctx.save(); ctx.fillStyle=col; ctx.beginPath();
   ctx.moveTo(x,y+h); ctx.lineTo(x,y+h*0.32); ctx.lineTo(x+w*0.27,y+h*0.62); ctx.lineTo(x+w*0.5,y+h*0.12);
@@ -888,7 +925,7 @@ function drawCallout(CO,cur,SF,fr){
   }
   if(FINAL_ON){                                  // round 2: the final-table line and footnote
     window.__FINAL={};
-    if(TL.finalLine){ ctx.fillStyle=T.ink; ctx.font='600 '+C.size+'px '+FONT; tabText(TL.finalLine.text, LEFT, C.y, 'left', 'final_line', null); window.__FINAL.line=TL.finalLine.text; }
+    if(TL.finalLine){ ctx.fillStyle=T.ink; ctx.font='600 '+C.size+'px '+FONT; tabText(TL.finalLine.text, LEFT, VISITS&&CFG.final_line.y?CFG.final_line.y:C.y, 'left', 'final_line', null); window.__FINAL.line=TL.finalLine.text; }
     if(FFOOT){ ctx.fillStyle=T.cap||T.muted; ctx.font='500 '+FFOOT.size+'px '+FONT; tabText(FFOOT.mark+' '+FFOOT.text, LEFT, C.y+FFOOT.dy, 'left', 'footnote', FFOOT.id); window.__FINAL.footnote=FFOOT.text; }
   }
   if(NOTES){                                     // the PS2 note candidate (DEC-094), stills only
@@ -1013,7 +1050,9 @@ function drawAt(t){
   const REC = RECLINE ? {id:SF.order[0], u:SF.u[SF.order[0]], plus:!!SF.plus[SF.order[0]]} : null;   // round 4: the record line without live_only too
   /* IQ-18 gaps "hold": how far a bar has gone into (or come out of) its held look this beat (0 = a figure, 1 = held) */
   const heldOf = id => !MONEY || GAPS.mode!=='hold' ? 0 : (cur.held[id] ? (prev.held && prev.held[id] ? 1 : SF.g) : (prev.held && prev.held[id] ? 1-SF.g : 0));
-  const rows = SF ? ORD.map(id=>({c:ENT[id], n:SF.u[id], s:null, len:SF.u[id], st:SHARE&&!(id in cur.style)?prev.style[id]:cur.style[id], pl:SF.plus[id], a:SF.alpha?SF.alpha[id]:null, held:heldOf(id), lo:SF.lo?SF.lo[id]:null}))
+  const rows = SF ? ORD.map(id=>({c:ENT[id], n:SF.u[id], s:null, len:SF.u[id], st:VISITS ? visitsStyle(!(id in cur.style)?prev.style[id]:cur.style[id]) : SHARE&&!(id in cur.style)?prev.style[id]:cur.style[id], pl:SF.plus[id], a:SF.alpha?SF.alpha[id]:null, held:heldOf(id), lo:SF.lo?SF.lo[id]:null,
+                                   pub: VISITS && (id in cur.totals ? (SF.g>=1 && 'ph'.includes(cur.prov[id])) : prev.prov[id]==='h' || prev.prov[id]==='p'),
+                                   nm: VISITS ? ((id in cur.totals ? cur.labels[id] : prev.labels[id]) || ENT[id].label) : null}))
                   : cur.order.map(id=>({c:ENT[id], n:cur.totals[id], s:cur.starts?cur.starts[id]:null, len:lerp(prev.totals[id]||0, cur.totals[id], g),
                                    st:SERIES?cur.style[id]:null, pl:SERIES?!!cur.plus[id]:false}));
   const top = rows.slice(0,ROWCAP+3);
@@ -1048,7 +1087,7 @@ function drawAt(t){
   for(let v=0;v<=smoothMax+1e-9;v+=step){
     const x=x0+W*v/smoothMax; if(x>1920-RIGHT-VALW+20) break;
     const av=Math.round(v/AXU);
-    ctx.fillStyle=T.axis; tabText((SERIES&&av>0?(CFG.axis_prefix||''):'')+av.toLocaleString('en-GB')+(SERIES&&av>0?(CFG.axis_suffix||''):''),x,TOP-6,'center','axis',null);
+    ctx.fillStyle=T.axis; tabText(VISITS ? (v>0?visitsAxis(v):'0') : (SERIES&&av>0?(CFG.axis_prefix||''):'')+av.toLocaleString('en-GB')+(SERIES&&av>0?(CFG.axis_suffix||''):''),x,TOP-6,'center','axis',null);
     ctx.fillStyle=T.grid; gridLine(Math.round(x),TOP+8,BOTTOM);
   }
   /* round 3: the gold record line, under the bars (the label is drawn after them) */
@@ -1098,10 +1137,11 @@ function drawAt(t){
     /* IQ-10 fade: fa scales the bar and picture, ta the text */
     const RA=ctx.globalAlpha, fa=fadeOf(c.id,k,fr)*(r.held ? 1-(1-GAPS.alpha)*ease(r.held) : 1), ta=FADE ? 1-(1-FADE.text_alpha)*(1-fa)/(1-FADE.alpha) : (r.held ? 1-0.3*ease(r.held) : 1);
     const SK = STATUS ? RTT_TIMELINE.statusAt(TL,c.id,fr) : null;   // round 4
-    window.__BARS.push({id:c.id, y:c._y, alpha:ctx.globalAlpha, colour, hl, rect:{x:x0,y:by,w,h:BARH}, style:r.st, lo:r.lo, fade:fa, plus:r.pl, units:r.n, exiting:XA!=null, status:SK?SK.kind:null, enter_leave:r.a!=null&&r.a<1, held:r.held||0});
+    window.__BARS.push({id:c.id, y:c._y, alpha:ctx.globalAlpha, colour, hl, rect:{x:x0,y:by,w,h:BARH}, style:r.st, lo:r.lo, fade:fa, plus:r.pl, units:r.n, exiting:XA!=null, status:SK?SK.kind:null, enter_leave:r.a!=null&&r.a<1, held:r.held||0, name:r.nm||null, pub:VISITS?r.pub:null});
     if(ctx.globalAlpha<=0){ ctx.globalAlpha=1; return; }
     if(PIC){                                     // IQ-10 picture, in the column left of the bar
-      const im=PICIMG[c.id], bx=LEFT, byy=mid-G.PH/2;
+      const SWK = VISITS && PIC.switch && PIC.switch[c.id] ? picKey(c.id, ev.date) : null, SWP = SWK && k>=0 && SF && SF.g<1 ? picKey(c.id, k>0?TL.events[k-1].date:TL.openingEvent.date) : null;   // IQ-19
+      const im=PICIMG[SWK||c.id], bx=LEFT, byy=mid-G.PH/2;
       const OWN=PIC.own && PIC.own[c.id];
       if(im && PIC.tile){                         // IQ-13b: a logo, unmodified, fitted on a light tile (DEC-180)
         const pad=PIC.tile_pad!=null?PIC.tile_pad:6, cr=(PIC.crop&&PIC.crop[c.id])||{x:0,y:0,w:im.naturalWidth||im.width||1,h:im.naturalHeight||im.height||1};
@@ -1109,6 +1149,9 @@ function drawAt(t){
         const sc=Math.min((G.PW-2*pad)/cr.w,(G.PH-2*pad)/cr.h), d={x:bx+(G.PW-cr.w*sc)/2, y:byy+(G.PH-cr.h*sc)/2, w:cr.w*sc, h:cr.h*sc, crop:PIC.crop&&PIC.crop[c.id]?cr:null};
         const pix=Math.max(cr.w,cr.h)<=64;              // IQ-13c: 32 x 32 icons (Samba, Cello) scaled as crisp pixels, not blurred
         if(pix){ ctx.imageSmoothingEnabled=false; }
+        if(SWP && SWP!==SWK && PICIMG[SWP]){      // IQ-19: the old logo fades out over the first month after the switch
+          const im0=PICIMG[SWP], c0={x:0,y:0,w:im0.naturalWidth||1,h:im0.naturalHeight||1}, s0=Math.min((G.PW-2*pad)/c0.w,(G.PH-2*pad)/c0.h);
+          ctx.globalAlpha=RA*fa*(1-SF.g); ctx.drawImage(im0,bx+(G.PW-c0.w*s0)/2,byy+(G.PH-c0.h*s0)/2,c0.w*s0,c0.h*s0); ctx.globalAlpha=RA*fa*SF.g; }
         ctx.drawImage(im,cr.x,cr.y,cr.w,cr.h,d.x,d.y,d.w,d.h); ctx.imageSmoothingEnabled=true; ctx.globalAlpha=RA;
         window.__PICS.push({id:c.id, box:{x:bx,y:byy,w:G.PW,h:G.PH}, drawn:d, alpha:RA*fa, tile:true, pixel:pix});
       } else if(OWN){                              // IQ-13c (DEC-182 (5)): our own neutral tile - name and launch year in the bar colour
@@ -1162,7 +1205,7 @@ function drawAt(t){
 
     ctx.font='600 '+nf+'px '+FONT;
     const nx=x0+18;
-    const nm=fitName(c.label, 1920-64-nx-18-160);
+    const nm=fitName(r.nm||c.label, 1920-64-nx-18-160);   // IQ-19: the name at that date
     let nameOut=0;
     /* the pad under a name mid-overtake (C2-2's, applied to on-bar names too) */
     if(top.some(o=>o.c!==c && Math.abs(o.c._y-c._y)<0.85)){
@@ -1179,7 +1222,7 @@ function drawAt(t){
     ctx.font=(STATS?'700 ':'600 ')+VALF+'px '+FONT;          // IQ-05e: the win count in bold
     const HELD = MONEY && r.held>=0.5, MT = MONEY ? tagOf(c.id,'mark',ev.date) : null;    // IQ-18: a held bar shows no number
     const FV = FWD && k>=0 && SF && SF.lo && (ev.fwd || TL.events[k-1].fwd) ? fwdValue(c.id, r.lo, r.len, k, SF.g) : null;   // IQ-18c
-    const txt=HELD ? '' : FV!=null ? FV : SERIES ? fmtS(r.n,r.pl,c.id,r.st)+(MT?MT.mark:'')+(FINAL_ON&&FFOOT&&FFOOT.id===c.id?FFOOT.mark:'') : fmt(r.n), tw=tabWidth(txt,pitch());
+    const txt=HELD ? '' : FV!=null ? FV : SERIES ? fmtS(r.n,r.pl,c.id,r.st,r.pub)+(MT?MT.mark:'')+(FINAL_ON&&FFOOT&&FFOOT.id===c.id?FFOOT.mark:'') : fmt(r.n), tw=tabWidth(txt,pitch());
     let after;                                   // where anything after the value may start
     if(HELD){ after=x0+w+18+nameOut; }                // IQ-18: a held bar has no number at all
     else if(!VALOUT && !nameOut && w>tw+40+ctx.measureText(nm).width+24){ ctx.fillStyle='#F4F6FA'; tabText(txt,x0+w-18,mid+VALF*0.35,'right','value',c.id); after=x0+w+18; }
@@ -1212,12 +1255,12 @@ function drawAt(t){
     }
     if(SERIES && r.st==='analyst_estimate' && !(FWD && k>=0 && ev.fwd)){     // IQ-10 (DEC-084): the analyst-estimate label (IQ-18c: a forward board says whose estimate in its note)
       ctx.fillStyle=T.cap||T.muted; ctx.font='500 '+VALF+'px '+FONT;
-      after+=tabText('· analyst estimate',after,mid+VALF*0.35,'left','est_label',c.id)+VALF*0.35;
+      after+=tabText(VISITS?VISF.est_label:'· analyst estimate',after,mid+VALF*0.35,'left','est_label',c.id)+VALF*0.35;
     }
     if(SK && SK.kind!=='live'){                      // round 4: "· retired" / "· latest figure", fading in with the dim
       const a0=ctx.globalAlpha; ctx.globalAlpha=a0*statusIn(SK,fr);
       ctx.fillStyle=T.cap||T.muted; ctx.font='500 '+VALF+'px '+FONT;
-      after+=tabText('· '+STATUS[SK.kind],after,mid+VALF*0.35,'left','status_tag',c.id)+VALF*0.35;
+      after+=tabText('· '+(VISITS?STATUS[SK.kind].replace('{month}',LASTM[c.id]):STATUS[SK.kind]),after,mid+VALF*0.35,'left','status_tag',c.id)+VALF*0.35;
       window.__STATUS.push({id:c.id, kind:SK.kind, units:r.n, alpha:ctx.globalAlpha});
       ctx.globalAlpha=a0;
     }
@@ -1269,6 +1312,7 @@ function drawAt(t){
 
   if(SERIES){ drawCallout(CO, cur, SF, fr); drawMakerKey(cur, SF); }   // IQ-10
   if(MONEY){ drawTagFoot(cur, ev); drawStory(fr); drawCombined(k, SF, fr, cur, prev); }   // IQ-18 (RTT-103)
+  if(VISITS) drawStory(fr);                                              // IQ-19 (RTT-102)
   if(SHARE) drawSource(ev, fr);                                          // IQ-13
   if(DATEBLK || ERA) drawDateEra(k, fr);                                 // RTT-001 date/era round
 

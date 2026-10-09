@@ -253,7 +253,50 @@
     const pos = {}; prevOrder.forEach((id, i) => { pos[id] = i; });
     return Object.keys(values).sort((a, b) => (values[b] - values[a]) || ((a in pos ? pos[a] : 1e9) - (b in pos ? pos[b] : 1e9)) || (label[a] < label[b] ? -1 : label[a] > label[b] ? 1 : 0));
   }
+  /* IQ-19 (RTT-102): a monthly VISITS series (race.kind "visits", scripts/rtt102_adapter.py). Values are whole visits
+     from data/rtt-102/series_monthly.csv (a published month the figure used, a month between two published months the
+     build's straight line); nothing here changes the data. Options, all at draw time:
+       cfg.clock "month" (default) | "quarter": the clock ticks every month, or only at quarter ends (March, June,
+         September, December) plus the race's last month; a quarterly clock counts on a straight line from one quarter
+         end to the next, so a month between them (e.g. DeepSeek's February 2025 peak) is never shown;
+       cfg.smoothing.mode "none" (straight lines, as built: DEC-501 (4)) | "eased": each bar moves on a monotone cubic
+         (Fritsch-Carlson, pchip) through its published figures that the clock shows, by month index - it passes through
+         every one of them exactly, never goes beyond the two figures either side of it (no overshoot) and comes to rest
+         at a bar's first and last figure (RTT-001's draw-time smoothing, DEC-184); evaluated frame by frame (shareFrame);
+       cfg.status.sink (default true with cfg.status): a bar after its last published month (held at that figure,
+         status "latest_figure") ranks below every bar with a figure for the month - a held figure is never compared
+         with a later month's.
+     Rank otherwise: visits, then the previous month's order, then the name (the metric contract). */
+  function visitsRace(race, cfg) {
+    const Q = cfg.clock === 'quarter', last = race.events[race.events.length - 1].date;
+    const evs = race.events.filter(ev => !Q || [3, 6, 9, 12].includes(+ev.date.slice(5, 7)) || ev.date === last)
+      .map(ev => Object.assign({}, ev, { values: Object.assign({}, ev.values), series_values: ev.values }));
+    const S = Object.assign({ mode: 'none' }, cfg.smoothing || {}), label = {};
+    for (const e of race.entrants) label[e.id] = e.label;
+    const idx = {}; race.events.forEach((ev, i) => { idx[ev.date] = i; });
+    const ease = {};
+    if (S.mode === 'eased') {
+      const shown = new Set(evs.map(ev => ev.date));
+      for (const [id, ks] of Object.entries(race.knots || {})) {
+        const kk = ks.filter(k => shown.has(k.date));
+        if (kk.length) ease[id] = pchip(kk.map(k => idx[k.date]), kk.map(k => k.v));
+      }
+      for (const ev of evs) for (const id of Object.keys(ev.values))
+        if (ev.prov[id] !== 'h' && ease[id]) ev.values[id] = Math.round(ease[id](idx[ev.date]));
+    }
+    const SINK = !!(cfg.status && cfg.status.enabled && cfg.status.sink !== false);
+    const live = (ev, id) => !SINK || (ev.status || {})[id] !== 'latest_figure';
+    let prevOrder = [];
+    for (const ev of evs) {
+      const o = shareOrder(ev.values, prevOrder, label);
+      ev.order = o.filter(id => live(ev, id)).concat(o.filter(id => !live(ev, id)));
+      prevOrder = ev.order;
+    }
+    return Object.assign({}, race, { events: evs, crown: [], windows: [], smoothing: S, ease, monthIndex: idx, sink: SINK });
+  }
+
   function shareRace(race, cfg) {
+    if (race.kind === 'visits') return visitsRace(race, cfg);    // IQ-19 (RTT-102)
     const S = Object.assign({ mode: 'none', handover_months: 12, include_flagged: false }, cfg.smoothing || {});
     const SC = race.sc_start ? dayNum(race.sc_start) : Infinity, label = {};   // IQ-18: a money race has no source hand-overs
     for (const e of race.entrants) label[e.id] = e.label;
@@ -377,7 +420,7 @@
   }
 
   function buildSeries(race, cfg) {
-    const SHARE = race.kind === 'share' || race.kind === 'money', MONEY = race.kind === 'money';
+    const SHARE = race.kind === 'share' || race.kind === 'money' || race.kind === 'visits', MONEY = race.kind === 'money', VISITS = race.kind === 'visits';
     if (MONEY) race = holdGaps(race, cfg);
     if (SHARE) race = shareRace(race, cfg);
     if (MONEY) race = forwardBoards(race, cfg);                  // IQ-18c: off unless cfg.forward
@@ -400,7 +443,7 @@
       const plus = {}; for (const id of ev.plus) plus[id] = true;
       const mplus = {}; for (const m of ev.maker_plus || []) mplus[m] = true;
       const held = {}; for (const id of ev.held || []) held[id] = true;            // IQ-18: hold option only
-      const fx = ev.fwd ? { lo: Object.assign({}, ev.lo), fwd: true } : {};   // IQ-18c
+      const fx = ev.fwd ? { lo: Object.assign({}, ev.lo), fwd: true } : VISITS ? { labels: Object.assign({}, ev.labels), prov: Object.assign({}, ev.prov) } : {};   // IQ-18c; IQ-19: the name at that date, published / line / held
       all.push({ ev, st: { order, totals: Object.assign({}, ev.values), style: Object.assign({}, ev.style), plus, status: Object.assign({}, ev.status || {}), held, ...fx,
                            maker_totals: Object.assign({}, ev.maker_totals), maker_style: Object.assign({}, ev.maker_style), maker_plus: mplus } });
     });
@@ -522,7 +565,8 @@
        gap = other - id rounded DOWN to 0.1 million, "at least" only when the other's figure is a lower bound. */
     const FL = cfg.final_line;
     tl.isDataEnd = events[lastK].date === race.events[race.events.length - 1].date;   // the final table of the film
-    if (FL && FL.enabled && tl.isDataEnd) {
+    if (VISITS && FL && FL.enabled && tl.isDataEnd) tl.finalLine = { text: FL.text };   // IQ-19: one line of fixed wording, from verified figures (the config says which)
+    else if (FL && FL.enabled && tl.isDataEnd) {
       const s = states[lastK], a = s.totals[FL.id], b = s.totals[FL.other];
       if (!(b > a)) throw new Error('final line: ' + FL.other + ' is not ahead of ' + FL.id);
       const t = Math.floor((b - a) / 100000);
@@ -583,6 +627,7 @@
       tl.share = true; tl.windows = race.windows; tl.smoothing = race.smoothing; tl.scStart = race.sc_start;
       if (MONEY && events.some(ev => ev.fwd)) { tl.forward = true; tl.lastActual = events.findIndex(ev => ev.fwd) - 1; }   // IQ-18c: the index of June 2026 (-1: before the window)
       if (MONEY) { tl.allCombined = all.filter(x => !x.ev.fwd).map(x => ({ date: x.ev.date, c: x.ev.combined })); tl.money = true; tl.gaps = race.gaps || []; tl.story = race.story || []; tl.steps = race.steps || {}; tl.notesData = race.notes || {}; }
+      if (VISITS) { tl.visits = true; tl.ease = race.ease; tl.monthIndex = race.monthIndex; tl.sink = race.sink; tl.clock = cfg.clock || 'month'; tl.story = []; }   // IQ-19
       tl.crownAll = race.crown;
       const srcs = ev => ev.smooth ? [ev.smooth.from, ev.smooth.to] : String(ev.source_id || '').split('>').filter(Boolean);
       tl.markers = [];
@@ -618,6 +663,13 @@
       if (id in prev.totals) { const a = prev.totals[id]; u[id] = g >= 1 ? b : Math.round(a + (b - a) * g); alpha[id] = 1; }
       else { u[id] = b; alpha[id] = g; } });
     if (g < 1) prev.order.forEach((id, i) => { if (!(id in cur.totals)) { u[id] = prev.totals[id]; alpha[id] = 1 - g; idx[id] = 1e6 + i; } });
+    if (tl.visits) {                       // IQ-19 (RTT-102): eased motion frame by frame; held bars below the live ones
+      const MI = tl.monthIndex, d0 = k > 0 ? tl.events[k - 1].date : tl.openingEvent.date, x = MI[d0] + (MI[tl.events[k].date] - MI[d0]) * g;
+      if (g < 1 && tl.ease) for (const id of Object.keys(u)) if (tl.ease[id] && id in prev.totals && id in cur.totals && cur.prov[id] !== 'h') u[id] = Math.round(tl.ease[id](x));
+      const held = id => tl.sink && (cur.status[id] === 'latest_figure' || (!(id in cur.totals) && prev.status[id] === 'latest_figure'));
+      const order = Object.keys(u).sort((a, b) => (held(a) - held(b)) || (u[b] - u[a]) || (idx[a] - idx[b]));
+      return { g, u, order, plus: {}, mu: {}, mplus: {}, alpha };
+    }
     const order = Object.keys(u).sort((x, y) => (u[y] - u[x]) || (idx[x] - idx[y]));
     if (!cur.lo && !prev.lo) return { g, u, order, plus: {}, mu: {}, mplus: {}, alpha };
     /* IQ-18c: a forward board's ranges - the bottom of each range counted like the top (from the previous board's

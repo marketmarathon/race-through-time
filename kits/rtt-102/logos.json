@@ -1,0 +1,14 @@
+{
+ "note": "RTT-102 assistant logos (IQ-19, design round 1). Purpose: identification of each assistant on its bar only (house style section 7, as RTT-001 DEC-180/DEC-182 and RTT-103). Files live ONLY in the private repo (assets/rtt-102/logos/), fetched on a GitHub runner by .github/workflows/rtt102_assets.yml with scripts/rtt102_fetch_logos.py, because Wikimedia answers HTTP 429 to the Claude Code container. For each entry the runner keeps up to `keep` candidate files (the named candidates first, then Commons search hits and the logo images on the assistant's English Wikipedia article), records page, licence, author, restrictions and SHA-1 from the wiki API, and keeps a file only if the downloaded SHA-1 equals the API's. Claude then looks at every kept file and names the one each bar uses in config_rtt102_base.json; hashes go into assets_sha256.txt and the rights ledger. Never redrawn or recoloured; crops only where Luke allows. `bard` is the Bard logo of the time (option h), `gemini` today's Gemini logo.",
+ "logos": [
+  {"id": "chatgpt", "candidates": ["File:ChatGPT-Logo.svg", "File:ChatGPT logo.svg", "File:OpenAI Logo.svg"], "search": "ChatGPT logo", "page": "ChatGPT", "exclude": ["screenshot"]},
+  {"id": "gemini", "candidates": ["File:Google Gemini icon 2025.svg", "File:Google-gemini-icon.svg", "File:Google Gemini logo.svg"], "search": "Google Gemini icon", "page": "Google Gemini", "exclude": ["screenshot"]},
+  {"id": "bard", "candidates": ["File:Google Bard logo.svg", "File:Google Bard icon.svg", "File:Google_Bard_logo.svg"], "search": "Google Bard logo", "page": "Google Bard", "page_site": "en.wikipedia.org", "exclude": ["screenshot"]},
+  {"id": "claude", "candidates": ["File:Claude AI symbol.svg", "File:Claude AI logo.svg", "File:Anthropic logo.svg"], "search": "Claude AI logo", "page": "Claude (language model)", "exclude": ["screenshot"]},
+  {"id": "copilot", "candidates": ["File:Microsoft Copilot Icon.svg", "File:Copilot logo.svg", "File:Microsoft Copilot logo.svg"], "search": "Microsoft Copilot icon", "page": "Microsoft Copilot", "exclude": ["screenshot", "GitHub"]},
+  {"id": "perplexity", "candidates": ["File:Perplexity AI logo.svg", "File:Perplexity-ai-logo.svg", "File:Perplexity logo.svg"], "search": "Perplexity AI logo", "page": "Perplexity AI", "exclude": ["screenshot"]},
+  {"id": "deepseek", "candidates": ["File:DeepSeek logo.svg", "File:DeepSeek-icon.svg", "File:DeepSeek icon.svg"], "search": "DeepSeek logo", "page": "DeepSeek", "exclude": ["screenshot"]},
+  {"id": "grok", "candidates": ["File:Grok-feb-2025-logo.svg", "File:Grok logo.svg", "File:Grok AI logo.svg"], "search": "Grok xAI logo", "page": "Grok (chatbot)", "exclude": ["screenshot"]},
+  {"id": "meta_ai", "candidates": ["File:Meta AI logo.svg", "File:Meta AI logo.png", "File:Meta-ai-logo.svg"], "search": "Meta AI logo", "page": "Meta AI", "exclude": ["screenshot", "Llama"], "optional": true}
+ ]
+}
