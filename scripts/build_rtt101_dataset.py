@@ -1018,6 +1018,22 @@ for k in sorted(wt, key=lambda w: (w.split()[1], 0 if w.startswith("January") el
     window_totals.append({"window": k, "gross_spend_gbp": money(v["gross_spend_gbp"]), "net_spend_gbp": money(net),
                           "fee_transfers": v["transfers"]})
 
+# deals with a PL side per window, against the two windows of the same type either side (IQ-15j: January 2020 had been cut short by a
+# shortened Wikipedia list revision); a window under half the median of its neighbours is flagged and the check below fails
+wdeals = Counter()
+for t in transfers:
+    s = t["season_attributed"]
+    if (t["to_club_id"] and (t["to_club_id"], s) in in_pl) or (t["from_club_id"] and (t["from_club_id"], s) in in_pl):
+        m, y = int(t["date"][5:7]), int(t["date"][:4])
+        wdeals[f"summer {y}" if 4 <= m <= 10 else (f"January {y}" if m <= 3 else f"January {y + 1}")] += 1
+window_counts = []
+for k in sorted(wdeals, key=lambda w: (w.split()[1], 0 if w.startswith("January") else 1)):
+    kind, y = k.split()[0], int(k.split()[1])
+    nb = [wdeals[f"{kind} {y + d}"] for d in (-2, -1, 1, 2) if f"{kind} {y + d}" in wdeals]
+    med = sorted(nb)[len(nb) // 2] if len(nb) % 2 else (sorted(nb)[len(nb) // 2 - 1] + sorted(nb)[len(nb) // 2]) / 2 if nb else 0
+    window_counts.append({"window": k, "deals_with_pl_side": wdeals[k], "neighbour_median": med,
+                          "flag": "far below its neighbours" if nb and wdeals[k] < 0.5 * med else ""})
+
 # ---------------------------------------------------------------- write files
 ev_rows = []
 for t in transfers:
@@ -1109,6 +1125,7 @@ wr("coverage.csv", coverage, ["club_id", "era", "pl_seasons_in_era", "transfers_
 wr("unmatched_leads.csv", sorted(unmatched, key=lambda u: (u["date"], u["lead_id"])), ["lead_id", "section", "date", "player", "from_club", "to_club",
                                                                                      "fee_as_reported", "grade", "url", "reason"])
 wr("window_totals.csv", window_totals, ["window", "gross_spend_gbp", "net_spend_gbp", "fee_transfers"])
+wr("source/window_deal_counts.csv", window_counts, ["window", "deals_with_pl_side", "neighbour_median", "flag"])
 mom = rd("moments_leads.csv")
 if mom:
     wr("moments.csv", mom, list(mom[0].keys()))
@@ -1162,6 +1179,8 @@ for c in club_ids:
     if abs(tot - last.get(c, 0.0)) > 0.5:
         ser_ok = False
 check("month-end series consistent with the ledger", ser_ok, f"{len(month_ends)} month ends × {len(club_ids)} clubs")
+_lowwin = [f"{w['window']} ({w['deals_with_pl_side']} deals; neighbours' median {w['neighbour_median']:g})" for w in window_counts if w["flag"]]
+check("no window has under half the PL deals of the same-type windows either side", not _lowwin, "; ".join(_lowwin) or f"{len(window_counts)} windows compared")
 v04 = {"XUMADMS": "2.8564", "XUMAFFS": "9.7433", "XUMAILS": "2152.4916", "XUMASPS": "181.055", "XUMANGS": "3.217", "XUMAPES": "247.3737", "XUMAUSS": "1.8127"}
 got = {r["series_code"]: r["units_per_gbp"] for r in rd("fx.csv", DATA) if r["date"] == "1992-01-31" and r["series_code"] in v04}
 check("Bank of England Jan 1992 monthly averages equal Cowork's V-04 reading", all(abs(float(got.get(k, "nan")) - float(v)) < 1e-9 for k, v in v04.items()),

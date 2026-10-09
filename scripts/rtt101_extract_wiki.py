@@ -209,7 +209,9 @@ def window_rows(title, page):
             ci["fee"] = "LOAN" if loan_table else "NONE"
         elif None in (ci["name"], ci["from"], ci["to"], ci["fee"]):
             continue  # not a transfer table (e.g. released players: no "moving to" column)
-        width = len(hdr) if len(hdr) >= 5 else 5
+        # the table's own width (a loans table may have four columns: Date, Name, Moving from, Moving to); IQ-15j: assuming at least
+        # five dropped the date of every row of such tables (303 rows of summer 2017, 270 of summer 2018)
+        width = len(hdr) if len(hdr) >= 4 else 5
         carry_date, carry_left = "", 0
         for cells in split_rows(table):
             vals = []

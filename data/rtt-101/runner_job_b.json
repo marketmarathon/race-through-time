@@ -1,201 +1,65 @@
 {
- "delay": 1.5,
- "fetch": [
-  {
-   "name": "hist:List of English football transfers summer 2002",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+summer+2002&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  },
-  {
-   "name": "hist:List of English football transfers summer 2003",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+summer+2003&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  },
-  {
-   "name": "hist:List of English football transfers summer 2004",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+summer+2004&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  },
-  {
-   "name": "hist:List of English football transfers summer 2005",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+summer+2005&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  },
-  {
-   "name": "hist:List of English football transfers summer 2006",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+summer+2006&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  },
-  {
-   "name": "hist:List of English football transfers summer 2007",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+summer+2007&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  },
-  {
-   "name": "hist:List of English football transfers summer 2008",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+summer+2008&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  },
-  {
-   "name": "hist:List of English football transfers summer 2009",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+summer+2009&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  },
-  {
-   "name": "hist:List of English football transfers summer 2010",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+summer+2010&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  },
-  {
-   "name": "hist:List of English football transfers summer 2011",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+summer+2011&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  },
-  {
-   "name": "hist:List of English football transfers summer 2012",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+summer+2012&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  },
-  {
-   "name": "hist:List of English football transfers summer 2013",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+summer+2013&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  },
-  {
-   "name": "hist:List of English football transfers summer 2014",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+summer+2014&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  },
-  {
-   "name": "hist:List of English football transfers summer 2015",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+summer+2015&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  },
-  {
-   "name": "hist:List of English football transfers summer 2016",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+summer+2016&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  },
-  {
-   "name": "hist:List of English football transfers summer 2017",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+summer+2017&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  },
-  {
-   "name": "hist:List of English football transfers summer 2018",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+summer+2018&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  },
-  {
-   "name": "hist:List of English football transfers summer 2019",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+summer+2019&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  },
-  {
-   "name": "hist:List of English football transfers summer 2020",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+summer+2020&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  },
-  {
-   "name": "hist:List of English football transfers summer 2021",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+summer+2021&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  },
-  {
-   "name": "hist:List of English football transfers summer 2022",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+summer+2022&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  },
-  {
-   "name": "hist:List of English football transfers summer 2023",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+summer+2023&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  },
-  {
-   "name": "hist:List of English football transfers summer 2024",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+summer+2024&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  },
-  {
-   "name": "hist:List of English football transfers summer 2025",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+summer+2025&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  },
-  {
-   "name": "hist:List of English football transfers summer 2026",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+summer+2026&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  },
-  {
-   "name": "hist:List of English football transfers winter 2002–03",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+winter+2002%E2%80%9303&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  },
-  {
-   "name": "hist:List of English football transfers winter 2003–04",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+winter+2003%E2%80%9304&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  },
-  {
-   "name": "hist:List of English football transfers winter 2004–05",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+winter+2004%E2%80%9305&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  },
-  {
-   "name": "hist:List of English football transfers winter 2005–06",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+winter+2005%E2%80%9306&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  },
-  {
-   "name": "hist:List of English football transfers winter 2006–07",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+winter+2006%E2%80%9307&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  },
-  {
-   "name": "hist:List of English football transfers winter 2007–08",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+winter+2007%E2%80%9308&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  },
-  {
-   "name": "hist:List of English football transfers winter 2008–09",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+winter+2008%E2%80%9309&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  },
-  {
-   "name": "hist:List of English football transfers winter 2009–10",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+winter+2009%E2%80%9310&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  },
-  {
-   "name": "hist:List of English football transfers winter 2010–11",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+winter+2010%E2%80%9311&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  },
-  {
-   "name": "hist:List of English football transfers winter 2011–12",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+winter+2011%E2%80%9312&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  },
-  {
-   "name": "hist:List of English football transfers winter 2012–13",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+winter+2012%E2%80%9313&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  },
-  {
-   "name": "hist:List of English football transfers winter 2013–14",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+winter+2013%E2%80%9314&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  },
-  {
-   "name": "hist:List of English football transfers winter 2014–15",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+winter+2014%E2%80%9315&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  },
-  {
-   "name": "hist:List of English football transfers winter 2015–16",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+winter+2015%E2%80%9316&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  },
-  {
-   "name": "hist:List of English football transfers winter 2016–17",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+winter+2016%E2%80%9317&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  },
-  {
-   "name": "hist:List of English football transfers winter 2017–18",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+winter+2017%E2%80%9318&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  },
-  {
-   "name": "hist:List of English football transfers winter 2018–19",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+winter+2018%E2%80%9319&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  },
-  {
-   "name": "hist:List of English football transfers winter 2019–20",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+winter+2019%E2%80%9320&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  },
-  {
-   "name": "hist:List of English football transfers winter 2020–21",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+winter+2020%E2%80%9321&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  },
-  {
-   "name": "hist:List of English football transfers winter 2021–22",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+winter+2021%E2%80%9322&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  },
-  {
-   "name": "hist:List of English football transfers winter 2022–23",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+winter+2022%E2%80%9323&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  },
-  {
-   "name": "hist:List of English football transfers winter 2023–24",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+winter+2023%E2%80%9324&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  },
-  {
-   "name": "hist:List of English football transfers winter 2024–25",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+winter+2024%E2%80%9325&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  },
-  {
-   "name": "hist:List of English football transfers winter 2025–26",
-   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=List+of+English+football+transfers+winter+2025%E2%80%9326&rvprop=ids%7Ctimestamp%7Csize&rvlimit=500&format=json&formatversion=2"
-  }
+ "delay": 1.2,
+ "wiki": [
+  "2003–04 Arsenal F.C. season",
+  "2003–04 Chelsea F.C. season",
+  "2003–04 Manchester United F.C. season",
+  "2003–04 Liverpool F.C. season",
+  "2003–04 Newcastle United F.C. season",
+  "2003–04 Aston Villa F.C. season",
+  "2003–04 Charlton Athletic F.C. season",
+  "2003–04 Bolton Wanderers F.C. season",
+  "2003–04 Fulham F.C. season",
+  "2003–04 Birmingham City F.C. season",
+  "2003–04 Middlesbrough F.C. season",
+  "2003–04 Southampton F.C. season",
+  "2003–04 Portsmouth F.C. season",
+  "2003–04 Tottenham Hotspur F.C. season",
+  "2003–04 Blackburn Rovers F.C. season",
+  "2003–04 Manchester City F.C. season",
+  "2003–04 Everton F.C. season",
+  "2003–04 Leicester City F.C. season",
+  "2003–04 Leeds United F.C. season",
+  "2003–04 Wolverhampton Wanderers F.C. season",
+  "2004–05 Chelsea F.C. season",
+  "2004–05 Arsenal F.C. season",
+  "2004–05 Manchester United F.C. season",
+  "2004–05 Everton F.C. season",
+  "2004–05 Liverpool F.C. season",
+  "2004–05 Bolton Wanderers F.C. season",
+  "2004–05 Middlesbrough F.C. season",
+  "2004–05 Manchester City F.C. season",
+  "2004–05 Tottenham Hotspur F.C. season",
+  "2004–05 Aston Villa F.C. season",
+  "2004–05 Charlton Athletic F.C. season",
+  "2004–05 Birmingham City F.C. season",
+  "2004–05 Fulham F.C. season",
+  "2004–05 Newcastle United F.C. season",
+  "2004–05 Blackburn Rovers F.C. season",
+  "2004–05 Portsmouth F.C. season",
+  "2004–05 West Bromwich Albion F.C. season",
+  "2004–05 Crystal Palace F.C. season",
+  "2004–05 Norwich City F.C. season",
+  "2004–05 Southampton F.C. season",
+  "2019–20 Liverpool F.C. season",
+  "2019–20 Manchester City F.C. season",
+  "2019–20 Manchester United F.C. season",
+  "2019–20 Chelsea F.C. season",
+  "2019–20 Leicester City F.C. season",
+  "2019–20 Tottenham Hotspur F.C. season",
+  "2019–20 Wolverhampton Wanderers F.C. season",
+  "2019–20 Arsenal F.C. season",
+  "2019–20 Sheffield United F.C. season",
+  "2019–20 Burnley F.C. season",
+  "2019–20 Southampton F.C. season",
+  "2019–20 Everton F.C. season",
+  "2019–20 Newcastle United F.C. season",
+  "2019–20 Crystal Palace F.C. season",
+  "2019–20 Brighton & Hove Albion F.C. season",
+  "2019–20 West Ham United F.C. season",
+  "2019–20 Aston Villa F.C. season",
+  "2019–20 AFC Bournemouth season",
+  "2019–20 Watford F.C. season",
+  "2019–20 Norwich City F.C. season"
  ]
 }
