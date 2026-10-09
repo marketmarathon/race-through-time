@@ -17,6 +17,9 @@
 #   - uploads NO workflow artifact, uses NO cache, and deletes frames and videos at the end.
 # No full film is rendered (DEC-069: nothing beyond the approved look goes into a film before Luke approves it).
 # Triggers: a push that changes THIS FILE on the IQ-19 branch, or by hand (once merged).
+# Round 2 (IQ-19b, IQ-19c; Luke's answers DEC-543..DEC-554, Cowork's fixes DEC-555): the main version (title B, the
+# combined monthly visits panel, no closing line, eased, monthly at 1.5 s) - 12 stills (each also at phone size), 2 contact
+# sheets and one clip from October 2024 to the end; tagged rtt-102-round2-<commit>-run<n>. Still no film and no music.
 name: rtt102-pilot
 
 on:
@@ -39,8 +42,8 @@ env:
   ONLY_STILLS: ''
   ONLY_CLIPS: ''
   # clips with striped bars (older estimates) get the WCAG flash check first
-  FLASH_CLIPS: 'config_rtt102_clip_e_2024_linear.json config_rtt102_clip_e_2024_eased.json'
-  TAG_PREFIX: rtt-102-round1
+  FLASH_CLIPS: 'config_rtt102_clip_r2_oct2024_end.json'
+  TAG_PREFIX: rtt-102-round2
 
 jobs:
   render:
@@ -79,7 +82,7 @@ jobs:
             test -n "$f"
             echo "$c $f" | tee -a "$RUNNER_TEMP/plan.txt"
           done < <(if [ -n "$ONLY_CLIPS" ]; then printf '%s\n' $ONLY_CLIPS; elif [ -n "$ONLY_STILLS" ]; then :; else cat ../rtt-102/clips.txt; fi)
-          echo "the whole race at the base pace, not rendered, config_rtt102_base.json: $(RTT_CONFIG=../rtt-102/config_rtt102_base.json FRAME_COUNT_ONLY=1 node rtt.js)"
+          echo "the whole film without music, not rendered, config_rtt102_film.json: $(RTT_CONFIG=../rtt-102/config_rtt102_film.json FRAME_COUNT_ONLY=1 node rtt.js)"
 
       - name: Fetch Luke's logo and the assistant logos from the private repo and check their hashes
         env:
@@ -155,9 +158,9 @@ jobs:
           GH_TOKEN: ${{ secrets.RTT_PRIVATE_TOKEN }}
         run: |
           O="$RUNNER_TEMP/rtt_out"; SHORT=${GITHUB_SHA::7}
-          TAG="${TAG_PREFIX:-rtt-102-round1}-${SHORT}-run${GITHUB_RUN_NUMBER}"
+          TAG="${TAG_PREFIX:-rtt-102-round2}-${SHORT}-run${GITHUB_RUN_NUMBER}"
           {
-            echo "RTT-102 AI assistant websites race, design round 1 (IQ-19): options side by side for Luke - one contact sheet per item (a title, b estimates, c older estimates and the note, d value labels, e motion, f clock, g scale, h logos, i story cards, j final table), every still also at phone size, and the motion (e) and clock (f) clips. Rendered by GitHub Actions. No music. Not the film."
+            echo "RTT-102 ChatGPT vs Its Rivals, design round 2 (IQ-19b, IQ-19c): the main version with Luke's answers and Cowork's fixes - title B, the combined monthly visits panel bottom right, no closing line, eased motion, monthly at 1.5 s per month; stills (each also at phone size), contact sheets for the panel and for Cowork's fixes (a) and (b), and one clip from October 2024 to the end of the film. Rendered by GitHub Actions. No music. Not the film."
             echo
             echo "- Source: ${GITHUB_REPOSITORY} @ ${GITHUB_SHA} (${GITHUB_REF_NAME}), run ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
             while read -r c FRAMES; do
@@ -166,7 +169,7 @@ jobs:
             test -s "$RUNNER_TEMP/flash.txt" && sed 's/^/- /' "$RUNNER_TEMP/flash.txt"
             echo "- Stills: kits/rtt-102/stills.json, 1920 x 1080 PNG plus the same frame at phone size (390 points wide at 3 device pixels per point); *_sheet.png = options side by side"
             echo "- Luke's logo and the assistant logos (identification only; kits/rtt-102/logos.json): race-through-time-private, every SHA-256 checked against kits/rtt-102/assets_sha256.txt before drawing"
-            echo "- Data: data/rtt-102 as built in IQ-17 (pull request #21); no figure changed; the race ends in August 2026 (DEC-530, DEC-531)"
+            echo "- Data: data/rtt-102 as built in IQ-17 (pull request #21; IQ-19b added Cowork's Chrome checks V102-V104, manifest only); no figure changed; the race ends in August 2026 (DEC-530, DEC-531)"
             echo "- File SHA-256:"
             (cd "$O" && sha256sum $(ls *.mp4 2>/dev/null) *.png | sed 's/^/  - /')
             echo
@@ -174,7 +177,7 @@ jobs:
           } > "$O/notes.md"
           cat "$O/notes.md"
           gh release create "$TAG" --repo "$PRIVATE_REPO" --target main --prerelease \
-            --title "RTT-102 design round 1 ${SHORT} (options a-j: stills, sheets and clips)" --notes-file "$O/notes.md" $(ls "$O"/*.mp4 2>/dev/null) "$O"/*.png
+            --title "RTT-102 design round 2 ${SHORT} (main version: stills, sheets and the October 2024-to-end clip)" --notes-file "$O/notes.md" $(ls "$O"/*.mp4 2>/dev/null) "$O"/*.png
           URL="https://github.com/${PRIVATE_REPO}/releases/tag/${TAG}"
           echo "Release: $URL"
           echo "RTT-102 round 1 saved to the private repo: $URL" >> "$GITHUB_STEP_SUMMARY"

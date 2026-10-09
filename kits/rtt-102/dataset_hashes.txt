@@ -1,5 +1,5 @@
 # SHA-256 of the adapter inputs and output (rtt102-adapter/1.0)
 75495b74dad664ffaf85fb11f0217734243a351ee982463efefa68e6617a53e3 input data/rtt-102/series_monthly.csv
 275edafdb809a3820b0e00bea9d8493910183ea3b1bdfad181711bd2b7bd5b72 input data/rtt-102/identities.csv
-0f6182cfa5c352c1357d3bd81fb1e4e5ee58b6d3b3f97b5a77f73afd46edb3c3 input data/rtt-102/manifest.json
+297ba05a4bfc5bdced1a29aa8d4346bc90161056f842218f102b8e63b3572229 input data/rtt-102/manifest.json
 a1d999dd91762e8f4c74f0333febdb69c85420e9aed52ac68d3b095b6dbd24a3 output kits/rtt-102/race_rtt102.json

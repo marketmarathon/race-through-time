@@ -1,8 +1,1 @@
-config_rtt102_clip_e_2024_linear.json
-config_rtt102_clip_e_2024_eased.json
-config_rtt102_clip_f_month_0p75.json
-config_rtt102_clip_f_month_1p0.json
-config_rtt102_clip_f_month_1p5.json
-config_rtt102_clip_f_quarter_2p25.json
-config_rtt102_clip_f_quarter_3p0.json
-config_rtt102_clip_f_quarter_4p5.json
+config_rtt102_clip_r2_oct2024_end.json

@@ -1,4 +1,6 @@
-# RTT kit — RTT-102 AI assistant websites race (Similarweb's published estimates of monthly website visits, Dec 2022 – Aug 2026) · design round 1 (IQ-19)
+# RTT kit — RTT-102 "ChatGPT vs Its Rivals" (Similarweb's published estimates of monthly website visits, Dec 2022 – Aug 2026) · design round 2 (IQ-19b, IQ-19c)
+
+**Round 2 (9 Oct 2026):** Luke's answers (DEC-543..DEC-554) and Cowork's fixes (DEC-555) are built into `config_rtt102_film.json`: title "ChatGPT vs Its Rivals (2022–2026)" with "Monthly website visits · Similarweb estimates, worldwide" under it, eased motion, monthly at 1.5 s per month, stripes and the note together (DEC-556), two significant figures between published months (DEC-557), the combined monthly visits panel bottom right (DEC-558), no story cards, no closing line. The whole film is 2,466 frames = 1 min 22.2 s without music. `config_rtt102_clip_r2_oct2024_end.json` is round 2's clip; `stills.json` holds round 2's stills and sheets. Round 1's option configs are in git history and its pre-release.
 
 **IQ-19 (9 Oct 2026): the first design round - options side by side for Luke, no full film, no music** (brief `prompts/CODE_SESSION_IQ-19.md`; decisions DEC-531 onwards in `state/DECISIONS.md`). **The data is not changed:** `data/rtt-102/` as built in IQ-17 (pull request #21). The race ends in August 2026 (DEC-530, DEC-531): ChatGPT's verified September 2026 figure is not shown because the other bars stop at August.
 
@@ -8,12 +10,11 @@ This kit has **no player of its own**: it is drawn by the RTT-002 player (`kits/
 |---|---|
 | `race_rtt102.json` | Player input ("rtt-series/1", kind "visits"), written by `scripts/rtt102_adapter.py` from `data/rtt-102/series_monthly.csv` and `identities.csv` (their SHA-256 checked against `data/rtt-102/manifest.json` first): one event per month end, December 2022 to August 2026 (45), whole visits exactly as the series; each bar's name at that date; Similarweb's older estimates flagged; each bar's published months (`knots`, for the eased option); after a bar's last published month (Copilot from October 2025, Meta AI from January 2026) the bar is held at that figure, marked "latest_figure" |
 | `dataset_hashes.txt` | SHA-256 of the adapter's inputs and output (the render and the tests check them) |
-| `config_rtt102_base.json` | The base look (Claude's recommendation for each item): house defaults (sections 1-6), title A, estimates said once in the source line with solid bars and "~" values, Similarweb's older estimates striped with the dated note at August 2024, values "~5.6bn" / "~950m" / "~84.1m", held bars ranked below the live ones and dimmed "· latest figure, Sep 2025", one colour per assistant, a logo tile per bar (Bard's logo while the bar is "Bard"), monthly clock at 1.0 s per month, straight lines (as decided, DEC-501 (4)) |
-| `config_rtt102_story.json`, `config_rtt102_story_bard.json` | Item i: the four recommended story cards, and the same with Bard's renaming as a fifth |
-| `config_rtt102_clip_e_2024_*.json` | Item e: January–December 2024 with straight lines and eased (a monotone cubic through the same published figures) |
-| `config_rtt102_clip_f_*.json` | Item f: October 2024 – June 2025 with a monthly clock (0.75 / 1.0 / 1.5 s per month) and a quarterly clock (2.25 / 3.0 / 4.5 s per quarter) |
-| `stills.json`, `render_stills.js` | 30 option stills (each also at phone size) and one contact sheet per item (a–j); a still dated with a month is taken on the frame where that month's figures land; card stills on the card's own time (`card: true`) |
-| `clips.txt` | The eight clips the render workflow makes |
+| `config_rtt102_base.json` | Round 1's base look (Claude's recommendation for each item; the film config extends it): house defaults (sections 1-6), title A, estimates said once in the source line with solid bars and "~" values, Similarweb's older estimates striped with the dated note at August 2024, values "~5.6bn" / "~950m" / "~84.1m", held bars ranked below the live ones and dimmed "· latest figure, Sep 2025", one colour per assistant, a logo tile per bar (Bard's logo while the bar is "Bard"), monthly clock at 1.0 s per month, straight lines (as decided, DEC-501 (4)) |
+| `config_rtt102_film.json` | **The design, round 2** (Luke's answers and picks, Cowork's fixes): extends the base |
+| `config_rtt102_clip_r2_oct2024_end.json` | Round 2's clip: October 2024 to the end of the film (51.9 s) |
+| `stills.json`, `render_stills.js` | Round 2: 12 stills (each also at phone size) and 2 contact sheets (the panel; Cowork's fixes); a still dated with a month is taken on the frame where that month's figures land |
+| `clips.txt` | The clip the render workflow makes |
 | `logos.json`, `assets_sha256.txt` | The assistant logos (wiki title, page, licence, author, SHA-1, SHA-256; identification only; fetched by `.github/workflows/rtt102_assets.yml` with `scripts/rtt102_fetch_logos.py`) and the SHA-256 of every private file the render reads |
 | `description_credits.md` | Footer as drawn and the draft description lines |
 
@@ -22,7 +23,7 @@ This kit has **no player of its own**: it is drawn by the RTT-002 player (`kits/
 ```
 cd kits/rtt-002 && PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 npm ci
 python3 scripts/rtt102_adapter.py data/rtt-102 kits/rtt-102/race_rtt102.json --hash-file kits/rtt-102/dataset_hashes.txt   # from the repo root
-RTT_CONFIG=../rtt-102/config_rtt102_base.json FRAME_COUNT_ONLY=1 node rtt.js        # FRAMES 1752 = 58.4 s (the whole race at 1.0 s per month, 10 s final table)
+RTT_CONFIG=../rtt-102/config_rtt102_film.json FRAME_COUNT_ONLY=1 node rtt.js        # FRAMES 2466 = 1 min 22.2 s (the film without music)
 RTT_LOCAL_ASSETS=<folder with rtt_logo.png and logos/> node kits/rtt-102/render_stills.js OUT_DIR   # stills and sheets (outside the repo)
 node tests/player/run_tests_rtt102.js ; node tests/player/phone_check_rtt102.js      # from the repo root
 node tests/player/compare_frames.js <a checkout of the commit before a player change>

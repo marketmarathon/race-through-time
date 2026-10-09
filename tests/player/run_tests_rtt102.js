@@ -61,18 +61,20 @@ function visitsText(visits, V, pub) {
   if (u >= 1000000000n || m >= 1000n) s = (bn / P) + '.' + String(bn % P).padStart(D2, '0') + 'bn';
   else if (u >= 100000000n || t >= 1000n) s = m + 'm';
   else s = (t / 10n) + '.' + (t % 10n) + 'm';
+  if (!pub && V.between === 'sig2') {                 // IQ-19b (Cowork fix (b)): two significant figures, half up
+    let p = 1n; while (u >= p * 100n) p *= 10n;        // u in [10p, 100p) (or below 100)
+    let r = (u + p / 2n) / p; if (r >= 100n) { p *= 10n; r = (u + p / 2n) / p; }
+    const v = r * p;
+    if (v >= 1000000000n) s = v >= 10000000000n ? String(v / 1000000000n) + 'bn' : (Number(v / 100000000n) / 10).toFixed(1) + 'bn';
+    else s = v >= 10000000n ? String(v / 1000000n) + 'm' : v >= 1000000n ? (Number(v / 100000n) / 10).toFixed(1) + 'm' : (Number(v / 10000n) / 100).toFixed(2) + 'm';
+  }
   return (V.approx === 'all' || (V.approx === 'between' && !pub) ? '~' : '') + s;
 }
 
 const CASES = {
-  base: { config: 'config_rtt102_base.json' },
-  eased: { config: 'config_rtt102_base.json', over: { smoothing: { mode: 'eased' } } },
-  quarter: { config: 'config_rtt102_base.json', over: { clock: 'quarter', pacing: { sec_per_event: 3.0 } } },
-  between_2dp: { config: 'config_rtt102_base.json', over: { values: { visits: { approx: 'between', bn_decimals: 2 } }, status: { latest_figure: 'latest figure' } } },
-  analyst_note_only: { config: 'config_rtt102_base.json', over: { values: { visits: { look: 'analyst' } } } },
-  story: { config: 'config_rtt102_story.json' },
-  story_bard: { config: 'config_rtt102_story_bard.json' },
-  final_line: { config: 'config_rtt102_base.json', over: { final_line: { enabled: true, y: 172, text: "ChatGPT still leads; Gemini's visits more than tripled from August 2025 to August 2026" } } },
+  // round 1's cases (IQ-19, results in git history) are retired: its base config keeps round 1's note timing, which Cowork's fix (a) replaced
+  film: { config: 'config_rtt102_film.json' },                                   // round 2 (IQ-19b, IQ-19c): the main version
+  film_linear: { config: 'config_rtt102_film.json', over: { smoothing: { mode: 'none' } } },   // the panel = series_monthly.csv sums on every landing frame
 };
 for (const c of fs.readFileSync(path.join(K102, 'clips.txt'), 'utf8').split('\n').filter(Boolean)) CASES[c.replace(/^config_rtt102_|\.json$/g, '')] = { config: c };
 
@@ -105,11 +107,11 @@ async function runCase(name, C) {
   const fails = [], notes = [], landing = {}; tl.quarterEndFrame.forEach((f, k) => { landing[f] = k; });
   const fail = m => { if (fails.length < 40) fails.push(m); };
   const EASED = (cfg.smoothing || {}).mode === 'eased';
-  const lateness = {}, cardsSeen = {};
+  const lateness = {}, cardsSeen = {}, panelRows = [];
   let maxBelow = 0;
   for (let f = 0; f < total; f++) {
     const S = await pg.evaluate(fr => { drawAt(fr / 30); return { L: window.__LABELS, B: window.__BARS, R: window.__RANK, ST: window.__STATUS, DB: window.__DATEBLOCK,
-      SY: window.__STORY, CB: window.__CARDBOX, N: window.__NOTE, F: window.__FINAL, O: window.__OVERLAYS }; }, f);
+      SY: window.__STORY, CB: window.__CARDBOX, N: window.__NOTE, F: window.__FINAL, O: window.__OVERLAYS, C: window.__COMBINED }; }, f);
     const k = TLM.eventAt(tl, f), ev = k >= 0 ? tl.events[k] : tl.openingEvent, month = ev.date.slice(0, 7);
     if (month > '2026-08') fail(`frame ${f}: a month after August 2026 (${month})`);
     const labels = S.L, byKind = kd => labels.filter(L => L.kind === kd);
@@ -128,6 +130,23 @@ async function runCase(name, C) {
       if (lo && hi) { const a = Math.min(+lo.visits, +hi.visits), c = Math.max(+lo.visits, +hi.visits);
         if (b.units < a - 1 || b.units > c + 1) fail(`frame ${f} ${b.id}: ${b.units} outside its published figures ${a}..${c}`); }
     }
+    // 6 (IQ-19b, Cowork fix (a)): stripes on a bar's older-estimate stretch, kept while it counts to its first current
+    // figure and gone when that lands; the note only while some bar is striped
+    const kPrevM = (k > 0 ? tl.events[k - 1] : tl.openingEvent).date.slice(0, 7), counting = k >= 0 && f < tl.quarterEndFrame[k];
+    const olderOf = (id, m) => { const r = (byMonth[m] || {})[id]; if (r) return r.older_estimate === 'yes'; const lp = lastPub[id]; return lp && lp < m ? byMonth[lp][id].older_estimate === 'yes' : null; };
+    if (k >= 0 && V.look !== 'analyst') for (const b of S.B) { if (!(b.alpha > 0.01)) continue;
+      const now = olderOf(b.id, month), was = olderOf(b.id, kPrevM);
+      const want = V.older === 'stripes' && (now === true || (counting && was === true)) ? 'estimated' : 'official';
+      if (b.style !== want) fail(`frame ${f} (${month}${counting ? ', counting' : ''}) ${b.id}: drawn ${b.style}, want ${want}`); }
+    if (S.N && S.N.alpha > 0.01 && /striped/.test(S.N.text) && !S.B.some(b => b.style === 'estimated' && b.alpha > 0.01)) fail(`frame ${f}: the note is on screen with no striped bar`);
+    // (IQ-19b, Cowork fix (b)): every value on every frame - a published figure only on its landing frame (or held)
+    if (V.between === 'sig2') for (const b of S.B) { const v = labels.find(L => L.kind === 'value' && L.id === b.id); if (!v) continue;
+      const r = (byMonth[month] || {})[b.id], held = b.status === 'latest_figure' || (!r && lastPub[b.id] && lastPub[b.id] < month);
+      const pubF = held || (!counting && r && r.provenance === 'published');
+      const w = visitsText(b.units, V, pubF); if (v.text !== w) fail(`frame ${f} (${month}) ${b.id}: value "${v.text}", want "${w}" (${pubF ? 'published' : 'not a published figure'})`); }
+    // the combined panel (IQ-19b item 3c): never covers a name, value or tag; its text formatted as the bars'
+    if (cfg.combined && cfg.combined.enabled) { if (!S.C) fail(`frame ${f}: no combined panel`);
+      else { for (const L of labels.filter(L => ['name', 'value', 'status_tag'].includes(L.kind))) if (overlap(lbox(L), S.C.box)) fail(`frame ${f}: the panel covers ${L.kind} "${L.text}"`); } }
     // 7. story cards
     if (S.SY && S.SY.at) { const it = cfg.story.items.find(x => x.at === S.SY.at);
       cardsSeen[it.at] = true; if (lateness[it.at] == null) lateness[it.at] = (f - tl.startFrame[tl.events.findIndex(e => e.date === it.at)]) / 30;
@@ -159,6 +178,20 @@ async function runCase(name, C) {
     for (let i = 0; i < live.length; i++) for (let j = i + 1; j < live.length; j++) {
       const a = S.B.find(x => x.id === live[i]).units, c = S.B.find(x => x.id === live[j]).units;
       if (c > a) fail(`${month}: ${live[j]} (${c}) below ${live[i]} (${a})`); }
+    // the combined panel on a landing frame: the sum of the bars with a figure that month (held bars left out) = the drawn
+    // bars' sum; with straight lines (or where every one is published) = series_monthly.csv's sum; the bottom line
+    if (cfg.combined && cfg.combined.enabled && S.C) {
+      const liveIds = want.filter(id => row[id]), drawnSum = liveIds.reduce((a, id) => a + S.B.find(x => x.id === id).units, 0);
+      const dataSum = liveIds.reduce((a, id) => a + +row[id].visits, 0), allPub = liveIds.every(id => row[id].provenance === 'published');
+      if (S.C.value !== drawnSum) fail(`${month}: panel ${S.C.value} but the bars add up to ${drawnSum}`);
+      if ((!EASED || allPub) && S.C.value !== dataSum) fail(`${month}: panel ${S.C.value} but series_monthly.csv adds up to ${dataSum}`);
+      if (S.C.text !== visitsText(S.C.value, V, allPub)) fail(`${month}: panel text "${S.C.text}", want "${visitsText(S.C.value, V, allPub)}"`);
+      const out = want.filter(id => !row[id]);
+      const wantNote = out.length === 1 ? cfg.combined.drop_one.replace('{id}', out[0] === 'meta_ai' ? 'Meta AI' : 'Copilot').replace('{month}', MSHORT[+lastPub[out[0]].slice(5) - 1] + ' ' + lastPub[out[0]].slice(0, 4))
+        : out.length > 1 ? cfg.combined.drop_many.replace('{ids}', S.R.filter(id => out.includes(id)).map(id => id === 'meta_ai' ? 'Meta AI' : 'Copilot').join(', ')) : null;
+      if ((S.C.note || null) !== wantNote) fail(`${month}: panel line "${S.C.note}", want "${wantNote}"`);
+      if (!out.length && S.C.companies !== liveIds.length) fail(`${month}: panel counts ${S.C.companies} sites, want ${liveIds.length}`);
+      panelRows.push(month + ' ' + S.C.text + (S.C.note ? ' (' + S.C.note + ')' : '')); }
     // 4. date
     const [y, mo] = month.split('-').map(Number);
     if (!S.DB || S.DB.year !== y || S.DB.month !== MONTHS[mo - 1]) fail(`${month}: date block ${S.DB && S.DB.month} ${S.DB && S.DB.year}`);
@@ -167,7 +200,7 @@ async function runCase(name, C) {
     if (month === '2026-08' && cfg.final_line && cfg.final_line.enabled && f === tl.quarterEndFrame[tl.events.length - 1] && !(S.F && S.F.line === cfg.final_line.text)) fail('the final line is not on the final table');
   }
   // 7. story cards: wording and dates against Cowork's checks
-  if (cfg.story && cfg.story.enabled) for (const it of cfg.story.items) {
+  if (cfg.story && cfg.story.enabled) for (const it of cfg.story.items.filter(x => !x.plain)) {
     const m = /“(.*)”/.exec(it.text); const parts = m ? m[1].split('…').map(s => s.trim()).filter(Boolean) : [];
     const v = verif.find(r => parts.length && parts.every(p => r.exact_wording_seen.includes(p.replace(/\.$/, ''))));
     if (!v) fail(`card ${it.when}: "${it.text}" not found word for word in verification.csv`);
@@ -175,6 +208,7 @@ async function runCase(name, C) {
       if (w !== it.when) fail(`card: date ${it.when} but ${v.check_id} gives ${w}`); else notes.push(`card ${it.when} = ${v.check_id} (${v.status})`); }
     if (!cardsSeen[it.at] && tl.events.some(e => e.date === it.at)) fail(`card ${it.when} never shown`);
   }
+  if (panelRows.length) notes.push('panel on landing frames: ' + panelRows.filter((_, i) => i % 6 === 0 || i === panelRows.length - 1).join('; '));
   for (const [at, s] of Object.entries(lateness)) notes.push(`card dated ${at.slice(0, 7)} first on screen ${s.toFixed(1)} s after its month starts`);
   // 10. pacing
   const base = cfg.pacing.sec_per_event;

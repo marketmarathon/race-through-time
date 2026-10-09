@@ -9,6 +9,8 @@
  *     the value label's rounding written out again here, and the date block shows that month. Stills taken mid-move
  *     (after_sec) and story-card stills are reported, not checked against the month (their figures are still counting);
  *     eased-motion stills are checked on published months only.
+ * IQ-19b: a number that is not a published figure is checked at two significant figures (values.visits.between "sig2");
+ *   the combined panel's text is measured with the other labels.
  * The logo tile is reported (points on the phone), with no threshold. Placeholder logos (tests/player/placeholders.js).
  * Output: tests/player/PHONE_RTT102.md. Exit 1 on any failure.
  */
@@ -30,6 +32,13 @@ function visitsText(visits, V, pub) {
   if (u >= 1000000000n || m >= 1000n) s = (bn / P) + '.' + String(bn % P).padStart(D2, '0') + 'bn';
   else if (u >= 100000000n || t >= 1000n) s = m + 'm';
   else s = (t / 10n) + '.' + (t % 10n) + 'm';
+  if (!pub && V.between === 'sig2') {                 // IQ-19b: two significant figures (as run_tests_rtt102.js)
+    let p = 1n; while (u >= p * 100n) p *= 10n;
+    let r = (u + p / 2n) / p; if (r >= 100n) { p *= 10n; r = (u + p / 2n) / p; }
+    const v = r * p;
+    if (v >= 1000000000n) s = v >= 10000000000n ? String(v / 1000000000n) + 'bn' : (Number(v / 100000000n) / 10).toFixed(1) + 'bn';
+    else s = v >= 10000000n ? String(v / 1000000n) + 'm' : v >= 1000000n ? (Number(v / 100000n) / 10).toFixed(1) + 'm' : (Number(v / 10000n) / 100).toFixed(2) + 'm';
+  }
   return (V.approx === 'all' || (V.approx === 'between' && !pub) ? '~' : '') + s;
 }
 

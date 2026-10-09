@@ -210,6 +210,15 @@
        - status (DEC-132) with status.sink: a bar after its last published month is held at that figure, ranked below the
          live bars, dimmed, "· latest figure"; "{month}" in status.latest_figure = its last published month ("Sep 2025").
        - story cards (RTT-103's, DEC-357) and final_line {text, y} (a fixed line on the final table) for visits too.
+     Changed in IQ-19b (RTT-102 round 2, Luke's answers DEC-543..DEC-554 and Cowork's fixes DEC-555), visits only:
+       - values.visits.between "sig2": a number that is not a published figure (a month on the line between two published
+         months, or any frame while the bars count) shows two significant figures ("~80m", "~3.9bn"); published as before.
+       - stripes: a bar counting from an older estimate to a current figure keeps the stripes until the current figure
+         lands, so the stripes end exactly when the current figures begin.
+       - notes_at[].to: the note stays until the landing frame of that month (the stripes' last frame).
+       - combined (RTT-103's running total, DEC-359): the sum of the bars with a figure that month, counted with the bars
+         (a bar arriving or leaving the sum is weighted by the count), its line, and its bottom line naming the bars
+         left out after their latest figure (combined.drop_one / drop_many) or the number of sites (combined.count_text).
      Removed as unused: the Format C / C2-1 picture column and story cards, the prototype
      driver block that followed </html> in the C2-2 file.
 
@@ -345,11 +354,11 @@ function setup(o){
   ENTRY = MONEY && CFG.entry_tag && CFG.entry_tag.enabled ? Object.assign({text:'joins the race', return_text:null, sec:3.0}, CFG.entry_tag) : null;
   STORYQ=null;
   STORY = (MONEY||VISITS) && CFG.story && CFG.story.enabled ? Object.assign({mode:'line', sec:3.5, fade_in:0.3, fade_out:0.5, y:116, size:30, card:{x:1300, y:520, w:580}, items:[]}, CFG.story) : null;
-  COMB = MONEY && CFG.combined && CFG.combined.enabled ? Object.assign({mode:'number', x:1380, y:730, w:500, h:210, label:'Combined capital spending'}, CFG.combined) : null;
+  COMB = (MONEY||VISITS) && CFG.combined && CFG.combined.enabled ? Object.assign({mode:'number', x:1380, y:730, w:500, h:210, label:'Combined capital spending'}, CFG.combined) : null;
   ENTRYK={};
   STEPSON = MONEY && !!TL.stepPlan;
   FWD = MONEY && TL.forward ? Object.assign({source_y:124, source_size:30}, CFG.forward) : null; FWDNEED={};
-  if(MONEY){ let pv=TL.opening; TL.states.forEach((st,k)=>{ if(st.fwd) return; for(const id of Object.keys(st.totals)) if(!(id in pv.totals) && !st.held[id]) (ENTRYK[id]=ENTRYK[id]||[]).push(k); pv=st; }); }
+  if(MONEY||(VISITS&&COMB)){ let pv=TL.opening; TL.states.forEach((st,k)=>{ if(st.fwd) return; for(const id of Object.keys(st.totals)) if(!(id in pv.totals) && !st.held[id]) (ENTRYK[id]=ENTRYK[id]||[]).push(k); pv=st; }); }
   VAL = SHARE ? Object.assign({decimals:1, approx:false}, CFG.values||{}) : null;
   SRCL = SHARE && CFG.source_line && CFG.source_line.enabled ? Object.assign({y:120, size:30, prefix:'Source: ', names:{}, measure:{}, estimated:' · estimated', changing:'changing from {from} to {to}'}, CFG.source_line) : null;
   MARK = SHARE && CFG.marker && CFG.marker.enabled ? Object.assign({sec:3.0, text:'New source', fade_in:0.25, fade_out:0.4}, CFG.marker) : null;
@@ -445,8 +454,17 @@ function visitsText(u,pub){
   if(u>=1e9 || m>=1000) s=Math.floor(bn/P)+'.'+String(bn%P).padStart(D,'0')+'bn';
   else if(u>=1e8 || t>=1000) s=m+'m';
   else s=Math.floor(t/10)+'.'+(t%10)+'m';
+  if(!pub && VISF.between==='sig2') s=visitsSig2(u);       // IQ-19b (Cowork fix (b)): not a published figure
   const tilde = VISF.approx==='all' || (VISF.approx==='between' && !pub);
   return (tilde?'~':'')+s;
+}
+/* two significant figures, half up on the whole visits: 3.9bn, 12bn, 340m, 80m, 7.2m, 0.85m */
+function visitsSig2(u){
+  let e=Math.floor(Math.log10(Math.max(1,u))), q=Math.pow(10,Math.max(0,e-1)), r=Math.floor((u+q/2)/q);
+  if(r>=100){ q*=10; r=Math.floor((u+q/2)/q); }
+  const v=r*q;                                               // rounded to two significant figures, whole visits
+  if(v>=1e9) return (v>=1e10 ? (v/1e9).toFixed(0) : (v/1e9).toFixed(1))+'bn';
+  const m=v/1e6; return (m>=10 ? m.toFixed(0) : m>=1 ? m.toFixed(1) : m.toFixed(2))+'m';
 }
 function visitsAxis(v){ return v>=1e9 ? String(+(v/1e9).toFixed(2))+'bn' : String(+(v/1e6).toFixed(1))+'m'; }
 function visitsStyle(st){ return VISF.look==='analyst' ? 'analyst_estimate' : VISF.older==='none' ? 'official' : st; }
@@ -917,8 +935,8 @@ function drawCallout(CO,cur,SF,fr){
   }
   window.__NOTE=null;
   if(SHARE && TL.notes.length){                  // IQ-13: a dated note (the June 1996 EWS note), one calm line
-    for(const n of TL.notes){ const u=(fr-n.frame)/FPS; if(u<0 || u>=NOTEL.sec) continue;
-      const a=Math.max(0,Math.min(1,u/NOTEL.fade_in)*Math.min(1,(NOTEL.sec-u)/NOTEL.fade_out));
+    for(const n of TL.notes){ const NS=n.end!=null?(n.end-n.frame)/FPS:NOTEL.sec, u=(fr-n.frame)/FPS; if(u<0 || u>=NS) continue;   // IQ-19b: until month `to` lands
+      const a=Math.max(0,Math.min(1,u/NOTEL.fade_in)*Math.min(1,(NS-u)/NOTEL.fade_out));
       ctx.globalAlpha=a; ctx.fillStyle=T.cap||T.muted; ctx.font='500 '+NOTEL.size+'px '+FONT;
       tabText(n.text, LEFT, NOTEL.y||C.y, 'left', 'note_line', null);
       window.__NOTE={text:n.text, date:n.date, alpha:a}; ctx.globalAlpha=1; break; }
@@ -1050,8 +1068,8 @@ function drawAt(t){
   const REC = RECLINE ? {id:SF.order[0], u:SF.u[SF.order[0]], plus:!!SF.plus[SF.order[0]]} : null;   // round 4: the record line without live_only too
   /* IQ-18 gaps "hold": how far a bar has gone into (or come out of) its held look this beat (0 = a figure, 1 = held) */
   const heldOf = id => !MONEY || GAPS.mode!=='hold' ? 0 : (cur.held[id] ? (prev.held && prev.held[id] ? 1 : SF.g) : (prev.held && prev.held[id] ? 1-SF.g : 0));
-  const rows = SF ? ORD.map(id=>({c:ENT[id], n:SF.u[id], s:null, len:SF.u[id], st:VISITS ? visitsStyle(!(id in cur.style)?prev.style[id]:cur.style[id]) : SHARE&&!(id in cur.style)?prev.style[id]:cur.style[id], pl:SF.plus[id], a:SF.alpha?SF.alpha[id]:null, held:heldOf(id), lo:SF.lo?SF.lo[id]:null,
-                                   pub: VISITS && (id in cur.totals ? (SF.g>=1 && 'ph'.includes(cur.prov[id])) : prev.prov[id]==='h' || prev.prov[id]==='p'),
+  const rows = SF ? ORD.map(id=>({c:ENT[id], n:SF.u[id], s:null, len:SF.u[id], st:VISITS ? visitsStyle(!(id in cur.style)?prev.style[id]:(SF.g<1 && prev.style && prev.style[id]==='estimated' ? 'estimated' : cur.style[id])) : SHARE&&!(id in cur.style)?prev.style[id]:cur.style[id], pl:SF.plus[id], a:SF.alpha?SF.alpha[id]:null, held:heldOf(id), lo:SF.lo?SF.lo[id]:null,
+                                   pub: VISITS && (id in cur.totals ? (cur.prov[id]==='h' || (SF.g>=1 && cur.prov[id]==='p')) : prev.prov[id]==='h' || prev.prov[id]==='p'),   // IQ-19b: a held bar always shows its published figure
                                    nm: VISITS ? ((id in cur.totals ? cur.labels[id] : prev.labels[id]) || ENT[id].label) : null}))
                   : cur.order.map(id=>({c:ENT[id], n:cur.totals[id], s:cur.starts?cur.starts[id]:null, len:lerp(prev.totals[id]||0, cur.totals[id], g),
                                    st:SERIES?cur.style[id]:null, pl:SERIES?!!cur.plus[id]:false}));
@@ -1312,7 +1330,7 @@ function drawAt(t){
 
   if(SERIES){ drawCallout(CO, cur, SF, fr); drawMakerKey(cur, SF); }   // IQ-10
   if(MONEY){ drawTagFoot(cur, ev); drawStory(fr); drawCombined(k, SF, fr, cur, prev); }   // IQ-18 (RTT-103)
-  if(VISITS) drawStory(fr);                                              // IQ-19 (RTT-102)
+  if(VISITS){ drawStory(fr); drawCombined(k, SF, fr, cur, prev); }       // IQ-19 (RTT-102); IQ-19b: the panel
   if(SHARE) drawSource(ev, fr);                                          // IQ-13
   if(DATEBLK || ERA) drawDateEra(k, fr);                                 // RTT-001 date/era round
 
@@ -1490,10 +1508,16 @@ function drawCombined(k, SF, fr, cur, prev){
   window.__COMBINED=null;
   if(!COMB) return;
   const C=COMB, evC=k>=0?TL.events[k]:TL.openingEvent, evP=k>0?TL.events[k-1]:TL.openingEvent;
-  const g=SF?SF.g:1, tot = g>=1 ? evC.combined : Math.round(evP.combined+(evC.combined-evP.combined)*g);
-  const nNow=Object.keys(cur.totals).filter(id=>!cur.held[id] && !(ENT[id] && ENT[id].extra)).length;   // IQ-18c: ByteDance is never counted
+  const g=SF?SF.g:1;
+  let tot = g>=1 ? evC.combined : Math.round(evP.combined+(evC.combined-evP.combined)*g);
+  const liveV = (st,id) => id in st.totals && (st.status||{})[id]!=='latest_figure';
+  const nNow=Object.keys(cur.totals).filter(id=>!cur.held[id] && !(ENT[id] && ENT[id].extra) && (!VISITS || liveV(cur,id))).length;   // IQ-18c: ByteDance is never counted
+  let vPub=false;
+  if(VISITS){                                        // IQ-19b: counted with the bars as drawn; a bar entering or leaving the sum by the count's weight
+    if(SF && k>=0){ let t=0; for(const id of Object.keys(SF.u)){ const a=liveV(prev,id), b=liveV(cur,id); t+=SF.u[id]*(a&&b?1:b?g:a?1-g:0); } tot=g>=1?evC.combined:Math.round(t); }
+    vPub = g>=1 && Object.keys(cur.totals).filter(id=>liveV(cur,id)).every(id=>cur.prov[id]==='p'); }
   const FC=FWD && k>=0 && evC.fwd ? evC.fwd : null;   // IQ-18c: a forward board's total is a range
-  let valTxt=money(tot), totLo=tot;
+  let valTxt=VISITS?visitsText(tot,vPub):money(tot), totLo=tot;
   if(FC){ const l0=evP.combined_lo!=null?evP.combined_lo:evP.combined; totLo=g>=1?evC.combined_lo:Math.round(l0+(evC.combined_lo-l0)*g);
     valTxt=RTT_STEPS.bn(totLo/1e9, tot/1e9, FC.kind==='estimate'?'est':'whole'); }
   ctx.save(); ctx.fillStyle=T.panel; rr(C.x,C.y,C.w,C.h,12); ctx.fill();
@@ -1501,8 +1525,12 @@ function drawCombined(k, SF, fr, cur, prev){
   ctx.fillStyle=T.cap||T.muted; ctx.font='600 26px '+FONT; text('comb_label',null,C.label,C.x+pad,C.y+pad+22,'left');
   const NOTE_H=36;                                   // the bottom line: the join or gap note, else the company count
   let note='';
-  if(ENTRY||C.join_note!==false){ for(const [id,ks] of Object.entries(ENTRYK)) for(const kk of ks){ const u=(fr-TL.startFrame[kk])/FPS; if(u>=0 && u<3) note='+ '+ENT[id].short+(ks.indexOf(kk)>0?' again':'')+' from this quarter'; } }
+  if(!VISITS && (ENTRY||C.join_note!==false)){ for(const [id,ks] of Object.entries(ENTRYK)) for(const kk of ks){ const u=(fr-TL.startFrame[kk])/FPS; if(u>=0 && u<3) note='+ '+ENT[id].short+(ks.indexOf(kk)>0?' again':'')+' from this quarter'; } }
   for(const gp of TL.gaps||[]) if(evC.date>=gp.from && evC.date<=gp.to) note=(C.gap_text||'{id} not included: figures not comparable').replace('{id}',ENT[gp.id].short);
+  let dropTxt=null;
+  if(VISITS){ const out=Object.keys(cur.status||{}).filter(id=>cur.status[id]==='latest_figure');   // IQ-19b: bars left out after their latest figure
+    if(out.length===1) dropTxt=(C.drop_one||'{id} not counted after {month}').replace('{id}',ENT[out[0]].short).replace('{month}',LASTM[out[0]]);
+    else if(out.length>1) dropTxt=(C.drop_many||'{ids}: not counted after latest figures').replace('{ids}',out.map(id=>ENT[id].short).join(', ')); }
   const big = C.mode==='number' ? 72 : 52;
   ctx.fillStyle=T.ink; ctx.font='800 '+big+'px '+FONT; const tw=tabText(valTxt,C.x+pad,C.y+pad+30+big,'left','comb_value',null);
 
@@ -1535,9 +1563,10 @@ function drawCombined(k, SF, fr, cur, prev){
     ctx.fillStyle=T.cap||T.muted; ctx.font='500 26px '+FONT; tabText('$0',x0,y0+bh+24,'left','comb_axis',null); tabText(money(Math.round(max/1e10)*1e10).replace('.0',''),x0+w,y0+bh+24,'right','comb_axis',null);
   }
   if(note){ ctx.fillStyle=T.ink; ctx.font='500 26px '+FONT; text('comb_note',null,note,C.x+pad,C.y+C.h-16,'left'); }
-  else { ctx.fillStyle=T.cap||T.muted; ctx.font='500 26px '+FONT; text('comb_count',null,FC&&FC.comb_note ? FC.comb_note : 'sum of '+nNow+' companies',C.x+pad,C.y+C.h-16,'left'); }
+  else if(dropTxt){ ctx.fillStyle=T.cap||T.muted; ctx.font='500 26px '+FONT; text('comb_drop',null,dropTxt,C.x+pad,C.y+C.h-16,'left'); }   // IQ-19b
+  else { ctx.fillStyle=T.cap||T.muted; ctx.font='500 26px '+FONT; text('comb_count',null,FC&&FC.comb_note ? FC.comb_note : VISITS ? (C.count_text||'sum of {n} sites').replace('{n}',nNow) : 'sum of '+nNow+' companies',C.x+pad,C.y+C.h-16,'left'); }
   ctx.restore();
-  window.__COMBINED={value:tot, lo:FC?totLo:null, text:valTxt, exact:g>=1, companies:nNow, note, box:{x:C.x,y:C.y,w:C.w,h:C.h}};
+  window.__COMBINED={value:tot, lo:FC?totLo:null, text:valTxt, exact:g>=1, companies:nNow, note:VISITS?dropTxt:note, box:{x:C.x,y:C.y,w:C.w,h:C.h}};
 }
 
 function drawOutro(o){

@@ -9,39 +9,11 @@ Run: node tests/player/run_tests_rtt102.js · ALL PASS
 
 | Case | Config | Frames | Result |
 |---|---|---|---|
-| base | config_rtt102_base.json | 1752 | PASS |
-| eased | config_rtt102_base.json | 1764 | PASS |
-| quarter | config_rtt102_base.json | 1872 | PASS |
-| between_2dp | config_rtt102_base.json | 1752 | PASS |
-| analyst_note_only | config_rtt102_base.json | 1752 | PASS |
-| story | config_rtt102_story.json | 1752 | PASS |
-| story_bard | config_rtt102_story_bard.json | 1752 | PASS |
-| final_line | config_rtt102_base.json | 1752 | PASS |
-| clip_e_2024_linear | config_rtt102_clip_e_2024_linear.json | 432 | PASS |
-| clip_e_2024_eased | config_rtt102_clip_e_2024_eased.json | 432 | PASS |
-| clip_f_month_0p75 | config_rtt102_clip_f_month_0p75.json | 336 | PASS |
-| clip_f_month_1p0 | config_rtt102_clip_f_month_1p0.json | 408 | PASS |
-| clip_f_month_1p5 | config_rtt102_clip_f_month_1p5.json | 552 | PASS |
-| clip_f_quarter_2p25 | config_rtt102_clip_f_quarter_2p25.json | 282 | PASS |
-| clip_f_quarter_3p0 | config_rtt102_clip_f_quarter_3p0.json | 336 | PASS |
-| clip_f_quarter_4p5 | config_rtt102_clip_f_quarter_4p5.json | 444 | PASS |
+| film | config_rtt102_film.json | 2466 | PASS |
+| film_linear | config_rtt102_film.json | 2448 | PASS |
+| clip_r2_oct2024_end | config_rtt102_clip_r2_oct2024_end.json | 1557 | PASS |
 
 Notes:
-- story: card 15 Nov 2023 = V35 (VERIFIED (WebFetch))
-- story: card 18 Apr 2024 = V37 (VERIFIED (WebFetch))
-- story: card 13 May 2024 = V40 (VERIFIED (WebFetch))
-- story: card 19 Feb 2025 = V39 (VERIFIED (WebFetch))
-- story: card dated 2023-11 first on screen 0.0 s after its month starts
-- story: card dated 2024-04 first on screen 0.0 s after its month starts
-- story: card dated 2024-05 first on screen 3.0 s after its month starts
-- story: card dated 2025-02 first on screen 0.0 s after its month starts
-- story_bard: card 15 Nov 2023 = V35 (VERIFIED (WebFetch))
-- story_bard: card 8 Feb 2024 = V34 (VERIFIED (WebFetch))
-- story_bard: card 18 Apr 2024 = V37 (VERIFIED (WebFetch))
-- story_bard: card 13 May 2024 = V40 (VERIFIED (WebFetch))
-- story_bard: card 19 Feb 2025 = V39 (VERIFIED (WebFetch))
-- story_bard: card dated 2023-11 first on screen 0.0 s after its month starts
-- story_bard: card dated 2024-02 first on screen 0.4 s after its month starts
-- story_bard: card dated 2024-04 first on screen 2.4 s after its month starts
-- story_bard: card dated 2024-05 first on screen 5.4 s after its month starts
-- story_bard: card dated 2025-02 first on screen 0.2 s after its month starts
+- film: panel on landing frames: 2023-01 ~620m; 2023-07 ~1.7bn; 2024-01 ~2.1bn; 2024-07 ~3.0bn; 2025-01 ~4.7bn; 2025-07 ~7.3bn; 2026-01 ~8.3bn (not counting Copilot, Meta AI); 2026-07 ~9.9bn (not counting Copilot, Meta AI); 2026-08 ~9.9bn (not counting Copilot, Meta AI)
+- film_linear: panel on landing frames: 2023-01 ~620m; 2023-07 ~1.7bn; 2024-01 ~2.1bn; 2024-07 ~3.1bn; 2025-01 ~4.7bn; 2025-07 ~7.3bn; 2026-01 ~8.3bn (not counting Copilot, Meta AI); 2026-07 ~9.9bn (not counting Copilot, Meta AI); 2026-08 ~9.9bn (not counting Copilot, Meta AI)
+- clip_r2_oct2024_end: panel on landing frames: 2024-10 ~4.2bn; 2025-04 ~6.5bn; 2025-10 ~8.3bn (Copilot not counted after Sep 2025); 2026-04 ~9.9bn (not counting Copilot, Meta AI); 2026-08 ~9.9bn (not counting Copilot, Meta AI)

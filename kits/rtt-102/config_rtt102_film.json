@@ -1,0 +1,69 @@
+{
+ "extends": "config_rtt102_base.json",
+ "kit_version": "rtt102_round2_film",
+ "out": "rtt102_film.mp4",
+ "notes": [
+  "RTT-102 round 2 (IQ-19b, IQ-19c): the design with Luke's round-1 answers (DEC-543..DEC-551), Luke's round-2 picks (DEC-552..DEC-554) and Cowork's fixes (DEC-555): title B 'ChatGPT vs Its Rivals (2022–2026)' with the measure in the line under it; estimates said once in that line; Similarweb's older estimates striped, with the note on screen while the stripes are; '~' on every value, billions to one decimal, a number that is not a published figure to two significant figures, 'latest figure, Sep 2025'; eased motion; a monthly clock at 1.5 s per month; a logo per bar, Bard's while the bar is Bard; no story cards; the combined monthly visits panel (option A) bottom right; no closing line. One plain line under the title when Copilot's and Meta AI's figures end (as RTT-103's Alibaba line)."
+ ],
+ "title": "ChatGPT vs Its Rivals (2022–2026)",
+ "source_line": {
+  "names": {
+   "SW": "Monthly website visits · Similarweb estimates, worldwide"
+  }
+ },
+ "pacing": {
+  "sec_per_event": 1.5
+ },
+ "smoothing": {
+  "mode": "eased"
+ },
+ "values": {
+  "visits": {
+   "approx": "all",
+   "bn_decimals": 1,
+   "between": "sig2"
+  }
+ },
+ "notes_at": [
+  {
+   "date": "2024-07-31",
+   "to": "2024-09-30",
+   "text": "Similarweb re-estimated its figures in July 2024; striped bars are its older estimates"
+  }
+ ],
+ "story": {
+  "enabled": true,
+  "mode": "line",
+  "y": 172,
+  "size": 30,
+  "sec": 4.5,
+  "items": [
+   {
+    "plain": true,
+    "at": "2025-10-31",
+    "text": "Copilot's figures end in September 2025: its bar stays, outside the total"
+   },
+   {
+    "plain": true,
+    "at": "2026-01-31",
+    "text": "Meta AI's figures end in December 2025: its bar stays, outside the total"
+   }
+  ]
+ },
+ "combined": {
+  "enabled": true,
+  "mode": "line",
+  "x": 1360,
+  "y": 720,
+  "w": 520,
+  "h": 220,
+  "label": "Combined monthly visits (sites shown)",
+  "count_text": "sum of the {n} sites shown",
+  "drop_one": "{id} not counted after {month}",
+  "drop_many": "not counting {ids}",
+  "join_note": false
+ },
+ "final_line": {
+  "enabled": false
+ }
+}

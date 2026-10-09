@@ -443,6 +443,7 @@
       const plus = {}; for (const id of ev.plus) plus[id] = true;
       const mplus = {}; for (const m of ev.maker_plus || []) mplus[m] = true;
       const held = {}; for (const id of ev.held || []) held[id] = true;            // IQ-18: hold option only
+      if (VISITS) { let c = 0; for (const [id, v] of Object.entries(ev.values)) if ((ev.status || {})[id] !== 'latest_figure') c += v; ev.combined = c; }   // IQ-19b: the sum of the bars with a figure that month (held bars left out)
       const fx = ev.fwd ? { lo: Object.assign({}, ev.lo), fwd: true } : VISITS ? { labels: Object.assign({}, ev.labels), prov: Object.assign({}, ev.prov) } : {};   // IQ-18c; IQ-19: the name at that date, published / line / held
       all.push({ ev, st: { order, totals: Object.assign({}, ev.values), style: Object.assign({}, ev.style), plus, status: Object.assign({}, ev.status || {}), held, ...fx,
                            maker_totals: Object.assign({}, ev.maker_totals), maker_style: Object.assign({}, ev.maker_style), maker_plus: mplus } });
@@ -618,7 +619,7 @@
       for (const e of race.entrants) {
         const list = [{ frame: -Infinity, kind: opening.status[e.id] || 'live' }];
         events.forEach((ev, k) => { const kd = states[k].status[e.id] || 'live';
-          if (kd !== list[list.length - 1].kind) list.push({ frame: tl.quarterEndFrame[k], kind: kd }); });
+          if (kd !== list[list.length - 1].kind) list.push({ frame: VISITS ? startFrame[k] : tl.quarterEndFrame[k], kind: kd }); });   // IQ-19b: a visits bar dims while it sinks below the live bars (the month's count), so its landing frame shows it dimmed
         tl.status[e.id] = list;
       }
     }
@@ -627,7 +628,8 @@
       tl.share = true; tl.windows = race.windows; tl.smoothing = race.smoothing; tl.scStart = race.sc_start;
       if (MONEY && events.some(ev => ev.fwd)) { tl.forward = true; tl.lastActual = events.findIndex(ev => ev.fwd) - 1; }   // IQ-18c: the index of June 2026 (-1: before the window)
       if (MONEY) { tl.allCombined = all.filter(x => !x.ev.fwd).map(x => ({ date: x.ev.date, c: x.ev.combined })); tl.money = true; tl.gaps = race.gaps || []; tl.story = race.story || []; tl.steps = race.steps || {}; tl.notesData = race.notes || {}; }
-      if (VISITS) { tl.visits = true; tl.ease = race.ease; tl.monthIndex = race.monthIndex; tl.sink = race.sink; tl.clock = cfg.clock || 'month'; tl.story = []; }   // IQ-19
+      if (VISITS) { tl.visits = true; tl.ease = race.ease; tl.monthIndex = race.monthIndex; tl.sink = race.sink; tl.clock = cfg.clock || 'month'; tl.story = [];   // IQ-19
+        tl.allCombined = all.map(x => ({ date: x.ev.date, c: x.ev.combined })); }                                                                   // IQ-19b: the panel's line
       tl.crownAll = race.crown;
       const srcs = ev => ev.smooth ? [ev.smooth.from, ev.smooth.to] : String(ev.source_id || '').split('>').filter(Boolean);
       tl.markers = [];
@@ -635,7 +637,8 @@
         const fresh = now.filter(s => !was.includes(s));
         if (fresh.length && was.length) tl.markers.push({ k, date: ev.date, frame: startFrame[k], sources: fresh }); });
       tl.notes = [];
-      for (const n of cfg.notes_at || []) { const k = events.findIndex(ev => ev.date === n.date); if (k >= 0) tl.notes.push({ k, date: n.date, frame: startFrame[k], text: n.text }); }
+      for (const n of cfg.notes_at || []) { const k = events.findIndex(ev => ev.date === n.date); if (k >= 0) tl.notes.push(Object.assign({ k, date: n.date, frame: startFrame[k], text: n.text },
+        n.to ? { end: tl.quarterEndFrame[events.findIndex(ev => ev.date === n.to)] } : {})); }   // IQ-19b: notes_at[].to - on screen until the landing frame of month `to`
     }
     /* IQ-18b (RTT-103, money): the steps after the race (cfg.steps.sequence [{name, sec, ...}], drawn by rtt_steps.js),
        scheduled from the race's last frame; only when the window reaches the end of the data. tl.raceEnd = the first
