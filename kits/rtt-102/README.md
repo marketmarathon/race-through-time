@@ -17,6 +17,8 @@ This kit has **no player of its own**: it is drawn by the RTT-002 player (`kits/
 | `clips.txt` | The clip the render workflow makes |
 | `logos.json`, `assets_sha256.txt` | The assistant logos (wiki title, page, licence, author, SHA-1, SHA-256; identification only; fetched by `.github/workflows/rtt102_assets.yml` with `scripts/rtt102_fetch_logos.py`) and the SHA-256 of every private file the render reads |
 | `description_credits.md` | Footer as drawn and the draft description lines |
+| `music_rtt102.json` | Luke's track "Glitcher" by Dyalla (DEC-568): private path, SHA-256 of the file and its README, length, start 10.5 s on the drop (DEC-570), 5 s fade; the file itself is never in this repo |
+| `youtube_times.md` | Times for the packaging from the frame plan: moments, suggested chapters, the final table's values, the panel's first and last values |
 
 ## Run
 
@@ -33,4 +35,4 @@ Render: `.github/workflows/rtt102_pilot.yml` (its own workflow; a push that chan
 
 ## Not in this kit
 
-No logo files, stills or renders (DEC-006, DEC-060): they live only in the private repo. No music (round 1).
+No logo files, stills or renders (DEC-006, DEC-060): they live only in the private repo. No music file (private repo only, DEC-568); `.github/workflows/rtt102_film.yml` fetches and hash-checks it and renders the full film (IQ-19f).

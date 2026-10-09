@@ -12,4 +12,6 @@
 - Names and logos of the assistants are trademarks of their owners and are shown only to identify each website; Race Through Time is not affiliated with or endorsed by any of them, or by Similarweb.
 - No story cards (DEC-549). Context lines available for the description, each checked at source: Bard became Gemini on 8 Feb 2024 (Google, V34/V102); Microsoft's Copilot site opened on 15 Nov 2023 (V35); Meta's meta.ai on 18 Apr 2024 (V37); OpenAI's chatgpt.com on 13 May 2024 (V40); xAI's Grok 3 on Grok.com on 19 Feb 2025 (V39/V103); DeepSeek-R1 released 20 Jan 2025, "Website & API are live now!" (V104).
 - The panel bottom right adds up the bars with a figure that month ("sites shown"); Copilot and Meta AI are left out after their latest figures.
-- Music: none chosen yet (round 1 has no music).
+- Music (optional; no attribution required): "Glitcher" by Dyalla, YouTube Audio Library (DEC-568; credit in the description only, DEC-230).
+- DeepSeek-R1 context (V104): DeepSeek released R1 on 20 Jan 2025 ("Website & API are live now!"); DeepSeek reaches second place in January 2025 on the board (0:37, `youtube_times.md`).
+- Chapters and the final table's values for the description: `kits/rtt-102/youtube_times.md`.
