@@ -277,7 +277,12 @@
     const ease = {};
     if (S.mode === 'eased') {
       const shown = new Set(evs.map(ev => ev.date));
-      for (const [id, ks] of Object.entries(race.knots || {})) {
+      /* IQ-19d (owner DEC-562): smoothing.knots "all" - every month the clock shows is a knot (published and on the line),
+         so every landing frame is series_monthly.csv exactly and only the motion between months is eased; default: the
+         published figures only (IQ-19b) */
+      const KN = S.knots === 'all' ? Object.fromEntries(Object.keys(race.knots || {}).map(id => [id,
+        evs.filter(ev => id in ev.values && ev.prov[id] !== 'h').map(ev => ({ date: ev.date, v: ev.values[id] }))])) : race.knots || {};
+      for (const [id, ks] of Object.entries(KN)) {
         const kk = ks.filter(k => shown.has(k.date));
         if (kk.length) ease[id] = pchip(kk.map(k => idx[k.date]), kk.map(k => k.v));
       }

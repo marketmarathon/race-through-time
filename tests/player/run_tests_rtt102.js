@@ -106,7 +106,7 @@ async function runCase(name, C) {
   process.chdir(prev);
   const fails = [], notes = [], landing = {}; tl.quarterEndFrame.forEach((f, k) => { landing[f] = k; });
   const fail = m => { if (fails.length < 40) fails.push(m); };
-  const EASED = (cfg.smoothing || {}).mode === 'eased';
+  const EASED = (cfg.smoothing || {}).mode === 'eased', ALLKN = EASED && cfg.smoothing.knots === 'all';   // IQ-19d: knots on every month
   const lateness = {}, cardsSeen = {}, panelRows = [];
   let maxBelow = 0;
   for (let f = 0; f < total; f++) {
@@ -126,9 +126,9 @@ async function runCase(name, C) {
     if (EASED && k >= 0) for (const b of S.B) {
       const ks = knots[b.id]; if (!ks || b.status === 'latest_figure') continue;
       const m = month, prevM = (k > 0 ? tl.events[k - 1] : tl.openingEvent).date.slice(0, 7);
-      const lo = ks.filter(r => r.month <= prevM).pop(), hi = ks.find(r => r.month >= m);
-      if (lo && hi) { const a = Math.min(+lo.visits, +hi.visits), c = Math.max(+lo.visits, +hi.visits);
-        if (b.units < a - 1 || b.units > c + 1) fail(`frame ${f} ${b.id}: ${b.units} outside its published figures ${a}..${c}`); }
+      const lo = ALLKN ? (byMonth[prevM] || {})[b.id] : ks.filter(r => r.month <= prevM).pop(), hi = ALLKN ? (byMonth[m] || {})[b.id] : ks.find(r => r.month >= m);
+      if (lo && hi) { const a = Math.min(+lo.visits, +hi.visits), c = Math.max(+lo.visits, +hi.visits);   // IQ-19d: between the two months' series values
+        if (b.units < a - 1 || b.units > c + 1) fail(`frame ${f} ${b.id}: ${b.units} outside ${ALLKN ? 'its two months\' values' : 'its published figures'} ${a}..${c}`); }
     }
     // 6 (IQ-19b, Cowork fix (a)): stripes on a bar's older-estimate stretch, kept while it counts to its first current
     // figure and gone when that lands; the note only while some bar is striped
@@ -163,7 +163,7 @@ async function runCase(name, C) {
       const held_ = !row[id], r = held_ ? byMonth[lastPub[id]][id] : row[id], b = S.B.find(x => x.id === id);
       if (held_ && !(month > lastPub[id])) fail(`${month} ${id}: no series row but not after its last published month`);
       const pub = held_ || r.provenance === 'published';
-      if (!EASED || pub) { const v = labels.find(L => L.kind === 'value' && L.id === id), w = visitsText(r.visits, V, pub);
+      if (!EASED || ALLKN || pub) { const v = labels.find(L => L.kind === 'value' && L.id === id), w = visitsText(r.visits, V, pub);
         if (!v || v.text !== w) fail(`${month} ${id}: value "${v && v.text}" but the data gives "${w}"`);
         if (b.units !== +r.visits) fail(`${month} ${id}: bar units ${b.units} but the data ${r.visits}`); }
       const nm = labels.find(L => L.kind === 'name' && L.id === id);
@@ -184,7 +184,7 @@ async function runCase(name, C) {
       const liveIds = want.filter(id => row[id]), drawnSum = liveIds.reduce((a, id) => a + S.B.find(x => x.id === id).units, 0);
       const dataSum = liveIds.reduce((a, id) => a + +row[id].visits, 0), allPub = liveIds.every(id => row[id].provenance === 'published');
       if (S.C.value !== drawnSum) fail(`${month}: panel ${S.C.value} but the bars add up to ${drawnSum}`);
-      if ((!EASED || allPub) && S.C.value !== dataSum) fail(`${month}: panel ${S.C.value} but series_monthly.csv adds up to ${dataSum}`);
+      if ((!EASED || ALLKN || allPub) && S.C.value !== dataSum) fail(`${month}: panel ${S.C.value} but series_monthly.csv adds up to ${dataSum}`);
       if (S.C.text !== visitsText(S.C.value, V, allPub)) fail(`${month}: panel text "${S.C.text}", want "${visitsText(S.C.value, V, allPub)}"`);
       const out = want.filter(id => !row[id]);
       const wantNote = out.length === 1 ? cfg.combined.drop_one.replace('{id}', out[0] === 'meta_ai' ? 'Meta AI' : 'Copilot').replace('{month}', MSHORT[+lastPub[out[0]].slice(5) - 1] + ' ' + lastPub[out[0]].slice(0, 4))
@@ -230,8 +230,8 @@ function colours(cfg) {
   for (let i = 0; i < ids.length; i++) for (let j = i + 1; j < ids.length; j++) for (const M of Object.values(MAT)) { const d = TLM.deltaE(sim(pal[i], M), sim(pal[j], M)); if (d < cb) { cb = d; cbp = ids[i] + '/' + ids[j]; } }
   return { mn, mp, cb, cbp, ok: mn >= 18 };
 }
-function orders(cfg, data) {
-  const lin = TLM.buildSeries(data, merge(cfg, { smoothing: { mode: 'none' } })), eas = TLM.buildSeries(data, merge(cfg, { smoothing: { mode: 'eased' } }));
+function orders(cfg, data) {   // IQ-19d: the film's own easing (knots on every month) against straight lines
+  const lin = TLM.buildSeries(data, merge(cfg, { smoothing: { mode: 'none' } })), eas = TLM.buildSeries(data, merge(cfg, { smoothing: { mode: 'eased', knots: (cfg.smoothing || {}).knots } }));
   const diffs = [];
   lin.states.forEach((s, k) => { if (s.order.join() !== eas.states[k].order.join()) diffs.push(lin.events[k].date.slice(0, 7) + ': ' + s.order.join(' > ') + '  vs eased  ' + eas.states[k].order.join(' > ')); });
   return diffs;
@@ -247,7 +247,7 @@ function orders(cfg, data) {
   const hl = fs.readFileSync(path.join(K102, 'dataset_hashes.txt'), 'utf8').split('\n').filter(l => !l.startsWith('#') && / output /.test(l))[0].split(' ')[0];
   if (hl !== sha(path.join(K102, 'race_rtt102.json'))) zero.push('race_rtt102.json differs from dataset_hashes.txt');
   const prev = process.cwd(); process.chdir(KIT);
-  const baseCfg = rtt.loadConfig('../rtt-102/config_rtt102_base.json'), data = JSON.parse(fs.readFileSync(path.join(K102, 'race_rtt102.json'), 'utf8'));
+  const baseCfg = rtt.loadConfig('../rtt-102/config_rtt102_film.json'), data = JSON.parse(fs.readFileSync(path.join(K102, 'race_rtt102.json'), 'utf8'));
   process.chdir(prev);
   const col = colours(baseCfg), ord = orders(baseCfg, data);
   for (const [name, C] of Object.entries(CASES)) if (!only.length || only.includes(name)) { const r = await runCase(name, C); res.push(r); console.log(`${r.fails.length ? 'FAIL' : 'PASS'} ${name} (${r.frames} frames)${r.fails.length ? '\n  ' + r.fails.join('\n  ') : ''}`); }

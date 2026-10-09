@@ -70,7 +70,7 @@ function visitsText(visits, V, pub) {
     const others = vis.filter(l => !['name', 'value', 'axis', 'date_month', 'date_year'].includes(l.kind));
     const small = others.length ? others.reduce((a, b) => (b.size < a.size ? b : a)) : null;
     const fails = []; let figs = '—';
-    const V = Object.assign({ approx: 'all', bn_decimals: 1 }, (cfg.values || {}).visits || {}), EASED = (cfg.smoothing || {}).mode === 'eased';
+    const V = Object.assign({ approx: 'all', bn_decimals: 1 }, (cfg.values || {}).visits || {}), EASED = (cfg.smoothing || {}).mode === 'eased' && cfg.smoothing.knots !== 'all';   // IQ-19d: knots on every month = the data on every landing frame
     const at = s.after_sec != null || s.card ? null : s.at === 'final' ? '2026-08' : s.at.slice(0, 7);
     if (at) { const row = byMonth[at] || {}, bad = []; let n = 0;
       for (const id of Object.keys(lastPub)) { const held = !row[id] && lastPub[id] < at && Object.keys(byMonth).some(m => m <= at && byMonth[m][id]);

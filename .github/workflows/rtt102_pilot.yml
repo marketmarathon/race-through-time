@@ -20,6 +20,8 @@
 # Round 2 (IQ-19b, IQ-19c; Luke's answers DEC-543..DEC-554, Cowork's fixes DEC-555): the main version (title B, the
 # combined monthly visits panel, no closing line, eased, monthly at 1.5 s) - 12 stills (each also at phone size), 2 contact
 # sheets and one clip from October 2024 to the end; tagged rtt-102-round2-<commit>-run<n>. Still no film and no music.
+# Round 2 revised (IQ-19d, owner DEC-562/DEC-563): eased through every month of the data, a taller panel line; 5 stills
+# (each also at phone size), one contact sheet and the October 2024-to-end clip; tagged rtt-102-round2b-<commit>-run<n>.
 name: rtt102-pilot
 
 on:
@@ -43,7 +45,7 @@ env:
   ONLY_CLIPS: ''
   # clips with striped bars (older estimates) get the WCAG flash check first
   FLASH_CLIPS: 'config_rtt102_clip_r2_oct2024_end.json'
-  TAG_PREFIX: rtt-102-round2
+  TAG_PREFIX: rtt-102-round2b
 
 jobs:
   render:
@@ -158,9 +160,9 @@ jobs:
           GH_TOKEN: ${{ secrets.RTT_PRIVATE_TOKEN }}
         run: |
           O="$RUNNER_TEMP/rtt_out"; SHORT=${GITHUB_SHA::7}
-          TAG="${TAG_PREFIX:-rtt-102-round2}-${SHORT}-run${GITHUB_RUN_NUMBER}"
+          TAG="${TAG_PREFIX:-rtt-102-round2b}-${SHORT}-run${GITHUB_RUN_NUMBER}"
           {
-            echo "RTT-102 ChatGPT vs Its Rivals, design round 2 (IQ-19b, IQ-19c): the main version with Luke's answers and Cowork's fixes - title B, the combined monthly visits panel bottom right, no closing line, eased motion, monthly at 1.5 s per month; stills (each also at phone size), contact sheets for the panel and for Cowork's fixes (a) and (b), and one clip from October 2024 to the end of the film. Rendered by GitHub Actions. No music. Not the film."
+            echo "RTT-102 ChatGPT vs Its Rivals, design round 2 revised (IQ-19d): eased through every month of the data (every landing frame = series_monthly.csv, DEC-562) and a taller line in the combined panel (DEC-563); 5 stills (each also at phone size), one contact sheet and the clip from October 2024 to the end of the film. Rendered by GitHub Actions. No music. Not the film."
             echo
             echo "- Source: ${GITHUB_REPOSITORY} @ ${GITHUB_SHA} (${GITHUB_REF_NAME}), run ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
             while read -r c FRAMES; do
@@ -177,7 +179,7 @@ jobs:
           } > "$O/notes.md"
           cat "$O/notes.md"
           gh release create "$TAG" --repo "$PRIVATE_REPO" --target main --prerelease \
-            --title "RTT-102 design round 2 ${SHORT} (main version: stills, sheets and the October 2024-to-end clip)" --notes-file "$O/notes.md" $(ls "$O"/*.mp4 2>/dev/null) "$O"/*.png
+            --title "RTT-102 design round 2 revised ${SHORT} (eased through every month, taller panel line: stills, sheet and the October 2024-to-end clip)" --notes-file "$O/notes.md" $(ls "$O"/*.mp4 2>/dev/null) "$O"/*.png
           URL="https://github.com/${PRIVATE_REPO}/releases/tag/${TAG}"
           echo "Release: $URL"
           echo "RTT-102 round 1 saved to the private repo: $URL" >> "$GITHUB_STEP_SUMMARY"

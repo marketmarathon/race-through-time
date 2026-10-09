@@ -1,129 +1,55 @@
 {
  "stills": [
   {
-   "name": "r2_c1_panel_aug2024",
+   "name": "r2b_feb2024",
+   "config": "config_rtt102_film.json",
+   "at": "2024-02-29"
+  },
+  {
+   "name": "r2b_aug2024",
    "config": "config_rtt102_film.json",
    "at": "2024-08-31"
   },
   {
-   "name": "r2_c2_panel_feb2025",
+   "name": "r2b_feb2025",
    "config": "config_rtt102_film.json",
    "at": "2025-02-28"
   },
   {
-   "name": "r2_c3_panel_oct2025_copilot_out",
+   "name": "r2b_oct2025",
    "config": "config_rtt102_film.json",
    "at": "2025-10-31"
   },
   {
-   "name": "r2_c4_panel_jan2026_meta_out",
-   "config": "config_rtt102_film.json",
-   "at": "2026-01-31"
-  },
-  {
-   "name": "r2_c5_panel_aug2026",
+   "name": "r2b_aug2026",
    "config": "config_rtt102_film.json",
    "at": "2026-08-31"
   },
   {
-   "name": "r2_f1_stripes_note_jul2024",
-   "config": "config_rtt102_film.json",
-   "at": "2024-07-31"
-  },
-  {
-   "name": "r2_f2_stripes_note_aug2024",
-   "config": "config_rtt102_film.json",
-   "at": "2024-08-31"
-  },
-  {
-   "name": "r2_f3_counting_into_sep2024",
-   "config": "config_rtt102_film.json",
-   "at": "2024-09-30",
-   "after_sec": 0.6
-  },
-  {
-   "name": "r2_f4_sep2024_current",
-   "config": "config_rtt102_film.json",
-   "at": "2024-09-30"
-  },
-  {
-   "name": "r2_f5_sig2_feb2025_landing",
-   "config": "config_rtt102_film.json",
-   "at": "2025-02-28"
-  },
-  {
-   "name": "r2_f6_sig2_mid_count_mar2025",
-   "config": "config_rtt102_film.json",
-   "at": "2025-03-31",
-   "after_sec": 0.6
-  },
-  {
-   "name": "r2_d1_final_table",
-   "config": "config_rtt102_film.json",
-   "at": "final"
-  },
-  {
-   "name": "r2_sheet_c_panel",
+   "name": "r2b_sheet",
    "compose": {
-    "title": "Round 2 · the main version (title B, panel A, no closing line) · the combined monthly visits panel, bottom right",
+    "title": "Round 2 revised (IQ-19d): eased through every month of the data, taller line in the combined panel",
     "cols": 2,
     "items": [
      {
-      "still": "r2_c1_panel_aug2024",
-      "caption": "August 2024"
+      "still": "r2b_feb2024",
+      "caption": "February 2024: Claude ~39m (the data's 39.3m, on the line)"
      },
      {
-      "still": "r2_c2_panel_feb2025",
-      "caption": "February 2025"
+      "still": "r2b_aug2024",
+      "caption": "August 2024: Gemini ~280m (the data's 278.3m)"
      },
      {
-      "still": "r2_c3_panel_oct2025_copilot_out",
+      "still": "r2b_feb2025",
+      "caption": "February 2025: Copilot ~80m (the data's 80.4m)"
+     },
+     {
+      "still": "r2b_oct2025",
       "caption": "October 2025: Copilot leaves the total"
      },
      {
-      "still": "r2_c4_panel_jan2026_meta_out",
-      "caption": "January 2026: Meta AI leaves the total"
-     },
-     {
-      "still": "r2_c5_panel_aug2026",
-      "caption": "August 2026"
-     },
-     {
-      "still": "r2_d1_final_table",
-      "caption": "August 2026: the final table (10 s), no line"
-     }
-    ]
-   }
-  },
-  {
-   "name": "r2_sheet_fixes",
-   "compose": {
-    "title": "Round 2 · Cowork fixes (a) stripes and note together, (b) two significant figures between published months",
-    "cols": 2,
-    "items": [
-     {
-      "still": "r2_f1_stripes_note_jul2024",
-      "caption": "(a) July 2024: the note appears with the stripes"
-     },
-     {
-      "still": "r2_f2_stripes_note_aug2024",
-      "caption": "(a) August 2024: stripes and note"
-     },
-     {
-      "still": "r2_f3_counting_into_sep2024",
-      "caption": "(a) counting into September 2024: still striped"
-     },
-     {
-      "still": "r2_f4_sep2024_current",
-      "caption": "(a) September 2024 lands: current figures, no stripes, no note"
-     },
-     {
-      "still": "r2_f5_sig2_feb2025_landing",
-      "caption": "(b) February 2025 landing: Copilot ~80m (line), Claude ~73.0m (published)"
-     },
-     {
-      "still": "r2_f6_sig2_mid_count_mar2025",
-      "caption": "(b) mid-count into March 2025: two significant figures"
+      "still": "r2b_aug2026",
+      "caption": "August 2026: the final board"
      }
     ]
    }
