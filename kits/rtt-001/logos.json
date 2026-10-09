@@ -425,7 +425,7 @@
    "author": "Tencent",
    "source_credit": "",
    "commons_restrictions": "",
-   "description": "QQ Browser icon with its Chinese wordmark (shown whole: only the IE crop is approved)",
+   "description": "QQ Browser icon with its Chinese wordmark; drawn cropped to the icon (owner decision DEC-199)",
    "size": [
     375,
     135
@@ -433,7 +433,14 @@
    "bytes": 13597,
    "ext": "png",
    "sha256": "4a1b7850a96c1bc4d8b7a088bdc7df4afc22f979a90b69868ba77bea6bf3ce81",
-   "private_path": "assets/rtt-001/logos/qq.png"
+   "private_path": "assets/rtt-001/logos/qq.png",
+   "crop": {
+    "x": 10,
+    "y": 31,
+    "w": 74,
+    "h": 74
+   },
+   "crop_note": "crop only (owner decision DEC-199): the icon at x 12-81, y 33-102 of the file plus a 2 px margin; done at draw time (config_rtt001_approved.json pictures.crop), the stored file is unmodified"
   },
   {
    "browser_id": "qihoo360",

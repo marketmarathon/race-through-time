@@ -1,0 +1,15 @@
+{
+ "extends": "config_rtt001_approved_fit.json",
+ "kit_version": "rtt001_approved_1_fit_clip_2008_2009",
+ "out": "rtt001_fit_2008_2009.mp4",
+ "window": {
+  "from": "2008-07-01",
+  "to": "2009-06-30"
+ },
+ "pacing": {
+  "final_board_sec": 2.0
+ },
+ "notes": [
+  "Board-size option (answer 5, DEC-188; DEC-202), the resize motion: July 2008 - June 2009 at 0.5 s per month with Luke's approved choices. In January 2009 StatCounter's figures begin and the board goes from 5 browsers to 10, the biggest change of board size in the film, so the rows ease from 5 slots to 10 over 2 s while the new bars fade in. The same months with fixed slots: clip f2 (smoothed) in rtt-001-pilot1-82167f8-run2."
+ ]
+}

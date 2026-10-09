@@ -1,0 +1,4 @@
+{ "extends": "config_rtt001_era_A.json", "kit_version": "rtt001_era_B",
+  "date_block": { "mode": "screen", "year_size": 96 },
+  "era": { "x": 1530, "y": 740, "w": 360, "h": 290 },
+  "notes": ["EXTRA OPTION B for Luke (DEC-218): as option A, but the year and month are shown ON the era device's screen, which is drawn larger (360 x 290 px) so the year stays readable."] }

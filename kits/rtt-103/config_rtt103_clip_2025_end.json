@@ -1,0 +1,10 @@
+{
+ "extends": "config_rtt103_film.json",
+ "kit_version": "rtt103_round3_clip_2025_end",
+ "window": {
+  "from": "2025-03-31"
+ },
+ "notes": [
+  "Round-3 motion clip: 2025 through 2030 into the end (the last story cards, the race carrying on through the 2026 plans and the 2027-2030 estimates, the explanation, the combined line, the peak step and the final table)."
+ ]
+}

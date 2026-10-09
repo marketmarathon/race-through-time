@@ -1,0 +1,20 @@
+{
+ "ready": true,
+ "title": "The Fifth Quadrant",
+ "artist": "Dan \"Lebo\" Lebowitz, Tone Seeker",
+ "source": "YouTube Studio Audio Library on the Race Through Time channel (Dance and Electronic / Dramatic, 2:50, added Apr 2025), YouTube Audio Library licence (no attribution required); chosen by Luke 8 Oct 2026 (DEC-372); downloaded by Claude in Cowork in Luke's Chrome 8 Oct 2026",
+ "file": "the_fifth_quadrant_lebowitz_tone_seeker.mp3",
+ "private_path": "assets/rtt-103/music/the_fifth_quadrant_lebowitz_tone_seeker.mp3",
+ "private_ref": "main",
+ "sha256": "c0b3be7d0e298c85df31b7035b56cef93a18d1472d35963e741e3d353b29cf89",
+ "bytes": 6784559,
+ "duration_sec": 169.59,
+ "loop_start": 58.654,
+ "loop_end": 124.111,
+ "crossfade_sec": 3.622,
+ "notes": [
+  "The audio file is NEVER committed here (licence: may not be made available separately from videos; reference/rights_ledger.md). It lives only in the private repo, main branch (commit 2bdb8a4), with README_the_fifth_quadrant.txt, and is fetched and SHA-256 checked at render time by .github/workflows/rtt103_film.yml (checked again by Claude Code on 8 and 9 Oct 2026: equal).",
+  "Loop points (DEC-379, scripts/rtt_music_loop.py, librosa 0.11+ in the Claude Code container, 9 Oct 2026): 129.2 BPM, one beat every 0.4644 s (median), 358 beats. The best-scoring pair: loop_start = beat 128 (58.654 s), loop_end = beat 272 (124.111 s), 144 beats = 36 bars, both on the 16-beat grid; spectral match across the crossfade window 0.947 (1.0 = identical), level step -0.3 dB; crossfade 3.622 s = 8 beats measured at loop_end. For the 198.0 s film: two joins, at 124.11 s and 189.57 s (the second inside the 10 s fade over the final table, which starts at 188.0 s, as RTT-003's second join, DEC-148); the film never reaches the track's outro. Test mix on a silent 198.0 s video (Claude Code container, 9 Oct 2026): -16.0 LUFS integrated, true peak -1.6 dBTP.",
+  "Playback (scripts/rtt_mix_music.sh, unchanged): from 0 s; at loop_end an equal-power crossfade back to loop_start; faded out over the 10 s final table; mixed to -16 LUFS integrated, true peak at most -1 dBTP (the script fails otherwise)."
+ ]
+}
