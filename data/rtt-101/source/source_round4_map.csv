@@ -1,0 +1,259 @@
+deal_id,transfer_id,player,date,leader_side,batch
+U2191,Tb2d432531c,Toby Collyer,2026-08-30,manchester_united:seller,1
+U2188,Tedec7c0898,Issa Kaboré,2026-08-27,manchester_city:seller,1
+U2185,T59b6e41cf9,Jeremiah Berkeley-Agyepong,2026-08-25,chelsea:seller,1
+U2179,Tb07a294a59,Ethan Ennis,2026-08-18,manchester_united:seller,1
+U2173,Td2ef122a4f,Ethan Williams,2026-08-13,manchester_united:seller,1
+U2163,Ta097b13197,Radek Vítek,2026-08-08,manchester_united:seller,1
+U2155,Tfd4d2d578a,Tyler Fredricson,2026-07-30,manchester_united:seller,1
+U2149,Tbc35c28bc2,Matty Warhurst,2026-07-21,manchester_city:seller,1
+U2136,Tbd77319bb7,Jahmai Simpson-Pusey,2026-07-04,manchester_city:seller,1
+U2131,T00369f8dc1,Isaac Smith,2026-07-02,manchester_city:seller,1
+U2129,T78823cd020,Emmanuel Emegha,2026-07-01,chelsea:buyer,1
+U2115,T513d005e29,Yahya Idrissi,2026-02-02,chelsea:seller,1
+U2110,T95918d15a7,Harry McGlinchey,2026-02-02,chelsea:seller,1
+U2108,Tc8bdfd9b84,Ato Ampah,2026-02-02,chelsea:seller,1
+U2106,Td32d272f9a,Rhys Bennett,2026-01-31,manchester_united:seller,1
+U2103,T1a1f8cb302,Seb Naylor,2026-01-29,manchester_city:seller,1
+U2099,T122da53b01,Will Dickson,2026-01-16,manchester_city:seller,1
+U2089,T4745f0848b,Leo Castledine,2026-01-09,chelsea:seller,1
+U2078,T0a04cc483f,Ishé Samuels-Smith,2025-09-01,chelsea:buyer,1
+U2072,T565def9c68,Ben Chilwell,2025-09-01,chelsea:seller,1
+U2071,Td7d006cc65,Alex Matos,2025-09-01,chelsea:seller,1
+U2063,Te99e471f53,True Grant,2025-08-25,manchester_city:seller,1
+U2039,T6f0cfd08da,Zak Sturge,2025-07-14,chelsea:seller,1
+U2034,Tec85c3a2ba,Diego León,2025-07-05,manchester_united:buyer,1
+U2032,Tbe728cc19b,Christopher Atherton,2025-07-03,chelsea:buyer,1
+U2027,T028ecc1539,Dylan Williams,2025-07-01,chelsea:seller,1
+U2005,T1306f150c3,Travis Akomeah,2025-02-03,chelsea:seller,1
+U1996,Tc0fdad0c7a,Harvey Vale,2025-02-03,chelsea:seller,1
+U2003,T7ac2a36108,Ruben Curley,2025-02-03,manchester_united:seller,1
+U1972,Ta593dfbdba,Billy Gee,2024-08-30,chelsea:seller,1
+U1971,Tbb8152ca5a,Tino Anjorin,2024-08-29,chelsea:seller,1
+U1966,Ta77a3025c3,Hannibal Mejbri,2024-08-28,manchester_united:seller,1
+U1961,T14edb7ef34,Mason Burstow,2024-08-16,chelsea:seller,1
+U1957,T77831feff2,Micah Hamilton,2024-08-09,manchester_city:seller,1
+U1940,Ta74c25e443,Willy Kambwala,2024-07-15,manchester_united:seller,1
+U1927,Tbe0b9c473b,Chinoso Chibueze,2024-07-04,chelsea:seller,1
+U1925,T27da34bf34,Lewis Fiorini,2024-07-02,manchester_city:seller,1
+U1917,Tc77abedfdb,Jamie Cumming,2024-06-27,chelsea:seller,1
+U1910,T56e453b641,Charlie Webster,2024-06-21,chelsea:seller,1
+U1906,T6799ff8557,Dion Rankine,2024-06-14,chelsea:seller,1
+U1887,Tbe14cb005e,Zack Steffen,2024-01-04,manchester_city:seller,1
+U1884,T48a1fd42f2,Eric Bailly,2023-09-05,manchester_united:seller,1
+U1879,Tff3fdbef99,Marc Jurado,2023-09-01,manchester_united:seller,1
+U1860,T23c1d283d9,Ben Elliott,2023-08-15,chelsea:seller,1
+U1861,T1c579c1c75,Matěj Kovář,2023-08-15,manchester_united:seller,1
+U1843,Tc5c4472902,Nathan Bishop,2023-08-02,manchester_united:seller,1
+U1835,T53a2c4de14,Alex Telles,2023-07-23,manchester_united:seller,1
+U1833,T4a7e509cd9,Charlie Savage,2023-07-22,manchester_united:seller,1
+U1822,Tf3a23265c6,Cieran Slicker,2023-07-08,manchester_city:seller,1
+U1820,T74bba6d781,Morgan Rogers,2023-07-07,manchester_city:seller,1
+U1813,T1d68be8d1a,Ethan Laird,2023-06-30,manchester_united:seller,1
+U1812,T10b1ff0fa4,Édouard Mendy,2023-06-28,chelsea:seller,1
+U1808,T6ab502b353,Zidane Iqbal,2023-06-26,manchester_united:seller,1
+U1804,T5118a6cea9,Xavier Simons,2023-06-14,chelsea:seller,1
+U1758,T4bcdd52a46,Manuel Akanji,2022-09-01,manchester_city:buyer,1
+U1746,Tc8b6c2c901,Matt Miazga,2022-08-05,chelsea:seller,1
+U1738,T40709458bc,Arijanet Muric,2022-07-22,manchester_city:seller,1
+U1726,T59c1004207,Dylan Levitt,2022-07-07,manchester_united:seller,1
+U1704,T9aa0d72653,Sammy Robinson,2022-01-31,manchester_city:seller,1
+U1701,Td59cb10d65,Matt Smith,2022-01-31,manchester_city:seller,1
+U1692,T359364d682,Tariq Uwakwe,2022-01-28,chelsea:seller,1
+U1686,T02d4a5d668,Lewis Baker,2022-01-15,chelsea:seller,1
+U1662,Te44e56f946,Ike Ugbo,2021-08-25,chelsea:seller,1
+U1661,Ta5b106f951,Davide Zappacosta,2021-08-24,chelsea:seller,1
+U1640,T4b9777b5e4,Paul McShane,2021-07-23,manchester_united:buyer,1
+U1635,T9c3ab5815c,Olivier Giroud,2021-07-17,chelsea:seller,1
+U1632,Tf2d8e6c4c7,Lukas Nmecha,2021-07-16,manchester_city:seller,1
+U1615,Ta16639ca08,Victor Moses,2021-07-02,chelsea:seller,1
+U1599,T3f38187355,Danilo Pantić,2021-06-16,chelsea:seller,1
+U1595,T59aaa3ef17,Angeliño,2021-02-13,manchester_city:seller,1
+U1594,T1e2f4c014a,Marcos Rojo,2021-02-02,manchester_united:seller,1
+U1591,T6831f07fae,Keyendrah Simmonds,2021-02-01,manchester_city:seller,1
+U1584,T18b1f115c2,Nathanael Ogbeta,2021-01-25,manchester_city:seller,1
+U1585,T77caadcffb,Tom Scott,2021-01-25,manchester_city:seller,1
+U1577,Tbf85ef721a,Lucas Piazon,2021-01-14,chelsea:seller,1
+U1574,Ta0521e69ed,Charlie Brown,2021-01-13,chelsea:seller,1
+U1575,T807c94debd,Timothy Fosu-Mensah,2021-01-13,manchester_united:seller,1
+U1571,T280d3b2c9e,Joel Latibeaudiere,2020-10-16,manchester_city:seller,1
+U1539,Tfbc31d4f2d,Jacob Maddox,2020-08-12,chelsea:seller,1
+U1533,T060eb8357e,Fisayo Dele-Bashiru,2020-07-28,manchester_city:seller,1
+U1515,T6403be737e,Michael Hector,2019-09-05,chelsea:seller,1
+U1509,T65755702a7,Jeremie Frimpong,2019-09-01,manchester_city:seller,1
+U1513,T29ea844ac0,Matteo Darmian,2019-09-01,manchester_united:seller,1
+U1511,T2e8360d39d,Lee O'Connor,2019-09-01,manchester_united:seller,1
+U1504,T4e4ff5ede1,Brandon Barker,2019-08-09,manchester_city:seller,1
+U1485,T816d202f28,Kasey Palmer,2019-08-01,chelsea:seller,1
+U1470,Tf2a1afa9e1,Zack Steffen,2019-07-09,manchester_city:buyer,1
+U1465,T07d17f5b7d,Angeliño,2019-07-03,manchester_city:buyer,1
+U1457,T8e42f46422,Jay Dasilva,2019-06-26,chelsea:seller,1
+U1452,Te4ba641509,Ola Aina,2019-06-11,chelsea:seller,1
+U1445,Td02f847a60,Kylian Hazard,2019-05-05,chelsea:seller,1
+U1443,T8bb8eaffec,Marouane Fellaini,2019-02-01,manchester_united:seller,1
+U1433,T45113c523b,Cesc Fàbregas,2019-01-11,chelsea:seller,1
+U1427,Tf92e13e507,Thibaut Courtois,2018-08-09,chelsea:seller,1
+U1418,T1f533a9ac7,Daniel Arzani,2018-08-09,manchester_city:buyer,1
+U1403,T555c4537f8,Bersant Celina,2018-07-31,manchester_city:seller,1
+U1404,Ta19bb0abcf,Philippe Sandler,2018-07-31,manchester_city:buyer,1
+U1389,Ta058278624,Isaac Buckley-Ricketts,2018-07-17,manchester_city:seller,1
+U1373,Tdeca369fa2,Jacob Davenport,2018-07-02,manchester_city:seller,1
+U1366,T8dca59df3f,Ashley Smith-Brown,2018-06-26,manchester_city:seller,1
+U1355,Td1e33d1c8e,Joe Riley,2018-05-25,manchester_united:seller,1
+U1347,T230d7e424b,Pablo Maffeo,2018-05-14,manchester_city:seller,1
+U1342,T713fe43e1d,Jack Harrison,2018-01-30,manchester_city:buyer,1
+U1331,T702b093e06,Shay Facey,2018-01-05,manchester_city:seller,1
+U1318,T88dcd02ad3,Davide Zappacosta,2017-08-31,chelsea:buyer,1
+U1322,Tf66bdb3744,Malakai Mars,2017-08-31,chelsea:seller,1
+U1307,T9699188eff,Olarenwaju Kayode,2017-08-18,manchester_city:buyer,1
+U1304,Tdd300b2870,Zackarias Faour,2017-08-11,manchester_city:seller,1
+U1298,T024015cb6b,Fernando,2017-08-04,manchester_city:seller,1
+U1291,T225533eba0,James Horsfield,2017-07-24,manchester_city:seller,1
+U1286,T4b3ebd54a8,Mukhtar Ali,2017-07-17,chelsea:seller,1
+U1279,Tee1e59ba0f,Douglas Luiz,2017-07-15,manchester_city:buyer,1
+U1268,Tad3dbf0af5,Bruno Zuculini,2017-07-11,manchester_city:seller,1
+U1264,T6243700b74,Rubén Sobrino,2017-07-06,manchester_city:seller,1
+U1260,Tfaed44e5a6,Josh Harrop,2017-06-23,manchester_united:seller,1
+U1242,T6910a5331b,Branislav Ivanović,2017-02-01,chelsea:seller,1
+U1243,T075767c0b4,Jack Byrne,2017-02-01,manchester_city:seller,1
+U1231,T495f0bd5fb,Dion Conroy,2017-01-27,chelsea:seller,1
+U1223,T4b813d3bc6,Ian Lawlor,2017-01-13,manchester_city:seller,1
+U1219,Tb96c8f7bc3,George Glendon,2017-01-12,manchester_city:seller,1
+U1215,Tc9e2001ef3,John Mikel Obi,2017-01-06,chelsea:seller,1
+U1189,Tb1b14b0271,Eduardo,2016-08-25,chelsea:buyer,1
+U1186,T27ff2e5fb3,Tyler Blackett,2016-08-22,manchester_united:seller,1
+U1174,T0968627929,Mohamed Salah,2016-08-03,chelsea:seller,1
+U1160,Tf9392aa56b,Joe Rothwell,2016-07-12,manchester_united:seller,1
+U1155,T4b969e4454,Oleksandr Zinchenko,2016-07-04,manchester_city:buyer,1
+U1145,T6e905cacc8,Stipe Perica,2016-06-15,chelsea:seller,1
+U1132,T4bc175680c,Matt Miazga,2016-01-30,chelsea:buyer,1
+U1118,T3cd5b4262c,George Evans,2016-01-19,manchester_city:seller,1
+U1114,Ted4c3b82f6,Liam Grimshaw,2016-01-18,manchester_united:seller,1
+U1112,Tb5b896c4da,Anthony Cáceres,2016-01-15,manchester_city:buyer,2
+U1106,Tdb0d51b819,Ben Pearson,2016-01-11,manchester_united:seller,2
+U1101,Ta69ffd016b,Ulises Dávila,2015-12-05,chelsea:seller,2
+U1081,T963134d764,Rafael,2015-08-03,manchester_united:seller,2
+U1072,T5d943e4fac,Reece James,2015-07-21,manchester_united:seller,2
+U1070,T6eaa74a85a,Jordy Hiwula,2015-07-17,manchester_city:seller,2
+U1063,T9a1230d34e,Enes Ünal,2015-07-06,manchester_city:buyer,2
+U1064,T74a73061ad,Ángelo Henríquez,2015-07-06,manchester_united:seller,2
+U1039,Td49050fe44,Marnick Vermijl,2015-02-02,manchester_united:seller,2
+U1034,T679d8e23b0,Sadiq El Fitouri,2015-01-30,manchester_united:buyer,2
+U1016,T7b088c50ef,Fernando Torres,2015-01-05,chelsea:seller,2
+U1000,T470db043a8,Emyr Huws,2014-09-01,manchester_city:seller,2
+U0998,Tb00a100d7e,Shinji Kagawa,2014-08-31,manchester_united:seller,2
+U0990,T774aea5739,George Saville,2014-08-26,chelsea:seller,2
+U0976,Teeb91ea993,Bruno Zuculini,2014-08-08,manchester_city:buyer,2
+U0947,T7ec5db5572,Mario Pašalić,2014-07-09,chelsea:buyer,2
+U0933,Tb6c2db8508,Vanja Milinković-Savić,2014-05-17,manchester_united:buyer,2
+U0916,Tf92c9cec37,Michael Essien,2014-01-27,chelsea:seller,2
+U0913,T64181875d0,Kevin De Bruyne,2014-01-18,chelsea:seller,2
+U0900,T97897ad48f,Abdul Razak,2013-10-17,manchester_city:seller,2
+U0886,Tf907d5d7dd,Denis Suárez,2013-08-22,manchester_city:seller,2
+U0883,Td9a447b755,Scott Wootton,2013-08-21,manchester_united:seller,2
+U0874,Tae9470f6a5,Maicon,2013-07-18,manchester_city:seller,2
+U0871,Tc8ec7d3fdf,Jérémy Hélan,2013-07-12,manchester_city:seller,2
+U0851,Tcaa483f92d,Jeffrey Bruma,2013-06-13,chelsea:seller,2
+U0850,T78f666d8ed,Guillermo Varela,2013-06-07,manchester_united:buyer,2
+U0823,Tc567ac0ac1,Robbie Brady,2013-01-08,manchester_united:seller,2
+U0816,Tf23e0c664c,Joshua King,2013-01-02,manchester_united:seller,2
+U0814,Tf972326f93,Wallace,2012-12-04,chelsea:buyer,2
+U0813,T462bfb3e6b,Ángelo Henríquez,2012-09-05,manchester_united:buyer,2
+U0810,T597bd41d72,Nigel de Jong,2012-08-31,manchester_city:seller,2
+U0806,Tb16adb6b40,Maicon,2012-08-31,manchester_city:buyer,2
+U0784,T3fcb82dbf9,Alexander Büttner,2012-08-21,manchester_united:buyer,2
+U0770,T7699860c92,Vladimír Weiss,2012-08-02,manchester_city:seller,2
+U0759,Te131b6bf78,Thorgan Hazard,2012-07-24,chelsea:buyer,2
+U0747,T65dca144ab,Greg Cunningham,2012-07-05,manchester_city:seller,2
+U0740,T0f0461b8c9,Joan Àngel Román,2012-06-27,manchester_city:seller,2
+U0738,T2ef56f8a9b,Shinji Kagawa,2012-06-22,manchester_united:buyer,2
+U0735,T05365247b5,Nick Powell,2012-06-12,manchester_united:buyer,2
+U0732,Td9277e29ee,Matty James,2012-05-15,manchester_united:seller,2
+U0733,Teb676b3911,Ritchie De Laet,2012-05-15,manchester_united:seller,2
+U0727,T1664aac705,Philipp Prosenik,2012-01-31,chelsea:seller,2
+U0728,T4cdd91d620,Ravel Morrison,2012-01-31,manchester_united:seller,2
+U0716,T420b907514,Mame Biram Diouf,2012-01-28,manchester_united:seller,2
+U0710,Tff8833e50f,Danny Drinkwater,2012-01-20,manchester_united:seller,2
+U0709,T4273dd716f,Ben Mee,2012-01-17,manchester_city:seller,2
+U0704,T5dc6057394,Chris Chantler,2012-01-06,manchester_city:seller,2
+U0703,Te0959aa099,Kieran Trippier,2012-01-03,manchester_city:seller,2
+U0700,T6b567129fa,Nicolas Anelka,2012-01-01,chelsea:seller,2
+U0671,T1dbe4075b7,Ulises Dávila,2011-08-27,chelsea:buyer,2
+U0662,T7cfa665139,Romelu Lukaku,2011-08-18,chelsea:buyer,2
+U0655,Tf262ddd104,Yuri Zhirkov,2011-08-06,chelsea:seller,2
+U0653,T57e4b599f1,Costel Pantilimon,2011-08-05,manchester_city:buyer,2
+U0644,T457d221cbe,Thibaut Courtois,2011-07-26,chelsea:buyer,2
+U0639,T88d0280927,Jô,2011-07-20,manchester_city:seller,2
+U0633,Td4946ca3a0,Jérôme Boateng,2011-07-18,manchester_city:seller,2
+U0619,T99a7e2202a,Stefan Savić,2011-07-06,manchester_city:buyer,2
+U0617,Ta64c37588f,Nicky Ajose,2011-07-05,manchester_united:seller,2
+U0612,T3c2fa18f83,David de Gea,2011-06-29,manchester_united:buyer,2
+U0602,T956124bcb3,Gökhan Töre,2011-06-06,chelsea:seller,2
+U0601,Ta4e11727dc,Jacopo Sala,2011-06-03,chelsea:seller,2
+U0597,Td6a0692906,James Poole,2011-05-13,manchester_city:seller,2
+U0596,T985b401f06,Corry Evans,2011-05-12,manchester_united:seller,2
+U0595,Tea3978a6f4,Joe Dudgeon,2011-05-10,manchester_united:seller,2
+U0586,T30834bcb91,Cameron Stewart,2011-01-31,manchester_united:seller,2
+U0570,Tdf9b07613b,Anders Lindegaard,2010-11-27,manchester_united:buyer,2
+U0564,Tcc307817c4,Matej Delač,2010-08-31,chelsea:buyer,2
+U0551,T924695fe6e,Adam Clayton,2010-08-31,manchester_city:seller,2
+U0566,Tce59c839da,Robinho,2010-08-31,manchester_city:seller,2
+U0535,T74bbcc3276,Ramires,2010-08-13,chelsea:buyer,2
+U0519,T382ecc75e7,Tomáš Kalas,2010-07-07,chelsea:buyer,2
+U0512,Te5c1531bfb,Jérôme Boateng,2010-07-01,manchester_city:buyer,2
+U0514,T922e320c53,Zoran Tošić,2010-07-01,manchester_united:seller,2
+U0505,T175d8e93f4,Miroslav Stoch,2010-06-10,chelsea:seller,2
+U0500,T74bcc9c397,Javier Hernández,2010-05-27,manchester_united:buyer,2
+U0487,T9310c27464,Danny Simpson,2010-01-20,manchester_united:seller,2
+U0485,T552dd9da60,Patrick Vieira,2010-01-08,manchester_city:buyer,2
+U0483,Td4846c9f8a,Tom Taiwo,2010-01-06,chelsea:seller,2
+U0480,Ta1cabe27b3,Paul Marshall,2010-01-02,manchester_city:seller,2
+U0387,T688b5b8f61,Gökhan Töre,2009-01-30,chelsea:buyer,2
+U0379,T24f56817ae,Nigel de Jong,2009-01-21,manchester_city:buyer,2
+U0366,T1f1dab7906,Zoran Tošić,2009-01-02,manchester_united:buyer,2
+U0360,T247fb667de,Manucho,2008-12-21,manchester_united:buyer,2
+U0347,T123658508a,Gláuber,2008-08-31,manchester_city:buyer,2
+U0348,T39f525b238,Pablo Zabaleta,2008-08-31,manchester_city:buyer,2
+U0340,T2d583809d7,Andriy Shevchenko,2008-08-25,chelsea:seller,2
+U0339,T48287208ed,Rolando Bianchi,2008-08-23,manchester_city:seller,2
+U0338,T52d18323b5,Vincent Kompany,2008-08-22,manchester_city:buyer,2
+U0317,Tb48180a34d,Chris Eagles,2008-07-29,manchester_united:seller,2
+U0303,Te8f2b5cc15,Georgios Samaras,2008-07-15,manchester_city:seller,2
+U0292,T2717a13689,Garry Breen,2008-07-02,manchester_city:seller,2
+U0290,T2f7cd03d31,Andreas Isaksson,2008-07-02,manchester_city:seller,2
+U0289,T4a1208ca60,Deco,2008-06-30,chelsea:buyer,2
+U0283,Td76a764e1f,Gerard Piqué,2008-05-27,manchester_united:seller,2
+U0282,Tfcb214cb69,Ashley Grimes,2008-05-21,manchester_city:seller,2
+U0275,T32225d4e4e,Ousmane Dabo,2008-01-31,manchester_city:seller,2
+U0255,T0b429fe24b,Branislav Ivanović,2008-01-16,chelsea:buyer,2
+U0226,T647ebfa506,Juliano Belletti,2007-08-23,chelsea:buyer,2
+U0225,Tb9359aa448,Gabriel Heinze,2007-08-23,manchester_united:seller,2
+U0215,T3ec20663b0,Valeri Bojinov,2007-08-03,manchester_city:buyer,2
+U0213,T95e16d52c8,Vedran Ćorluka,2007-08-02,manchester_city:buyer,2
+U0209,T2115c0251b,Giuseppe Rossi,2007-07-31,manchester_united:seller,2
+U0199,T322aff94f2,Gelson Fernandes,2007-07-14,manchester_city:buyer,2
+U0176,T4a98fbeed5,Jonas Elmer,2007-06-28,chelsea:seller,2
+U0166,T4590a7fcb2,Nuno Morais,2007-05-11,chelsea:seller,2
+U0164,T52bc244fce,Michael Ball,2007-01-31,manchester_city:buyer,2
+U0124,T91e2f4aa14,Khalid Boulahrouz,2006-08-21,chelsea:buyer,2
+U0120,T9dfba46ed4,Willo Flood,2006-08-02,manchester_city:seller,2
+U0117,Tf61678d919,Bernardo Corradi,2006-07-20,manchester_city:buyer,2
+U0111,T85515a3ede,Bradley Wright-Phillips,2006-07-05,manchester_city:seller,2
+U0108,T5be03b8096,David Bellion,2006-07-01,manchester_united:seller,2
+U0106,Tc6975dfb5f,Jiri Jarosik,2006-06-19,chelsea:seller,2
+U0105,T6b454e0457,Salomon Kalou,2006-05-30,chelsea:buyer,2
+U0095,T735a70e259,Mikel John Obi,2006-01-01,chelsea:buyer,2
+U0087,T2ee2dd43bd,Jiri Jarosik,2005-01-06,chelsea:buyer,2
+U0084,Tb7b7e31e19,Diego Forlán,2004-08-21,manchester_united:seller,2
+U0056,T727d58d226,Niclas Jensen,2003-07-08,manchester_city:seller,2
+U0046,T4702986b41,Tyrone Loran,2002-05-21,manchester_city:buyer,2
+U0030,Tabfcfab934,Richard Wellens,2000-03-23,manchester_united:seller,2
+U0026,T39bca0bc3d,Paul Gibson,1999-03-25,manchester_united:seller,2
+U0025,Te3931cb466,Michael Ryan,1999-03-24,manchester_united:seller,2
+U0022,Tc611d7e175,Bojan Djordjic,1999-02-17,manchester_united:buyer,2
+U0019,Ta531a5bba8,John O'Shea,1998-08-03,manchester_united:buyer,2
+U0017,Tabc80b2623,Leon Mills,1998-07-04,manchester_united:seller,2
+U0015,Te0efadec9b,Karel Poborský,1997-12-30,manchester_united:seller,2
+U0003,T0ed8e80d9b,Nick Colgan,1992-07-01,chelsea:buyer,2
+U0001,T23a488d866,Paul Sixsmith,1992-06-30,manchester_united:seller,2
+U0002,Ta716cd737e,Paul Wratten,1992-06-30,manchester_united:seller,2

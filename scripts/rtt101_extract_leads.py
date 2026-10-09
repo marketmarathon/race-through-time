@@ -34,7 +34,11 @@ FILES += [(os.path.basename(f), "S") for f in sorted(_glob.glob(os.path.join(PRI
 # source round 3 (IQ-15i): the undisclosed-fee sweep (part24a/e/f/g, U deal IDs via source_round3_map.csv) and the leader deals read by Cowork in
 # Luke's Chrome (part24d) or by a helper (part24b), R deal IDs via source_round2_map.csv; part24c (round-up pages) is context only, not read
 FILES += [(os.path.basename(f), "S") for f in sorted(_glob.glob(os.path.join(PRIV, "part24[abdefg]_*.csv")))]
-_MAP = {}
+# source round 4 (IQ-15k): the three leaders' undisclosed deals (part25a batch 1, part25c batch 2; U deal IDs via source_round3_map.csv)
+# and the six January 2020 leader deals (part25d; deal_id = our transfer_id). part25b (Cowork's Chrome reads of the 12 round 3 pages
+# the runner could not read) is recorded in source/round4_chrome_reads.csv instead: it gives no grade A/B figure
+FILES += [(os.path.basename(f), "S") for f in sorted(_glob.glob(os.path.join(PRIV, "part25[acd]_*.csv")))]
+_MAP = {"Tf8a5f7e6ee": "T6403be737e"}  # IQ-15k: Hector's club-season duplicate is dropped; his one Chelsea -> Fulham move (DEC-436)
 for _name in ("source_round1_map.csv", "source_round2_map.csv", "source_round3_map.csv"):
     _mp = os.path.join(os.path.dirname(os.path.abspath(OUT)), _name)
     if os.path.exists(_mp):
@@ -52,10 +56,17 @@ AGGREGATOR = re.compile(r"(flashscore|sportskeeda|90min\.com|getfootballnews|foo
                         r"football365|myfootball\.com\.au|sportsnews\.com\.au)", re.I)
 
 
+# round 4 (IQ-15k, DEC-420 (a)): the sites batch 1's helpers graded B are aggregators too, unless the helper's note says the page itself is syndicated agency copy
+AGGREGATOR4 = re.compile(r"(goal\.com|90min|(^|//|\.)si\.com|fourfourtwo|thescore\.com|football-espana|teamtalk|sportinglife)", re.I)
+AGENCY = re.compile(r"syndicated copy of (?:PA|Reuters|AFP|AP|the Press Association|Associated Press)\b")  # the page itself is agency copy
+
+
 def grade(row):
     g = (row.get("grade") or "").strip().upper()
     if row.get("_round2") and g in ("A", "B") and AGGREGATOR.search(row.get("source_url", "")):
         return "C", "aggregator, scores, blog or fan site: a pointer (C), whatever the research file says"
+    if row.get("_round4") and g in ("A", "B") and AGGREGATOR4.search(row.get("source_url", "")) and not AGENCY.search(row.get("notes", "")):
+        return "C", "aggregator site with no agency named: a pointer (C), whatever the research file says (DEC-420 (a), IQ-15k)"
     q = (row.get("exact_quote", "") + " " + row.get("fee_as_reported", ""))
     # brief section 7: UEFA.com news of another party's fee = B; "reported"/"thought to be" rows = reported (B)
     if g == "A" and (UEFA.search(row.get("source_url", "")) or REPORTED.search(q)):
@@ -82,11 +93,14 @@ for fn, sec in FILES:
                 continue  # deal not found: nothing to check
             _n = _seq.setdefault(r["deal_id"], 0) + 1
             _seq[r["deal_id"]] = _n
-            r = dict(r, evidence_id=f"{r['deal_id']}-{_n:02d}", transfer_id=_MAP.get(r["deal_id"], ""), date=r.get("transfer_date_reported", ""))
+            _tid = _MAP.get(r["deal_id"], "") or (r["deal_id"] if re.fullmatch(r"T[0-9a-f]{10}", r["deal_id"]) else "")
+            r = dict(r, evidence_id=f"{r['deal_id']}-{_n:02d}", transfer_id=_tid, date=r.get("transfer_date_reported", ""))
             if "soccerbase" in (r.get("source_url") or "").lower() or (r.get("publisher") or "").lower().startswith("soccerbase"):
                 r["grade"] = "C"
-            if fn.startswith(("part22", "part23", "part24")):
+            if fn.startswith(("part22", "part23", "part24", "part25")):
                 r["_round2"] = True
+            if fn.startswith("part25"):
+                r["_round4"] = True
         url = (r.get("source_url") or "").strip()
         url = re.sub(r"^https?://acc-english\.ajax\.nl", "https://english.ajax.nl", url)  # a copy of the same Ajax page (Cowork, IQ-15h)
         if "transfermarkt" in url.lower() or "wikipedia.org" in url.lower():

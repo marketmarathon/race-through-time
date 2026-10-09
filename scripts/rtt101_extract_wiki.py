@@ -206,6 +206,10 @@ def window_rows(title, page):
         ci = {"date": col("date"), "name": col("name", "player"), "from": col("moving from", "from"),
               "to": col("moving to", "to"), "fee": col("fee")}
         loan_table = any(h.startswith(("end date", "date to", "until")) for h in hdr)
+        # IQ-15k: or the table sits under a "Loans" heading ("=== Loans ===<!--...-->" on the summer 2017 and 2018 pages, whose
+        # four-column loan tables were read as permanent moves at £0 in IQ-15j, e.g. Hector to Hull 2017 and Sheffield Wednesday 2018)
+        _hd = re.findall(r"^=+\s*([^=\n]*?)\s*=+\s*(?:<!--.*?-->)?\s*$", w[:tm.start()], re.M)
+        loan_table = loan_table or bool(_hd and "loan" in _hd[-1].lower())
         if ci["fee"] is None and ci["name"] is not None and ci["from"] is not None and ci["to"] is not None:
             ci["date"] = 0
             ci["fee"] = "LOAN" if loan_table else "NONE"
@@ -477,18 +481,33 @@ def window_of(d):
     return f"summer {y}" if 4 <= m <= 10 else (f"January {y}" if m <= 3 else f"January {y + 1}")
 
 
+def season_of_day(d):
+    """the July-June football year of a date (for the duplicate test only; the build uses the exact season windows)"""
+    return d.year if d.month >= 7 else d.year - 1
+
+
+def _same_club(a, b):
+    """two (club_id, name) pairs name the same club: same id, or a distinctive word of one name in the other"""
+    if a[0] and b[0]:
+        return a[0] == b[0]
+    wa = {x for x in _fold(a[1]) if len(x) >= 4 and x not in ("city", "town", "united", "club", "football", "athletic", "rovers", "real", "sporting")}
+    return bool(wa & set(_fold(b[1])))
+
+
 def drop_listed(cs, rows):
     """IQ-15j: club-season pages since 2002-03 repeat most deals of the window list pages, often naming the other club differently
     ("Genk" / "K.R.C. Genk"), so a club-season row is kept only if no list-page row has the same player (same full name, or the
-    same surname) at the same club within 60 days, and only for a window in CLUB_PAGE_WINDOWS (the rest are listed, not used).
+    same surname) at the same club within 60 days, or between the same two clubs (both loans or both not) within 180 days or the
+    same season (IQ-15k), and only for a window in CLUB_PAGE_WINDOWS (the rest are listed, not used).
     Pages before 2002-03 are kept as they were."""
     idx = defaultdict(list)
     for r in rows:
         if not r["date"]:
             continue
-        for c in (r["from_club_id"], r["to_club_id"]):
+        loan = "loan" in r["fee_text"].lower()
+        for c, o in ((r["from_club_id"], (r["to_club_id"], r["to_name"])), (r["to_club_id"], (r["from_club_id"], r["from_name"]))):
             if c:
-                idx[c].append((_fold(r["player"]), _day(r["date"])))
+                idx[c].append((_fold(r["player"]), _day(r["date"]), o, loan))
     keep, dropped, unused = [], 0, []
     for r in cs:
         if r["window"] < "club-season 2002":
@@ -498,8 +517,15 @@ def drop_listed(cs, rows):
         nm = _fold(r["player"])
         hit = False
         if r["date"] and nm:
-            for n2, d2 in idx.get(own, ()):
-                if (n2 == nm or (n2 and n2[-1] == nm[-1])) and abs((d2 - _day(r["date"])).days) <= 60:
+            other = (r["to_club_id"], r["to_name"]) if r["from_club_id"] == own else (r["from_club_id"], r["from_name"])
+            loan = "loan" in r["fee_text"].lower()
+            for n2, d2, o2, loan2 in idx.get(own, ()):
+                if not (n2 == nm or (n2 and n2[-1] == nm[-1])):
+                    continue
+                gap = abs((d2 - _day(r["date"])).days)
+                # IQ-15k: also the same player between the same two clubs, both loans or both not, within 180 days or the same
+                # season (Hector: Chelsea and Fulham announced on 5 Sep 2019 a permanent move completed in January 2020)
+                if gap <= 60 or (loan == loan2 and _same_club(other, o2) and (gap <= 180 or season_of_day(d2) == season_of_day(_day(r["date"])))):
                     hit = True
                     break
         if hit:
