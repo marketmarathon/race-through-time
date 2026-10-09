@@ -11,6 +11,8 @@ non-free files) and a `page` whose images are searched after the candidates (onl
 only if the downloaded SHA-1 equals the API's. Writes OUT_DIR/<id>.<ext> and OUT_DIR/manifest.csv (id, file, page,
 title, licence, author, restrictions, sha1, sha256, bytes, width, height). Prints only titles, names, sizes and
 hashes. Exit 1 if a required entry is missing or differs (entries with "optional": true may be missing).
+IQ-18f: an optional third argument lists the ids to fetch (comma-separated), e.g. bytedance,bytedance_company: nothing
+else is downloaded or rewritten, and the run's manifest is manifest_<ids>.csv.
 """
 import csv
 import hashlib
@@ -55,9 +57,12 @@ def plain(s):
 
 def main():
     spec, out = sys.argv[1], sys.argv[2]
+    only = sys.argv[3].split(',') if len(sys.argv) > 3 and sys.argv[3] else None   # IQ-18f: fetch only these ids
     os.makedirs(out, exist_ok=True)
     rows, bad = [], []
     for L in json.load(open(spec, encoding='utf-8'))['logos']:
+        if only and L['id'] not in only:
+            continue
         info, site = None, L.get('site')
         bad_t = lambda t: any(x.lower() in t.lower() for x in L.get('exclude', []))
         cands = list(L.get('candidates', []))
@@ -103,7 +108,8 @@ def main():
                      'sha1': s1, 'sha256': hashlib.sha256(b).hexdigest(), 'bytes': len(b),
                      'width': ii.get('width'), 'height': ii.get('height')})
         print('%s  %s  %d bytes  %s  licence: %s' % (rows[-1]['sha256'], name, len(b), title, rows[-1]['licence']))
-    with open(os.path.join(out, 'manifest.csv'), 'w', newline='', encoding='utf-8') as f:
+    # IQ-18f: a partial run writes its own manifest and leaves the files and manifest of the full run untouched
+    with open(os.path.join(out, 'manifest_%s.csv' % '_'.join(only) if only else 'manifest.csv'), 'w', newline='', encoding='utf-8') as f:
         w = csv.DictWriter(f, fieldnames=list(rows[0].keys()) if rows else ['id'], lineterminator='\n')
         w.writeheader()
         for r in rows:

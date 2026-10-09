@@ -12,6 +12,7 @@
 # Trigger: a push that changes this file or the fetch script on the IQ-18 branch, or by hand.
 # Run 2 (IQ-18b): Baidu the company's logo from its English Wikipedia page (Luke's answer 5 B; never the Baidu Cloud logo).
 # Run 3: run 2 took the page's lead photo (a building, not drawn); now File:Baidu.svg, logo titles only.
+# Run 4 (IQ-18f, Luke DEC-381): ByteDance the company's own logo ONLY (ONLY_IDS); every other logo file is left untouched.
 name: rtt103-assets
 
 on:
@@ -30,6 +31,7 @@ concurrency:
 env:
   PRIVATE_REPO: marketmarathon/race-through-time-private
   PRIVATE_BRANCH: claude/magical-einstein-hguyvv
+  ONLY_IDS: bytedance,bytedance_company
 
 jobs:
   fetch:
@@ -51,13 +53,13 @@ jobs:
           cd "$W/private"
           if git ls-remote --exit-code --heads origin "$PRIVATE_BRANCH" > /dev/null; then git checkout -q "$PRIVATE_BRANCH"; else git checkout -q -b "$PRIVATE_BRANCH" origin/main; fi
           cd "$GITHUB_WORKSPACE"
-          python3 scripts/rtt103_fetch_logos.py kits/rtt-103/logos.json "$W/private/assets/rtt-103/logos"
+          python3 scripts/rtt103_fetch_logos.py kits/rtt-103/logos.json "$W/private/assets/rtt-103/logos" "$ONLY_IDS"
           cd "$W/private"
           git config user.name "rtt103-assets workflow"
           git config user.email "rtt103-assets@users.noreply.github.com"
           git add assets/rtt-103/logos
           if git diff --cached --quiet; then echo "nothing new to commit"; exit 0; fi
-          git commit -q -m "RTT-103: company logos from Wikimedia Commons, SHA-1 checked (IQ-18; source run ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID})"
+          git commit -q -m "RTT-103: company logos from Wikimedia, SHA-1 checked (IQ-18/IQ-18f ${ONLY_IDS}; source run ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID})"
           git push -q origin "HEAD:$PRIVATE_BRANCH"
           echo "committed $(git rev-parse --short HEAD) to ${PRIVATE_REPO} ${PRIVATE_BRANCH}"
 

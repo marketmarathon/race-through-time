@@ -106,6 +106,67 @@
     "Wiki"
    ],
    "why": "IQ-18b (Luke's answer 5 B): Baidu the company's own logo, identification only; never the Baidu Cloud product logo"
+  },
+  {
+   "id": "bytedance",
+   "candidates": [
+    "File:ByteDance logo.svg",
+    "File:ByteDance Logo.svg",
+    "File:Bytedance logo.svg",
+    "File:ByteDance logo English.svg"
+   ],
+   "search": "ByteDance logo",
+   "exclude": [
+    "TikTok",
+    "Douyin",
+    "Toutiao",
+    "Lark",
+    "CapCut",
+    "Feishu",
+    "Doubao",
+    "Pico",
+    "Lemon8",
+    "Volcano",
+    "Xigua",
+    "Helo",
+    "Resso",
+    "Lark",
+    "Coze",
+    "Jianying",
+    "Musical"
+   ],
+   "optional": true,
+   "why": "IQ-18f (Luke, DEC-381): ByteDance the company's own logo, identification only, Commons first; never a product logo (TikTok, Douyin and the rest excluded)"
+  },
+  {
+   "id": "bytedance_company",
+   "site": "en.wikipedia.org",
+   "page": "ByteDance",
+   "candidates": [
+    "File:ByteDance logo.svg",
+    "File:ByteDance Logo.svg"
+   ],
+   "exclude": [
+    "TikTok",
+    "Douyin",
+    "Toutiao",
+    "Lark",
+    "CapCut",
+    "Feishu",
+    "Doubao",
+    "Pico",
+    "Lemon8",
+    "Volcano",
+    "Xigua",
+    "Helo",
+    "Resso",
+    "Lark",
+    "Coze",
+    "Jianying",
+    "Musical"
+   ],
+   "optional": true,
+   "why": "IQ-18f fallback if Commons has nothing usable: the logo on English Wikipedia's ByteDance article (non-free, identification only, as Baidu and RTT-001's logos)"
   }
  ],
  "fetched": {
