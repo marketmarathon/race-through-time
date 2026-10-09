@@ -401,11 +401,23 @@ review = {r["check_id"]: r for r in rd("review_decisions.csv")}  # Claude's read
 art_cites = defaultdict(list)
 for r in rd("player_article_citations.csv"):
     art_cites[r["transfer_id"]].append(r["url"])
-amount_rejects = {(r["transfer_id"], r.get("amount", "")) for r in review.values() if r["decision"] == "reject" and r.get("scope") == "amount"}
+# an "amount" rejection names the figure and, through its check ID ("...-3000GBP"), its currency: £30m rejected does not block €30m
+# (IQ-15h: Curtis Jones's guaranteed €30m and Mayenda's €22m had been blocked by rejections of £30m and £22m totals)
+_rej_cur = defaultdict(set)
+for r in review.values():
+    if r["decision"] == "reject" and r.get("scope") == "amount":
+        _m = re.search(r"\d(GBP|EUR|USD)$", r["check_id"])
+        _rej_cur[(r["transfer_id"], r.get("amount", ""))].add(_m.group(1) if _m else None)
+amount_rejects = set(_rej_cur)
+
+
+def amount_rejected(tid, amount, cur):
+    curs = _rej_cur.get((tid, amount))
+    return bool(curs) and (None in curs or cur in curs)
 checks = defaultdict(list)
 for c in rd("runner_checks.csv"):
     rv = review.get(c["check_id"])
-    if not rv and any((tid, c["amount"]) in amount_rejects for tid in [c["transfer_id"]]):
+    if not rv and amount_rejected(c["transfer_id"], c["amount"], c.get("currency") or "GBP"):
         rv = {"decision": "reject", "note": "the same figure was rejected for this deal on review"}
     if rv and rv["decision"] == "reject":
         c = dict(c, status="UNVERIFIED", result="REJECTED on review: " + rv["note"])
@@ -448,7 +460,7 @@ for t in transfers:
         for c in checks.get(u, []):
             if c["status"] != "VERIFIED" or not sn or L.norm(c.get("near", "")) != sn or c["amount"] not in amounts:
                 continue
-            if (t["transfer_id"], c["amount"]) in amount_rejects:
+            if amount_rejected(t["transfer_id"], c["amount"], c.get("currency") or "GBP"):
                 continue  # Claude rejected this figure for this deal on review (whatever page states it)
             if not soccerbase_row_ok(c, t["date"]):
                 continue  # another row of the player's Soccerbase table, or its career total
@@ -593,8 +605,8 @@ for t in transfers:
         e["total_incl_addons"] = bool(TOTAL_RX.search(e["fee_text"] or "")) and "guaranteed_part" not in p["qualifiers"]
         if re.search(r"sell-on|sell on", e["fee_text"] or "", re.I):
             e["total_incl_addons"] = True  # a sell-on payment to a former club is not this deal's fee (DEC-238 handles it)
-        e["figure_rejected"] = (t["transfer_id"], money(e["gbp"]) if e["gbp"] is not None else "") in amount_rejects or (
-            e["amount"] is not None and (t["transfer_id"], money(e["amount"])) in amount_rejects)
+        e["figure_rejected"] = (e["gbp"] is not None and amount_rejected(t["transfer_id"], money(e["gbp"]), "GBP")) or (
+            e["amount"] is not None and amount_rejected(t["transfer_id"], money(e["amount"]), e["currency"] or "GBP"))
         usable = (e["gbp"] is not None and "up_to" not in p["qualifiers"] and "combined" not in p["qualifiers"]
                   and not e["total_incl_addons"] and not e["figure_rejected"]
                   and not (wiki_undisclosed and e["grade"] in ("C", "D")))  # undisclosed: only an A/B reported figure (DEC-237 (g))
@@ -821,6 +833,62 @@ for t in transfers:
         t["tier"], t["tier_reason"] = "3", "under £2m"
     else:
         t["tier"], t["tier_reason"] = "", "no fee counted"
+# order test for the round 2 deals not researched (IQ-15h, DEC-419 (a)): does removing the fee, or using another version of it, change
+# the leader or who is in the top 12 at any month end? Written to source/round2_order_test.csv; those deals go to a later round
+_r2map = os.path.join(SRC, "source_round2_map.csv")
+if os.path.exists(_r2map):
+    _researched = set()
+    for _l in rd("leads_evidence.csv"):
+        _m = re.match(r"part2(?:2b|3g)-(R\d{4})-", _l["lead_row"])
+        if _m:
+            _researched.add(_m.group(1))
+    _tby = {t["transfer_id"]: t for t in transfers}
+
+    def _first_change(club_deltas, from_date):
+        for me in month_ends:
+            if me < from_date or me not in order_cache:
+                continue
+            base = order_cache[me]
+            if not any(c in club_deltas for c, _, _ in base):
+                continue
+            mod = sorted(((c, v - club_deltas.get(c, 0.0), rch) for c, v, rch in base), key=lambda x: (-x[1], x[2], x[0]))
+            if mod[0][0] != base[0][0]:
+                return me, "leader"
+            if {c for c, _, _ in mod[:12]} != {c for c, _, _ in base[:12]}:
+                return me, "top 12"
+        return "", ""
+
+    def _deltas(t, amount):
+        d, s_ = {}, t["season_attributed"]
+        if t["to_club_id"] and (t["to_club_id"], s_) in in_pl:
+            d[t["to_club_id"]] = amount
+        if t["from_club_id"] and (t["from_club_id"], s_) in in_pl:
+            d[t["from_club_id"]] = d.get(t["from_club_id"], 0) - amount
+        return d
+
+    _out = []
+    for _r in csv.DictReader(open(_r2map, encoding="utf-8")):
+        t = _tby.get(_r["transfer_id"])
+        if _r["deal_id"] in _researched or not t:
+            continue
+        f = t["fee_gbp"] or 0.0
+        res = ("", "")
+        how = ""
+        if f > 0:
+            res = _first_change(_deltas(t, f), t["date"])
+            how = "fee removed" if res[0] else ""
+            if not res[0]:
+                for alt in sorted({float(v) for v in t["fee_versions_gbp"].split(";") if v} - {f}):
+                    res = _first_change(_deltas(t, f - alt), t["date"])
+                    if res[0]:
+                        how = "another version of the fee"
+                        break
+        _out.append({"deal_id": _r["deal_id"], "transfer_id": t["transfer_id"], "player": t["player"], "date": t["date"],
+                     "season": t["season_attributed"], "fee_gbp": f"{f:.2f}", "could_change": "yes" if res[0] else "no",
+                     "first_month_end": res[0], "what_changes": res[1], "test": how})
+    with open(os.path.join(os.path.dirname(_r2map), "round2_order_test.csv"), "w", newline="", encoding="utf-8") as _fh:
+        _w = csv.DictWriter(_fh, fieldnames=list(_out[0].keys()) if _out else ["deal_id"], lineterminator="\n")
+        _w.writeheader(); _w.writerows(_out)
 tier3 = sorted(t["transfer_id"] for t in transfers if t["tier"] == "3")
 sample3 = set(rng.sample(tier3, max(1, round(len(tier3) * 0.05)))) if tier3 else set()
 for t in transfers:

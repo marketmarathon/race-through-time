@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """RTT-101 (IQ-15): write reports/RTT-101_data_report.md from the built data (deterministic).
 Usage: python3 scripts/rtt101_report.py [DATA_DIR] [REPORT_PATH]"""
-import csv, json, os, sys, urllib.parse
+import csv, json, os, re, sys, urllib.parse
 from collections import Counter, defaultdict
 
 D = sys.argv[1] if len(sys.argv) > 1 else "data/rtt-101"
@@ -592,3 +592,149 @@ if R2:
     with open(OUT, "a", encoding="utf-8") as f:
         f.write("\n".join(R) + "\n")
     print("section 13:", len(R2), "round 2 deals")
+
+# ---------------------------------------------------------------- source round 2 (IQ-15h): Claude helper research on the priority list
+BASE2 = rd("source_round2_baseline.csv", os.path.join(D, "source"))
+if BASE2:
+    from collections import Counter as _C3
+    LEADS = rd("leads_evidence.csv", os.path.join(D, "source"))
+    researched = sorted({re.match(r"part2(?:2b|3g)-(R\d{4})-", l["lead_row"]).group(1) for l in LEADS
+                         if re.match(r"part2(?:2b|3g)-(R\d{4})-", l["lead_row"])})
+    rs = set(researched)
+    B2 = [b for b in BASE2 if b["deal_id"] in rs]
+    DSR = {r["transfer_id"]: r for r in rd("deal_structure.csv", os.path.join(D, "source"))}
+    D404 = {r["transfer_id"]: r for r in rd("dec404_changes.csv", os.path.join(D, "source"))}
+    REJ2 = defaultdict(list)
+    for r in rd("review_decisions.csv", os.path.join(D, "source")):
+        if r["batch"].startswith("SR2-") and r["decision"] == "reject" and r["scope"] == "amount":
+            REJ2[r["transfer_id"]].append(f"£{float(r['amount']):,.0f} not counted: {r['note'].split('; weighed')[0]}")
+    rev2 = [r for r in rd("review_decisions.csv", os.path.join(D, "source")) if r["batch"].startswith("SR2-")]
+    tids = {b["transfer_id"] for b in B2}
+    v0 = sum(1 for b in B2 if b["status"] == "VERIFIED")
+    v1 = sum(1 for k in tids if TI.get(k, {}).get("status") == "VERIFIED")
+    vab = sum(1 for k in tids if TI.get(k, {}).get("status") == "VERIFIED" and TI[k]["grade"] in ("A", "B"))
+    chg, up, down = [], 0.0, 0.0
+    for b in B2:
+        t = TI.get(b["transfer_id"])
+        if not t:
+            continue
+        f0, f1 = float(b["fee_gbp"] or 0), float(t["fee_gbp"] or 0)
+        if abs(f1 - f0) >= 1 or b["date"] != t["date"]:
+            chg.append((b, t, f0, f1)); up += max(0.0, f1 - f0); down += max(0.0, f0 - f1)
+    fees = [c for c in chg if abs(c[3] - c[2]) >= 1]
+
+    def why2(t, f0, f1):
+        k = t["transfer_id"]
+        if k in DSR and DSR[k]["fee_amount"] != "" and ("IQ-15h" in DSR[k]["rule"] or "DEC-417" in DSR[k]["rule"]):
+            return DSR[k]["rule"]
+        if k in REJ2:
+            return "; ".join(REJ2[k])
+        if k in D404:
+            return "DEC-404: the report that the deal was completed beats an earlier bid, agreed or expected figure"
+        if abs(f1 - f0) < 1:
+            return "completion date from the grade B report"
+        if t["fee_status"].startswith("undisclosed"):
+            return "every A/B source calls the fee undisclosed: counted £0 (DEC-237 (g), DEC-408 (a))"
+        return f"confirmed at source ({t['grade']}, {urllib.parse.urlparse(SRC_URL.get(t['canonical_source_id'], '')).netloc})" if t["status"] == "VERIFIED" \
+            else f"higher-ranked figure now on file (not yet confirmed at source; {t['grade']})"
+
+    R = ["\n## 14. Source round 2: the priority deals (IQ-15h; DEC-419 to DEC-421)\n",
+         f"- **Inputs:** ChatGPT instalment 1 (R0001–R0030, private part22b) and the Claude helper research on the 323 priority deals (part23g = part22c + "
+         "part23a–f, 992 rows): every data file's SHA-256 matched `00_README.md` (the prompt and the helper instructions have no recorded hash). "
+         f"Rows attached to their deals through `source/source_round2_map.csv`; **{len(rs)} deals researched**. Aggregator, scores and blog sites count as "
+         "grade C whatever the file says; Ajax's acc-english pages were read at english.ajax.nl.",
+         "- **Checked at source:** all 1,015 cited pages read on the runner "
+         "(https://github.com/marketmarathon/race-through-time/actions/runs/37888858665): 886 loaded; 42 not found, 41 refused, 13 server errors (including "
+         "West Ham's club pages), 15 timed out. A figure counts only when it sits next to the player's name and the page names both clubs, so a helper "
+         "quote that the page does not carry is never used.",
+         f"- **Quotes read:** {len(rev2)} newly confirmed quotes ({sum(1 for r in rev2 if r['decision'] == 'reject')} rejected: another deal's figure, a "
+         "valuation or a garbled currency on the page, a maximum, a total with add-ons, a buy-back clause, a range, or a package including an unvalued player).",
+         f"- **VERIFIED:** {v1} of the {len(tids)} researched transfers now have a fee confirmed at source ({vab} by a club, league or press source), "
+         f"up from {v0} before this round.",
+         f"- **Changed:** {len(fees)} fees changed (£{up / 1e6:.1f}m up, £{down / 1e6:.1f}m down; net {m(up - down)}) and "
+         f"{sum(1 for c in chg if c[0]['date'] != c[1]['date'])} completion date(s) moved.\n",
+         "| Deal | Player | Move | Date before → after | Fee before | Fee after | Why |", "|---|---|---|---|---|---|---|"]
+    for b, t, f0, f1 in sorted(chg, key=lambda c: c[0]["deal_id"]):
+        R.append(f"| {b['deal_id']} | {t['player']} | {clubs.get(t['from_club'], t['from_club'])} → {clubs.get(t['to_club'], t['to_club'])} | "
+                 f"{b['date']}{' → ' + t['date'] if b['date'] != t['date'] else ''} | £{f0:,.0f} | £{f1:,.0f} | {why2(t, f0, f1)[:150]} |")
+    R += ["\n**Deal structures applied in round 2** (`source/deal_structure.csv`):\n", "| Player | Fee booked | Rule | Note |", "|---|---|---|---|"]
+    for r in rd("deal_structure.csv", os.path.join(D, "source")):
+        if "IQ-15h" in r["rule"] or "IQ-15h" in r["note"]:
+            R.append(f"| {r['player']} | {('£{:,.0f}'.format(float(r['fee_amount']))) if r['fee_amount'] != '' else 'date only: ' + r['date']} | "
+                     f"{r['rule']} | {r['note'][:160]} |")
+    # maximum/approximation-only deals (DEC-276) on the priority list
+    z = [(b, TI[b["transfer_id"]]) for b in B2 if not float(b["fee_gbp"] or 0) and b["transfer_id"] in TI]
+    R += [f"\n**Deals counted £0 because only a maximum or an approximation had been found (DEC-276): {len(z)} on the priority list.**\n",
+          "| Deal | Player | Now | Status | Basis |", "|---|---|---|---|---|"]
+    for b, t in sorted(z, key=lambda x: x[0]["deal_id"]):
+        R.append(f"| {b['deal_id']} | {t['player']} | £{float(t['fee_gbp'] or 0):,.0f} | {t['status']} | {t['fee_status'][:110]} |")
+    # windows
+    WB = {w["window"]: w for w in rd("window_totals_before_source_round2.csv", os.path.join(D, "source"))}
+    R += ["\n**League-wide spending by window** (before = commit 4b0f91c; windows that moved by £0.1m or more; published totals from part17b are "
+          "research leads, UNVERIFIED):\n", "| Window | Gross before | Gross after | Change | Published gross | Net before | Net after |", "|---|---|---|---|---|---|---|"]
+    tb = ta = 0.0
+    for win in sorted(set(WB) | set(WT), key=wkey):
+        a, b0 = WT.get(win, {}), WB.get(win, {})
+        ga, gb = float(a.get("gross_spend_gbp") or 0), float(b0.get("gross_spend_gbp") or 0)
+        tb += gb; ta += ga
+        if abs(ga - gb) >= 1e5:
+            pub = next((r for r in sorted(lead_by.get(win, []), key=lambda r: r["grade"]) if r["gross_gbp"]), None)
+            R.append(f"| {win} | {m(gb)} | {m(ga)} | {m(ga - gb)} | {(m(pub['gross_gbp']) + ' (' + pub['grade'] + ')') if pub else '—'} | "
+                     f"{m(b0.get('net_spend_gbp'))} | {m(a.get('net_spend_gbp'))} |")
+    R.append(f"\nTotal gross, all windows: {m(tb)} before, {m(ta)} after ({m(ta - tb)}).")
+    # leader and top 12
+    TB = {r["month_end"]: r["top12_in_rank_order"].split(";") for r in rd("top12_before_source_round2.csv", os.path.join(D, "source"))}
+    now = defaultdict(list)
+    for r in SM:
+        if r["rank"] and int(r["rank"]) <= 12:
+            now[r["month_end"]].append((int(r["rank"]), r["club_id"]))
+    NOW = {mo: [c for _, c in sorted(v)] for mo, v in now.items()}
+    lead_ch = [mo for mo in sorted(NOW) if TB.get(mo) and TB[mo][0] != NOW[mo][0]]
+    set_ch = [mo for mo in sorted(NOW) if TB.get(mo) and set(TB[mo]) != set(NOW[mo])]
+    R.append(f"\n**Effect on the race** (against the build at 4b0f91c): the leader changes at {len(lead_ch)} month ends"
+             + (" (" + "; ".join(f"{mo[:7]}: {NAME.get(TB[mo][0], TB[mo][0])} → {NAME.get(NOW[mo][0], NOW[mo][0])}" for mo in lead_ch[:20]) + (" …" if len(lead_ch) > 20 else "") + ")" if lead_ch else "")
+             + f"; who is in the top 12 changes at {len(set_ch)} month ends"
+             + (" (" + "; ".join(f"{mo[:7]}: in {', '.join(NAME.get(c, c) for c in sorted(set(NOW[mo]) - set(TB[mo])))}, out "
+                                 f"{', '.join(NAME.get(c, c) for c in sorted(set(TB[mo]) - set(NOW[mo])))}" for mo in set_ch[:12]) + (" …" if len(set_ch) > 12 else "") + ")" if set_ch else "")
+             + ". " + "Final point: " + ", ".join(f"{NAME.get(c, c)} {m(next(float(r['cum_net_gbp']) for r in SM if r['month_end'] == max(NOW) and r['club_id'] == c))}" for c in NOW[max(NOW)][:3]) + ".")
+    # still unverified among the researched deals
+    unv = sorted((TI[k] for k in tids if TI.get(k, {}).get("status") != "VERIFIED" and float(TI[k]["fee_gbp"] or 0) > 0),
+                 key=lambda t: -float(t["fee_gbp"]))
+    R += [f"\n**Still UNVERIFIED among the researched deals: {len(unv)}** (their fee is a preview, not for screen; mostly pages the runner could not "
+          "load or that do not name both clubs). The largest:\n", "| Player | Move | Date | Fee in use | Grade |", "|---|---|---|---|---|"]
+    for t in unv[:25]:
+        R.append(f"| {t['player']} | {clubs.get(t['from_club'], t['from_club'])} → {clubs.get(t['to_club'], t['to_club'])} | {t['date']} | £{float(t['fee_gbp']):,.0f} | {t['grade']} |")
+    # order test on the unresearched deals
+    OT = rd("round2_order_test.csv", os.path.join(D, "source"))
+    yes = [r for r in OT if r["could_change"] == "yes"]
+    R += [f"\n**Order test on the {len(OT)} round 2 deals not researched** (`source/round2_order_test.csv`; the Tier 1 test of DEC-256: does removing the fee, "
+          f"or using another version of it, change the leader or who is in the top 12 at any month end?): **{len(yes)} could** "
+          f"({sum(1 for r in yes if r['what_changes'] == 'leader')} the leader, the rest a top-12 place) and go to a later round; {len(OT) - len(yes)} could not. "
+          "By season: " + ", ".join(f"{k} {v}" for k, v in sorted(_C3(r["season"] for r in yes).items())) + ".\n",
+          "Deals that could change the leader:\n", "| Deal | Player | Date | Fee in use | First month end affected |", "|---|---|---|---|---|"]
+    for r in sorted((r for r in yes if r["what_changes"] == "leader"), key=lambda r: r["date"]):
+        R.append(f"| {r['deal_id']} | {r['player']} | {r['date']} | £{float(r['fee_gbp']):,.0f} | {r['first_month_end']} |")
+    R += ["\n**Decided under DEC-417 (Claude, DEC-420; details in `state/DECISIONS.md`)**\n",
+          "1. Aggregator, scores and blog sites count as grade C; agency copies and regional papers stay B as the helpers graded them.",
+          "2. A rejected figure no longer blocks the same number in another currency (Curtis Jones's guaranteed €30m and Mayenda's €22m had been blocked by "
+          "rejections of £30m and £22m totals).",
+          "3. Earlier rejections re-weighed against the new leads: Bent, Gyan, Gordon and Brughmans still have only totals or bounds (£0 under DEC-276); "
+          "Crouch 2009, Benítez, Ings, Mateus Fernandes and João Pedro to Chelsea keep their guaranteed figures; João Pedro to Brighton now counts the "
+          "£30m 'understood' (a reported figure for an undisclosed fee).",
+          "4. Guaranteed fee where the completion report gives it: Xhaka £25m initial (was £35m), Sané, Álvarez, Mané, Leon Bailey, Emiliano Martínez (£17m reported, not the £20m with add-ons), Arnautović, "
+          "Matić 2017, Strand Larsen, Skipp, Semenyo 2023, Mamardashvili, Ugarte, Šeško, Núñez to Al Hilal, Thiaw, Negredo.",
+          "5. Exchanges: Jeffrey counts the whole £60,000 deal with Roche valued at £25,000 (as for Cole, DEC-407); Pitcher counts £50,000 cash with Whyte "
+          "and Mortimer at £0; Rutter (initial fee only as a range) and Brughmans (only 'up to') stay £0; Sereni stays £0 (Sky's pre-completion £4.5m against "
+          "'exceeded the £4.57m'); Daley's date is the completion report's (31 May 1994).",
+          "6. Mikel (2006): kept at £16m on the Manchester United → Chelsea move (£12m to United and £4m to Lyn, one payment for one registration); "
+          "Chelsea's spend is exact and United's income is £4m too high until the build can book a payment to a third club.",
+          "\n**For Luke (DEC-417 leaves this to him: it changes who leads)**\n",
+          "1. **Nastasić (Fiorentina → Manchester City, Aug 2012).** The only figure found is \"£12m — including Stefan Savic as a makeweight\"; Savić is not "
+          "valued and City called the fee undisclosed. Under the part-exchange rule the cash is unknown, so the build counts £0 for now, and that puts "
+          "Chelsea ahead of Manchester City from September to December 2015 (by £3.5m). *Recommendation:* count the £12m package as Nastasić's fee with "
+          "Savić at £0, the closest figure to what City paid (it overstates City's outlay by Savić's unknown value rather than understating it by the cash), "
+          "and ask the next round for the cash part.",
+          "\n**Worth knowing:** from March to June 2003 Manchester United lead Newcastle United by about £10,000, so any small correction can swap them."]
+    with open(OUT, "a", encoding="utf-8") as f:
+        f.write("\n".join(R) + "\n")
+    print("section 14:", len(rs), "deals researched;", v0, "->", v1, "VERIFIED;", len(fees), "fees changed;", len(lead_ch), "leader changes;", len(yes), "order-test deals")

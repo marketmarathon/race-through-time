@@ -22,6 +22,9 @@ canon = lambda ev, tid: next((e for e in ev.values() if e["transfer_id"] == tid 
 lists = {}
 for r in rd(f"{D}/source/source_round1_map.csv"):
     lists.setdefault(r["transfer_id"], "source round 1 list " + ("A" if r["deal_id"].startswith("A") else "B"))
+if os.path.exists(f"{D}/source/source_round2_map.csv"):
+    for r in rd(f"{D}/source/source_round2_map.csv"):
+        lists.setdefault(r["transfer_id"], "source round 2")
 # the 32 phase 2 same-grade conflicts settled by DEC-277 (conflicts.csv as committed at the end of IQ-15e, c62ca6b)
 base = subprocess.run(["git", "show", "c62ca6b:data/rtt-101/conflicts.csv"], capture_output=True, text=True, check=True).stdout
 phase2 = {r["transfer_id"] for r in csv.DictReader(base.splitlines()) if r.get("rule_result")}

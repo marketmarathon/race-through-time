@@ -95,6 +95,12 @@ for fn, sec in FILES:
             continue  # repeat of a section B row: matched by source, not added
         g, gn = grade(r)
         q = (r.get("exact_quote") or "").strip()
+        if len(q.split()) >= 25:
+            # quotes stay under 25 words (contract): keep the 22 words around the first figure, marking the cuts
+            ws = q.split()
+            k = next((n for n, w_ in enumerate(ws) if re.search(r"[£€$]|\d", w_)), 0)
+            a = max(0, min(k - 10, len(ws) - 22))
+            q = ("[…] " if a > 0 else "") + " ".join(ws[a:a + 22]) + (" […]" if a + 22 < len(ws) else "")
         rid = r.get("evidence_id") or r.get("record_id")
         if sec in ("G", "S"):
             rid = fn.split("_")[0] + "-" + rid  # e.g. part18b-A0001 (gap-list rows reuse letters used elsewhere)
