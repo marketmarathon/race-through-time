@@ -1,0 +1,13 @@
+# RTT-102 private assets read by .github/workflows/rtt102_pilot.yml - SHA-256 checked before any render (DEC-060, DEC-061).
+# Files live only in marketmarathon/race-through-time-private (logos: branch claude/relaxed-clarke-9e0sqq until merged); never committed here.
+# Assistant logos: identification only; sources, licences and status in kits/rtt-102/logos.json and reference/rights_ledger.md.
+e3db46119b52648c84eae5f6acd682bd7be855819818856e695592b20572eeca  assets/rtt-002/rtt_logo.png
+a66ba245fc68677ae1a47a5f726d60d691e4c8d5942028328dc2beb3b8ceb4dc  assets/rtt-102/logos/chatgpt.svg
+cda2df6631d5fa227de3fa04ed78cf354f910ba92a9f086e7455655c10ad9d09  assets/rtt-102/logos/gemini.svg
+b76cb07f34c52ef4dd45fa12fc96fff9054e9d5ad92244e19836cbcd5dc264c4  assets/rtt-102/logos/bard.svg
+5de1221c77cc91e748066fd642ad0eee1c1fa65328814f5178166f901e599709  assets/rtt-102/logos/claude.svg
+c7525bb43370b940c67805321b91fe00c83cb5330e0baf83f766e491a555a9b7  assets/rtt-102/logos/copilot.svg
+917fdfb11cd6a16f3097343dd187ae980d8e8d6fad9a948386cca67c1087abc5  assets/rtt-102/logos/perplexity.png
+5afe2e9fb26acff7359763b694eb3577f7a9098dec1257a3fc6da1a4d52c050f  assets/rtt-102/logos/deepseek.svg
+27c620b0133d57215075b045560ea8fb234a24aaab3e42af1ba89ad84e34075a  assets/rtt-102/logos/grok.svg
+bfc4f84fc218eabad117762dc4990cbcf645ee7197526be2864ccfeb0f395b0f  assets/rtt-102/logos/meta_ai.png

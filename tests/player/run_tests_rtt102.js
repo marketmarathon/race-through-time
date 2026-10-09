@@ -24,7 +24,7 @@
  *   8. layout: no label outside the frame; title, source line and note line clear of the date block and logo box
  *   9. colours: no two assistants closer than CIEDE2000 18 as drawn (DEC-023); colour-blind (protan, deutan) minimum
  *      reported
- *  10. pacing: each month (or quarter) counts over 0.8-1.4 x its base
+ *  10. pacing: each month (or quarter) counts over 0.8-1.4 x its base (to the whole frame)
  *  11. eased vs straight lines: the month-end order of every place (1st to 8th) compared month by month (report only)
  * Results: tests/player/RESULTS_RTT102.md. Exit 1 on any failure.
  *
@@ -178,8 +178,8 @@ async function runCase(name, C) {
   for (const [at, s] of Object.entries(lateness)) notes.push(`card dated ${at.slice(0, 7)} first on screen ${s.toFixed(1)} s after its month starts`);
   // 10. pacing
   const base = cfg.pacing.sec_per_event;
-  for (let i = 0; i + 1 < tl.startFrame.length; i++) { const s = (tl.startFrame[i + 1] - tl.startFrame[i]) / 30 / base;
-    if (s < 0.8 - 1e-6 || s > 1.4 + 1e-6) fail(`pacing: event ${i} lasts ${s.toFixed(2)} x base`); }
+  for (let i = 0; i + 1 < tl.startFrame.length; i++) { const n = tl.startFrame[i + 1] - tl.startFrame[i];   // whole frames: one frame of rounding allowed
+    if (n < 0.8 * base * 30 - 1 || n > 1.4 * base * 30 + 1) fail(`pacing: event ${i} lasts ${(n / 30 / base).toFixed(2)} x base`); }
   await br.close();
   return { name, config: C.config, frames: total, fails, notes };
 }

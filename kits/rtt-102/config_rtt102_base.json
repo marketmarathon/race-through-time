@@ -150,7 +150,17 @@
  "pictures": {
   "enabled": true,
   "dir": "logos",
-  "files": {},
+  "files": {
+   "chatgpt": "chatgpt.svg",
+   "gemini": "gemini.svg",
+   "bard": "bard.svg",
+   "claude": "claude.svg",
+   "copilot": "copilot.svg",
+   "perplexity": "perplexity.png",
+   "deepseek": "deepseek.svg",
+   "grok": "grok.svg",
+   "meta_ai": "meta_ai.png"
+  },
   "tile": true,
   "tile_pad": 6,
   "placeholder": false,
