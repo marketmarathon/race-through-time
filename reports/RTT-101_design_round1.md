@@ -1,14 +1,14 @@
 # RTT-101 Premier League net transfer spend — design round 1 (IQ-21, 10 Oct 2026)
 
-Brief: `prompts/CODE_SESSION_IQ-21.md`. Decisions: DEC-700 (owner: crests) and DEC-701 to DEC-713 (Claude). Kit: `kits/rtt-101/README.md`. Private pre-release with every still, sheet and clip: see DEC-713 and `state/STATE.json` (`episodes[RTT-101].design_round1`). **Preview figures**: `series_onscreen.csv` (VERIFIED fees only, DEC-448) as merged from pull request #19 at IQ-15n (413b60a); the Tier 1 checks may still change them. Nothing here is approved (DEC-069).
+Brief: `prompts/CODE_SESSION_IQ-21.md`. Decisions: DEC-700 (owner: crests) and DEC-701 to DEC-713 (Claude). Kit: `kits/rtt-101/README.md`. Private pre-release with every still, sheet and clip: https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-101-round1-bcd9d15-run3 (DEC-713; SHA-256 in its notes and in `state/STATE.json`). **Preview figures**: `series_onscreen.csv` (VERIFIED fees only, DEC-448) as merged from pull request #19 at IQ-15n (413b60a); the Tier 1 checks may still change them. Nothing here is approved (DEC-069).
 
 ## What the round shows (one contact sheet per item)
 
 | Item | Options shown | Claude's recommendation |
 |---|---|---|
 | a. Title | A "Premier League Net Transfer Spend (1992–2026)"; B "The Premier League's Biggest Spenders (1992–2026)"; C "Premier League Spending Race (1992–2026)"; each with the measure and "undisclosed fees not included" in the line under it; and A with "undisclosed…" in the footer instead | A, with "undisclosed fees not included" in the line under the title (readable on a phone, 6.1 pt; in the footer it is 5.3 pt and sits where YouTube's controls are) |
-| b. Board size | 10, 12 and 15 bars at phone size on June 2003, August 2015 and the freeze | 12 (DEC-704): 30 clubs ever reach it; no bar below zero (15 bars: 33 bar-months below zero in 1992–93) |
-| c. Value labels | compact "£1.74bn" / "£683m" / "£45.3m" vs millions with one decimal "£1,740.4m"; near-ties with and without extra decimals | compact; extra decimals is Luke's call (DEC-705) |
+| b. Board size | 10, 12 and 15 bars at phone size on June 2003, August 2015 and the freeze | 12 (DEC-704): 30 clubs ever reach it; no bar below zero; names 6.9 pt on a phone (15 bars: names 5.7 pt, below the 5.9 pt floor, and 33 bar-months below zero in 1992–93) |
+| c. Value labels | compact "£1.74bn" / "£683m" / "£45.3m" vs millions with one decimal "£1,740.4m"; near-ties with and without extra decimals | compact; extra decimals is Luke's call (DEC-705: two first-place near-ties, Aug 1993 and Jul 2022; the sheet's Aug 2008 example shows no tie on the current data) |
 | d. Out of the PL | dimmed + "· relegated 2009"; dimmed + "· not in the PL"; dimmed only; the return in 2010 (and a clip, May 2009 to Sep 2010) | dimmed + "· relegated 2009" (exact; the year is the end of the club's last PL season) |
 | e. Colours, crests | kit colours (shaded, second-colour edge) vs a distinct palette on the busiest board (Aug 2017) and the freeze; colour-blind simulations; today's crest vs the crest in use at the date; tile vs no tile | Luke's call on colours (DEC-706); today's crest on the light tile |
 | f. Pacing | clips of June 2003 – September 2004 at A 0.5 s a month, B house multipliers, C 0.25 s in months with no open window | C (DEC-707): A 3 min 32 s, B 3 min 52 s, C 2 min 59.5 s |
