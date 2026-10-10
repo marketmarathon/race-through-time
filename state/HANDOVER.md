@@ -1,4 +1,50 @@
-# HANDOVER — 9 Oct 2026 (Claude Code cloud session: IQ-18g, RTT-103 film APPROVED; chapter times). IQ-18f, IQ-18e, round 3 (IQ-18c/18d), round 2 (IQ-18b) and round 1 (IQ-18) notes follow, then the RTT-103 data stages, then pull request #18's RTT-001 notes and earlier sessions.
+# HANDOVER — 10 Oct 2026 (Claude Code cloud session IQ-19h: pull request #23 brought up to date with main after Luke merged #18 and #22). RTT-102 sections first (IQ-19 to IQ-19h, this branch), then RTT-103 as on main (IQ-18g back to round 1), then the RTT-103 data stages, pull request #18's RTT-001 notes and earlier sessions.
+
+## Pull request #23 up to date with main (IQ-19h, 10 Oct 2026) — Luke can merge #23 now
+- Brief `prompts/CODE_SESSION_IQ-19h.md`. `origin/main` (merge commit `7705838`: #18 and #22) merged into `claude/relaxed-clarke-9e0sqq`; only the three state files conflicted, both sides kept (every DEC from main and from this branch, in number order, none renumbered; RTT-103 as on main, RTT-102 as on this branch). No DEC recorded (no choice needed); **next free RTT-102 number still DEC-574**.
+- #23 contains #21's branch (`b04f33a`), so merging #23 also merges #21. Nothing in this merge touches a workflow that runs on this branch, so the push started no render.
+- Checked after the push: GitHub shows #23 as mergeable with no conflicts (`clean`); `run_tests_rtt102.js` 3/3 PASS; `compare_frames.js` against main: 84 frames of RTT-001/002/003/103 pixel-identical.
+- **Private repo:** branch `claude/relaxed-clarke-9e0sqq` holds only the RTT-102 logos (`b808d9d`, `f2c1d04`: 26 files under `assets/rtt-102/logos/`), has no pull request yet and merges cleanly into private main as it is. It should be merged there so the logos stay on main (the film workflow already falls back to main).
+
+## RTT-102 — film APPROVED (IQ-19g, 9 Oct 2026) — next: packaging in Cowork
+- **Same branch and pull request** https://github.com/marketmarathon/race-through-time/pull/23 (not merged, DEC-057; merge order #18, #22, #21, then #23). Brief `prompts/CODE_SESSION_IQ-19g.md`. Owner DEC-573: Luke approved the master `rtt102_film_8f49737_3840x2160.mp4` (private pre-release `rtt-102-film-8f49737-run1`), SHA-256 `8aa8ecbec90336b8faafae1054dcbdce81faa8216d46088211281e0e34416bad`; Cowork checked GitHub's asset digests against both recorded SHA-256s. **Next free RTT-102 number: DEC-574.**
+- **Next:** packaging is drafted in Cowork (no files needed from Code; `kits/rtt-102/youtube_times.md` and `description_credits.md` are there to use). Luke uploads as Private and publishes only on his explicit yes. Nothing goes to YouTube from Claude.
+- **Rules for the next session:** any change to the film is a design change (DEC-069) and needs a fresh render and a fresh approval (DEC-078). The release notes' line "played once from its start, no loop" is a workflow fallback; DEC-570 (from 10.5 s, no loop) is the correct record (DEC-573). Do not edit the release. In the next film workflow, and in `rtt102_film.yml` if RTT-102 is ever re-rendered, word that fallback from the music record's `start_sec` (e.g. "played once from <start_sec> s, no loop"); do not edit `rtt102_film.yml` otherwise, because a push that changes it starts a render.
+
+## RTT-102 — full film with music (IQ-19f, 9 Oct 2026) — awaiting Luke's approval of the master by SHA-256
+- **Same branch and pull request** https://github.com/marketmarathon/race-through-time/pull/23 (not merged, DEC-057; merge order #18, #22, #21, then #23). Brief `prompts/CODE_SESSION_IQ-19f.md`. Owner DEC-568 (music "Glitcher" by Dyalla, YouTube Audio Library), DEC-569 (5 s final table becomes the house default for later films; approved films unchanged); Claude DEC-570 (music starts at 10.5 s, on the drop; no loop), DEC-571 (workflow, `youtube_times.md`), DEC-572 (the render: release, SHA-256s, loudness, WCAG). **Next free RTT-102 number: DEC-573.**
+- **Built:** `kits/rtt-102/music_rtt102.json`, `.github/workflows/rtt102_film.yml` (runs on a push that changes it, or by hand; renders `config_rtt102_film.json` unchanged), `kits/rtt-102/youtube_times.md` (moments, chapters, final table and panel values for the description). Rights ledger and house style updated.
+- **Watch this:** https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-102-film-8f49737-run1 (run https://github.com/marketmarathon/race-through-time/actions/runs/37964960456). Master `rtt102_film_8f49737_3840x2160.mp4` SHA-256 `8aa8ecbec90336b8faafae1054dcbdce81faa8216d46088211281e0e34416bad` (44,135,567 bytes); viewing copy `rtt102_film_8f49737_1920x1080_viewing.mp4` SHA-256 `bbf4e5e626f72ef6ca1406ac264635bd95404778ca2eebb0fd0343d35af97c06` (7,805,053 bytes); both 77.767 s, −16.0 LUFS, true peak −4.1 dBTP. Whole-film WCAG flash check PASS (9,299 px of 57,600).
+- **Rules for the next RTT-102 session:** if Luke approves the master by its SHA-256, record it as an owner DEC from DEC-573 and set the state to APPROVED; nothing goes to YouTube from Claude. If he asks for changes, they are design changes (DEC-069): stills first, then a fresh render and a fresh approval. A re-render goes through `rtt102_film.yml` only (a push that changes it, or a manual run). Never change a figure; never use Similarweb's paid platform (DEC-531).
+
+## RTT-102 — look APPROVED (IQ-19e, 9 Oct 2026) — awaiting Luke's music track
+- **Same branch and pull request** https://github.com/marketmarathon/race-through-time/pull/23 (not merged, DEC-057; merge order #18, #22, #21, then #23). Brief `prompts/CODE_SESSION_IQ-19e.md`. Owner DEC-566 (look approved at 1.5 s per month; no long hang at the end: 5 s from August 2026's landing to the last frame), Claude DEC-567. **Next free RTT-102 number: DEC-568.**
+- **The film config** `kits/rtt-102/config_rtt102_film.json`: **2,333 frames = 1 min 17.8 s** without music; `pacing.final_board_sec` 6.1667 gives exactly 150 frames (5.0 s) of still final board after August 2026 lands (`pacing.final_after_landing_sec: 5`, checked by `run_tests_rtt102.js`). No render since round 2 revised (`rtt-102-round2b-69f397d-run3`).
+- **Rules for the next RTT-102 session (the film):** when Cowork sends Luke's track with its SHA-256, add `kits/rtt-102/music_rtt102.json` (private path, SHA-256, length, loop points from `scripts/rtt_music_loop.py` if the film is longer than the track) and a new `.github/workflows/rtt102_film.yml` modelled on `rtt103_film.yml`: music fetched from the private repo and hash-checked, looped on the beat with crossfades if needed, **faded out over the last 5 s** (from August 2026's landing frame, DEC-566), −16 LUFS integrated, true peak ≤ −1 dBTP; WCAG flash check of the whole film first; 3840 × 2160 master plus 1920 × 1080 copy; private pre-release with every SHA-256; render `config_rtt102_film.json` unchanged; Luke approves the exact master by SHA-256 (DEC-078). Record from DEC-568. Never change a figure; never use Similarweb's paid platform (DEC-531). The 5 s ending is RTT-102's own; do not change the house default unless Luke decides it.
+
+## RTT-102 — round 2 revised (IQ-19d, 9 Oct 2026) — look approved by Luke (above)
+- **Same branch and pull request** https://github.com/marketmarathon/race-through-time/pull/23 (not merged). Brief `prompts/CODE_SESSION_IQ-19d.md`. Owner DEC-562 (eased through every month of the data), DEC-563 (taller panel line); Claude DEC-564 (how), DEC-565 (record). (next free number then DEC-566; now see the approved look above).
+- **Watch this:** https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-102-round2b-69f397d-run3 (run https://github.com/marketmarathon/race-through-time/actions/runs/37903776272): stills Feb 2024, Aug 2024, Feb 2025, Oct 2025, Aug 2026 (each also at phone size), one sheet, the clip October 2024 → end (51.3 s).
+- **Changes:** `config_rtt102_film.json` `smoothing.knots: "all"` (every month of series_monthly.csv is a knot, so every landing frame = the file; no month-end order differs from straight lines) and `combined.y` 680 / `combined.h` 260 (panel line 66 px). Film 2,448 frames = 1 min 21.6 s.
+- **Tests:** run_tests_rtt102.js 3/3, phone_check_rtt102.js 5/5, compare_frames.js 84 frames pixel-identical, WCAG flash PASS on the clip. Rules for the next session as in round 2 below (record from DEC-566).
+
+## RTT-102 — design round 2 (IQ-19b, IQ-19c, 9 Oct 2026) — awaiting Luke's look at the clip
+- **Same branch and pull request** https://github.com/marketmarathon/race-through-time/pull/23 (not merged, DEC-057; merge order #18, #22, #21, then #23). Briefs: `prompts/CODE_SESSION_IQ-19b.md`, `prompts/CODE_SESSION_IQ-19c.md`. Decisions DEC-543..DEC-554 (owner: round-1 answers; title B "ChatGPT vs Its Rivals (2022–2026)", panel A, no closing line), DEC-555 (Cowork's fixes), DEC-556..DEC-561 (Claude). (next free number then DEC-562; now see round 2 revised above). #22 has moved on since this branch merged it (IQ-18f, RTT-103 files only; no shared player change); not merged again here.
+- **Private pre-release (watch this):** https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-102-round2-1a8e17e-run2 (run https://github.com/marketmarathon/race-through-time/actions/runs/37897071737): the clip October 2024 → end (51.9 s, no audio), 12 stills each also at phone size, sheets `r2_sheet_c_panel` and `r2_sheet_fixes`; every SHA-256 in the notes and `state/STATE.json` (`RTT-102.design_round2`).
+- **The design:** `kits/rtt-102/config_rtt102_film.json` (2,466 frames = 1 min 22.2 s without music): eased, monthly at 1.5 s, stripes until the first current figure lands with the note only while stripes show (DEC-556), two significant figures for any number that is not a published figure (DEC-557), the combined monthly visits panel and the two plain drop-out lines (DEC-558), logos (Bard's while "Bard"), no cards, no closing line.
+- **Tests:** `run_tests_rtt102.js` 3/3 (film, film with straight lines, clip; new checks for fixes (a), (b) and the panel sums), `phone_check_rtt102.js` 12/12, `compare_frames.js` 84 frames of RTT-001/002/003/103 pixel-identical, data tests 24/24, WCAG flash PASS on the clip.
+- **Rules for the next RTT-102 session:** when Luke approves the look, add `kits/rtt-102/music_rtt102.json` for his track and a new `.github/workflows/rtt102_film.yml` modelled on `rtt103_film.yml` (music hash-checked, looped on the beat, −16 LUFS, true peak ≤ −1 dBTP, WCAG flash check of the whole film first, 4K master + 1080p copy, private pre-release); render from `config_rtt102_film.json` unchanged unless Luke asks; he approves the exact file by SHA-256 (DEC-078). Record from DEC-562. Never change a figure; never use Similarweb's paid platform (DEC-531).
+
+## RTT-102 — design round 1 (IQ-19, 9 Oct 2026) — answered by Luke 9 Oct 2026 (round 2 above)
+- **Branch** `claude/relaxed-clarke-9e0sqq` (public and private), pull request https://github.com/marketmarathon/race-through-time/pull/23 (not merged, DEC-057). It starts from #21's branch with #22's merged in (DEC-533), so **Luke merges #18, then #22, then #21, then this one**. Brief: `prompts/CODE_SESSION_IQ-19.md`. Decisions DEC-531, DEC-532 (owner: Similarweb's paid platform not a source, the race ends in August 2026; start the design round) and DEC-533..DEC-542 (Claude). (next free number then DEC-543; now see round 2 above).
+- **Private pre-release (watch this):** https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-102-round1-b73a5e8-run1 (run https://github.com/marketmarathon/race-through-time/actions/runs/37889983731): one contact sheet per item (a–j), 30 stills each also at phone size, 8 clips (e: 2024 straight vs eased; f: Oct 2024 – Jun 2025 with a monthly and a quarterly clock at three speeds each); every SHA-256 in the release notes and `state/STATE.json` (`RTT-102.design_round1`).
+- **Built:** `kits/rtt-102/` (README there): `scripts/rtt102_adapter.py` → `race_rtt102.json` (kind "visits", Dec 2022 – Aug 2026; Copilot and Meta AI held at their last figure after it, DEC-535); base config = Claude's recommendation for each item; option configs and stills.json overrides; logos fetched by `rtt102_assets.yml` (private commit `b808d9d`, DEC-541). Shared player: the visits kind behind the race kind and config keys (DEC-534); the SVG loader now sizes a percent-width SVG from its viewBox (Grok's file; no other episode has one).
+- **Tests:** `node tests/player/run_tests_rtt102.js` 16/16 cases PASS (every frame of the whole race in five variants, the story configs and all 8 clips: values = series_monthly.csv on every landing frame, held bars below live ones, names, stripes exactly on Similarweb's older estimates, no overshoot with easing, card quotes word for word in verification.csv, layout, pacing); `node tests/player/phone_check_rtt102.js` 30/30 PASS (names 6.9 pt, values 7.3 pt, footer 5.3 pt; every dated still = that month's figures); `node tests/player/compare_frames.js <checkout of 1f7d664> 12`: 84 frames of RTT-001, RTT-002, RTT-003 and RTT-103 film configs pixel-identical; WCAG flash check of the two clips with stripes on the runner: PASS on both 2024 clips (largest too-often-flashing area in a 10° field 5,672 px general, 0 px red; limit 57,600 px).
+- **Questions for Luke** (pull request): title, estimates, older estimates and the note, value labels and "latest figure", motion, clock and pace, logos and their rights, story cards, the final line. If he does not answer, round 2 builds Claude's recommendations.
+- **For Cowork to check in Luke's Chrome (before the film):** re-read V34 (Bard → Gemini, 8 Feb 2024) and, if a Claude card is wanted, V36 (claude.ai, 11 Jul 2023) in Chrome; DeepSeek-R1's release date (20 Jan 2025, https://api-docs.deepseek.com/news/news250120; UNVERIFIED) if Luke wants a DeepSeek card; grok.com's launch day (NOT FOUND); any public Similarweb publication of September 2026 figures (DEC-531).
+- **Rules for the next RTT-102 session:** read Luke's answers in the pull request; record them from DEC-543; build the chosen options into one film config (`config_rtt102_film.json`, extends the base); run `run_tests_rtt102.js`, `phone_check_rtt102.js` and, if shared player code changes, `compare_frames.js` against the commit before the change; render only with `.github/workflows/rtt102_pilot.yml` (a push that changes it) or a new `rtt102_film.yml` once the look is approved and Luke names a track; logos only through `rtt102_assets.yml`. Never change a figure (data/rtt-102 as built; rebuild only through `scripts/build_rtt102_dataset.py` with a brief that approves it). Do not use figures from Similarweb's paid platform (DEC-531).
+
+## (Earlier header, from main after pull request #22) HANDOVER — 9 Oct 2026 (Claude Code cloud session: IQ-18g, RTT-103 film APPROVED; chapter times). IQ-18f, IQ-18e, round 3 (IQ-18c/18d), round 2 (IQ-18b) and round 1 (IQ-18) notes follow, then the RTT-103 data stages, then pull request #18's RTT-001 notes and earlier sessions.
 
 ## RTT-103 — FILM APPROVED (IQ-18g, 9 Oct 2026) — next: YouTube packaging and Luke's upload
 - **Approved (DEC-383):** `rtt103_film_265e6fd_3840x2160.mp4`, SHA-256 `39b4a826e40bbaad2483dcdc1d31f5e6df43056960cef28cbf20b5f4499ce699`, 200,456,403 bytes, 198.000 s (3:18), commit `265e6fd`, private pre-release https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-103-film-265e6fd-run2. Any change needs a fresh approval (DEC-078). Brief `prompts/CODE_SESSION_IQ-18g.md`. **Next free DEC: DEC-384** (block ends DEC-399).
@@ -41,8 +87,81 @@
 - **Findings for round 2:** Baidu has no company logo on Commons (own tile for now, question 5); Tencent enters in December 2011 because its 2010–11 quarters were not found (DEC-351); at 1.5 s per quarter only about four or five 3.5 s story moments fit in 2025–26, so they queue and the share sale moves to the 2026 plans step (DEC-350); title option C is too long beside the date.
 - **Rules for the next RTT-103 session (done in IQ-18b):** read pull request #22's questions and Luke's answers; record them from DEC-353; build the chosen options into one config (move the chosen step designs from `steps.js` into the player behind keys); run `run_tests_rtt103.js`, `phone_check_rtt103.js` and, if shared player code changes, `compare_frames.js` against the commit before the change plus the RTT-002/003/001 suites; render only with `.github/workflows/rtt103_pilot.yml` (a push that changes it) — never another episode's workflow. Logos only through `rtt103_assets.yml`. No figure changes (the data is final, DEC-345).
 
+## (Earlier header, IQ-17/IQ-16f) HANDOVER — 8 Oct 2026 (two parallel Claude Code cloud sessions: IQ-17/IQ-17b, RTT-102 AI assistant websites race, data phase 1; and IQ-16f, RTT-103 The AI Spending Race stage 6). Each episode has its own sections below; earlier sessions follow.
+
 ## DEC number blocks (owner DEC-339, 8 Oct 2026) — read before recording any decision
 - Each parallel Code session uses its own block: **IQ-16 (RTT-103) DEC-331–DEC-399**; IQ-15 (RTT-101) DEC-400–DEC-499; IQ-17 (RTT-102) DEC-500 onwards. DEC-278..DEC-280 on this branch (RTT-103, 7 Oct) keep their numbers; the RTT-101 session renumbers its own three to DEC-400–DEC-402.
+
+## RTT-102 update (IQ-17c, 8 Oct 2026): Luke's last three answers
+- **Brief:** `prompts/CODE_SESSION_IQ-17c.md`. "All as recommended."
+- **Recorded:**
+  - DEC-528: step 5 approved, so ChatGPT December 2022 = 265M and January 2023 = 615M.
+  - DEC-529: Perplexity starts in December 2022 at 2.2 million.
+  - DEC-530: if the September 2026 profiles cannot be read, the race ends in August 2026, with Copilot and Meta AI as "latest figure".
+- **Numbering:** the brief said "from DEC-523", but DEC-523 to DEC-527 were already used in IQ-17b, so the next free numbers were used. **The next RTT-102 DEC is DEC-531.**
+- **Build:** no data value changed. Only the step-5 label (conflicts.csv, points.csv) and report §9 changed. No question is open.
+- **Next:**
+  1. Cowork's September 2026 profiles (9 Oct): add or map them as rows (see the IQ-17b note below), then rebuild and run `python3 tests/rtt102/run_tests_rtt102.py`.
+  2. Design session (DEC-069).
+
+## RTT-102 update (IQ-17b, 8 Oct 2026): Luke's answers and Cowork's checks applied
+- **Brief:** `prompts/CODE_SESSION_IQ-17b.md`. Cowork's file `cowork_similarweb_verification_2026-10-08_IQ17.csv` (V43–V101) and the new `00_README.md` match the hashes in the brief (private commit `8d41c57`).
+- **Luke's answers** ("All as recommended") are DEC-515 to DEC-522. The rule now has his step 4, "the later publication over the earlier".
+- **Claude's records:**
+  - DEC-523: how step 4 is applied, with agreement tested between every pair.
+  - DEC-524: **step 5, a proposal applied until Luke decides**. Within one publication, its labelled chart beats its prose. This gives ChatGPT December 2022 = 265M and January 2023 = 615M.
+  - DEC-525: Claude January 2026 = 203M and February = 290.3M; the IPO blog's February "203 million" is set aside.
+  - DEC-526: the import.
+  - DEC-527: the findings.
+- **Now:**
+  - 153 points used and 236 bar-months; six bars verified to August 2026.
+  - No leftover conflicts.
+  - Third place: Grok in February 2026, Claude from March 2026.
+  - Perplexity starts in December 2022 (Reuters quoting Similarweb).
+- **Checks:** tests 24/24 PASS; build checks 11/11 PASS.
+- **Next:**
+  1. Cowork reads the seven September 2026 profiles (9 Oct). Add each as a row in `source/observations_manual.csv`, or map the existing `B07x` rows in `source/verification_map.csv`; then rebuild and run the tests.
+  2. Luke answers the 3 open questions in report §9.
+  3. Design session.
+- (Superseded by IQ-17c: the next RTT-102 DEC is DEC-531.)
+
+## RTT-102 AI assistant websites race: data build phase 1 (IQ-17, 8 Oct 2026), awaiting Luke
+- **Branch** `claude/nice-wozniak-f62eio` (public), pull request https://github.com/marketmarathon/race-through-time/pull/21 open, **not merged** (DEC-057). The private repo is untouched: its `research/rtt-102/` inputs were only read. Brief: `prompts/CODE_SESSION_IQ-17.md` (8,744 bytes, SHA-256 `28bf52ab…e569`). Luke's start message: `prompts/CODE_SESSION_IQ-17_start.md`. The build ran in parallel with IQ-16 (DEC-503). **DEC numbers: IQ-17 uses DEC-500 onwards only (DEC-504); this session used DEC-500 to DEC-514** (IQ-17b then used DEC-515 to DEC-527).
+- **Owner decisions recorded:**
+  - DEC-500: route D, Similarweb monthly website visits.
+  - DEC-501: answers 2–4 of 7 Oct (older estimates marked; title states the measure; straight lines; Le Chat out).
+  - DEC-502: every published month; the conflict rule; DeepSeek = deepseek.com.
+  - DEC-503: the build runs in parallel with IQ-16.
+  - DEC-504: the DEC-500+ block.
+- **Claude's records:**
+  - Working choices DEC-505 to DEC-511.
+  - Findings DEC-512 and DEC-513.
+  - Design proposals DEC-514 (not built).
+- **Built:**
+  - Contract `reference/metric_contract_RTT-102.md` and the data in `data/rtt-102/`: identities, points, conflicts, series_monthly, place_changes, turns and the source tables.
+  - Report `reports/RTT-102_data_report.md`, with the coverage grid, place changes, conflicts, sharp turns, the Cowork list, press credits and 8 questions.
+  - Rights-ledger section.
+  - Runner workflow `.github/workflows/rtt102_sources.yml` (run https://github.com/marketmarathon/race-through-time/actions/runs/37790576703). It read 28 of 41 pages; LinkedIn is closed to it by robots.txt.
+- **Checks:**
+  - Build 11/11 PASS.
+  - `python3 tests/rtt102/run_tests_rtt102.py` 19/19 PASS, including two byte-identical rebuilds and a re-import of the private inputs against their SHA-256.
+- **Numbers:**
+  - 137 verified points are used, giving 203 bar-months.
+  - ChatGPT leads every month.
+  - Second place: DeepSeek takes it from Gemini in January–April 2025.
+  - Third place: Claude from March 2026.
+  - **Only ChatGPT is verified after June 2026** (question 1).
+- **Rules for the next RTT-102 session:**
+  - (1) Rebuild with `python3 scripts/build_rtt102_dataset.py data/rtt-102 reports/RTT-102_data_report.md`; never edit the outputs by hand (test T02).
+  - (2) A new check from Cowork goes into `data/rtt-102/source/verification_map.csv`, or into a new row in `observations_manual.csv` plus the map; a new set-aside goes into `exclusions.csv` with a DEC.
+  - (3) `rtt102_sources.yml` runs only on a push that changes it or `scripts/rtt102_check_sources.py` on this branch. Keep robots.txt obeyed and never fetch Similarweb's website profiles from a runner.
+  - (4) Expect merge conflicts in `state/` with pull requests #19 and #20: keep both sides. The DEC blocks do not overlap (≤399, 400–499, 500+).
+  - (5) Do not touch the RTT-101 or RTT-103 files.
+- **Next:**
+  1. Luke answers report §9.
+  2. Cowork checks report §5 in Luke's Chrome, the September 2026 profiles first.
+  3. Rebuild.
+  4. Design session (DEC-069) with the DEC-514 proposals side by side, including monthly against quarterly playback for smoothness.
 
 ## RTT-103 — stage 6 (IQ-16f, 8 Oct 2026) — data complete; awaiting the design session
 - **Same branch and pull request** (https://github.com/marketmarathon/race-through-time/pull/20, not merged). Brief and Cowork's two messages: `prompts/CODE_SESSION_IQ-16f.md`. Decisions DEC-331..DEC-338 (Luke's answers), DEC-339 (blocks), DEC-340 (Cowork Chrome checks), DEC-341 (Claude).

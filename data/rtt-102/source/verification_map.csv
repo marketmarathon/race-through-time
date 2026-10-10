@@ -1,0 +1,171 @@
+obs_id,verification_id,status,wording_seen_at_source,basis
+B001,R1,VERIFIED,"from 153,000 visits on release day to 266 million in December 2022 to 1.7 billion in October 2023, according to Similarweb",GitHub runner (page text)
+B002,R1,VERIFIED,ChatGPT had about 266 million visits by December,GitHub runner (page text)
+B003,V43,VERIFIED,265M | Dec 22,"Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+B004,R1,VERIFIED,The December total winds up at 266 million,GitHub runner (page text)
+B005,V18,VERIFIED,266 million visits in December,Cowork in Luke's Chrome
+B006,V46,VERIFIED,1.56B | Mar 23,"Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+B007,V19,VERIFIED,according to Similarweb's preliminary estimates for March ... ChatGPT attracted nearly 1.6 billion worldwide visits,Cowork in Luke's Chrome
+B008,V19;R1,VERIFIED,Google's Bard chatbot ... drew 30.6 million visits to bard.google.com,GitHub runner (page text); Cowork note to V19
+B009,V05,VERIFIED,In March 2023 ... the platform drew just 30.6 million visits,Cowork in Luke's Chrome
+B010,V20,VERIFIED,As traffic drops from 1.8 billion in May to 1.6 billion in June,Cowork in Luke's Chrome
+B011,V49,VERIFIED,1.63B | Jun 23,"Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+B012,V14,VERIFIED,hit 142.6 million visits in May; elsewhere: attracted 142.6 million visitors in May,Cowork in Luke's Chrome (wording conflict: visits and visitors)
+B013,V52,VERIFIED,1.49B | Sep 23,"Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+B014,R1,VERIFIED,finishing September with 1.5 billion visits compared with 1.4 billion in August,GitHub runner (page text)
+B015,R1,VERIFIED,"For the full month of September, ChatGPT attracted 1.5 billion worldwide visits",GitHub runner (page text)
+B016,V13,VERIFIED,"In September, it bounced back to about 1.5 billion",Cowork in Luke's Chrome
+B017,V12,VERIFIED,Google Bard ... got 219.3 million website visits in September,Cowork in Luke's Chrome
+B018,R1,VERIFIED,"from 153,000 visits on release day to 266 million in December 2022 to 1.7 billion in October 2023, according to Similarweb",GitHub runner (page text)
+B019,V21,VERIFIED,ChatGPT's monthly traffic recovers to 1.7 billion visits,Cowork in Luke's Chrome
+B020,V53,VERIFIED,1.70B | Oct 23,"Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+B021,V03,VERIFIED,March 2024 traffic to chat.openai.com reached 1.77 billion visits,Cowork in Luke's Chrome
+B022,V02,VERIFIED,Google Gemini traffic was up 37% MoM to 433.5 million visits worldwide in March,Cowork in Luke's Chrome
+B023,V04,VERIFIED,boosted traffic 24% MoM and 288% YoY to 61.5 million visits,Cowork in Luke's Chrome
+B024,V54,NOT FOUND,,"Cowork in Luke's Chrome (8 Oct, IQ-17b): no printed 2.5 billion; chart without labels"
+B025,V07,VERIFIED,After setting a new traffic record of 2.2 billion visits in May 2024,Cowork in Luke's Chrome
+B026,V23,VERIFIED,"far more than Perplexity, with 70.5 million visits",Cowork in Luke's Chrome
+B027,V25,VERIFIED,ChatGPT 3.1bn>5.9bn (Sep 2024 > Sep 2025),Cowork in Luke's Chrome (press text)
+B028,V24,VERIFIED,September 2024 traffic up 112% year-over-year (YoY) to 3.1 billion visits,Cowork in Luke's Chrome
+B029,V55,VERIFIED,since then it has climbed every month to 3.1 billion visits in September 2024 | table row: chatgpt.com 3.1B,"Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+B030,V06,VERIFIED,gemini.google.com got 247.3 million visits in September,Cowork in Luke's Chrome
+B031,V25,VERIFIED,Claude grew 123% from 70.4 million to 157 million,Cowork in Luke's Chrome (press text)
+B032,V25,VERIFIED,Copilot grew 169.2% from 37 million to 99.6 million,Cowork in Luke's Chrome (press text)
+B033,V25,VERIFIED,Perplexity 72.3m>169.5m (Sep 2024 > Sep 2025),Cowork in Luke's Chrome (press text)
+B034,V25,VERIFIED,Meta 7.8m>11.1m (Sep 2024 > Sep 2025),Cowork in Luke's Chrome (press text)
+B035,V26,VERIFIED,Web traffic for ChatGPT dipped slightly in December ... At still 3.7 billion visits,Cowork in Luke's Chrome
+B036,V08,VERIFIED,Google's Gemini website attracted 291.6 million visits in October,Cowork in Luke's Chrome
+B037,V09,VERIFIED,Claude was up 25.5% MoM and 394.9% YoY to 84.1 million visits,Cowork in Luke's Chrome
+B038,V10,VERIFIED,experienced traffic growth of 87.6% MoM to 69.4 million visits,Cowork in Luke's Chrome
+B039,V11,VERIFIED,Perplexity was up 25.5% MoM and 199.2% YoY to 90.8 million visits,Cowork in Luke's Chrome
+B040,V25,VERIFIED,ChatGPT 3.1bn>5.9bn (Sep 2024 > Sep 2025),Cowork in Luke's Chrome (press text)
+B041,V56,VERIFIED,"ChatGPT retains a distant lead over other AI platforms, with 5.6 billion visits in September.","Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+B042,V57,VERIFIED,"Google's Gemini AI chatbot got more than 1 billion visits for the first time in September, according to Similarweb estimates - 1.1 billion visits, an increase of 46% over August.","Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+B043,V58,VERIFIED,got more than 1 billion visits for the first time in September,"Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+B044,V25,VERIFIED,Claude grew 123% from 70.4 million to 157 million,Cowork in Luke's Chrome (press text)
+B045,V25,VERIFIED,Copilot grew 169.2% from 37 million to 99.6 million,Cowork in Luke's Chrome (press text)
+B046,V25,VERIFIED,Perplexity 72.3m>169.5m (Sep 2024 > Sep 2025),Cowork in Luke's Chrome (press text)
+B047,V25,VERIFIED,Meta 7.8m>11.1m (Sep 2024 > Sep 2025),Cowork in Luke's Chrome (press text)
+B048,V87,VERIFIED,Dec-25 $9B 173M 21.9M 15.1M,"Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+B049,V27,VERIFIED,5.7 billion visits for chatgpt.com and 2.6 billion for gemini.google.com,Cowork in Luke's Chrome
+B050,V28,VERIFIED,Gemini Mar 2.60 billion / Apr 2.76 billion,Cowork in Luke's Chrome
+B051,V27,VERIFIED,5.7 billion visits for chatgpt.com and 2.6 billion for gemini.google.com,Cowork in Luke's Chrome
+B052,V64,VERIFIED,15 | gemini.google... | 0.60% | ↑ 22.86% | 2.595B,"Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+B053,V65,VERIFIED,"Monthly visits are now approaching 2.6 billion, more than seven times what the platform was handling a year ago.","Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+B054,V66,VERIFIED,"Claude hit 823.5 million total visits in April, up 34% from March's 613.7 million.","Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+B055,V27,VERIFIED,The website for Anthropic Claude got 613.7 million visits in March,Cowork in Luke's Chrome
+B056,V89,VERIFIED,Mar-26 ~$19B 614M 67.0M 55.1M,"Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+B057,V63,VERIFIED,"Claude hit 613.7 million web visits in March, passing both DeepSeek and Grok on its way to third place among generative AI websites.","Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+B058,V31,VERIFIED,"Deepseek at 246.4 million, and Perplexity at 153.8 million",Cowork in Luke's Chrome (press text)
+B059,V62,VERIFIED,106 | deepseek.com | 0.07% | ↓ 8.41% | 273.2M,"Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+B060,V93,VERIFIED,grok.com 210M +10% 31.0M +18% 2.1% 2.6% 326M (Mar-26) | grok.com peaked at 326M in Mar-26 and runs 210M,"Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+B061,V30,VERIFIED,chatgpt.com ... Monthly Visits 5.382B (footer 'Jun 2026 vs. May 2026 | All Traffic | Worldwide'),Cowork in Luke's Chrome (table image)
+B062,V74,VERIFIED,2.859B | Jun 26 - Jun 26,"Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+B063,V29,VERIFIED,Gemini still closed out June with 2.86B visits,Cowork in Luke's Chrome
+B064,V72,VERIFIED,946.7M | Jun 26 - Jun 26,"Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+B065,V29,VERIFIED,June closed out at 946.8M visits,Cowork in Luke's Chrome
+B066,V28;V69,VERIFIED,"In April, Claude nearly doubled DeepSeek's 411 million visits and almost tripled Grok's 279 million",Cowork in Luke's Chrome; chart beside the text names deepseek.com and grok.com (V69)
+B067,V28;V70,VERIFIED,"In April, Claude nearly doubled DeepSeek's 411 million visits and almost tripled Grok's 279 million",Cowork in Luke's Chrome; chart beside the text names deepseek.com and grok.com (V70)
+B068,V15,VERIFIED,5.9B chatgpt.com (Total Visits; tooltip: Sum of all visits on desktop and mobile from the last month),Cowork in Luke's Chrome
+B069,V42,UNVERIFIED,,NOT CHECKED (Similarweb free search limit)
+B070,V42,UNVERIFIED,,NOT CHECKED (Similarweb free search limit)
+B071,V42,UNVERIFIED,,NOT CHECKED (Similarweb free search limit)
+B072,V42,UNVERIFIED,,NOT CHECKED (Similarweb free search limit)
+B073,V42,UNVERIFIED,,NOT CHECKED (Similarweb free search limit)
+B074,V42,UNVERIFIED,,NOT CHECKED (Similarweb free search limit)
+B075,V42,UNVERIFIED,,NOT CHECKED (Similarweb free search limit)
+B076,V42,UNVERIFIED,,NOT CHECKED (Similarweb free search limit)
+B077,V42,UNVERIFIED,,NOT CHECKED (Similarweb free search limit)
+B078,V42,UNVERIFIED,,NOT CHECKED (Similarweb free search limit)
+B079,V42,UNVERIFIED,,NOT CHECKED (Similarweb free search limit)
+B080,V22,VERIFIED,"Last month, worldwide traffic for ChatGPT was 1.67 billion, according to Similarweb's preliminary estimate",Cowork in Luke's Chrome (press)
+B081,V22,VERIFIED,Google Bard's 267 million,Cowork in Luke's Chrome (press)
+B082,V22,VERIFIED,Claude's 26,Cowork in Luke's Chrome (press)
+M001,V20,VERIFIED,As traffic drops from 1.8 billion in May to 1.6 billion in June,Cowork in Luke's Chrome
+M002,R1,VERIFIED,"In January, ChatGPT reached 617 million visits to chat.openai.com, more than double December's total.",GitHub runner (page text)
+M003,V23;R1,VERIFIED,"ChatGPT attracted 1.8 billion visits in April, putting it right around its May 2023 peak of 1.81 billion visits",GitHub runner (page text); Cowork note to V23
+M004,R1,VERIFIED,"up 17.2% month-over-month (MoM) to 3.7 billion worldwide visits, according to preliminary Similarweb estimates for October",GitHub runner (page text)
+M005,R1,VERIFIED,"November traffic hit a stunning 3.7 billion visits, marking a 115.9% year-over-year surge.",GitHub runner (page text)
+M006,R1,VERIFIED,the gap is wide in favor of GPT with its 5.7B visits vs Grok's 201M in July,GitHub runner (page text)
+M007,R1,VERIFIED,Metric ChatGPT Grok Visits 5.72B 38K,GitHub runner (page text)
+M008,V59,VERIFIED,"ChatGPT topped 6 billion visits for the first time in October (6.2M, up 4.4% from September), according to Similarweb estimates. | Meanwhile, Google's Gemini, which entered the billion+ visit club in September, grew traffic another 11.7% to 1.2M visits. ... just the traffic to gemini.google.com","Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+M009,V59,VERIFIED,"ChatGPT topped 6 billion visits for the first time in October (6.2M, up 4.4% from September), according to Similarweb estimates. | Meanwhile, Google's Gemini, which entered the billion+ visit club in September, grew traffic another 11.7% to 1.2M visits. ... just the traffic to gemini.google.com","Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+M010,V59,VERIFIED,"ChatGPT topped 6 billion visits for the first time in October (6.2M, up 4.4% from September), according to Similarweb estimates. | Meanwhile, Google's Gemini, which entered the billion+ visit club in September, grew traffic another 11.7% to 1.2M visits. ... just the traffic to gemini.google.com","Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+M011,V95,VERIFIED,chatgpt.com 5.64B −4% 475M −3% 57.2% 79.3% 6.17B (Oct-25),"Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+M012,R1,VERIFIED,"According to Similarweb, Perplexity.ai recorded 154.9 million visits (2.19% share)",GitHub runner (page text)
+M013,R1,VERIFIED,Grok has 247 million visits (3.51%),GitHub runner (page text)
+M014,R1,VERIFIED,DeepSeek recorded 282 million visits (4%) in the month of December,GitHub runner (page text)
+M015,V60,VERIFIED,Google Gemini in December 2025: → 1.735B total website visits. → +28.38% month-over-month.,"Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+M016,V86,VERIFIED,Most of the increase came between January and April 2026 (203M to 824M visits a month).,"Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+M017,R1,VERIFIED,"Between February and April 2026, monthly visits to claude.ai increased from 203 million to 824 million.",GitHub runner (page text)
+M018,V61,VERIFIED,101 | claude.ai | 0.07% | ↑ 43.07% | 290.3M,"Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+M019,V88,VERIFIED,Feb-26 $14B 290M 37.2M 24.8M,"Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+M020,V31,VERIFIED,ChatGPT recorded 5.35 billion visits in February,Cowork in Luke's Chrome (press text)
+M021,V31,VERIFIED,"Gemini 2.11 billion (The Decoder, February)",Cowork in Luke's Chrome (press text)
+M022,V31,VERIFIED,"Grok 298.5 million (The Decoder, February)",Cowork in Luke's Chrome (press text)
+M023,V31,VERIFIED,"Claude 290.3 million (The Decoder, February)",Cowork in Luke's Chrome (press text)
+M024,V31,VERIFIED,"Deepseek at 246.4 million, and Perplexity at 153.8 million",Cowork in Luke's Chrome (press text)
+M025,V28,VERIFIED,Gemini Mar 2.60 billion / Apr 2.76 billion,Cowork in Luke's Chrome
+M026,V67,VERIFIED,15 | gemini.google... | 0.66% | ↑ 6.38% | 2.761B,"Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+M027,V28,VERIFIED,Claude Apr 823.5 million,Cowork in Luke's Chrome
+M028,V90,VERIFIED,Apr-26 $30B 824M 89.7M 77.2M,"Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+M029,R1,VERIFIED,"Between February and April 2026, monthly visits to claude.ai increased from 203 million to 824 million.",GitHub runner (page text)
+M030,V71,VERIFIED,952.5M | May 26 - May 26,"Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+M031,R1,VERIFIED,Claude went from 100 million visits in May 2025 to 953 million in May 2026,GitHub runner (page text)
+M032,V91,VERIFIED,May-26 $47B 953M 101M 102M,"Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+M033,V73,VERIFIED,2.903B | May 26 - May 26,"Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+M034,V94,VERIFIED,gemini.google.com 2.62B +262% 303M +148% 26.5% 9.8% 2.90B (May-26),"Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+M035,V77,VERIFIED,up from 2.2 million when the service became available in December 2022,"Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+M036,V76,VERIFIED,"Its website and mobile web had 45 million visits in December, up from 2.2 million when the service became available in December 2022, according to Similarweb (NYSE:SMWB) data.","Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+M037,V75,VERIFIED,"Perplexity saw its website and mobile web had 45.6 million visits in December, according to Similarweb data.","Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+M038,R1,VERIFIED,"Similarweb's (paid) tools report that total visits to ChatGPT's website increased by 14 percent month on month, reaching almost 2.9 billion in June 2024.",GitHub runner (page text)
+M039,R1,VERIFIED,Gemini's web interface still attracted more than 340 million total visits in June 2024,GitHub runner (page text)
+M041,R1,VERIFIED,"As recently as December 2024, the website was averaging around 300K daily visits.",GitHub runner (page text; other measure)
+M042,R1,VERIFIED,daily visits to Copilot increased to 2.4 million,GitHub runner (page text; other measure)
+M043,R1,VERIFIED,The ChatGPT website attracted 140.7 million unique visitors in October,GitHub runner (page text; other measure)
+M044,R1,VERIFIED,"Google's Bard chatbot attracted 142.6 million visitors in May, up from 49.7 million in April, according to preliminary data.",GitHub runner (page text; wording conflict)
+M046,R1,VERIFIED,up 62.5% from 616 million in January,GitHub runner (page text)
+M047,R1,VERIFIED,The chat.openai.com website attracted more than 1 billion visits in February,GitHub runner (page text)
+M048,R1,VERIFIED,up from just over 1 billion in February,GitHub runner (page text)
+M049,R1,VERIFIED,ChatGPT tops 1 billion visits,GitHub runner (page text)
+M050,R1,VERIFIED,"In April, ChatGPT attracted about 1.76 billion visits worldwide, up 12.6% from March.",GitHub runner (page text)
+M051,R1,VERIFIED,"in April, 206.7 million ChatGPT unique visitors generated 1.76 billion visits",GitHub runner (page text)
+M052,R1,VERIFIED,ChatGPT attracted 1.5 billion worldwide visits compared with nearly 1.7 billion in April,GitHub runner (page text)
+M053,R1,VERIFIED,Now up to 1.77 billion visits,GitHub runner (page text)
+M054,R1,VERIFIED,"ChatGPT (chat.openai.com) attracted 1.8 billion worldwide visits in May, up 2.8% from April.",GitHub runner (page text)
+M055,R1,VERIFIED,ChatGPT peaked at 1.8 billion worldwide visits in May before dropping to 1.4 billion in August.,GitHub runner (page text)
+M056,R1,VERIFIED,"its peak traffic record of 1.81 billion visits worldwide, set in May 2023",GitHub runner (page text)
+M057,R1,VERIFIED,its May 2023 peak of 1.81 billion visits,GitHub runner (page text)
+M058,R1,VERIFIED,the volume of worldwide traffic it hit in May 2023 – 1.8 billion visits,GitHub runner (page text)
+M059,R1,VERIFIED,which attracted about 1.5 billion worldwide visitors to its website in July,GitHub runner (page text; wording says visitors)
+M060,R1,VERIFIED,before dropping to 1.4 billion in August,GitHub runner (page text)
+M061,R1,VERIFIED,compared with 1.4 billion in August,GitHub runner (page text)
+M062,R1,VERIFIED,it could reach as high as 1.7 billion visits in October,GitHub runner (page text; projection)
+M063,R1,VERIFIED,"With 1.6 billion visits in February, ChatGPT (chat.openai.com) has yet to match",GitHub runner (page text)
+M064,R1,VERIFIED,Metric ChatGPT (Jul 2025) Google (Jul 2025) Visits 5.72B 84.5B,GitHub runner (page text)
+M065,R1,VERIFIED,Reaching almost 700 million visits in July 2025,GitHub runner (page text)
+M066,R1,VERIFIED,is up to 140 million visits in July 2025,GitHub runner (page text)
+M067,R1,VERIFIED,Claude went from 100 million visits in May 2025 to 953 million in May 2026,GitHub runner (page text)
+M068,V44,VERIFIED,615M | Jan 23,"Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+M069,V45,VERIFIED,1.00B | Feb 23,"Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+M070,V47,VERIFIED,1.77B | Apr 23,"Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+M071,V48,VERIFIED,1.81B | May 23,"Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+M072,V50,VERIFIED,1.47B | Jul 23,"Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+M073,V51,VERIFIED,1.42B | Aug 23,"Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+M074,V68,VERIFIED,"ChatGPT, of course, still owns the room at 5.5 billion visits, and nobody's pretending otherwise.","Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+M075,V80,VERIFIED,"Since May, Claude's monthly visits have landed at 952.6M, 946.8M, 969.3M, and 950.2M.","Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+M076,V78,VERIFIED,"Since May, Claude's monthly visits have landed at 952.6M, 946.8M, 969.3M, and 950.2M.","Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+M077,V78,VERIFIED,"Since May, Claude's monthly visits have landed at 952.6M, 946.8M, 969.3M, and 950.2M.","Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+M078,V79,VERIFIED,"August closed at 950.2M visits, down 2.0% from July","Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+M079,V81,VERIFIED,"Visits eased 6.0% in July and 2.6% in August, and Gemini closed the summer at 2.62B visits, compared with a May peak of 2.90B.","Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+M080,V82,VERIFIED,"After a 3.3% dip in June, ChatGPT added 1.3% in July and 3.5% in August, finishing at 5.64B visits.","Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+M081,V83,VERIFIED,5 | chatgpt.com | 1.30% | ↑ 3.45% | 5.638B,"Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+M082,V92,VERIFIED,Jul-26 $65B 969M 108M 135M | claude.ai 950M ... 969M (Jul-26),"Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+M083,V96,VERIFIED,claude.ai 950M +540% 111M +562% 9.6% 2.0% 969M (Jul-26),"Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+M084,V97,VERIFIED,chatgpt.com 5.64B −4% 475M −3% 57.2% 79.3% 6.17B (Oct-25),"Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+M085,V98,VERIFIED,gemini.google.com 2.62B +262% 303M +148% 26.5% 9.8% 2.90B (May-26),"Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+M086,V99,VERIFIED,deepseek.com 354M +11% 39.3M −13% 3.6% 4.3% 615M (Feb-25),"Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+M087,V99,VERIFIED,deepseek.com 354M +11% 39.3M −13% 3.6% 4.3% 615M (Feb-25),"Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+M088,V100,VERIFIED,grok.com 210M +10% 31.0M +18% 2.1% 2.6% 326M (Mar-26),"Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+M089,V101,VERIFIED,perplexity.ai 95.2M −36% 17.7M −29% 1.0% 2.0% 219M (Oct-25),"Cowork in Luke's Chrome (8 Oct, IQ-17b)"
+M090,V101,VERIFIED,perplexity.ai 95.2M −36% 17.7M −29% 1.0% 2.0% 219M (Oct-25),"Cowork in Luke's Chrome (8 Oct, IQ-17b)"

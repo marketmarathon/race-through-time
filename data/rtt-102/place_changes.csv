@@ -1,0 +1,11 @@
+month,place,new_holder,previous_holder,kind,new_holder_provenance,previous_holder_provenance,on_published_months,bars_live
+2022-12,1,chatgpt,,first holder,published,not on the board,yes,2
+2022-12,2,perplexity,,first holder,published,not on the board,yes,2
+2023-03,2,gemini,perplexity,overtake,published,interpolated,no,3
+2023-03,3,perplexity,,first holder,interpolated,not on the board,no,3
+2025-01,2,deepseek,gemini,overtake,published,published,yes,8
+2025-01,3,gemini,perplexity,overtake,published,published,yes,8
+2025-05,2,gemini,deepseek,overtake,published,published,yes,8
+2025-05,3,deepseek,gemini,overtake,published,published,yes,8
+2026-02,3,grok,deepseek,overtake,published,published,yes,6
+2026-03,3,claude,grok,overtake,published,published,yes,6

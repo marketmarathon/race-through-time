@@ -1,0 +1,68 @@
+[
+ {
+  "id": "K01",
+  "name": "Every on-screen value rests on a VERIFIED figure with its URL and the wording seen at source",
+  "result": "PASS",
+  "detail": "153 points used; problems: none"
+ },
+ {
+  "id": "K02",
+  "name": "No averaging: each published month shows one printed figure exactly; each other month is the straight line between its two points",
+  "result": "PASS",
+  "detail": "236 series rows; mismatches: none; used values not printed: none"
+ },
+ {
+  "id": "K03",
+  "name": "No point or bar before the site's start date",
+  "result": "PASS",
+  "detail": "problems: none"
+ },
+ {
+  "id": "K04",
+  "name": "One address per assistant per month",
+  "result": "PASS",
+  "detail": "problems: none"
+ },
+ {
+  "id": "K05",
+  "name": "DeepSeek: deepseek.com only; never deepseek.com + chat.deepseek.com",
+  "result": "PASS",
+  "detail": "15 DeepSeek points used; problems: none"
+ },
+ {
+  "id": "K06",
+  "name": "No forecast: projections (Similarweb's June 2024 and October 2023 projections) are never used",
+  "result": "PASS",
+  "detail": "projection rows ['M040', 'M062'], all excluded"
+ },
+ {
+  "id": "K07",
+  "name": "data_version set on every point and every series row",
+  "result": "PASS",
+  "detail": "problems: none"
+ },
+ {
+  "id": "K08",
+  "name": "No extrapolation beyond a bar's first or last published point",
+  "result": "PASS",
+  "detail": "problems: none"
+ },
+ {
+  "id": "K09",
+  "name": "Only eligible VERIFIED figures are used; UNVERIFIED and NOT FOUND never",
+  "result": "PASS",
+  "detail": "problems: none"
+ },
+ {
+  "id": "K10",
+  "name": "Leftover conflicts use no figure until Luke decides",
+  "result": "PASS",
+  "detail": "0 leftovers; problems: none"
+ },
+ {
+  "id": "K11",
+  "name": "Le Chat and uncounted sites (Bing Chat in bing.com, Grok in x.com) have no bar",
+  "result": "PASS",
+  "detail": "none on the board"
+ }
+]
