@@ -1,0 +1,13 @@
+{
+ "extends": "config_rtt101_pace_B.json",
+ "kit_version": "rtt101_round1_clip_paceB",
+ "out": "rtt101_clip_paceB.mp4",
+ "window": {
+  "from": "2003-06-30",
+  "to": "2004-09-30"
+ },
+ "pacing": {
+  "lead_in_sec": 1,
+  "final_board_sec": 2
+ }
+}

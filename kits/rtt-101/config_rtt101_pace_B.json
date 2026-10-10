@@ -1,0 +1,12 @@
+{
+ "extends": "config_rtt101_base.json",
+ "kit_version": "rtt101_round1_pace_B",
+ "pacing": {
+  "sec_per_event": 0.5,
+  "mult": {
+   "rank_change": 1.4,
+   "visible_change": 1.0,
+   "quiet": 0.8
+  }
+ }
+}

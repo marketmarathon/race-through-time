@@ -300,7 +300,28 @@
     return Object.assign({}, race, { events: evs, crown: [], windows: [], smoothing: S, ease, monthIndex: idx, sink: SINK });
   }
 
+  /* IQ-21 (RTT-101): a NET series (race.kind "net", scripts/rtt101_adapter.py): each club's cumulative net spend on
+     reported transfer fees in whole pence at every month end (may be negative), plus the freeze point. The order is the
+     data's own rank (ev.order, series_onscreen.csv: ties go to the club that reached the value first); nothing here
+     changes a figure. cfg.smoothing.mode "eased": each bar moves on a monotone cubic (pchip) through EVERY month end of
+     its series, by event index (RTT-102's DEC-562 approach: every landing frame is the data exactly, only the motion
+     between month ends is eased, never beyond the two figures either side). */
+  function netRace(race, cfg) {
+    const evs = race.events.map(ev => Object.assign({}, ev, { values: Object.assign({}, ev.values), series_values: ev.values, order: ev.order.slice() }));
+    const S = Object.assign({ mode: 'none' }, cfg.smoothing || {}), idx = {}, ease = {};
+    race.events.forEach((ev, i) => { idx[ev.date] = i; });
+    for (const ev of evs) { const o = ev.order.slice().sort((a, b) => ev.values[b] - ev.values[a] || ev.order.indexOf(a) - ev.order.indexOf(b));
+      if (o.join() !== ev.order.join() || o.length !== Object.keys(ev.values).length) throw new Error(ev.date + ': the data order is not by value'); }
+    if (S.mode === 'eased') {
+      const pts = {};
+      evs.forEach((ev, i) => { for (const [id, v] of Object.entries(ev.values)) (pts[id] = pts[id] || { xs: [], ys: [] }).xs.push(i), pts[id].ys.push(v); });
+      for (const [id, p] of Object.entries(pts)) ease[id] = pchip(p.xs, p.ys);
+    }
+    return Object.assign({}, race, { events: evs, crown: [], windows: [], smoothing: S, ease, monthIndex: idx });
+  }
+
   function shareRace(race, cfg) {
+    if (race.kind === 'net') return netRace(race, cfg);           // IQ-21 (RTT-101)
     if (race.kind === 'visits') return visitsRace(race, cfg);    // IQ-19 (RTT-102)
     const S = Object.assign({ mode: 'none', handover_months: 12, include_flagged: false }, cfg.smoothing || {});
     const SC = race.sc_start ? dayNum(race.sc_start) : Infinity, label = {};   // IQ-18: a money race has no source hand-overs
@@ -425,7 +446,8 @@
   }
 
   function buildSeries(race, cfg) {
-    const SHARE = race.kind === 'share' || race.kind === 'money' || race.kind === 'visits', MONEY = race.kind === 'money', VISITS = race.kind === 'visits';
+    const SHARE = race.kind === 'share' || race.kind === 'money' || race.kind === 'visits' || race.kind === 'net', MONEY = race.kind === 'money', VISITS = race.kind === 'visits';
+    const NET = race.kind === 'net';                               // IQ-21 (RTT-101)
     if (MONEY) race = holdGaps(race, cfg);
     if (SHARE) race = shareRace(race, cfg);
     if (MONEY) race = forwardBoards(race, cfg);                  // IQ-18c: off unless cfg.forward
@@ -440,7 +462,7 @@
     race.events.forEach((ev, i) => {
       if (i > 0 && !(ev.date > race.events[i - 1].date)) throw new Error('quarter ends out of order at ' + ev.date);
       for (const [id, u] of Object.entries(ev.values)) {
-        if (!Number.isInteger(u) || u < 0) throw new Error(ev.date + ' ' + id + ': units must be a whole number');
+        if (!Number.isInteger(u) || (u < 0 && !NET)) throw new Error(ev.date + ' ' + id + ': units must be a whole number');   // IQ-21: a net figure may be negative
         if (lastVal[id] !== u) { lastVal[id] = u; reached[id] = ev.date; }
       }
       const r = Object.assign({}, reached);
@@ -449,7 +471,8 @@
       const mplus = {}; for (const m of ev.maker_plus || []) mplus[m] = true;
       const held = {}; for (const id of ev.held || []) held[id] = true;            // IQ-18: hold option only
       if (VISITS) { let c = 0; for (const [id, v] of Object.entries(ev.values)) if ((ev.status || {})[id] !== 'latest_figure') c += v; ev.combined = c; }   // IQ-19b: the sum of the bars with a figure that month (held bars left out)
-      const fx = ev.fwd ? { lo: Object.assign({}, ev.lo), fwd: true } : VISITS ? { labels: Object.assign({}, ev.labels), prov: Object.assign({}, ev.prov) } : {};   // IQ-18c; IQ-19: the name at that date, published / line / held
+      const fx = ev.fwd ? { lo: Object.assign({}, ev.lo), fwd: true } : VISITS ? { labels: Object.assign({}, ev.labels), prov: Object.assign({}, ev.prov) }
+               : NET ? { rel: Object.assign({}, ev.rel), avg: Object.assign({}, ev.avg), seasons: Object.assign({}, ev.seasons) } : {};   // IQ-21   // IQ-18c; IQ-19: the name at that date, published / line / held
       all.push({ ev, st: { order, totals: Object.assign({}, ev.values), style: Object.assign({}, ev.style), plus, status: Object.assign({}, ev.status || {}), held, ...fx,
                            maker_totals: Object.assign({}, ev.maker_totals), maker_style: Object.assign({}, ev.maker_style), maker_plus: mplus } });
     });
@@ -488,7 +511,10 @@
       if (c) records.push({ k, date: ev.date, id: c.id, previous: c.previous, style: c.style, type: 'CROWN', held: hold[k] });
     });
     /* IQ-13: a segment may also name the month it starts from ({from, sec_per_event}: a faster fixed pace from a named month) */
-    const base = ev => { for (const s of P.segments || []) if ((s.to == null || ev.date <= s.to) && (s.from == null || ev.date >= s.from)) return s.sec_per_event; return P.sec_per_event; };
+    /* IQ-21: pacing.month_rules [{from, to, months: [1..12], sec_per_event}] - one named calendar rule (e.g. the months with
+       no open transfer window, from 2002-03), checked before the segments; absent for every other episode */
+    const base = ev => { for (const s of P.month_rules || []) if ((s.to == null || ev.date <= s.to) && (s.from == null || ev.date >= s.from) && s.months.includes(+ev.date.slice(5, 7)) && !ev.freeze) return s.sec_per_event;
+      for (const s of P.segments || []) if ((s.to == null || ev.date <= s.to) && (s.from == null || ev.date >= s.from)) return s.sec_per_event; return P.sec_per_event; };
     /* With counting (cfg.count, round 2), a held quarter counts at its normal beat and THEN holds for
        record_hold.sec, so the pause follows the overtake; without counting (round 1) the hold replaces
        the beat, as RTT-002's record pauses do. */
@@ -501,7 +527,7 @@
       if (k < events.length - 1) sec += beatSec(k);
     }
     const lastK = events.length - 1;
-    const raceFrames = events[lastK].beat_sec != null ? startFrame[lastK] + Math.round(events[lastK].beat_sec * fps)   // IQ-18c/18e: the last forward board's own length
+    let raceFrames = events[lastK].beat_sec != null ? startFrame[lastK] + Math.round(events[lastK].beat_sec * fps)   // IQ-18c/18e: the last forward board's own length
       : P.final_board_sec != null
       ? startFrame[lastK] + Math.round(P.final_board_sec * fps)
       : Math.round((sec + beatSec(lastK) + P.end_hold_sec) * fps);
@@ -533,6 +559,9 @@
                  highlight: events.map(() => []), hasStarts: false, fade, makers: race.makers, entrants: race.entrants,
                  countFrames, launch };
     tl.quarterEndFrame = events.map((ev, k) => startFrame[k] + countFrames[k] - 1);
+    /* IQ-21 (RTT-101): pacing.final_after_landing_sec - the final table holds exactly that long from the frame after the
+       last figures land (DEC-569), whatever the last beat's multiplier */
+    if (NET && P.final_after_landing_sec != null && events[lastK].beat_sec == null) tl.raceFrames = raceFrames = tl.quarterEndFrame[lastK] + 1 + Math.round(P.final_after_landing_sec * fps);
     /* Moments (callouts): every change of first place (crown.csv) plus the configured extra moments
        (cfg.moments: {type: "first_past", id, units} or {type: "passes", id, other, rank}). Each is checked
        against the data here (a claim the data does not support stops the build) and placed on the exact
@@ -571,7 +600,7 @@
        gap = other - id rounded DOWN to 0.1 million, "at least" only when the other's figure is a lower bound. */
     const FL = cfg.final_line;
     tl.isDataEnd = events[lastK].date === race.events[race.events.length - 1].date;   // the final table of the film
-    if (VISITS && FL && FL.enabled && tl.isDataEnd) tl.finalLine = { text: FL.text };   // IQ-19: one line of fixed wording, from verified figures (the config says which)
+    if ((VISITS || NET) && FL && FL.enabled && tl.isDataEnd) tl.finalLine = { text: FL.text };   // IQ-21: RTT-101 too   // IQ-19: one line of fixed wording, from verified figures (the config says which)
     else if (FL && FL.enabled && tl.isDataEnd) {
       const s = states[lastK], a = s.totals[FL.id], b = s.totals[FL.other];
       if (!(b > a)) throw new Error('final line: ' + FL.other + ' is not ahead of ' + FL.id);
@@ -624,7 +653,7 @@
       for (const e of race.entrants) {
         const list = [{ frame: -Infinity, kind: opening.status[e.id] || 'live' }];
         events.forEach((ev, k) => { const kd = states[k].status[e.id] || 'live';
-          if (kd !== list[list.length - 1].kind) list.push({ frame: VISITS ? startFrame[k] : tl.quarterEndFrame[k], kind: kd }); });   // IQ-19b: a visits bar dims while it sinks below the live bars (the month's count), so its landing frame shows it dimmed
+          if (kd !== list[list.length - 1].kind) list.push({ frame: VISITS || NET ? startFrame[k] : tl.quarterEndFrame[k], kind: kd }); });   // IQ-21: a club leaving or rejoining the PL changes look over the month's count   // IQ-19b: a visits bar dims while it sinks below the live bars (the month's count), so its landing frame shows it dimmed
         tl.status[e.id] = list;
       }
     }
@@ -633,6 +662,8 @@
       tl.share = true; tl.windows = race.windows; tl.smoothing = race.smoothing; tl.scStart = race.sc_start;
       if (MONEY && events.some(ev => ev.fwd)) { tl.forward = true; tl.lastActual = events.findIndex(ev => ev.fwd) - 1; }   // IQ-18c: the index of June 2026 (-1: before the window)
       if (MONEY) { tl.allCombined = all.filter(x => !x.ev.fwd).map(x => ({ date: x.ev.date, c: x.ev.combined })); tl.money = true; tl.gaps = race.gaps || []; tl.story = race.story || []; tl.steps = race.steps || {}; tl.notesData = race.notes || {}; }
+      if (NET) { tl.net = true; tl.money = true; tl.ease = race.ease; tl.monthIndex = race.monthIndex; tl.gaps = []; tl.story = []; tl.steps = {}; tl.notesData = {};   // IQ-21 (RTT-101): drawn as a money race
+        tl.allCombined = all.map(x => ({ date: x.ev.date, c: x.ev.combined })); }
       if (VISITS) { tl.visits = true; tl.ease = race.ease; tl.monthIndex = race.monthIndex; tl.sink = race.sink; tl.clock = cfg.clock || 'month'; tl.story = [];   // IQ-19
         tl.allCombined = all.map(x => ({ date: x.ev.date, c: x.ev.combined })); }                                                                   // IQ-19b: the panel's line
       tl.crownAll = race.crown;
@@ -648,7 +679,7 @@
     /* IQ-18b (RTT-103, money): the steps after the race (cfg.steps.sequence [{name, sec, ...}], drawn by rtt_steps.js),
        scheduled from the race's last frame; only when the window reaches the end of the data. tl.raceEnd = the first
        frame after the race; tl.stepPlan[i] = {name, ..., first, frames}; tl.raceFrames then covers the steps too. */
-    if (MONEY && cfg.steps && cfg.steps.enabled && tl.isDataEnd) {
+    if ((MONEY || NET) && cfg.steps && cfg.steps.enabled && tl.isDataEnd) {   // IQ-21: RTT-101's closing view
       tl.raceEnd = tl.raceFrames; tl.stepPlan = [];
       let f = tl.raceFrames;
       for (const st of cfg.steps.sequence) { const n = Math.round(st.sec * fps); tl.stepPlan.push(Object.assign({}, st, { first: f, frames: n })); f += n; }
@@ -677,6 +708,10 @@
       const held = id => tl.sink && (cur.status[id] === 'latest_figure' || (!(id in cur.totals) && prev.status[id] === 'latest_figure'));
       const order = Object.keys(u).sort((a, b) => (held(a) - held(b)) || (u[b] - u[a]) || (idx[a] - idx[b]));
       return { g, u, order, plus: {}, mu: {}, mplus: {}, alpha };
+    }
+    if (tl.net && g < 1 && tl.ease) {     // IQ-21 (RTT-101): eased through every month end (exact at g = 1)
+      const MI = tl.monthIndex, d0 = k > 0 ? tl.events[k - 1].date : tl.openingEvent.date, x = MI[d0] + (MI[tl.events[k].date] - MI[d0]) * g;
+      for (const id of Object.keys(u)) if (tl.ease[id] && id in prev.totals && id in cur.totals) u[id] = Math.round(tl.ease[id](x));
     }
     const order = Object.keys(u).sort((x, y) => (u[y] - u[x]) || (idx[x] - idx[y]));
     if (!cur.lo && !prev.lo) return { g, u, order, plus: {}, mu: {}, mplus: {}, alpha };

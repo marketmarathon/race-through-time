@@ -1,0 +1,7 @@
+# SHA-256 of the adapter inputs and output (rtt101-adapter/1.0)
+283065090493da5353cbf72a41baed6322225e0379bf37f06aa7fa6b6fb4d4c4 input data/rtt-101/series_onscreen.csv
+5248094d95dc09911b071145989c08bf9c1a333090e1f8b7cc81ba9f966f4823 input data/rtt-101/clubs.csv
+b6489b523322332afc57e755f0bf5f2f7d7972231ea9bdea53cf6302afd1f85f input data/rtt-101/pl_membership.csv
+5e99ded9cb70499c158fcf0806b4e2a01bd8771462a92a0cf6ce52ff1abb1e35 input data/rtt-101/seasons.csv
+a19a4c506fdcf3b54305d3357ea51e5ef36f5e0d2f810f815271d6808a31f64b input data/rtt-101/manifest.json
+3491e28843220973cc9a5432b276c1465311d273d5504b444c99b42779950d70 output kits/rtt-101/race_rtt101.json

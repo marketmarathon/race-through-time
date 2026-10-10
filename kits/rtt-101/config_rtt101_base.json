@@ -1,0 +1,322 @@
+{
+ "series": "Race Through Time",
+ "episode": "RTT-101",
+ "kit_version": "rtt101_round1_base",
+ "notes": [
+  "RTT-101 design round 1 (IQ-21): the base look every option config and still extends - Claude's recommendation for each item a-k (none of it approved yet, DEC-069). House defaults (house_style sections 1-6) applied without asking: no intro or outro, the final table holds 5 s after the freeze figures land (DEC-569), no running captions, big date top right beside the RTT logo, board sized to its bars (board.fit), values follow the bar and count smoothly, eased through every month end and landing exactly on each (DEC-562 approach), one colour per club (CIEDE2000 >= 18 on screen together; tests/player/COLOURS_RTT101.md), stills on landing frames, credits in the footer. Race file: kits/rtt-101/race_rtt101.json (scripts/rtt101_adapter.py, series_onscreen.csv: VERIFIED fees only, DEC-448). Preview figures: the Tier 1 round may still change them."
+ ],
+ "format_version": "RTT-1 player (kits/rtt-002), series mode with the net kind (IQ-21)",
+ "out": "rtt101_clip.mp4",
+ "renderer_file": "player_rtt.html",
+ "race_file": "../rtt-101/race_rtt101.json",
+ "fps": 30,
+ "intro_sec": 0,
+ "outro_sec": 0,
+ "crf": 4,
+ "preset": "slow",
+ "rows": 12,
+ "window": {
+  "from": null,
+  "to": null
+ },
+ "pacing": {
+  "sec_per_event": 0.5,
+  "bounds": [
+   0.8,
+   1.4
+  ],
+  "mult": {
+   "rank_change": 1.0,
+   "visible_change": 1.0,
+   "quiet": 1.0
+  },
+  "settled_run_after": 3,
+  "lead_in_sec": 2,
+  "end_hold_sec": 3,
+  "judge_rows": 12,
+  "final_after_landing_sec": 5
+ },
+ "glide": {
+  "bar_sec": 0.35,
+  "rank_sec": 0.55,
+  "entry_sec": 0.1,
+  "bar_mode": "beat"
+ },
+ "unit": "pounds",
+ "title": "Premier League Net Transfer Spend (1992–2026)",
+ "subtitle": "",
+ "subtitle_sec": 0,
+ "kicker": "RACE THROUGH TIME",
+ "range": "1992 – 2026",
+ "subline": {
+  "enabled": true,
+  "text": "Reported transfer fees paid minus fees received · undisclosed fees not included",
+  "y": 124,
+  "size": 30
+ },
+ "footer": "Race Through Time · Reported transfer fees from club statements and press reports; CPI: ONS; exchange rates: Bank of England",
+ "look": "navy",
+ "sizes": {
+  "axis": 30,
+  "date": 34,
+  "footer": 26
+ },
+ "barend": 1420,
+ "nameoverflow": true,
+ "namemode": "bar",
+ "namescale": 0.9,
+ "valout": true,
+ "valw": 260,
+ "yearsize": 112,
+ "fonts": {
+  "family": "Archivo",
+  "source": "npm:@fontsource/archivo"
+ },
+ "board_top": 232,
+ "record_hold": {
+  "enabled": false,
+  "sec": 2,
+  "types": [
+   "CROWN"
+  ]
+ },
+ "count": {
+  "enabled": true
+ },
+ "values": {
+  "net": {
+   "style": "compact",
+   "ties": "none"
+  }
+ },
+ "smoothing": {
+  "mode": "eased"
+ },
+ "source_line": {
+  "enabled": false
+ },
+ "marker": {
+  "enabled": false
+ },
+ "note_line": {
+  "y": 172,
+  "size": 30,
+  "sec": 4
+ },
+ "notes_at": [],
+ "maker_order": [
+  "arsenal",
+  "aston_villa",
+  "barnsley",
+  "birmingham_city",
+  "blackburn_rovers",
+  "blackpool",
+  "bolton_wanderers",
+  "bournemouth",
+  "bradford_city",
+  "brentford",
+  "brighton",
+  "burnley",
+  "cardiff_city",
+  "charlton_athletic",
+  "chelsea",
+  "coventry_city",
+  "crystal_palace",
+  "derby_county",
+  "everton",
+  "fulham",
+  "huddersfield_town",
+  "hull_city",
+  "ipswich_town",
+  "leeds_united",
+  "leicester_city",
+  "liverpool",
+  "luton_town",
+  "manchester_city",
+  "manchester_united",
+  "middlesbrough",
+  "newcastle_united",
+  "norwich_city",
+  "nottingham_forest",
+  "oldham_athletic",
+  "portsmouth",
+  "qpr",
+  "reading",
+  "sheffield_united",
+  "sheffield_wednesday",
+  "southampton",
+  "stoke_city",
+  "sunderland",
+  "swansea_city",
+  "swindon_town",
+  "tottenham_hotspur",
+  "watford",
+  "west_brom",
+  "west_ham",
+  "wigan_athletic",
+  "wimbledon_fc",
+  "wolves"
+ ],
+ "palette": [
+  "#558800",
+  "#EE6600",
+  "#E6194B",
+  "#FF22EE",
+  "#FF22EE",
+  "#E6194B",
+  "#886600",
+  "#FF22EE",
+  "#E6194B",
+  "#E6194B",
+  "#E6194B",
+  "#E6194B",
+  "#E6194B",
+  "#AA7766",
+  "#00DD00",
+  "#CC0088",
+  "#E6194B",
+  "#E6194B",
+  "#775577",
+  "#CC0088",
+  "#E6194B",
+  "#E6194B",
+  "#7777EE",
+  "#007766",
+  "#AA7766",
+  "#E6194B",
+  "#E6194B",
+  "#5522FF",
+  "#886600",
+  "#006699",
+  "#00AAEE",
+  "#E6194B",
+  "#006699",
+  "#006699",
+  "#E6194B",
+  "#AA3300",
+  "#E6194B",
+  "#AA7766",
+  "#11BB99",
+  "#E6194B",
+  "#007766",
+  "#7777EE",
+  "#E6194B",
+  "#775577",
+  "#AA3300",
+  "#E6194B",
+  "#FF22EE",
+  "#E6194B",
+  "#E6194B",
+  "#E6194B",
+  "#11BB99"
+ ],
+ "board": {
+  "bar_gap": 10,
+  "name_frac": 0.72,
+  "value_frac": 0.72,
+  "stripes": "screen",
+  "fit": {
+   "enabled": true,
+   "min_slots": 4,
+   "sec": 2
+  }
+ },
+ "pictures": {
+  "enabled": true,
+  "dir": "crests",
+  "files": {},
+  "tile": true,
+  "tile_pad": 4,
+  "placeholder": false,
+  "height_frac": 0.92,
+  "aspect": 1,
+  "gap": 14,
+  "own": {},
+  "switch": {}
+ },
+ "fade": {
+  "enabled": true,
+  "alpha": 0.55,
+  "text_alpha": 0.8,
+  "sec": 0.6
+ },
+ "status": {
+  "enabled": true,
+  "sink": false,
+  "sec": 0.6,
+  "out": "relegated {year}"
+ },
+ "crown": {
+  "enabled": true
+ },
+ "callout": {
+  "enabled": false
+ },
+ "moments": [],
+ "story": {
+  "enabled": false
+ },
+ "final_line": {
+  "enabled": false
+ },
+ "combined": {
+  "enabled": true,
+  "mode": "line",
+  "x": 1360,
+  "y": 680,
+  "w": 520,
+  "h": 260,
+  "label": "All Premier League clubs: net spend",
+  "count_text": "paid to clubs outside the PL, since 1992",
+  "join_note": false,
+  "dots": false
+ },
+ "steps": {
+  "enabled": false
+ },
+ "overlays": [
+  {
+   "name": "logo",
+   "file": "rtt_logo.png",
+   "x": 1702,
+   "y": 12,
+   "w": 154,
+   "h": 154
+  }
+ ],
+ "overlay_gap": 12,
+ "time_label": {
+  "mode": "none",
+  "season_prefix": "",
+  "months": [
+   "January",
+   "February",
+   "March",
+   "April",
+   "May",
+   "June",
+   "July",
+   "August",
+   "September",
+   "October",
+   "November",
+   "December"
+  ],
+  "format": "month",
+  "x": 64,
+  "y": 124,
+  "align": "left",
+  "size": 34
+ },
+ "date_block": {
+  "enabled": true,
+  "mode": "beside",
+  "right": 1680,
+  "month_y": 60,
+  "month_size": 40,
+  "year_y": 160,
+  "year_size": 112,
+  "roll_sec": 0.5,
+  "freeze_label": "1 September"
+ }
+}

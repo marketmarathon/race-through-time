@@ -1,0 +1,260 @@
+{
+ "note": "RTT-101 kit colours (IQ-21, Claude working choice for design round 1 item e): each club's main home-kit colour family and a second colour, approximate hex values chosen by Claude from the clubs' well-known colours, not from any club's brand file. A white or black main colour cannot carry white names on the navy ground, so the darker or lighter element is used and said in `kit`. kits/rtt-101/make_palette.js adjusts the shades within each family.",
+ "clubs": {
+  "arsenal": {
+   "main": "#EF0107",
+   "second": "#FFFFFF",
+   "kit": "red with white sleeves"
+  },
+  "aston_villa": {
+   "main": "#7A003C",
+   "second": "#95BFE5",
+   "kit": "claret and blue"
+  },
+  "barnsley": {
+   "main": "#D71920",
+   "second": "#FFFFFF",
+   "kit": "red"
+  },
+  "birmingham_city": {
+   "main": "#1D3F95",
+   "second": "#FFFFFF",
+   "kit": "blue"
+  },
+  "blackburn_rovers": {
+   "main": "#009EE0",
+   "second": "#FFFFFF",
+   "kit": "blue and white halves"
+  },
+  "blackpool": {
+   "main": "#F68712",
+   "second": "#FFFFFF",
+   "kit": "tangerine"
+  },
+  "bolton_wanderers": {
+   "main": "#2B3990",
+   "second": "#FFFFFF",
+   "kit": "white with navy (navy used: white bars cannot carry white names)"
+  },
+  "bournemouth": {
+   "main": "#DA291C",
+   "second": "#000000",
+   "kit": "red and black stripes"
+  },
+  "bradford_city": {
+   "main": "#8B1A3A",
+   "second": "#F9B71A",
+   "kit": "claret and amber"
+  },
+  "brentford": {
+   "main": "#E30613",
+   "second": "#FFFFFF",
+   "kit": "red and white stripes"
+  },
+  "brighton": {
+   "main": "#0057B8",
+   "second": "#FFFFFF",
+   "kit": "blue and white stripes"
+  },
+  "burnley": {
+   "main": "#6C1D45",
+   "second": "#99D6EA",
+   "kit": "claret and blue"
+  },
+  "cardiff_city": {
+   "main": "#0070B5",
+   "second": "#FFFFFF",
+   "kit": "blue"
+  },
+  "charlton_athletic": {
+   "main": "#D4021D",
+   "second": "#FFFFFF",
+   "kit": "red"
+  },
+  "chelsea": {
+   "main": "#034694",
+   "second": "#FFFFFF",
+   "kit": "blue"
+  },
+  "coventry_city": {
+   "main": "#59CBE8",
+   "second": "#FFFFFF",
+   "kit": "sky blue"
+  },
+  "crystal_palace": {
+   "main": "#1B458F",
+   "second": "#C4122E",
+   "kit": "red and blue"
+  },
+  "derby_county": {
+   "main": "#3C3C3C",
+   "second": "#FFFFFF",
+   "kit": "white with black (black shown as charcoal)"
+  },
+  "everton": {
+   "main": "#003399",
+   "second": "#FFFFFF",
+   "kit": "blue"
+  },
+  "fulham": {
+   "main": "#6E6E6E",
+   "second": "#CC0000",
+   "kit": "white with black (shown as grey)"
+  },
+  "huddersfield_town": {
+   "main": "#0E63AD",
+   "second": "#FFFFFF",
+   "kit": "blue and white stripes"
+  },
+  "hull_city": {
+   "main": "#F5A12D",
+   "second": "#000000",
+   "kit": "amber and black"
+  },
+  "ipswich_town": {
+   "main": "#3A64A3",
+   "second": "#FFFFFF",
+   "kit": "blue"
+  },
+  "leeds_united": {
+   "main": "#FFCD00",
+   "second": "#1D428A",
+   "kit": "white with yellow and blue (yellow used)"
+  },
+  "leicester_city": {
+   "main": "#003090",
+   "second": "#FDBE11",
+   "kit": "blue"
+  },
+  "liverpool": {
+   "main": "#C8102E",
+   "second": "#00B2A9",
+   "kit": "red"
+  },
+  "luton_town": {
+   "main": "#F78F1E",
+   "second": "#002D62",
+   "kit": "orange"
+  },
+  "manchester_city": {
+   "main": "#6CABDD",
+   "second": "#1C2C5B",
+   "kit": "sky blue"
+  },
+  "manchester_united": {
+   "main": "#DA291C",
+   "second": "#FBE122",
+   "kit": "red"
+  },
+  "middlesbrough": {
+   "main": "#E11B22",
+   "second": "#FFFFFF",
+   "kit": "red"
+  },
+  "newcastle_united": {
+   "main": "#5A5A5A",
+   "second": "#FFFFFF",
+   "kit": "black and white stripes (shown as grey)"
+  },
+  "norwich_city": {
+   "main": "#00A650",
+   "second": "#FFF200",
+   "kit": "yellow and green (green used)"
+  },
+  "nottingham_forest": {
+   "main": "#DD0000",
+   "second": "#FFFFFF",
+   "kit": "red"
+  },
+  "oldham_athletic": {
+   "main": "#0055A5",
+   "second": "#FFFFFF",
+   "kit": "blue"
+  },
+  "portsmouth": {
+   "main": "#001489",
+   "second": "#FFFFFF",
+   "kit": "blue"
+  },
+  "qpr": {
+   "main": "#1D5BA4",
+   "second": "#FFFFFF",
+   "kit": "blue and white hoops"
+  },
+  "reading": {
+   "main": "#004494",
+   "second": "#FFFFFF",
+   "kit": "blue and white hoops"
+  },
+  "sheffield_united": {
+   "main": "#EE2737",
+   "second": "#FFFFFF",
+   "kit": "red and white stripes"
+  },
+  "sheffield_wednesday": {
+   "main": "#4466AA",
+   "second": "#FFFFFF",
+   "kit": "blue and white stripes"
+  },
+  "southampton": {
+   "main": "#D71920",
+   "second": "#FFFFFF",
+   "kit": "red and white stripes"
+  },
+  "stoke_city": {
+   "main": "#E03A3E",
+   "second": "#FFFFFF",
+   "kit": "red and white stripes"
+  },
+  "sunderland": {
+   "main": "#EB172B",
+   "second": "#FFFFFF",
+   "kit": "red and white stripes"
+  },
+  "swansea_city": {
+   "main": "#8A8A8A",
+   "second": "#000000",
+   "kit": "white (shown as grey)"
+  },
+  "swindon_town": {
+   "main": "#DA291C",
+   "second": "#FFFFFF",
+   "kit": "red"
+  },
+  "tottenham_hotspur": {
+   "main": "#132257",
+   "second": "#FFFFFF",
+   "kit": "white with navy (navy used)"
+  },
+  "watford": {
+   "main": "#FBEE23",
+   "second": "#ED2127",
+   "kit": "yellow and black"
+  },
+  "west_brom": {
+   "main": "#122F67",
+   "second": "#FFFFFF",
+   "kit": "navy and white stripes"
+  },
+  "west_ham": {
+   "main": "#7A263A",
+   "second": "#1BB1E7",
+   "kit": "claret and blue"
+  },
+  "wigan_athletic": {
+   "main": "#1D59AF",
+   "second": "#FFFFFF",
+   "kit": "blue and white stripes"
+  },
+  "wimbledon_fc": {
+   "main": "#1A3D8F",
+   "second": "#F5D21E",
+   "kit": "blue and yellow"
+  },
+  "wolves": {
+   "main": "#FDB913",
+   "second": "#231F20",
+   "kit": "old gold and black"
+  }
+ }
+}

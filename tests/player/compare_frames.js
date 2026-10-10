@@ -5,7 +5,7 @@
  *
  *   node tests/player/compare_frames.js <reference repo root> [frames per config]
  *
- * Configs: RTT-002's film and pilot, RTT-003's film, RTT-001's approved film configs, RTT-103's film (IQ-19). Each config's frames are spread
+ * Configs: RTT-002's film and pilot, RTT-003's film, RTT-001's approved film configs, RTT-103's film (IQ-19), RTT-102's approved film (IQ-21). Each config's frames are spread
  * evenly over the whole film (default 8, plus the first and last). Private pictures are absent on both sides (each
  * player reports them "not found" and draws its fallback), so the comparison covers every drawn element the same way.
  * Prints one line per config and exits 1 on any difference.
@@ -16,7 +16,8 @@ const REF = path.resolve(process.argv[2] || '');
 const N = +(process.argv[3] || 8);
 const CHROME = process.env.PW_CHROME || '/opt/pw-browsers/chromium';
 const CONFIGS = ['../rtt-002/config_rtt002_film.json', '../rtt-002/config_pilot_2014_2021_top20.json', '../rtt-003/config_rtt003_film.json',
-                 '../rtt-001/config_rtt001_approved_fit.json', '../rtt-001/config_rtt001_photos.json', '../rtt-103/config_rtt103_film.json'];
+                 '../rtt-001/config_rtt001_approved_fit.json', '../rtt-001/config_rtt001_photos.json', '../rtt-103/config_rtt103_film.json',
+                 '../rtt-102/config_rtt102_film.json'];   // IQ-21: RTT-102's approved film too
 
 async function frames(root, cfgFile, picks) {
   const kit = path.join(root, 'kits', 'rtt-002');

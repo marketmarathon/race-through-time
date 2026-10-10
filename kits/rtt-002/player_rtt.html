@@ -219,6 +219,19 @@
        - combined (RTT-103's running total, DEC-359): the sum of the bars with a figure that month, counted with the bars
          (a bar arriving or leaving the sum is weighted by the count), its line, and its bottom line naming the bars
          left out after their latest figure (combined.drop_one / drop_many) or the number of sites (combined.count_text).
+     Changed in IQ-21 (RTT-101 design round 1), only for a NET series (race kind "net", scripts/rtt101_adapter.py), drawn as a
+     money race, so every RTT-001, RTT-002, RTT-003, RTT-102 and RTT-103 config draws exactly as before (compare_frames.js):
+       - values: whole pence -> pounds (values.net {style "compact" "£1.71bn" / "£637m" / "£45.3m" | "m1" "£1,710.9m", ties
+         "none" | "extra"}; rounded half up on the integers; "−£1.3m" below zero; ties "extra": while two neighbouring bars
+         on the board show the same figure, both get one more decimal until they differ); the axis reads "£20m", "£1.5bn".
+       - status.out: a club outside the Premier League keeps its frozen bar and rank (DEC-259), dimmed, with
+         "· relegated {year}" (or any fixed text; "" = dimmed only); its return to the league brightens back over status.sec.
+       - subline {enabled, text, y, size}: a fixed line under the title for the whole film ("Undisclosed fees not included").
+       - date_block.freeze_label: the month line at the freeze point ("1 September" over 2026).
+       - pictures.switch for net races too (the crest in use at each date); bar_edge {id: colour}: a club's second colour
+         along the bottom of its bar (an option for kit colours).
+       - combined.mode "avg": the leader's average net spend per PL season in 2026 pounds; combined.count_text, combined.dots.
+       - steps "avgtable": a closing view after the final table, the final table's clubs ranked by that average.
      Removed as unused: the Format C / C2-1 picture column and story cards, the prototype
      driver block that followed </html> in the C2-2 file.
 
@@ -276,6 +289,7 @@ let SHARE=false, VAL=null, SRCL=null, MARK=null, NOTEL=null;
 let STEPSON=false, FINALDRAW=false;   // IQ-18b (RTT-103): the steps after a money race
 let FWD=null, FWDNEED={}, ROWCAP=10;   // IQ-18c (RTT-103): the race carries on through the 2026 plans and the 2027-2030 estimates
 let VISITS=false, VISF=null, LASTM={};   // IQ-19 (RTT-102): all off for every other episode
+let NET=false, NETF=null, NETX={}, SUBL=null, EDGE=null;   // IQ-21 (RTT-101): all off for every other episode
 let MONEY=false, MONEYF=null, GAPS=null, TAGS=null, TAGFOOT=null, ENTRY=null, ENTRYK={}, STORY=null, COMB=null;   // IQ-18 (RTT-103): all off for RTT-001/002/003   // IQ-13 (RTT-001): all off for RTT-002 and RTT-003
 let DATEBLK=null, ERA=null, ERAST=null, ERAIMG={};                          // RTT-001 date/era round (DEC-214..): off unless configured
 let TOP=150; const BOTTOM=1080-46;            // IQ-10: TOP from config board_top (RTT-003); 150 for RTT-002
@@ -347,6 +361,10 @@ function setup(o){
   SERIES = !!TL.series; SHARE = !!TL.share; MONEY = !!TL.money; VISITS = !!TL.visits; AXU = MONEY ? 1e9 : VISITS ? 1 : SHARE ? 100 : SERIES ? 1e6 : 1;
   VISF = VISITS ? Object.assign({approx:'all', bn_decimals:1, older:'stripes', look:'solid', est_label:'· analyst estimate'}, (CFG.values||{}).visits||{}) : null;
   LASTM = {}; if(VISITS) for(const e of o.data.entrants){ const [y,m]=e.last_month.split('-').map(Number); LASTM[e.id]=(CFG.date_block&&CFG.date_block.months_short||['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'])[m-1]+' '+y; }
+  NET = !!TL.net; NETX = {}; if(NET) AXU = 1e8;    // IQ-21: whole pence; the axis steps in whole millions of pounds
+  NETF = NET ? Object.assign({style:'compact', ties:'none', prefix:'£'}, (CFG.values||{}).net||{}) : null;
+  SUBL = NET && CFG.subline && CFG.subline.enabled ? Object.assign({y:124, size:30}, CFG.subline) : null;
+  EDGE = NET && CFG.bar_edge ? CFG.bar_edge : null;
   MONEYF = MONEY ? Object.assign({prefix:'$', suffix:'bn', decimals:1, whole_from:null}, (CFG.values||{}).money||{}) : null;
   GAPS = MONEY ? Object.assign({mode:'leave', alpha:0.45, text:'figures not comparable'}, CFG.gaps||{}) : null;
   TAGS = MONEY && Array.isArray(CFG.bar_tags) && CFG.bar_tags.length ? CFG.bar_tags : null;
@@ -469,7 +487,38 @@ function visitsSig2(u){
 function visitsAxis(v){ return v>=1e9 ? String(+(v/1e9).toFixed(2))+'bn' : String(+(v/1e6).toFixed(1))+'m'; }
 function visitsStyle(st){ return VISF.look==='analyst' ? 'analyst_estimate' : VISF.older==='none' ? 'official' : st; }
 function tagOf(id,mode,date){ return TAGS ? TAGS.find(t=>t.id===id && (t.mode||'after')===mode && (!t.from || date>=t.from) && (!t.to || date<=t.to)) : null; }
+/* IQ-21 (RTT-101): whole pence -> pounds, rounded half up (away from zero) on the integers. "compact": £1bn and over two
+   decimals of a billion ("£1.71bn"), £100m and over whole millions ("£637m"), below that one decimal ("£45.3m", "£4.2m");
+   a value that rounds up into the next band takes that band's form. "m1": millions with one decimal ("£1,710.9m").
+   extra = more decimals (the near-tie option). Zero reads "£0"; below zero "−£1.3m". */
+function netText(u,extra){
+  if(!Number.isInteger(u)) console.error('BAD PENCE '+u);
+  const x=extra||0, a=Math.abs(u), sg=u<0?'\u2212':'', P=NETF.prefix;
+  if(a===0) return P+'0';
+  const r=(q)=>Math.floor((a+q/2)/q), dec=(n,d)=>{ const p=Math.pow(10,d); return d ? Math.floor(n/p).toLocaleString('en-GB')+'.'+String(n%p).padStart(d,'0') : n.toLocaleString('en-GB'); };
+  if(NETF.style==='m1'){ const d=1+x; return sg+P+dec(r(1e8/Math.pow(10,d)),d)+'m'; }
+  const dB=2+x, b=r(1e11/Math.pow(10,dB));
+  if(a>=1e11 || b>=Math.pow(10,dB)) return sg+P+dec(b,dB)+'bn';
+  const d1=1+x, t=r(1e8/Math.pow(10,d1));
+  if(a>=1e10 || t>=100*Math.pow(10,d1)) { const d0=x, m=r(1e8/Math.pow(10,d0)); return sg+P+dec(m,d0)+'m'; }
+  return sg+P+dec(t,d1)+'m';
+}
+function netAxis(v){ const m=Math.round(v/1e8); return m===0 ? '0' : NETF.prefix+(m>=1000 ? String(+(m/1000).toFixed(2))+'bn' : m+'m'); }
+/* the near-tie option (values.net.ties "extra"): for month k's landed figures, every pair of neighbouring bars on the board
+   whose labels read the same while their figures differ gets one more decimal, both of them, until they differ (at most 3) */
+function netTies(k){
+  if(NETF.ties!=='extra') return {};
+  if(NETX[k]) return NETX[k];
+  const st=k>=0?TL.states[k]:TL.opening, o=st.order.slice(0,ROWCAP), ex={};
+  for(let i=0;i+1<o.length;i++){ const a=o[i], b=o[i+1], va=st.totals[a], vb=st.totals[b];
+    if(va===vb) continue;
+    let e=Math.max(ex[a]||0, ex[b]||0); while(e<3 && netText(va,e)===netText(vb,e)) e++;
+    if(e>0){ ex[a]=Math.max(ex[a]||0,e); ex[b]=Math.max(ex[b]||0,e); } }
+  return NETX[k]=ex;
+}
+let NETK=-1;
 function fmtS(u,plus,id,st,pub){
+  if(NET) return netText(u,netTies(NETK)[id]||0);         // IQ-21
   if(VISITS) return visitsText(u,pub);
   if(MONEY) return money(u);
   if(SHARE) return pct(u,st);
@@ -574,7 +623,10 @@ function nameSize(){
   if(SERIES){ [TL.opening].concat(TL.states.filter(s=>!s.fwd)).forEach(s=>s.order.slice(0,NROWS+1).forEach(id=>{ if(s.style[id]==='analyst_estimate') everA[id]=true; }));
     ctx.font='500 '+g.VALF+'px '+FONT; estW=g.VALF*0.35+tabWidth('· analyst estimate',pitch()); ctx.font=(STATS?'700 ':'600 ')+g.VALF+'px '+FONT; }
   if(VISITS && VISF.look==='analyst'){ ctx.font='500 '+g.VALF+'px '+FONT; estW=g.VALF*0.35+tabWidth(VISF.est_label,pitch()); ctx.font='600 '+g.VALF+'px '+FONT; for(const id of ids) everA[id]=true; }
-  const valOf=id=>VISITS ? tabWidth(visitsText(seen[id],false),p)+(everA[id]?estW:0)+(CROWN?g.VALF*1.6:0) : MONEY ? tabWidth(money(seen[id])+'*',p)+(CROWN?g.VALF*1.6:0) : SHARE ? Math.max(tabWidth(pct(seen[id],'official'),p), VAL.approx ? tabWidth(pct(seen[id],'estimated'),p) : 0)+(CROWN?g.VALF*1.6:0)
+  const everOut={}; if(NET && STATUS && STATUS.out){ [TL.opening].concat(TL.states).forEach(s=>s.order.slice(0,NROWS+1).forEach(id=>{ if((s.status||{})[id]==='out') everOut[id]=true; })); }
+  const outW = NET && STATUS && STATUS.out ? (ctx.font='500 '+g.VALF+'px '+FONT, g.VALF*0.35+tabWidth('· '+STATUS.out.replace('{year}','2000'),pitch())) : 0;
+  if(NET) ctx.font='600 '+g.VALF+'px '+FONT;
+  const valOf=id=>NET ? tabWidth(netText(seen[id],NETF.ties==='extra'?1:0),p)+(CROWN?g.VALF*1.6:0)+(everOut[id]?outW:0) : VISITS ? tabWidth(visitsText(seen[id],false),p)+(everA[id]?estW:0)+(CROWN?g.VALF*1.6:0) : MONEY ? tabWidth(money(seen[id])+'*',p)+(CROWN?g.VALF*1.6:0) : SHARE ? Math.max(tabWidth(pct(seen[id],'official'),p), VAL.approx ? tabWidth(pct(seen[id],'estimated'),p) : 0)+(CROWN?g.VALF*1.6:0)
                : SERIES ? tabWidth(fmtS(seen[id],true,id)+(FFOOT&&FFOOT.id===id?FFOOT.mark:''),p)+(everA[id]?estW:0)+(CROWN?g.VALF*1.6:0)
                          : tabWidth(fmt(seen[id]),p)+(seenS[id]||0);   // IQ-05e: plus the stats label
   const nx=g.x0+18, limit=1920-64;
@@ -825,7 +877,7 @@ function drawYear(yNow, yOld, p, xr, base, size, align, band){
 function drawDateEra(k, fr){
   var dbox=null;
   const ST=eraState(), ev=k>=0?TL.events[k]:TL.openingEvent, y=+ev.date.slice(0,4), m=+ev.date.slice(5,7);
-  const month = ev.fwd && ev.fwd.month ? ev.fwd.month : DATEBLK && DATEBLK.label==='ttm' ? (DATEBLK.ttm_prefix||'12 months to ')+(DATEBLK.months_short||CFG.time_label.months)[m-1]   // IQ-18
+  const month = ev.fwd && ev.fwd.month ? ev.fwd.month : ev.freeze && DATEBLK && DATEBLK.freeze_label ? DATEBLK.freeze_label : DATEBLK && DATEBLK.label==='ttm' ? (DATEBLK.ttm_prefix||'12 months to ')+(DATEBLK.months_short||CFG.time_label.months)[m-1]   // IQ-18
               : DATEBLK && DATEBLK.label==='quarter' ? 'Q'+Math.ceil(m/3) : CFG.time_label.months[m-1];
   const ys=k>=0?ST.yearStart[k]:null, rollF=DATEBLK?Math.max(1,DATEBLK.roll_sec*FPS):1;
   const p = ys && ys.from!=null && fr-ys.f<rollF ? ease((fr-ys.f)/rollF) : 1, yOld = p<1 ? ys.from : null;
@@ -874,7 +926,7 @@ function drawCrown(x,y,w,h,col){
    over FADE.sec. TL.fade[id]: window event index, -1 = already faded at the opening, null = never. */
 function fadeOf(id,k,fr){
   if(!FADE || !SERIES) return 1;
-  if(STATUS){ const S=RTT_TIMELINE.statusAt(TL,id,fr); return S.kind==='live' ? 1 : 1-(1-FADE.alpha)*statusIn(S,fr); }   // round 4
+  if(STATUS){ const S=RTT_TIMELINE.statusAt(TL,id,fr); return S.kind==='live' ? (NET ? netBack(id,fr) : 1) : 1-(1-FADE.alpha)*statusIn(S,fr); }   // round 4
   if(LIVE) return (FINAL_LBL && TL.exit[id]) ? FADE.alpha : 1;     // round 3: the faded look only in the all-time table
   const f=TL.fade[id];
   if(f==null) return 1;
@@ -892,6 +944,12 @@ function logoCrop(m){
   const px=cx.getImageData(0,0,w,h).data; let x0=w,y0=h,x1=-1,y1=-1;
   for(let y=0;y<h;y++) for(let x=0;x<w;x++) if(px[(y*w+x)*4+3]>40){ if(x<x0)x0=x; if(x>x1)x1=x; if(y<y0)y0=y; if(y>y1)y1=y; }
   return LOGOCROP[m] = x1<0 ? {x:0,y:0,w:im.naturalWidth,h:im.naturalHeight} : {x:x0/S, y:y0/S, w:(x1-x0+1)/S, h:(y1-y0+1)/S};
+}
+/* IQ-21: a club back in the Premier League brightens over status.sec from the first frame of the month it returns */
+function netBack(id,fr){
+  const L=TL.status[id]; let i=0; while(i+1<L.length && L[i+1].frame<=fr) i++;
+  if(i===0 || L[i].frame===-Infinity) return 1;
+  return FADE.alpha+(1-FADE.alpha)*ease((fr-L[i].frame+1)/TL.statusFade);
 }
 /* round 4: how far a non-live bar's dim and label have come in (0..1); 1 when it stopped before the window */
 function statusIn(S,fr){ return S.dimFrom===-Infinity ? 1 : ease((fr-S.dimFrom+1)/TL.statusFade); }
@@ -943,7 +1001,7 @@ function drawCallout(CO,cur,SF,fr){
   }
   if(FINAL_ON){                                  // round 2: the final-table line and footnote
     window.__FINAL={};
-    if(TL.finalLine){ ctx.fillStyle=T.ink; ctx.font='600 '+C.size+'px '+FONT; tabText(TL.finalLine.text, LEFT, VISITS&&CFG.final_line.y?CFG.final_line.y:C.y, 'left', 'final_line', null); window.__FINAL.line=TL.finalLine.text; }
+    if(TL.finalLine){ ctx.fillStyle=T.ink; ctx.font='600 '+C.size+'px '+FONT; tabText(TL.finalLine.text, LEFT, (VISITS||NET)&&CFG.final_line.y?CFG.final_line.y:C.y, 'left', 'final_line', null); window.__FINAL.line=TL.finalLine.text; }
     if(FFOOT){ ctx.fillStyle=T.cap||T.muted; ctx.font='500 '+FFOOT.size+'px '+FONT; tabText(FFOOT.mark+' '+FFOOT.text, LEFT, C.y+FFOOT.dy, 'left', 'footnote', FFOOT.id); window.__FINAL.footnote=FFOOT.text; }
   }
   if(NOTES){                                     // the PS2 note candidate (DEC-094), stills only
@@ -1081,6 +1139,8 @@ function drawAt(t){
   let titleTxt=CFG.title;
   if(CFG.time_label.mode==='title') titleTxt+=' · '+ev.season+(ev.grand_prix?' · '+ev.grand_prix:'');
   text('title',null,titleTxt,LEFT,74,'left');
+  NETK=k;                                                 // IQ-21: the month whose near-ties set the decimals
+  if(SUBL){ ctx.fillStyle=T.cap||T.muted; ctx.font='500 '+SUBL.size+'px '+FONT; tabText(SUBL.text, LEFT, SUBL.y, 'left', 'subline', null); }
   if(FWD && k>=0 && ev.fwd && ev.fwd.source_line) drawFwdSource(k, fr);   // IQ-18c
   const tsec=fr/FPS, CO=calloutAt(fr);
   FINAL_ON = COUNT && !CO && TL.isDataEnd && k===TL.events.length-1 && fr>=(LIVE && TL.finalTable ? TL.finalLineFrom : TL.finalFrom) && !!(TL.finalLine||FFOOT);
@@ -1105,7 +1165,7 @@ function drawAt(t){
   for(let v=0;v<=smoothMax+1e-9;v+=step){
     const x=x0+W*v/smoothMax; if(x>1920-RIGHT-VALW+20) break;
     const av=Math.round(v/AXU);
-    ctx.fillStyle=T.axis; tabText(VISITS ? (v>0?visitsAxis(v):'0') : (SERIES&&av>0?(CFG.axis_prefix||''):'')+av.toLocaleString('en-GB')+(SERIES&&av>0?(CFG.axis_suffix||''):''),x,TOP-6,'center','axis',null);
+    ctx.fillStyle=T.axis; tabText(NET ? netAxis(v) : VISITS ? (v>0?visitsAxis(v):'0') : (SERIES&&av>0?(CFG.axis_prefix||''):'')+av.toLocaleString('en-GB')+(SERIES&&av>0?(CFG.axis_suffix||''):''),x,TOP-6,'center','axis',null);
     ctx.fillStyle=T.grid; gridLine(Math.round(x),TOP+8,BOTTOM);
   }
   /* round 3: the gold record line, under the bars (the label is drawn after them) */
@@ -1158,7 +1218,7 @@ function drawAt(t){
     window.__BARS.push({id:c.id, y:c._y, alpha:ctx.globalAlpha, colour, hl, rect:{x:x0,y:by,w,h:BARH}, style:r.st, lo:r.lo, fade:fa, plus:r.pl, units:r.n, exiting:XA!=null, status:SK?SK.kind:null, enter_leave:r.a!=null&&r.a<1, held:r.held||0, name:r.nm||null, pub:VISITS?r.pub:null});
     if(ctx.globalAlpha<=0){ ctx.globalAlpha=1; return; }
     if(PIC){                                     // IQ-10 picture, in the column left of the bar
-      const SWK = VISITS && PIC.switch && PIC.switch[c.id] ? picKey(c.id, ev.date) : null, SWP = SWK && k>=0 && SF && SF.g<1 ? picKey(c.id, k>0?TL.events[k-1].date:TL.openingEvent.date) : null;   // IQ-19
+      const SWK = (VISITS||NET) && PIC.switch && PIC.switch[c.id] ? picKey(c.id, ev.date) : null, SWP = SWK && k>=0 && SF && SF.g<1 ? picKey(c.id, k>0?TL.events[k-1].date:TL.openingEvent.date) : null;   // IQ-19
       const im=PICIMG[SWK||c.id], bx=LEFT, byy=mid-G.PH/2;
       const OWN=PIC.own && PIC.own[c.id];
       if(im && PIC.tile){                         // IQ-13b: a logo, unmodified, fitted on a light tile (DEC-180)
@@ -1217,7 +1277,8 @@ function drawAt(t){
       ctx.save(); ctx.shadowColor=mixWhite(colour,0.5); ctx.shadowBlur=HL.glow*hl*RASTER;
       ctx.fillStyle=mixWhite(colour,HL.mix*hl); rr(x0,by,w,BARH,2); ctx.fill(); ctx.restore();
     } else if(SERIES){ if(r.lo!=null && r.lo<r.len){ const wl=Math.max(3,W*r.lo/smoothMax); drawStyledBar(x0,by,wl,BARH,colour,r.st); drawRangeExt(x0+wl,by,w-wl,BARH,colour,r.st); }   // IQ-18c: a range
-                       else drawStyledBar(x0,by,w,BARH,colour,r.st); }
+                       else drawStyledBar(x0,by,w,BARH,colour,r.st);
+                       if(EDGE && EDGE[c.id]){ const eh=Math.max(4,Math.round(BARH*0.18)); ctx.save(); rr(x0,by,w,BARH,2); ctx.clip(); ctx.fillStyle=EDGE[c.id]; ctx.fillRect(x0,by+BARH-eh,w,eh); ctx.restore(); } }   // IQ-21: a club's second colour
     else { ctx.fillStyle=colour; rr(x0,by,w,BARH,2); ctx.fill(); }
     if(SERIES) ctx.globalAlpha=RA*ta;
 
@@ -1278,7 +1339,8 @@ function drawAt(t){
     if(SK && SK.kind!=='live'){                      // round 4: "· retired" / "· latest figure", fading in with the dim
       const a0=ctx.globalAlpha; ctx.globalAlpha=a0*statusIn(SK,fr);
       ctx.fillStyle=T.cap||T.muted; ctx.font='500 '+VALF+'px '+FONT;
-      after+=tabText('· '+(VISITS?STATUS[SK.kind].replace('{month}',LASTM[c.id]):STATUS[SK.kind]),after,mid+VALF*0.35,'left','status_tag',c.id)+VALF*0.35;
+      const stt = NET ? String(STATUS[SK.kind]||'').replace('{year}', (cur.rel&&cur.rel[c.id])||(prev.rel&&prev.rel[c.id])||'') : VISITS?STATUS[SK.kind].replace('{month}',LASTM[c.id]):STATUS[SK.kind];   // IQ-21: "" = dimmed only
+      if(stt) after+=tabText('· '+stt,after,mid+VALF*0.35,'left','status_tag',c.id)+VALF*0.35;
       window.__STATUS.push({id:c.id, kind:SK.kind, units:r.n, alpha:ctx.globalAlpha});
       ctx.globalAlpha=a0;
     }
@@ -1367,6 +1429,7 @@ function drawStepFrame(f){
   else if(st.name==='explain') RTT_STEPS.explain(u);   // IQ-18c
   else if(st.name==='line') RTT_STEPS.line(u);
   else if(st.name==='peaks') RTT_STEPS.peaks(u);
+  else if(st.name==='avgtable') drawAvgTable(u, st);   // IQ-21 (RTT-101)
   else throw new Error('unknown step '+st.name);
   const a=Math.max(st.dip_in && u<st.dip_in ? 1-u/st.dip_in : 0, st.dip_out && sec-u<st.dip_out ? 1-(sec-u)/st.dip_out : 0);
   if(a>0){ baseTransform(); ctx.save(); ctx.globalAlpha=a; ctx.fillStyle=T.ground; ctx.fillRect(0,0,1920,1080); ctx.restore(); }
@@ -1507,6 +1570,7 @@ function drawStory(fr){
 function drawCombined(k, SF, fr, cur, prev){
   window.__COMBINED=null;
   if(!COMB) return;
+  if(NET && COMB.mode==='avg') return drawAvgPanel(k, SF);   // IQ-21: the leader's average per PL season (2026 £)
   const C=COMB, evC=k>=0?TL.events[k]:TL.openingEvent, evP=k>0?TL.events[k-1]:TL.openingEvent;
   const g=SF?SF.g:1;
   let tot = g>=1 ? evC.combined : Math.round(evP.combined+(evC.combined-evP.combined)*g);
@@ -1517,7 +1581,7 @@ function drawCombined(k, SF, fr, cur, prev){
     if(SF && k>=0){ let t=0; for(const id of Object.keys(SF.u)){ const a=liveV(prev,id), b=liveV(cur,id); t+=SF.u[id]*(a&&b?1:b?g:a?1-g:0); } tot=g>=1?evC.combined:Math.round(t); }
     vPub = g>=1 && Object.keys(cur.totals).filter(id=>liveV(cur,id)).every(id=>cur.prov[id]==='p'); }
   const FC=FWD && k>=0 && evC.fwd ? evC.fwd : null;   // IQ-18c: a forward board's total is a range
-  let valTxt=VISITS?visitsText(tot,vPub):money(tot), totLo=tot;
+  let valTxt=VISITS?visitsText(tot,vPub):NET?netText(tot,0):money(tot), totLo=tot;
   if(FC){ const l0=evP.combined_lo!=null?evP.combined_lo:evP.combined; totLo=g>=1?evC.combined_lo:Math.round(l0+(evC.combined_lo-l0)*g);
     valTxt=RTT_STEPS.bn(totLo/1e9, tot/1e9, FC.kind==='estimate'?'est':'whole'); }
   ctx.save(); ctx.fillStyle=T.panel; rr(C.x,C.y,C.w,C.h,12); ctx.fill();
@@ -1552,7 +1616,7 @@ function drawCombined(k, SF, fr, cur, prev){
       ctx.save(); ctx.fillStyle=mixGround(T.rule,0.6); ctx.beginPath(); PF.forEach((p,i)=>i?ctx.lineTo(X(p),Y(p)):ctx.moveTo(X(p),Y(p)));
       PF.slice().reverse().forEach(p=>ctx.lineTo(X(p),Y({c:lo(p)}))); ctx.closePath(); ctx.fill();
       ctx.strokeStyle=T.rule; ctx.lineWidth=4; ctx.setLineDash([10,8]); ctx.beginPath(); PF.forEach((p,i)=>i?ctx.lineTo(X(p),Y(p)):ctx.moveTo(X(p),Y(p))); ctx.stroke(); ctx.restore(); }
-    for(const [id,ks] of Object.entries(ENTRYK)) for(const kk of ks){ const p=A.find(q=>q.date===TL.events[kk].date); if(!p || kk>k) continue;
+    if(C.dots!==false) for(const [id,ks] of Object.entries(ENTRYK)) for(const kk of ks){ const p=A.find(q=>q.date===TL.events[kk].date); if(!p || kk>k) continue;
       ctx.fillStyle=darkenForWhite(ENT[id].colour); ctx.beginPath(); ctx.arc(X(p),Y({c:p.c}),6,0,Math.PI*2); ctx.fill(); }
     ctx.fillStyle=T.cap||T.muted; ctx.font='500 26px '+FONT; tabText(A[0].date.slice(0,4),x0,y0+h+30,'left','comb_axis',null); tabText(FC ? evC.date.slice(0,4) : A[A.length-1].date.slice(0,4),x0+w,y0+h+30,'right','comb_axis',null);
   } else if(C.mode==='bar'){
@@ -1564,9 +1628,58 @@ function drawCombined(k, SF, fr, cur, prev){
   }
   if(note){ ctx.fillStyle=T.ink; ctx.font='500 26px '+FONT; text('comb_note',null,note,C.x+pad,C.y+C.h-16,'left'); }
   else if(dropTxt){ ctx.fillStyle=T.cap||T.muted; ctx.font='500 26px '+FONT; text('comb_drop',null,dropTxt,C.x+pad,C.y+C.h-16,'left'); }   // IQ-19b
-  else { ctx.fillStyle=T.cap||T.muted; ctx.font='500 26px '+FONT; text('comb_count',null,FC&&FC.comb_note ? FC.comb_note : VISITS ? (C.count_text||'sum of {n} sites').replace('{n}',nNow) : 'sum of '+nNow+' companies',C.x+pad,C.y+C.h-16,'left'); }
+  else { ctx.fillStyle=T.cap||T.muted; ctx.font='500 26px '+FONT; text('comb_count',null,FC&&FC.comb_note ? FC.comb_note : VISITS ? (C.count_text||'sum of {n} sites').replace('{n}',nNow) : NET ? (C.count_text||'') : 'sum of '+nNow+' companies',C.x+pad,C.y+C.h-16,'left'); }
   ctx.restore();
   window.__COMBINED={value:tot, lo:FC?totLo:null, text:valTxt, exact:g>=1, companies:nNow, note:VISITS?dropTxt:note, box:{x:C.x,y:C.y,w:C.w,h:C.h}};
+}
+
+/* ---- IQ-21 (RTT-101) ---- */
+/* the panel's option B: the leader's average net spend per PL season in 2026 pounds (series_onscreen.csv
+   avg_real_net_per_season_gbp2026), for the month whose figures are on the board (the landed month; while the bars count,
+   the month before) */
+function drawAvgPanel(k, SF){
+  const C=COMB, st=(SF&&SF.g>=1)||k<0 ? (k>=0?TL.states[k]:TL.opening) : (k>0?TL.states[k-1]:TL.opening), id=st.order[0], pad=20;
+  ctx.save(); ctx.fillStyle=T.panel; rr(C.x,C.y,C.w,C.h,12); ctx.fill();
+  ctx.fillStyle=T.cap||T.muted; ctx.font='600 26px '+FONT; text('comb_label',null,C.label,C.x+pad,C.y+pad+22,'left');
+  if(C.label2) text('comb_label',null,C.label2,C.x+pad,C.y+pad+56,'left');
+  const v=netText(st.avg[id],1);
+  ctx.fillStyle=T.ink; ctx.font='800 64px '+FONT; tabText(v,C.x+pad,C.y+C.h-62,'left','comb_value',null);
+  ctx.fillStyle=T.cap||T.muted; ctx.font='500 26px '+FONT;
+  const n=st.seasons[id], line=ENT[id].short+' · '+n+' PL season'+(n===1?'':'s');
+  text('comb_count',null,line,C.x+pad,C.y+C.h-18,'left');
+  ctx.restore();
+  window.__COMBINED={value:st.avg[id], text:v, leader:id, seasons:n, box:{x:C.x,y:C.y,w:C.w,h:C.h}};
+}
+/* the closing view (steps "avgtable"): the final table's clubs ranked by their average net spend per PL season in 2026
+   pounds, at the freeze; ties keep the final table's order */
+function drawAvgTable(u, S){
+  baseTransform(); window.__LABELS=[]; window.__BARS=[]; window.__PICS=[];
+  const last=TL.states[TL.states.length-1], n=S.rows||NROWS, ids=last.order.slice(0,n);
+  const pos={}; ids.forEach((id,i)=>{ pos[id]=i; });
+  const ord=ids.slice().sort((a,b)=>(last.avg[b]-last.avg[a])||(pos[a]-pos[b]));
+  ctx.fillStyle=T.ground; ctx.fillRect(0,0,1920,1080); ctx.textBaseline='alphabetic'; ctx.textAlign='left';
+  ctx.fillStyle=T.ink; ctx.font='700 50px '+FONT; text('title',null,S.title||CFG.title,LEFT,74,'left');
+  ctx.fillStyle=T.cap||T.muted; ctx.font='500 30px '+FONT; tabText(S.subtitle||'',LEFT,124,'left','subline',null);
+  if(S.note){ ctx.font='500 26px '+FONT; tabText(S.note,LEFT,172,'left','avg_note',null); }
+  const G=BOARDFIT?fitGeom(geom(),Math.max(BOARDFIT.min_slots,n)):geom(), nf=nameSize(), mx=Math.max(...ord.map(id=>last.avg[id]))*1.06;
+  ord.forEach((id,i)=>{
+    const c=ENT[id], y=TOP+14+i*G.ROWH, by=y+(G.ROWH-G.BARH)/2, mid=by+G.BARH/2, w=Math.max(3,G.W*last.avg[id]/mx);
+    const im=PICIMG[id];
+    if(PIC && im && PIC.tile){ const pad=PIC.tile_pad!=null?PIC.tile_pad:6, byy=mid-G.PH/2; ctx.fillStyle='#F4F6FA'; rr(LEFT,byy,G.PW,G.PH,8); ctx.fill();
+      const iw=im.naturalWidth||1, ih=im.naturalHeight||1, sc=Math.min((G.PW-2*pad)/iw,(G.PH-2*pad)/ih); ctx.drawImage(im,LEFT+(G.PW-iw*sc)/2,byy+(G.PH-ih*sc)/2,iw*sc,ih*sc);
+      window.__PICS.push({id, box:{x:LEFT,y:byy,w:G.PW,h:G.PH}, alpha:1, tile:true}); }
+    drawStyledBar(G.x0,by,w,G.BARH,darkenForWhite(c.colour),'official');
+    if(EDGE && EDGE[id]){ const eh=Math.max(4,Math.round(G.BARH*0.18)); ctx.save(); rr(G.x0,by,w,G.BARH,2); ctx.clip(); ctx.fillStyle=EDGE[id]; ctx.fillRect(G.x0,by+G.BARH-eh,w,eh); ctx.restore(); }
+    ctx.fillStyle='#F4F6FA'; ctx.font='600 '+nf+'px '+FONT; const nx=G.x0+18; text('name',id,c.label,nx,mid+nf*0.35,'left');
+    const nameOut=Math.max(0,(nx+ctx.measureText(c.label).width)-(G.x0+w));
+    ctx.fillStyle=T.ink; ctx.font='600 '+G.VALF+'px '+FONT; const vt=netText(last.avg[id],1), tw=tabText(vt,G.x0+w+18+nameOut,mid+G.VALF*0.35,'left','value',id);
+    ctx.fillStyle=T.cap||T.muted; ctx.font='500 '+G.VALF+'px '+FONT; const sn=last.seasons[id];
+    tabText('· '+sn+' season'+(sn===1?'':'s'),G.x0+w+18+nameOut+tw+G.VALF*0.35,mid+G.VALF*0.35,'left','avg_seasons',id);
+    window.__BARS.push({id, y:i, units:last.avg[id], seasons:sn, rect:{x:G.x0,y:by,w,h:G.BARH}});
+  });
+  ctx.fillStyle=T.foot; ctx.font='400 '+SZ.footer+'px '+FONT; text('footer',null,S.footer||CFG.footer||'',LEFT,1080-20,'left');
+  for(const b of OVL) if(b.img){ const s2=Math.min(b.w/b.img.naturalWidth, b.h/b.img.naturalHeight); ctx.drawImage(b.img, b.x+(b.w-b.img.naturalWidth*s2)/2, b.y+(b.h-b.img.naturalHeight*s2)/2, b.img.naturalWidth*s2, b.img.naturalHeight*s2); }
+  window.__STEP={name:'avgtable', order:ord};
 }
 
 function drawOutro(o){
