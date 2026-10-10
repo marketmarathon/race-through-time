@@ -3,6 +3,8 @@
 ## Pull request #23 up to date with main (IQ-19h, 10 Oct 2026) — Luke can merge #23 now
 - Brief `prompts/CODE_SESSION_IQ-19h.md`. `origin/main` (merge commit `7705838`: #18 and #22) merged into `claude/relaxed-clarke-9e0sqq`; only the three state files conflicted, both sides kept (every DEC from main and from this branch, in number order, none renumbered; RTT-103 as on main, RTT-102 as on this branch). No DEC recorded (no choice needed); **next free RTT-102 number still DEC-574**.
 - #23 contains #21's branch (`b04f33a`), so merging #23 also merges #21. Nothing in this merge touches a workflow that runs on this branch, so the push started no render.
+- Checked after the push: GitHub shows #23 as mergeable with no conflicts (`clean`); `run_tests_rtt102.js` 3/3 PASS; `compare_frames.js` against main: 84 frames of RTT-001/002/003/103 pixel-identical.
+- **Private repo:** branch `claude/relaxed-clarke-9e0sqq` holds only the RTT-102 logos (`b808d9d`, `f2c1d04`: 26 files under `assets/rtt-102/logos/`), has no pull request yet and merges cleanly into private main as it is. It should be merged there so the logos stay on main (the film workflow already falls back to main).
 
 ## RTT-102 — film APPROVED (IQ-19g, 9 Oct 2026) — next: packaging in Cowork
 - **Same branch and pull request** https://github.com/marketmarathon/race-through-time/pull/23 (not merged, DEC-057; merge order #18, #22, #21, then #23). Brief `prompts/CODE_SESSION_IQ-19g.md`. Owner DEC-573: Luke approved the master `rtt102_film_8f49737_3840x2160.mp4` (private pre-release `rtt-102-film-8f49737-run1`), SHA-256 `8aa8ecbec90336b8faafae1054dcbdce81faa8216d46088211281e0e34416bad`; Cowork checked GitHub's asset digests against both recorded SHA-256s. **Next free RTT-102 number: DEC-574.**
