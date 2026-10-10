@@ -1,7 +1,7 @@
 {
   "schema": "rtt-state/0.1",
   "updated": "2026-10-10",
-  "updated_by": "Claude (Claude Code cloud session): IQ-22c - RTT-104 music chosen (DEC-649) and FULL FILM rendered (DEC-650..DEC-652), awaiting Luke's approval of the master by SHA-256",
+  "updated_by": "Claude (Claude Code cloud session): IQ-22d - RTT-104 film V1 not approved (DEC-653); V2 smooth and slower (DEC-654..DEC-656) rendered (DEC-657), awaiting Luke's approval by SHA-256",
   "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); starts data audit PASSED (DEC-058/DEC-059, merged PR #8); IQ-04 MERGED (PR #2); IQ-05 rounds 1-5 MERGED (PR #3-#7); round-5 pilot RENDERED and APPROVED by Luke (DEC-062, visual direction = milestone 3); pull request #9 MERGED (c378ea7); RTT-002 FINAL FILM APPROVED (DEC-078), pull request #10 MERGED (main ef01814), UPLOADED by Luke in YouTube Studio and SCHEDULED PUBLIC 30 Sep 2026 (DEC-079 early release, DEC-080): video 2fY7Bzq8Uu0 on channel UC8R47xbyBB5Z93MdMkoUOWg; IQ-09 RTT-003 DATA BUILD DONE 1 Oct 2026; Luke's answers applied 2 Oct 2026 (DEC-093..DEC-102); pull request #12 MERGED 2 Oct 2026 (main 4288f6d); IQ-10 RTT-003 DESIGN PILOT ROUND 5 (FINAL PILOT ROUND) RENDERED 3 Oct 2026 (private pre-release; not the full film), awaiting Luke's review; IQ-11 (3 Oct 2026): CLAUDE.md and reference/house_style.md added on the IQ-10 branch (DEC-145); next episode RTT-001 Browser Wars (DEC-144); IQ-10 round 6 (3 Oct 2026): RTT-003 design APPROVED (DEC-146), FULL FILM with music rendered to a private pre-release, then APPROVED by Luke (DEC-150); IQ-12 (3 Oct 2026): RTT-001 Browser Wars DATA BUILD done (data/rtt-001, 11/11 checks PASS), pull request open, awaiting Luke's answers to 12 questions; IQ-12b (4 Oct 2026): Luke answered all 12 RTT-001 questions (DEC-164..DEC-166), smoothing direction for the pilot (DEC-167), order check (DEC-168); RTT-003 record (3-4 Oct 2026, pull request #14): full film APPROVED (DEC-150), pull request #13 MERGED (main 618c6a7) and private pull request #1 MERGED (private main 4d47eb2), UPLOADED by Luke in YouTube Studio and PUBLISHED PUBLIC 3 Oct 2026 (DEC-151): video JZzvA_ZDii0; IQ-13/IQ-13b/IQ-13c (4 Oct 2026): RTT-001 DESIGN PILOT 1 rendered to a private pre-release (smoothing options A/B/C, flagged stretches, notes, marker, colours, browser logos per owner direction DEC-180, features, pacing, titles), then the logo round with every browser's logo (DEC-182/DEC-183, private pre-release rtt-001-pilot1-f3d9e2f-run3), awaiting Luke's answers; pull request #15 merged by Luke (b5a09d3); pull request #16 merged 4 Oct 2026 22:37 UTC (main 3bb2857)",
   "canonical_queue": "state/ folder on main in marketmarathon/race-through-time (this file)",
   "repo_baseline": {
@@ -678,11 +678,11 @@
     {
       "id": "RTT-104",
       "title": "Women in Parliament: Highest vs Lowest (1997-2025) (working title, DEC-601)",
-      "state": "FILM_RENDERED_AWAITING_LUKE_APPROVAL",
+      "state": "FILM_V2_RENDERED_AWAITING_LUKE_APPROVAL",
       "check_level": "LIVE",
       "verdict": "CONDITIONAL",
-      "blocker": "Luke approves the exact master by its SHA-256 (DEC-078): rtt104_film_e8d74bc_3840x2160.mp4, b65ed119f2a3c9fa5eea8fcc939d848f91e8a414909b8539a0285cf60cd01c63, 91,660,797 bytes (https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-104-film-e8d74bc-run2). Also: end-screen placement over the closing card (DEC-648) and chapter titles (kits/rtt-104/youtube_times.md). Then Luke uploads by hand (DEC-080).",
-      "decisions": "DEC-600..DEC-605 (owner, brief); DEC-606..DEC-610 (Claude findings: DEC block, runner fetch, rights, reference dates, fetch facts); DEC-611..DEC-613 (owner, IQ-20b: 4 m confirmed, latest-year population rule, closing card); DEC-614 (Cowork for Luke: build data, stay blocked); DEC-615 (rights options; Cowork checks); DEC-616..DEC-622 (Claude: names, missing years, ties, 0% group, world panel, reference-date finding, build results); DEC-623 (owner, IQ-20d: rights option A, owner-accepted risk; lifts DEC-614); DEC-624..DEC-627 (owner, IQ-22: year only, leaving reason on screen, closing card approved, Turkiye); DEC-628..DEC-633 (Claude: board exits, own page via the shared driver, design details, flash check, phone check and running time, render); DEC-634..DEC-644 (owner, IQ-22b: all design-round-1 recommendations approved); DEC-645 (Cowork check of the stills); DEC-646..DEC-648 (Claude: approved base config and the 2005 zero-group fit fix, whole-film checks, film workflow gated on music); DEC-649 (owner: music No.10 A New Beginning, Esther Abrami); DEC-650 (owner: render the full film); DEC-651 (Claude: no loop, start at the end of the opening silence, fade over the last 5 s); DEC-652 (render record)",
+      "blocker": "Luke approves the exact V2 master by its SHA-256 (DEC-078): rtt104_film_v2_fda34c5_3840x2160.mp4, 5f40b577d1b0c0baaf8df0be1132a571057ff0564c619b3e48a163736d70aa70, 126,759,509 bytes, 1:43.7 (https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-104-film-v2-fda34c5-run3). Also: end-screen placement over the closing card (DEC-648) and chapter titles (kits/rtt-104/youtube_times.md). Then Luke uploads by hand (DEC-080).",
+      "decisions": "DEC-600..DEC-605 (owner, brief); DEC-606..DEC-610 (Claude findings: DEC block, runner fetch, rights, reference dates, fetch facts); DEC-611..DEC-613 (owner, IQ-20b: 4 m confirmed, latest-year population rule, closing card); DEC-614 (Cowork for Luke: build data, stay blocked); DEC-615 (rights options; Cowork checks); DEC-616..DEC-622 (Claude: names, missing years, ties, 0% group, world panel, reference-date finding, build results); DEC-623 (owner, IQ-20d: rights option A, owner-accepted risk; lifts DEC-614); DEC-624..DEC-627 (owner, IQ-22: year only, leaving reason on screen, closing card approved, Turkiye); DEC-628..DEC-633 (Claude: board exits, own page via the shared driver, design details, flash check, phone check and running time, render); DEC-634..DEC-644 (owner, IQ-22b: all design-round-1 recommendations approved); DEC-645 (Cowork check of the stills); DEC-646..DEC-648 (Claude: approved base config and the 2005 zero-group fit fix, whole-film checks, film workflow gated on music); DEC-649 (owner: music No.10 A New Beginning, Esther Abrami); DEC-650 (owner: render the full film); DEC-651 (Claude: no loop, start at the end of the opening silence, fade over the last 5 s); DEC-652 (render record); DEC-653 (owner: V1 not approved, V2 smoother and slower); DEC-654 (Cowork's reading under DEC-417: PCHIP motion, 3 s per year); DEC-655..DEC-657 (Claude: V2 build, checks, render)",
       "branch": "claude/nifty-brown-hrl2yi",
       "data": "data/rtt-104/ (README there); build python3 scripts/build_rtt104_dataset.py data/rtt-104 reports/RTT-104_data_report.md; tests python3 tests/rtt104/run_tests_rtt104.py (20/20)",
       "contract": "reference/metric_contract_RTT-104.md",
@@ -691,27 +691,32 @@
       "facts": "126 countries in the race at 4 m (140 at 2.5 m); leaders Sweden 1997-2002, Rwanda 2003-2025; 0% group at most 3 a year; closing card 6 VERIFIED (Afghanistan, Bangladesh, Haiti, Kuwait, Myanmar, Sudan), Nepal NOT FOUND (off); WDI = OWID to rounding in all 5,288 cells; WDI updated 2026-10-08",
       "kit": "kits/rtt-104 (player_rtt104.html through kits/rtt-002/rtt.js openPlayer; configs per option; render_rtt104.js, render_stills.js); workflow .github/workflows/rtt104_pilot.yml",
       "film": {
-        "config": "kits/rtt-104/config_rtt104_film.json",
-        "frames": 2271,
-        "duration": "1:15.7",
+        "config": "kits/rtt-104/config_rtt104_film_v2.json (V2; V1 = config_rtt104_film.json)",
+        "frames": 3111,
+        "duration": "1:43.7",
         "workflow": ".github/workflows/rtt104_film.yml (gate tested: run 38034741656, render skipped)",
-        "checks": "tests/rtt104/FILM_CHECK.md 34/34 PASS; tests/rtt104/WCAG_FLASH_FILM.md PASS (51,183 of 57,600 px)",
+        "checks": "tests/rtt104/FILM_CHECK.md PASS (34 shots + 2,492 in-between frames); tests/rtt104/WCAG_FLASH_FILM_V2.md PASS (runner 29,677 of 57,600 px)",
         "youtube_times": "kits/rtt-104/youtube_times.md",
         "music": "kits/rtt-104/music_rtt104.json (No.10 A New Beginning by Esther Abrami; starts 0.705 s into the track)",
-        "release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-104-film-e8d74bc-run2",
+        "release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-104-film-v2-fda34c5-run3",
         "master": {
-          "file": "rtt104_film_e8d74bc_3840x2160.mp4",
-          "sha256": "b65ed119f2a3c9fa5eea8fcc939d848f91e8a414909b8539a0285cf60cd01c63",
-          "bytes": 91660797
+          "file": "rtt104_film_v2_fda34c5_3840x2160.mp4",
+          "sha256": "5f40b577d1b0c0baaf8df0be1132a571057ff0564c619b3e48a163736d70aa70",
+          "bytes": 126759509
         },
         "viewing": {
-          "file": "rtt104_film_e8d74bc_1920x1080_viewing.mp4",
-          "sha256": "1b4636fa8581a8570aaa9345288974be12bb0caa4a50de684177bf487b40619c",
-          "bytes": 14661168
+          "file": "rtt104_film_v2_fda34c5_1920x1080_viewing.mp4",
+          "sha256": "f2e8679ec18513cc6a403dfabf39c23ff277bb5bb761c958b3258c7fdcd0ac75",
+          "bytes": 20839516
         },
-        "audio": "-15.9 LUFS integrated, true peak -1.5 dBTP",
-        "run": "https://github.com/marketmarathon/race-through-time/actions/runs/38037587321",
-        "credits": "kits/rtt-104/description_credits.md"
+        "audio": "-16.0 LUFS integrated, true peak -1.5 dBTP",
+        "run": "https://github.com/marketmarathon/race-through-time/actions/runs/38039718541",
+        "credits": "kits/rtt-104/description_credits.md",
+        "v1_superseded": {
+          "release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-104-film-e8d74bc-run2",
+          "master_sha256": "b65ed119f2a3c9fa5eea8fcc939d848f91e8a414909b8539a0285cf60cd01c63",
+          "status": "not approved (DEC-653)"
+        }
       }
     }
   ],
@@ -1022,6 +1027,16 @@
       "result": {
         "decisions": "DEC-649..DEC-652",
         "release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-104-film-e8d74bc-run2"
+      }
+    },
+    {
+      "id": "IQ-22d",
+      "task": "RTT-104 film V2: smoother (monotone curves through every year, no stop per year) and slower (3 s per year); checks; new private pre-release",
+      "where": "branch claude/nifty-brown-hrl2yi, pull request https://github.com/marketmarathon/race-through-time/pull/24; prompts/CODE_SESSION_IQ-22d.md",
+      "status": "DONE 10 Oct 2026: V2 rendered, awaiting Luke's approval by SHA-256",
+      "result": {
+        "decisions": "DEC-653..DEC-657",
+        "release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-104-film-v2-fda34c5-run3"
       }
     }
   ],
