@@ -22,7 +22,7 @@ const PHONE_PT = 390, FLOOR = 5.0, NAMES = 5.9, k = PHONE_PT / 1920, pt = px => 
 (async () => {
   const dir = path.join(ROOT, 'tests', 'output', 'rtt001_phone', '_assets'); fs.mkdirSync(dir, { recursive: true });
   placeholderPNG(path.join(dir, 'rtt_logo.png'), 885, 885, [212, 175, 55]);
-  const stills = JSON.parse(fs.readFileSync(path.join(ROOT, 'kits', 'rtt-001', 'stills.json'), 'utf8')).stills.filter(s => s.config);
+  const stills = JSON.parse(fs.readFileSync(path.join(ROOT, 'kits', 'rtt-001', 'stills.json'), 'utf8')).stills.filter(s => s.config && !s.sheet);   // boards only (a sheet may name a config)
   const out = ['# RTT-001 phone check (IQ-13)', '', `Each board still measured as drawn on the 1920 frame and converted to points on a phone showing the video ${PHONE_PT} points wide. Names and values at least ${NAMES} pt (RTT-002's approved size); axis and date at least the names; footer, source line, marker, note and callouts at least ${FLOOR} pt. Logo tile and crown: reported only.`, '',
                '| Still | Names | Values | Axis | Date | Footer | Source line | Marker | Note | Callout | Logo tile | Crown | Result |', '|---|---|---|---|---|---|---|---|---|---|---|---|---|'];
   let ok = true;
@@ -38,8 +38,9 @@ const PHONE_PT = 390, FLOOR = 5.0, NAMES = 5.9, k = PHONE_PT / 1920, pt = px => 
     const S = await pg.evaluate(() => ({ L: window.__LABELS, P: window.__PICS, CR: window.__CROWN }));
     await br.close();
     const size = kinds => { const v = S.L.filter(l => kinds.includes(l.kind) && l.alpha > 0.3).map(l => l.size); return v.length ? Math.min(...v) : null; };
-    const z = { name: size(['name']), value: size(['value']), axis: size(['axis']), date: size(['time_line']), footer: size(['footer']),
+    const z = { name: size(['name']), value: size(['value']), axis: size(['axis']), date: size(['time_line', 'date_month', 'date_year']), footer: size(['footer']),
                 source: size(['source_line']), marker: size(['marker']), note: size(['note_line']), callout: size(['callout', 'callout_extra']) };
+    // date: the old date line, or the date block's month and year (date/era round, DEC-214)
     const fails = [];
     for (const kk of ['name', 'value']) if (z[kk] == null || pt(z[kk]) < NAMES) fails.push(kk + ' < ' + NAMES + ' pt');
     if (!(z.axis >= z.name)) fails.push('axis < names');

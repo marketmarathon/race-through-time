@@ -1,0 +1,277 @@
+{
+ "extends": "config_rtt103_base.json",
+ "kit_version": "rtt103_film_iq18f",
+ "out": "rtt103_film.mp4",
+ "pacing": {
+  "sec_per_event": 1.5,
+  "final_board_sec": 4.0
+ },
+ "gaps": {
+  "mode": "leave"
+ },
+ "combined": {
+  "enabled": true,
+  "mode": "line",
+  "x": 1380,
+  "y": 700,
+  "w": 500,
+  "h": 240,
+  "gap_text": "{id} left out: not comparable"
+ },
+ "story": {
+  "enabled": true,
+  "mode": "card",
+  "sec": 3.5,
+  "size": 30,
+  "card": {
+   "x": 1380,
+   "y": 330,
+   "w": 500,
+   "size": "names"
+  },
+  "items": [
+   {
+    "at": "2016-06-30",
+    "plain": true,
+    "text": "Alibaba leaves the board: its figures for mid-2016 to 2017 are not comparable"
+   },
+   {
+    "at": "2018-03-31",
+    "plain": true,
+    "text": "Alibaba is back: comparable figures again from 2018"
+   },
+   {
+    "at": "2023-03-31",
+    "when": "23 Jan 2023",
+    "who": "Microsoft and OpenAI",
+    "text": "“…a multiyear, multibillion dollar investment…”",
+    "tag": "commitment · not capital spending",
+    "colour": "#0F7FD6"
+   },
+   {
+    "at": "2024-09-30",
+    "when": "30 Jul 2024",
+    "who": "Microsoft",
+    "text": "“Cloud and AI related spend represents nearly all of total capital expenditures.”",
+    "tag": "company statement",
+    "colour": "#0F7FD6"
+   },
+   {
+    "at": "2025-03-31",
+    "when": "21 Jan 2025",
+    "who": "Stargate (OpenAI, SoftBank, Oracle, MGX)",
+    "text": "“…invest $500 billion over the next four years”",
+    "tag": "commitment · not capital spending",
+    "colour": "#D2352B"
+   },
+   {
+    "at": "2025-09-30",
+    "when": "23 Sep 2025",
+    "who": "OpenAI and Oracle",
+    "text": "“…exceeds $300 billion … over the next five years”",
+    "tag": "commitment · not capital spending",
+    "colour": "#D2352B"
+   },
+   {
+    "at": "2026-06-30",
+    "when": "29 Apr 2026",
+    "who": "Alphabet",
+    "text": "“…the overwhelming majority of this spend … to support the AI opportunities…”",
+    "tag": "company statement",
+    "colour": "#2E9E4A"
+   },
+   {
+    "when": "2 Jun 2026",
+    "who": "Alphabet",
+    "text": "“…a total equity raise of $84.75 billion.”",
+    "tag": "financing · not capital spending",
+    "colour": "#2E9E4A",
+    "at": "2026-12-31"
+   },
+   {
+    "when": "30 Apr 2026",
+    "who": "iCapital estimate",
+    "text": "“…70–75% of that spend now tied directly to AI infrastructure”",
+    "sub": "about Amazon, Microsoft, Alphabet and Meta's projected 2026 spending",
+    "tag": "estimate · not in the bars",
+    "colour": "#E8B44A",
+    "tagColour": "#E8B44A",
+    "at": "2026-12-31",
+    "sec": 4.5,
+    "card_y": 236
+   }
+  ]
+ },
+ "steps": {
+  "enabled": true,
+  "race_dip_out": 0.5,
+  "final_line": "Combined: {now} in the 12 months to June 2026, up from {before} a year earlier",
+  "sequence": [
+   {
+    "name": "explain",
+    "sec": 16.0,
+    "dip_in": 0.5,
+    "dip_out": 0.4
+   },
+   {
+    "name": "line",
+    "sec": 6.0,
+    "dip_in": 0.5,
+    "dip_out": 0.4
+   },
+   {
+    "name": "peaks",
+    "sec": 8.0,
+    "dip_in": 0.5,
+    "dip_out": 0.4
+   },
+   {
+    "name": "final",
+    "sec": 10.0,
+    "dip_in": 0.5
+   }
+  ],
+  "line": {
+   "band_sec": 1.0,
+   "footer": "Actual: company filings · 2026: company plans (Amazon, Oracle as reported by Reuters; Alibaba: Citi) · 2027–2030: Race Through Time estimates"
+  },
+  "peaks": {
+   "row_gap_sec": 1.2,
+   "footer": "BCG (12 Jun 2026, chart read by eye) · FactSet consensus as of 31 Aug 2026, published by Morgan Stanley Investment Management, 17 Sep 2026 · Allianz Research (28 Sep 2026)"
+  },
+  "explain": {
+   "pill": "ABOUT THE ESTIMATES",
+   "title": "What the 2026–2030 bars show",
+   "row_gap_sec": 0.5,
+   "items": [
+    {
+     "lead": "2026",
+     "text": "Company plans (Amazon, Oracle: as reported by Reuters). Alibaba: Citi estimate. Tencent, Baidu: latest 12 months (Tencent aims to boost 2026 spending, Reuters). ByteDance: press report, not in the total."
+    },
+    {
+     "lead": "2027–2030",
+     "text": "Race Through Time estimates: each 2026 figure grown at FactSet consensus rates."
+    },
+    {
+     "lead": "Least reliable",
+     "text": "2030. Oracle's 2027–2028 figures are probably high."
+    },
+    {
+     "lead": "CoreWeave",
+     "text": "Rating agencies expect a dip in 2027."
+    }
+   ],
+   "footer": "2026: company calls and releases, Reuters, Citi, SCMP · CoreWeave: Fitch (17 Jul 2026), S&P Global Ratings (9 Apr 2026) · Estimates: FactSet consensus as of 31 Aug 2026, published by Morgan Stanley Investment Management, 17 Sep 2026",
+   "size": 40,
+   "lead_size": 42,
+   "item_gap": 44,
+   "top": 280
+  }
+ },
+ "notes": [
+  "IQ-18e (Luke's answers DEC-376..DEC-378, DEC-379): the round-3 look approved; from June 2026 the race slows and flows on continuously (2026 plans 10.8 s, 2027-2030 6 s each, a 3 s hold at 2030), then the explanation (trimmed, 16 s), the combined line, the peak timeline and the final June 2026 table. The film config rendered by rtt103_film.yml.",
+  "IQ-18f (Luke, DEC-381): ByteDance's own logo (Commons File:ByteDance logo.svg) on the same light tile as the others; nothing else changed from 4d1e2dc."
+ ],
+ "board": {
+  "fit": {
+   "max_slots": 10
+  }
+ },
+ "forward": {
+  "enabled": true,
+  "extra": {
+   "bytedance": {
+    "label": "ByteDance",
+    "colour": "#5A6375",
+    "years": [
+     2026
+    ],
+    "source": "bytedance_2026",
+    "field": "forecast_amount_usd_bn"
+   }
+  },
+  "boards": [
+   {
+    "year": 2026,
+    "kind": "plans",
+    "sec": 10.8,
+    "month": "company plans",
+    "source_line": "2026: company plans and latest figures · Alibaba: Citi estimate · ByteDance: press report",
+    "footer": "2026 plans: company calls and releases · Amazon, Oracle: as reported by Reuters · Alibaba: Citi estimate · ByteDance: SCMP, unnamed sources",
+    "comb_note": "sum of 9 companies · not ByteDance",
+    "notes": {
+     "amazon": "plan, as reported by Reuters",
+     "alphabet": "plan",
+     "microsoft": "plan incl. leases",
+     "meta": "plan incl. leases",
+     "oracle": "year to May 2027, as reported by Reuters",
+     "coreweave": "plan",
+     "alibaba": "Citi estimate, year to Mar 2027",
+     "tencent": "actual to Jun 2026",
+     "baidu": "actual to Jun 2026",
+     "bytedance": "press report"
+    },
+    "prefix": {
+     "microsoft": "~",
+     "bytedance": "more than "
+    },
+    "count_sec": 10.8
+   },
+   {
+    "year": 2027,
+    "kind": "estimate",
+    "sec": 6.0,
+    "month": "estimate",
+    "source_line": "Race Through Time estimates · growth: FactSet consensus",
+    "footer": "Growth: FactSet consensus as of 31 Aug 2026, published by Morgan Stanley Investment Management, 17 Sep 2026 · Alibaba to Mar 2029: Citi",
+    "comb_note": "sum of the 9 bars",
+    "notes": {
+     "oracle": "probably high",
+     "alibaba": "Citi estimate, year to Mar 2028"
+    },
+    "count_sec": 6.0
+   },
+   {
+    "year": 2028,
+    "kind": "estimate",
+    "sec": 6.0,
+    "month": "estimate",
+    "source_line": "Race Through Time estimates · growth: FactSet consensus",
+    "footer": "Growth: FactSet consensus as of 31 Aug 2026, published by Morgan Stanley Investment Management, 17 Sep 2026 · Alibaba to Mar 2029: Citi",
+    "comb_note": "sum of the 9 bars",
+    "notes": {
+     "oracle": "probably high",
+     "alibaba": "Citi estimate, year to Mar 2029"
+    },
+    "count_sec": 6.0
+   },
+   {
+    "year": 2029,
+    "kind": "estimate",
+    "sec": 6.0,
+    "month": "estimate",
+    "source_line": "Race Through Time estimates · growth: FactSet consensus",
+    "footer": "Growth: FactSet consensus as of 31 Aug 2026, published by Morgan Stanley Investment Management, 17 Sep 2026 · Alibaba to Mar 2029: Citi",
+    "comb_note": "sum of the 9 bars",
+    "notes": {},
+    "count_sec": 6.0
+   },
+   {
+    "year": 2030,
+    "kind": "estimate",
+    "sec": 9.0,
+    "month": "estimate",
+    "source_line": "Race Through Time estimates · growth: FactSet consensus · 2030: least reliable year",
+    "footer": "Growth: FactSet consensus as of 31 Aug 2026, published by Morgan Stanley Investment Management, 17 Sep 2026 · Alibaba to Mar 2029: Citi",
+    "comb_note": "sum of the 9 bars",
+    "notes": {},
+    "count_sec": 6.0
+   }
+  ]
+ },
+ "pictures": {
+  "files": {
+   "bytedance": "bytedance.svg"
+  }
+ }
+}

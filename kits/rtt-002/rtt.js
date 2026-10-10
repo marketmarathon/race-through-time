@@ -153,6 +153,21 @@ function loadPictures(cfg, data) {
   }
   return out;
 }
+/* RTT-001 era photos (DEC-221): era.photo_dir under the private assets; each era entry with a `file` gets its photo.
+   A missing file is reported ("not found") like the pictures, which the render workflows treat as a failure. */
+function loadEraPhotos(cfg) {
+  const E = cfg.era;
+  if (!E || !E.enabled || !(E.eras || []).some(e => e.file)) return {};
+  const dir = path.join(path.resolve(KIT, process.env.RTT_LOCAL_ASSETS || cfg.local_assets || 'local_assets'), E.photo_dir || 'photos');
+  const out = {};
+  for (const e of E.eras) {
+    if (!e.file) continue;
+    const f = path.join(dir, e.file);
+    if (!fs.existsSync(f)) { console.log('era photo "' + e.device + '": ' + f + ' not found - none drawn'); continue; }
+    out[e.file] = dataUrl(f);
+  }
+  return out;
+}
 function loadLogos(cfg) {
   const K = cfg.maker_key || {}, BL = cfg.bar_logos || {};
   if (!(K.enabled && K.logos) && !BL.enabled) return {};   // IQ-10 round 2: also for the logos on the bars
@@ -197,7 +212,7 @@ async function openPlayer({ cfg, data, raster = 1, chrome }) {
   if (!fontOK) { await br.close(); throw new Error(fam + ' did not resolve - refusing to render substituted type'); }
 
   await pg.evaluate(o => window.setup(o), { data, cfg, raster, flags: loadFlags(cfg), overlays: loadOverlays(cfg),
-                                          pictures: loadPictures(cfg, data), logos: loadLogos(cfg) });
+                                          pictures: loadPictures(cfg, data), logos: loadLogos(cfg), era_photos: loadEraPhotos(cfg) });
   await pg.evaluate(() => window.__imagesReady);
   return { br, pg };
 }

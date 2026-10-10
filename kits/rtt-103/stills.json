@@ -1,0 +1,79 @@
+{
+ "stills": [
+  {
+   "name": "r01_board_jun2026",
+   "config": "config_rtt103_film.json",
+   "at": "2026-06-30"
+  },
+  {
+   "name": "r02_2026_board_share_sale",
+   "config": "config_rtt103_film.json",
+   "at": "2026-12-31",
+   "after_sec": 4.5
+  },
+  {
+   "name": "r03_2026_board_icapital",
+   "config": "config_rtt103_film.json",
+   "at": "2026-12-31",
+   "after_sec": 9.0
+  },
+  {
+   "name": "r04_2027_estimates",
+   "config": "config_rtt103_film.json",
+   "at": "2027-12-31"
+  },
+  {
+   "name": "r05_2030_estimates",
+   "config": "config_rtt103_film.json",
+   "at": "2030-12-31"
+  },
+  {
+   "name": "r06_explanation",
+   "config": "config_rtt103_film.json",
+   "step": 0,
+   "step_sec": 6.0
+  },
+  {
+   "name": "r07_final_table",
+   "config": "config_rtt103_film.json",
+   "at": "final"
+  },
+  {
+   "name": "d01_round3",
+   "compose": {
+    "title": "d01 · RTT-103 round 3: the race carries on after June 2026 (Luke's direction, DEC-371)",
+    "cols": 2,
+    "items": [
+     {
+      "still": "r01_board_jun2026",
+      "caption": "June 2026, the last real quarter (stills on the frames where the figures land)"
+     },
+     {
+      "still": "r02_2026_board_share_sale",
+      "caption": "2026 plans, mid-move (4.5 s in): Alphabet's share-sale card"
+     },
+     {
+      "still": "r03_2026_board_icapital",
+      "caption": "2026 plans, mid-move (9 s in): iCapital's card"
+     },
+     {
+      "still": "r04_2027_estimates",
+      "caption": "2027: Race Through Time estimates, striped, on the same board"
+     },
+     {
+      "still": "r05_2030_estimates",
+      "caption": "2030: least reliable estimate"
+     },
+     {
+      "still": "r06_explanation",
+      "caption": "The explanation after 2030"
+     },
+     {
+      "still": "r07_final_table",
+      "caption": "The final June 2026 table (10 s hold), as built in round 2"
+     }
+    ]
+   }
+  }
+ ]
+}
