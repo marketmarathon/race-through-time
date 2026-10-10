@@ -1,0 +1,61 @@
+{
+ "episode": "RTT-002 F1 wins",
+ "kit": "rtt-002",
+ "film_config": "config_rtt002_film.json",
+ "private_ref": "main",
+ "assets_list": "kits/thumbnails/assets_sha256_rtt002.txt",
+ "at": "2020-10-25",
+ "crop": {
+  "x": 55,
+  "y": 150,
+  "w": 1675,
+  "h": 890
+ },
+ "min_bars": 8,
+ "check": {
+  "type": "f1_wins",
+  "wins_file": "data/rtt-002/cumulative_wins_wide.csv",
+  "drivers_file": "data/rtt-002/drivers.csv",
+  "starts_file": "data/rtt-002/starts.csv"
+ },
+ "words": [
+  "MOST",
+  "F1 WINS"
+ ],
+ "years": "1950–2026",
+ "options": [
+  {
+   "name": "A",
+   "background": "white"
+  }
+ ],
+ "overrides": {
+  "overlays": [
+   {
+    "name": "logo",
+    "file": "rtt_logo.png",
+    "x": 1702,
+    "y": 12,
+    "w": 154,
+    "h": 154
+   }
+  ]
+ },
+ "word_sizes": [
+  150,
+  120
+ ],
+ "rows": [
+  {
+   "top": 490,
+   "tile_w": 436,
+   "tile_h": 119,
+   "plain": true,
+   "items": [
+    {
+     "file": "rtt_car.png"
+    }
+   ]
+  }
+ ]
+}
