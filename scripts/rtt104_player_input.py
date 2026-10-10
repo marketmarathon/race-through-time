@@ -47,13 +47,13 @@ def main(data_dir, out, hashes):
                       key=lambda c: countries[c]["short_name"])
         if len(zids) != int(zero[y]["count"]) or "; ".join(countries[c]["short_name"] for c in zids) != zero[y]["countries"]:
             raise SystemExit(f"0% group {y} does not match zero_group.csv")
-        # ranks 1-20 on each side (in the race, shown value; same order as the build: full precision, then name), so the
+        # every rank on each side (in the race, shown value; same order as the build: full precision, then name; IQ-22d: all ranks, for V2's smooth curves), so the
         # player can bring a country up from below the board and take one down out of it; ranks 1-10 must equal boards.csv
         cand = [(r["iso3"], r["shown_value"]) for (c, yy), r in series.items() if yy == y and r["shown_value"] != ""
                 and countries[c]["in_race"] == "yes"]
         from decimal import Decimal
-        topo = sorted(cand, key=lambda t: (-Decimal(t[1]), countries[t[0]]["short_name"]))[:20]
-        boto = sorted((t for t in cand if Decimal(t[1]) > 0), key=lambda t: (Decimal(t[1]), countries[t[0]]["short_name"]))[:20]
+        topo = sorted(cand, key=lambda t: (-Decimal(t[1]), countries[t[0]]["short_name"]))
+        boto = sorted((t for t in cand if Decimal(t[1]) > 0), key=lambda t: (Decimal(t[1]), countries[t[0]]["short_name"]))
         for name, lst in (("top", topo), ("bottom", boto)):
             if [t[0] for t in lst[:10]] != [b["id"] for b in side(name)]:
                 raise SystemExit(f"{y} {name}: ranks 1-10 differ from boards.csv")

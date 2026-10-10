@@ -41,6 +41,32 @@ const S = require(path.join(ROOT, 'kits', 'rtt-104', 'render_stills.js'));
     const bad = v.length || p.fails.length || o.length; if (bad) ok = false;
     out.push(`| ${f} | ${s.name} | ${v.length ? 'FAIL: ' + v.join('; ') : 'PASS'} | ${p.fails.length ? 'FAIL: ' + p.fails.join('; ') : 'PASS'} | ${o.length ? 'FAIL: ' + o.join('; ') : 'PASS'} |`);
   }
+  /* IQ-22d (V2, smooth motion): every frame of every move: each bar's value label lies between its two years' published
+     figures (one-decimal rounding allowed) and is never below 0; the year label is one of the move's two years. */
+  const between = await pg.evaluate(() => !!CURVES);
+  if (between) {
+    const moves = await pg.evaluate(() => PLAN.steps.filter(s => s.kind === 'move').map(s => ({ a: s.a, b: s.b, from: s.from, to: s.to })));
+    let checked = 0, bad = [];
+    for (const m of moves) for (let f = m.from + 1; f < m.to; f++) {
+      const r = await pg.evaluate(([ff, a, b]) => {
+        drawAt(ff / 30);
+        const val = (y, k, id) => { const R = D.frames[PLAN.idx[y]].ranks[k].find(x => x.id === id); return R ? +R.v : null; };
+        const errs = [];
+        for (const x of window.__BARS) {
+          if (x.alpha < 0.05) continue;
+          const t = parseFloat(x.value), va = val(a, x.board, x.id), vb = val(b, x.board, x.id);
+          const lo = Math.min(...[va, vb].filter(v => v != null)), hi = Math.max(...[va, vb].filter(v => v != null));
+          if (!(t >= 0) || t < Math.round(lo * 10) / 10 - 0.05 - 1e-9 || t > Math.round(hi * 10) / 10 + 0.05 + 1e-9) errs.push(`${x.board} ${x.id} ${x.value} outside ${lo}-${hi}`);
+        }
+        const yl = window.__LABELS.filter(l => l.kind === 'year').map(l => +l.text);
+        if (yl.some(y => y !== a && y !== b)) errs.push('year label ' + yl.join(','));
+        return { n: window.__BARS.length, errs };
+      }, [f, m.a, m.b]);
+      checked++; if (r.errs.length) bad.push(`frame ${f}: ${r.errs.join('; ')}`);
+    }
+    if (bad.length) ok = false;
+    out.push('', `Between landings (smooth motion): ${checked} frames checked; every value label between its two years' published figures and not below 0, the year label one of the two years: ${bad.length ? 'FAIL' : 'PASS'}${bad.length ? ' — ' + bad.slice(0, 10).join(' | ') : ''}.`);
+  }
   await br.close();
   out.push('', `Overall: ${ok ? 'PASS' : 'FAIL'} (${shots.length} shots).`, '');
   fs.writeFileSync(path.join(__dirname, 'FILM_CHECK.md'), out.join('\n'));

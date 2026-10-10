@@ -39,7 +39,8 @@ concurrency:
 env:
   PRIVATE_REPO: marketmarathon/race-through-time-private
   PRIVATE_REF: main
-  FILM: config_rtt104_film.json
+  FILM: config_rtt104_film_v2.json   # IQ-22d: V2, smooth motion at 3 s per year (V1 = config_rtt104_film.json, run 38037587321)
+  STEM_NAME: rtt104_film_v2
   RASTER_W: '3840'
 
 jobs:
@@ -150,7 +151,7 @@ jobs:
         run: |
           set -o pipefail
           O="$RUNNER_TEMP/rtt_out"; mkdir -p "$O"
-          SHORT=${GITHUB_SHA::7}; STEM="rtt104_film_${SHORT}"
+          SHORT=${GITHUB_SHA::7}; STEM="${STEM_NAME}_${SHORT}"
           probe() { ffprobe -v error -select_streams v:0 -count_packets -show_entries stream=width,height,nb_read_packets,r_frame_rate -of csv=p=0 "$1"; }
           audio() { ffprobe -v error -select_streams a -show_entries stream=index -of csv=p=0 "$1" | wc -l; }
           SEG_OUT="$O/silent.mp4" RASTER_W="$RASTER_W" RTT_CONFIG="$FILM" node kits/rtt-104/render_rtt104.js | tee "$RUNNER_TEMP/render.log"
@@ -186,12 +187,12 @@ jobs:
           GH_TOKEN: ${{ secrets.RTT_PRIVATE_TOKEN }}
         run: |
           O="$RUNNER_TEMP/rtt_out"; SHORT=${GITHUB_SHA::7}
-          TAG="rtt-104-film-${SHORT}-run${GITHUB_RUN_NUMBER}"
+          TAG="rtt-104-film-v2-${SHORT}-run${GITHUB_RUN_NUMBER}"
           {
-            echo "RTT-104 Women in Parliament: Highest vs Lowest (1997-2025): FULL FILM, rendered by GitHub Actions."
+            echo "RTT-104 Women in Parliament: Highest vs Lowest (1997-2025): FULL FILM V2 (smooth motion, 3 s per year; IQ-22d), rendered by GitHub Actions."
             echo
             echo "- Source: ${GITHUB_REPOSITORY} @ ${GITHUB_SHA} (${GITHUB_REF_NAME}), run ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
-            echo "- kits/rtt-104/${FILM}: ${FRAMES} frames at 30 fps = $(awk -v f="$FRAMES" 'BEGIN {printf "%.2f", f / 30}') s; the approved design (DEC-634..DEC-644)"
+            echo "- kits/rtt-104/${FILM}: ${FRAMES} frames at 30 fps = $(awk -v f="$FRAMES" 'BEGIN {printf "%.2f", f / 30}') s; the approved design (DEC-634..DEC-644) with V2's smooth motion at 3 s per year (DEC-653..DEC-655)"
             echo "- Master 3840x2160 (x264 slow CRF 4, as RTT-002 and RTT-003); viewing copy 1920x1080 (x264 CRF 18)"
             echo "- Before the render: $(tail -1 "$RUNNER_TEMP/filmcheck.txt"); $(cat "$RUNNER_TEMP/flash.txt")"
             echo "- Audio: \"${MUSIC_TITLE}\" (YouTube Audio Library, attribution not required), ${MUSIC_PATH}, ${MUSIC_BYTES} bytes, SHA-256 ${MUSIC_SHA256} (checked); README SHA-256 ${README_SHA256:-none}; played once from ${START} s $( [ -n "$LOOP_END" ] && echo "with loop ${LOOP_START}-${LOOP_END} s" ), faded out over the last ${FADE} s, AAC 320 kb/s"
@@ -205,7 +206,7 @@ jobs:
           } > "$O/notes.md"
           cat "$O/notes.md"
           gh release create "$TAG" --repo "$PRIVATE_REPO" --target main --prerelease \
-            --title "RTT-104 full film ${SHORT} (3840x2160 + 1920x1080, music)" --notes-file "$O/notes.md" "$O"/*.mp4
+            --title "RTT-104 full film V2 ${SHORT} (3840x2160 + 1920x1080, music)" --notes-file "$O/notes.md" "$O"/*.mp4
           echo "Release: https://github.com/${PRIVATE_REPO}/releases/tag/${TAG}" | tee -a "$GITHUB_STEP_SUMMARY"
 
       - name: Delete the logo, music, frames and videos from the runner

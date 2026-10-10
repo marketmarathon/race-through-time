@@ -32,7 +32,7 @@ function baseTransform(){ ctx.setTransform(RASTER,0,0,RASTER,0,0); }
 const T={ ground:'#0b1424', panel:'#152134', ink:'#F4F6FA', muted:'#8492A6', cap:'#AAB3C2', axis:'#8492A6',
           hairline:'rgba(244,246,250,0.14)', grid:'rgba(244,246,250,0.07)', foot:'#7C8798', grey:'#5D6878' };
 let FONT='"Archivo"', CFG=null, D=null, FPS=30, RACE_FRAMES=0;
-let FLAGIMG={}, FLAGCODE={}, LOGO=null, ENT={}, PLAN=null, G=null, FL=false;
+let FLAGIMG={}, FLAGCODE={}, LOGO=null, ENT={}, PLAN=null, G=null, FL=false, CURVES=null;
 window.__LABELS=[]; window.__BARS=[]; window.__STATE=null;
 
 function note(kind,id,text,x,y,align,w,extra){
@@ -75,6 +75,7 @@ function setup(o){
   if(o.overlays && o.overlays.logo){ LOGO=new Image(); LOGO.src=o.overlays.logo; loads.push(LOGO.decode()); }
   window.__imagesReady=Promise.all(loads).then(()=>Object.keys(FLAGIMG).length);
   PLAN=buildPlan(); RACE_FRAMES=PLAN.total;
+  CURVES = CFG.motion==='smooth' ? buildCurves() : null;
   G=geometry();
 }
 window.setup=setup;
@@ -93,7 +94,7 @@ function buildPlan(){
   for(let i=1;i<years.length;i++){
     const y=years[i], L=leaves.filter(l=>l.year===y);
     if(L.length){ const n=Math.round(CFG.note_sec*F); steps.push({kind:'note', year:years[i-1], leaves:L, from:f, to:f+n}); f+=n; }
-    const beat=Math.round(CFG.sec_per_year*F), mv=Math.round(beat*CFG.move_frac);
+    const beat=Math.round(CFG.sec_per_year*F), mv=CFG.motion==='smooth' ? beat : Math.round(beat*CFG.move_frac);   // IQ-22d V2: no hold per year
     steps.push({kind:'move', a:years[i-1], b:y, leaves:L, from:f, to:f+mv}); f+=mv;
     steps.push({kind:'hold', year:y, from:f, to:f+beat-mv, landing:f}); f+=beat-mv;
   }
@@ -103,7 +104,8 @@ function buildPlan(){
   if(CFG.closing_card.enabled){ const n=Math.round(CFG.closing_card.sec*F); card={from:f, to:f+n}; steps.push({kind:'card', from:f, to:f+n}); f+=n; }
   const landing={}; for(const s of steps) if(s.kind==='hold' && landing[s.year]==null) landing[s.year]=s.landing!=null?s.landing:s.from;
   const notes={}; for(const s of steps) if(s.kind==='note') notes[s.leaves[0].year]=s.from;
-  return {steps, total:f, years, idx, landing, notes, card};
+  const knot={}; years.forEach((y,i)=>knot[y]=i);
+  return {steps, total:f, years, idx, landing, notes, card, knot};
 }
 window.landingFrame=y=>PLAN.landing[y];               // the frame on which year y's figures land (stills are taken there)
 window.noteFrame=y=>PLAN.notes[y];                     // the first frame of the leave note before year y
@@ -144,6 +146,7 @@ function itemsAt(fr){
   /* -> {year label, per board list of {id, slot, value, text, alpha, landed, latest, grey, note}} */
   let st=PLAN.steps.find(s=>fr>=s.from && fr<s.to) || PLAN.steps[PLAN.steps.length-1];
   if(st.kind==='card') st=PLAN.steps[PLAN.steps.length-2];
+  if(CURVES && st.kind==='move' && fr===st.from) st={kind:'hold', year:st.a};   // V2: a landing frame is drawn exactly as the data (V1's hold path)
   const out={top:[], bottom:[], zero:null, zeroPrev:null, zeroMix:1, yearLabel:null, yearPrev:null, yearMix:1, worldYear:null, step:st};
   if(st.kind==='hold' || st.kind==='note'){
     const B=boardItems(st.year);
@@ -157,13 +160,14 @@ function itemsAt(fr){
     return out;
   }
   // a move from year a to year b
+  if(CURVES) return itemsSmooth(st, fr, out);
   const u=ease((fr-st.from)/Math.max(1,st.to-st.from)), A=boardItems(st.a), B=boardItems(st.b);
   out.yearLabel=st.b; out.yearPrev=st.a; out.yearMix=clamp((fr-st.from)/(0.5*FPS),0,1);
   out.worldYear=st.a+u;
   for(const k of ['top','bottom']){
     /* positions from each year's ranks 1-20, so a country comes up from below the board and goes down out of it
        (rows past slot 10 are hidden under the board's edge); values count between the two years' figures */
-    const RA={}, RB={}; A.ranks[k].forEach((b,i)=>RA[b.id]={i:i+1,v:+b.v}); B.ranks[k].forEach((b,i)=>RB[b.id]={i:i+1,v:+b.v});
+    const RA={}, RB={}; A.ranks[k].slice(0,20).forEach((b,i)=>RA[b.id]={i:i+1,v:+b.v}); B.ranks[k].slice(0,20).forEach((b,i)=>RB[b.id]={i:i+1,v:+b.v});   // V1: ranks 1-20 only
     const onA={}, onB={}; A[k].forEach(b=>onA[b.id]=b); B[k].forEach(b=>onB[b.id]=b);
     const ids=[...new Set(A[k].map(b=>b.id).concat(B[k].map(b=>b.id)))];
     for(const id of ids){
@@ -178,6 +182,71 @@ function itemsAt(fr){
     }
   }
   out.zero=B.zero; out.zeroPrev=A.zero; out.zeroMix=u;
+  return out;
+}
+
+
+/* ---------------- V2 (IQ-22d): smooth motion ----------------
+   Every year is a knot. For each country that is ever on a board in the window (and each board), its rank (capped at
+   23 = below the board) and its shown value at each knot are joined by a monotone cubic (PCHIP, Fritsch-Carlson
+   slopes, as RTT-102 DEC-546): between two knots the curve never goes beyond either knot's value, so a value label
+   never shows more than the next published figure, nor less than the smaller of the two (never below 0). The slope is
+   zero at the first and last knot and at a knot where the board pauses for a leave note, so the motion starts from rest
+   and stops at rest there; elsewhere the bars glide through each year without stopping. On a landing frame (u = 0 of
+   the next move, or a hold/note frame) the board is drawn by the same path as V1, i.e. exactly boards.csv. */
+function fcSlopes(v, rest){
+  const n=v.length, d=new Array(n).fill(0), del=[];
+  for(let i=0;i<n-1;i++) del.push(isNaN(v[i])||isNaN(v[i+1]) ? NaN : v[i+1]-v[i]);
+  for(let i=0;i<n;i++){
+    if(rest.has(i) || isNaN(v[i])) { d[i]=0; continue; }
+    const a=i>0?del[i-1]:NaN, b=i<n-1?del[i]:NaN;
+    if(isNaN(a)||isNaN(b)) { d[i]=0; continue; }                 // ends of a run: start/stop at rest
+    d[i] = a*b<=0 ? 0 : 2/(1/a+1/b);                             // harmonic mean (Fritsch-Butland), unit knot spacing
+  }
+  return d;
+}
+function hermite(v0,v1,d0,d1,u){
+  const u2=u*u, u3=u2*u;
+  return (2*u3-3*u2+1)*v0 + (u3-2*u2+u)*d0 + (-2*u3+3*u2)*v1 + (u3-u2)*d1;
+}
+function buildCurves(){
+  const ys=PLAN.years, n=ys.length, rest=new Set([0, n-1]);
+  for(const y of Object.keys(PLAN.notes)) rest.add(PLAN.knot[+y-1]);
+  const C={top:{}, bottom:{}};
+  for(const k of ['top','bottom']){
+    const ids=new Set(); for(const y of ys) for(const b of boardItems(y)[k]) ids.add(b.id);
+    for(const id of ids){
+      const slot=[], val=[];
+      for(const y of ys){
+        const R=boardItems(y).ranks[k], i=R.findIndex(r=>r.id===id);
+        slot.push(i<0 ? 23 : Math.min(i+1, 23)); val.push(i<0 ? NaN : +R[i].v);
+      }
+      C[k][id]={slot, val, ds:fcSlopes(slot, rest), dv:fcSlopes(val, rest)};
+    }
+  }
+  return C;
+}
+function itemsSmooth(st, fr, out){
+  const u=(fr-st.from)/Math.max(1,st.to-st.from), A=boardItems(st.a), B=boardItems(st.b), i=PLAN.knot[st.a];
+  for(const k of ['top','bottom']){
+    const onA={}, onB={}; A[k].forEach(b=>onA[b.id]=b); B[k].forEach(b=>onB[b.id]=b);
+    for(const [id,c] of Object.entries(CURVES[k])){
+      const L=st.leaves.find(l=>l.id===id && l.board===k);
+      if(L){ const a=onA[id]; if(!a) continue;                       // approved leave look B: pinned, grey, shrinking
+        out[k].push({id, slot:c.slot[i], v:+a.v*(1-u), text:a.t, alpha:1-ease(clamp((u-0.4)/0.6,0,1)), landed:true, note:L.note, noteA:1-u, grey:1, leaving:true, shrink:true}); continue; }
+      const sl=hermite(c.slot[i], c.slot[i+1], c.ds[i], c.ds[i+1], u);
+      if(sl>10.98 && c.slot[i]>10 && c.slot[i+1]>10) continue;       // below the board for the whole year
+      let v0=c.val[i], v1=c.val[i+1];
+      const v = isNaN(v0)&&isNaN(v1) ? NaN : isNaN(v0) ? v1 : isNaN(v1) ? v0 : clamp(hermite(v0,v1,c.dv[i],c.dv[i+1],u), Math.min(v0,v1), Math.max(v0,v1));
+      if(isNaN(v)) continue;
+      const src = u<0.5 ? (onA[id]||onB[id]) : (onB[id]||onA[id]);
+      out[k].push({id, slot:sl, v:Math.max(0,v), text:null, alpha:1, landed:false, latest:src?src.latest:false, from:src?src.from:''});
+    }
+  }
+  out.zero=B.zero; out.zeroPrev=A.zero; out.zeroMix=clamp((u-0.7)/0.3,0,1);   // the 0% row changes as the year lands
+  out.yearLabel=st.b; out.yearPrev=st.a; out.yearMix=clamp((fr-(st.to-Math.round(0.5*FPS)))/(0.5*FPS),0,1);   // the year rolls in the last 0.5 s
+  if(out.yearMix<=0){ out.yearLabel=st.a; out.yearPrev=null; out.yearMix=1; }
+  out.worldYear=st.a+u;
   return out;
 }
 
