@@ -1,0 +1,27 @@
+# IPU-PARLINE2-EGY-LC-ELECTIONS
+# url: https://data.ipu.org/parliament/EG/EG-LC01/elections/
+# final url: https://data.ipu.org/parliament/EG/EG-LC01/election/EG-LC01-E20251110/
+# fetched (UTC): 2026-10-10T06:44:08Z
+# HTTP 200; 164573 bytes; SHA-256 b12540f639f916b810409983e73ee96756275e0ebc4c372f56d8adc6a1e48272
+# Short excerpts only (lines holding the searched words, with the line before and after).
+
+Political system | Political systems: Presidential, Parliamentary, Presidential-Parliamentary, Monarchy, Communist, Transitional. | View field in the data dictionary
+
+IPU membership | Current membership status | View field in the data dictionary
+
+Historical data on women | Parliamentary mandate | Law-making, oversight, budget
+
+10 Nov 2025 to 18 Dec 2025 | Date of dissolution of the outgoing legislature | Date at which the previous legislature (elected at the previous elections) was dissolved.
+
+Upon normal expiry | Expected date of next elections | The expected date at which the next elections should take place, based on law or practice.
+
+Scope of elections | Scope of elections: Full renewal; Partial renewal. | View field in the data dictionary
+
+Full renewal | Results
+
+Total number of men after the election | The total number of male parliamentarians in this parliament/chamber following the election or renewal, regardless of their modes of designation. | View field in the data dictionary
+
+Total number of women after the election | The total number of female parliamentarians in this parliament/chamber following the election or renewal, regardless of their modes of designation. | View field in the data dictionary
+
+First-term parliamentarians | The number of members who are assuming their parliamentary mandate for the first time following the election or renewal, regardless of their mode of designation. | View field in the data dictionary
+

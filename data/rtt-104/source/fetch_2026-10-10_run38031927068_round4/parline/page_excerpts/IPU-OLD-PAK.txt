@@ -1,0 +1,11 @@
+# IPU-OLD-PAK
+# url: https://www.ipu.org/parlement/PK
+# final url: https://www.ipu.org/parlement/PK
+# fetched (UTC): 2026-10-10T06:44:00Z
+# HTTP 200; 97398 bytes; SHA-256 938808c3f6bf46654fc2e34771b28d4e58b5433f2750037c69a8e03f5183a3b6
+# Short excerpts only (lines holding the searched words, with the line before and after).
+
+Bicameral | Last election | Feb 2024
+
+Contact us | Vacancies | IPU structure and governance
+
