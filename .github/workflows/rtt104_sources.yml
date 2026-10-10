@@ -1,0 +1,46 @@
+# Race Through Time - RTT-104 Women in Parliament (IQ-20): fetch the World Bank WDI data, Our World in Data's copy, the
+# terms of use, the reference-date notes and the IPU Parline country pages. The Claude Code cloud container cannot reach
+# api.worldbank.org, ourworldindata.org, ipu.org or data.ipu.org. Its own workflow: it renders nothing and cannot start
+# any episode's render.
+# This repository is PUBLIC (DEC-006, DEC-061), so this workflow:
+#   - uses no secret, uploads NO workflow artifact and uses NO cache;
+#   - commits to this branch only open-licence data files (WDI API JSON and OWID CSV, both CC BY 4.0), a SHA-256
+#     manifest and short excerpts of public web pages (never a whole page), under data/rtt-104/source/;
+#   - prints only IDs, sizes, hashes and those excerpts.
+# Trigger: a push that changes this file or the fetch script on the IQ-20 branch, or by hand.
+name: rtt104-sources
+
+on:
+  push:
+    branches: [claude/nifty-brown-hrl2yi]
+    paths: [.github/workflows/rtt104_sources.yml, scripts/rtt104_fetch_sources.py]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: rtt104-sources
+  cancel-in-progress: true
+
+jobs:
+  fetch:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch sources and commit the data files, manifest and excerpts to this branch
+        env:
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          command -v pdftotext > /dev/null || { sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils > /dev/null; }
+          OUT="data/rtt-104/source/fetch_$(date -u +%Y-%m-%d)_run${GITHUB_RUN_ID}"
+          python3 scripts/rtt104_fetch_sources.py "$OUT"
+          for f in "$OUT"/page_excerpts/*.txt; do echo "::group::$(basename "$f")"; cat "$f"; echo "::endgroup::"; done
+          git config user.name "rtt104-sources workflow"
+          git config user.email "rtt104-sources@users.noreply.github.com"
+          git add "$OUT"
+          git commit -q -m "RTT-104: sources fetched on a GitHub runner (IQ-20; run ${RUN_URL})"
+          for i in 1 2 3; do git pull -q --rebase origin "$GITHUB_REF_NAME" && git push -q origin "HEAD:$GITHUB_REF_NAME" && break; sleep 5; done
+          echo "committed $(git rev-parse --short HEAD) under ${OUT}"
