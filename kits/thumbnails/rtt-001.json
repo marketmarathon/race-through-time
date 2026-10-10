@@ -31,14 +31,6 @@
   {
    "name": "A",
    "background": "white"
-  },
-  {
-   "name": "B",
-   "background": "bright"
-  },
-  {
-   "name": "C",
-   "background": "dark"
   }
  ],
  "word_sizes": [
