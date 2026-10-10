@@ -1,6 +1,6 @@
 {
  "extends": "config_rtt103_base.json",
- "kit_version": "rtt103_film_iq18e",
+ "kit_version": "rtt103_film_iq18f",
  "out": "rtt103_film.mp4",
  "pacing": {
   "sec_per_event": 1.5,
@@ -169,7 +169,8 @@
   }
  },
  "notes": [
-  "IQ-18e (Luke's answers DEC-376..DEC-378, DEC-379): the round-3 look approved; from June 2026 the race slows and flows on continuously (2026 plans 10.8 s, 2027-2030 6 s each, a 3 s hold at 2030), then the explanation (trimmed, 16 s), the combined line, the peak timeline and the final June 2026 table. The film config rendered by rtt103_film.yml."
+  "IQ-18e (Luke's answers DEC-376..DEC-378, DEC-379): the round-3 look approved; from June 2026 the race slows and flows on continuously (2026 plans 10.8 s, 2027-2030 6 s each, a 3 s hold at 2030), then the explanation (trimmed, 16 s), the combined line, the peak timeline and the final June 2026 table. The film config rendered by rtt103_film.yml.",
+  "IQ-18f (Luke, DEC-381): ByteDance's own logo (Commons File:ByteDance logo.svg) on the same light tile as the others; nothing else changed from 4d1e2dc."
  ],
  "board": {
   "fit": {
@@ -267,5 +268,10 @@
     "count_sec": 6.0
    }
   ]
+ },
+ "pictures": {
+  "files": {
+   "bytedance": "bytedance.svg"
+  }
  }
 }

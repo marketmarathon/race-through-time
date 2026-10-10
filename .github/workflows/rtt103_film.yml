@@ -23,6 +23,8 @@
 #   - uploads NO workflow artifact, uses NO cache, and deletes logos, music, frames and videos at the end.
 # Nothing is uploaded to YouTube or published; Luke approves the exact render by its SHA-256 (DEC-078).
 # Triggers: a push that changes THIS FILE on the IQ-18 branch, or by hand once merged.
+# Run 1 (IQ-18e, 4d1e2dc): rtt-103-film-4d1e2dc-run1 (DEC-380). Run 2 (IQ-18f, Luke DEC-381): the same film with ByteDance's own
+# logo (Commons File:ByteDance logo.svg, SHA-256 checked like the others); nothing else changed, same music mix.
 name: rtt103-film
 
 on:

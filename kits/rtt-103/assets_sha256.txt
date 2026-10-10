@@ -11,3 +11,4 @@ b536f39ac80d6b93477ce158e9e0f963504a407da8c35caf5ded3ac072b49176  assets/rtt-103
 a0f0d2d0d2e259e646f3fb78ccec18148072de8482fddbb178bf0ebff164a1db  assets/rtt-103/logos/tencent.svg
 972cd6c39431968004073c73fbf618065cf9d8012f1d0b32e16471692a45f16f  assets/rtt-103/logos/coreweave.svg
 6ebed5d0a7aa790394a14a9cb207dcfa6c70adac59ecf31c817098b6bb5e0b49  assets/rtt-103/logos/baidu_company.svg
+062b0eb7f19fd38d590600a244e61b609c0f76d4578bf464c892b638abee86c2  assets/rtt-103/logos/bytedance.svg
