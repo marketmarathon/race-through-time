@@ -1,5 +1,7 @@
 # RTT-104 Women in Parliament — times for YouTube (IQ-22c)
 
+Rendered film: master `rtt104_film_e8d74bc_3840x2160.mp4`, SHA-256 `b65ed119f2a3c9fa5eea8fcc939d848f91e8a414909b8539a0285cf60cd01c63` (2,271 frames, checked by the workflow), https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-104-film-e8d74bc-run2.
+
 From the approved film config `config_rtt104_film.json` (2 s per year, 1.7 s move + 0.3 s hold; DEC-634..DEC-644): **2,271 frames at 30 fps = 1:15.7**. Worked out from the player's own plan (`planSummary()` in `player_rtt104.html`, deterministic); the film workflow checks that the rendered files have exactly these 2,271 frames. A year's label changes when its move starts; its figures land 1.7 s later. Values are `data/rtt-104/boards.csv`.
 
 ## Chapter-worthy moments
@@ -17,7 +19,7 @@ From the approved film config `config_rtt104_film.json` (2 s per year, 1.7 s mov
 | 0:58.9 – 1:00.7 | **Kuwait leaves the bottom board: "No sitting parliament: dissolved by the Emir, May 2024"** |
 | 1:02.7 / 1:04.4 | **2025: the final table** (holds 1:04.4 – 1:09.7) |
 | 1:09.7 – 1:15.7 | Closing card "Not included: no sitting parliament" |
-| 1:10.7 – 1:15.7 | Music fades out (last 5 s, DEC-651) |
+| 1:10.7 – 1:15.7 | Music fades out (last 5 s, DEC-651); the music starts at 0.705 s into the track (its opening silence skipped) |
 
 ## Chapters (proposal; YouTube needs the first at 0:00, at least three, each at least 10 s long)
 ```

@@ -1,6 +1,13 @@
-# HANDOVER — 10 Oct 2026 (session IQ-20 and IQ-22, Claude Code cloud session: RTT-104 Women in Parliament data build, design round 1, design approved and film prepared). The RTT-103 notes (IQ-16f, 8 Oct 2026) and earlier follow; IQ-14/IQ-15/IQ-17/IQ-18/IQ-19 notes are on their own unmerged branches (pull requests #18, #19, #21, #22, #23).
+# HANDOVER — 10 Oct 2026 (session IQ-20 and IQ-22, Claude Code cloud session: RTT-104 Women in Parliament data build, design round 1, design approved, full film rendered). The RTT-103 notes (IQ-16f, 8 Oct 2026) and earlier follow; IQ-14/IQ-15/IQ-17/IQ-18/IQ-19 notes are on their own unmerged branches (pull requests #18, #19, #21, #22, #23).
 
-## DEC block for RTT-104: DEC-600–DEC-699 (brief IQ-20; checked free on main and every open pull request, DEC-606). Used so far: DEC-600..DEC-648.
+## DEC block for RTT-104: DEC-600–DEC-699 (brief IQ-20; checked free on main and every open pull request, DEC-606). Used so far: DEC-600..DEC-652.
+
+## RTT-104 — FULL FILM rendered, awaiting Luke's approval (IQ-22c, 10 Oct 2026)
+- **Same branch and pull request** (https://github.com/marketmarathon/race-through-time/pull/24, not merged). Message: `prompts/CODE_SESSION_IQ-22c.md`. DEC-649 (music), DEC-650 (render), DEC-651 (how the music is used), DEC-652 (render record).
+- **Private pre-release:** https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-104-film-e8d74bc-run2. **Master `rtt104_film_e8d74bc_3840x2160.mp4`, SHA-256 `b65ed119f2a3c9fa5eea8fcc939d848f91e8a414909b8539a0285cf60cd01c63`, 91,660,797 bytes**; viewing copy SHA-256 `1b4636fa8581a8570aaa9345288974be12bb0caa4a50de684177bf487b40619c`, 14,661,168 bytes; 75.70 s; −15.9 LUFS, −1.5 dBTP; film check 34/34 and WCAG flash PASS on the runner.
+- **Music:** "No.10 A New Beginning" by Esther Abrami (YouTube Audio Library, no attribution required), private `assets/rtt-104/music/…`, starts 0.705 s into the track (opening silence skipped), faded over the last 5 s.
+- **For the upload (Luke, by hand, DEC-080):** `kits/rtt-104/description_credits.md` and `kits/rtt-104/youtube_times.md` (chapters, final-table values, end-screen proposal).
+- **Rules for the next RTT-104 session:** record Luke's approval of the exact master by its SHA-256 as an owner DEC from DEC-653 (any change after that needs a fresh approval, DEC-078). Do NOT edit `kits/rtt-104/music_rtt104.json` or `.github/workflows/rtt104_film.yml` unless a new render is wanted: a push that changes either starts a render.
 
 ## RTT-104 — design approved, film ready, waiting for Luke's music (IQ-22b, 10 Oct 2026)
 - **Same branch and pull request** (https://github.com/marketmarathon/race-through-time/pull/24, not merged). Message: `prompts/CODE_SESSION_IQ-22b.md`. Luke approved every round-1 recommendation (DEC-634..DEC-644); Cowork checked the stills (DEC-645).
