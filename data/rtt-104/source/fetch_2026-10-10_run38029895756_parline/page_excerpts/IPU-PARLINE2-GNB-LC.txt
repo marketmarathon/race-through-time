@@ -1,0 +1,57 @@
+# IPU-PARLINE2-GNB-LC
+# url: https://data.ipu.org/parliament/GW/GW-LC01/
+# final url: https://data.ipu.org/parliament/GW/GW-LC01/
+# fetched (UTC): 2026-10-10T06:09:18Z
+# HTTP 200; 319880 bytes; SHA-256 eee32b442e8f18cf1e84ca9e781b3dd023ed20409e7b8e6f8e3b929a54ce99c2
+# Short excerpts only (lines holding the searched words, with the line before and after).
+
+Guinea-Bissau | Transitional National Council | IPU Parline: global data on national parliaments | Skip to main content
+
+Guinea-Bissau | Transitional National Council | Political system
+
+Political systems: Presidential, Parliamentary, Presidential-Parliamentary, Monarchy, Communist, Transitional. | View field in the data dictionary
+
+Transitional system | Compare data of this field
+
+IPU membership | Current membership status | View field in the data dictionary
+
+Elections | Parliamentary mandate | Law-making, oversight, budget
+
+Parliament name | Conselho Nacional de Transição (Transitional National Council) | See historical data for this field
+
+Chamber name | Conselho Nacional de Transição (Transitional National Council) | See historical data for this field
+
+Structure & status of parliament | This field is to indicate lower/upper in the back end.
+
+1 | Notes: The transition period will last 12 months. It will expire with the inauguration of the elected President of the Republic and the start of the new legislature (Article 19.1, Transitional Political Charter). | Compare data of this field
+
+See historical data for this field | Transitional status | Parliament is in a transitional status, pending the establishment of a new full-fledged parliament.
+
+View field in the data dictionary | Speaker of the Transitional National Council | Speaker
+
+Term | Start (and end) of the term of the Speaker | View field in the data dictionary
+
+Term | Start (and end) of the term of the Secretary general | View field in the data dictionary
+
+66 | Notes: The Transitional National Council, which took office on 12 December 2025, is composed of the following 65 members and the Speaker: | - 10 people designated by the president of the transitional republic;
+
+- 15 representatives of the high military command; | - 20 representatives of political parties;
+
+Average age of all members | Average age of members, for which data is available, at the time of the last election or renewal. | View field in the data dictionary
+
+Percentage of members, by age | Age at the last election or renewal | Overall
+
+3 | Notes: Article 8 of the Transitional Political Charter (Carta Política de Transição) | Youth
+
+2 | Notes: Article 8, transitional political charter (Carta Política de Transição), published 8 December 2025. | Compare data of this field
+
+2 | Notes: Article 8, transitional political charter (Carta Política de Transição), published 8 December 2025. | Sources: Transitional political charter (Carta Política de Transição) art. 8
+
+2025-12 | Transitional system | 2005-01
+
+2025-12 | Conselho Nacional de Transição (Transitional National Council) | -
+
+2025-12 | Conselho Nacional de Transição (Transitional National Council) | 1972-10
+
+1 | The transition period will last 12 months. It will expire with the inauguration of the elected President of the Republic and the start of the new legislature (Article 19.1, Transitional Political Charter). | 2025-12
+

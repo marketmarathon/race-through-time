@@ -1,0 +1,19 @@
+# IPU-PARLINE2-SDN-LC
+# url: https://data.ipu.org/parliament/SD/SD-LC01/
+# final url: https://data.ipu.org/parliament/SD/SD-LC01/
+# fetched (UTC): 2026-10-10T06:10:03Z
+# HTTP 200; 141471 bytes; SHA-256 b8a626241933df69403adf1b6c10a214bffd97d6834c290ab5fc546091ce05c6
+# Short excerpts only (lines holding the searched words, with the line before and after).
+
+Political system | Political systems: Presidential, Parliamentary, Presidential-Parliamentary, Monarchy, Communist, Transitional. | View field in the data dictionary
+
+Transitional system | Compare data of this field
+
+IPU membership | Current membership status | View field in the data dictionary
+
+Share | Chamber is suspended | The Parliament of Sudan was dissolved following a coup d'état in April 2019.
+
+2021-01 | Transitional system | 2020-01
+
+2019-04 | Transitional system | 2005-01
+
