@@ -140,6 +140,8 @@ def parline_round(out):
         if c in iso2 and r["value"] is not None:
             has.setdefault(c, set()).add(r["date"])
     missing = sorted(c for c, ys in has.items() if "2025" not in ys)
+    if os.environ.get("PARLINE_ISO3"):  # IQ-22 round 4: named economies only (board exits with a gap)
+        missing = os.environ["PARLINE_ISO3"].split()
     print("economies with figures but no 2025 figure:", ", ".join(missing))
     for c in missing:
         i2 = iso2[c]
@@ -182,8 +184,9 @@ def archive_round(out):
     os.makedirs(exc, exist_ok=True)
     manifest = {"fetched_by": "GitHub runner, .github/workflows/rtt104_sources.yml (FETCH_SET=archive)",
                 "run_url": os.environ.get("RUN_URL", ""), "files": [], "pages": []}
-    rx = re.compile(ARCHIVE_COUNTRIES)
-    urls = [(f"IPU-ARCHIVE-{d}", f"http://archive.ipu.org/wmn-e/arc/classif{d}.htm") for d in ARCHIVE_DATES]
+    rx = re.compile(os.environ.get("ARCHIVE_COUNTRIES") or ARCHIVE_COUNTRIES)
+    dates = os.environ.get("ARCHIVE_DATES", "").split() or ARCHIVE_DATES
+    urls = [(f"IPU-ARCHIVE-{d}", f"http://archive.ipu.org/wmn-e/arc/classif{d}.htm") for d in dates]
     urls.append(("IPU-ARCHIVE-INDEX", "http://archive.ipu.org/wmn-e/classif-arc.htm"))
     for sid, url in urls:
         status, ctype, body, final = fetch(url)
@@ -204,6 +207,9 @@ def archive_round(out):
             line = " | ".join(cells)
             if rx.search(line) or (sid.endswith("INDEX") and re.search(r"\d{4}", line)):
                 rows.append(line[:400])
+        if os.environ.get("ARCHIVE_NOTES"):  # IQ-22: footnotes and other text naming the countries, outside the table
+            body_text = to_text(re.sub(r"(?is)<table.*?</table>", " ", t).encode("utf-8"), "", url)
+            rows += ["NOTE: " + ln[:400] for ln in body_text.splitlines() if rx.search(ln)][:40]
         rec.update({"bytes": len(body), "sha256": hashlib.sha256(body).hexdigest(), "content_type": ctype,
                     "final_url": final, "excerpt_file": f"page_excerpts/{sid}.txt", "excerpts": len(rows)})
         with open(os.path.join(exc, f"{sid}.txt"), "w", encoding="utf-8") as f:
@@ -220,6 +226,11 @@ def archive_round(out):
 
 def main():
     out = sys.argv[1]
+    if os.environ.get("FETCH_SET") == "round4":  # IQ-22: Parline pages and archived rankings for named countries
+        sub = os.path.join(out, "parline")
+        parline_round(sub)
+        archive_round(os.path.join(out, "archive"))
+        return
     if os.environ.get("FETCH_SET") == "archive":
         return archive_round(out)
     if os.environ.get("FETCH_SET") == "parline":
