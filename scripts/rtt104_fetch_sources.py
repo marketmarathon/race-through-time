@@ -13,6 +13,9 @@ data/rtt-104/source/fetch_manifest.json. The log prints IDs, sizes, hashes and t
 IQ-20 round 2 (FETCH_SET=parline): only the IPU Parline pages of the economies with no 2025 figure, read from the
 round-1 WDI file (ROUND1 below), with a narrow filter that skips the site's country menu (round 1 caught only the menu).
 
+IQ-20 round 3 (FETCH_SET=archive): IPU's archived monthly rankings (archive.ipu.org, static HTML, 1997-2018), to test
+which date a WDI year's figure describes. Only the table rows naming the test countries are kept.
+
 Usage: rtt104_fetch_sources.py <out_dir>      Standard library only (plus pdftotext for the one PDF).
 """
 import datetime
@@ -169,8 +172,56 @@ def parline_round(out):
     json.dump(manifest, open(os.path.join(out, "fetch_manifest.json"), "w"), indent=1, sort_keys=True)
 
 
+ARCHIVE_DATES = ["010197", "100898", "250198", "010103", "010104", "310103", "310104", "010107", "010108", "310107",
+                 "310108", "010118", "010119", "010218", "010219", "010113", "010213", "010214"]
+ARCHIVE_COUNTRIES = r"Rwanda|Mexico|United Arab Emirates|Sweden|Saudi Arabia|Japan|Nepal|Kuwait|Guinea-Bissau|Bangladesh|Haiti|Sudan"
+
+
+def archive_round(out):
+    exc = os.path.join(out, "page_excerpts")
+    os.makedirs(exc, exist_ok=True)
+    manifest = {"fetched_by": "GitHub runner, .github/workflows/rtt104_sources.yml (FETCH_SET=archive)",
+                "run_url": os.environ.get("RUN_URL", ""), "files": [], "pages": []}
+    rx = re.compile(ARCHIVE_COUNTRIES)
+    urls = [(f"IPU-ARCHIVE-{d}", f"http://archive.ipu.org/wmn-e/arc/classif{d}.htm") for d in ARCHIVE_DATES]
+    urls.append(("IPU-ARCHIVE-INDEX", "http://archive.ipu.org/wmn-e/classif-arc.htm"))
+    for sid, url in urls:
+        status, ctype, body, final = fetch(url)
+        rec = {"id": sid, "url": url, "fetched_utc": now(), "status": status}
+        if body is None:
+            rec["error"] = ctype
+            print(f"{sid}: FAILED {ctype}")
+            manifest["pages"].append(rec)
+            continue
+        t = body.decode("utf-8", "replace") if b"charset=utf-8" in body[:2000].lower() else body.decode("latin-1")
+        title = re.findall(r"(?is)<title>(.*?)</title>", t)
+        heads = [re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", h))).strip()
+                 for h in re.findall(r"(?is)<(?:h1|h2|h3|b|strong)[^>]*>(.*?)</(?:h1|h2|h3|b|strong)>", t)][:12]
+        rows = []
+        for tr in re.findall(r"(?is)<tr[^>]*>(.*?)</tr>", t):
+            cells = [re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", c))).strip()
+                     for c in re.findall(r"(?is)<t[dh][^>]*>(.*?)</t[dh]>", tr)]
+            line = " | ".join(cells)
+            if rx.search(line) or (sid.endswith("INDEX") and re.search(r"\d{4}", line)):
+                rows.append(line[:400])
+        rec.update({"bytes": len(body), "sha256": hashlib.sha256(body).hexdigest(), "content_type": ctype,
+                    "final_url": final, "excerpt_file": f"page_excerpts/{sid}.txt", "excerpts": len(rows)})
+        with open(os.path.join(exc, f"{sid}.txt"), "w", encoding="utf-8") as f:
+            f.write(f"# {sid}\n# url: {url}\n# final url: {final}\n# fetched (UTC): {rec['fetched_utc']}\n"
+                    f"# HTTP {status}; {len(body)} bytes; SHA-256 {rec['sha256']}\n# title: {title[:1]}\n"
+                    f"# headings: {heads}\n# Table rows naming the test countries only.\n\n")
+            for r in rows[:80]:
+                f.write(r + "\n")
+        print(f"{sid}: {status} {len(body)} bytes rows {len(rows)}")
+        manifest["pages"].append(rec)
+        time.sleep(1)
+    json.dump(manifest, open(os.path.join(out, "fetch_manifest.json"), "w"), indent=1, sort_keys=True)
+
+
 def main():
     out = sys.argv[1]
+    if os.environ.get("FETCH_SET") == "archive":
+        return archive_round(out)
     if os.environ.get("FETCH_SET") == "parline":
         return parline_round(out)
     raw = os.path.join(out, "raw")

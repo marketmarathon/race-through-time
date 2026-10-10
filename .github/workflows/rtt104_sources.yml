@@ -31,7 +31,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Fetch sources and commit the data files, manifest and excerpts to this branch
         env:
-          FETCH_SET: parline  # IQ-20 round 2: IPU Parline pages only (empty = round 1, every source)
+          FETCH_SET: archive  # IQ-20 round 3: IPU archived monthly rankings (parline = round 2, IPU Parline pages; empty = round 1, every source)
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           set -euo pipefail
