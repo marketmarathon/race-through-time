@@ -1,0 +1,8 @@
+e4ec06f29912d4269b855e9f83950f1c0159c4cfeafd6d43cdef875b98688aa9  input   data/rtt-104/boards.csv
+d4fdaee752b58f89757547a262ee361e99015134a2ad6167832a4096ef44fd34  input   data/rtt-104/zero_group.csv
+41fe231e3338b5ff179a33c22c5fa533efd237db0c5b293d58b413caa42c1d2b  input   data/rtt-104/world.csv
+471dc446da8d991f4e995b0562ba0fc9ad76c50545def5be53579df3d217335a  input   data/rtt-104/closing_card.csv
+e09bed66d90db4565a942bda4773872d1f173b11622ff23a36d202a03ca7465c  input   data/rtt-104/countries.csv
+3b6e3fd0eac9ae927a98083c52c4000049a3aac83a42e7c5ad46ac2fe4da55e5  input   data/rtt-104/series.csv
+c2cf24de8fe3967f18fcca596d8c83835925a2dd37dea756a1fe43ef6467b67f  input   data/rtt-104/source/leave_notes.csv
+a97412300d6bb2cfe9718bd5f77b5b183a4c97a9b679fffb149c2a9a5da3aeac  output  kits/rtt-104/race_rtt104.json

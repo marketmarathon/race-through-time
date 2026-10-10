@@ -1,0 +1,10054 @@
+{
+ "closing_card": [
+  {
+   "id": "AFG",
+   "label": "Afghanistan",
+   "last_year": 2021,
+   "line": "Parliament dissolved after the Taliban takeover (August 2021)"
+  },
+  {
+   "id": "BGD",
+   "label": "Bangladesh",
+   "last_year": 2023,
+   "line": "Parliament dissolved in August 2024"
+  },
+  {
+   "id": "HTI",
+   "label": "Haiti",
+   "last_year": 2019,
+   "line": "Deputies' terms expired in January 2020 with no election held"
+  },
+  {
+   "id": "KWT",
+   "label": "Kuwait",
+   "last_year": 2023,
+   "line": "National Assembly dissolved by the Emir (May 2024)"
+  },
+  {
+   "id": "MMR",
+   "label": "Myanmar",
+   "last_year": 2021,
+   "line": "No functioning parliament since the military coup of 1 February 2021"
+  },
+  {
+   "id": "SDN",
+   "label": "Sudan",
+   "last_year": 2018,
+   "line": "Parliament dissolved after the coup of April 2019"
+  }
+ ],
+ "dataset": "RTT-104",
+ "entrants": [
+  {
+   "flag": "af",
+   "id": "AFG",
+   "label": "Afghanistan",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan"
+  },
+  {
+   "flag": "ao",
+   "id": "AGO",
+   "label": "Angola",
+   "region": "Sub-Saharan Africa"
+  },
+  {
+   "flag": "ae",
+   "id": "ARE",
+   "label": "United Arab Emirates",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan"
+  },
+  {
+   "flag": "ar",
+   "id": "ARG",
+   "label": "Argentina",
+   "region": "Latin America & Caribbean"
+  },
+  {
+   "flag": "au",
+   "id": "AUS",
+   "label": "Australia",
+   "region": "East Asia & Pacific"
+  },
+  {
+   "flag": "at",
+   "id": "AUT",
+   "label": "Austria",
+   "region": "Europe & Central Asia"
+  },
+  {
+   "flag": "bi",
+   "id": "BDI",
+   "label": "Burundi",
+   "region": "Sub-Saharan Africa"
+  },
+  {
+   "flag": "be",
+   "id": "BEL",
+   "label": "Belgium",
+   "region": "Europe & Central Asia"
+  },
+  {
+   "flag": "bj",
+   "id": "BEN",
+   "label": "Benin",
+   "region": "Sub-Saharan Africa"
+  },
+  {
+   "flag": "bf",
+   "id": "BFA",
+   "label": "Burkina Faso",
+   "region": "Sub-Saharan Africa"
+  },
+  {
+   "flag": "bd",
+   "id": "BGD",
+   "label": "Bangladesh",
+   "region": "South Asia"
+  },
+  {
+   "flag": "bg",
+   "id": "BGR",
+   "label": "Bulgaria",
+   "region": "Europe & Central Asia"
+  },
+  {
+   "flag": "by",
+   "id": "BLR",
+   "label": "Belarus",
+   "region": "Europe & Central Asia"
+  },
+  {
+   "flag": "bo",
+   "id": "BOL",
+   "label": "Bolivia",
+   "region": "Latin America & Caribbean"
+  },
+  {
+   "flag": "br",
+   "id": "BRA",
+   "label": "Brazil",
+   "region": "Latin America & Caribbean"
+  },
+  {
+   "flag": "cf",
+   "id": "CAF",
+   "label": "Central African Republic",
+   "region": "Sub-Saharan Africa"
+  },
+  {
+   "flag": "ca",
+   "id": "CAN",
+   "label": "Canada",
+   "region": "North America"
+  },
+  {
+   "flag": "ch",
+   "id": "CHE",
+   "label": "Switzerland",
+   "region": "Europe & Central Asia"
+  },
+  {
+   "flag": "cn",
+   "id": "CHN",
+   "label": "China",
+   "region": "East Asia & Pacific"
+  },
+  {
+   "flag": "ci",
+   "id": "CIV",
+   "label": "Côte d'Ivoire",
+   "region": "Sub-Saharan Africa"
+  },
+  {
+   "flag": "cm",
+   "id": "CMR",
+   "label": "Cameroon",
+   "region": "Sub-Saharan Africa"
+  },
+  {
+   "flag": "cd",
+   "id": "COD",
+   "label": "DR Congo",
+   "region": "Sub-Saharan Africa"
+  },
+  {
+   "flag": "cg",
+   "id": "COG",
+   "label": "Congo",
+   "region": "Sub-Saharan Africa"
+  },
+  {
+   "flag": "co",
+   "id": "COL",
+   "label": "Colombia",
+   "region": "Latin America & Caribbean"
+  },
+  {
+   "flag": "cr",
+   "id": "CRI",
+   "label": "Costa Rica",
+   "region": "Latin America & Caribbean"
+  },
+  {
+   "flag": "cu",
+   "id": "CUB",
+   "label": "Cuba",
+   "region": "Latin America & Caribbean"
+  },
+  {
+   "flag": "de",
+   "id": "DEU",
+   "label": "Germany",
+   "region": "Europe & Central Asia"
+  },
+  {
+   "flag": "dk",
+   "id": "DNK",
+   "label": "Denmark",
+   "region": "Europe & Central Asia"
+  },
+  {
+   "flag": "dz",
+   "id": "DZA",
+   "label": "Algeria",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan"
+  },
+  {
+   "flag": "ec",
+   "id": "ECU",
+   "label": "Ecuador",
+   "region": "Latin America & Caribbean"
+  },
+  {
+   "flag": "eg",
+   "id": "EGY",
+   "label": "Egypt",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan"
+  },
+  {
+   "flag": "es",
+   "id": "ESP",
+   "label": "Spain",
+   "region": "Europe & Central Asia"
+  },
+  {
+   "flag": "et",
+   "id": "ETH",
+   "label": "Ethiopia",
+   "region": "Sub-Saharan Africa"
+  },
+  {
+   "flag": "fi",
+   "id": "FIN",
+   "label": "Finland",
+   "region": "Europe & Central Asia"
+  },
+  {
+   "flag": "fr",
+   "id": "FRA",
+   "label": "France",
+   "region": "Europe & Central Asia"
+  },
+  {
+   "flag": "gb",
+   "id": "GBR",
+   "label": "United Kingdom",
+   "region": "Europe & Central Asia"
+  },
+  {
+   "flag": "gh",
+   "id": "GHA",
+   "label": "Ghana",
+   "region": "Sub-Saharan Africa"
+  },
+  {
+   "flag": "hn",
+   "id": "HND",
+   "label": "Honduras",
+   "region": "Latin America & Caribbean"
+  },
+  {
+   "flag": "ht",
+   "id": "HTI",
+   "label": "Haiti",
+   "region": "Latin America & Caribbean"
+  },
+  {
+   "flag": "hu",
+   "id": "HUN",
+   "label": "Hungary",
+   "region": "Europe & Central Asia"
+  },
+  {
+   "flag": "in",
+   "id": "IND",
+   "label": "India",
+   "region": "South Asia"
+  },
+  {
+   "flag": "ir",
+   "id": "IRN",
+   "label": "Iran",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan"
+  },
+  {
+   "flag": "jo",
+   "id": "JOR",
+   "label": "Jordan",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan"
+  },
+  {
+   "flag": "jp",
+   "id": "JPN",
+   "label": "Japan",
+   "region": "East Asia & Pacific"
+  },
+  {
+   "flag": "ke",
+   "id": "KEN",
+   "label": "Kenya",
+   "region": "Sub-Saharan Africa"
+  },
+  {
+   "flag": "kg",
+   "id": "KGZ",
+   "label": "Kyrgyzstan",
+   "region": "Europe & Central Asia"
+  },
+  {
+   "flag": "kh",
+   "id": "KHM",
+   "label": "Cambodia",
+   "region": "East Asia & Pacific"
+  },
+  {
+   "flag": "kr",
+   "id": "KOR",
+   "label": "South Korea",
+   "region": "East Asia & Pacific"
+  },
+  {
+   "flag": "kw",
+   "id": "KWT",
+   "label": "Kuwait",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan"
+  },
+  {
+   "flag": "la",
+   "id": "LAO",
+   "label": "Laos",
+   "region": "East Asia & Pacific"
+  },
+  {
+   "flag": "lb",
+   "id": "LBN",
+   "label": "Lebanon",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan"
+  },
+  {
+   "flag": "lr",
+   "id": "LBR",
+   "label": "Liberia",
+   "region": "Sub-Saharan Africa"
+  },
+  {
+   "flag": "ly",
+   "id": "LBY",
+   "label": "Libya",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan"
+  },
+  {
+   "flag": "lk",
+   "id": "LKA",
+   "label": "Sri Lanka",
+   "region": "South Asia"
+  },
+  {
+   "flag": "ma",
+   "id": "MAR",
+   "label": "Morocco",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan"
+  },
+  {
+   "flag": "mg",
+   "id": "MDG",
+   "label": "Madagascar",
+   "region": "Sub-Saharan Africa"
+  },
+  {
+   "flag": "mx",
+   "id": "MEX",
+   "label": "Mexico",
+   "region": "Latin America & Caribbean"
+  },
+  {
+   "flag": "ml",
+   "id": "MLI",
+   "label": "Mali",
+   "region": "Sub-Saharan Africa"
+  },
+  {
+   "flag": "mm",
+   "id": "MMR",
+   "label": "Myanmar",
+   "region": "East Asia & Pacific"
+  },
+  {
+   "flag": "mz",
+   "id": "MOZ",
+   "label": "Mozambique",
+   "region": "Sub-Saharan Africa"
+  },
+  {
+   "flag": "mr",
+   "id": "MRT",
+   "label": "Mauritania",
+   "region": "Sub-Saharan Africa"
+  },
+  {
+   "flag": "my",
+   "id": "MYS",
+   "label": "Malaysia",
+   "region": "East Asia & Pacific"
+  },
+  {
+   "flag": "ne",
+   "id": "NER",
+   "label": "Niger",
+   "region": "Sub-Saharan Africa"
+  },
+  {
+   "flag": "ng",
+   "id": "NGA",
+   "label": "Nigeria",
+   "region": "Sub-Saharan Africa"
+  },
+  {
+   "flag": "ni",
+   "id": "NIC",
+   "label": "Nicaragua",
+   "region": "Latin America & Caribbean"
+  },
+  {
+   "flag": "nl",
+   "id": "NLD",
+   "label": "Netherlands",
+   "region": "Europe & Central Asia"
+  },
+  {
+   "flag": "no",
+   "id": "NOR",
+   "label": "Norway",
+   "region": "Europe & Central Asia"
+  },
+  {
+   "flag": "np",
+   "id": "NPL",
+   "label": "Nepal",
+   "region": "South Asia"
+  },
+  {
+   "flag": "nz",
+   "id": "NZL",
+   "label": "New Zealand",
+   "region": "East Asia & Pacific"
+  },
+  {
+   "flag": "om",
+   "id": "OMN",
+   "label": "Oman",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan"
+  },
+  {
+   "flag": "pk",
+   "id": "PAK",
+   "label": "Pakistan",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan"
+  },
+  {
+   "flag": "pa",
+   "id": "PAN",
+   "label": "Panama",
+   "region": "Latin America & Caribbean"
+  },
+  {
+   "flag": "pe",
+   "id": "PER",
+   "label": "Peru",
+   "region": "Latin America & Caribbean"
+  },
+  {
+   "flag": "pg",
+   "id": "PNG",
+   "label": "Papua New Guinea",
+   "region": "East Asia & Pacific"
+  },
+  {
+   "flag": "kp",
+   "id": "PRK",
+   "label": "North Korea",
+   "region": "East Asia & Pacific"
+  },
+  {
+   "flag": "pt",
+   "id": "PRT",
+   "label": "Portugal",
+   "region": "Europe & Central Asia"
+  },
+  {
+   "flag": "py",
+   "id": "PRY",
+   "label": "Paraguay",
+   "region": "Latin America & Caribbean"
+  },
+  {
+   "flag": "rw",
+   "id": "RWA",
+   "label": "Rwanda",
+   "region": "Sub-Saharan Africa"
+  },
+  {
+   "flag": "sa",
+   "id": "SAU",
+   "label": "Saudi Arabia",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan"
+  },
+  {
+   "flag": "sd",
+   "id": "SDN",
+   "label": "Sudan",
+   "region": "Sub-Saharan Africa"
+  },
+  {
+   "flag": "sn",
+   "id": "SEN",
+   "label": "Senegal",
+   "region": "Sub-Saharan Africa"
+  },
+  {
+   "flag": "sg",
+   "id": "SGP",
+   "label": "Singapore",
+   "region": "East Asia & Pacific"
+  },
+  {
+   "flag": "sl",
+   "id": "SLE",
+   "label": "Sierra Leone",
+   "region": "Sub-Saharan Africa"
+  },
+  {
+   "flag": "so",
+   "id": "SOM",
+   "label": "Somalia",
+   "region": "Sub-Saharan Africa"
+  },
+  {
+   "flag": "rs",
+   "id": "SRB",
+   "label": "Serbia",
+   "region": "Europe & Central Asia"
+  },
+  {
+   "flag": "se",
+   "id": "SWE",
+   "label": "Sweden",
+   "region": "Europe & Central Asia"
+  },
+  {
+   "flag": "sy",
+   "id": "SYR",
+   "label": "Syria",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan"
+  },
+  {
+   "flag": "td",
+   "id": "TCD",
+   "label": "Chad",
+   "region": "Sub-Saharan Africa"
+  },
+  {
+   "flag": "tg",
+   "id": "TGO",
+   "label": "Togo",
+   "region": "Sub-Saharan Africa"
+  },
+  {
+   "flag": "th",
+   "id": "THA",
+   "label": "Thailand",
+   "region": "East Asia & Pacific"
+  },
+  {
+   "flag": "tj",
+   "id": "TJK",
+   "label": "Tajikistan",
+   "region": "Europe & Central Asia"
+  },
+  {
+   "flag": "tm",
+   "id": "TKM",
+   "label": "Turkmenistan",
+   "region": "Europe & Central Asia"
+  },
+  {
+   "flag": "tn",
+   "id": "TUN",
+   "label": "Tunisia",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan"
+  },
+  {
+   "flag": "tr",
+   "id": "TUR",
+   "label": "Türkiye",
+   "region": "Europe & Central Asia"
+  },
+  {
+   "flag": "tz",
+   "id": "TZA",
+   "label": "Tanzania",
+   "region": "Sub-Saharan Africa"
+  },
+  {
+   "flag": "ug",
+   "id": "UGA",
+   "label": "Uganda",
+   "region": "Sub-Saharan Africa"
+  },
+  {
+   "flag": "ua",
+   "id": "UKR",
+   "label": "Ukraine",
+   "region": "Europe & Central Asia"
+  },
+  {
+   "flag": "vn",
+   "id": "VNM",
+   "label": "Vietnam",
+   "region": "East Asia & Pacific"
+  },
+  {
+   "flag": "ye",
+   "id": "YEM",
+   "label": "Yemen",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan"
+  },
+  {
+   "flag": "za",
+   "id": "ZAF",
+   "label": "South Africa",
+   "region": "Sub-Saharan Africa"
+  },
+  {
+   "flag": "zm",
+   "id": "ZMB",
+   "label": "Zambia",
+   "region": "Sub-Saharan Africa"
+  }
+ ],
+ "frames": [
+  {
+   "bottom": [
+    {
+     "from": "",
+     "id": "MAR",
+     "latest": false,
+     "t": "0.6",
+     "v": "0.615384615384615"
+    },
+    {
+     "from": "",
+     "id": "NER",
+     "latest": false,
+     "t": "1.2",
+     "v": "1.20481927710843"
+    },
+    {
+     "from": "",
+     "id": "TGO",
+     "latest": false,
+     "t": "1.2",
+     "v": "1.23456790123457"
+    },
+    {
+     "from": "",
+     "id": "MRT",
+     "latest": false,
+     "t": "1.3",
+     "v": "1.26582278481013"
+    },
+    {
+     "from": "",
+     "id": "KGZ",
+     "latest": false,
+     "t": "1.4",
+     "v": "1.42857142857143"
+    },
+    {
+     "from": "",
+     "id": "PNG",
+     "latest": false,
+     "t": "1.8",
+     "v": "1.8348623853211"
+    },
+    {
+     "from": "",
+     "id": "EGY",
+     "latest": false,
+     "t": "2.0",
+     "v": "1.98237885462555"
+    },
+    {
+     "from": "",
+     "id": "ETH",
+     "latest": false,
+     "t": "2.0",
+     "v": "2.04841713221601"
+    },
+    {
+     "from": "",
+     "id": "PAK",
+     "latest": false,
+     "t": "2.3",
+     "v": "2.30414746543779"
+    },
+    {
+     "from": "",
+     "id": "LBN",
+     "latest": false,
+     "t": "2.3",
+     "v": "2.34375"
+    }
+   ],
+   "ranks": {
+    "bottom": [
+     {
+      "id": "MAR",
+      "v": "0.615384615384615"
+     },
+     {
+      "id": "NER",
+      "v": "1.20481927710843"
+     },
+     {
+      "id": "TGO",
+      "v": "1.23456790123457"
+     },
+     {
+      "id": "MRT",
+      "v": "1.26582278481013"
+     },
+     {
+      "id": "KGZ",
+      "v": "1.42857142857143"
+     },
+     {
+      "id": "PNG",
+      "v": "1.8348623853211"
+     },
+     {
+      "id": "EGY",
+      "v": "1.98237885462555"
+     },
+     {
+      "id": "ETH",
+      "v": "2.04841713221601"
+     },
+     {
+      "id": "PAK",
+      "v": "2.30414746543779"
+     },
+     {
+      "id": "LBN",
+      "v": "2.34375"
+     },
+     {
+      "id": "TUR",
+      "v": "2.36363636363636"
+     },
+     {
+      "id": "TCD",
+      "v": "2.4"
+     },
+     {
+      "id": "PRY",
+      "v": "2.5"
+     },
+     {
+      "id": "TJK",
+      "v": "2.76243093922652"
+     },
+     {
+      "id": "KEN",
+      "v": "2.97029702970297"
+     },
+     {
+      "id": "KOR",
+      "v": "3.01003344481605"
+     },
+     {
+      "id": "DZA",
+      "v": "3.15789473684211"
+     },
+     {
+      "id": "NPL",
+      "v": "3.41463414634146"
+     },
+     {
+      "id": "CAF",
+      "v": "3.52941176470588"
+     },
+     {
+      "id": "HTI",
+      "v": "3.6144578313253"
+     }
+    ],
+    "top": [
+     {
+      "id": "SWE",
+      "v": "40.4011461318052"
+     },
+     {
+      "id": "NOR",
+      "v": "36.3636363636364"
+     },
+     {
+      "id": "FIN",
+      "v": "33.5"
+     },
+     {
+      "id": "DNK",
+      "v": "32.9608938547486"
+     },
+     {
+      "id": "NLD",
+      "v": "31.3333333333333"
+     },
+     {
+      "id": "NZL",
+      "v": "29.1666666666667"
+     },
+     {
+      "id": "ARG",
+      "v": "27.6264591439689"
+     },
+     {
+      "id": "AUT",
+      "v": "26.2295081967213"
+     },
+     {
+      "id": "VNM",
+      "v": "26.2222222222222"
+     },
+     {
+      "id": "DEU",
+      "v": "26.1904761904762"
+     },
+     {
+      "id": "MOZ",
+      "v": "25.2"
+     },
+     {
+      "id": "ZAF",
+      "v": "25"
+     },
+     {
+      "id": "ESP",
+      "v": "24.7126436781609"
+     },
+     {
+      "id": "CUB",
+      "v": "22.7504244482173"
+     },
+     {
+      "id": "CHE",
+      "v": "21"
+     },
+     {
+      "id": "CAN",
+      "v": "20.5980066445183"
+     },
+     {
+      "id": "PRK",
+      "v": "20.0873362445415"
+     },
+     {
+      "id": "GBR",
+      "v": "18.2094081942337"
+     },
+     {
+      "id": "UGA",
+      "v": "18.1159420289855"
+     },
+     {
+      "id": "TKM",
+      "v": "18"
+     }
+    ]
+   },
+   "top": [
+    {
+     "from": "",
+     "id": "SWE",
+     "latest": false,
+     "t": "40.4",
+     "v": "40.4011461318052"
+    },
+    {
+     "from": "",
+     "id": "NOR",
+     "latest": false,
+     "t": "36.4",
+     "v": "36.3636363636364"
+    },
+    {
+     "from": "",
+     "id": "FIN",
+     "latest": false,
+     "t": "33.5",
+     "v": "33.5"
+    },
+    {
+     "from": "",
+     "id": "DNK",
+     "latest": false,
+     "t": "33.0",
+     "v": "32.9608938547486"
+    },
+    {
+     "from": "",
+     "id": "NLD",
+     "latest": false,
+     "t": "31.3",
+     "v": "31.3333333333333"
+    },
+    {
+     "from": "",
+     "id": "NZL",
+     "latest": false,
+     "t": "29.2",
+     "v": "29.1666666666667"
+    },
+    {
+     "from": "",
+     "id": "ARG",
+     "latest": false,
+     "t": "27.6",
+     "v": "27.6264591439689"
+    },
+    {
+     "from": "",
+     "id": "AUT",
+     "latest": false,
+     "t": "26.2",
+     "v": "26.2295081967213"
+    },
+    {
+     "from": "",
+     "id": "VNM",
+     "latest": false,
+     "t": "26.2",
+     "v": "26.2222222222222"
+    },
+    {
+     "from": "",
+     "id": "DEU",
+     "latest": false,
+     "t": "26.2",
+     "v": "26.1904761904762"
+    }
+   ],
+   "year": 1997,
+   "zero": [
+    "JOR",
+    "KWT",
+    "ARE"
+   ]
+  },
+  {
+   "bottom": [
+    {
+     "from": "",
+     "id": "MAR",
+     "latest": false,
+     "t": "0.6",
+     "v": "0.615384615384615"
+    },
+    {
+     "from": "",
+     "id": "YEM",
+     "latest": false,
+     "t": "0.7",
+     "v": "0.664451827242525"
+    },
+    {
+     "from": "",
+     "id": "NER",
+     "latest": false,
+     "t": "1.2",
+     "v": "1.20481927710843"
+    },
+    {
+     "from": "",
+     "id": "TGO",
+     "latest": false,
+     "t": "1.2",
+     "v": "1.23456790123457"
+    },
+    {
+     "from": "",
+     "id": "KGZ",
+     "latest": false,
+     "t": "1.4",
+     "v": "1.42857142857143"
+    },
+    {
+     "from": "",
+     "id": "PNG",
+     "latest": false,
+     "t": "1.8",
+     "v": "1.8348623853211"
+    },
+    {
+     "from": "",
+     "id": "EGY",
+     "latest": false,
+     "t": "2.0",
+     "v": "1.98237885462555"
+    },
+    {
+     "from": "",
+     "id": "ETH",
+     "latest": false,
+     "t": "2.0",
+     "v": "2.04841713221601"
+    },
+    {
+     "from": "",
+     "id": "PAK",
+     "latest": false,
+     "t": "2.3",
+     "v": "2.30414746543779"
+    },
+    {
+     "from": "",
+     "id": "LBN",
+     "latest": false,
+     "t": "2.3",
+     "v": "2.34375"
+    }
+   ],
+   "ranks": {
+    "bottom": [
+     {
+      "id": "MAR",
+      "v": "0.615384615384615"
+     },
+     {
+      "id": "YEM",
+      "v": "0.664451827242525"
+     },
+     {
+      "id": "NER",
+      "v": "1.20481927710843"
+     },
+     {
+      "id": "TGO",
+      "v": "1.23456790123457"
+     },
+     {
+      "id": "KGZ",
+      "v": "1.42857142857143"
+     },
+     {
+      "id": "PNG",
+      "v": "1.8348623853211"
+     },
+     {
+      "id": "EGY",
+      "v": "1.98237885462555"
+     },
+     {
+      "id": "ETH",
+      "v": "2.04841713221601"
+     },
+     {
+      "id": "PAK",
+      "v": "2.30414746543779"
+     },
+     {
+      "id": "LBN",
+      "v": "2.34375"
+     },
+     {
+      "id": "TUR",
+      "v": "2.36363636363636"
+     },
+     {
+      "id": "TCD",
+      "v": "2.4"
+     },
+     {
+      "id": "PRY",
+      "v": "2.5"
+     },
+     {
+      "id": "TJK",
+      "v": "2.76243093922652"
+     },
+     {
+      "id": "DZA",
+      "v": "3.15789473684211"
+     },
+     {
+      "id": "NPL",
+      "v": "3.41463414634146"
+     },
+     {
+      "id": "CAF",
+      "v": "3.52941176470588"
+     },
+     {
+      "id": "KEN",
+      "v": "3.6036036036036"
+     },
+     {
+      "id": "HTI",
+      "v": "3.6144578313253"
+     },
+     {
+      "id": "KOR",
+      "v": "3.67892976588629"
+     }
+    ],
+    "top": [
+     {
+      "id": "SWE",
+      "v": "40.4011461318052"
+     },
+     {
+      "id": "DNK",
+      "v": "37.4301675977654"
+     },
+     {
+      "id": "NOR",
+      "v": "36.3636363636364"
+     },
+     {
+      "id": "NLD",
+      "v": "36"
+     },
+     {
+      "id": "FIN",
+      "v": "33.5"
+     },
+     {
+      "id": "NZL",
+      "v": "29.1666666666667"
+     },
+     {
+      "id": "ZAF",
+      "v": "28.75"
+     },
+     {
+      "id": "ARG",
+      "v": "27.6264591439689"
+     },
+     {
+      "id": "CUB",
+      "v": "27.6206322795341"
+     },
+     {
+      "id": "AUT",
+      "v": "26.2295081967213"
+     },
+     {
+      "id": "VNM",
+      "v": "26.2222222222222"
+     },
+     {
+      "id": "DEU",
+      "v": "26.1904761904762"
+     },
+     {
+      "id": "MOZ",
+      "v": "25.2"
+     },
+     {
+      "id": "ESP",
+      "v": "24.7126436781609"
+     },
+     {
+      "id": "CHN",
+      "v": "21.8194024840551"
+     },
+     {
+      "id": "LAO",
+      "v": "21.2121212121212"
+     },
+     {
+      "id": "CHE",
+      "v": "21"
+     },
+     {
+      "id": "CAN",
+      "v": "20.5980066445183"
+     },
+     {
+      "id": "PRK",
+      "v": "20.0873362445415"
+     },
+     {
+      "id": "CRI",
+      "v": "19.2982456140351"
+     }
+    ]
+   },
+   "top": [
+    {
+     "from": "",
+     "id": "SWE",
+     "latest": false,
+     "t": "40.4",
+     "v": "40.4011461318052"
+    },
+    {
+     "from": "",
+     "id": "DNK",
+     "latest": false,
+     "t": "37.4",
+     "v": "37.4301675977654"
+    },
+    {
+     "from": "",
+     "id": "NOR",
+     "latest": false,
+     "t": "36.4",
+     "v": "36.3636363636364"
+    },
+    {
+     "from": "",
+     "id": "NLD",
+     "latest": false,
+     "t": "36.0",
+     "v": "36"
+    },
+    {
+     "from": "",
+     "id": "FIN",
+     "latest": false,
+     "t": "33.5",
+     "v": "33.5"
+    },
+    {
+     "from": "",
+     "id": "NZL",
+     "latest": false,
+     "t": "29.2",
+     "v": "29.1666666666667"
+    },
+    {
+     "from": "",
+     "id": "ZAF",
+     "latest": false,
+     "t": "28.8",
+     "v": "28.75"
+    },
+    {
+     "from": "",
+     "id": "ARG",
+     "latest": false,
+     "t": "27.6",
+     "v": "27.6264591439689"
+    },
+    {
+     "from": "",
+     "id": "CUB",
+     "latest": false,
+     "t": "27.6",
+     "v": "27.6206322795341"
+    },
+    {
+     "from": "",
+     "id": "AUT",
+     "latest": false,
+     "t": "26.2",
+     "v": "26.2295081967213"
+    }
+   ],
+   "year": 1998,
+   "zero": [
+    "JOR",
+    "KWT",
+    "ARE"
+   ]
+  },
+  {
+   "bottom": [
+    {
+     "from": "",
+     "id": "MAR",
+     "latest": false,
+     "t": "0.6",
+     "v": "0.615384615384615"
+    },
+    {
+     "from": "",
+     "id": "YEM",
+     "latest": false,
+     "t": "0.7",
+     "v": "0.664451827242525"
+    },
+    {
+     "from": "1998",
+     "id": "NER",
+     "latest": true,
+     "t": "1.2",
+     "v": "1.20481927710843"
+    },
+    {
+     "from": "1998",
+     "id": "TGO",
+     "latest": true,
+     "t": "1.2",
+     "v": "1.23456790123457"
+    },
+    {
+     "from": "",
+     "id": "KGZ",
+     "latest": false,
+     "t": "1.4",
+     "v": "1.42857142857143"
+    },
+    {
+     "from": "",
+     "id": "PNG",
+     "latest": false,
+     "t": "1.8",
+     "v": "1.8348623853211"
+    },
+    {
+     "from": "",
+     "id": "EGY",
+     "latest": false,
+     "t": "2.0",
+     "v": "1.98237885462555"
+    },
+    {
+     "from": "",
+     "id": "ETH",
+     "latest": false,
+     "t": "2.0",
+     "v": "2.02578268876611"
+    },
+    {
+     "from": "",
+     "id": "LBN",
+     "latest": false,
+     "t": "2.3",
+     "v": "2.34375"
+    },
+    {
+     "from": "",
+     "id": "TCD",
+     "latest": false,
+     "t": "2.4",
+     "v": "2.4"
+    }
+   ],
+   "ranks": {
+    "bottom": [
+     {
+      "id": "MAR",
+      "v": "0.615384615384615"
+     },
+     {
+      "id": "YEM",
+      "v": "0.664451827242525"
+     },
+     {
+      "id": "NER",
+      "v": "1.20481927710843"
+     },
+     {
+      "id": "TGO",
+      "v": "1.23456790123457"
+     },
+     {
+      "id": "KGZ",
+      "v": "1.42857142857143"
+     },
+     {
+      "id": "PNG",
+      "v": "1.8348623853211"
+     },
+     {
+      "id": "EGY",
+      "v": "1.98237885462555"
+     },
+     {
+      "id": "ETH",
+      "v": "2.02578268876611"
+     },
+     {
+      "id": "LBN",
+      "v": "2.34375"
+     },
+     {
+      "id": "TCD",
+      "v": "2.4"
+     },
+     {
+      "id": "PRY",
+      "v": "2.5"
+     },
+     {
+      "id": "TJK",
+      "v": "2.76243093922652"
+     },
+     {
+      "id": "DZA",
+      "v": "3.15789473684211"
+     },
+     {
+      "id": "KEN",
+      "v": "3.57142857142857"
+     },
+     {
+      "id": "HTI",
+      "v": "3.6144578313253"
+     },
+     {
+      "id": "KOR",
+      "v": "3.67892976588629"
+     },
+     {
+      "id": "MRT",
+      "v": "3.79746835443038"
+     },
+     {
+      "id": "TUR",
+      "v": "4.18181818181818"
+     },
+     {
+      "id": "SGP",
+      "v": "4.3010752688172"
+     },
+     {
+      "id": "JPN",
+      "v": "4.6"
+     }
+    ],
+    "top": [
+     {
+      "id": "SWE",
+      "v": "42.6934097421203"
+     },
+     {
+      "id": "DNK",
+      "v": "37.4301675977654"
+     },
+     {
+      "id": "FIN",
+      "v": "37"
+     },
+     {
+      "id": "NOR",
+      "v": "36.3636363636364"
+     },
+     {
+      "id": "NLD",
+      "v": "36"
+     },
+     {
+      "id": "DEU",
+      "v": "30.9417040358744"
+     },
+     {
+      "id": "ZAF",
+      "v": "30"
+     },
+     {
+      "id": "NZL",
+      "v": "29.1666666666667"
+     },
+     {
+      "id": "ARG",
+      "v": "27.6264591439689"
+     },
+     {
+      "id": "CUB",
+      "v": "27.6206322795341"
+     },
+     {
+      "id": "AUT",
+      "v": "26.2295081967213"
+     },
+     {
+      "id": "VNM",
+      "v": "26"
+     },
+     {
+      "id": "MOZ",
+      "v": "25.2"
+     },
+     {
+      "id": "BEL",
+      "v": "23.3333333333333"
+     },
+     {
+      "id": "CHE",
+      "v": "22.5"
+     },
+     {
+      "id": "AUS",
+      "v": "22.4489795918367"
+     },
+     {
+      "id": "CHN",
+      "v": "21.8194024840551"
+     },
+     {
+      "id": "ESP",
+      "v": "21.551724137931"
+     },
+     {
+      "id": "LAO",
+      "v": "21.2121212121212"
+     },
+     {
+      "id": "CAN",
+      "v": "20.5980066445183"
+     }
+    ]
+   },
+   "top": [
+    {
+     "from": "",
+     "id": "SWE",
+     "latest": false,
+     "t": "42.7",
+     "v": "42.6934097421203"
+    },
+    {
+     "from": "",
+     "id": "DNK",
+     "latest": false,
+     "t": "37.4",
+     "v": "37.4301675977654"
+    },
+    {
+     "from": "",
+     "id": "FIN",
+     "latest": false,
+     "t": "37.0",
+     "v": "37"
+    },
+    {
+     "from": "",
+     "id": "NOR",
+     "latest": false,
+     "t": "36.4",
+     "v": "36.3636363636364"
+    },
+    {
+     "from": "",
+     "id": "NLD",
+     "latest": false,
+     "t": "36.0",
+     "v": "36"
+    },
+    {
+     "from": "",
+     "id": "DEU",
+     "latest": false,
+     "t": "30.9",
+     "v": "30.9417040358744"
+    },
+    {
+     "from": "",
+     "id": "ZAF",
+     "latest": false,
+     "t": "30.0",
+     "v": "30"
+    },
+    {
+     "from": "",
+     "id": "NZL",
+     "latest": false,
+     "t": "29.2",
+     "v": "29.1666666666667"
+    },
+    {
+     "from": "1998",
+     "id": "ARG",
+     "latest": true,
+     "t": "27.6",
+     "v": "27.6264591439689"
+    },
+    {
+     "from": "",
+     "id": "CUB",
+     "latest": false,
+     "t": "27.6",
+     "v": "27.6206322795341"
+    }
+   ],
+   "year": 1999,
+   "zero": [
+    "JOR",
+    "KWT",
+    "ARE"
+   ]
+  },
+  {
+   "bottom": [
+    {
+     "from": "",
+     "id": "MAR",
+     "latest": false,
+     "t": "0.6",
+     "v": "0.615384615384615"
+    },
+    {
+     "from": "",
+     "id": "YEM",
+     "latest": false,
+     "t": "0.7",
+     "v": "0.664451827242525"
+    },
+    {
+     "from": "",
+     "id": "NER",
+     "latest": false,
+     "t": "1.2",
+     "v": "1.20481927710843"
+    },
+    {
+     "from": "",
+     "id": "PNG",
+     "latest": false,
+     "t": "1.8",
+     "v": "1.8348623853211"
+    },
+    {
+     "from": "",
+     "id": "EGY",
+     "latest": false,
+     "t": "2.0",
+     "v": "1.98237885462555"
+    },
+    {
+     "from": "",
+     "id": "KGZ",
+     "latest": false,
+     "t": "2.3",
+     "v": "2.32558139534884"
+    },
+    {
+     "from": "",
+     "id": "LBN",
+     "latest": false,
+     "t": "2.3",
+     "v": "2.34375"
+    },
+    {
+     "from": "",
+     "id": "TCD",
+     "latest": false,
+     "t": "2.4",
+     "v": "2.4"
+    },
+    {
+     "from": "",
+     "id": "PRY",
+     "latest": false,
+     "t": "2.5",
+     "v": "2.5"
+    },
+    {
+     "from": "",
+     "id": "NGA",
+     "latest": false,
+     "t": "3.4",
+     "v": "3.41880341880342"
+    }
+   ],
+   "ranks": {
+    "bottom": [
+     {
+      "id": "MAR",
+      "v": "0.615384615384615"
+     },
+     {
+      "id": "YEM",
+      "v": "0.664451827242525"
+     },
+     {
+      "id": "NER",
+      "v": "1.20481927710843"
+     },
+     {
+      "id": "PNG",
+      "v": "1.8348623853211"
+     },
+     {
+      "id": "EGY",
+      "v": "1.98237885462555"
+     },
+     {
+      "id": "KGZ",
+      "v": "2.32558139534884"
+     },
+     {
+      "id": "LBN",
+      "v": "2.34375"
+     },
+     {
+      "id": "TCD",
+      "v": "2.4"
+     },
+     {
+      "id": "PRY",
+      "v": "2.5"
+     },
+     {
+      "id": "NGA",
+      "v": "3.41880341880342"
+     },
+     {
+      "id": "DZA",
+      "v": "3.42105263157895"
+     },
+     {
+      "id": "IRN",
+      "v": "3.44827586206897"
+     },
+     {
+      "id": "KEN",
+      "v": "3.57142857142857"
+     },
+     {
+      "id": "HTI",
+      "v": "3.6144578313253"
+     },
+     {
+      "id": "MRT",
+      "v": "3.79746835443038"
+     },
+     {
+      "id": "TUR",
+      "v": "4.18181818181818"
+     },
+     {
+      "id": "SGP",
+      "v": "4.3010752688172"
+     },
+     {
+      "id": "THA",
+      "v": "4.81283422459893"
+     },
+     {
+      "id": "TGO",
+      "v": "4.93827160493827"
+     },
+     {
+      "id": "CMR",
+      "v": "5.55555555555556"
+     }
+    ],
+    "top": [
+     {
+      "id": "SWE",
+      "v": "42.6934097421203"
+     },
+     {
+      "id": "DNK",
+      "v": "37.4301675977654"
+     },
+     {
+      "id": "FIN",
+      "v": "36.5"
+     },
+     {
+      "id": "NOR",
+      "v": "36.3636363636364"
+     },
+     {
+      "id": "NLD",
+      "v": "36"
+     },
+     {
+      "id": "DEU",
+      "v": "30.9417040358744"
+     },
+     {
+      "id": "NZL",
+      "v": "30.8333333333333"
+     },
+     {
+      "id": "MOZ",
+      "v": "30"
+     },
+     {
+      "id": "ZAF",
+      "v": "29.8245614035088"
+     },
+     {
+      "id": "ESP",
+      "v": "28.2857142857143"
+     },
+     {
+      "id": "CUB",
+      "v": "27.6206322795341"
+     },
+     {
+      "id": "AUT",
+      "v": "26.775956284153"
+     },
+     {
+      "id": "ARG",
+      "v": "26.4591439688716"
+     },
+     {
+      "id": "TKM",
+      "v": "26"
+     },
+     {
+      "id": "VNM",
+      "v": "26"
+     },
+     {
+      "id": "RWA",
+      "v": "25.7142857142857"
+     },
+     {
+      "id": "BEL",
+      "v": "23.3333333333333"
+     },
+     {
+      "id": "CHE",
+      "v": "23"
+     },
+     {
+      "id": "AUS",
+      "v": "22.972972972973"
+     },
+     {
+      "id": "CHN",
+      "v": "21.7828418230563"
+     }
+    ]
+   },
+   "top": [
+    {
+     "from": "",
+     "id": "SWE",
+     "latest": false,
+     "t": "42.7",
+     "v": "42.6934097421203"
+    },
+    {
+     "from": "",
+     "id": "DNK",
+     "latest": false,
+     "t": "37.4",
+     "v": "37.4301675977654"
+    },
+    {
+     "from": "",
+     "id": "FIN",
+     "latest": false,
+     "t": "36.5",
+     "v": "36.5"
+    },
+    {
+     "from": "",
+     "id": "NOR",
+     "latest": false,
+     "t": "36.4",
+     "v": "36.3636363636364"
+    },
+    {
+     "from": "",
+     "id": "NLD",
+     "latest": false,
+     "t": "36.0",
+     "v": "36"
+    },
+    {
+     "from": "",
+     "id": "DEU",
+     "latest": false,
+     "t": "30.9",
+     "v": "30.9417040358744"
+    },
+    {
+     "from": "",
+     "id": "NZL",
+     "latest": false,
+     "t": "30.8",
+     "v": "30.8333333333333"
+    },
+    {
+     "from": "",
+     "id": "MOZ",
+     "latest": false,
+     "t": "30.0",
+     "v": "30"
+    },
+    {
+     "from": "",
+     "id": "ZAF",
+     "latest": false,
+     "t": "29.8",
+     "v": "29.8245614035088"
+    },
+    {
+     "from": "",
+     "id": "ESP",
+     "latest": false,
+     "t": "28.3",
+     "v": "28.2857142857143"
+    }
+   ],
+   "year": 2000,
+   "zero": [
+    "JOR",
+    "KWT",
+    "ARE"
+   ]
+  },
+  {
+   "bottom": [
+    {
+     "from": "",
+     "id": "MAR",
+     "latest": false,
+     "t": "0.6",
+     "v": "0.615384615384615"
+    },
+    {
+     "from": "",
+     "id": "YEM",
+     "latest": false,
+     "t": "0.7",
+     "v": "0.668896321070234"
+    },
+    {
+     "from": "",
+     "id": "NER",
+     "latest": false,
+     "t": "1.2",
+     "v": "1.20481927710843"
+    },
+    {
+     "from": "",
+     "id": "JOR",
+     "latest": false,
+     "t": "1.3",
+     "v": "1.25"
+    },
+    {
+     "from": "",
+     "id": "PNG",
+     "latest": false,
+     "t": "1.8",
+     "v": "1.8348623853211"
+    },
+    {
+     "from": "",
+     "id": "LBN",
+     "latest": false,
+     "t": "2.3",
+     "v": "2.34375"
+    },
+    {
+     "from": "",
+     "id": "TCD",
+     "latest": false,
+     "t": "2.4",
+     "v": "2.4"
+    },
+    {
+     "from": "",
+     "id": "EGY",
+     "latest": false,
+     "t": "2.4",
+     "v": "2.42290748898678"
+    },
+    {
+     "from": "",
+     "id": "PRY",
+     "latest": false,
+     "t": "2.5",
+     "v": "2.5"
+    },
+    {
+     "from": "",
+     "id": "NGA",
+     "latest": false,
+     "t": "3.4",
+     "v": "3.41880341880342"
+    }
+   ],
+   "ranks": {
+    "bottom": [
+     {
+      "id": "MAR",
+      "v": "0.615384615384615"
+     },
+     {
+      "id": "YEM",
+      "v": "0.668896321070234"
+     },
+     {
+      "id": "NER",
+      "v": "1.20481927710843"
+     },
+     {
+      "id": "JOR",
+      "v": "1.25"
+     },
+     {
+      "id": "PNG",
+      "v": "1.8348623853211"
+     },
+     {
+      "id": "LBN",
+      "v": "2.34375"
+     },
+     {
+      "id": "TCD",
+      "v": "2.4"
+     },
+     {
+      "id": "EGY",
+      "v": "2.42290748898678"
+     },
+     {
+      "id": "PRY",
+      "v": "2.5"
+     },
+     {
+      "id": "NGA",
+      "v": "3.41880341880342"
+     },
+     {
+      "id": "DZA",
+      "v": "3.42105263157895"
+     },
+     {
+      "id": "IRN",
+      "v": "3.44827586206897"
+     },
+     {
+      "id": "KEN",
+      "v": "3.57142857142857"
+     },
+     {
+      "id": "HTI",
+      "v": "3.6144578313253"
+     },
+     {
+      "id": "TUR",
+      "v": "4.18181818181818"
+     },
+     {
+      "id": "TGO",
+      "v": "4.93827160493827"
+     },
+     {
+      "id": "CMR",
+      "v": "5.55555555555556"
+     },
+     {
+      "id": "NPL",
+      "v": "5.85365853658537"
+     },
+     {
+      "id": "KOR",
+      "v": "5.86080586080586"
+     },
+     {
+      "id": "BEN",
+      "v": "6.02409638554217"
+     }
+    ],
+    "top": [
+     {
+      "id": "SWE",
+      "v": "42.6934097421203"
+     },
+     {
+      "id": "DNK",
+      "v": "37.4301675977654"
+     },
+     {
+      "id": "FIN",
+      "v": "36.5"
+     },
+     {
+      "id": "NLD",
+      "v": "36"
+     },
+     {
+      "id": "NOR",
+      "v": "35.7575757575758"
+     },
+     {
+      "id": "DEU",
+      "v": "31.0810810810811"
+     },
+     {
+      "id": "NZL",
+      "v": "30.8333333333333"
+     },
+     {
+      "id": "MOZ",
+      "v": "30"
+     },
+     {
+      "id": "ZAF",
+      "v": "29.8245614035088"
+     },
+     {
+      "id": "ESP",
+      "v": "28.2857142857143"
+     },
+     {
+      "id": "CUB",
+      "v": "27.6206322795341"
+     },
+     {
+      "id": "AUT",
+      "v": "26.775956284153"
+     },
+     {
+      "id": "ARG",
+      "v": "26.4591439688716"
+     },
+     {
+      "id": "BGR",
+      "v": "26.25"
+     },
+     {
+      "id": "TKM",
+      "v": "26"
+     },
+     {
+      "id": "VNM",
+      "v": "26"
+     },
+     {
+      "id": "RWA",
+      "v": "25.6756756756757"
+     },
+     {
+      "id": "UGA",
+      "v": "24.6710526315789"
+     },
+     {
+      "id": "BEL",
+      "v": "23.3333333333333"
+     },
+     {
+      "id": "CHE",
+      "v": "23"
+     }
+    ]
+   },
+   "top": [
+    {
+     "from": "",
+     "id": "SWE",
+     "latest": false,
+     "t": "42.7",
+     "v": "42.6934097421203"
+    },
+    {
+     "from": "2000",
+     "id": "DNK",
+     "latest": true,
+     "t": "37.4",
+     "v": "37.4301675977654"
+    },
+    {
+     "from": "",
+     "id": "FIN",
+     "latest": false,
+     "t": "36.5",
+     "v": "36.5"
+    },
+    {
+     "from": "",
+     "id": "NLD",
+     "latest": false,
+     "t": "36.0",
+     "v": "36"
+    },
+    {
+     "from": "",
+     "id": "NOR",
+     "latest": false,
+     "t": "35.8",
+     "v": "35.7575757575758"
+    },
+    {
+     "from": "",
+     "id": "DEU",
+     "latest": false,
+     "t": "31.1",
+     "v": "31.0810810810811"
+    },
+    {
+     "from": "",
+     "id": "NZL",
+     "latest": false,
+     "t": "30.8",
+     "v": "30.8333333333333"
+    },
+    {
+     "from": "",
+     "id": "MOZ",
+     "latest": false,
+     "t": "30.0",
+     "v": "30"
+    },
+    {
+     "from": "",
+     "id": "ZAF",
+     "latest": false,
+     "t": "29.8",
+     "v": "29.8245614035088"
+    },
+    {
+     "from": "",
+     "id": "ESP",
+     "latest": false,
+     "t": "28.3",
+     "v": "28.2857142857143"
+    }
+   ],
+   "year": 2001,
+   "zero": [
+    "KWT",
+    "ARE"
+   ]
+  },
+  {
+   "bottom": [
+    {
+     "from": "",
+     "id": "YEM",
+     "latest": false,
+     "t": "0.7",
+     "v": "0.668896321070234"
+    },
+    {
+     "from": "",
+     "id": "NER",
+     "latest": false,
+     "t": "1.2",
+     "v": "1.20481927710843"
+    },
+    {
+     "from": "",
+     "id": "JOR",
+     "latest": false,
+     "t": "1.3",
+     "v": "1.25"
+    },
+    {
+     "from": "2001",
+     "id": "PNG",
+     "latest": true,
+     "t": "1.8",
+     "v": "1.8348623853211"
+    },
+    {
+     "from": "",
+     "id": "BGD",
+     "latest": false,
+     "t": "2.0",
+     "v": "2"
+    },
+    {
+     "from": "",
+     "id": "LBN",
+     "latest": false,
+     "t": "2.3",
+     "v": "2.34375"
+    },
+    {
+     "from": "2001",
+     "id": "TCD",
+     "latest": true,
+     "t": "2.4",
+     "v": "2.4"
+    },
+    {
+     "from": "",
+     "id": "EGY",
+     "latest": false,
+     "t": "2.4",
+     "v": "2.42290748898678"
+    },
+    {
+     "from": "",
+     "id": "PRY",
+     "latest": false,
+     "t": "2.5",
+     "v": "2.5"
+    },
+    {
+     "from": "",
+     "id": "NGA",
+     "latest": false,
+     "t": "3.4",
+     "v": "3.41880341880342"
+    }
+   ],
+   "ranks": {
+    "bottom": [
+     {
+      "id": "YEM",
+      "v": "0.668896321070234"
+     },
+     {
+      "id": "NER",
+      "v": "1.20481927710843"
+     },
+     {
+      "id": "JOR",
+      "v": "1.25"
+     },
+     {
+      "id": "PNG",
+      "v": "1.8348623853211"
+     },
+     {
+      "id": "BGD",
+      "v": "2"
+     },
+     {
+      "id": "LBN",
+      "v": "2.34375"
+     },
+     {
+      "id": "TCD",
+      "v": "2.4"
+     },
+     {
+      "id": "EGY",
+      "v": "2.42290748898678"
+     },
+     {
+      "id": "PRY",
+      "v": "2.5"
+     },
+     {
+      "id": "NGA",
+      "v": "3.41880341880342"
+     },
+     {
+      "id": "KEN",
+      "v": "3.57142857142857"
+     },
+     {
+      "id": "HTI",
+      "v": "3.6144578313253"
+     },
+     {
+      "id": "IRN",
+      "v": "4.13793103448276"
+     },
+     {
+      "id": "TUR",
+      "v": "4.18181818181818"
+     },
+     {
+      "id": "LKA",
+      "v": "4.44444444444444"
+     },
+     {
+      "id": "TGO",
+      "v": "4.93827160493827"
+     },
+     {
+      "id": "HND",
+      "v": "5.46875"
+     },
+     {
+      "id": "NPL",
+      "v": "5.85365853658537"
+     },
+     {
+      "id": "KOR",
+      "v": "5.86080586080586"
+     },
+     {
+      "id": "BEN",
+      "v": "6.02409638554217"
+     }
+    ],
+    "top": [
+     {
+      "id": "SWE",
+      "v": "44.9856733524355"
+     },
+     {
+      "id": "DNK",
+      "v": "37.9888268156425"
+     },
+     {
+      "id": "FIN",
+      "v": "36.5"
+     },
+     {
+      "id": "NOR",
+      "v": "36.3636363636364"
+     },
+     {
+      "id": "CRI",
+      "v": "35.0877192982456"
+     },
+     {
+      "id": "NLD",
+      "v": "34"
+     },
+     {
+      "id": "DEU",
+      "v": "32.1724709784411"
+     },
+     {
+      "id": "ARG",
+      "v": "30.7392996108949"
+     },
+     {
+      "id": "MOZ",
+      "v": "30"
+     },
+     {
+      "id": "ZAF",
+      "v": "29.8245614035088"
+     },
+     {
+      "id": "NZL",
+      "v": "29.1666666666667"
+     },
+     {
+      "id": "ESP",
+      "v": "28.2857142857143"
+     },
+     {
+      "id": "CUB",
+      "v": "27.6206322795341"
+     },
+     {
+      "id": "VNM",
+      "v": "27.3092369477912"
+     },
+     {
+      "id": "AUT",
+      "v": "26.775956284153"
+     },
+     {
+      "id": "BGR",
+      "v": "26.25"
+     },
+     {
+      "id": "TKM",
+      "v": "26"
+     },
+     {
+      "id": "RWA",
+      "v": "25.6756756756757"
+     },
+     {
+      "id": "AUS",
+      "v": "25.3333333333333"
+     },
+     {
+      "id": "UGA",
+      "v": "24.6710526315789"
+     }
+    ]
+   },
+   "top": [
+    {
+     "from": "",
+     "id": "SWE",
+     "latest": false,
+     "t": "45.0",
+     "v": "44.9856733524355"
+    },
+    {
+     "from": "",
+     "id": "DNK",
+     "latest": false,
+     "t": "38.0",
+     "v": "37.9888268156425"
+    },
+    {
+     "from": "",
+     "id": "FIN",
+     "latest": false,
+     "t": "36.5",
+     "v": "36.5"
+    },
+    {
+     "from": "",
+     "id": "NOR",
+     "latest": false,
+     "t": "36.4",
+     "v": "36.3636363636364"
+    },
+    {
+     "from": "",
+     "id": "CRI",
+     "latest": false,
+     "t": "35.1",
+     "v": "35.0877192982456"
+    },
+    {
+     "from": "",
+     "id": "NLD",
+     "latest": false,
+     "t": "34.0",
+     "v": "34"
+    },
+    {
+     "from": "",
+     "id": "DEU",
+     "latest": false,
+     "t": "32.2",
+     "v": "32.1724709784411"
+    },
+    {
+     "from": "",
+     "id": "ARG",
+     "latest": false,
+     "t": "30.7",
+     "v": "30.7392996108949"
+    },
+    {
+     "from": "",
+     "id": "MOZ",
+     "latest": false,
+     "t": "30.0",
+     "v": "30"
+    },
+    {
+     "from": "",
+     "id": "ZAF",
+     "latest": false,
+     "t": "29.8",
+     "v": "29.8245614035088"
+    }
+   ],
+   "year": 2002,
+   "zero": [
+    "KWT",
+    "ARE"
+   ]
+  },
+  {
+   "bottom": [
+    {
+     "from": "",
+     "id": "YEM",
+     "latest": false,
+     "t": "0.3",
+     "v": "0.332225913621262"
+    },
+    {
+     "from": "",
+     "id": "PNG",
+     "latest": false,
+     "t": "0.9",
+     "v": "0.917431192660551"
+    },
+    {
+     "from": "",
+     "id": "NER",
+     "latest": false,
+     "t": "1.2",
+     "v": "1.20481927710843"
+    },
+    {
+     "from": "",
+     "id": "BGD",
+     "latest": false,
+     "t": "2.0",
+     "v": "2"
+    },
+    {
+     "from": "",
+     "id": "LBN",
+     "latest": false,
+     "t": "2.3",
+     "v": "2.34375"
+    },
+    {
+     "from": "",
+     "id": "EGY",
+     "latest": false,
+     "t": "2.4",
+     "v": "2.42290748898678"
+    },
+    {
+     "from": "",
+     "id": "HTI",
+     "latest": false,
+     "t": "3.6",
+     "v": "3.6144578313253"
+    },
+    {
+     "from": "",
+     "id": "MRT",
+     "latest": false,
+     "t": "3.7",
+     "v": "3.7037037037037"
+    },
+    {
+     "from": "",
+     "id": "MDG",
+     "latest": false,
+     "t": "3.8",
+     "v": "3.75"
+    },
+    {
+     "from": "",
+     "id": "IRN",
+     "latest": false,
+     "t": "4.1",
+     "v": "4.13793103448276"
+    }
+   ],
+   "ranks": {
+    "bottom": [
+     {
+      "id": "YEM",
+      "v": "0.332225913621262"
+     },
+     {
+      "id": "PNG",
+      "v": "0.917431192660551"
+     },
+     {
+      "id": "NER",
+      "v": "1.20481927710843"
+     },
+     {
+      "id": "BGD",
+      "v": "2"
+     },
+     {
+      "id": "LBN",
+      "v": "2.34375"
+     },
+     {
+      "id": "EGY",
+      "v": "2.42290748898678"
+     },
+     {
+      "id": "HTI",
+      "v": "3.6144578313253"
+     },
+     {
+      "id": "MRT",
+      "v": "3.7037037037037"
+     },
+     {
+      "id": "MDG",
+      "v": "3.75"
+     },
+     {
+      "id": "IRN",
+      "v": "4.13793103448276"
+     },
+     {
+      "id": "TUR",
+      "v": "4.36363636363636"
+     },
+     {
+      "id": "LKA",
+      "v": "4.44444444444444"
+     },
+     {
+      "id": "NGA",
+      "v": "4.72222222222222"
+     },
+     {
+      "id": "UKR",
+      "v": "5.33333333333333"
+     },
+     {
+      "id": "JOR",
+      "v": "5.45454545454545"
+     },
+     {
+      "id": "HND",
+      "v": "5.46875"
+     },
+     {
+      "id": "TCD",
+      "v": "5.80645161290323"
+     },
+     {
+      "id": "NPL",
+      "v": "5.85365853658537"
+     },
+     {
+      "id": "KOR",
+      "v": "5.86080586080586"
+     },
+     {
+      "id": "BEN",
+      "v": "6.02409638554217"
+     }
+    ],
+    "top": [
+     {
+      "id": "RWA",
+      "v": "48.75"
+     },
+     {
+      "id": "SWE",
+      "v": "45.2722063037249"
+     },
+     {
+      "id": "DNK",
+      "v": "37.9888268156425"
+     },
+     {
+      "id": "FIN",
+      "v": "37.5"
+     },
+     {
+      "id": "NLD",
+      "v": "36.6666666666667"
+     },
+     {
+      "id": "NOR",
+      "v": "36.3636363636364"
+     },
+     {
+      "id": "CUB",
+      "v": "35.9605911330049"
+     },
+     {
+      "id": "BEL",
+      "v": "35.3333333333333"
+     },
+     {
+      "id": "CRI",
+      "v": "35.0877192982456"
+     },
+     {
+      "id": "AUT",
+      "v": "33.879781420765"
+     },
+     {
+      "id": "DEU",
+      "v": "32.1724709784411"
+     },
+     {
+      "id": "ARG",
+      "v": "30.7392996108949"
+     },
+     {
+      "id": "MOZ",
+      "v": "30"
+     },
+     {
+      "id": "ZAF",
+      "v": "29.8245614035088"
+     },
+     {
+      "id": "NZL",
+      "v": "28.3333333333333"
+     },
+     {
+      "id": "ESP",
+      "v": "28.2857142857143"
+     },
+     {
+      "id": "VNM",
+      "v": "27.3092369477912"
+     },
+     {
+      "id": "BGR",
+      "v": "26.25"
+     },
+     {
+      "id": "TKM",
+      "v": "26"
+     },
+     {
+      "id": "AUS",
+      "v": "25.3333333333333"
+     }
+    ]
+   },
+   "top": [
+    {
+     "from": "",
+     "id": "RWA",
+     "latest": false,
+     "t": "48.8",
+     "v": "48.75"
+    },
+    {
+     "from": "",
+     "id": "SWE",
+     "latest": false,
+     "t": "45.3",
+     "v": "45.2722063037249"
+    },
+    {
+     "from": "",
+     "id": "DNK",
+     "latest": false,
+     "t": "38.0",
+     "v": "37.9888268156425"
+    },
+    {
+     "from": "",
+     "id": "FIN",
+     "latest": false,
+     "t": "37.5",
+     "v": "37.5"
+    },
+    {
+     "from": "",
+     "id": "NLD",
+     "latest": false,
+     "t": "36.7",
+     "v": "36.6666666666667"
+    },
+    {
+     "from": "",
+     "id": "NOR",
+     "latest": false,
+     "t": "36.4",
+     "v": "36.3636363636364"
+    },
+    {
+     "from": "",
+     "id": "CUB",
+     "latest": false,
+     "t": "36.0",
+     "v": "35.9605911330049"
+    },
+    {
+     "from": "",
+     "id": "BEL",
+     "latest": false,
+     "t": "35.3",
+     "v": "35.3333333333333"
+    },
+    {
+     "from": "",
+     "id": "CRI",
+     "latest": false,
+     "t": "35.1",
+     "v": "35.0877192982456"
+    },
+    {
+     "from": "",
+     "id": "AUT",
+     "latest": false,
+     "t": "33.9",
+     "v": "33.879781420765"
+    }
+   ],
+   "year": 2003,
+   "zero": [
+    "KWT",
+    "SAU",
+    "ARE"
+   ]
+  },
+  {
+   "bottom": [
+    {
+     "from": "",
+     "id": "YEM",
+     "latest": false,
+     "t": "0.3",
+     "v": "0.332225913621262"
+    },
+    {
+     "from": "",
+     "id": "PNG",
+     "latest": false,
+     "t": "0.9",
+     "v": "0.917431192660551"
+    },
+    {
+     "from": "",
+     "id": "BGD",
+     "latest": false,
+     "t": "2.0",
+     "v": "2"
+    },
+    {
+     "from": "",
+     "id": "LBN",
+     "latest": false,
+     "t": "2.3",
+     "v": "2.34375"
+    },
+    {
+     "from": "",
+     "id": "OMN",
+     "latest": false,
+     "t": "2.4",
+     "v": "2.40963855421687"
+    },
+    {
+     "from": "",
+     "id": "EGY",
+     "latest": false,
+     "t": "2.9",
+     "v": "2.86343612334802"
+    },
+    {
+     "from": "",
+     "id": "HTI",
+     "latest": false,
+     "t": "3.6",
+     "v": "3.6144578313253"
+    },
+    {
+     "from": "",
+     "id": "MRT",
+     "latest": false,
+     "t": "3.7",
+     "v": "3.7037037037037"
+    },
+    {
+     "from": "",
+     "id": "IRN",
+     "latest": false,
+     "t": "4.1",
+     "v": "4.13793103448276"
+    },
+    {
+     "from": "",
+     "id": "TUR",
+     "latest": false,
+     "t": "4.4",
+     "v": "4.36363636363636"
+    }
+   ],
+   "ranks": {
+    "bottom": [
+     {
+      "id": "YEM",
+      "v": "0.332225913621262"
+     },
+     {
+      "id": "PNG",
+      "v": "0.917431192660551"
+     },
+     {
+      "id": "BGD",
+      "v": "2"
+     },
+     {
+      "id": "LBN",
+      "v": "2.34375"
+     },
+     {
+      "id": "OMN",
+      "v": "2.40963855421687"
+     },
+     {
+      "id": "EGY",
+      "v": "2.86343612334802"
+     },
+     {
+      "id": "HTI",
+      "v": "3.6144578313253"
+     },
+     {
+      "id": "MRT",
+      "v": "3.7037037037037"
+     },
+     {
+      "id": "IRN",
+      "v": "4.13793103448276"
+     },
+     {
+      "id": "TUR",
+      "v": "4.36363636363636"
+     },
+     {
+      "id": "NGA",
+      "v": "4.72222222222222"
+     },
+     {
+      "id": "LKA",
+      "v": "4.88888888888889"
+     },
+     {
+      "id": "LBR",
+      "v": "5.26315789473684"
+     },
+     {
+      "id": "UKR",
+      "v": "5.33333333333333"
+     },
+     {
+      "id": "JOR",
+      "v": "5.45454545454545"
+     },
+     {
+      "id": "HND",
+      "v": "5.46875"
+     },
+     {
+      "id": "NPL",
+      "v": "5.85365853658537"
+     },
+     {
+      "id": "DZA",
+      "v": "6.16966580976864"
+     },
+     {
+      "id": "TGO",
+      "v": "6.17283950617284"
+     },
+     {
+      "id": "TCD",
+      "v": "6.45161290322581"
+     }
+    ],
+    "top": [
+     {
+      "id": "RWA",
+      "v": "48.75"
+     },
+     {
+      "id": "SWE",
+      "v": "45.2722063037249"
+     },
+     {
+      "id": "NOR",
+      "v": "38.1818181818182"
+     },
+     {
+      "id": "DNK",
+      "v": "37.9888268156425"
+     },
+     {
+      "id": "FIN",
+      "v": "37.5"
+     },
+     {
+      "id": "NLD",
+      "v": "36.6666666666667"
+     },
+     {
+      "id": "ESP",
+      "v": "36"
+     },
+     {
+      "id": "CUB",
+      "v": "35.9605911330049"
+     },
+     {
+      "id": "CRI",
+      "v": "35.0877192982456"
+     },
+     {
+      "id": "MOZ",
+      "v": "34.8"
+     },
+     {
+      "id": "BEL",
+      "v": "34.6666666666667"
+     },
+     {
+      "id": "AUT",
+      "v": "33.879781420765"
+     },
+     {
+      "id": "ARG",
+      "v": "33.7254901960784"
+     },
+     {
+      "id": "ZAF",
+      "v": "32.7787021630616"
+     },
+     {
+      "id": "DEU",
+      "v": "32.75"
+     },
+     {
+      "id": "BLR",
+      "v": "29.3577981651376"
+     },
+     {
+      "id": "NZL",
+      "v": "28.3333333333333"
+     },
+     {
+      "id": "VNM",
+      "v": "27.3092369477912"
+     },
+     {
+      "id": "BGR",
+      "v": "26.25"
+     },
+     {
+      "id": "TKM",
+      "v": "26"
+     }
+    ]
+   },
+   "top": [
+    {
+     "from": "",
+     "id": "RWA",
+     "latest": false,
+     "t": "48.8",
+     "v": "48.75"
+    },
+    {
+     "from": "",
+     "id": "SWE",
+     "latest": false,
+     "t": "45.3",
+     "v": "45.2722063037249"
+    },
+    {
+     "from": "",
+     "id": "NOR",
+     "latest": false,
+     "t": "38.2",
+     "v": "38.1818181818182"
+    },
+    {
+     "from": "",
+     "id": "DNK",
+     "latest": false,
+     "t": "38.0",
+     "v": "37.9888268156425"
+    },
+    {
+     "from": "",
+     "id": "FIN",
+     "latest": false,
+     "t": "37.5",
+     "v": "37.5"
+    },
+    {
+     "from": "",
+     "id": "NLD",
+     "latest": false,
+     "t": "36.7",
+     "v": "36.6666666666667"
+    },
+    {
+     "from": "",
+     "id": "ESP",
+     "latest": false,
+     "t": "36.0",
+     "v": "36"
+    },
+    {
+     "from": "",
+     "id": "CUB",
+     "latest": false,
+     "t": "36.0",
+     "v": "35.9605911330049"
+    },
+    {
+     "from": "",
+     "id": "CRI",
+     "latest": false,
+     "t": "35.1",
+     "v": "35.0877192982456"
+    },
+    {
+     "from": "",
+     "id": "MOZ",
+     "latest": false,
+     "t": "34.8",
+     "v": "34.8"
+    }
+   ],
+   "year": 2004,
+   "zero": [
+    "KWT",
+    "SAU",
+    "ARE"
+   ]
+  },
+  {
+   "bottom": [
+    {
+     "from": "",
+     "id": "YEM",
+     "latest": false,
+     "t": "0.3",
+     "v": "0.332225913621262"
+    },
+    {
+     "from": "",
+     "id": "PNG",
+     "latest": false,
+     "t": "0.9",
+     "v": "0.917431192660551"
+    },
+    {
+     "from": "",
+     "id": "KWT",
+     "latest": false,
+     "t": "1.5",
+     "v": "1.53846153846154"
+    },
+    {
+     "from": "",
+     "id": "EGY",
+     "latest": false,
+     "t": "2.0",
+     "v": "1.98237885462555"
+    },
+    {
+     "from": "",
+     "id": "OMN",
+     "latest": false,
+     "t": "2.4",
+     "v": "2.40963855421687"
+    },
+    {
+     "from": "",
+     "id": "HTI",
+     "latest": false,
+     "t": "3.6",
+     "v": "3.6144578313253"
+    },
+    {
+     "from": "2004",
+     "id": "MRT",
+     "latest": true,
+     "t": "3.7",
+     "v": "3.7037037037037"
+    },
+    {
+     "from": "",
+     "id": "IRN",
+     "latest": false,
+     "t": "4.1",
+     "v": "4.13793103448276"
+    },
+    {
+     "from": "",
+     "id": "TUR",
+     "latest": false,
+     "t": "4.4",
+     "v": "4.36363636363636"
+    },
+    {
+     "from": "",
+     "id": "LBN",
+     "latest": false,
+     "t": "4.7",
+     "v": "4.6875"
+    }
+   ],
+   "ranks": {
+    "bottom": [
+     {
+      "id": "YEM",
+      "v": "0.332225913621262"
+     },
+     {
+      "id": "PNG",
+      "v": "0.917431192660551"
+     },
+     {
+      "id": "KWT",
+      "v": "1.53846153846154"
+     },
+     {
+      "id": "EGY",
+      "v": "1.98237885462555"
+     },
+     {
+      "id": "OMN",
+      "v": "2.40963855421687"
+     },
+     {
+      "id": "HTI",
+      "v": "3.6144578313253"
+     },
+     {
+      "id": "MRT",
+      "v": "3.7037037037037"
+     },
+     {
+      "id": "IRN",
+      "v": "4.13793103448276"
+     },
+     {
+      "id": "TUR",
+      "v": "4.36363636363636"
+     },
+     {
+      "id": "LBN",
+      "v": "4.6875"
+     },
+     {
+      "id": "LBY",
+      "v": "4.73684210526316"
+     },
+     {
+      "id": "LKA",
+      "v": "4.88888888888889"
+     },
+     {
+      "id": "UKR",
+      "v": "5.33333333333333"
+     },
+     {
+      "id": "JOR",
+      "v": "5.45454545454545"
+     },
+     {
+      "id": "NPL",
+      "v": "5.85365853658537"
+     },
+     {
+      "id": "DZA",
+      "v": "6.16966580976864"
+     },
+     {
+      "id": "NGA",
+      "v": "6.38888888888889"
+     },
+     {
+      "id": "TCD",
+      "v": "6.45161290322581"
+     },
+     {
+      "id": "MDG",
+      "v": "6.875"
+     },
+     {
+      "id": "KEN",
+      "v": "7.14285714285714"
+     }
+    ],
+    "top": [
+     {
+      "id": "RWA",
+      "v": "48.75"
+     },
+     {
+      "id": "SWE",
+      "v": "45.2722063037249"
+     },
+     {
+      "id": "NOR",
+      "v": "37.8698224852071"
+     },
+     {
+      "id": "FIN",
+      "v": "37.5"
+     },
+     {
+      "id": "DNK",
+      "v": "36.8715083798883"
+     },
+     {
+      "id": "NLD",
+      "v": "36.6666666666667"
+     },
+     {
+      "id": "ARG",
+      "v": "36.1867704280156"
+     },
+     {
+      "id": "ESP",
+      "v": "36"
+     },
+     {
+      "id": "CUB",
+      "v": "35.9605911330049"
+     },
+     {
+      "id": "CRI",
+      "v": "35.0877192982456"
+     },
+     {
+      "id": "MOZ",
+      "v": "34.8"
+     },
+     {
+      "id": "BEL",
+      "v": "34.6666666666667"
+     },
+     {
+      "id": "AUT",
+      "v": "33.879781420765"
+     },
+     {
+      "id": "ZAF",
+      "v": "32.75"
+     },
+     {
+      "id": "NZL",
+      "v": "32.2314049586777"
+     },
+     {
+      "id": "DEU",
+      "v": "31.7589576547231"
+     },
+     {
+      "id": "BDI",
+      "v": "30.5084745762712"
+     },
+     {
+      "id": "TZA",
+      "v": "30.4075235109718"
+     },
+     {
+      "id": "BLR",
+      "v": "29.0909090909091"
+     },
+     {
+      "id": "AFG",
+      "v": "27.3092369477912"
+     }
+    ]
+   },
+   "top": [
+    {
+     "from": "",
+     "id": "RWA",
+     "latest": false,
+     "t": "48.8",
+     "v": "48.75"
+    },
+    {
+     "from": "",
+     "id": "SWE",
+     "latest": false,
+     "t": "45.3",
+     "v": "45.2722063037249"
+    },
+    {
+     "from": "",
+     "id": "NOR",
+     "latest": false,
+     "t": "37.9",
+     "v": "37.8698224852071"
+    },
+    {
+     "from": "",
+     "id": "FIN",
+     "latest": false,
+     "t": "37.5",
+     "v": "37.5"
+    },
+    {
+     "from": "",
+     "id": "DNK",
+     "latest": false,
+     "t": "36.9",
+     "v": "36.8715083798883"
+    },
+    {
+     "from": "",
+     "id": "NLD",
+     "latest": false,
+     "t": "36.7",
+     "v": "36.6666666666667"
+    },
+    {
+     "from": "",
+     "id": "ARG",
+     "latest": false,
+     "t": "36.2",
+     "v": "36.1867704280156"
+    },
+    {
+     "from": "",
+     "id": "ESP",
+     "latest": false,
+     "t": "36.0",
+     "v": "36"
+    },
+    {
+     "from": "",
+     "id": "CUB",
+     "latest": false,
+     "t": "36.0",
+     "v": "35.9605911330049"
+    },
+    {
+     "from": "",
+     "id": "CRI",
+     "latest": false,
+     "t": "35.1",
+     "v": "35.0877192982456"
+    }
+   ],
+   "year": 2005,
+   "zero": [
+    "KGZ",
+    "SAU",
+    "ARE"
+   ]
+  },
+  {
+   "bottom": [
+    {
+     "from": "",
+     "id": "YEM",
+     "latest": false,
+     "t": "0.3",
+     "v": "0.332225913621262"
+    },
+    {
+     "from": "",
+     "id": "PNG",
+     "latest": false,
+     "t": "0.9",
+     "v": "0.917431192660551"
+    },
+    {
+     "from": "",
+     "id": "KWT",
+     "latest": false,
+     "t": "1.5",
+     "v": "1.53846153846154"
+    },
+    {
+     "from": "",
+     "id": "EGY",
+     "latest": false,
+     "t": "2.0",
+     "v": "2.03619909502262"
+    },
+    {
+     "from": "",
+     "id": "HTI",
+     "latest": false,
+     "t": "2.0",
+     "v": "2.04081632653061"
+    },
+    {
+     "from": "",
+     "id": "OMN",
+     "latest": false,
+     "t": "2.4",
+     "v": "2.40963855421687"
+    },
+    {
+     "from": "",
+     "id": "IRN",
+     "latest": false,
+     "t": "4.1",
+     "v": "4.13793103448276"
+    },
+    {
+     "from": "",
+     "id": "TUR",
+     "latest": false,
+     "t": "4.4",
+     "v": "4.36363636363636"
+    },
+    {
+     "from": "",
+     "id": "LBN",
+     "latest": false,
+     "t": "4.7",
+     "v": "4.6875"
+    },
+    {
+     "from": "",
+     "id": "LKA",
+     "latest": false,
+     "t": "4.9",
+     "v": "4.88888888888889"
+    }
+   ],
+   "ranks": {
+    "bottom": [
+     {
+      "id": "YEM",
+      "v": "0.332225913621262"
+     },
+     {
+      "id": "PNG",
+      "v": "0.917431192660551"
+     },
+     {
+      "id": "KWT",
+      "v": "1.53846153846154"
+     },
+     {
+      "id": "EGY",
+      "v": "2.03619909502262"
+     },
+     {
+      "id": "HTI",
+      "v": "2.04081632653061"
+     },
+     {
+      "id": "OMN",
+      "v": "2.40963855421687"
+     },
+     {
+      "id": "IRN",
+      "v": "4.13793103448276"
+     },
+     {
+      "id": "TUR",
+      "v": "4.36363636363636"
+     },
+     {
+      "id": "LBN",
+      "v": "4.6875"
+     },
+     {
+      "id": "LKA",
+      "v": "4.88888888888889"
+     },
+     {
+      "id": "ARE",
+      "v": "5"
+     },
+     {
+      "id": "JOR",
+      "v": "5.45454545454545"
+     },
+     {
+      "id": "NPL",
+      "v": "5.88235294117647"
+     },
+     {
+      "id": "NGA",
+      "v": "6.11111111111111"
+     },
+     {
+      "id": "DZA",
+      "v": "6.16966580976864"
+     },
+     {
+      "id": "TCD",
+      "v": "6.45161290322581"
+     },
+     {
+      "id": "MDG",
+      "v": "6.875"
+     },
+     {
+      "id": "BEN",
+      "v": "7.2289156626506"
+     },
+     {
+      "id": "KEN",
+      "v": "7.30593607305936"
+     },
+     {
+      "id": "LBY",
+      "v": "7.69230769230769"
+     }
+    ],
+    "top": [
+     {
+      "id": "RWA",
+      "v": "48.75"
+     },
+     {
+      "id": "SWE",
+      "v": "47.2779369627507"
+     },
+     {
+      "id": "CRI",
+      "v": "38.5964912280702"
+     },
+     {
+      "id": "FIN",
+      "v": "38"
+     },
+     {
+      "id": "NOR",
+      "v": "37.8698224852071"
+     },
+     {
+      "id": "DNK",
+      "v": "36.8715083798883"
+     },
+     {
+      "id": "NLD",
+      "v": "36.6666666666667"
+     },
+     {
+      "id": "ESP",
+      "v": "36"
+     },
+     {
+      "id": "CUB",
+      "v": "35.9605911330049"
+     },
+     {
+      "id": "ARG",
+      "v": "35.0194552529183"
+     },
+     {
+      "id": "MOZ",
+      "v": "34.8"
+     },
+     {
+      "id": "BEL",
+      "v": "34.6666666666667"
+     },
+     {
+      "id": "ZAF",
+      "v": "32.75"
+     },
+     {
+      "id": "AUT",
+      "v": "32.2404371584699"
+     },
+     {
+      "id": "NZL",
+      "v": "32.2314049586777"
+     },
+     {
+      "id": "DEU",
+      "v": "31.5960912052117"
+     },
+     {
+      "id": "BDI",
+      "v": "30.5084745762712"
+     },
+     {
+      "id": "TZA",
+      "v": "30.4075235109718"
+     },
+     {
+      "id": "UGA",
+      "v": "29.8192771084337"
+     },
+     {
+      "id": "PER",
+      "v": "29.1666666666667"
+     }
+    ]
+   },
+   "top": [
+    {
+     "from": "",
+     "id": "RWA",
+     "latest": false,
+     "t": "48.8",
+     "v": "48.75"
+    },
+    {
+     "from": "",
+     "id": "SWE",
+     "latest": false,
+     "t": "47.3",
+     "v": "47.2779369627507"
+    },
+    {
+     "from": "",
+     "id": "CRI",
+     "latest": false,
+     "t": "38.6",
+     "v": "38.5964912280702"
+    },
+    {
+     "from": "",
+     "id": "FIN",
+     "latest": false,
+     "t": "38.0",
+     "v": "38"
+    },
+    {
+     "from": "",
+     "id": "NOR",
+     "latest": false,
+     "t": "37.9",
+     "v": "37.8698224852071"
+    },
+    {
+     "from": "",
+     "id": "DNK",
+     "latest": false,
+     "t": "36.9",
+     "v": "36.8715083798883"
+    },
+    {
+     "from": "",
+     "id": "NLD",
+     "latest": false,
+     "t": "36.7",
+     "v": "36.6666666666667"
+    },
+    {
+     "from": "",
+     "id": "ESP",
+     "latest": false,
+     "t": "36.0",
+     "v": "36"
+    },
+    {
+     "from": "",
+     "id": "CUB",
+     "latest": false,
+     "t": "36.0",
+     "v": "35.9605911330049"
+    },
+    {
+     "from": "",
+     "id": "ARG",
+     "latest": false,
+     "t": "35.0",
+     "v": "35.0194552529183"
+    }
+   ],
+   "year": 2006,
+   "zero": [
+    "KGZ",
+    "SAU"
+   ]
+  },
+  {
+   "bottom": [
+    {
+     "from": "",
+     "id": "YEM",
+     "latest": false,
+     "t": "0.3",
+     "v": "0.332225913621262"
+    },
+    {
+     "from": "",
+     "id": "PNG",
+     "latest": false,
+     "t": "0.9",
+     "v": "0.917431192660551"
+    },
+    {
+     "from": "",
+     "id": "KWT",
+     "latest": false,
+     "t": "1.5",
+     "v": "1.53846153846154"
+    },
+    {
+     "from": "",
+     "id": "EGY",
+     "latest": false,
+     "t": "1.8",
+     "v": "1.80995475113122"
+    },
+    {
+     "from": "",
+     "id": "HTI",
+     "latest": false,
+     "t": "4.1",
+     "v": "4.08163265306122"
+    },
+    {
+     "from": "",
+     "id": "IRN",
+     "latest": false,
+     "t": "4.1",
+     "v": "4.13793103448276"
+    },
+    {
+     "from": "",
+     "id": "LBN",
+     "latest": false,
+     "t": "4.7",
+     "v": "4.6875"
+    },
+    {
+     "from": "",
+     "id": "TCD",
+     "latest": false,
+     "t": "5.2",
+     "v": "5.16129032258065"
+    },
+    {
+     "from": "",
+     "id": "LKA",
+     "latest": false,
+     "t": "5.8",
+     "v": "5.77777777777778"
+    },
+    {
+     "from": "",
+     "id": "JOR",
+     "latest": false,
+     "t": "6.4",
+     "v": "6.36363636363636"
+    }
+   ],
+   "ranks": {
+    "bottom": [
+     {
+      "id": "YEM",
+      "v": "0.332225913621262"
+     },
+     {
+      "id": "PNG",
+      "v": "0.917431192660551"
+     },
+     {
+      "id": "KWT",
+      "v": "1.53846153846154"
+     },
+     {
+      "id": "EGY",
+      "v": "1.80995475113122"
+     },
+     {
+      "id": "HTI",
+      "v": "4.08163265306122"
+     },
+     {
+      "id": "IRN",
+      "v": "4.13793103448276"
+     },
+     {
+      "id": "LBN",
+      "v": "4.6875"
+     },
+     {
+      "id": "TCD",
+      "v": "5.16129032258065"
+     },
+     {
+      "id": "LKA",
+      "v": "5.77777777777778"
+     },
+     {
+      "id": "JOR",
+      "v": "6.36363636363636"
+     },
+     {
+      "id": "NGA",
+      "v": "6.98324022346369"
+     },
+     {
+      "id": "KEN",
+      "v": "7.2463768115942"
+     },
+     {
+      "id": "COG",
+      "v": "7.2992700729927"
+     },
+     {
+      "id": "LBY",
+      "v": "7.69230769230769"
+     },
+     {
+      "id": "DZA",
+      "v": "7.7120822622108"
+     },
+     {
+      "id": "MDG",
+      "v": "7.8740157480315"
+     },
+     {
+      "id": "SOM",
+      "v": "8.203125"
+     },
+     {
+      "id": "UKR",
+      "v": "8.22222222222222"
+     },
+     {
+      "id": "COD",
+      "v": "8.4"
+     },
+     {
+      "id": "COL",
+      "v": "8.43373493975904"
+     }
+    ],
+    "top": [
+     {
+      "id": "RWA",
+      "v": "48.75"
+     },
+     {
+      "id": "SWE",
+      "v": "46.9914040114613"
+     },
+     {
+      "id": "FIN",
+      "v": "41.5"
+     },
+     {
+      "id": "ARG",
+      "v": "40"
+     },
+     {
+      "id": "NLD",
+      "v": "39.3333333333333"
+     },
+     {
+      "id": "DNK",
+      "v": "37.9888268156425"
+     },
+     {
+      "id": "CRI",
+      "v": "36.8421052631579"
+     },
+     {
+      "id": "ESP",
+      "v": "36.5714285714286"
+     },
+     {
+      "id": "NOR",
+      "v": "36.094674556213"
+     },
+     {
+      "id": "CUB",
+      "v": "35.9605911330049"
+     },
+     {
+      "id": "BEL",
+      "v": "35.3333333333333"
+     },
+     {
+      "id": "MOZ",
+      "v": "34.8"
+     },
+     {
+      "id": "NZL",
+      "v": "33.0578512396694"
+     },
+     {
+      "id": "ZAF",
+      "v": "33"
+     },
+     {
+      "id": "AUT",
+      "v": "32.7868852459016"
+     },
+     {
+      "id": "DEU",
+      "v": "31.6476345840131"
+     },
+     {
+      "id": "UGA",
+      "v": "30.7228915662651"
+     },
+     {
+      "id": "BDI",
+      "v": "30.5084745762712"
+     },
+     {
+      "id": "TZA",
+      "v": "30.4075235109718"
+     },
+     {
+      "id": "PER",
+      "v": "29.1666666666667"
+     }
+    ]
+   },
+   "top": [
+    {
+     "from": "",
+     "id": "RWA",
+     "latest": false,
+     "t": "48.8",
+     "v": "48.75"
+    },
+    {
+     "from": "",
+     "id": "SWE",
+     "latest": false,
+     "t": "47.0",
+     "v": "46.9914040114613"
+    },
+    {
+     "from": "",
+     "id": "FIN",
+     "latest": false,
+     "t": "41.5",
+     "v": "41.5"
+    },
+    {
+     "from": "",
+     "id": "ARG",
+     "latest": false,
+     "t": "40.0",
+     "v": "40"
+    },
+    {
+     "from": "",
+     "id": "NLD",
+     "latest": false,
+     "t": "39.3",
+     "v": "39.3333333333333"
+    },
+    {
+     "from": "",
+     "id": "DNK",
+     "latest": false,
+     "t": "38.0",
+     "v": "37.9888268156425"
+    },
+    {
+     "from": "",
+     "id": "CRI",
+     "latest": false,
+     "t": "36.8",
+     "v": "36.8421052631579"
+    },
+    {
+     "from": "",
+     "id": "ESP",
+     "latest": false,
+     "t": "36.6",
+     "v": "36.5714285714286"
+    },
+    {
+     "from": "",
+     "id": "NOR",
+     "latest": false,
+     "t": "36.1",
+     "v": "36.094674556213"
+    },
+    {
+     "from": "",
+     "id": "CUB",
+     "latest": false,
+     "t": "36.0",
+     "v": "35.9605911330049"
+    }
+   ],
+   "year": 2007,
+   "zero": [
+    "OMN",
+    "SAU"
+   ]
+  },
+  {
+   "bottom": [
+    {
+     "from": "",
+     "id": "YEM",
+     "latest": false,
+     "t": "0.3",
+     "v": "0.332225913621262"
+    },
+    {
+     "from": "",
+     "id": "PNG",
+     "latest": false,
+     "t": "0.9",
+     "v": "0.917431192660551"
+    },
+    {
+     "from": "",
+     "id": "EGY",
+     "latest": false,
+     "t": "1.8",
+     "v": "1.80995475113122"
+    },
+    {
+     "from": "",
+     "id": "IRN",
+     "latest": false,
+     "t": "2.8",
+     "v": "2.7972027972028"
+    },
+    {
+     "from": "",
+     "id": "KWT",
+     "latest": false,
+     "t": "3.1",
+     "v": "3.07692307692308"
+    },
+    {
+     "from": "",
+     "id": "HTI",
+     "latest": false,
+     "t": "4.1",
+     "v": "4.08163265306122"
+    },
+    {
+     "from": "",
+     "id": "LBN",
+     "latest": false,
+     "t": "4.7",
+     "v": "4.6875"
+    },
+    {
+     "from": "",
+     "id": "TCD",
+     "latest": false,
+     "t": "5.2",
+     "v": "5.16129032258065"
+    },
+    {
+     "from": "",
+     "id": "LKA",
+     "latest": false,
+     "t": "5.8",
+     "v": "5.77777777777778"
+    },
+    {
+     "from": "",
+     "id": "BGD",
+     "latest": false,
+     "t": "6.3",
+     "v": "6.33333333333333"
+    }
+   ],
+   "ranks": {
+    "bottom": [
+     {
+      "id": "YEM",
+      "v": "0.332225913621262"
+     },
+     {
+      "id": "PNG",
+      "v": "0.917431192660551"
+     },
+     {
+      "id": "EGY",
+      "v": "1.80995475113122"
+     },
+     {
+      "id": "IRN",
+      "v": "2.7972027972028"
+     },
+     {
+      "id": "KWT",
+      "v": "3.07692307692308"
+     },
+     {
+      "id": "HTI",
+      "v": "4.08163265306122"
+     },
+     {
+      "id": "LBN",
+      "v": "4.6875"
+     },
+     {
+      "id": "TCD",
+      "v": "5.16129032258065"
+     },
+     {
+      "id": "LKA",
+      "v": "5.77777777777778"
+     },
+     {
+      "id": "BGD",
+      "v": "6.33333333333333"
+     },
+     {
+      "id": "JOR",
+      "v": "6.36363636363636"
+     },
+     {
+      "id": "NGA",
+      "v": "6.98324022346369"
+     },
+     {
+      "id": "COG",
+      "v": "7.2992700729927"
+     },
+     {
+      "id": "LBY",
+      "v": "7.69230769230769"
+     },
+     {
+      "id": "DZA",
+      "v": "7.7120822622108"
+     },
+     {
+      "id": "MDG",
+      "v": "7.8740157480315"
+     },
+     {
+      "id": "GHA",
+      "v": "7.89473684210526"
+     },
+     {
+      "id": "SOM",
+      "v": "8.203125"
+     },
+     {
+      "id": "UKR",
+      "v": "8.22222222222222"
+     },
+     {
+      "id": "COD",
+      "v": "8.4"
+     }
+    ],
+    "top": [
+     {
+      "id": "RWA",
+      "v": "56.25"
+     },
+     {
+      "id": "SWE",
+      "v": "46.9914040114613"
+     },
+     {
+      "id": "CUB",
+      "v": "43.1596091205212"
+     },
+     {
+      "id": "FIN",
+      "v": "41.5"
+     },
+     {
+      "id": "NLD",
+      "v": "41.3333333333333"
+     },
+     {
+      "id": "ARG",
+      "v": "40"
+     },
+     {
+      "id": "DNK",
+      "v": "37.9888268156425"
+     },
+     {
+      "id": "AGO",
+      "v": "37.2727272727273"
+     },
+     {
+      "id": "CRI",
+      "v": "36.8421052631579"
+     },
+     {
+      "id": "ESP",
+      "v": "36.2857142857143"
+     },
+     {
+      "id": "NOR",
+      "v": "36.094674556213"
+     },
+     {
+      "id": "BEL",
+      "v": "35.3333333333333"
+     },
+     {
+      "id": "MOZ",
+      "v": "34.8"
+     },
+     {
+      "id": "NZL",
+      "v": "33.6065573770492"
+     },
+     {
+      "id": "NPL",
+      "v": "33.1649831649832"
+     },
+     {
+      "id": "ZAF",
+      "v": "33"
+     },
+     {
+      "id": "DEU",
+      "v": "32.1895424836601"
+     },
+     {
+      "id": "BLR",
+      "v": "31.8181818181818"
+     },
+     {
+      "id": "UGA",
+      "v": "30.7228915662651"
+     },
+     {
+      "id": "BDI",
+      "v": "30.5084745762712"
+     }
+    ]
+   },
+   "top": [
+    {
+     "from": "",
+     "id": "RWA",
+     "latest": false,
+     "t": "56.3",
+     "v": "56.25"
+    },
+    {
+     "from": "",
+     "id": "SWE",
+     "latest": false,
+     "t": "47.0",
+     "v": "46.9914040114613"
+    },
+    {
+     "from": "",
+     "id": "CUB",
+     "latest": false,
+     "t": "43.2",
+     "v": "43.1596091205212"
+    },
+    {
+     "from": "",
+     "id": "FIN",
+     "latest": false,
+     "t": "41.5",
+     "v": "41.5"
+    },
+    {
+     "from": "",
+     "id": "NLD",
+     "latest": false,
+     "t": "41.3",
+     "v": "41.3333333333333"
+    },
+    {
+     "from": "",
+     "id": "ARG",
+     "latest": false,
+     "t": "40.0",
+     "v": "40"
+    },
+    {
+     "from": "",
+     "id": "DNK",
+     "latest": false,
+     "t": "38.0",
+     "v": "37.9888268156425"
+    },
+    {
+     "from": "",
+     "id": "AGO",
+     "latest": false,
+     "t": "37.3",
+     "v": "37.2727272727273"
+    },
+    {
+     "from": "",
+     "id": "CRI",
+     "latest": false,
+     "t": "36.8",
+     "v": "36.8421052631579"
+    },
+    {
+     "from": "",
+     "id": "ESP",
+     "latest": false,
+     "t": "36.3",
+     "v": "36.2857142857143"
+    }
+   ],
+   "year": 2008,
+   "zero": [
+    "OMN",
+    "SAU"
+   ]
+  },
+  {
+   "bottom": [
+    {
+     "from": "",
+     "id": "YEM",
+     "latest": false,
+     "t": "0.3",
+     "v": "0.332225913621262"
+    },
+    {
+     "from": "",
+     "id": "PNG",
+     "latest": false,
+     "t": "0.9",
+     "v": "0.917431192660551"
+    },
+    {
+     "from": "",
+     "id": "EGY",
+     "latest": false,
+     "t": "1.8",
+     "v": "1.76211453744493"
+    },
+    {
+     "from": "",
+     "id": "IRN",
+     "latest": false,
+     "t": "2.8",
+     "v": "2.75862068965517"
+    },
+    {
+     "from": "",
+     "id": "LBN",
+     "latest": false,
+     "t": "3.1",
+     "v": "3.125"
+    },
+    {
+     "from": "",
+     "id": "HTI",
+     "latest": false,
+     "t": "4.1",
+     "v": "4.08163265306122"
+    },
+    {
+     "from": "",
+     "id": "TCD",
+     "latest": false,
+     "t": "5.2",
+     "v": "5.16129032258065"
+    },
+    {
+     "from": "",
+     "id": "LKA",
+     "latest": false,
+     "t": "5.8",
+     "v": "5.77777777777778"
+    },
+    {
+     "from": "",
+     "id": "JOR",
+     "latest": false,
+     "t": "6.4",
+     "v": "6.36363636363636"
+    },
+    {
+     "from": "",
+     "id": "SOM",
+     "latest": false,
+     "t": "6.9",
+     "v": "6.86456400742115"
+    }
+   ],
+   "ranks": {
+    "bottom": [
+     {
+      "id": "YEM",
+      "v": "0.332225913621262"
+     },
+     {
+      "id": "PNG",
+      "v": "0.917431192660551"
+     },
+     {
+      "id": "EGY",
+      "v": "1.76211453744493"
+     },
+     {
+      "id": "IRN",
+      "v": "2.75862068965517"
+     },
+     {
+      "id": "LBN",
+      "v": "3.125"
+     },
+     {
+      "id": "HTI",
+      "v": "4.08163265306122"
+     },
+     {
+      "id": "TCD",
+      "v": "5.16129032258065"
+     },
+     {
+      "id": "LKA",
+      "v": "5.77777777777778"
+     },
+     {
+      "id": "JOR",
+      "v": "6.36363636363636"
+     },
+     {
+      "id": "SOM",
+      "v": "6.86456400742115"
+     },
+     {
+      "id": "NGA",
+      "v": "6.98324022346369"
+     },
+     {
+      "id": "COG",
+      "v": "7.2992700729927"
+     },
+     {
+      "id": "KWT",
+      "v": "7.69230769230769"
+     },
+     {
+      "id": "LBY",
+      "v": "7.69230769230769"
+     },
+     {
+      "id": "DZA",
+      "v": "7.7120822622108"
+     },
+     {
+      "id": "MDG",
+      "v": "7.8740157480315"
+     },
+     {
+      "id": "UKR",
+      "v": "8"
+     },
+     {
+      "id": "GHA",
+      "v": "8.26086956521739"
+     },
+     {
+      "id": "COD",
+      "v": "8.4"
+     },
+     {
+      "id": "COL",
+      "v": "8.43373493975904"
+     }
+    ],
+    "top": [
+     {
+      "id": "RWA",
+      "v": "56.25"
+     },
+     {
+      "id": "SWE",
+      "v": "46.4183381088825"
+     },
+     {
+      "id": "ZAF",
+      "v": "44.5"
+     },
+     {
+      "id": "CUB",
+      "v": "43.1596091205212"
+     },
+     {
+      "id": "NLD",
+      "v": "42"
+     },
+     {
+      "id": "FIN",
+      "v": "40"
+     },
+     {
+      "id": "NOR",
+      "v": "39.6449704142012"
+     },
+     {
+      "id": "MOZ",
+      "v": "39.2"
+     },
+     {
+      "id": "AGO",
+      "v": "38.6363636363636"
+     },
+     {
+      "id": "ARG",
+      "v": "38.5214007782101"
+     },
+     {
+      "id": "BEL",
+      "v": "38"
+     },
+     {
+      "id": "DNK",
+      "v": "37.9888268156425"
+     },
+     {
+      "id": "CRI",
+      "v": "36.8421052631579"
+     },
+     {
+      "id": "ESP",
+      "v": "36.5714285714286"
+     },
+     {
+      "id": "NZL",
+      "v": "33.6065573770492"
+     },
+     {
+      "id": "NPL",
+      "v": "33.1649831649832"
+     },
+     {
+      "id": "DEU",
+      "v": "32.7974276527331"
+     },
+     {
+      "id": "ECU",
+      "v": "32.258064516129"
+     },
+     {
+      "id": "BLR",
+      "v": "31.8181818181818"
+     },
+     {
+      "id": "UGA",
+      "v": "31.4814814814815"
+     }
+    ]
+   },
+   "top": [
+    {
+     "from": "",
+     "id": "RWA",
+     "latest": false,
+     "t": "56.3",
+     "v": "56.25"
+    },
+    {
+     "from": "",
+     "id": "SWE",
+     "latest": false,
+     "t": "46.4",
+     "v": "46.4183381088825"
+    },
+    {
+     "from": "",
+     "id": "ZAF",
+     "latest": false,
+     "t": "44.5",
+     "v": "44.5"
+    },
+    {
+     "from": "",
+     "id": "CUB",
+     "latest": false,
+     "t": "43.2",
+     "v": "43.1596091205212"
+    },
+    {
+     "from": "",
+     "id": "NLD",
+     "latest": false,
+     "t": "42.0",
+     "v": "42"
+    },
+    {
+     "from": "",
+     "id": "FIN",
+     "latest": false,
+     "t": "40.0",
+     "v": "40"
+    },
+    {
+     "from": "",
+     "id": "NOR",
+     "latest": false,
+     "t": "39.6",
+     "v": "39.6449704142012"
+    },
+    {
+     "from": "",
+     "id": "MOZ",
+     "latest": false,
+     "t": "39.2",
+     "v": "39.2"
+    },
+    {
+     "from": "",
+     "id": "AGO",
+     "latest": false,
+     "t": "38.6",
+     "v": "38.6363636363636"
+    },
+    {
+     "from": "",
+     "id": "ARG",
+     "latest": false,
+     "t": "38.5",
+     "v": "38.5214007782101"
+    }
+   ],
+   "year": 2009,
+   "zero": [
+    "OMN",
+    "SAU"
+   ]
+  },
+  {
+   "bottom": [
+    {
+     "from": "",
+     "id": "YEM",
+     "latest": false,
+     "t": "0.3",
+     "v": "0.332225913621262"
+    },
+    {
+     "from": "",
+     "id": "PNG",
+     "latest": false,
+     "t": "0.9",
+     "v": "0.917431192660551"
+    },
+    {
+     "from": "",
+     "id": "IRN",
+     "latest": false,
+     "t": "2.8",
+     "v": "2.75862068965517"
+    },
+    {
+     "from": "",
+     "id": "LBN",
+     "latest": false,
+     "t": "3.1",
+     "v": "3.125"
+    },
+    {
+     "from": "",
+     "id": "MMR",
+     "latest": false,
+     "t": "4.3",
+     "v": "4.29447852760736"
+    },
+    {
+     "from": "",
+     "id": "TCD",
+     "latest": false,
+     "t": "5.2",
+     "v": "5.16129032258065"
+    },
+    {
+     "from": "",
+     "id": "LKA",
+     "latest": false,
+     "t": "5.3",
+     "v": "5.33333333333333"
+    },
+    {
+     "from": "",
+     "id": "SOM",
+     "latest": false,
+     "t": "6.8",
+     "v": "6.77655677655678"
+    },
+    {
+     "from": "",
+     "id": "NGA",
+     "latest": false,
+     "t": "7.0",
+     "v": "6.98324022346369"
+    },
+    {
+     "from": "",
+     "id": "COG",
+     "latest": false,
+     "t": "7.3",
+     "v": "7.2992700729927"
+    }
+   ],
+   "ranks": {
+    "bottom": [
+     {
+      "id": "YEM",
+      "v": "0.332225913621262"
+     },
+     {
+      "id": "PNG",
+      "v": "0.917431192660551"
+     },
+     {
+      "id": "IRN",
+      "v": "2.75862068965517"
+     },
+     {
+      "id": "LBN",
+      "v": "3.125"
+     },
+     {
+      "id": "MMR",
+      "v": "4.29447852760736"
+     },
+     {
+      "id": "TCD",
+      "v": "5.16129032258065"
+     },
+     {
+      "id": "LKA",
+      "v": "5.33333333333333"
+     },
+     {
+      "id": "SOM",
+      "v": "6.77655677655678"
+     },
+     {
+      "id": "NGA",
+      "v": "6.98324022346369"
+     },
+     {
+      "id": "COG",
+      "v": "7.2992700729927"
+     },
+     {
+      "id": "KWT",
+      "v": "7.69230769230769"
+     },
+     {
+      "id": "LBY",
+      "v": "7.69230769230769"
+     },
+     {
+      "id": "DZA",
+      "v": "7.7120822622108"
+     },
+     {
+      "id": "UKR",
+      "v": "8"
+     },
+     {
+      "id": "GHA",
+      "v": "8.26086956521739"
+     },
+     {
+      "id": "COD",
+      "v": "8.4"
+     },
+     {
+      "id": "PAN",
+      "v": "8.45070422535211"
+     },
+     {
+      "id": "BRA",
+      "v": "8.57699805068226"
+     },
+     {
+      "id": "CIV",
+      "v": "8.86699507389163"
+     },
+     {
+      "id": "HUN",
+      "v": "9.06735751295337"
+     }
+    ],
+    "top": [
+     {
+      "id": "RWA",
+      "v": "56.25"
+     },
+     {
+      "id": "SWE",
+      "v": "44.9856733524355"
+     },
+     {
+      "id": "ZAF",
+      "v": "44.5"
+     },
+     {
+      "id": "CUB",
+      "v": "43.1596091205212"
+     },
+     {
+      "id": "NLD",
+      "v": "40.6666666666667"
+     },
+     {
+      "id": "FIN",
+      "v": "40"
+     },
+     {
+      "id": "NOR",
+      "v": "39.6449704142012"
+     },
+     {
+      "id": "BEL",
+      "v": "39.3333333333333"
+     },
+     {
+      "id": "MOZ",
+      "v": "39.2"
+     },
+     {
+      "id": "AGO",
+      "v": "38.6363636363636"
+     },
+     {
+      "id": "CRI",
+      "v": "38.5964912280702"
+     },
+     {
+      "id": "ARG",
+      "v": "38.5214007782101"
+     },
+     {
+      "id": "DNK",
+      "v": "37.9888268156425"
+     },
+     {
+      "id": "ESP",
+      "v": "36.5714285714286"
+     },
+     {
+      "id": "NZL",
+      "v": "33.6065573770492"
+     },
+     {
+      "id": "NPL",
+      "v": "33.1649831649832"
+     },
+     {
+      "id": "DEU",
+      "v": "32.7974276527331"
+     },
+     {
+      "id": "ECU",
+      "v": "32.258064516129"
+     },
+     {
+      "id": "BDI",
+      "v": "32.0754716981132"
+     },
+     {
+      "id": "BLR",
+      "v": "31.8181818181818"
+     }
+    ]
+   },
+   "top": [
+    {
+     "from": "",
+     "id": "RWA",
+     "latest": false,
+     "t": "56.3",
+     "v": "56.25"
+    },
+    {
+     "from": "",
+     "id": "SWE",
+     "latest": false,
+     "t": "45.0",
+     "v": "44.9856733524355"
+    },
+    {
+     "from": "",
+     "id": "ZAF",
+     "latest": false,
+     "t": "44.5",
+     "v": "44.5"
+    },
+    {
+     "from": "",
+     "id": "CUB",
+     "latest": false,
+     "t": "43.2",
+     "v": "43.1596091205212"
+    },
+    {
+     "from": "",
+     "id": "NLD",
+     "latest": false,
+     "t": "40.7",
+     "v": "40.6666666666667"
+    },
+    {
+     "from": "",
+     "id": "FIN",
+     "latest": false,
+     "t": "40.0",
+     "v": "40"
+    },
+    {
+     "from": "",
+     "id": "NOR",
+     "latest": false,
+     "t": "39.6",
+     "v": "39.6449704142012"
+    },
+    {
+     "from": "",
+     "id": "BEL",
+     "latest": false,
+     "t": "39.3",
+     "v": "39.3333333333333"
+    },
+    {
+     "from": "",
+     "id": "MOZ",
+     "latest": false,
+     "t": "39.2",
+     "v": "39.2"
+    },
+    {
+     "from": "",
+     "id": "AGO",
+     "latest": false,
+     "t": "38.6",
+     "v": "38.6363636363636"
+    }
+   ],
+   "year": 2010,
+   "zero": [
+    "OMN",
+    "SAU"
+   ]
+  },
+  {
+   "bottom": [
+    {
+     "from": "",
+     "id": "YEM",
+     "latest": false,
+     "t": "0.3",
+     "v": "0.332225913621262"
+    },
+    {
+     "from": "",
+     "id": "PNG",
+     "latest": false,
+     "t": "0.9",
+     "v": "0.917431192660551"
+    },
+    {
+     "from": "",
+     "id": "OMN",
+     "latest": false,
+     "t": "1.2",
+     "v": "1.19047619047619"
+    },
+    {
+     "from": "",
+     "id": "EGY",
+     "latest": false,
+     "t": "2.0",
+     "v": "1.96850393700787"
+    },
+    {
+     "from": "",
+     "id": "IRN",
+     "latest": false,
+     "t": "2.8",
+     "v": "2.75862068965517"
+    },
+    {
+     "from": "",
+     "id": "LBN",
+     "latest": false,
+     "t": "3.1",
+     "v": "3.125"
+    },
+    {
+     "from": "",
+     "id": "MMR",
+     "latest": false,
+     "t": "3.5",
+     "v": "3.54430379746835"
+    },
+    {
+     "from": "",
+     "id": "HTI",
+     "latest": false,
+     "t": "4.2",
+     "v": "4.21052631578947"
+    },
+    {
+     "from": "",
+     "id": "LKA",
+     "latest": false,
+     "t": "5.8",
+     "v": "5.77777777777778"
+    },
+    {
+     "from": "",
+     "id": "SOM",
+     "latest": false,
+     "t": "6.8",
+     "v": "6.77655677655678"
+    }
+   ],
+   "ranks": {
+    "bottom": [
+     {
+      "id": "YEM",
+      "v": "0.332225913621262"
+     },
+     {
+      "id": "PNG",
+      "v": "0.917431192660551"
+     },
+     {
+      "id": "OMN",
+      "v": "1.19047619047619"
+     },
+     {
+      "id": "EGY",
+      "v": "1.96850393700787"
+     },
+     {
+      "id": "IRN",
+      "v": "2.75862068965517"
+     },
+     {
+      "id": "LBN",
+      "v": "3.125"
+     },
+     {
+      "id": "MMR",
+      "v": "3.54430379746835"
+     },
+     {
+      "id": "HTI",
+      "v": "4.21052631578947"
+     },
+     {
+      "id": "LKA",
+      "v": "5.77777777777778"
+     },
+     {
+      "id": "SOM",
+      "v": "6.77655677655678"
+     },
+     {
+      "id": "NGA",
+      "v": "6.81818181818182"
+     },
+     {
+      "id": "COG",
+      "v": "7.2992700729927"
+     },
+     {
+      "id": "KWT",
+      "v": "7.69230769230769"
+     },
+     {
+      "id": "LBY",
+      "v": "7.69230769230769"
+     },
+     {
+      "id": "DZA",
+      "v": "7.96915167095116"
+     },
+     {
+      "id": "UKR",
+      "v": "8"
+     },
+     {
+      "id": "GHA",
+      "v": "8.26086956521739"
+     },
+     {
+      "id": "COD",
+      "v": "8.4"
+     },
+     {
+      "id": "BEN",
+      "v": "8.43373493975904"
+     },
+     {
+      "id": "PAN",
+      "v": "8.45070422535211"
+     }
+    ],
+    "top": [
+     {
+      "id": "RWA",
+      "v": "56.25"
+     },
+     {
+      "id": "CUB",
+      "v": "45.221843003413"
+     },
+     {
+      "id": "SWE",
+      "v": "44.6991404011461"
+     },
+     {
+      "id": "FIN",
+      "v": "42.5"
+     },
+     {
+      "id": "ZAF",
+      "v": "42.25"
+     },
+     {
+      "id": "NLD",
+      "v": "40.6666666666667"
+     },
+     {
+      "id": "NIC",
+      "v": "40.2173913043478"
+     },
+     {
+      "id": "NOR",
+      "v": "39.6449704142012"
+     },
+     {
+      "id": "MOZ",
+      "v": "39.2"
+     },
+     {
+      "id": "DNK",
+      "v": "39.1061452513966"
+     },
+     {
+      "id": "CRI",
+      "v": "38.5964912280702"
+     },
+     {
+      "id": "AGO",
+      "v": "38.1818181818182"
+     },
+     {
+      "id": "BEL",
+      "v": "38"
+     },
+     {
+      "id": "ARG",
+      "v": "37.3540856031128"
+     },
+     {
+      "id": "ESP",
+      "v": "36"
+     },
+     {
+      "id": "TZA",
+      "v": "36"
+     },
+     {
+      "id": "UGA",
+      "v": "34.9740932642487"
+     },
+     {
+      "id": "NPL",
+      "v": "33.1649831649832"
+     },
+     {
+      "id": "DEU",
+      "v": "32.9032258064516"
+     },
+     {
+      "id": "ECU",
+      "v": "32.258064516129"
+     }
+    ]
+   },
+   "top": [
+    {
+     "from": "",
+     "id": "RWA",
+     "latest": false,
+     "t": "56.3",
+     "v": "56.25"
+    },
+    {
+     "from": "",
+     "id": "CUB",
+     "latest": false,
+     "t": "45.2",
+     "v": "45.221843003413"
+    },
+    {
+     "from": "",
+     "id": "SWE",
+     "latest": false,
+     "t": "44.7",
+     "v": "44.6991404011461"
+    },
+    {
+     "from": "",
+     "id": "FIN",
+     "latest": false,
+     "t": "42.5",
+     "v": "42.5"
+    },
+    {
+     "from": "",
+     "id": "ZAF",
+     "latest": false,
+     "t": "42.3",
+     "v": "42.25"
+    },
+    {
+     "from": "",
+     "id": "NLD",
+     "latest": false,
+     "t": "40.7",
+     "v": "40.6666666666667"
+    },
+    {
+     "from": "",
+     "id": "NIC",
+     "latest": false,
+     "t": "40.2",
+     "v": "40.2173913043478"
+    },
+    {
+     "from": "",
+     "id": "NOR",
+     "latest": false,
+     "t": "39.6",
+     "v": "39.6449704142012"
+    },
+    {
+     "from": "",
+     "id": "MOZ",
+     "latest": false,
+     "t": "39.2",
+     "v": "39.2"
+    },
+    {
+     "from": "",
+     "id": "DNK",
+     "latest": false,
+     "t": "39.1",
+     "v": "39.1061452513966"
+    }
+   ],
+   "year": 2011,
+   "zero": [
+    "SAU"
+   ]
+  },
+  {
+   "bottom": [
+    {
+     "from": "",
+     "id": "YEM",
+     "latest": false,
+     "t": "0.3",
+     "v": "0.332225913621262"
+    },
+    {
+     "from": "",
+     "id": "OMN",
+     "latest": false,
+     "t": "1.2",
+     "v": "1.19047619047619"
+    },
+    {
+     "from": "",
+     "id": "EGY",
+     "latest": false,
+     "t": "2.0",
+     "v": "1.96850393700787"
+    },
+    {
+     "from": "",
+     "id": "PNG",
+     "latest": false,
+     "t": "2.7",
+     "v": "2.7027027027027"
+    },
+    {
+     "from": "",
+     "id": "IRN",
+     "latest": false,
+     "t": "3.1",
+     "v": "3.10344827586207"
+    },
+    {
+     "from": "",
+     "id": "LBN",
+     "latest": false,
+     "t": "3.1",
+     "v": "3.125"
+    },
+    {
+     "from": "",
+     "id": "HTI",
+     "latest": false,
+     "t": "4.2",
+     "v": "4.21052631578947"
+    },
+    {
+     "from": "",
+     "id": "LKA",
+     "latest": false,
+     "t": "5.8",
+     "v": "5.77777777777778"
+    },
+    {
+     "from": "",
+     "id": "MMR",
+     "latest": false,
+     "t": "6.0",
+     "v": "6.03248259860789"
+    },
+    {
+     "from": "",
+     "id": "KWT",
+     "latest": false,
+     "t": "6.2",
+     "v": "6.15384615384615"
+    }
+   ],
+   "ranks": {
+    "bottom": [
+     {
+      "id": "YEM",
+      "v": "0.332225913621262"
+     },
+     {
+      "id": "OMN",
+      "v": "1.19047619047619"
+     },
+     {
+      "id": "EGY",
+      "v": "1.96850393700787"
+     },
+     {
+      "id": "PNG",
+      "v": "2.7027027027027"
+     },
+     {
+      "id": "IRN",
+      "v": "3.10344827586207"
+     },
+     {
+      "id": "LBN",
+      "v": "3.125"
+     },
+     {
+      "id": "HTI",
+      "v": "4.21052631578947"
+     },
+     {
+      "id": "LKA",
+      "v": "5.77777777777778"
+     },
+     {
+      "id": "MMR",
+      "v": "6.03248259860789"
+     },
+     {
+      "id": "KWT",
+      "v": "6.15384615384615"
+     },
+     {
+      "id": "NGA",
+      "v": "6.66666666666667"
+     },
+     {
+      "id": "COG",
+      "v": "7.35294117647059"
+     },
+     {
+      "id": "JPN",
+      "v": "7.91666666666667"
+     },
+     {
+      "id": "GHA",
+      "v": "8.26086956521739"
+     },
+     {
+      "id": "BEN",
+      "v": "8.43373493975904"
+     },
+     {
+      "id": "PAN",
+      "v": "8.45070422535211"
+     },
+     {
+      "id": "BRA",
+      "v": "8.57699805068226"
+     },
+     {
+      "id": "HUN",
+      "v": "8.80829015544041"
+     },
+     {
+      "id": "COD",
+      "v": "8.94308943089431"
+     },
+     {
+      "id": "UKR",
+      "v": "9.43820224719101"
+     }
+    ],
+    "top": [
+     {
+      "id": "RWA",
+      "v": "56.25"
+     },
+     {
+      "id": "CUB",
+      "v": "45.221843003413"
+     },
+     {
+      "id": "SWE",
+      "v": "44.6991404011461"
+     },
+     {
+      "id": "SEN",
+      "v": "42.6666666666667"
+     },
+     {
+      "id": "FIN",
+      "v": "42.5"
+     },
+     {
+      "id": "ZAF",
+      "v": "42.25"
+     },
+     {
+      "id": "NIC",
+      "v": "40.2173913043478"
+     },
+     {
+      "id": "NOR",
+      "v": "39.6449704142012"
+     },
+     {
+      "id": "MOZ",
+      "v": "39.2"
+     },
+     {
+      "id": "DNK",
+      "v": "39.1061452513966"
+     },
+     {
+      "id": "NLD",
+      "v": "38.6666666666667"
+     },
+     {
+      "id": "CRI",
+      "v": "38.5964912280702"
+     },
+     {
+      "id": "BEL",
+      "v": "38"
+     },
+     {
+      "id": "ARG",
+      "v": "37.3540856031128"
+     },
+     {
+      "id": "MEX",
+      "v": "36.8"
+     },
+     {
+      "id": "ESP",
+      "v": "36"
+     },
+     {
+      "id": "TZA",
+      "v": "36"
+     },
+     {
+      "id": "UGA",
+      "v": "34.9740932642487"
+     },
+     {
+      "id": "AGO",
+      "v": "34.0909090909091"
+     },
+     {
+      "id": "SRB",
+      "v": "33.2"
+     }
+    ]
+   },
+   "top": [
+    {
+     "from": "",
+     "id": "RWA",
+     "latest": false,
+     "t": "56.3",
+     "v": "56.25"
+    },
+    {
+     "from": "",
+     "id": "CUB",
+     "latest": false,
+     "t": "45.2",
+     "v": "45.221843003413"
+    },
+    {
+     "from": "",
+     "id": "SWE",
+     "latest": false,
+     "t": "44.7",
+     "v": "44.6991404011461"
+    },
+    {
+     "from": "",
+     "id": "SEN",
+     "latest": false,
+     "t": "42.7",
+     "v": "42.6666666666667"
+    },
+    {
+     "from": "",
+     "id": "FIN",
+     "latest": false,
+     "t": "42.5",
+     "v": "42.5"
+    },
+    {
+     "from": "",
+     "id": "ZAF",
+     "latest": false,
+     "t": "42.3",
+     "v": "42.25"
+    },
+    {
+     "from": "",
+     "id": "NIC",
+     "latest": false,
+     "t": "40.2",
+     "v": "40.2173913043478"
+    },
+    {
+     "from": "",
+     "id": "NOR",
+     "latest": false,
+     "t": "39.6",
+     "v": "39.6449704142012"
+    },
+    {
+     "from": "",
+     "id": "MOZ",
+     "latest": false,
+     "t": "39.2",
+     "v": "39.2"
+    },
+    {
+     "from": "",
+     "id": "DNK",
+     "latest": false,
+     "t": "39.1",
+     "v": "39.1061452513966"
+    }
+   ],
+   "year": 2012,
+   "zero": [
+    "SAU"
+   ]
+  },
+  {
+   "bottom": [
+    {
+     "from": "",
+     "id": "YEM",
+     "latest": false,
+     "t": "0.3",
+     "v": "0.332225913621262"
+    },
+    {
+     "from": "",
+     "id": "OMN",
+     "latest": false,
+     "t": "1.2",
+     "v": "1.19047619047619"
+    },
+    {
+     "from": "",
+     "id": "PNG",
+     "latest": false,
+     "t": "2.7",
+     "v": "2.7027027027027"
+    },
+    {
+     "from": "",
+     "id": "IRN",
+     "latest": false,
+     "t": "3.1",
+     "v": "3.10344827586207"
+    },
+    {
+     "from": "",
+     "id": "LBN",
+     "latest": false,
+     "t": "3.1",
+     "v": "3.125"
+    },
+    {
+     "from": "",
+     "id": "HTI",
+     "latest": false,
+     "t": "4.2",
+     "v": "4.21052631578947"
+    },
+    {
+     "from": "",
+     "id": "LKA",
+     "latest": false,
+     "t": "5.8",
+     "v": "5.77777777777778"
+    },
+    {
+     "from": "",
+     "id": "MMR",
+     "latest": false,
+     "t": "6.0",
+     "v": "6.03248259860789"
+    },
+    {
+     "from": "",
+     "id": "KWT",
+     "latest": false,
+     "t": "6.2",
+     "v": "6.15384615384615"
+    },
+    {
+     "from": "",
+     "id": "NGA",
+     "latest": false,
+     "t": "6.7",
+     "v": "6.66666666666667"
+    }
+   ],
+   "ranks": {
+    "bottom": [
+     {
+      "id": "YEM",
+      "v": "0.332225913621262"
+     },
+     {
+      "id": "OMN",
+      "v": "1.19047619047619"
+     },
+     {
+      "id": "PNG",
+      "v": "2.7027027027027"
+     },
+     {
+      "id": "IRN",
+      "v": "3.10344827586207"
+     },
+     {
+      "id": "LBN",
+      "v": "3.125"
+     },
+     {
+      "id": "HTI",
+      "v": "4.21052631578947"
+     },
+     {
+      "id": "LKA",
+      "v": "5.77777777777778"
+     },
+     {
+      "id": "MMR",
+      "v": "6.03248259860789"
+     },
+     {
+      "id": "KWT",
+      "v": "6.15384615384615"
+     },
+     {
+      "id": "NGA",
+      "v": "6.66666666666667"
+     },
+     {
+      "id": "COG",
+      "v": "7.35294117647059"
+     },
+     {
+      "id": "JPN",
+      "v": "8.125"
+     },
+     {
+      "id": "BEN",
+      "v": "8.43373493975904"
+     },
+     {
+      "id": "PAN",
+      "v": "8.45070422535211"
+     },
+     {
+      "id": "BRA",
+      "v": "8.57699805068226"
+     },
+     {
+      "id": "HUN",
+      "v": "8.80829015544041"
+     },
+     {
+      "id": "COD",
+      "v": "8.94308943089431"
+     },
+     {
+      "id": "UKR",
+      "v": "9.43820224719101"
+     },
+     {
+      "id": "MLI",
+      "v": "10.2040816326531"
+     },
+     {
+      "id": "MYS",
+      "v": "10.3603603603604"
+     }
+    ],
+    "top": [
+     {
+      "id": "RWA",
+      "v": "63.75"
+     },
+     {
+      "id": "CUB",
+      "v": "48.8562091503268"
+     },
+     {
+      "id": "SWE",
+      "v": "44.9856733524355"
+     },
+     {
+      "id": "SEN",
+      "v": "42.6666666666667"
+     },
+     {
+      "id": "FIN",
+      "v": "42.5"
+     },
+     {
+      "id": "ZAF",
+      "v": "42.25"
+     },
+     {
+      "id": "NIC",
+      "v": "40.2173913043478"
+     },
+     {
+      "id": "NOR",
+      "v": "39.6449704142012"
+     },
+     {
+      "id": "MOZ",
+      "v": "39.2"
+     },
+     {
+      "id": "DNK",
+      "v": "39.1061452513966"
+     },
+     {
+      "id": "ECU",
+      "v": "38.6861313868613"
+     },
+     {
+      "id": "NLD",
+      "v": "38.6666666666667"
+     },
+     {
+      "id": "CRI",
+      "v": "38.5964912280702"
+     },
+     {
+      "id": "BEL",
+      "v": "38"
+     },
+     {
+      "id": "MEX",
+      "v": "36.8"
+     },
+     {
+      "id": "ARG",
+      "v": "36.5758754863813"
+     },
+     {
+      "id": "DEU",
+      "v": "36.4500792393027"
+     },
+     {
+      "id": "ESP",
+      "v": "36"
+     },
+     {
+      "id": "TZA",
+      "v": "36"
+     },
+     {
+      "id": "UGA",
+      "v": "34.9740932642487"
+     }
+    ]
+   },
+   "top": [
+    {
+     "from": "",
+     "id": "RWA",
+     "latest": false,
+     "t": "63.8",
+     "v": "63.75"
+    },
+    {
+     "from": "",
+     "id": "CUB",
+     "latest": false,
+     "t": "48.9",
+     "v": "48.8562091503268"
+    },
+    {
+     "from": "",
+     "id": "SWE",
+     "latest": false,
+     "t": "45.0",
+     "v": "44.9856733524355"
+    },
+    {
+     "from": "",
+     "id": "SEN",
+     "latest": false,
+     "t": "42.7",
+     "v": "42.6666666666667"
+    },
+    {
+     "from": "",
+     "id": "FIN",
+     "latest": false,
+     "t": "42.5",
+     "v": "42.5"
+    },
+    {
+     "from": "",
+     "id": "ZAF",
+     "latest": false,
+     "t": "42.3",
+     "v": "42.25"
+    },
+    {
+     "from": "",
+     "id": "NIC",
+     "latest": false,
+     "t": "40.2",
+     "v": "40.2173913043478"
+    },
+    {
+     "from": "",
+     "id": "NOR",
+     "latest": false,
+     "t": "39.6",
+     "v": "39.6449704142012"
+    },
+    {
+     "from": "",
+     "id": "MOZ",
+     "latest": false,
+     "t": "39.2",
+     "v": "39.2"
+    },
+    {
+     "from": "",
+     "id": "DNK",
+     "latest": false,
+     "t": "39.1",
+     "v": "39.1061452513966"
+    }
+   ],
+   "year": 2013,
+   "zero": []
+  },
+  {
+   "bottom": [
+    {
+     "from": "",
+     "id": "YEM",
+     "latest": false,
+     "t": "0.3",
+     "v": "0.332225913621262"
+    },
+    {
+     "from": "",
+     "id": "OMN",
+     "latest": false,
+     "t": "1.2",
+     "v": "1.19047619047619"
+    },
+    {
+     "from": "",
+     "id": "KWT",
+     "latest": false,
+     "t": "1.5",
+     "v": "1.53846153846154"
+    },
+    {
+     "from": "",
+     "id": "PNG",
+     "latest": false,
+     "t": "2.7",
+     "v": "2.7027027027027"
+    },
+    {
+     "from": "",
+     "id": "IRN",
+     "latest": false,
+     "t": "3.1",
+     "v": "3.10344827586207"
+    },
+    {
+     "from": "",
+     "id": "LBN",
+     "latest": false,
+     "t": "3.1",
+     "v": "3.125"
+    },
+    {
+     "from": "",
+     "id": "HTI",
+     "latest": false,
+     "t": "4.2",
+     "v": "4.21052631578947"
+    },
+    {
+     "from": "",
+     "id": "MMR",
+     "latest": false,
+     "t": "5.6",
+     "v": "5.59440559440559"
+    },
+    {
+     "from": "",
+     "id": "LKA",
+     "latest": false,
+     "t": "5.8",
+     "v": "5.77777777777778"
+    },
+    {
+     "from": "",
+     "id": "THA",
+     "latest": false,
+     "t": "6.1",
+     "v": "6.09137055837564"
+    }
+   ],
+   "ranks": {
+    "bottom": [
+     {
+      "id": "YEM",
+      "v": "0.332225913621262"
+     },
+     {
+      "id": "OMN",
+      "v": "1.19047619047619"
+     },
+     {
+      "id": "KWT",
+      "v": "1.53846153846154"
+     },
+     {
+      "id": "PNG",
+      "v": "2.7027027027027"
+     },
+     {
+      "id": "IRN",
+      "v": "3.10344827586207"
+     },
+     {
+      "id": "LBN",
+      "v": "3.125"
+     },
+     {
+      "id": "HTI",
+      "v": "4.21052631578947"
+     },
+     {
+      "id": "MMR",
+      "v": "5.59440559440559"
+     },
+     {
+      "id": "LKA",
+      "v": "5.77777777777778"
+     },
+     {
+      "id": "THA",
+      "v": "6.09137055837564"
+     },
+     {
+      "id": "NGA",
+      "v": "6.66666666666667"
+     },
+     {
+      "id": "COG",
+      "v": "7.35294117647059"
+     },
+     {
+      "id": "JPN",
+      "v": "8.125"
+     },
+     {
+      "id": "BEN",
+      "v": "8.43373493975904"
+     },
+     {
+      "id": "CIV",
+      "v": "9.44881889763779"
+     },
+     {
+      "id": "MLI",
+      "v": "9.52380952380952"
+     },
+     {
+      "id": "BRA",
+      "v": "9.94152046783626"
+     },
+     {
+      "id": "HUN",
+      "v": "10.0502512562814"
+     },
+     {
+      "id": "MYS",
+      "v": "10.3603603603604"
+     },
+     {
+      "id": "COD",
+      "v": "10.6425702811245"
+     }
+    ],
+    "top": [
+     {
+      "id": "RWA",
+      "v": "63.75"
+     },
+     {
+      "id": "BOL",
+      "v": "53.0769230769231"
+     },
+     {
+      "id": "CUB",
+      "v": "48.8562091503268"
+     },
+     {
+      "id": "SWE",
+      "v": "44.6991404011461"
+     },
+     {
+      "id": "SEN",
+      "v": "43.3333333333333"
+     },
+     {
+      "id": "FIN",
+      "v": "42.5"
+     },
+     {
+      "id": "NIC",
+      "v": "42.3913043478261"
+     },
+     {
+      "id": "ECU",
+      "v": "41.6058394160584"
+     },
+     {
+      "id": "ZAF",
+      "v": "41.5"
+     },
+     {
+      "id": "ESP",
+      "v": "39.7142857142857"
+     },
+     {
+      "id": "NOR",
+      "v": "39.6449704142012"
+     },
+     {
+      "id": "BEL",
+      "v": "39.3333333333333"
+     },
+     {
+      "id": "MOZ",
+      "v": "39.2"
+     },
+     {
+      "id": "DNK",
+      "v": "39.1061452513966"
+     },
+     {
+      "id": "NLD",
+      "v": "38.6666666666667"
+     },
+     {
+      "id": "MEX",
+      "v": "37.4"
+     },
+     {
+      "id": "AGO",
+      "v": "36.8181818181818"
+     },
+     {
+      "id": "ARG",
+      "v": "36.5758754863813"
+     },
+     {
+      "id": "DEU",
+      "v": "36.4500792393027"
+     },
+     {
+      "id": "TZA",
+      "v": "36"
+     }
+    ]
+   },
+   "top": [
+    {
+     "from": "",
+     "id": "RWA",
+     "latest": false,
+     "t": "63.8",
+     "v": "63.75"
+    },
+    {
+     "from": "",
+     "id": "BOL",
+     "latest": false,
+     "t": "53.1",
+     "v": "53.0769230769231"
+    },
+    {
+     "from": "",
+     "id": "CUB",
+     "latest": false,
+     "t": "48.9",
+     "v": "48.8562091503268"
+    },
+    {
+     "from": "",
+     "id": "SWE",
+     "latest": false,
+     "t": "44.7",
+     "v": "44.6991404011461"
+    },
+    {
+     "from": "",
+     "id": "SEN",
+     "latest": false,
+     "t": "43.3",
+     "v": "43.3333333333333"
+    },
+    {
+     "from": "",
+     "id": "FIN",
+     "latest": false,
+     "t": "42.5",
+     "v": "42.5"
+    },
+    {
+     "from": "",
+     "id": "NIC",
+     "latest": false,
+     "t": "42.4",
+     "v": "42.3913043478261"
+    },
+    {
+     "from": "",
+     "id": "ECU",
+     "latest": false,
+     "t": "41.6",
+     "v": "41.6058394160584"
+    },
+    {
+     "from": "",
+     "id": "ZAF",
+     "latest": false,
+     "t": "41.5",
+     "v": "41.5"
+    },
+    {
+     "from": "",
+     "id": "ESP",
+     "latest": false,
+     "t": "39.7",
+     "v": "39.7142857142857"
+    }
+   ],
+   "year": 2014,
+   "zero": []
+  },
+  {
+   "bottom": [
+    {
+     "from": "",
+     "id": "OMN",
+     "latest": false,
+     "t": "1.2",
+     "v": "1.17647058823529"
+    },
+    {
+     "from": "",
+     "id": "KWT",
+     "latest": false,
+     "t": "1.5",
+     "v": "1.53846153846154"
+    },
+    {
+     "from": "",
+     "id": "PNG",
+     "latest": false,
+     "t": "2.7",
+     "v": "2.7027027027027"
+    },
+    {
+     "from": "",
+     "id": "IRN",
+     "latest": false,
+     "t": "3.1",
+     "v": "3.10344827586207"
+    },
+    {
+     "from": "",
+     "id": "LBN",
+     "latest": false,
+     "t": "3.1",
+     "v": "3.125"
+    },
+    {
+     "from": "",
+     "id": "HTI",
+     "latest": false,
+     "t": "4.2",
+     "v": "4.21052631578947"
+    },
+    {
+     "from": "",
+     "id": "LKA",
+     "latest": false,
+     "t": "4.9",
+     "v": "4.88888888888889"
+    },
+    {
+     "from": "",
+     "id": "NGA",
+     "latest": false,
+     "t": "5.6",
+     "v": "5.55555555555556"
+    },
+    {
+     "from": "",
+     "id": "THA",
+     "latest": false,
+     "t": "6.1",
+     "v": "6.09137055837564"
+    },
+    {
+     "from": "",
+     "id": "BEN",
+     "latest": false,
+     "t": "7.2",
+     "v": "7.2289156626506"
+    }
+   ],
+   "ranks": {
+    "bottom": [
+     {
+      "id": "OMN",
+      "v": "1.17647058823529"
+     },
+     {
+      "id": "KWT",
+      "v": "1.53846153846154"
+     },
+     {
+      "id": "PNG",
+      "v": "2.7027027027027"
+     },
+     {
+      "id": "IRN",
+      "v": "3.10344827586207"
+     },
+     {
+      "id": "LBN",
+      "v": "3.125"
+     },
+     {
+      "id": "HTI",
+      "v": "4.21052631578947"
+     },
+     {
+      "id": "LKA",
+      "v": "4.88888888888889"
+     },
+     {
+      "id": "NGA",
+      "v": "5.55555555555556"
+     },
+     {
+      "id": "THA",
+      "v": "6.09137055837564"
+     },
+     {
+      "id": "BEN",
+      "v": "7.2289156626506"
+     },
+     {
+      "id": "COG",
+      "v": "7.35294117647059"
+     },
+     {
+      "id": "MLI",
+      "v": "8.84353741496599"
+     },
+     {
+      "id": "COD",
+      "v": "8.94308943089431"
+     },
+     {
+      "id": "CIV",
+      "v": "9.16334661354582"
+     },
+     {
+      "id": "BFA",
+      "v": "9.44881889763779"
+     },
+     {
+      "id": "JPN",
+      "v": "9.47368421052632"
+     },
+     {
+      "id": "BRA",
+      "v": "9.94152046783626"
+     },
+     {
+      "id": "HUN",
+      "v": "10.1010101010101"
+     },
+     {
+      "id": "MYS",
+      "v": "10.3603603603604"
+     },
+     {
+      "id": "GHA",
+      "v": "10.9090909090909"
+     }
+    ],
+    "top": [
+     {
+      "id": "RWA",
+      "v": "63.75"
+     },
+     {
+      "id": "BOL",
+      "v": "53.0769230769231"
+     },
+     {
+      "id": "CUB",
+      "v": "48.8562091503268"
+     },
+     {
+      "id": "SWE",
+      "v": "43.5530085959885"
+     },
+     {
+      "id": "SEN",
+      "v": "42.6666666666667"
+     },
+     {
+      "id": "MEX",
+      "v": "42.3694779116466"
+     },
+     {
+      "id": "ZAF",
+      "v": "42"
+     },
+     {
+      "id": "ECU",
+      "v": "41.6058394160584"
+     },
+     {
+      "id": "FIN",
+      "v": "41.5"
+     },
+     {
+      "id": "NIC",
+      "v": "41.304347826087"
+     },
+     {
+      "id": "ESP",
+      "v": "41.1428571428571"
+     },
+     {
+      "id": "NOR",
+      "v": "39.6449704142012"
+     },
+     {
+      "id": "MOZ",
+      "v": "39.6"
+     },
+     {
+      "id": "BEL",
+      "v": "39.3333333333333"
+     },
+     {
+      "id": "ETH",
+      "v": "38.7568555758684"
+     },
+     {
+      "id": "DNK",
+      "v": "37.4301675977654"
+     },
+     {
+      "id": "NLD",
+      "v": "37.3333333333333"
+     },
+     {
+      "id": "AGO",
+      "v": "36.8181818181818"
+     },
+     {
+      "id": "ARG",
+      "v": "36.5758754863813"
+     },
+     {
+      "id": "DEU",
+      "v": "36.4500792393027"
+     }
+    ]
+   },
+   "top": [
+    {
+     "from": "",
+     "id": "RWA",
+     "latest": false,
+     "t": "63.8",
+     "v": "63.75"
+    },
+    {
+     "from": "",
+     "id": "BOL",
+     "latest": false,
+     "t": "53.1",
+     "v": "53.0769230769231"
+    },
+    {
+     "from": "",
+     "id": "CUB",
+     "latest": false,
+     "t": "48.9",
+     "v": "48.8562091503268"
+    },
+    {
+     "from": "",
+     "id": "SWE",
+     "latest": false,
+     "t": "43.6",
+     "v": "43.5530085959885"
+    },
+    {
+     "from": "",
+     "id": "SEN",
+     "latest": false,
+     "t": "42.7",
+     "v": "42.6666666666667"
+    },
+    {
+     "from": "",
+     "id": "MEX",
+     "latest": false,
+     "t": "42.4",
+     "v": "42.3694779116466"
+    },
+    {
+     "from": "",
+     "id": "ZAF",
+     "latest": false,
+     "t": "42.0",
+     "v": "42"
+    },
+    {
+     "from": "",
+     "id": "ECU",
+     "latest": false,
+     "t": "41.6",
+     "v": "41.6058394160584"
+    },
+    {
+     "from": "",
+     "id": "FIN",
+     "latest": false,
+     "t": "41.5",
+     "v": "41.5"
+    },
+    {
+     "from": "",
+     "id": "NIC",
+     "latest": false,
+     "t": "41.3",
+     "v": "41.304347826087"
+    }
+   ],
+   "year": 2015,
+   "zero": [
+    "YEM"
+   ]
+  },
+  {
+   "bottom": [
+    {
+     "from": "",
+     "id": "OMN",
+     "latest": false,
+     "t": "1.2",
+     "v": "1.17647058823529"
+    },
+    {
+     "from": "",
+     "id": "KWT",
+     "latest": false,
+     "t": "2.0",
+     "v": "2"
+    },
+    {
+     "from": "",
+     "id": "PNG",
+     "latest": false,
+     "t": "2.7",
+     "v": "2.7027027027027"
+    },
+    {
+     "from": "",
+     "id": "LBN",
+     "latest": false,
+     "t": "3.1",
+     "v": "3.125"
+    },
+    {
+     "from": "",
+     "id": "NGA",
+     "latest": false,
+     "t": "5.6",
+     "v": "5.55555555555556"
+    },
+    {
+     "from": "",
+     "id": "LKA",
+     "latest": false,
+     "t": "5.8",
+     "v": "5.77777777777778"
+    },
+    {
+     "from": "",
+     "id": "IRN",
+     "latest": false,
+     "t": "5.9",
+     "v": "5.88235294117647"
+    },
+    {
+     "from": "",
+     "id": "THA",
+     "latest": false,
+     "t": "6.1",
+     "v": "6.09137055837564"
+    },
+    {
+     "from": "",
+     "id": "CAF",
+     "latest": false,
+     "t": "7.2",
+     "v": "7.19424460431655"
+    },
+    {
+     "from": "",
+     "id": "BEN",
+     "latest": false,
+     "t": "7.2",
+     "v": "7.2289156626506"
+    }
+   ],
+   "ranks": {
+    "bottom": [
+     {
+      "id": "OMN",
+      "v": "1.17647058823529"
+     },
+     {
+      "id": "KWT",
+      "v": "2"
+     },
+     {
+      "id": "PNG",
+      "v": "2.7027027027027"
+     },
+     {
+      "id": "LBN",
+      "v": "3.125"
+     },
+     {
+      "id": "NGA",
+      "v": "5.55555555555556"
+     },
+     {
+      "id": "LKA",
+      "v": "5.77777777777778"
+     },
+     {
+      "id": "IRN",
+      "v": "5.88235294117647"
+     },
+     {
+      "id": "THA",
+      "v": "6.09137055837564"
+     },
+     {
+      "id": "CAF",
+      "v": "7.19424460431655"
+     },
+     {
+      "id": "BEN",
+      "v": "7.2289156626506"
+     },
+     {
+      "id": "COG",
+      "v": "7.35294117647059"
+     },
+     {
+      "id": "MLI",
+      "v": "8.84353741496599"
+     },
+     {
+      "id": "COD",
+      "v": "8.94308943089431"
+     },
+     {
+      "id": "CIV",
+      "v": "9.16334661354582"
+     },
+     {
+      "id": "BFA",
+      "v": "9.44881889763779"
+     },
+     {
+      "id": "JPN",
+      "v": "9.47368421052632"
+     },
+     {
+      "id": "MMR",
+      "v": "9.93071593533487"
+     },
+     {
+      "id": "BRA",
+      "v": "9.94152046783626"
+     },
+     {
+      "id": "HUN",
+      "v": "10.1010101010101"
+     },
+     {
+      "id": "MYS",
+      "v": "10.3603603603604"
+     }
+    ],
+    "top": [
+     {
+      "id": "RWA",
+      "v": "63.75"
+     },
+     {
+      "id": "BOL",
+      "v": "53.0769230769231"
+     },
+     {
+      "id": "CUB",
+      "v": "48.8562091503268"
+     },
+     {
+      "id": "NIC",
+      "v": "45.6521739130435"
+     },
+     {
+      "id": "SWE",
+      "v": "43.5530085959885"
+     },
+     {
+      "id": "SEN",
+      "v": "42.6666666666667"
+     },
+     {
+      "id": "MEX",
+      "v": "42.4"
+     },
+     {
+      "id": "ZAF",
+      "v": "42"
+     },
+     {
+      "id": "ECU",
+      "v": "41.6058394160584"
+     },
+     {
+      "id": "FIN",
+      "v": "41.5"
+     },
+     {
+      "id": "NOR",
+      "v": "39.6449704142012"
+     },
+     {
+      "id": "MOZ",
+      "v": "39.6"
+     },
+     {
+      "id": "BEL",
+      "v": "39.3333333333333"
+     },
+     {
+      "id": "ESP",
+      "v": "39.1428571428571"
+     },
+     {
+      "id": "ETH",
+      "v": "38.7568555758684"
+     },
+     {
+      "id": "DNK",
+      "v": "37.4301675977654"
+     },
+     {
+      "id": "NLD",
+      "v": "37.3333333333333"
+     },
+     {
+      "id": "AGO",
+      "v": "36.8181818181818"
+     },
+     {
+      "id": "TZA",
+      "v": "36.5591397849462"
+     },
+     {
+      "id": "DEU",
+      "v": "36.4500792393027"
+     }
+    ]
+   },
+   "top": [
+    {
+     "from": "",
+     "id": "RWA",
+     "latest": false,
+     "t": "63.8",
+     "v": "63.75"
+    },
+    {
+     "from": "",
+     "id": "BOL",
+     "latest": false,
+     "t": "53.1",
+     "v": "53.0769230769231"
+    },
+    {
+     "from": "",
+     "id": "CUB",
+     "latest": false,
+     "t": "48.9",
+     "v": "48.8562091503268"
+    },
+    {
+     "from": "",
+     "id": "NIC",
+     "latest": false,
+     "t": "45.7",
+     "v": "45.6521739130435"
+    },
+    {
+     "from": "",
+     "id": "SWE",
+     "latest": false,
+     "t": "43.6",
+     "v": "43.5530085959885"
+    },
+    {
+     "from": "",
+     "id": "SEN",
+     "latest": false,
+     "t": "42.7",
+     "v": "42.6666666666667"
+    },
+    {
+     "from": "",
+     "id": "MEX",
+     "latest": false,
+     "t": "42.4",
+     "v": "42.4"
+    },
+    {
+     "from": "",
+     "id": "ZAF",
+     "latest": false,
+     "t": "42.0",
+     "v": "42"
+    },
+    {
+     "from": "",
+     "id": "ECU",
+     "latest": false,
+     "t": "41.6",
+     "v": "41.6058394160584"
+    },
+    {
+     "from": "",
+     "id": "FIN",
+     "latest": false,
+     "t": "41.5",
+     "v": "41.5"
+    }
+   ],
+   "year": 2016,
+   "zero": [
+    "HTI",
+    "YEM"
+   ]
+  },
+  {
+   "bottom": [
+    {
+     "from": "",
+     "id": "OMN",
+     "latest": false,
+     "t": "1.2",
+     "v": "1.17647058823529"
+    },
+    {
+     "from": "",
+     "id": "HTI",
+     "latest": false,
+     "t": "2.5",
+     "v": "2.54237288135593"
+    },
+    {
+     "from": "",
+     "id": "KWT",
+     "latest": false,
+     "t": "3.1",
+     "v": "3.07692307692308"
+    },
+    {
+     "from": "",
+     "id": "LBN",
+     "latest": false,
+     "t": "3.1",
+     "v": "3.125"
+    },
+    {
+     "from": "",
+     "id": "THA",
+     "latest": false,
+     "t": "4.8",
+     "v": "4.8"
+    },
+    {
+     "from": "",
+     "id": "NGA",
+     "latest": false,
+     "t": "5.6",
+     "v": "5.55555555555556"
+    },
+    {
+     "from": "",
+     "id": "LKA",
+     "latest": false,
+     "t": "5.8",
+     "v": "5.77777777777778"
+    },
+    {
+     "from": "",
+     "id": "IRN",
+     "latest": false,
+     "t": "5.9",
+     "v": "5.88235294117647"
+    },
+    {
+     "from": "",
+     "id": "BEN",
+     "latest": false,
+     "t": "7.2",
+     "v": "7.2289156626506"
+    },
+    {
+     "from": "",
+     "id": "CAF",
+     "latest": false,
+     "t": "8.6",
+     "v": "8.57142857142857"
+    }
+   ],
+   "ranks": {
+    "bottom": [
+     {
+      "id": "OMN",
+      "v": "1.17647058823529"
+     },
+     {
+      "id": "HTI",
+      "v": "2.54237288135593"
+     },
+     {
+      "id": "KWT",
+      "v": "3.07692307692308"
+     },
+     {
+      "id": "LBN",
+      "v": "3.125"
+     },
+     {
+      "id": "THA",
+      "v": "4.8"
+     },
+     {
+      "id": "NGA",
+      "v": "5.55555555555556"
+     },
+     {
+      "id": "LKA",
+      "v": "5.77777777777778"
+     },
+     {
+      "id": "IRN",
+      "v": "5.88235294117647"
+     },
+     {
+      "id": "BEN",
+      "v": "7.2289156626506"
+     },
+     {
+      "id": "CAF",
+      "v": "8.57142857142857"
+     },
+     {
+      "id": "MLI",
+      "v": "8.84353741496599"
+     },
+     {
+      "id": "COD",
+      "v": "8.94308943089431"
+     },
+     {
+      "id": "LBR",
+      "v": "9.85915492957746"
+     },
+     {
+      "id": "HUN",
+      "v": "10.0502512562814"
+     },
+     {
+      "id": "JPN",
+      "v": "10.1075268817204"
+     },
+     {
+      "id": "MMR",
+      "v": "10.161662817552"
+     },
+     {
+      "id": "MYS",
+      "v": "10.3603603603604"
+     },
+     {
+      "id": "CIV",
+      "v": "10.5882352941176"
+     },
+     {
+      "id": "BRA",
+      "v": "10.7212475633528"
+     },
+     {
+      "id": "BFA",
+      "v": "11.0236220472441"
+     }
+    ],
+    "top": [
+     {
+      "id": "RWA",
+      "v": "61.25"
+     },
+     {
+      "id": "BOL",
+      "v": "53.0769230769231"
+     },
+     {
+      "id": "CUB",
+      "v": "48.8562091503268"
+     },
+     {
+      "id": "NIC",
+      "v": "45.6521739130435"
+     },
+     {
+      "id": "SWE",
+      "v": "43.5530085959885"
+     },
+     {
+      "id": "MEX",
+      "v": "42.6"
+     },
+     {
+      "id": "FIN",
+      "v": "42"
+     },
+     {
+      "id": "ZAF",
+      "v": "41.8367346938776"
+     },
+     {
+      "id": "SEN",
+      "v": "41.8181818181818"
+     },
+     {
+      "id": "NOR",
+      "v": "41.4201183431953"
+     },
+     {
+      "id": "MOZ",
+      "v": "39.6"
+     },
+     {
+      "id": "ESP",
+      "v": "39.1428571428571"
+     },
+     {
+      "id": "FRA",
+      "v": "38.9948006932409"
+     },
+     {
+      "id": "ETH",
+      "v": "38.7568555758684"
+     },
+     {
+      "id": "NZL",
+      "v": "38.3333333333333"
+     },
+     {
+      "id": "ARG",
+      "v": "38.1322957198444"
+     },
+     {
+      "id": "BEL",
+      "v": "38"
+     },
+     {
+      "id": "ECU",
+      "v": "37.956204379562"
+     },
+     {
+      "id": "DNK",
+      "v": "37.4301675977654"
+     },
+     {
+      "id": "TZA",
+      "v": "37.1794871794872"
+     }
+    ]
+   },
+   "top": [
+    {
+     "from": "",
+     "id": "RWA",
+     "latest": false,
+     "t": "61.3",
+     "v": "61.25"
+    },
+    {
+     "from": "",
+     "id": "BOL",
+     "latest": false,
+     "t": "53.1",
+     "v": "53.0769230769231"
+    },
+    {
+     "from": "",
+     "id": "CUB",
+     "latest": false,
+     "t": "48.9",
+     "v": "48.8562091503268"
+    },
+    {
+     "from": "",
+     "id": "NIC",
+     "latest": false,
+     "t": "45.7",
+     "v": "45.6521739130435"
+    },
+    {
+     "from": "",
+     "id": "SWE",
+     "latest": false,
+     "t": "43.6",
+     "v": "43.5530085959885"
+    },
+    {
+     "from": "",
+     "id": "MEX",
+     "latest": false,
+     "t": "42.6",
+     "v": "42.6"
+    },
+    {
+     "from": "",
+     "id": "FIN",
+     "latest": false,
+     "t": "42.0",
+     "v": "42"
+    },
+    {
+     "from": "",
+     "id": "ZAF",
+     "latest": false,
+     "t": "41.8",
+     "v": "41.8367346938776"
+    },
+    {
+     "from": "",
+     "id": "SEN",
+     "latest": false,
+     "t": "41.8",
+     "v": "41.8181818181818"
+    },
+    {
+     "from": "",
+     "id": "NOR",
+     "latest": false,
+     "t": "41.4",
+     "v": "41.4201183431953"
+    }
+   ],
+   "year": 2017,
+   "zero": [
+    "PNG",
+    "YEM"
+   ]
+  },
+  {
+   "bottom": [
+    {
+     "from": "",
+     "id": "OMN",
+     "latest": false,
+     "t": "1.2",
+     "v": "1.17647058823529"
+    },
+    {
+     "from": "",
+     "id": "HTI",
+     "latest": false,
+     "t": "2.5",
+     "v": "2.54237288135593"
+    },
+    {
+     "from": "",
+     "id": "KWT",
+     "latest": false,
+     "t": "3.1",
+     "v": "3.07692307692308"
+    },
+    {
+     "from": "",
+     "id": "LBN",
+     "latest": false,
+     "t": "4.7",
+     "v": "4.6875"
+    },
+    {
+     "from": "",
+     "id": "THA",
+     "latest": false,
+     "t": "5.3",
+     "v": "5.28455284552846"
+    },
+    {
+     "from": "",
+     "id": "NGA",
+     "latest": false,
+     "t": "5.6",
+     "v": "5.55555555555556"
+    },
+    {
+     "from": "",
+     "id": "LKA",
+     "latest": false,
+     "t": "5.8",
+     "v": "5.77777777777778"
+    },
+    {
+     "from": "",
+     "id": "IRN",
+     "latest": false,
+     "t": "5.9",
+     "v": "5.88235294117647"
+    },
+    {
+     "from": "",
+     "id": "BEN",
+     "latest": false,
+     "t": "7.2",
+     "v": "7.2289156626506"
+    },
+    {
+     "from": "",
+     "id": "CAF",
+     "latest": false,
+     "t": "8.6",
+     "v": "8.57142857142857"
+    }
+   ],
+   "ranks": {
+    "bottom": [
+     {
+      "id": "OMN",
+      "v": "1.17647058823529"
+     },
+     {
+      "id": "HTI",
+      "v": "2.54237288135593"
+     },
+     {
+      "id": "KWT",
+      "v": "3.07692307692308"
+     },
+     {
+      "id": "LBN",
+      "v": "4.6875"
+     },
+     {
+      "id": "THA",
+      "v": "5.28455284552846"
+     },
+     {
+      "id": "NGA",
+      "v": "5.55555555555556"
+     },
+     {
+      "id": "LKA",
+      "v": "5.77777777777778"
+     },
+     {
+      "id": "IRN",
+      "v": "5.88235294117647"
+     },
+     {
+      "id": "BEN",
+      "v": "7.2289156626506"
+     },
+     {
+      "id": "CAF",
+      "v": "8.57142857142857"
+     },
+     {
+      "id": "MLI",
+      "v": "8.84353741496599"
+     },
+     {
+      "id": "COD",
+      "v": "8.94308943089431"
+     },
+     {
+      "id": "JPN",
+      "v": "10.1075268817204"
+     },
+     {
+      "id": "MMR",
+      "v": "10.161662817552"
+     },
+     {
+      "id": "CIV",
+      "v": "10.5882352941176"
+     },
+     {
+      "id": "BFA",
+      "v": "11.0236220472441"
+     },
+     {
+      "id": "COG",
+      "v": "11.2582781456954"
+     },
+     {
+      "id": "IND",
+      "v": "11.8081180811808"
+     },
+     {
+      "id": "UKR",
+      "v": "12.2931442080378"
+     },
+     {
+      "id": "LBR",
+      "v": "12.3287671232877"
+     }
+    ],
+    "top": [
+     {
+      "id": "RWA",
+      "v": "61.25"
+     },
+     {
+      "id": "CUB",
+      "v": "53.2231404958678"
+     },
+     {
+      "id": "BOL",
+      "v": "53.0769230769231"
+     },
+     {
+      "id": "MEX",
+      "v": "48.2"
+     },
+     {
+      "id": "SWE",
+      "v": "46.1318051575931"
+     },
+     {
+      "id": "NIC",
+      "v": "45.6521739130435"
+     },
+     {
+      "id": "CRI",
+      "v": "45.6140350877193"
+     },
+     {
+      "id": "ZAF",
+      "v": "42.7480916030534"
+     },
+     {
+      "id": "FIN",
+      "v": "42"
+     },
+     {
+      "id": "SEN",
+      "v": "41.8181818181818"
+     },
+     {
+      "id": "NOR",
+      "v": "41.4201183431953"
+     },
+     {
+      "id": "MOZ",
+      "v": "39.6"
+     },
+     {
+      "id": "FRA",
+      "v": "39.5833333333333"
+     },
+     {
+      "id": "ESP",
+      "v": "39.1428571428571"
+     },
+     {
+      "id": "ARG",
+      "v": "38.9105058365759"
+     },
+     {
+      "id": "ETH",
+      "v": "38.7568555758684"
+     },
+     {
+      "id": "NZL",
+      "v": "38.3333333333333"
+     },
+     {
+      "id": "BEL",
+      "v": "38"
+     },
+     {
+      "id": "ECU",
+      "v": "37.956204379562"
+     },
+     {
+      "id": "DNK",
+      "v": "37.4301675977654"
+     }
+    ]
+   },
+   "top": [
+    {
+     "from": "",
+     "id": "RWA",
+     "latest": false,
+     "t": "61.3",
+     "v": "61.25"
+    },
+    {
+     "from": "",
+     "id": "CUB",
+     "latest": false,
+     "t": "53.2",
+     "v": "53.2231404958678"
+    },
+    {
+     "from": "",
+     "id": "BOL",
+     "latest": false,
+     "t": "53.1",
+     "v": "53.0769230769231"
+    },
+    {
+     "from": "",
+     "id": "MEX",
+     "latest": false,
+     "t": "48.2",
+     "v": "48.2"
+    },
+    {
+     "from": "",
+     "id": "SWE",
+     "latest": false,
+     "t": "46.1",
+     "v": "46.1318051575931"
+    },
+    {
+     "from": "",
+     "id": "NIC",
+     "latest": false,
+     "t": "45.7",
+     "v": "45.6521739130435"
+    },
+    {
+     "from": "",
+     "id": "CRI",
+     "latest": false,
+     "t": "45.6",
+     "v": "45.6140350877193"
+    },
+    {
+     "from": "",
+     "id": "ZAF",
+     "latest": false,
+     "t": "42.7",
+     "v": "42.7480916030534"
+    },
+    {
+     "from": "",
+     "id": "FIN",
+     "latest": false,
+     "t": "42.0",
+     "v": "42"
+    },
+    {
+     "from": "",
+     "id": "SEN",
+     "latest": false,
+     "t": "41.8",
+     "v": "41.8181818181818"
+    }
+   ],
+   "year": 2018,
+   "zero": [
+    "PNG",
+    "YEM"
+   ]
+  },
+  {
+   "bottom": [
+    {
+     "from": "",
+     "id": "YEM",
+     "latest": false,
+     "t": "0.3",
+     "v": "0.332225913621262"
+    },
+    {
+     "from": "",
+     "id": "OMN",
+     "latest": false,
+     "t": "2.3",
+     "v": "2.32558139534884"
+    },
+    {
+     "from": "",
+     "id": "HTI",
+     "latest": false,
+     "t": "2.5",
+     "v": "2.54237288135593"
+    },
+    {
+     "from": "",
+     "id": "NGA",
+     "latest": false,
+     "t": "3.4",
+     "v": "3.38028169014084"
+    },
+    {
+     "from": "",
+     "id": "KWT",
+     "latest": false,
+     "t": "4.6",
+     "v": "4.61538461538462"
+    },
+    {
+     "from": "",
+     "id": "LBN",
+     "latest": false,
+     "t": "4.7",
+     "v": "4.6875"
+    },
+    {
+     "from": "",
+     "id": "LKA",
+     "latest": false,
+     "t": "5.3",
+     "v": "5.33333333333333"
+    },
+    {
+     "from": "",
+     "id": "IRN",
+     "latest": false,
+     "t": "5.9",
+     "v": "5.88235294117647"
+    },
+    {
+     "from": "",
+     "id": "BEN",
+     "latest": false,
+     "t": "7.2",
+     "v": "7.2289156626506"
+    },
+    {
+     "from": "",
+     "id": "CAF",
+     "latest": false,
+     "t": "8.6",
+     "v": "8.57142857142857"
+    }
+   ],
+   "ranks": {
+    "bottom": [
+     {
+      "id": "YEM",
+      "v": "0.332225913621262"
+     },
+     {
+      "id": "OMN",
+      "v": "2.32558139534884"
+     },
+     {
+      "id": "HTI",
+      "v": "2.54237288135593"
+     },
+     {
+      "id": "NGA",
+      "v": "3.38028169014084"
+     },
+     {
+      "id": "KWT",
+      "v": "4.61538461538462"
+     },
+     {
+      "id": "LBN",
+      "v": "4.6875"
+     },
+     {
+      "id": "LKA",
+      "v": "5.33333333333333"
+     },
+     {
+      "id": "IRN",
+      "v": "5.88235294117647"
+     },
+     {
+      "id": "BEN",
+      "v": "7.2289156626506"
+     },
+     {
+      "id": "CAF",
+      "v": "8.57142857142857"
+     },
+     {
+      "id": "MLI",
+      "v": "9.52380952380952"
+     },
+     {
+      "id": "COD",
+      "v": "10"
+     },
+     {
+      "id": "JPN",
+      "v": "10.1075268817204"
+     },
+     {
+      "id": "CIV",
+      "v": "10.9803921568627"
+     },
+     {
+      "id": "COG",
+      "v": "11.2582781456954"
+     },
+     {
+      "id": "MMR",
+      "v": "11.3163972286374"
+     },
+     {
+      "id": "LBR",
+      "v": "12.3287671232877"
+     },
+     {
+      "id": "SLE",
+      "v": "12.3287671232877"
+     },
+     {
+      "id": "HUN",
+      "v": "12.5628140703518"
+     },
+     {
+      "id": "GHA",
+      "v": "13.0909090909091"
+     }
+    ],
+    "top": [
+     {
+      "id": "RWA",
+      "v": "61.25"
+     },
+     {
+      "id": "CUB",
+      "v": "53.2231404958678"
+     },
+     {
+      "id": "BOL",
+      "v": "53.0769230769231"
+     },
+     {
+      "id": "ARE",
+      "v": "50"
+     },
+     {
+      "id": "MEX",
+      "v": "48.2"
+     },
+     {
+      "id": "SWE",
+      "v": "47.2779369627507"
+     },
+     {
+      "id": "FIN",
+      "v": "47"
+     },
+     {
+      "id": "ZAF",
+      "v": "46.3476070528967"
+     },
+     {
+      "id": "CRI",
+      "v": "45.6140350877193"
+     },
+     {
+      "id": "NIC",
+      "v": "44.5652173913043"
+     },
+     {
+      "id": "ESP",
+      "v": "44"
+     },
+     {
+      "id": "BEL",
+      "v": "42"
+     },
+     {
+      "id": "SEN",
+      "v": "41.8181818181818"
+     },
+     {
+      "id": "CHE",
+      "v": "41.5"
+     },
+     {
+      "id": "MOZ",
+      "v": "41.2"
+     },
+     {
+      "id": "NZL",
+      "v": "40.8333333333333"
+     },
+     {
+      "id": "NOR",
+      "v": "40.8284023668639"
+     },
+     {
+      "id": "ARG",
+      "v": "40.1574803149606"
+     },
+     {
+      "id": "BLR",
+      "v": "40"
+     },
+     {
+      "id": "FRA",
+      "v": "39.6880415944541"
+     }
+    ]
+   },
+   "top": [
+    {
+     "from": "",
+     "id": "RWA",
+     "latest": false,
+     "t": "61.3",
+     "v": "61.25"
+    },
+    {
+     "from": "",
+     "id": "CUB",
+     "latest": false,
+     "t": "53.2",
+     "v": "53.2231404958678"
+    },
+    {
+     "from": "",
+     "id": "BOL",
+     "latest": false,
+     "t": "53.1",
+     "v": "53.0769230769231"
+    },
+    {
+     "from": "",
+     "id": "ARE",
+     "latest": false,
+     "t": "50.0",
+     "v": "50"
+    },
+    {
+     "from": "",
+     "id": "MEX",
+     "latest": false,
+     "t": "48.2",
+     "v": "48.2"
+    },
+    {
+     "from": "",
+     "id": "SWE",
+     "latest": false,
+     "t": "47.3",
+     "v": "47.2779369627507"
+    },
+    {
+     "from": "",
+     "id": "FIN",
+     "latest": false,
+     "t": "47.0",
+     "v": "47"
+    },
+    {
+     "from": "",
+     "id": "ZAF",
+     "latest": false,
+     "t": "46.3",
+     "v": "46.3476070528967"
+    },
+    {
+     "from": "",
+     "id": "CRI",
+     "latest": false,
+     "t": "45.6",
+     "v": "45.6140350877193"
+    },
+    {
+     "from": "",
+     "id": "NIC",
+     "latest": false,
+     "t": "44.6",
+     "v": "44.5652173913043"
+    }
+   ],
+   "year": 2019,
+   "zero": [
+    "PNG"
+   ]
+  },
+  {
+   "bottom": [
+    {
+     "from": "",
+     "id": "YEM",
+     "latest": false,
+     "t": "0.3",
+     "v": "0.332225913621262"
+    },
+    {
+     "from": "",
+     "id": "OMN",
+     "latest": false,
+     "t": "2.3",
+     "v": "2.32558139534884"
+    },
+    {
+     "from": "",
+     "id": "LBN",
+     "latest": false,
+     "t": "4.7",
+     "v": "4.6875"
+    },
+    {
+     "from": "",
+     "id": "LKA",
+     "latest": false,
+     "t": "5.4",
+     "v": "5.38116591928251"
+    },
+    {
+     "from": "",
+     "id": "IRN",
+     "latest": false,
+     "t": "5.6",
+     "v": "5.59440559440559"
+    },
+    {
+     "from": "",
+     "id": "BFA",
+     "latest": false,
+     "t": "6.3",
+     "v": "6.2992125984252"
+    },
+    {
+     "from": "",
+     "id": "KWT",
+     "latest": false,
+     "t": "6.3",
+     "v": "6.34920634920635"
+    },
+    {
+     "from": "",
+     "id": "NGA",
+     "latest": false,
+     "t": "7.2",
+     "v": "7.22222222222222"
+    },
+    {
+     "from": "",
+     "id": "BEN",
+     "latest": false,
+     "t": "7.2",
+     "v": "7.2289156626506"
+    },
+    {
+     "from": "",
+     "id": "CAF",
+     "latest": false,
+     "t": "8.6",
+     "v": "8.57142857142857"
+    }
+   ],
+   "ranks": {
+    "bottom": [
+     {
+      "id": "YEM",
+      "v": "0.332225913621262"
+     },
+     {
+      "id": "OMN",
+      "v": "2.32558139534884"
+     },
+     {
+      "id": "LBN",
+      "v": "4.6875"
+     },
+     {
+      "id": "LKA",
+      "v": "5.38116591928251"
+     },
+     {
+      "id": "IRN",
+      "v": "5.59440559440559"
+     },
+     {
+      "id": "BFA",
+      "v": "6.2992125984252"
+     },
+     {
+      "id": "KWT",
+      "v": "6.34920634920635"
+     },
+     {
+      "id": "NGA",
+      "v": "7.22222222222222"
+     },
+     {
+      "id": "BEN",
+      "v": "7.2289156626506"
+     },
+     {
+      "id": "CAF",
+      "v": "8.57142857142857"
+     },
+     {
+      "id": "JPN",
+      "v": "9.89247311827957"
+     },
+     {
+      "id": "SYR",
+      "v": "11.2"
+     },
+     {
+      "id": "COG",
+      "v": "11.2582781456954"
+     },
+     {
+      "id": "CIV",
+      "v": "11.3725490196078"
+     },
+     {
+      "id": "JOR",
+      "v": "11.5384615384615"
+     },
+     {
+      "id": "HUN",
+      "v": "12.0603015075377"
+     },
+     {
+      "id": "LBR",
+      "v": "12.3287671232877"
+     },
+     {
+      "id": "SLE",
+      "v": "12.3287671232877"
+     },
+     {
+      "id": "COD",
+      "v": "12.8"
+     },
+     {
+      "id": "GHA",
+      "v": "13.0909090909091"
+     }
+    ],
+    "top": [
+     {
+      "id": "RWA",
+      "v": "61.25"
+     },
+     {
+      "id": "CUB",
+      "v": "53.2231404958678"
+     },
+     {
+      "id": "ARE",
+      "v": "50"
+     },
+     {
+      "id": "NZL",
+      "v": "48.3333333333333"
+     },
+     {
+      "id": "MEX",
+      "v": "48.2"
+     },
+     {
+      "id": "NIC",
+      "v": "47.2527472527472"
+     },
+     {
+      "id": "SWE",
+      "v": "46.9914040114613"
+     },
+     {
+      "id": "ZAF",
+      "v": "46.75"
+     },
+     {
+      "id": "BOL",
+      "v": "46.1538461538462"
+     },
+     {
+      "id": "FIN",
+      "v": "46"
+     },
+     {
+      "id": "CRI",
+      "v": "45.6140350877193"
+     },
+     {
+      "id": "ESP",
+      "v": "44"
+     },
+     {
+      "id": "SEN",
+      "v": "43.030303030303"
+     },
+     {
+      "id": "MOZ",
+      "v": "42.4"
+     },
+     {
+      "id": "CHE",
+      "v": "41.5"
+     },
+     {
+      "id": "NOR",
+      "v": "41.4201183431953"
+     },
+     {
+      "id": "BEL",
+      "v": "41.3333333333333"
+     },
+     {
+      "id": "ARG",
+      "v": "40.8560311284047"
+     },
+     {
+      "id": "BLR",
+      "v": "40"
+     },
+     {
+      "id": "PRT",
+      "v": "40"
+     }
+    ]
+   },
+   "top": [
+    {
+     "from": "",
+     "id": "RWA",
+     "latest": false,
+     "t": "61.3",
+     "v": "61.25"
+    },
+    {
+     "from": "",
+     "id": "CUB",
+     "latest": false,
+     "t": "53.2",
+     "v": "53.2231404958678"
+    },
+    {
+     "from": "",
+     "id": "ARE",
+     "latest": false,
+     "t": "50.0",
+     "v": "50"
+    },
+    {
+     "from": "",
+     "id": "NZL",
+     "latest": false,
+     "t": "48.3",
+     "v": "48.3333333333333"
+    },
+    {
+     "from": "",
+     "id": "MEX",
+     "latest": false,
+     "t": "48.2",
+     "v": "48.2"
+    },
+    {
+     "from": "",
+     "id": "NIC",
+     "latest": false,
+     "t": "47.3",
+     "v": "47.2527472527472"
+    },
+    {
+     "from": "",
+     "id": "SWE",
+     "latest": false,
+     "t": "47.0",
+     "v": "46.9914040114613"
+    },
+    {
+     "from": "",
+     "id": "ZAF",
+     "latest": false,
+     "t": "46.8",
+     "v": "46.75"
+    },
+    {
+     "from": "",
+     "id": "BOL",
+     "latest": false,
+     "t": "46.2",
+     "v": "46.1538461538462"
+    },
+    {
+     "from": "",
+     "id": "FIN",
+     "latest": false,
+     "t": "46.0",
+     "v": "46"
+    }
+   ],
+   "year": 2020,
+   "zero": [
+    "PNG"
+   ]
+  },
+  {
+   "bottom": [
+    {
+     "from": "",
+     "id": "KWT",
+     "latest": false,
+     "t": "1.5",
+     "v": "1.53846153846154"
+    },
+    {
+     "from": "",
+     "id": "OMN",
+     "latest": false,
+     "t": "2.3",
+     "v": "2.32558139534884"
+    },
+    {
+     "from": "",
+     "id": "NGA",
+     "latest": false,
+     "t": "3.6",
+     "v": "3.61111111111111"
+    },
+    {
+     "from": "",
+     "id": "LBN",
+     "latest": false,
+     "t": "4.7",
+     "v": "4.6875"
+    },
+    {
+     "from": "",
+     "id": "LKA",
+     "latest": false,
+     "t": "5.4",
+     "v": "5.38116591928251"
+    },
+    {
+     "from": "",
+     "id": "IRN",
+     "latest": false,
+     "t": "5.6",
+     "v": "5.59440559440559"
+    },
+    {
+     "from": "",
+     "id": "BFA",
+     "latest": false,
+     "t": "6.3",
+     "v": "6.2992125984252"
+    },
+    {
+     "from": "",
+     "id": "DZA",
+     "latest": false,
+     "t": "8.1",
+     "v": "8.10810810810811"
+    },
+    {
+     "from": "",
+     "id": "BEN",
+     "latest": false,
+     "t": "8.4",
+     "v": "8.43373493975904"
+    },
+    {
+     "from": "",
+     "id": "JPN",
+     "latest": false,
+     "t": "9.7",
+     "v": "9.67741935483871"
+    }
+   ],
+   "ranks": {
+    "bottom": [
+     {
+      "id": "KWT",
+      "v": "1.53846153846154"
+     },
+     {
+      "id": "OMN",
+      "v": "2.32558139534884"
+     },
+     {
+      "id": "NGA",
+      "v": "3.61111111111111"
+     },
+     {
+      "id": "LBN",
+      "v": "4.6875"
+     },
+     {
+      "id": "LKA",
+      "v": "5.38116591928251"
+     },
+     {
+      "id": "IRN",
+      "v": "5.59440559440559"
+     },
+     {
+      "id": "BFA",
+      "v": "6.2992125984252"
+     },
+     {
+      "id": "DZA",
+      "v": "8.10810810810811"
+     },
+     {
+      "id": "BEN",
+      "v": "8.43373493975904"
+     },
+     {
+      "id": "JPN",
+      "v": "9.67741935483871"
+     },
+     {
+      "id": "LBR",
+      "v": "10.958904109589"
+     },
+     {
+      "id": "SYR",
+      "v": "11.2"
+     },
+     {
+      "id": "COG",
+      "v": "11.2582781456954"
+     },
+     {
+      "id": "JOR",
+      "v": "11.5384615384615"
+     },
+     {
+      "id": "SLE",
+      "v": "12.3287671232877"
+     },
+     {
+      "id": "COD",
+      "v": "12.8"
+     },
+     {
+      "id": "CAF",
+      "v": "12.8571428571429"
+     },
+     {
+      "id": "HUN",
+      "v": "13.0653266331658"
+     },
+     {
+      "id": "CIV",
+      "v": "14.1732283464567"
+     },
+     {
+      "id": "IND",
+      "v": "14.4444444444444"
+     }
+    ],
+    "top": [
+     {
+      "id": "RWA",
+      "v": "61.25"
+     },
+     {
+      "id": "CUB",
+      "v": "53.4129692832764"
+     },
+     {
+      "id": "NIC",
+      "v": "50.5494505494505"
+     },
+     {
+      "id": "MEX",
+      "v": "50"
+     },
+     {
+      "id": "ARE",
+      "v": "50"
+     },
+     {
+      "id": "NZL",
+      "v": "49.1666666666667"
+     },
+     {
+      "id": "SWE",
+      "v": "46.9914040114613"
+     },
+     {
+      "id": "ZAF",
+      "v": "46.5822784810127"
+     },
+     {
+      "id": "BOL",
+      "v": "46.1538461538462"
+     },
+     {
+      "id": "FIN",
+      "v": "46"
+     },
+     {
+      "id": "CRI",
+      "v": "45.6140350877193"
+     },
+     {
+      "id": "NOR",
+      "v": "44.9704142011834"
+     },
+     {
+      "id": "ARG",
+      "v": "44.7470817120623"
+     },
+     {
+      "id": "ESP",
+      "v": "43.4285714285714"
+     },
+     {
+      "id": "SEN",
+      "v": "43.030303030303"
+     },
+     {
+      "id": "ETH",
+      "v": "42.5882352941177"
+     },
+     {
+      "id": "CHE",
+      "v": "42.5"
+     },
+     {
+      "id": "MOZ",
+      "v": "42.4"
+     },
+     {
+      "id": "BEL",
+      "v": "42"
+     },
+     {
+      "id": "AUT",
+      "v": "40.4371584699454"
+     }
+    ]
+   },
+   "top": [
+    {
+     "from": "",
+     "id": "RWA",
+     "latest": false,
+     "t": "61.3",
+     "v": "61.25"
+    },
+    {
+     "from": "",
+     "id": "CUB",
+     "latest": false,
+     "t": "53.4",
+     "v": "53.4129692832764"
+    },
+    {
+     "from": "",
+     "id": "NIC",
+     "latest": false,
+     "t": "50.5",
+     "v": "50.5494505494505"
+    },
+    {
+     "from": "",
+     "id": "MEX",
+     "latest": false,
+     "t": "50.0",
+     "v": "50"
+    },
+    {
+     "from": "",
+     "id": "ARE",
+     "latest": false,
+     "t": "50.0",
+     "v": "50"
+    },
+    {
+     "from": "",
+     "id": "NZL",
+     "latest": false,
+     "t": "49.2",
+     "v": "49.1666666666667"
+    },
+    {
+     "from": "",
+     "id": "SWE",
+     "latest": false,
+     "t": "47.0",
+     "v": "46.9914040114613"
+    },
+    {
+     "from": "",
+     "id": "ZAF",
+     "latest": false,
+     "t": "46.6",
+     "v": "46.5822784810127"
+    },
+    {
+     "from": "",
+     "id": "BOL",
+     "latest": false,
+     "t": "46.2",
+     "v": "46.1538461538462"
+    },
+    {
+     "from": "",
+     "id": "FIN",
+     "latest": false,
+     "t": "46.0",
+     "v": "46"
+    }
+   ],
+   "year": 2021,
+   "zero": [
+    "PNG",
+    "YEM"
+   ]
+  },
+  {
+   "bottom": [
+    {
+     "from": "",
+     "id": "PNG",
+     "latest": false,
+     "t": "1.7",
+     "v": "1.73913043478261"
+    },
+    {
+     "from": "",
+     "id": "OMN",
+     "latest": false,
+     "t": "2.3",
+     "v": "2.32558139534884"
+    },
+    {
+     "from": "",
+     "id": "NGA",
+     "latest": false,
+     "t": "3.6",
+     "v": "3.61111111111111"
+    },
+    {
+     "from": "",
+     "id": "LKA",
+     "latest": false,
+     "t": "5.3",
+     "v": "5.33333333333333"
+    },
+    {
+     "from": "",
+     "id": "IRN",
+     "latest": false,
+     "t": "5.6",
+     "v": "5.59440559440559"
+    },
+    {
+     "from": "",
+     "id": "KWT",
+     "latest": false,
+     "t": "6.3",
+     "v": "6.25"
+    },
+    {
+     "from": "",
+     "id": "LBN",
+     "latest": false,
+     "t": "6.3",
+     "v": "6.25"
+    },
+    {
+     "from": "",
+     "id": "BEN",
+     "latest": false,
+     "t": "7.4",
+     "v": "7.40740740740741"
+    },
+    {
+     "from": "",
+     "id": "DZA",
+     "latest": false,
+     "t": "8.1",
+     "v": "8.10810810810811"
+    },
+    {
+     "from": "",
+     "id": "JPN",
+     "latest": false,
+     "t": "9.9",
+     "v": "9.91379310344828"
+    }
+   ],
+   "ranks": {
+    "bottom": [
+     {
+      "id": "PNG",
+      "v": "1.73913043478261"
+     },
+     {
+      "id": "OMN",
+      "v": "2.32558139534884"
+     },
+     {
+      "id": "NGA",
+      "v": "3.61111111111111"
+     },
+     {
+      "id": "LKA",
+      "v": "5.33333333333333"
+     },
+     {
+      "id": "IRN",
+      "v": "5.59440559440559"
+     },
+     {
+      "id": "KWT",
+      "v": "6.25"
+     },
+     {
+      "id": "LBN",
+      "v": "6.25"
+     },
+     {
+      "id": "BEN",
+      "v": "7.40740740740741"
+     },
+     {
+      "id": "DZA",
+      "v": "8.10810810810811"
+     },
+     {
+      "id": "JPN",
+      "v": "9.91379310344828"
+     },
+     {
+      "id": "LBR",
+      "v": "10.958904109589"
+     },
+     {
+      "id": "SYR",
+      "v": "11.2"
+     },
+     {
+      "id": "JOR",
+      "v": "12.3076923076923"
+     },
+     {
+      "id": "SLE",
+      "v": "12.3287671232877"
+     },
+     {
+      "id": "COD",
+      "v": "12.8"
+     },
+     {
+      "id": "CAF",
+      "v": "12.8571428571429"
+     },
+     {
+      "id": "MYS",
+      "v": "13.5746606334842"
+     },
+     {
+      "id": "HUN",
+      "v": "14.070351758794"
+     },
+     {
+      "id": "CIV",
+      "v": "14.1732283464567"
+     },
+     {
+      "id": "GHA",
+      "v": "14.5454545454545"
+     }
+    ],
+    "top": [
+     {
+      "id": "RWA",
+      "v": "61.25"
+     },
+     {
+      "id": "CUB",
+      "v": "53.4129692832764"
+     },
+     {
+      "id": "NIC",
+      "v": "51.6483516483517"
+     },
+     {
+      "id": "NZL",
+      "v": "50.4201680672269"
+     },
+     {
+      "id": "MEX",
+      "v": "50"
+     },
+     {
+      "id": "ARE",
+      "v": "50"
+     },
+     {
+      "id": "CRI",
+      "v": "47.3684210526316"
+     },
+     {
+      "id": "ZAF",
+      "v": "46.5"
+     },
+     {
+      "id": "SWE",
+      "v": "46.4183381088825"
+     },
+     {
+      "id": "BOL",
+      "v": "46.1538461538462"
+     },
+     {
+      "id": "FIN",
+      "v": "45.5"
+     },
+     {
+      "id": "NOR",
+      "v": "44.9704142011834"
+     },
+     {
+      "id": "ARG",
+      "v": "44.7470817120623"
+     },
+     {
+      "id": "SEN",
+      "v": "44.2424242424242"
+     },
+     {
+      "id": "DNK",
+      "v": "43.5754189944134"
+     },
+     {
+      "id": "ESP",
+      "v": "42.9799426934097"
+     },
+     {
+      "id": "BEL",
+      "v": "42.6666666666667"
+     },
+     {
+      "id": "MOZ",
+      "v": "42.4"
+     },
+     {
+      "id": "CHE",
+      "v": "41.5"
+     },
+     {
+      "id": "ETH",
+      "v": "41.4893617021277"
+     }
+    ]
+   },
+   "top": [
+    {
+     "from": "",
+     "id": "RWA",
+     "latest": false,
+     "t": "61.3",
+     "v": "61.25"
+    },
+    {
+     "from": "",
+     "id": "CUB",
+     "latest": false,
+     "t": "53.4",
+     "v": "53.4129692832764"
+    },
+    {
+     "from": "",
+     "id": "NIC",
+     "latest": false,
+     "t": "51.6",
+     "v": "51.6483516483517"
+    },
+    {
+     "from": "",
+     "id": "NZL",
+     "latest": false,
+     "t": "50.4",
+     "v": "50.4201680672269"
+    },
+    {
+     "from": "",
+     "id": "MEX",
+     "latest": false,
+     "t": "50.0",
+     "v": "50"
+    },
+    {
+     "from": "",
+     "id": "ARE",
+     "latest": false,
+     "t": "50.0",
+     "v": "50"
+    },
+    {
+     "from": "",
+     "id": "CRI",
+     "latest": false,
+     "t": "47.4",
+     "v": "47.3684210526316"
+    },
+    {
+     "from": "",
+     "id": "ZAF",
+     "latest": false,
+     "t": "46.5",
+     "v": "46.5"
+    },
+    {
+     "from": "",
+     "id": "SWE",
+     "latest": false,
+     "t": "46.4",
+     "v": "46.4183381088825"
+    },
+    {
+     "from": "",
+     "id": "BOL",
+     "latest": false,
+     "t": "46.2",
+     "v": "46.1538461538462"
+    }
+   ],
+   "year": 2022,
+   "zero": [
+    "YEM"
+   ]
+  },
+  {
+   "bottom": [
+    {
+     "from": "",
+     "id": "PNG",
+     "latest": false,
+     "t": "2.7",
+     "v": "2.7027027027027"
+    },
+    {
+     "from": "",
+     "id": "KWT",
+     "latest": false,
+     "t": "3.1",
+     "v": "3.07692307692308"
+    },
+    {
+     "from": "",
+     "id": "NGA",
+     "latest": false,
+     "t": "3.9",
+     "v": "3.91061452513966"
+    },
+    {
+     "from": "",
+     "id": "LKA",
+     "latest": false,
+     "t": "5.3",
+     "v": "5.33333333333333"
+    },
+    {
+     "from": "",
+     "id": "IRN",
+     "latest": false,
+     "t": "5.6",
+     "v": "5.59440559440559"
+    },
+    {
+     "from": "",
+     "id": "LBN",
+     "latest": false,
+     "t": "6.3",
+     "v": "6.25"
+    },
+    {
+     "from": "",
+     "id": "DZA",
+     "latest": false,
+     "t": "7.9",
+     "v": "7.86240786240786"
+    },
+    {
+     "from": "",
+     "id": "JPN",
+     "latest": false,
+     "t": "10.3",
+     "v": "10.3448275862069"
+    },
+    {
+     "from": "",
+     "id": "SYR",
+     "latest": false,
+     "t": "10.8",
+     "v": "10.8"
+    },
+    {
+     "from": "",
+     "id": "LBR",
+     "latest": false,
+     "t": "11.0",
+     "v": "10.958904109589"
+    }
+   ],
+   "ranks": {
+    "bottom": [
+     {
+      "id": "PNG",
+      "v": "2.7027027027027"
+     },
+     {
+      "id": "KWT",
+      "v": "3.07692307692308"
+     },
+     {
+      "id": "NGA",
+      "v": "3.91061452513966"
+     },
+     {
+      "id": "LKA",
+      "v": "5.33333333333333"
+     },
+     {
+      "id": "IRN",
+      "v": "5.59440559440559"
+     },
+     {
+      "id": "LBN",
+      "v": "6.25"
+     },
+     {
+      "id": "DZA",
+      "v": "7.86240786240786"
+     },
+     {
+      "id": "JPN",
+      "v": "10.3448275862069"
+     },
+     {
+      "id": "SYR",
+      "v": "10.8"
+     },
+     {
+      "id": "LBR",
+      "v": "10.958904109589"
+     },
+     {
+      "id": "JOR",
+      "v": "12.3076923076923"
+     },
+     {
+      "id": "COD",
+      "v": "12.8"
+     },
+     {
+      "id": "CAF",
+      "v": "12.8571428571429"
+     },
+     {
+      "id": "MYS",
+      "v": "13.5135135135135"
+     },
+     {
+      "id": "KHM",
+      "v": "13.6"
+     },
+     {
+      "id": "CIV",
+      "v": "13.7254901960784"
+     },
+     {
+      "id": "HUN",
+      "v": "14.070351758794"
+     },
+     {
+      "id": "GHA",
+      "v": "14.5454545454545"
+     },
+     {
+      "id": "COG",
+      "v": "14.5695364238411"
+     },
+     {
+      "id": "ZMB",
+      "v": "14.9700598802395"
+     }
+    ],
+    "top": [
+     {
+      "id": "RWA",
+      "v": "61.25"
+     },
+     {
+      "id": "CUB",
+      "v": "55.7446808510638"
+     },
+     {
+      "id": "NIC",
+      "v": "51.6483516483517"
+     },
+     {
+      "id": "MEX",
+      "v": "50"
+     },
+     {
+      "id": "ARE",
+      "v": "50"
+     },
+     {
+      "id": "CRI",
+      "v": "47.3684210526316"
+     },
+     {
+      "id": "SWE",
+      "v": "46.4183381088825"
+     },
+     {
+      "id": "BOL",
+      "v": "46.1538461538462"
+     },
+     {
+      "id": "NOR",
+      "v": "46.1538461538462"
+     },
+     {
+      "id": "SEN",
+      "v": "46.0606060606061"
+     },
+     {
+      "id": "FIN",
+      "v": "46"
+     },
+     {
+      "id": "ZAF",
+      "v": "45.8646616541353"
+     },
+     {
+      "id": "ESP",
+      "v": "44.2857142857143"
+     },
+     {
+      "id": "NZL",
+      "v": "44.2622950819672"
+     },
+     {
+      "id": "DNK",
+      "v": "43.5754189944134"
+     },
+     {
+      "id": "MOZ",
+      "v": "43.2"
+     },
+     {
+      "id": "ARG",
+      "v": "43.1906614785992"
+     },
+     {
+      "id": "ECU",
+      "v": "43.0656934306569"
+     },
+     {
+      "id": "BEL",
+      "v": "42.6666666666667"
+     },
+     {
+      "id": "ETH",
+      "v": "41.3135593220339"
+     }
+    ]
+   },
+   "top": [
+    {
+     "from": "",
+     "id": "RWA",
+     "latest": false,
+     "t": "61.3",
+     "v": "61.25"
+    },
+    {
+     "from": "",
+     "id": "CUB",
+     "latest": false,
+     "t": "55.7",
+     "v": "55.7446808510638"
+    },
+    {
+     "from": "",
+     "id": "NIC",
+     "latest": false,
+     "t": "51.6",
+     "v": "51.6483516483517"
+    },
+    {
+     "from": "",
+     "id": "MEX",
+     "latest": false,
+     "t": "50.0",
+     "v": "50"
+    },
+    {
+     "from": "",
+     "id": "ARE",
+     "latest": false,
+     "t": "50.0",
+     "v": "50"
+    },
+    {
+     "from": "",
+     "id": "CRI",
+     "latest": false,
+     "t": "47.4",
+     "v": "47.3684210526316"
+    },
+    {
+     "from": "",
+     "id": "SWE",
+     "latest": false,
+     "t": "46.4",
+     "v": "46.4183381088825"
+    },
+    {
+     "from": "",
+     "id": "BOL",
+     "latest": false,
+     "t": "46.2",
+     "v": "46.1538461538462"
+    },
+    {
+     "from": "",
+     "id": "NOR",
+     "latest": false,
+     "t": "46.2",
+     "v": "46.1538461538462"
+    },
+    {
+     "from": "",
+     "id": "SEN",
+     "latest": false,
+     "t": "46.1",
+     "v": "46.0606060606061"
+    }
+   ],
+   "year": 2023,
+   "zero": [
+    "OMN",
+    "YEM"
+   ]
+  },
+  {
+   "bottom": [
+    {
+     "from": "",
+     "id": "PNG",
+     "latest": false,
+     "t": "2.7",
+     "v": "2.7027027027027"
+    },
+    {
+     "from": "",
+     "id": "NGA",
+     "latest": false,
+     "t": "3.9",
+     "v": "3.91061452513966"
+    },
+    {
+     "from": "",
+     "id": "IRN",
+     "latest": false,
+     "t": "4.8",
+     "v": "4.82758620689655"
+    },
+    {
+     "from": "",
+     "id": "LBN",
+     "latest": false,
+     "t": "6.3",
+     "v": "6.25"
+    },
+    {
+     "from": "",
+     "id": "DZA",
+     "latest": false,
+     "t": "7.9",
+     "v": "7.86240786240786"
+    },
+    {
+     "from": "",
+     "id": "SYR",
+     "latest": false,
+     "t": "9.6",
+     "v": "9.6"
+    },
+    {
+     "from": "",
+     "id": "LKA",
+     "latest": false,
+     "t": "10.0",
+     "v": "10"
+    },
+    {
+     "from": "",
+     "id": "LBR",
+     "latest": false,
+     "t": "11.0",
+     "v": "10.958904109589"
+    },
+    {
+     "from": "",
+     "id": "CAF",
+     "latest": false,
+     "t": "11.4",
+     "v": "11.4285714285714"
+    },
+    {
+     "from": "",
+     "id": "COD",
+     "latest": false,
+     "t": "13.0",
+     "v": "12.9979035639413"
+    }
+   ],
+   "ranks": {
+    "bottom": [
+     {
+      "id": "PNG",
+      "v": "2.7027027027027"
+     },
+     {
+      "id": "NGA",
+      "v": "3.91061452513966"
+     },
+     {
+      "id": "IRN",
+      "v": "4.82758620689655"
+     },
+     {
+      "id": "LBN",
+      "v": "6.25"
+     },
+     {
+      "id": "DZA",
+      "v": "7.86240786240786"
+     },
+     {
+      "id": "SYR",
+      "v": "9.6"
+     },
+     {
+      "id": "LKA",
+      "v": "10"
+     },
+     {
+      "id": "LBR",
+      "v": "10.958904109589"
+     },
+     {
+      "id": "CAF",
+      "v": "11.4285714285714"
+     },
+     {
+      "id": "COD",
+      "v": "12.9979035639413"
+     },
+     {
+      "id": "CIV",
+      "v": "13.3858267716535"
+     },
+     {
+      "id": "MYS",
+      "v": "13.5135135135135"
+     },
+     {
+      "id": "KHM",
+      "v": "13.6"
+     },
+     {
+      "id": "IND",
+      "v": "13.6531365313653"
+     },
+     {
+      "id": "GHA",
+      "v": "14.5454545454545"
+     },
+     {
+      "id": "COG",
+      "v": "14.5695364238411"
+     },
+     {
+      "id": "HUN",
+      "v": "14.572864321608"
+     },
+     {
+      "id": "ZMB",
+      "v": "14.9700598802395"
+     },
+     {
+      "id": "TUN",
+      "v": "15.6862745098039"
+     },
+     {
+      "id": "JPN",
+      "v": "15.6989247311828"
+     }
+    ],
+    "top": [
+     {
+      "id": "RWA",
+      "v": "63.75"
+     },
+     {
+      "id": "CUB",
+      "v": "55.7446808510638"
+     },
+     {
+      "id": "NIC",
+      "v": "53.8461538461538"
+     },
+     {
+      "id": "MEX",
+      "v": "50.2"
+     },
+     {
+      "id": "ARE",
+      "v": "50"
+     },
+     {
+      "id": "CRI",
+      "v": "49.1228070175439"
+     },
+     {
+      "id": "SWE",
+      "v": "46.7048710601719"
+     },
+     {
+      "id": "BOL",
+      "v": "46.1538461538462"
+     },
+     {
+      "id": "FIN",
+      "v": "46"
+     },
+     {
+      "id": "NZL",
+      "v": "45.5284552845528"
+     },
+     {
+      "id": "DNK",
+      "v": "45.2513966480447"
+     },
+     {
+      "id": "ZAF",
+      "v": "44.702842377261"
+     },
+     {
+      "id": "NOR",
+      "v": "44.3786982248521"
+     },
+     {
+      "id": "ESP",
+      "v": "44.2857142857143"
+     },
+     {
+      "id": "ECU",
+      "v": "43.0656934306569"
+     },
+     {
+      "id": "ARG",
+      "v": "42.4124513618677"
+     },
+     {
+      "id": "BEL",
+      "v": "41.3333333333333"
+     },
+     {
+      "id": "ETH",
+      "v": "41.3135593220339"
+     },
+     {
+      "id": "SEN",
+      "v": "41.2121212121212"
+     },
+     {
+      "id": "GBR",
+      "v": "40.4615384615385"
+     }
+    ]
+   },
+   "top": [
+    {
+     "from": "",
+     "id": "RWA",
+     "latest": false,
+     "t": "63.8",
+     "v": "63.75"
+    },
+    {
+     "from": "",
+     "id": "CUB",
+     "latest": false,
+     "t": "55.7",
+     "v": "55.7446808510638"
+    },
+    {
+     "from": "",
+     "id": "NIC",
+     "latest": false,
+     "t": "53.8",
+     "v": "53.8461538461538"
+    },
+    {
+     "from": "",
+     "id": "MEX",
+     "latest": false,
+     "t": "50.2",
+     "v": "50.2"
+    },
+    {
+     "from": "",
+     "id": "ARE",
+     "latest": false,
+     "t": "50.0",
+     "v": "50"
+    },
+    {
+     "from": "",
+     "id": "CRI",
+     "latest": false,
+     "t": "49.1",
+     "v": "49.1228070175439"
+    },
+    {
+     "from": "",
+     "id": "SWE",
+     "latest": false,
+     "t": "46.7",
+     "v": "46.7048710601719"
+    },
+    {
+     "from": "",
+     "id": "BOL",
+     "latest": false,
+     "t": "46.2",
+     "v": "46.1538461538462"
+    },
+    {
+     "from": "",
+     "id": "FIN",
+     "latest": false,
+     "t": "46.0",
+     "v": "46"
+    },
+    {
+     "from": "",
+     "id": "NZL",
+     "latest": false,
+     "t": "45.5",
+     "v": "45.5284552845528"
+    }
+   ],
+   "year": 2024,
+   "zero": [
+    "OMN",
+    "YEM"
+   ]
+  },
+  {
+   "bottom": [
+    {
+     "from": "",
+     "id": "PNG",
+     "latest": false,
+     "t": "2.7",
+     "v": "2.7027027027027"
+    },
+    {
+     "from": "",
+     "id": "NGA",
+     "latest": false,
+     "t": "4.2",
+     "v": "4.21348314606742"
+    },
+    {
+     "from": "",
+     "id": "IRN",
+     "latest": false,
+     "t": "4.9",
+     "v": "4.91228070175439"
+    },
+    {
+     "from": "",
+     "id": "SYR",
+     "latest": false,
+     "t": "4.9",
+     "v": "4.91803278688525"
+    },
+    {
+     "from": "",
+     "id": "LBN",
+     "latest": false,
+     "t": "6.3",
+     "v": "6.25"
+    },
+    {
+     "from": "",
+     "id": "DZA",
+     "latest": false,
+     "t": "7.9",
+     "v": "7.86240786240786"
+    },
+    {
+     "from": "",
+     "id": "LKA",
+     "latest": false,
+     "t": "9.8",
+     "v": "9.77777777777778"
+    },
+    {
+     "from": "",
+     "id": "LBR",
+     "latest": false,
+     "t": "11.0",
+     "v": "10.958904109589"
+    },
+    {
+     "from": "",
+     "id": "CAF",
+     "latest": false,
+     "t": "11.4",
+     "v": "11.4285714285714"
+    },
+    {
+     "from": "",
+     "id": "COD",
+     "latest": false,
+     "t": "12.8",
+     "v": "12.8"
+    }
+   ],
+   "ranks": {
+    "bottom": [
+     {
+      "id": "PNG",
+      "v": "2.7027027027027"
+     },
+     {
+      "id": "NGA",
+      "v": "4.21348314606742"
+     },
+     {
+      "id": "IRN",
+      "v": "4.91228070175439"
+     },
+     {
+      "id": "SYR",
+      "v": "4.91803278688525"
+     },
+     {
+      "id": "LBN",
+      "v": "6.25"
+     },
+     {
+      "id": "DZA",
+      "v": "7.86240786240786"
+     },
+     {
+      "id": "LKA",
+      "v": "9.77777777777778"
+     },
+     {
+      "id": "LBR",
+      "v": "10.958904109589"
+     },
+     {
+      "id": "CAF",
+      "v": "11.4285714285714"
+     },
+     {
+      "id": "COD",
+      "v": "12.8"
+     },
+     {
+      "id": "CIV",
+      "v": "13.3858267716535"
+     },
+     {
+      "id": "MYS",
+      "v": "13.5135135135135"
+     },
+     {
+      "id": "KHM",
+      "v": "13.6"
+     },
+     {
+      "id": "IND",
+      "v": "13.7867647058824"
+     },
+     {
+      "id": "MDG",
+      "v": "14.1104294478528"
+     },
+     {
+      "id": "GHA",
+      "v": "14.5454545454545"
+     },
+     {
+      "id": "COG",
+      "v": "14.5695364238411"
+     },
+     {
+      "id": "ZMB",
+      "v": "14.9700598802395"
+     },
+     {
+      "id": "TGO",
+      "v": "15.0442477876106"
+     },
+     {
+      "id": "HUN",
+      "v": "15.5778894472362"
+     }
+    ],
+    "top": [
+     {
+      "id": "RWA",
+      "v": "63.75"
+     },
+     {
+      "id": "CUB",
+      "v": "55.7446808510638"
+     },
+     {
+      "id": "NIC",
+      "v": "54.9450549450549"
+     },
+     {
+      "id": "BOL",
+      "v": "50.7692307692308"
+     },
+     {
+      "id": "MEX",
+      "v": "50.2"
+     },
+     {
+      "id": "ARE",
+      "v": "50"
+     },
+     {
+      "id": "CRI",
+      "v": "49.1228070175439"
+     },
+     {
+      "id": "AUS",
+      "v": "46"
+     },
+     {
+      "id": "NZL",
+      "v": "45.5284552845528"
+     },
+     {
+      "id": "FIN",
+      "v": "45.5"
+     },
+     {
+      "id": "ECU",
+      "v": "45.0331125827815"
+     },
+     {
+      "id": "SWE",
+      "v": "44.9856733524355"
+     },
+     {
+      "id": "ZAF",
+      "v": "44.8621553884712"
+     },
+     {
+      "id": "ESP",
+      "v": "44.2857142857143"
+     },
+     {
+      "id": "DNK",
+      "v": "43.5754189944134"
+     },
+     {
+      "id": "NLD",
+      "v": "43.3333333333333"
+     },
+     {
+      "id": "ETH",
+      "v": "41.9087136929461"
+     },
+     {
+      "id": "PER",
+      "v": "41.5384615384615"
+     },
+     {
+      "id": "BEL",
+      "v": "41.3333333333333"
+     },
+     {
+      "id": "ARG",
+      "v": "41.2451361867704"
+     }
+    ]
+   },
+   "top": [
+    {
+     "from": "",
+     "id": "RWA",
+     "latest": false,
+     "t": "63.8",
+     "v": "63.75"
+    },
+    {
+     "from": "",
+     "id": "CUB",
+     "latest": false,
+     "t": "55.7",
+     "v": "55.7446808510638"
+    },
+    {
+     "from": "",
+     "id": "NIC",
+     "latest": false,
+     "t": "54.9",
+     "v": "54.9450549450549"
+    },
+    {
+     "from": "",
+     "id": "BOL",
+     "latest": false,
+     "t": "50.8",
+     "v": "50.7692307692308"
+    },
+    {
+     "from": "",
+     "id": "MEX",
+     "latest": false,
+     "t": "50.2",
+     "v": "50.2"
+    },
+    {
+     "from": "",
+     "id": "ARE",
+     "latest": false,
+     "t": "50.0",
+     "v": "50"
+    },
+    {
+     "from": "",
+     "id": "CRI",
+     "latest": false,
+     "t": "49.1",
+     "v": "49.1228070175439"
+    },
+    {
+     "from": "",
+     "id": "AUS",
+     "latest": false,
+     "t": "46.0",
+     "v": "46"
+    },
+    {
+     "from": "",
+     "id": "NZL",
+     "latest": false,
+     "t": "45.5",
+     "v": "45.5284552845528"
+    },
+    {
+     "from": "",
+     "id": "FIN",
+     "latest": false,
+     "t": "45.5",
+     "v": "45.5"
+    }
+   ],
+   "year": 2025,
+   "zero": [
+    "OMN",
+    "YEM"
+   ]
+  }
+ ],
+ "kind": "split_share",
+ "leaves": [
+  {
+   "board": "bottom",
+   "id": "HTI",
+   "note": "No sitting parliament: deputies' terms expired Jan 2020",
+   "rank": 3,
+   "returns": null,
+   "year": 2020
+  },
+  {
+   "board": "bottom",
+   "id": "KWT",
+   "note": "No sitting parliament: dissolved by the Emir, May 2024",
+   "rank": 2,
+   "returns": null,
+   "year": 2024
+  },
+  {
+   "board": "bottom",
+   "id": "PAK",
+   "note": "No figure 1999–2001",
+   "rank": 9,
+   "returns": 2002,
+   "year": 1999
+  },
+  {
+   "board": "bottom",
+   "id": "EGY",
+   "note": "No figure 2013–2015",
+   "rank": 3,
+   "returns": 2016,
+   "year": 2013
+  }
+ ],
+ "source": "data/rtt-104 (scripts/build_rtt104_dataset.py); written by scripts/rtt104_player_input.py",
+ "unit": "percent",
+ "world": [
+  {
+   "t": "11.7",
+   "v": "11.6921710616204",
+   "year": 1997
+  },
+  {
+   "t": "13.1",
+   "v": "13.0708222318607",
+   "year": 1998
+  },
+  {
+   "t": "13.5",
+   "v": "13.520105471325",
+   "year": 1999
+  },
+  {
+   "t": "13.9",
+   "v": "13.9044395261034",
+   "year": 2000
+  },
+  {
+   "t": "14.1",
+   "v": "14.0907008703619",
+   "year": 2001
+  },
+  {
+   "t": "15.2",
+   "v": "15.1974459115988",
+   "year": 2002
+  },
+  {
+   "t": "15.2",
+   "v": "15.1792072157607",
+   "year": 2003
+  },
+  {
+   "t": "15.9",
+   "v": "15.897000565931",
+   "year": 2004
+  },
+  {
+   "t": "16.5",
+   "v": "16.4745450107136",
+   "year": 2005
+  },
+  {
+   "t": "17.0",
+   "v": "16.9696642264783",
+   "year": 2006
+  },
+  {
+   "t": "17.9",
+   "v": "17.8692023015208",
+   "year": 2007
+  },
+  {
+   "t": "18.4",
+   "v": "18.4427546321088",
+   "year": 2008
+  },
+  {
+   "t": "19.0",
+   "v": "19.0250865737926",
+   "year": 2009
+  },
+  {
+   "t": "19.2",
+   "v": "19.1570378151261",
+   "year": 2010
+  },
+  {
+   "t": "19.8",
+   "v": "19.8277667259973",
+   "year": 2011
+  },
+  {
+   "t": "20.8",
+   "v": "20.7552042977426",
+   "year": 2012
+  },
+  {
+   "t": "21.8",
+   "v": "21.7774474410703",
+   "year": 2013
+  },
+  {
+   "t": "22.2",
+   "v": "22.1882965165675",
+   "year": 2014
+  },
+  {
+   "t": "22.8",
+   "v": "22.8492991579336",
+   "year": 2015
+  },
+  {
+   "t": "23.1",
+   "v": "23.0913674246322",
+   "year": 2016
+  },
+  {
+   "t": "23.6",
+   "v": "23.5903366743768",
+   "year": 2017
+  },
+  {
+   "t": "24.1",
+   "v": "24.0978782716432",
+   "year": 2018
+  },
+  {
+   "t": "24.6",
+   "v": "24.6366036865178",
+   "year": 2019
+  },
+  {
+   "t": "25.6",
+   "v": "25.5804311774461",
+   "year": 2020
+  },
+  {
+   "t": "26.1",
+   "v": "26.1284632146934",
+   "year": 2021
+  },
+  {
+   "t": "26.5",
+   "v": "26.4676194017957",
+   "year": 2022
+  },
+  {
+   "t": "26.7",
+   "v": "26.7357485206308",
+   "year": 2023
+  },
+  {
+   "t": "27.0",
+   "v": "27.0344977100892",
+   "year": 2024
+  },
+  {
+   "t": "27.2",
+   "v": "27.2485552269582",
+   "year": 2025
+  }
+ ],
+ "years": [
+  1997,
+  1998,
+  1999,
+  2000,
+  2001,
+  2002,
+  2003,
+  2004,
+  2005,
+  2006,
+  2007,
+  2008,
+  2009,
+  2010,
+  2011,
+  2012,
+  2013,
+  2014,
+  2015,
+  2016,
+  2017,
+  2018,
+  2019,
+  2020,
+  2021,
+  2022,
+  2023,
+  2024,
+  2025
+ ]
+}

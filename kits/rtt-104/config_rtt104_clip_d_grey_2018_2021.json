@@ -1,0 +1,12 @@
+{
+ "extends": "config_rtt104_d_grey.json",
+ "window": {
+  "from": 2018,
+  "to": 2021
+ },
+ "notes": "Clip, option d-B: Haiti's bar greys with the note for one beat, then shrinks away. 2 s per year.",
+ "closing_card": {
+  "enabled": false
+ },
+ "final_hold_sec": 1.0
+}

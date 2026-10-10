@@ -138,6 +138,29 @@ t("known: Sweden leads 1997-2002, Rwanda 2003-2025",
 t("known: Rwanda 2003 = 48.75, UAE 2019 = 50, Saudi Arabia 2013 = 19.8675496688742",
   rawv[("RWA", 2003)] == "48.75" and rawv[("ARE", 2019)] == "50" and rawv[("SAU", 2013)] == "19.8675496688742")
 
+# 8 IQ-22: the player input (kits/rtt-104/race_rtt104.json) is rebuilt identically from the data, and every board value in it
+#   is the data's own text
+tmp = tempfile.mkdtemp()
+try:
+    subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "rtt104_player_input.py"), DATA, os.path.join(tmp, "r.json"),
+                    os.path.join(tmp, "h.txt")], capture_output=True, check=True)
+    kit = os.path.join(ROOT, "kits", "rtt-104")
+    t("player input rebuilt identically (race_rtt104.json, flags.csv, dataset_hashes.txt)",
+      filecmp.cmp(os.path.join(tmp, "r.json"), os.path.join(kit, "race_rtt104.json"), shallow=False)
+      and filecmp.cmp(os.path.join(tmp, "flags.csv"), os.path.join(kit, "flags.csv"), shallow=False)
+      and open(os.path.join(tmp, "h.txt")).read().split("output")[0] == open(os.path.join(kit, "dataset_hashes.txt")).read().split("output")[0])
+    race = json.load(open(os.path.join(kit, "race_rtt104.json"), encoding="utf-8"))
+    bad = [(f["year"], k, b["id"]) for f in race["frames"] for k in ("top", "bottom") for b in f[k]
+           if not any(r["iso3"] == b["id"] and int(r["year"]) == f["year"] and r["board"] == k and r["value"] == b["v"]
+                      and r["value_1dp"] == b["t"] for r in boards)]
+    t("every player-input board value equals boards.csv", not bad, str(bad[:3]))
+    notes = rows(os.path.join("source", "leave_notes.csv"))
+    t("leave notes only for countries on a board the year before with no figure that year",
+      all(any(b["iso3"] == n["iso3"] and int(b["year"]) == int(n["leaves_in"]) - 1 for b in boards)
+          and (n["iso3"], int(n["leaves_in"])) not in rawv for n in notes))
+finally:
+    shutil.rmtree(tmp)
+
 passed = sum(1 for _, ok, _ in results if ok)
 for name, ok, detail in results:
     print(f"{'PASS' if ok else 'FAIL'}  {name}" + (f"  ({detail})" if detail and not ok else ""))

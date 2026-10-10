@@ -1,0 +1,141 @@
+# Race Through Time - render the RTT-104 Women in Parliament design round 1 (IQ-22): stills, phone copies, sheets and four
+# short clips, 1920 x 1080, no music. NOT a film (DEC-069: nothing new goes into a film before Luke approves it).
+#
+# Its OWN workflow: render_pilot.yml (RTT-002) and the other episodes' workflows are not changed, so nothing here can start
+# another episode's render. This repository is PUBLIC (DEC-006), so this workflow (as rtt001_pilot.yml, DEC-061):
+#   - fetches Luke's logo from the PRIVATE repo marketmarathon/race-through-time-private with the secret
+#     RTT_PRIVATE_TOKEN into $RUNNER_TEMP (outside the checkout), never into the repo, and never prints the secret;
+#   - checks its SHA-256 against kits/rtt-104/assets_sha256.txt and the player input against kits/rtt-104/dataset_hashes.txt
+#     (and rebuilds the input from data/rtt-104 to prove it is current), and stops on any mismatch;
+#   - renders the clips (kits/rtt-104/clips.txt) with NO audio track and the stills (kits/rtt-104/stills.json) with their
+#     phone copies and sheets; every still is checked against data/rtt-104/boards.csv, at phone size and for overlaps
+#     (kits/rtt-104/render_stills.js), and every clip gets the WCAG flash check (tests/player/wcag_flash_rtt003.js);
+#   - saves everything ONLY as one pre-release in the private repo, with every file's SHA-256 in its notes;
+#   - uploads NO workflow artifact, uses NO cache, and deletes the logo, frames and videos at the end.
+# Trigger: a push that changes THIS FILE on the IQ-20/IQ-22 branch, or by hand.
+name: rtt104-pilot
+
+on:
+  push:
+    branches: [claude/nifty-brown-hrl2yi]
+    paths: [.github/workflows/rtt104_pilot.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rtt104-pilot
+  cancel-in-progress: false
+
+env:
+  PRIVATE_REPO: marketmarathon/race-through-time-private
+  PRIVATE_REF: main
+
+jobs:
+  render:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install ffmpeg, the kit and Chromium
+        working-directory: kits/rtt-002
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg > /dev/null
+          ffmpeg -hide_banner -encoders 2>/dev/null | grep -q libx264
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 npm ci
+          npx playwright install --with-deps chromium
+          echo "PW_CHROME=$(node -e "console.log(require('playwright').chromium.executablePath())")" >> "$GITHUB_ENV"
+
+      - name: Check the player input and the frame counts
+        run: |
+          want=$(awk '$2 == "output" {print $1}' kits/rtt-104/dataset_hashes.txt)
+          got=$(sha256sum kits/rtt-104/race_rtt104.json | cut -d' ' -f1)
+          echo "race_rtt104.json $got (dataset_hashes.txt: $want)"; test -n "$want" && test "$got" = "$want"
+          python3 scripts/rtt104_player_input.py data/rtt-104 "$RUNNER_TEMP/race_check.json" "$RUNNER_TEMP/hash_check.txt" > /dev/null
+          test "$(sha256sum "$RUNNER_TEMP/race_check.json" | cut -d' ' -f1)" = "$want"
+          python3 tests/rtt104/run_tests_rtt104.py | tail -1
+          : > "$RUNNER_TEMP/plan.txt"
+          while read -r c; do
+            test -n "$c" || continue
+            f=$(RTT_CONFIG="$c" FRAME_COUNT_ONLY=1 node kits/rtt-104/render_rtt104.js | awk '/^FRAMES/ {print $2}')
+            test -n "$f"; echo "$c $f" | tee -a "$RUNNER_TEMP/plan.txt"
+          done < kits/rtt-104/clips.txt
+          for c in config_rtt104_base.json config_rtt104_i_3s.json; do echo "full film, NOT rendered, $c: $(RTT_CONFIG=$c FRAME_COUNT_ONLY=1 node kits/rtt-104/render_rtt104.js | grep FRAMES)"; done
+
+      - name: Fetch Luke's logo from the private repo and check its hash
+        env:
+          GH_TOKEN: ${{ secrets.RTT_PRIVATE_TOKEN }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then echo "::error::secret RTT_PRIVATE_TOKEN is not available to this run"; exit 1; fi
+          A="$RUNNER_TEMP/rtt_assets"; mkdir -p "$A"
+          : > "$RUNNER_TEMP/check.txt"
+          grep -v '^#' kits/rtt-104/assets_sha256.txt | while read -r sum p; do
+            case "$p" in
+              assets/rtt-002/rtt_logo.png) dst="$A/rtt_logo.png";;
+              *) echo "::error::unexpected path $p"; exit 1;;
+            esac
+            gh api -H 'Accept: application/vnd.github.raw' "repos/$PRIVATE_REPO/contents/$p?ref=$PRIVATE_REF" > "$dst"
+            printf '%s  %s\n' "$sum" "$dst" >> "$RUNNER_TEMP/check.txt"
+          done
+          sha256sum -c --quiet "$RUNNER_TEMP/check.txt"
+          echo "$(wc -l < "$RUNNER_TEMP/check.txt") private file(s) fetched, SHA-256 checked"
+          echo "RTT_LOCAL_ASSETS=$A" >> "$GITHUB_ENV"
+
+      - name: Render the clips (1920 x 1080, no audio), check every video and run the WCAG flash check
+        run: |
+          set -o pipefail
+          O="$RUNNER_TEMP/rtt_out"; mkdir -p "$O"; SHORT=${GITHUB_SHA::7}
+          probe() { ffprobe -v error -select_streams v:0 -count_packets -show_entries stream=width,height,nb_read_packets,r_frame_rate -of csv=p=0 "$1"; }
+          : > "$RUNNER_TEMP/flash.txt"
+          while read -r c FRAMES; do
+            STEM="rtt104_${c#config_rtt104_}"; STEM="${STEM%.json}_${SHORT}_1920x1080"
+            SEG_OUT="$O/$STEM.mp4" RASTER_W=1920 RTT_CONFIG="$c" node kits/rtt-104/render_rtt104.js | tee "$RUNNER_TEMP/render.log"
+            if grep -q 'not found' "$RUNNER_TEMP/render.log"; then echo "::error::the logo was not loaded"; exit 1; fi
+            m=$(probe "$O/$STEM.mp4"); echo "$c: $m"; test "$m" = "1920,1080,30/1,$FRAMES"
+            a=$(ffprobe -v error -select_streams a -show_entries stream=index -of csv=p=0 "$O/$STEM.mp4" | wc -l); test "$a" = 0
+            node tests/player/wcag_flash_rtt003.js "../rtt-104/$c" 2>/dev/null | python3 -c "import sys,json; t=sys.stdin.read(); d=json.loads(t[t.index('{'):]); print('$STEM.mp4: WCAG flash check %s (largest too-often-flashing area in a 10-degree field %d px of %d allowed; red %d)' % ('PASS' if d['pass'] else 'FAIL', d['worst']['fastG']['best'], d['limit_px_10deg'], d['worst']['fastR']['best'])); sys.exit(0 if d['pass'] else 1)" | tee -a "$RUNNER_TEMP/flash.txt"
+          done < "$RUNNER_TEMP/plan.txt"
+
+      - name: Render the stills, phone copies and sheets, with their checks
+        run: |
+          set -o pipefail
+          node kits/rtt-104/render_stills.js "$RUNNER_TEMP/rtt_out" | tee "$RUNNER_TEMP/stills.log"
+          if grep -q 'not found' "$RUNNER_TEMP/stills.log"; then echo "::error::the logo was not loaded"; exit 1; fi
+          ls "$RUNNER_TEMP/rtt_out"/*.png | wc -l
+
+      - name: Save the clips and stills as one pre-release in the private repo
+        env:
+          GH_TOKEN: ${{ secrets.RTT_PRIVATE_TOKEN }}
+        run: |
+          O="$RUNNER_TEMP/rtt_out"; SHORT=${GITHUB_SHA::7}
+          TAG="rtt-104-round1-${SHORT}-run${GITHUB_RUN_NUMBER}"
+          {
+            echo "RTT-104 Women in Parliament, design round 1 (IQ-22): options side by side for Luke to choose from, rendered by GitHub Actions. No music. Not a film."
+            echo
+            echo "- Source: ${GITHUB_REPOSITORY} @ ${GITHUB_SHA} (${GITHUB_REF_NAME}), run ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+            while read -r c FRAMES; do echo "- kits/rtt-104/${c}: ${FRAMES} frames at 30 fps = $(awk -v f="$FRAMES" 'BEGIN {printf "%.1f", f / 30}') s, 1920 x 1080, x264, no audio"; done < "$RUNNER_TEMP/plan.txt"
+            sed 's/^/- /' "$RUNNER_TEMP/flash.txt"
+            echo "- Stills: kits/rtt-104/stills.json, 1920 x 1080 PNG plus the same frame at phone size (390 points wide at 3 device pixels per point); sheet_*.png = options side by side. Every still checked against data/rtt-104/boards.csv, at phone size and for overlaps (tests/rtt104/STILLS_CHECK.md); layout B misses the phone sizes, as reported"
+            echo "- Luke's logo: race-through-time-private ${PRIVATE_REF}, SHA-256 checked against kits/rtt-104/assets_sha256.txt; flags: flag-icons 7.5.0 (MIT)"
+            echo "- File SHA-256:"
+            (cd "$O" && sha256sum *.mp4 *.png | sed 's/^/  - /')
+            echo
+            echo "Private review render. Not for upload or publication. Not the film."
+          } > "$O/notes.md"
+          cat "$O/notes.md"
+          gh release create "$TAG" --repo "$PRIVATE_REPO" --target main --prerelease \
+            --title "RTT-104 design round 1 ${SHORT} (stills and clips)" --notes-file "$O/notes.md" "$O"/*.mp4 "$O"/*.png
+          echo "Release: https://github.com/${PRIVATE_REPO}/releases/tag/${TAG}" | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Delete the logo, frames and videos from the runner
+        if: always()
+        run: rm -rf "$RUNNER_TEMP/rtt_assets" "$RUNNER_TEMP/rtt_out" "$RUNNER_TEMP"/*.log "$RUNNER_TEMP/check.txt"

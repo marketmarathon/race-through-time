@@ -1,0 +1,7 @@
+{
+ "extends": "config_rtt104_base.json",
+ "zero_group": {
+  "style": "count"
+ },
+ "notes": "Option c-3: the 0% group as a bar whose name is the count ('No women: 2 countries'), with flag and name chips after '0%'."
+}

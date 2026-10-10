@@ -1,0 +1,12 @@
+{
+ "extends": "config_rtt104_i_3s.json",
+ "window": {
+  "from": 2001,
+  "to": 2009
+ },
+ "notes": "Clip, pace option i: 2001-2009 at 3 s per year, eased.",
+ "closing_card": {
+  "enabled": false
+ },
+ "final_hold_sec": 1.0
+}

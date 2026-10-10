@@ -1,0 +1,63 @@
+{
+ "episode": "RTT-104",
+ "kit_version": "rtt104_design_round1",
+ "format_version": "RTT-104 split page (kits/rtt-104/player_rtt104.html) through the shared driver's openPlayer (kits/rtt-002/rtt.js)",
+ "renderer_file": "../rtt-104/player_rtt104.html",
+ "race_file": "../rtt-104/race_rtt104.json",
+ "fps": 30,
+ "crf": 18,
+ "preset": "medium",
+ "fonts": {
+  "family": "Archivo"
+ },
+ "flags": {
+  "enabled": true,
+  "csv": "../rtt-104/flags.csv"
+ },
+ "overlays": [
+  {
+   "name": "logo",
+   "file": "rtt_logo.png",
+   "x": 1702,
+   "y": 12,
+   "w": 154,
+   "h": 154
+  }
+ ],
+ "title": "Women in Parliament: Highest vs Lowest (1997–2025)",
+ "measure": "Share of seats held by women · lower or single house",
+ "footer": "Race Through Time · Data: Inter-Parliamentary Union (IPU), via World Bank World Development Indicators (CC BY 4.0)",
+ "layout": "lr",
+ "scale": "shared",
+ "shared_max": 70,
+ "own_max": {
+  "top": 70,
+  "bottom": 15
+ },
+ "colours": {
+  "top": "#2FC4B2",
+  "bottom": "#F0A04B"
+ },
+ "world_panel": true,
+ "zero_group": {
+  "style": "bar"
+ },
+ "leave": {
+  "enabled": true,
+  "style": "fade"
+ },
+ "sec_per_year": 2.0,
+ "move_frac": 0.85,
+ "lead_in_sec": 1.5,
+ "final_hold_sec": 5.0,
+ "note_sec": 1.8,
+ "closing_card": {
+  "enabled": true,
+  "sec": 6.0,
+  "fade_sec": 0.6,
+  "title": "Not included: no sitting parliament",
+  "subtitle": "Countries of 4 million people or more with no figure for 2025"
+ },
+ "notes": "RTT-104 design round 1 (IQ-22). The recommended combination: layout A (left/right), one shared 0-70% scale, flags, the 0% group as a group bar, leave note A (fade), the world panel bottom right, 2 s per year. Every other option is a config that extends this one and changes one key. Nothing here is approved: options for Luke (DEC-069).",
+ "intro_sec": 0
+}

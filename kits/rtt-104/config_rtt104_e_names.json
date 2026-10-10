@@ -1,0 +1,7 @@
+{
+ "extends": "config_rtt104_base.json",
+ "flags": {
+  "enabled": false
+ },
+ "notes": "Option e-B: names only, no flags."
+}
