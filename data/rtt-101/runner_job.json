@@ -1,3 +1,54 @@
 {
-"delay": 1.0
+"delay": 1.5,
+"check": [
+{
+"id": "R6X-01-85GBP",
+"transfer_id": "Tb0972afd54",
+"near": "ampadu",
+"url": "https://www.exetercityfc.co.uk/news/2018/april/ethan-ampadu-tribunal-fee",
+"amount": "850000.00",
+"currency": "GBP",
+"needles": [
+"£850,000"
+]
+},
+{
+"id": "R6X-02-3500GBP",
+"transfer_id": "Td761fa8de6",
+"near": "matic",
+"url": "https://itv.com/news/2017-07-31/man-united-sign-midfielder-matic-from-chelsea",
+"amount": "35000000.00",
+"currency": "GBP",
+"needles": [
+"£35million",
+"£35 million",
+"£35m"
+]
+},
+{
+"id": "R6X-03-600GBP",
+"transfer_id": "T0b9f953de9",
+"near": "evans",
+"url": "https://itv.com/news/2015-08-30/jonny-evans-moves-from-manchester-united-to-west-brom",
+"amount": "6000000.00",
+"currency": "GBP",
+"needles": [
+"£6million",
+"£6 million",
+"£6m"
+]
+},
+{
+"id": "R6X-04-0GBP",
+"transfer_id": "T28914f7090",
+"near": "barry",
+"url": "https://nz.news.yahoo.com/everton-gareth-barry-signing-permanent-201358307.html",
+"amount": "0.00",
+"currency": "GBP",
+"needles": [
+"expired in June",
+"expired"
+]
+}
+]
 }

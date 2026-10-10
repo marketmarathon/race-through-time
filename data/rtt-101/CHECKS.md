@@ -8,17 +8,18 @@ Phase 1 preview: every fee is UNVERIFIED unless `status` says VERIFIED. Not for 
 | every season has an attribution window | **PASS** | 1992-05-03 to 2026-09-01 |
 | 51 clubs, each with at least one PL season | **PASS** | 51 clubs |
 | no transfer counted outside its club's PL seasons | **PASS** | 3984 ledger rows frozen (club not in the PL) |
-| PL-to-PL deals net to zero (spend - income of PL clubs = net spend with non-PL clubs) | **PASS** | spend £29,187,557,675 − income £15,283,832,397 = £13,903,725,278; net with non-PL clubs £13,903,725,278 |
-| no fee without a source row | **PASS** | 3529 fee-bearing transfers |
+| PL-to-PL deals net to zero (spend - income of PL clubs = net spend with non-PL clubs) | **PASS** | spend £29,160,249,929 − income £15,254,995,851 = £13,905,254,077; net with non-PL clubs £13,905,254,077 |
+| no fee without a source row | **PASS** | 3526 fee-bearing transfers |
 | no Transfermarkt figure or URL anywhere | **PASS** | none found |
-| quotes under 25 words | **PASS** | 20772 evidence rows |
-| every conversion has a rate row | **PASS** | 124 conversions |
+| quotes under 25 words | **PASS** | 20797 evidence rows |
+| every conversion has a rate row | **PASS** | 123 conversions |
 | month-end series consistent with the ledger (all-fees preview, and the on-screen series from VERIFIED fees only) | **PASS** | 413 month ends × 51 clubs, two series |
 | no window has under half the PL deals of the same-type windows either side (bar documented gaps) | **PASS** | 69 windows compared; documented gaps (DEC-431): none |
 | every list-page row has a date (IQ-15j: undated rows are dropped from the build) | **PASS** | 20905 rows |
 | Bank of England Jan 1992 monthly averages equal Cowork's V-04 reading | **PASS** | 7 of 7 series compared |
 | ECB GBP/EUR 1999-01 equals Cowork's V-06 reading (0.7029125) | **PASS** | 333 months |
 | no amount rejection silently removes a research lead that quotes the player with that figure | **PASS** | all such rejections were weighed against the lead |
+| runner surname test matches hyphenated and apostrophe surnames | **PASS** | Wright-Phillips, O'Kane, Guivarc'h, Wan-Bissaka, Darmian |
 | CPI base month recorded | **PASS** | D7BT 2026-08 = 143.6 (September 2026 not yet published at build time) |
 
 ## Cross-checks against the private research files (results only; the files stay private, DEC-006)

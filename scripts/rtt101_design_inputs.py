@@ -43,7 +43,7 @@ def crowns(bm):
 
 L = ["# RTT-101 design inputs (for the design session; built by `scripts/rtt101_design_inputs.py`)", "",
      "Nothing here is approved design. No visual feature or change to the approved look is built or rendered without Luke's approval "
-     "(DEC-069). Figures are as built; the order at the freeze is not settled until Cowork's Tier 1 round (DEC-445).", "",
+     "(DEC-069). Figures are as built; the order at the freeze is not settled until the remaining open Tier 1 fees are checked (DEC-445, DEC-450).", "",
      "## What the player reads", "",
      "| File | Columns the player uses | Notes |", "|---|---|---|",
      "| `series_onscreen.csv` | `month_end`, `club_id`, `cum_net_gbp` (bar length and value), `rank`, `in_pl` (frozen-bar look), "

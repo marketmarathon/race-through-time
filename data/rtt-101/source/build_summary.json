@@ -23,12 +23,12 @@
   [
    "PL-to-PL deals net to zero (spend - income of PL clubs = net spend with non-PL clubs)",
    "PASS",
-   "spend \u00a329,187,557,675 \u2212 income \u00a315,283,832,397 = \u00a313,903,725,278; net with non-PL clubs \u00a313,903,725,278"
+   "spend \u00a329,160,249,929 \u2212 income \u00a315,254,995,851 = \u00a313,905,254,077; net with non-PL clubs \u00a313,905,254,077"
   ],
   [
    "no fee without a source row",
    "PASS",
-   "3529 fee-bearing transfers"
+   "3526 fee-bearing transfers"
   ],
   [
    "no Transfermarkt figure or URL anywhere",
@@ -38,12 +38,12 @@
   [
    "quotes under 25 words",
    "PASS",
-   "20772 evidence rows"
+   "20797 evidence rows"
   ],
   [
    "every conversion has a rate row",
    "PASS",
-   "124 conversions"
+   "123 conversions"
   ],
   [
    "month-end series consistent with the ledger (all-fees preview, and the on-screen series from VERIFIED fees only)",
@@ -76,24 +76,29 @@
    "all such rejections were weighed against the lead"
   ],
   [
+   "runner surname test matches hyphenated and apostrophe surnames",
+   "PASS",
+   "Wright-Phillips, O'Kane, Guivarc'h, Wan-Bissaka, Darmian"
+  ],
+  [
    "CPI base month recorded",
    "PASS",
    "D7BT 2026-08 = 143.6 (September 2026 not yet published at build time)"
   ]
  ],
  "cpi_base_month": "2026-08",
- "n_conflicts": 872,
- "n_conflicts_for_luke": 55,
- "n_fee": 3529,
+ "n_conflicts": 870,
+ "n_conflicts_for_luke": 39,
+ "n_fee": 3526,
  "n_status": {
-  "UNVERIFIED": 1299,
-  "VERIFIED": 2230
+  "UNVERIFIED": 1244,
+  "VERIFIED": 2282
  },
  "n_tier": {
-  "": 10658,
-  "1": 1957,
-  "2": 844,
-  "3": 742
+  "": 10661,
+  "1": 1985,
+  "2": 823,
+  "3": 732
  },
  "n_transfers": 14201
 }

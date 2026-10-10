@@ -214,6 +214,12 @@ def pname(s):
     return s
 
 
+def surname_matches(player, near):
+    """the runner's surname must end the player's name ("Wright-Phillips", "O'Kane" and "Guivarc'h" normalise to two words)"""
+    sn, cn = pname(player).strip(), L.norm(near or "").strip()
+    return bool(sn and cn) and (" " + sn).endswith(" " + cn)
+
+
 def same_player(a, b):
     """Full name equal, or same surname and same first initial, or a one-word name equal to the other's first or last word."""
     pa, pb = pname(a), pname(b)
@@ -454,11 +460,10 @@ for t in transfers:
             own.setdefault(u, e)
     for u in art_cites.get(t["transfer_id"], []):
         own.setdefault(u, None)  # cited by the player's own Wikipedia article in a sentence about this move (pointer)
-    sn = pname(t["player"]).split(" ")[-1] if t["player"] else ""
     amounts = {money(e["parsed"]["amount"]) for e in t["_ev"] if e["parsed"]["amount"] is not None}
     for u, e0 in list(own.items()):
         for c in checks.get(u, []):
-            if c["status"] != "VERIFIED" or not sn or L.norm(c.get("near", "")) != sn or c["amount"] not in amounts:
+            if c["status"] != "VERIFIED" or not surname_matches(t["player"], c.get("near", "")) or c["amount"] not in amounts:
                 continue
             if amount_rejected(t["transfer_id"], c["amount"], c.get("currency") or "GBP"):
                 continue  # Claude rejected this figure for this deal on review (whatever page states it)
@@ -483,7 +488,7 @@ for r in rd("reported_fees.csv"):
     for t in transfers:
         if r.get("transfer_id") and t["transfer_id"] != r["transfer_id"]:
             continue  # the figure belongs to the deal it was found for, not to the same player's other moves on that page
-        if pname(t["player"]).split(" ")[-1] != L.norm(r["near"]) or not (r["url"] in art_cites.get(t["transfer_id"], []) or any(
+        if not surname_matches(t["player"], r["near"]) or not (r["url"] in art_cites.get(t["transfer_id"], []) or any(
                 r["url"] in ([e["url"]] if e["origin"] != "wikipedia_list" else e.get("cite_urls", "").split()) for e in t["_ev"])):
             continue
         sid = source_id(r["url"], urllib.parse.urlparse(r["url"]).netloc, r["grade_by_publisher"], "press_or_club")
@@ -851,6 +856,8 @@ if os.path.exists(_r2map):
     _r_of_t = {r["transfer_id"]: r["deal_id"] for r in rd("source_round2_map.csv")}
     # round 5 (IQ-15l) researched the deals on its list (source_round5_map.csv, keyed by our transfer ID), found a figure or not
     _researched |= {_r_of_t[r["deal_id"]] for r in rd("source_round5_map.csv") if r["deal_id"] in _r_of_t}
+    # round 6 (IQ-15n) researched the 53 leader deals on source_round6_map.csv (keyed by L ID, with our transfer ID)
+    _researched |= {_r_of_t[r["transfer_id"]] for r in rd("source_round6_map.csv") if r["transfer_id"] in _r_of_t}
     for _l in rd("leads_evidence.csv"):
         _m = re.match(r"part2(?:2b|3g|4b|4d)-(R\d{4})-", _l["lead_row"])
         if _m:
@@ -1229,6 +1236,11 @@ for t in transfers:
                 blocked.append(f"{t['player']} {e['fee_text']}")
 check("no amount rejection silently removes a research lead that quotes the player with that figure", not blocked,
       "; ".join(blocked[:10]) or "all such rejections were weighed against the lead")
+# lesson of IQ-15m (Guivarc'h) and IQ-15n (Wright-Phillips, Wan-Bissaka, O'Kane): a one-word surname test left runner figures unattached
+_pairs = (("Shaun Wright-Phillips", "Wright-Phillips"), ("John O'Kane", "O'Kane"), ("Stéphane Guivarc'h", "Guivarc'h"), ("Aaron Wan-Bissaka", "Wan-Bissaka"),
+          ("Matteo Darmian", "Darmian"))
+check("runner surname test matches hyphenated and apostrophe surnames", all(surname_matches(a, b) for a, b in _pairs)
+      and not surname_matches("Shaun Wright-Phillips", "Shaun") and not surname_matches("Kenedy", ""), ", ".join(b for _, b in _pairs))
 check("CPI base month recorded", True, f"D7BT {cpi_base_month} = {cpi_base} (September 2026 not yet published at build time)")
 
 with open(os.path.join(DATA, "CHECKS.md"), "w", encoding="utf-8") as f:

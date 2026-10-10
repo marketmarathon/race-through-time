@@ -39,8 +39,8 @@ def short(ex, money):
     return " ".join(words[max(0, k - 10): k + 12])
 
 
-def surname(p):
-    return L.norm(re.sub(r"\(.*?\)", "", p)).split(" ")[-1] if p else ""
+def full(p):
+    return L.norm(re.sub(r"\(.*?\)", "", p)).strip() if p else ""
 
 
 chk_path = f"{D}/source/runner_checks.csv"
@@ -55,7 +55,8 @@ for line in open(log, encoding="utf-8"):
         dates[it["url"]] = {"url": it["url"], "published": rec["published"][:25], "page_sha256": rec["sha256"], "retrieved": day}
     near = L.norm(it["near"])
     clubs_ok = all(rec.get("also_found") or [True]) if it.get("also") else None
-    tids = [tid for tid in by_url.get(it["url"], ()) if tid in T and surname(T[tid]["player"]) == near]
+    # the whole normalised surname must end the player's name: "Wright-Phillips", "Wan-Bissaka" and "O'Kane" normalise to two words
+    tids = [tid for tid in by_url.get(it["url"], ()) if tid in T and (" " + full(T[tid]["player"])).endswith(" " + near)]
     for s in rec.get("snips", []):
         p = L.parse_fee(s["money"])
         if p["amount"] is None:

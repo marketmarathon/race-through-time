@@ -1271,6 +1271,143 @@ if B19:
              "small ones under £2m?** That is what the contract says (§8) and what `series_onscreen.csv` does; the approved tiers had small fees "
              "counted on the strength of a sample, but the sample cannot yet give an error rate. Counting the small unconfirmed fees as well changes no "
              "leader (Chelsea still lead at the freeze, by £8.1m instead of £11.0m). **Recommendation:** yes, confirmed fees only, every tier.")
+    # IQ-15n: section 19 records the race as built at the end of IQ-15m (aa6bf3c), kept word for word; section 20 has the current figures
+    FROZEN19 = os.path.join(D, "source", "report_section19_iq15m.md")
+    with open(OUT, "a", encoding="utf-8") as f:
+        f.write("\n" + open(FROZEN19, encoding="utf-8").read() if os.path.exists(FROZEN19) else "\n".join(R) + "\n")
+    print("section 19:", len(TO), "Tier 1 open;", len(crowns19(ONS)), "on-screen leader spells")
+
+# ---- section 20: source round 6, the leaders' open Tier 1 fees (IQ-15n)
+B20 = rd("source_round6_baseline.csv", os.path.join(D, "source"))
+if B20 and B19:
+    SRC = os.path.join(D, "source")
+    TT = {t["transfer_id"]: t for t in T}
+    MAP6 = rd("source_round6_map.csv", SRC)
+    CAN = {}
+    for e in rd("fee_evidence.csv"):
+        if e["canonical"] == "yes":
+            CAN[e["transfer_id"]] = e
+    NOTE20 = {  # what settled each deal (Claude decisions under DEC-417: DEC-451)
+        "L6001": "only a feature three years later says 'Bought for pounds 800,000': not contemporary press, so grade C (contract §3)",
+        "L6004": "£1m 'makeweight' (The Independent; Cowork's Chrome read, as the page does not name United) (DEC-407)",
+        "L6008": "'around pounds 400,000' agreed, then 'his pounds 400,000 move' (The Independent); the December 1998 list's £250,000 rising to £500,000 (grade C) kept as a version",
+        "L6012": "'his £16.6m fee' (The Guardian); UEFA.com's 'in the region of €23m' kept as a same-grade version",
+        "L6016": "£17m up front (The Guardian); the £21m and UEFA's €30.4m include appearance payments (DEC-276, DEC-420 (e))",
+        "L6019": "the page reads 'a reported €4m fee' (the helper's 'in excess of' is not on it)",
+        "L6020": "City AM's 'around £9m' refused the runner (403); the 2008 report's 21 million pounds is the 2005 fee (rejected)",
+        "L6021": "only 'at least 14 million pounds' (a lower bound) and an offer with no currency; UEFA.com says undisclosed",
+        "L6022": "'£8m-rated' is a valuation at the agreement stage, not a reported fee",
+        "L6024": "'around 15 million pounds' (Khaleej Times; Al Jazeera's $24m is the same estimate); Ahram's £17m refused the runner",
+        "L6025": "'15 million pounds ($23.6 million)' (SI.com); £10m up front plus £5m appears only in grade C sources",
+        "L6026": "only 'reportedly worth more than €3m' (a lower bound)",
+        "L6027": "free: his City contract 'expired in June' (Reuters copy); Wikipedia's £2m dropped",
+        "L6029": "'around £9million' (The Irish News); completion date moved to 29 Aug 2015",
+        "L6030": "undisclosed (Eurosport's page now gone); counted £0",
+        "L6031": "the completion report's €20m (Eurosport) over the agreed £12.9m; the met 'asking price of £12.7m' rejected (DEC-404)",
+        "L6033": "TNT Sports' '£6.7m' was read but the page does not name Fluminense; Fox says undisclosed",
+        "L6035": "the completion report's 'reported £4 million' over the pre-completion £2.7m (DEC-404)",
+        "L6038": "£1.3m guaranteed (Sky Sports on the tribunal); £850,000 initial and 'up to £2.5m' rejected (DEC-276)",
+        "L6039": "ITV's £35m (plus up to £5m) timed out twice on the runner; the Premier League says undisclosed",
+        "L6040": "£45m up front (BBC); the £50m includes add-ons (DEC-276, DEC-420 (e))",
+        "L6041": "both cited pages refused or gone (403, 404)",
+        "L6043": "an initial £14million (Yahoo, PA copy); the 21 million euros (£18m) total rejected (DEC-420 (e))",
+        "L6045": "an initial £64m (Sky Sports); the £72m includes add-ons (DEC-420 (e))",
+        "L6046": "the play-off win 'triggers £20m move' (BBC)",
+        "L6048": "an initial £21.1 million (The Telegraph, Yahoo copy); the €40m and £33.7m include add-ons; the runner missed it at first because the page says Savinho",
+        "L6049": "'a reported £31 million'; the £33.7m includes add-ons (DEC-420 (e))",
+        "L6050": "an initial £24 million (BBC Sport, credited, 4 Aug 2025), the earliest dated report; Sky Sports' initial £25m kept as a same-grade version",
+        "L6051": "'44 million euros ($51 million)' (agency copy); the dollars are the page's conversion",
+        "L6052": "only beIN Sports (grade C): £4m guaranteed, up to £8m",
+        "L6053": "'set to join for a fee of £7m' (Irish News, deadline day); the BBC's 'up to £12m' is a maximum",
+    }
+
+    def fee_s(f, g, st, ty=""):
+        f = float(f or 0)
+        return ("free" if ty == "free" else f"£{f / 1e6:,.2f}m") + f" {g} {st}"
+    R = ["\n## 20. Source round 6: the leaders' open Tier 1 fees (IQ-15n; DEC-450 to DEC-453)\n",
+         "Luke's DEC-450: the 53 open Tier 1 fees involving Manchester United, Chelsea or Manchester City at 13173a4 were checked in Cowork "
+         "(`part27a`, `part27b`); the other open Tier 1 fees go to a ChatGPT prompt Luke runs (`RTT-101_source_round6_map.csv`). Every page cited was "
+         "read on the GitHub runner (99 pages, then 4 again); a quote counts only where the runner, or Cowork's Chrome read, found it word for word.\n",
+         "**The 53 deals, before and after** (fee in pounds at the transfer date; grade; status):\n",
+         "| L ID | Deal | Date | Before | After | What settled it |", "|---|---|---|---|---|---|"]
+    BB = {r["transfer_id"]: r for r in B20}
+    nv = 0
+    for m_ in MAP6:
+        t, b = TT.get(m_["transfer_id"]), BB.get(m_["transfer_id"], {})
+        if not t:
+            continue
+        nv += t["status"] == "VERIFIED"
+        e = CAN.get(t["transfer_id"], {})
+        basis = NOTE20.get(m_["deal_id"]) or (f"'{e.get('fee_text', '')}' ({urllib.parse.urlparse(e.get('url', '')).netloc.replace('www.', '')})"
+                                              if t["status"] == "VERIFIED" else "no grade A or B source read")
+        R.append(f"| {m_['deal_id']} | {t['player']}: {NAME.get(t['from_club'], t['from_club'])} → {NAME.get(t['to_club'], t['to_club'])} | {t['date']} | "
+                 f"{fee_s(b.get('fee_gbp'), b.get('grade', ''), b.get('status', ''))} | {fee_s(t['fee_gbp'], t['grade'], t['status'], t['type'])} | {basis} |")
+    TO0 = rd("tier1_open_before_round6.csv", SRC)
+    TO = rd("tier1_open.csv")
+    l0 = {r["transfer_id"] for r in TO0 if r["involves_leader"] == "yes"}
+    l1 = {r["transfer_id"] for r in TO if r["involves_leader"] == "yes"}
+    a0 = {r["transfer_id"] for r in TO0}
+    nowv = [x for x in l0 if TT.get(x, {}).get("status") == "VERIFIED"]
+    R.append(f"\n{nv} of the 53 are now VERIFIED. **The leaders' open Tier 1 fees:** {len(l0)} at the end of IQ-15m; {len(nowv)} of them are now "
+             f"VERIFIED, {len(l0 & l1)} are still open and {len(l0 - l1 - set(nowv))} have left Tier 1. Because the race at the freeze has changed, "
+             f"{len(l1 - l0)} other leader deals are now Tier 1 ('removal changes the leader or the top 12'), so {len(l1)} leader fees are open now "
+             f"(`tier1_open.csv`, {len(TO)} open Tier 1 fees in all, {len(a0)} before): "
+             + "; ".join(f"{TT[x]['player']} ({NAME.get(TT[x]['from_club'], TT[x]['from_club'])} → {NAME.get(TT[x]['to_club'], TT[x]['to_club'])}, {TT[x]['date'][:4]})"
+                         for x in sorted(l1, key=lambda x: (TT[x]['date'], x))) + ".")
+    NF = rd("round6_namefix_deals.csv", SRC)
+    nfv = [r for r in NF if TT.get(r["transfer_id"], {}).get("status") == "VERIFIED"]
+    R.append(f"\n**Finding: hyphens and apostrophes in surnames (DEC-452).** The runner's surname test compared one word, so 'Wright-Phillips', "
+             f"'Wan-Bissaka' or 'O'Kane' never matched and figures the runner had already found were never attached. Fixed in "
+             f"`rtt101_ingest_probe.py` and the build. It touched {len(NF)} deals outside this round's 53 as well: {len(nfv)} are now VERIFIED at the "
+             "figure they already showed or at the page's own figure (Hwang £14m, was £13m; Fernández-Pardo £51.4m, was £51m), and two figures "
+             "were rejected on review (Hudson-Odoi's 'under £5m' is an upper bound; Samuels-Smith 'was valued at £6.5m'), so those two count £0 "
+             "(`source/round6_namefix_deals.csv`). Sávio's page calls him Savinho: the runner read it, and the check was added by hand.")
+    S0 = {r["club_id"]: float(r["cum_net_gbp"]) for r in rd("standings_onscreen_before_round6.csv", SRC)}
+    r0 = sorted(S0, key=lambda c: -S0[c])
+    lead_v = float(ONS[last][0]["cum_net_gbp"])
+    R += [f"\n**On-screen standings at the freeze ({last}), top 12** (VERIFIED fees only; before = end of IQ-15m):\n",
+          "| Rank | Club | Net | Gap to the leader | Before | Rank before |", "|---|---|---|---|---|---|"]
+    for i in range(12):
+        a = ONS[last][i]
+        c = a["club_id"]
+        R.append(f"| {i + 1} | {NAME.get(c, c)} | £{float(a['cum_net_gbp']) / 1e6:,.1f}m | "
+                 f"{'–' if i == 0 else '£' + format((lead_v - float(a['cum_net_gbp'])) / 1e6, ',.1f') + 'm'} | £{S0.get(c, 0) / 1e6:,.1f}m | {r0.index(c) + 1 if c in r0 else '–'} |")
+    TB = {r["month_end"]: r["top12_in_rank_order"].split(";") for r in rd("top12_onscreen_before_round6.csv", SRC)}
+    cb = []
+    for mo in sorted(TB):
+        if not cb or cb[-1][1] != TB[mo][0]:
+            cb.append((mo[:7], TB[mo][0]))
+    ca = crowns19(ONS)
+    chg = [mo for mo in sorted(ONS) if TB.get(mo) and TB[mo][0] != ONS[mo][0]["club_id"]]
+    R += ["\n**On-screen leader, through time** (month the lead changes hands):\n",
+          "- Section 19 (before): " + " → ".join(f"{NAME.get(c, c)} ({mo})" for mo, c in cb),
+          "- Now: " + " → ".join(f"{NAME.get(c, c)} ({mo})" for mo, c in ca),
+          f"- The leader differs at {len(chg)} month ends" + (f", from {chg[0][:7]} to {chg[-1][:7]}" if chg else "") + "."]
+    cs = close19(ONS)
+    R.append("\n**Close calls on screen since July 2002** (leader ahead by under £10m at a month end): "
+             + ("; ".join(f"{mo} {NAME.get(a, a)} over {NAME.get(b, b)} by £{g / 1e6:.2f}m" for mo, a, b, g in cs) if cs else "none") + ".")
+    OT = rd("round2_order_test.csv", SRC)
+    yes = [r for r in OT if r["could_change"] == "yes"]
+    R.append(f"\n**Order test** (`source/round2_order_test.csv`; the round 6 deals now count as researched): {len(yes)} of {len(OT)} unresearched "
+             f"round 2 deals could change a top-12 place, {sum(1 for r in yes if r['what_changes'] == 'leader')} the leader (section 19: 191 of 378, none).")
+    pv = {r["club_id"]: float(r["cum_net_gbp"]) for r in PRE[last]}
+    ov = {r["club_id"]: float(r["cum_net_gbp"]) for r in ONS[last]}
+    bd = {c: pv.get(c, 0) - ov.get(c, 0) for c in ("manchester_united", "chelsea", "manchester_city")}
+    R.append("\n**Section 19's bound, now.** Section 19 said that if every unconfirmed fee were confirmed, Chelsea would lose £56.1m on screen, City "
+             f"£52.9m and United gain £40.3m. Now the same comparison (preview minus on screen, at the freeze) gives United "
+             f"{'+' if bd['manchester_united'] >= 0 else '−'}£{abs(bd['manchester_united']) / 1e6:.1f}m, Chelsea "
+             f"{'+' if bd['chelsea'] >= 0 else '−'}£{abs(bd['chelsea']) / 1e6:.1f}m and City {'+' if bd['manchester_city'] >= 0 else '−'}"
+             f"£{abs(bd['manchester_city']) / 1e6:.1f}m. The preview's own order is United £{pv['manchester_united'] / 1e6:,.1f}m, Chelsea "
+             f"£{pv['chelsea'] / 1e6:,.1f}m, City £{pv['manchester_city'] / 1e6:,.1f}m.")
+    FEE = [t for t in T if float(t["fee_gbp"] or 0) > 0]
+    R.append(f"\n**VERIFIED share of fee money:** {share(FEE):.1%} of £{sum(float(t['fee_gbp']) for t in FEE) / 1e9:,.2f}bn "
+             f"({sum(1 for t in FEE if t['status'] == 'VERIFIED')} of {len(FEE)} fees); Tier 1 {share([t for t in FEE if t['tier'] == '1']):.1%}, "
+             f"Tier 2 {share([t for t in FEE if t['tier'] == '2']):.1%}, Tier 3 {share([t for t in FEE if t['tier'] == '3']):.1%} (section 19: 86.3%; "
+             "Tier 1 93.3%).")
+    MISS = rd("round6_map_missing.csv", SRC)
+    R.append(f"\n**For the next research round:** {len(MISS)} open Tier 1 deals at 13173a4 were missing from ChatGPT's round 6 map "
+             "(`source/round6_map_missing.csv`), and the leaders' fees still open above. Section 19's question 1 is still with Luke; "
+             "`series_onscreen.csv` is built as before.")
     with open(OUT, "a", encoding="utf-8") as f:
         f.write("\n".join(R) + "\n")
-    print("section 19:", len(TO), "Tier 1 open;", len(crowns19(ONS)), "on-screen leader spells")
+    print("section 20:", nv, "of 53 verified;", len(l1), "leader Tier 1 open;", len(chg), "month ends with another on-screen leader")

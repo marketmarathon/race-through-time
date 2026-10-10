@@ -1,0 +1,22 @@
+transfer_id,player,from_club,to_club,date,status_before,fee_gbp_before,grade_before
+T03cb33e751,Seol Ki-Hyeon,wolves,reading,2006-07-11,UNVERIFIED,1500000.00,B
+Teb2829ebe3,Charles N'Zogbia,newcastle_united,wigan_athletic,2009-02-02,UNVERIFIED,6000000.00,B
+T8a1d452ef3,Jamie O'Hara,tottenham_hotspur,wolves,2011-06-21,UNVERIFIED,5000000.00,C
+Tf2bb1d0787,Alex Oxlade-Chamberlain,arsenal,liverpool,2017-08-31,UNVERIFIED,35000000.00,B
+Tf5cd15091a,Kyle Walker-Peters,tottenham_hotspur,southampton,2020-08-11,UNVERIFIED,12000000.00,C
+Tc259303847,Pierre Lees-Melou,Nice,norwich_city,2021-07-13,UNVERIFIED,3500000.00,C
+T64671e0276,Hwang Hee-chan,RB Leipzig,wolves,2022-01-26,UNVERIFIED,13000000.00,B
+T34d25c6fdc,Armel Bella-Kotchap,VfL Bochum,southampton,2022-06-21,UNVERIFIED,8600000.00,C
+Td0031bd75b,Keane Lewis-Potter,hull_city,brentford,2022-07-12,UNVERIFIED,20000000.00,B
+T9e4b2a858b,Morgan Gibbs-White,wolves,nottingham_forest,2022-08-19,UNVERIFIED,25000000.00,B
+T5267060f55,James Ward-Prowse,southampton,west_ham,2023-08-14,UNVERIFIED,30000000.00,B
+T035439ec22,Callum Hudson-Odoi,chelsea,nottingham_forest,2023-09-01,UNVERIFIED,5000000.00,C
+T20311d5b5e,Jake O'Brien,Lyon,everton,2024-07-30,UNVERIFIED,16400000.00,C
+T8348b00143,Aaron Wan-Bissaka,manchester_united,west_ham,2024-08-13,UNVERIFIED,15000000.00,C
+Td3b96c90a4,Matt O'Riley,Celtic,brighton,2024-08-26,UNVERIFIED,25000000.00,B
+T2f7b0a82b0,Trent Alexander-Arnold,liverpool,Real Madrid,2025-06-01,UNVERIFIED,8400000.00,C
+Tb761afb16e,Kaine Kesler-Hayden,aston_villa,coventry_city,2025-07-01,UNVERIFIED,3500000.00,C
+Tcd12223287,Ishé Samuels-Smith,chelsea,Strasbourg,2025-07-30,UNVERIFIED,6500000.00,C
+T60bcf38494,Matias Fernandez-Pardo,Lille,newcastle_united,2026-09-01,UNVERIFIED,51000000.00,B
+T9419949f92,Taylor Harwood-Bellis,southampton,aston_villa,2026-09-01,UNVERIFIED,25000000.00,B
+Tcbb485ee49,Brooke Norton-Cuffy,Genoa,hull_city,2026-09-01,UNVERIFIED,12000000.00,C
