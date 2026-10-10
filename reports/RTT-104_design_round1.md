@@ -1,8 +1,8 @@
 # RTT-104 Women in Parliament — design round 1 (IQ-22, 10 Oct 2026)
 
-Brief: `prompts/CODE_SESSION_IQ-22.md`. Decisions: DEC-624..DEC-627 (Luke's answers to the data report), DEC-628..DEC-633 (Claude). Nothing here is approved: every look is an option for Luke (DEC-069). No music, no film.
+Brief: `prompts/CODE_SESSION_IQ-22.md`. Decisions: DEC-624..DEC-627 (Luke's answers to the data report), DEC-628..DEC-633 (Claude; the render is DEC-633). Nothing here is approved: every look is an option for Luke (DEC-069). No music, no film.
 
-**Private pre-release (stills, phone copies, sheets, clips, every SHA-256 in its notes):** RELEASE_URL
+**Private pre-release (stills, phone copies, sheets, clips, every SHA-256 in its notes):** https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-104-round1-5b1194d-run1
 
 ## What Luke decided before this round
 - Year only on screen, never a day or month (DEC-624).
@@ -16,7 +16,7 @@ RTT-104 has its own page, `kits/rtt-104/player_rtt104.html`, opened through the 
 - **Values:** every board still shows exactly `data/rtt-104/boards.csv` for its year (countries, order, one-decimal values) and the 0% group equals `zero_group.csv` (`kits/rtt-104/render_stills.js`, results `tests/rtt104/STILLS_CHECK.md`).
 - **Phone (390 pt wide):** layout A names and values 30 px = **6.1 pt**, all other text at least 5.3 pt — PASS. Layout B 23 px = **4.7 pt**, axis 4.1 pt — below RTT-002's approved 5.9 pt.
 - **Overlap:** no text inside the world panel or past its board — PASS.
-- **WCAG flash** (whole picture, `tests/player/wcag_flash_rtt003.js`, limit 57,600 px in a 10-degree field): 2001–2009 at 2 s per year 51,182 px PASS; at 3 s 48,153 px PASS; Haiti clips 26,873 px PASS. A faster move (1.2 s) failed at 68,833 px when many rows cross in 2002→2003, so the 2 s pace moves for 1.7 s and holds 0.3 s (DEC-631). The whole film needs this check before any film render.
+- **WCAG flash** (whole picture, `tests/player/wcag_flash_rtt003.js`, limit 57,600 px in a 10-degree field), on the runner's render: 2001–2009 at 2 s per year 50,601 px PASS; at 3 s 47,519 px PASS; Haiti clips 26,441 px PASS (red at most 2 px). A faster move (1.2 s) failed at 68,833 px when many rows cross in 2002→2003, so the 2 s pace moves for 1.7 s and holds 0.3 s (DEC-631). The whole film needs this check before any film render.
 - **Approved films unchanged:** no shared file changed against `main` (DEC-629).
 - **Data tests:** `python3 tests/rtt104/run_tests_rtt104.py` 23/23 PASS (now including the player input rebuilt identically from the data).
 

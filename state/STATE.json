@@ -979,7 +979,7 @@
       "status": "DONE 10 Oct 2026: rendered to a private pre-release; awaiting Luke's answers a-i",
       "result": {
         "decisions": "DEC-624..DEC-633",
-        "release": "RELEASE_URL"
+        "release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-104-round1-5b1194d-run1"
       }
     }
   ],
