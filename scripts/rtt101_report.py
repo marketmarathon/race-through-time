@@ -1129,6 +1129,9 @@ if BASE5:
         if r["rank"] and int(r["rank"]) <= 12:
             now[r["month_end"]].append((int(r["rank"]), r["club_id"]))
     NOW = {mo: [c for _, c in sorted(v)] for mo, v in now.items()}
+    # IQ-15m: this section records the race as built at the end of IQ-15l (13173a4); section 19 has the current figures
+    if rd("top12_before_iq15m.csv", os.path.join(D, "source")):
+        NOW = {r["month_end"]: r["top12_in_rank_order"].split(";") for r in rd("top12_before_iq15m.csv", os.path.join(D, "source"))}
 
     def crowns5(seqmap):
         out = []
@@ -1140,14 +1143,16 @@ if BASE5:
     set_ch = [mo for mo in sorted(NOW) if TB5.get(mo) and set(TB5[mo]) != set(NOW[mo])]
     R += ["\n**Who leads, through time** (month the lead changes hands; from 2003):\n",
           "- Before (1b01d81): " + " → ".join(f"{NAME.get(c, c)} ({mo})" for mo, c in crowns5(TB5) if mo >= "2003"),
-          "- After: " + " → ".join(f"{NAME.get(c, c)} ({mo})" for mo, c in crowns5(NOW) if mo >= "2003"),
+          "- After (end of IQ-15l, 13173a4; section 19 has the current figures): " + " → ".join(f"{NAME.get(c, c)} ({mo})" for mo, c in crowns5(NOW) if mo >= "2003"),
           f"\nThe leader differs at {len(lead_ch)} month end{'' if len(lead_ch) == 1 else 's'}" + (" (" + ", ".join(mo[:7] for mo in lead_ch) + ")" if lead_ch else "")
           + f"; who is in the top 12 differs at {len(set_ch)} month end{'' if len(set_ch) == 1 else 's'}" + (" (" + "; ".join(f"{mo[:7]}: {', '.join(NAME.get(c, c) for c in sorted(set(NOW[mo]) - set(TB5[mo])))} in for "
                                 f"{', '.join(NAME.get(c, c) for c in sorted(set(TB5[mo]) - set(NOW[mo])))}" for mo in set_ch[:8]) + ")" if set_ch else "") + "."]
     SB5 = {r["club_id"]: (int(r["rank"]), float(r["cum_net_gbp"])) for r in rd("standings_before_round5.csv", os.path.join(D, "source"))}
     last = max(NOW)
     SA5 = {r["club_id"]: (int(r["rank"]), float(r["cum_net_gbp"])) for r in SM if r["month_end"] == last and r["rank"]}
-    R += [f"\n**Standings at the freeze ({last}), cumulative net spend:**\n", "| Rank after | Club | Net before (rank) | Net after | Change |", "|---|---|---|---|---|"]
+    if rd("standings_before_iq15m.csv", os.path.join(D, "source")):
+        SA5 = {r["club_id"]: (int(r["rank"]), float(r["cum_net_gbp"])) for r in rd("standings_before_iq15m.csv", os.path.join(D, "source"))}
+    R += [f"\n**Standings at the freeze ({last}), cumulative net spend, at the end of IQ-15l:**\n", "| Rank after | Club | Net before (rank) | Net after | Change |", "|---|---|---|---|---|"]
     for c, (rk, v) in sorted(SA5.items(), key=lambda x: x[1][0])[:12]:
         b_ = SB5.get(c, (0, 0.0))
         R.append(f"| {rk} | {NAME.get(c, c)} | £{b_[1] / 1e6:,.2f}m ({b_[0]}) | £{v / 1e6:,.2f}m | {m(v - b_[1])} |")
@@ -1158,7 +1163,7 @@ if BASE5:
              f"£{(SB5[b3[0]][1] - SB5[b3[1]][1]) / 1e6:,.2f}m and {NAME[b3[2]]} by £{(SB5[b3[0]][1] - SB5[b3[2]][1]) / 1e6:,.2f}m.")
     OT = rd("round2_order_test.csv", os.path.join(D, "source"))
     yes = [r for r in OT if r["could_change"] == "yes"]
-    R.append(f"\n**Order test re-run** (`source/round2_order_test.csv`, the round 5 deals now counted as researched): {len(yes)} of {len(OT)} unresearched "
+    R.append(f"\n**Order test re-run** (`source/round2_order_test.csv`, the round 5 deals now counted as researched; at the end of IQ-15l: 188 of 378): {len(yes)} of {len(OT)} unresearched "
              f"round 2 deals could change who is in the top 12 at some month end, **{sum(1 for r in yes if r['what_changes'] == 'leader')} the leader** "
              "(14 before this round). Of the five round 5 deals with no grade A/B source, only Guivarc'h (Newcastle → Rangers, 1998, £3.5m) changes the "
              "leader if removed, at August 1999 (tested in a scratch copy). Undisclosed fees counted £0 cannot be tested this way: there is no figure to try.")
@@ -1171,3 +1176,101 @@ if BASE5:
     with open(OUT, "a", encoding="utf-8") as f:
         f.write("\n".join(R) + "\n")
     print("section 18:", v1, "of 34 verified;", len(lead_ch), "leader changes;", sum(1 for r in yes if r["what_changes"] == "leader"), "order-test leader deals")
+
+# ---- section 19: wrap-up before design (IQ-15m)
+B19 = rd("standings_before_iq15m.csv", os.path.join(D, "source"))
+if B19:
+    def bymonth(rows):
+        out = defaultdict(list)
+        for r in rows:
+            if r["rank"]:
+                out[r["month_end"]].append(r)
+        for mo in out:
+            out[mo].sort(key=lambda r: int(r["rank"]))
+        return out
+    PRE, ONS = bymonth(SM), bymonth(rd("series_onscreen.csv"))
+    last = max(ONS)
+
+    def crowns19(bm):
+        out = []
+        for mo in sorted(bm):
+            if not out or out[-1][1] != bm[mo][0]["club_id"]:
+                out.append((mo[:7], bm[mo][0]["club_id"]))
+        return out
+
+    def close19(bm, since="2002-07", lim=10e6):
+        return [(mo[:7], bm[mo][0]["club_id"], bm[mo][1]["club_id"], float(bm[mo][0]["cum_net_gbp"]) - float(bm[mo][1]["cum_net_gbp"]))
+                for mo in sorted(bm) if mo >= since and float(bm[mo][0]["cum_net_gbp"]) - float(bm[mo][1]["cum_net_gbp"]) < lim]
+    TO = rd("tier1_open.csv")
+    FEE = [t for t in T if float(t["fee_gbp"] or 0) > 0]
+
+    def share(rows):
+        s = sum(float(t["fee_gbp"]) for t in rows)
+        return (sum(float(t["fee_gbp"]) for t in rows if t["status"] == "VERIFIED") / s) if s else 0.0
+    WB19 = {w["window"]: float(w["gross_spend_gbp"] or 0) for w in rd("window_totals_before_iq15m.csv", os.path.join(D, "source"))}
+    pubs = {w: next((r for r in sorted(v, key=lambda r: r["grade"]) if r["gross_gbp"]), None) for w, v in lead_by.items()}
+    pubs = {w: float(p["gross_gbp"]) for w, p in pubs.items() if p}
+    def wshare(W):
+        ws = [W.get(w, 0.0) / p for w, p in pubs.items()]
+        return sum(ws) / len(ws), sum(W.get(w, 0.0) for w in pubs) / sum(pubs.values())
+    wb_avg, wb_money = wshare(WB19)
+    wa_avg, wa_money = wshare({w: float(v["gross_spend_gbp"] or 0) for w, v in WT.items()})
+    OT = rd("round2_order_test.csv", os.path.join(D, "source"))
+    yes = [r for r in OT if r["could_change"] == "yes"]
+    TU = rd("thin_windows_unsourced.csv", os.path.join(D, "source"))
+    R = ["\n## 19. Wrap-up before design (IQ-15m; DEC-445 to DEC-449)\n",
+         "**What changed**\n",
+         "- **Luke's DEC-445:** RTT-101 keeps being built from our own deal-by-deal data; no Transfermarkt or press club totals anywhere; the P4 sweep "
+         "is not run now. Section 18's question 1 stays open: on VERIFIED fees only the order at the freeze is different.",
+         "- **Guivarc'h (1998):** £3.5m confirmed from Cowork's Chrome read of The Independent's weekly round-up (DEC-446).",
+         f"- **Thin windows (DEC-447):** 604 deals the list pages miss added from club-season pages (January 1993, 1994, 2004, 2005; summers 2007, 2013, "
+         f"2019); 23 carry a Wikipedia figure (£49.2m), none yet confirmed; {len(TU)} undisclosed or unconfirmed ones listed in "
+         "`source/thin_windows_unsourced.csv`. The deal-count check passes for every window and `KNOWN_SPARSE` is empty.",
+         "- **The on-screen series (DEC-448):** `series_onscreen.csv`, built from VERIFIED fees only (every tier), beside the all-fees preview "
+         "`series_monthly.csv`; contract v1.5 §8 points the player at it.",
+         f"\n**Window totals against part17b** (gross spending by PL clubs; {len(pubs)} windows with a published total; research leads, UNVERIFIED, "
+         "a comparison only): our totals average "
+         f"{wb_avg:.1%} of the published figure before IQ-15m and {wa_avg:.1%} after; as a share of the money, {wb_money:.1%} before and {wa_money:.1%} after "
+         "(the thin windows add mostly loans, free transfers and undisclosed fees).",
+         f"\n**Standings at the freeze ({last}), top 12:**\n",
+         "| Rank | On screen (VERIFIED fees only) | Net | Gap to the leader | Preview (all fees) | Net |", "|---|---|---|---|---|---|"]
+    lead_v = float(ONS[last][0]["cum_net_gbp"])
+    for i in range(12):
+        a, b = ONS[last][i], PRE[last][i]
+        R.append(f"| {i + 1} | {NAME.get(a['club_id'], a['club_id'])} | £{float(a['cum_net_gbp']) / 1e6:,.1f}m | "
+                 f"{'–' if i == 0 else '£' + format((lead_v - float(a['cum_net_gbp'])) / 1e6, ',.1f') + 'm'} | {NAME.get(b['club_id'], b['club_id'])} | £{float(b['cum_net_gbp']) / 1e6:,.1f}m |")
+    R += ["\n**Who leads, through time** (month the lead changes hands):\n",
+          "- On screen: " + " → ".join(f"{NAME.get(c, c)} ({mo})" for mo, c in crowns19(ONS)),
+          "- Preview: " + " → ".join(f"{NAME.get(c, c)} ({mo})" for mo, c in crowns19(PRE))]
+    cs, cp = close19(ONS), close19(PRE)
+    R.append("\n**Close calls since July 2002** (leader ahead by under £10m at a month end): on screen, "
+             + ("; ".join(f"{mo} {NAME.get(a, a)} over {NAME.get(b, b)} by £{g / 1e6:.2f}m" for mo, a, b, g in cs) if cs else "none")
+             + "; in the preview, " + ("; ".join(f"{mo} {NAME.get(a, a)} over {NAME.get(b, b)} by £{g / 1e6:.2f}m" for mo, a, b, g in cp) if cp else "none")
+             + ". The one-month Chelsea lead of July 2016 and the March–June 2003 near-tie (United over Newcastle) exist only in the preview. "
+             "Before 2002 the race is close for long stretches on both bases (Blackburn, Liverpool and Newcastle within £3m of each other in "
+             "many months of 1992–2000).")
+    TB19 = {r["month_end"]: r["top12_in_rank_order"].split(";") for r in rd("top12_before_iq15m.csv", os.path.join(D, "source"))}
+    pre_set = [mo for mo in sorted(PRE) if TB19.get(mo) and set(TB19[mo]) != {r["club_id"] for r in PRE[mo][:12]}]
+    pre_lead = [mo for mo in sorted(PRE) if TB19.get(mo) and TB19[mo][0] != PRE[mo][0]["club_id"]]
+    diff_lead = [mo for mo in sorted(ONS) if ONS[mo][0]["club_id"] != PRE[mo][0]["club_id"]]
+    R.append(f"\n**Top-12 changes and the order test:** against 13173a4 the preview's leader changes at {len(pre_lead)} month ends and who is in its "
+             f"top 12 at {len(pre_set)}; the on-screen series differs from the preview in the leader at {len(diff_lead)} month ends. Order test "
+             f"(`source/round2_order_test.csv`): {len(yes)} of {len(OT)} unresearched round 2 deals could change a top-12 place, "
+             f"{sum(1 for r in yes if r['what_changes'] == 'leader')} the leader.")
+    R.append(f"\n**VERIFIED share of fee money:** {share(FEE):.1%} of £{sum(float(t['fee_gbp']) for t in FEE) / 1e9:,.2f}bn of fees "
+             f"({sum(1 for t in FEE if t['status'] == 'VERIFIED')} of {len(FEE)} fees); Tier 1 {share([t for t in FEE if t['tier'] == '1']):.1%}, "
+             f"Tier 2 {share([t for t in FEE if t['tier'] == '2']):.1%}, Tier 3 {share([t for t in FEE if t['tier'] == '3']):.1%}.")
+    wy = _C6 = None
+    from collections import Counter as _C9
+    R.append(f"\n**Still UNVERIFIED:** {len(TO)} Tier 1 fees (`tier1_open.csv`, no figures; {sum(1 for r in TO if r['involves_leader'] == 'yes')} "
+             "involve Manchester United, Chelsea or Manchester City; why open: "
+             + ", ".join(f"{k} {v}" for k, v in _C9(r['why_open'].split(' (')[0] for r in TO).most_common()) + "). If every unconfirmed fee "
+             "were confirmed, Chelsea would lose £56.1m on screen, City £52.9m and United gain £40.3m: the gap between the two bases, so the order at "
+             "the freeze waits for Cowork's Tier 1 round (DEC-445). Tier 2 and Tier 3 fees not confirmed stay off screen (DEC-448).")
+    R.append("\n**Question for Luke (what the video shows):**\n1. **On screen, should a bar count only fees confirmed at source, including the "
+             "small ones under £2m?** That is what the contract says (§8) and what `series_onscreen.csv` does; the approved tiers had small fees "
+             "counted on the strength of a sample, but the sample cannot yet give an error rate. Counting the small unconfirmed fees as well changes no "
+             "leader (Chelsea still lead at the freeze, by £8.1m instead of £11.0m). **Recommendation:** yes, confirmed fees only, every tier.")
+    with open(OUT, "a", encoding="utf-8") as f:
+        f.write("\n".join(R) + "\n")
+    print("section 19:", len(TO), "Tier 1 open;", len(crowns19(ONS)), "on-screen leader spells")

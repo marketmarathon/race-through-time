@@ -1,4 +1,4 @@
-# Metric contract — RTT-101 Premier League net transfer spend · v1.4 (completion-report rule DEC-404, IQ-15f) · 8 Oct 2026
+# Metric contract — RTT-101 Premier League net transfer spend · v1.5 (on-screen series from VERIFIED fees only, DEC-448, IQ-15m) · 10 Oct 2026
 
 Written before the data build (DEC-036). Owner decisions: DEC-235 to DEC-240 (Luke, 4–7 Oct 2026) and DEC-245 (no contact about data). Claude's working choices DEC-247 to DEC-250 and DEC-254, CONFIRMED by Luke (DEC-262). Luke's answers of 7 Oct 2026: DEC-256 to DEC-264. Phase 2 working choices and findings: DEC-265 to DEC-273; Luke's phase 2 answers: DEC-274 to DEC-277. Brief: `prompts/CODE_SESSION_IQ-15.md`.
 
@@ -64,12 +64,12 @@ One `club_id` per club; other names in `clubs.csv`. **Wimbledon FC (PL 1992–20
 |---|---|---|
 | Club name (bar label) | club's common English name | `clubs.csv` `display_name` |
 | Other names (search, matching) | Wikipedia article titles, earlier names | `clubs.csv` `other_names` |
-| Cumulative net spend, nominal (bar length and value) | method above, from VERIFIED fees only on screen | `series_monthly.csv` `cum_net_gbp` |
-| Average CPI-adjusted net per PL season (secondary) | method §6; ONS D7BT (OGL v3) | `series_monthly.csv` `avg_real_net_per_season_gbp2026` |
-| PL seasons played | `pl_membership.csv`, `seasons.csv` | `series_monthly.csv` `pl_seasons_played` |
-| In / out of the PL (frozen bar look) | `pl_membership.csv` | `series_monthly.csv` `in_pl` |
-| Month / date shown | month end, final point at the freeze | `series_monthly.csv` `month_end` |
-| Rank | method above | `series_monthly.csv` `rank` |
+| Cumulative net spend, nominal (bar length and value) | method above, from VERIFIED fees only on screen (every tier; DEC-448) | `series_onscreen.csv` `cum_net_gbp` (on screen); `series_monthly.csv` is the all-fees preview, not for screen |
+| Average CPI-adjusted net per PL season (secondary) | method §6; ONS D7BT (OGL v3); VERIFIED fees only on screen | `series_onscreen.csv` `avg_real_net_per_season_gbp2026` |
+| PL seasons played | `pl_membership.csv`, `seasons.csv` | `series_onscreen.csv` `pl_seasons_played` |
+| In / out of the PL (frozen bar look) | `pl_membership.csv` | `series_onscreen.csv` `in_pl` |
+| Month / date shown | month end, final point at the freeze | `series_onscreen.csv` `month_end` |
+| Rank | method above | `series_onscreen.csv` `rank` |
 | Source line (on screen and description) | "Reported transfer fees from club statements and press reports; CPI: ONS; exchange rates: Bank of England" — wording for a design round | — |
 | Notes for "reported" and converted fees | `transfers.csv` `fee_status`, `fx_*` | `club_ledger.csv` `notes` |
 | Undisclosed-fee count per club | `transfers.csv` | `coverage.csv` |
