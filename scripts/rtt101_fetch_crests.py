@@ -9,7 +9,8 @@ for RTT-001 and RTT-103). Standard library only.
 
 For every club in clubs.csv (all 51, by `wikipedia_title`; Wimbledon F.C. is the old club's own article, never AFC
 Wimbledon's or MK Dons'):
-  - the article's lead image on English Wikipedia (pageimages) is taken as the club's crest today. The API says where
+  - the `image` of the article's infobox on English Wikipedia (the crest as the article shows it; run 2: PageImages never
+    returns a non-free file, so run 1 found only 3) is taken as the club's crest today. The API says where
     the file lives: on Wikimedia Commons ("shared": a free licence, Commons first) or on English Wikipedia itself
     ("local": almost always a non-free logo used under the article's fair-use rationale). It is kept only if its title
     looks like a crest (crest, badge, logo, emblem, coat, shield, FC, AFC; never a photograph);
@@ -82,6 +83,14 @@ def page_images(title):
     return lead, [i['title'] for i in pg.get('images', [])]
 
 
+def infobox_image(title):
+    """the `image` of the article's infobox (Infobox football club): the crest as the article shows it. PageImages never
+    returns a non-free file, so the infobox is read from the wikitext of section 0 (run 1, 10 Oct 2026: 3 of 51 leads)."""
+    wt = api(action='parse', page=title, prop='wikitext', section=0, redirects=1).get('parse', {}).get('wikitext', '')
+    m = re.search(r'\|\s*image\s*=\s*(?:\[\[)?\s*(?:File:|Image:)?\s*([^|\]\n<{]+?\.(?:svg|png|gif|jpg|jpeg))', wt, re.I)
+    return ('File:' + m.group(1).strip().replace('_', ' ')) if m else None
+
+
 def info(title):
     pg = api(action='query', titles=title, prop='imageinfo', iiprop='url|sha1|size|mime|extmetadata')['query']['pages'][0]
     if not pg.get('imageinfo'):
@@ -119,11 +128,12 @@ def main():
     rows, missing, bad = [], [], []
     for c in csv.DictReader(open(clubs_csv, encoding='utf-8')):
         cid, title = c['club_id'], c['wikipedia_title']
-        lead, imgs = page_images(title)
+        lead0, imgs = page_images(title)
+        lead = infobox_image(title) or lead0
         hist_lead, hist = page_images('History of ' + title)
         print('%s: article %s: lead image %s; %d images; "History of" article: %s' % (cid, title, lead, len(imgs), 'yes (%d images)' % len(hist) if hist or hist_lead else 'none'))
         got_lead = False
-        if lead and CREST.search(lead) and not NOT_CREST.search(lead):
+        if lead and lead.lower().endswith(('.svg', '.png', '.gif')):
             ii = info(lead)
             if ii:
                 ext = lead.rsplit('.', 1)[1].lower()
