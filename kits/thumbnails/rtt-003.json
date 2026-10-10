@@ -1,0 +1,100 @@
+{
+ "episode": "RTT-003 Best-Selling Consoles",
+ "kit": "rtt-003",
+ "film_config": "config_rtt003_film.json",
+ "private_ref": "claude/sweet-mendel-faig7w",
+ "assets_list": "kits/rtt-003/assets_sha256.txt",
+ "at": "2024-12-31",
+ "crop": {
+  "x": 55,
+  "y": 228,
+  "w": 1680,
+  "h": 808
+ },
+ "min_bars": 8,
+ "check": {
+  "file": "data/rtt-003/series.csv",
+  "date_col": "quarter_end",
+  "id_col": "console_id",
+  "value_col": "units",
+  "label_units": {
+   "m": 1000000
+  }
+ },
+ "words": [
+  "BEST-SELLING",
+  "CONSOLES"
+ ],
+ "years": "1985–2026",
+ "options": [
+  {
+   "name": "A",
+   "background": "white"
+  },
+  {
+   "name": "A_short",
+   "background": "white",
+   "words": [
+    "CONSOLE",
+    "WARS"
+   ],
+   "word_sizes": [
+    130,
+    150
+   ]
+  }
+ ],
+ "overrides": {
+  "maker_key": {
+   "enabled": false
+  }
+ },
+ "word_sizes": [
+  120,
+  120
+ ],
+ "rows": [
+  {
+   "top": 400,
+   "tile_w": 100,
+   "tile_h": 76,
+   "gap": 12,
+   "pad": 6,
+   "items": [
+    {
+     "file": "icons/playstation_2.png"
+    },
+    {
+     "file": "icons/nintendo_ds.png"
+    },
+    {
+     "file": "icons/nintendo_switch.png"
+    },
+    {
+     "file": "icons/game_boy.png"
+    }
+   ]
+  },
+  {
+   "top": 492,
+   "tile_w": 100,
+   "tile_h": 50,
+   "gap": 12,
+   "pad": 7,
+   "items": [
+    {
+     "file": "logos/sony.svg"
+    },
+    {
+     "file": "logos/nintendo.svg"
+    },
+    {
+     "file": "logos/microsoft.svg"
+    },
+    {
+     "file": "logos/sega.svg"
+    }
+   ]
+  }
+ ]
+}

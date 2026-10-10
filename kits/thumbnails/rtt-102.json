@@ -1,0 +1,99 @@
+{
+ "episode": "RTT-102 ChatGPT vs Its Rivals",
+ "kit": "rtt-102",
+ "film_config": "config_rtt102_film.json",
+ "private_ref": "claude/relaxed-clarke-9e0sqq",
+ "assets_list": "kits/rtt-102/assets_sha256.txt",
+ "at": "2025-09-30",
+ "crop": {
+  "x": 55,
+  "y": 240,
+  "w": 1440,
+  "h": 795
+ },
+ "min_bars": 8,
+ "check": {
+  "file": "data/rtt-102/series_monthly.csv",
+  "period": "month",
+  "date_col": "month",
+  "id_col": "assistant_id",
+  "value_col": "visits",
+  "label_units": {
+   "k": 1000,
+   "m": 1000000,
+   "bn": 1000000000
+  }
+ },
+ "words": [
+  "CHATGPT",
+  "VS ITS RIVALS"
+ ],
+ "years": "2022–2026",
+ "options": [
+  {
+   "name": "A",
+   "background": "white"
+  },
+  {
+   "name": "A_short",
+   "background": "white",
+   "words": [
+    "CHATGPT",
+    "VS RIVALS"
+   ],
+   "word_sizes": [
+    120,
+    120
+   ]
+  }
+ ],
+ "overrides": {
+  "combined": {
+   "enabled": false
+  }
+ },
+ "word_sizes": [
+  120,
+  90
+ ],
+ "rows": [
+  {
+   "top": 380,
+   "tile_w": 92,
+   "gap": 14,
+   "items": [
+    {
+     "file": "logos/chatgpt.svg"
+    },
+    {
+     "file": "logos/gemini.svg"
+    },
+    {
+     "file": "logos/claude.svg"
+    },
+    {
+     "file": "logos/deepseek.svg"
+    }
+   ]
+  },
+  {
+   "top": 486,
+   "tile_w": 92,
+   "gap": 14,
+   "items": [
+    {
+     "file": "logos/grok.svg"
+    },
+    {
+     "file": "logos/perplexity.png"
+    },
+    {
+     "file": "logos/copilot.svg"
+    },
+    {
+     "file": "logos/meta_ai.png"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,75 @@
+{
+ "episode": "RTT-001 Browser Wars",
+ "kit": "rtt-001",
+ "film_config": "config_rtt001_photos.json",
+ "private_ref": "claude/compassionate-cray-tlnnkm",
+ "assets_list": "kits/rtt-001/assets_sha256.txt",
+ "at": "2011-11-30",
+ "crop": {
+  "x": 50,
+  "y": 240,
+  "w": 1500,
+  "h": 795
+ },
+ "min_bars": 8,
+ "check": {
+  "file": "data/rtt-001/series.csv",
+  "date_col": "date",
+  "id_col": "browser_id",
+  "value_col": "share",
+  "units_per_value": 100,
+  "label_units": {
+   "%": 1
+  }
+ },
+ "words": [
+  "BROWSER",
+  "WARS"
+ ],
+ "years": "1994–2026",
+ "options": [
+  {
+   "name": "A",
+   "background": "white"
+  },
+  {
+   "name": "B",
+   "background": "bright"
+  },
+  {
+   "name": "C",
+   "background": "dark"
+  }
+ ],
+ "word_sizes": [
+  104,
+  150
+ ],
+ "overrides": {
+  "era": {
+   "enabled": false
+  }
+ },
+ "rows": [
+  {
+   "top": 470,
+   "tile_w": 98,
+   "gap": 14,
+   "items": [
+    {
+     "file": "logos/netscape.svg"
+    },
+    {
+     "file": "logos/internet_explorer.png",
+     "crop_id": "internet_explorer"
+    },
+    {
+     "file": "logos/firefox.png"
+    },
+    {
+     "file": "logos/chrome.svg"
+    }
+   ]
+  }
+ ]
+}

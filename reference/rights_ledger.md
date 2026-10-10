@@ -238,6 +238,10 @@ Luke asked for real photographs of the devices of each era instead of drawings (
 
 **Similarweb's paid platform (owner DEC-531, 9 Oct 2026):** figures seen inside Similarweb's paid platform (Luke's free trial) are not used for the video or the data: its terms s.6(iv) bar presenting or sharing data received through the Platform without consent. Only figures Similarweb published in public (DEC-244's owner-accepted risk) are used.
 
+## Thumbnails (IQ-23, recorded 10 Oct 2026; owner DEC-800, DEC-801)
+
+The thumbnails use **only files already listed above**, for the same purpose (identification only, unmodified except the crops Luke allowed in the films): no new file was fetched, drawn or generated (DEC-807). `kits/thumbnails/rtt-###.json` names each file; `tests/player/run_tests_thumbnails.js` checks that every one is on the episode's private-file list (`kits/<kit>/assets_sha256.txt`, or `kits/thumbnails/assets_sha256_rtt002.txt` for Luke's badge and the car), and the workflow checks every SHA-256 before drawing. Per thumbnail: RTT-001 browser logos (board, plus Netscape, IE6 with the film's crop, Firefox and Chrome in the row); RTT-002 flags (flag-icons, MIT) and the car cut-out (Liauzh, CC BY 4.0, background removed: **its credit must stay in the RTT-002 description while the thumbnail uses it**; the team and sponsor marks are larger on a thumbnail than in the film, still for the D-05 check); RTT-003 console pictures (PS2, DS, Switch, Game Boy) and maker logos (Sony, Nintendo, Microsoft, Sega); RTT-102 all eight assistant logos; RTT-103 company logos (board, plus Amazon, Google, Microsoft and Meta in the row); Luke's RTT badge on every one. No driver photo (none is cleared). The images themselves live only in the private repo's pre-releases (DEC-006, DEC-060).
+
 ## Tools used to make the video (not drawn, not shipped)
 
 | Tool | Version | Licence |

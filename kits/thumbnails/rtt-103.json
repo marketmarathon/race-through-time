@@ -1,0 +1,98 @@
+{
+ "episode": "RTT-103 The AI Spending Race",
+ "kit": "rtt-103",
+ "film_config": "config_rtt103_film.json",
+ "private_ref": "claude/magical-einstein-hguyvv",
+ "assets_list": "kits/rtt-103/assets_sha256.txt",
+ "at": "2025-12-31",
+ "crop": {
+  "x": 55,
+  "y": 240,
+  "w": 1545,
+  "h": 795
+ },
+ "min_bars": 8,
+ "check": {
+  "file": "data/rtt-103/AI_SPENDING_RACE_MASTER.csv",
+  "date_col": "date",
+  "id_col": "company",
+  "id_lower": true,
+  "value_col": "capex_TTM_usd",
+  "label_units": {
+   "m": 1000000,
+   "bn": 1000000000
+  }
+ },
+ "words": [
+  "THE AI",
+  "SPENDING",
+  "RACE"
+ ],
+ "years": "2010–2030",
+ "options": [
+  {
+   "name": "A",
+   "background": "white"
+  },
+  {
+   "name": "A_short",
+   "background": "white",
+   "words": [
+    "AI SPENDING",
+    "RACE"
+   ],
+   "word_sizes": [
+    120,
+    150
+   ]
+  }
+ ],
+ "overrides": {
+  "story": {
+   "enabled": false
+  },
+  "combined": {
+   "enabled": false
+  }
+ },
+ "word_sizes": [
+  96,
+  96,
+  96
+ ],
+ "rows": [
+  {
+   "top": 462,
+   "tile_w": 205,
+   "tile_h": 76,
+   "gap": 14,
+   "pad": 10,
+   "items": [
+    {
+     "file": "logos/amazon.svg"
+    },
+    {
+     "file": "logos/alphabet.svg"
+    }
+   ]
+  },
+  {
+   "top": 550,
+   "tile_w": 205,
+   "tile_h": 76,
+   "gap": 14,
+   "pad": 10,
+   "items": [
+    {
+     "file": "logos/microsoft.svg"
+    },
+    {
+     "file": "logos/meta.svg"
+    }
+   ]
+  }
+ ],
+ "layout": {
+  "words_top": 80
+ }
+}
