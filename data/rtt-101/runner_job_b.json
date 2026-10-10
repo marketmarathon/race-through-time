@@ -1,112 +1,66 @@
 {
 "delay": 0.8,
-"anchored": true,
 "probe": [
 {
-"id": "46e0a7cd413f661c",
-"url": "https://news.bbc.co.uk/sport2/hi/football/teams/c/charlton_athletic/3247130.stm",
-"near": "Henry",
+"id": "01c3c8413a414a16",
+"url": "https://www.skysports.com/football/news/11668/2207953",
+"near": "Goey",
 "also": [
 [
-"Tottenham Hotspur",
-"Tottenham",
-"Spurs"
+"Feyenoord"
 ],
 [
-"Free Agent",
-"Free",
-"Agent"
+"Chelsea"
 ]
 ],
-"group": "window"
+"group": "src"
 },
 {
-"id": "03b21bddbe2e151c",
-"url": "https://news.bbc.co.uk/sport2/hi/football/teams/c/charlton_athletic/3247130.stm",
-"near": "Perry",
+"id": "f78ba27882770744",
+"url": "https://www.chelseafc.com/en/news/article/hands-on--ed-de-goey",
+"near": "Goey",
 "also": [
 [
-"Tottenham Hotspur",
-"Tottenham",
-"Spurs"
+"Feyenoord"
 ],
 [
-"Charlton Athletic",
-"Charlton"
+"Chelsea"
 ]
 ],
-"group": "window"
+"group": "src"
 },
 {
-"id": "998e5b7c274a7704",
-"url": "https://news.bbc.co.uk/sport2/hi/football/teams/c/charlton_athletic/3247130.stm",
-"near": "Black",
+"id": "ce07942295f65fad",
+"url": "https://irishtimes.com/sport/gianluca-vialli-s-signings-1.1102326",
+"near": "Ferrer",
 "also": [
 [
-"Tottenham Hotspur",
-"Tottenham",
-"Spurs"
+"Barcelona"
 ],
 [
-""
+"Chelsea"
 ]
 ],
-"group": "window"
+"group": "src"
 },
 {
-"id": "13f53582202c86b1",
-"url": "https://news.bbc.co.uk/sport1/hi/football/teams/m/man_utd/3378641.stm",
-"near": "Fangzhuo",
+"id": "e13339401145857c",
+"url": "https://www.skysports.com/football/news/2240414/rayo-keen-on-jokanovic",
+"near": "Jokanović",
 "also": [
 [
-"Dalian Shide",
-"Dalian",
-"Shide"
+"Deportivo"
 ],
 [
-"Manchester United",
-"Man Utd",
-"Man United"
+"Chelsea"
 ]
 ],
-"group": "window"
+"group": "src"
 },
 {
-"id": "1a81db22bca7af85",
-"url": "https://www.skysports.com/football/news/11675/2289568/blondel-set-for-belgium-return",
-"near": "Blondel",
-"also": [
-[
-"Tottenham Hotspur",
-"Tottenham",
-"Spurs"
-],
-[
-"Club Brugge",
-"Brugge"
-]
-],
-"group": "window"
-},
-{
-"id": "055325fdce4e044b",
-"url": "https://news.bbc.co.uk/sport2/hi/football/teams/w/wolverhampton_wanderers/3437337.stm",
-"near": "Jones",
-"also": [
-[
-"Southampton"
-],
-[
-"Wolverhampton Wanderers",
-"Wolves"
-]
-],
-"group": "window"
-},
-{
-"id": "39dd8e10cc0719d2",
-"url": "https://news.bbc.co.uk/sport2/hi/football/teams/s/swansea_city/3452661.stm",
-"near": "Tate",
+"id": "d50e75e34014c697",
+"url": "https://epfs.thedailystar.net/TDS/2002/07/27/MAI/5_14/0d78e61f32c10014_14.pdf",
+"near": "Yorke",
 "also": [
 [
 "Manchester United",
@@ -114,65 +68,16 @@
 "Man United"
 ],
 [
-"Swansea City",
-"Swansea"
+"Blackburn Rovers",
+"Blackburn"
 ]
 ],
-"group": "window"
+"group": "src"
 },
 {
-"id": "e14f1a33edbca6c4",
-"url": "https://news.bbc.co.uk/sport1/hi/football/teams/m/millwall/3993911.stm",
-"near": "Dobie",
-"also": [
-[
-"West Bromwich Albion",
-"West Brom",
-"WBA"
-],
-[
-"Millwall"
-]
-],
-"group": "window"
-},
-{
-"id": "dc2fea0ff96f642c",
-"url": "https://news.bbc.co.uk/sport2/hi/football/teams/w/west_bromwich_albion/4061859.stm",
-"near": "Sigurdsson",
-"also": [
-[
-"West Bromwich Albion",
-"West Brom",
-"WBA"
-],
-[
-""
-]
-],
-"group": "window"
-},
-{
-"id": "1ee50ed58f7b6a08",
-"url": "https://news.bbc.co.uk/sport2/hi/football/teams/m/mansfield_town/4073179.stm",
-"near": "Brown",
-"also": [
-[
-"West Bromwich Albion",
-"West Brom",
-"WBA"
-],
-[
-"Mansfield Town",
-"Mansfield"
-]
-],
-"group": "window"
-},
-{
-"id": "bf7f584a8b6c80c3",
-"url": "https://news.bbc.co.uk/sport2/hi/football/teams/r/rangers/4105285.stm",
-"near": "Djordjic",
+"id": "0a05f86e23b60fd2",
+"url": "https://www.irishexaminer.com/sport/soccer/arid-10095131.html",
+"near": "Yorke",
 "also": [
 [
 "Manchester United",
@@ -180,1416 +85,1252 @@
 "Man United"
 ],
 [
-"Rangers"
+"Blackburn Rovers",
+"Blackburn"
 ]
 ],
-"group": "window"
+"group": "src"
 },
 {
-"id": "a893c1af273b0e37",
-"url": "https://news.bbc.co.uk/sport2/hi/football/teams/n/norwich/4221977.stm",
-"near": "Stuart",
+"id": "fbf5cf0c0805e89e",
+"url": "https://archive.thedailystar.net/2003/09/02/d30902041645.htm",
+"near": "Makélélé",
 "also": [
 [
-"Charlton Athletic",
-"Charlton"
+"Real Madrid",
+"Madrid"
 ],
 [
-"Norwich City",
-"Norwich"
+"Chelsea"
 ]
 ],
-"group": "window"
+"group": "src"
 },
 {
-"id": "0d62c15817d96b3e",
-"url": "https://news.bbc.co.uk/sport2/hi/football/teams/b/burnley/4380609.stm",
-"near": "O'Connor",
+"id": "59763e44831ed899",
+"url": "https://www.uefa.com/uefachampionsleague/news/0254-0d7b34e7cabb-cbe9cd5916f1-1000--makelele-makes-chelsea-move",
+"near": "Makélélé",
 "also": [
 [
-"West Bromwich Albion",
-"West Brom",
-"WBA"
+"Real Madrid",
+"Madrid"
 ],
 [
-"Burnley"
+"Chelsea"
 ]
 ],
-"group": "window"
+"group": "src"
 },
 {
-"id": "9bea2009128f595a",
-"url": "https://news.bbc.co.uk/sport2/hi/football/teams/e/everton/6655123.stm",
-"near": "Pistone",
+"id": "2c27e09b8a237fe4",
+"url": "https://www.uefa.com/news-media/news/025e-0f908d73c73f-e86806a14946-1000--birmingham-grab-gronkj%C3%A6r",
+"near": "Grønkjær",
 "also": [
 [
-"Everton"
-],
-[
-"''Released''"
-]
-],
-"group": "window"
-},
-{
-"id": "d46a97b2c2c1444c",
-"url": "http://www.safc.com/news/?page_id=12429",
-"near": "Dowson",
-"also": [
-[
-"Youth system",
-"Youth",
-"system"
-],
-[
-"Sunderland"
-]
-],
-"group": "window"
-},
-{
-"id": "d7fe2a8dccc427bd",
-"url": "http://www.safc.com/news/?page_id=12429",
-"near": "Chandler",
-"also": [
-[
-"Youth system",
-"Youth",
-"system"
-],
-[
-"Sunderland"
-]
-],
-"group": "window"
-},
-{
-"id": "70a2af5793e21ffd",
-"url": "http://www.safc.com/news/?page_id=12429",
-"near": "Weir",
-"also": [
-[
-"Youth system",
-"Youth",
-"system"
-],
-[
-"Sunderland"
-]
-],
-"group": "window"
-},
-{
-"id": "207aa76b37e7ad99",
-"url": "http://www.safc.com/news/?page_id=12429",
-"near": "Smith",
-"also": [
-[
-"Sunderland"
-],
-[
-"Aldershot Town",
-"Aldershot"
-]
-],
-"group": "window"
-},
-{
-"id": "0120e8f227c9c233",
-"url": "http://www.safc.com/news/?page_id=12429",
-"near": "Cunningham",
-"also": [
-[
-"Sunderland"
-],
-[
-"–"
-]
-],
-"group": "window"
-},
-{
-"id": "6fadfded48be01e9",
-"url": "http://www.safc.com/news/?page_id=12429",
-"near": "Mocquet",
-"also": [
-[
-"Sunderland"
-],
-[
-"Pau"
-]
-],
-"group": "window"
-},
-{
-"id": "d9732b6f0c531c7a",
-"url": "http://www.safc.com/index.php?page_id=13016",
-"near": "Hysén",
-"also": [
-[
-"Sunderland"
-],
-[
-"Göteborg"
-]
-],
-"group": "window"
-},
-{
-"id": "e6b348bc92ea36e9",
-"url": "https://www.bbc.co.uk/sport/football/21839361",
-"near": "Owen",
-"also": [
-[
-"Stoke City",
-"Stoke"
-],
-[
-"Retired"
-]
-],
-"group": "window"
-},
-{
-"id": "917ac38eb39863d0",
-"url": "http://www.tottenhamhotspur.com/news/player-update-100613/",
-"near": "Barthram",
-"also": [
-[
-"Tottenham Hotspur",
-"Tottenham",
-"Spurs"
-],
-[
-"Swindon Town",
-"Swindon"
-]
-],
-"group": "window"
-},
-{
-"id": "9ee46dab2a6f8c95",
-"url": "http://www.tottenhamhotspur.com/news/player-update-100613/",
-"near": "Bostock",
-"also": [
-[
-"Tottenham Hotspur",
-"Tottenham",
-"Spurs"
-],
-[
-"Royal Antwerp",
-"Royal",
-"Antwerp"
-]
-],
-"group": "window"
-},
-{
-"id": "653b57c4d45ce5ec",
-"url": "http://www.tottenhamhotspur.com/news/player-update-100613/",
-"near": "Parrett",
-"also": [
-[
-"Tottenham Hotspur",
-"Tottenham",
-"Spurs"
-],
-[
-"Stevenage"
-]
-],
-"group": "window"
-},
-{
-"id": "666dbe443b60e3dd",
-"url": "http://www.tottenhamhotspur.com/news/player-update-100613/",
-"near": "Bentley",
-"also": [
-[
-"Tottenham Hotspur",
-"Tottenham",
-"Spurs"
-],
-[
-"Free agent",
-"Free",
-"agent"
-]
-],
-"group": "window"
-},
-{
-"id": "d902138afa9f4f14",
-"url": "http://www.tottenhamhotspur.com/news/player-update-100613/",
-"near": "Nicholson",
-"also": [
-[
-"Tottenham Hotspur",
-"Tottenham",
-"Spurs"
-],
-[
-"Greenock Morton",
-"Greenock",
-"Morton"
-]
-],
-"group": "window"
-},
-{
-"id": "f8cb747f58c73970",
-"url": "http://www.tottenhamhotspur.com/news/player-update-100613/",
-"near": "Gallas",
-"also": [
-[
-"Tottenham Hotspur",
-"Tottenham",
-"Spurs"
-],
-[
-"Perth Glory",
-"Perth",
-"Glory"
-]
-],
-"group": "window"
-},
-{
-"id": "f066ad0e7ee40493",
-"url": "http://www.tottenhamhotspur.com/news/player-update-100613/",
-"near": "Munns",
-"also": [
-[
-"Tottenham Hotspur",
-"Tottenham",
-"Spurs"
+"Chelsea"
 ],
 [
 "Birmingham City",
 "Birmingham"
 ]
 ],
-"group": "window"
+"group": "src"
 },
 {
-"id": "1816f9252283dce7",
-"url": "http://www.manutd.com/en/News-And-Features/Football-News/2013/Jul/united-reach-agreement-with-molde-over-mats-daehli.aspx",
-"near": "Dæhli",
-"also": [
-[
-"Manchester United",
-"Man Utd",
-"Man United"
-],
-[
-"Molde"
-]
-],
-"group": "window"
-},
-{
-"id": "6e553ca07f00c1b2",
-"url": "https://www.wba.co.uk/news/2013/september/tamas-bids-fond-farewell",
-"near": "Tamaș",
-"also": [
-[
-"West Bromwich Albion",
-"West Brom",
-"WBA"
-],
-[
-"CFR Cluj",
-"Cluj"
-]
-],
-"group": "window"
-},
-{
-"id": "d186015135ac23c2",
-"url": "https://www.prosport.ro/fotbal-intern/liga-1/interviu-exclusiv-ala-un-pahar-de-vorba-cu-tamasa-da-am-iesit-in-club-si-m-am-imbatat-sunt-primul-fotbalist-care-face-asta-11756380",
-"near": "Tamaș",
-"also": [
-[
-"West Bromwich Albion",
-"West Brom",
-"WBA"
-],
-[
-"CFR Cluj",
-"Cluj"
-]
-],
-"group": "window"
-},
-{
-"id": "56366c7fff443f5b",
-"url": "http://www.manutd.com/en/News-And-Features/Football-News/2013/Sep/saidy-janko-signs-for-manchester-united.aspx",
-"near": "Janko",
-"also": [
-[
-"Zürich"
-],
-[
-"Manchester United",
-"Man Utd",
-"Man United"
-]
-],
-"group": "window"
-},
-{
-"id": "a8d3c29e745baa24",
-"url": "http://metro.co.uk/2013/10/23/arsenal-beat-everton-to-sign-goalkeeper-matt-macey-from-bristol-rovers-4158409/",
-"near": "Macey",
-"also": [
-[
-"Bristol Rovers",
-"Bristol"
-],
-[
-"Arsenal"
-]
-],
-"group": "window"
-},
-{
-"id": "1982a2d5b4bf2c92",
-"url": "http://www.arsenal.com/academy/players/matt-macey",
-"near": "Macey",
-"also": [
-[
-"Bristol Rovers",
-"Bristol"
-],
-[
-"Arsenal"
-]
-],
-"group": "window"
-},
-{
-"id": "fcf6f55bdd53e30f",
-"url": "https://www.expressandstar.com/sport/football/wolverhampton-wanderers-fc/2019/05/23/wolves-snap-up-promising-youngster-hong-wan/",
-"near": "Wan",
-"also": [
-[
-"Yeovil Town",
-"Yeovil"
-],
-[
-"Wolverhampton Wanderers",
-"Wolves"
-]
-],
-"group": "window"
-},
-{
-"id": "2d8dd4f1fee8d94c",
-"url": "https://www.wolves.co.uk/news/under-23/20190702-wolves-sign-french-prospect-nya/#",
-"near": "Nya",
-"also": [
-[
-"Paris Saint-Germain",
-"Paris",
-"Saint-Germain"
-],
-[
-"Wolverhampton Wanderers",
-"Wolves"
-]
-],
-"group": "window"
-},
-{
-"id": "b2d6da1d8fe790a2",
-"url": "https://www.manutd.com/en/news/detail/man-utd-confirms-to-premier-league-list-of-released-players",
-"near": "Bohui",
-"also": [
-[
-"Manchester United",
-"Man Utd",
-"Man United"
-],
-[
-"NAC Breda",
-"Breda"
-]
-],
-"group": "window"
-},
-{
-"id": "5f1a416f4de399cb",
-"url": "https://www.manutd.com/en/news/detail/man-utd-confirms-to-premier-league-list-of-released-players",
-"near": "Whelan",
-"also": [
-[
-"Manchester United",
-"Man Utd",
-"Man United"
-],
-[
-"Watford"
-]
-],
-"group": "window"
-},
-{
-"id": "0e1e2fd4e988c913",
-"url": "https://www.sufc.co.uk/academy/news/2019/october/development-duo-sign/",
-"near": "Gribbin",
-"also": [
-[
-"Manchester United",
-"Man Utd",
-"Man United"
-],
-[
-"Sheffield United",
-"Sheff Utd"
-]
-],
-"group": "window"
-},
-{
-"id": "7386fa71d480793a",
-"url": "https://www.manutd.com/en/news/detail/man-utd-confirms-to-premier-league-list-of-released-players",
-"near": "Gribbin",
-"also": [
-[
-"Manchester United",
-"Man Utd",
-"Man United"
-],
-[
-"Sheffield United",
-"Sheff Utd"
-]
-],
-"group": "window"
-},
-{
-"id": "068019cb3b38ae37",
-"url": "https://www.pitchero.com/clubs/newmillsafc/news/dearnley-joins-the-millers--2488104.html",
-"near": "Dearnley",
-"also": [
-[
-"Manchester United",
-"Man Utd",
-"Man United"
-],
-[
-"New Mills",
-"Mills"
-]
-],
-"group": "window"
-},
-{
-"id": "f6429a313cec1b14",
-"url": "https://www.manutd.com/en/news/detail/man-utd-confirms-to-premier-league-list-of-released-players",
-"near": "Dearnley",
-"also": [
-[
-"Manchester United",
-"Man Utd",
-"Man United"
-],
-[
-"New Mills",
-"Mills"
-]
-],
-"group": "window"
-},
-{
-"id": "e97819bfdcc0f436",
-"url": "https://www.manutd.com/en/news/detail/man-utd-confirms-to-premier-league-list-of-released-players",
-"near": "Thompson",
-"also": [
-[
-"Manchester United",
-"Man Utd",
-"Man United"
-],
-[
-"Released"
-]
-],
-"group": "window"
-},
-{
-"id": "4cc576c6a1b4d9dd",
-"url": "https://www.manutd.com/en/news/detail/man-utd-confirms-to-premier-league-list-of-released-players",
-"near": "Buffonge",
-"also": [
-[
-"Manchester United",
-"Man Utd",
-"Man United"
-],
-[
-"Spezia"
-]
-],
-"group": "window"
-},
-{
-"id": "f1d4c98e8b03406a",
-"url": "https://www.manutd.com/en/news/detail/man-utd-confirms-to-premier-league-list-of-released-players",
-"near": "Warren",
-"also": [
-[
-"Manchester United",
-"Man Utd",
-"Man United"
-],
-[
-"Released"
-]
-],
-"group": "window"
-},
-{
-"id": "15a5276952ee598a",
-"url": "https://www.nottscountyfc.co.uk/news/2019/june/new-article/",
-"near": "Etete",
-"also": [
-[
-"Notts County",
-"Notts"
-],
-[
-"Tottenham Hotspur",
-"Tottenham",
-"Spurs"
-]
-],
-"group": "window"
-},
-{
-"id": "6906c82701c57193",
-"url": "https://www.football.london/tottenham-hotspur-fc/transfer-news/spurs-complete-first-signing-summer-16274030",
-"near": "Solberg",
-"also": [
-[
-"Bryne"
-],
-[
-"Tottenham Hotspur",
-"Tottenham",
-"Spurs"
-]
-],
-"group": "window"
-},
-{
-"id": "435e44960236d9da",
-"url": "https://www.lancashiretelegraph.co.uk/sport/football/burnley_fc/news/17640868.three-players-to-leave-burnley-with-peter-crouch-in-talks/",
-"near": "Lindegaard",
-"also": [
-[
-"Burnley"
-],
-[
-"Helsingborg"
-]
-],
-"group": "window"
-},
-{
-"id": "bc968233099383c4",
-"url": "https://www.lancashiretelegraph.co.uk/sport/football/burnley_fc/news/17640868.three-players-to-leave-burnley-with-peter-crouch-in-talks/",
-"near": "Mitchell",
-"also": [
-[
-"Burnley"
-],
-[
-"Larne"
-]
-],
-"group": "window"
-},
-{
-"id": "b357fdccca9c3b74",
-"url": "https://www.chelseafc.com/en/news/2019/07/01/kalas-makes-championship-switch",
-"near": "Kalas",
+"id": "112b24a9f8579af5",
+"url": "https://www.uefa.com/insideuefa/news/newsid=269368.html",
+"near": "Grønkjær",
 "also": [
 [
 "Chelsea"
 ],
 [
-"Bristol City",
-"Bristol"
+"Birmingham City",
+"Birmingham"
 ]
 ],
-"group": "window"
+"group": "src"
 },
 {
-"id": "74d8d63853c65ce2",
-"url": "https://www.pinkun.com/norwich-city/hannover-announce-permanent-signing-of-canaries-defender-1-6122958",
-"near": "Franke",
+"id": "5beae44432d216c1",
+"url": "https://www.irishexaminer.com/sport/soccer/arid-10048903.html",
+"near": "Kežman",
 "also": [
 [
-"Norwich City",
-"Norwich"
+"PSV"
 ],
 [
-"Hannover 96",
-"Hannover"
+"Chelsea"
 ]
 ],
-"group": "window"
+"group": "src"
 },
 {
-"id": "c19edcf2389d03fd",
-"url": "https://www.hitc.com/en-gb/2019/06/06/young-maltese-goalkeeper-christopher-farrugia-explains-how-sheff/",
-"near": "Farrugia",
-"also": [
-[
-"Floriana"
-],
-[
-"Sheffield United",
-"Sheff Utd"
-]
-],
-"group": "window"
-},
-{
-"id": "fbc8717fc6ad23de",
-"url": "https://www.lancashiretelegraph.co.uk/sport/football/burnley_fc/news/17640868.three-players-to-leave-burnley-with-peter-crouch-in-talks/",
-"near": "Bruce",
-"also": [
-[
-"Burnley"
-],
-[
-"Free agent",
-"Free",
-"agent"
-]
-],
-"group": "window"
-},
-{
-"id": "43c1012d580aea76",
-"url": "https://www.lancashiretelegraph.co.uk/sport/football/burnley_fc/news/17640868.three-players-to-leave-burnley-with-peter-crouch-in-talks/",
-"near": "Massanka",
-"also": [
-[
-"Burnley"
-],
-[
-"Chorley"
-]
-],
-"group": "window"
-},
-{
-"id": "0bfb1ea817a21cea",
-"url": "https://www.chelseafc.com/en/news/2019/05/31/rob-green-announces-retirement",
-"near": "Green",
+"id": "861036c84487e585",
+"url": "https://www.uefa.com/news-media/news/01aa-0e6cd0416190-aabfabc783df-1000--forssell-makes-birmingham-move/",
+"near": "Forssell",
 "also": [
 [
 "Chelsea"
 ],
 [
-"Retired"
+"Birmingham City",
+"Birmingham"
 ]
 ],
-"group": "window"
+"group": "src"
 },
 {
-"id": "e52971366f9aaa72",
-"url": "https://www.chelseafc.com/en/news/2019/07/01/academy-trio-sign-new-deals",
-"near": "Thompson",
+"id": "6071aa88b01615ed",
+"url": "https://www.uefa.com/uefachampionsleague/news/newsid=317551.html",
+"near": "Wright-Phillips",
+"also": [
+[
+"Manchester City",
+"Man City"
+],
+[
+"Chelsea"
+]
+],
+"group": "src"
+},
+{
+"id": "c03ea3a429d31b4c",
+"url": "https://old.jamaica-gleaner.com/gleaner/20080829/sports/sports6.html",
+"near": "Wright-Phillips",
+"also": [
+[
+"Manchester City",
+"Man City"
+],
+[
+"Chelsea"
+]
+],
+"group": "src"
+},
+{
+"id": "45be61309b960167",
+"url": "https://www.uefa.com/uefachampionsleague/news/newsid=429743.html",
+"near": "Guðjohnsen",
 "also": [
 [
 "Chelsea"
 ],
 [
-"Exeter City",
-"Exeter"
+"Barcelona"
 ]
 ],
-"group": "window"
+"group": "src"
 },
 {
-"id": "bb0a5f1a507ea21a",
-"url": "https://www.brightonandhovealbion.com/news/2019/may/bruno-retires/",
-"near": "Bruno",
+"id": "90f48f27d8c9247d",
+"url": "https://www.mancity.com/news/first-team/first-team-news/archive/2007/july/city-swoop-for-petrov",
+"near": "Petrov",
 "also": [
 [
-"Brighton & Hove Albion",
-"Brighton",
-"Brighton and Hove Albion"
+"Atlético Madrid",
+"Atlético",
+"Madrid"
 ],
 [
-"Retired"
+"Manchester City",
+"Man City"
 ]
 ],
-"group": "window"
+"group": "src"
 },
 {
-"id": "3e12ad03189fe2cc",
-"url": "http://www.evertonfc.com/news/2019/04/17/kristensen",
-"near": "Kristensen",
+"id": "7a22a3d5b77f829e",
+"url": "https://archive.thedailystar.net/2007/07/28/d70728041340.htm",
+"near": "Petrov",
 "also": [
 [
-"Lyngby"
+"Atlético Madrid",
+"Atlético",
+"Madrid"
 ],
 [
-"Everton"
+"Manchester City",
+"Man City"
 ]
 ],
-"group": "window"
+"group": "src"
 },
 {
-"id": "64024a99be324b95",
-"url": "https://www.lancashiretelegraph.co.uk/sport/football/burnley_fc/news/17640868.three-players-to-leave-burnley-with-peter-crouch-in-talks/",
-"near": "Walters",
+"id": "c56c22474345b4f0",
+"url": "https://www.uefa.com/uefachampionsleague/news/0254-0d7ba23325be-910d6926d641-1000--chelsea-capture-argentinian-prodigy",
+"near": "Santo",
 "also": [
 [
-"Burnley"
+"Audax Italiano",
+"Audax",
+"Italiano"
 ],
 [
-"Retired"
+"Chelsea"
 ]
 ],
-"group": "window"
+"group": "src"
 },
 {
-"id": "199a8c44f1423bcf",
-"url": "http://thepoint.gm/africa/gambia/article/eupen-signs-sulayman-marreh-permanent",
-"near": "Marreh",
-"also": [
-[
-"Watford"
-],
-[
-"Eupen"
-]
-],
-"group": "window"
-},
-{
-"id": "4701df1233b65ba6",
-"url": "https://www.watfordobserver.co.uk/sport/17622421.obbi-oulare-makes-move-from-watford-to-standard-liege-permanent/",
-"near": "Oularé",
-"also": [
-[
-"Watford"
-],
-[
-"Standard Liège",
-"Standard",
-"Liège"
-]
-],
-"group": "window"
-},
-{
-"id": "df9a9788a6bf4627",
-"url": "https://www.lcfc.com/news/1260931/leicester-city-sign-trio-of-youth-internationals/press-release",
-"near": "Daley-Campbell",
-"also": [
-[
-"Arsenal"
-],
-[
-"Leicester City",
-"Leicester"
-]
-],
-"group": "window"
-},
-{
-"id": "699e143fb4fd0116",
-"url": "https://www.lancashiretelegraph.co.uk/sport/football/burnley_fc/news/17640868.three-players-to-leave-burnley-with-peter-crouch-in-talks/",
-"near": "Crouch",
-"also": [
-[
-"Burnley"
-],
-[
-"Retired"
-]
-],
-"group": "window"
-},
-{
-"id": "66ba35e13ce76988",
-"url": "https://twitter.com/NorwichCityAcad",
-"near": "Nizet",
-"also": [
-[
-"Anderlecht"
-],
-[
-"Norwich City",
-"Norwich"
-]
-],
-"group": "window"
-},
-{
-"id": "6f2215cdf33560d3",
-"url": "https://www.burnleyexpress.net/sport/football/burnley-sign-young-curzon-ashton-right-back-1-9771545",
-"near": "Senior",
-"also": [
-[
-"Curzon Ashton",
-"Curzon",
-"Ashton"
-],
-[
-"Burnley"
-]
-],
-"group": "window"
-},
-{
-"id": "b71cd2663922ba42",
-"url": "https://www.lancashiretelegraph.co.uk/sport/football/burnley_fc/news/17640868.three-players-to-leave-burnley-with-peter-crouch-in-talks/",
-"near": "Cook",
-"also": [
-[
-"Burnley"
-],
-[
-"Hampton & Richmond Borough",
-"Hampton",
-"Richmond",
-"Borough"
-]
-],
-"group": "window"
-},
-{
-"id": "eeb68c8e65a429c0",
-"url": "https://www.expressandstar.com/sport/football/wolverhampton-wanderers-fc/2019/07/01/leander-dendonckers-permanent-wolves-signing-completed/",
-"near": "Dendoncker",
-"also": [
-[
-"Anderlecht"
-],
-[
-"Wolverhampton Wanderers",
-"Wolves"
-]
-],
-"group": "window"
-},
-{
-"id": "23d20f617f07df8e",
-"url": "https://www.chelseafc.com/en/news/2019/07/01/academy-trio-sign-new-deals",
-"near": "Angban",
+"id": "8db23bb8e4c9f573",
+"url": "https://www.cityam.com/swp-capture-inspires-city-to-cup-escape/",
+"near": "Wright-Phillips",
 "also": [
 [
 "Chelsea"
 ],
 [
-"Metz"
+"Manchester City",
+"Man City"
 ]
 ],
-"group": "window"
+"group": "src"
 },
 {
-"id": "3a3a85d8b4091b5b",
-"url": "https://twitter.com/NorwichCityAcad/status/1143459184278740994",
-"near": "Mair",
+"id": "5a2907403b745fcf",
+"url": "https://uefa.com/uefaeuropaleague/news/01d5-0e70bfe98422-2c2e1477ace6-1000--bellamy-joins-city-kaka-stays-at-milan",
+"near": "Bellamy",
 "also": [
-[
-"Aberdeen"
-],
-[
-"Norwich City",
-"Norwich"
-]
-],
-"group": "window"
-},
-{
-"id": "bbc183f6086c14f8",
-"url": "https://futbal.pravda.sk/zahranicne-ligy/clanok/510905-sestnastrocny-kosican-odisiel-snivat-sen-o-premier-league-do-west-hamu/",
-"near": "Veliky",
-"also": [
-[
-"Slavia Prague",
-"Slavia",
-"Prague"
-],
 [
 "West Ham United",
 "West Ham"
-]
 ],
-"group": "window"
-},
-{
-"id": "ff10553ba8a44d66",
-"url": "https://www.birminghammail.co.uk/sport/football/transfer-news/confirmed-wolves-sanction-double-transfer-16518326",
-"near": "Caiado",
-"also": [
-[
-"Wolverhampton Wanderers",
-"Wolves"
-],
-[
-"Famalicão"
-]
-],
-"group": "window"
-},
-{
-"id": "f0971e79b7e44018",
-"url": "https://www.birminghammail.co.uk/sport/football/transfer-news/confirmed-wolves-sanction-double-transfer-16518326",
-"near": "Gonçalves",
-"also": [
-[
-"Wolverhampton Wanderers",
-"Wolves"
-],
-[
-"Famalicão"
-]
-],
-"group": "window"
-},
-{
-"id": "9d650df8bf05da97",
-"url": "https://www.birminghammail.co.uk/sport/football/transfer-news/wolves-transfer-news-lee-harkin-16528155",
-"near": "Harkin",
-"also": [
-[
-"Moyola Park",
-"Moyola",
-"Park"
-],
-[
-"Wolverhampton Wanderers",
-"Wolves"
-]
-],
-"group": "window"
-},
-{
-"id": "e95dd2bf40fa1bce",
-"url": "https://bohemianfc.com/?p=14415",
-"near": "Reghba",
-"also": [
-[
-"Bohemians"
-],
-[
-"Leicester City",
-"Leicester"
-]
-],
-"group": "window"
-},
-{
-"id": "529e1934a5ef5748",
-"url": "https://www.lcfc.com/news/1260931/leicester-city-sign-trio-of-youth-internationals/press-release",
-"near": "Hirst",
-"also": [
-[
-"OH Leuven",
-"Leuven"
-],
-[
-"Leicester City",
-"Leicester"
-]
-],
-"group": "window"
-},
-{
-"id": "35fa834be472dd79",
-"url": "https://www.matlocktownfc.co.uk/hall-joins-premier-league-sheffield-united.asp",
-"near": "Hall",
-"also": [
-[
-"Matlock Town",
-"Matlock"
-],
-[
-"Sheffield United",
-"Sheff Utd"
-]
-],
-"group": "window"
-},
-{
-"id": "acaa8e65f7245358",
-"url": "https://www.motherwellfc.co.uk/2019/07/08/sherwin-seedorf-signs-for-motherwell/",
-"near": "Seedorf",
-"also": [
-[
-"Wolverhampton Wanderers",
-"Wolves"
-],
-[
-"Motherwell"
-]
-],
-"group": "window"
-},
-{
-"id": "f0a59d7d3c41962b",
-"url": "https://www.wolves.co.uk/news/under-23/20190709-tsun-dai-completes-wolves-move/",
-"near": "Dai",
-"also": [
-[
-"Oxford United",
-"Oxford"
-],
-[
-"Wolverhampton Wanderers",
-"Wolves"
-]
-],
-"group": "window"
-},
-{
-"id": "2aebb54a066e45be",
-"url": "https://www.leedsunited.com/en/news/sam-dalby-makes-watford-move",
-"near": "Dalby",
-"also": [
-[
-"Leeds United",
-"Leeds"
-],
-[
-"Watford"
-]
-],
-"group": "window"
-},
-{
-"id": "8ea877f014afee2d",
-"url": "https://www.wolves.co.uk/news/academy/20190712-meet-the-new-wolves-academy-scholars/",
-"near": "Bugarin",
-"also": [
-[
-"Celta Vigo",
-"Celta",
-"Vigo"
-],
-[
-"Wolverhampton Wanderers",
-"Wolves"
-]
-],
-"group": "window"
-},
-{
-"id": "3fdab5d833318955",
-"url": "https://www.wolves.co.uk/news/academy/20190712-meet-the-new-wolves-academy-scholars/",
-"near": "Scott",
-"also": [
-[
-"Linfield"
-],
-[
-"Wolverhampton Wanderers",
-"Wolves"
-]
-],
-"group": "window"
-},
-{
-"id": "f678759c5c82ad2e",
-"url": "https://www.wolves.co.uk/news/academy/20190712-meet-the-new-wolves-academy-scholars/",
-"near": "Hesketh",
-"also": [
 [
 "Manchester City",
 "Man City"
-],
-[
-"Wolverhampton Wanderers",
-"Wolves"
 ]
 ],
-"group": "window"
+"group": "src"
 },
 {
-"id": "c05cc399c2179b31",
-"url": "https://www.brightonandhovealbion.com/news/2019/july/albion-sign-man-city-and-england-starlet/",
-"near": "Richards",
+"id": "16cd5899552c9101",
+"url": "https://www.odt.co.nz/node/40077",
+"near": "Bellamy",
 "also": [
+[
+"West Ham United",
+"West Ham"
+],
 [
 "Manchester City",
 "Man City"
-],
-[
-"Brighton & Hove Albion",
-"Brighton",
-"Brighton and Hove Albion"
 ]
 ],
-"group": "window"
+"group": "src"
 },
 {
-"id": "e5a158f826bf17c5",
-"url": "https://www.chelseafc.com/en/news/2019/07/18/daishawn-redan-moves-to-germany",
-"near": "Redan",
+"id": "9002629c17749054",
+"url": "https://www.cityam.com/fulhams-smalling-opts-join-united-over-arsenal/",
+"near": "Smalling",
 "also": [
 [
-"Chelsea"
+"Fulham"
 ],
-[
-"Hertha BSC",
-"Hertha"
-]
-],
-"group": "window"
-},
-{
-"id": "205c3582364685d1",
-"url": "https://www.gazette-news.co.uk/sport/17783028.colchester-united-starlet-todd-miller-joined-brighton-hove-albion/",
-"near": "Miller",
-"also": [
-[
-"Colchester United",
-"Colchester"
-],
-[
-"Brighton & Hove Albion",
-"Brighton",
-"Brighton and Hove Albion"
-]
-],
-"group": "window"
-},
-{
-"id": "e1d9a031f0faf924",
-"url": "https://www.canaries.co.uk/News/2019/july/nelson-oliveira-departs-to-join-aek-athens/",
-"near": "Oliveira",
-"also": [
-[
-"Norwich City",
-"Norwich"
-],
-[
-"AEK Athens",
-"Athens"
-]
-],
-"group": "window"
-},
-{
-"id": "529b330eae5ca40a",
-"url": "https://www.southamptonfc.com/news/2019-07-22/announcement-jordy-clasie-southampton-az-alkmaar-transfer",
-"near": "Clasie",
-"also": [
-[
-"Southampton"
-],
-[
-"AZ Alkmaar",
-"Alkmaar"
-]
-],
-"group": "window"
-},
-{
-"id": "5809aab2965ac513",
-"url": "https://www.evertonfc.com/news/1291724/sambou-signs-for-fortuna-sittard",
-"near": "Sambou",
-"also": [
-[
-"Everton"
-],
-[
-"Fortuna Sittard",
-"Fortuna",
-"Sittard"
-]
-],
-"group": "window"
-},
-{
-"id": "21d826973744dca6",
-"url": "https://www.motherwellfc.co.uk/2019/07/26/reece-mcalear-joins-norwich-city/",
-"near": "McAlear",
-"also": [
-[
-"Motherwell"
-],
-[
-"Norwich City",
-"Norwich"
-]
-],
-"group": "window"
-},
-{
-"id": "7a69f737ebb2038d",
-"url": "https://www.dailyrecord.co.uk/sport/football/football-transfer-news/tobi-oluwayemi-joins-celtic-tottenham-18337174",
-"near": "Oluwayemi",
-"also": [
-[
-"Tottenham Hotspur",
-"Tottenham",
-"Spurs"
-],
-[
-"Celtic"
-]
-],
-"group": "window"
-},
-{
-"id": "06b7f6463a35d089",
-"url": "https://www.manutd.com/en/news/detail/nishan-burkart-leaves-united-to-join-freiburg",
-"near": "Burkart",
-"also": [
 [
 "Manchester United",
 "Man Utd",
 "Man United"
-],
-[
-"Freiburg"
 ]
 ],
-"group": "window"
+"group": "src"
 },
 {
-"id": "32cac7c190cca22e",
-"url": "https://www.canaries.co.uk/News/2019/july/ben-marshall-contract-with-norwich-city-terminated-by-mutual-consent/",
-"near": "Marshall",
+"id": "6eb55a9e2bb61afc",
+"url": "https://m.jpost.com/sports/benayoun-finalizes-move-to-chelsea",
+"near": "Benayoun",
 "also": [
 [
-"Norwich City",
-"Norwich"
+"Liverpool"
 ],
 [
-"Free agent",
-"Free",
-"agent"
+"Chelsea"
 ]
 ],
-"group": "window"
+"group": "src"
 },
 {
-"id": "ca9bd86a2481ddc4",
-"url": "https://www.arsenal.com/news/xavier-amaechi-joins-hamburg",
-"near": "Amaechi",
+"id": "db77c9770d6b5e05",
+"url": "https://thejc.com/life/sport/benayoun-is-israels-most-expensive-player-ever-wa258c0e",
+"near": "Benayoun",
 "also": [
 [
-"Arsenal"
+"Liverpool"
 ],
 [
-"Hamburger SV",
-"Hamburger"
+"Chelsea"
 ]
 ],
-"group": "window"
+"group": "src"
 },
 {
-"id": "9eb0b145d2084aea",
-"url": "https://www.leicestermercury.co.uk/sport/football/transfer-news/leicester-city-sign-youth-international-3164726",
-"near": "Odunze",
-"also": [
-[
-"Vancouver Whitecaps",
-"Vancouver",
-"Whitecaps"
-],
-[
-"Leicester City",
-"Leicester"
-]
-],
-"group": "window"
-},
-{
-"id": "e4b95c27a914e924",
-"url": "https://www.arsenal.com/news/takuma-asano-joins-partizan-belgrade",
-"near": "Asano",
-"also": [
-[
-"Arsenal"
-],
-[
-"Partizan Belgrade",
-"Partizan",
-"Belgrade"
-]
-],
-"group": "window"
-},
-{
-"id": "076b6b3a8f540a49",
-"url": "https://www.avfc.co.uk/News/2019/08/08/transfer-news-bjarnason-departs",
-"near": "Bjarnason",
+"id": "670732360997a3f0",
+"url": "https://english.ahram.org.eg/News/14893.aspx",
+"near": "Young",
 "also": [
 [
 "Aston Villa",
 "Villa"
 ],
 [
-"Free agent",
-"Free",
-"agent"
+"Manchester United",
+"Man Utd",
+"Man United"
 ]
 ],
-"group": "window"
+"group": "src"
 },
 {
-"id": "0b3dce6b457b6f04",
-"url": "https://www.wolves.co.uk/news/under-23/20190809-mayounga-completes-wolves-move/",
-"near": "Mayounga",
+"id": "06121d415e37602c",
+"url": "https://www.khaleejtimes.com/football/ashley-young-joins-man-united",
+"near": "Young",
 "also": [
 [
-"Lyon"
+"Aston Villa",
+"Villa"
 ],
 [
-"Wolverhampton Wanderers",
-"Wolves"
+"Manchester United",
+"Man Utd",
+"Man United"
 ]
 ],
-"group": "window"
+"group": "src"
 },
 {
-"id": "bc6a93a5d46bba52",
-"url": "https://www.buryfc.co.uk/news/2019/august/callum-hulme-joins-leicester-city/",
-"near": "Hulme",
+"id": "ad658e07c06db2a1",
+"url": "https://www.aljazeera.com/sport/football/2011/06/20116231687478336.html",
+"near": "Young",
 "also": [
 [
-"Bury"
+"Aston Villa",
+"Villa"
 ],
 [
-"Leicester City",
-"Leicester"
+"Manchester United",
+"Man Utd",
+"Man United"
 ]
 ],
-"group": "window"
+"group": "src"
 },
 {
-"id": "a1593f7e6c2fea5b",
-"url": "https://www.evertonfc.com/news/1310544/onyekuru-moves-to-monaco",
-"near": "Onyekuru",
+"id": "3712f82eb56292db",
+"url": "https://english.ahram.org.eg/News/63252.aspx",
+"near": "Zaha",
 "also": [
 [
-"Everton"
+"Crystal Palace",
+"Palace"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "src"
+},
+{
+"id": "f186be126b229b02",
+"url": "https://www.si.com/soccer/2013/01/25/manchester-united-wilfried-zaha",
+"near": "Zaha",
+"also": [
+[
+"Crystal Palace",
+"Palace"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "src"
+},
+{
+"id": "af32203c5ae48aaa",
+"url": "https://malaysia.news.yahoo.com/day-2013-wilfried-zaha-agrees-060000269.html",
+"near": "Zaha",
+"also": [
+[
+"Crystal Palace",
+"Palace"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "src"
+},
+{
+"id": "8b2cbe962b2a4329",
+"url": "https://www.uefa.com/uefachampionsleague/news/newsid=1975641.html",
+"near": "Cuevas",
+"also": [
+[
+"O'Higgins"
+],
+[
+"Chelsea"
+]
+],
+"group": "src"
+},
+{
+"id": "2cd4b4284fc7157e",
+"url": "https://www.gulf-times.com/story/439208/chelsea-seal-swoop-for-brazilian-starlet",
+"near": "Nathan",
+"also": [
+[
+"Atlético Paranaense",
+"Atlético",
+"Paranaense"
+],
+[
+"Chelsea"
+]
+],
+"group": "src"
+},
+{
+"id": "2c0d3bad75ea8e45",
+"url": "https://skysports.com/transfer/news/12691/9806928/nathan-to-join-chelsea-pending-medical-say-sky-sources",
+"near": "Nathan",
+"also": [
+[
+"Atlético Paranaense",
+"Atlético",
+"Paranaense"
+],
+[
+"Chelsea"
+]
+],
+"group": "src"
+},
+{
+"id": "7d3bbba137424cfd",
+"url": "https://www.pressandjournal.co.uk/fp/news/579765/chelsea-complete-signing-another-brazilian-star/",
+"near": "Nathan",
+"also": [
+[
+"Atlético Paranaense",
+"Atlético",
+"Paranaense"
+],
+[
+"Chelsea"
+]
+],
+"group": "src"
+},
+{
+"id": "8762ed79152e36b7",
+"url": "https://www.irishnews.com/sport/2015/08/29/news/lopes-move-to-monaco-leaves-pellegrini-red-faced-245013/",
+"near": "Lopes",
+"also": [
+[
+"Manchester City",
+"Man City"
 ],
 [
 "Monaco"
 ]
 ],
-"group": "window"
+"group": "src"
 },
 {
-"id": "e5ad19e99abf42b6",
-"url": "https://www.standard.co.uk/sport/football/tottenham/tottenham-flop-georgeskevin-nkoudou-completes-46m-besiktas-transfer-a4219296.html",
-"near": "Nkoudou",
+"id": "1e28684ca7bdadd9",
+"url": "https://www.hitc.com/report-manchester-city-youngster-set-for-permanent-ligue-1-switc/",
+"near": "Lopes",
+"also": [
+[
+"Manchester City",
+"Man City"
+],
+[
+"Monaco"
+]
+],
+"group": "src"
+},
+{
+"id": "f6ea663b2fc5490a",
+"url": "https://www.eurosport.com/football/rekik-leaving-city-for-om_sto4803112/story.shtml",
+"near": "Rekik",
+"also": [
+[
+"Manchester City",
+"Man City"
+],
+[
+"Marseille"
+]
+],
+"group": "src"
+},
+{
+"id": "5dc399dd2c595d4d",
+"url": "https://www.omroepbrabant.nl/nieuws/2117303/ex-psver-karim-rekik-vertrekt-naar-olympique-marseille",
+"near": "Rekik",
+"also": [
+[
+"Manchester City",
+"Man City"
+],
+[
+"Marseille"
+]
+],
+"group": "src"
+},
+{
+"id": "cf3508951dd7ff25",
+"url": "https://www.skysports.com/transfer/news/12691/9905726/manchester-united-agree-matteo-darmian-fee-with-torino",
+"near": "Darmian",
+"also": [
+[
+"Torino"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "src"
+},
+{
+"id": "2646fdd9af5883b4",
+"url": "https://irishtimes-irishtimes-prod.cdn.arcpublishing.com/sport/soccer/english-soccer/manchester-united-move-closer-to-completing-darmian-signing-1.2277671",
+"near": "Darmian",
+"also": [
+[
+"Torino"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "src"
+},
+{
+"id": "d79cdbe0192f45ac",
+"url": "https://www.tntsports.co.uk/football/premier-league/2015-2016/matteo-darmian-joins-manchester-united-in-14.37-million-deal_sto4817430/story.shtml",
+"near": "Darmian",
+"also": [
+[
+"Torino"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "src"
+},
+{
+"id": "b82fb78c6a4bf01a",
+"url": "https://gulfnews.com/sport/football/premier-league/bastian-schweinsteiger-completes-manchester-united-switch-1.1549548",
+"near": "Schweinsteiger",
+"also": [
+[
+"Bayern Munich",
+"Bayern",
+"Munich"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "src"
+},
+{
+"id": "63b8e324926bf135",
+"url": "https://english.ahram.org.eg/News/135112.aspx",
+"near": "Schweinsteiger",
+"also": [
+[
+"Bayern Munich",
+"Bayern",
+"Munich"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "src"
+},
+{
+"id": "80fbbe033470425e",
+"url": "https://english.ahram.org.eg/News/140117.aspx",
+"near": "Schweinsteiger",
+"also": [
+[
+"Bayern Munich",
+"Bayern",
+"Munich"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "src"
+},
+{
+"id": "2dadb9f6a791db0a",
+"url": "https://www.tntsports.co.uk/football/premier-league/2015-2016/chelsea-transfer-news-club-to-wrap-up-kenedy-deal-after-work-permit-comes-through_sto4854692/story.shtml",
+"near": "Kenedy",
+"also": [
+[
+"Fluminense"
+],
+[
+"Chelsea"
+]
+],
+"group": "src"
+},
+{
+"id": "72baf33bb9a0c365",
+"url": "https://www.foxnews.com/sports/chelsea-sign-kenedy-from-fluminense",
+"near": "Kenedy",
+"also": [
+[
+"Fluminense"
+],
+[
+"Chelsea"
+]
+],
+"group": "src"
+},
+{
+"id": "58d4fbff4645976b",
+"url": "https://itv.com/news/2015-08-30/jonny-evans-moves-from-manchester-united-to-west-brom",
+"near": "Evans",
+"also": [
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+],
+[
+"West Bromwich Albion",
+"West Brom",
+"WBA"
+]
+],
+"group": "src"
+},
+{
+"id": "20d89eea110e2846",
+"url": "https://gulfnews.com/sport/football/english-premier-league-manchester-uniteds-jonny-evans-signs-for-west-brom-1.1575373",
+"near": "Evans",
+"also": [
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+],
+[
+"West Bromwich Albion",
+"West Brom",
+"WBA"
+]
+],
+"group": "src"
+},
+{
+"id": "a1087976795c0065",
+"url": "https://www.tntsports.co.uk/football/premier-league/2015-2016/chelsea-sign-nantes-defender-papy-djilobodji-in-4m-deal_sto4889546/story.shtml",
+"near": "Djilobodji",
+"also": [
+[
+"Nantes"
+],
+[
+"Chelsea"
+]
+],
+"group": "src"
+},
+{
+"id": "390590fb9d9a9515",
+"url": "https://www.tntsports.co.uk/football/chelsea-complete-djilobodji-deal-as-loan-list-grows_sto4889938/story.shtml",
+"near": "Djilobodji",
+"also": [
+[
+"Nantes"
+],
+[
+"Chelsea"
+]
+],
+"group": "src"
+},
+{
+"id": "d40cba5d88dff8aa",
+"url": "https://cityam.com/?p=398117",
+"near": "Djilobodji",
+"also": [
+[
+"Nantes"
+],
+[
+"Chelsea"
+]
+],
+"group": "src"
+},
+{
+"id": "770ee99b7367fc24",
+"url": "https://www.foxnews.com/sports/chelsea-snap-up-nantes-defender-djilobodji-on-four-year-deal.amp",
+"near": "Djilobodji",
+"also": [
+[
+"Nantes"
+],
+[
+"Chelsea"
+]
+],
+"group": "src"
+},
+{
+"id": "89e36ba16415fc93",
+"url": "https://www.juventus.com/it/news/articoli/la-juve-riscatta-cuadrado",
+"near": "Cuadrado",
+"also": [
+[
+"Chelsea"
+],
+[
+"Juventus"
+]
+],
+"group": "src"
+},
+{
+"id": "3ec66697dc065cd1",
+"url": "https://www.tntsports.co.uk/football/serie-a/2016-2017/juventus-sign-juan-cuadrado-on-permanent-deal-from-chelsea_sto6177303/story.shtml",
+"near": "Cuadrado",
+"also": [
+[
+"Chelsea"
+],
+[
+"Juventus"
+]
+],
+"group": "src"
+},
+{
+"id": "ed34c9fc982b2f6e",
+"url": "https://www.calcioefinanza.it/2017/05/22/la-juventus-riscatta-cuadrado-dal-chelsea-20-milioni/",
+"near": "Cuadrado",
+"also": [
+[
+"Chelsea"
+],
+[
+"Juventus"
+]
+],
+"group": "src"
+},
+{
+"id": "9780db74e6017854",
+"url": "https://www.skysports.com/football/news/11339366/chelsea-ordered-to-pay-lb2-5m-to-exeter-for-ethan-ampadu",
+"near": "Ampadu",
+"also": [
+[
+"Exeter City",
+"Exeter"
+],
+[
+"Chelsea"
+]
+],
+"group": "src"
+},
+{
+"id": "1c7b93875d7f323b",
+"url": "https://www.exetercityfc.co.uk/news/2018/april/ethan-ampadu-tribunal-fee",
+"near": "Ampadu",
+"also": [
+[
+"Exeter City",
+"Exeter"
+],
+[
+"Chelsea"
+]
+],
+"group": "src"
+},
+{
+"id": "11084f074e9bdb2a",
+"url": "https://shropshirestar.com/sport/uk-sports/2018/04/20/exeter-disappointed-for-football-after-tribunal-over-ethan-ampadu-compensation",
+"near": "Ampadu",
+"also": [
+[
+"Exeter City",
+"Exeter"
+],
+[
+"Chelsea"
+]
+],
+"group": "src"
+},
+{
+"id": "79f8fc9892704a28",
+"url": "https://www.premierleague.com/news/444221",
+"near": "Matić",
+"also": [
+[
+"Chelsea"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "src"
+},
+{
+"id": "eb971765e785bfb1",
+"url": "https://itv.com/news/2017-07-31/man-united-sign-midfielder-matic-from-chelsea",
+"near": "Matić",
+"also": [
+[
+"Chelsea"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "src"
+},
+{
+"id": "b7fbb8e59e807b7e",
+"url": "https://theweek.com/man-utd-transfer-news/87341/man-united-confirm-40m-deal-for-chelsea-star-nemanja-matic",
+"near": "Matić",
+"also": [
+[
+"Chelsea"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "src"
+},
+{
+"id": "b290d2a4c9157a8a",
+"url": "https://www.channelstv.com/2019/06/29/united-complete-wan-bissakas-50m-move/amp/",
+"near": "Wan-Bissaka",
+"also": [
+[
+"Crystal Palace",
+"Palace"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "src"
+},
+{
+"id": "385a1b50a195a041",
+"url": "https://uk.sports.yahoo.com/news/aaron-wan-bissaka-transfer-man-100330244.html",
+"near": "Wan-Bissaka",
+"also": [
+[
+"Crystal Palace",
+"Palace"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "src"
+},
+{
+"id": "ecb70791fbc34c48",
+"url": "https://english.ahram.org.eg/News/372703.aspx",
+"near": "Pašalić",
+"also": [
+[
+"Chelsea"
+],
+[
+"Atalanta"
+]
+],
+"group": "src"
+},
+{
+"id": "84a76e788fb20485",
+"url": "https://www.football-italia.net/154842/official-atalanta-purchase-pasalic",
+"near": "Pašalić",
+"also": [
+[
+"Chelsea"
+],
+[
+"Atalanta"
+]
+],
+"group": "src"
+},
+{
+"id": "4ebf138ea0d4e8bf",
+"url": "https://sg.news.yahoo.com/chelsea-clear-gathers-pace-kalidou-175202998.html",
+"near": "Koulibaly",
+"also": [
+[
+"Chelsea"
+],
+[
+"Al Hilal",
+"Hilal"
+]
+],
+"group": "src"
+},
+{
+"id": "d3ed17970c36816a",
+"url": "https://www.tntsports.co.uk/football/transfers/2023-2024/kalidou-koulibaly-senegal-defender-confirms-transfer-to-saudi-side-al-hilal-after-one-season-at-chel_sto9673889/story.shtml",
+"near": "Koulibaly",
+"also": [
+[
+"Chelsea"
+],
+[
+"Al Hilal",
+"Hilal"
+]
+],
+"group": "src"
+},
+{
+"id": "9c64181b1563bc61",
+"url": "https://sg.news.yahoo.com/ac-milan-sign-ruben-loftus-171502620.html",
+"near": "Loftus-Cheek",
+"also": [
+[
+"Chelsea"
+],
+[
+"AC Milan",
+"Milan"
+]
+],
+"group": "src"
+},
+{
+"id": "ffbdee2381193608",
+"url": "https://www.tntsports.co.uk/football/transfers/2023-2024/ac-milan-complete-signing-of-ruben-loftus-cheek-as-england-midfielder-quits-chelsea-for-serie-a_sto9677978/story.shtml",
+"near": "Loftus-Cheek",
+"also": [
+[
+"Chelsea"
+],
+[
+"AC Milan",
+"Milan"
+]
+],
+"group": "src"
+},
+{
+"id": "3af0f827d0ea69a8",
+"url": "https://br.soccerway.com/noticias/meio-campista-loftus-cheek-troca-o-chelsea-pelo-milan-por-16-milhoes-de-euros/AsHlmjam",
+"near": "Loftus-Cheek",
+"also": [
+[
+"Chelsea"
+],
+[
+"AC Milan",
+"Milan"
+]
+],
+"group": "src"
+},
+{
+"id": "a2a6d66ed45ade00",
+"url": "https://www.soccerway.com/news/soccer-serie-a-midfielder-ruben-loftus-cheek-completes-move-to-ac-milan-from-chelsea/4WCXjY7k",
+"near": "Loftus-Cheek",
+"also": [
+[
+"Chelsea"
+],
+[
+"AC Milan",
+"Milan"
+]
+],
+"group": "src"
+},
+{
+"id": "4ea7ac04b7fe65d2",
+"url": "https://www.pressreader.com/usa/the-guardian-usa/20230714/282175065587151",
+"near": "Pulisic",
+"also": [
+[
+"Chelsea"
+],
+[
+"AC Milan",
+"Milan"
+]
+],
+"group": "src"
+},
+{
+"id": "d0dddcf4625b9d64",
+"url": "https://www.tntsports.co.uk/football/transfers/2023-2024/christian-pulisic-joins-ac-milan-from-chelsea-united-states-star-makes-move-on-four-year-deal_sto9691862/story.shtml",
+"near": "Pulisic",
+"also": [
+[
+"Chelsea"
+],
+[
+"AC Milan",
+"Milan"
+]
+],
+"group": "src"
+},
+{
+"id": "cd7c0754f159dba7",
+"url": "https://www.soccerway.com/news/soccer-serie-a-u-s-forward-christian-pulisic-joins-milan-from-chelsea-on-four-year-deal/Y1PpMuJD",
+"near": "Pulisic",
+"also": [
+[
+"Chelsea"
+],
+[
+"AC Milan",
+"Milan"
+]
+],
+"group": "src"
+},
+{
+"id": "b814a19e357f5b5a",
+"url": "https://www.skysports.com/football/news/12040/12930397/rasmus-hojlund-manchester-united-complete-72m-deal-with-atalanta-for-denmark-forward",
+"near": "Højlund",
+"also": [
+[
+"Atalanta"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "src"
+},
+{
+"id": "695eb5adb1d6df06",
+"url": "https://www.breakingnews.ie/sport/manchester-united-agree-deal-for-atalanta-striker-rasmus-hojlund-1508811.html",
+"near": "Højlund",
+"also": [
+[
+"Atalanta"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "src"
+},
+{
+"id": "390d832932d16476",
+"url": "https://uk.news.yahoo.com/man-city-could-net-20m-145811325.html",
+"near": "Harwood-Bellis",
+"also": [
+[
+"Manchester City",
+"Man City"
+],
+[
+"Southampton"
+]
+],
+"group": "src"
+},
+{
+"id": "335c2d444c1c50b8",
+"url": "https://breakingnews.ie/sport/chelsea-sign-leicester-midfielder-kiernan-dewsbury-hall-for-around-30million-1645077.html",
+"near": "Dewsbury-Hall",
+"also": [
+[
+"Leicester City",
+"Leicester"
+],
+[
+"Chelsea"
+]
+],
+"group": "src"
+},
+{
+"id": "4da1f37cda353eba",
+"url": "https://uk.sports.yahoo.com/news/manchester-city-seal-33-7m-193518696.html",
+"near": "Savinho",
+"also": [
+[
+"Troyes"
+],
+[
+"Manchester City",
+"Man City"
+]
+],
+"group": "src"
+},
+{
+"id": "3e8d28e3ca9f5087",
+"url": "https://www.inkl.com/news/manchester-city-splash-out-on-first-signing-of-the-summer",
+"near": "Savinho",
+"also": [
+[
+"Troyes"
+],
+[
+"Manchester City",
+"Man City"
+]
+],
+"group": "src"
+},
+{
+"id": "ad9810107570e24e",
+"url": "https://www.expressandstar.com/sport/wolves-star-completes-manchester-city-move-5692733",
+"near": "Ait-Nouri",
+"also": [
+[
+"Wolverhampton Wanderers",
+"Wolves"
+],
+[
+"Manchester City",
+"Man City"
+]
+],
+"group": "src"
+},
+{
+"id": "5b833fabb8546e7d",
+"url": "https://citizen.digital/article/man-city-sign-ait-nouri-from-wolves-on-five-year-deal-n364311",
+"near": "Ait-Nouri",
+"also": [
+[
+"Wolverhampton Wanderers",
+"Wolves"
+],
+[
+"Manchester City",
+"Man City"
+]
+],
+"group": "src"
+},
+{
+"id": "b165aba0e8b16c5d",
+"url": "https://malaymail.com/news/sports/2025/06/10/man-city-sign-ait-nouri-in-31m-deal-ahead-of-club-world-cup-squad-rebuild/179804",
+"near": "Ait-Nouri",
+"also": [
+[
+"Wolverhampton Wanderers",
+"Wolves"
+],
+[
+"Manchester City",
+"Man City"
+]
+],
+"group": "src"
+},
+{
+"id": "3f8238bcd1685d60",
+"url": "https://thefinancialexpress.com.bd/sports/everton-and-chelsea-in-agreement-for-midfielder-dewsbury-hall",
+"near": "Dewsbury-Hall",
+"also": [
+[
+"Chelsea"
+],
+[
+"Everton"
+]
+],
+"group": "src"
+},
+{
+"id": "637f397850567901",
+"url": "https://www.lbc.co.uk/news/sport/everton-sign-kiernan-dewsbury-hall/",
+"near": "Dewsbury-Hall",
+"also": [
+[
+"Chelsea"
+],
+[
+"Everton"
+]
+],
+"group": "src"
+},
+{
+"id": "5614144e7c8350cf",
+"url": "https://citizen.digital/article/hojlund-makes-permanent-move-to-napoli-from-man-utd-n383923",
+"near": "Højlund",
+"also": [
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+],
+[
+"Napoli"
+]
+],
+"group": "src"
+},
+{
+"id": "a2abe9be6ef4aefb",
+"url": "https://www.beinsports.com/en-us/soccer/premier-league/articles/man-utd-sign-highly-rated-youngster-thompson-2026-07-20",
+"near": "Thompson",
 "also": [
 [
 "Tottenham Hotspur",
@@ -1597,87 +1338,203 @@
 "Spurs"
 ],
 [
-"Beşiktaş"
+"Manchester United",
+"Man Utd",
+"Man United"
 ]
 ],
-"group": "window"
+"group": "src"
 },
 {
-"id": "f8aa06c3a8b1fced",
-"url": "https://www.tottenhamhotspur.com/news/2019/august/tenerife-move-for-shashoua/",
-"near": "Shashoua",
+"id": "11df7c557ebdb97b",
+"url": "https://www.irishnews.com/sport/soccer/transfer-deadline-day-spurs-go-for-chelsea-duo-as-aston-villa-splash-the-cash-YEZOTZ4KA5PSTEGAUU2CBY3JMI/",
+"near": "Adarabioyo",
 "also": [
+[
+"Chelsea"
+],
 [
 "Tottenham Hotspur",
 "Tottenham",
 "Spurs"
-],
-[
-"Tenerife"
 ]
 ],
-"group": "window"
+"group": "src"
 },
 {
-"id": "c7c3d542390de60f",
-"url": "https://www.leicestermercury.co.uk/sport/football/transfer-news/leicester-city-complete-signing-young-3256335",
-"near": "O'Connor",
+"id": "37a9bb29f4a57c80",
+"url": "https://www.independent.co.uk/sport/that-was-the-weekend-that-was-1525128.html",
+"near": "Cundy",
 "also": [
 [
-"Wexford"
+"Chelsea"
 ],
 [
-"Leicester City",
-"Leicester"
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
 ]
 ],
-"group": "window"
+"group": "src"
 },
 {
-"id": "1594458d3db347db",
-"url": "https://www.lcfc.com/news/1327079/youngster-pacanu-joins-romanian-side-cfr-cluj/press-release",
-"near": "Pașcanu",
+"id": "26b2089731bfd353",
+"url": "https://www.bbc.co.uk/sport/football/articles/c70dkdyd5r9o",
+"near": "Adarabioyo",
 "also": [
 [
-"Leicester City",
-"Leicester"
+"Chelsea"
 ],
 [
-"CFR Cluj",
-"Cluj"
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
 ]
 ],
-"group": "window"
+"group": "src"
 },
 {
-"id": "d9361e2ff1864db4",
-"url": "https://www.lancs.live/sport/football/football-news/burnley-complete-signing-goalkeeper-jensen-16926412",
-"near": "Jensen",
+"id": "14b0fe5fe4274e2a",
+"url": "https://www.bbc.co.uk/sport/football/articles/cgrv2n29d9yo",
+"near": "Adarabioyo",
 "also": [
 [
-"Hellerup"
+"Chelsea"
 ],
 [
-"Burnley"
+"Tottenham Hotspur",
+"Tottenham",
+"Spurs"
 ]
 ],
-"group": "window"
+"group": "src"
 },
 {
-"id": "e919536f405b96cc",
-"url": "https://www.lancs.live/sport/football/football-news/burnley-complete-deal-swedish-striker-17049931",
-"near": "Mumbongo",
+"id": "18682fc732de2a8e",
+"url": "https://www.independent.co.uk/sport/gillespie-dominant-football-1569869.html",
+"near": "Gillespie",
 "also": [
 [
-"Hellas Verona",
-"Hellas",
-"Verona"
+"Manchester United",
+"Man Utd",
+"Man United"
 ],
 [
-"Burnley"
+"Newcastle United",
+"Newcastle"
 ]
 ],
-"group": "window"
+"group": "src"
+},
+{
+"id": "df8e6779117f8b9d",
+"url": "https://www.bbc.co.uk/sport/football/48784655",
+"near": "Wan-Bissaka",
+"also": [
+[
+"Crystal Palace",
+"Palace"
+],
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+]
+],
+"group": "src"
+},
+{
+"id": "7bfbe82c1e680ea8",
+"url": "https://www.theguardian.com/football/2005/jul/18/newsstory.sport10",
+"near": "Wright-Phillips",
+"also": [
+[
+"Manchester City",
+"Man City"
+],
+[
+"Chelsea"
+]
+],
+"group": "src"
+},
+{
+"id": "1ada34c6025fb94d",
+"url": "https://www.theguardian.com/football/2005/jul/18/newsstory.sport",
+"near": "Wright-Phillips",
+"also": [
+[
+"Manchester City",
+"Man City"
+],
+[
+"Chelsea"
+]
+],
+"group": "src"
+},
+{
+"id": "0b56e40073cb9c45",
+"url": "https://www.independent.co.uk/sport/football-speed-forces-issue-by-requesting-move-1141625.html",
+"near": "O'Kane",
+"also": [
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+],
+[
+"Everton"
+]
+],
+"group": "src"
+},
+{
+"id": "1961b965f3fbc698",
+"url": "https://www.independent.co.uk/sport/that-was-the-weekend-that-was-curcic-curse-on-baffling-little-1150592.html",
+"near": "O'Kane",
+"also": [
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+],
+[
+"Everton"
+]
+],
+"group": "src"
+},
+{
+"id": "ad8b41388187bccc",
+"url": "https://www.independent.co.uk/sport/football-the-spent-force-of-goodison-1188538.html",
+"near": "O'Kane",
+"also": [
+[
+"Manchester United",
+"Man Utd",
+"Man United"
+],
+[
+"Everton"
+]
+],
+"group": "src"
+},
+{
+"id": "e33bbbdf8d709787",
+"url": "https://www.theguardian.com/football/2003/sep/01/newsstory.chelsea",
+"near": "Makélélé",
+"also": [
+[
+"Real Madrid",
+"Madrid"
+],
+[
+"Chelsea"
+]
+],
+"group": "src"
 }
 ]
 }

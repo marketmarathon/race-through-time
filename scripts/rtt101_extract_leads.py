@@ -41,8 +41,11 @@ FILES += [(os.path.basename(f), "S") for f in sorted(_glob.glob(os.path.join(PRI
 # source round 5 (IQ-15l): the fees that decide the finish (part26a, deal_id = our transfer_id) and Cowork's reads of the cited pages in
 # Luke's Chrome (part26b, keyed by transfer_id; its columns are mapped to the research columns below)
 FILES += [(os.path.basename(f), "S") for f in sorted(_glob.glob(os.path.join(PRIV, "part26[ab]_*.csv")))]
+# source round 6 (IQ-15n): the leaders' open Tier 1 fees (part27a, deal IDs L6001-L6053 via source_round6_map.csv) and Cowork's Chrome
+# reads (part27b, keyed by transfer_id, read like part26b)
+FILES += [(os.path.basename(f), "S") for f in sorted(_glob.glob(os.path.join(PRIV, "part27[ab]_*.csv")))]
 _MAP = {"Tf8a5f7e6ee": "T6403be737e"}  # IQ-15k: Hector's club-season duplicate is dropped; his one Chelsea -> Fulham move (DEC-436)
-for _name in ("source_round1_map.csv", "source_round2_map.csv", "source_round3_map.csv"):
+for _name in ("source_round1_map.csv", "source_round2_map.csv", "source_round3_map.csv", "source_round6_map.csv"):
     _mp = os.path.join(os.path.dirname(os.path.abspath(OUT)), _name)
     if os.path.exists(_mp):
         for _r in csv.DictReader(open(_mp, encoding="utf-8")):
@@ -71,7 +74,7 @@ AGENCY = re.compile(r"syndicated copy of (?:PA|Reuters|AFP|AP|the Press Associat
 FOREIGN = re.compile(r"(omanobserver|thejakartapost|tsn\.ca|supersport|malaymail|morungexpress|ahram\.org|gulfnews|iol\.co\.za|channelstv|"
                      r"aljazeera|mg\.co\.za|tribune\.com\.pk|the-star\.co\.ke)", re.I)
 CREDITED = re.compile(r"(syndicated copy of|(?:Reuters|AFP|AP|Sapa-AP) copy|credit|dateline|footer shows|ends '|— ?Reuters|- AFP|\(AP\)|"
-                      r"byline[^.;]*(?:Reuters|Agence France|AFP))", re.I)
+                      r"byline[^.;]*(?:Reuters|Agence France|AFP)|(?:Reuters|AFP|AP) byline)", re.I)
 UNCREDITED = re.compile(r"no agency credit|NOT confirmed", re.I)
 
 
@@ -102,11 +105,11 @@ for fn, sec in FILES:
     p = os.path.join(PRIV, fn)
     sha = hashlib.sha256(open(p, "rb").read()).hexdigest()[:16]
     _r26a = {}
-    if fn.startswith("part26b"):  # grade each Chrome read like the research row citing the same page, else by its publisher
-        for _x in csv.DictReader(open(os.path.join(PRIV, next(f for f, _ in FILES if f.startswith("part26a"))), encoding="utf-8-sig")):
+    if fn.startswith(("part26b", "part27b")):  # grade each Chrome read like the research row citing the same page, else by its publisher
+        for _x in csv.DictReader(open(os.path.join(PRIV, next(f for f, _ in FILES if f.startswith(fn[:6] + "a"))), encoding="utf-8-sig")):
             _r26a.setdefault(_x["source_url"].strip(), (_x.get("grade (A/B/C)") or _x.get("grade"), _x.get("notes", "")))
     for r in csv.DictReader(open(p, encoding="utf-8-sig")):
-        if fn.startswith("part26b"):
+        if fn.startswith(("part26b", "part27b")):
             import rtt101_lib as _L
             _u = (r.get("url") or "").strip()
             if _u and not _u.startswith("http"):
@@ -138,9 +141,9 @@ for fn, sec in FILES:
                 r["grade"] = "C"
             if fn.startswith(("part22", "part23", "part24", "part25")):
                 r["_round2"] = True
-            if fn.startswith(("part25", "part26")):
+            if fn.startswith(("part25", "part26", "part27")):
                 r["_round4"] = True
-            if fn.startswith("part26"):
+            if fn.startswith(("part26", "part27")):
                 r["_round5"] = True
         url = (r.get("source_url") or "").strip()
         url = re.sub(r"^https?://acc-english\.ajax\.nl", "https://english.ajax.nl", url)  # a copy of the same Ajax page (Cowork, IQ-15h)
