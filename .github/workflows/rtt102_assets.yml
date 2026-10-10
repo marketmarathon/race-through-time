@@ -1,0 +1,66 @@
+# Race Through Time - RTT-102 assistant logos (IQ-19, design round 1). Its own workflow: nothing here can start a
+# render of any episode.
+#
+# Wikimedia answers HTTP 429 to the Claude Code cloud container, so the logos listed in kits/rtt-102/logos.json are
+# looked up and downloaded here, on a GitHub-hosted runner, and committed straight into the PRIVATE repo (DEC-060).
+# This repository is PUBLIC (DEC-006, DEC-061), so this workflow:
+#   - pushes to the private repo with the secret RTT_PRIVATE_TOKEN, never printing it;
+#   - keeps a file only if its downloaded SHA-1 equals the wiki API's, and records page, licence, author,
+#     restrictions, SHA-1 and SHA-256 in a manifest next to the files (copied into the rights ledger afterwards);
+#   - uploads NO workflow artifact, uses NO cache and prints only titles, names, sizes, licences and hashes;
+#   - deletes everything it downloaded from the runner at the end.
+# Trigger: a push that changes this file or the fetch script on the IQ-19 branch, or by hand.
+# Run 2: the named candidates only (chosen from run 1's listings), every candidate kept for the choice by eye.
+name: rtt102-assets
+
+on:
+  push:
+    branches: [claude/relaxed-clarke-9e0sqq]
+    paths: [.github/workflows/rtt102_assets.yml, scripts/rtt102_fetch_logos.py]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rtt102-assets
+  cancel-in-progress: false
+
+env:
+  PRIVATE_REPO: marketmarathon/race-through-time-private
+  PRIVATE_BRANCH: claude/relaxed-clarke-9e0sqq
+
+jobs:
+  fetch:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Look up and download from Wikimedia, check SHA-1, commit to the private repo
+        env:
+          GH_TOKEN: ${{ secrets.RTT_PRIVATE_TOKEN }}
+        run: |
+          set -euo pipefail
+          if [ -z "$GH_TOKEN" ]; then echo "::error::secret RTT_PRIVATE_TOKEN is not available to this run"; exit 1; fi
+          W="$RUNNER_TEMP/rtt102"; mkdir -p "$W"
+          git clone -q "https://x-access-token:${GH_TOKEN}@github.com/${PRIVATE_REPO}.git" "$W/private"
+          cd "$W/private"
+          if git ls-remote --exit-code --heads origin "$PRIVATE_BRANCH" > /dev/null; then git checkout -q "$PRIVATE_BRANCH"; else git checkout -q -b "$PRIVATE_BRANCH" origin/main; fi
+          cd "$GITHUB_WORKSPACE"
+          rm -rf "$W/private/assets/rtt-102/logos"
+          python3 scripts/rtt102_fetch_logos.py kits/rtt-102/logos.json "$W/private/assets/rtt-102/logos"
+          cd "$W/private"
+          git config user.name "rtt102-assets workflow"
+          git config user.email "rtt102-assets@users.noreply.github.com"
+          git add -A assets/rtt-102/logos
+          if git diff --cached --quiet; then echo "nothing new to commit"; exit 0; fi
+          git commit -q -m "RTT-102: assistant logos from Wikimedia, SHA-1 checked (IQ-19; source run ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID})"
+          git push -q origin "HEAD:$PRIVATE_BRANCH"
+          echo "committed $(git rev-parse --short HEAD) to ${PRIVATE_REPO} ${PRIVATE_BRANCH}"
+
+      - name: Delete the downloads from the runner
+        if: always()
+        run: rm -rf "$RUNNER_TEMP/rtt102"

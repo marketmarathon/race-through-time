@@ -126,9 +126,13 @@ function dataUrl(f) {
 function svgSized(f) {
   let t = fs.readFileSync(f, 'utf8');
   const m = /<svg\b[^>]*>/i.exec(t);
-  if (m && !/\swidth\s*=/.test(m[0])) {
+  /* IQ-19: a width or height in percent ("100%", RTT-102's Grok file) gives no intrinsic size either; it is replaced the
+     same way. No RTT-001, RTT-003 or RTT-103 file has one (checked on their private branches, 9 Oct 2026). */
+  const pct = m && /\swidth\s*=\s*["'][^"']*%/.test(m[0]);
+  if (m && (!/\swidth\s*=/.test(m[0]) || pct)) {
     const vb = /viewBox\s*=\s*["']\s*[-\d.]+[\s,]+[-\d.]+[\s,]+([\d.]+)[\s,]+([\d.]+)/i.exec(m[0]);
-    if (vb) t = t.slice(0, m.index) + m[0].replace(/<svg\b/i, '<svg width="' + vb[1] + '" height="' + vb[2] + '"') + t.slice(m.index + m[0].length);
+    const tag = pct ? m[0].replace(/\s(width|height)\s*=\s*["'][^"']*["']/gi, '') : m[0];
+    if (vb) t = t.slice(0, m.index) + tag.replace(/<svg\b/i, '<svg width="' + vb[1] + '" height="' + vb[2] + '"') + t.slice(m.index + m[0].length);
   }
   return 'data:image/svg+xml;base64,' + Buffer.from(t, 'utf8').toString('base64');
 }
@@ -150,6 +154,21 @@ function loadPictures(cfg, data) {
     const f = path.join(dir, e.id + '.png');
     if (!fs.existsSync(f)) { console.log('picture "' + e.id + '": ' + f + ' not found - none drawn'); continue; }
     out[e.id] = dataUrl(f);
+  }
+  return out;
+}
+/* RTT-001 era photos (DEC-221): era.photo_dir under the private assets; each era entry with a `file` gets its photo.
+   A missing file is reported ("not found") like the pictures, which the render workflows treat as a failure. */
+function loadEraPhotos(cfg) {
+  const E = cfg.era;
+  if (!E || !E.enabled || !(E.eras || []).some(e => e.file)) return {};
+  const dir = path.join(path.resolve(KIT, process.env.RTT_LOCAL_ASSETS || cfg.local_assets || 'local_assets'), E.photo_dir || 'photos');
+  const out = {};
+  for (const e of E.eras) {
+    if (!e.file) continue;
+    const f = path.join(dir, e.file);
+    if (!fs.existsSync(f)) { console.log('era photo "' + e.device + '": ' + f + ' not found - none drawn'); continue; }
+    out[e.file] = dataUrl(f);
   }
   return out;
 }
@@ -197,7 +216,7 @@ async function openPlayer({ cfg, data, raster = 1, chrome }) {
   if (!fontOK) { await br.close(); throw new Error(fam + ' did not resolve - refusing to render substituted type'); }
 
   await pg.evaluate(o => window.setup(o), { data, cfg, raster, flags: loadFlags(cfg), overlays: loadOverlays(cfg),
-                                          pictures: loadPictures(cfg, data), logos: loadLogos(cfg) });
+                                          pictures: loadPictures(cfg, data), logos: loadLogos(cfg), era_photos: loadEraPhotos(cfg) });
   await pg.evaluate(() => window.__imagesReady);
   return { br, pg };
 }

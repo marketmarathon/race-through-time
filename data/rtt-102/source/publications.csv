@@ -1,0 +1,60 @@
+pub_id,title,publisher,author,publication_date,source_type,data_version,url
+S23_BILLION,ChatGPT Topped 1 Billion Visits in February,Similarweb,David F. Carr,2023-03-07,S,older,https://www.similarweb.com/blog/insights/ai-news/chatgpt-1-billion/
+S23_MARCH,"ChatGPT Grew Another 55.8% in March, Overtaking Bing and DuckDuckGo",Similarweb,David F. Carr,2023-04-03,S,older,https://www.similarweb.com/blog/insights/ai-news/chatgpt-bing-duckduckgo/
+S23_APRIL,"ChatGPT’s Growth Begins to Flatten, up 12.6% from March to April",Similarweb,David F. Carr,2023-05-03,S,older,https://www.similarweb.com/blog/insights/ai-news/chatgpt-growth-flattens/
+S23_MAY,"As ChatGPT Growth Flattened in May, Google Bard Rose 187%",Similarweb,David F. Carr,2023-06-05,S,older,https://www.similarweb.com/blog/insights/ai-news/chatgpt-bard/
+S23_PERP,Perplexity.AI Gained Traffic as ChatGPT Dipped in June and July,Similarweb,David F. Carr,2023-08-09,S,older,https://www.similarweb.com/blog/insights/ai-news/perplexity/
+S23_COMEBACK,ChatGPT Recovers to Near-Peak Levels,Similarweb,David F. Carr,2023-10-30,S,older,https://www.similarweb.com/blog/insights/ai-news/chatgpt-comeback/
+S23_BDAY,ChatGPT’s First Birthday is November 30: A Year in Review,Similarweb,David F. Carr,2023-11-15,S,older,https://www.similarweb.com/blog/insights/ai-news/chatgpt-birthday/
+DIGI_2023,"ChatGPT turns a year old, marking a major milestone for generative AI",Digiday,Marty Swant,2023-12-01,P,older,https://digiday.com/media-buying/chatgpt-turns-a-year-old-marking-a-major-milestone-for-generative-ai/
+ROW_2023,How AI shook the world in 2023,Rest of World,Daniela Dib,2023-12-29,P,older,https://restofworld.org/2023/the-year-of-ai-boom-2023/
+R24_PERP_JAN,"Search startup Perplexity AI valued at $520 million in funding from Bezos, Nvidia",Reuters / Investing.com syndication,Krystal Hu and Pritam Biswas,2024-01-04,P,older,https://www.investing.com/news/stock-market-news/search-startup-perplexity-ai-valued-at-520-million-in-funding-from-bezos-nvidia-3267562
+S24_CUSTOM,Charting ChatGPT’s App Store of Custom GPTs,Similarweb,David F. Carr,2024-01-29,S,older,https://www.similarweb.com/blog/insights/ai-news/chatgpt-custom-gpts/
+R24_PERP_FEB,SK Telecom partners with AI search startup Perplexity in Korea,Reuters,Krystal Hu,2024-02-26,P,older,https://www.reuters.com/technology/sk-telecom-partners-with-ai-search-startup-perplexity-korea-2024-02-26/
+SW24_FEB,"ChatGPT, Custom GPTs, and AI Chat Challengers: CoPilot, Gemini, Perplexity, and More",Similarweb,David F. Carr,2024-03-08,S,older,https://www.similarweb.com/blog/insights/ai-news/chatgpt-challengers/
+SW24_MAR,"ChatGPT Traffic up 13% YoY, Nearly Matching 2023 Peak",Similarweb,David F. Carr,2024-04-11,S,older,https://www.similarweb.com/blog/insights/ai-news/chatgpt-rebuilds/
+SW24_APR,ChatGPT Hits Daily Traffic Record as Search Engine Rumors Swirl,Similarweb,David F. Carr,2024-05-10,S,older,https://www.similarweb.com/blog/insights/ai-news/chatgpt-daily-peak/
+SW24_JUN_PROJECT,"ChatGPT Continued to Gain Traffic in June, Beating the “Summer Slump”",Similarweb,David F. Carr,2024-06-27,S,older,https://www.similarweb.com/blog/insights/ai-news/chatgpt-beats-summer-slump/
+DR24_JUN,Digital 2024 July Global Statshot Report,DataReportal,Simon Kemp,2024-07-31,P,current,https://datareportal.com/reports/digital-2024-july-global-statshot
+SW24_JUL,"ChatGPT Traffic Stumbles, Luma Dream Machine Surges",Similarweb,David F. Carr,2024-08-09,S,current,https://www.similarweb.com/blog/insights/ai-news/chatgpt-traffic-dips-slightly-luma-dream-machine-surges/
+S_METHOD_CTO,New Data Version: The Best Digital Data Just Got Better,Similarweb,"Ron Asher, Chief Technology Officer",2024-09-24,S,current,https://www.similarweb.com/blog/updates/announcements/new-data-version/
+SW24_SEP,ChatGPT Topped 3 Billion Visits in September,Similarweb,David F. Carr,2024-10-16,S,current,https://www.similarweb.com/blog/insights/ai-news/chatgpt-topped-3-billion-visits-in-september/
+SW24_NOTEBOOK,AI Podcasts Power Huge Growth for Google’s NotebookLM,Similarweb,David F. Carr,2024-10-17,S,current,https://www.similarweb.com/blog/insights/ai-news/ai-podcasts-power-huge-growth-for-googles-notebooklm/
+SW24_OCT,"Rapid Growth Continues for ChatGPT, Google’s NotebookLM",Similarweb,David F. Carr,2024-11-06,S,current,https://www.similarweb.com/blog/insights/ai-news/chatgpt-notebooklm/
+SW24_NOV_LABEL,Similarweb Product Updates: The November 2024 Edition,Similarweb,Adelle Kehoe,2024-12-12,S,current,https://www.similarweb.com/blog/updates/product-updates/november-2024/
+SW24_DEC_CARR,[LinkedIn post: ChatGPT December2024 web traffic],Similarweb,David F. Carr,2025-01-06,S,current,https://www.linkedin.com/posts/davidfcarr_web-traffic-for-chatgpt-dipped-slightly-in-activity-7282097456845099010--5mL
+SW25_DEEPSEEK_DEC,"DeepSeek Explodes on the AI Scene, Challenging ChatGPT",Similarweb,David F. Carr,2025-01-28,S,current,https://www.similarweb.com/blog/insights/ai-news/deepseek-explodes-on-the-ai-scene-challenging-chatgpt/
+P25_TC,ChatGPT isn’t the only chatbot that’s gaining users,TechCrunch,Kyle Wiggers,2025-04-01,P,current,https://techcrunch.com/2025/04/01/chatgpt-isnt-the-only-chatbot-thats-gaining-users/
+S25_MONTHLY,ChatGPT Monthly Visits: SEO Analysis & Competitor Comparisons,Similarweb,Limor Barenholtz,2025-08-25,S,current,https://aisearch.similarweb.com/blog/chatgpt-monthly-visits/
+S25_CARR_SEP,[Post on Gemini and ChatGPT traffic in September 2025],Similarweb / LinkedIn,David F. Carr,2025-10-07,S,current,https://www.linkedin.com/posts/davidfcarr_googles-gemini-ai-chatbot-got-more-than-activity-7381367902047838208-PBkM
+P25_DIGI,In Graphic Detail: How AI search is changing publisher visibility,Digiday,Sara Guaglione,2025-10-20,P,current,https://digiday.com/media/in-graphic-detail-how-ai-search-is-changing-publisher-visibility/
+S25_CARR_OCT,[Post on ChatGPT and Gemini traffic in October 2025],Similarweb / LinkedIn,David F. Carr,2025-11-04,S,current,https://www.linkedin.com/posts/davidfcarr_chatgpt-topped-6-billion-visits-for-the-first-activity-7391508422426316800-dpZt
+P25_ET_DEC,"OpenAI vs Google: ChatGPT's daily visits fall 22%, Gemini holds steady",The Economic Times,Puran Choudhary / ETtech,2026-01-07,P,current,https://economictimes.indiatimes.com/tech/artificial-intelligence/open-ai-vs-google-chatgpts-daily-visits-fall-22-gemini-holds-steady/articleshow/126398825.cms
+S25_GEM_DEC,[Post on Gemini website performance in December 2025],Similarweb / LinkedIn,Similarweb,2026-01-12,S,current,https://www.linkedin.com/posts/similarweb_google-gemini-in-december-2025-1735b-activity-7416454327948435456-wavH
+S25_TABLE,Winners and Losers in the Gen AI Market,Similarweb,Darrell Mordecai,2026-01-21,S,current,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+Q26_DECODER,ChatGPT still leads the chatbot market but its dominance is slipping as Google’s Gemini gains ground,The Decoder,Matthias Bastian,2026-03-12,P,current,https://the-decoder.com/chatgpt-still-leads-the-chatbot-market-but-its-dominance-is-slipping-as-googles-gemini-gains-ground/
+Q26_FEB_NEWS,A Short Month With Long Trends,Similarweb,Similarweb,2026-03-12,S,current,https://www.linkedin.com/pulse/short-month-long-trends-similarweb-6iitc
+Q26_CARR_MARCH,The website for Anthropic Claude got 613.7 million visits in March,Similarweb,David F. Carr,2026-04-06,S,current,https://www.linkedin.com/posts/davidfcarr_the-website-for-anthropic-claude-got-6137-activity-7446996322559283201-lnDx
+Q26_MARCH_NEWS,"Claude, Gemini, Apple, and a Middle East conflict that reshuffled the news and prediction map",Similarweb,Similarweb,2026-04-16,S,current,https://www.linkedin.com/pulse/claude-gemini-apple-middle-east-conflict-reshuffled-news-prediction-bewhf
+Q26_APRIL_NEWS,"TikTok’s Web Takeover, Claude’s (Continued) Surge, and Meta’s AI Moment",Similarweb,Similarweb,2026-05-20,S,current,https://www.linkedin.com/pulse/tiktoks-web-takeover-claudes-continued-surge-metas-ai-moment-n8gvc
+Q26_JUNE_TOP10,Top 10 websites by total visits in June 2026:,Similarweb,Similarweb,2026-07-07,S,current,https://www.linkedin.com/posts/similarweb_top-10-websites-by-total-visits-in-june-2026-activity-7480262186624331776-VDKz
+Q26_JUNE_NEWS,Did AI Take a Summer Vacation?,Similarweb,Similarweb,2026-07-16,S,current,https://www.linkedin.com/pulse/did-ai-take-summer-vacation-similarweb-cukgf
+Q26_CLAUDE_COMPARE,Claude vs. ChatGPT: What 2026 Usage Data Says About Which AI to Pick,Similarweb,"Maayan Zohar Basteker, Senior SEO Specialist at Similarweb",2026-09-08,S,current,https://aisearch.similarweb.com/blog/claude-vs-chatgpt/
+Q26_IPO_PDF,Anthropic (claude.ai): What Similarweb data says ahead of the upcoming IPO,Similarweb,"Aria Ertefaie, Lead Analyst",2026-09-17,S,current,https://www.similarweb.com/corp/wp-content/uploads/2026/09/attachment-Anthropic-IPO-Special-Report-September-2026.pdf
+Q26_IPO_BLOG,Anthropic IPO: What Claude’s Web and App Data Show,Similarweb,"Kene Fidel-Ndubisi, Product Marketing Manager, Investors",2026-09-24,S,current,https://www.similarweb.com/blog/investor/stock-market/anthropic-ipo/
+S26_BARD,"bard.google.com Traffic Analytics, Ranking & Audience [September 2026]",Similarweb,NOT STATED,NOT STATED,S,current,https://www.similarweb.com/website/bard.google.com/
+S26_CLAUDE,"claude.ai Traffic Analytics, Ranking & Audience [September 2026]",Similarweb,NOT STATED,NOT STATED,S,current,https://www.similarweb.com/website/claude.ai/
+S26_COPILOT,"copilot.microsoft.com Traffic Analytics, Ranking & Audience [September 2026]",Similarweb,NOT STATED,NOT STATED,S,current,https://www.similarweb.com/website/copilot.microsoft.com/
+S26_DS,"deepseek.com Traffic Analytics, Ranking & Audience [September 2026]",Similarweb,NOT STATED,NOT STATED,S,current,https://www.similarweb.com/website/deepseek.com/
+S26_DS_CHAT,"chat.deepseek.com Traffic Analytics, Ranking & Audience [September 2026]",Similarweb,NOT STATED,NOT STATED,S,current,https://www.similarweb.com/website/chat.deepseek.com/
+S26_GEM,"gemini.google.com Traffic Analytics, Ranking & Audience [September 2026]",Similarweb,NOT STATED,NOT STATED,S,current,https://www.similarweb.com/website/gemini.google.com/
+S26_GPT,"chatgpt.com Traffic Analytics, Ranking & Audience [September 2026]",Similarweb,NOT STATED,NOT STATED,S,current,https://www.similarweb.com/website/chatgpt.com/
+S26_GPT_OLD,"chat.openai.com Traffic Analytics, Ranking & Audience [September 2026]",Similarweb,NOT STATED,NOT STATED,S,current,https://www.similarweb.com/website/chat.openai.com/
+S26_GROK,"grok.com Traffic Analytics, Ranking & Audience [September 2026]",Similarweb,NOT STATED,NOT STATED,S,current,https://www.similarweb.com/website/grok.com/
+S26_LECHAT,"chat.mistral.ai Traffic Analytics, Ranking & Audience [September 2026]",Similarweb,NOT STATED,NOT STATED,S,current,https://www.similarweb.com/website/chat.mistral.ai/
+S26_META,"meta.ai Traffic Analytics, Ranking & Audience [September 2026]",Similarweb,NOT STATED,NOT STATED,S,current,https://www.similarweb.com/website/meta.ai/
+S26_PERP,"perplexity.ai Traffic Analytics, Ranking & Audience [September 2026]",Similarweb,NOT STATED,NOT STATED,S,current,https://www.similarweb.com/website/perplexity.ai/
+S_METHOD_2024,Everything you need to know about Similarweb’s 2024 Data Version Update,Similarweb,NOT STATED,NOT STATED,S,current,https://support.similarweb.com/hc/en-us/articles/18876356573725-Everything-you-need-to-know-about-Similarweb-s-2024-Data-Version-Update
+S_METHOD_ALL,All Traffic,Similarweb,NOT FOUND,NOT STATED,S,current,https://support.similarweb.com/hc/en-us/articles/29954339090973-All-Traffic
+S_METHOD_LITE,API Lite,Similarweb,NOT STATED,NOT STATED,S,current,https://developers.similarweb.com/reference/api-lite
+S_METHOD_MONTH,Monthly Visits,Similarweb,NOT STATED,NOT STATED,S,current,https://support.similarweb.com/hc/en-us/articles/115000501465-Monthly-Visits

@@ -1,0 +1,20 @@
+{
+ "ready": true,
+ "title": "All In",
+ "artist": "Everet Almond",
+ "source": "YouTube Studio Audio Library (Dance and Electronic, Bright, 3:07, added Jul 2025), standard YouTube Audio Library licence (as reported by Claude in Cowork, README_all_in.txt in the private repo); chosen by Luke 5 Oct 2026 (DEC-209); downloaded by Claude in Cowork in Luke's Chrome 5 Oct 2026",
+ "file": "all_in_everet_almond.mp3",
+ "private_path": "assets/rtt-001/music/all_in_everet_almond.mp3",
+ "private_ref": "main",
+ "sha256": "db0f298599574f2efc6f6dcc0a1dae7cb267b01dfa4492c31d842adfc7cd7711",
+ "bytes": 7507629,
+ "duration_sec": 187.66,
+ "loop_start": null,
+ "loop_end": null,
+ "crossfade_sec": null,
+ "notes": [
+  "READY (DEC-211): the file is in the private repo, main branch, at assets/rtt-001/music/all_in_everet_almond.mp3 (raw MP3, 320 kbps, 44.1 kHz stereo, 187.66 s, 7,507,629 bytes) with README_all_in.txt; SHA-256 as given by Claude in Cowork, who re-downloaded the file from GitHub and checked it. .github/workflows/rtt001_film.yml fetches the file and STOPS unless its SHA-256 is exactly this value (Claude Code's own check: this container cannot read the private repo).",
+  "The audio file is NEVER committed here (licence: may not be made available separately from videos; reference/rights_ledger.md).",
+  "No loop (DEC-210): the track (187.66 s) is longer than the film (5,529 frames = 184.30 s), so it plays once from its start, is cut to the film and fades out over the 10 s final table (from 174.30 s); mixed to about -16 LUFS integrated, true peak at most -1 dBTP by scripts/rtt_mix_music.sh (unchanged; the RTT-002/RTT-003 method, DEC-072/DEC-074). The last 3.36 s of the track are not heard."
+ ]
+}

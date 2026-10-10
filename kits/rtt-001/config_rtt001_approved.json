@@ -1,0 +1,12 @@
+{ "extends": "config_rtt001_opt_C.json", "kit_version": "rtt001_approved_1",
+  "out": "rtt001_film.mp4",
+  "title": "Most-Used Web Browsers (share of web browsing)",
+  "smoothing": { "include_flagged": true },
+  "notes_at": [ { "date": "1996-06-30", "text": "Note: until May 1996 this source counted Internet Explorer inside “Mosaic”" } ],
+  "crown": { "enabled": true },
+  "callout": { "enabled": false },
+  "board": { "stripes": "screen" },
+  "record_hold": { "enabled": false },
+  "pacing": { "sec_per_event": 0.5, "segments": [ { "from": "2014-01-31", "sec_per_event": 0.3 } ] },
+  "pictures": { "crop": { "qq": { "x": 10, "y": 31, "w": 74, "h": 74 } } },
+  "notes": ["Luke's answers to pilot 1 (5 Oct 2026, prompts/CODE_SESSION_IQ-13_answers.md, DEC-184 to DEC-200): option C (smoothed hand-overs, '~85%' before 2009, 'New source' marker); both flagged stretches smoothed; the June 1996 note; source line as proposed; top 10 with fixed slots (the board-size option is config_rtt001_approved_fit.json); one decimal from 2009; colours and logos as in run 3, QQ Browser cropped to its icon; crown on the leader's bar; no callouts and so no callout pause; 0.5 s per month, 0.3 s per month from January 2014; title 'Most-Used Web Browsers (share of web browsing)'. No music yet. Not the film: Luke picks the board option first."] }

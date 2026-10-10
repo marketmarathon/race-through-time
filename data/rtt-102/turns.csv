@@ -1,0 +1,16 @@
+assistant_id,at_month,months_before,months_after,slope_before_per_month,slope_after_per_month,why,version_change
+chatgpt,2024-02,3,1,-23333333,170000000,direction reverses,no
+gemini,2023-05,1,4,92900000,19175000,slows sharply,no
+gemini,2024-03,4,6,41625000,-31033333,direction reverses,yes
+gemini,2024-09,6,1,-31033333,44300000,direction reverses,yes
+gemini,2024-10,1,3,44300000,-7968585,direction reverses,no
+gemini,2025-01,3,1,-7968585,16443246,direction reverses,no
+claude,2024-09,10,1,4440000,13700000,speeds up sharply,yes
+claude,2024-10,1,3,13700000,-2445844,direction reverses,no
+copilot,2024-10,1,11,32400000,2745454,slows sharply,no
+perplexity,2024-04,1,5,9000000,360000,slows sharply,yes
+perplexity,2024-09,5,1,360000,18500000,speeds up sharply,yes
+perplexity,2024-10,1,3,18500000,2905649,slows sharply,no
+perplexity,2025-01,3,1,2905649,10917894,speeds up sharply,no
+deepseek,2026-04,2,4,68900000,-14250000,direction reverses,no
+meta_ai,2025-01,4,1,52266,-845349,direction reverses,no

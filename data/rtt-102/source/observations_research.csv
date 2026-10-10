@@ -1,0 +1,167 @@
+obs_id,origin,pub_id,source_type,publication_date,month,relative_label,assistant_id,site_as_recorded,visits_as_published,qualifier,quote_as_recorded,url
+B001,dossier B,DIGI_2023,P,2023-12-01,2022-12,,chatgpt,chat.openai.com,266 million,,266 million,https://digiday.com/media-buying/chatgpt-turns-a-year-old-marking-a-major-milestone-for-generative-ai/
+B002,dossier B,S23_APRIL,S,2023-05-03,2022-12,,chatgpt,chat.openai.com,about 266 million,about,about 266 million,https://www.similarweb.com/blog/insights/ai-news/chatgpt-growth-flattens/
+B003,dossier B,S23_BDAY,S,2023-11-15,2022-12,,chatgpt,chat.openai.com,265M,,IMAGE,https://www.similarweb.com/blog/insights/ai-news/chatgpt-birthday/
+B004,dossier B,S23_BDAY,S,2023-11-15,2022-12,,chatgpt,chat.openai.com,266 million,,266 million,https://www.similarweb.com/blog/insights/ai-news/chatgpt-birthday/
+B005,dossier B,S23_BILLION,S,2023-03-07,2022-12,,chatgpt,chat.openai.com,266 million,,266 million,https://www.similarweb.com/blog/insights/ai-news/chatgpt-1-billion/
+B006,dossier B,S23_BDAY,S,2023-11-15,2023-03,,chatgpt,chat.openai.com,1.56B,,IMAGE,https://www.similarweb.com/blog/insights/ai-news/chatgpt-birthday/
+B007,dossier B,S23_MARCH,S,2023-04-03,2023-03,,chatgpt,chat.openai.com,nearly 1.6 billion,nearly; preliminary estimates,nearly 1.6 billion,https://www.similarweb.com/blog/insights/ai-news/chatgpt-bing-duckduckgo/
+B008,dossier B,S23_MARCH,S,2023-04-03,2023-03,,gemini,bard.google.com,30.6 million,preliminary estimates,30.6 million,https://www.similarweb.com/blog/insights/ai-news/chatgpt-bing-duckduckgo/
+B009,dossier B,SW24_MAR,S,2024-04-11,2023-03,,gemini,bard.google.com,30.6 million,,30.6 million,https://www.similarweb.com/blog/insights/ai-news/chatgpt-rebuilds/
+B010,dossier B,S23_BDAY,S,2023-11-15,2023-06,,chatgpt,chat.openai.com,1.6 billion,,1.6 billion,https://www.similarweb.com/blog/insights/ai-news/chatgpt-birthday/
+B011,dossier B,S23_BDAY,S,2023-11-15,2023-06,,chatgpt,chat.openai.com,1.63B,,IMAGE,https://www.similarweb.com/blog/insights/ai-news/chatgpt-birthday/
+B012,dossier B,S23_MAY,S,2023-06-05,2023-05,,gemini,bard.google.com,142.6 million,preliminary estimates,142.6 million,https://www.similarweb.com/blog/insights/ai-news/chatgpt-bard/
+B013,dossier B,S23_BDAY,S,2023-11-15,2023-09,,chatgpt,chat.openai.com,1.49B,,IMAGE,https://www.similarweb.com/blog/insights/ai-news/chatgpt-birthday/
+B014,dossier B,S23_BDAY,S,2023-11-15,2023-09,,chatgpt,chat.openai.com,1.5 billion,,1.5 billion,https://www.similarweb.com/blog/insights/ai-news/chatgpt-birthday/
+B015,dossier B,S23_COMEBACK,S,2023-10-30,2023-09,,chatgpt,chat.openai.com,1.5 billion,,1.5 billion,https://www.similarweb.com/blog/insights/ai-news/chatgpt-comeback/
+B016,dossier B,S23_COMEBACK,S,2023-10-30,2023-09,,chatgpt,chat.openai.com,about 1.5 billion,about,about 1.5 billion,https://www.similarweb.com/blog/insights/ai-news/chatgpt-comeback/
+B017,dossier B,S23_COMEBACK,S,2023-10-30,2023-09,,gemini,bard.google.com,219.3 million,,219.3 million,https://www.similarweb.com/blog/insights/ai-news/chatgpt-comeback/
+B018,dossier B,DIGI_2023,P,2023-12-01,2023-10,,chatgpt,chat.openai.com,1.7 billion,,1.7 billion,https://digiday.com/media-buying/chatgpt-turns-a-year-old-marking-a-major-milestone-for-generative-ai/
+B019,dossier B,S23_BDAY,S,2023-11-15,2023-10,,chatgpt,chat.openai.com,1.7 billion,,1.7 billion,https://www.similarweb.com/blog/insights/ai-news/chatgpt-birthday/
+B020,dossier B,S23_BDAY,S,2023-11-15,2023-10,,chatgpt,chat.openai.com,1.70B,,IMAGE,https://www.similarweb.com/blog/insights/ai-news/chatgpt-birthday/
+B021,dossier B,SW24_MAR,S,2024-04-11,2024-03,,chatgpt,chat.openai.com,1.77 billion,,1.77 billion,https://www.similarweb.com/blog/insights/ai-news/chatgpt-rebuilds/
+B022,dossier B,SW24_MAR,S,2024-04-11,2024-03,,gemini,gemini.google.com,433.5 million,,433.5 million,https://www.similarweb.com/blog/insights/ai-news/chatgpt-rebuilds/
+B023,dossier B,SW24_MAR,S,2024-04-11,2024-03,,perplexity,perplexity.ai,61.5 million,,61.5 million,https://www.similarweb.com/blog/insights/ai-news/chatgpt-rebuilds/
+B024,dossier B,SW24_JUN_PROJECT,S,2024-06-27,2024-05,,chatgpt,chat.openai.com + chatgpt.com (publisher treats as same site),2.5 billion,,2.5 billion,https://www.similarweb.com/blog/insights/ai-news/chatgpt-beats-summer-slump/
+B025,dossier B,SW24_OCT,S,2024-11-06,2024-05,,chatgpt,chatgpt.com / chat.openai.com [publisher history],2.2 billion,,2.2 billion,https://www.similarweb.com/blog/insights/ai-news/chatgpt-notebooklm/
+B026,dossier B,SW24_APR,S,2024-05-10,2024-04,,perplexity,perplexity.ai,70.5 million,,70.5 million,https://www.similarweb.com/blog/insights/ai-news/chatgpt-daily-peak/
+B027,dossier B,P25_DIGI,P,2025-10-20,2024-09,,chatgpt,chatgpt.com,3.1 billion,,3.1,https://digiday.com/media/in-graphic-detail-how-ai-search-is-changing-publisher-visibility/
+B028,dossier B,SW24_SEP,S,2024-10-16,2024-09,,chatgpt,chatgpt.com,3.1 billion,,3.1 billion,https://www.similarweb.com/blog/insights/ai-news/chatgpt-topped-3-billion-visits-in-september/
+B029,dossier B,SW24_SEP,S,2024-10-16,2024-09,,chatgpt,chatgpt.com,3.1B,,3.1B,https://www.similarweb.com/blog/insights/ai-news/chatgpt-topped-3-billion-visits-in-september/
+B030,dossier B,SW24_NOTEBOOK,S,2024-10-17,2024-09,,gemini,gemini.google.com,247.3 million,,247.3 million,https://www.similarweb.com/blog/insights/ai-news/ai-podcasts-power-huge-growth-for-googles-notebooklm/
+B031,dossier B,P25_DIGI,P,2025-10-20,2024-09,,claude,claude.ai [product mapping; domain NOT STATED],70.4 million,,70.4,https://digiday.com/media/in-graphic-detail-how-ai-search-is-changing-publisher-visibility/
+B032,dossier B,P25_DIGI,P,2025-10-20,2024-09,,copilot,copilot.microsoft.com [product mapping; domain NOT STATED],37 million,,37 million,https://digiday.com/media/in-graphic-detail-how-ai-search-is-changing-publisher-visibility/
+B033,dossier B,P25_DIGI,P,2025-10-20,2024-09,,perplexity,perplexity.ai [product mapping; domain NOT STATED],72.3 million,,72.3,https://digiday.com/media/in-graphic-detail-how-ai-search-is-changing-publisher-visibility/
+B034,dossier B,P25_DIGI,P,2025-10-20,2024-09,,meta_ai,meta.ai [product mapping; domain NOT STATED],7.8 million,,7.8 million,https://digiday.com/media/in-graphic-detail-how-ai-search-is-changing-publisher-visibility/
+B035,dossier B,SW24_DEC_CARR,S,2025-01-06,2024-12,,chatgpt,chatgpt.com (formerly chat.openai.com),3.7 billion,,3.7 billion,https://www.linkedin.com/posts/davidfcarr_web-traffic-for-chatgpt-dipped-slightly-in-activity-7282097456845099010--5mL
+B036,dossier B,SW24_OCT,S,2024-11-06,2024-10,,gemini,gemini.google.com,291.6 million,preliminary,291.6 million,https://www.similarweb.com/blog/insights/ai-news/chatgpt-notebooklm/
+B037,dossier B,SW24_OCT,S,2024-11-06,2024-10,,claude,claude.ai,84.1 million,preliminary,84.1 million,https://www.similarweb.com/blog/insights/ai-news/chatgpt-notebooklm/
+B038,dossier B,SW24_OCT,S,2024-11-06,2024-10,,copilot,copilot.microsoft.com,69.4 million,preliminary,69.4 million,https://www.similarweb.com/blog/insights/ai-news/chatgpt-notebooklm/
+B039,dossier B,SW24_OCT,S,2024-11-06,2024-10,,perplexity,perplexity.ai,90.8 million,preliminary,90.8 million,https://www.similarweb.com/blog/insights/ai-news/chatgpt-notebooklm/
+B040,dossier B,P25_DIGI,P,2025-10-20,2025-09,,chatgpt,chatgpt.com,5.9 billion,,5.9,https://digiday.com/media/in-graphic-detail-how-ai-search-is-changing-publisher-visibility/
+B041,dossier B,S25_CARR_SEP,S,2025-10-07,2025-09,,chatgpt,chatgpt.com,5.6 billion,,5.6 billion,https://www.linkedin.com/posts/davidfcarr_googles-gemini-ai-chatbot-got-more-than-activity-7381367902047838208-PBkM
+B042,dossier B,S25_CARR_SEP,S,2025-10-07,2025-09,,gemini,gemini.google.com,1.1 billion,,1.1 billion,https://www.linkedin.com/posts/davidfcarr_googles-gemini-ai-chatbot-got-more-than-activity-7381367902047838208-PBkM
+B043,dossier B,S25_CARR_SEP,S,2025-10-07,2025-09,,gemini,gemini.google.com,more than 1 billion,more than,more than 1 billion,https://www.linkedin.com/posts/davidfcarr_googles-gemini-ai-chatbot-got-more-than-activity-7381367902047838208-PBkM
+B044,dossier B,P25_DIGI,P,2025-10-20,2025-09,,claude,claude.ai [product mapping; domain NOT STATED],157 million,,157,https://digiday.com/media/in-graphic-detail-how-ai-search-is-changing-publisher-visibility/
+B045,dossier B,P25_DIGI,P,2025-10-20,2025-09,,copilot,copilot.microsoft.com [product mapping; domain NOT STATED],99.6 million,,99.6 million,https://digiday.com/media/in-graphic-detail-how-ai-search-is-changing-publisher-visibility/
+B046,dossier B,P25_DIGI,P,2025-10-20,2025-09,,perplexity,perplexity.ai [product mapping; domain NOT STATED],169.5 million,,169.5,https://digiday.com/media/in-graphic-detail-how-ai-search-is-changing-publisher-visibility/
+B047,dossier B,P25_DIGI,P,2025-10-20,2025-09,,meta_ai,meta.ai [product mapping; domain NOT STATED],11.1 million,,11.1 million,https://digiday.com/media/in-graphic-detail-how-ai-search-is-changing-publisher-visibility/
+B048,dossier B,Q26_IPO_PDF,S,2026-09-17,2025-12,,claude,claude.ai,173M,,173M,https://www.similarweb.com/corp/wp-content/uploads/2026/09/attachment-Anthropic-IPO-Special-Report-September-2026.pdf
+B049,dossier B,Q26_CARR_MARCH,S,2026-04-06,2026-03,,chatgpt,chatgpt.com,5.7 billion,,5.7 billion,https://www.linkedin.com/posts/davidfcarr_the-website-for-anthropic-claude-got-6137-activity-7446996322559283201-lnDx
+B050,dossier B,Q26_APRIL_NEWS,S,2026-05-20,2026-03,,gemini,gemini.google.com,2.60 billion,,2.60 billion,https://www.linkedin.com/pulse/tiktoks-web-takeover-claudes-continued-surge-metas-ai-moment-n8gvc
+B051,dossier B,Q26_CARR_MARCH,S,2026-04-06,2026-03,,gemini,gemini.google.com,2.6 billion,,2.6 billion,https://www.linkedin.com/posts/davidfcarr_the-website-for-anthropic-claude-got-6137-activity-7446996322559283201-lnDx
+B052,dossier B,Q26_MARCH_NEWS,S,2026-04-16,2026-03,,gemini,gemini.google.com,2.595B,,IMAGE,https://www.linkedin.com/pulse/claude-gemini-apple-middle-east-conflict-reshuffled-news-prediction-bewhf
+B053,dossier B,Q26_MARCH_NEWS,S,2026-04-16,2026-03,,gemini,gemini.google.com,now approaching 2.6 billion,now approaching,now approaching 2.6 billion,https://www.linkedin.com/pulse/claude-gemini-apple-middle-east-conflict-reshuffled-news-prediction-bewhf
+B054,dossier B,Q26_APRIL_NEWS,S,2026-05-20,2026-03,,claude,claude.ai,613.7 million,,613.7 million,https://www.linkedin.com/pulse/tiktoks-web-takeover-claudes-continued-surge-metas-ai-moment-n8gvc
+B055,dossier B,Q26_CARR_MARCH,S,2026-04-06,2026-03,,claude,claude.ai,613.7 million,,613.7 million,https://www.linkedin.com/posts/davidfcarr_the-website-for-anthropic-claude-got-6137-activity-7446996322559283201-lnDx
+B056,dossier B,Q26_IPO_PDF,S,2026-09-17,2026-03,,claude,claude.ai,614M,,614M,https://www.similarweb.com/corp/wp-content/uploads/2026/09/attachment-Anthropic-IPO-Special-Report-September-2026.pdf
+B057,dossier B,Q26_MARCH_NEWS,S,2026-04-16,2026-03,,claude,claude.ai,613.7 million,,613.7 million,https://www.linkedin.com/pulse/claude-gemini-apple-middle-east-conflict-reshuffled-news-prediction-bewhf
+B058,dossier B,Q26_DECODER,P,2026-03-12,2026-02,,perplexity,perplexity.ai,153.8 million,,153.8 million,https://the-decoder.com/chatgpt-still-leads-the-chatbot-market-but-its-dominance-is-slipping-as-googles-gemini-gains-ground/
+B059,dossier B,Q26_FEB_NEWS,S,2026-03-12,2026-02,,deepseek,deepseek.com,273.2M,,IMAGE,https://www.linkedin.com/pulse/short-month-long-trends-similarweb-6iitc
+B060,dossier B,Q26_IPO_PDF,S,2026-09-17,2026-03,,grok,grok.com,326M,,326M,https://www.similarweb.com/corp/wp-content/uploads/2026/09/attachment-Anthropic-IPO-Special-Report-September-2026.pdf
+B061,dossier B,Q26_JUNE_TOP10,S,2026-07-07,2026-06,,chatgpt,chatgpt.com,5.382B,,IMAGE,https://www.linkedin.com/posts/similarweb_top-10-websites-by-total-visits-in-june-2026-activity-7480262186624331776-VDKz
+B062,dossier B,Q26_JUNE_NEWS,S,2026-07-16,2026-06,,gemini,gemini.google.com,2.859B,,IMAGE,https://www.linkedin.com/pulse/did-ai-take-summer-vacation-similarweb-cukgf
+B063,dossier B,Q26_JUNE_NEWS,S,2026-07-16,2026-06,,gemini,gemini.google.com,2.86B,,2.86B,https://www.linkedin.com/pulse/did-ai-take-summer-vacation-similarweb-cukgf
+B064,dossier B,Q26_JUNE_NEWS,S,2026-07-16,2026-06,,claude,claude.ai,946.7M,,IMAGE,https://www.linkedin.com/pulse/did-ai-take-summer-vacation-similarweb-cukgf
+B065,dossier B,Q26_JUNE_NEWS,S,2026-07-16,2026-06,,claude,claude.ai,946.8M,,946.8M,https://www.linkedin.com/pulse/did-ai-take-summer-vacation-similarweb-cukgf
+B066,dossier B,Q26_APRIL_NEWS,S,2026-05-20,2026-04,,deepseek,deepseek.com,411 million,,411 million,https://www.linkedin.com/pulse/tiktoks-web-takeover-claudes-continued-surge-metas-ai-moment-n8gvc
+B067,dossier B,Q26_APRIL_NEWS,S,2026-05-20,2026-04,,grok,grok.com,279 million,,279 million,https://www.linkedin.com/pulse/tiktoks-web-takeover-claudes-continued-surge-metas-ai-moment-n8gvc
+B068,dossier B,S26_GPT,S,NOT STATED,2026-09,,chatgpt,chatgpt.com,5.9B,,5.9B,https://www.similarweb.com/website/chatgpt.com/
+B069,dossier B,S26_GPT_OLD,S,NOT STATED,2026-09,,chatgpt,chat.openai.com,34.4M,,34.4M,https://www.similarweb.com/website/chat.openai.com/
+B070,dossier B,S26_BARD,S,NOT STATED,2026-09,,gemini,bard.google.com,549K,,549K,https://www.similarweb.com/website/bard.google.com/
+B071,dossier B,S26_GEM,S,NOT STATED,2026-09,,gemini,gemini.google.com,2.6B,,2.6B,https://www.similarweb.com/website/gemini.google.com/
+B072,dossier B,S26_CLAUDE,S,NOT STATED,2026-09,,claude,claude.ai,1B,,1B,https://www.similarweb.com/website/claude.ai/
+B073,dossier B,S26_COPILOT,S,NOT STATED,2026-09,,copilot,copilot.microsoft.com,64.4M,,64.4M,https://www.similarweb.com/website/copilot.microsoft.com/
+B074,dossier B,S26_PERP,S,NOT STATED,2026-09,,perplexity,perplexity.ai,91.7M,,91.7M,https://www.similarweb.com/website/perplexity.ai/
+B075,dossier B,S26_DS,S,NOT STATED,2026-09,,deepseek,deepseek.com,357.4M,,357.4M,https://www.similarweb.com/website/deepseek.com/
+B076,dossier B,S26_DS_CHAT,S,NOT STATED,2026-09,,deepseek,chat.deepseek.com,313.1M,,313.1M,https://www.similarweb.com/website/chat.deepseek.com/
+B077,dossier B,S26_GROK,S,NOT STATED,2026-09,,grok,grok.com,205.5M,,205.5M,https://www.similarweb.com/website/grok.com/
+B078,dossier B,S26_META,S,NOT STATED,2026-09,,meta_ai,meta.ai,34.4M,,34.4M,https://www.similarweb.com/website/meta.ai/
+B079,dossier B,S26_LECHAT,S,NOT STATED,2026-09,,le_chat,chat.mistral.ai,5.3M,,5.3M,https://www.similarweb.com/website/chat.mistral.ai/
+B080,dossier B,DIGI_2023,P,2023-12-01,NOT STATED,Last month,chatgpt,chat.openai.com,1.67 billion,preliminary estimate,1.67 billion,https://digiday.com/media-buying/chatgpt-turns-a-year-old-marking-a-major-milestone-for-generative-ai/
+B081,dossier B,DIGI_2023,P,2023-12-01,NOT STATED,Last month,gemini,bard.google.com,267 million,preliminary estimate,267 million,https://digiday.com/media-buying/chatgpt-turns-a-year-old-marking-a-major-milestone-for-generative-ai/
+B082,dossier B,DIGI_2023,P,2023-12-01,NOT STATED,Last month,claude,claude.ai,26 million,preliminary estimate,26 million,https://digiday.com/media-buying/chatgpt-turns-a-year-old-marking-a-major-milestone-for-generative-ai/
+T2025-01-chatgpt,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-01,,chatgpt,chatgpt.com,"3,849,853,175",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-01-gemini,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-01,,gemini,gemini.google.com,"267,694,244",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-01-deepseek,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-01,,deepseek,deepseek.com,"277,912,490",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-01-grok,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-01,,grok,grok.com,"1,205,770",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-01-perplexity,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-01,,perplexity,perplexity.ai,"99,516,948",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-01-claude,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-01,,claude,claude.ai,"76,762,466",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-01-meta_ai,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-01,,meta_ai,meta.ai,"8,009,067",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-02-chatgpt,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-02,,chatgpt,chatgpt.com,"3,905,403,554",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-02-gemini,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-02,,gemini,gemini.google.com,"284,137,490",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-02-deepseek,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-02,,deepseek,deepseek.com,"614,743,154",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-02-grok,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-02,,grok,grok.com,"51,462,811",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-02-perplexity,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-02,,perplexity,perplexity.ai,"110,434,842",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-02-claude,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-02,,claude,claude.ai,"73,004,868",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-02-meta_ai,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-02,,meta_ai,meta.ai,"7,163,718",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-03-chatgpt,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-03,,chatgpt,chatgpt.com,"4,548,614,056",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-03-gemini,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-03,,gemini,gemini.google.com,"343,025,053",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-03-deepseek,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-03,,deepseek,deepseek.com,"510,556,960",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-03-grok,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-03,,grok,grok.com,"202,650,131",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-03-perplexity,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-03,,perplexity,perplexity.ai,"123,921,376",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-03-claude,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-03,,claude,claude.ai,"101,105,053",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-03-meta_ai,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-03,,meta_ai,meta.ai,"7,581,379",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-04-chatgpt,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-04,,chatgpt,chatgpt.com,"5,141,783,559",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-04-gemini,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-04,,gemini,gemini.google.com,"409,432,013",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-04-deepseek,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-04,,deepseek,deepseek.com,"480,115,726",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-04-grok,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-04,,grok,grok.com,"196,116,135",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-04-perplexity,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-04,,perplexity,perplexity.ai,"113,057,060",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-04-claude,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-04,,claude,claude.ai,"95,631,797",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-04-meta_ai,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-04,,meta_ai,meta.ai,"11,074,735",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-05-chatgpt,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-05,,chatgpt,chatgpt.com,"5,492,392,083",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-05-gemini,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-05,,gemini,gemini.google.com,"527,738,672",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-05-deepseek,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-05,,deepseek,deepseek.com,"436,203,136",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-05-grok,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-05,,grok,grok.com,"178,615,350",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-05-perplexity,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-05,,perplexity,perplexity.ai,"126,783,455",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-05-claude,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-05,,claude,claude.ai,"99,686,263",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-05-meta_ai,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-05,,meta_ai,meta.ai,"13,634,061",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-06-chatgpt,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-06,,chatgpt,chatgpt.com,"5,395,125,236",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-06-gemini,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-06,,gemini,gemini.google.com,"648,554,740",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-06-deepseek,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-06,,deepseek,deepseek.com,"385,849,616",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-06-grok,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-06,,grok,grok.com,"158,337,402",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-06-perplexity,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-06,,perplexity,perplexity.ai,"129,483,174",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-06-claude,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-06,,claude,claude.ai,"113,302,600",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-06-meta_ai,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-06,,meta_ai,meta.ai,"12,945,673",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-07-chatgpt,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-07,,chatgpt,chatgpt.com,"5,720,228,865",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-07-gemini,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-07,,gemini,gemini.google.com,"699,642,673",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-07-deepseek,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-07,,deepseek,deepseek.com,"350,480,297",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-07-grok,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-07,,grok,grok.com,"201,518,109",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-07-perplexity,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-07,,perplexity,perplexity.ai,"140,615,519",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-07-claude,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-07,,claude,claude.ai,"125,168,105",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-07-meta_ai,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-07,,meta_ai,meta.ai,"11,330,361",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-08-chatgpt,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-08,,chatgpt,chatgpt.com,"5,846,786,290",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-08-gemini,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-08,,gemini,gemini.google.com,"723,383,952",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-08-deepseek,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-08,,deepseek,deepseek.com,"319,266,449",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-08-grok,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-08,,grok,grok.com,"190,919,493",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-08-perplexity,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-08,,perplexity,perplexity.ai,"148,235,696",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-08-claude,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-08,,claude,claude.ai,"148,496,006",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-08-meta_ai,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-08,,meta_ai,meta.ai,"10,902,051",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-09-chatgpt,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-09,,chatgpt,chatgpt.com,"5,904,115,522",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-09-gemini,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-09,,gemini,gemini.google.com,"1,057,887,865",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-09-deepseek,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-09,,deepseek,deepseek.com,"333,000,513",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-09-grok,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-09,,grok,grok.com,"176,720,499",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-09-perplexity,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-09,,perplexity,perplexity.ai,"169,501,187",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-09-claude,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-09,,claude,claude.ai,"156,996,523",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-09-meta_ai,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-09,,meta_ai,meta.ai,"11,054,517",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-10-chatgpt,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-10,,chatgpt,chatgpt.com,"6,165,610,531",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-10-gemini,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-10,,gemini,gemini.google.com,"1,182,055,658",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-10-deepseek,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-10,,deepseek,deepseek.com,"355,282,656",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-10-grok,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-10,,grok,grok.com,"204,306,987",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-10-perplexity,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-10,,perplexity,perplexity.ai,"218,859,244",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-10-claude,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-10,,claude,claude.ai,"196,998,867",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-10-meta_ai,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-10,,meta_ai,meta.ai,"22,678,085",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-11-chatgpt,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-11,,chatgpt,chatgpt.com,"5,844,546,402",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-11-gemini,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-11,,gemini,gemini.google.com,"1,351,749,213",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-11-deepseek,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-11,,deepseek,deepseek.com,"345,707,274",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-11-grok,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-11,,grok,grok.com,"234,428,108",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-11-perplexity,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-11,,perplexity,perplexity.ai,"189,015,417",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-11-claude,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-11,,claude,claude.ai,"180,305,239",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-11-meta_ai,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-11,,meta_ai,meta.ai,"19,872,867",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-12-chatgpt,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-12,,chatgpt,chatgpt.com,"5,517,989,010",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-12-gemini,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-12,,gemini,gemini.google.com,"1,735,320,959",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-12-deepseek,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-12,,deepseek,deepseek.com,"328,865,716",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-12-grok,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-12,,grok,grok.com,"271,154,744",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-12-perplexity,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-12,,perplexity,perplexity.ai,"179,583,644",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-12-claude,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-12,,claude,claude.ai,"172,690,841",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/
+T2025-12-meta_ai,2025 table (Cowork V01),S25_TABLE,S,2026-01-21,2025-12,,meta_ai,meta.ai,"21,559,214",,table cell,https://www.similarweb.com/blog/insights/marketing-insights/gen-ai-market-winners/

@@ -1,0 +1,71 @@
+{
+ "extends": "config_rtt001_approved_fit.json",
+ "kit_version": "rtt001_photos_2",
+ "time_label": {
+  "mode": "none"
+ },
+ "date_block": {
+  "enabled": true,
+  "mode": "beside",
+  "right": 1680,
+  "month_y": 60,
+  "month_size": 40,
+  "year_y": 160,
+  "year_size": 112,
+  "roll_sec": 0.5
+ },
+ "era": {
+  "enabled": true,
+  "x": 1410,
+  "y": 640,
+  "w": 480,
+  "h": 360,
+  "radius": 16,
+  "fade_sec": 2.0,
+  "photo_dir": "photos",
+  "eras": [
+   {
+    "from": "1994-01-31",
+    "device": "crt",
+    "file": "candidates/crt1990s/04_IBM_Aptiva_2144_M51.jpg",
+    "crop": {
+     "x": 0,
+     "y": 60,
+     "w": 1920,
+     "h": 1440
+    }
+   },
+   {
+    "from": "2000-01-31",
+    "device": "tower",
+    "file": "candidates/tower2000s/04_Dell_XPS_T600R.jpg",
+    "bg": "#152134"
+   },
+   {
+    "from": "2006-01-31",
+    "device": "laptop",
+    "file": "candidates/laptop2006/09_ThinkPad_T43.jpg"
+   },
+   {
+    "from": "2009-01-31",
+    "device": "phone_early",
+    "file": "candidates/phone2009/06_HTC_Dream_Orange_FR.jpg"
+   },
+   {
+    "from": "2015-01-31",
+    "device": "phone_modern",
+    "file": "candidates/phone2015/02_Samsung_Galaxy_S6_Gold_Platinum_Front.jpg",
+    "crop": {
+     "x": 280,
+     "y": 220,
+     "w": 1260,
+     "h": 2160
+    },
+    "bg": "#152134"
+   }
+  ]
+ },
+ "notes": [
+  "Luke's answers on pilot 3 and pilot 4 (DEC-221 to DEC-224, DEC-227 to DEC-230): the date (year 112 px, month 40 px, half-second roll) top right, directly left of the channel logo; real photographs of each era's device bottom right on a 480 x 360 px rounded tile (sized against every frame of the film, DEC-231), crossfading over 2 s at 1994 / 2000 / 2006 / 2009 / 2015: IBM Aptiva with its CRT, Dell XPS T600r, IBM ThinkPad T43, HTC Dream, Samsung Galaxy S6 (kits/rtt-001/era_photos.json; files in the private repo, assets/rtt-001/photos). Credits in the YouTube description only (kits/rtt-001/description_credits.md)."
+ ]
+}

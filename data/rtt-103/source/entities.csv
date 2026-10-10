@@ -1,0 +1,4 @@
+entity_id,former_name,new_name,effective_date,evidence,recommended_video_display_name
+alphabet,Google Inc.,Alphabet Inc.,2015-10-02,"Alphabet Form 10-K FY2025 (Alphabet succeeded Google as the issuer on 2 Oct 2015); SEC filer CIK 1652044 from Q3 2015, Google CIK 1288776 before",Alphabet (Google)
+meta,"Facebook, Inc.","Meta Platforms, Inc.",2021-10-28,"Company announcement ""The Facebook Company Is Now Meta"" (about.fb.com, 28 Oct 2021, fetched on a GitHub runner)",Meta (Facebook)
+alibaba,Alibaba Group Holding Limited,(no change),,"Catalogue rows name the company ""Alibaba"" and ""Alibaba Group Holding Limited"": one company_id",Alibaba
