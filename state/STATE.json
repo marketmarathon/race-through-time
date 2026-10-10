@@ -1,7 +1,7 @@
 {
   "schema": "rtt-state/0.1",
-  "updated": "2026-10-08",
-  "updated_by": "Claude (Claude Code cloud session): IQ-16f - RTT-103 The AI Spending Race stage 6: Luke's answers (DEC-331..DEC-338), DEC block rule (DEC-339), Cowork checks recorded (DEC-340), look-ahead finalised (DEC-341); branch claude/gracious-meitner-aedj37 (public and private), pull request #20 open, not merged",
+  "updated": "2026-10-10",
+  "updated_by": "Claude (Claude Code cloud session): IQ-20 - RTT-104 Women in Parliament data build (DEC-600..DEC-622); data built, episode BLOCKED on rights (DEC-614)",
   "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); starts data audit PASSED (DEC-058/DEC-059, merged PR #8); IQ-04 MERGED (PR #2); IQ-05 rounds 1-5 MERGED (PR #3-#7); round-5 pilot RENDERED and APPROVED by Luke (DEC-062, visual direction = milestone 3); pull request #9 MERGED (c378ea7); RTT-002 FINAL FILM APPROVED (DEC-078), pull request #10 MERGED (main ef01814), UPLOADED by Luke in YouTube Studio and SCHEDULED PUBLIC 30 Sep 2026 (DEC-079 early release, DEC-080): video 2fY7Bzq8Uu0 on channel UC8R47xbyBB5Z93MdMkoUOWg; IQ-09 RTT-003 DATA BUILD DONE 1 Oct 2026; Luke's answers applied 2 Oct 2026 (DEC-093..DEC-102); pull request #12 MERGED 2 Oct 2026 (main 4288f6d); IQ-10 RTT-003 DESIGN PILOT ROUND 5 (FINAL PILOT ROUND) RENDERED 3 Oct 2026 (private pre-release; not the full film), awaiting Luke's review; IQ-11 (3 Oct 2026): CLAUDE.md and reference/house_style.md added on the IQ-10 branch (DEC-145); next episode RTT-001 Browser Wars (DEC-144); IQ-10 round 6 (3 Oct 2026): RTT-003 design APPROVED (DEC-146), FULL FILM with music rendered to a private pre-release, then APPROVED by Luke (DEC-150); IQ-12 (3 Oct 2026): RTT-001 Browser Wars DATA BUILD done (data/rtt-001, 11/11 checks PASS), pull request open, awaiting Luke's answers to 12 questions; IQ-12b (4 Oct 2026): Luke answered all 12 RTT-001 questions (DEC-164..DEC-166), smoothing direction for the pilot (DEC-167), order check (DEC-168); RTT-003 record (3-4 Oct 2026, pull request #14): full film APPROVED (DEC-150), pull request #13 MERGED (main 618c6a7) and private pull request #1 MERGED (private main 4d47eb2), UPLOADED by Luke in YouTube Studio and PUBLISHED PUBLIC 3 Oct 2026 (DEC-151): video JZzvA_ZDii0; IQ-13/IQ-13b/IQ-13c (4 Oct 2026): RTT-001 DESIGN PILOT 1 rendered to a private pre-release (smoothing options A/B/C, flagged stretches, notes, marker, colours, browser logos per owner direction DEC-180, features, pacing, titles), then the logo round with every browser's logo (DEC-182/DEC-183, private pre-release rtt-001-pilot1-f3d9e2f-run3), awaiting Luke's answers; pull request #15 merged by Luke (b5a09d3); pull request #16 merged 4 Oct 2026 22:37 UTC (main 3bb2857)",
   "canonical_queue": "state/ folder on main in marketmarathon/race-through-time (this file)",
   "repo_baseline": {
@@ -674,6 +674,21 @@
       },
       "prompt": "prompts/CODE_SESSION_IQ-16.md (brief, SHA-256 01871f60...), prompts/CODE_SESSION_IQ-16_launch.md, prompts/CODE_SESSION_IQ-16b.md (Luke's answers), prompts/CODE_SESSION_IQ-16c.md (stage 3 brief and Luke's mid-session update), prompts/CODE_SESSION_IQ-16d.md, prompts/CODE_SESSION_IQ-16e.md, prompts/CODE_SESSION_IQ-16f.md",
       "dec_block": "DEC-331 to DEC-399 (DEC-339); IQ-15 RTT-101 DEC-400-499; IQ-17 RTT-102 DEC-500+"
+    },
+    {
+      "id": "RTT-104",
+      "title": "Women in Parliament: Highest vs Lowest (1997-2025) (working title, DEC-601)",
+      "state": "DATA_BUILT_BLOCKED_ON_RIGHTS",
+      "check_level": "LIVE",
+      "verdict": "BLOCKED",
+      "blocker": "Rights (DEC-608, DEC-614, DEC-615): the IPU's own terms forbid commercial use of its content while the World Bank labels SG.GEN.PARL.ZS CC BY 4.0. Luke chooses (a) owner-accepted risk with IPU and World Bank credit, takedown if the IPU objects, or (b) shelve. Then report questions 2-4 (year only, closing-card lines, Turkiye) and a design session (DEC-069; 0% group bar DEC-602 is a design option).",
+      "decisions": "DEC-600..DEC-605 (owner, brief); DEC-606..DEC-610 (Claude findings: DEC block, runner fetch, rights, reference dates, fetch facts); DEC-611..DEC-613 (owner, IQ-20b: 4 m confirmed, latest-year population rule, closing card); DEC-614 (Cowork for Luke: build data, stay blocked); DEC-615 (rights options; Cowork checks); DEC-616..DEC-622 (Claude: names, missing years, ties, 0% group, world panel, reference-date finding, build results)",
+      "branch": "claude/nifty-brown-hrl2yi",
+      "data": "data/rtt-104/ (README there); build python3 scripts/build_rtt104_dataset.py data/rtt-104 reports/RTT-104_data_report.md; tests python3 tests/rtt104/run_tests_rtt104.py (20/20)",
+      "contract": "reference/metric_contract_RTT-104.md",
+      "report": "reports/RTT-104_data_report.md",
+      "sources_workflow": ".github/workflows/rtt104_sources.yml (runs 38029495926, 38029895756, 38030108879; commits open-licence data and excerpts to this branch, no secret, no artifact, no cache)",
+      "facts": "126 countries in the race at 4 m (140 at 2.5 m); leaders Sweden 1997-2002, Rwanda 2003-2025; 0% group at most 3 a year; closing card 6 VERIFIED (Afghanistan, Bangladesh, Haiti, Kuwait, Myanmar, Sudan), Nepal NOT FOUND (off); WDI = OWID to rounding in all 5,288 cells; WDI updated 2026-10-08"
     }
   ],
   "episodes_not_started": "RTT-013..RTT-100 remain BRIEF (workbook Slate 100)",
@@ -945,6 +960,15 @@
       "status": "DONE 4 Oct 2026: 27 logo files (13 new) fetched on a runner into the private repo; own tiles for Lynx and NetFront; rendered to https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-001-pilot1-f3d9e2f-run3; NetFront/Lynx listed for Claude in Cowork",
       "result": {
         "decisions": "DEC-182, DEC-183"
+      }
+    },
+    {
+      "id": "IQ-20",
+      "task": "RTT-104 Women in Parliament: data build (top 10 vs bottom 10, 1997-2025), with IQ-20b (Luke's answers) and IQ-20c (Cowork's note)",
+      "where": "branch claude/nifty-brown-hrl2yi; prompts/CODE_SESSION_IQ-20.md, -20b.md, -20c.md",
+      "status": "DONE 10 Oct 2026: data built and tested; episode BLOCKED on rights until Luke answers report question 1; pull request open, not merged (DEC-057)",
+      "result": {
+        "decisions": "DEC-600..DEC-622"
       }
     }
   ],

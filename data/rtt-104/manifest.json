@@ -1,0 +1,33 @@
+{
+ "build": "scripts/build_rtt104_dataset.py",
+ "inputs": {
+  "config.json": "a1c0c7c5b543ffbcb986beb3fd5cd5b901ce9bc7b021b7b62089f573769f2790",
+  "source/closing_card_reasons.csv": "4aa5b29c0b449858f75c6929eef7b55560b779627b255b37ad6d7bffded68cfc",
+  "source/fetch_2026-10-10_run38029495926/raw/owid_share-of-women-in-parliament-ipu.csv": "a8a368acc79e7185ce38f934e3419cae8a4ae1f6e1de27a6e63f0584aaa0f8e5",
+  "source/fetch_2026-10-10_run38029495926/raw/owid_share-of-women-in-parliament-ipu.metadata.json": "d40ae6b55ba80f12c3e5b5e22084634f48dd9d8b01ae1da5827cd0bf5023ed1b",
+  "source/fetch_2026-10-10_run38029495926/raw/wdi_SG.GEN.PARL.ZS_WLD_1997-2025.json": "2697c525bd6a68471087a447dcc9145af7065ab320f22771a17e3c92c474b593",
+  "source/fetch_2026-10-10_run38029495926/raw/wdi_SG.GEN.PARL.ZS_all_1997-2025.json": "4939b85692f583c794567e157d4fc6cecb39c09016935d93997c702732167de1",
+  "source/fetch_2026-10-10_run38029495926/raw/wdi_SP.POP.TOTL_all_1997-2026.json": "29d8dd3eaa1711f42f2d17077cf72590417d8ab13c41736083d61c0a68bca31f",
+  "source/fetch_2026-10-10_run38029495926/raw/wdi_country_list.json": "c9acf3932785191a649cbc04c3056af4cf64a236e5c3b49d49be25ddb0440bce",
+  "source/fetch_2026-10-10_run38029495926/raw/wdi_indicator_SG.GEN.PARL.ZS.json": "9123fcf88711c1de25253d938c904d1f6851a49ac33ae4894ff7b5d45abe4791",
+  "source/fetch_2026-10-10_run38029495926/raw/wdi_indicator_SP.POP.TOTL.json": "2f8491efc00bf2c0995112ff8e87aba69e5e9d22d0880b22f7e3a4ec757ba05c",
+  "source/fetch_2026-10-10_run38029495926/raw/wdi_metadata_SG.GEN.PARL.ZS.json": "3fec34c5f64590d3a34733fa158b1806fbc6b41ea6a9d8611fcbc864a91ad390",
+  "source/fetch_2026-10-10_run38029495926/raw/wdi_metadata_SP.POP.TOTL.json": "8670604aa3dabf4f664fdd405420b38e7271eac1f91f2bc2213879f4514c6480",
+  "source/fetch_2026-10-10_run38029495926/raw/wdi_source_2.json": "26d3ed8cf01ffed2995a9997940398bf5a287a1ee595fad75983f877d2805bba",
+  "source/short_names.csv": "dfeffbdbed58f485bde028dbb507221c6a382a7eee4e07d2bddbe856a8049baf"
+ },
+ "outputs": {
+  "boards.csv": "e4ec06f29912d4269b855e9f83950f1c0159c4cfeafd6d43cdef875b98688aa9",
+  "boards_2_5m_comparison.csv": "c3a565f4e5377b92d8f5ca0442c1bc9f0b30e1bc4fbad73da4b890875c26f758",
+  "checks.json": "c56d5a7245d60860763ddbd5d8ace46cb7dc4ad3ce74892217a6550fb7b8f2e6",
+  "closing_card.csv": "471dc446da8d991f4e995b0562ba0fc9ad76c50545def5be53579df3d217335a",
+  "countries.csv": "e09bed66d90db4565a942bda4773872d1f173b11622ff23a36d202a03ca7465c",
+  "events.csv": "8a30dd047e8ec93d74ac6c841d45d6327cab3f24dd999f70f0ba750bf89f901b",
+  "series.csv": "3b6e3fd0eac9ae927a98083c52c4000049a3aac83a42e7c5ad46ac2fe4da55e5",
+  "ties.csv": "a9bd388e3eef5810ac699a5f39befeaeed43841462ecb38e5dbf9cd89f4b32fe",
+  "wdi_owid_differences.csv": "e8f9f0e249836ffbdc7b4b0890bc70574d4a104e0c16721a4988d7ab925c2e84",
+  "world.csv": "41fe231e3338b5ff179a33c22c5fa533efd237db0c5b293d58b413caa42c1d2b",
+  "zero_group.csv": "d4fdaee752b58f89757547a262ee361e99015134a2ad6167832a4096ef44fd34"
+ },
+ "report": "e1d3b476a06f8320280f2d6cf70d233cf283ad208a1dcb7030e3e8ef0e209254"
+}

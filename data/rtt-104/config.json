@@ -7,5 +7,6 @@
  "population_threshold_alternative": 2500000,
  "population_rule": "latest_year",
  "single_gap_rule": "carry_previous_marked_latest_figure",
- "notes": "population_threshold is the owner's rule (DEC-604; 4,000,000 default, 2,500,000 reported as the alternative until Luke confirms). population_rule latest_year = the list is fixed by the latest year with a WDI population figure (Claude working choice DEC-610); the alternative 'year' (population in that year) is reported, never used for the boards unless Luke chooses it. single_gap_rule: DEC-611."
+ "notes": "population_threshold 4,000,000 is the owner's rule (DEC-604, confirmed DEC-611); 2,500,000 is reported as a comparison only. population_rule latest_year = each country's population in the latest WDI year with a figure decides whether it is in for the whole race (owner, DEC-612). single_gap_rule: DEC-617.",
+ "source_raw_dir": "source/fetch_2026-10-10_run38029495926/raw"
 }
