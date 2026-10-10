@@ -36,6 +36,7 @@ The reference frame is 1920 × 1080. Masters are rendered at 3840 × 2160.
   - Continuous measures count smoothly between data points and show the exact data value at each data point (DEC-115).
 - **Values follow the bar.** Shown in the episode's unit with "+" where the figure is a lower bound, e.g. "118.7m+" (DEC-111, DEC-115). RTT-002 shows "91 wins · 306 starts · 29.7%" (DEC-053).
 - **A small date line is always visible** near the title and changes at every data point (DEC-045 (3)).
+- **Annual figures whose reference date varies by year show the year only,** never a day or month, and the description says what the figures are (RTT-104 Women in Parliament, DEC-624).
 - **The RTT logo** is the round globe badge, top right, in a square box of about 154 px (DEC-051, DEC-052).
 - **One picture per bar,** matching the name on the bar (DEC-114 (a)). Tall pictures must not look narrow; fix the sizing rather than swapping the picture (DEC-114 (e)). RTT-002 used today's design of each national flag (DEC-035 (1)).
 - **The bottom strip** (about 130 px; Claude's estimate of what YouTube's controls cover) holds nothing important. The footer credits sit there (DEC-042, DEC-065).
@@ -53,6 +54,7 @@ The reference frame is 1920 × 1080. Masters are rendered at 3840 × 2160.
 - **Bars that stop growing:**
   - The bar stays on the board, lightly dimmed (alpha 0.55, text 0.8) (DEC-131; values DEC-135, *working choice*).
   - It reads "· retired" when the bar ends on the manufacturer's own final total, or from a documented end of production. It reads "· latest figure" only where our figures run out with neither (DEC-140, refining DEC-132). A bar counts as stopped from the last period in which it added at least 10,000 units (DEC-142, *working choice*).
+- **A bar that leaves because the thing measured stops existing** (RTT-104: a parliament dissolved, suspended or whose members' terms ran out) says why ON SCREEN at that moment, in a short line resting on a VERIFIED source, and then leaves; it is not left to a closing card alone (owner DEC-625; how it looks is chosen in RTT-104's design round). Where no reason is found at source, nothing is claimed.
 - **A source disagreement worth mentioning** gets a short footnote on the final table only, not during the race. Example: RTT-003's PS2 note (DEC-117).
 - **Name the measure in the title** when the story is about something narrower: RTT-103's bars are total capital spending, so the title says so (e.g. "The AI Spending Race: Big Tech's Capital Spending") and AI is the story told around it (DEC-291, DEC-321). A narrower share (e.g. "AI") is never invented or multiplied into the bars: the companies' own statements appear as dated story moments, and a third-party share estimate at most once, labelled as an estimate (DEC-322, DEC-323).
 - **Running totals are named for what they add up**: RTT-103's is "Combined capital spending", the sum of the bars on screen, never mixed with a narrower forecast (DEC-324). **Our own estimates** (RTT-103 look-ahead, owner exception DEC-326) are labelled "Race Through Time estimate" with the source of their growth assumption named, and the least reliable year is marked (DEC-327). Where forecasters disagree (e.g. on a peak), show the disagreement rather than one closing figure (DEC-328).
@@ -87,6 +89,7 @@ Luke approved each of these for the episode named. Propose any of them in a new 
 - **Group scoreboard:** a small panel of group totals, e.g. maker totals (RTT-003; DEC-114, DEC-123).
 - **A one-line summary on the final table,** e.g. "Switch is at least 3.4 million behind the PS2" (RTT-003; DEC-117).
 - **Group logo beside the picture on each bar**, with the name on the bar (RTT-003; DEC-116, DEC-126; settled by DEC-138). RTT-003's tile is the picture box's height, 2:1, with the logo artwork trimmed to its own edges (DEC-142, *working choice*). Small text logos stay hard to read on a phone (RTT-003: SEGA 5.8 pt, Atari 2.6 pt, Nintendo 1.9 pt; DEC-142).
+- **A closing card naming who is left out and why** (RTT-104, owner DEC-603, DEC-626): an exception to "no closing card" (section 1), one line per country with a VERIFIED reason, under a heading such as "Not included: no sitting parliament"; anything that cannot be sourced stays off.
 - **A subject picture box** in the bottom-right corner, e.g. RTT-002's car photo (DEC-045 (4)).
 
 ## 8. Open questions (not defaults yet)
