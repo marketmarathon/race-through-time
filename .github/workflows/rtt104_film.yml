@@ -2,9 +2,9 @@
 # config kits/rtt-104/config_rtt104_film.json) with Luke's music, the way the RTT-003 film was made (rtt003_film.yml):
 # a 3840 x 2160 master plus a 1920 x 1080 viewing copy, saved ONLY as a private pre-release.
 #
-# NOT YET: Luke has not chosen the music. The first job reads kits/rtt-104/music_rtt104.json and renders NOTHING until
-# every field is filled (title, artist, file, private_path, sha256, bytes, loop points) - with the placeholder the run
-# stops at that gate, green, with a notice. Cowork sends the choice; the session that fills the file starts the render.
+# Music (IQ-22c, DEC-649): "No.10 A New Beginning" by Esther Abrami (YouTube Audio Library). The first job reads
+# kits/rtt-104/music_rtt104.json and renders NOTHING unless it is complete (ready, title, artist, file, private_path,
+# sha256, bytes, start_sec, fade_sec; loop points optional). The track is longer than the film: played once, no loop.
 #
 # Its OWN workflow: no other episode's workflow is changed, so nothing here can start another render. This repository
 # is PUBLIC (DEC-006), so this workflow (DEC-061):
@@ -57,7 +57,8 @@ jobs:
           ready=$(python3 -c "
           import json, re
           m = json.load(open('kits/rtt-104/music_rtt104.json'))
-          ok = all(m.get(k) not in (None, '') for k in ('title','artist','file','private_path','sha256','bytes','loop_start','loop_end','crossfade_sec','fade_sec'))
+          ok = m.get('ready') is True and all(m.get(k) not in (None, '') for k in ('title','artist','file','private_path','sha256','bytes','start_sec','fade_sec'))
+          ok = ok and (m.get('loop_end') is None or all(m.get(k) is not None for k in ('loop_start','crossfade_sec')))
           ok = ok and bool(re.fullmatch(r'[0-9a-f]{64}', m['sha256'] or '')) and '/' not in m['file']
           print('true' if ok else 'false')")
           echo "ready=$ready" >> "$GITHUB_OUTPUT"
@@ -96,8 +97,11 @@ jobs:
           test "$(sha256sum "$RUNNER_TEMP/race_check.json" | cut -d' ' -f1)" = "$want"
           python3 -c "
           import json; m = json.load(open('kits/rtt-104/music_rtt104.json'))
-          for k, v in [('MUSIC', m['file']), ('MUSIC_PATH', m['private_path']), ('MUSIC_SHA256', m['sha256']), ('LOOP_START', m['loop_start']),
-                       ('LOOP_END', m['loop_end']), ('XFADE', m['crossfade_sec']), ('FADE', m['fade_sec']), ('MUSIC_TITLE', m['title'] + ' / ' + m['artist'])]:
+          e = lambda v: '' if v is None else v
+          for k, v in [('MUSIC', m['file']), ('MUSIC_PATH', m['private_path']), ('MUSIC_SHA256', m['sha256']), ('MUSIC_BYTES', m['bytes']),
+                       ('README_PATH', e(m.get('readme_path'))), ('README_BYTES', e(m.get('readme_bytes'))), ('README_PRE', e(m.get('readme_sha256_prefix'))),
+                       ('README_SUF', e(m.get('readme_sha256_suffix'))), ('START', m['start_sec']), ('LOOP_START', e(m['loop_start'])),
+                       ('LOOP_END', e(m['loop_end'])), ('XFADE', e(m['crossfade_sec'])), ('FADE', m['fade_sec']), ('MUSIC_TITLE', m['title'] + ' by ' + m['artist'])]:
               print(f'{k}={v}')" >> "$GITHUB_ENV"
           f=$(RTT_CONFIG="$FILM" FRAME_COUNT_ONLY=1 node kits/rtt-104/render_rtt104.js | awk '/^FRAMES/ {print $2}')
           test -n "$f"; echo "FRAMES=$f" >> "$GITHUB_ENV"
@@ -118,6 +122,21 @@ jobs:
           gh api -H 'Accept: application/vnd.github.raw' "repos/$PRIVATE_REPO/contents/$MUSIC_PATH?ref=$PRIVATE_REF" > "$M/$MUSIC"
           printf '%s  %s\n' "$MUSIC_SHA256" "$M/$MUSIC" >> "$RUNNER_TEMP/check.txt"
           sha256sum -c --quiet "$RUNNER_TEMP/check.txt"
+          test "$(stat -c %s "$M/$MUSIC")" = "$MUSIC_BYTES"
+          if [ -n "$README_PATH" ]; then
+            gh api -H 'Accept: application/vnd.github.raw' "repos/$PRIVATE_REPO/contents/$README_PATH?ref=$PRIVATE_REF" > "$M/README.txt"
+            rs=$(sha256sum "$M/README.txt" | cut -d' ' -f1)
+            test "$(stat -c %s "$M/README.txt")" = "$README_BYTES"; case "$rs" in "$README_PRE"*"$README_SUF") ;; *) echo "::error::README hash does not match"; exit 1;; esac
+            echo "README_SHA256=$rs" >> "$GITHUB_ENV"; rm "$M/README.txt"
+          fi
+          # DEC-651 start: "auto" = 0 s unless the track opens with silence (below -50 dB for 0.2 s or more from 0 s)
+          if [ "$START" = auto ]; then
+            s0=$(ffmpeg -nostdin -hide_banner -t 20 -i "$M/$MUSIC" -af silencedetect=noise=-50dB:d=0.2 -f null - 2>&1 | python3 -c "
+          import re, sys
+          t = sys.stdin.read(); st = re.findall(r'silence_start: (-?[\d.]+)', t); en = re.findall(r'silence_end: ([\d.]+)', t)
+          print(en[0] if st and float(st[0]) <= 0.05 and en else '0')")
+            echo "start: auto -> ${s0} s"; echo "START=$s0" >> "$GITHUB_ENV"
+          fi
           echo "$(wc -l < "$RUNNER_TEMP/check.txt") private files fetched (Luke's logo, music), SHA-256 checked"
           echo "RTT_LOCAL_ASSETS=$A" >> "$GITHUB_ENV"; echo "RTT_MUSIC_FILE=$M/$MUSIC" >> "$GITHUB_ENV"
 
@@ -138,7 +157,10 @@ jobs:
           if grep -q 'not found' "$RUNNER_TEMP/render.log"; then echo "::error::the logo was not loaded"; exit 1; fi
           m=$(probe "$O/silent.mp4"); echo "silent master: $m"; test "$m" = "3840,2160,30/1,$FRAMES"
           MASTER="$O/${STEM}_3840x2160.mp4"; VIEW="$O/${STEM}_1920x1080_viewing.mp4"
-          scripts/rtt_mix_music.sh "$O/silent.mp4" "$RTT_MUSIC_FILE" "$MASTER" "$FADE" "$LOOP_START" "$LOOP_END" "$XFADE" 2>&1 | tee "$RUNNER_TEMP/mix.log"
+          # the track from START (lossless cut to PCM), then the unchanged mix script: played once (or looped if loop points are given)
+          ffmpeg -nostdin -hide_banner -loglevel error -y -ss "$START" -i "$RTT_MUSIC_FILE" -c:a pcm_s24le "$RUNNER_TEMP/rtt_music/from_start.wav"
+          if [ -n "$LOOP_END" ]; then LA=("$LOOP_START" "$LOOP_END" "$XFADE"); else LA=(); fi
+          scripts/rtt_mix_music.sh "$O/silent.mp4" "$RUNNER_TEMP/rtt_music/from_start.wav" "$MASTER" "$FADE" "${LA[@]}" 2>&1 | tee "$RUNNER_TEMP/mix.log"
           rm "$O/silent.mp4"
           ffmpeg -nostdin -hide_banner -loglevel error -y -i "$MASTER" -map 0:v:0 -map 0:a:0 \
             -vf scale=1920:1080:flags=lanczos -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p \
@@ -172,12 +194,12 @@ jobs:
             echo "- kits/rtt-104/${FILM}: ${FRAMES} frames at 30 fps = $(awk -v f="$FRAMES" 'BEGIN {printf "%.2f", f / 30}') s; the approved design (DEC-634..DEC-644)"
             echo "- Master 3840x2160 (x264 slow CRF 4, as RTT-002 and RTT-003); viewing copy 1920x1080 (x264 CRF 18)"
             echo "- Before the render: $(tail -1 "$RUNNER_TEMP/filmcheck.txt"); $(cat "$RUNNER_TEMP/flash.txt")"
-            echo "- Audio: ${MUSIC_TITLE}, ${MUSIC_PATH} SHA-256 ${MUSIC_SHA256} (checked); loop ${LOOP_START}-${LOOP_END} s with ${XFADE} s crossfades, faded out over the last ${FADE} s (the closing card)"
+            echo "- Audio: \"${MUSIC_TITLE}\" (YouTube Audio Library, attribution not required), ${MUSIC_PATH}, ${MUSIC_BYTES} bytes, SHA-256 ${MUSIC_SHA256} (checked); README SHA-256 ${README_SHA256:-none}; played once from ${START} s $( [ -n "$LOOP_END" ] && echo "with loop ${LOOP_START}-${LOOP_END} s" ), faded out over the last ${FADE} s, AAC 320 kb/s"
             echo "- $(cat "$RUNNER_TEMP/joins.txt")"
             echo "- Measured after encoding:"
             sed 's/^/  - /' "$RUNNER_TEMP/measure.txt"
-            echo "- Video SHA-256:"
-            (cd "$O" && sha256sum *.mp4 | sed 's/^/  - /')
+            echo "- Video SHA-256 and size:"
+            (cd "$O" && for f in *.mp4; do echo "  - $(sha256sum "$f" | cut -d' ' -f1)  $f  $(stat -c %s "$f") bytes"; done)
             echo
             echo "Private review render. Not for upload or publication until Luke approves the exact file by its SHA-256 (DEC-078)."
           } > "$O/notes.md"
