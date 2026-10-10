@@ -15,7 +15,7 @@ const fs = require('fs'), path = require('path');
 const ROOT = path.resolve(__dirname, '..', '..'), KIT = path.join(ROOT, 'kits', 'rtt-002'), K101 = path.join(ROOT, 'kits', 'rtt-101');
 const rtt = require(path.join(KIT, 'rtt.js')), ST = require(path.join(K101, 'render_stills.js'));
 const { placeholderPNG, logoPlaceholders } = require('./placeholders.js');
-const CHROME = process.env.PW_CHROME || '/opt/pw-browsers/chromium';
+const CHROME = process.env.PW_CHROME || (fs.existsSync('/opt/pw-browsers/chromium') ? '/opt/pw-browsers/chromium' : undefined);   // the container's Chromium, else Playwright's own (runner)
 const PHONE_PT = 390, FLOOR = 5.0, NAMES = 5.9, k = PHONE_PT / 1920, pt = px => px * k;
 const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 const pence = s => { const [a, b = ''] = s.split('.'); const neg = a.startsWith('-'); const v = BigInt(a.replace('-', '')) * 100n + BigInt((b + '00').slice(0, 2)); return neg ? -v : v; };

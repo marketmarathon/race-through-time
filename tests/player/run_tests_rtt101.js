@@ -18,7 +18,7 @@ const fs = require('fs'), path = require('path'), crypto = require('crypto');
 const ROOT = path.resolve(__dirname, '..', '..'), KIT = path.join(ROOT, 'kits', 'rtt-002'), K101 = path.join(ROOT, 'kits', 'rtt-101'), D = path.join(ROOT, 'data', 'rtt-101');
 const rtt = require(path.join(KIT, 'rtt.js')), TLM = require(path.join(KIT, 'rtt_timeline.js'));
 const { placeholderPNG, logoPlaceholders } = require('./placeholders.js');
-const CHROME = process.env.PW_CHROME || '/opt/pw-browsers/chromium';
+const CHROME = process.env.PW_CHROME || (fs.existsSync('/opt/pw-browsers/chromium') ? '/opt/pw-browsers/chromium' : undefined);   // the container's Chromium, else Playwright's own (runner)
 const sha = f => crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex');
 const CONFIGS = ['config_rtt101_base.json', 'config_rtt101_pace_B.json', 'config_rtt101_pace_C.json'];
 

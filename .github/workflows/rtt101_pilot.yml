@@ -63,6 +63,7 @@ jobs:
           ffmpeg -hide_banner -encoders 2>/dev/null | grep -q libx264
           PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 npm ci
           npx playwright install --with-deps chromium
+          echo "PW_CHROME=$(node -e "console.log(require('playwright').chromium.executablePath())")" >> "$GITHUB_ENV"
 
       - name: RTT-101 player tests and the phone check of every still (placeholder crests; before any render)
         run: |
