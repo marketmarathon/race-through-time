@@ -1,8 +1,14 @@
-# HANDOVER — 10 Oct 2026 (session IQ-20 and IQ-22, Claude Code cloud session: RTT-104 Women in Parliament data build, design round 1, design approved, film V1 and V2 rendered). The RTT-103 notes (IQ-16f, 8 Oct 2026) and earlier follow; IQ-14/IQ-15/IQ-17/IQ-18/IQ-19 notes are on their own unmerged branches (pull requests #18, #19, #21, #22, #23).
+# HANDOVER — 10 Oct 2026 (session IQ-20 and IQ-22, Claude Code cloud session: RTT-104 Women in Parliament data build, design round 1, design approved, film V1 and V2 rendered, V2 APPROVED). The RTT-103 notes (IQ-16f, 8 Oct 2026) and earlier follow; IQ-14/IQ-15/IQ-17/IQ-18/IQ-19 notes are on their own unmerged branches (pull requests #18, #19, #21, #22, #23).
 
-## DEC block for RTT-104: DEC-600–DEC-699 (brief IQ-20; checked free on main and every open pull request, DEC-606). Used so far: DEC-600..DEC-657.
+## DEC block for RTT-104: DEC-600–DEC-699 (brief IQ-20; checked free on main and every open pull request, DEC-606). Used so far: DEC-600..DEC-659.
 
-## RTT-104 — FILM V2 rendered (smoother, slower), awaiting Luke's approval (IQ-22d, 10 Oct 2026)
+## RTT-104 — FILM APPROVED (IQ-22e, 10 Oct 2026) — next: YouTube packaging in Cowork
+- **Luke approved V2** (DEC-658, Cowork chat 10:23 BST, "Approved."): master `rtt104_film_v2_fda34c5_3840x2160.mp4`, SHA-256 `5f40b577d1b0c0baaf8df0be1132a571057ff0564c619b3e48a163736d70aa70`, 126,759,509 bytes, 1:43.7, commit `fda34c5`, release https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-104-film-v2-fda34c5-run3. Cowork matched the master and viewing copy against GitHub's release digests.
+- **Packaging files** (DEC-659): `kits/rtt-104/youtube_times.md` and `kits/rtt-104/description_credits.md` carry the approved film's chapter times, the 2025 final table (re-read from the data) and the **5 s end-screen window 1:38.7–1:43.7**.
+- **Open for Luke:** end-screen placement (DEC-648); chapter titles; merging pull request #24 (DEC-057).
+- **Rules for the next RTT-104 session:** the film is approved by SHA-256: any change, however small, needs a fresh render and a fresh approval (DEC-078). Do not push changes to `.github/workflows/rtt104_film.yml` or `kits/rtt-104/music_rtt104.json` (either starts a render). Next DEC: DEC-660.
+
+## RTT-104 — FILM V2 rendered (smoother, slower) (IQ-22d, 10 Oct 2026) — APPROVED by Luke (DEC-658, above)
 - **Same branch and pull request** (https://github.com/marketmarathon/race-through-time/pull/24, not merged). Message: `prompts/CODE_SESSION_IQ-22d.md`. Luke did not approve V1 (DEC-653): smoother, slower. V2 per Cowork's reading under DEC-417 (DEC-654): monotone curves through every year (no stop per year), 3 s per year.
 - **Private pre-release:** https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-104-film-v2-fda34c5-run3. **Master `rtt104_film_v2_fda34c5_3840x2160.mp4`, SHA-256 `5f40b577d1b0c0baaf8df0be1132a571057ff0564c619b3e48a163736d70aa70`, 126,759,509 bytes**; viewing copy SHA-256 `f2e8679ec18513cc6a403dfabf39c23ff277bb5bb761c958b3258c7fdcd0ac75`, 20,839,516 bytes; 1:43.7; −16.0 LUFS, −1.5 dBTP.
 - **How:** `player_rtt104.html` `motion: "smooth"` (DEC-655); config `kits/rtt-104/config_rtt104_film_v2.json`; the film workflow now renders V2 (`FILM`), V1's config is kept. Checks: film check now covers every in-between frame (values between the two years' figures, never below 0) — PASS; WCAG PASS 29,677 px (V1 51,183).
