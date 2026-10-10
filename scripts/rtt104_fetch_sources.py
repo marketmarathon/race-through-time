@@ -10,6 +10,9 @@ NOT kept: only their SHA-256, size and the paragraphs that hold the searched wor
 to data/rtt-104/source/page_excerpts/. Every file's URL, UTC fetch time, HTTP status, bytes and SHA-256 go to
 data/rtt-104/source/fetch_manifest.json. The log prints IDs, sizes, hashes and the excerpts (all public pages).
 
+IQ-20 round 2 (FETCH_SET=parline): only the IPU Parline pages of the economies with no 2025 figure, read from the
+round-1 WDI file (ROUND1 below), with a narrow filter that skips the site's country menu (round 1 caught only the menu).
+
 Usage: rtt104_fetch_sources.py <out_dir>      Standard library only (plus pdftotext for the one PDF).
 """
 import datetime
@@ -61,6 +64,11 @@ PAGES = [  # (id, url, regex of words whose paragraphs are kept) - excerpts only
     ("UN-SDG-META-551A", "https://unstats.un.org/sdgs/metadata/files/Metadata-05-05-01a.pdf",
      r"1 January|as of|as at|reference|periodicity|lower|single|chamber|vacan|occupied|appointed|elected|data availability|release|calendar"),
 ]
+PARLINE_NARROW = (r"dissol|suspen|coup|militar|seiz|takeover|transition|interim|no longer|not function|expired|lapse|"
+                  r"vacan|ceased|postpon|Taliban|junta|prorog|status|state of emergency|decree|last election|next election|"
+                  r"renewal|term of|mandate")
+ROUND1 = "data/rtt-104/source/fetch_2026-10-10_run38029495926/raw"
+MENU = re.compile(r"^[A-Z][^|\d.;:]{1,50} - [A-Z][^\s|]*(?: [^\s|]+){0,5}$")  # "Country - Chamber name" menu entries
 PARLINE_WORDS = (r"dissol|suspend|suspension|coup|transition|military|no parliament|not functioning|no longer|"
                  r"elections? (?:held|postponed|scheduled|due)|interim|status|last election|mandate|expired|vacan|"
                  r"National Assembly|Parliament|Jirga|Majlis|Hluttaw|Congress|Chamber|House")
@@ -115,8 +123,56 @@ def excerpts(text, words, limit=60):
     return out
 
 
+def parline_round(out):
+    exc = os.path.join(out, "page_excerpts")
+    os.makedirs(exc, exist_ok=True)
+    manifest = {"fetched_by": "GitHub runner, .github/workflows/rtt104_sources.yml (FETCH_SET=parline)",
+                "run_url": os.environ.get("RUN_URL", ""), "files": [], "pages": []}
+    parl = json.load(open(os.path.join(ROUND1, "wdi_SG.GEN.PARL.ZS_all_1997-2025.json")))[1]
+    ctry = json.load(open(os.path.join(ROUND1, "wdi_country_list.json")))[1]
+    iso2 = {c["id"]: c["iso2Code"] for c in ctry if c["region"]["id"] != "NA"}
+    has = {}
+    for r in parl:
+        c = r["countryiso3code"]
+        if c in iso2 and r["value"] is not None:
+            has.setdefault(c, set()).add(r["date"])
+    missing = sorted(c for c, ys in has.items() if "2025" not in ys)
+    print("economies with figures but no 2025 figure:", ", ".join(missing))
+    for c in missing:
+        i2 = iso2[c]
+        for sid, url in ((f"IPU-PARLINE2-{c}", f"https://data.ipu.org/parliament/{i2}/"),
+                         (f"IPU-PARLINE2-{c}-LC", f"https://data.ipu.org/parliament/{i2}/{i2}-LC01/"),
+                         (f"IPU-PARLINE2-{c}-LC-ELECTIONS", f"https://data.ipu.org/parliament/{i2}/{i2}-LC01/elections/"),
+                         (f"IPU-OLD-{c}", f"https://www.ipu.org/parlement/{i2}")):
+            status, ctype, body, final = fetch(url)
+            rec = {"id": sid, "url": url, "fetched_utc": now(), "status": status}
+            if body is None:
+                rec["error"] = ctype
+                print(f"{sid}: FAILED {ctype}")
+                manifest["pages"].append(rec)
+                continue
+            text = to_text(body, ctype, url)
+            lines = [ln for ln in text.splitlines() if not MENU.match(ln)]
+            ex = excerpts("\n".join(lines), PARLINE_NARROW, limit=25)
+            rec.update({"bytes": len(body), "sha256": hashlib.sha256(body).hexdigest(), "content_type": ctype,
+                        "final_url": final, "text_chars": len(text), "excerpt_file": f"page_excerpts/{sid}.txt",
+                        "excerpts": len(ex)})
+            with open(os.path.join(exc, f"{sid}.txt"), "w", encoding="utf-8") as f:
+                f.write(f"# {sid}\n# url: {url}\n# final url: {final}\n# fetched (UTC): {rec['fetched_utc']}\n"
+                        f"# HTTP {status}; {len(body)} bytes; SHA-256 {rec['sha256']}\n"
+                        "# Short excerpts only (lines holding the searched words, with the line before and after).\n\n")
+                for e in ex:
+                    f.write(e + "\n\n")
+            print(f"{sid}: {status} {len(body)} bytes sha256 {rec['sha256']} excerpts {len(ex)}")
+            manifest["pages"].append(rec)
+            time.sleep(1)
+    json.dump(manifest, open(os.path.join(out, "fetch_manifest.json"), "w"), indent=1, sort_keys=True)
+
+
 def main():
     out = sys.argv[1]
+    if os.environ.get("FETCH_SET") == "parline":
+        return parline_round(out)
     raw = os.path.join(out, "raw")
     exc = os.path.join(out, "page_excerpts")
     os.makedirs(raw, exist_ok=True)

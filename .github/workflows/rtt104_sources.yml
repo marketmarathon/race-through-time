@@ -31,11 +31,12 @@ jobs:
       - uses: actions/checkout@v4
       - name: Fetch sources and commit the data files, manifest and excerpts to this branch
         env:
+          FETCH_SET: parline  # IQ-20 round 2: IPU Parline pages only (empty = round 1, every source)
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           set -euo pipefail
           command -v pdftotext > /dev/null || { sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils > /dev/null; }
-          OUT="data/rtt-104/source/fetch_$(date -u +%Y-%m-%d)_run${GITHUB_RUN_ID}"
+          OUT="data/rtt-104/source/fetch_$(date -u +%Y-%m-%d)_run${GITHUB_RUN_ID}${FETCH_SET:+_$FETCH_SET}"
           python3 scripts/rtt104_fetch_sources.py "$OUT"
           for f in "$OUT"/page_excerpts/*.txt; do echo "::group::$(basename "$f")"; cat "$f"; echo "::endgroup::"; done
           git config user.name "rtt104-sources workflow"
