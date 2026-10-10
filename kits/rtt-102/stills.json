@@ -1,0 +1,58 @@
+{
+ "stills": [
+  {
+   "name": "r2b_feb2024",
+   "config": "config_rtt102_film.json",
+   "at": "2024-02-29"
+  },
+  {
+   "name": "r2b_aug2024",
+   "config": "config_rtt102_film.json",
+   "at": "2024-08-31"
+  },
+  {
+   "name": "r2b_feb2025",
+   "config": "config_rtt102_film.json",
+   "at": "2025-02-28"
+  },
+  {
+   "name": "r2b_oct2025",
+   "config": "config_rtt102_film.json",
+   "at": "2025-10-31"
+  },
+  {
+   "name": "r2b_aug2026",
+   "config": "config_rtt102_film.json",
+   "at": "2026-08-31"
+  },
+  {
+   "name": "r2b_sheet",
+   "compose": {
+    "title": "Round 2 revised (IQ-19d): eased through every month of the data, taller line in the combined panel",
+    "cols": 2,
+    "items": [
+     {
+      "still": "r2b_feb2024",
+      "caption": "February 2024: Claude ~39m (the data's 39.3m, on the line)"
+     },
+     {
+      "still": "r2b_aug2024",
+      "caption": "August 2024: Gemini ~280m (the data's 278.3m)"
+     },
+     {
+      "still": "r2b_feb2025",
+      "caption": "February 2025: Copilot ~80m (the data's 80.4m)"
+     },
+     {
+      "still": "r2b_oct2025",
+      "caption": "October 2025: Copilot leaves the total"
+     },
+     {
+      "still": "r2b_aug2026",
+      "caption": "August 2026: the final board"
+     }
+    ]
+   }
+  }
+ ]
+}

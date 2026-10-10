@@ -1,0 +1,21 @@
+{
+ "ready": true,
+ "title": "Glitcher",
+ "artist": "Dyalla",
+ "source": "YouTube Studio Audio Library on the Race Through Time channel (Dance and Electronic / Bright, 3:54, added Jun 2025), YouTube Audio Library licence (no attribution required); chosen by Luke 9 Oct 2026 (DEC-568); downloaded by Cowork in Luke's Chrome 9 Oct 2026",
+ "file": "glitcher_dyalla.mp3",
+ "private_path": "assets/rtt-102/music/glitcher_dyalla.mp3",
+ "private_ref": "main",
+ "sha256": "e848dfe29dd5374ad6b5d86c8c09a4d55b6fe5472b136184aba9ba71311225a3",
+ "bytes": 9367547,
+ "duration_sec": 234.16,
+ "readme_path": "assets/rtt-102/music/README_glitcher.txt",
+ "readme_sha256": "1de6789e054f34f482bf0c2a46cb1b88d0d11084b582d2d50c3f155b9fa77f1c",
+ "start_sec": 10.5,
+ "fade_out_sec": 5,
+ "notes": [
+  "The audio file is NEVER committed here (Audio Library terms: not to be shared on its own; reference/rights_ledger.md). It lives only in the private repo, main branch (commit b4adada), with README_glitcher.txt; both SHA-256 checked by Claude Code on 9 Oct 2026 (equal to the brief) and checked again by .github/workflows/rtt102_film.yml at render time.",
+  "Start (DEC-570): the track opens with a quieter 10.4 s intro (about -21 dB RMS against about -10 dB once the beat is in), then 10.35-10.45 s near-silence and the drop: the full beat starts at 10.503 s (measured on the decoded audio, 2 ms windows), about 96 BPM. The film's music starts at 10.500 s, 3 ms before the drop, where the track is at about -42 dB, so it opens on the beat with no click and needs no fade-in. The track is longer than the film (223.6 s left from 10.5 s against 77.8 s), so no loop.",
+  "Playback: the workflow cuts the track losslessly from start_sec (PCM WAV) and hands it to scripts/rtt_mix_music.sh (unchanged): played once, faded out over the last 5 s (from August 2026's landing frame, DEC-566), mixed to -16 LUFS integrated, true peak at most -1 dBTP (the script fails otherwise). Test mix on a silent 77.77 s video (Claude Code container, 9 Oct 2026): -16.0 LUFS integrated, true peak -4.1 dBTP."
+ ]
+}

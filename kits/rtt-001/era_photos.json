@@ -1,0 +1,427 @@
+{
+ "note": "RTT-001 era photos (DEC-221): the shortlist for Luke, 3 per era, from the candidates in the private repo (assets/rtt-001/photos/candidates, branch claude/compassionate-cray-tlnnkm). Commercial-use licences only; every licence and author as read from the file page through the Commons API by the rtt001-photos workflow. recommended = Claude's pick, used in the pilot stills. crop = the part of the file drawn (crop only, the file is unchanged); bg = the tile behind a photo that does not fill it. chosen = in the film (owner decision DEC-227, 6 Oct 2026: the recommended picks except the Dell XPS T600r and the Galaxy S6, which match their eras).",
+ "photos": [
+  {
+   "device": "crt",
+   "file": "candidates/crt1990s/04_IBM_Aptiva_2144_M51.jpg",
+   "label": "IBM Aptiva 2144-M51 with its G40 monitor (about 1995)",
+   "recommended": true,
+   "page": "https://commons.wikimedia.org/wiki/File:IBM_Aptiva_2144-M51.jpg",
+   "author": "Ruben de Rijcke",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "credit": "Own work",
+   "restrictions": "none flagged on the file page",
+   "original_size": [
+    3534,
+    3024
+   ],
+   "original_sha1": "9a453d3c217a053fbcd65c9acf9d2a3bcb3c8d94",
+   "rendering": "Commons rendering https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/IBM_Aptiva_2144-M51.jpg/1920px-IBM_Aptiva_2144-M51.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "sha256": "b1f39e03ee0cc69d4327b22e93fc23f04782d5a568c24cf89192d907aad9d2e0",
+   "bytes": 507937,
+   "attribution": "IBM Aptiva 2144-M51 with its G40 monitor: photo by Ruben de Rijcke, CC BY-SA 4.0, cropped, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:IBM_Aptiva_2144-M51.jpg)",
+   "crop": {
+    "x": 0,
+    "y": 60,
+    "w": 1920,
+    "h": 1440
+   },
+   "size": [
+    1920,
+    1643
+   ],
+   "chosen": true
+  },
+  {
+   "device": "crt",
+   "file": "candidates/crt1990s/07_IBM_Aptiva_486_carregando_o_Windows_95.jpg",
+   "label": "IBM Aptiva 486 loading Windows 95",
+   "recommended": false,
+   "page": "https://commons.wikimedia.org/wiki/File:IBM_Aptiva_486_carregando_o_Windows_95.jpg",
+   "author": "Al Lemos",
+   "licence": "CC BY-SA 3.0",
+   "licence_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+   "credit": "Own work",
+   "restrictions": "none flagged on the file page",
+   "original_size": [
+    1321,
+    1185
+   ],
+   "original_sha1": "204fa9d30c7a1b7e752f91b17d7606bf8039a61a",
+   "rendering": "Commons rendering https://upload.wikimedia.org/wikipedia/commons/9/9a/IBM_Aptiva_486_carregando_o_Windows_95.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "sha256": "4c340e047fe1f2cdc145face40b5130b47d89d90b0152d8f56cf3c3d124571a4",
+   "bytes": 459690,
+   "attribution": "IBM Aptiva 486 loading Windows 95: photo by Al Lemos, CC BY-SA 3.0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:IBM_Aptiva_486_carregando_o_Windows_95.jpg)",
+   "size": [
+    1321,
+    1185
+   ],
+   "chosen": false
+  },
+  {
+   "device": "crt",
+   "file": "candidates/crt1990s/11_Gateway_2000.jpg",
+   "label": "Gateway 2000 desktop and CRT",
+   "recommended": false,
+   "page": "https://commons.wikimedia.org/wiki/File:Gateway_2000.jpg",
+   "author": "MBlairMartin",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "credit": "Own work",
+   "restrictions": "none flagged on the file page",
+   "original_size": [
+    1307,
+    1425
+   ],
+   "original_sha1": "dc41a0204dcad5ac7d3b8bfb2389cb7f2b2f4cd0",
+   "rendering": "Commons rendering https://upload.wikimedia.org/wikipedia/commons/7/7a/Gateway_2000.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "sha256": "9ed3665b75eb57210715b323420ec6616fd385903de5177f0066cc59abf34807",
+   "bytes": 283431,
+   "attribution": "Gateway 2000 desktop and CRT: photo by MBlairMartin, CC BY-SA 4.0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Gateway_2000.jpg)",
+   "bg": "#152134",
+   "size": [
+    1307,
+    1425
+   ],
+   "chosen": false
+  },
+  {
+   "device": "tower",
+   "file": "candidates/tower2000s/03_DellDimensionE521.jpg",
+   "label": "Dell Dimension E521 tower (2006)",
+   "recommended": true,
+   "page": "https://commons.wikimedia.org/wiki/File:DellDimensionE521.jpg",
+   "author": "Rowen Hansen",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "credit": "Own work",
+   "restrictions": "none flagged on the file page",
+   "original_size": [
+    4405,
+    6371
+   ],
+   "original_sha1": "196d68882113ca5d08297859596bc5b4954f2984",
+   "rendering": "Commons rendering https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/DellDimensionE521.jpg/1920px-DellDimensionE521.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "sha256": "f3259461c400d4adf3cffe3bd88f31dc77efee185d3d40444b8b6f78aae22419",
+   "bytes": 519717,
+   "attribution": "Dell Dimension E521 tower: photo by Rowen Hansen, CC BY-SA 4.0, cropped, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:DellDimensionE521.jpg)",
+   "crop": {
+    "x": 20,
+    "y": 20,
+    "w": 1880,
+    "h": 2740
+   },
+   "bg": "#152134",
+   "size": [
+    1920,
+    2777
+   ],
+   "chosen": false
+  },
+  {
+   "device": "tower",
+   "file": "candidates/tower2000s/04_Dell_XPS_T600R.jpg",
+   "label": "Dell XPS T600r tower (about 2000)",
+   "recommended": false,
+   "page": "https://commons.wikimedia.org/wiki/File:Dell_XPS_T600R.jpg",
+   "author": "Thomasp94",
+   "licence": "CC BY-SA 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+   "credit": "Own work",
+   "restrictions": "none flagged on the file page",
+   "original_size": [
+    2140,
+    2876
+   ],
+   "original_sha1": "8910bc7fdde461c7d3b07d4a71b71ef732e47376",
+   "rendering": "Commons rendering https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Dell_XPS_T600R.jpg/1920px-Dell_XPS_T600R.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "sha256": "a8b4a4de1ae0fe072692bc4f6faf9bbda86c4553adc91499c3ced45b9378700a",
+   "bytes": 832032,
+   "attribution": "Dell XPS T600r tower: photo by Thomasp94, CC BY-SA 3.0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Dell_XPS_T600R.jpg)",
+   "bg": "#152134",
+   "size": [
+    1920,
+    2580
+   ],
+   "chosen": true
+  },
+  {
+   "device": "tower",
+   "file": "candidates/tower2000s/11_EMachines_eTower.jpg",
+   "label": "eMachines eTower (about 2000)",
+   "recommended": false,
+   "page": "https://commons.wikimedia.org/wiki/File:EMachines_eTower.jpg",
+   "author": "Ali West",
+   "licence": "CC BY 2.0",
+   "licence_url": "https://creativecommons.org/licenses/by/2.0",
+   "credit": "https://www.flickr.com/photos/alismith44/2261350642/",
+   "restrictions": "none flagged on the file page",
+   "original_size": [
+    2112,
+    2816
+   ],
+   "original_sha1": "7099d9f7a5f14be6f0e4335fe45cf5bb024ed23b",
+   "rendering": "Commons rendering https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/EMachines_eTower.jpg/1920px-EMachines_eTower.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "sha256": "adaf2bd6aa8fc0a811c7412fb13e7fe50a5b9cab9c4ad5eb4064f9ac64f2df89",
+   "bytes": 915651,
+   "attribution": "eMachines eTower: photo by Ali West, CC BY 2.0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:EMachines_eTower.jpg)",
+   "bg": "#152134",
+   "size": [
+    1920,
+    2560
+   ],
+   "chosen": false
+  },
+  {
+   "device": "laptop",
+   "file": "candidates/laptop2006/09_ThinkPad_T43.jpg",
+   "label": "IBM ThinkPad T43 (2005)",
+   "recommended": true,
+   "page": "https://commons.wikimedia.org/wiki/File:ThinkPad_T43.jpg",
+   "author": "Bitmaster Helsinki",
+   "licence": "CC BY 2.0",
+   "licence_url": "https://creativecommons.org/licenses/by/2.0",
+   "credit": "https://www.flickr.com/photos/tietokonekauppa/2529960047/",
+   "restrictions": "none flagged on the file page",
+   "original_size": [
+    3264,
+    2448
+   ],
+   "original_sha1": "ed4483acbceb943a4d381ebec5672af34fd2d31d",
+   "rendering": "Commons rendering https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/ThinkPad_T43.jpg/1920px-ThinkPad_T43.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "sha256": "d27c3dc102ea5ceb66c2196e6f4d05017b13d0865a214160a1f06308cdf0b581",
+   "bytes": 552278,
+   "attribution": "IBM ThinkPad T43: photo by Bitmaster Helsinki, CC BY 2.0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:ThinkPad_T43.jpg)",
+   "size": [
+    1920,
+    1440
+   ],
+   "chosen": true
+  },
+  {
+   "device": "laptop",
+   "file": "candidates/laptop2006/03_Ibm_lenovo_thinkpad_t60.jpg",
+   "label": "IBM/Lenovo ThinkPad T60 (2006)",
+   "recommended": false,
+   "page": "https://commons.wikimedia.org/wiki/File:Ibm_lenovo_thinkpad_t60.jpg",
+   "author": "osde8info",
+   "licence": "CC BY-SA 2.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/2.0",
+   "credit": "https://www.flickr.com/photos/osde-info/8719987277/",
+   "restrictions": "none flagged on the file page",
+   "original_size": [
+    1863,
+    2487
+   ],
+   "original_sha1": "e2f0d28bcf990a53dbf1eff0955c841c801e8f37",
+   "rendering": "Commons rendering https://upload.wikimedia.org/wikipedia/commons/6/64/Ibm_lenovo_thinkpad_t60.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "sha256": "09923dc1d7e83f99beb38068f4185644b85b22d07d15837b37085b6c3aeb26b3",
+   "bytes": 1373857,
+   "attribution": "IBM/Lenovo ThinkPad T60: photo by osde8info, CC BY-SA 2.0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Ibm_lenovo_thinkpad_t60.jpg)",
+   "bg": "#152134",
+   "size": [
+    1863,
+    2487
+   ],
+   "chosen": false
+  },
+  {
+   "device": "laptop",
+   "file": "candidates/laptop2006/04_IBM_Lenovo_ThinkPad_T60.jpg",
+   "label": "IBM/Lenovo ThinkPad T60 (2006)",
+   "recommended": false,
+   "page": "https://commons.wikimedia.org/wiki/File:IBM_Lenovo_ThinkPad_T60.jpg",
+   "author": "Enrico Guazzini",
+   "licence": "CC BY-SA 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+   "credit": "Photographie de Enrico901",
+   "restrictions": "none flagged on the file page",
+   "original_size": [
+    4000,
+    3000
+   ],
+   "original_sha1": "3787fce5d4634330166bf94d16072b07b2076f8d",
+   "rendering": "Commons rendering https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/IBM_Lenovo_ThinkPad_T60.jpg/1920px-IBM_Lenovo_ThinkPad_T60.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "sha256": "091204c3d804297e36e31568aea2c15164eb46c812e53e3b3990819d15728361",
+   "bytes": 467188,
+   "attribution": "IBM/Lenovo ThinkPad T60: photo by Enrico Guazzini, CC BY-SA 3.0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:IBM_Lenovo_ThinkPad_T60.jpg)",
+   "size": [
+    1920,
+    1440
+   ],
+   "chosen": false
+  },
+  {
+   "device": "phone_early",
+   "file": "candidates/phone2009/06_HTC_Dream_Orange_FR.jpg",
+   "label": "HTC Dream, the first Android phone (2008)",
+   "recommended": true,
+   "page": "https://commons.wikimedia.org/wiki/File:HTC_Dream_Orange_FR.jpeg",
+   "author": "Akela NDE",
+   "licence": "CC BY-SA 3.0",
+   "licence_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+   "credit": "Own work",
+   "restrictions": "none flagged on the file page",
+   "original_size": [
+    2568,
+    1926
+   ],
+   "original_sha1": "c85dcf491ef59258263d032ed0b00f8790b2e4b8",
+   "rendering": "Commons rendering https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/HTC_Dream_Orange_FR.jpeg/1920px-HTC_Dream_Orange_FR.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "sha256": "5e3a5fe577794ef448d20c56f96783ca2409e0f1e0ce23424139b55e3aa3b596",
+   "bytes": 524533,
+   "attribution": "HTC Dream, the first Android phone: photo by Akela NDE, CC BY-SA 3.0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:HTC_Dream_Orange_FR.jpeg)",
+   "size": [
+    1920,
+    1440
+   ],
+   "chosen": true
+  },
+  {
+   "device": "phone_early",
+   "file": "candidates/phone2009/04_HTC_Dream_opened.jpg",
+   "label": "HTC Dream, opened (2008)",
+   "recommended": false,
+   "page": "https://commons.wikimedia.org/wiki/File:HTC_Dream_opened.jpg",
+   "author": "Marcus Sümnick",
+   "licence": "CC BY 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by/3.0",
+   "credit": "Own work",
+   "restrictions": "none flagged on the file page",
+   "original_size": [
+    1600,
+    1269
+   ],
+   "original_sha1": "085af5f3785a86f82dbee6b28e4593df0759c614",
+   "rendering": "Commons rendering https://upload.wikimedia.org/wikipedia/commons/6/64/HTC_Dream_opened.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "sha256": "65e0368f8c7b6dc27841fc392befd2861966a6b0b921c07a294ca91bacf0324f",
+   "bytes": 846073,
+   "attribution": "HTC Dream, opened: photo by Marcus Sümnick, CC BY 3.0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:HTC_Dream_opened.jpg)",
+   "size": [
+    1600,
+    1269
+   ],
+   "chosen": false
+  },
+  {
+   "device": "phone_early",
+   "file": "candidates/phone2009/07_CreativeTools_se_PackshotCreator_HTC_Hero_Android.jpg",
+   "label": "HTC Hero (2009)",
+   "recommended": false,
+   "page": "https://commons.wikimedia.org/wiki/File:CreativeTools.se_-_PackshotCreator_-_HTC_Hero_Android.jpg",
+   "author": "Creative Tools. Watermark removed by User:Ainali",
+   "licence": "CC BY 2.0",
+   "licence_url": "https://creativecommons.org/licenses/by/2.0",
+   "credit": "CreativeTools.se - PackshotCreator - HTC Hero Android",
+   "restrictions": "none flagged on the file page",
+   "original_size": [
+    3133,
+    3312
+   ],
+   "original_sha1": "670d722cc63dcf7503346d8fb607d55e348f013d",
+   "rendering": "Commons rendering https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/CreativeTools.se_-_PackshotCreator_-_HTC_Hero_Android.jpg/1920px-CreativeTools.se_-_PackshotCreator_-_HTC_Hero_Android.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "sha256": "da49a5970ae27b3c15c6a2afa82b782a9aee9e8311ec5786962189ecd9be6aef",
+   "bytes": 216564,
+   "attribution": "HTC Hero: photo by Creative Tools. Watermark removed by User:Ainali, CC BY 2.0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:CreativeTools.se_-_PackshotCreator_-_HTC_Hero_Android.jpg)",
+   "bg": "#FFFFFF",
+   "size": [
+    1920,
+    2030
+   ],
+   "chosen": false
+  },
+  {
+   "device": "phone_modern",
+   "file": "candidates/phone2015/08_Samsung_Galaxy_S7_26089332033_.jpg",
+   "label": "Samsung Galaxy S7 (2016)",
+   "recommended": true,
+   "page": "https://commons.wikimedia.org/wiki/File:Samsung_Galaxy_S7_(26089332033).jpg",
+   "author": "Maurizio Pesce from Milan, Italia",
+   "licence": "CC BY 2.0",
+   "licence_url": "https://creativecommons.org/licenses/by/2.0",
+   "credit": "Samsung Galaxy S7",
+   "restrictions": "none flagged on the file page",
+   "original_size": [
+    5184,
+    3456
+   ],
+   "original_sha1": "846d4d16279ad0b41cad5173885190d5ce5e1d61",
+   "rendering": "Commons rendering https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Samsung_Galaxy_S7_%2826089332033%29.jpg/1920px-Samsung_Galaxy_S7_%2826089332033%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "sha256": "806efa29bbc4a860d927199dcba13a3b8f105a993483dc27c48caee2baad9211",
+   "bytes": 441609,
+   "attribution": "Samsung Galaxy S7: photo by Maurizio Pesce from Milan, Italia, CC BY 2.0, cropped, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Samsung_Galaxy_S7_(26089332033).jpg)",
+   "crop": {
+    "x": 480,
+    "y": 250,
+    "w": 960,
+    "h": 720
+   },
+   "size": [
+    1920,
+    1280
+   ],
+   "chosen": false
+  },
+  {
+   "device": "phone_modern",
+   "file": "candidates/phone2015/02_Samsung_Galaxy_S6_Gold_Platinum_Front.jpg",
+   "label": "Samsung Galaxy S6 (2015)",
+   "recommended": false,
+   "page": "https://commons.wikimedia.org/wiki/File:Samsung_Galaxy_S6_(Gold_Platinum)_-_Front.jpg",
+   "author": "Beamish4",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "credit": "Own work",
+   "restrictions": "none flagged on the file page",
+   "original_size": [
+    4088,
+    5448
+   ],
+   "original_sha1": "873de1e2cfd7e6035a39876ea9b8dd4b4ce31ad5",
+   "rendering": "Commons rendering https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Samsung_Galaxy_S6_%28Gold_Platinum%29_-_Front.jpg/1920px-Samsung_Galaxy_S6_%28Gold_Platinum%29_-_Front.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "sha256": "ae2dc03f911519d5c7b465720784cf0d09d7497a801ae7f197db99ed19ddb881",
+   "bytes": 1744732,
+   "attribution": "Samsung Galaxy S6: photo by Beamish4, CC BY-SA 4.0, cropped, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Samsung_Galaxy_S6_(Gold_Platinum)_-_Front.jpg)",
+   "bg": "#152134",
+   "size": [
+    1920,
+    2559
+   ],
+   "chosen": true,
+   "crop": {
+    "x": 280,
+    "y": 220,
+    "w": 1260,
+    "h": 2160
+   }
+  },
+  {
+   "device": "phone_modern",
+   "file": "candidates/phone2015/14_Android_Assistant_on_the_Google_Pixel_XL_smartphone_29526761.jpg",
+   "label": "Google Pixel XL (2016)",
+   "recommended": false,
+   "page": "https://commons.wikimedia.org/wiki/File:Android_Assistant_on_the_Google_Pixel_XL_smartphone_(29526761674).jpg",
+   "author": "Maurizio Pesce from Milan, Italia",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "credit": "Android Assistant on the Google Pixel XL smartphone",
+   "restrictions": "none flagged on the file page",
+   "original_size": [
+    1954,
+    2793
+   ],
+   "original_sha1": "9c3f37db6803c5735171a1974a5345bd0b9583e9",
+   "rendering": "Commons rendering https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Android_Assistant_on_the_Google_Pixel_XL_smartphone_%2829526761674%29.jpg/1920px-Android_Assistant_on_the_Google_Pixel_XL_smartphone_%2829526761674%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "sha256": "26a0662b6a4cd44f67d60e1e4b69a294de791ae2210ce6bf6f2a32260cdb97d7",
+   "bytes": 752430,
+   "attribution": "Google Pixel XL: photo by Maurizio Pesce from Milan, Italia, CC BY-SA 4.0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Android_Assistant_on_the_Google_Pixel_XL_smartphone_(29526761674).jpg)",
+   "bg": "#152134",
+   "size": [
+    1920,
+    2744
+   ],
+   "chosen": false
+  }
+ ]
+}

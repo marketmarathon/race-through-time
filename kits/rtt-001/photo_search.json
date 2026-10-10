@@ -1,0 +1,23 @@
+{
+ "note": "RTT-001 era photos (DEC-221): Commons searches per era, run on a runner by scripts/rtt001_photo_candidates.py. Commercial-use licences only (public domain, CC0, CC BY, CC BY-SA). Candidates go only to the private repo.",
+ "per_query": 8,
+ "per_category": 12,
+ "per_era": 14,
+ "eras": [
+  { "id": "crt1990s", "label": "Mid-1990s beige CRT desktop (with a dial-up modem or a 90s browser if possible)",
+    "queries": ["Packard Bell computer 1990s", "Compaq Presario 1995", "IBM Aptiva", "Gateway 2000 computer", "Windows 95 desktop computer CRT", "486 computer monitor beige", "Netscape Navigator CRT monitor", "US Robotics Sportster modem"],
+    "categories": ["Category:IBM Aptiva", "Category:Packard Bell computers", "Category:Compaq Presario"] },
+  { "id": "tower2000s", "label": "2000s desktop tower",
+    "queries": ["Dell Dimension desktop", "Dell OptiPlex GX270", "HP Pavilion desktop 2003", "eMachines desktop", "Windows XP desktop computer", "Compaq Evo desktop"],
+    "categories": ["Category:Dell Dimension", "Category:Dell OptiPlex"] },
+  { "id": "laptop2006", "label": "Mid-2000s laptop",
+    "queries": ["ThinkPad T60", "ThinkPad T43", "Dell Inspiron 6400", "Dell Latitude D620", "HP Compaq nc6400", "Acer Aspire 5100"],
+    "categories": ["Category:IBM ThinkPad T60", "Category:Lenovo ThinkPad T60"] },
+  { "id": "phone2009", "label": "First-generation touch smartphone around 2009",
+    "queries": ["HTC Dream", "T-Mobile G1", "HTC Hero", "Motorola Droid", "Nokia N97", "Samsung Galaxy GT-I7500", "iPhone 3GS", "Palm Pre"],
+    "categories": ["Category:HTC Dream", "Category:HTC Hero", "Category:Nokia N97"] },
+  { "id": "phone2015", "label": "Modern smartphone around 2015+",
+    "queries": ["Samsung Galaxy S6", "Samsung Galaxy S7", "Google Pixel phone", "Nexus 5X", "iPhone 6", "Samsung Galaxy S8"],
+    "categories": ["Category:Samsung Galaxy S6", "Category:Samsung Galaxy S7", "Category:Google Pixel"] }
+ ]
+}

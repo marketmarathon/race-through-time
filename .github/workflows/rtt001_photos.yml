@@ -1,0 +1,66 @@
+# Race Through Time - RTT-001 era photos (owner direction DEC-221): candidate photographs of the devices of each era
+# from Wikimedia Commons, for Luke to pick from a contact sheet. Its own workflow: nothing here can start a render.
+#
+# Wikimedia answers HTTP 429 to the Claude Code cloud container (6 Oct 2026), so the search and the downloads run here
+# on a GitHub-hosted runner (scripts/rtt001_photo_candidates.py, queries in kits/rtt-001/photo_search.json), and the
+# candidates are committed straight into the PRIVATE repo (DEC-060), never into this public one (DEC-006). This
+# workflow (DEC-061):
+#   - keeps only commercial-use licences (public domain, CC0, CC BY, CC BY-SA; never NC, ND, GFDL-only or non-free);
+#   - records for each file its page, author, licence, credit, restrictions and SHA-256 in the private manifest.json;
+#   - pushes to the private repo with the secret RTT_PRIVATE_TOKEN, never printing it;
+#   - uploads NO workflow artifact, uses NO cache, prints only file names, licences and hashes;
+#   - deletes everything it downloaded from the runner at the end.
+# Trigger: a push that changes this file, the script or photo_search.json on the IQ-13 branch, or by hand.
+name: rtt001-photos
+
+on:
+  push:
+    branches: [claude/compassionate-cray-tlnnkm]
+    paths: [.github/workflows/rtt001_photos.yml, scripts/rtt001_photo_candidates.py, kits/rtt-001/photo_search.json]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rtt001-photos
+  cancel-in-progress: false
+
+env:
+  PRIVATE_REPO: marketmarathon/race-through-time-private
+  PRIVATE_BRANCH: claude/compassionate-cray-tlnnkm
+
+jobs:
+  candidates:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Search Commons, download the candidates, commit them to the private repo
+        env:
+          GH_TOKEN: ${{ secrets.RTT_PRIVATE_TOKEN }}
+        run: |
+          set -euo pipefail
+          if [ -z "$GH_TOKEN" ]; then echo "::error::secret RTT_PRIVATE_TOKEN is not available to this run"; exit 1; fi
+          W="$RUNNER_TEMP/rtt001p"; mkdir -p "$W"
+          git clone -q "https://x-access-token:${GH_TOKEN}@github.com/${PRIVATE_REPO}.git" "$W/private"
+          cd "$W/private"
+          if git ls-remote --exit-code --heads origin "$PRIVATE_BRANCH" > /dev/null; then git checkout -q "$PRIVATE_BRANCH"; else git checkout -q -b "$PRIVATE_BRANCH" origin/main; fi
+          cd "$GITHUB_WORKSPACE"
+          D="$W/private/assets/rtt-001/photos/candidates"; rm -rf "$D"
+          python3 scripts/rtt001_photo_candidates.py kits/rtt-001/photo_search.json "$D"
+          cd "$W/private"
+          git config user.name "rtt001-photos workflow"
+          git config user.email "rtt001-photos@users.noreply.github.com"
+          git add -A assets/rtt-001/photos/candidates
+          if git diff --cached --quiet; then echo "nothing new to commit"; exit 0; fi
+          git commit -q -m "RTT-001: era photo candidates from Wikimedia Commons, commercial-use licences only (DEC-221; source run ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID})"
+          git push -q origin "HEAD:$PRIVATE_BRANCH"
+          echo "committed $(git rev-parse --short HEAD) to ${PRIVATE_REPO} ${PRIVATE_BRANCH}"
+
+      - name: Delete the downloads from the runner
+        if: always()
+        run: rm -rf "$RUNNER_TEMP/rtt001p"

@@ -1,0 +1,28 @@
+# Race Through Time - RTT-102 (IQ-17): read Similarweb's dated publications and the press quoting them at their source.
+# The Claude Code cloud container cannot reach them (its network policy blocks similarweb.com, digiday.com,
+# the-decoder.com, linkedin.com and others). Separate from every render workflow: it renders nothing.
+# This repository is PUBLIC (DEC-006, DEC-061): no secret is used, NO workflow artifact is uploaded, NO cache;
+# the log prints only HTTP status, page hashes, page dates and short sentences that hold a visits figure.
+# Similarweb's website profiles are not fetched (its free search limit is not worked around) and robots.txt is obeyed.
+# Trigger: a push that changes this file or the script on the IQ-17 branch, or by hand.
+name: rtt102-sources
+
+on:
+  push:
+    branches: [claude/nice-wozniak-f62eio]
+    paths: [.github/workflows/rtt102_sources.yml, scripts/rtt102_check_sources.py]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Fetch each publication and print the sentences that hold visits figures
+        run: python3 scripts/rtt102_check_sources.py

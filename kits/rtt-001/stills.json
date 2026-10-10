@@ -440,6 +440,300 @@
      }
     ]
    }
+  },
+  {
+   "name": "b01_fixed_jan1995",
+   "config": "config_rtt001_approved.json",
+   "at": "1995-01-31"
+  },
+  {
+   "name": "b01_fit_jan1995",
+   "config": "config_rtt001_approved_fit.json",
+   "at": "1995-01-31"
+  },
+  {
+   "name": "b02_fixed_jun1999",
+   "config": "config_rtt001_approved.json",
+   "at": "1999-06-30"
+  },
+  {
+   "name": "b02_fit_jun1999",
+   "config": "config_rtt001_approved_fit.json",
+   "at": "1999-06-30"
+  },
+  {
+   "name": "b03_fixed_jun2005",
+   "config": "config_rtt001_approved.json",
+   "at": "2005-06-30"
+  },
+  {
+   "name": "b03_fit_jun2005",
+   "config": "config_rtt001_approved_fit.json",
+   "at": "2005-06-30"
+  },
+  {
+   "name": "b04_fixed_jun2015",
+   "config": "config_rtt001_approved.json",
+   "at": "2015-06-30"
+  },
+  {
+   "name": "b04_fit_jun2015",
+   "config": "config_rtt001_approved_fit.json",
+   "at": "2015-06-30"
+  },
+  {
+   "name": "s21_logos_approved",
+   "sheet": "sheet_logos",
+   "config": "config_rtt001_approved.json"
+  },
+  {
+   "name": "c09_board_fixed_vs_fit",
+   "compose": {
+    "title": "RTT-001 board size (answer 5, DEC-188): fixed 10 slots (left) or bars sized to the number of browsers on the board (right)",
+    "cols": 2,
+    "items": [
+     {
+      "still": "b01_fixed_jan1995",
+      "caption": "January 1995: fixed 10 slots"
+     },
+     {
+      "still": "b01_fit_jan1995",
+      "caption": "January 1995: bars sized to the browsers on the board"
+     },
+     {
+      "still": "b02_fixed_jun1999",
+      "caption": "June 1999: fixed 10 slots"
+     },
+     {
+      "still": "b02_fit_jun1999",
+      "caption": "June 1999: bars sized to the browsers on the board"
+     },
+     {
+      "still": "b03_fixed_jun2005",
+      "caption": "June 2005: fixed 10 slots"
+     },
+     {
+      "still": "b03_fit_jun2005",
+      "caption": "June 2005: bars sized to the browsers on the board"
+     },
+     {
+      "still": "b04_fixed_jun2015",
+      "caption": "June 2015: fixed 10 slots"
+     },
+     {
+      "still": "b04_fit_jun2015",
+      "caption": "June 2015: bars sized to the browsers on the board"
+     }
+    ]
+   }
+  },
+  {
+   "name": "e01_old_jun1996",
+   "config": "config_rtt001_approved_fit.json",
+   "at": "1996-06-30"
+  },
+  {
+   "name": "e01_A_jun1996",
+   "config": "config_rtt001_era_A.json",
+   "at": "1996-06-30"
+  },
+  {
+   "name": "e01_B_jun1996",
+   "config": "config_rtt001_era_B.json",
+   "at": "1996-06-30"
+  },
+  {
+   "name": "e02_old_jun2004",
+   "config": "config_rtt001_approved_fit.json",
+   "at": "2004-06-30"
+  },
+  {
+   "name": "e02_A_jun2004",
+   "config": "config_rtt001_era_A.json",
+   "at": "2004-06-30"
+  },
+  {
+   "name": "e02_B_jun2004",
+   "config": "config_rtt001_era_B.json",
+   "at": "2004-06-30"
+  },
+  {
+   "name": "e03_old_jun2010",
+   "config": "config_rtt001_approved_fit.json",
+   "at": "2010-06-30"
+  },
+  {
+   "name": "e03_A_jun2010",
+   "config": "config_rtt001_era_A.json",
+   "at": "2010-06-30"
+  },
+  {
+   "name": "e03_B_jun2010",
+   "config": "config_rtt001_era_B.json",
+   "at": "2010-06-30"
+  },
+  {
+   "name": "e04_old_jun2020",
+   "config": "config_rtt001_approved_fit.json",
+   "at": "2020-06-30"
+  },
+  {
+   "name": "e04_A_jun2020",
+   "config": "config_rtt001_era_A.json",
+   "at": "2020-06-30"
+  },
+  {
+   "name": "e04_B_jun2020",
+   "config": "config_rtt001_era_B.json",
+   "at": "2020-06-30"
+  },
+  {
+   "name": "s22_era_devices",
+   "sheet": "sheet_devices",
+   "config": "config_rtt001_era_A.json"
+  },
+  {
+   "name": "c10_date_era_old_A_B",
+   "compose": {
+    "title": "RTT-001 date and era picture (DEC-214, DEC-215): as rendered (left), option A (middle), option B (right)",
+    "cols": 3,
+    "items": [
+     {
+      "still": "e01_old_jun1996",
+      "caption": "June 1996 - as rendered (old date)"
+     },
+     {
+      "still": "e01_A_jun1996",
+      "caption": "June 1996 - A: big year beside the era picture"
+     },
+     {
+      "still": "e01_B_jun1996",
+      "caption": "June 1996 - B: year on the device screen"
+     },
+     {
+      "still": "e02_old_jun2004",
+      "caption": "June 2004 - as rendered (old date)"
+     },
+     {
+      "still": "e02_A_jun2004",
+      "caption": "June 2004 - A: big year beside the era picture"
+     },
+     {
+      "still": "e02_B_jun2004",
+      "caption": "June 2004 - B: year on the device screen"
+     },
+     {
+      "still": "e03_old_jun2010",
+      "caption": "June 2010 - as rendered (old date)"
+     },
+     {
+      "still": "e03_A_jun2010",
+      "caption": "June 2010 - A: big year beside the era picture"
+     },
+     {
+      "still": "e03_B_jun2010",
+      "caption": "June 2010 - B: year on the device screen"
+     },
+     {
+      "still": "e04_old_jun2020",
+      "caption": "June 2020 - as rendered (old date)"
+     },
+     {
+      "still": "e04_A_jun2020",
+      "caption": "June 2020 - A: big year beside the era picture"
+     },
+     {
+      "still": "e04_B_jun2020",
+      "caption": "June 2020 - B: year on the device screen"
+     }
+    ]
+   }
+  },
+  {
+   "name": "f01_old_jun1996",
+   "config": "config_rtt001_approved_fit.json",
+   "at": "1996-06-30"
+  },
+  {
+   "name": "f01_new_jun1996",
+   "config": "config_rtt001_photos.json",
+   "at": "1996-06-30"
+  },
+  {
+   "name": "f02_old_jun2004",
+   "config": "config_rtt001_approved_fit.json",
+   "at": "2004-06-30"
+  },
+  {
+   "name": "f02_new_jun2004",
+   "config": "config_rtt001_photos.json",
+   "at": "2004-06-30"
+  },
+  {
+   "name": "f03_old_jun2010",
+   "config": "config_rtt001_approved_fit.json",
+   "at": "2010-06-30"
+  },
+  {
+   "name": "f03_new_jun2010",
+   "config": "config_rtt001_photos.json",
+   "at": "2010-06-30"
+  },
+  {
+   "name": "f04_old_jun2020",
+   "config": "config_rtt001_approved_fit.json",
+   "at": "2020-06-30"
+  },
+  {
+   "name": "f04_new_jun2020",
+   "config": "config_rtt001_photos.json",
+   "at": "2020-06-30"
+  },
+  {
+   "name": "s23_era_photo_shortlist",
+   "sheet": "sheet_photos",
+   "config": "config_rtt001_photo_sheet.json"
+  },
+  {
+   "name": "c11_date_photos_old_new",
+   "compose": {
+    "title": "RTT-001 date top right and era photos (DEC-221, DEC-222): as rendered (left) and new (right)",
+    "cols": 2,
+    "items": [
+     {
+      "still": "f01_old_jun1996",
+      "caption": "June 1996 - as rendered"
+     },
+     {
+      "still": "f01_new_jun1996",
+      "caption": "June 1996 - new: date top right, photo bottom right"
+     },
+     {
+      "still": "f02_old_jun2004",
+      "caption": "June 2004 - as rendered"
+     },
+     {
+      "still": "f02_new_jun2004",
+      "caption": "June 2004 - new: date top right, photo bottom right"
+     },
+     {
+      "still": "f03_old_jun2010",
+      "caption": "June 2010 - as rendered"
+     },
+     {
+      "still": "f03_new_jun2010",
+      "caption": "June 2010 - new: date top right, photo bottom right"
+     },
+     {
+      "still": "f04_old_jun2020",
+      "caption": "June 2020 - as rendered"
+     },
+     {
+      "still": "f04_new_jun2020",
+      "caption": "June 2020 - new: date top right, photo bottom right"
+     }
+    ]
+   }
   }
  ]
 }

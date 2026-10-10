@@ -1,0 +1,9 @@
+obs_id,reason,dec
+M005,"Probably October's figure under November's name: the round-up gives the same 3.7 billion and the same 115.9% year-on-year growth as the October post it links to (dossier D05)",DEC-509
+M007,"Contradicted by the same page: its prose gives Grok 201M for July 2025, as does Similarweb's 2025 table; the 38K table cell is set aside",DEC-509
+M009,"Unit inconsistent within its post ('topped 6 billion' beside '6.2M'); never repaired",DEC-509
+M010,"Unit inconsistent within its post (Gemini '1.2M' beside billions); never repaired",DEC-509
+M038,"Data version uncertain: published 31 Jul 2024, three days after Similarweb's new data version; its '+14% month on month' fits the older May figure (2.5 billion), not the current one (2.2 billion)",DEC-509
+M039,"Data version uncertain (same DataReportal report as M038)",DEC-509
+M045,"Month mismatch: 'by the end of November' while the Similarweb infographic it links labels 1.70B for October (dossier F04)",DEC-509
+M017,"January's figure under February's name: Similarweb's own dated February table shows claude.ai 290.3M (+43.07% month on month, V61) and its IPO report says 'between January and April 2026 (203M to 824M visits a month)' (V86); the IPO blog's 'between February and April' wording is loose (Luke, IQ-17b)",DEC-525

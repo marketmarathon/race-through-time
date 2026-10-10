@@ -1,0 +1,23 @@
+{
+ "builder": "scripts/build_rtt102_dataset.py",
+ "files": {
+  "CHECKS.md": "fb1b3b58978fe1c995206e4ad648b03c4dec346263ac5f2270668e1802dd65a3",
+  "checks.json": "925eed8bccd251836509c4dc2507003254d5e39799c8596f8177a01d84f45230",
+  "conflicts.csv": "9d2b7f3b71bb4f93fbd5c858bbc5216367929ff28a47de1c2ab87a3a0438ba77",
+  "identities.csv": "275edafdb809a3820b0e00bea9d8493910183ea3b1bdfad181711bd2b7bd5b72",
+  "place_changes.csv": "225f411ebfae16168ac7e67d31c203d9ee58c598437626f0188f91cbe7c49f4a",
+  "points.csv": "06280b0a35af06cd6f767a9e1526b0ff2bc077932e0e61728751cbe25a57f991",
+  "series_monthly.csv": "75495b74dad664ffaf85fb11f0217734243a351ee982463efefa68e6617a53e3",
+  "source/exclusions.csv": "824b9d6b472fc86b2dbd57ede6b1fea0f50c552f3ef647c02e96a08f22d6bfc9",
+  "source/inputs_sha256.csv": "c987104d2b86b0e5a75ee95fe767dcb80315bbb08a6d9ec43f2ea94871b82bd9",
+  "source/observations_manual.csv": "3ece2bb93bab627f4c5d5a6639ae1396c7828e6ab651fedc6dec65839f16f7e0",
+  "source/observations_research.csv": "87218ad511389c61dc46f0c1e7eaa19a34e06f0dd570653ff2b9d6743020f21c",
+  "source/publications.csv": "2689f8347c3d62d5cc241f087224887909953bd88cd077dd5a3bb6c7d1db5574",
+  "source/publications_manual.csv": "b253f05ae48e873117dadcd6ecf329e06a80fd14e9fb454fb198bdb1a90c896a",
+  "source/runner_checks.csv": "072f16276c296200ddfd0df845031455c8952a04d7c5b45618023f42c2f928c6",
+  "source/verification.csv": "26bc856d1cf32d590237edef6231759a7acafc3b964af0dc67f19a9b3a5ccfac",
+  "source/verification_chrome.csv": "480213cf5a933f3dcf1c614078736a5584611655c687559e6295ff24c655086e",
+  "source/verification_map.csv": "a5449064ab720deb72ad50d178b6c440de5424956544e36fc31619d51dbad367",
+  "turns.csv": "cb72f6c644144435b1414cc9d0b92db09fc2f6587fab35c464ae7301ef7451ac"
+ }
+}

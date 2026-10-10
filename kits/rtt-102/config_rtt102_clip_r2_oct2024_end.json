@@ -1,0 +1,12 @@
+{
+ "extends": "config_rtt102_film.json",
+ "kit_version": "rtt102_round2_clip",
+ "out": "rtt102_clip_r2_oct2024_end.mp4",
+ "notes": [
+  "Round 2 (IQ-19b item e, IQ-19c): October 2024 to the end of the film (opening board September 2024) with every round-1 answer and fix and Luke's round-2 picks: monthly at 1.5 s, eased, title B, the combined-visits panel, the final table (10 s) with no line."
+ ],
+ "window": {
+  "from": "2024-10-31",
+  "to": null
+ }
+}
