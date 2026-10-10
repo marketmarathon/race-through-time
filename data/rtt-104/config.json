@@ -1,0 +1,11 @@
+{
+ "episode": "RTT-104",
+ "first_year": 1997,
+ "last_year": 2025,
+ "board_size": 10,
+ "population_threshold": 4000000,
+ "population_threshold_alternative": 2500000,
+ "population_rule": "latest_year",
+ "single_gap_rule": "carry_previous_marked_latest_figure",
+ "notes": "population_threshold is the owner's rule (DEC-604; 4,000,000 default, 2,500,000 reported as the alternative until Luke confirms). population_rule latest_year = the list is fixed by the latest year with a WDI population figure (Claude working choice DEC-610); the alternative 'year' (population in that year) is reported, never used for the boards unless Luke chooses it. single_gap_rule: DEC-611."
+}
