@@ -50,7 +50,7 @@
   },
   {
    "name": "c1_zero_group_bar_1997",
-   "config": "config_rtt104_base.json",
+   "config": "config_rtt104_c_bar.json",
    "at": 1997,
    "question": "c"
   },
@@ -68,7 +68,7 @@
   },
   {
    "name": "c1_zero_group_bar_2025",
-   "config": "config_rtt104_base.json",
+   "config": "config_rtt104_c_bar.json",
    "at": 2025,
    "question": "c"
   },
@@ -86,7 +86,7 @@
   },
   {
    "name": "d1_leave_A_fade_Haiti_2019_note",
-   "config": "config_rtt104_base.json",
+   "config": "config_rtt104_d_fade.json",
    "at": "note:2020",
    "question": "d"
   },
@@ -98,7 +98,7 @@
   },
   {
    "name": "d3_leave_A_fade_Kuwait_2023_note",
-   "config": "config_rtt104_base.json",
+   "config": "config_rtt104_d_fade.json",
    "at": "note:2024",
    "question": "d"
   },

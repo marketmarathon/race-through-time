@@ -1,0 +1,8 @@
+{
+ "extends": "config_rtt104_base.json",
+ "leave": {
+  "enabled": true,
+  "style": "fade"
+ },
+ "notes": "Round-1 option d-A (not chosen): the note on the bar, then the bar fades."
+}

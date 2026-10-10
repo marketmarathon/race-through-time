@@ -1,5 +1,5 @@
 {
- "extends": "config_rtt104_base.json",
+ "extends": "config_rtt104_d_fade.json",
  "window": {
   "from": 2018,
   "to": 2021

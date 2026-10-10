@@ -1,0 +1,18 @@
+{
+ "title": null,
+ "artist": null,
+ "source": null,
+ "file": null,
+ "private_path": null,
+ "sha256": null,
+ "bytes": null,
+ "loop_start": null,
+ "loop_end": null,
+ "crossfade_sec": null,
+ "fade_sec": 6.0,
+ "notes": [
+  "PLACEHOLDER (IQ-22b): Luke has not chosen the music yet; Cowork sends the choice. Until every field is filled the film workflow refuses to run.",
+  "When filled: the file lives ONLY in the private repo (never committed here); sha256 and bytes are checked at render time; loop points from scripts/rtt_music_loop.py as for RTT-003 (DEC-148).",
+  "fade_sec 6.0: the music fades out over the closing card (the last 6 s), the way RTT-002/003 faded over their final table (DEC-072)."
+ ]
+}

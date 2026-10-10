@@ -1,1 +1,7 @@
-{"extends": "config_rtt104_base.json", "leave": {"style": "grey"}, "notes": "Option d-B: the leaving bar greys out with its note for one beat, then slides off the board."}
+{
+ "extends": "config_rtt104_base.json",
+ "leave": {
+  "style": "grey"
+ },
+ "notes": "Round-1 option d-B, CHOSEN (DEC-637): now the same as the base config; kept so the round-1 stills and clip can be redrawn."
+}

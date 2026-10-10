@@ -263,8 +263,9 @@ function drawZero(P,S){
     const y=slotY(P,11), n=ids.length, cnt=n+(n===1?' country':' countries');
     const head=P.nameAbove?y+25:y+P.row*0.7, line=P.nameAbove?y+53:y+P.row*0.7;
     ctx.globalAlpha=alpha;
-    const chips=(x,yy,sz)=>{ for(const id of ids){ if(FL){ drawFlag(id,x,yy-sz*0.8,sz*1.2,sz*0.8,alpha); x+=sz*1.2+8; }
-                                                   ctx.fillStyle=T.ink; ctx.font='600 '+P.nameSize+'px '+FONT; x+=text('zero_names',id,ENT[id].label,x,yy,'left')+24; } return x; };
+    const chipsW=(sz,gap)=>{ ctx.font='600 '+P.nameSize+'px '+FONT; let w=0; for(const id of ids){ if(FL) w+=sz*1.2+8; w+=ctx.measureText(ENT[id].label).width+gap; } return w-gap; };
+    const chips=(x,yy,sz,gap)=>{ gap=gap||24; for(const id of ids){ if(FL){ drawFlag(id,x,yy-sz*0.8,sz*1.2,sz*0.8,alpha); x+=sz*1.2+8; }
+                                                   ctx.fillStyle=T.ink; ctx.font='600 '+P.nameSize+'px '+FONT; x+=text('zero_names',id,ENT[id].label,x,yy,'left')+gap; } return x; };
     if(st==='bar'){                       // c1: a group bar - the heading on the name line, "0%" and the names on the bar line
       ctx.fillStyle=T.ink; ctx.font='600 '+P.nameSize+'px '+FONT;
       text('zero_head','zero','No women in parliament: '+cnt, P.nameAbove?P.bx:P.bx-12, head, P.nameAbove?'left':'right');
@@ -279,8 +280,14 @@ function drawZero(P,S){
     } else if(st==='count'){              // c3: the count as the bar's name, the countries as flag + name chips on the bar line
       ctx.fillStyle='#E25D5D'; ctx.font='700 '+P.nameSize+'px '+FONT;
       text('zero_head','zero','No women: '+cnt, P.nameAbove?P.bx:P.bx-12, head, P.nameAbove?'left':'right');
-      ctx.font='600 '+P.valSize+'px '+FONT; ctx.fillStyle=T.ink; const vw=tabText('0%',P.bx,line,'left','value','zero');
-      chips(P.bx+vw+22, line, P.nameSize);
+      /* fit (IQ-22b): three long names (e.g. 2005: Kyrgyzstan, Saudi Arabia, United Arab Emirates) would run past the board,
+         so the line then starts at the flag column, and if still too wide the gaps between chips tighten */
+      const edge=P.x+P.w; let x0=P.bx, gap=24;
+      ctx.font='600 '+P.valSize+'px '+FONT; const w0=tabWidth('0%',pitch())+22;
+      if(x0+w0+chipsW(P.nameSize,gap)>edge) x0=P.x;
+      if(x0+w0+chipsW(P.nameSize,gap)>edge) gap=14;
+      ctx.fillStyle=T.ink; const vw=tabText('0%',x0,line,'left','value','zero');
+      chips(x0+vw+22, line, P.nameSize, gap);
     }
     ctx.globalAlpha=1;
   };

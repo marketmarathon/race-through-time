@@ -139,4 +139,5 @@ async function main() {
   console.log(`${Object.keys(files).length} stills, ${Object.keys(files).length} phone copies, ${spec.compose.length} sheets in ${out}`);
   process.exit(ok ? 0 : 1);
 }
-main().catch(e => { console.error('::error::' + e.message); process.exit(2); });
+module.exports = { checkValues, checkPhone, checkOverlap, targetFrame };
+if (require.main === module) main().catch(e => { console.error('::error::' + e.message); process.exit(2); });

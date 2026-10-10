@@ -1,6 +1,6 @@
 {
  "episode": "RTT-104",
- "kit_version": "rtt104_design_round1",
+ "kit_version": "rtt104_approved_round1",
  "format_version": "RTT-104 split page (kits/rtt-104/player_rtt104.html) through the shared driver's openPlayer (kits/rtt-002/rtt.js)",
  "renderer_file": "../rtt-104/player_rtt104.html",
  "race_file": "../rtt-104/race_rtt104.json",
@@ -40,11 +40,11 @@
  },
  "world_panel": true,
  "zero_group": {
-  "style": "bar"
+  "style": "count"
  },
  "leave": {
   "enabled": true,
-  "style": "fade"
+  "style": "grey"
  },
  "sec_per_year": 2.0,
  "move_frac": 0.85,
@@ -58,6 +58,6 @@
   "title": "Not included: no sitting parliament",
   "subtitle": "Countries of 4 million people or more with no figure for 2025"
  },
- "notes": "RTT-104 design round 1 (IQ-22). The recommended combination: layout A (left/right), one shared 0-70% scale, flags, the 0% group as a group bar, leave note A (fade), the world panel bottom right, 2 s per year. Every other option is a config that extends this one and changes one key. Nothing here is approved: options for Luke (DEC-069).",
+ "notes": "RTT-104 APPROVED design (Luke, IQ-22b, 10 Oct 2026, DEC-634..DEC-644): layout A (boards side by side), one shared 0-70% scale, the 0% group as 'No women: N countries' with flag and name chips, leaving the board option B (grey with the note for one beat, then shrink away; Haiti, Kuwait, Pakistan and Egypt), flags from flag-icons, the world-average panel, title/measure/credit as shown, the closing card with its subtitle, 2 s per year (1.7 s move + 0.3 s hold). The round-1 option configs extend this file and change one key; they are a record of the options, not the film.",
  "intro_sec": 0
 }
