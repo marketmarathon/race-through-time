@@ -1,0 +1,57 @@
+# OWID-FAQ-LICENCE
+# url: https://ourworldindata.org/faqs
+# final url: https://ourworldindata.org/faqs
+# fetched (UTC): 2026-10-10T06:02:17Z
+# HTTP 200; 187648 bytes; SHA-256 adac814454cbb98fc279cd52840aa4245ee2f457d46ea1afcf654c4350ba22b8
+# Short excerpts only (lines holding the searched words, with the line before and after).
+
+Do your funders have editorial oversight or control over your publication? | Can I reuse or republish your charts? | Can I reuse or republish your data?
+
+Can I republish your articles and other writing? | Can I reuse or republish third-party material made available on your website? | What software do you use for your visualizations — and can I use it?
+
+How can I embed one of your interactive charts in my website? | What are the terms of use for your website? | Can I change my cookie preferences?
+
+Much of our work focuses on finding the highest quality and most comprehensive data available. This data is available thanks to the crucial work of numerous data providers that we rely on, from academic researchers and think tanks to international institutions like the WHO, UN, and World Bank. | We bring this data all into one place, visualize it in our interactive charts, give it crucial context and explanation with our writing, and make it easy for others to reuse. | Our work would not be possible without the researchers and data providers we rely on, so we ask you to always respect their license terms and cite them appropriately. This is crucial to allow data providers to continue doing t
+
+Most of our funding comes from unrestricted donations, with a smaller portion of funding coming from restricted grants, e.g., to cover particular topics. But we only apply for grants to cover topics that we are already interested in and have the expertise for. | Can I reuse or republish your charts? | Yes! Unless otherwise stated, you can use, reproduce, and distribute any chart we made (those with our logo and CC BY copyright stamp), provided that you cite us.
+
+You do not need permission from us, and we do not sign copyright release forms, provided that you cite us appropriately. | To cite one of our charts, cite the page that it’s found on or that is linked to at the bottom of the chart. For example, our chart on annual CO2 emissions by world region has a link at the bottom of the chart to our page on CO2 and greenhouse gas emissions , which should be cited as:
+
+You can also embed our interactive charts in any website. | Note that some of the charts on our site were produced by third parties and are subject to their license terms. For example, this chart about gender pay differences comes from the World Bank’s World Development Report and is subject to their license terms. We ask you to always respect the license terms of third parties and cite them appropriately. | Can I reuse or republish your data?
+
+It depends on the data source, which is always indicated along with the data. | Most of the data on Our World in Data comes from third-party providers (such as the WHO, UN, and World Bank) and is subject to the license terms of those providers. You should always check their license before reusing or republishing the data. Our work would not be possible without the data providers we rely on, so we ask you to always respect their license terms and cite them appropriately. | Some of the data on our site is produced by us — you can tell because it will say “Official data collated by Our World in Data”, “with major processing by Our World in Data”, or similar. Data produced by us falls under our 
+
+Citation instructions for all data on our site (whether produced by third-parties or by us) can be found by clicking “Learn more about this data” at the bottom of our interactive charts, and at the bottom of our pages dedicated to specific data indicators (for example, the child mortality rate ). | Read more about how to reuse the data we have on our site.
+
+Can I republish your articles and other writing? | Yes. You can republish or reproduce our writing, online or in print, for free and without permission, provided that you follow all the guidelines set out in these FAQs, and in particular: | You must credit Our World in Data and its authors and make it clear that we are not active contributors to your publication by including the following statement in the byline or at the top of the material:
+
+“Originally published by [author names] at Our World in Data. Republished here under a Creative Commons license .” | Link back to the original material on our site, for example, on the words “Originally published”.
+
+In online publications, you should embed our interactive charts whenever possible. This is easy to do by following these instructions . | Can I reuse or republish third-party material made available on your website? | Most of the data and some of the charts on Our World in Data come from third-party providers (such as the WHO, UN, and World Bank). Such materials are subject to the license terms of those providers.
+
+You should always check their license before reusing or republishing their data, charts, or other material. Our work would not be possible without the third-party providers we rely on, so we ask you to always respect their license terms and cite them appropriately. | What software do you use for your visualizations — and can I use it?
+
+We develop our own visualization and database tool, the Our World in Data Grapher. The Grapher's source code is available on GitHub for transparency and educational reference, so anyone can view and study how it works. | However, the Grapher is not freely licensed for reuse without permission. | If you'd like to copy, modify, distribute, or use any part of the Grapher codebase in your own project, product, or service, you'll need to first request written permission from Global Change Data Lab.
+
+To do that, contact licensing@ourworldindata.org . | (Historical note: prior Grapher versions were released under the MIT License. Copies of the repository obtained under that earlier license remain subject to its terms for the versions they covered. The MIT license as previously granted is irrevocable for those prior versions.) | Can I use the Our World in Data name or logo?
+
+You are only permitted to use the Our World in Data name or logo as it appears on our charts, articles, and other pages. You have this permission only as long as your use of the material we make available is in accordance with the license terms and follows these guidelines. | You are not permitted to use our logo on its own or to imply endorsement. This would require an institutional process for a more formal partnership or collaboration.
+
+If we believe your use of material contravenes the license terms or these guidelines, at our written request you must promptly remove the Our World in Data name and logo from all material appearing online on the websites and other platforms under your control. | How should I cite your charts?
+
+How should I cite your data? | When reusing the data we have on our site (e.g., to do an analysis, make your own chart, or build on it in another way), you must credit both Our World in Data and the underlying third-party data provider. | You should also always check the license of third-party data providers before reusing or republishing the data.
+
+Can I use your work for teaching? | Yes! We know that many teachers use our work, from primary school to postgraduate education. Just be sure to follow our guidelines on reusing our charts, data, and writing. | We love to hear about and support our work being used for teaching. We have a Teaching Hub where we provide interactive teaching notes, presentation slides, charts, and many other resources.
+
+Can I translate your work into another language? | We fully support readers translating and sharing our work in their own personal networks. This use is covered under our CC BY license . | However, you must make it clear that your translation is not official nor endorsed by us. Here’s a sample recommended statement for your use:
+
+Academic research articles, such as Bourguignon & Morrison (2002) ’Inequality Among World Citizens: 1820-1992’ in the American Economic Review. | Official data from government sources; for example, our COVID-19 vaccination and testing datasets compiled the official numbers published by governments and health ministries worldwide. | In every chart, we clearly indicate the source of the data being shown. We also indicate whenever we have combined data sources or made changes to the original datasets (such as regional aggregations, per capita transformations, etc.).
+
+Our work would not be possible without the data providers we rely on, so we ask you to always respect their license terms and cite them appropriately. This is crucial to allow data providers to continue doing their work, enhancing, maintaining, and updating valuable data. | How can I embed one of your interactive charts in my website?
+
+CORE Econ open-access economics textbooks | What are the terms of use for your website? | Here is our legal disclaimer that describes our terms of use.
+
+Donate now | Our World in Data is a project of Global Change Data Lab , a nonprofit based in the UK (Reg. Charity No. 1186433). Our charts, articles, and data are licensed under CC BY , unless stated otherwise. The source code for our tools and software is made publicly available for transparency and educational reference under a custom license . Re-use requires permission. Third-party materials, including some charts and data, are subject to third-party licenses. See our FAQs for more details. | Explore
+
+Legal disclaimer | Grapher license | Send feedback
+
