@@ -18,17 +18,17 @@
   [
    "no transfer counted outside its club's PL seasons",
    "PASS",
-   "3898 ledger rows frozen (club not in the PL)"
+   "3984 ledger rows frozen (club not in the PL)"
   ],
   [
    "PL-to-PL deals net to zero (spend - income of PL clubs = net spend with non-PL clubs)",
    "PASS",
-   "spend \u00a329,161,743,531 \u2212 income \u00a315,269,229,096 = \u00a313,892,514,434; net with non-PL clubs \u00a313,892,514,434"
+   "spend \u00a329,189,322,531 \u2212 income \u00a315,293,825,543 = \u00a313,895,496,988; net with non-PL clubs \u00a313,895,496,988"
   ],
   [
    "no fee without a source row",
    "PASS",
-   "3507 fee-bearing transfers"
+   "3530 fee-bearing transfers"
   ],
   [
    "no Transfermarkt figure or URL anywhere",
@@ -38,22 +38,22 @@
   [
    "quotes under 25 words",
    "PASS",
-   "20066 evidence rows"
+   "20680 evidence rows"
   ],
   [
    "every conversion has a rate row",
    "PASS",
-   "117 conversions"
+   "118 conversions"
   ],
   [
-   "month-end series consistent with the ledger",
+   "month-end series consistent with the ledger (all-fees preview, and the on-screen series from VERIFIED fees only)",
    "PASS",
-   "413 month ends \u00d7 51 clubs"
+   "413 month ends \u00d7 51 clubs, two series"
   ],
   [
    "no window has under half the PL deals of the same-type windows either side (bar documented gaps)",
    "PASS",
-   "69 windows compared; documented gaps (DEC-431): January 1993, January 1994, January 2004, January 2005"
+   "69 windows compared; documented gaps (DEC-431): none"
   ],
   [
    "every list-page row has a date (IQ-15j: undated rows are dropped from the build)",
@@ -84,16 +84,16 @@
  "cpi_base_month": "2026-08",
  "n_conflicts": 852,
  "n_conflicts_for_luke": 47,
- "n_fee": 3507,
+ "n_fee": 3530,
  "n_status": {
-  "UNVERIFIED": 1279,
-  "VERIFIED": 2228
+  "UNVERIFIED": 1301,
+  "VERIFIED": 2229
  },
  "n_tier": {
-  "": 10076,
-  "1": 1945,
-  "2": 818,
-  "3": 758
+  "": 10657,
+  "1": 1935,
+  "2": 859,
+  "3": 750
  },
- "n_transfers": 13597
+ "n_transfers": 14201
 }

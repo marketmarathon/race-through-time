@@ -7,14 +7,14 @@ Phase 1 preview: every fee is UNVERIFIED unless `status` says VERIFIED. Not for 
 | 22 clubs per season 1992-95, 20 after (706 club-seasons) | **PASS** | 706 club-seasons in 35 seasons |
 | every season has an attribution window | **PASS** | 1992-05-03 to 2026-09-01 |
 | 51 clubs, each with at least one PL season | **PASS** | 51 clubs |
-| no transfer counted outside its club's PL seasons | **PASS** | 3898 ledger rows frozen (club not in the PL) |
-| PL-to-PL deals net to zero (spend - income of PL clubs = net spend with non-PL clubs) | **PASS** | spend £29,161,743,531 − income £15,269,229,096 = £13,892,514,434; net with non-PL clubs £13,892,514,434 |
-| no fee without a source row | **PASS** | 3507 fee-bearing transfers |
+| no transfer counted outside its club's PL seasons | **PASS** | 3984 ledger rows frozen (club not in the PL) |
+| PL-to-PL deals net to zero (spend - income of PL clubs = net spend with non-PL clubs) | **PASS** | spend £29,189,322,531 − income £15,293,825,543 = £13,895,496,988; net with non-PL clubs £13,895,496,988 |
+| no fee without a source row | **PASS** | 3530 fee-bearing transfers |
 | no Transfermarkt figure or URL anywhere | **PASS** | none found |
-| quotes under 25 words | **PASS** | 20066 evidence rows |
-| every conversion has a rate row | **PASS** | 117 conversions |
-| month-end series consistent with the ledger | **PASS** | 413 month ends × 51 clubs |
-| no window has under half the PL deals of the same-type windows either side (bar documented gaps) | **PASS** | 69 windows compared; documented gaps (DEC-431): January 1993, January 1994, January 2004, January 2005 |
+| quotes under 25 words | **PASS** | 20680 evidence rows |
+| every conversion has a rate row | **PASS** | 118 conversions |
+| month-end series consistent with the ledger (all-fees preview, and the on-screen series from VERIFIED fees only) | **PASS** | 413 month ends × 51 clubs, two series |
+| no window has under half the PL deals of the same-type windows either side (bar documented gaps) | **PASS** | 69 windows compared; documented gaps (DEC-431): none |
 | every list-page row has a date (IQ-15j: undated rows are dropped from the build) | **PASS** | 20905 rows |
 | Bank of England Jan 1992 monthly averages equal Cowork's V-04 reading | **PASS** | 7 of 7 series compared |
 | ECB GBP/EUR 1999-01 equals Cowork's V-06 reading (0.7029125) | **PASS** | 333 months |

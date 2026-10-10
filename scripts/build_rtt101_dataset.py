@@ -740,37 +740,45 @@ while d.isoformat() <= "2026-08-31":
     d = dt.date.fromisoformat(month_end((d + dt.timedelta(days=1)).isoformat()))
 month_ends.append(FREEZE)
 
-counted_by_club = defaultdict(list)
-for r in ledger:
-    if r["counted"] == "yes":
-        counted_by_club[r["club_id"]].append(r)
-series, series_index = [], {}
-for c in club_ids:
-    rows = counted_by_club.get(c, [])
-    j, cum, real, last_change = 0, 0.0, 0.0, ""
-    for me in month_ends:
-        while j < len(rows) and rows[j]["date"] <= me:
-            v = float(rows[j]["net_gbp"])
-            if v != 0:
-                last_change = rows[j]["date"]
-            cum += v
-            real += float(rows[j]["net_real_gbp2026"] or 0)
-            j += 1
-        played = [s for s in seasons_of_club.get(c, []) if season_by_label[s]["attribution_start"] <= me]
-        cur = season_of(me)
-        rec = {"month_end": me, "club_id": c, "cum_net_gbp": round(cum, 2), "in_pl": "yes" if (c, cur) in in_pl else "no",
-               "pl_seasons_played": len(played), "cum_real_net_gbp2026": round(real, 2),
-               "avg_real_net_per_season_gbp2026": round(real / len(played), 2) if played else None,
-               "_reached": last_change or "0000"}
-        series.append(rec)
-by_month = defaultdict(list)
-for r in series:
-    if r["pl_seasons_played"] > 0:
-        by_month[r["month_end"]].append(r)
-for me, rows in by_month.items():
-    rows.sort(key=lambda r: (-r["cum_net_gbp"], r["_reached"], r["club_id"]))
-    for i, r in enumerate(rows, 1):
-        r["rank"] = i
+def build_series(keep):
+    """the month-end series from the counted ledger rows that keep(row) accepts; ranked as on screen"""
+    counted_by_club = defaultdict(list)
+    for r in ledger:
+        if r["counted"] == "yes" and keep(r):
+            counted_by_club[r["club_id"]].append(r)
+    series = []
+    for c in club_ids:
+        rows = counted_by_club.get(c, [])
+        j, cum, real, last_change = 0, 0.0, 0.0, ""
+        for me in month_ends:
+            while j < len(rows) and rows[j]["date"] <= me:
+                v = float(rows[j]["net_gbp"])
+                if v != 0:
+                    last_change = rows[j]["date"]
+                cum += v
+                real += float(rows[j]["net_real_gbp2026"] or 0)
+                j += 1
+            played = [s for s in seasons_of_club.get(c, []) if season_by_label[s]["attribution_start"] <= me]
+            cur = season_of(me)
+            rec = {"month_end": me, "club_id": c, "cum_net_gbp": round(cum, 2), "in_pl": "yes" if (c, cur) in in_pl else "no",
+                   "pl_seasons_played": len(played), "cum_real_net_gbp2026": round(real, 2),
+                   "avg_real_net_per_season_gbp2026": round(real / len(played), 2) if played else None,
+                   "_reached": last_change or "0000"}
+            series.append(rec)
+    by_month = defaultdict(list)
+    for r in series:
+        if r["pl_seasons_played"] > 0:
+            by_month[r["month_end"]].append(r)
+    for me, rows in by_month.items():
+        rows.sort(key=lambda r: (-r["cum_net_gbp"], r["_reached"], r["club_id"]))
+        for i, r in enumerate(rows, 1):
+            r["rank"] = i
+    return series, by_month
+
+
+# the all-fees preview (series_monthly.csv) and, for the player, VERIFIED fees only (series_onscreen.csv; contract §8, IQ-15m DEC-447)
+series, by_month = build_series(lambda r: True)
+series_onscreen, by_month_onscreen = build_series(lambda r: r["status"] == "VERIFIED")
 
 # ---------------------------------------------------------------- tiers, conflicts, coverage
 order_cache = {}
@@ -1025,12 +1033,7 @@ for k in sorted(wt, key=lambda w: (w.split()[1], 0 if w.startswith("January") el
 # shortened Wikipedia list revision); a window under half the median of its neighbours is flagged and the check below fails
 # windows the deal-count check knows are short, with the reason (DEC-431). Each one's club-season pages list the missing deals
 # (source/club_page_rows_unused.csv); they are not in the build because no brief has approved that window's change yet.
-KNOWN_SPARSE = {
-    "January 1993": "1992-93 club-season pages: more rows readable with the newer table reading, not used",
-    "January 1994": "1993-94 club-season pages: more rows readable with the newer table reading, not used",
-    "January 2004": "the winter 2003-04 list page misses most deals; the 2003-04 club-season pages list them, not used",
-    "January 2005": "the winter 2004-05 list page misses most deals; the 2004-05 club-season pages list them, not used",
-}
+KNOWN_SPARSE = {}  # IQ-15m (DEC-447): January 1993, 1994, 2004 and 2005 pass once their club-season rows are read
 wdeals = Counter()
 for t in transfers:
     s = t["season_attributed"]
@@ -1109,6 +1112,12 @@ for r in series:
     r["cum_real_net_gbp2026"] = money(r["cum_real_net_gbp2026"])
 wr("series_monthly.csv", series, ["month_end", "club_id", "cum_net_gbp", "rank", "in_pl", "pl_seasons_played", "cum_real_net_gbp2026",
                                   "avg_real_net_per_season_gbp2026"])
+for r in series_onscreen:
+    r["avg_real_net_per_season_gbp2026"] = money(r["avg_real_net_per_season_gbp2026"])
+    r["cum_net_gbp"] = money(r["cum_net_gbp"])
+    r["cum_real_net_gbp2026"] = money(r["cum_real_net_gbp2026"])
+wr("series_onscreen.csv", series_onscreen, ["month_end", "club_id", "cum_net_gbp", "rank", "in_pl", "pl_seasons_played", "cum_real_net_gbp2026",
+                                            "avg_real_net_per_season_gbp2026"])
 wr("conflicts.csv", conflicts, ["transfer_id", "player", "from_club", "to_club", "date", "canonical_gbp", "canonical_grade", "min_gbp", "max_gbp", "spread_gbp",
                                 "versions", "tier", "same_grade_gap_over_10pct_and_1m", "settled_at_source", "for_luke", "rule_result", "versions_detail"])
 PRIORITY = ["chelsea", "manchester_united", "manchester_city", "arsenal", "liverpool", "newcastle_united", "blackburn_rovers", "everton"]  # DEC-263
@@ -1181,15 +1190,17 @@ check("quotes under 25 words", not long_q, f"{len(ev_rows)} evidence rows")
 noconv = [t for t in transfers if t["currency"] and t["currency"] != "GBP" and t["fee_gbp"] and not t["fx_rate"]]
 check("every conversion has a rate row", not noconv, f"{sum(1 for t in transfers if t['fx_rate'])} conversions")
 ser_ok = True
-last = {}
-for r in series:
-    if r["month_end"] == FREEZE:
-        last[r["club_id"]] = float(r["cum_net_gbp"])
-for c in club_ids:
-    tot = sum(float(r["net_gbp"]) for r in counted_by_club.get(c, []) if r["date"] <= FREEZE)
-    if abs(tot - last.get(c, 0.0)) > 0.5:
-        ser_ok = False
-check("month-end series consistent with the ledger", ser_ok, f"{len(month_ends)} month ends × {len(club_ids)} clubs")
+for _ser, _keep in ((series, lambda r: True), (series_onscreen, lambda r: r["status"] == "VERIFIED")):
+    last = {}
+    for r in _ser:
+        if r["month_end"] == FREEZE:
+            last[r["club_id"]] = float(r["cum_net_gbp"])
+    for c in club_ids:
+        tot = sum(float(r["net_gbp"]) for r in ledger if r["club_id"] == c and r["counted"] == "yes" and _keep(r) and r["date"] <= FREEZE)
+        if abs(tot - last.get(c, 0.0)) > 0.5:
+            ser_ok = False
+check("month-end series consistent with the ledger (all-fees preview, and the on-screen series from VERIFIED fees only)", ser_ok,
+      f"{len(month_ends)} month ends × {len(club_ids)} clubs, two series")
 _lowwin = [f"{w['window']} ({w['deals_with_pl_side']} deals; neighbours' median {w['neighbour_median']:g})" for w in window_counts
            if w["flag"] and w["window"] not in KNOWN_SPARSE]
 _known = [w["window"] for w in window_counts if w["flag"] and w["window"] in KNOWN_SPARSE]

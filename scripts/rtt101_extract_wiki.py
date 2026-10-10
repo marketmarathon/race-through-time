@@ -412,7 +412,8 @@ def club_season_rows(title, page, modern=None):
             frm = (ot, on, oid) if direction == "in" else ("", m.group(2), own)
             to = ("", m.group(2), own) if direction == "in" else (ot, on, oid)
             out.append({"window": f"club-season {m.group(1)}", "page": title, "revid": page["revid"], "date": date,
-                        "player": player_name(vals[c_name]), "player_article": player_link(vals[c_name]), "from_article": frm[0], "from_name": frm[1], "from_club_id": frm[2] or "",
+                        "player": player_name(vals[c_name]) or (link_target(vals[c_name])[1] if modern else ""),  # {{flag athlete|[[…]]}} (IQ-15m)
+                        "player_article": player_link(vals[c_name]), "from_article": frm[0], "from_name": frm[1], "from_club_id": frm[2] or "",
                         "to_article": to[0], "to_name": to[1], "to_club_id": to[2] or "", "fee_text": ftxt,
                         "citation_only_transfermarkt": "no", "cite_urls": " ".join(c.get("url", "") for c in cites if c.get("url")),
                         "cite_publishers": " | ".join((c.get("publisher") or c.get("work") or c.get("website") or "") for c in cites),
@@ -473,7 +474,9 @@ def _day(d):
 
 
 # windows whose list page is known to miss most deals and whose club-season rows the build uses (IQ-15j brief, DEC-430)
-CLUB_PAGE_WINDOWS = {"January 2020"}
+CLUB_PAGE_WINDOWS = {"January 2020",
+                     # IQ-15m (DEC-447): the windows the deal-count check flagged and the list pages much shorter now than at their largest
+                     "January 1993", "January 1994", "January 2004", "January 2005", "summer 2007", "summer 2013", "summer 2019"}
 
 
 def window_of(d):
@@ -494,7 +497,7 @@ def _same_club(a, b):
     return bool(wa & set(_fold(b[1])))
 
 
-def drop_listed(cs, rows):
+def drop_listed(cs, rows, include_old=False):
     """IQ-15j: club-season pages since 2002-03 repeat most deals of the window list pages, often naming the other club differently
     ("Genk" / "K.R.C. Genk"), so a club-season row is kept only if no list-page row has the same player (same full name, or the
     same surname) at the same club within 60 days, or between the same two clubs (both loans or both not) within 180 days or the
@@ -510,7 +513,7 @@ def drop_listed(cs, rows):
                 idx[c].append((_fold(r["player"]), _day(r["date"]), o, loan))
     keep, dropped, unused = [], 0, []
     for r in cs:
-        if r["window"] < "club-season 2002":
+        if r["window"] < "club-season 2002" and not include_old:
             keep.append(r)  # pages before 2002-03 are used as they always were (the build merges their repeats of list rows)
             continue
         own = L.club_id(re.match(r"\d{4}–(?:\d{2}|2000) (.+) season$", r["page"]).group(1))
@@ -530,7 +533,7 @@ def drop_listed(cs, rows):
                     break
         if hit:
             dropped += 1
-        elif r["window"] >= "club-season 2002" and not (r["date"] and window_of(r["date"]) in CLUB_PAGE_WINDOWS):
+        elif (r["window"] >= "club-season 2002" or include_old) and not (r["date"] and window_of(r["date"]) in CLUB_PAGE_WINDOWS):
             unused.append(dict(r, reason="not on a list page; window not approved for club-season rows (listed for the next round)"))
         else:
             keep.append(r)
@@ -579,13 +582,28 @@ def main():
     for t in sorted(pages):
         if t.endswith(" season"):
             cs += club_season_rows(t, pages[t])
-    cs, n_dup, unused = drop_listed(cs, rows)
+    # IQ-15m: deals the gap lists added (research leads, section G) count as listed too, so a club-season row does not repeat them
+    gap = []
+    _lp = os.path.join(OUT, "leads_evidence.csv")
+    if os.path.exists(_lp):
+        for _r in csv.DictReader(open(_lp, encoding="utf-8")):
+            if _r["lead_section"] == "G" and re.fullmatch(r"\d{4}-\d{2}-\d{2}", _r["date"] or ""):
+                gap.append({"date": _r["date"], "player": _r["player"], "fee_text": _r["fee_as_reported"],
+                            "from_club_id": L.club_id(_r["from_club"]) or "", "from_name": _r["from_club"],
+                            "to_club_id": L.club_id(_r["to_club"]) or "", "to_name": _r["to_club"]})
+    cs, n_dup, unused = drop_listed(cs, rows + gap)
     # what the 2002-03+ reading (bold labels, loans tables without a fee) would add on the 1992-2002 pages: listed, not used
+    extra = []
     for t in sorted(pages):
         if t.endswith(" season") and re.match(r"(199\d|2000|2001)–", t):
             was = {tuple(r.values()) for r in club_season_rows(t, pages[t])}
-            unused += [dict(r, reason="1992-2002 page: readable with the 2002-03+ reading; not used (listed for the next round)")
-                       for r in club_season_rows(t, pages[t], modern=True) if tuple(r.values()) not in was]
+            extra += [r for r in club_season_rows(t, pages[t], modern=True) if tuple(r.values()) not in was]
+    # IQ-15m (DEC-447): in an approved window, such a row is used when it repeats neither a list-page row nor a row the old reading
+    # already gives; the rest stay listed, not used
+    add, n_dup2, rest = drop_listed(extra, rows + gap + cs, include_old=True)
+    cs += add
+    n_dup += n_dup2
+    unused += [dict(r, reason="1992-2002 page: readable with the 2002-03+ reading; not used (listed for the next round)") for r in rest]
     with open(os.path.join(OUT, "club_page_rows_unused.csv"), "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=list(unused[0])); w.writeheader(); w.writerows(unused)
     if cs:
