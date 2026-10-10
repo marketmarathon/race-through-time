@@ -1,6 +1,14 @@
-# HANDOVER — 10 Oct 2026 (session IQ-20 and IQ-22, Claude Code cloud session: RTT-104 Women in Parliament data build, then design round 1). The RTT-103 notes (IQ-16f, 8 Oct 2026) and earlier follow; IQ-14/IQ-15/IQ-17/IQ-18/IQ-19 notes are on their own unmerged branches (pull requests #18, #19, #21, #22, #23).
+# HANDOVER — 10 Oct 2026 (session IQ-20 and IQ-22, Claude Code cloud session: RTT-104 Women in Parliament data build, design round 1, design approved and film prepared). The RTT-103 notes (IQ-16f, 8 Oct 2026) and earlier follow; IQ-14/IQ-15/IQ-17/IQ-18/IQ-19 notes are on their own unmerged branches (pull requests #18, #19, #21, #22, #23).
 
-## DEC block for RTT-104: DEC-600–DEC-699 (brief IQ-20; checked free on main and every open pull request, DEC-606). Used so far: DEC-600..DEC-633.
+## DEC block for RTT-104: DEC-600–DEC-699 (brief IQ-20; checked free on main and every open pull request, DEC-606). Used so far: DEC-600..DEC-648.
+
+## RTT-104 — design approved, film ready, waiting for Luke's music (IQ-22b, 10 Oct 2026)
+- **Same branch and pull request** (https://github.com/marketmarathon/race-through-time/pull/24, not merged). Message: `prompts/CODE_SESSION_IQ-22b.md`. Luke approved every round-1 recommendation (DEC-634..DEC-644); Cowork checked the stills (DEC-645).
+- **Approved design = `kits/rtt-104/config_rtt104_base.json`**; the film = `config_rtt104_film.json` (the base + 4K master settings): 2,271 frames = 1:15.7. Round-1 option configs stay as a record.
+- **Checks:** `node tests/rtt104/film_check_rtt104.js` 34/34 PASS (every year, every leave note, the closing card; it caught and DEC-646 fixed the 2005 0% group running past the board); whole-film WCAG flash PASS 51,183 of 57,600 px (`tests/rtt104/WCAG_FLASH_FILM.md`); data tests 23/23.
+- **Film workflow** `.github/workflows/rtt104_film.yml`: gate job (no render while `kits/rtt-104/music_rtt104.json` is the placeholder; tested, run 38034741656), then the data tests, film check, WCAG check, 4K master with music (`scripts/rtt_mix_music.sh`, fade over the 6 s closing card), 1080p viewing copy, private pre-release with SHA-256s.
+- **YouTube:** `kits/rtt-104/youtube_times.md` (key times, chapter proposal, end screen proposal, description lines).
+- **Rules for the next RTT-104 session (music):** save Cowork's message; put the track ONLY in the private repo; find loop points with `scripts/rtt_music_loop.py` (as RTT-003, DEC-148); fill every field of `music_rtt104.json` (file, private_path, sha256, bytes, loop_start, loop_end, crossfade_sec; fade_sec 6) and push it: that starts the film render. Record the owner DEC from DEC-649; add the music to `reference/rights_ledger.md` and the credit to `youtube_times.md`. Luke approves the exact master by its SHA-256 (DEC-078).
 
 ## RTT-104 — design round 1 (IQ-22, 10 Oct 2026) — rendered, awaiting Luke's answers a–i
 - **Same branch and pull request** (https://github.com/marketmarathon/race-through-time/pull/24, not merged). Brief: `prompts/CODE_SESSION_IQ-22.md`. Decisions DEC-624..DEC-627 (Luke: year only; leaving reason on screen; closing card approved; "Türkiye"), DEC-628..DEC-633 (Claude).
