@@ -1,6 +1,6 @@
 # RTT-104 Women in Parliament — data (IQ-20, 10 Oct 2026)
 
-**Status: data built; episode BLOCKED** for design, render and publishing until Luke answers the rights question (DEC-614; `reports/RTT-104_data_report.md` question 1).
+**Status: data built; rights settled by Luke (DEC-623: World Bank CC BY 4.0, IPU site terms non-commercial, owner-accepted risk).** Next: Luke's answers to report questions 2–4, then the design session (DEC-069).
 
 - Contract: `reference/metric_contract_RTT-104.md`. Report: `reports/RTT-104_data_report.md`.
 - Build: `python3 scripts/build_rtt104_dataset.py data/rtt-104 reports/RTT-104_data_report.md` (deterministic; reads only `config.json` and `source/`).
