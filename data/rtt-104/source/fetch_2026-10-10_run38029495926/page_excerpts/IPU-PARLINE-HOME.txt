@@ -1,0 +1,15 @@
+# IPU-PARLINE-HOME
+# url: https://data.ipu.org/
+# final url: https://data.ipu.org/
+# fetched (UTC): 2026-10-10T06:02:09Z
+# HTTP 200; 147575 bytes; SHA-256 5283fd0e48fbfa4eec3dd2fdf56d18de1aa878e4b586df81034ec65b6c8b5df5
+# Short excerpts only (lines holding the searched words, with the line before and after).
+
+Contact us | Terms of use | IPU.org
+
+Data explorer | Browse and download parliamentary data by country, chamber, or topic. Create your own custom dataset. | Compare
+
+Privacy | Terms of use | Connect
+
+Subscribe to our newsletter | © Copyright IPU 2026, Terms of use & Privacy statement
+

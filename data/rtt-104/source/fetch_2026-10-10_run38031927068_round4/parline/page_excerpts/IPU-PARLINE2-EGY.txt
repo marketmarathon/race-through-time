@@ -1,0 +1,57 @@
+# IPU-PARLINE2-EGY
+# url: https://data.ipu.org/parliament/EG/
+# final url: https://data.ipu.org/parliament/EG/EG-LC01/
+# fetched (UTC): 2026-10-10T06:44:03Z
+# HTTP 200; 318352 bytes; SHA-256 1c62342af16fa6fbf833abae676db66e9310980f85770b79b7914675cab2dabe
+# Short excerpts only (lines holding the searched words, with the line before and after).
+
+Political system | Political systems: Presidential, Parliamentary, Presidential-Parliamentary, Monarchy, Communist, Transitional. | View field in the data dictionary
+
+IPU membership | Current membership status | View field in the data dictionary
+
+Elections | Parliamentary mandate | Law-making, oversight, budget
+
+See historical data for this field | Structure & status of parliament | This field is to indicate lower/upper in the back end.
+
+Term | Start (and end) of the term of the Speaker | View field in the data dictionary
+
+Term | Start (and end) of the term of the Secretary general | View field in the data dictionary
+
+Average age of all members | Average age of members, for which data is available, at the time of the last election or renewal. | View field in the data dictionary
+
+Youngest member (years) | Age is calculated at the time the member was elected/appointed to a new legislature. Data is not updated during the legislature unless the member is no longer a member. | View field in the data dictionary
+
+Oldest member (years) | Age is calculated at the time the member was elected/appointed to a new legislature. Data is not updated during the legislature unless the member is no longer a member. | View field in the data dictionary
+
+Percentage of members, by age | Age at the last election or renewal | Overall
+
+Notes: Electoral lists must include at least one candidate who is a person with a disability, though this does not guarantee representation within the House of Representatives. | Sources: House of Representatives Elections Law (Decree-Law 46/2014) | 2014 Constitution, art. 244
+
+Term | Start (and end) of the term of the Speaker | View field in the data dictionary
+
+Term | Start (and end) of the term of the Speaker | View field in the data dictionary
+
+Term | Start (and end) of the term of the Speaker | View field in the data dictionary
+
+Term | Start (and end) of the term of the Speaker | View field in the data dictionary
+
+Term | Start (and end) of the term of the Speaker | View field in the data dictionary
+
+Term | Start (and end) of the term of the Speaker | View field in the data dictionary
+
+Youngest member (years) | Age is calculated at the time the member was elected/appointed to a new legislature. Data is not updated during the legislature unless the member is no longer a member. | View field in the data dictionary
+
+Youngest member (years) | Age is calculated at the time the member was elected/appointed to a new legislature. Data is not updated during the legislature unless the member is no longer a member. | View field in the data dictionary
+
+Youngest member (years) | Age is calculated at the time the member was elected/appointed to a new legislature. Data is not updated during the legislature unless the member is no longer a member. | View field in the data dictionary
+
+Youngest member (years) | Age is calculated at the time the member was elected/appointed to a new legislature. Data is not updated during the legislature unless the member is no longer a member. | View field in the data dictionary
+
+Oldest member (years) | Age is calculated at the time the member was elected/appointed to a new legislature. Data is not updated during the legislature unless the member is no longer a member. | View field in the data dictionary
+
+Oldest member (years) | Age is calculated at the time the member was elected/appointed to a new legislature. Data is not updated during the legislature unless the member is no longer a member. | View field in the data dictionary
+
+Oldest member (years) | Age is calculated at the time the member was elected/appointed to a new legislature. Data is not updated during the legislature unless the member is no longer a member. | View field in the data dictionary
+
+Oldest member (years) | Age is calculated at the time the member was elected/appointed to a new legislature. Data is not updated during the legislature unless the member is no longer a member. | View field in the data dictionary
+

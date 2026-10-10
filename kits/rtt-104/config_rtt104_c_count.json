@@ -1,0 +1,7 @@
+{
+ "extends": "config_rtt104_base.json",
+ "zero_group": {
+  "style": "count"
+ },
+ "notes": "Round-1 option c-3, CHOSEN (DEC-636): now the same as the base config."
+}

@@ -1,0 +1,10 @@
+# IPU-ARCHIVE-250100
+# url: http://archive.ipu.org/wmn-e/arc/classif250100.htm
+# final url: http://archive.ipu.org/wmn-e/arc/classif250100.htm
+# fetched (UTC): 2026-10-10T06:44:14Z
+# HTTP 200; 38263 bytes; SHA-256 e9d3afccaa46411650a73aa841e4a5399c06386991c5dbb8bf2a1915f2f111d4
+# title: ['Women in Parliaments: World Classification']
+# headings: ['Situation as of 25 January 2000', '177 countries', 'descending order of the percentage of women in the lower or single House', 'New:', 'Rank', 'Country', 'Lower or single House', 'Upper House or Senate', 'Elections', 'Seats', 'Women', '% W']
+# Table rows naming the test countries only.
+
+? | Egypt | 11 1995 | 454 | 9 | 2.0 | --- | --- | --- | ---

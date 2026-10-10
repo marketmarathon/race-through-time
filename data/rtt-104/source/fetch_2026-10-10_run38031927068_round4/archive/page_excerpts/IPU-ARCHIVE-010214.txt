@@ -1,0 +1,10 @@
+# IPU-ARCHIVE-010214
+# url: http://archive.ipu.org/wmn-e/arc/classif010214.htm
+# final url: http://archive.ipu.org/wmn-e/arc/classif010214.htm
+# fetched (UTC): 2026-10-10T06:44:21Z
+# HTTP 200; 40290 bytes; SHA-256 05740f2ce0806ee501395062b8820af4e41dc68d19a4a74d1911e5cd348c0436
+# title: ['Women in Parliaments: World Classification']
+# headings: ['>>> VERSION FRANÇAISE Women', 'in national parliaments Situation as of 1st February 2014', '189 countries', 'descending order of the percentage of women in the lower or single House', 'New:', 'WORLD CLASSIFICATION', 'Rank', 'Country', 'Lower or single House', 'Upper House or Senate', 'Elections', 'Seats*']
+# Table rows naming the test countries only.
+
+73 | Pakistan | 5 2013 | 323 | 67 | 20.7% | 3 2012 | 104 | 17 | 16.3%

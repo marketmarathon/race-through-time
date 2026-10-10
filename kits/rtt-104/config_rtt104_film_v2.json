@@ -1,0 +1,8 @@
+{
+ "extends": "config_rtt104_film.json",
+ "kit_version": "rtt104_film_v2",
+ "out": "rtt104_film_v2.mp4",
+ "motion": "smooth",
+ "sec_per_year": 3.0,
+ "notes": "RTT-104 FILM V2 (IQ-22d, DEC-653..DEC-655): the approved look (DEC-634..DEC-644) with smooth motion (monotone PCHIP curves through every year, no stop per year; motion 'smooth' in player_rtt104.html) at 3 s per year. Landing frames are drawn exactly as boards.csv; leave notes and the 0% group keep the approved look, the note hold stays 1.8 s. V1 (config_rtt104_film.json) is kept as the record of the first render."
+}

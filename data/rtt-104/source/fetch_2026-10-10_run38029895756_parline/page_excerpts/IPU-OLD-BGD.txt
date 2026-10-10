@@ -1,0 +1,11 @@
+# IPU-OLD-BGD
+# url: https://www.ipu.org/parlement/BD
+# final url: https://www.ipu.org/parlement/BD
+# fetched (UTC): 2026-10-10T06:09:07Z
+# HTTP 200; 95754 bytes; SHA-256 0cc8098548dc893e3567b3be0219f8f29117cd257bab52e34bd45c302308bbde
+# Short excerpts only (lines holding the searched words, with the line before and after).
+
+Unicameral | Last election | Feb 2026
+
+Contact us | Vacancies | IPU structure and governance
+

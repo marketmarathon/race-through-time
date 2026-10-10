@@ -1,0 +1,288 @@
+{
+ "stills": [
+  {
+   "name": "a1_layoutA_left_right_2003",
+   "config": "config_rtt104_base.json",
+   "at": 2003,
+   "question": "a"
+  },
+  {
+   "name": "a2_layoutB_top_bottom_2003",
+   "config": "config_rtt104_a_tb.json",
+   "at": 2003,
+   "question": "a"
+  },
+  {
+   "name": "a1_layoutA_left_right_2013",
+   "config": "config_rtt104_base.json",
+   "at": 2013,
+   "question": "a"
+  },
+  {
+   "name": "a2_layoutB_top_bottom_2013",
+   "config": "config_rtt104_a_tb.json",
+   "at": 2013,
+   "question": "a"
+  },
+  {
+   "name": "a1_layoutA_left_right_2025",
+   "config": "config_rtt104_base.json",
+   "at": 2025,
+   "question": "a"
+  },
+  {
+   "name": "a2_layoutB_top_bottom_2025",
+   "config": "config_rtt104_a_tb.json",
+   "at": 2025,
+   "question": "a"
+  },
+  {
+   "name": "b2_scaleB_own_scales_2003",
+   "config": "config_rtt104_b_own.json",
+   "at": 2003,
+   "question": "b"
+  },
+  {
+   "name": "b2_scaleB_own_scales_2025",
+   "config": "config_rtt104_b_own.json",
+   "at": 2025,
+   "question": "b"
+  },
+  {
+   "name": "c1_zero_group_bar_1997",
+   "config": "config_rtt104_c_bar.json",
+   "at": 1997,
+   "question": "c"
+  },
+  {
+   "name": "c2_zero_group_strip_1997",
+   "config": "config_rtt104_c_strip.json",
+   "at": 1997,
+   "question": "c"
+  },
+  {
+   "name": "c3_zero_group_count_1997",
+   "config": "config_rtt104_c_count.json",
+   "at": 1997,
+   "question": "c"
+  },
+  {
+   "name": "c1_zero_group_bar_2025",
+   "config": "config_rtt104_c_bar.json",
+   "at": 2025,
+   "question": "c"
+  },
+  {
+   "name": "c2_zero_group_strip_2025",
+   "config": "config_rtt104_c_strip.json",
+   "at": 2025,
+   "question": "c"
+  },
+  {
+   "name": "c3_zero_group_count_2025",
+   "config": "config_rtt104_c_count.json",
+   "at": 2025,
+   "question": "c"
+  },
+  {
+   "name": "d1_leave_A_fade_Haiti_2019_note",
+   "config": "config_rtt104_d_fade.json",
+   "at": "note:2020",
+   "question": "d"
+  },
+  {
+   "name": "d2_leave_B_grey_Haiti_2019_note",
+   "config": "config_rtt104_d_grey.json",
+   "at": "note:2020",
+   "question": "d"
+  },
+  {
+   "name": "d3_leave_A_fade_Kuwait_2023_note",
+   "config": "config_rtt104_d_fade.json",
+   "at": "note:2024",
+   "question": "d"
+  },
+  {
+   "name": "d4_leave_B_grey_Kuwait_2023_note",
+   "config": "config_rtt104_d_grey.json",
+   "at": "note:2024",
+   "question": "d"
+  },
+  {
+   "name": "d5_no_figure_Pakistan_1998_note",
+   "config": "config_rtt104_base.json",
+   "at": "note:1999",
+   "question": "d"
+  },
+  {
+   "name": "d6_no_figure_Egypt_2012_note",
+   "config": "config_rtt104_base.json",
+   "at": "note:2013",
+   "question": "d"
+  },
+  {
+   "name": "e2_names_only_2013",
+   "config": "config_rtt104_e_names.json",
+   "at": 2013,
+   "question": "e"
+  },
+  {
+   "name": "g_opening_1997",
+   "config": "config_rtt104_base.json",
+   "at": "frame:0",
+   "question": "g"
+  },
+  {
+   "name": "h_closing_card",
+   "config": "config_rtt104_base.json",
+   "at": "card",
+   "question": "h"
+  }
+ ],
+ "compose": [
+  {
+   "name": "sheet_a_2003",
+   "title": "(a) Layout A: left/right  vs  Layout B: top/bottom · 2003",
+   "items": [
+    [
+     "a1_layoutA_left_right_2003",
+     "A · left/right"
+    ],
+    [
+     "a2_layoutB_top_bottom_2003",
+     "B · top/bottom"
+    ]
+   ]
+  },
+  {
+   "name": "sheet_a_2013",
+   "title": "(a) Layout A vs B · 2013",
+   "items": [
+    [
+     "a1_layoutA_left_right_2013",
+     "A · left/right"
+    ],
+    [
+     "a2_layoutB_top_bottom_2013",
+     "B · top/bottom"
+    ]
+   ]
+  },
+  {
+   "name": "sheet_a_2025",
+   "title": "(a) Layout A vs B · 2025",
+   "items": [
+    [
+     "a1_layoutA_left_right_2025",
+     "A · left/right"
+    ],
+    [
+     "a2_layoutB_top_bottom_2025",
+     "B · top/bottom"
+    ]
+   ]
+  },
+  {
+   "name": "sheet_b_scale",
+   "title": "(b) Scale A: one shared 0–70% scale  vs  Scale B: each board its own scale",
+   "items": [
+    [
+     "a1_layoutA_left_right_2003",
+     "A · shared 0–70% · 2003"
+    ],
+    [
+     "b2_scaleB_own_scales_2003",
+     "B · own scales · 2003"
+    ],
+    [
+     "a1_layoutA_left_right_2025",
+     "A · shared 0–70% · 2025"
+    ],
+    [
+     "b2_scaleB_own_scales_2025",
+     "B · own scales · 2025"
+    ]
+   ]
+  },
+  {
+   "name": "sheet_c_1997",
+   "title": "(c) The 0% group · 1997 (3 countries)",
+   "cols": 3,
+   "items": [
+    [
+     "c1_zero_group_bar_1997",
+     "1 · group bar"
+    ],
+    [
+     "c2_zero_group_strip_1997",
+     "2 · strip"
+    ],
+    [
+     "c3_zero_group_count_1997",
+     "3 · count with chips"
+    ]
+   ]
+  },
+  {
+   "name": "sheet_c_2025",
+   "title": "(c) The 0% group · 2025 (2 countries)",
+   "cols": 3,
+   "items": [
+    [
+     "c1_zero_group_bar_2025",
+     "1 · group bar"
+    ],
+    [
+     "c2_zero_group_strip_2025",
+     "2 · strip"
+    ],
+    [
+     "c3_zero_group_count_2025",
+     "3 · count with chips"
+    ]
+   ]
+  },
+  {
+   "name": "sheet_d_Haiti",
+   "title": "(d) Leaving the board: Haiti, end of 2019",
+   "items": [
+    [
+     "d1_leave_A_fade_Haiti_2019_note",
+     "A · note on the bar, then it fades"
+    ],
+    [
+     "d2_leave_B_grey_Haiti_2019_note",
+     "B · bar greys with the note, then shrinks away"
+    ]
+   ]
+  },
+  {
+   "name": "sheet_d_Kuwait",
+   "title": "(d) Leaving the board: Kuwait, end of 2023",
+   "items": [
+    [
+     "d3_leave_A_fade_Kuwait_2023_note",
+     "A · note on the bar, then it fades"
+    ],
+    [
+     "d4_leave_B_grey_Kuwait_2023_note",
+     "B · bar greys with the note, then shrinks away"
+    ]
+   ]
+  },
+  {
+   "name": "sheet_e_2013",
+   "title": "(e) Flags  vs  names only · 2013",
+   "items": [
+    [
+     "a1_layoutA_left_right_2013",
+     "A · flags"
+    ],
+    [
+     "e2_names_only_2013",
+     "B · names only"
+    ]
+   ]
+  }
+ ]
+}

@@ -1,0 +1,447 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>RTT-104 split race</title>
+<style>html,body{margin:0;background:#0b1424}canvas{display:block}</style></head>
+<body><canvas id="c" width="1920" height="1080"></canvas>
+<script>
+/* Race Through Time - RTT-104 Women in Parliament, design round 1 (IQ-22).
+ *
+ * A split race: the 10 highest and the 10 lowest shares, one beat per year. Driven by kits/rtt-104/render_rtt104.js
+ * through the shared driver's openPlayer() (kits/rtt-002/rtt.js: Archivo from @fontsource, flags from flag-icons,
+ * Luke's logo from the private assets), with the same page contract as kits/rtt-002/player_rtt.html: setup(o),
+ * drawAt(t), RACE_FRAMES, window.__LABELS / __BARS for the tests. The shared player is NOT changed, so no approved
+ * film can change (RTT-001/002/003/102/103). The look follows reference/house_style.md: the navy look, Archivo,
+ * every number drawn digit by digit on the widest digit, the big year top right left of the logo, footer credits in
+ * the bottom strip, one decimal for shares.
+ *
+ * Everything new is an OPTION for Luke (DEC-069), switched by config:
+ *   layout "lr" (top board left, bottom board right) | "tb" (top board above, bottom board below)   - brief (a)
+ *   scale  "shared" (both boards 0-70%) | "own" (each board its own fixed scale, labelled)          - brief (b)
+ *   zero_group.style "bar" | "strip" | "flags" | "none"                                            - brief (c)
+ *   leave.style "fade" | "grey"                                                                     - brief (d)
+ *   flags true | false                                                                              - brief (e)
+ *   world_panel true | false                                                                        - brief (f)
+ *   closing_card {enabled, sec}                                                                     - brief (h)
+ *   sec_per_year, move_frac                                                                         - brief (i)
+ * Values: every landing frame shows the year's data text exactly (boards.csv value_1dp); while bars move the values
+ * count (house style 3, DEC-115). Nothing here computes a figure.
+ */
+const cv=document.getElementById('c'), ctx=cv.getContext('2d');
+let RASTER=1;
+function setRaster(r){ RASTER=r||1; cv.width=Math.round(1920*RASTER); cv.height=Math.round(1080*RASTER); }
+function baseTransform(){ ctx.setTransform(RASTER,0,0,RASTER,0,0); }
+const T={ ground:'#0b1424', panel:'#152134', ink:'#F4F6FA', muted:'#8492A6', cap:'#AAB3C2', axis:'#8492A6',
+          hairline:'rgba(244,246,250,0.14)', grid:'rgba(244,246,250,0.07)', foot:'#7C8798', grey:'#5D6878' };
+let FONT='"Archivo"', CFG=null, D=null, FPS=30, RACE_FRAMES=0;
+let FLAGIMG={}, FLAGCODE={}, LOGO=null, ENT={}, PLAN=null, G=null, FL=false, CURVES=null;
+window.__LABELS=[]; window.__BARS=[]; window.__STATE=null;
+
+function note(kind,id,text,x,y,align,w,extra){
+  const x0 = align==='right' ? x-w : align==='center' ? x-w/2 : x;
+  const m=/(\d+)px/.exec(ctx.font);
+  window.__LABELS.push(Object.assign({kind,id,text,x:x0,y,w,size:m?+m[1]:null,alpha:ctx.globalAlpha}, extra||{}));
+}
+function text(kind,id,str,x,y,align){ ctx.textAlign=align||'left'; ctx.fillText(str,x,y); const w=ctx.measureText(str).width; note(kind,id,str,x,y,align||'left',w); ctx.textAlign='left'; return w; }
+function pitch(){ let w=0; for(const d of '0123456789') w=Math.max(w,ctx.measureText(d).width); return w; }
+function tabWidth(s,p){ let t=0; for(const ch of s) t+=(ch>='0'&&ch<='9')?p:ctx.measureText(ch).width; return t; }
+function tabText(s,x,y,align,kind,id){        // numbers digit by digit on the widest digit (house style, as player_rtt.html)
+  const p=pitch(), w=tabWidth(s,p); let cx = align==='right' ? x-w : align==='center' ? x-w/2 : x; const x0=cx;
+  ctx.textAlign='left';
+  for(const ch of s){ if(ch>='0'&&ch<='9'){ const cw=ctx.measureText(ch).width; ctx.fillText(ch,cx+(p-cw)/2,y); cx+=p; } else { ctx.fillText(ch,cx,y); cx+=ctx.measureText(ch).width; } }
+  if(kind) note(kind,id,s,x0,y,'left',w);
+  return w;
+}
+function rr(x,y,w,h,r){ r=Math.max(0,Math.min(r,h/2,w/2)); ctx.beginPath(); ctx.moveTo(x+r,y); ctx.arcTo(x+w,y,x+w,y+h,r); ctx.arcTo(x+w,y+h,x,y+h,r); ctx.arcTo(x,y+h,x,y,r); ctx.arcTo(x,y,x+w,y,r); ctx.closePath(); }
+const ease=u=>u<=0?0:u>=1?1:u*u*(3-2*u), lerp=(a,b,f)=>a+(b-a)*f, clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+function hexMix(a,b,f){ const p=h=>[1,3,5].map(i=>parseInt(h.slice(i,i+2),16)); const A=p(a),B=p(b); return '#'+A.map((v,i)=>Math.round(lerp(v,B[i],f)).toString(16).padStart(2,'0')).join(''); }
+
+/* ---------------- setup ---------------- */
+function setup(o){
+  setRaster(o.raster||1);
+  CFG=Object.assign({fps:30, layout:'lr', scale:'shared', flags:{enabled:true}, world_panel:true, sec_per_year:2.0, move_frac:0.6,
+                     lead_in_sec:1.5, final_hold_sec:5.0, note_sec:1.8, zero_group:{style:'bar'}, leave:{style:'fade', enabled:true},
+                     closing_card:{enabled:false, sec:6.0, fade_sec:0.6}, shared_max:70, own_max:{top:70, bottom:15},
+                     colours:{top:'#2FC4B2', bottom:'#F0A04B'}}, o.cfg);
+  FPS=CFG.fps; D=o.data;
+  if(CFG.fonts && CFG.fonts.family) FONT='"'+CFG.fonts.family+'"';
+  ENT={}; for(const e of D.entrants) ENT[e.id]=e;
+  const loads=[]; FLAGIMG={}; FLAGCODE={};
+  FL=!!(CFG.flags && CFG.flags.enabled);
+  if(FL){
+    if(!o.flags) throw new Error('flags on but no flag images were passed to setup()');
+    for(const [id,code] of Object.entries(o.flags.byId)){ FLAGCODE[id]=code;
+      if(!FLAGIMG[code]){ const im=new Image(); im.src=o.flags.svg[code]; FLAGIMG[code]=im; loads.push(im.decode()); } }
+  }
+  LOGO=null;
+  if(o.overlays && o.overlays.logo){ LOGO=new Image(); LOGO.src=o.overlays.logo; loads.push(LOGO.decode()); }
+  window.__imagesReady=Promise.all(loads).then(()=>Object.keys(FLAGIMG).length);
+  PLAN=buildPlan(); RACE_FRAMES=PLAN.total;
+  CURVES = CFG.motion==='smooth' ? buildCurves() : null;
+  G=geometry();
+}
+window.setup=setup;
+
+/* ---------------- timeline: one beat per year ----------------
+   lead-in on the first year; for each later year: (a leave note on the previous year's board, if any) then a move of
+   move_frac x sec_per_year (eased) and a hold for the rest; the year label changes when the move starts. After the
+   last year lands: the final hold (5 s, DEC-569), then the closing card if switched on. */
+function buildPlan(){
+  const F=CFG.fps, from=CFG.window&&CFG.window.from||D.years[0], to=CFG.window&&CFG.window.to||D.years[D.years.length-1];
+  const idx={}; D.frames.forEach((fr,i)=>idx[fr.year]=i);
+  const years=D.years.filter(y=>y>=from&&y<=to), steps=[]; let f=0;
+  const lead=Math.round(CFG.lead_in_sec*F);
+  steps.push({kind:'hold', year:years[0], from:f, to:f+lead}); f+=lead;
+  const leaves = CFG.leave && CFG.leave.enabled ? D.leaves : [];
+  for(let i=1;i<years.length;i++){
+    const y=years[i], L=leaves.filter(l=>l.year===y);
+    if(L.length){ const n=Math.round(CFG.note_sec*F); steps.push({kind:'note', year:years[i-1], leaves:L, from:f, to:f+n}); f+=n; }
+    const beat=Math.round(CFG.sec_per_year*F), mv=CFG.motion==='smooth' ? beat : Math.round(beat*CFG.move_frac);   // IQ-22d V2: no hold per year
+    steps.push({kind:'move', a:years[i-1], b:y, leaves:L, from:f, to:f+mv}); f+=mv;
+    steps.push({kind:'hold', year:y, from:f, to:f+beat-mv, landing:f}); f+=beat-mv;
+  }
+  const last=years[years.length-1], fin=Math.round(CFG.final_hold_sec*F);
+  steps.push({kind:'hold', year:last, from:f, to:f+fin, landing:f, final:true}); f+=fin;
+  let card=null;
+  if(CFG.closing_card.enabled){ const n=Math.round(CFG.closing_card.sec*F); card={from:f, to:f+n}; steps.push({kind:'card', from:f, to:f+n}); f+=n; }
+  const landing={}; for(const s of steps) if(s.kind==='hold' && landing[s.year]==null) landing[s.year]=s.landing!=null?s.landing:s.from;
+  const notes={}; for(const s of steps) if(s.kind==='note') notes[s.leaves[0].year]=s.from;
+  const knot={}; years.forEach((y,i)=>knot[y]=i);
+  return {steps, total:f, years, idx, landing, notes, card, knot};
+}
+window.landingFrame=y=>PLAN.landing[y];               // the frame on which year y's figures land (stills are taken there)
+window.noteFrame=y=>PLAN.notes[y];                     // the first frame of the leave note before year y
+window.cardFrame=()=>PLAN.card?PLAN.card.from:null;
+window.planSummary=()=>({total:PLAN.total, years:PLAN.years, landing:PLAN.landing, notes:PLAN.notes});
+
+/* ---------------- geometry ---------------- */
+function geometry(){
+  const lr=CFG.layout==='lr';
+  const g={lr, top:{}, bottom:{}};
+  const headY=lr?204:188, flagW=FL?(lr?48:39):0, flagGap=FL?14:0;
+  if(lr){
+    const row=64, y0=248;
+    for(const [k,x] of [['top',64],['bottom',984]]){
+      Object.assign(g[k], {x, w:872, headY, axisY:y0-10, y0, row, nameAbove:true, nameSize:30, valSize:30, barH:20,
+                           flagW, flagH:flagW*2/3, flagGap, slots:11});
+      g[k].bx = x+flagW+flagGap; g[k].bw = g[k].w-(flagW+flagGap)-140;
+    }
+  } else {
+    const row=29;
+    Object.assign(g.top, {x:64, w:1792, headY:headY, axisY:236, y0:244, row, nameAbove:false, nameSize:23, valSize:23, barH:20, flagW, flagH:flagW*2/3, flagGap, slots:10});
+    Object.assign(g.bottom, {x:64, w:1792, headY:592, axisY:620, y0:628, row, nameAbove:false, nameSize:23, valSize:23, barH:20, flagW, flagH:flagW*2/3, flagGap, slots:11});
+    for(const k of ['top','bottom']){ const P=g[k]; P.nameW=330; P.bx=P.x+flagW+flagGap+P.nameW+12; P.bw=P.w-(flagW+flagGap+P.nameW+12)-150; }
+  }
+  for(const k of ['top','bottom']){
+    const P=g[k]; P.max = CFG.scale==='shared' ? CFG.shared_max : CFG.own_max[k];
+  }
+  g.panel = lr ? {x:1452, y:snapPanel(g.bottom), w:404, h:0} : {x:1452, y:650, w:404, h:250};
+  if(lr) g.panel.h = slotY(g.bottom,11)-12-g.panel.y;
+  return g;
+}
+function slotY(P,s){ return P.y0+(s-1)*P.row; }
+function snapPanel(P){ return P.y0+6*P.row+4; }   // from row 7; ends above the 0% row (slot 11)
+
+/* ---------------- one board ---------------- */
+function boardItems(year){ return D.frames[PLAN.idx[year]]; }
+function itemsAt(fr){
+  /* -> {year label, per board list of {id, slot, value, text, alpha, landed, latest, grey, note}} */
+  let st=PLAN.steps.find(s=>fr>=s.from && fr<s.to) || PLAN.steps[PLAN.steps.length-1];
+  if(st.kind==='card') st=PLAN.steps[PLAN.steps.length-2];
+  if(CURVES && st.kind==='move' && fr===st.from) st={kind:'hold', year:st.a};   // V2: a landing frame is drawn exactly as the data (V1's hold path)
+  const out={top:[], bottom:[], zero:null, zeroPrev:null, zeroMix:1, yearLabel:null, yearPrev:null, yearMix:1, worldYear:null, step:st};
+  if(st.kind==='hold' || st.kind==='note'){
+    const B=boardItems(st.year);
+    out.yearLabel=st.year; out.worldYear=st.year;
+    for(const k of ['top','bottom']) B[k].forEach((b,i)=>out[k].push({id:b.id, slot:i+1, v:+b.v, text:b.t, alpha:1, landed:true, latest:b.latest, from:b.from}));
+    out.zero=B.zero;
+    if(st.kind==='note'){
+      const u=(fr-st.from)/Math.max(1,st.to-st.from);
+      for(const L of st.leaves){ const it=out[L.board].find(x=>x.id===L.id); if(it){ it.note=L.note; it.noteA=ease(u/0.25); it.grey = CFG.leave.style==='grey' ? ease(u/0.35) : 0; } }
+    }
+    return out;
+  }
+  // a move from year a to year b
+  if(CURVES) return itemsSmooth(st, fr, out);
+  const u=ease((fr-st.from)/Math.max(1,st.to-st.from)), A=boardItems(st.a), B=boardItems(st.b);
+  out.yearLabel=st.b; out.yearPrev=st.a; out.yearMix=clamp((fr-st.from)/(0.5*FPS),0,1);
+  out.worldYear=st.a+u;
+  for(const k of ['top','bottom']){
+    /* positions from each year's ranks 1-20, so a country comes up from below the board and goes down out of it
+       (rows past slot 10 are hidden under the board's edge); values count between the two years' figures */
+    const RA={}, RB={}; A.ranks[k].slice(0,20).forEach((b,i)=>RA[b.id]={i:i+1,v:+b.v}); B.ranks[k].slice(0,20).forEach((b,i)=>RB[b.id]={i:i+1,v:+b.v});   // V1: ranks 1-20 only
+    const onA={}, onB={}; A[k].forEach(b=>onA[b.id]=b); B[k].forEach(b=>onB[b.id]=b);
+    const ids=[...new Set(A[k].map(b=>b.id).concat(B[k].map(b=>b.id)))];
+    for(const id of ids){
+      const L=st.leaves.find(l=>l.id===id && l.board===k);
+      if(L && CFG.leave.style==='fade'){ const a=onA[id]; out[k].push({id, slot:RA[id].i, v:+a.v, text:a.t, alpha:1-ease(u/0.5), landed:true, note:L.note, noteA:1, leaving:true}); continue; }
+      if(L){ const a=onA[id]; out[k].push({id, slot:RA[id].i, v:+a.v*(1-u), text:a.t, alpha:1-ease(clamp((u-0.4)/0.6,0,1)), landed:true, note:L.note, noteA:1-u, grey:1, leaving:true, shrink:true}); continue; }
+      const ra=RA[id]?RA[id].i:23, rb=RB[id]?RB[id].i:23;
+      const va=RA[id]?RA[id].v:RB[id].v, vb=RB[id]?RB[id].v:va;
+      const b=onB[id];
+      out[k].push({id, slot:lerp(ra,rb,u), v:lerp(va,vb,u), text:u>=1&&b?b.t:null, alpha:(!RA[id]||!RB[id]) ? (RB[id]?u:1-u) : 1,
+                   landed:u>=1, latest:b?b.latest:false, from:b?b.from:'', entering:!onA[id], leaving:!onB[id]});
+    }
+  }
+  out.zero=B.zero; out.zeroPrev=A.zero; out.zeroMix=u;
+  return out;
+}
+
+
+/* ---------------- V2 (IQ-22d): smooth motion ----------------
+   Every year is a knot. For each country that is ever on a board in the window (and each board), its rank (capped at
+   23 = below the board) and its shown value at each knot are joined by a monotone cubic (PCHIP, Fritsch-Carlson
+   slopes, as RTT-102 DEC-546): between two knots the curve never goes beyond either knot's value, so a value label
+   never shows more than the next published figure, nor less than the smaller of the two (never below 0). The slope is
+   zero at the first and last knot and at a knot where the board pauses for a leave note, so the motion starts from rest
+   and stops at rest there; elsewhere the bars glide through each year without stopping. On a landing frame (u = 0 of
+   the next move, or a hold/note frame) the board is drawn by the same path as V1, i.e. exactly boards.csv. */
+function fcSlopes(v, rest){
+  const n=v.length, d=new Array(n).fill(0), del=[];
+  for(let i=0;i<n-1;i++) del.push(isNaN(v[i])||isNaN(v[i+1]) ? NaN : v[i+1]-v[i]);
+  for(let i=0;i<n;i++){
+    if(rest.has(i) || isNaN(v[i])) { d[i]=0; continue; }
+    const a=i>0?del[i-1]:NaN, b=i<n-1?del[i]:NaN;
+    if(isNaN(a)||isNaN(b)) { d[i]=0; continue; }                 // ends of a run: start/stop at rest
+    d[i] = a*b<=0 ? 0 : 2/(1/a+1/b);                             // harmonic mean (Fritsch-Butland), unit knot spacing
+  }
+  return d;
+}
+function hermite(v0,v1,d0,d1,u){
+  const u2=u*u, u3=u2*u;
+  return (2*u3-3*u2+1)*v0 + (u3-2*u2+u)*d0 + (-2*u3+3*u2)*v1 + (u3-u2)*d1;
+}
+function buildCurves(){
+  const ys=PLAN.years, n=ys.length, rest=new Set([0, n-1]);
+  for(const y of Object.keys(PLAN.notes)) rest.add(PLAN.knot[+y-1]);
+  const C={top:{}, bottom:{}};
+  for(const k of ['top','bottom']){
+    const ids=new Set(); for(const y of ys) for(const b of boardItems(y)[k]) ids.add(b.id);
+    for(const id of ids){
+      const slot=[], val=[];
+      for(const y of ys){
+        const R=boardItems(y).ranks[k], i=R.findIndex(r=>r.id===id);
+        slot.push(i<0 ? 23 : Math.min(i+1, 23)); val.push(i<0 ? NaN : +R[i].v);
+      }
+      C[k][id]={slot, val, ds:fcSlopes(slot, rest), dv:fcSlopes(val, rest)};
+    }
+  }
+  return C;
+}
+function itemsSmooth(st, fr, out){
+  const u=(fr-st.from)/Math.max(1,st.to-st.from), A=boardItems(st.a), B=boardItems(st.b), i=PLAN.knot[st.a];
+  for(const k of ['top','bottom']){
+    const onA={}, onB={}; A[k].forEach(b=>onA[b.id]=b); B[k].forEach(b=>onB[b.id]=b);
+    for(const [id,c] of Object.entries(CURVES[k])){
+      const L=st.leaves.find(l=>l.id===id && l.board===k);
+      if(L){ const a=onA[id]; if(!a) continue;                       // approved leave look B: pinned, grey, shrinking
+        out[k].push({id, slot:c.slot[i], v:+a.v*(1-u), text:a.t, alpha:1-ease(clamp((u-0.4)/0.6,0,1)), landed:true, note:L.note, noteA:1-u, grey:1, leaving:true, shrink:true}); continue; }
+      const sl=hermite(c.slot[i], c.slot[i+1], c.ds[i], c.ds[i+1], u);
+      if(sl>10.98 && c.slot[i]>10 && c.slot[i+1]>10) continue;       // below the board for the whole year
+      let v0=c.val[i], v1=c.val[i+1];
+      const v = isNaN(v0)&&isNaN(v1) ? NaN : isNaN(v0) ? v1 : isNaN(v1) ? v0 : clamp(hermite(v0,v1,c.dv[i],c.dv[i+1],u), Math.min(v0,v1), Math.max(v0,v1));
+      if(isNaN(v)) continue;
+      const src = u<0.5 ? (onA[id]||onB[id]) : (onB[id]||onA[id]);
+      out[k].push({id, slot:sl, v:Math.max(0,v), text:null, alpha:1, landed:false, latest:src?src.latest:false, from:src?src.from:''});
+    }
+  }
+  out.zero=B.zero; out.zeroPrev=A.zero; out.zeroMix=clamp((u-0.7)/0.3,0,1);   // the 0% row changes as the year lands
+  out.yearLabel=st.b; out.yearPrev=st.a; out.yearMix=clamp((fr-(st.to-Math.round(0.5*FPS)))/(0.5*FPS),0,1);   // the year rolls in the last 0.5 s
+  if(out.yearMix<=0){ out.yearLabel=st.a; out.yearPrev=null; out.yearMix=1; }
+  out.worldYear=st.a+u;
+  return out;
+}
+
+function fmtPct(v){ return (Math.round(v*10)/10).toFixed(1)+'%'; }
+function drawFlag(id,x,y,w,h,alpha){
+  const im=FLAGIMG[FLAGCODE[id]]; if(!im) return;
+  ctx.save(); ctx.globalAlpha=alpha; rr(x,y,w,h,3); ctx.clip(); ctx.drawImage(im,x,y,w,h); ctx.restore();
+  ctx.save(); ctx.globalAlpha=alpha*0.5; ctx.strokeStyle='rgba(244,246,250,0.35)'; ctx.lineWidth=1; rr(x+0.5,y+0.5,w-1,h-1,3); ctx.stroke(); ctx.restore();
+  window.__LABELS.push({kind:'flag', id, text:FLAGCODE[id], x, y, w, h, size:null, alpha});
+}
+
+function drawPanelHead(k,P){
+  const lbl = k==='top' ? 'Highest' : 'Lowest';
+  const sub = k==='top' ? '10 highest shares' : '10 lowest shares above 0%';
+  ctx.fillStyle=CFG.colours[k]; ctx.font='700 34px '+FONT; const w=text('board_head',k,lbl,P.x,P.headY,'left');
+  ctx.fillStyle=T.cap; ctx.font='500 26px '+FONT; const w2=text('board_sub',k,sub,P.x+w+16,P.headY,'left');
+  if(CFG.scale==='own'){                         // brief (b) option B: the board's own scale, unmistakable
+    const s=(k==='bottom'?'Zoomed scale 0–':'Scale 0–')+P.max+'%';
+    ctx.font='700 26px '+FONT; const sw=ctx.measureText(s).width+24, sx=P.x+P.w-sw, sy=P.headY-27;
+    ctx.fillStyle=k==='bottom'?'#F0A04B':'#2FC4B2'; rr(sx,sy,sw,36,8); ctx.fill();
+    ctx.fillStyle=T.ground; text('scale_tag',k,s,sx+12,P.headY,'left');
+  }
+}
+function drawAxis(k,P){
+  const step = P.max<=20 ? 5 : 10;
+  ctx.font='400 '+(G.lr?29:20)+'px '+FONT;
+  for(let v=0; v<=P.max+1e-9; v+=step){
+    const x=P.bx+P.bw*v/P.max;
+    ctx.fillStyle = CFG.scale==='own' && k==='bottom' ? '#F0A04B' : T.axis;
+    tabText(v+'%', x, P.axisY, 'center', 'axis', k);
+    ctx.fillStyle=T.grid; ctx.fillRect(Math.round(x)-0.5, P.axisY+8, 1, P.slots*P.row-4);
+  }
+}
+
+function drawBoard(k, items, S){
+  const P=G[k];
+  drawPanelHead(k,P); drawAxis(k,P);
+  ctx.save(); ctx.beginPath(); ctx.rect(P.x-4, P.y0-6, P.w+8, 10*P.row+4); ctx.clip();   // rows 1-10; the 0% row (slot 11) is drawn outside
+  const sorted=items.slice().sort((a,b)=>(b.leaving?1:0)-(a.leaving?1:0));
+  for(const it of sorted){
+    if(it.alpha<=0.001 || it.slot>10.98) continue;
+    const y=slotY(P,it.slot), e=ENT[it.id];
+    const barY = P.nameAbove ? y+34 : y+(P.row-P.barH)/2;
+    let col=CFG.colours[k]; if(it.grey) col=hexMix(col,T.grey,it.grey);
+    const a=it.alpha*(it.latest?0.55:1);
+    const len=Math.max(2, P.bw*it.v/P.max);
+    ctx.globalAlpha=a; ctx.fillStyle=col; rr(P.bx, barY, len, P.barH, 4); ctx.fill(); ctx.globalAlpha=1;
+    if(FL) drawFlag(it.id, P.x, (P.nameAbove ? y+(P.row-P.flagH)/2 : y+(P.row-P.flagH)/2), P.flagW, P.flagH, it.alpha*(it.grey?1-0.5*it.grey:1));
+    // name
+    ctx.globalAlpha=it.alpha*(it.latest?0.8:1)*(it.grey?1-0.35*it.grey:1);
+    ctx.fillStyle=T.ink; ctx.font='600 '+P.nameSize+'px '+FONT;
+    let nw;
+    if(P.nameAbove) nw=text('name',it.id,e.label,P.bx,y+25,'left');
+    else nw=text('name',it.id,e.label,P.bx-12,barY+P.barH*0.82,'right');
+    // value
+    const vtxt = it.shrink ? it.text+'%' : it.landed && it.text ? it.text+'%' : fmtPct(it.v);
+    ctx.font='600 '+P.valSize+'px '+FONT; ctx.fillStyle=T.ink;
+    const vx=P.bx+len+12, vy=P.nameAbove ? y+53 : barY+P.barH*0.86;
+    let vw=tabText(vtxt, vx, vy, 'left', 'value', it.id);
+    window.__BARS.push({id:it.id, board:k, slot:it.slot, value:vtxt, landed:!!it.landed, alpha:it.alpha, latest:!!it.latest, rect:{x:P.bx,y:barY,w:len,h:P.barH}});
+    if(it.latest){ ctx.fillStyle=T.cap; ctx.font='500 '+P.valSize+'px '+FONT; vw+=text('latest',it.id,' · latest figure',vx+vw,vy,'left'); }
+    // leave note (brief d): on the bar's name line, after the name
+    if(it.note && it.noteA>0){
+      ctx.globalAlpha=it.alpha*it.noteA; ctx.font='600 26px '+FONT; ctx.fillStyle='#FFD27A';
+      let nx = P.nameAbove ? P.bx+nw+14 : vx+vw+16, ny = P.nameAbove ? y+25 : vy;
+      let s='— '+it.note, fs=26;
+      const limit = yy => (CFG.world_panel && G.lr && k==='bottom' && yy>G.panel.y-8 && yy<G.panel.y+G.panel.h+30) ? G.panel.x-16 : P.x+P.w;
+      if(P.nameAbove && nx+ctx.measureText(s).width > limit(ny)){ nx=vx+vw+14; ny=vy; }   // the name line would cross the world panel: use the value line
+      while(ctx.measureText(s).width > limit(ny)-nx && fs>25){ fs--; ctx.font='600 '+fs+'px '+FONT; }
+      text('leave_note',it.id,s,nx,ny,'left');
+    }
+    ctx.globalAlpha=1;
+  }
+  ctx.restore();
+  if(k==='bottom') drawZero(P,S);
+}
+
+/* brief (c): the 0% group, in the 11th slot of the bottom board */
+function drawZero(P,S){
+  const st=CFG.zero_group.style; if(st==='none') return;
+  const draw=(ids,alpha)=>{
+    if(!ids || !ids.length || alpha<=0.001) return;
+    const y=slotY(P,11), n=ids.length, cnt=n+(n===1?' country':' countries');
+    const head=P.nameAbove?y+25:y+P.row*0.7, line=P.nameAbove?y+53:y+P.row*0.7;
+    ctx.globalAlpha=alpha;
+    const chipsW=(sz,gap)=>{ ctx.font='600 '+P.nameSize+'px '+FONT; let w=0; for(const id of ids){ if(FL) w+=sz*1.2+8; w+=ctx.measureText(ENT[id].label).width+gap; } return w-gap; };
+    const chips=(x,yy,sz,gap)=>{ gap=gap||24; for(const id of ids){ if(FL){ drawFlag(id,x,yy-sz*0.8,sz*1.2,sz*0.8,alpha); x+=sz*1.2+8; }
+                                                   ctx.fillStyle=T.ink; ctx.font='600 '+P.nameSize+'px '+FONT; x+=text('zero_names',id,ENT[id].label,x,yy,'left')+gap; } return x; };
+    if(st==='bar'){                       // c1: a group bar - the heading on the name line, "0%" and the names on the bar line
+      ctx.fillStyle=T.ink; ctx.font='600 '+P.nameSize+'px '+FONT;
+      text('zero_head','zero','No women in parliament: '+cnt, P.nameAbove?P.bx:P.bx-12, head, P.nameAbove?'left':'right');
+      ctx.fillStyle='#E25D5D'; ctx.fillRect(P.bx, P.nameAbove?y+34:y+(P.row-P.barH)/2, 3, P.barH);
+      ctx.font='600 '+P.valSize+'px '+FONT; ctx.fillStyle=T.ink; const vw=tabText('0%',P.bx+12,line,'left','value','zero');
+      ctx.fillStyle=T.cap; ctx.font='500 '+P.valSize+'px '+FONT; text('zero_names','zero',' · '+ids.map(id=>ENT[id].label).join(', '),P.bx+12+vw,line,'left');
+    } else if(st==='strip'){              // c2: a rule under the board, "0% no women in parliament", then flag + name chips
+      ctx.fillStyle='rgba(226,93,93,0.6)'; ctx.fillRect(P.x,y+1,P.w,2);
+      ctx.fillStyle='#E25D5D'; ctx.font='700 '+P.nameSize+'px '+FONT; const hw=tabText('0%',P.x,head,'left','value','zero');
+      ctx.fillStyle=T.cap; ctx.font='600 '+P.nameSize+'px '+FONT; text('zero_head','zero','  no women in parliament',P.x+hw,head,'left');
+      if(P.nameAbove) chips(P.x, line, P.nameSize); else chips(P.x+hw+400, head, P.nameSize);
+    } else if(st==='count'){              // c3: the count as the bar's name, the countries as flag + name chips on the bar line
+      ctx.fillStyle='#E25D5D'; ctx.font='700 '+P.nameSize+'px '+FONT;
+      text('zero_head','zero','No women: '+cnt, P.nameAbove?P.bx:P.bx-12, head, P.nameAbove?'left':'right');
+      /* fit (IQ-22b): three long names (e.g. 2005: Kyrgyzstan, Saudi Arabia, United Arab Emirates) would run past the board,
+         so the line then starts at the flag column, and if still too wide the gaps between chips tighten */
+      const edge=P.x+P.w; let x0=P.bx, gap=24;
+      ctx.font='600 '+P.valSize+'px '+FONT; const w0=tabWidth('0%',pitch())+22;
+      if(x0+w0+chipsW(P.nameSize,gap)>edge) x0=P.x;
+      if(x0+w0+chipsW(P.nameSize,gap)>edge) gap=14;
+      ctx.fillStyle=T.ink; const vw=tabText('0%',x0,line,'left','value','zero');
+      chips(x0+vw+22, line, P.nameSize, gap);
+    }
+    ctx.globalAlpha=1;
+  };
+  if(S.zeroPrev && S.zeroMix<1 && S.zeroPrev.join()!==S.zero.join()){ draw(S.zeroPrev,1-S.zeroMix); draw(S.zero,S.zeroMix); }
+  else draw(S.zero,1);
+}
+
+/* brief (f): the world average, bottom right */
+function drawWorld(S){
+  if(!CFG.world_panel) return;
+  const p=G.panel, W=D.world, y0=D.years[0], y1=D.years[D.years.length-1], vmax=30;
+  ctx.fillStyle=T.panel; rr(p.x,p.y,p.w,p.h,12); ctx.fill();
+  ctx.fillStyle=T.ink; ctx.font='600 25px '+FONT; text('panel_head','world','World average (all countries)',p.x+18,p.y+38,'left');
+  const cx=p.x+18, cw=p.w-36, cy=p.y+84, ch=p.h-84-46;
+  const X=y=>cx+cw*(y-y0)/(y1-y0), Y=v=>cy+ch*(1-v/vmax);
+  ctx.fillStyle=T.grid; for(const v of [0,10,20,30]) ctx.fillRect(cx,Math.round(Y(v)),cw,1);
+  ctx.fillStyle=T.axis; ctx.font='400 25px '+FONT;
+  tabText('1997',cx,p.y+p.h-14,'left','panel_axis','world'); tabText(String(y1),cx+cw,p.y+p.h-14,'right','panel_axis','world');
+  tabText('30%',cx,Y(30)-8,'left','panel_axis','world');
+  const t=Math.min(S.worldYear,y1), pts=W.filter(w=>w.year<=Math.floor(t)).map(w=>[X(w.year),Y(+w.v)]);
+  const fl=Math.floor(t), nx=W.find(w=>w.year===fl+1);
+  if(nx && t>fl){ const a=W.find(w=>w.year===fl); pts.push([X(t), Y(lerp(+a.v,+nx.v,t-fl))]); }
+  ctx.strokeStyle='#F4F6FA'; ctx.lineWidth=3; ctx.lineJoin='round'; ctx.beginPath(); pts.forEach((q,i)=>i?ctx.lineTo(q[0],q[1]):ctx.moveTo(q[0],q[1])); ctx.stroke();
+  const L=pts[pts.length-1]; ctx.fillStyle='#F4F6FA'; ctx.beginPath(); ctx.arc(L[0],L[1],6,0,7); ctx.fill();
+  const cur=W.find(w=>w.year===Math.round(t)), landed=Number.isInteger(t);
+  const vt = landed ? cur.t+'%' : fmtPct(lerp(+W.find(w=>w.year===fl).v, +(nx||W.find(w=>w.year===fl)).v, t-fl));
+  ctx.font='700 29px '+FONT; ctx.fillStyle=T.ink;
+  const vw=tabWidth(vt,pitch()), right=L[0]-10>=cx+vw;
+  tabText(vt, right?L[0]-10:L[0]+12, L[1]-14, right?'right':'left', 'panel_value', 'world');
+  window.__STATE.world={year:t, text:vt};
+}
+
+/* the year, top right left of the logo (house style: extra-bold 112 px, rolls over half a second) */
+function drawYear(S){
+  const x=1678, y=132, h=112;
+  ctx.save(); ctx.beginPath(); ctx.rect(1300, y-h, 400, h+22); ctx.clip();
+  ctx.fillStyle=T.ink; ctx.font='800 112px '+FONT;
+  if(S.yearPrev!=null && S.yearMix<1){
+    const m=ease(S.yearMix);
+    ctx.globalAlpha=1-m; tabText(String(S.yearPrev), x, y-m*h*0.9, 'right', 'year_old', null);
+    ctx.globalAlpha=m;   tabText(String(S.yearLabel), x, y+(1-m)*h*0.9, 'right', 'year', null);
+  } else tabText(String(S.yearLabel), x, y, 'right', 'year', null);
+  ctx.restore(); ctx.globalAlpha=1;
+}
+function drawChrome(){
+  ctx.fillStyle=T.ink; ctx.font='700 50px '+FONT; text('title',null,CFG.title,64,74,'left');
+  ctx.fillStyle=T.cap; ctx.font='500 28px '+FONT; text('measure',null,CFG.measure,64,118,'left');
+  if(LOGO){ ctx.drawImage(LOGO,1702,12,154,154); }
+  else { ctx.strokeStyle=T.hairline; ctx.lineWidth=2; rr(1703,13,152,152,76); ctx.stroke(); }
+  window.__LABELS.push({kind:'logo_box', text:'', x:1702, y:12, w:154, h:154, size:null, alpha:1});
+  ctx.fillStyle=T.foot; ctx.font='400 26px '+FONT; text('footer',null,CFG.footer,64,1080-20,'left');
+  if(!G.lr){ ctx.fillStyle=T.hairline; ctx.fillRect(64,560,1792,2); }
+}
+
+/* brief (h): the closing card, after the final table */
+function drawCard(u){
+  ctx.globalAlpha=u; ctx.fillStyle=T.ground; ctx.fillRect(0,0,1920,1080);
+  ctx.fillStyle=T.ink; ctx.font='700 50px '+FONT; text('card_title',null,CFG.closing_card.title||'Not included: no sitting parliament',64,190,'left');
+  ctx.fillStyle=T.cap; ctx.font='500 28px '+FONT; text('card_sub',null,CFG.closing_card.subtitle||'',64,236,'left');
+  let y=316;
+  for(const c of D.closing_card){
+    if(FL) drawFlag(c.id,64,y-34,60,40,u);
+    ctx.fillStyle=T.ink; ctx.font='700 36px '+FONT; const w=text('card_name',c.id,c.label,64+(FL?80:0),y,'left');
+    ctx.fillStyle=T.cap; ctx.font='500 34px '+FONT; text('card_line',c.id,'— '+c.line,64+(FL?80:0)+w+16,y,'left');
+    y+=86;
+  }
+  ctx.fillStyle=T.foot; ctx.font='400 26px '+FONT; text('footer',null,CFG.footer,64,1080-20,'left');
+  if(LOGO) ctx.drawImage(LOGO,1702,12,154,154);
+  ctx.globalAlpha=1;
+}
+
+function drawAt(t){
+  baseTransform(); window.__LABELS=[]; window.__BARS=[];
+  const fr=Math.min(Math.round(t*FPS), RACE_FRAMES-1);
+  const S=itemsAt(fr); window.__STATE={frame:fr, year:S.yearLabel, step:S.step.kind};
+  ctx.fillStyle=T.ground; ctx.fillRect(0,0,1920,1080); ctx.textBaseline='alphabetic';
+  drawChrome(); drawYear(S);
+  drawBoard('top', S.top, S); drawBoard('bottom', S.bottom, S);
+  drawWorld(S);
+  if(PLAN.card && fr>=PLAN.card.from){
+    const u=clamp((fr-PLAN.card.from)/(CFG.closing_card.fade_sec*FPS),0,1);
+    window.__LABELS=[]; window.__BARS=[]; drawCard(ease(u)); window.__STATE.step='card';
+  }
+}
+window.drawAt=drawAt;
+function drawIntro(){ drawAt(0); }
+window.drawIntro=drawIntro;
+</script></body></html>

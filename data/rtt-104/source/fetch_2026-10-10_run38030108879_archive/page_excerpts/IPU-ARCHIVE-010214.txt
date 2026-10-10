@@ -1,0 +1,22 @@
+# IPU-ARCHIVE-010214
+# url: http://archive.ipu.org/wmn-e/arc/classif010214.htm
+# final url: http://archive.ipu.org/wmn-e/arc/classif010214.htm
+# fetched (UTC): 2026-10-10T06:12:51Z
+# HTTP 200; 40290 bytes; SHA-256 05740f2ce0806ee501395062b8820af4e41dc68d19a4a74d1911e5cd348c0436
+# title: ['Women in Parliaments: World Classification']
+# headings: ['>>> VERSION FRANÇAISE Women', 'in national parliaments Situation as of 1st February 2014', '189 countries', 'descending order of the percentage of women in the lower or single House', 'New:', 'WORLD CLASSIFICATION', 'Rank', 'Country', 'Lower or single House', 'Upper House or Senate', 'Elections', 'Seats*']
+# Table rows naming the test countries only.
+
+1 | Rwanda | 9 2013 | 80 | 51 | 63.8% | 9 2011 | 26 | 10 | 38.5%
+4 | Sweden | 9 2010 | 349 | 157 | 45.0% | --- | --- | --- | ---
+19 | Mexico | 7 2012 | 500 | 187 | 37.4% | 7 2012 | 128 | 44 | 34.4%
+37 | Nepal | 11 2013 | 575 | 172 | 29.9% | --- | --- | --- | ---
+46 | South Sudan | 8 2011 | 332 | 88 | 26.5% | 8 2011 | 50 | 5 | 10.0%
+" | Sudan | 4 2010 | 354 | 86 | 24.3% | 5 2010 | 29 | 5 | 17.2%
+76 | Saudi Arabia | 1 2013 | 151 | 30 | 19.9% | --- | --- | --- | ---
+86 | United Arab Emirates | 9 2011 | 40 | 7 | 17.5% | --- | --- | --- | ---
+113 | Guinea-Bissau | 11 2008 | 100 | 11 | 11.0% | --- | --- | --- | ---
+128 | Japan | 12 2012 | 480 | 39 | 8.1% | 7 2013 | 242 | 39 | 16.1%
+132 | Bangladesh | 1 2014 | 297 | 19 | 6.4% | --- | --- | --- | ---
+137 | Kuwait | 7 2013 | 65 | 3 | 4.6% | --- | --- | --- | ---
+138 | Haiti | 11 2010 | 95 | 4 | 4.2% | 11 2010 | 20 | 0 | 0.0%

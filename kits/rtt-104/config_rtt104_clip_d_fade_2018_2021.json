@@ -1,0 +1,12 @@
+{
+ "extends": "config_rtt104_d_fade.json",
+ "window": {
+  "from": 2018,
+  "to": 2021
+ },
+ "notes": "Clip, option d-A: Haiti leaves the bottom board in 2020 (note on the bar, then it fades). 2 s per year.",
+ "closing_card": {
+  "enabled": false
+ },
+ "final_hold_sec": 1.0
+}

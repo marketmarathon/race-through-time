@@ -1,0 +1,57 @@
+# IPU-PARLINE2-ERI
+# url: https://data.ipu.org/parliament/ER/
+# final url: https://data.ipu.org/parliament/ER/ER-LC01/
+# fetched (UTC): 2026-10-10T06:09:09Z
+# HTTP 200; 265069 bytes; SHA-256 33d028963576844ee3fa5c280575f74047e1a386ab926515203d0f8db9304ecb
+# Short excerpts only (lines holding the searched words, with the line before and after).
+
+Political system | Political systems: Presidential, Parliamentary, Presidential-Parliamentary, Monarchy, Communist, Transitional. | View field in the data dictionary
+
+IPU membership | Current membership status | View field in the data dictionary
+
+Elections | Parliamentary mandate | Law-making, oversight, budget
+
+See historical data for this field | Structure & status of parliament | This field is to indicate lower/upper in the back end.
+
+4 | Notes: The National Assembly, established in 1994, was set up for an interim period of four years, pending the adoption of a constitution and the holding of elections. It comprised 150 members. | The National Assembly ratified the Constitution in 1997. It was supposed to enter into force after National Assembly elections, scheduled for 1997. However, the elections were postponed indefinitely. The National Assembly has not met since February 2002.
+
+See historical data for this field | Transitional status | Parliament is in a transitional status, pending the establishment of a new full-fledged parliament.
+
+Term | Start (and end) of the term of the Speaker | View field in the data dictionary
+
+No information available | The post of Secretary General is currently vacant | Yes
+
+Average age of all members | Average age of members, for which data is available, at the time of the last election or renewal. | View field in the data dictionary
+
+Percentage of members, by age | Age at the last election or renewal | Overall
+
+4 | The National Assembly, established in 1994, was set up for an interim period of four years, pending the adoption of a constitution and the holding of elections. It comprised 150 members. | The National Assembly ratified the Constitution in 1997. It was supposed to enter into force after National Assembly elections, scheduled for 1997. However, the elections were postponed indefinitely. The National Assembly has not met since February 2002.
+
+4 | The National Assembly, established in 1994, was set up for an interim period of four years, pending the adoption of a constitution and the holding of elections. It comprised 150 members. | The National Assembly ratified the Constitution in 1997. It was supposed to enter into force after National Assembly elections, scheduled for 1997. However, the elections were postponed indefinitely. The National Assembly has not met since February 2002.
+
+The term of the Speaker is different from the term of the house | The term of the Speaker may be different from the term of the House (legislature).
+
+- | The term of the Speaker is different from the term of the house | The term of the Speaker may be different from the term of the House (legislature).
+
+No information available | The post of Secretary General is currently vacant | Yes
+
+No information available | The post of Secretary General is currently vacant | Yes
+
+No information available | The post of Secretary General is currently vacant | Yes
+
+No information available | The post of Secretary General is currently vacant | Yes
+
+No information available | The post of Secretary General is currently vacant | Yes
+
+No information available | The post of Secretary General is currently vacant | Yes
+
+No information available | The post of Secretary General is currently vacant | Yes
+
+No information available | The post of Secretary General is currently vacant | Yes
+
+No information available | The post of Secretary General is currently vacant | Yes
+
+No information available | The post of Secretary General is currently vacant | Yes
+
+No information available | The post of Secretary General is currently vacant | Yes
+
