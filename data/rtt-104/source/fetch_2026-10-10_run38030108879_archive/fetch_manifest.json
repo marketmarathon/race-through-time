@@ -1,0 +1,210 @@
+{
+ "fetched_by": "GitHub runner, .github/workflows/rtt104_sources.yml (FETCH_SET=archive)",
+ "files": [],
+ "pages": [
+  {
+   "bytes": 39010,
+   "content_type": "text/html",
+   "excerpt_file": "page_excerpts/IPU-ARCHIVE-010197.txt",
+   "excerpts": 11,
+   "fetched_utc": "2026-10-10T06:12:24Z",
+   "final_url": "http://archive.ipu.org/wmn-e/arc/classif010197.htm",
+   "id": "IPU-ARCHIVE-010197",
+   "sha256": "e1297d0bbc771a8066b5f786e3a15aa6f7e96a6a4ba3bae55a659bb29bb6f9d9",
+   "status": 200,
+   "url": "http://archive.ipu.org/wmn-e/arc/classif010197.htm"
+  },
+  {
+   "bytes": 39040,
+   "content_type": "text/html",
+   "excerpt_file": "page_excerpts/IPU-ARCHIVE-100898.txt",
+   "excerpts": 11,
+   "fetched_utc": "2026-10-10T06:12:26Z",
+   "final_url": "http://archive.ipu.org/wmn-e/arc/classif100898.htm",
+   "id": "IPU-ARCHIVE-100898",
+   "sha256": "94546b44a27b6d189607adfdebb49f5a2ae790c4da6d571d6d1c6096c9336fc1",
+   "status": 200,
+   "url": "http://archive.ipu.org/wmn-e/arc/classif100898.htm"
+  },
+  {
+   "bytes": 38673,
+   "content_type": "text/html",
+   "excerpt_file": "page_excerpts/IPU-ARCHIVE-250198.txt",
+   "excerpts": 11,
+   "fetched_utc": "2026-10-10T06:12:28Z",
+   "final_url": "http://archive.ipu.org/wmn-e/arc/classif250198.htm",
+   "id": "IPU-ARCHIVE-250198",
+   "sha256": "65ade97b74f7982bff344da1c06ccb7702be6d322648f636dc3d211e3bfd34c6",
+   "status": 200,
+   "url": "http://archive.ipu.org/wmn-e/arc/classif250198.htm"
+  },
+  {
+   "error": "HTTP 404",
+   "fetched_utc": "2026-10-10T06:12:30Z",
+   "id": "IPU-ARCHIVE-010103",
+   "status": null,
+   "url": "http://archive.ipu.org/wmn-e/arc/classif010103.htm"
+  },
+  {
+   "error": "HTTP 404",
+   "fetched_utc": "2026-10-10T06:12:30Z",
+   "id": "IPU-ARCHIVE-010104",
+   "status": null,
+   "url": "http://archive.ipu.org/wmn-e/arc/classif010104.htm"
+  },
+  {
+   "bytes": 33817,
+   "content_type": "text/html",
+   "excerpt_file": "page_excerpts/IPU-ARCHIVE-310103.txt",
+   "excerpts": 1,
+   "fetched_utc": "2026-10-10T06:12:31Z",
+   "final_url": "http://archive.ipu.org/wmn-e/arc/classif310103.htm",
+   "id": "IPU-ARCHIVE-310103",
+   "sha256": "50950d07d44dd5b8ae156a8fb023154d8c416061c8d51998619fe59527b76356",
+   "status": 200,
+   "url": "http://archive.ipu.org/wmn-e/arc/classif310103.htm"
+  },
+  {
+   "error": "HTTP 404",
+   "fetched_utc": "2026-10-10T06:12:33Z",
+   "id": "IPU-ARCHIVE-310104",
+   "status": null,
+   "url": "http://archive.ipu.org/wmn-e/arc/classif310104.htm"
+  },
+  {
+   "error": "HTTP 404",
+   "fetched_utc": "2026-10-10T06:12:33Z",
+   "id": "IPU-ARCHIVE-010107",
+   "status": null,
+   "url": "http://archive.ipu.org/wmn-e/arc/classif010107.htm"
+  },
+  {
+   "error": "HTTP 404",
+   "fetched_utc": "2026-10-10T06:12:34Z",
+   "id": "IPU-ARCHIVE-010108",
+   "status": null,
+   "url": "http://archive.ipu.org/wmn-e/arc/classif010108.htm"
+  },
+  {
+   "bytes": 37073,
+   "content_type": "text/html",
+   "excerpt_file": "page_excerpts/IPU-ARCHIVE-310107.txt",
+   "excerpts": 13,
+   "fetched_utc": "2026-10-10T06:12:34Z",
+   "final_url": "http://archive.ipu.org/wmn-e/arc/classif310107.htm",
+   "id": "IPU-ARCHIVE-310107",
+   "sha256": "52e685b857a80d72b43c1fa4b6e8a05c9575ba9e067c6853df0830b2b9f608f2",
+   "status": 200,
+   "url": "http://archive.ipu.org/wmn-e/arc/classif310107.htm"
+  },
+  {
+   "bytes": 36683,
+   "content_type": "text/html",
+   "excerpt_file": "page_excerpts/IPU-ARCHIVE-310108.txt",
+   "excerpts": 12,
+   "fetched_utc": "2026-10-10T06:12:36Z",
+   "final_url": "http://archive.ipu.org/wmn-e/arc/classif310108.htm",
+   "id": "IPU-ARCHIVE-310108",
+   "sha256": "36ef9c37bf193eb96cf479a529c2d0801d7b91bbfa8e2db61dec5058d4f90115",
+   "status": 200,
+   "url": "http://archive.ipu.org/wmn-e/arc/classif310108.htm"
+  },
+  {
+   "bytes": 43498,
+   "content_type": "text/html",
+   "excerpt_file": "page_excerpts/IPU-ARCHIVE-010118.txt",
+   "excerpts": 13,
+   "fetched_utc": "2026-10-10T06:12:38Z",
+   "final_url": "http://archive.ipu.org/wmn-e/arc/classif010118.htm",
+   "id": "IPU-ARCHIVE-010118",
+   "sha256": "862229bf011f20c27b8ccd6c6ec35b7f126e43af8880547dd391fbdd7d288873",
+   "status": 200,
+   "url": "http://archive.ipu.org/wmn-e/arc/classif010118.htm"
+  },
+  {
+   "bytes": 43905,
+   "content_type": "text/html",
+   "excerpt_file": "page_excerpts/IPU-ARCHIVE-010119.txt",
+   "excerpts": 13,
+   "fetched_utc": "2026-10-10T06:12:41Z",
+   "final_url": "http://archive.ipu.org/wmn-e/arc/classif010119.htm",
+   "id": "IPU-ARCHIVE-010119",
+   "sha256": "86123f227986ab44709d662d256f86dfc8aa763d2b93787429ae21ed42d9075d",
+   "status": 200,
+   "url": "http://archive.ipu.org/wmn-e/arc/classif010119.htm"
+  },
+  {
+   "bytes": 43496,
+   "content_type": "text/html",
+   "excerpt_file": "page_excerpts/IPU-ARCHIVE-010218.txt",
+   "excerpts": 13,
+   "fetched_utc": "2026-10-10T06:12:43Z",
+   "final_url": "http://archive.ipu.org/wmn-e/arc/classif010218.htm",
+   "id": "IPU-ARCHIVE-010218",
+   "sha256": "fbcb1032fc332f7cc1d13433ec4542124be9d8da8e137ab5fb3f4457b168030d",
+   "status": 200,
+   "url": "http://archive.ipu.org/wmn-e/arc/classif010218.htm"
+  },
+  {
+   "bytes": 43133,
+   "content_type": "text/html",
+   "excerpt_file": "page_excerpts/IPU-ARCHIVE-010219.txt",
+   "excerpts": 13,
+   "fetched_utc": "2026-10-10T06:12:45Z",
+   "final_url": "http://archive.ipu.org/wmn-e/arc/classif010219.htm",
+   "id": "IPU-ARCHIVE-010219",
+   "sha256": "a1dc671c53c53c51b5f48d0a0954c6abe08681a275b154776c2a10f7a09f8146",
+   "status": 200,
+   "url": "http://archive.ipu.org/wmn-e/arc/classif010219.htm"
+  },
+  {
+   "bytes": 40529,
+   "content_type": "text/html",
+   "excerpt_file": "page_excerpts/IPU-ARCHIVE-010113.txt",
+   "excerpts": 13,
+   "fetched_utc": "2026-10-10T06:12:47Z",
+   "final_url": "http://archive.ipu.org/wmn-e/arc/classif010113.htm",
+   "id": "IPU-ARCHIVE-010113",
+   "sha256": "61bf425298cd80ebec0b793b7fa6eab45bd1215a0756a5210b816c889a083d16",
+   "status": 200,
+   "url": "http://archive.ipu.org/wmn-e/arc/classif010113.htm"
+  },
+  {
+   "bytes": 40531,
+   "content_type": "text/html",
+   "excerpt_file": "page_excerpts/IPU-ARCHIVE-010213.txt",
+   "excerpts": 13,
+   "fetched_utc": "2026-10-10T06:12:49Z",
+   "final_url": "http://archive.ipu.org/wmn-e/arc/classif010213.htm",
+   "id": "IPU-ARCHIVE-010213",
+   "sha256": "6af3f0d43e98f154f2dbc143331b8b7b1c1c92a7e58568c3706ebe9c2e8d0ea2",
+   "status": 200,
+   "url": "http://archive.ipu.org/wmn-e/arc/classif010213.htm"
+  },
+  {
+   "bytes": 40290,
+   "content_type": "text/html",
+   "excerpt_file": "page_excerpts/IPU-ARCHIVE-010214.txt",
+   "excerpts": 13,
+   "fetched_utc": "2026-10-10T06:12:51Z",
+   "final_url": "http://archive.ipu.org/wmn-e/arc/classif010214.htm",
+   "id": "IPU-ARCHIVE-010214",
+   "sha256": "05740f2ce0806ee501395062b8820af4e41dc68d19a4a74d1911e5cd348c0436",
+   "status": 200,
+   "url": "http://archive.ipu.org/wmn-e/arc/classif010214.htm"
+  },
+  {
+   "bytes": 57649,
+   "content_type": "text/html",
+   "excerpt_file": "page_excerpts/IPU-ARCHIVE-INDEX.txt",
+   "excerpts": 2,
+   "fetched_utc": "2026-10-10T06:12:53Z",
+   "final_url": "http://archive.ipu.org/wmn-e/classif-arc.htm",
+   "id": "IPU-ARCHIVE-INDEX",
+   "sha256": "249c2e7692d39ddacb2fcac95a127ed60dab93bd11164df114a9ed2061c64e60",
+   "status": 200,
+   "url": "http://archive.ipu.org/wmn-e/classif-arc.htm"
+  }
+ ],
+ "run_url": "https://github.com/marketmarathon/race-through-time/actions/runs/38030108879"
+}

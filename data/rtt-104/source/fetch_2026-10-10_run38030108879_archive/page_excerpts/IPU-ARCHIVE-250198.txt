@@ -1,0 +1,20 @@
+# IPU-ARCHIVE-250198
+# url: http://archive.ipu.org/wmn-e/arc/classif250198.htm
+# final url: http://archive.ipu.org/wmn-e/arc/classif250198.htm
+# fetched (UTC): 2026-10-10T06:12:28Z
+# HTTP 200; 38673 bytes; SHA-256 65ade97b74f7982bff344da1c06ccb7702be6d322648f636dc3d211e3bfd34c6
+# title: ['Women in Parliaments: World Classification']
+# headings: ['Situation as of 25 January 1998', '177 countries', 'descending order of the percentage of women in the lower or single House', 'New:', 'Rank', 'Country', 'Lower or single House', 'Upper House or Senate', 'Elections', 'Seats', 'Women', '% W']
+# Table rows naming the test countries only.
+
+Rank | Country | Lower or single House | Upper House or Senate | Elections | Seats | Women | % W | Elections | Seats | Women | % W | 1 | Sweden | 09 1994 | 349 | 141 | 40.4 | --- | --- | --- | ---
+23 | Rwanda | 11 1994 | 70 | 12 | 17.1 | --- | --- | --- | ---
+29 | Mexico | 07 1997 | 500 | 71 | 14.2 | 07 1997 | 128 | 16 | 12.5
+45 | Guinea-Bissau | 07 1994 | 100 | 10 | 10.0 | --- | --- | --- | ---
+50 | Bangladesh | 06 1996 | 330 | 30 | 9.1 | --- | --- | --- | ---
+" | Sudan | 03 1996 | 400 | 21 | 5.3 | --- | --- | --- | ---
+79 | Japan | 10 1996 | 500 | 23 | 4.6 | 07 1995 | 252 | 35 | 13.9
+85 | Haiti | 06 1995 | 83 | 3 | 3.6 | 04 1997 | 27 | ? | ?
+" | Nepal | 11 1994 | 205 | 7 | 3.4 | 06 1995 | 60 | 5 | 8.3
+" | Kuwait | 10 1996 | 50 | 0 | 0.0 | --- | --- | --- | ---
+" | United Arab Emirates | 11 1995 | 40 | 0 | 0.0 | --- | --- | --- | ---
