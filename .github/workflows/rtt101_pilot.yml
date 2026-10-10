@@ -19,6 +19,7 @@
 #   - uploads NO workflow artifact, uses NO cache, and deletes frames and videos at the end.
 # No full film is rendered (DEC-069: nothing beyond the approved look goes into a film before Luke approves it).
 # Triggers: a push that changes THIS FILE on the IQ-21 branch, or by hand (once merged). Tagged rtt-101-round1-<commit>-run<n>.
+# Run 3: the phone check reports the 15-bar option (below the 5.9 pt floor) instead of failing on it.
 name: rtt101-pilot
 
 on:

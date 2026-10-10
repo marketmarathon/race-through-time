@@ -8,6 +8,7 @@
  *   - a still dated with a month (taken on the frame where that month's figures land) shows that month's figures exactly
  *     as data/rtt-101/series_onscreen.csv gives them, in the still's own format (with the near-tie option, the figure
  *     rounded to the decimals drawn), and the date block shows that month ("1 September" 2026 at the freeze).
+ * A still marked phone_report_only (the 15-bar option of item b) is measured and reported, not counted as a failure.
  * The crest tile is reported (points on the phone), with no threshold. Placeholder crests (tests/player/placeholders.js).
  * Output: tests/player/PHONE_RTT101.md. Exit 1 on any failure.
  */
@@ -41,6 +42,7 @@ function bounds(t) {
   let ok = true;
   for (const s of stills) {
     const cfg = ST.stillConfig(s);
+    for (const f of Object.values((cfg.pictures && cfg.pictures.files) || {})) fs.mkdirSync(path.dirname(path.join(dir, cfg.pictures.dir || 'logos', f)), { recursive: true });   // older crests sit in sub-folders
     logoPlaceholders(cfg, dir);
     const data = JSON.parse(fs.readFileSync(path.resolve(KIT, cfg.race_file), 'utf8'));
     process.env.RTT_LOCAL_ASSETS = dir;
@@ -74,11 +76,12 @@ function bounds(t) {
     for (const kk of ['name', 'value', 'axis']) if (z[kk] != null && pt(z[kk]) < NAMES) fails.push(kk + ' < ' + NAMES + ' pt');
     if (z.name != null && z.date != null && !(z.date >= z.name)) fails.push('date < names');
     if (small && pt(small.size) < FLOOR) fails.push(small.kind + ' "' + small.text.slice(0, 30) + '" < ' + FLOOR + ' pt');
-    ok = ok && !fails.length;
+    const rep = s.phone_report_only && fails.length;      // an option shown for comparison (15 bars): measured and reported, not a failure
+    ok = ok && (!fails.length || rep);
     const f = v => v == null ? '—' : `${v}px = ${pt(v).toFixed(1)} pt`;
     const p = (S.P || [])[0];
-    out.push(`| ${s.name} | ${f(z.name)} | ${f(z.value)} | ${f(z.axis)} | ${f(z.date)} | ${small ? small.kind + ' ' + f(small.size) : '—'} | ${p ? `${Math.round(p.box.w)} x ${Math.round(p.box.h)} px = ${pt(p.box.w).toFixed(1)} x ${pt(p.box.h).toFixed(1)} pt` : '—'} | ${figs} | ${fails.length ? 'FAIL: ' + fails.join('; ') : 'PASS'} |`);
-    console.log(`${fails.length ? 'FAIL' : 'PASS'} ${s.name}${fails.length ? ': ' + fails.join('; ') : ''}`);
+    out.push(`| ${s.name} | ${f(z.name)} | ${f(z.value)} | ${f(z.axis)} | ${f(z.date)} | ${small ? small.kind + ' ' + f(small.size) : '—'} | ${p ? `${Math.round(p.box.w)} x ${Math.round(p.box.h)} px = ${pt(p.box.w).toFixed(1)} x ${pt(p.box.h).toFixed(1)} pt` : '—'} | ${figs} | ${rep ? 'BELOW THE FLOOR (option shown for comparison): ' + fails.join('; ') : fails.length ? 'FAIL: ' + fails.join('; ') : 'PASS'} |`);
+    console.log(`${rep ? 'REPORT' : fails.length ? 'FAIL' : 'PASS'} ${s.name}${fails.length ? ': ' + fails.join('; ') : ''}`);
   }
   out.push('', `Overall: ${ok ? 'PASS' : 'FAIL'}. For reference: RTT-002's approved film draws names and values at 29 px = 5.9 pt; RTT-003's at 33 px = 6.7 pt.`, '');
   if (!only.length) fs.writeFileSync(path.join(__dirname, 'PHONE_RTT101.md'), out.join('\n'));

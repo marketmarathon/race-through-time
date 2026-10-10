@@ -158,7 +158,8 @@
     "pacing": {
      "judge_rows": 15
     }
-   }
+   },
+   "phone_report_only": true
   },
   {
    "name": "b_15_201508",
@@ -169,7 +170,8 @@
     "pacing": {
      "judge_rows": 15
     }
-   }
+   },
+   "phone_report_only": true
   },
   {
    "name": "b_15_freeze",
@@ -180,7 +182,8 @@
     "pacing": {
      "judge_rows": 15
     }
-   }
+   },
+   "phone_report_only": true
   },
   {
    "name": "c_compact_freeze",
