@@ -1,0 +1,58 @@
+{
+ "extends": "config_rtt101_base.json",
+ "kit_version": "rtt101_round1_story_card",
+ "story": {
+  "enabled": true,
+  "mode": "card",
+  "sec": 3.5,
+  "size": 30,
+  "card": {
+   "x": 1380,
+   "y": 300,
+   "w": 500,
+   "size": "names"
+  },
+  "items": [
+   {
+    "at": "2002-07-31",
+    "when": "Summer 2002",
+    "who": "Premier League",
+    "text": "Transfer windows begin: from 2002–03, deals only in summer and January",
+    "short": "Transfer windows begin: deals only in summer and January",
+    "tag": "rule change"
+   },
+   {
+    "at": "2003-07-31",
+    "when": "1 July 2003",
+    "who": "Chelsea",
+    "text": "Sale to Roman Abramovich announced",
+    "short": "Chelsea sold to Roman Abramovich",
+    "tag": "ownership"
+   },
+   {
+    "at": "2008-09-30",
+    "when": "1 September 2008",
+    "who": "Manchester City",
+    "text": "Takeover by Abu Dhabi United Group agreed",
+    "short": "Manchester City: Abu Dhabi United Group takeover agreed",
+    "tag": "ownership"
+   },
+   {
+    "at": "2021-10-31",
+    "when": "7 October 2021",
+    "who": "Newcastle United",
+    "text": "Acquisition by PIF, PCP Capital Partners and RB Sports & Media completed",
+    "short": "Newcastle United: PIF-led acquisition completed",
+    "tag": "ownership"
+   },
+   {
+    "at": "2022-05-31",
+    "when": "30 May 2022",
+    "who": "Chelsea",
+    "text": "Consortium led by Todd Boehly and Clearlake Capital completes its acquisition",
+    "short": "Chelsea: Boehly–Clearlake consortium completes its purchase",
+    "tag": "ownership"
+   }
+  ]
+ }
+}

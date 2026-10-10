@@ -1,6 +1,7 @@
 /* RTT-101 colours (IQ-21, design round 1, item e). Two options for Luke, both one colour per club for the whole film:
  *   kit       each club's own kit colour family (kit_colours.json: the main colour, plus a second colour), with the shade
- *             moved inside that family (lightness and chroma, hue within ±12°) where two clubs that share the board would
+ *             moved inside that family (lightness and chroma, hue within ±12°, at most CIEDE2000 8 from the kit colour, so it
+ *             still reads as that colour) where two clubs that share the board would
  *             otherwise be closer than CIEDE2000 18; a pair still closer gets the second club's second colour as an
  *             edge along its bar (player key bar_edge);
  *   distinct  a palette of clearly different colours (the RTT-002 family), each club taking the first colour at least
@@ -17,7 +18,7 @@ const T = require('../rtt-002/rtt_timeline.js');
 const K = __dirname, ROOT = path.resolve(K, '..', '..');
 const race = JSON.parse(fs.readFileSync(path.join(K, 'race_rtt101.json'), 'utf8'));
 const KIT = JSON.parse(fs.readFileSync(path.join(K, 'kit_colours.json'), 'utf8')).clubs;
-const MIN = 18, CB_MIN = +(process.env.CB_MIN || 0);
+const KIT_SHIFT = 8, MIN = 18, CB_MIN = +(process.env.CB_MIN || 0);
 const MAT = { protan: [[0.152286,1.052583,-0.204868],[0.114503,0.786281,0.099216],[-0.003882,-0.048116,1.051998]],
               deutan: [[0.367322,0.860646,-0.227968],[0.280085,0.672501,0.047413],[-0.011820,0.042940,0.968881]] };
 const lin = c => { c /= 255; return c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4); };
@@ -127,7 +128,7 @@ function assign(kind, n) {
   }
   if (!Object.keys(pick).length) for (const id of order) {
     const nb = [...(adj[id] || [])].filter(m => m in pick);
-    const cands = kind === 'kit' ? shades(KIT[id].main) : DISTINCT;
+    const cands = kind === 'kit' ? shades(KIT[id].main).filter(c => dE(c, KIT[id].main) <= KIT_SHIFT) : DISTINCT;   // a shade stays recognisably the kit colour
     let best = null, bestScore = -1;
     for (const [i, c] of cands.entries()) {
       const m = nb.length ? Math.min(...nb.map(o => dE(c, pick[o]))) : 99;

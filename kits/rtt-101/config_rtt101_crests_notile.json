@@ -1,0 +1,8 @@
+{
+ "extends": "config_rtt101_base.json",
+ "kit_version": "rtt101_round1_crests_notile",
+ "pictures": {
+  "tile": false,
+  "height_frac": 1.0
+ }
+}

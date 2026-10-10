@@ -8,6 +8,6 @@
  },
  "pacing": {
   "lead_in_sec": 1,
-  "final_board_sec": 2
+  "final_after_landing_sec": 2
  }
 }

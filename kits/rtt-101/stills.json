@@ -1,1 +1,769 @@
-{"stills":[{"name":"t_jun2003","config":"config_rtt101_base.json","at":"2003-06-30"},{"name":"t_final","config":"config_rtt101_base.json","at":"final"}]}
+{
+ "stills": [
+  {
+   "name": "rep_199207",
+   "config": "config_rtt101_base.json",
+   "at": "1992-07-31"
+  },
+  {
+   "name": "rep_199308",
+   "config": "config_rtt101_base.json",
+   "at": "1993-08-31"
+  },
+  {
+   "name": "rep_200006",
+   "config": "config_rtt101_base.json",
+   "at": "2000-06-30"
+  },
+  {
+   "name": "rep_200306",
+   "config": "config_rtt101_base.json",
+   "at": "2003-06-30"
+  },
+  {
+   "name": "rep_200808",
+   "config": "config_rtt101_base.json",
+   "at": "2008-08-31"
+  },
+  {
+   "name": "rep_201508",
+   "config": "config_rtt101_base.json",
+   "at": "2015-08-31"
+  },
+  {
+   "name": "rep_201607",
+   "config": "config_rtt101_base.json",
+   "at": "2016-07-31"
+  },
+  {
+   "name": "rep_202209",
+   "config": "config_rtt101_base.json",
+   "at": "2022-09-30"
+  },
+  {
+   "name": "rep_freeze",
+   "config": "config_rtt101_base.json",
+   "at": "final"
+  },
+  {
+   "name": "a_title_A",
+   "config": "config_rtt101_base.json",
+   "at": "2008-08-31",
+   "overrides": {
+    "title": "Premier League Net Transfer Spend (1992–2026)",
+    "subline": {
+     "text": "Reported transfer fees paid minus fees received · undisclosed fees not included"
+    }
+   }
+  },
+  {
+   "name": "a_title_B",
+   "config": "config_rtt101_base.json",
+   "at": "2008-08-31",
+   "overrides": {
+    "title": "The Premier League's Biggest Spenders (1992–2026)",
+    "subline": {
+     "text": "Net spend on reported transfer fees, since 1992 · undisclosed fees not included"
+    }
+   }
+  },
+  {
+   "name": "a_title_C",
+   "config": "config_rtt101_base.json",
+   "at": "2008-08-31",
+   "overrides": {
+    "title": "Premier League Spending Race (1992–2026)",
+    "subline": {
+     "text": "Net spend on reported transfer fees: paid minus received · undisclosed fees not included"
+    }
+   }
+  },
+  {
+   "name": "a_undisclosed_footer",
+   "config": "config_rtt101_footer_undisclosed.json",
+   "at": "2008-08-31"
+  },
+  {
+   "name": "b_10_200306",
+   "config": "config_rtt101_base.json",
+   "at": "2003-06-30",
+   "overrides": {
+    "rows": 10,
+    "pacing": {
+     "judge_rows": 10
+    }
+   }
+  },
+  {
+   "name": "b_10_201508",
+   "config": "config_rtt101_base.json",
+   "at": "2015-08-31",
+   "overrides": {
+    "rows": 10,
+    "pacing": {
+     "judge_rows": 10
+    }
+   }
+  },
+  {
+   "name": "b_10_freeze",
+   "config": "config_rtt101_base.json",
+   "at": "final",
+   "overrides": {
+    "rows": 10,
+    "pacing": {
+     "judge_rows": 10
+    }
+   }
+  },
+  {
+   "name": "b_12_200306",
+   "config": "config_rtt101_base.json",
+   "at": "2003-06-30",
+   "overrides": {
+    "rows": 12,
+    "pacing": {
+     "judge_rows": 12
+    }
+   }
+  },
+  {
+   "name": "b_12_201508",
+   "config": "config_rtt101_base.json",
+   "at": "2015-08-31",
+   "overrides": {
+    "rows": 12,
+    "pacing": {
+     "judge_rows": 12
+    }
+   }
+  },
+  {
+   "name": "b_12_freeze",
+   "config": "config_rtt101_base.json",
+   "at": "final",
+   "overrides": {
+    "rows": 12,
+    "pacing": {
+     "judge_rows": 12
+    }
+   }
+  },
+  {
+   "name": "b_15_200306",
+   "config": "config_rtt101_base.json",
+   "at": "2003-06-30",
+   "overrides": {
+    "rows": 15,
+    "pacing": {
+     "judge_rows": 15
+    }
+   }
+  },
+  {
+   "name": "b_15_201508",
+   "config": "config_rtt101_base.json",
+   "at": "2015-08-31",
+   "overrides": {
+    "rows": 15,
+    "pacing": {
+     "judge_rows": 15
+    }
+   }
+  },
+  {
+   "name": "b_15_freeze",
+   "config": "config_rtt101_base.json",
+   "at": "final",
+   "overrides": {
+    "rows": 15,
+    "pacing": {
+     "judge_rows": 15
+    }
+   }
+  },
+  {
+   "name": "c_compact_freeze",
+   "config": "config_rtt101_base.json",
+   "at": "final"
+  },
+  {
+   "name": "c_m1_freeze",
+   "config": "config_rtt101_base.json",
+   "at": "final",
+   "overrides": {
+    "values": {
+     "net": {
+      "style": "m1"
+     }
+    }
+   }
+  },
+  {
+   "name": "c_compact_199308",
+   "config": "config_rtt101_base.json",
+   "at": "1993-08-31"
+  },
+  {
+   "name": "c_extra_199308",
+   "config": "config_rtt101_base.json",
+   "at": "1993-08-31",
+   "overrides": {
+    "values": {
+     "net": {
+      "ties": "extra"
+     }
+    }
+   }
+  },
+  {
+   "name": "c_compact_200808",
+   "config": "config_rtt101_base.json",
+   "at": "2008-08-31"
+  },
+  {
+   "name": "c_extra_200808",
+   "config": "config_rtt101_base.json",
+   "at": "2008-08-31",
+   "overrides": {
+    "values": {
+     "net": {
+      "ties": "extra"
+     }
+    }
+   }
+  },
+  {
+   "name": "c_m1_200808",
+   "config": "config_rtt101_base.json",
+   "at": "2008-08-31",
+   "overrides": {
+    "values": {
+     "net": {
+      "style": "m1"
+     }
+    }
+   }
+  },
+  {
+   "name": "d_relegated_200908",
+   "config": "config_rtt101_base.json",
+   "at": "2009-08-31"
+  },
+  {
+   "name": "d_notpl_200908",
+   "config": "config_rtt101_base.json",
+   "at": "2009-08-31",
+   "overrides": {
+    "status": {
+     "out": "not in the PL"
+    }
+   }
+  },
+  {
+   "name": "d_dimonly_200908",
+   "config": "config_rtt101_base.json",
+   "at": "2009-08-31",
+   "overrides": {
+    "status": {
+     "out": ""
+    }
+   }
+  },
+  {
+   "name": "d_back_201008",
+   "config": "config_rtt101_base.json",
+   "at": "2010-08-31"
+  },
+  {
+   "name": "e_distinct_201708",
+   "config": "config_rtt101_base.json",
+   "at": "2017-08-31"
+  },
+  {
+   "name": "e_kit_201708",
+   "config": "config_rtt101_colours_kit.json",
+   "at": "2017-08-31"
+  },
+  {
+   "name": "e_distinct_201708_protan",
+   "config": "config_rtt101_base.json",
+   "at": "2017-08-31",
+   "cvd": "protan"
+  },
+  {
+   "name": "e_kit_201708_protan",
+   "config": "config_rtt101_colours_kit.json",
+   "at": "2017-08-31",
+   "cvd": "protan"
+  },
+  {
+   "name": "e_distinct_201708_deutan",
+   "config": "config_rtt101_base.json",
+   "at": "2017-08-31",
+   "cvd": "deutan"
+  },
+  {
+   "name": "e_kit_201708_deutan",
+   "config": "config_rtt101_colours_kit.json",
+   "at": "2017-08-31",
+   "cvd": "deutan"
+  },
+  {
+   "name": "e_distinct_freeze",
+   "config": "config_rtt101_base.json",
+   "at": "final"
+  },
+  {
+   "name": "e_kit_freeze",
+   "config": "config_rtt101_colours_kit.json",
+   "at": "final"
+  },
+  {
+   "name": "e_crest_today_200306",
+   "config": "config_rtt101_base.json",
+   "at": "2003-06-30"
+  },
+  {
+   "name": "e_crest_dated_200306",
+   "config": "config_rtt101_crests_dated.json",
+   "at": "2003-06-30"
+  },
+  {
+   "name": "e_crest_today_199508",
+   "config": "config_rtt101_base.json",
+   "at": "1995-08-31"
+  },
+  {
+   "name": "e_crest_dated_199508",
+   "config": "config_rtt101_crests_dated.json",
+   "at": "1995-08-31"
+  },
+  {
+   "name": "e_crest_tile_201508",
+   "config": "config_rtt101_base.json",
+   "at": "2015-08-31"
+  },
+  {
+   "name": "e_crest_notile_201508",
+   "config": "config_rtt101_crests_notile.json",
+   "at": "2015-08-31"
+  },
+  {
+   "name": "g_A_total_201508",
+   "config": "config_rtt101_base.json",
+   "at": "2015-08-31"
+  },
+  {
+   "name": "g_B_avg_201508",
+   "config": "config_rtt101_panel_avg.json",
+   "at": "2015-08-31"
+  },
+  {
+   "name": "g_C_none_201508",
+   "config": "config_rtt101_base.json",
+   "at": "2015-08-31",
+   "overrides": {
+    "combined": {
+     "enabled": false
+    }
+   }
+  },
+  {
+   "name": "h_A_closing_view",
+   "config": "config_rtt101_closing_avg.json",
+   "step": 0,
+   "step_sec": 3
+  },
+  {
+   "name": "i_card_200307",
+   "config": "config_rtt101_story_card.json",
+   "at": "2003-07-31",
+   "card": true,
+   "after_sec": 0.4
+  },
+  {
+   "name": "i_line_200307",
+   "config": "config_rtt101_story_line.json",
+   "at": "2003-07-31",
+   "after_sec": 0.4
+  },
+  {
+   "name": "i_none_200307",
+   "config": "config_rtt101_base.json",
+   "at": "2003-07-31"
+  },
+  {
+   "name": "i_card_200809",
+   "config": "config_rtt101_story_card.json",
+   "at": "2008-09-30",
+   "card": true,
+   "after_sec": 0.4
+  },
+  {
+   "name": "j_note_freeze",
+   "config": "config_rtt101_final_note.json",
+   "at": "final"
+  },
+  {
+   "name": "j_none_freeze",
+   "config": "config_rtt101_base.json",
+   "at": "final"
+  },
+  {
+   "name": "rep",
+   "compose": {
+    "title": "Representative boards in the base look (Claude's recommendation for each item; preview figures)",
+    "cols": 3,
+    "items": [
+     {
+      "still": "rep_199207",
+      "caption": "July 1992: the first board"
+     },
+     {
+      "still": "rep_199308",
+      "caption": "August 1993: Blackburn £0.005m ahead of Villa"
+     },
+     {
+      "still": "rep_200006",
+      "caption": "June 2000: Liverpool £0.17m ahead of Chelsea"
+     },
+     {
+      "still": "rep_200306",
+      "caption": "June 2003"
+     },
+     {
+      "still": "rep_200808",
+      "caption": "August 2008"
+     },
+     {
+      "still": "rep_201508",
+      "caption": "August 2015"
+     },
+     {
+      "still": "rep_201607",
+      "caption": "July 2016"
+     },
+     {
+      "still": "rep_202209",
+      "caption": "September 2022"
+     },
+     {
+      "still": "rep_freeze",
+      "caption": "1 September 2026: the freeze (final table)"
+     }
+    ]
+   }
+  },
+  {
+   "name": "a",
+   "compose": {
+    "title": "a. Title and the line under it (\"undisclosed fees not included\" on screen all film)",
+    "cols": 2,
+    "items": [
+     {
+      "still": "a_title_A",
+      "caption": "A: Premier League Net Transfer Spend (recommended)"
+     },
+     {
+      "still": "a_title_B",
+      "caption": "B: The Premier League's Biggest Spenders"
+     },
+     {
+      "still": "a_title_C",
+      "caption": "C: Premier League Spending Race"
+     },
+     {
+      "still": "a_undisclosed_footer",
+      "caption": "A with \"undisclosed fees not included\" in the footer instead"
+     }
+    ]
+   }
+  },
+  {
+   "name": "b",
+   "compose": {
+    "title": "b. Board size at phone size: 10, 12 and 15 bars (June 2003, August 2015, the freeze)",
+    "cols": 3,
+    "phone": true,
+    "items": [
+     {
+      "still": "b_10_200306",
+      "caption": "10 bars · June 2003"
+     },
+     {
+      "still": "b_10_201508",
+      "caption": "10 bars · August 2015"
+     },
+     {
+      "still": "b_10_freeze",
+      "caption": "10 bars · freeze"
+     },
+     {
+      "still": "b_12_200306",
+      "caption": "12 bars · June 2003"
+     },
+     {
+      "still": "b_12_201508",
+      "caption": "12 bars · August 2015"
+     },
+     {
+      "still": "b_12_freeze",
+      "caption": "12 bars · freeze"
+     },
+     {
+      "still": "b_15_200306",
+      "caption": "15 bars · June 2003"
+     },
+     {
+      "still": "b_15_201508",
+      "caption": "15 bars · August 2015"
+     },
+     {
+      "still": "b_15_freeze",
+      "caption": "15 bars · freeze"
+     }
+    ]
+   }
+  },
+  {
+   "name": "c",
+   "compose": {
+    "title": "c. Value labels: compact (£1.74bn / £683m / £45.3m) vs millions with one decimal; near-ties",
+    "cols": 2,
+    "items": [
+     {
+      "still": "c_compact_freeze",
+      "caption": "compact (recommended) · freeze"
+     },
+     {
+      "still": "c_m1_freeze",
+      "caption": "£m with one decimal · freeze"
+     },
+     {
+      "still": "c_compact_199308",
+      "caption": "compact · Aug 1993: Blackburn and Villa both read £5.5m"
+     },
+     {
+      "still": "c_extra_199308",
+      "caption": "one more decimal while two neighbours read the same"
+     },
+     {
+      "still": "c_compact_200808",
+      "caption": "compact · Aug 2008: Villa and Newcastle both read £111m"
+     },
+     {
+      "still": "c_extra_200808",
+      "caption": "one more decimal: £111.4m / £111.1m"
+     }
+    ]
+   }
+  },
+  {
+   "name": "d",
+   "compose": {
+    "title": "d. Clubs outside the Premier League: Newcastle relegated in 2009, back in 2010",
+    "cols": 2,
+    "items": [
+     {
+      "still": "d_relegated_200908",
+      "caption": "dimmed + \"· relegated 2009\" (recommended)"
+     },
+     {
+      "still": "d_notpl_200908",
+      "caption": "dimmed + \"· not in the PL\""
+     },
+     {
+      "still": "d_dimonly_200908",
+      "caption": "dimmed only"
+     },
+     {
+      "still": "d_back_201008",
+      "caption": "August 2010: back in the league, full colour"
+     }
+    ]
+   }
+  },
+  {
+   "name": "e_colours",
+   "compose": {
+    "title": "e. Colours on the busiest board (August 2017) and the freeze: kit colours vs a distinct palette",
+    "cols": 2,
+    "items": [
+     {
+      "still": "e_kit_201708",
+      "caption": "kit colours, closest pairs shaded or edged"
+     },
+     {
+      "still": "e_distinct_201708",
+      "caption": "distinct palette (CIEDE2000 >= 18 for every pair)"
+     },
+     {
+      "still": "e_kit_freeze",
+      "caption": "kit colours · freeze"
+     },
+     {
+      "still": "e_distinct_freeze",
+      "caption": "distinct palette · freeze"
+     }
+    ]
+   }
+  },
+  {
+   "name": "e_colourblind",
+   "compose": {
+    "title": "e. Colour-blind check (simulated): August 2017",
+    "cols": 2,
+    "items": [
+     {
+      "still": "e_kit_201708_protan",
+      "caption": "kit · protanopia"
+     },
+     {
+      "still": "e_distinct_201708_protan",
+      "caption": "distinct · protanopia"
+     },
+     {
+      "still": "e_kit_201708_deutan",
+      "caption": "kit · deuteranopia"
+     },
+     {
+      "still": "e_distinct_201708_deutan",
+      "caption": "distinct · deuteranopia"
+     }
+    ]
+   }
+  },
+  {
+   "name": "e_crests",
+   "compose": {
+    "title": "e. Crests: today's crest throughout vs the crest in use at the date (files found for some clubs only)",
+    "cols": 2,
+    "items": [
+     {
+      "still": "e_crest_today_200306",
+      "caption": "June 2003 · today's crests"
+     },
+     {
+      "still": "e_crest_dated_200306",
+      "caption": "June 2003 · crest in use then, where a dated file was found"
+     },
+     {
+      "still": "e_crest_today_199508",
+      "caption": "August 1995 · today's crests"
+     },
+     {
+      "still": "e_crest_dated_199508",
+      "caption": "August 1995 · crest in use then, where found"
+     },
+     {
+      "still": "e_crest_tile_201508",
+      "caption": "crest on a light tile (house style)"
+     },
+     {
+      "still": "e_crest_notile_201508",
+      "caption": "crest alone, a little larger"
+     }
+    ]
+   }
+  },
+  {
+   "name": "e_crests_phone",
+   "compose": {
+    "title": "e. Crests at phone size",
+    "cols": 2,
+    "phone": true,
+    "items": [
+     {
+      "still": "e_crest_tile_201508",
+      "caption": "light tile"
+     },
+     {
+      "still": "e_crest_notile_201508",
+      "caption": "no tile"
+     }
+    ]
+   }
+  },
+  {
+   "name": "g",
+   "compose": {
+    "title": "g. Bottom-right panel (August 2015)",
+    "cols": 3,
+    "items": [
+     {
+      "still": "g_A_total_201508",
+      "caption": "A: all PL clubs' net spend, with its line (recommended)"
+     },
+     {
+      "still": "g_B_avg_201508",
+      "caption": "B: the leader's average per PL season (2026 £)"
+     },
+     {
+      "still": "g_C_none_201508",
+      "caption": "C: nothing"
+     }
+    ]
+   }
+  },
+  {
+   "name": "h",
+   "compose": {
+    "title": "h. The secondary statistic as one closing view after the final table (option A)",
+    "cols": 2,
+    "items": [
+     {
+      "still": "j_none_freeze",
+      "caption": "the final table (held 5 s)"
+     },
+     {
+      "still": "h_A_closing_view",
+      "caption": "then the closing view, 6 s: average per PL season, 2026 £"
+     }
+    ]
+   }
+  },
+  {
+   "name": "i",
+   "compose": {
+    "title": "i. Story moments (layout only: every candidate is still UNVERIFIED and would not be shown)",
+    "cols": 2,
+    "items": [
+     {
+      "still": "i_card_200307",
+      "caption": "story card (RTT-103 style)"
+     },
+     {
+      "still": "i_line_200307",
+      "caption": "one line under the title for 3 s"
+     },
+     {
+      "still": "i_none_200307",
+      "caption": "none"
+     },
+     {
+      "still": "i_card_200809",
+      "caption": "story card · September 2008"
+     }
+    ]
+   }
+  },
+  {
+   "name": "j",
+   "compose": {
+    "title": "j. The final table at the freeze, held 5 s",
+    "cols": 2,
+    "items": [
+     {
+      "still": "j_note_freeze",
+      "caption": "with \"Figures will be updated after the January 2027 window\""
+     },
+     {
+      "still": "j_none_freeze",
+      "caption": "without (the note in the description only; recommended)"
+     }
+    ]
+   }
+  }
+ ]
+}

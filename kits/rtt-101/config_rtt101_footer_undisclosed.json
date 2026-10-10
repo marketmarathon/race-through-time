@@ -1,0 +1,8 @@
+{
+ "extends": "config_rtt101_base.json",
+ "kit_version": "rtt101_round1_footer_undisclosed",
+ "subline": {
+  "text": "Reported transfer fees paid minus fees received"
+ },
+ "footer": "Race Through Time · Reported transfer fees from club statements and press reports; CPI: ONS; exchange rates: Bank of England · Undisclosed fees not included"
+}

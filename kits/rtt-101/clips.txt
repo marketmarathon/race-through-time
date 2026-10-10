@@ -1,0 +1,4 @@
+config_rtt101_clip_paceA_2003_2004.json
+config_rtt101_clip_paceB_2003_2004.json
+config_rtt101_clip_paceC_2003_2004.json
+config_rtt101_clip_relegation_2009_2010.json

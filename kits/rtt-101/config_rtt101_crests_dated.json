@@ -1,0 +1,93 @@
+{
+ "extends": "config_rtt101_base.json",
+ "kit_version": "rtt101_round1_crests_dated",
+ "pictures": {
+  "files": {
+   "arsenal_1990": "candidates/arsenal/04_Arsenal_Crest_1990_1993.svg",
+   "arsenal_1994": "candidates/arsenal/05_Arsenal_Crest_1994_1995.svg",
+   "arsenal_1996": "candidates/arsenal/06_Arsenal_Crest_1996_2001.svg",
+   "arsenal_2001": "candidates/arsenal/10_Arsenal_FC_logo_2001_2002.svg",
+   "everton_2000": "candidates/everton/01_Everton_FC_Crest_2000_13.svg",
+   "everton_2013": "candidates/everton/02_Everton_FC_Crest_2013_14.svg",
+   "middlesbrough_old": "candidates/middlesbrough/01_Middlesbrough_crest_old.png",
+   "tottenham_old": "candidates/tottenham_hotspur/02_Tottenham_Hotspur_old_logo.png",
+   "west_ham_old": "candidates/west_ham/03_WestHamPreviousLogo.png",
+   "sunderland_1972": "candidates/sunderland/01_SAFC1972_97crest.svg",
+   "stoke_2001": "candidates/stoke_city/02_Stoke_City_FC_crest_2001.svg",
+   "sheffield_wednesday_old": "candidates/sheffield_wednesday/02_Sheffield_Wednesday_badge.svg"
+  },
+  "switch": {
+   "arsenal": [
+    {
+     "until": "1993-06-30",
+     "key": "arsenal_1990",
+     "from": "1990-01-01"
+    },
+    {
+     "until": "1995-06-30",
+     "key": "arsenal_1994"
+    },
+    {
+     "until": "2001-06-30",
+     "key": "arsenal_1996"
+    },
+    {
+     "until": "2002-05-31",
+     "key": "arsenal_2001"
+    }
+   ],
+   "sunderland": [
+    {
+     "until": "1997-06-30",
+     "key": "sunderland_1972"
+    }
+   ],
+   "tottenham_hotspur": [
+    {
+     "until": "2006-06-30",
+     "key": "tottenham_old",
+     "from": "2000-01-01"
+    }
+   ],
+   "middlesbrough": [
+    {
+     "until": "2007-06-30",
+     "key": "middlesbrough_old"
+    }
+   ],
+   "everton": [
+    {
+     "until": "2013-06-30",
+     "key": "everton_2000",
+     "from": "2000-07-01"
+    },
+    {
+     "until": "2014-06-30",
+     "key": "everton_2013",
+     "from": "2013-07-01"
+    }
+   ],
+   "west_ham": [
+    {
+     "until": "2016-06-30",
+     "key": "west_ham_old",
+     "from": "2000-01-01"
+    }
+   ],
+   "stoke_city": [
+    {
+     "until": "2026-06-30",
+     "key": "stoke_2001",
+     "from": "2001-07-01"
+    }
+   ],
+   "sheffield_wednesday": [
+    {
+     "until": "2026-06-30",
+     "key": "sheffield_wednesday_old",
+     "from": "2016-07-01"
+    }
+   ]
+  }
+ }
+}

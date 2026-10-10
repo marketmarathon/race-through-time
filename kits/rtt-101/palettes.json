@@ -150,15 +150,15 @@
     ],
     [
      "chelsea",
-     "qpr",
-     7,
-     6
-    ],
-    [
-     "chelsea",
      "west_brom",
      9.1,
      8.1
+    ],
+    [
+     "chelsea",
+     "qpr",
+     7,
+     6
     ],
     [
      "manchester_united",
@@ -270,15 +270,15 @@
     ],
     [
      "everton",
-     "qpr",
-     13.3,
-     9.5
-    ],
-    [
-     "everton",
      "west_brom",
      7.6,
      7.4
+    ],
+    [
+     "everton",
+     "qpr",
+     13.3,
+     9.5
     ],
     [
      "arsenal",
@@ -324,15 +324,15 @@
     ],
     [
      "arsenal",
-     "charlton_athletic",
-     7.2,
-     6.4
-    ],
-    [
-     "arsenal",
      "nottingham_forest",
      3.9,
      2.9
+    ],
+    [
+     "arsenal",
+     "charlton_athletic",
+     7.2,
+     6.4
     ],
     [
      "arsenal",
@@ -353,6 +353,12 @@
      4.2
     ],
     [
+     "tottenham_hotspur",
+     "west_brom",
+     4.7,
+     3.9
+    ],
+    [
      "leicester_city",
      "sheffield_wednesday",
      17.2,
@@ -371,18 +377,6 @@
      6.1
     ],
     [
-     "oldham_athletic",
-     "sheffield_wednesday",
-     7.2,
-     6.1
-    ],
-    [
-     "oldham_athletic",
-     "qpr",
-     2,
-     1.9
-    ],
-    [
      "fulham",
      "newcastle_united",
      7.5,
@@ -393,6 +387,18 @@
      "manchester_city",
      17.1,
      16.8
+    ],
+    [
+     "oldham_athletic",
+     "sheffield_wednesday",
+     7.2,
+     6.1
+    ],
+    [
+     "oldham_athletic",
+     "qpr",
+     2,
+     1.9
     ],
     [
      "stoke_city",
@@ -429,6 +435,36 @@
      "qpr",
      3.7,
      3.4
+    ],
+    [
+     "birmingham_city",
+     "chelsea",
+     3.8,
+     1.2
+    ],
+    [
+     "birmingham_city",
+     "everton",
+     3.9,
+     2.9
+    ],
+    [
+     "birmingham_city",
+     "tottenham_hotspur",
+     11.8,
+     11.3
+    ],
+    [
+     "birmingham_city",
+     "leicester_city",
+     4.6,
+     3.9
+    ],
+    [
+     "birmingham_city",
+     "west_brom",
+     7.7,
+     7.6
     ],
     [
      "bournemouth",
@@ -473,24 +509,6 @@
      3.8
     ],
     [
-     "birmingham_city",
-     "chelsea",
-     3.8,
-     1.2
-    ],
-    [
-     "birmingham_city",
-     "everton",
-     3.9,
-     2.9
-    ],
-    [
-     "birmingham_city",
-     "tottenham_hotspur",
-     11.8,
-     11.3
-    ],
-    [
      "crystal_palace",
      "everton",
      6.4,
@@ -528,15 +546,21 @@
     ],
     [
      "crystal_palace",
+     "west_brom",
+     8.2,
+     7.8
+    ],
+    [
+     "crystal_palace",
      "qpr",
      7.8,
      6.1
     ],
     [
-     "crystal_palace",
-     "west_brom",
-     8.2,
-     7.8
+     "nottingham_forest",
+     "sunderland",
+     7,
+     3.9
     ],
     [
      "charlton_athletic",
@@ -561,12 +585,6 @@
      "sunderland",
      5.7,
      4.6
-    ],
-    [
-     "nottingham_forest",
-     "sunderland",
-     7,
-     3.9
     ],
     [
      "qpr",
@@ -597,328 +615,392 @@
      "leicester_city",
      3.6,
      2.6
+    ],
+    [
+     "hull_city",
+     "wolves",
+     6.2,
+     1.6
     ]
    ]
   },
   "kit": {
    "palette": [
-    "#8E3200",
+    "#D64414",
     "#7A003C",
     "#D71920",
-    "#312384",
-    "#055F7E",
+    "#47529A",
+    "#009EE0",
     "#F68712",
-    "#604B7F",
-    "#9F3E2D",
+    "#163365",
+    "#C00008",
     "#8B1A3A",
     "#E30613",
     "#0057B8",
     "#6C1D45",
     "#0070B5",
-    "#6E070B",
+    "#BE3A22",
     "#034694",
-    "#0BA1B2",
-    "#757BCE",
+    "#30CFE3",
+    "#3C437E",
     "#3C3C3C",
-    "#8A60CF",
+    "#302878",
     "#828282",
     "#0E63AD",
-    "#F5A12D",
-    "#555FA0",
+    "#E0AB1F",
+    "#4C658A",
     "#FFCD00",
-    "#411F91",
+    "#403AAE",
     "#C8102E",
     "#F78F1E",
     "#6CABDD",
-    "#E75609",
-    "#EF4B5C",
+    "#F4442F",
+    "#E11B22",
     "#5A5A5A",
     "#00A650",
-    "#FE1C2B",
-    "#2D315E",
+    "#DD0000",
+    "#2F68BB",
     "#001489",
-    "#209DF4",
+    "#0F5F96",
     "#004494",
-    "#F1896A",
-    "#A3A1CD",
+    "#F21845",
+    "#5F61A5",
     "#D71920",
-    "#860015",
-    "#F28168",
+    "#CC5240",
+    "#DB3946",
     "#8A8A8A",
-    "#D2645A",
-    "#3A2F4F",
+    "#C00008",
+    "#303253",
     "#FBEE23",
-    "#585176",
-    "#A44E6C",
+    "#122F67",
+    "#673737",
     "#1D59AF",
     "#1A3D8F",
-    "#FCB771"
+    "#F09D3D"
    ],
    "bar_edge": {
+    "manchester_united": "#FBE122",
     "middlesbrough": "#FFFFFF",
     "sunderland": "#FFFFFF",
-    "west_ham": "#1BB1E7",
     "stoke_city": "#FFFFFF",
     "swindon_town": "#FFFFFF",
     "nottingham_forest": "#FFFFFF",
     "sheffield_united": "#FFFFFF",
+    "everton": "#FFFFFF",
+    "sheffield_wednesday": "#FFFFFF",
+    "tottenham_hotspur": "#FFFFFF",
     "leicester_city": "#FDBE11",
     "oldham_athletic": "#FFFFFF",
     "ipswich_town": "#FFFFFF",
+    "crystal_palace": "#C4122E",
     "west_brom": "#FFFFFF",
-    "sheffield_wednesday": "#FFFFFF",
     "qpr": "#FFFFFF",
     "wolves": "#231F20",
     "blackburn_rovers": "#FFFFFF",
-    "charlton_athletic": "#FFFFFF",
+    "coventry_city": "#FFFFFF",
+    "west_ham": "#1BB1E7",
     "arsenal": "#FFFFFF",
     "bournemouth": "#000000",
+    "charlton_athletic": "#FFFFFF",
     "fulham": "#CC0000",
-    "coventry_city": "#FFFFFF",
     "birmingham_city": "#FFFFFF",
-    "crystal_palace": "#C4122E",
-    "bolton_wanderers": "#FFFFFF"
+    "bolton_wanderers": "#FFFFFF",
+    "hull_city": "#000000"
    },
    "fails": [
     [
      "liverpool",
+     "manchester_united",
+     14.9,
+     4.6
+    ],
+    [
+     "liverpool",
      "middlesbrough",
-     14.2,
-     5.8
+     7.6,
+     7.3
     ],
     [
      "liverpool",
      "sunderland",
-     13.3,
-     6.9
-    ],
-    [
-     "liverpool",
-     "west_ham",
-     17.5,
-     18.8
+     7.4,
+     7.3
     ],
     [
      "liverpool",
      "stoke_city",
-     13.4,
-     9.7
+     10.6,
+     7.2
     ],
     [
      "liverpool",
      "swindon_town",
-     14.7,
-     6.5
+     7.7,
+     4
     ],
     [
      "liverpool",
      "nottingham_forest",
-     12.8,
-     5.4
+     10,
+     6.7
     ],
     [
      "liverpool",
      "sheffield_united",
-     14.9,
-     6.8
+     9.6,
+     3.4
+    ],
+    [
+     "chelsea",
+     "everton",
+     12.6,
+     6.1
+    ],
+    [
+     "chelsea",
+     "sheffield_wednesday",
+     13.6,
+     10.1
+    ],
+    [
+     "chelsea",
+     "tottenham_hotspur",
+     14.6,
+     11
     ],
     [
      "chelsea",
      "leicester_city",
-     15.6,
-     4.6
+     10.3,
+     3.5
     ],
     [
      "chelsea",
      "oldham_athletic",
-     12.3,
-     8.6
+     11.9,
+     11.2
     ],
     [
      "chelsea",
      "ipswich_town",
-     11.5,
-     9
+     11.4,
+     11.9
+    ],
+    [
+     "chelsea",
+     "crystal_palace",
+     7.9,
+     3.4
     ],
     [
      "chelsea",
      "west_brom",
-     15.8,
-     9.6
+     9.1,
+     8.1
     ],
     [
-     "newcastle_united",
-     "sheffield_wednesday",
-     17,
-     15.6
+     "chelsea",
+     "qpr",
+     9.3,
+     6.3
     ],
     [
-     "newcastle_united",
-     "west_brom",
-     16.6,
-     14.2
+     "manchester_united",
+     "middlesbrough",
+     7.8,
+     2.9
     ],
     [
      "manchester_united",
      "sunderland",
-     14.5,
-     10.1
+     10.2,
+     5
+    ],
+    [
+     "manchester_united",
+     "stoke_city",
+     7.4,
+     4.4
     ],
     [
      "manchester_united",
      "swindon_town",
-     14.6,
-     11.4
+     15.5,
+     6.3
     ],
     [
      "manchester_united",
      "nottingham_forest",
-     13,
-     2.2
+     9.9,
+     2.6
     ],
     [
      "manchester_united",
      "sheffield_united",
-     14.4,
-     10.3
+     10.5,
+     3.7
     ],
     [
      "manchester_city",
      "sheffield_wednesday",
-     16.3,
-     5.1
+     14.1,
+     7.8
+    ],
+    [
+     "manchester_city",
+     "oldham_athletic",
+     9.2,
+     10.5
     ],
     [
      "manchester_city",
      "qpr",
-     12.7,
-     6.8
+     12.5,
+     12.5
     ],
     [
      "leeds_united",
      "wolves",
-     13.8,
-     9.1
-    ],
-    [
-     "blackburn_rovers",
-     "chelsea",
-     13.3,
-     8.1
-    ],
-    [
-     "blackburn_rovers",
-     "newcastle_united",
-     17.7,
-     14.3
+     12.5,
+     3.5
     ],
     [
      "blackburn_rovers",
      "manchester_city",
-     13.9,
-     13
+     12.3,
+     4.5
     ],
     [
      "blackburn_rovers",
-     "ipswich_town",
-     16.1,
-     6.7
+     "coventry_city",
+     15.3,
+     9.7
     ],
     [
      "aston_villa",
      "west_ham",
-     16.6,
-     16.3
-    ],
-    [
-     "aston_villa",
-     "stoke_city",
-     15.4,
-     14.7
-    ],
-    [
-     "aston_villa",
-     "charlton_athletic",
-     16.5,
-     13.9
+     13.3,
+     4
     ],
     [
      "everton",
-     "sheffield_wednesday",
-     15.6,
-     13
+     "tottenham_hotspur",
+     10.4,
+     7.7
     ],
     [
      "everton",
-     "ipswich_town",
-     13.1,
-     8.4
+     "leicester_city",
+     9.2,
+     9
+    ],
+    [
+     "everton",
+     "west_brom",
+     7.5,
+     2.5
     ],
     [
      "arsenal",
      "liverpool",
-     17.3,
-     8.4
+     14.2,
+     8.9
+    ],
+    [
+     "arsenal",
+     "manchester_united",
+     7.8,
+     4.3
+    ],
+    [
+     "arsenal",
+     "middlesbrough",
+     8.2,
+     1.4
     ],
     [
      "arsenal",
      "sunderland",
-     16.5,
-     15.4
+     13.4,
+     6.8
     ],
     [
      "arsenal",
      "stoke_city",
-     13.7,
-     6.4
-    ],
-    [
-     "arsenal",
-     "bournemouth",
-     9.4,
+     7.7,
      6.1
     ],
     [
      "arsenal",
+     "bournemouth",
+     11,
+     9.7
+    ],
+    [
+     "arsenal",
+     "wolves",
+     18,
+     4.5
+    ],
+    [
+     "arsenal",
+     "swindon_town",
+     11,
+     9.7
+    ],
+    [
+     "arsenal",
+     "nottingham_forest",
+     6.5,
+     2.6
+    ],
+    [
+     "arsenal",
      "charlton_athletic",
-     13.8,
-     10.6
+     7.2,
+     6.5
     ],
     [
      "arsenal",
      "sheffield_united",
-     16.2,
-     15.1
+     15.3,
+     7.6
     ],
     [
      "middlesbrough",
      "sunderland",
-     13.9,
-     1.9
+     7.2,
+     5.8
     ],
     [
-     "sunderland",
-     "west_ham",
-     17.7,
-     15.5
+     "middlesbrough",
+     "stoke_city",
+     7,
+     5.1
     ],
     [
-     "sunderland",
-     "wolves",
-     14.4,
-     1.4
+     "tottenham_hotspur",
+     "west_brom",
+     8.1,
+     5.9
+    ],
+    [
+     "leicester_city",
+     "sheffield_wednesday",
+     12.8,
+     9.3
     ],
     [
      "leicester_city",
      "tottenham_hotspur",
-     15.9,
-     11.5
+     16.4,
+     14
     ],
     [
      "leicester_city",
      "west_brom",
-     17.8,
-     11.9
+     12.7,
+     11.3
     ],
     [
      "fulham",
@@ -933,143 +1015,257 @@
      15.3
     ],
     [
-     "fulham",
+     "oldham_athletic",
      "sheffield_wednesday",
-     14.9,
-     13.3
+     10.5,
+     3.9
+    ],
+    [
+     "oldham_athletic",
+     "qpr",
+     6.8,
+     6.2
+    ],
+    [
+     "stoke_city",
+     "sunderland",
+     7.1,
+     0.7
+    ],
+    [
+     "ipswich_town",
+     "newcastle_united",
+     15.8,
+     15.9
     ],
     [
      "ipswich_town",
      "manchester_city",
-     13.8,
-     9.2
+     10.7,
+     8.2
     ],
     [
      "ipswich_town",
      "sheffield_wednesday",
-     11.8,
-     10.1
+     7.1,
+     5.4
+    ],
+    [
+     "ipswich_town",
+     "leicester_city",
+     14.5,
+     11.7
     ],
     [
      "ipswich_town",
      "oldham_athletic",
-     16.6,
-     16.2
+     7.2,
+     9.3
     ],
     [
-     "bournemouth",
-     "liverpool",
-     9.3,
-     2.2
-    ],
-    [
-     "bournemouth",
-     "sunderland",
-     9.9,
-     9.7
-    ],
-    [
-     "bournemouth",
-     "stoke_city",
-     11.2,
-     9.8
-    ],
-    [
-     "bournemouth",
-     "nottingham_forest",
-     17.7,
-     8.5
-    ],
-    [
-     "coventry_city",
-     "manchester_city",
-     16.7,
-     3.7
+     "ipswich_town",
+     "qpr",
+     7.9,
+     5
     ],
     [
      "birmingham_city",
      "chelsea",
-     13.6,
-     6.1
+     7.9,
+     4.5
+    ],
+    [
+     "birmingham_city",
+     "manchester_city",
+     16.8,
+     13.8
+    ],
+    [
+     "birmingham_city",
+     "everton",
+     13.1,
+     11.1
     ],
     [
      "birmingham_city",
      "tottenham_hotspur",
-     14.3,
-     10.1
+     14.8,
+     13.8
     ],
     [
-     "crystal_palace",
+     "birmingham_city",
+     "leicester_city",
+     8.6,
+     4.6
+    ],
+    [
+     "birmingham_city",
+     "west_brom",
+     12.9,
+     12.8
+    ],
+    [
+     "bournemouth",
+     "liverpool",
+     7.7,
+     4
+    ],
+    [
+     "bournemouth",
+     "manchester_united",
+     15.5,
+     6.3
+    ],
+    [
+     "bournemouth",
+     "middlesbrough",
+     8.1,
+     6.1
+    ],
+    [
+     "bournemouth",
+     "sunderland",
+     13,
+     10.7
+    ],
+    [
+     "bournemouth",
+     "stoke_city",
+     12,
+     10.3
+    ],
+    [
+     "bournemouth",
+     "nottingham_forest",
+     6.2,
+     4.2
+    ],
+    [
+     "coventry_city",
      "manchester_city",
-     10.9,
-     7.6
+     14.7,
+     6
     ],
     [
      "crystal_palace",
      "everton",
-     10.7,
-     4.2
+     8.5,
+     6
     ],
     [
      "crystal_palace",
      "sheffield_wednesday",
-     13.4,
-     12.4
+     11.2,
+     11.3
+    ],
+    [
+     "crystal_palace",
+     "tottenham_hotspur",
+     9.1,
+     8.5
+    ],
+    [
+     "crystal_palace",
+     "leicester_city",
+     9.1,
+     6.2
+    ],
+    [
+     "crystal_palace",
+     "oldham_athletic",
+     15.6,
+     11.9
     ],
     [
      "crystal_palace",
      "ipswich_town",
-     12.3,
-     12.1
+     11.8,
+     10.5
     ],
     [
-     "charlton_athletic",
-     "liverpool",
-     18,
-     12.2
+     "crystal_palace",
+     "west_brom",
+     7.9,
+     7
+    ],
+    [
+     "crystal_palace",
+     "qpr",
+     14.5,
+     6
     ],
     [
      "nottingham_forest",
      "sunderland",
-     14.4,
-     7.3
+     11.7,
+     7
+    ],
+    [
+     "charlton_athletic",
+     "liverpool",
+     8.4,
+     2.4
+    ],
+    [
+     "charlton_athletic",
+     "manchester_united",
+     11.9,
+     2.8
+    ],
+    [
+     "charlton_athletic",
+     "middlesbrough",
+     6.6,
+     0.3
+    ],
+    [
+     "charlton_athletic",
+     "sunderland",
+     10.7,
+     7
+    ],
+    [
+     "qpr",
+     "sheffield_wednesday",
+     14,
+     3.7
     ],
     [
      "bolton_wanderers",
      "chelsea",
-     16.5,
-     6.2
+     8.3,
+     7.7
     ],
     [
      "bolton_wanderers",
      "everton",
-     16.1,
-     15
-    ],
-    [
-     "bolton_wanderers",
-     "sheffield_wednesday",
-     14.1,
-     12.1
+     8.6,
+     2.8
     ],
     [
      "bolton_wanderers",
      "leicester_city",
-     14.7,
-     9.3
+     13,
+     11
+    ],
+    [
+     "hull_city",
+     "wolves",
+     9,
+     2.1
     ]
    ]
   },
   "distinct": {
    "palette": [
-    "#B47800",
+    "#FF2DFF",
     "#000FFF",
     "#E6194B",
-    "#7878D2",
-    "#698700",
+    "#A57869",
+    "#695A2D",
     "#E6194B",
-    "#FF2DFF",
-    "#698700",
+    "#B47800",
+    "#695A2D",
     "#E6194B",
     "#E6194B",
     "#E6194B",
@@ -1077,42 +1273,42 @@
     "#E6194B",
     "#0F6978",
     "#00E100",
-    "#005AA5",
-    "#7878D2",
+    "#FF5A0F",
+    "#A57869",
     "#E6194B",
     "#694B69",
+    "#FF5A0F",
+    "#E6194B",
+    "#FF2DFF",
     "#005AA5",
-    "#E6194B",
-    "#E6194B",
-    "#C30096",
     "#00A587",
-    "#695A2D",
+    "#698700",
     "#E6194B",
     "#E6194B",
     "#0F5A2D",
-    "#FF2DFF",
-    "#873C0F",
+    "#B47800",
+    "#7878D2",
     "#00A5E1",
     "#E6194B",
     "#7878D2",
+    "#7878D2",
+    "#E6194B",
     "#873C0F",
     "#E6194B",
-    "#A57869",
-    "#E6194B",
     "#0F6978",
-    "#FF5A0F",
-    "#E6194B",
-    "#00A587",
     "#C30096",
     "#E6194B",
-    "#694B69",
-    "#A57869",
+    "#00A587",
+    "#005AA5",
     "#E6194B",
-    "#698700",
+    "#694B69",
+    "#873C0F",
+    "#E6194B",
+    "#C30096",
     "#0F6978",
     "#E6194B",
     "#E6194B",
-    "#FF5A0F"
+    "#C30096"
    ],
    "bar_edge": {},
    "fails": []

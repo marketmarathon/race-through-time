@@ -1,0 +1,18 @@
+{
+ "extends": "config_rtt101_base.json",
+ "kit_version": "rtt101_round1_closing_avg",
+ "steps": {
+  "enabled": true,
+  "race_dip_out": 0.5,
+  "sequence": [
+   {
+    "name": "avgtable",
+    "sec": 6,
+    "dip_in": 0.5,
+    "subtitle": "Average net spend per Premier League season played (2026 £)",
+    "note": "Each club's net spend in its PL seasons, adjusted for inflation (CPI, ONS), divided by its PL seasons",
+    "rows": 12
+   }
+  ]
+ }
+}

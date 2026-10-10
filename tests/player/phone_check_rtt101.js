@@ -49,7 +49,7 @@ function bounds(t) {
     const target = await ST.targetFrame(pg, s);
     const from = s.step != null ? target : Math.max(0, target - (s.warm != null ? s.warm : 120));
     for (let f = from; f <= target; f++) await rtt.drawFrame(pg, f, cfg);
-    if (s.step == null) for (let i = 0; i < 45; i++) await rtt.drawFrame(pg, target, cfg);
+    if (s.step == null) for (let i = 0; i < 150; i++) await rtt.drawFrame(pg, target, cfg);
     const S = await pg.evaluate(() => ({ L: window.__LABELS, P: window.__PICS, R: window.__RANK, dates: TL.events.map(e => e.date), open: TL.openingEvent.date }));
     await br.close();
     const vis = S.L.filter(l => l.alpha > 0.3 && l.size);

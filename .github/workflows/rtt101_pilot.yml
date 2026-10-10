@@ -1,0 +1,194 @@
+# Race Through Time - render the RTT-101 "Premier League net transfer spend" design round 1 (IQ-21): option stills (each
+# also at phone size), one side-by-side contact sheet per item (a-k) and the pacing and relegation clips, 1920 x 1080, no
+# music. Preview figures: the Tier 1 checks may still change them (said in the release notes, not on the frames).
+#
+# Its OWN workflow: render_pilot.yml (RTT-002) and the RTT-001, RTT-003, RTT-102 and RTT-103 workflows are not changed, so
+# nothing here can start another episode's render. This repository is PUBLIC (DEC-006). Its workflow logs and artifacts
+# can be read by other people, so this workflow (as rtt102_pilot.yml, DEC-061):
+#   - runs the RTT-101 player tests first (tests/player/run_tests_rtt101.js, placeholder crests) and stops on a failure;
+#   - fetches Luke's logo and the club crests (identification only, owner DEC-700; kits/rtt-101/crests.json) from the
+#     PRIVATE repo marketmarathon/race-through-time-private with the secret RTT_PRIVATE_TOKEN into $RUNNER_TEMP (outside
+#     the checkout), never into the repo, and never prints the secret;
+#   - checks their SHA-256 against kits/rtt-101/assets_sha256.txt and the player input against
+#     kits/rtt-101/dataset_hashes.txt, and stops on any mismatch;
+#   - runs the WCAG 2.x flash check (tests/player/wcag_flash_rtt003.js, every frame, every pixel) on EVERY clip before
+#     rendering it, and stops if one fails (house style 4);
+#   - renders the clips (kits/rtt-101/clips.txt) at 1920 x 1080 with NO audio track, and the stills
+#     (kits/rtt-101/stills.json) at 1920 x 1080 plus phone size, and the side-by-side comparison sheets;
+#   - saves everything ONLY as one pre-release in the private repo, with every file's SHA-256 in its notes;
+#   - uploads NO workflow artifact, uses NO cache, and deletes frames and videos at the end.
+# No full film is rendered (DEC-069: nothing beyond the approved look goes into a film before Luke approves it).
+# Triggers: a push that changes THIS FILE on the IQ-21 branch, or by hand (once merged). Tagged rtt-101-round1-<commit>-run<n>.
+name: rtt101-pilot
+
+on:
+  push:
+    branches: [claude/loving-heisenberg-hypu42]
+    paths: [.github/workflows/rtt101_pilot.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rtt101-pilot
+  cancel-in-progress: false
+
+env:
+  PRIVATE_REPO: marketmarathon/race-through-time-private
+  PRIVATE_REF: claude/loving-heisenberg-hypu42
+  # ONLY_STILLS empty = every still; ONLY_CLIPS empty = every clip in clips.txt, unless ONLY_STILLS is set (stills only).
+  ONLY_STILLS: ''
+  ONLY_CLIPS: ''
+  TAG_PREFIX: rtt-101-round1
+
+jobs:
+  render:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install ffmpeg, the kit and Chromium
+        working-directory: kits/rtt-002
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg > /dev/null
+          ffmpeg -hide_banner -encoders 2>/dev/null | grep -q libx264
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 npm ci
+          npx playwright install --with-deps chromium
+
+      - name: RTT-101 player tests and the phone check of every still (placeholder crests; before any render)
+        run: |
+          node tests/player/run_tests_rtt101.js > "$RUNNER_TEMP/tests.txt" || { cat "$RUNNER_TEMP/tests.txt"; exit 1; }
+          head -12 "$RUNNER_TEMP/tests.txt"
+          node tests/player/phone_check_rtt101.js > "$RUNNER_TEMP/phone.txt" || { cat "$RUNNER_TEMP/phone.txt"; exit 1; }
+          echo "phone check: $(grep -c '^PASS' "$RUNNER_TEMP/phone.txt") still(s) PASS"
+
+      - name: Check the player input and the frame counts
+        working-directory: kits/rtt-002
+        run: |
+          want=$(awk '$2 == "output" && $3 ~ /race_rtt101.json$/ {print $1}' ../rtt-101/dataset_hashes.txt)
+          got=$(sha256sum ../rtt-101/race_rtt101.json | cut -d' ' -f1)
+          echo "race_rtt101.json $got (dataset_hashes.txt: $want)"
+          test -n "$want" && test "$got" = "$want"
+          : > "$RUNNER_TEMP/plan.txt"
+          while read -r c; do
+            test -n "$c" || continue
+            test -f "../rtt-101/$c" || { echo "::error::no config $c"; exit 1; }
+            f=$(RTT_CONFIG="../rtt-101/$c" FRAME_COUNT_ONLY=1 node rtt.js | awk '/^FRAMES/ {print $2}')
+            test -n "$f"
+            echo "$c $f" | tee -a "$RUNNER_TEMP/plan.txt"
+          done < <(if [ -n "$ONLY_CLIPS" ]; then printf '%s\n' $ONLY_CLIPS; elif [ -n "$ONLY_STILLS" ]; then :; else cat ../rtt-101/clips.txt; fi)
+          for p in A B C; do echo "the whole film, pace $p, not rendered: $(RTT_CONFIG=../rtt-101/config_rtt101_pace_$p.json FRAME_COUNT_ONLY=1 node rtt.js | awk '/^FRAMES/ {printf "%d frames = %.1f s", $2, $2/30}')" | tee -a "$RUNNER_TEMP/films.txt"; done
+
+      - name: Fetch Luke's logo and the club crests from the private repo and check their hashes
+        env:
+          GH_TOKEN: ${{ secrets.RTT_PRIVATE_TOKEN }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then echo "::error::secret RTT_PRIVATE_TOKEN is not available to this run"; exit 1; fi
+          A="$RUNNER_TEMP/rtt_assets"; mkdir -p "$A/crests"
+          : > "$RUNNER_TEMP/check.txt"
+          grep -v '^#' kits/rtt-101/assets_sha256.txt | while read -r sum p; do
+            case "$p" in
+              assets/rtt-002/rtt_logo.png) dst="$A/rtt_logo.png";;
+              assets/rtt-101/crests/*) dst="$A/crests/${p#assets/rtt-101/crests/}";;
+              *) echo "::error::unexpected path $p"; exit 1;;
+            esac
+            mkdir -p "$(dirname "$dst")"
+            # the crest branch, or the private main once Luke has merged it; the SHA-256 check below decides either way
+            gh api -H 'Accept: application/vnd.github.raw' "repos/$PRIVATE_REPO/contents/$p?ref=$PRIVATE_REF" > "$dst" 2>/dev/null \
+              || gh api -H 'Accept: application/vnd.github.raw' "repos/$PRIVATE_REPO/contents/$p?ref=main" > "$dst"
+            printf '%s  %s\n' "$sum" "$dst" >> "$RUNNER_TEMP/check.txt"
+          done
+          sha256sum -c --quiet "$RUNNER_TEMP/check.txt"
+          echo "$(wc -l < "$RUNNER_TEMP/check.txt") private file(s) fetched, SHA-256 checked"
+          echo "RTT_LOCAL_ASSETS=$A" >> "$GITHUB_ENV"
+
+      - name: WCAG 2.x flash check of every clip (before rendering)
+        if: env.ONLY_STILLS == ''
+        run: |
+          set -o pipefail
+          export PW_CHROME=$(cd kits/rtt-002 && node -e "console.log(require('playwright').chromium.executablePath())")
+          test -x "$PW_CHROME"
+          : > "$RUNNER_TEMP/flash.txt"
+          for c in $(if [ -n "$ONLY_CLIPS" ]; then printf '%s\n' $ONLY_CLIPS; else cat kits/rtt-101/clips.txt; fi); do
+            node tests/player/wcag_flash_rtt003.js "../rtt-101/$c" > "$RUNNER_TEMP/flash.json"
+            python3 - "$RUNNER_TEMP/flash.json" "$c" >> "$RUNNER_TEMP/flash.txt" <<'PY'
+          import json, sys
+          r = json.load(open(sys.argv[1]))
+          print(f"{sys.argv[2]}: WCAG 2.x flash check (every frame, every pixel) {'PASS' if r['pass'] else 'FAIL'}; "
+                f"largest too-often-flashing area in a 10-degree field {r['worst']['fastG']['best']} px general, {r['worst']['fastR']['best']} px red, "
+                f"limit {r['limit_px_10deg']} px (25%)")
+          PY
+          done
+          cat "$RUNNER_TEMP/flash.txt"
+          if grep -q FAIL "$RUNNER_TEMP/flash.txt"; then echo "::error::a clip fails the WCAG flash check"; exit 1; fi
+
+      - name: Render the clips (1920 x 1080, no audio) and check every video
+        run: |
+          set -o pipefail
+          O="$RUNNER_TEMP/rtt_out"; mkdir -p "$O"
+          SHORT=${GITHUB_SHA::7}
+          probe() { ffprobe -v error -select_streams v:0 -count_packets \
+                      -show_entries stream=width,height,nb_read_packets,r_frame_rate -of csv=p=0 "$1"; }
+          mapfile -t PLAN < "$RUNNER_TEMP/plan.txt"
+          for line in "${PLAN[@]}"; do
+            read -r c FRAMES <<< "$line"
+            STEM="rtt101_${c#config_rtt101_}"; STEM="${STEM%.json}_${SHORT}_1920x1080"
+            (cd kits/rtt-002 && SEG_OUT="$O/$STEM.mp4" RASTER_W=1920 RTT_CONFIG="../rtt-101/$c" node rtt.js | tee "$RUNNER_TEMP/render.log")
+            if grep -q 'not found' "$RUNNER_TEMP/render.log"; then echo "::error::a crest or an overlay was not loaded"; exit 1; fi
+            m=$(probe "$O/$STEM.mp4"); echo "$c: $m"
+            test "$m" = "1920,1080,30/1,$FRAMES"
+            a=$(ffprobe -v error -select_streams a -show_entries stream=index -of csv=p=0 "$O/$STEM.mp4" | wc -l)
+            echo "$STEM.mp4: $a audio stream(s), want 0"; test "$a" = 0
+          done
+
+      - name: Render the stills (1920 x 1080 and phone size) and the comparison sheets
+        run: |
+          set -o pipefail
+          node kits/rtt-101/render_stills.js "$RUNNER_TEMP/rtt_out" $ONLY_STILLS | tee "$RUNNER_TEMP/stills.log"
+          if grep -q 'not found' "$RUNNER_TEMP/stills.log"; then echo "::error::a crest was not loaded"; exit 1; fi
+          ls "$RUNNER_TEMP/rtt_out"/*.png | wc -l
+
+      - name: Save the clips and stills as one pre-release in the private repo
+        env:
+          GH_TOKEN: ${{ secrets.RTT_PRIVATE_TOKEN }}
+        run: |
+          O="$RUNNER_TEMP/rtt_out"; SHORT=${GITHUB_SHA::7}
+          TAG="${TAG_PREFIX:-rtt-101-round1}-${SHORT}-run${GITHUB_RUN_NUMBER}"
+          {
+            echo "RTT-101 Premier League net transfer spend, design round 1 (IQ-21): options side by side for Luke (items a-k), each still also at phone size, 13 contact sheets, three pacing clips (June 2003 to September 2004: A one pace 0.5 s a month, B the house multipliers, C 0.25 s for the months with no open window) and one relegation clip (Newcastle, 2009-10). Rendered by GitHub Actions. No music. Not the film."
+            echo
+            echo "- **PREVIEW FIGURES:** data/rtt-101/series_onscreen.csv (VERIFIED fees only, DEC-448) as merged from pull request #19; the Tier 1 checks may still change them. Every still and clip is a design preview, not a claim."
+            echo "- Story moments (item i) are shown as layout only: every candidate in moments.csv is still UNVERIFIED and would not be on screen until checked at source."
+            echo "- Source: ${GITHUB_REPOSITORY} @ ${GITHUB_SHA} (${GITHUB_REF_NAME}), run ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+            sed 's/^/- /' "$RUNNER_TEMP/films.txt"
+            while read -r c FRAMES; do
+              echo "- kits/rtt-101/${c}: ${FRAMES} frames at 30 fps = $(awk -v f="$FRAMES" 'BEGIN {printf "%.1f", f / 30}') s, 1920 x 1080, x264, no audio"
+            done < "$RUNNER_TEMP/plan.txt"
+            test -s "$RUNNER_TEMP/flash.txt" && sed 's/^/- /' "$RUNNER_TEMP/flash.txt"
+            echo "- Player tests: $(grep -m1 '^Run:' "$RUNNER_TEMP/tests.txt"); phone check: $(grep -c '^PASS' "$RUNNER_TEMP/phone.txt") still(s) PASS, $(grep -c '^FAIL' "$RUNNER_TEMP/phone.txt") FAIL"
+            echo "- Stills: kits/rtt-101/stills.json, 1920 x 1080 PNG plus the same frame at phone size (390 points wide at 3 device pixels per point), each taken on the frame where its month's figures land; *_sheet.png = options side by side"
+            echo "- Luke's logo and the club crests (identification only, DEC-700; kits/rtt-101/crests.json): race-through-time-private, every SHA-256 checked against kits/rtt-101/assets_sha256.txt before drawing"
+            echo "- File SHA-256:"
+            (cd "$O" && sha256sum $(ls *.mp4 2>/dev/null) *.png | sed 's/^/  - /')
+            echo
+            echo "Private review render. Not for upload or publication (DEC-001). Not the film."
+          } > "$O/notes.md"
+          cat "$O/notes.md"
+          gh release create "$TAG" --repo "$PRIVATE_REPO" --target main --prerelease \
+            --title "RTT-101 design round 1 ${SHORT} (options a-k: stills, phone copies, sheets, pacing and relegation clips; preview figures)" --notes-file "$O/notes.md" $(ls "$O"/*.mp4 2>/dev/null) "$O"/*.png
+          URL="https://github.com/${PRIVATE_REPO}/releases/tag/${TAG}"
+          echo "Release: $URL"
+          echo "RTT-101 round 1 saved to the private repo: $URL" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Delete the logos, frames and videos from the runner
+        if: always()
+        run: rm -rf "$RUNNER_TEMP/rtt_assets" "$RUNNER_TEMP/rtt_out" "$RUNNER_TEMP/render.log" "$RUNNER_TEMP/stills.log" "$RUNNER_TEMP/check.txt" "$RUNNER_TEMP/flash.json" tests/output

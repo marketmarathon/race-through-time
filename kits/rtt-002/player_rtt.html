@@ -512,7 +512,7 @@ function netTies(k){
   const st=k>=0?TL.states[k]:TL.opening, o=st.order.slice(0,ROWCAP), ex={};
   for(let i=0;i+1<o.length;i++){ const a=o[i], b=o[i+1], va=st.totals[a], vb=st.totals[b];
     if(va===vb) continue;
-    let e=Math.max(ex[a]||0, ex[b]||0); while(e<3 && netText(va,e)===netText(vb,e)) e++;
+    let e=0; while(e<3 && netText(va,e)===netText(vb,e)) e++;   // each pair on its own (no cascade down the board)
     if(e>0){ ex[a]=Math.max(ex[a]||0,e); ex[b]=Math.max(ex[b]||0,e); } }
   return NETX[k]=ex;
 }
@@ -914,7 +914,7 @@ function drawDateEra(k, fr){
 }
 /* IQ-19: the picture key of bar id at a date (pictures.switch {id: [{until, key}]}: the first entry whose `until` is on or
    after the date; else the bar's own file) */
-function picKey(id,date){ for(const s of PIC.switch[id]) if(date<=s.until) return s.key; return id; }
+function picKey(id,date){ for(const s of PIC.switch[id]) if(date<=s.until && (!s.from || date>=s.from)) return s.key; return id; }   // IQ-21: an entry may name the first date it applies (`from`)
 function drawCrown(x,y,w,h,col){
   ctx.save(); ctx.fillStyle=col; ctx.beginPath();
   ctx.moveTo(x,y+h); ctx.lineTo(x,y+h*0.32); ctx.lineTo(x+w*0.27,y+h*0.62); ctx.lineTo(x+w*0.5,y+h*0.12);
@@ -1605,7 +1605,8 @@ function drawCombined(k, SF, fr, cur, prev){
     if(FWD && k>=0) for(const e of TL.events) if(e.fwd && e.date<=evP.date) pts.push({date:e.date, c:e.combined, lo:e.combined_lo});   // IQ-18c
     if(k>=0) pts.push({date:null, t:+new Date(evP.date)+(+new Date(evC.date)-(+new Date(evP.date)))*g, c:tot, lo:FC?totLo:undefined});
     const d1=Math.max(+new Date(A[A.length-1].date), FC ? pts[pts.length-1].t : 0);   // IQ-18c: the panel's years run on with the boards
-    const X=p=>x0+w*(((p.t!=null?p.t:+new Date(p.date))-d0)/(d1-d0)), mx=Math.max(1,...pts.map(p=>p.c))*1.08, Y=p=>y0+h-h*p.c/mx;
+    const X=p=>x0+w*(((p.t!=null?p.t:+new Date(p.date))-d0)/(d1-d0)), mx=Math.max(1,...pts.map(p=>p.c))*1.08;
+    const mn=NET ? Math.min(0,...pts.map(p=>p.c))*1.08 : 0, Y = NET ? p=>y0+h-h*(p.c-mn)/(mx-mn) : p=>y0+h-h*p.c/mx;   // IQ-21: a net total can start below zero (July 1992: -£1.4m)
     for(const gp of TL.gaps||[]) if(pts.length && (k<0?TL.openingEvent.date:evC.date)>=gp.from){ ctx.fillStyle='rgba(244,246,250,0.07)';
       const xa=X({date:gp.last}), xb=Math.min(X({date:gp.returns}), X(pts[pts.length-1])); if(xb>xa) ctx.fillRect(xa,y0,xb-xa,h); }
     ctx.strokeStyle=T.grid; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(x0,y0+h); ctx.lineTo(x0+w,y0+h); ctx.stroke();
@@ -1642,7 +1643,7 @@ function drawAvgPanel(k, SF){
   ctx.save(); ctx.fillStyle=T.panel; rr(C.x,C.y,C.w,C.h,12); ctx.fill();
   ctx.fillStyle=T.cap||T.muted; ctx.font='600 26px '+FONT; text('comb_label',null,C.label,C.x+pad,C.y+pad+22,'left');
   if(C.label2) text('comb_label',null,C.label2,C.x+pad,C.y+pad+56,'left');
-  const v=netText(st.avg[id],1);
+  const v=netText(st.avg[id],0);
   ctx.fillStyle=T.ink; ctx.font='800 64px '+FONT; tabText(v,C.x+pad,C.y+C.h-62,'left','comb_value',null);
   ctx.fillStyle=T.cap||T.muted; ctx.font='500 26px '+FONT;
   const n=st.seasons[id], line=ENT[id].short+' · '+n+' PL season'+(n===1?'':'s');
@@ -1672,7 +1673,7 @@ function drawAvgTable(u, S){
     if(EDGE && EDGE[id]){ const eh=Math.max(4,Math.round(G.BARH*0.18)); ctx.save(); rr(G.x0,by,w,G.BARH,2); ctx.clip(); ctx.fillStyle=EDGE[id]; ctx.fillRect(G.x0,by+G.BARH-eh,w,eh); ctx.restore(); }
     ctx.fillStyle='#F4F6FA'; ctx.font='600 '+nf+'px '+FONT; const nx=G.x0+18; text('name',id,c.label,nx,mid+nf*0.35,'left');
     const nameOut=Math.max(0,(nx+ctx.measureText(c.label).width)-(G.x0+w));
-    ctx.fillStyle=T.ink; ctx.font='600 '+G.VALF+'px '+FONT; const vt=netText(last.avg[id],1), tw=tabText(vt,G.x0+w+18+nameOut,mid+G.VALF*0.35,'left','value',id);
+    ctx.fillStyle=T.ink; ctx.font='600 '+G.VALF+'px '+FONT; const vt=netText(last.avg[id],0), tw=tabText(vt,G.x0+w+18+nameOut,mid+G.VALF*0.35,'left','value',id);
     ctx.fillStyle=T.cap||T.muted; ctx.font='500 '+G.VALF+'px '+FONT; const sn=last.seasons[id];
     tabText('· '+sn+' season'+(sn===1?'':'s'),G.x0+w+18+nameOut+tw+G.VALF*0.35,mid+G.VALF*0.35,'left','avg_seasons',id);
     window.__BARS.push({id, y:i, units:last.avg[id], seasons:sn, rect:{x:G.x0,y:by,w,h:G.BARH}});

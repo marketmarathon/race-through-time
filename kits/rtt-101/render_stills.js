@@ -9,7 +9,7 @@
  *   {name, config, at: "YYYY-MM-DD" | "final", overrides?, settle?, warm?, cvd?}   a board still on the frame where that
  *       month's figures land (never mid-move, house style 6). The race is wound up from `warm` frames before the target
  *       (default 120: the rank glide settles in about ten time constants of 0.55 s) and the target frame is then redrawn
- *       `settle` times (default 45), as a paused video would come to rest; values, colours and text are the target frame's.
+ *       `settle` times (default 150: the 0.55 s glide closes all but 0.01% of a gap), as a paused video would come to rest; values, colours and text are the target frame's.
  *       cvd "protan" | "deutan": the frame as a person with protanopia or deuteranopia would see it (Machado, Oliveira &
  *       Fernandes 2009, severity 1, in linear RGB; the colour-blind check of item e).
  *       after_sec: that many seconds after the month's first frame (motion stills only); card: the story card dated `at`,
@@ -65,7 +65,7 @@ async function main() {
     const raceEnd = await pg.evaluate(() => TL.raceEnd || null);
     const from = s.step != null ? target : Math.max(0, target - (s.warm != null ? s.warm : 120));
     for (let f = from; f <= target; f++) await rtt.drawFrame(pg, f, cfg);
-    if (!raceEnd || target < raceEnd) for (let i = 0; i < (s.settle != null ? s.settle : 45); i++) await rtt.drawFrame(pg, target, cfg);
+    if (!raceEnd || target < raceEnd) for (let i = 0; i < (s.settle != null ? s.settle : 150); i++) await rtt.drawFrame(pg, target, cfg);
     if (s.cvd) await pg.evaluate(M => {           // the colour-blind view of the drawn frame (linear RGB)
       const c = document.getElementById('c'), x = c.getContext('2d'), im = x.getImageData(0, 0, c.width, c.height), d = im.data;
       const L = new Float32Array(256); for (let i = 0; i < 256; i++) { const v = i / 255; L[i] = v <= 0.04045 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4); }

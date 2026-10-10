@@ -1,0 +1,9 @@
+{
+ "extends": "config_rtt101_base.json",
+ "kit_version": "rtt101_round1_final_note",
+ "final_line": {
+  "enabled": true,
+  "text": "Figures will be updated after the January 2027 window",
+  "y": 172
+ }
+}

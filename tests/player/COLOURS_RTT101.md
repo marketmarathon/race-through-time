@@ -6,7 +6,7 @@ Board of 12 (co-visible = in the top 13 that month, or the top 12 the month befo
 
 ## Kit colours as they are
 
-90 pair(s) that share the board are closer than CIEDE2000 18.
+94 pair(s) that share the board are closer than CIEDE2000 18.
 
 | Pair | CIEDE2000 as drawn | colour-blind (worse of protan/deutan) |
 |---|---|---|
@@ -34,6 +34,8 @@ Board of 12 (co-visible = in the top 13 that month, or the top 12 the month befo
 | arsenal / nottingham_forest | 3.9 | 2.9 |
 | charlton_athletic / manchester_united | 4.3 | 3.2 |
 | arsenal / middlesbrough | 4.4 | 2.8 |
+| birmingham_city / leicester_city | 4.6 | 3.9 |
+| tottenham_hotspur / west_brom | 4.7 | 3.9 |
 | leeds_united / wolves | 4.8 | 0.6 |
 | manchester_united / sunderland | 4.8 | 2.7 |
 | bournemouth / sunderland | 4.8 | 2.7 |
@@ -44,6 +46,7 @@ Board of 12 (co-visible = in the top 13 that month, or the top 12 the month befo
 | arsenal / sunderland | 5.5 | 2.2 |
 | ipswich_town / oldham_athletic | 5.6 | 5.3 |
 | charlton_athletic / sunderland | 5.7 | 4.6 |
+| hull_city / wolves | 6.2 | 1.6 |
 | crystal_palace / oldham_athletic | 6.3 | 4.4 |
 | aston_villa / west_ham | 6.3 | 4.8 |
 | crystal_palace / everton | 6.4 | 3.9 |
@@ -63,6 +66,7 @@ Board of 12 (co-visible = in the top 13 that month, or the top 12 the month befo
 | liverpool / middlesbrough | 7.6 | 7.3 |
 | chelsea / leicester_city | 7.6 | 5.2 |
 | everton / west_brom | 7.6 | 7.4 |
+| birmingham_city / west_brom | 7.7 | 7.6 |
 | crystal_palace / qpr | 7.8 | 6.1 |
 | crystal_palace / west_brom | 8.2 | 7.8 |
 | liverpool / stoke_city | 8.3 | 7.9 |
@@ -103,77 +107,105 @@ Board of 12 (co-visible = in the top 13 that month, or the top 12 the month befo
 
 ## Kit colours, closest pairs adjusted (second-colour edge where still close)
 
-63 pair(s) that share the board are closer than CIEDE2000 18; colour-blind closest 0.8 (blackburn_rovers/bolton_wanderers).
+91 pair(s) that share the board are closer than CIEDE2000 18; colour-blind closest 0.3 (leeds_united/middlesbrough).
 
 | Pair | CIEDE2000 as drawn | colour-blind (worse of protan/deutan) |
 |---|---|---|
-| bournemouth / liverpool | 9.3 | 2.2 |
-| arsenal / bournemouth | 9.4 | 6.1 |
-| bournemouth / sunderland | 9.9 | 9.7 |
-| crystal_palace / everton | 10.7 | 4.2 |
-| crystal_palace / manchester_city | 10.9 | 7.6 |
-| bournemouth / stoke_city | 11.2 | 9.8 |
-| chelsea / ipswich_town | 11.5 | 9.0 |
-| ipswich_town / sheffield_wednesday | 11.8 | 10.1 |
-| chelsea / oldham_athletic | 12.3 | 8.6 |
-| crystal_palace / ipswich_town | 12.3 | 12.1 |
-| manchester_city / qpr | 12.7 | 6.8 |
-| liverpool / nottingham_forest | 12.8 | 5.4 |
-| manchester_united / nottingham_forest | 13.0 | 2.2 |
-| everton / ipswich_town | 13.1 | 8.4 |
-| liverpool / sunderland | 13.3 | 6.9 |
-| blackburn_rovers / chelsea | 13.3 | 8.1 |
-| crystal_palace / sheffield_wednesday | 13.4 | 12.4 |
-| liverpool / stoke_city | 13.4 | 9.7 |
-| birmingham_city / chelsea | 13.6 | 6.1 |
-| arsenal / stoke_city | 13.7 | 6.4 |
-| ipswich_town / manchester_city | 13.8 | 9.2 |
-| leeds_united / wolves | 13.8 | 9.1 |
-| arsenal / charlton_athletic | 13.8 | 10.6 |
-| middlesbrough / sunderland | 13.9 | 1.9 |
-| blackburn_rovers / manchester_city | 13.9 | 13.0 |
-| bolton_wanderers / sheffield_wednesday | 14.1 | 12.1 |
-| liverpool / middlesbrough | 14.2 | 5.8 |
-| birmingham_city / tottenham_hotspur | 14.3 | 10.1 |
-| sunderland / wolves | 14.4 | 1.4 |
-| nottingham_forest / sunderland | 14.4 | 7.3 |
-| manchester_united / sheffield_united | 14.4 | 10.3 |
-| manchester_united / sunderland | 14.5 | 10.1 |
-| manchester_united / swindon_town | 14.6 | 11.4 |
-| bolton_wanderers / leicester_city | 14.7 | 9.3 |
-| liverpool / swindon_town | 14.7 | 6.5 |
-| liverpool / sheffield_united | 14.9 | 6.8 |
-| fulham / sheffield_wednesday | 14.9 | 13.3 |
-| aston_villa / stoke_city | 15.4 | 14.7 |
-| chelsea / leicester_city | 15.6 | 4.6 |
-| everton / sheffield_wednesday | 15.6 | 13.0 |
+| bournemouth / nottingham_forest | 6.2 | 4.2 |
+| arsenal / nottingham_forest | 6.5 | 2.6 |
+| charlton_athletic / middlesbrough | 6.6 | 0.3 |
+| oldham_athletic / qpr | 6.8 | 6.2 |
+| middlesbrough / stoke_city | 7.0 | 5.1 |
+| stoke_city / sunderland | 7.1 | 0.7 |
+| ipswich_town / sheffield_wednesday | 7.1 | 5.4 |
+| ipswich_town / oldham_athletic | 7.2 | 9.3 |
+| arsenal / charlton_athletic | 7.2 | 6.5 |
+| middlesbrough / sunderland | 7.2 | 5.8 |
+| manchester_united / stoke_city | 7.4 | 4.4 |
+| liverpool / sunderland | 7.4 | 7.3 |
+| everton / west_brom | 7.5 | 2.5 |
+| liverpool / middlesbrough | 7.6 | 7.3 |
+| liverpool / swindon_town | 7.7 | 4.0 |
+| bournemouth / liverpool | 7.7 | 4.0 |
+| arsenal / stoke_city | 7.7 | 6.1 |
+| manchester_united / middlesbrough | 7.8 | 2.9 |
+| arsenal / manchester_united | 7.8 | 4.3 |
+| ipswich_town / qpr | 7.9 | 5.0 |
+| birmingham_city / chelsea | 7.9 | 4.5 |
+| crystal_palace / west_brom | 7.9 | 7.0 |
+| chelsea / crystal_palace | 7.9 | 3.4 |
+| bournemouth / middlesbrough | 8.1 | 6.1 |
+| tottenham_hotspur / west_brom | 8.1 | 5.9 |
+| arsenal / middlesbrough | 8.2 | 1.4 |
+| bolton_wanderers / chelsea | 8.3 | 7.7 |
+| charlton_athletic / liverpool | 8.4 | 2.4 |
+| crystal_palace / everton | 8.5 | 6.0 |
+| birmingham_city / leicester_city | 8.6 | 4.6 |
+| bolton_wanderers / everton | 8.6 | 2.8 |
+| hull_city / wolves | 9.0 | 2.1 |
+| chelsea / west_brom | 9.1 | 8.1 |
+| crystal_palace / leicester_city | 9.1 | 6.2 |
+| crystal_palace / tottenham_hotspur | 9.1 | 8.5 |
+| manchester_city / oldham_athletic | 9.2 | 10.5 |
+| everton / leicester_city | 9.2 | 9.0 |
+| chelsea / qpr | 9.3 | 6.3 |
+| liverpool / sheffield_united | 9.6 | 3.4 |
+| manchester_united / nottingham_forest | 9.9 | 2.6 |
+| liverpool / nottingham_forest | 10.0 | 6.7 |
+| manchester_united / sunderland | 10.2 | 5.0 |
+| chelsea / leicester_city | 10.3 | 3.5 |
+| everton / tottenham_hotspur | 10.4 | 7.7 |
+| oldham_athletic / sheffield_wednesday | 10.5 | 3.9 |
+| manchester_united / sheffield_united | 10.5 | 3.7 |
+| liverpool / stoke_city | 10.6 | 7.2 |
+| charlton_athletic / sunderland | 10.7 | 7.0 |
+| ipswich_town / manchester_city | 10.7 | 8.2 |
+| arsenal / bournemouth | 11.0 | 9.7 |
+| arsenal / swindon_town | 11.0 | 9.7 |
+| crystal_palace / sheffield_wednesday | 11.2 | 11.3 |
+| chelsea / ipswich_town | 11.4 | 11.9 |
+| nottingham_forest / sunderland | 11.7 | 7.0 |
+| crystal_palace / ipswich_town | 11.8 | 10.5 |
+| chelsea / oldham_athletic | 11.9 | 11.2 |
+| charlton_athletic / manchester_united | 11.9 | 2.8 |
+| bournemouth / stoke_city | 12.0 | 10.3 |
+| blackburn_rovers / manchester_city | 12.3 | 4.5 |
+| leeds_united / wolves | 12.5 | 3.5 |
+| manchester_city / qpr | 12.5 | 12.5 |
+| chelsea / everton | 12.6 | 6.1 |
+| leicester_city / west_brom | 12.7 | 11.3 |
+| leicester_city / sheffield_wednesday | 12.8 | 9.3 |
+| birmingham_city / west_brom | 12.9 | 12.8 |
+| bolton_wanderers / leicester_city | 13.0 | 11.0 |
+| bournemouth / sunderland | 13.0 | 10.7 |
+| birmingham_city / everton | 13.1 | 11.1 |
+| aston_villa / west_ham | 13.3 | 4.0 |
+| arsenal / sunderland | 13.4 | 6.8 |
+| chelsea / sheffield_wednesday | 13.6 | 10.1 |
+| qpr / sheffield_wednesday | 14.0 | 3.7 |
+| manchester_city / sheffield_wednesday | 14.1 | 7.8 |
+| arsenal / liverpool | 14.2 | 8.9 |
+| ipswich_town / leicester_city | 14.5 | 11.7 |
+| crystal_palace / qpr | 14.5 | 6.0 |
+| chelsea / tottenham_hotspur | 14.6 | 11.0 |
+| coventry_city / manchester_city | 14.7 | 6.0 |
+| birmingham_city / tottenham_hotspur | 14.8 | 13.8 |
+| liverpool / manchester_united | 14.9 | 4.6 |
+| blackburn_rovers / coventry_city | 15.3 | 9.7 |
+| arsenal / sheffield_united | 15.3 | 7.6 |
+| manchester_united / swindon_town | 15.5 | 6.3 |
+| bournemouth / manchester_united | 15.5 | 6.3 |
 | fulham / newcastle_united | 15.6 | 15.6 |
-| chelsea / west_brom | 15.8 | 9.6 |
-| leicester_city / tottenham_hotspur | 15.9 | 11.5 |
-| blackburn_rovers / ipswich_town | 16.1 | 6.7 |
-| bolton_wanderers / everton | 16.1 | 15.0 |
-| arsenal / sheffield_united | 16.2 | 15.1 |
-| manchester_city / sheffield_wednesday | 16.3 | 5.1 |
-| bolton_wanderers / chelsea | 16.5 | 6.2 |
-| arsenal / sunderland | 16.5 | 15.4 |
-| aston_villa / charlton_athletic | 16.5 | 13.9 |
-| ipswich_town / oldham_athletic | 16.6 | 16.2 |
-| aston_villa / west_ham | 16.6 | 16.3 |
-| newcastle_united / west_brom | 16.6 | 14.2 |
+| crystal_palace / oldham_athletic | 15.6 | 11.9 |
+| ipswich_town / newcastle_united | 15.8 | 15.9 |
+| leicester_city / tottenham_hotspur | 16.4 | 14.0 |
 | fulham / manchester_city | 16.6 | 15.3 |
-| coventry_city / manchester_city | 16.7 | 3.7 |
-| newcastle_united / sheffield_wednesday | 17.0 | 15.6 |
-| arsenal / liverpool | 17.3 | 8.4 |
-| liverpool / west_ham | 17.5 | 18.8 |
-| blackburn_rovers / newcastle_united | 17.7 | 14.3 |
-| sunderland / west_ham | 17.7 | 15.5 |
-| bournemouth / nottingham_forest | 17.7 | 8.5 |
-| leicester_city / west_brom | 17.8 | 11.9 |
-| charlton_athletic / liverpool | 18.0 | 12.2 |
+| birmingham_city / manchester_city | 16.8 | 13.8 |
+| arsenal / wolves | 18.0 | 4.5 |
 
-Second-colour edges: middlesbrough #FFFFFF, sunderland #FFFFFF, west_ham #1BB1E7, stoke_city #FFFFFF, swindon_town #FFFFFF, nottingham_forest #FFFFFF, sheffield_united #FFFFFF, leicester_city #FDBE11, oldham_athletic #FFFFFF, ipswich_town #FFFFFF, west_brom #FFFFFF, sheffield_wednesday #FFFFFF, qpr #FFFFFF, wolves #231F20, blackburn_rovers #FFFFFF, charlton_athletic #FFFFFF, arsenal #FFFFFF, bournemouth #000000, fulham #CC0000, coventry_city #FFFFFF, birmingham_city #FFFFFF, crystal_palace #C4122E, bolton_wanderers #FFFFFF
+Second-colour edges: manchester_united #FBE122, middlesbrough #FFFFFF, sunderland #FFFFFF, stoke_city #FFFFFF, swindon_town #FFFFFF, nottingham_forest #FFFFFF, sheffield_united #FFFFFF, everton #FFFFFF, sheffield_wednesday #FFFFFF, tottenham_hotspur #FFFFFF, leicester_city #FDBE11, oldham_athletic #FFFFFF, ipswich_town #FFFFFF, crystal_palace #C4122E, west_brom #FFFFFF, qpr #FFFFFF, wolves #231F20, blackburn_rovers #FFFFFF, coventry_city #FFFFFF, west_ham #1BB1E7, arsenal #FFFFFF, bournemouth #000000, charlton_athletic #FFFFFF, fulham #CC0000, birmingham_city #FFFFFF, bolton_wanderers #FFFFFF, hull_city #000000
 
 ## Distinct palette
 
-0 pair(s) that share the board are closer than CIEDE2000 18; colour-blind closest 0.4 (chelsea/west_brom).
+0 pair(s) that share the board are closer than CIEDE2000 18; colour-blind closest 0.4 (chelsea/leicester_city).
 

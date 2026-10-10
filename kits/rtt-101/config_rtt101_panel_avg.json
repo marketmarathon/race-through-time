@@ -1,0 +1,9 @@
+{
+ "extends": "config_rtt101_base.json",
+ "kit_version": "rtt101_round1_panel_avg",
+ "combined": {
+  "mode": "avg",
+  "label": "Leader's average net spend",
+  "label2": "per PL season, in 2026 £ (CPI)"
+ }
+}

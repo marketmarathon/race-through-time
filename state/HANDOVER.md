@@ -1,3 +1,12 @@
+# HANDOVER — 10 Oct 2026 (Claude Code cloud session IQ-21: RTT-101 design round 1). The IQ-15 data sessions' notes and earlier sessions follow below.
+
+## RTT-101 design round 1 (IQ-21, 10 Oct 2026) — rendered; waiting for Luke's answers
+- **Done:** owner DEC-700 (crests) recorded; Claude DEC-701..DEC-713. Branch `claude/loving-heisenberg-hypu42` (public and private) = PR #19's branch + PR #23's branch + this work; pull request __PR__ (not merged). Merge order for Luke: #18, #22, #21, #23, #19, then __PR__.
+- **Built:** `scripts/rtt101_adapter.py` → `kits/rtt-101/race_rtt101.json` (from `series_onscreen.csv` only); a "net" race kind in the shared player (`kits/rtt-002`), off for every other episode (pixel-identical, `tests/player/compare_frames.js`); configs for items a-k, 57 stills + phone copies, 13 sheets, 4 clips (`kits/rtt-101/stills.json`, `clips.txt`); crests fetched on a runner into the private repo (`assets/rtt-101/crests/`, 51 clubs, all English Wikipedia local files, SHA-256 in `kits/rtt-101/assets_sha256.txt` and the rights ledger); render workflow `.github/workflows/rtt101_pilot.yml`; tests `run_tests_rtt101.js`, `phone_check_rtt101.js`; colours `kits/rtt-101/make_palette.js`. Report: `reports/RTT-101_design_round1.md`.
+- **Release:** __RELEASE__ (preview figures; every file's SHA-256 in its notes and in STATE).
+- **Open for Luke:** the numbered questions in the pull request (title, board size, near-tie decimals, relegation label, colours, crest dating, pacing, panel, closing view and its ranking, story moments, final-table note). Section 19 question 1 (data) is still his too.
+- **Rules for the next session:** merge PR #19 again before any RTT-101 render (the data may move); never change `data/rtt-101` or the build; story moments stay off screen until VERIFIED; no figure from the Man City case on the board; the crests are identification only (DEC-700) and live only in the private repo; RTT-101 renders only through `rtt101_pilot.yml` (never `render_pilot.yml`).
+
 # HANDOVER — 10 Oct 2026 (session 16, Claude Code cloud session: IQ-15 to IQ-15n, RTT-101 Premier League net transfer spend: data build, phase 2 and source rounds 1 to 6). Earlier sessions' notes follow below.
 
 ## RTT-101 source round 6, the leaders' open Tier 1 fees (IQ-15n, 10 Oct 2026) — done; Luke's section 19 question still open
