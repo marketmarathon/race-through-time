@@ -1,0 +1,141 @@
+# Race Through Time - render the thumbnails (IQ-23, owner DEC-800 to DEC-802): for each episode with a config in
+# kits/thumbnails/ (rtt-###.json), a real board from its approved film on the left, big words and the years on the right,
+# a row of the film's own logos or pictures, on a bright background; 1280 x 720 PNG and JPG (JPG under 2 MB) plus
+# 320 x 180 (phone feed) and 168 x 94 (sidebar) copies.
+#
+# Its OWN workflow: no film workflow is changed, so nothing here starts any episode's film or clip render. This repository
+# is PUBLIC (DEC-006). Its workflow logs and artifacts can be read by other people, so this workflow (as the film
+# workflows, DEC-061):
+#   - fetches each episode's private files (Luke's logo, the film's logos, console pictures, era photos, the RTT-002 car)
+#     from the PRIVATE repo marketmarathon/race-through-time-private with the secret RTT_PRIVATE_TOKEN into $RUNNER_TEMP
+#     (outside the checkout), never into the repo, and never prints the secret;
+#   - checks every file's SHA-256 against the episode's list (kits/<kit>/assets_sha256.txt, or
+#     kits/thumbnails/assets_sha256_rtt002.txt) and each player input against kits/<kit>/dataset_hashes.txt, and stops on
+#     any mismatch;
+#   - renders with kits/thumbnails/render_thumbnails.js, which stops if any bar or value on a board differs from the
+#     episode's data file, or if a switched-off side panel changes the board;
+#   - saves everything ONLY as one pre-release in the private repo, with every file's SHA-256 in its notes;
+#   - uploads NO workflow artifact, uses NO cache, and deletes the private files and the images at the end.
+# Nothing goes to YouTube. Triggers: a push that changes THIS FILE on the IQ-23 branch, or by hand (once merged).
+name: thumbnails
+
+on:
+  push:
+    branches: [claude/awesome-clarke-h5nrcc]
+    paths: [.github/workflows/thumbnails.yml]
+  workflow_dispatch:
+    inputs:
+      episodes:
+        description: Episodes to render (e.g. "rtt-001 rtt-003"); empty = every config in kits/thumbnails
+        default: ''
+
+permissions:
+  contents: read
+
+concurrency:
+  group: thumbnails
+  cancel-in-progress: false
+
+env:
+  PRIVATE_REPO: marketmarathon/race-through-time-private
+  TAG_PREFIX: rtt-thumbs-r1
+  EPISODES: ${{ github.event.inputs.episodes || '' }}
+
+jobs:
+  render:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install the kit and Chromium
+        working-directory: kits/rtt-002
+        run: |
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 npm ci
+          npx playwright install --with-deps chromium
+
+      - name: Check each player input against its dataset hashes
+        run: |
+          set -e
+          for c in kits/thumbnails/rtt-*.json; do
+            e=$(basename "$c" .json)
+            if [ -n "$EPISODES" ] && ! grep -qw "$e" <<< "$EPISODES"; then continue; fi
+            race=$(cd kits/rtt-002 && node -e "const r=require('./rtt.js');const t=require('../thumbnails/$e.json');console.log(require('path').relative('../..', require('path').resolve(r.loadConfig('../'+t.kit+'/'+t.film_config).race_file)))")
+            want=$(awk -v f="$race" '$2 == "output" && $3 == f {print $1}' "kits/$e/dataset_hashes.txt")
+            got=$(sha256sum "$race" | cut -d' ' -f1)
+            echo "$e: $race $got (dataset_hashes.txt: $want)"
+            test -n "$want" && test "$got" = "$want"
+          done
+
+      - name: Fetch the private files from the private repo and check their hashes
+        env:
+          GH_TOKEN: ${{ secrets.RTT_PRIVATE_TOKEN }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then echo "::error::secret RTT_PRIVATE_TOKEN is not available to this run"; exit 1; fi
+          ROOT="$RUNNER_TEMP/rtt_assets"; mkdir -p "$ROOT"
+          : > "$RUNNER_TEMP/check.txt"
+          for c in kits/thumbnails/rtt-*.json; do
+            e=$(basename "$c" .json)
+            if [ -n "$EPISODES" ] && ! grep -qw "$e" <<< "$EPISODES"; then continue; fi
+            REF=$(node -e "console.log(require('./$c').private_ref)"); LIST=$(node -e "console.log(require('./$c').assets_list)")
+            grep -v '^#' "$LIST" | while read -r sum p; do
+              test -n "$p" || continue
+              case "$p" in assets/rtt-[0-9][0-9][0-9]/*) rel=${p#assets/rtt-[0-9][0-9][0-9]/};; *) echo "::error::unexpected path $p"; exit 1;; esac
+              dst="$ROOT/$e/$rel"; mkdir -p "$(dirname "$dst")"
+              # the episode's asset branch, or the private main once Luke has merged it; the SHA-256 check decides either way
+              gh api -H 'Accept: application/vnd.github.raw' "repos/$PRIVATE_REPO/contents/$p?ref=$REF" > "$dst" 2>/dev/null \
+                || gh api -H 'Accept: application/vnd.github.raw' "repos/$PRIVATE_REPO/contents/$p?ref=main" > "$dst"
+              printf '%s  %s\n' "$sum" "$dst" >> "$RUNNER_TEMP/check.txt"
+            done
+          done
+          sha256sum -c --quiet "$RUNNER_TEMP/check.txt"
+          echo "$(wc -l < "$RUNNER_TEMP/check.txt") private file(s) fetched, SHA-256 checked"
+          echo "RTT_ASSETS_ROOT=$ROOT" >> "$GITHUB_ENV"
+
+      - name: Render the thumbnails and check every board against the data
+        run: |
+          set -o pipefail
+          export PW_CHROME=$(cd kits/rtt-002 && node -e "console.log(require('playwright').chromium.executablePath())")
+          test -x "$PW_CHROME"
+          node kits/thumbnails/render_thumbnails.js "$RUNNER_TEMP/rtt_out" $EPISODES | tee "$RUNNER_TEMP/thumbs.log"
+          if grep -q 'not found' "$RUNNER_TEMP/thumbs.log"; then echo "::error::a picture was not loaded"; exit 1; fi
+          ls "$RUNNER_TEMP/rtt_out"
+
+      - name: Save the thumbnails as one pre-release in the private repo
+        env:
+          GH_TOKEN: ${{ secrets.RTT_PRIVATE_TOKEN }}
+        run: |
+          O="$RUNNER_TEMP/rtt_out"; SHORT=${GITHUB_SHA::7}
+          TAG="${TAG_PREFIX}-${SHORT}-run${GITHUB_RUN_NUMBER}"
+          {
+            echo "Race Through Time thumbnails, round 1 (IQ-23; owner DEC-800 to DEC-802): a real board from each approved film on the left, big words and the years on the right, the film's own logos or pictures, a bright background. RTT-001 in three options (A white, B bright yellow, C the film's dark navy with the words on a yellow panel); the other four in option A; A_short = a shorter wording proposed for the 168 x 94 sidebar. Rendered by GitHub Actions. Not uploaded anywhere."
+            echo
+            echo "- Source: ${GITHUB_REPOSITORY} @ ${GITHUB_SHA} (${GITHUB_REF_NAME}), run ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+            echo "- Renderer: kits/thumbnails/render_thumbnails.js, one config per episode (kits/thumbnails/rtt-###.json)"
+            echo "- Sizes: *_1280x720.png and .jpg (YouTube's thumbnail size; every JPG under 2 MB), *_320x180_phone_feed.png and *_168x94_sidebar.png (the same PNG scaled down, to judge legibility)"
+            echo "- Private files: race-through-time-private, every SHA-256 checked against the episode's list before drawing; player inputs checked against kits/<kit>/dataset_hashes.txt"
+            echo "- Boards (each the film's own frame where the period's figures land, cropped, never edited; every bar's figure, value label, order and length checked against the episode's data file; *_check.json lists them):"
+            for j in "$O"/*_check.json; do
+              node -e "const c=require('$j');console.log('  - '+c.episode+': '+c.period+', frame '+c.frame+' of '+c.film_frames+' ('+c.film_config+'); '+c.bars.length+' bars; '+(c.errors.length?'CHECK FAILED':'every bar = the data file')+(c.overrides?'; side panels switched off for the crop: '+Object.keys(c.overrides).join(', ')+' (board identical to the approved config: '+c.board_same_as_film_config+')':''))"
+            done
+            echo "- File SHA-256:"
+            (cd "$O" && sha256sum *.png *.jpg *_check.json | sed 's/^/  - /')
+            echo
+            echo "Private review render. Not for upload until Luke picks an option (DEC-001, DEC-078)."
+          } > "$O/notes.md"
+          cat "$O/notes.md"
+          gh release create "$TAG" --repo "$PRIVATE_REPO" --target main --prerelease \
+            --title "RTT thumbnails round 1 ${SHORT} (new layout: options A, B, C for Browser Wars; option A for the other four)" --notes-file "$O/notes.md" "$O"/*.png "$O"/*.jpg "$O"/*_check.json
+          URL="https://github.com/${PRIVATE_REPO}/releases/tag/${TAG}"
+          echo "Release: $URL"
+          echo "RTT thumbnails saved to the private repo: $URL" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Delete the private files and images from the runner
+        if: always()
+        run: rm -rf "$RUNNER_TEMP/rtt_assets" "$RUNNER_TEMP/rtt_out" "$RUNNER_TEMP/thumbs.log" "$RUNNER_TEMP/check.txt"
