@@ -57,7 +57,7 @@ Note for Luke (rights): the UN's website terms are non-commercial; we use only t
 ## Round 3 (IQ-24f, 17 Oct 2026): three palettes and 6 s vs 12 s
 Brief `prompts/CODE_SESSION_IQ-24f.md`. Luke (DEC-691..DEC-693): round-2 colours not approved ("Europe is just a bit too close to the Americas", "a bit drab"); 6 s per year preferred to 4.5 s, try 6 s vs 12 s; everything else kept.
 
-**Watch:** the private pre-release in DEC-696: `sheet_v3r3_palettes` (A, B, C on the same 2019 frame with tags) and each palette's still with its phone copy; two clips of 2016–2020 in palette C: 6 s per year (27 s) and 12 s per year (51 s).
+**Watch:** https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-104-v3-round3-a3ac2ed-run3 (DEC-696): `sheet_v3r3_palettes` (A, B, C on the same 2019 frame with tags) and each palette's still with its phone copy; two clips of 2016–2020 in palette C: 6 s per year (27 s) and 12 s per year (51 s).
 
 **Palettes (DEC-694)** — all vivid, no yellow or amber, dark names readable, every pair checked including the amber tag; associations are familiar ones, not official, and none copies a brand, flag or the Olympic rings.
 
@@ -73,7 +73,7 @@ C is the most saturated and puts Europe (blue) and the Americas (crimson) furthe
 
 **Music:** the approved track lasts 2:27.6 and V2 plays it once, so any of these paces needs the track looped or a longer track (a question before the film).
 
-**Checks (all PASS):** values, tags, phone with each palette (6.1 pt; legend 5.1 pt), overlaps, every clip frame (`tests/rtt104/STILLS_CHECK_V3_round3.md`); V2 byte-identical to c379631; WCAG flash on both clips (DEC-696).
+**Checks (all PASS):** values, tags, phone with each palette (6.1 pt; legend 5.1 pt), overlaps, every clip frame (`tests/rtt104/STILLS_CHECK_V3_round3.md`); V2 byte-identical to c379631; WCAG flash PASS on both clips (16,067 and 4,297 px of 57,600).
 
 ### Questions for Luke (round 3)
 1. **Which palette, A, B or C?** *(Recommendation: C. Default: C.)*

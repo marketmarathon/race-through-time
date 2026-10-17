@@ -1383,7 +1383,7 @@
           "configs": "kits/rtt-104/config_rtt104_v3_palette_{a,b,c}.json; clips config_rtt104_v3_clip_palette_c_{6_0s,12_0s}_2016_2020.json",
           "running_time": "6 s 3:00.5; 8 s 4:04.5; 12 s 5:48.5 (incl. 5 s final table and 6 s closing card)",
           "music_note": "track 2:27.6: a 3:00+ film needs a loop or a longer track",
-          "release": "see DEC-696"
+          "release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-104-v3-round3-a3ac2ed-run3 (run 39027332899; 6 s clip a06f1f3c...5176, 12 s clip ec12ed3d...75ac; WCAG PASS both)"
         }
       }
     }
