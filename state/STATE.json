@@ -1363,7 +1363,7 @@
           "configs": "kits/rtt-104/config_rtt104_v3_base.json (recommended) and config_rtt104_v3_*.json",
           "workflow": ".github/workflows/rtt104_v3_pilot.yml (push changing it renders the round)",
           "checks": "node kits/rtt-104/render_stills_v3.js <dir outside repo> --check-only -> tests/rtt104/STILLS_CHECK_V3.md; python3 tests/rtt104/check_v3_changes.py",
-          "release": "see DEC-679"
+          "release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-104-v3-round1-e546e07-run1 (run 39019439677; clip a c1be98d3...3b80, clip b abcfdf36...9eaa; WCAG PASS both)"
         }
       }
     }

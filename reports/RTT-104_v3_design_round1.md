@@ -2,7 +2,7 @@
 
 Brief `prompts/CODE_SESSION_IQ-24d.md`. Owner DEC-672 (go ahead), DEC-673 (see both tag rules), DEC-674 (late-year question, answer pending); Claude DEC-675..DEC-679. Nothing here is approved; no film was rendered. **The approved V2 film is unchanged** (its page, configs, input, music, workflow and the shared driver byte-identical to c379631, `python3 tests/rtt104/check_v3_changes.py`).
 
-**Watch:** the private pre-release named in DEC-679 (stills, phone copies, three sheets, two clips; every SHA-256 in its notes).
+**Watch:** https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-104-v3-round1-e546e07-run1 (8 stills with phone copies, 3 sheets, 2 clips; every SHA-256 in its notes; DEC-679).
 
 ## What was built
 - `kits/rtt-104/player_rtt104_v3.html`: runs the approved V2 page's own code unchanged and replaces only the board (DEC-675). One full-width board of 20, bars 33 px thick (V2: 20 px), flag left of the bar, name and value on the bar, big year, world-average panel bottom right, title "Women in Parliament: The Top 20 (1997–2025)", measure line as V2, credit "Race Through Time · Data: IPU via World Bank WDI (CC BY 4.0) · Election dates: IPU Parline". Smooth motion at 3 s per year as V2.
@@ -14,7 +14,7 @@ Brief `prompts/CODE_SESSION_IQ-24d.md`. Owner DEC-672 (go ahead), DEC-673 (see b
 - **Tags:** every tag on every still and every frame of both clips is a VERIFIED row with a source URL and fetched excerpt, big under the rule shown, with the row's month and year; on a landing every such row is drawn. Whole race scanned too: all 46 (a) and 101 (b) tags appear and fit, under both scales. `check_v3_changes.py`: 180/180 cause rows have a runner-fetched excerpt showing the date.
 - **Phone:** names, values and tags 30 px = **6.1 pt** at 390 pt wide (≥ 5.9: PASS); top 15: 6.9 pt (DEC-676).
 - **Overlap:** no bar or text inside the world panel or past the edge, every frame.
-- **WCAG flash:** both clips, on the runner (results in the release notes and DEC-679).
+- **WCAG flash:** both clips PASS on the runner (32,211 and 47,059 px of 57,600 allowed).
 - Data tests 23/23.
 
 ## What the clips show (2016 → 2020, 3 s per year)
