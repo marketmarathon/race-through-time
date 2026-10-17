@@ -1,6 +1,6 @@
 # RTT-104 V3 — YouTube times (IQ-24g, 17 Oct 2026): "Women in Parliament: The Top 20 (1997–2025)"
 
-For the film rendered from `kits/rtt-104/config_rtt104_v3_film.json` (private pre-release in DEC-703). **Not approved yet:** these times hold only for that exact render; Luke approves the master by its SHA-256 (DEC-078). V2's `youtube_times.md` is unchanged and still describes the approved V2 film.
+For the film rendered from `kits/rtt-104/config_rtt104_v3_film.json` (private pre-release https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-104-film-v3-90233ff-run1; master SHA-256 `54e96cd52553d85c1a5705c33bd620becd3b2eea344348a952c15b1315ebffe5`, DEC-703). **Not approved yet:** these times hold only for that exact render; Luke approves the master by its SHA-256 (DEC-078). V2's `youtube_times.md` is unchanged and still describes the approved V2 film.
 
 **Running time: 2:54.5** (5,235 frames at 30 fps): 1.5 s on 1997, 28 years at 6 s each, then the 5 s final table (2025 lands at 2:49.5). No closing card (DEC-701).
 

@@ -1394,7 +1394,21 @@
           "chapters": "0:00 / 0:31 / 1:37 / 2:07 / 2:43",
           "end_screen": "2:49.5-2:54.5",
           "times_file": "kits/rtt-104/youtube_times_v3.md",
-          "release": "see DEC-703"
+          "release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-104-film-v3-90233ff-run1",
+          "master": {
+            "file": "rtt104_film_v3_90233ff_3840x2160.mp4",
+            "sha256": "54e96cd52553d85c1a5705c33bd620becd3b2eea344348a952c15b1315ebffe5",
+            "bytes": 447703319,
+            "duration": "2:54.5 (174.500 s)",
+            "commit": "90233ff",
+            "run": "https://github.com/marketmarathon/race-through-time/actions/runs/39031094776"
+          },
+          "viewing_copy": {
+            "file": "rtt104_film_v3_90233ff_1920x1080_viewing.mp4",
+            "sha256": "5f36f7f47979b2c1d8e60bbf82ad453192cc5f323d60e924c158718df1d19ab0",
+            "bytes": 48444205
+          },
+          "checks_on_runner": "film check PASS; WCAG whole film PASS (16,093 of 57,600 px); loop check PASS; -16.1 LUFS, -1.5 dBTP; V2 byte-identical to c379631"
         }
       }
     }
