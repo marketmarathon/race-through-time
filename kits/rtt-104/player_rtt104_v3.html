@@ -109,7 +109,7 @@ function drawAxis3(P,max){
 /* tag timing, in seconds from the start of the move into the tag's year (3 s per year): fades in over 0.3 s, fully shown
    for the last 2 s of the move (while the bar moves to its new figure) and on the landing frame, then fades out over
    the first 0.3 s of the next move. So a landing still shows the year's exact figures with the tags for its changes. */
-function tagAlpha(sec){ const t=CFG.v3.tag, beat=CFG.sec_per_year, on=beat-t.hold_sec;
+function tagAlpha(sec){ const t=CFG.v3.tag, beat=CFG.sec_per_year, on=beat-Math.min(t.hold_sec, beat-1);   // IQ-24f cap: a tag is gone 0.4 s before the next year's tags start
   return clamp(Math.min((sec-(on-t.fade_sec))/t.fade_sec, (beat+t.fade_sec-sec)/t.fade_sec),0,1); }
 
 function drawBoard3(S){

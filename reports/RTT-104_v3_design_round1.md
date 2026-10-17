@@ -53,3 +53,29 @@ Brief `prompts/CODE_SESSION_IQ-24e.md`. **Luke chose (DEC-680..DEC-684):** 20 ro
 2. **Pace: 4.5 s or 6 s per year, or in between?** *(Recommendation: 4.5 s: easy to follow, and the film stays near 2 minutes 20. 6 s makes it 3 minutes, long for 28 years. Default: 4.5 s.)*
 
 Note for Luke (rights): the UN's website terms are non-commercial; we use only the facts (which continent) and name "UN M49" in the legend. Claude judges the risk very low (rights ledger).
+
+## Round 3 (IQ-24f, 17 Oct 2026): three palettes and 6 s vs 12 s
+Brief `prompts/CODE_SESSION_IQ-24f.md`. Luke (DEC-691..DEC-693): round-2 colours not approved ("Europe is just a bit too close to the Americas", "a bit drab"); 6 s per year preferred to 4.5 s, try 6 s vs 12 s; everything else kept.
+
+**Watch:** the private pre-release in DEC-696: `sheet_v3r3_palettes` (A, B, C on the same 2019 frame with tags) and each palette's still with its phone copy; two clips of 2016–2020 in palette C: 6 s per year (27 s) and 12 s per year (51 s).
+
+**Palettes (DEC-694)** — all vivid, no yellow or amber, dark names readable, every pair checked including the amber tag; associations are familiar ones, not official, and none copies a brand, flag or the Olympic rings.
+
+| | Africa | Americas | Asia | Europe | Oceania | Weakest colour-blind pair (ΔE, target 8) | Europe ↔ Americas (normal) |
+|---|---|---|---|---|---|---|---|
+| A | lime green `#7CBA10` | red `#DA534F` | orchid `#E688EC` | blue `#5E78F7` | turquoise `#17EACE` | 10.3 Oceania ↔ amber tag | 30.3 |
+| B | green `#27A902` | coral red `#FB817A` | hot pink `#F024A1` | sky blue `#4FAAFE` | purple `#9E62E2` | 9.9 Oceania ↔ Europe | 27.9 |
+| **C (recommended)** | lime green `#93BC2D` | crimson `#E1465E` | pink orchid `#F295FB` | blue `#3789FD` | purple `#AC61CB` | 9.1 Oceania ↔ Europe | **32.7** |
+
+C is the most saturated and puts Europe (blue) and the Americas (crimson) furthest apart; its weakest pair is Oceania ↔ Europe, and only Australia and New Zealand are purple.
+
+**Pace (DEC-695):** tags stay two-thirds of a year (4 s at 6 s, 8 s at 12 s), capped so they are gone before the next year's tags. Full film including the 5 s final table and the closing card: **6 s → 3:00.5; 8 s → 4:04.5; 12 s → 5:48.5**. Dead time at 12 s: no second where nothing moves, but quiet years crawl (2010's biggest change is 1.8 points, about 41 px in 12 s; 2016, 2021 and 2022 have nothing above 4.5 points).
+
+**Music:** the approved track lasts 2:27.6 and V2 plays it once, so any of these paces needs the track looped or a longer track (a question before the film).
+
+**Checks (all PASS):** values, tags, phone with each palette (6.1 pt; legend 5.1 pt), overlaps, every clip frame (`tests/rtt104/STILLS_CHECK_V3_round3.md`); V2 byte-identical to c379631; WCAG flash on both clips (DEC-696).
+
+### Questions for Luke (round 3)
+1. **Which palette, A, B or C?** *(Recommendation: C. Default: C.)*
+2. **Pace: 6 s or 12 s per year, or between (e.g. 8 s)?** *(Recommendation: 6 s: you already found it works, and the film is 3:00. 12 s makes it nearly 6 minutes and quiet years crawl. 8 s (4:05) if 6 s still feels quick. Default: 6 s.)*
+3. **Music for the longer film:** loop the approved track, or choose a longer one? *(Recommendation: loop it, with a crossfade at a musical phrase, as RTT-003. Default: loop.)*

@@ -78,6 +78,10 @@ function checkPhone(st) {
     if (pt(min[k]) < need - 1e-9) fails.push(`${k} ${min[k]}px = ${pt(min[k]).toFixed(1)} pt < ${need}`); }
   return { fails, min };
 }
+/* IQ-24f: bar positions (length and row) and the largest move of any bar between two samples, in px */
+const barPos = st => Object.fromEntries(st.bars.map(b => [b.id, [b.rect.w, b.rect.y]]));
+const motion = (a, b) => Math.max(0, ...Object.keys(b).filter(k => a[k]).map(k => Math.abs(a[k][0] - b[k][0]) + Math.abs(a[k][1] - b[k][1])),
+  ...Object.keys(b).filter(k => !a[k]).map(() => 99), ...Object.keys(a).filter(k => !b[k]).map(() => 99));
 const grab = pg => pg.evaluate(() => ({ labels: window.__LABELS, bars: window.__BARS, panel: G.panel, legend: G.legend || null, state: window.__STATE }));
 
 async function main() {
@@ -109,14 +113,15 @@ async function main() {
     console.log(`${res.length ? 'FAIL' : 'PASS'} ${s.name}${res.length ? ': ' + res.join('; ') : ''}`);
   }
   /* every frame of every V3 clip: tags and layout; landing frames also values */
-  report.push('', '| Clip | Frames | Tags shown (country-year) | Landing values | Tag and layout checks, every frame |', '|---|---|---|---|---|');
+  report.push('', '| Clip | Frames | Still seconds (no bar moves more than 2 px in the second) | Tags shown (country-year) | Landing values | Tag and layout checks, every frame |', '|---|---|---|---|---|---|');
   for (const c of fs.readFileSync(path.join(__dirname, `clips_v3${ROUND}.txt`), 'utf8').split(/\s+/).filter(Boolean)) {
     const cfg = R.config(c), { br, pg } = await R.open(cfg);
     const total = await pg.evaluate(() => RACE_FRAMES), lands = await pg.evaluate(() => PLAN.landing);
     const atLand = Object.fromEntries(Object.entries(lands).map(([y, f]) => [f, +y])), first = Math.min(...Object.keys(lands).map(Number));
-    const fails = new Set(), seen = new Set(); let vals = 0;
+    const fails = new Set(), seen = new Set(); let vals = 0, mark = null; const still = [];
     for (let f = 0; f < total; f++) {
       await R.frame(pg, f); const st = await grab(pg), ly = atLand[f];
+      if (f % 30 === 0) { const pos = barPos(st); if (mark && motion(mark, pos) < 2) still.push(f / 30 - 1); mark = pos; }   // IQ-24f: a still second
       for (const x of [...checkTags(st, cfg, ly === first ? null : ly), ...checkLayout(st)]) fails.add(x);   // no change lands on the first year shown
       st.labels.filter(l => l.kind === 'tag' && l.alpha > 0.05).forEach(l => seen.add(l.id + ' ' + l.year));
       if (ly) { const got = st.bars.slice().sort((a, b) => a.slot - b.slot).map(b => b.id + ' ' + b.value).join('|');
@@ -124,7 +129,7 @@ async function main() {
     }
     await br.close();
     if (fails.size) ok = false;
-    report.push(`| ${c} | ${total} | ${seen.size}: ${[...seen].sort((a, b) => a.slice(4).localeCompare(b.slice(4)) || a.localeCompare(b)).join(', ')} | ${vals}/${Object.keys(lands).length} PASS | ${fails.size ? 'FAIL: ' + [...fails].join('; ') : 'PASS'} |`);
+    report.push(`| ${c} | ${total} | ${still.length ? still.length + ' (' + still.map(x => x + '–' + (x + 1) + ' s').join(', ') + ')' : '0'} | ${seen.size}: ${[...seen].sort((a, b) => a.slice(4).localeCompare(b.slice(4)) || a.localeCompare(b)).join(', ')} | ${vals}/${Object.keys(lands).length} PASS | ${fails.size ? 'FAIL: ' + [...fails].join('; ') : 'PASS'} |`);
     console.log(`${fails.size ? 'FAIL' : 'PASS'} ${c}: ${total} frames, ${seen.size} tags${fails.size ? ': ' + [...fails].join('; ') : ''}`);
   }
   report.push('', `Overall: ${ok ? 'PASS' : 'FAIL'}.`, '');
@@ -157,5 +162,5 @@ async function main() {
   console.log(`${Object.keys(files).length} stills, ${Object.keys(files).length} phone copies, ${spec.compose.length} sheets in ${out}`);
   process.exit(ok ? 0 : 1);
 }
-module.exports = { checkTags, checkLayout, checkPhone, wantBoard, grab };
+module.exports = { checkTags, checkLayout, checkPhone, wantBoard, grab, barPos, motion };
 if (require.main === module) main().catch(e => { console.error('::error::' + e.message); process.exit(2); });

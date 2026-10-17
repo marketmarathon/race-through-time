@@ -1,0 +1,6 @@
+{
+ "extends": "config_rtt104_v3_continents.json",
+ "kit_version": "rtt104_v3_round3_palette_b",
+ "v3": {"continent_colours": {"Africa": "#27A902", "Americas": "#FB817A", "Asia": "#F024A1", "Europe": "#4FAAFE", "Oceania": "#9E62E2"}},
+ "notes": "RTT-104 V3 round 3 (IQ-24f) palette B: associations 2 (Europe sky blue, Americas coral red, Africa green, Asia hot pink, Oceania purple). Familiar associations only, not official colours. Checked (DEC-694)."
+}
