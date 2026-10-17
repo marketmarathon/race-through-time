@@ -5,6 +5,7 @@ from that fetch holding its date (IQ-24c); (3) the approved V2 film config and t
 import csv
 import os
 import subprocess
+import tempfile
 import sys
 
 ok = True
@@ -35,8 +36,19 @@ for r in el:
 print(f"election/other rows with a runner-fetched URL and excerpt showing the date: {len(el) - len(badel)}/{len(el)}",
       "PASS" if not badel else f"FAIL {badel}")
 ok &= not badel
-for p in ("kits/rtt-104/config_rtt104_film_v2.json", ".github/workflows/rtt104_film.yml", "kits/rtt-104/music_rtt104.json"):
+# IQ-24d: the V2 film's whole chain (its configs, page, input, flags, renderer and the shared driver) is checked too
+for p in ("kits/rtt-104/config_rtt104_film_v2.json", ".github/workflows/rtt104_film.yml", "kits/rtt-104/music_rtt104.json",
+          "kits/rtt-104/config_rtt104_film.json", "kits/rtt-104/config_rtt104_base.json", "kits/rtt-104/player_rtt104.html",
+          "kits/rtt-104/race_rtt104.json", "kits/rtt-104/flags.csv", "kits/rtt-104/render_rtt104.js", "kits/rtt-002/rtt.js"):
     same = subprocess.run(["git", "diff", "--quiet", "c379631", "--", p]).returncode == 0
     print(f"{p} byte-identical to c379631:", "PASS" if same else "FAIL")
     ok &= same
+# IQ-24d: the V3 player input is current (rebuilt from the data and V2's input, byte for byte)
+with tempfile.TemporaryDirectory() as tmp:
+    out = os.path.join(tmp, "race_rtt104_v3.json")
+    subprocess.run([sys.executable, "scripts/rtt104_v3_tags.py", "data/rtt-104", "kits/rtt-104/race_rtt104.json", out],
+                   check=True, stdout=subprocess.DEVNULL)
+    same = open(out, "rb").read() == open("kits/rtt-104/race_rtt104_v3.json", "rb").read()
+print("kits/rtt-104/race_rtt104_v3.json rebuilt byte-identical:", "PASS" if same else "FAIL")
+ok &= same
 sys.exit(0 if ok else 1)

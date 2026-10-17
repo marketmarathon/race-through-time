@@ -1,0 +1,174 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>RTT-104 V3 top 20</title>
+<style>html,body{margin:0;background:#0b1424}canvas{display:block}</style></head>
+<body><canvas id="c" width="1920" height="1080"></canvas>
+<script>
+/* Race Through Time - RTT-104 V3 design round (IQ-24d): ONE full-width board of the top 20, bigger bars in the classic
+ * look (flag left of the bar, name and value on the bar), and short tags naming the VERIFIED event behind a change.
+ *
+ * Reuse, not a copy (CLAUDE.md, DEC-105): this page first loads the approved V2 page's own script
+ * (player_rtt104.html, NOT changed, so the approved film cannot change) and runs it here as it is: the timeline
+ * (buildPlan), the smooth motion maths (fcSlopes, hermite; DEC-654/655), the text, flag, year, world-panel, chrome and
+ * closing-card drawing, and the page contract (setup, drawAt, RACE_FRAMES, __LABELS, __BARS). Only the board is new:
+ * geometry, the items for 20 rows, the bar drawing and the tags. Driven by kits/rtt-104/render_rtt104.js as V2.
+ *
+ * Options for Luke (DEC-069), by config key "v3":
+ *   rows 20 | 15                                   - question 1
+ *   tag.look "pill" | "text"                        - question 2
+ *   tag.rule "a" (5 points or more) | "b" (also 3+ places) | "none"   - question 3
+ *   scale "fixed" (0-70%) | "leader" (the leader's bar at 90% of the width)   - question 4
+ * Data: kits/rtt-104/race_rtt104_v3.json (scripts/rtt104_v3_tags.py): top20 per year (series.csv texts) and tags from
+ * VERIFIED rows of data/rtt-104/v3_change_events.csv. Nothing here computes a figure.
+ */
+(function loadV2(){
+  const x=new XMLHttpRequest(); x.open('GET','player_rtt104.html',false); x.send();
+  const src=x.responseText, a=src.indexOf('<script>')+8, b=src.lastIndexOf('</'+'script>');
+  if(a<8||b<a) throw new Error('V2 page script not found');
+  const s=document.createElement('script'); s.text=src.slice(a,b); document.head.appendChild(s);   // runs now, as a classic script
+})();
+</script>
+<script>
+const V2={setup:window.setup};
+let CURVES3=null, TAGS={}, N=20;
+const NAVY='#0b1424', AMBER='#FFD27A';
+
+window.setup=function(o){
+  o=Object.assign({}, o, {cfg:Object.assign({}, o.cfg, {motion:'smooth', leave:{enabled:false, style:'grey'}})});
+  V2.setup(o);                                         // V2's setup calls geometry() below and builds PLAN
+  const v3=Object.assign({rows:20, scale:'fixed', fixed_max:70, leader_frac:0.9}, CFG.v3||{});
+  v3.tag=Object.assign({rule:'a', look:'pill', fade_sec:0.3, hold_sec:2.0}, (CFG.v3||{}).tag||{});
+  CFG.v3=v3; N=v3.rows; G=geometry();
+  TAGS={}; for(const t of D.tags||[]) if(v3.tag.rule==='b' || (v3.tag.rule==='a' && t.rule_a)) TAGS[t.id+'|'+t.to_year]=t;
+  CURVES3=buildCurves3();
+};
+
+geometry=function(){
+  const v3=CFG.v3||{rows:20}, n=v3.rows||20, y0=196, H=812, row=H/n;
+  const barH=Math.round(row*0.82), flagH=Math.min(n>15?30:36, barH-2), flagW=flagH*1.5;
+  const P={x:64, w:1792, y0, row, barH, flagW, flagH, axisY:182, nameSize:n>15?30:34, valSize:n>15?30:34,
+           bx:64+flagW+12};
+  P.bw=1724-P.bx;                                      // 70% ends at x = 1724, leaving room for the value and a tag
+  return {lr:true, P, panel:{x:1452, y:742, w:404, h:252}};   // lr: V2's chrome then draws no split line
+};
+
+/* smooth motion over 20 rows: V2's curves (monotone PCHIP, DEC-655) with the rank capped at N+3 = below the board */
+function buildCurves3(){
+  const ys=PLAN.years, n=ys.length, rest=new Set([0,n-1]), C={}, cap=N+3;
+  const ids=new Set(); for(const y of ys) for(const b of D.top20[y].slice(0,N)) ids.add(b.id);
+  for(const id of ids){
+    const slot=[], val=[];
+    for(const y of ys){ const R=D.frames[PLAN.idx[y]].ranks.top, i=R.findIndex(r=>r.id===id);
+      slot.push(i<0?cap:Math.min(i+1,cap)); val.push(i<0?NaN:+R[i].v); }
+    C[id]={slot, val, ds:fcSlopes(slot,rest), dv:fcSlopes(val,rest)};
+  }
+  return C;
+}
+
+itemsAt=function(fr){
+  let st=PLAN.steps.find(s=>fr>=s.from && fr<s.to) || PLAN.steps[PLAN.steps.length-1];
+  if(st.kind==='card') st=PLAN.steps[PLAN.steps.length-2];
+  if(st.kind==='move' && fr===st.from) st={kind:'hold', year:st.a};   // a landing frame is drawn exactly as the data
+  const out={top:[], yearLabel:null, yearPrev:null, yearMix:1, worldYear:null, step:st, tags:[]};
+  if(st.kind!=='move'){
+    out.yearLabel=st.year; out.worldYear=st.year;
+    D.top20[st.year].slice(0,N).forEach((b,i)=>out.top.push({id:b.id, slot:i+1, v:+b.v, text:b.t, landed:true, alpha:1}));
+    if(st.year!==PLAN.years[0]) out.tags=[{year:st.year, sec:CFG.sec_per_year+(fr-PLAN.landing[st.year])/FPS}];   // no change lands on the first year shown
+    return out;
+  }
+  const u=(fr-st.from)/Math.max(1,st.to-st.from), i=PLAN.knot[st.a];
+  for(const [id,c] of Object.entries(CURVES3)){
+    const sl=hermite(c.slot[i],c.slot[i+1],c.ds[i],c.ds[i+1],u);
+    if(sl>N+0.98 && c.slot[i]>N && c.slot[i+1]>N) continue;
+    const v0=c.val[i], v1=c.val[i+1];
+    const v = isNaN(v0)&&isNaN(v1) ? NaN : isNaN(v0) ? v1 : isNaN(v1) ? v0 : clamp(hermite(v0,v1,c.dv[i],c.dv[i+1],u),Math.min(v0,v1),Math.max(v0,v1));
+    if(isNaN(v)) continue;
+    out.top.push({id, slot:sl, v:Math.max(0,v), text:null, landed:false, alpha:1});
+  }
+  const sec=(fr-st.from)/FPS; out.tags=[{year:st.b, sec}];
+  if(st.a!==PLAN.years[0]) out.tags.push({year:st.a, sec:CFG.sec_per_year+sec});   // the last year's tags fade out
+  out.yearLabel=st.b; out.yearPrev=st.a; out.yearMix=clamp((fr-(st.to-Math.round(0.5*FPS)))/(0.5*FPS),0,1);
+  if(out.yearMix<=0){ out.yearLabel=st.a; out.yearPrev=null; out.yearMix=1; }
+  out.worldYear=st.a+u;
+  return out;
+};
+
+function scaleMax(items){
+  if(CFG.v3.scale!=='leader') return CFG.v3.fixed_max;
+  return Math.max(...items.map(it=>it.v))/CFG.v3.leader_frac;
+}
+function drawAxis3(P,max){
+  const step=10; ctx.font='400 26px '+FONT;
+  for(let v=0; v<=max+1e-9; v+=step){
+    const x=P.bx+P.bw*v/max; ctx.fillStyle=T.axis; tabText(v+'%', x, P.axisY, 'center', 'axis', 'top');
+    ctx.fillStyle=T.grid; ctx.fillRect(Math.round(x)-0.5, P.axisY+8, 1, P.y0+N*P.row-P.axisY-8);
+  }
+}
+/* tag timing, in seconds from the start of the move into the tag's year (3 s per year): fades in over 0.3 s, fully shown
+   for the last 2 s of the move (while the bar moves to its new figure) and on the landing frame, then fades out over
+   the first 0.3 s of the next move. So a landing still shows the year's exact figures with the tags for its changes. */
+function tagAlpha(sec){ const t=CFG.v3.tag, beat=CFG.sec_per_year, on=beat-t.hold_sec;
+  return clamp(Math.min((sec-(on-t.fade_sec))/t.fade_sec, (beat+t.fade_sec-sec)/t.fade_sec),0,1); }
+
+function drawBoard3(S){
+  const P=G.P, max=scaleMax(S.top); window.__STATE.scale_max=max;
+  drawAxis3(P,max);
+  ctx.save(); ctx.beginPath(); ctx.rect(0, P.y0-4, 1920, N*P.row+2); ctx.clip();
+  const later=[];
+  for(const it of S.top.slice().sort((a,b)=>b.slot-a.slot)){        // lower rows first, so a rising bar passes over
+    if(it.slot>N+0.98) continue;
+    const e=ENT[it.id], y=P.y0+(it.slot-1)*P.row, len=Math.max(2,P.bw*it.v/max);
+    drawFlag(it.id, P.x, y+(P.barH-P.flagH)/2, P.flagW, P.flagH, 1);
+    ctx.fillStyle=CFG.colours.top; rr(P.bx, y, len, P.barH, 5); ctx.fill();
+    const base=y+P.barH/2+P.nameSize*0.36;
+    ctx.font='700 '+P.nameSize+'px '+FONT; const nw=ctx.measureText(e.label).width;
+    ctx.font='700 '+P.valSize+'px '+FONT;
+    const vtxt=it.landed&&it.text ? it.text+'%' : fmtPct(it.v), vw=tabWidth(vtxt,pitch());
+    const inside = len >= 14+nw+20+vw+12;
+    ctx.fillStyle=NAVY; ctx.font='700 '+P.nameSize+'px '+FONT;
+    if(len>=14+nw+12) text('name',it.id,e.label,P.bx+14,base,'left');
+    else { ctx.fillStyle=T.ink; text('name',it.id,e.label,P.bx+len+12,base,'left'); }
+    ctx.font='700 '+P.valSize+'px '+FONT;
+    let vEnd;
+    if(inside){ ctx.fillStyle=NAVY; tabText(vtxt,P.bx+len-12,base,'right','value',it.id); vEnd=P.bx+len; }
+    else { ctx.fillStyle=T.ink; const x0=len>=14+nw+12 ? P.bx+len+12 : P.bx+len+12+nw+16; tabText(vtxt,x0,base,'left','value',it.id); vEnd=x0+vw; }
+    window.__BARS.push({id:it.id, board:'top', slot:it.slot, value:vtxt, landed:!!it.landed, alpha:1, rect:{x:P.bx,y,w:len,h:P.barH}});
+    for(const q of S.tags||[]){ const tg=TAGS[it.id+'|'+q.year], a=tg?tagAlpha(q.sec):0;
+      if(a>0.001) later.push({tg, a, y, base, len, vEnd, inside, vw, nameEnd:P.bx+14+nw}); }
+  }
+  for(const L of later) drawTag(L);                    // tags on top of every bar
+  ctx.restore();
+}
+
+/* a tag: beside the bar (after its value); if that would cross the board's edge or the world panel, inside the bar
+   just left of the value. look "pill": a filled amber chip; look "text": amber words after a short amber rule. */
+function drawTag(L){
+  const P=G.P, look=CFG.v3.tag.look, s=L.tg.text, fs=30;
+  ctx.font='700 '+fs+'px '+FONT; const tw=ctx.measureText(s).width, padX=look==='pill'?14:0, lead=look==='pill'?0:16;
+  const W=tw+2*padX+lead, h=36, top=L.y+(P.barH-h)/2;
+  const p=G.panel, inPanelRows = CFG.world_panel && top+h>p.y-6 && top<p.y+p.h;
+  const limit = inPanelRows ? p.x-14 : P.x+P.w;
+  let x=L.vEnd+16, onBar=false;
+  if(x+W>limit && L.inside){ x=P.bx+L.len-12-L.vw-18-W; onBar=true; }
+  const fits = x+W<=limit && (!onBar || x>=L.nameEnd+12);
+  ctx.globalAlpha=L.a;
+  if(look==='pill'){ ctx.fillStyle=AMBER; rr(x,top,W,h,h/2); ctx.fill(); ctx.fillStyle=NAVY; }
+  else { ctx.fillStyle=onBar?NAVY:AMBER; ctx.fillRect(x,top+4,5,h-8); }
+  ctx.font='700 '+fs+'px '+FONT; ctx.textAlign='left'; ctx.fillText(s,x+padX+lead,L.base);
+  note('tag',L.tg.id,s,x+padX+lead,L.base,'left',tw,{year:L.tg.to_year, onBar, fits, box:{x,y:top,w:W,h}});
+  ctx.globalAlpha=1;
+}
+
+drawAt=function(t){
+  baseTransform(); window.__LABELS=[]; window.__BARS=[];
+  const fr=Math.min(Math.round(t*FPS), RACE_FRAMES-1);
+  const S=itemsAt(fr); window.__STATE={frame:fr, year:S.yearLabel, step:S.step.kind};
+  ctx.fillStyle=T.ground; ctx.fillRect(0,0,1920,1080); ctx.textBaseline='alphabetic';
+  drawChrome(); drawYear(S); drawBoard3(S); drawWorld(S);
+  if(PLAN.card && fr>=PLAN.card.from){
+    const u=clamp((fr-PLAN.card.from)/(CFG.closing_card.fade_sec*FPS),0,1);
+    window.__LABELS=[]; window.__BARS=[]; drawCard(ease(u)); window.__STATE.step='card';
+  }
+};
+window.drawIntro=()=>drawAt(0);
+window.moveFrame=y=>{ const s=PLAN.steps.find(s=>s.kind==='move' && s.b===y); return s?s.from:null; };   // first frame of the move into year y
+</script></body></html>
