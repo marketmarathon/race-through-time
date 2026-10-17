@@ -1,0 +1,127 @@
+iso3,label,m49_code,region_code,region_name,sub_region_name,intermediate_region_name,country_or_area
+AFG,Afghanistan,004,142,Asia,Southern Asia,,Afghanistan
+AGO,Angola,024,002,Africa,Sub-Saharan Africa,Middle Africa,Angola
+ARE,United Arab Emirates,784,142,Asia,Western Asia,,United Arab Emirates
+ARG,Argentina,032,019,Americas,Latin America and the Caribbean,South America,Argentina
+AUS,Australia,036,009,Oceania,Australia and New Zealand,,Australia
+AUT,Austria,040,150,Europe,Western Europe,,Austria
+AZE,Azerbaijan,031,142,Asia,Western Asia,,Azerbaijan
+BDI,Burundi,108,002,Africa,Sub-Saharan Africa,Eastern Africa,Burundi
+BEL,Belgium,056,150,Europe,Western Europe,,Belgium
+BEN,Benin,204,002,Africa,Sub-Saharan Africa,Western Africa,Benin
+BFA,Burkina Faso,854,002,Africa,Sub-Saharan Africa,Western Africa,Burkina Faso
+BGD,Bangladesh,050,142,Asia,Southern Asia,,Bangladesh
+BGR,Bulgaria,100,150,Europe,Eastern Europe,,Bulgaria
+BLR,Belarus,112,150,Europe,Eastern Europe,,Belarus
+BOL,Bolivia,068,019,Americas,Latin America and the Caribbean,South America,Bolivia (Plurinational State of)
+BRA,Brazil,076,019,Americas,Latin America and the Caribbean,South America,Brazil
+CAF,Central African Republic,140,002,Africa,Sub-Saharan Africa,Middle Africa,Central African Republic
+CAN,Canada,124,019,Americas,Northern America,,Canada
+CHE,Switzerland,756,150,Europe,Western Europe,,Switzerland
+CHL,Chile,152,019,Americas,Latin America and the Caribbean,South America,Chile
+CHN,China,156,142,Asia,Eastern Asia,,China
+CIV,Côte d'Ivoire,384,002,Africa,Sub-Saharan Africa,Western Africa,Côte d’Ivoire
+CMR,Cameroon,120,002,Africa,Sub-Saharan Africa,Middle Africa,Cameroon
+COD,DR Congo,180,002,Africa,Sub-Saharan Africa,Middle Africa,Democratic Republic of the Congo
+COG,Congo,178,002,Africa,Sub-Saharan Africa,Middle Africa,Congo
+COL,Colombia,170,019,Americas,Latin America and the Caribbean,South America,Colombia
+CRI,Costa Rica,188,019,Americas,Latin America and the Caribbean,Central America,Costa Rica
+CUB,Cuba,192,019,Americas,Latin America and the Caribbean,Caribbean,Cuba
+CZE,Czechia,203,150,Europe,Eastern Europe,,Czechia
+DEU,Germany,276,150,Europe,Western Europe,,Germany
+DNK,Denmark,208,150,Europe,Northern Europe,,Denmark
+DOM,Dominican Republic,214,019,Americas,Latin America and the Caribbean,Caribbean,Dominican Republic
+DZA,Algeria,012,002,Africa,Northern Africa,,Algeria
+ECU,Ecuador,218,019,Americas,Latin America and the Caribbean,South America,Ecuador
+EGY,Egypt,818,002,Africa,Northern Africa,,Egypt
+ESP,Spain,724,150,Europe,Southern Europe,,Spain
+ETH,Ethiopia,231,002,Africa,Sub-Saharan Africa,Eastern Africa,Ethiopia
+FIN,Finland,246,150,Europe,Northern Europe,,Finland
+FRA,France,250,150,Europe,Western Europe,,France
+GBR,United Kingdom,826,150,Europe,Northern Europe,,United Kingdom of Great Britain and Northern Ireland
+GHA,Ghana,288,002,Africa,Sub-Saharan Africa,Western Africa,Ghana
+GIN,Guinea,324,002,Africa,Sub-Saharan Africa,Western Africa,Guinea
+GRC,Greece,300,150,Europe,Southern Europe,,Greece
+GTM,Guatemala,320,019,Americas,Latin America and the Caribbean,Central America,Guatemala
+HND,Honduras,340,019,Americas,Latin America and the Caribbean,Central America,Honduras
+HTI,Haiti,332,019,Americas,Latin America and the Caribbean,Caribbean,Haiti
+HUN,Hungary,348,150,Europe,Eastern Europe,,Hungary
+IDN,Indonesia,360,142,Asia,South-eastern Asia,,Indonesia
+IND,India,356,142,Asia,Southern Asia,,India
+IRL,Ireland,372,150,Europe,Northern Europe,,Ireland
+IRN,Iran,364,142,Asia,Southern Asia,,Iran (Islamic Republic of)
+IRQ,Iraq,368,142,Asia,Western Asia,,Iraq
+ISR,Israel,376,142,Asia,Western Asia,,Israel
+ITA,Italy,380,150,Europe,Southern Europe,,Italy
+JOR,Jordan,400,142,Asia,Western Asia,,Jordan
+JPN,Japan,392,142,Asia,Eastern Asia,,Japan
+KAZ,Kazakhstan,398,142,Asia,Central Asia,,Kazakhstan
+KEN,Kenya,404,002,Africa,Sub-Saharan Africa,Eastern Africa,Kenya
+KGZ,Kyrgyzstan,417,142,Asia,Central Asia,,Kyrgyzstan
+KHM,Cambodia,116,142,Asia,South-eastern Asia,,Cambodia
+KOR,South Korea,410,142,Asia,Eastern Asia,,Republic of Korea
+KWT,Kuwait,414,142,Asia,Western Asia,,Kuwait
+LAO,Laos,418,142,Asia,South-eastern Asia,,Lao People's Democratic Republic
+LBN,Lebanon,422,142,Asia,Western Asia,,Lebanon
+LBR,Liberia,430,002,Africa,Sub-Saharan Africa,Western Africa,Liberia
+LBY,Libya,434,002,Africa,Northern Africa,,Libya
+LKA,Sri Lanka,144,142,Asia,Southern Asia,,Sri Lanka
+MAR,Morocco,504,002,Africa,Northern Africa,,Morocco
+MDG,Madagascar,450,002,Africa,Sub-Saharan Africa,Eastern Africa,Madagascar
+MEX,Mexico,484,019,Americas,Latin America and the Caribbean,Central America,Mexico
+MLI,Mali,466,002,Africa,Sub-Saharan Africa,Western Africa,Mali
+MMR,Myanmar,104,142,Asia,South-eastern Asia,,Myanmar
+MOZ,Mozambique,508,002,Africa,Sub-Saharan Africa,Eastern Africa,Mozambique
+MRT,Mauritania,478,002,Africa,Sub-Saharan Africa,Western Africa,Mauritania
+MWI,Malawi,454,002,Africa,Sub-Saharan Africa,Eastern Africa,Malawi
+MYS,Malaysia,458,142,Asia,South-eastern Asia,,Malaysia
+NER,Niger,562,002,Africa,Sub-Saharan Africa,Western Africa,Niger
+NGA,Nigeria,566,002,Africa,Sub-Saharan Africa,Western Africa,Nigeria
+NIC,Nicaragua,558,019,Americas,Latin America and the Caribbean,Central America,Nicaragua
+NLD,Netherlands,528,150,Europe,Western Europe,,Netherlands (Kingdom of the)
+NOR,Norway,578,150,Europe,Northern Europe,,Norway
+NPL,Nepal,524,142,Asia,Southern Asia,,Nepal
+NZL,New Zealand,554,009,Oceania,Australia and New Zealand,,New Zealand
+OMN,Oman,512,142,Asia,Western Asia,,Oman
+PAK,Pakistan,586,142,Asia,Southern Asia,,Pakistan
+PAN,Panama,591,019,Americas,Latin America and the Caribbean,Central America,Panama
+PER,Peru,604,019,Americas,Latin America and the Caribbean,South America,Peru
+PHL,Philippines,608,142,Asia,South-eastern Asia,,Philippines
+PNG,Papua New Guinea,598,009,Oceania,Melanesia,,Papua New Guinea
+POL,Poland,616,150,Europe,Eastern Europe,,Poland
+PRK,North Korea,408,142,Asia,Eastern Asia,,Democratic People's Republic of Korea
+PRT,Portugal,620,150,Europe,Southern Europe,,Portugal
+PRY,Paraguay,600,019,Americas,Latin America and the Caribbean,South America,Paraguay
+ROU,Romania,642,150,Europe,Eastern Europe,,Romania
+RUS,Russia,643,150,Europe,Eastern Europe,,Russian Federation
+RWA,Rwanda,646,002,Africa,Sub-Saharan Africa,Eastern Africa,Rwanda
+SAU,Saudi Arabia,682,142,Asia,Western Asia,,Saudi Arabia
+SDN,Sudan,729,002,Africa,Northern Africa,,Sudan
+SEN,Senegal,686,002,Africa,Sub-Saharan Africa,Western Africa,Senegal
+SGP,Singapore,702,142,Asia,South-eastern Asia,,Singapore
+SLE,Sierra Leone,694,002,Africa,Sub-Saharan Africa,Western Africa,Sierra Leone
+SLV,El Salvador,222,019,Americas,Latin America and the Caribbean,Central America,El Salvador
+SOM,Somalia,706,002,Africa,Sub-Saharan Africa,Eastern Africa,Somalia
+SRB,Serbia,688,150,Europe,Southern Europe,,Serbia
+SSD,South Sudan,728,002,Africa,Sub-Saharan Africa,Eastern Africa,South Sudan
+SVK,Slovakia,703,150,Europe,Eastern Europe,,Slovakia
+SWE,Sweden,752,150,Europe,Northern Europe,,Sweden
+SYR,Syria,760,142,Asia,Western Asia,,Syrian Arab Republic
+TCD,Chad,148,002,Africa,Sub-Saharan Africa,Middle Africa,Chad
+TGO,Togo,768,002,Africa,Sub-Saharan Africa,Western Africa,Togo
+THA,Thailand,764,142,Asia,South-eastern Asia,,Thailand
+TJK,Tajikistan,762,142,Asia,Central Asia,,Tajikistan
+TKM,Turkmenistan,795,142,Asia,Central Asia,,Turkmenistan
+TUN,Tunisia,788,002,Africa,Northern Africa,,Tunisia
+TUR,Türkiye,792,142,Asia,Western Asia,,Türkiye
+TZA,Tanzania,834,002,Africa,Sub-Saharan Africa,Eastern Africa,United Republic of Tanzania
+UGA,Uganda,800,002,Africa,Sub-Saharan Africa,Eastern Africa,Uganda
+UKR,Ukraine,804,150,Europe,Eastern Europe,,Ukraine
+USA,United States,840,019,Americas,Northern America,,United States of America
+UZB,Uzbekistan,860,142,Asia,Central Asia,,Uzbekistan
+VEN,Venezuela,862,019,Americas,Latin America and the Caribbean,South America,Venezuela (Bolivarian Republic of)
+VNM,Vietnam,704,142,Asia,South-eastern Asia,,Viet Nam
+YEM,Yemen,887,142,Asia,Western Asia,,Yemen
+ZAF,South Africa,710,002,Africa,Sub-Saharan Africa,Southern Africa,South Africa
+ZMB,Zambia,894,002,Africa,Sub-Saharan Africa,Eastern Africa,Zambia
+ZWE,Zimbabwe,716,002,Africa,Sub-Saharan Africa,Eastern Africa,Zimbabwe
