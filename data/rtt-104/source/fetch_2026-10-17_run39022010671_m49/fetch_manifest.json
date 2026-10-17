@@ -1,0 +1,70 @@
+{
+ "fetched_by": "GitHub runner, .github/workflows/rtt104_sources.yml (FETCH_SET=m49)",
+ "pages": [
+  {
+   "bytes": 1721575,
+   "entrants_found": 126,
+   "entrants_missing": [],
+   "fetched_utc": "2026-10-17T09:40:34Z",
+   "final_url": "https://unstats.un.org/unsd/methodology/m49/overview/",
+   "sha256": "b9048114f6e7f2abda83bf03d4263c9d7cd1bd7230e3d0461025ee7839a7a1fb",
+   "status": 200,
+   "table_header": [
+    "Global Code",
+    "Global Name",
+    "Region Code",
+    "Region Name",
+    "Sub-region Code",
+    "Sub-region Name",
+    "Intermediate Region Code",
+    "Intermediate Region Name",
+    "Country or Area",
+    "M49 Code",
+    "ISO-alpha2 Code",
+    "ISO-alpha3 Code",
+    "Least Developed Countries (LDC)",
+    "Land Locked Developing Countries (LLDC)",
+    "Small Island Developing States (SIDS)",
+    "Developed / Developing Countries"
+   ],
+   "table_rows": 248,
+   "tables": [
+    "<table id = \"downloadTableEN\" class=\"compact\" cellspacing=\"0\" width=\"100%\" >",
+    "<table id = \"downloadTableZH\"  class=\"compact\" cellspacing=\"0\" width=\"100%\" >",
+    "<table id = \"downloadTableRU\"  class=\"compact\" cellspacing=\"0\" width=\"100%\" >",
+    "<table id = \"downloadTableFR\"  class=\"compact\" cellspacing=\"0\" width=\"100%\" >",
+    "<table id = \"downloadTableES\"  class=\"compact\" cellspacing=\"0\" width=\"100%\" >",
+    "<table id = \"downloadTableAR\"  class=\"compact\" cellspacing=\"0\" width=\"100%\" >"
+   ],
+   "url": "https://unstats.un.org/unsd/methodology/m49/overview/"
+  },
+  {
+   "bytes": 93843,
+   "excerpts": 3,
+   "fetched_utc": "2026-10-17T09:40:34Z",
+   "final_url": "https://www.un.org/en/about-us/terms-of-use",
+   "sha256": "8c1d4f76ad17119d15d838c68ab76f750c046ee738ce2ca688412752b54ee5fb",
+   "status": 200,
+   "url": "https://www.un.org/en/about-us/terms-of-use"
+  },
+  {
+   "bytes": 85163,
+   "excerpts": 5,
+   "fetched_utc": "2026-10-17T09:40:35Z",
+   "final_url": "https://www.un.org/en/about-us/copyright",
+   "sha256": "85c0056bdc83792c3e67ec0c48936701ff4a3d677bdcdc8090001f0b37a2c0de",
+   "status": 200,
+   "url": "https://www.un.org/en/about-us/copyright"
+  },
+  {
+   "bytes": 12684,
+   "excerpts": 2,
+   "fetched_utc": "2026-10-17T09:40:35Z",
+   "final_url": "https://data.un.org/Host.aspx?Content=UNdataUse",
+   "sha256": "d1703cf4053a4cde187721e1f64ca3696af59f80ae9261c1f721daac4c5bc175",
+   "status": 200,
+   "url": "https://data.un.org/Host.aspx?Content=UNdataUse"
+  }
+ ],
+ "run_url": "https://github.com/marketmarathon/race-through-time/actions/runs/39022010671"
+}

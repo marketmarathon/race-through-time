@@ -1,0 +1,18 @@
+# V3-975d811fabc3
+# url: https://data.ipu.org/election-summary/HTML/2085_09.htm
+# final url: https://data.ipu.org/election-summary/HTML/2085_09.htm
+# fetched (UTC): 2026-10-17T08:07:33Z
+# HTTP 200; 21163 bytes; SHA-256 49cb44f50d1ea377dfb1b867f67dcff6af17be965ce0b82492d950f3a05f6ff4
+# title: IPU PARLINE database: DEMOCRATIC PEOPLE'S REPUBLIC OF KOREA (Choe Go In Min Hoe Ui), ELECTIONS IN 2009
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 8 March 2009
+D: Elections were held for all the seats in the Supreme People's Assembly. | On 7 January 2009, the State-run news agency announced that elections to the Supreme People's Assembly, which had been due by August 2008, would be held on 8 March. Although the authorities did not announce any official reasons, it is widely believed that the elections were delayed due to the deteri
+D: On 7 January 2009, the State-run news agency announced that elections to the Supreme People's Assembly, which had been d | Mr. Kim, who inherited power from his father, Kim Il-sung in 1994, is General Secretary of the Workers' Party of Korea, Supreme Commander of the Korean People's Army, and Chairman of the National Defence Commission. He had reportedly suffered a stroke in August 2008. The international media focused 
+D: Voter turnout | Round no 1 8 March 2009
+D: Sources: | - Permanent Mission of the Democratic People's Republic of Korea to the United Nations Office and Other International Organizations in Geneva (08.09.2009)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Dates of election / renewal (from/to) | 8 March 2009
+K: Purpose of elections | Elections were held for all the seats in the Supreme People's Assembly.
+K: As in the previous elections, only one candidate was listed on the ballot paper in each constituency. Officially, voters' meetings are held in all the constituencies across the country to nominate can | The authorities, in official publications, stated that they wanted to achieve a powerful North Korea by 2012, the 100th anniversary of the birth of the country's founding leader, Mr. Kim Il-sung. The 

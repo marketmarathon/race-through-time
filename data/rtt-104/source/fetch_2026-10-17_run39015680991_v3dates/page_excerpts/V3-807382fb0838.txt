@@ -1,0 +1,21 @@
+# V3-807382fb0838
+# url: https://data.ipu.org/election-summary/HTML/2239_13.htm
+# final url: https://data.ipu.org/election-summary/HTML/2239_13.htm
+# fetched (UTC): 2026-10-17T08:08:48Z
+# HTTP 200; 20277 bytes; SHA-256 d5df3b7642966c54a2ac09ae65e0988f195bfeab597f2b82ca8249ede4a9eb98
+# title: IPU PARLINE database: NORWAY (Stortinget), ELECTIONS IN 2013
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 9 September 2013
+D: - The red-green coalition comprised the Labour Party, the Centre Party and the Socialist Left Party. | Date of previous elections: 14 September 2009
+D: Timing of election: Upon normal expiry | Expected date of next elections: September 2017
+D: Names of parties in government: Conservative Party and Progress Party | Date of the first session of the new parliament: 1 October 2013
+D: Voter turnout | Round no 1 9 September 2013
+D: Sources: | Parliament (23.09.2013)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Dates of election / renewal (from/to) | 9 September 2013
+K: Purpose of elections | The centre-right coalition led by the Conservative Party took a total of 96 seats in the 169-member parliament, defeating Prime Minister Jens Stoltenberg's redgreen coalition. Although his Labour Par
+K: Date of dissolution of the outgoing legislature: N/A | Timing of election: Upon normal expiry
+K: Timing of election: Upon normal expiry | Expected date of next elections: September 2017
+K: Number of seats at stake: 169 (full renewal renewal) | Number of candidates: 4,081 (2,437 men, 1,644 women)

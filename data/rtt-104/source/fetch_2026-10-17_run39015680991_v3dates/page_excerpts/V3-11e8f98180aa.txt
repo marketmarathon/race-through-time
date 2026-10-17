@@ -1,0 +1,30 @@
+# V3-11e8f98180aa
+# url: https://data.ipu.org/election-summary/HTML/2211_09.htm
+# final url: https://data.ipu.org/election-summary/HTML/2211_09.htm
+# fetched (UTC): 2026-10-17T08:08:17Z
+# HTTP 200; 15896 bytes; SHA-256 2c2035b77bc980e2070ce9337b8632bbc74facea868befc12bdde0be65446a41
+# title: IPU PARLINE database: MEXICO (Cámara de Diputados) ELECTIONS IN 2009
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 5 July 2009
+D: Elections were held for all the seats in the Chamber of Deputies on the normal expiry of the members' term of office. | At stake in the July 2009 elections were 500 seats in the Chamber of Deputies.
+D: At stake in the July 2009 elections were 500 seats in the Chamber of Deputies. | In the previous elections held in July 2006 in parallel with the elections to the Senate and the presidency
+D: pledging to tackle crime. | Upon assuming the post in December 2006
+D: Mexico's economy was expected to shrink by 5.5 per cent in 2009. | In April 2009
+D: Voter turnout | Round no 1 5 July 2009
+D: Sources: | - IPU Group (18.07.2009
+D: - IPU Group (18.07.2009 | 02.09.2009
+D: 02.09.2009 | 01.01.2010
+D: 01.01.2010 | 19.03.2010)
+K: Cámara de Diputados (Chamber of Deputies) | General information
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Chamber name (generic / translated) | Cámara de Diputados / Chamber of Deputies
+K: Cámara de Diputados / Chamber of Deputies | Related chamber (for bicameral parliaments)
+K: Related chamber (for bicameral parliaments) | Cámara de Senadores / Senate
+K: Dates of election / renewal (from/to) | 5 July 2009
+K: Purpose of elections | Elections were held for all the seats in the Chamber of Deputies on the normal expiry of the members' term of office.
+K: Elections were held for all the seats in the Chamber of Deputies on the normal expiry of the members' term of office. | At stake in the July 2009 elections were 500 seats in the Chamber of Deputies.
+K: the National Action Party (PAN) won 206 seats in the Chamber of Deputies. The Democratic Revolutionary Party (PRD) and Institutional Revolutionary Party (PRI) took 126 and 104 seats respectively. Five | pledging to tackle crime.
+K: losing 55. Of all the eight parties represented in the outgoing Chamber | only the Social Democratic and Peasant Alternative Party (ALT) failed to win seats. 141 women were elected.
+K: the newly elected Chamber of Deputies held its first session and elected Mr. Francisco Ramírez Acuña (PAN) as its new Speaker. | STATISTICS

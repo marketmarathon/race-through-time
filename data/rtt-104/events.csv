@@ -1,0 +1,163 @@
+year,board,event,country,detail,value
+1997,top,first_place,Sweden,highest; was -,40.4
+1998,top,enters,Cuba,rank 9,27.6
+1998,top,enters,South Africa,rank 7,28.8
+1998,top,leaves,Germany,,
+1998,top,leaves,Vietnam,,
+1999,top,enters,Germany,rank 6,30.9
+1999,top,leaves,Austria,,
+2000,top,enters,Mozambique,rank 8,30.0
+2000,top,enters,Spain,rank 10,28.3
+2000,top,leaves,Argentina,,
+2000,top,leaves,Cuba,,
+2002,top,enters,Argentina,rank 8,30.7
+2002,top,enters,Costa Rica,rank 5,35.1
+2002,top,leaves,New Zealand,,
+2002,top,leaves,Spain,,
+2003,top,first_place,Rwanda,highest; was Sweden,48.8
+2003,top,enters,Austria,rank 10,33.9
+2003,top,enters,Belgium,rank 8,35.3
+2003,top,enters,Cuba,rank 7,36.0
+2003,top,enters,Rwanda,rank 1,48.8
+2003,top,leaves,Argentina,,
+2003,top,leaves,Germany,,
+2003,top,leaves,Mozambique,,
+2003,top,leaves,South Africa,,
+2004,top,enters,Mozambique,rank 10,34.8
+2004,top,enters,Spain,rank 7,36.0
+2004,top,leaves,Austria,,
+2004,top,leaves,Belgium,,
+2005,top,enters,Argentina,rank 7,36.2
+2005,top,leaves,Mozambique,,
+2008,top,enters,Angola,rank 8,37.3
+2008,top,leaves,Norway,,
+2009,top,enters,Mozambique,rank 8,39.2
+2009,top,enters,Norway,rank 7,39.6
+2009,top,enters,South Africa,rank 3,44.5
+2009,top,leaves,Costa Rica,,
+2009,top,leaves,Denmark,,
+2009,top,leaves,Spain,,
+2010,top,enters,Belgium,rank 8,39.3
+2010,top,leaves,Argentina,,
+2011,top,enters,Denmark,rank 10,39.1
+2011,top,enters,Nicaragua,rank 7,40.2
+2011,top,leaves,Angola,,
+2011,top,leaves,Belgium,,
+2012,top,enters,Senegal,rank 4,42.7
+2012,top,leaves,Netherlands,,
+2014,top,enters,Bolivia,rank 2,53.1
+2014,top,enters,Ecuador,rank 8,41.6
+2014,top,enters,Spain,rank 10,39.7
+2014,top,leaves,Denmark,,
+2014,top,leaves,Mozambique,,
+2014,top,leaves,Norway,,
+2015,top,enters,Mexico,rank 6,42.4
+2015,top,leaves,Spain,,
+2017,top,enters,Norway,rank 10,41.4
+2017,top,leaves,Ecuador,,
+2018,top,enters,Costa Rica,rank 7,45.6
+2018,top,leaves,Norway,,
+2019,top,enters,United Arab Emirates,rank 4,50.0
+2019,top,leaves,Senegal,,
+2020,top,enters,New Zealand,rank 4,48.3
+2020,top,leaves,Costa Rica,,
+2022,top,enters,Costa Rica,rank 7,47.4
+2022,top,leaves,Finland,,
+2023,top,enters,Norway,rank 9,46.2
+2023,top,enters,Senegal,rank 10,46.1
+2023,top,leaves,New Zealand,,
+2023,top,leaves,South Africa,,
+2024,top,enters,Finland,rank 9,46.0
+2024,top,enters,New Zealand,rank 10,45.5
+2024,top,leaves,Norway,,
+2024,top,leaves,Senegal,,
+2025,top,enters,Australia,rank 8,46.0
+2025,top,leaves,Sweden,,
+1997,bottom,first_place,Morocco,lowest above 0%; was -,0.6
+1998,bottom,enters,Yemen,rank 2,0.7
+1998,bottom,leaves,Mauritania,,
+1999,bottom,enters,Chad,rank 10,2.4
+1999,bottom,leaves,Pakistan,,
+2000,bottom,enters,Nigeria,rank 10,3.4
+2000,bottom,enters,Paraguay,rank 9,2.5
+2000,bottom,leaves,Ethiopia,,
+2000,bottom,leaves,Togo,,
+2001,bottom,enters,Jordan,rank 4,1.3
+2001,bottom,leaves,Kyrgyzstan,,
+2002,bottom,first_place,Yemen,lowest above 0%; was Morocco,0.7
+2002,bottom,enters,Bangladesh,rank 5,2.0
+2002,bottom,leaves,Morocco,,
+2003,bottom,enters,Haiti,rank 7,3.6
+2003,bottom,enters,Iran,rank 10,4.1
+2003,bottom,enters,Madagascar,rank 9,3.8
+2003,bottom,enters,Mauritania,rank 8,3.7
+2003,bottom,leaves,Chad,,
+2003,bottom,leaves,Jordan,,
+2003,bottom,leaves,Nigeria,,
+2003,bottom,leaves,Paraguay,,
+2004,bottom,enters,Oman,rank 5,2.4
+2004,bottom,enters,Türkiye,rank 10,4.4
+2004,bottom,leaves,Madagascar,,
+2004,bottom,leaves,Niger,,
+2005,bottom,enters,Kuwait,rank 3,1.5
+2005,bottom,leaves,Bangladesh,,
+2006,bottom,enters,Sri Lanka,rank 10,4.9
+2006,bottom,leaves,Mauritania,,
+2007,bottom,enters,Chad,rank 8,5.2
+2007,bottom,enters,Jordan,rank 10,6.4
+2007,bottom,leaves,Oman,,
+2007,bottom,leaves,Türkiye,,
+2008,bottom,enters,Bangladesh,rank 10,6.3
+2008,bottom,leaves,Jordan,,
+2009,bottom,enters,Jordan,rank 9,6.4
+2009,bottom,enters,Somalia,rank 10,6.9
+2009,bottom,leaves,Bangladesh,,
+2009,bottom,leaves,Kuwait,,
+2010,bottom,enters,Congo,rank 10,7.3
+2010,bottom,enters,Myanmar,rank 5,4.3
+2010,bottom,enters,Nigeria,rank 9,7.0
+2010,bottom,leaves,Egypt,,
+2010,bottom,leaves,Haiti,,
+2010,bottom,leaves,Jordan,,
+2011,bottom,enters,Egypt,rank 4,2.0
+2011,bottom,enters,Haiti,rank 8,4.2
+2011,bottom,enters,Oman,rank 3,1.2
+2011,bottom,leaves,Chad,,
+2011,bottom,leaves,Congo,,
+2011,bottom,leaves,Nigeria,,
+2012,bottom,enters,Kuwait,rank 10,6.2
+2012,bottom,leaves,Somalia,,
+2013,bottom,enters,Nigeria,rank 10,6.7
+2013,bottom,leaves,Egypt,,
+2014,bottom,enters,Thailand,rank 10,6.1
+2014,bottom,leaves,Nigeria,,
+2015,bottom,first_place,Oman,lowest above 0%; was Yemen,1.2
+2015,bottom,enters,Benin,rank 10,7.2
+2015,bottom,enters,Nigeria,rank 8,5.6
+2015,bottom,leaves,Myanmar,,
+2015,bottom,leaves,Yemen,,
+2016,bottom,enters,Central African Republic,rank 9,7.2
+2016,bottom,leaves,Haiti,,
+2017,bottom,enters,Haiti,rank 2,2.5
+2017,bottom,leaves,Papua New Guinea,,
+2019,bottom,first_place,Yemen,lowest above 0%; was Oman,0.3
+2019,bottom,enters,Yemen,rank 1,0.3
+2019,bottom,leaves,Thailand,,
+2020,bottom,enters,Burkina Faso,rank 6,6.3
+2020,bottom,leaves,Haiti,,
+2021,bottom,first_place,Kuwait,lowest above 0%; was Yemen,1.5
+2021,bottom,enters,Algeria,rank 8,8.1
+2021,bottom,enters,Japan,rank 10,9.7
+2021,bottom,leaves,Central African Republic,,
+2021,bottom,leaves,Yemen,,
+2022,bottom,first_place,Papua New Guinea,lowest above 0%; was Kuwait,1.7
+2022,bottom,enters,Papua New Guinea,rank 1,1.7
+2022,bottom,leaves,Burkina Faso,,
+2023,bottom,enters,Liberia,rank 10,11.0
+2023,bottom,enters,Syria,rank 9,10.8
+2023,bottom,leaves,Benin,,
+2023,bottom,leaves,Oman,,
+2024,bottom,enters,Central African Republic,rank 9,11.4
+2024,bottom,enters,DR Congo,rank 10,13.0
+2024,bottom,leaves,Japan,,
+2024,bottom,leaves,Kuwait,,

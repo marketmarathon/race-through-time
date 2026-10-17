@@ -1,0 +1,21 @@
+# V3-60574c59f00b
+# url: https://data.ipu.org/election-summary/HTML/2291_09.htm
+# final url: https://data.ipu.org/election-summary/HTML/2291_09.htm
+# fetched (UTC): 2026-10-17T08:09:17Z
+# HTTP 200; 28586 bytes; SHA-256 d630b630ccf6272337e8986fa3d9e609da6e0ba944782cbce22973a4184afa37
+# title: IPU PARLINE database: SOUTH AFRICA (National Assembly), ELECTIONS IN 2009
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 22 April 2009
+D: Elections were held for all the seats of the National Assembly on the normal expiry of the members' term of office. | The April 2009 elections were the fourth to be held since the end of apartheid in 1994. At stake were 400 seats in the National Assembly (lower chamber of parliament). Parliament was due to elect the country's new president after the elections.
+D: The April 2009 elections were the fourth to be held since the end of apartheid in 1994. At stake were 400 seats in the N | In the previous elections, held in April 2004, the ANC, led by then President Thabo Mbeki, won 279 seats. The Democratic Alliance (DA) came in a distant second with 50 seats, followed by the Inkatha Freedom Party (IFP) with 28 seats. Nine other parties won fewer than ten seats each.
+D: Under the ANC Government, the country of 48.8 million inhabitants achieved economic development and many citizens benefi | In December 2007, President Mbeki lost the ANC's leadership to ANC Vice-President Jacob Zuma. Mr. Zuma had been sacked by Mr. Mbeki as Deputy President of the country over charges of financial impropriety. In September 2008, Mr. Mbeki resigned as President over allegations that he had interfered in 
+D: In December 2007, President Mbeki lost the ANC's leadership to ANC Vice-President Jacob Zuma. Mr. Zuma had been sacked b | On 13 February 2009, President Motlanthe called elections for 22 April. Pursuant to the Government's 50:50 gender equality policy, the major parties endorsed more women candidates than in the previous elections. In all, 9,130 candidates, including 3,511 women, representing 40 parties ran in the 2009
+D: Voter turnout | Round no 1 22 April 2009
+D: Sources: | - National Assembly (11.05.2009, 24.01.2012, 01.01.2014)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name
+K: Chamber name | National Assembly
+K: Related chamber (for bicameral parliaments) | National Council of Provinces
+K: Dates of election / renewal (from/to) | 22 April 2009
+K: Purpose of elections | Elections were held for all the seats of the National Assembly on the normal expiry of the members' term of office.

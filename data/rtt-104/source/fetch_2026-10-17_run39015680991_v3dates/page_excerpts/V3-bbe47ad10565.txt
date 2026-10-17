@@ -1,0 +1,17 @@
+# V3-bbe47ad10565
+# url: https://data.ipu.org/election-summary/HTML/2015_98.htm
+# final url: https://data.ipu.org/election-summary/HTML/2015_98.htm
+# fetched (UTC): 2026-10-17T08:06:39Z
+# HTTP 200; 7870 bytes; SHA-256 688c1f6576a47063201080c0ce9933e38fbe731d55870f2397507709f41139ee
+# title: AUSTRALIA: parliamentary elections House of Representatives, 1998
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 3 October 1998
+D: Purpose of elections: | Elections were held for all the seats in the House of Representatives following the dissolution of Parliament on 31 August 1998. General elections had previously been held in March 1996.
+D: Background and outcome of elections: | On 30 August 1998, Prime Minister John Howard (Liberal Party) announced a snap general election, polling not being due for another six to eight months and called with the minimum legal notice of five weeks. In doing so, he stated that the elections would be fought on the issue of "economic managemen
+D: Debate in the campaign focused to a large extent on the proposal by the Liberal-National Party coalition Government to i | On polling day, the Liberal-National alliance was returned to power but with a sharply reduced majority in the House as the ALP rebounded from its 1996 showing to capture a total of 67 seats. One Nation, for its part, lost its only seat that had been held by Ms. Hanson. In the Senate election, howev
+D: STATISTICS | Round no 1 (03 October 1998): Elections results
+K: Parliamentary Chamber: House of Representatives | ELECTIONS HELD IN 1998
+K: Chamber: | House of Representatives
+K: Dates of elections / renewal (from/to): | 3 October 1998
+K: Purpose of elections: | Elections were held for all the seats in the House of Representatives following the dissolution of Parliament on 31 August 1998. General elections had previously been held in March 1996.

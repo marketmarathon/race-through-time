@@ -1,0 +1,5 @@
+{
+ "extends": "config_rtt104_base.json",
+ "layout": "tb",
+ "notes": "Round-1 option (not chosen, DEC-634..DEC-644): Option a-B: top board above, bottom board below (one change from the base)."
+}

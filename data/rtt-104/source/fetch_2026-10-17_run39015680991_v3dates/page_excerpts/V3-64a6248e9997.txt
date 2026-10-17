@@ -1,0 +1,18 @@
+# V3-64a6248e9997
+# url: https://data.ipu.org/election-summary/HTML/2211_97.htm
+# final url: https://data.ipu.org/election-summary/HTML/2211_97.htm
+# fetched (UTC): 2026-10-17T08:08:19Z
+# HTTP 200; 9127 bytes; SHA-256 0284ddca7f5866addbe096d4ac3b3b8355200977632d04b558db9ede5898f8ca
+# title: MEXICO: parliamentary elections C�mara de Diputados, 1997
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 6 July 1997
+D: For Congress, the ruling Institutional Revolutionary Party (PRI), headed by Mr. Humberto Roque Villanueva, was mainly ch | During the campaign, the opposition vowed to fight corruption in official circles, cut taxes and decentralise Government services; it moreover pointed to the pervasive economic and social dissatisfaction in the country, particularly after the December 1994 devaluation of the peso effected by the adm
+D: STATISTICS | Round no 1 (6 July 1997): Elections results
+K: Parliamentary Chamber: C�mara de Diputados | ELECTIONS HELD IN 1997
+K: Chamber: | C�mara de Diputados
+K: Dates of elections / renewal (from/to): | 6 July 1997
+K: Purpose of elections: | Elections were held for all the seats in the Chamber of Deputies on the normal expiry of the members' term of office.
+K: Elections were held for all the seats in the Chamber of Deputies on the normal expiry of the members' term of office. | Background and outcome of elections:
+K: The 1997 mid-term elections were held simultaneously with, inter alia, polling for six (of 31) state governorships and for mayor of Mexico City (who was previously appointed). Of the Senate seats, the | For Congress, the ruling Institutional Revolutionary Party (PRI), headed by Mr. Humberto Roque Villanueva, was mainly challenged by the centre-right National Action Party (PAN) led by Mr. Felipe Calde
+K: Conditions for fair balloting were created by significant 1996 electoral reforms which included the setting up of an autonomous Federal Electoral Institute to manage the elections rather than the Mini | STATISTICS

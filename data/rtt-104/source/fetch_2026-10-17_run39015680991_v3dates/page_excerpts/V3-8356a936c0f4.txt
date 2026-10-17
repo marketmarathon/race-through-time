@@ -1,0 +1,24 @@
+# V3-8356a936c0f4
+# url: https://data.ipu.org/election-summary/HTML/2087_07.htm
+# final url: https://data.ipu.org/election-summary/HTML/2087_07.htm
+# fetched (UTC): 2026-10-17T08:07:38Z
+# HTTP 200; 23117 bytes; SHA-256 880e871a8ada613b6ccc528226404c0cd03ea70ab7de0bff7ac88a13215d2f7f
+# title: IPU PARLINE database: DENMARK (Folketinget) ELECTIONS IN 2007
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 13 November 2007
+D: Purpose of elections | Elections were held for all the seats in Parliament following the early dissolution of this body in October 2007. General elections had previously been held in February 2005.
+D: Elections were held for all the seats in Parliament following the early dissolution of this body in October 2007. Genera | On 24 October 2007
+D: Prime Minister Anders Fogh Rasmussen called early elections to the 179-member Danish Parliament (Folketing) for 13 Novem | ahead of the official end of the four-year term in February 2009.
+D: and has the support of the Danish People's Party. | In the previous elections held in February 2005
+D: took 47 seats | losing five. He subsequently resigned as party leader and was succeeded by Ms. Helle Thorning-Schmidt in April 2005.
+D: proposing that asylum seekers with families be housed outside reception centres. The Social Democratic Party suggested t | a new centrist party formed in May 2007 and led by Mr. Naser Khader
+D: Voter turnout | Round no 1 13 November 2007
+D: - http://im.dk/ | - Ministry of Welfare (28.11.2007)
+D: - Ministry of Welfare (28.11.2007) | - The Danish Parliament (29.11.2007
+D: - The Danish Parliament (29.11.2007 | 29.02.2008
+D: 29.02.2008 | 03.03.2008)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Dates of election / renewal (from/to) | 13 November 2007
+K: Purpose of elections | Elections were held for all the seats in Parliament following the early dissolution of this body in October 2007. General elections had previously been held in February 2005.

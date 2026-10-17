@@ -1,0 +1,23 @@
+# V3-735b30f9eaf7
+# url: https://data.ipu.org/election-summary/HTML/2355_12.htm
+# final url: https://data.ipu.org/election-summary/HTML/2355_12.htm
+# fetched (UTC): 2026-10-17T08:10:06Z
+# HTTP 200; 33195 bytes; SHA-256 706f5850054b93f9a266e112a7738ce757c9d8710c382bf623c9f1c375c2ab5b
+# title: IPU PARLINE database: SERBIA (Narodna skupstina), ELECTIONS IN 2012
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 6 May 2012
+D: No party won an outright majority in the 2012 parliamentary elections, held in parallel with presidential polls. The "Le | In the presidential run-off on 20 May 2012, Mr. Nikolic defeated the outgoing president, Mr. Tadic. Mr. Nikolic is a former ally of the late President Milosevic. In 2008, Mr. Nikolic ran for president on a nationalist pro-Russian and anti-EU platform. But in October that year he and followers from t
+D: - The "Choice for a Better Life" coalition comprised the Democratic Party, G17, the Movement for Serb Revival, the Socia | Date of previous elections: 11 May 2008
+D: Timing of election: Upon normal expiry | Expected date of next elections: May 2016
+D: Names of parties in government: Serbian Progressive Party (SNS), New Serbia (NS), Socialist Party of Serbia (SPS), Socia | Date of the first session of the new parliament: 31 May 2012
+D: Voter turnout | Round no 1 6 May 2012
+D: Sources: | Assemblée nationale (12.06.2012, 27.12.2012, 01.01.2014)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Dates of election / renewal (from/to) | 6 May 2012
+K: Purpose of elections | No party won an outright majority in the 2012 parliamentary elections, held in parallel with presidential polls. The "Let's Get Serbia Moving" coalition (see note), led by Mr. Tomislav Nikolic (Serbia
+K: Date of dissolution of the outgoing legislature: N/A | Timing of election: Upon normal expiry
+K: Timing of election: Upon normal expiry | Expected date of next elections: May 2016
+K: Number of seats at stake: 250 (full renewal) | Number of candidates: Not available
+K: - The "Choice for a Better Life" coalition comprised the Democratic Party (DS), G17, the Serbian Renewal Movement (SPO), the Social Democratic Party of Serbia, the League of Social Democrats of Vojvod | - Ivica Dacic - SPS, PUPS, US comprised the Socialist Party of Serbia (SPS), the Party of United Pensioners of Serbia (PUPS) and United Serbia (US).

@@ -1,0 +1,57 @@
+# UN-SDG-META-551A
+# url: https://unstats.un.org/sdgs/metadata/files/Metadata-05-05-01a.pdf
+# final url: https://unstats.un.org/sdgs/metadata/files/Metadata-05-05-01a.pdf
+# fetched (UTC): 2026-10-10T06:02:19Z
+# HTTP 200; 153333 bytes; SHA-256 856871d0bb7d5fcc0f6b4a0118f685d29b08ff38f934bc2a2683ea6dc1c62f87
+# Short excerpts only (lines holding the searched words, with the line before and after).
+
+Definition: | The proportion of seats held by women in national parliaments, currently as of 1 January of reporting | year, is currently measured as the number of seats held by women members in single or lower chambers
+
+of national parliaments, expressed as a percentage of all occupied seats. | 
+
+National parliaments can be bicameral or unicameral. This indicator covers the single chamber in | unicameral parliaments and the lower chamber in bicameral parliaments. It does not cover the upper
+
+ | chamber of bicameral parliaments. Seats are usually won by members in general parliamentary elections. | Seats may also be filled by nomination, appointment, indirect election, rotation of members, and by-
+
+ | 3.c. Data collection calendar (FREQ_COLL) | Data are updated on a monthly basis, up to the last day of the month.
+
+ | 3.d. Data release calendar (REL_CAL_POLICY) | Data are updated on a monthly basis, up to the last day of the month.
+
+Women’s participation in parliaments is a key aspect of women’s opportunities in political and public life | and is linked to women’s empowerment. Equal numbers of women and men in lower chambers would | give an indicator value of 50 percent.
+
+4.b. Comment and limitations (REC_USE_LIM) | - The number of countries covered varies with suspensions or dissolutions of parliaments. As of 1 | February 2016, 193 countries are included.
+
+elections, for instance, are often not announced internationally as general elections are. | - The data excludes the numbers and percentages of women in the upper chambers of parliament. The | information is available on the Inter-Parliamentary Union (IPU) website at https://data.ipu.org/women-
+
+The proportion of seats held by women in the national parliament is derived by dividing the total number | of seats occupied by women by the total number of seats in parliament. | 
+
+Inter-Parliamentary Union (IPU) member parliaments provide information on changes and updates to the | IPU secretariat via IPU Groups within each parliamentary chamber or via the Parline Correspondent’s | Network.
+
+Parline Correspondents are staff members of national parliaments who act as the IPU focal point for IPU’s | Parline database within each chamber or parliament. Their main role is to make sure that all the data in | Parline for their parliament is up-to-date and correct, including for this indicator. If no response is
+
+4.g. Regional aggregations (REG_AGG) | Regional aggregations are a simple sum of country and chamber level data. A weighting structure is not | applied.
+
+Guidance is not required to provide information for this indicator (i.e. current number of members and | the total number of women members in a given single or lower chamber of a national parliament). | 
+
+Parliamentary Union (IPU) of changes to the number of seats or the total number of women in a | parliamentary chamber, every time there is a change. | 
+
+ | 5. Data availability and disaggregation (COVERAGE) | Data availability:
+
+follows; | 2020 – Present                  As at 1 January | 2013 – 2019                     As at 1 February
+
+1999                            As at 5 February | 2002                            As at 4 February
+
+2003, 2005 – 2007, 2009 - 2012 As at 31 January | 2001, 2004                      As at 30 January
+
+2008                            As at 29 January | 1998, 2000                      As at 25 January
+
+ | 1997                               As at 1 January | Prior to 1997                      Unknown
+
+The indicator can be disaggregated for analysis by geographical region and sub-region, legislature type | (single or lower, parliamentary or presidential), the method of filling seats (directly elected, indirectly | elected, appointed), and the use of special measures.
+
+Data are not adjusted for international comparability. Though, for international comparisons, generally | only the single or lower house is considered in calculating the indicator. | 
+
+ | 7. References and Documentation (OTHER_DOC) | URL:
+
+ | References: | Inter-parliamentary Union (2008). Equality in Politics: A Survey of Women and Men in Parliaments.
+

@@ -1,0 +1,35 @@
+# V3-4ae2b75bbbbb
+# url: https://data.ipu.org/parliament/VN/VN-LC01/election/VN-LC01-E20160522/
+# final url: https://data.ipu.org/parliament/VN/VN-LC01/election/VN-LC01-E20160522/
+# fetched (UTC): 2026-10-17T08:15:06Z
+# HTTP 200; 179131 bytes; SHA-256 6a4f781d2d7276e33b28e64324d776a51a8019f7d2e88097dc99a1493fbc98fc
+# title: Viet Nam National Assembly May 2016 Election | Election results | Viet Nam | IPU Parline: global data on national parliaments
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Viet Nam National Assembly May 2016 Election | Election results | Viet Nam | IPU Parline: global data on national parliaments
+D: View field in the data dictionary | 22 May 2016
+D: View field in the data dictionary | 19 Jul 2016
+D: As in previous elections, the Communist Party - the only legal political party in Viet Nam – presented most of the candi | The 2016 elections followed the 12th National Congress of the Communist Party in January which re-elected Mr. Nguyen Phu Trong as General Secretary of the Party's Central Committee. The Secretary General pledged to move Vietnam towards modernisation. Prior to the 2016 elections, the National Assembl
+D: Sources | National Assembly (09.06.2016, 18.07.2016, 30.08.2016)
+D: View field in the data dictionary | 20 Jul 2016
+D: View field in the data dictionary | 21 Jul 2016
+K: Select country and chamber | Parliaments
+K: Political systems: Presidential, Parliamentary, Presidential-Parliamentary, Monarchy, Communist, Transitional. | View field in the data dictionary
+K: The date when elections started and ended for directly or indirectly elected parliaments/chambers. The date of appointments for appointed parliaments/chambers. | View field in the data dictionary
+K: Date of dissolution of the outgoing legislature | Date at which the previous legislature (elected at the previous elections) was dissolved.
+K: Date at which the previous legislature (elected at the previous elections) was dissolved. | View field in the data dictionary
+K: Timing of election | Timing of election: Upon normal expiry; Early elections; Delayed elections
+K: Timing of election: Upon normal expiry; Early elections; Delayed elections | View field in the data dictionary
+K: Number of seats contested at the elections. Where the parliament/chamber is fully renewed, this number is usually identical to the statutory number of members. Where the parliament/chamber is partiall | View field in the data dictionary
+K: Scope of elections | Scope of elections: Full renewal; Partial renewal.
+K: Scope of elections: Full renewal; Partial renewal. | View field in the data dictionary
+K: Full renewal | Candidates
+K: As in previous elections, the Communist Party - the only legal political party in Viet Nam – presented most of the candidates for election to the 500-member National Assembly (see note). In 2016, 870  | The 2016 elections followed the 12th National Congress of the Communist Party in January which re-elected Mr. Nguyen Phu Trong as General Secretary of the Party's Central Committee. The Secretary Gene
+K: On polling day, Communist Party General Secretary Trong called on all candidates to "serve the country and the people and fully implement duties and responsibilities stipulated by the Constitution and | Note: In accordance with the law on the organization of the National Assembly, the statutory number of members shall not exceed 500. In 2016, 496 members were elected.
+K: The number of "Non-party members" above includes two self-nominated members. | Two candidates-elect (one man and one woman, both members of the Communist Party) were disqualified before the first session of the newly elected National Assembly held on 20 July.
+K: The total number of male parliamentarians in this parliament/chamber following the election or renewal, regardless of their modes of designation. | View field in the data dictionary
+K: The total number of female parliamentarians in this parliament/chamber following the election or renewal, regardless of their modes of designation. | View field in the data dictionary
+K: The percentage is calculated by dividing the total number of women in this parliament/chamber by the current number of members. | View field in the data dictionary
+K: The number of members who are assuming their parliamentary mandate for the first time following the election or renewal, regardless of their mode of designation. | View field in the data dictionary
+K: The date when the newly elected parliament/chamber was convened for the first time. It may be different from the date when members were sworn in. | View field in the data dictionary
+K: The political party to which the Speaker belonged to at the moment of the election. In some parliaments, the Speaker suspends or relinquishes their party membership during their term in office and is  | View field in the data dictionary

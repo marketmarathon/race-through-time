@@ -1,0 +1,18 @@
+# V3-2f91fe77162b
+# url: https://data.ipu.org/election-summary/HTML/2223_04.htm
+# final url: https://data.ipu.org/election-summary/HTML/2223_04.htm
+# fetched (UTC): 2026-10-17T08:08:20Z
+# HTTP 200; 21373 bytes; SHA-256 2d790fe055833691e5ce4da7884e8ac8a27889a864dd5c1b32088be5a24a1366
+# title: IPU PARLINE database: MOZAMBIQUE (Assembleia da Republica), Elections in 2004
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: BACKGROUND | Dates of election / renewal (from/to) (from/to) 1 December 2004
+D: Dates of election / renewal (from/to) (from/to) 1 December 2004 | 2 December 2004
+D: Elections were held for all seats in the Assembly of the Republic on the normal expiry of the members' term of office. | The third presidential and parliamentary elections since the end of the 16-year civil war were held on 1 and 2 December 2004. Incumbent President Joaquim Chissano, who had ruled Mozambique for 18 years, was not running. He was constitutionally barred from seeking a new term. His chosen successor was
+D: Although international observers led by former United States President Jimmy Carter deemed the elections to be fair and  | In both the presidential and the parliamentary elections, Frelimo candidates won over 60 per cent of the valid votes, reducing the tally of the opposition party, Renamo, to 30 per cent. Mr. Guebuza was therefore declared the winner on 21 December. He took office on 2 February 2005 for five years.
+D: Voter turnout | Round no 1 (from/to) 1 December 2004
+D: Round no 1 (from/to) 1 December 2004 | 2 December 2004
+D: Mozambican National Resistance (RENAMO) contested the elections as Renamo-Electoral Coalition. | Sources: National Electoral Commission and Constitutional Council of Mozambique (19/01/2005)
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Purpose of elections | Elections were held for all seats in the Assembly of the Republic on the normal expiry of the members' term of office.
+K: The local media attributed the low turnout to a lack of enthusiasm among Mozambicans for the election, which was being held 12 years after the 1992 peace accord, as well as its timing. It appears that | Although international observers led by former United States President Jimmy Carter deemed the elections to be fair and transparent, they questioned the credibility of the ballot. Renamo claimed that 

@@ -1,0 +1,15 @@
+# V3-0d8335616255
+# url: https://www.aec.gov.au/elections/supplementary_by_elections/1998/newcastle.htm
+# final url: https://www.aec.gov.au/elections/supplementary_by_elections/1998/newcastle.htm
+# fetched (UTC): 2026-10-17T08:15:24Z
+# HTTP 200; 56204 bytes; SHA-256 69f8d4e4383794d1a067e81d9f39d0189f250e548a3369348958afc50c6e4ef9
+# title: Newcastle 1998 supplementary election - Australian Electoral Commission
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Newcastle 1998 supplementary election | Updated: 19 January 2011
+D: Updated: 19 January 2011 | Due to the death of a candidate in the Division of Newcastle prior to polling day, a supplementary election for this seat was held using the electoral roll that was prepared for the original election. There were 77 596 electors enrolled for the supplementary election that was held on 21 November 199
+D: Seat Status: Safe Labor | 2 March 1996 Election:
+D: ALP: 61.19% | 21 November 1998 Supplementary Election
+K: By-elections | Referendums
+K: By-elections | Referendums
+K: > By-elections & Supplementary Elections | Newcastle 1998 supplementary election

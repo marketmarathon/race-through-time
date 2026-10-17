@@ -1,0 +1,30 @@
+{
+ "C1_every_value_traceable_to_wdi": {
+  "detail": "0 untraceable",
+  "pass": true
+ },
+ "C2_no_zero_where_missing": {
+  "detail": "0 cases",
+  "pass": true
+ },
+ "C3_no_country_below_threshold": {
+  "detail": "0 cases",
+  "pass": true
+ },
+ "C4_no_forecast": {
+  "detail": "last WDI year with figures 2025",
+  "pass": true
+ },
+ "C5_boards_well_formed": {
+  "detail": "[]",
+  "pass": true
+ },
+ "C6_world_panel_is_wld": {
+  "detail": "0 years differ or missing",
+  "pass": true
+ },
+ "C7_latest_figure_rule": {
+  "detail": "0 cases",
+  "pass": true
+ }
+}

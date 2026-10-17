@@ -1,0 +1,16 @@
+# V3-41dc334d8790
+# url: https://data.ipu.org/election-summary/HTML/2349_97.htm
+# final url: https://data.ipu.org/election-summary/HTML/2349_97.htm
+# fetched (UTC): 2026-10-17T08:10:00Z
+# HTTP 200; 6203 bytes; SHA-256 7a9f393ae8091d7bb73cf67c0803bde2b120d6e5efdbecffcf8ee7afd430e912
+# title: VIET NAM: parliamentary elections Quoc-Hoi, 1997
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 20 July 1997
+D: Background and outcome of elections: | The previous parliamentary elections (for 395 seats) had been held in July 1992. For those of 1997, 666 candidates - including 106 independents and a record number of women (202) - stood for the expanded National Assembly’s 450 seats; all candidatures were approved by the Viet Nam Fatherland Front -
+D: The campaign period was marked by candidates’ meetings organised by the Fatherland Front and attended by representatives | On 24 September, Mr. Tran Duc Luong was elected President of the Republic by the National Assembly. The next day, Mr. Phan Van Khai was chosen Prime Minister. Both are members of the CPV. This party's leading role in Vietnamese society was enshrined in the 1992 Constitution.
+D: STATISTICS | Round no 1 (20 July 1997): Elections results
+K: Parliamentary Chamber: Quoc-Hoi | ELECTIONS HELD IN 1997
+K: Chamber: | Quoc-Hoi
+K: Dates of elections / renewal (from/to): | 20 July 1997
+K: Purpose of elections: | Elections were held for all the seats in Parliament on the normal expiry of the members' term of office.

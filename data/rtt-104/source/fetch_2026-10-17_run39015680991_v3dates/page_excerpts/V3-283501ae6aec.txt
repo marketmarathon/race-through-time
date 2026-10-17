@@ -1,0 +1,17 @@
+# V3-283501ae6aec
+# url: https://data.ipu.org/election-summary/HTML/2235_96.htm
+# final url: https://data.ipu.org/election-summary/HTML/2235_96.htm
+# fetched (UTC): 2026-10-17T08:08:43Z
+# HTTP 200; 7265 bytes; SHA-256 b05078c5b2a602372a0de57977eef8aa7da2c87538af29aafd547f878b54d85d
+# title: NICARAGUA: parliamentary elections Asamblea Nacional, 1996
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 20 October 1996
+D: Purpose of elections: | Elections were held for all the seats in Parliament as scheduled by the Electoral Law adopted on 5 December 1995. General elections had previously been held in February 1990.
+D: Background and outcome of elections: | The date of the parliamentary elections was set in December 1995. They were combined with polling for President of the Republic - an open race since Mrs. Violeta Barrios de Chamorro was constitutionally barred from seeking re-election to the post she had won in February 1990.
+D: Election day - monitored by thousands of international observers including former US President Jimmy Carter - was extend | On 8 November, the Supreme Electoral Council proclaimed Mr. Aleman the victor with 51% of the vote as against 37% for Mr. Ortega who came in second - a clear margin over the 45% needed to avoid a runoff ballot. Parliamentary results, for their part, were only published on 4 December; the FSLN remain
+D: STATISTICS | Round no 1 (20 October 1996): Elections results
+K: Parliamentary Chamber: Asamblea Nacional | ELECTIONS HELD IN 1996
+K: Chamber: | Asamblea Nacional
+K: Dates of elections / renewal (from/to): | 20 October 1996
+K: Purpose of elections: | Elections were held for all the seats in Parliament as scheduled by the Electoral Law adopted on 5 December 1995. General elections had previously been held in February 1990.

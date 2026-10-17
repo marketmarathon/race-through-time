@@ -1,0 +1,32 @@
+# V3-855592883eda
+# url: https://data.ipu.org/parliament/AE/AE-LC01/election/AE-LC01-E20191005/
+# final url: https://data.ipu.org/parliament/AE/AE-LC01/election/AE-LC01-E20191005/
+# fetched (UTC): 2026-10-17T08:10:18Z
+# HTTP 200; 164914 bytes; SHA-256 3766f928868459e9da12de08f291a0118cb0dc691558ac928d76f8316f57005f
+# title: United Arab Emirates Federal National Council October 2019 Election | Election results | United Arab Emirates | IPU Parline: global data on national parliaments
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: United Arab Emirates Federal National Council October 2019 Election | Election results | United Arab Emirates | IPU Parline: global data on national parliaments
+D: View field in the data dictionary | 05 Oct 2019
+D: View field in the data dictionary | The 2019 elections led to the first gender-parity parliament in the United Arab Emirates. A record seven women were among the 20 elected members in October and 13 other women were appointed by presidential decree on 11 November. The new 40-member Federal National Council thus comprises 20 women, up 
+D: The 2019 elections led to the first gender-parity parliament in the United Arab Emirates. A record seven women were amon | The 2019 elections were the first to be held after President Sheikh Khalifa called for Emirati women to occupy 50 per cent of the Federal National Council starting from the upcoming elections. The directive was issued by the UAE Government Communication Office in December 2018. The size of the Elect
+D: Sources | Federal National (23.10.2019, 12.11.2019)
+D: View field in the data dictionary | 14 Nov 2019
+D: View field in the data dictionary | 14 Nov 2019
+K: Select country and chamber | Parliaments
+K: Political systems: Presidential, Parliamentary, Presidential-Parliamentary, Monarchy, Communist, Transitional. | View field in the data dictionary
+K: The date when elections started and ended for directly or indirectly elected parliaments/chambers. The date of appointments for appointed parliaments/chambers. | View field in the data dictionary
+K: Date of dissolution of the outgoing legislature | Date at which the previous legislature (elected at the previous elections) was dissolved.
+K: Date at which the previous legislature (elected at the previous elections) was dissolved. | View field in the data dictionary
+K: Timing of election | Timing of election: Upon normal expiry; Early elections; Delayed elections
+K: Timing of election: Upon normal expiry; Early elections; Delayed elections | View field in the data dictionary
+K: Number of seats contested at the elections. Where the parliament/chamber is fully renewed, this number is usually identical to the statutory number of members. Where the parliament/chamber is partiall | View field in the data dictionary
+K: Scope of elections | Scope of elections: Full renewal; Partial renewal.
+K: Scope of elections: Full renewal; Partial renewal. | View field in the data dictionary
+K: Full renewal | Candidates
+K: Women Appointed | 13
+K: The total number of male parliamentarians in this parliament/chamber following the election or renewal, regardless of their modes of designation. | View field in the data dictionary
+K: The total number of female parliamentarians in this parliament/chamber following the election or renewal, regardless of their modes of designation. | View field in the data dictionary
+K: The percentage is calculated by dividing the total number of women in this parliament/chamber by the current number of members. | View field in the data dictionary
+K: The number of members who are assuming their parliamentary mandate for the first time following the election or renewal, regardless of their mode of designation. | View field in the data dictionary
+K: The date when the newly elected parliament/chamber was convened for the first time. It may be different from the date when members were sworn in. | View field in the data dictionary

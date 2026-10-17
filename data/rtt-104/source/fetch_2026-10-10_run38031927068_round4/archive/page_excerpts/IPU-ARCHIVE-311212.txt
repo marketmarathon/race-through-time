@@ -1,0 +1,11 @@
+# IPU-ARCHIVE-311212
+# url: http://archive.ipu.org/wmn-e/arc/classif311212.htm
+# final url: http://archive.ipu.org/wmn-e/arc/classif311212.htm
+# fetched (UTC): 2026-10-10T06:44:23Z
+# HTTP 200; 40491 bytes; SHA-256 342e14cfb50b3a7091f2ebe84f0b95f68e309e772bfc9fad80764aced1913f28
+# title: ['Women in Parliaments: World Classification']
+# headings: ['>>> VERSION FRANÇAISE Women', 'in national parliaments Situation as of 31 December 2012', '190 countries', 'descending order of the percentage of women in the lower or single House', 'New:', 'WORLD CLASSIFICATION', 'Rank', 'Country', 'Lower or single House', 'Upper House or Senate', 'Elections', 'Seats*']
+# Table rows naming the test countries only.
+
+57 | Pakistan | 2 2008 | 342 | 77 | 22.5% | 3 2012 | 104 | 17 | 16.3%
+136 | Egypt | 11 2011 | 508 | 10 | 2.0% | 1 2012 | 180 | 5 | 2.8%

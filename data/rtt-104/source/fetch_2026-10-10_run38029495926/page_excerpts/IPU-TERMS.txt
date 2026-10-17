@@ -1,0 +1,35 @@
+# IPU-TERMS
+# url: https://www.ipu.org/terms-use
+# final url: https://www.ipu.org/terms-use
+# fetched (UTC): 2026-10-10T06:02:06Z
+# HTTP 200; 88088 bytes; SHA-256 73bc1afc7e063f24dba7e7129fd13d8601f4e029bffe954e459d7aecb8480d3d
+# Short excerpts only (lines holding the searched words, with the line before and after).
+
+Terms of Use | Inter-Parliamentary Union | Skip to main content
+
+IPU Parline | Terms of Use | Use of the Inter-Parliamentary Union (IPU) websites, ipu.org, data.ipu.org and parliamentaryindicators.org, constitutes acceptance of these Terms of Use.
+
+The IPU websites act as a resource and a repository for data on national parliaments, designed to allow users to access, compare and share. The IPU websites are aimed at parliamentarians, academics, journalists, international and civil society organizations, and the general public. | Copyright and restriction on use of content | The IPU hereby reserves sole proprietary rights including copyright, trademark and other intellectual property rights over its content on the websites, unless otherwise stated.
+
+The IPU supports open access to the published output of its activities as a fundamental part of its mission and a public benefit to be encouraged wherever possible. The IPU’s open access policy applies to all the publications published by the IPU and is subject to the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. | While most of the content in the IPU’s publications is owned or co-owned by the IPU, there may be materials that are credited to another published source. Permission will normally be required from the originating publisher to reproduce such materials. Please refer to the copyright notice in the publication concerned for complete information.
+
+Translations and adaptations | All content on the IPU websites or extracts thereof may be displayed, reproduced, translated or adapted for research or personal use but not for sale or for use in conjunction with commercial purposes. | If you produce an adaptation or a translation of an IPU publication available under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, the following disclaimer should be included, as applicable:
+
+For translations: “This translation was not authored by the Inter-Parliamentary Union (IPU). The IPU bears no responsibility for the content or accuracy of this translation. The original English edition [Title]. Geneva: Inter-Parliamentary Union [Year]. Licence: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License remains the binding and authentic edition”. | For adaptations: “This adaptation is derived from the original work titled [Title], the Inter-Parliamentary Union (IPU) [Year], under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. The IPU did not create this adaptation and disclaims responsibility for its content or accur
+
+Permissions and licences | Permission from the IPU is not required for the use of IPU materials issued under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. You may also use our Application Programming Interface (API) to facilitate access to our datasets, either through a separate website or through another type of software application. Any IPU datasets must also be made available to the public free of charge.
+
+The IPU provides no warranty of any kind, either expressed or implied, and shall not be liable for damages arising from the use of IPU publications. | Any use of datasets from data.ipu.org should be attributed as follows: “Inter-Parliamentary Union: dataset_name, month_year” (for example “Inter-Parliamentary Union: Women’s Caucuses, September 2017”). If you share or facilitate access to the datasets, you must include the same acknowledgement requirement in any sub-licences of the data that you grant, and require that any sub-licensees do the same, by providing the Uniform Resource Locator (URL) of these terms of use. | Applications for use of information from the IPU websites and related enq
+
+No warranties | The IPU reserves the right, at its sole discretion, temporarily or permanently, to modify or discontinue content or datasets from its websites, at any time, as well as the means of accessing or utilizing them, with or without prior notice. | The IPU may, at its sole discretion, under any circumstances, for any or no reason whatsoever and with or without prior notice, terminate content or datasets, and any means of accessing or utilizing them.
+
+Exclusion of liability | The IPU will not be held responsible or liable for the accuracy, usefulness or availability of any content or of any data in the datasets. | Nothing herein shall constitute or be considered to be a limitation upon, or waiver of, the privileges and immunities of the IPU.
+
+Cookies | IPU websites may use cookies to enhance the user experience. Users may choose to set their web browser to refuse cookies, or to alert them when cookies are being sent. IPU websites include social media features and widgets. These features may collect the IP addresses of users, and may set a cookie to enable the feature to function properly. These features and widgets are either hosted by a third party or hosted directly on the website. The IPU takes no responsibility for the use of any third-party widgets, features or websites, or links to third-party websites or services. | Your interactions with these features are governed by the privacy policies of the companies providing them.
+
+In carrying out its programmes and operations, the IPU Secretariat collects, stores and processes Personal Data on individuals interacting with the IPU, including parliamentarians, staff members and other individuals engaging with the Organization in accordance with the IPU Personal Data Protection Policy and Procedures. The IPU is committed to respecting the dignity and privacy of these individuals, while balancing such rights with the IPU’s ability to carry out its mandate. | The Data Protection Policy sets out the IPU’s approach to data privacy protection. It outlines the processes followed by the IPU Secretariat to ensure that it can carry out its mandate while abiding by internationally
+
+These Terms of Use may be amended by the IPU at any time at its sole discretion. If the Terms of Use are amended, this will be reflected by changing the date on this page. We advise users to periodically review the Terms of Use. By continuing to use IPU content after the IPU has made available an amended version of these Terms of Use, you acknowledge, agree and consent to such future amendments. | Last update: 24 April 2024
+
+Subscribe to our newsletter | © Copyright IPU 2026, Terms of use & Privacy statement | Select your language
+

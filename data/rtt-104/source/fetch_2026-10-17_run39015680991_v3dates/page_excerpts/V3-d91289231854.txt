@@ -1,0 +1,20 @@
+# V3-d91289231854
+# url: https://data.ipu.org/election-summary/HTML/2223_09.htm
+# final url: https://data.ipu.org/election-summary/HTML/2223_09.htm
+# fetched (UTC): 2026-10-17T08:08:22Z
+# HTTP 200; 24480 bytes; SHA-256 64d5d4f52c2f7fb1b7345495ed3034fd7a2bebb1237c75ba43f5213e15fe9443
+# title: IPU PARLINE database: MOZAMBIQUE (Assembleia da Republica), ELECTIONS IN 2009
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 28 October 2009
+D: Purpose of elections | Early elections were held for all seats in the Assembly of the Republic. The elections had previously taken place in December 2004.
+D: Early elections were held for all seats in the Assembly of the Republic. The elections had previously taken place in Dec | On 20 April 2009, President Armando Guebuza issued a decree setting the date for parliamentary and presidential elections for 28 October. The 2009 elections were the fourth to be held since the end of the country's civil war in 1992.
+D: The ruling Front for the Liberation of Mozambique (FRELIMO) has run the country since Mozambique gained independence fro | Prior to the 2009 elections, RENAMO was reportedly losing ground due to an internal split. In March 2009, its dissidents formed the Democratic Movement of Mozambique (MDM) under the leadership of Mr. Daviz Simango. The MDM backed Mr. Simango, the mayor of Beira, the country's second largest city, as
+D: On 28 December, the Constitutional Council dismissed RENAMO's claims of massive fraud and validated the election results | The newly elected Assembly of the Republic held its first session on 12 January 2010. Ms. Verónica Nataniel Macamo Dlovo (FRELIMO) was elected as Speaker, becoming the first woman to assume the post in Mozambique. Only 16 of the 51 RENAMO members took the oath at the first session. Members who do no
+D: Voter turnout | Round no 1 28 October 2009
+D: Sources: | - Assembly of the Republic (29.01.2010)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Dates of election / renewal (from/to) | 28 October 2009
+K: Purpose of elections | Early elections were held for all seats in the Assembly of the Republic. The elections had previously taken place in December 2004.
+K: Nearly 30 parties applied to run for the parliamentary elections but the National Elections Commission (CNE) registered only 17 parties and two coalitions due to alleged registration irregularities. T | FRELIMO, RENAMO and the MDM all campaigned on a similar platform, pledging to attract more foreign investment, develop the rural economy and fight corruption. They presented manifestos of varying leng

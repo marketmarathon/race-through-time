@@ -1,0 +1,10 @@
+# IPU-ARCHIVE-310103
+# url: http://archive.ipu.org/wmn-e/arc/classif310103.htm
+# final url: http://archive.ipu.org/wmn-e/arc/classif310103.htm
+# fetched (UTC): 2026-10-10T06:12:31Z
+# HTTP 200; 33817 bytes; SHA-256 50950d07d44dd5b8ae156a8fb023154d8c416061c8d51998619fe59527b76356
+# title: ['Women in Parliaments: World Classification']
+# headings: ['Situation as of 31 January 2003', '182 countries', 'descending order of the percentage of women in the lower or single House', 'New:', 'Rank', 'Country', 'Lower or single House', 'Upper House or Senate', 'Elections', 'Seats*', 'Women', '% W']
+# Table rows naming the test countries only.
+
+Rank | Country | Lower or single House | Upper House or Senate | Elections | Seats* | Women | % W | Elections | Seats* | Women | % W | 1 | Sweden | 09 2002 | 349 | 158 | 45.3 | --- | --- | --- | --- | 2 | Denmark | 11 2001 | 179 | 68 | 38.0 | --- | --- | --- | --- | 3 | Netherlands | 01 2003 | 150 | 55 | 36.7 | 05 1999 | 75 | 20 | 26.7 | 4 | Finland | 03 1999 | 200 | 73 | 36.5 | --- | --- | --- | 

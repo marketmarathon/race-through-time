@@ -1,0 +1,45 @@
+# IPU-WOMEN-RANKING
+# url: https://data.ipu.org/women-ranking?month=1&year=2025
+# final url: https://data.ipu.org/women-ranking/?date_month=1&date_year=2025
+# fetched (UTC): 2026-10-10T06:02:11Z
+# HTTP 200; 316657 bytes; SHA-256 31432fdbb1e3c64f8d1d3e88050c330990209484ba668f3dbdacee4c8350a508
+# Short excerpts only (lines holding the searched words, with the line before and after).
+
+Monthly ranking of women in national parliaments | IPU Parline: global data on national parliaments | Skip to main content
+
+Parliamentary elections | Data on Women | Monthly ranking
+
+Women Speakers | Historical Data | Data on Age
+
+Global and regional averages | Data tools | Specialized bodies
+
+Youth Caucus | Data Tools | Compare
+
+Data explorer | Data dictionary
+
+API updates | IPU data catalogue | About
+
+Methodology | Data to impact | Regional groupings
+
+IPU home page | Monthly ranking | Global and regional averages
+
+Women Speakers | Historical Data | Monthly ranking of women in national parliaments
+
+Each month, the IPU publishes rankings of the percentage of women in national parliaments. | See the monthly global and regional averages compiled on the basis of the ranking data.
+
+Monthly rankings for 1997-2018 are available on the IPU archive site . | See also:
+
+Calculated by dividing the current number of women by the current number of members. | Ranking as of 1st January 2025 | View global and regional averages
+
+Elections | Seats | Women
+
+Elections | Seats | Women
+
+- | Syrian Arab Republic: Data corresponds to the People's Assembly, elected in July 2024, which was suspended in December 2024 for a three-month period. | Notes :
+
+The data in this table have been compiled by the Inter-Parliamentary Union on the basis of information provided by national parliaments. | Parliaments are classified according to the percentage of seats held by women in lower or single parliamentary chambers.
+
+The figures correspond to the number of seats filled in parliament at the given time. The ranking may evolve over time based on updates received from national parliaments. | When countries appear at the bottom of the table with no ranking number, it means that data on the number of women in the single or lower parliamentary chambers are temporarily unavailable. This is usually the case when elections have taken place recently and the official results have not yet been published. Once the data on the number of women become available, the ranking is updated accordingly.
+
+South Africa: The figures on the distribution of seats in the Upper House do not include the 36 special rotating delegates appointed on an ad hoc basis; the Upper House percentage is therefore calculated on the basis of the 54 permanent seats. | IPU Offices
+

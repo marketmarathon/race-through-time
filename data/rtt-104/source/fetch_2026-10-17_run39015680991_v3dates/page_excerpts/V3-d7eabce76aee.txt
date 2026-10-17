@@ -1,0 +1,128 @@
+# V3-d7eabce76aee
+# url: https://data.ipu.org/elections/
+# final url: https://data.ipu.org/elections/
+# fetched (UTC): 2026-10-17T08:10:14Z
+# HTTP 200; 393021 bytes; SHA-256 d52d8d1c68e434a0de4fed93385ba24b9fd177e395f0c7ae99191047e7dfabab
+# title: Parliamentary elections | IPU Parline: global data on national parliaments
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Directly elected | 20 Oct 2018 - 21 Oct 2018
+D: 20 Oct 2018 - 21 Oct 2018 | 26 Apr 2019
+D: Indirectly elected | 10 Jan 2015
+D: 10 Jan 2015 | 10 Jan 2015
+D: Directly elected | 11 May 2025
+D: 11 May 2025 | 12 Sep 2025
+D: 12 Sep 2025 | 31 May 2029
+D: Directly elected | 02 Jul 2026
+D: 02 Jul 2026 | 02 Aug 2026
+D: Indirectly elected | 09 Mar 2025
+D: 09 Mar 2025 | 19 May 2025
+D: 19 May 2025 | 31 Jan 2028
+D: Directly elected | 02 Apr 2023
+D: 02 Apr 2023 | 26 Apr 2023
+D: 26 Apr 2023 | 30 Apr 2027
+D: Directly elected | 24 Aug 2022
+D: 24 Aug 2022 | 16 Sep 2022
+D: 16 Sep 2022 | 31 Aug 2027
+D: Directly elected | 30 Apr 2026
+D: 30 Apr 2026 | 18 May 2026
+D: Appointed | 20 May 2026
+D: 20 May 2026 | 20 May 2026
+D: Directly elected | 26 Oct 2025
+D: 26 Oct 2025 | 17 Dec 2025
+D: 17 Dec 2025 | 31 Oct 2027
+D: Directly elected | 26 Oct 2025
+D: 26 Oct 2025 | 10 Dec 2025
+D: 10 Dec 2025 | 31 Oct 2027
+D: Directly elected | 07 Jun 2026
+D: 07 Jun 2026 | 02 Aug 2026
+D: Directly elected | 03 May 2025
+D: 03 May 2025 | 22 Jul 2025
+D: 22 Jul 2025 | 31 May 2028
+D: Directly elected | 03 May 2025
+D: 03 May 2025 | 22 Jul 2025
+D: 22 Jul 2025 | 31 May 2028
+D: Directly elected | 29 Sep 2024
+D: 29 Sep 2024 | 24 Oct 2024
+D: 24 Oct 2024 | 30 Sep 2029
+D: Directly elected | 01 Sep 2024
+D: 01 Sep 2024 | 23 Sep 2024
+D: 23 Sep 2024 | 04 Nov 2029
+D: Directly elected | 12 May 2026
+D: 12 May 2026 | 20 May 2026
+D: Appointed | 20 May 2026
+D: 20 May 2026 | 20 May 2026
+D: Directly elected | 12 Nov 2022 - 19 Nov 2022
+D: 12 Nov 2022 - 19 Nov 2022 | 12 Dec 2022
+D: 12 Dec 2022 | 30 Nov 2027
+D: Appointed | 27 Nov 2022
+D: 27 Nov 2022 | 27 Nov 2022
+D: 27 Nov 2022 | 30 Nov 2027
+D: Directly elected | 12 Feb 2026
+D: 12 Feb 2026 | 12 Mar 2026
+D: Directly elected | 11 Feb 2026
+D: 11 Feb 2026 | 20 Feb 2026
+D: Appointed | 20 Feb 2026
+D: 20 Feb 2026 | 20 Feb 2026
+D: Directly elected | 25 Feb 2024
+D: 25 Feb 2024 | 22 Mar 2024
+D: 22 Mar 2024 | 02 Feb 2029
+D: Indirectly elected | 04 Apr 2024
+D: 04 Apr 2024 | 12 Apr 2024
+D: 12 Apr 2024 | 31 Mar 2029
+D: Directly elected | 09 Jun 2024
+D: 09 Jun 2024 | 04 Jul 2024
+D: 04 Jul 2024 | 30 Jun 2029
+D: Indirectly elected | 18 Jul 2024
+D: 18 Jul 2024 | 08 Oct 2024
+D: 08 Oct 2024 | 31 Jul 2029
+D: Directly elected | 12 Mar 2025
+D: 12 Mar 2025 | 09 May 2025
+D: Appointed | 09 May 2025
+D: 09 May 2025 | 09 May 2025
+D: Directly elected | 11 Jan 2026
+D: 11 Jan 2026 | 08 Feb 2026
+D: Other | 30 Jul 2026
+D: 30 Jul 2026 | 30 Jul 2026
+D: Directly elected | 09 Jan 2024
+D: 09 Jan 2024 | 25 Jan 2024
+K: Select country and chamber | Parliaments
+K: The “Last election” column displays the dates of the most recent general/regular elections for directly/indirectly elected parliaments/chambers; and the most recent renewal dates for parliaments/chamb | The “Expected date of next elections” column indicates the date when the next elections/renewal should normally take place, based on law or practice. Unless relevant laws set a specific election day, 
+K: The “Expected date of next elections” column indicates the date when the next elections/renewal should normally take place, based on law or practice. Unless relevant laws set a specific election day,  | See also:
+K: All chambers | Lower chambers and unicameral parliaments
+K: Lower chambers and unicameral parliaments | Only unicameral parliaments
+K: Only lower chambers | Only upper chambers
+K: Only upper chambers | API
+K: Chamber | Structure of parliament
+K: Chamber type | Principal mode of designation of members
+K: House of the People (Suspended) | Bicameral
+K: Lower chamber | Directly elected
+K: House of Elders (Suspended) | Bicameral
+K: Upper chamber | Indirectly elected
+K: Lower chamber | Directly elected
+K: Upper chamber | Indirectly elected
+K: Lower chamber | Directly elected
+K: Upper chamber | Appointed
+K: Appointed | 20 May 2026
+K: Chamber of Deputies | Bicameral
+K: Lower chamber | Directly elected
+K: Upper chamber | Directly elected
+K: Lower chamber | Directly elected
+K: Upper chamber | Directly elected
+K: Lower chamber | Directly elected
+K: Upper chamber | Indirectly elected
+K: Lower chamber | Directly elected
+K: Upper chamber | Appointed
+K: Appointed | 20 May 2026
+K: Lower chamber | Directly elected
+K: Upper chamber | Appointed
+K: Appointed | 27 Nov 2022
+K: Lower chamber | Directly elected
+K: Upper chamber | Appointed
+K: Appointed | 20 Feb 2026
+K: Lower chamber | Directly elected
+K: Upper chamber | Indirectly elected
+K: Lower chamber | Directly elected
+K: Upper chamber | Indirectly elected
+K: Lower chamber | Directly elected
+K: Upper chamber | Appointed

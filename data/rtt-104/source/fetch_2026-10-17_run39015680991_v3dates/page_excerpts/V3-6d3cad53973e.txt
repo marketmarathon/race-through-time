@@ -1,0 +1,25 @@
+# V3-6d3cad53973e
+# url: https://data.ipu.org/election-summary/HTML/2305_07.htm
+# final url: https://data.ipu.org/election-summary/HTML/2305_07.htm
+# fetched (UTC): 2026-10-17T08:09:32Z
+# HTTP 200; 30531 bytes; SHA-256 88e1ce2e58f5eb0b0717e8af9a04d67d64dca8853ec1980f7b6e57706c624b5c
+# title: IPU PARLINE database: SWITZERLAND (Nationalrat - Conseil national - Consiglio nazionale) ELECTIONS IN 2007
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 21 October 2007
+D: Elections were held for all the seats in the National Council on the normal expiry of the members' term of office. | On 21 October 2007
+D: The following half-cantons had elected their representatives prior to this date. | Zoug: Two male representatives (one each from the CVP/PDC and the FDP/PRD) elected on 29 October 2006.
+D: Zoug: Two male representatives (one each from the CVP/PDC and the FDP/PRD) elected on 29 October 2006. | Appenzell Rhodes-Int: one male representative (CVP/PDC) elected on 29 April 2007 through "Landsgemeinde" (cantonal assembly of citizens).
+D: Appenzell Rhodes-Int: one male representative (CVP/PDC) elected on 29 April 2007 through "Landsgemeinde" (cantonal assem | Nidwald: one male representative (CVP/PDC) elected tacitly on 4 September 2007.
+D: Nidwald: one male representative (CVP/PDC) elected tacitly on 4 September 2007. | Obwald: one male representative (FDP/PRD) elected tacitly on 24 September 2007.
+D: Voter turnout | Round no 1 21 October 2007
+D: - http://www.politik-stat.ch/nrw2007CH_fr.html | - Federal Assembly (22.02.2008
+D: - Federal Assembly (22.02.2008 | 01.01.2010)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Chamber name (generic / translated) | Related chamber (for bicameral parliaments)
+K: Related chamber (for bicameral parliaments) | Ständerat - Conseil des Etats - Consiglio degli Stati / Council of States
+K: Dates of election / renewal (from/to) | 21 October 2007
+K: Purpose of elections | Elections were held for all the seats in the National Council on the normal expiry of the members' term of office.
+K: bringing their seats to 62 and 20 respectively. The SVP/UDC obtained the largest share of seats in this chamber since the country's proportional voting system started in 1919. The CVP/PDC also added t | winning 31 in all. On the contrary
+K: followed by the FDP/PRD and the SVP/UDC with seven seats each. The SP/PS took six seats. The GPS/PES won its first seat in this chamber. After the first round | other candidates withdrew in favour of the second leading candidate in the cantons of Fribourg and Valais. Run-off elections were thus held in six cantons for a total of ten seats.

@@ -1,0 +1,17 @@
+# V3-3076442c9569
+# url: https://data.ipu.org/election-summary/HTML/2303_10.htm
+# final url: https://data.ipu.org/election-summary/HTML/2303_10.htm
+# fetched (UTC): 2026-10-17T08:09:29Z
+# HTTP 200; 36754 bytes; SHA-256 2e950ff0ca81dac01f912975ab495bed08126ad3e87014b1364eb3a931b5bc2a
+# title: IPU PARLINE database: SWEDEN (Riksdagen), ELECTIONS IN 2010
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 19 September 2010
+D: There were 349 seats at stake in the 2010 parliamentary elections. The media focused on whether Prime Minister Fredrik R | In the previous elections (September 2006), the Alliance for Sweden, which comprised four opposition centre-right parties - the Moderate Party (97 seats), the Centre Party (CP, 29), the Liberal Party (FP, 28) and the Christian Democratic Party (KD, 24) - won a total of 178 seats. Prime Minister Göra
+D: In the 2010 elections, Prime Minister Reinfeldt's four-party coalition was challenged by the SAP and other centre-left p | Prime Minister Reinfeldt urged voters to keep the SD out of parliament. He said he wanted Sweden be more involved in the EU but promised not to hold a new referendum on the euro (which had been rejected in a 2003 referendum). FP leader and Minister of Education Jan Björklund proposed to open "elite 
+D: Voter turnout | Round no 1 19 September 2010
+D: Sources: | - Parliament (07.10.2010, 22.03.2011, 26.01.2012, 01.01.2014)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Dates of election / renewal (from/to) | 19 September 2010
+K: Purpose of elections | Elections were held for all the seats in Parliament on the normal expiry of the members' term of office.

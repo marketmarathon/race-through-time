@@ -1,0 +1,71 @@
+# V3-451b42279eb6
+# url: https://data.ipu.org/parliament/BE/BE-LC01/
+# final url: https://data.ipu.org/parliament/BE/BE-LC01/
+# fetched (UTC): 2026-10-17T08:10:55Z
+# HTTP 200; 360999 bytes; SHA-256 8852900b2f7af34d09455c5f5190bed9706b6751c0fb10319d78c4b946de2e94
+# title: Belgium | House of Representatives | IPU Parline: global data on national parliaments
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: View field in the data dictionary | 10 Jul 2024
+D: Additional information | Elected on 10 July 2024, re-elected on 8 Oct. 2024, on 14 Oct. 2025 and 13 Oct. 2026.
+D: View field in the data dictionary | 01 Nov 2024
+D: Sources: https://www.idea.int/data-tools/data/gender-quotas-database/country?country=22 | Article 117bis of the Electoral Code, as amended by L2002-12-13/41, art. 5, 003. The law entered into force on 20 January 2003.
+D: View field in the data dictionary | 10 Jul 2024
+D: Additional information | Elected on 10 July 2024, re-elected on 8 Oct. 2024, on 14 Oct. 2025 and 13 Oct. 2026.
+D: View field in the data dictionary | 13 Oct 2020 to 03 Jul 2024
+D: Additional information | Elected on 13 Oct. 2020, re-elected on 12 Oct. 2021, 11 Oct. 2022, and on 10 Oct. 2023.
+D: View field in the data dictionary | 27 Jun 2019 to 12 Oct 2020
+D: Additional information | Elected on 27 June 2019.
+D: View field in the data dictionary | 14 Oct 2014 to 26 Jun 2019
+D: Additional information | Elected on 14 Oct. 2014, re-elected on 13 Oct. 2015, on 11 Oct. 2016, on 10 Oct. 2017 and 9 Oct. 2018.
+D: View field in the data dictionary | 10 Jul 2024
+D: Additional information | Elected on 10 July 2024, re-elected on 8 Oct. 2024, on 14 Oct. 2025 and 13 Oct. 2026.
+D: View field in the data dictionary | 13 Oct 2020 to 03 Jul 2024
+D: Additional information | Elected on 13 Oct. 2020, re-elected on 12 Oct. 2021, 11 Oct. 2022, and on 10 Oct. 2023.
+D: View field in the data dictionary | 27 Jun 2019 to 12 Oct 2020
+D: Additional information | Elected on 27 June 2019.
+D: View field in the data dictionary | 14 Oct 2014 to 26 Jun 2019
+D: Additional information | Elected on 14 Oct. 2014, re-elected on 13 Oct. 2015, on 11 Oct. 2016, on 10 Oct. 2017 and 9 Oct. 2018.
+D: View field in the data dictionary | 01 Nov 2024
+D: View field in the data dictionary | 01 Jun 2022 to 31 Oct 2024
+D: View field in the data dictionary | 1 June 2022 -
+D: View field in the data dictionary | 01 Nov 2024
+D: View field in the data dictionary | 01 Jun 2022 to 31 Oct 2024
+D: View field in the data dictionary | 1 June 2022 -
+K: Select country and chamber | Parliaments
+K: Political systems: Presidential, Parliamentary, Presidential-Parliamentary, Monarchy, Communist, Transitional. | View field in the data dictionary
+K: Basic information such as the official name of parliament and details of its structure and leadership. Also includes the current breakdown of MPs by sex and age, and provisions for quotas and reserved | Parliament name
+K: Chamber name | Chambre des Représentants (House of Representatives)
+K: Lower chamber | Parliamentary term (years)
+K: Notes: The Houses every year on the second Tuesday in October, unless they have been convened previously by the King. Each session, each House appoints its president, its vice-presidents, and forms it | Sources: Constitution, art. 44 and 52
+K: As defined in the constitution or other fundamental laws. Combines the number of parliamentarians in both chambers in bicameral parliaments. | View field in the data dictionary
+K: Average age of members, for which data is available, at the time of the last election or renewal. | View field in the data dictionary
+K: Age is calculated at the time the member was elected/appointed to a new legislature. Data is not updated during the legislature unless the member is no longer a member. | View field in the data dictionary
+K: Age is calculated at the time the member was elected/appointed to a new legislature. Data is not updated during the legislature unless the member is no longer a member. | View field in the data dictionary
+K: Age at the last election or renewal | Overall
+K: Reserved seats and quotas | There are reserved seats in parliament for certain groups
+K: There are reserved seats in parliament for certain groups | Reserved seats are a means to ensure the parliamentary representation of certain groups in society.
+K: Reserved seats are a means to ensure the parliamentary representation of certain groups in society. | View field in the data dictionary
+K: Electoral quota for women | Quotas to promote gender-balanced representation in parliament
+K: Quotas to promote gender-balanced representation in parliament | View field in the data dictionary
+K: Sources: https://www.idea.int/data-tools/data/gender-quotas-database/country?country=22 | Article 117bis of the Electoral Code, as amended by L2002-12-13/41, art. 5, 003. The law entered into force on 20 January 2003.
+K: Youth quota | Quotas to promote the representation of youth in parliament.
+K: Quotas to promote the representation of youth in parliament. | View field in the data dictionary
+K: Historical data for Chamber name | XLS
+K: Historical data for Chamber name | Updated at
+K: Chamber name | 1946-01
+K: The Houses every year on the second Tuesday in October, unless they have been convened previously by the King. Each session, each House appoints its president, its vice-presidents, and forms its burea | Constitution, art. 44 and 52
+K: Age is calculated at the time the member was elected/appointed to a new legislature. Data is not updated during the legislature unless the member is no longer a member. | View field in the data dictionary
+K: Age is calculated at the time the member was elected/appointed to a new legislature. Data is not updated during the legislature unless the member is no longer a member. | View field in the data dictionary
+K: Age is calculated at the time the member was elected/appointed to a new legislature. Data is not updated during the legislature unless the member is no longer a member. | View field in the data dictionary
+K: Age is calculated at the time the member was elected/appointed to a new legislature. Data is not updated during the legislature unless the member is no longer a member. | View field in the data dictionary
+K: Age is calculated at the time the member was elected/appointed to a new legislature. Data is not updated during the legislature unless the member is no longer a member. | View field in the data dictionary
+K: Age is calculated at the time the member was elected/appointed to a new legislature. Data is not updated during the legislature unless the member is no longer a member. | View field in the data dictionary
+K: Age is calculated at the time the member was elected/appointed to a new legislature. Data is not updated during the legislature unless the member is no longer a member. | View field in the data dictionary
+K: Age is calculated at the time the member was elected/appointed to a new legislature. Data is not updated during the legislature unless the member is no longer a member. | View field in the data dictionary
+K: Age at the last election or renewal | Overall
+K: Age at the last election or renewal | Overall
+K: Age at the last election or renewal | Overall
+K: Age at the last election or renewal | Overall
+K: Age at the last election or renewal | Overall
+K: Age at the last election or renewal | Overall

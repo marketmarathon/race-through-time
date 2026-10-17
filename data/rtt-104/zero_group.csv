@@ -1,0 +1,30 @@
+year,count,countries,countries_with_a_value
+1997,3,Jordan; Kuwait; United Arab Emirates,106
+1998,3,Jordan; Kuwait; United Arab Emirates,112
+1999,3,Jordan; Kuwait; United Arab Emirates,112
+2000,3,Jordan; Kuwait; United Arab Emirates,113
+2001,2,Kuwait; United Arab Emirates,114
+2002,2,Kuwait; United Arab Emirates,116
+2003,3,Kuwait; Saudi Arabia; United Arab Emirates,116
+2004,3,Kuwait; Saudi Arabia; United Arab Emirates,118
+2005,3,Kyrgyzstan; Saudi Arabia; United Arab Emirates,122
+2006,2,Kyrgyzstan; Saudi Arabia,124
+2007,2,Oman; Saudi Arabia,124
+2008,2,Oman; Saudi Arabia,123
+2009,2,Oman; Saudi Arabia,123
+2010,2,Oman; Saudi Arabia,124
+2011,1,Saudi Arabia,125
+2012,1,Saudi Arabia,125
+2013,0,,123
+2014,0,,124
+2015,1,Yemen,124
+2016,2,Haiti; Yemen,126
+2017,2,Papua New Guinea; Yemen,126
+2018,2,Papua New Guinea; Yemen,126
+2019,1,Papua New Guinea,125
+2020,1,Papua New Guinea,124
+2021,2,Papua New Guinea; Yemen,124
+2022,1,Yemen,121
+2023,2,Oman; Yemen,120
+2024,2,Oman; Yemen,118
+2025,2,Oman; Yemen,119

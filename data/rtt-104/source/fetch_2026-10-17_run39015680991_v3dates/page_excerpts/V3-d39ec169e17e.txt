@@ -1,0 +1,22 @@
+# V3-d39ec169e17e
+# url: https://data.ipu.org/election-summary/HTML/2045_14.htm
+# final url: https://data.ipu.org/election-summary/HTML/2045_14.htm
+# fetched (UTC): 2026-10-17T08:07:06Z
+# HTTP 200; 21815 bytes; SHA-256 b01cf878de3d2dd26c693e4f971ca1c41a986b0321731f2bbf8b8996033fdeb8
+# title: IPU PARLINE database: BULGARIA (Narodno sabranie), ELECTIONS IN 2014
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 5 October 2014
+D: No party won an outright majority, thus reinforcing the existing political stalemate. Citizens for European Development  | The 2014 snap elections, held only 18 months after the previous elections, were triggered by the collapse of the government led by Mr. Plamen Oresharski (BSP) in July. DPS called for early elections following the BSP's poor results in European Parliament elections in May. Prime Minister Oresharski r
+D: During the election campaign, GERB leader Borisov argued that it would not be possible to form a stable government witho | Date of previous elections: 12 May 2013
+D: Date of previous elections: 12 May 2013 | Date of dissolution of the outgoing legislature: 6 August 2014
+D: Timing of election: Early elections | Expected date of next elections: October 2018
+D: Number of parties winning seats: 8 (3 parties and 5 coalitions) | Date of the first session of the new parliament: 27 October 2014
+D: Voter turnout | Round no 1 5 October 2014
+D: Sources: | National Assembly (27.10.2014, 01.01.2017)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Dates of election / renewal (from/to) | 5 October 2014
+K: Purpose of elections | No party won an outright majority, thus reinforcing the existing political stalemate. Citizens for European Development of Bulgaria (GERB), the main opposition party led by former Prime Minister Boyko
+K: Timing of election: Early elections | Expected date of next elections: October 2018
+K: Number of seats at stake: 240 (full renewal) | Number of candidates: 5,280 (3,574 men, 1,706 women)

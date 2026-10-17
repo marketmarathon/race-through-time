@@ -1,0 +1,19 @@
+# V3-f25a6a0e02bc
+# url: https://data.ipu.org/election-summary/HTML/2335_01.htm
+# final url: https://data.ipu.org/election-summary/HTML/2335_01.htm
+# fetched (UTC): 2026-10-17T08:09:48Z
+# HTTP 200; 10652 bytes; SHA-256 08776406d29f02f82519ffbc7781419fbe4332de34c6eb9bd32ad1a93c2115ec
+# title: UNITED KINGDOM: parliamentary elections House of Commons, 2001
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 7 June 2001
+D: Purpose of elections: | Elections were held for all the seats in the House of Commons after the dissolution of Parliament in May 2001. General elections had previously been held in May 1997.
+D: Background and outcome of elections: | Prime Minister Tony Blair called national elections for 7 June 2001, together with local elections in England and Northern Ireland, almost a year before the Labour Party would have been obliged to face the voters. The local elections had been initially scheduled for 3 May 2001, but were postponed be
+D: Prime Minister Tony Blair called national elections for 7 June 2001, together with local elections in England and Northe | A centralised Electoral Commission had been established in November 2000 by the Political Parties, Elections and Referendums Act. This independent body reports directly to Parliament rather than to a Government ministry. Its key responsibilities include registration of parties for European, national
+D: A centralised Electoral Commission had been established in November 2000 by the Political Parties, Elections and Referen | On 14 May 2001, Parliament was officially dissolved by proclamation of Queen Elizabeth II and 3,319 candidates registered to contest the 659 seats in the House of Commons.
+D: The Labour Party won 412 seats, enough for a ruling majority in the House of Commons, against 166 for the Conservative P | On 13 June 2001, Mr Michael Martin was re-elected as Speaker of the House of Commons.
+D: STATISTICS | Round no 1 (7 June 2001): Elections results
+K: Parliamentary Chamber: House of Commons | ELECTIONS HELD IN 2001
+K: Chamber: | House of Commons
+K: Dates of elections / renewal (from/to): | 7 June 2001
+K: Purpose of elections: | Elections were held for all the seats in the House of Commons after the dissolution of Parliament in May 2001. General elections had previously been held in May 1997.

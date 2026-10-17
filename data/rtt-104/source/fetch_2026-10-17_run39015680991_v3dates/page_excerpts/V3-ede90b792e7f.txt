@@ -1,0 +1,15 @@
+# V3-ede90b792e7f
+# url: https://data.ipu.org/election-summary/HTML/2085_03.htm
+# final url: https://data.ipu.org/election-summary/HTML/2085_03.htm
+# fetched (UTC): 2026-10-17T08:07:32Z
+# HTTP 200; 13472 bytes; SHA-256 d9cbb54b24c299a108de40e9dd80974c7532fcb38b3ace81e8860a925cfe2ecd
+# title: IPU PARLINE database: DEMOCRATIC PEOPLE'S REPUBLIC OF KOREA (Choe Go In Min Hoe Ui), Elections in 2003
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 3 August 2003
+D: Elections were held for all the seats in Parliament on the normal expiry of the members' term of office | Voters in the Democratic People's Republic of Korea (DPRK) went to the polls on 3 August 2003 to elect the deputies of the 11th Supreme People's Assembly. Elections for the People's Assemblies at all other levels (provincial, city and county) were also conducted across the country.
+D: Each of the country's 687 constituencies had just one candidate selected by the ruling Korean Workers' Party. All of the | On 3 September 2003, the first session of the 11th Supreme People's Assembly re-elected leader Kim Jong Il as Chairman of the National Defence Commission of the DPRK.
+D: Voter turnout | Round no 1 3 August 2003
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Dates of election / renewal (from/to) | 3 August 2003
+K: Purpose of elections | Elections were held for all the seats in Parliament on the normal expiry of the members' term of office

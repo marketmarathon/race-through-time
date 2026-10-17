@@ -1,0 +1,27 @@
+# V3-62b6dbc2fe1b
+# url: https://data.ipu.org/election-summary/HTML/2007_08.htm
+# final url: https://data.ipu.org/election-summary/HTML/2007_08.htm
+# fetched (UTC): 2026-10-17T08:06:19Z
+# HTTP 200; 19172 bytes; SHA-256 50b6cb2695e6bb4fe2f7291b4ad2e15cd7678f339694d7447504497b74e57545
+# title: IPU PARLINE database: ANGOLA (Assembleia nacional) ELECTIONS IN 2008
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: BACKGROUND | Dates of election / renewal (from/to) (from/to) 5 September 2008
+D: Dates of election / renewal (from/to) (from/to) 5 September 2008 | 6 September 2008
+D: Purpose of elections | Elections were held for all seats in the National Assembly. General elections had previously taken place in September 1992.
+D: Elections were held for all seats in the National Assembly. General elections had previously taken place in September 19 | On 4 June 2008
+D: President José Eduardo dos Santos called parliamentary elections for 5 September | 16 years after the previous elections were held in September 1992. Elections had been postponed repeatedly as a result of the civil war that had engulfed the country following its independence from Portugal in 1975.
+D: took 70 seats. The remainder went to small parties. The three seats reserved for Angolans living abroad were not filled. | The 1992 elections followed a peace accord signed between President dos Santos and Mr. Savimbi in May 1991. However
+D: but conceded defeat after the election commission rejected its claim for lack of evidence. The remaining seats went to s | The newly elected National Assembly held its first session on 30 September 2008. It elected outgoing prime minister Fernando da Piedade Dias dos Santos (MPLA) as its new Speaker.
+D: Voter turnout | Round no 1 (from/to) 5 September 2008
+D: Round no 1 (from/to) 5 September 2008 | 6 September 2008
+D: - http://www.cne.ao | - National Assembly (02.10.2008
+D: - National Assembly (02.10.2008 | 01.01.2010
+D: 01.01.2010 | 20.12.2011)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Purpose of elections | Elections were held for all seats in the National Assembly. General elections had previously taken place in September 1992.
+K: took 70 seats. The remainder went to small parties. The three seats reserved for Angolans living abroad were not filled. | The 1992 elections followed a peace accord signed between President dos Santos and Mr. Savimbi in May 1991. However
+K: President dos Santos appointed Mr. António Paulo Kassoma (MPLA) as the new Prime Minister. On 3 October | Mr. Kassoma's cabinet was sworn in by the President.
+K: Social Renewal Party (PRS) | 3.17
+K: Social Renewal Party (PRS) | 8

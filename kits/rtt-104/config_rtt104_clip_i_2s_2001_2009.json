@@ -1,0 +1,12 @@
+{
+ "extends": "config_rtt104_base.json",
+ "window": {
+  "from": 2001,
+  "to": 2009
+ },
+ "notes": "Clip, pace option i: 2001-2009 at 2 s per year, eased (Rwanda takes first place in 2003, the UAE rises, Saudi Arabia appears).",
+ "closing_card": {
+  "enabled": false
+ },
+ "final_hold_sec": 1.0
+}

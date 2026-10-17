@@ -1,0 +1,13 @@
+{
+ "stills": [
+  {"name": "v3r3_palette_A_2019", "config": "config_rtt104_v3_palette_a.json", "at": 2019},
+  {"name": "v3r3_palette_B_2019", "config": "config_rtt104_v3_palette_b.json", "at": 2019},
+  {"name": "v3r3_palette_C_2019", "config": "config_rtt104_v3_palette_c.json", "at": 2019}
+ ],
+ "compose": [
+  {"name": "sheet_v3r3_palettes", "title": "RTT-104 V3 round 3 · continent palettes A, B, C · same frame (2019 lands, with tags) · C recommended", "cols": 3,
+   "items": [["v3r3_palette_A_2019", "A: Europe blue, Americas red, Africa green, Asia orchid, Oceania turquoise"],
+             ["v3r3_palette_B_2019", "B: Europe sky blue, Americas coral, Africa green, Asia hot pink, Oceania purple"],
+             ["v3r3_palette_C_2019", "C (recommended): Europe blue, Americas crimson, Africa lime, Asia pink, Oceania purple"]]}
+ ]
+}

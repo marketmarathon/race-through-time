@@ -1,0 +1,11 @@
+# IPU-OLD-MMR
+# url: https://www.ipu.org/parlement/MM
+# final url: https://www.ipu.org/parlement/MM
+# fetched (UTC): 2026-10-10T06:09:53Z
+# HTTP 200; 95291 bytes; SHA-256 2ae2f809c6fba6c05b9e062e2edfd151e66c45eda101d1121f29f2eed4618405
+# Short excerpts only (lines holding the searched words, with the line before and after).
+
+Bicameral | Last election | Nov 2020
+
+Contact us | Vacancies | IPU structure and governance
+

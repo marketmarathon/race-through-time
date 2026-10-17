@@ -1,0 +1,21 @@
+# V3-7cfc97670766
+# url: https://data.ipu.org/election-summary/HTML/2111_07.htm
+# final url: https://data.ipu.org/election-summary/HTML/2111_07.htm
+# fetched (UTC): 2026-10-17T08:07:54Z
+# HTTP 200; 22987 bytes; SHA-256 ce34e394cf805b7e3cf61f6ce413e6aa35744e7d05f36caac8f06f91a66d13f4
+# title: IPU PARLINE database: FINLAND (Eduskunta - Riksdagen) ELECTIONS IN 2007
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 18 March 2007
+D: Elections were held for all the seats in Parliament on the normal expiry of the members' term of office. | The March 2007 elections came on the heels of the country's presidency of the European Union from July to December 2006. As a result
+D: The March 2007 elections came on the heels of the country's presidency of the European Union from July to December 2006. | the election campaign started late compared to previous ones. In the last elections held in March 2003
+D: while the remainder of seats was won by small parties. | In June 2003
+D: down from four in the 2003 elections. | President Tarja Halonen opened the new parliament on 28 March 2007.
+D: Voter turnout | Round no 1 18 March 2007
+D: Sources: | - Parliament (19.02.2008
+D: - Parliament (19.02.2008 | 01.01.2010)
+D: Eighty-four women were elected on 18 March. However | after the formation of the new government on 19 April 2007
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Dates of election / renewal (from/to) | 18 March 2007
+K: Purpose of elections | Elections were held for all the seats in Parliament on the normal expiry of the members' term of office.

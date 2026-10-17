@@ -1,0 +1,146 @@
+# Race Through Time - render the RTT-104 V3 design round (IQ-24d): the top-20 board with election tags. Stills with
+# phone copies and sheets, and two short clips of 2016-2020 (tag rule a and tag rule b), 1920 x 1080, no music.
+# NOT a film (DEC-069: nothing new goes into a film before Luke approves it).
+#
+# Its OWN workflow: the approved V2 film's workflow (rtt104_film.yml), V2's configs, page and music file are not changed
+# (tests/rtt104/check_v3_changes.py proves them byte-identical to c379631 before anything renders), and no other
+# episode's workflow is touched. This repository is PUBLIC (DEC-006), so this workflow (as rtt104_pilot.yml, DEC-061):
+#   - fetches Luke's logo from the PRIVATE repo with the secret RTT_PRIVATE_TOKEN into $RUNNER_TEMP, never into the
+#     repo, never printing the secret, and checks its SHA-256 against kits/rtt-104/assets_sha256.txt;
+#   - checks V2's player input against kits/rtt-104/dataset_hashes.txt and that the V3 input is rebuilt byte-identical;
+#   - renders the clips (kits/rtt-104/clips_v3.txt) with NO audio track, each with the WCAG flash check, and the stills
+#     (kits/rtt-104/stills_v3.json) with their checks (values = data, every tag = a VERIFIED row with an excerpt, phone
+#     sizes, overlaps; kits/rtt-104/render_stills_v3.js, which also checks every frame of both clips);
+#   - saves everything ONLY as one pre-release in the private repo, with every file's SHA-256 in its notes;
+#   - uploads NO workflow artifact, uses NO cache, and deletes the logo, frames and videos at the end.
+# Trigger: a push that changes THIS FILE on the RTT-104 branch, or by hand. Round: V3_ROUND below (IQ-24f: round3).
+name: rtt104-v3-pilot
+
+on:
+  push:
+    branches: [claude/nifty-brown-hrl2yi]
+    paths: [.github/workflows/rtt104_v3_pilot.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rtt104-v3-pilot
+  cancel-in-progress: false
+
+env:
+  V3_ROUND: round3      # IQ-24f: three palettes and 6 s vs 12 s per year (round2 = IQ-24e; empty = IQ-24d round 1: stills_v3.json, clips_v3.txt)
+  PRIVATE_REPO: marketmarathon/race-through-time-private
+  PRIVATE_REF: main
+
+jobs:
+  render:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0          # check_v3_changes.py compares V2's files with commit c379631
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install ffmpeg, the kit and Chromium
+        working-directory: kits/rtt-002
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg > /dev/null
+          ffmpeg -hide_banner -encoders 2>/dev/null | grep -q libx264
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 npm ci
+          npx playwright install --with-deps chromium
+          echo "PW_CHROME=$(node -e "console.log(require('playwright').chromium.executablePath())")" >> "$GITHUB_ENV"
+
+      - name: Check the data, V2 unchanged, the V3 input and the frame counts
+        run: |
+          want=$(awk '$2 == "output" {print $1}' kits/rtt-104/dataset_hashes.txt)
+          got=$(sha256sum kits/rtt-104/race_rtt104.json | cut -d' ' -f1)
+          echo "race_rtt104.json $got (dataset_hashes.txt: $want)"; test -n "$want" && test "$got" = "$want"
+          python3 scripts/rtt104_player_input.py data/rtt-104 "$RUNNER_TEMP/race_check.json" "$RUNNER_TEMP/hash_check.txt" > /dev/null
+          test "$(sha256sum "$RUNNER_TEMP/race_check.json" | cut -d' ' -f1)" = "$want"
+          python3 tests/rtt104/run_tests_rtt104.py | tail -1
+          python3 tests/rtt104/check_v3_changes.py
+          echo "race_rtt104_v3.json $(sha256sum kits/rtt-104/race_rtt104_v3.json | cut -d' ' -f1)"
+          : > "$RUNNER_TEMP/plan.txt"
+          while read -r c; do
+            test -n "$c" || continue
+            f=$(RTT_CONFIG="$c" FRAME_COUNT_ONLY=1 node kits/rtt-104/render_rtt104.js | awk '/^FRAMES/ {print $2}')
+            test -n "$f"; echo "$c $f" | tee -a "$RUNNER_TEMP/plan.txt"
+          done < "kits/rtt-104/clips_v3${V3_ROUND:+_$V3_ROUND}.txt"
+
+      - name: Fetch Luke's logo from the private repo and check its hash
+        env:
+          GH_TOKEN: ${{ secrets.RTT_PRIVATE_TOKEN }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then echo "::error::secret RTT_PRIVATE_TOKEN is not available to this run"; exit 1; fi
+          A="$RUNNER_TEMP/rtt_assets"; mkdir -p "$A"
+          : > "$RUNNER_TEMP/check.txt"
+          grep -v '^#' kits/rtt-104/assets_sha256.txt | while read -r sum p; do
+            case "$p" in
+              assets/rtt-002/rtt_logo.png) dst="$A/rtt_logo.png";;
+              *) echo "::error::unexpected path $p"; exit 1;;
+            esac
+            gh api -H 'Accept: application/vnd.github.raw' "repos/$PRIVATE_REPO/contents/$p?ref=$PRIVATE_REF" > "$dst"
+            printf '%s  %s\n' "$sum" "$dst" >> "$RUNNER_TEMP/check.txt"
+          done
+          sha256sum -c --quiet "$RUNNER_TEMP/check.txt"
+          echo "$(wc -l < "$RUNNER_TEMP/check.txt") private file(s) fetched, SHA-256 checked"
+          echo "RTT_LOCAL_ASSETS=$A" >> "$GITHUB_ENV"
+
+      - name: Render the clips (1920 x 1080, no audio), check every video and run the WCAG flash check
+        run: |
+          set -o pipefail
+          O="$RUNNER_TEMP/rtt_out"; mkdir -p "$O"; SHORT=${GITHUB_SHA::7}
+          probe() { ffprobe -v error -select_streams v:0 -count_packets -show_entries stream=width,height,nb_read_packets,r_frame_rate -of csv=p=0 "$1"; }
+          : > "$RUNNER_TEMP/flash.txt"
+          while read -r c FRAMES; do
+            STEM="rtt104_${c#config_rtt104_}"; STEM="${STEM%.json}_${SHORT}_1920x1080"
+            SEG_OUT="$O/$STEM.mp4" RASTER_W=1920 RTT_CONFIG="$c" node kits/rtt-104/render_rtt104.js | tee "$RUNNER_TEMP/render.log"
+            if grep -q 'not found' "$RUNNER_TEMP/render.log"; then echo "::error::the logo was not loaded"; exit 1; fi
+            m=$(probe "$O/$STEM.mp4"); echo "$c: $m"; test "$m" = "1920,1080,30/1,$FRAMES"
+            a=$(ffprobe -v error -select_streams a -show_entries stream=index -of csv=p=0 "$O/$STEM.mp4" | wc -l); test "$a" = 0
+            node tests/player/wcag_flash_rtt003.js "../rtt-104/$c" 2>/dev/null | python3 -c "import sys,json; t=sys.stdin.read(); d=json.loads(t[t.index('{'):]); print('$STEM.mp4: WCAG flash check %s (largest too-often-flashing area in a 10-degree field %d px of %d allowed; red %d)' % ('PASS' if d['pass'] else 'FAIL', d['worst']['fastG']['best'], d['limit_px_10deg'], d['worst']['fastR']['best'])); sys.exit(0 if d['pass'] else 1)" | tee -a "$RUNNER_TEMP/flash.txt"
+          done < "$RUNNER_TEMP/plan.txt"
+
+      - name: Render the stills, phone copies and sheets; check them and every frame of both clips
+        run: |
+          set -o pipefail
+          node kits/rtt-104/render_stills_v3.js "$RUNNER_TEMP/rtt_out" | tee "$RUNNER_TEMP/stills.log"
+          if grep -q 'not found' "$RUNNER_TEMP/stills.log"; then echo "::error::the logo was not loaded"; exit 1; fi
+          ls "$RUNNER_TEMP/rtt_out"/*.png | wc -l
+
+      - name: Save the clips and stills as one pre-release in the private repo
+        env:
+          GH_TOKEN: ${{ secrets.RTT_PRIVATE_TOKEN }}
+        run: |
+          O="$RUNNER_TEMP/rtt_out"; SHORT=${GITHUB_SHA::7}
+          TAG="rtt-104-v3-${V3_ROUND:-round1}-${SHORT}-run${GITHUB_RUN_NUMBER}"
+          {
+            echo "RTT-104 Women in Parliament V3, design ${V3_ROUND:-round1} (IQ-24d to IQ-24f): the top-20 board with election tags as Luke chose them; round 2 adds continent colours (UN M49) and slower paces; round 3 shows three palettes and 6 s vs 12 s per year. Rendered by GitHub Actions. No music. Not a film. The approved V2 film is unchanged."
+            echo
+            echo "- Source: ${GITHUB_REPOSITORY} @ ${GITHUB_SHA} (${GITHUB_REF_NAME}), run ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+            while read -r c FRAMES; do echo "- kits/rtt-104/${c}: ${FRAMES} frames at 30 fps = $(awk -v f="$FRAMES" 'BEGIN {printf "%.1f", f / 30}') s, 1920 x 1080, x264, no audio"; done < "$RUNNER_TEMP/plan.txt"
+            sed 's/^/- /' "$RUNNER_TEMP/flash.txt"
+            echo "- Stills: kits/rtt-104/stills_v3${V3_ROUND:+_$V3_ROUND}.json, 1920 x 1080 PNG plus the same frame at phone size (390 points wide at 3 device pixels per point); sheet_v3_*.png = options side by side. Checked: values = data/rtt-104/v3_change_events.csv, every tag = a VERIFIED row with a fetched excerpt, phone sizes, overlaps; every frame of both clips too (kits/rtt-104/render_stills_v3.js). The file named PROPOSAL shows a proposal, not an approved rule"
+            if [ "$V3_ROUND" = round3 ]; then echo "- Clips: the same years (2016 to 2020), palette C, tag rule (a): rtt104_v3_clip_palette_c_6_0s = 6 s per year (tags 4.0 s); rtt104_v3_clip_palette_c_12_0s = 12 s per year (tags 8.0 s). Sheet sheet_v3r3_palettes = palettes A, B, C on the same 2019 frame"; elif [ "$V3_ROUND" = round2 ]; then echo "- Clips: the same years (2016 to 2020), tag rule (a), continent colours: rtt104_v3_clip_continents_4_5s = 4.5 s per year (tags 3.0 s); rtt104_v3_clip_continents_6_0s = 6 s per year (tags 4.0 s)"; else echo "- Clips: rtt104_v3_clip_a = tag rule (a); rtt104_v3_clip_b = tag rule (b). Same years (2016 to 2020), 3 s per year"; fi
+            echo "- Luke's logo: race-through-time-private ${PRIVATE_REF}, SHA-256 checked against kits/rtt-104/assets_sha256.txt; flags: flag-icons 7.5.0 (MIT)"
+            echo "- File SHA-256:"
+            (cd "$O" && sha256sum *.mp4 *.png | sed 's/^/  - /')
+            echo
+            echo "Private review render. Not for upload or publication. Not the film."
+          } > "$O/notes.md"
+          cat "$O/notes.md"
+          gh release create "$TAG" --repo "$PRIVATE_REPO" --target main --prerelease \
+            --title "RTT-104 V3 design ${V3_ROUND:-round1} ${SHORT} (stills and clips)" --notes-file "$O/notes.md" "$O"/*.mp4 "$O"/*.png
+          echo "Release: https://github.com/${PRIVATE_REPO}/releases/tag/${TAG}" | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Delete the logo, frames and videos from the runner
+        if: always()
+        run: rm -rf "$RUNNER_TEMP/rtt_assets" "$RUNNER_TEMP/rtt_out" "$RUNNER_TEMP"/*.log "$RUNNER_TEMP/check.txt"

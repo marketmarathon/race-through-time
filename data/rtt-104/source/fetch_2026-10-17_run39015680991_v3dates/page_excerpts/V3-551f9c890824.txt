@@ -1,0 +1,17 @@
+# V3-551f9c890824
+# url: https://data.ipu.org/election-summary/HTML/2011_99.htm
+# final url: https://data.ipu.org/election-summary/HTML/2011_99.htm
+# fetched (UTC): 2026-10-17T08:06:31Z
+# HTTP 200; 7789 bytes; SHA-256 6bd995b21e5890185ab42b462e81a807eb8ffd745e0398b733224330df5d2d82
+# title: ARGENTINA: parliamentary elections C�mara de Diputados, 1999
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 24 October 1999
+D: Background and outcome of elections: | Twenty-four million Argentine citizens, including two million young people voting for the first time, turned out on Sunday, 24 October 1999 to elect a new President of the Republic along with half of the national deputies and the governors of six provinces, including Buenos Aires.
+D: STATISTICS | Round no 1 (24 October 1999): Elections results
+K: Parliamentary Chamber: C�mara de Diputados | ELECTIONS HELD IN 1999
+K: Chamber: | C�mara de Diputados
+K: Dates of elections / renewal (from/to): | 24 October 1999
+K: Purpose of elections: | Elections were held to renew one-half of the seats in the Chamber of Deputies on the normal expiry of the members' term of office.
+K: Elections were held to renew one-half of the seats in the Chamber of Deputies on the normal expiry of the members' term of office. | Background and outcome of elections:
+K: The results of the partial renewal of the Chamber of Deputies confirmed the success of the Alianza coalition, which polled 43.6% of the votes and holds 127 out of 257 seats. Nevertheless, the new pres | Despite the importance of these elections, which marked the consolidation of Argentine democracy sixteen years after the end of the military dictatorship as well as the end of a decade of peronist gov

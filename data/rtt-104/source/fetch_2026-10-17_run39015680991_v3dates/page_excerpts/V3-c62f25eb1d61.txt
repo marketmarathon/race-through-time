@@ -1,0 +1,18 @@
+# V3-c62f25eb1d61
+# url: https://data.ipu.org/election-summary/HTML/2079_03.htm
+# final url: https://data.ipu.org/election-summary/HTML/2079_03.htm
+# fetched (UTC): 2026-10-17T08:07:27Z
+# HTTP 200; 7050 bytes; SHA-256 234cb066d6f6b35b37a308afa6f50abb1472308249ea30ad2daceb9701330f3e
+# title: CUBA: parliamentary elections Asamblea nacional del Poder popular, 2003
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 19 January 2003
+D: Background and outcome of elections: | Cubans went to the polls on 19 January 2003 to fill 609 seats in the National Assembly of People's Power and 1,199 in the 14 provincial assemblies. All the 609 candidates who ran uncontested for the National Assembly were elected, as well as all 1,199 candidates who also ran unopposed for the provin
+D: Officials declared that more than 97 per cent of the eight million eligible voters had cast ballots. This turnout was sl | Since all the candidates ran unopposed, voters could either mark or leave blank the circle next to each name on their ballot. According to official accounts, three per cent of ballots were deposited blank, while less than 1 per cent were spoiled. Blank or spoiled ballots can be a sign of protest, as
+D: Since all the candidates ran unopposed, voters could either mark or leave blank the circle next to each name on their ba | A first round of balloting in October 2002 had elected members of Cuba's municipal assemblies. Half of the parliamentary candidates on the January ballots were chosen from municipal assembly members. The other half included many internationally known figures, such as Juan Miguel Gonzalez, father of 
+D: A first round of balloting in October 2002 had elected members of Cuba's municipal assemblies. Half of the parliamentary | The newly-elected members were sworn in on 7 March 2003. Mr. Ricardo Alarc�n de Quesada was re-elected as Speaker.
+D: STATISTICS | Round no 1 (19 January 2003): Elections results
+K: Parliamentary Chamber: Asamblea nacional del Poder popular | ELECTIONS HELD IN 2003
+K: Chamber: | Asamblea nacional del Poder popular
+K: Dates of elections / renewal (from/to): | 19 January 2003
+K: Purpose of elections: | Elections were held for all seats in Parliament on the normal expiry of the members' term of office.

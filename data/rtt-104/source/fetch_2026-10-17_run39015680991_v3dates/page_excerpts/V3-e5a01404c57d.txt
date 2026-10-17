@@ -1,0 +1,97 @@
+# V3-e5a01404c57d
+# url: https://data.ipu.org/parliament/MX/MX-LC01/
+# final url: https://data.ipu.org/parliament/MX/MX-LC01/
+# fetched (UTC): 2026-10-17T08:13:00Z
+# HTTP 200; 381077 bytes; SHA-256 c94742d915e7889fcad0c7e8ff6b94eace426c4712560621cb4018d5d1d00a1b
+# title: Mexico | Chamber of Deputies | IPU Parline: global data on national parliaments
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Raúl Bolaños-Cacho Cué (Male) | Date of birth: 02 Jun 1988
+D: View field in the data dictionary | 01 Sep 2026 to 31 Aug 2027
+D: View field in the data dictionary | 02 Oct 2024
+D: View field in the data dictionary | Appointed on 18 Sep. 2024 with effective 2 Oct 2024.
+D: Notes: Parties must include persons with disabilities in at least 6 of 300 single-seat districts races and include at le | Sources: Agreement INE/CG625/2023 of the National Electoral Institute (16 January 2024)
+D: Yes | Notes: Article 3.1. d bis) of the April 2020 Decree (DOF: 13/04/2020)* stipulates gender parity requirements, which require 50% of candidates to be women and 50% to be men for positions filled through popular election and the same percentages for those appointed to their positions.
+D: See Quota Project: https://www.idea.int/data-tools/data/gender-quotas/country-view/220/35 | Sources: DOF: 13/04/2020: http://www.dof.gob.mx/nota_detalle.php?codigo=5591565&fecha=13/04/2020
+D: Raúl Bolaños-Cacho Cué (Male) | Date of birth: 02 Jun 1988
+D: View field in the data dictionary | 01 Sep 2026 to 31 Aug 2027
+D: View field in the data dictionary | 02 Sep 2025 to 31 Aug 2026
+D: View field in the data dictionary | 08 Oct 2024 to 01 Sep 2025
+D: View field in the data dictionary | 06 Oct 2024 to 07 Oct 2024
+D: View field in the data dictionary | 01 Sep 2024 to 05 Oct 2024
+D: View field in the data dictionary | 01 Sep 2023 to 31 Aug 2024
+D: View field in the data dictionary | 01 Sep 2022 to 31 Aug 2023
+D: View field in the data dictionary | 01 Sep 2021 to 31 Aug 2022
+D: Additional information | Elected on 1 Sep. 2021.
+D: View field in the data dictionary | 02 Sep 2020 to 31 Aug 2021
+D: Additional information | Elected on 2 Sep. 2020.
+D: View field in the data dictionary | 05 Sep 2019 to 31 Aug 2020
+D: Additional information | Elected on 5 Sep. 2019.
+D: View field in the data dictionary | 05 Sep 2019 to 31 Aug 2020
+D: Additional information | Elected on 5 Sep. 2019.
+D: View field in the data dictionary | 01 Sep 2018 to 31 Aug 2019
+D: Raúl Bolaños-Cacho Cué (Male) | Date of birth: 02 Jun 1988
+D: View field in the data dictionary | 01 Sep 2026 to 31 Aug 2027
+D: View field in the data dictionary | 02 Sep 2025 to 31 Aug 2026
+D: View field in the data dictionary | 08 Oct 2024 to 01 Sep 2025
+D: View field in the data dictionary | 06 Oct 2024 to 07 Oct 2024
+D: View field in the data dictionary | 01 Sep 2024 to 05 Oct 2024
+D: View field in the data dictionary | 01 Sep 2023 to 31 Aug 2024
+D: View field in the data dictionary | 01 Sep 2022 to 31 Aug 2023
+D: View field in the data dictionary | 01 Sep 2021 to 31 Aug 2022
+D: Additional information | Elected on 1 Sep. 2021.
+D: View field in the data dictionary | 02 Sep 2020 to 31 Aug 2021
+D: Additional information | Elected on 2 Sep. 2020.
+D: View field in the data dictionary | 05 Sep 2019 to 31 Aug 2020
+D: Additional information | Elected on 5 Sep. 2019.
+D: View field in the data dictionary | 05 Sep 2019 to 31 Aug 2020
+D: Additional information | Elected on 5 Sep. 2019.
+D: View field in the data dictionary | 01 Sep 2018 to 31 Aug 2019
+D: View field in the data dictionary | 02 Oct 2024
+D: View field in the data dictionary | Appointed on 18 Sep. 2024 with effective 2 Oct 2024.
+D: View field in the data dictionary | 30 Nov 2018 to 01 Oct 2024
+D: View field in the data dictionary | Appointed on 30 November 2018.
+D: View field in the data dictionary | 02 Oct 2024
+D: View field in the data dictionary | Appointed on 18 Sep. 2024 with effective 2 Oct 2024.
+D: View field in the data dictionary | 30 Nov 2018 to 01 Oct 2024
+D: View field in the data dictionary | Appointed on 30 November 2018.
+K: Mexico | Chamber of Deputies | IPU Parline: global data on national parliaments | Skip to main content
+K: Select country and chamber | Parliaments
+K: Chamber of Deputies | Senate
+K: Chamber of Deputies | Political system
+K: Political systems: Presidential, Parliamentary, Presidential-Parliamentary, Monarchy, Communist, Transitional. | View field in the data dictionary
+K: Basic information such as the official name of parliament and details of its structure and leadership. Also includes the current breakdown of MPs by sex and age, and provisions for quotas and reserved | Parliament name
+K: Chamber name | Cámara de Diputados (Chamber of Deputies)
+K: Cámara de Diputados (Chamber of Deputies) | See historical data for this field
+K: Lower chamber | Parliamentary term (years)
+K: Speaker of the Chamber of Deputies | Speaker
+K: As defined in the constitution or other fundamental laws. Combines the number of parliamentarians in both chambers in bicameral parliaments. | View field in the data dictionary
+K: Average age of members, for which data is available, at the time of the last election or renewal. | View field in the data dictionary
+K: Age is calculated at the time the member was elected/appointed to a new legislature. Data is not updated during the legislature unless the member is no longer a member. | View field in the data dictionary
+K: Age is calculated at the time the member was elected/appointed to a new legislature. Data is not updated during the legislature unless the member is no longer a member. | View field in the data dictionary
+K: Age at the last election or renewal | Overall
+K: Reserved seats and quotas | There are reserved seats in parliament for certain groups
+K: There are reserved seats in parliament for certain groups | Reserved seats are a means to ensure the parliamentary representation of certain groups in society.
+K: Reserved seats are a means to ensure the parliamentary representation of certain groups in society. | View field in the data dictionary
+K: Electoral quota for women | Quotas to promote gender-balanced representation in parliament
+K: Quotas to promote gender-balanced representation in parliament | View field in the data dictionary
+K: Legislated candidate quotas. | See Quota Project: https://www.idea.int/data-tools/data/gender-quotas/country-view/220/35
+K: See Quota Project: https://www.idea.int/data-tools/data/gender-quotas/country-view/220/35 | Sources: DOF: 13/04/2020: http://www.dof.gob.mx/nota_detalle.php?codigo=5591565&fecha=13/04/2020
+K: Legislated candidate quotas: Articles 219 and 220 of the Federal Code for Electoral Institutions and Procedures (Código Federal de Instituciones y Procedimientos Electorales, COFIPE). | Compare data of this field
+K: Youth quota | Quotas to promote the representation of youth in parliament.
+K: Quotas to promote the representation of youth in parliament. | View field in the data dictionary
+K: Historical data for Chamber name | XLS
+K: Historical data for Chamber name | Updated at
+K: Chamber name | 1952-09
+K: Cámara de Diputados (Chamber of Deputies) | -
+K: Chamber of Deputies | Official title
+K: Speaker of the Chamber of Deputies | Speaker
+K: Speaker of the Chamber of Deputies | Speaker
+K: Speaker of the Chamber of Deputies | Speaker
+K: Speaker of the Chamber of Deputies | Speaker
+K: Speaker of the Chamber of Deputies | Speaker
+K: Speaker of the Chamber of Deputies | Speaker
+K: Speaker of the Chamber of Deputies | Speaker
+K: Speaker of the Chamber of Deputies | Speaker
+K: Speaker of the Chamber of Deputies | Speaker
+K: Speaker of the Chamber of Deputies | Speaker

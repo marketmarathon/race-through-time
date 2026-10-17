@@ -1,0 +1,26 @@
+iso3,wb_name,short_name,note
+BHS,"Bahamas, The",Bahamas,drop the article
+BRN,Brunei Darussalam,Brunei,common short name
+CIV,Cote d'Ivoire,Côte d'Ivoire,accents restored
+COD,"Congo, Dem. Rep.",DR Congo,common short name
+COG,"Congo, Rep.",Congo,common short name (Republic of the Congo)
+EGY,"Egypt, Arab Rep.",Egypt,common short name
+FSM,"Micronesia, Fed. Sts.",Micronesia,common short name
+GMB,"Gambia, The",Gambia,drop the article
+IRN,"Iran, Islamic Rep.",Iran,common short name
+KGZ,Kyrgyz Republic,Kyrgyzstan,common short name
+KNA,St. Kitts and Nevis,Saint Kitts and Nevis,no abbreviation
+KOR,"Korea, Rep.",South Korea,common short name
+LAO,Lao PDR,Laos,common short name
+LCA,St. Lucia,Saint Lucia,no abbreviation
+PRK,"Korea, Dem. People's Rep.",North Korea,common short name
+RUS,Russian Federation,Russia,common short name
+SOM,"Somalia, Fed. Rep.",Somalia,common short name
+STP,Sao Tome and Principe,São Tomé and Príncipe,accents restored
+SVK,Slovak Republic,Slovakia,common short name
+SYR,Syrian Arab Republic,Syria,common short name
+TUR,Turkiye,Türkiye,UN and World Bank name with its accent
+VCT,St. Vincent and the Grenadines,Saint Vincent and the Grenadines,no abbreviation
+VEN,"Venezuela, RB",Venezuela,common short name
+VNM,Viet Nam,Vietnam,common short name
+YEM,"Yemen, Rep.",Yemen,common short name

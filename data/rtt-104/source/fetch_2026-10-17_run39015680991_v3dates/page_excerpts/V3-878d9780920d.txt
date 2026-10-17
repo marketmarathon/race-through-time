@@ -1,0 +1,15 @@
+# V3-878d9780920d
+# url: https://data.ipu.org/election-summary/HTML/2087_98.htm
+# final url: https://data.ipu.org/election-summary/HTML/2087_98.htm
+# fetched (UTC): 2026-10-17T08:07:40Z
+# HTTP 200; 9517 bytes; SHA-256 3371af285c5dd8cdbc343011db587ff53664af884744a9cea719f2063c781ec4
+# title: DENMARK: parliamentary elections Folketinget, 1998
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 11 March 1998
+D: Background and outcome of elections: | On 19 February 1998, Prime Minister Poul Nyrup Rasmussen (Social Democratic Party) called general elections for the following month. In doing so, he sought � to ask voters whether they want a new Parliament which can continue the steady policy maintained over the past five years � (that is, since 19
+D: STATISTICS | Round no 1 (11 March 1998): Elections results
+K: Parliamentary Chamber: Folketinget | ELECTIONS HELD IN 1998
+K: Chamber: | Folketinget
+K: Dates of elections / renewal (from/to): | 11 March 1998
+K: Purpose of elections: | Elections were held for all the seats in Parliament on the normal expiry of the members' term of office.

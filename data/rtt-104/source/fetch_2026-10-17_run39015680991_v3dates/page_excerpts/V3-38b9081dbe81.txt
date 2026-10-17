@@ -1,0 +1,25 @@
+# V3-38b9081dbe81
+# url: https://data.ipu.org/election-summary/HTML/2231_12.htm
+# final url: https://data.ipu.org/election-summary/HTML/2231_12.htm
+# fetched (UTC): 2026-10-17T08:08:29Z
+# HTTP 200; 32939 bytes; SHA-256 2fd338f5b0e13b87eebcf2eb1e7952bfc521309326705209a1cd698eb219802c
+# title: IPU PARLINE database: NETHERLANDS (Tweede Kamer der Staten-Generaal), ELECTIONS IN 2012
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 12 September 2012
+D: The elections gave a clear lead over their rivals to two mainstream political parties. Outgoing Prime Minister Mark Rutt | Mr. Rutte and his 18-month-old government had resigned in April 2012 after a coalition ally, the Freedom Party, refused to support the government's austerity package.
+D: Mr. Rutte and his 18-month-old government had resigned in April 2012 after a coalition ally, the Freedom Party, refused  | Date of previous elections: 9 June 2010
+D: Date of previous elections: 9 June 2010 | Date of dissolution of the outgoing legislature: 19 September 2012
+D: Timing of election: Early elections | Expected date of next elections: September 2016
+D: Names of parties in government: People's Party for Freedom and Democracy (VVD), Labour Party (PvdA) | Date of the first session of the new parliament: 20 Sep. 2012
+D: Voter turnout | Round no 1 12 September 2012
+D: Source: | House of Representatives (01.01.2015, 01.01.2017)
+D: http://www.houseofrepresentatives.nl/news/official-results-2012-general-elections-house-representatives | http://www.kiesraad.nl/en/news/official-results-house-representatives-elections-12-september-2012
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Chamber name (generic / translated) | Tweede Kamer der Staten-Generaal / House of Representatives
+K: Related chamber (for bicameral parliaments) | Eerste Kamer der Staten-Generaal / Senate
+K: Dates of election / renewal (from/to) | 12 September 2012
+K: Purpose of elections | The elections gave a clear lead over their rivals to two mainstream political parties. Outgoing Prime Minister Mark Rutte's People's Party for Freedom and Democracy, which promised a reduction of the 
+K: Timing of election: Early elections | Expected date of next elections: September 2016
+K: Number of seats at stake: 150 (full renewal) | Number of candidates: 972 (669 men, 303 women)

@@ -28,6 +28,12 @@ on:
       episodes:
         description: Episodes to render (e.g. "rtt-001 rtt-003"); empty = every config in kits/thumbnails
         default: ''
+      tag_prefix:
+        description: Release tag prefix (empty = rtt-thumbs-r1, the IQ-23 round)
+        default: ''
+      note:
+        description: First line of the release notes and its title (empty = the IQ-23 round-1 wording)
+        default: ''
 
 permissions:
   contents: read
@@ -38,7 +44,8 @@ concurrency:
 
 env:
   PRIVATE_REPO: marketmarathon/race-through-time-private
-  TAG_PREFIX: rtt-thumbs-r1
+  TAG_PREFIX: ${{ github.event.inputs.tag_prefix || 'rtt-thumbs-r1' }}
+  NOTE: ${{ github.event.inputs.note || '' }}
   EPISODES: ${{ github.event.inputs.episodes || '' }}
 
 jobs:
@@ -68,6 +75,9 @@ jobs:
             if [ -n "$EPISODES" ] && ! grep -qw "$e" <<< "$EPISODES"; then continue; fi
             race=$(cd kits/rtt-002 && node -e "const r=require('./rtt.js');const t=require('../thumbnails/$e.json');console.log(require('path').relative('../..', require('path').resolve(r.loadConfig('../'+t.kit+'/'+t.film_config).race_file)))")
             want=$(awk -v f="$race" '$2 == "output" && $3 == f {print $1}' "kits/$e/dataset_hashes.txt")
+            # IQ-25: an input the episode's own list does not hold (RTT-104 V3: race_rtt104_v3.json; the RTT-104 film
+            # workflows expect exactly one output line in kits/rtt-104/dataset_hashes.txt) is listed for thumbnails only
+            if [ -z "$want" ] && [ -f "kits/thumbnails/dataset_hashes_$e.txt" ]; then want=$(awk -v f="$race" '$2 == "output" && $3 == f {print $1}' "kits/thumbnails/dataset_hashes_$e.txt"); fi
             got=$(sha256sum "$race" | cut -d' ' -f1)
             echo "$e: $race $got (dataset_hashes.txt: $want)"
             test -n "$want" && test "$got" = "$want"
@@ -114,7 +124,9 @@ jobs:
           O="$RUNNER_TEMP/rtt_out"; SHORT=${GITHUB_SHA::7}
           TAG="${TAG_PREFIX}-${SHORT}-run${GITHUB_RUN_NUMBER}"
           {
-            echo "Race Through Time thumbnails, round 1 (IQ-23; owner DEC-800 to DEC-802): a real board from each approved film on the left, big words and the years on the right, the film's own logos or pictures, a bright background. RTT-001 in three options (A white, B bright yellow, C the film's dark navy with the words on a yellow panel); the other four in option A; A_short = a shorter wording proposed for the 168 x 94 sidebar. Rendered by GitHub Actions. Not uploaded anywhere."
+            if [ -n "$NOTE" ]; then echo "$NOTE"; else
+              echo "Race Through Time thumbnails, round 1 (IQ-23; owner DEC-800 to DEC-802): a real board from each approved film on the left, big words and the years on the right, the film's own logos or pictures, a bright background. RTT-001 in three options (A white, B bright yellow, C the film's dark navy with the words on a yellow panel); the other four in option A; A_short = a shorter wording proposed for the 168 x 94 sidebar. Rendered by GitHub Actions. Not uploaded anywhere."
+            fi
             echo
             echo "- Source: ${GITHUB_REPOSITORY} @ ${GITHUB_SHA} (${GITHUB_REF_NAME}), run ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
             echo "- Renderer: kits/thumbnails/render_thumbnails.js, one config per episode (kits/thumbnails/rtt-###.json)"
@@ -130,8 +142,9 @@ jobs:
             echo "Private review render. Not for upload until Luke picks an option (DEC-001, DEC-078)."
           } > "$O/notes.md"
           cat "$O/notes.md"
+          if [ -n "$NOTE" ]; then TITLE="${NOTE%%.*} ${SHORT}"; else TITLE="RTT thumbnails round 1 ${SHORT} (new layout: options A, B, C for Browser Wars; option A for the other four)"; fi
           gh release create "$TAG" --repo "$PRIVATE_REPO" --target main --prerelease \
-            --title "RTT thumbnails round 1 ${SHORT} (new layout: options A, B, C for Browser Wars; option A for the other four)" --notes-file "$O/notes.md" "$O"/*.png "$O"/*.jpg "$O"/*_check.json
+            --title "$TITLE" --notes-file "$O/notes.md" "$O"/*.png "$O"/*.jpg "$O"/*_check.json
           URL="https://github.com/${PRIVATE_REPO}/releases/tag/${TAG}"
           echo "Release: $URL"
           echo "RTT thumbnails saved to the private repo: $URL" >> "$GITHUB_STEP_SUMMARY"

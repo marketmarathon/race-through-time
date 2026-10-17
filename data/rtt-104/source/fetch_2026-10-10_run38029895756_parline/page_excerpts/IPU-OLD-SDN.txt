@@ -1,0 +1,11 @@
+# IPU-OLD-SDN
+# url: https://www.ipu.org/parlement/SD
+# final url: https://www.ipu.org/parlement/SD
+# fetched (UTC): 2026-10-10T06:10:08Z
+# HTTP 200; 88933 bytes; SHA-256 511083c2cb52eccb0f1aef1d9ee8c80df3e287fb66ca9ef6fc1e184a8515449e
+# Short excerpts only (lines holding the searched words, with the line before and after).
+
+Bicameral | Last election | Apr 2015
+
+Contact us | Vacancies | IPU structure and governance
+

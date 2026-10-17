@@ -1,0 +1,26 @@
+# V3-ad8180f8bf5a
+# url: https://data.ipu.org/election-summary/HTML/2293_11.htm
+# final url: https://data.ipu.org/election-summary/HTML/2293_11.htm
+# fetched (UTC): 2026-10-17T08:09:23Z
+# HTTP 200; 40374 bytes; SHA-256 5349796306206fd32c13f4940163881c6466300cca0e71c64bf0e3f7b949f59a
+# title: IPU PARLINE database: SPAIN (Congreso de los Diputados), ELECTIONS IN 2011
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 20 November 2011
+D: Purpose of elections | Elections were held for all the seats in the Congress of Deputies following early dissolution of this body on 26 September 2011. Elections to the Congress of Deputies had previously taken place in March 2008.
+D: Elections were held for all the seats in the Congress of Deputies following early dissolution of this body on 26 Septemb | On 29 July 2011, Prime Minister José Luis Rodríguez Zapatero announced that parliamentary elections would be held on 20 November, four months earlier than they were constitutionally due. The bicameral parliament was subsequently dissolved on 26 September. At stake were all 350 seats in the Congress 
+D: On 29 July 2011, Prime Minister José Luis Rodríguez Zapatero announced that parliamentary elections would be held on 20  | In the previous elections held in March 2008, Prime Minister Zapatero's Spanish Socialist Workers' Party (PSOE) - in power since 2004 - remained the largest party in the Congress of Deputies with 169 seats, but failed to secure a majority. The People's Party (PP) followed with 153 seats. The latter 
+D: During Mr. Zapatero's second term, the global economic crisis severely affected the country's economy, in particular the | In April 2010, while the countries in the euro zone were negotiating a bailout plan for Greece - without which the country could have defaulted on sovereign debt, thus destabilizing the euro - attention turned to Spain's public deficit. Although Prime Minister Zapatero initially denied that the Span
+D: In April 2010, while the countries in the euro zone were negotiating a bailout plan for Greece - without which the count | In January 2011, the Cortes (Parliament) passed pension reforms that will gradually raise the retirement age from 65 to 67. In April, the Prime Minister announced that he would not seek re-election.
+D: In January 2011, the Cortes (Parliament) passed pension reforms that will gradually raise the retirement age from 65 to  | In May 2011, one week before local elections, the first mass protests by the "Indignant Movement" were held in Madrid. The Movement, comprising young demonstrators, protested against wage and social benefit cuts as well as high unemployment. Its demands included taxing bankers and top fortunes, and 
+D: On 29 July, the Prime Minister announced that early elections would be held in November to bring "political and economic | According to Eurostat, the overall unemployment rate in Spain in October 2011 was recorded at 22.8 per cent and 48.9 per cent for under 25-year-olds. Both are the highest among the 27 Member States of the European Union (EU).
+D: PP leader Mariano Rajoy Brey criticized the PSOE government for not taking adequate measures to tackle unemployment. The | In the middle of the election campaign, on 20 October, ETA declared "the definitive cessation" of its armed activity after 43 years of armed struggle for autonomy that claimed over 800 lives. Prime Minister Zapatero welcomed the declaration as a "victory for democracy, law and reason". The PP ruled 
+D: Voter turnout | Round no 1 20 November 2011
+D: Sources: | IPU Group (13.12.2011, 01.01.2014)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Chamber name (generic / translated) | Congreso de los Diputados / Congress of Deputies
+K: Related chamber (for bicameral parliaments) | Senado / Senate
+K: Dates of election / renewal (from/to) | 20 November 2011
+K: Purpose of elections | Elections were held for all the seats in the Congress of Deputies following early dissolution of this body on 26 September 2011. Elections to the Congress of Deputies had previously taken place in Mar
+K: The final results gave a clear victory to the PP, which took 186 of the 350 seats in the Congress of Deputies and 136 of the 208 directly-elected seats in the Senate. The PSOE took 110 and 48 seats re | On 13 December, the newly elected Cortes held its first session. Mr. Jesús María Posada Moreno (PP) was elected Speaker of the Congress of Deputies while Mr. Pío García-Escudero Márquez (PP) was elect

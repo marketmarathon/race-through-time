@@ -1,0 +1,16 @@
+# V3-e25a78d82e17
+# url: https://data.ipu.org/election-summary/HTML/2175_02.htm
+# final url: https://data.ipu.org/election-summary/HTML/2175_02.htm
+# fetched (UTC): 2026-10-17T08:08:09Z
+# HTTP 200; 5938 bytes; SHA-256 bfb99027065f711e800159798c61a478585e6cdd5c453967d7d0a44ae3a24551
+# title: LAO PEOPLE'S DEMOCRATIC REPUBLIC: parliamentary elections Sapha Heng Xat, 2002
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 24 February 2002
+D: Background and outcome of elections: | On 25 December 2001, it was announced that the next National Assembly election would be held on 24 February 2002, one year earlier than expected.
+D: The election brought 62 new faces into the new Assembly, including 25 women. Most of the lawmakers were already district | The new National Assembly convened on 9 April 2002 and re-elected Mr Samane Vinyaketh as its Chairman (Speaker). In the inaugural sitting, the newly elected deputies voted to keep President Khamtay Siphandone and the Prime Minister in place and also approved the President's proposed list of Cabinet 
+D: STATISTICS | Round no 1 (24 February 2002): Elections results
+K: Parliamentary Chamber: Sapha Heng Xat | ELECTIONS HELD IN 2002
+K: Chamber: | Sapha Heng Xat
+K: Dates of elections / renewal (from/to): | 24 February 2002
+K: Purpose of elections: | Elections were held for all seats in Parliament one year before the normal expiry of the member's term of office.

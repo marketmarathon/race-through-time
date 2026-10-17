@@ -1,0 +1,24 @@
+# V3-d2c86bab2007
+# url: https://data.ipu.org/election-summary/HTML/2055_06.htm
+# final url: https://data.ipu.org/election-summary/HTML/2055_06.htm
+# fetched (UTC): 2026-10-17T08:07:13Z
+# HTTP 200; 21669 bytes; SHA-256 bdf32db1d7545e827ea1853c38f14a5f10de0c3cdc1d441a1039087f7395d989
+# title: IPU PARLINE database: CANADA (House of Commons), Elections in 2006
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 23 January 2006
+D: Timing and scope of renewal | Elections were held for all members of the House of Commons following the premature dissolution of this body. General elections had been held previously on 28 June 2004.
+D: Elections were held for all members of the House of Commons following the premature dissolution of this body. General el | On 28 November 2005
+D: the Bloc Québécois and the New Democratic Party | which had previously backed the Liberals in a June 2005 no-confidence vote. After the vote
+D: led by Mr. Paul Martin | had ruled the country since 1993 but had failed to win an outright majority at the last elections in June 2004. The election campaign had been marked by the "sponsorship scandal" concerning the awarding of government contracts to advertising agencies connected to the Liberal Party in the late 1990s.
+D: fight crime and improve relations with the United States. | On 23 January 2006
+D: followed by the Bloc Québécois with 51 seats. The New Democrats won 29 seats | ten more than at the 2004 elections. On 24 January
+D: bringing the number of Conservative members of the House of Commons to 125. | On 6 February 2006
+D: Mr. Harper was sworn in as Prime Minister. He proceeded to form the smallest minority government in Canadian history | and invited the opposition to put forward candidates for the position of Speaker. The House of Commons held its first session on 3 April 2006 and re-elected Mr. Peter Milliken of the Liberal Party as Speaker.
+D: Voter turnout | Round no 1 23 January 2006
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name
+K: Chamber name | House of Commons
+K: Related chamber (for bicameral parliaments) | Senate
+K: Dates of election / renewal (from/to) | 23 January 2006
+K: Timing and scope of renewal | Elections were held for all members of the House of Commons following the premature dissolution of this body. General elections had been held previously on 28 June 2004.
+K: Governor General Michaëlle Jean dissolved the House of Commons on 29 November. | The Liberal Party

@@ -1,0 +1,29 @@
+# V3-a4b2d67518b9
+# url: https://data.ipu.org/election-summary/HTML/2095_09.htm
+# final url: https://data.ipu.org/election-summary/HTML/2095_09.htm
+# fetched (UTC): 2026-10-17T08:07:45Z
+# HTTP 200; 23307 bytes; SHA-256 1493c2ea02b8261cd3fa7cdf914740158345b25081e6b9c17e70b2d0a86bbe05
+# title: IPU PARLINE database: ECUADOR (Asamblea Nacional) ELECTIONS IN 2009
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 26 April 2009
+D: Elections were held for all seats in the newly-established National Assembly. | The April 2009 elections were the first to be held under the new Constitution adopted by referendum in September 2008. At stake were the 124 seats in the National Assembly established by the new Constitution. Presidential elections were held at the same time.
+D: In the previous elections to the then 100-member National Congress | held in October 2006
+D: known as an ally of Venezuelan President Hugo Chavez | was sworn in as President on 15 January 2007. A political crisis broke out the following month when the President announced his intention to hold a referendum on the establishment of a Constituent Assembly that would rewrite the Constitution. Fifty-seven parliamentarians who opposed the move were di
+D: 81.72 per cent of voters approved the establishment of the Constituent Assembly. | Elections to the 130-member Constituent Assembly took place on 30 September 2007. President Correa's allies
+D: which it claimed the Constituent Assembly was not empowered to make. | The Constituent Assembly finalized the draft constitution in July 2008. In September
+D: The new Constitution stipulated that early parliamentary and presidential elections be held. Twice delayed | the elections took place on 26 April 2009.
+D: a trend strongly felt among the 38 per cent of the country's 14 million inhabitants reported to be living below the pove | representing 19.7 per cent of gross domestic product. In December 2008
+D: reportedly the country's richest man | had been opposition leader in the Constituent Assembly but was expelled in January 2008 for not disclosing his personal wealth. He criticized Mr. Correa's administration for not doing enough for the poor
+D: Voter turnout | Round no 1 26 April 2009
+D: Sources: | - National Assembly (13.07.2009)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Dates of election / renewal (from/to) | 26 April 2009
+K: Purpose of elections | Elections were held for all seats in the newly-established National Assembly.
+K: the Institutional Renewal Party of National Action (PRIAN) came in first with 27 seats. Mr. Alvaro Noboa (PRIAN) lost to Mr. Rafael Correa who was supported by the Country Alliance (Alianza País | AP) in the run-off presidential elections. In the light of his commitment to rewrite the Constitution and to restructure the National Congress
+K: 81.72 per cent of voters approved the establishment of the Constituent Assembly. | Elections to the 130-member Constituent Assembly took place on 30 September 2007. President Correa's allies
+K: won 80 seats. The Constituent Assembly held its first session on 29 November and voted to "assume the legislative powers and duties" of the National Congress until such time as a new constitution was  | which it claimed the Constituent Assembly was not empowered to make.
+K: which it claimed the Constituent Assembly was not empowered to make. | The Constituent Assembly finalized the draft constitution in July 2008. In September
+K: the National Congress ceased to function. A 76-member Legislative and Oversight Commission made up of members of the Constituent Assembly was tasked in the interim with performing the main functions o | The new Constitution stipulated that early parliamentary and presidential elections be held. Twice delayed
+K: Institutional Renewal Party of National Action (PRIAN) | 7

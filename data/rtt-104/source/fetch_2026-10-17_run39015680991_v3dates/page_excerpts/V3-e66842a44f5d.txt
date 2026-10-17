@@ -1,0 +1,23 @@
+# V3-e66842a44f5d
+# url: https://data.ipu.org/election-summary/HTML/2015_07.htm
+# final url: https://data.ipu.org/election-summary/HTML/2015_07.htm
+# fetched (UTC): 2026-10-17T08:06:34Z
+# HTTP 200; 18069 bytes; SHA-256 c1fe4e4594f0158da53b37822d5bc6fdf8725c1f4a067f36c5dc697ecd29a0c5
+# title: IPU PARLINE database: AUSTRALIA (House of Representatives) ELECTIONS IN 2007
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 24 November 2007
+D: Elections were held for all the seats in the House of Representatives on the normal expiry of the members' term of offic | On 14 October 2007
+D: and 40 of the 76 seats in the Senate. | Prime Minister Howard (Liberal Party) was seeking a fifth consecutive term in office. In the previous elections held on 9 October 2004
+D: His main rival was Mr. Kevin Rudd of the centre-left Australian Labor Party (ALP). A former diplomat | Mr. Rudd was elected as party leader on 4 December 2006. The ALP
+D: the ALP won 18 seats | controlling 32 seats in all. The Liberal Party won 15 seats and also holds 32 seats in all. Newly-elected Senators are due to take up their posts on 1 July 2008. Until then the Liberal Party remains the largest party and retains its one seat majority in the Senate.
+D: Voter turnout | Round no 1 24 November 2007
+D: - http://vtr.aec.gov.au/ | - IPU Group (29.01.2008
+D: - IPU Group (29.01.2008 | 01.01.2010)
+D: 01.01.2010) | - House of Representatives (25.02.2008)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name
+K: Chamber name | House of Representatives
+K: Related chamber (for bicameral parliaments) | Senate
+K: Dates of election / renewal (from/to) | 24 November 2007
+K: Purpose of elections | Elections were held for all the seats in the House of Representatives on the normal expiry of the members' term of office.

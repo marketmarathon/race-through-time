@@ -1,0 +1,20 @@
+# V3-9ab46408f842
+# url: https://data.ipu.org/election-summary/HTML/2015_04.htm
+# final url: https://data.ipu.org/election-summary/HTML/2015_04.htm
+# fetched (UTC): 2026-10-17T08:06:33Z
+# HTTP 200; 28402 bytes; SHA-256 43000155f1f7e15e76240d809a2dc9f368b4ff35b5c6069db32e7e25caf60848
+# title: 
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to): | 9 October 2004
+D: Background and outcome of elections: | Australians went to the polls on 9 October 2004 to elect the 150 members of the House of Representatives and 40 of the 76 seats of the Senate.
+D: Australians went to the polls on 9 October 2004 to elect the 150 members of the House of Representatives and 40 of the 7 | The election campaign was a tight contest between the conservative Coalition of the Liberal Party and the National Party, led by Prime Minister Mr John Howard, and the Australian Labor Party (ALP), led by Mr Mark Latham, who had been elected its leader in December 2003. After five weeks of campaigni
+D: The elections saw the Coalition increase its majority in the House of Representatives with the Liberal Party obtaining 7 | The strong support for the Government was also reflected in the Senate where the Coalition will gain control with a total of 39 seats, 21 of them obtained in the 2004 elections. The Labor Party won 16 seats in the Senate election and will have 28 senators after June 2005; the Australian Greens won t
+D: The strong support for the Government was also reflected in the Senate where the Coalition will gain control with a tota | Following the Labor Party's defeat, Mr. Mark Latham resigned not only as Labor leader but from parliament. A by-election was thus held for the district of Werriwa on 19 March 2005. Mr. Chris Hayes of the Labor Party won this by-election with 55.53 per cent of the vote.
+D: Following the Labor Party's defeat, Mr. Mark Latham resigned not only as Labor leader but from parliament. A by-election | New senators will take their seats on 1 July 2005.
+D: STATISTICS | Round no 1 (9 October 2004): Election results
+D: Comments: | Following the Labor Party's defeat, Mr. Mark Latham resigned not only as Labor leader but from parliament. The by-election was thus held for the district of Werriwa on 19 March 2005. Mr. Chris Hayes of the Labor Party was elected by gaining 55.53 per cent of the vote.
+D: - Australian Electoral Commission and IFES | - Chamber Research Office, Australian House of Representatives (04.03.2005)
+K: Chamber: | House of Representatives
+K: Dates of election / renewal (from/to): | 9 October 2004
+K: Purpose of elections: | Elections were held for all the seats in the House of Representatives on the normal expiry of the members' term of office.

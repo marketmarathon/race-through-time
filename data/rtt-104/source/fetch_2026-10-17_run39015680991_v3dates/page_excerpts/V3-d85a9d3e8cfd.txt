@@ -1,0 +1,24 @@
+# V3-d85a9d3e8cfd
+# url: https://data.ipu.org/election-summary/HTML/2027_08.htm
+# final url: https://data.ipu.org/election-summary/HTML/2027_08.htm
+# fetched (UTC): 2026-10-17T08:06:49Z
+# HTTP 200; 16516 bytes; SHA-256 58eaf3d85cfe4881c0e165cbfad6c7354a10c905d6d079319189bb0c8d40b5cb
+# title: IPU PARLINE database: BELARUS (Palata Predstaviteley) ELECTIONS IN 2008
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 28 September 2008
+D: Elections were held for all the seats in the House of Representatives on the normal expiry of the members' term of offic | On 24 June 2008
+D: President Alexander Lukashenko issued a presidential decree calling elections to the House of Representatives for 28 Sep | In the previous elections held in October 2004
+D: eight candidates) | led by Mr. Anatoly Levkovich since August 2008. In the same month
+D: Mr. Mikalay Statkevich | was rejected in a Supreme Court ruling of 9 September due to a previous conviction for unauthorized demonstrations against the results of the 2004 parliamentary elections.
+D: Voter turnout | Round no 1 28 September 2008
+D: Sources: | - IPU Group (03.11.2008)
+D: - IPU Group (03.11.2008) | - House of Representatives (12.11.2008
+D: - House of Representatives (12.11.2008 | 19.02.2009)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Chamber name (generic / translated) | Palata Predstaviteley / House of Representatives
+K: Related chamber (for bicameral parliaments) | Soviet Respubliki / Council of the Republic
+K: Dates of election / renewal (from/to) | 28 September 2008
+K: Purpose of elections | Elections were held for all the seats in the House of Representatives on the normal expiry of the members' term of office.
+K: The newly elected House of Representatives held its first session on 27 October and elected Mr. Vladimir Andreichenko as its new Speaker. Mr. Boris Batura was elected as the new President of the Counc | Note:

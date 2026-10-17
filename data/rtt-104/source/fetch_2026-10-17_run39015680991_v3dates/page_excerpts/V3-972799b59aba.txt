@@ -1,0 +1,51 @@
+# V3-972799b59aba
+# url: https://data.ipu.org/election-summary/HTML/2386_08.htm
+# final url: https://data.ipu.org/election-summary/HTML/2386_08.htm
+# fetched (UTC): 2026-10-17T08:10:11Z
+# HTTP 200; 25121 bytes; SHA-256 d20b92cee710d634f71580543601da2e4e883babf99375d85918908feee939f9
+# title: IPU PARLINE database: NEPAL (Sambidhan Sabha) ELECTIONS IN 2008
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 10 April 2008
+D: Elections were held for all the directly elected seats in the Constituent Assembly. | Elections to the 601-member Constituent Assembly had been due before mid-June 2007
+D: in which over 13 | 000 people died. The Constituent Assembly was established on 27 May 2008 with the task of adopting the country's new Constitution within two years.
+D: 000 people died. The Constituent Assembly was established on 27 May 2008 with the task of adopting the country's new Con | The country had last held parliamentary elections in May 1999. The centrist Nepali Congress Party (NC) of the then Prime Minister Girija Prasad Koirala won 111 seats of the 205 seats in the House of Representatives
+D: Mr. Koirala's rival | Mr. Krishna Prasad Bhattarai (NC) became Prime Minister. Mr. Bhattarai resigned in March 2000 and was succeeded by Mr. Koirala. Following the Royal Palace massacre in June 2001 (in which Prince Dipendra killed King Birendra
+D: (NCD). | The House of Representatives was dissolved on 22 May 2002 in order to hold early parliamentary elections. Following Maoist rebels' threat to disrupt the elections
+D: The House of Representatives was dissolved on 22 May 2002 in order to hold early parliamentary elections. Following Maoi | Prime Minister Deuba asked the King to defer the polls by a year. The King then dismissed the government and subsequently postponed the elections indefinitely. On 1 February 2005
+D: accusing the government of failing to make arrangements for parliamentary elections. Many members of the NC and the UML  | On 24 April 2006
+D: following a wave of street protests calling for elections as soon as possible | King Gyanendra agreed to reinstate the House of Representatives. The reinstated House of Representatives held its first sitting on 28 April 2006. Mr. Koirala was elected Prime Minister.
+D: After numerous postponements | an interim constitution was promulgated by the House of Representatives on 15 January 2007
+D: an interim constitution was promulgated by the House of Representatives on 15 January 2007 | following the peace agreement of 8 November 2006 between the major political parties and Maoist rebels. The House of Representatives then dissolved itself in favour of a unicameral 330-member interim legislature
+D: the UML | the NCD and nine other small parties. In September 2007
+D: the NCD and the NC merged under the leadership of Prime Minister Koirala. | On 23 December 2007
+D: Former prime minister Kamal Thapa of the National Democratic Party (Rastriya Prajatantra) campaigned in support of the m | see note) in February 2008
+D: Voter turnout | Round no 1 10 April 2008
+D: - http://www.nepalelectionportal.org/EN/constituent-assembly/ | - Constituent Assembly (04.06.2008
+D: - Constituent Assembly (04.06.2008 | 28.07.2008
+D: 28.07.2008 | 24.09.2008)
+D: 24.09.2008) | - Election Commission (06.07.2008)
+D: Nepal Workers and Peasants Party (NWPP): 1 | As at 3 October 2008
+D: Note on the vacant seats: | As at 3 October 2008
+K: Sambidhan Sabha (Constituent Assembly) | General information
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Dates of election / renewal (from/to) | 10 April 2008
+K: Purpose of elections | Elections were held for all the directly elected seats in the Constituent Assembly.
+K: Elections were held for all the directly elected seats in the Constituent Assembly. | Elections to the 601-member Constituent Assembly had been due before mid-June 2007
+K: the lower chamber of the bi-cameral Parliament. Its coalition partner | the Nepali Communist Party (Unified Marxist-Leninist
+K: accusing the government of failing to make arrangements for parliamentary elections. Many members of the NC and the UML - including the UML leader Mr. Amrit Kumar Bohara and general secretary Mr. Madh | On 24 April 2006
+K: called the Legislative Parliament. This interim legislature comprised all members of the previous parliament (with the exception of three members who had been appointed by the King) | 83 Maoists and representatives of the major political parties. These parties formed a ruling alliance that included the NC
+K: the signature of a 23-point understanding paved the way for elections to the 601-member Constituent Assembly under a mixed electoral system. The agreement foresees that 335 members are elected through | the interim Legislative Parliament adopted a third amendment to the interim constitution
+K: declaring Nepal a federal democratic republic. The decision to abolish the 240-year monarchy would come into force after endorsement at the first sitting of the Constituent Assembly. | In all
+K: were vying for the seats in the Constituent Assembly. Over 3 | 000 candidates were from 70 political parties while some 800 candidates stood as independents.
+K: 25 parties won representation in the Constituent Assembly. | After the vote
+K: the Constituent Assembly held its first session. The following day | it voted to abolish the monarchy
+K: delayed the election of a new Speaker of the Constituent Assembly. | On 8 July
+K: was elected unopposed as the Speaker of the Constituent Assembly. | On 15 August
+K: the Constituent Assembly elected Mr. Pushpa Kamal Dahal (Maoists) as Prime Minister. He was sworn in on 18 August. He subsequently formed a six-party coalition government comprising his Communist Part | the UML
+K: 191 women were directly elected while six others were nominated by the Prime Minister. | Sources:
+K: - http://www.nepalelectionportal.org/EN/constituent-assembly/ | - Constituent Assembly (04.06.2008
+K: Note on the distribution of seats according to political parties for the 26 nominated members: | Communist Party of Nepal (Maoists): 9 (3 women)
+K: - five members were elected from two constituencies in the general elections. Their seats will be filled by by-elections; | - Mr. Ram Baran Yadav vacated his seat following his election as the President on 21 July;
+K: - one nominated member refused to take oath. | Copyright 1996-2013 Inter-Parliamentary Union

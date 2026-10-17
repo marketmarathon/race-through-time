@@ -1,0 +1,19 @@
+# V3-cd46883ac91a
+# url: https://data.ipu.org/election-summary/HTML/2011_01.htm
+# final url: https://data.ipu.org/election-summary/HTML/2011_01.htm
+# fetched (UTC): 2026-10-17T08:06:21Z
+# HTTP 200; 6341 bytes; SHA-256 5cfa570676e62cd3bccd8c2fbd622f61891cb2167f1805284a7a88d59a3001bb
+# title: ARGENTINA: parliamentary elections C�mara de Diputados, 2001
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 14 October 2001
+D: Background and outcome of elections: | Elections for the Senate and for one-half of the Chamber of Deputies were held on 14 October 2001. The Senate was in transition to a new system under which one-third of its members will be elected to six-year terms every two years. Previously, members were elected indirectly at the provincial level.
+D: Turnout was 73.7%, the lowest since 1983. Altogether, with blank or invalid ballots, more than 10,2 millions electors (o | These elections were seen as the first national test of the two-year-old administration of President de la Rua. President Fernando de la Rua was elected in 1999 on a centre-left platform, but his multiple cabinet changes and seeming inability to deal with the recession had sent his public approval r
+D: The opposition Peronists - Justicialist Party (PJ) - won a majority of seats in both Houses and will have 116 seats in t | On 10 December 2001, the new Congress held its first sitting. Mr Eduardo Cama�o was elected Speaker of the House of Deputies and Mr Ram�n Puerta President of the Senate.
+D: STATISTICS | Round no 1 (14 October 2001): Elections results
+K: Parliamentary Chamber: C�mara de Diputados | ELECTIONS HELD IN 2001
+K: Chamber: | C�mara de Diputados
+K: Dates of elections / renewal (from/to): | 14 October 2001
+K: Purpose of elections: | Elections were held to renew one-half (127) of the seats in the Chamber of Deputies on the normal expiry of the members' term of office.
+K: Elections were held to renew one-half (127) of the seats in the Chamber of Deputies on the normal expiry of the members' term of office. | Background and outcome of elections:
+K: The opposition Peronists - Justicialist Party (PJ) - won a majority of seats in both Houses and will have 116 seats in the Chamber of Deputies and 41 in the Senate while the ruling Alliance for Work,  | On 10 December 2001, the new Congress held its first sitting. Mr Eduardo Cama�o was elected Speaker of the House of Deputies and Mr Ram�n Puerta President of the Senate.

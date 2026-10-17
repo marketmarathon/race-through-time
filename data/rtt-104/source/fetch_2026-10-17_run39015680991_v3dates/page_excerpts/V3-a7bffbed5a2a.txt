@@ -1,0 +1,18 @@
+# V3-a7bffbed5a2a
+# url: https://data.ipu.org/election-summary/HTML/2233_05.htm
+# final url: https://data.ipu.org/election-summary/HTML/2233_05.htm
+# fetched (UTC): 2026-10-17T08:08:32Z
+# HTTP 200; 31043 bytes; SHA-256 e1123e8f5714cdd52252b20d093295e8fee12216372d8b3511455029f1e0712f
+# title: IPU PARLINE database: NEW ZEALAND (House of Representatives), Elections in 2005
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 17 September 2005
+D: Purpose of elections | Elections were held for all the seats in the House of Representatives following the dissolution of the House on 11 August 2005. General elections had previously taken place on 27 July 2002.
+D: Elections were held for all the seats in the House of Representatives following the dissolution of the House on 11 Augus | On 25 July 2005, Prime Minister Helen Clark, seeking a third term in office, called a general election for 17 September.
+D: At this election, the number of women elected reached a record-high in New Zealand of 39: 16 in single-member electoral  | On 17 October 2005, Ms. Clark announced the new minority coalition arrangements with the Progressive Party, with " confidence and support agreement" by United Future and New Zealand First. The new coalition government controlled 61 seats of 121 in Parliament. The Green Party signed a cooperation agr
+D: On 17 October 2005, Ms. Clark announced the new minority coalition arrangements with the Progressive Party, with " confi | Parliament was convened on 7 November 2005, and re-elected Ms. Margaret Wilson as Speaker.
+D: Voter turnout | Round no 1 17 September 2005
+D: - http://www.ps.parliament.govt.nz/schools/texts/members.shtml | - House of Representatives (01.01.2008)
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name
+K: Dates of election / renewal (from/to) | 17 September 2005
+K: Purpose of elections | Elections were held for all the seats in the House of Representatives following the dissolution of the House on 11 August 2005. General elections had previously taken place on 27 July 2002.

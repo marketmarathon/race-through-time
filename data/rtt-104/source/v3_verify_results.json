@@ -1,0 +1,937 @@
+{
+ "to_check_list_sha256": "a0c9949d91fa2905bc9d511d9cbad92d71e24b67a6b82ce8eeaf19c0b39ed991",
+ "rows": 490,
+ "verified": 374,
+ "fetch": "343 of 345 pages opened",
+ "run_url": "https://github.com/marketmarathon/race-through-time/actions/runs/39015680991",
+ "failed": [
+  {
+   "country": "Afghanistan",
+   "kind": "general election",
+   "claimed_date": "2005-09-18",
+   "reason": "page did not open (URLError: <urlopen error timed out>)",
+   "page_dates": "",
+   "url": "https://archive.ipu.org/parline-e/reports/arc/2381_05.htm"
+  },
+  {
+   "country": "Afghanistan",
+   "kind": "general election",
+   "claimed_date": "2010-09-18",
+   "reason": "page did not open (URLError: <urlopen error timed out>)",
+   "page_dates": "",
+   "url": "https://archive.ipu.org/parline-e/reports/arc/2381_10.htm"
+  },
+  {
+   "country": "Afghanistan",
+   "kind": "general election",
+   "claimed_date": "2018-10-20 to 2018-10-27",
+   "reason": "date shown, but on Wikipedia (not a primary source)",
+   "page_dates": "",
+   "url": "https://en.wikipedia.org/wiki/2018_Afghan_parliamentary_election"
+  },
+  {
+   "country": "Afghanistan",
+   "kind": "dissolved or suspended",
+   "claimed_date": "NOT FOUND",
+   "reason": "no date in the to-check list",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/AF/AF-LC01/election/AF-LC01-E20181020/"
+  },
+  {
+   "country": "Argentina",
+   "kind": "partial renewal",
+   "claimed_date": "2003-04-27 to 2003-11-23",
+   "reason": "date shown, but on Wikipedia (not a primary source)",
+   "page_dates": "",
+   "url": "https://es.wikipedia.org/wiki/Elecciones_legislativas_de_Argentina_de_2003"
+  },
+  {
+   "country": "Argentina",
+   "kind": "quota or seat law",
+   "claimed_date": "2017-11-22",
+   "reason": "date differs (page shows another date that year)",
+   "page_dates": "2017-12-06",
+   "url": "https://data.ipu.org/parliament/AR/AR-LC01/"
+  },
+  {
+   "country": "Argentina",
+   "kind": "quota or seat law",
+   "claimed_date": "2017-12-14",
+   "reason": "date differs (page shows another date that year)",
+   "page_dates": "2017-12-06",
+   "url": "https://data.ipu.org/parliament/AR/AR-LC01/"
+  },
+  {
+   "country": "Argentina",
+   "kind": "quota or seat law",
+   "claimed_date": "2017-12-15",
+   "reason": "date differs (page shows another date that year)",
+   "page_dates": "2017-12-06",
+   "url": "https://data.ipu.org/parliament/AR/AR-LC01/"
+  },
+  {
+   "country": "Argentina",
+   "kind": "other",
+   "claimed_date": "NOT FOUND",
+   "reason": "no date in the to-check list",
+   "page_dates": "",
+   "url": "https://data.ipu.org/election-summary/HTML/2011_05.htm"
+  },
+  {
+   "country": "Australia",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2016-05-09",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/AU/AU-LC01/election/AU-LC01-E20160702/"
+  },
+  {
+   "country": "Australia",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2019-04-11",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/AU/AU-LC01/election/AU-LC01-E20190518/"
+  },
+  {
+   "country": "Australia",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2022-04-11",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/AU/AU-LC01/election/AU-LC01-E20220521/"
+  },
+  {
+   "country": "Australia",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2025-03-28",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/AU/AU-LC01/election/AU-LC01-E20250503/"
+  },
+  {
+   "country": "Austria",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2017-11-09",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/AT/AT-LC01/election/AT-LC01-E20171015/"
+  },
+  {
+   "country": "Austria",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2019-10-23",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/AT/AT-LC01/election/AT-LC01-E20190929/"
+  },
+  {
+   "country": "Austria",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2024-10-24",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/AT/AT-LC01/election/AT-LC01-E20240929/"
+  },
+  {
+   "country": "Austria",
+   "kind": "other",
+   "claimed_date": "NOT FOUND",
+   "reason": "no date in the to-check list",
+   "page_dates": "",
+   "url": "https://data.ipu.org/election-summary/HTML/2017_08.htm"
+  },
+  {
+   "country": "Belgium",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2014-04-28",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/BE/BE-LC01/election/BE-LC01-E20140525/"
+  },
+  {
+   "country": "Belgium",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2019-05-23",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/BE/BE-LC01/election/BE-LC01-E20190526/"
+  },
+  {
+   "country": "Belgium",
+   "kind": "other",
+   "claimed_date": "NOT FOUND",
+   "reason": "no date in the to-check list",
+   "page_dates": "",
+   "url": "https://data.ipu.org/election-summary/HTML/2029_07.htm"
+  },
+  {
+   "country": "Bulgaria",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2017-01-27",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/BG/BG-LC01/election/BG-LC01-E20170326/"
+  },
+  {
+   "country": "Bulgaria",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2021-03-26",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/BG/BG-LC01/election/BG-LC01-E20210404/"
+  },
+  {
+   "country": "Bulgaria",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2021-05-11",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/BG/BG-LC01/election/BG-LC01-E20210711/"
+  },
+  {
+   "country": "Bulgaria",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2021-09-15",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/BG/BG-LC01/election/BG-LC01-E20211114/"
+  },
+  {
+   "country": "Bulgaria",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2022-08-02",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/BG/BG-LC01/election/BG-LC01-E20221002/"
+  },
+  {
+   "country": "Bulgaria",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2023-02-02",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/BG/BG-LC01/election/BG-LC01-E20230402/"
+  },
+  {
+   "country": "Bulgaria",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2024-06-19",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/BG/BG-LC01/election/BG-LC01-E20240609/"
+  },
+  {
+   "country": "Bulgaria",
+   "kind": "other",
+   "claimed_date": "NOT FOUND",
+   "reason": "no date in the to-check list",
+   "page_dates": "",
+   "url": "https://data.ipu.org/election-summary/HTML/2045_05.htm"
+  },
+  {
+   "country": "Bulgaria",
+   "kind": "other",
+   "claimed_date": "NOT FOUND",
+   "reason": "no date in the to-check list",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/BG/BG-LC01/election/BG-LC01-E20241027/"
+  },
+  {
+   "country": "Bulgaria",
+   "kind": "other",
+   "claimed_date": "NOT FOUND",
+   "reason": "no date in the to-check list",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/BG/BG-LC01/election/BG-LC01-E20241027/"
+  },
+  {
+   "country": "Canada",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2005-11-29",
+   "reason": "date differs (page shows another date that year)",
+   "page_dates": "2005-11-28",
+   "url": "https://data.ipu.org/election-summary/HTML/2055_06.htm"
+  },
+  {
+   "country": "Canada",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2015-08-02",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/CA/CA-LC01/election/CA-LC01-E20151019/"
+  },
+  {
+   "country": "Canada",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2019-09-11",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/CA/CA-LC01/election/CA-LC01-E20191021/"
+  },
+  {
+   "country": "Canada",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2021-08-15",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/CA/CA-LC01/election/CA-LC01-E20210920/"
+  },
+  {
+   "country": "Canada",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2025-03-23",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/CA/CA-LC01/election/CA-LC01-E20250428/"
+  },
+  {
+   "country": "Costa Rica",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2022-04-30",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/CR/CR-LC01/election/CR-LC01-E20220206/"
+  },
+  {
+   "country": "Denmark",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2015-06-18",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/DK/DK-LC01/election/DK-LC01-E20150618/"
+  },
+  {
+   "country": "Denmark",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2019-06-05",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/DK/DK-LC01/election/DK-LC01-E20190605/"
+  },
+  {
+   "country": "Denmark",
+   "kind": "other",
+   "claimed_date": "NOT FOUND",
+   "reason": "no date in the to-check list",
+   "page_dates": "",
+   "url": "https://data.ipu.org/election-summary/HTML/2087_07.htm"
+  },
+  {
+   "country": "Ecuador",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2007-11-29",
+   "reason": "date differs (page shows another date that year)",
+   "page_dates": "2007-01-15; 2007-09-30",
+   "url": "https://data.ipu.org/election-summary/HTML/2095_09.htm"
+  },
+  {
+   "country": "Ecuador",
+   "kind": "newly formed",
+   "claimed_date": "2007-11-29",
+   "reason": "date differs (page shows another date that year)",
+   "page_dates": "2007-01-15; 2007-09-30",
+   "url": "https://data.ipu.org/election-summary/HTML/2095_09.htm"
+  },
+  {
+   "country": "Ecuador",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2008-10-20",
+   "reason": "date not found on the page",
+   "page_dates": "",
+   "url": "https://data.ipu.org/election-summary/HTML/2095_09.htm"
+  },
+  {
+   "country": "Ecuador",
+   "kind": "newly formed",
+   "claimed_date": "2008-10-25",
+   "reason": "date differs (page shows another date that year)",
+   "page_dates": "2008-10-29",
+   "url": "https://data.ipu.org/election-summary/HTML/2095_08.htm"
+  },
+  {
+   "country": "Ecuador",
+   "kind": "appointed seats",
+   "claimed_date": "2008-10-29",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/election-summary/HTML/2095_08.htm"
+  },
+  {
+   "country": "Ecuador",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2017-05-14",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/EC/EC-LC01/election/EC-LC01-E20170219/"
+  },
+  {
+   "country": "Ecuador",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2023-05-17",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/EC/EC-LC01/election/EC-LC01-E20230820/"
+  },
+  {
+   "country": "Ecuador",
+   "kind": "partial renewal",
+   "claimed_date": "NOT FOUND",
+   "reason": "no date in the to-check list",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/EC/EC-LC01/election/EC-LC01-E20230820/"
+  },
+  {
+   "country": "Ethiopia",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2021-07-07",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/ET/ET-LC01/election/ET-LC01-E20210621/"
+  },
+  {
+   "country": "Finland",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2015-04-22",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/FI/FI-LC01/election/FI-LC01-E20150419/"
+  },
+  {
+   "country": "Finland",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2019-04-17",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/FI/FI-LC01/election/FI-LC01-E20190414/"
+  },
+  {
+   "country": "Finland",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2023-03-29",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/FI/FI-LC01/election/FI-LC01-E20230402/"
+  },
+  {
+   "country": "France",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2017-06-20",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/FR/FR-LC01/election/FR-LC01-E20170611/"
+  },
+  {
+   "country": "France",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2024-06-09",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/FR/FR-LC01/election/FR-LC01-E20240630/"
+  },
+  {
+   "country": "Germany",
+   "kind": "general election",
+   "claimed_date": "2005-09-18 to 2005-10-02",
+   "reason": "date partly found (one end of the claimed range)",
+   "page_dates": "2005-07-21; 2005-09-01; 2005-09-18; 2005-10-18; 2005-11-09",
+   "url": "https://data.ipu.org/election-summary/HTML/2121_05.htm"
+  },
+  {
+   "country": "Germany",
+   "kind": "other",
+   "claimed_date": "2005-11-16",
+   "reason": "date differs (page shows another date that year)",
+   "page_dates": "2005-07-21; 2005-09-01; 2005-09-18; 2005-10-18; 2005-11-09",
+   "url": "https://data.ipu.org/election-summary/HTML/2121_05.htm"
+  },
+  {
+   "country": "Germany",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2017-10-24",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/DE/DE-LC01/election/DE-LC01-E20170924/"
+  },
+  {
+   "country": "Germany",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2021-10-26",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/DE/DE-LC01/election/DE-LC01-E20210926/"
+  },
+  {
+   "country": "Germany",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2024-12-27",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/DE/DE-LC01/election/DE-LC01-E20250223/"
+  },
+  {
+   "country": "Mexico",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2018-08-31",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/MX/MX-LC01/election/MX-LC01-E20180701/"
+  },
+  {
+   "country": "Mozambique",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2025-01-12",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/MZ/MZ-LC01/election/MZ-LC01-E20241009/"
+  },
+  {
+   "country": "Nepal",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2007-01-15",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/election-summary/HTML/2386_07.htm"
+  },
+  {
+   "country": "Nepal",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2025-09-12",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/NP/NP-LC01/election/NP-LC01-E20260305/"
+  },
+  {
+   "country": "Nepal",
+   "kind": "appointed seats",
+   "claimed_date": "NOT FOUND",
+   "reason": "no date in the to-check list",
+   "page_dates": "",
+   "url": "https://data.ipu.org/election-summary/HTML/2386_13.htm"
+  },
+  {
+   "country": "Nepal",
+   "kind": "appointed seats",
+   "claimed_date": "NOT FOUND",
+   "reason": "no date in the to-check list",
+   "page_dates": "",
+   "url": "https://data.ipu.org/election-summary/HTML/2386_08.htm"
+  },
+  {
+   "country": "Netherlands",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2017-03-23",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/NL/NL-LC01/election/NL-LC01-E20170315/"
+  },
+  {
+   "country": "Netherlands",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2021-03-25",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/NL/NL-LC01/election/NL-LC01-E20210317/"
+  },
+  {
+   "country": "New Zealand",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2017-08-22",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/NZ/NZ-LC01/election/NZ-LC01-E20170923/"
+  },
+  {
+   "country": "New Zealand",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2020-09-06",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/NZ/NZ-LC01/election/NZ-LC01-E20201017/"
+  },
+  {
+   "country": "New Zealand",
+   "kind": "other",
+   "claimed_date": "NOT FOUND",
+   "reason": "no date in the to-check list",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/NZ/NZ-LC01/election/NZ-LC01-E20231014/"
+  },
+  {
+   "country": "Nicaragua",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2016-12-15",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/NI/NI-LC01/election/NI-LC01-E20161106/"
+  },
+  {
+   "country": "Nicaragua",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2021-12-15",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/NI/NI-LC01/election/NI-LC01-E20211107/"
+  },
+  {
+   "country": "Peru",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2019-09-30",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/PE/PE-LC01/election/PE-LC01-E20200126/"
+  },
+  {
+   "country": "Peru",
+   "kind": "other",
+   "claimed_date": "NOT FOUND",
+   "reason": "no date in the to-check list",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/PE/PE-LC01/election/PE-LC01-E20160410/"
+  },
+  {
+   "country": "Portugal",
+   "kind": "quota or seat law",
+   "claimed_date": "2006-08-21",
+   "reason": "date not found on the page",
+   "page_dates": "",
+   "url": "https://files.dre.pt/1s/2019/03/06300/0176701769.pdf"
+  },
+  {
+   "country": "Portugal",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2015-10-22",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/PT/PT-LC01/election/PT-LC01-E20151004/"
+  },
+  {
+   "country": "Portugal",
+   "kind": "quota or seat law",
+   "claimed_date": "2019-03-29",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://files.dre.pt/1s/2019/03/06300/0176701769.pdf"
+  },
+  {
+   "country": "Portugal",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2019-10-24",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/PT/PT-LC01/election/PT-LC01-E20191006/"
+  },
+  {
+   "country": "Portugal",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2021-11-04",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/PT/PT-LC01/election/PT-LC01-E20220130/"
+  },
+  {
+   "country": "Portugal",
+   "kind": "partial renewal",
+   "claimed_date": "2022-03-12 to 2022-03-13",
+   "reason": "date differs (page shows another date that year)",
+   "page_dates": "2022-01-30; 2022-02-11; 2022-02-15; 2022-02-25; 2022-03-28; 2022-03-29",
+   "url": "https://data.ipu.org/parliament/PT/PT-LC01/election/PT-LC01-E20220130/"
+  },
+  {
+   "country": "Portugal",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2024-01-15",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/PT/PT-LC01/election/PT-LC01-E20240310/"
+  },
+  {
+   "country": "Portugal",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2025-03-19",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/PT/PT-LC01/election/PT-LC01-E20250518/"
+  },
+  {
+   "country": "Portugal",
+   "kind": "other",
+   "claimed_date": "NOT FOUND",
+   "reason": "no date in the to-check list",
+   "page_dates": "",
+   "url": "https://data.ipu.org/election-summary/HTML/2257_09.htm"
+  },
+  {
+   "country": "Rwanda",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2018-08-09",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/RW/RW-LC01/election/RW-LC01-E20180903/"
+  },
+  {
+   "country": "Rwanda",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2024-06-14",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/RW/RW-LC01/election/RW-LC01-E20240715/"
+  },
+  {
+   "country": "Senegal",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2024-09-12",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/SN/SN-LC01/election/SN-LC01-E20241117/"
+  },
+  {
+   "country": "Serbia",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2016-03-04",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/RS/RS-LC01/election/RS-LC01-E20160424/"
+  },
+  {
+   "country": "Serbia",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2023-11-01",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/RS/RS-LC01/election/RS-LC01-E20231217/"
+  },
+  {
+   "country": "Serbia",
+   "kind": "other",
+   "claimed_date": "NOT FOUND",
+   "reason": "no date in the to-check list",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/RS/RS-LC01/election/RS-LC01-E20220403/"
+  },
+  {
+   "country": "Spain",
+   "kind": "quota or seat law",
+   "claimed_date": "2007-03-22",
+   "reason": "date not found on the page",
+   "page_dates": "",
+   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2024-15936"
+  },
+  {
+   "country": "Spain",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2016-05-03",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/ES/ES-LC01/election/ES-LC01-E20160626/"
+  },
+  {
+   "country": "Spain",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2019-03-05",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/ES/ES-LC01/election/ES-LC01-E20190428/"
+  },
+  {
+   "country": "Spain",
+   "kind": "quota or seat law",
+   "claimed_date": "2024-08-02",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2024-15936"
+  },
+  {
+   "country": "Sweden",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2014-09-29",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/SE/SE-LC01/election/SE-LC01-E20140914/"
+  },
+  {
+   "country": "Switzerland",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2015-11-30",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/CH/CH-LC01/election/CH-LC01-E20151018/"
+  },
+  {
+   "country": "Switzerland",
+   "kind": "other",
+   "claimed_date": "NOT FOUND",
+   "reason": "no date in the to-check list",
+   "page_dates": "",
+   "url": "https://data.ipu.org/election-summary/HTML/2305_07.htm"
+  },
+  {
+   "country": "Tanzania",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2015-08-20",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/TZ/TZ-LC01/election/TZ-LC01-E20151025/"
+  },
+  {
+   "country": "Tanzania",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2020-06-16",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/TZ/TZ-LC01/election/TZ-LC01-E20201028/"
+  },
+  {
+   "country": "Tanzania",
+   "kind": "partial renewal",
+   "claimed_date": "NOT FOUND",
+   "reason": "no date in the to-check list",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/TZ/TZ-LC01/election/TZ-LC01-E20201028/"
+  },
+  {
+   "country": "Tanzania",
+   "kind": "appointed seats",
+   "claimed_date": "NOT FOUND",
+   "reason": "no date in the to-check list",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/TZ/TZ-LC01/election/TZ-LC01-E20251029/"
+  },
+  {
+   "country": "Tanzania",
+   "kind": "appointed seats",
+   "claimed_date": "NOT FOUND",
+   "reason": "no date in the to-check list",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/TZ/TZ-LC01/election/TZ-LC01-E20201028/"
+  },
+  {
+   "country": "Turkmenistan",
+   "kind": "quota or seat law",
+   "claimed_date": "2008-09-26",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/election-summary/HTML/2325_08.htm"
+  },
+  {
+   "country": "Uganda",
+   "kind": "newly formed",
+   "claimed_date": "1996-07-07",
+   "reason": "date differs (page shows another date that year)",
+   "page_dates": "1996-06-27",
+   "url": "https://data.ipu.org/election-summary/HTML/2329_96.htm"
+  },
+  {
+   "country": "Uganda",
+   "kind": "partial renewal",
+   "claimed_date": "2001-06-22",
+   "reason": "date differs (page shows another date that year)",
+   "page_dates": "2001-06-01; 2001-06-26; 2001-07-03; 2001-07-04",
+   "url": "https://data.ipu.org/election-summary/HTML/2329_01.htm"
+  },
+  {
+   "country": "Uganda",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2016-05-11",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/UG/UG-LC01/election/UG-LC01-E20160218/"
+  },
+  {
+   "country": "Uganda",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2021-05-11",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/UG/UG-LC01/election/UG-LC01-E20210114/"
+  },
+  {
+   "country": "Uganda",
+   "kind": "appointed seats",
+   "claimed_date": "NOT FOUND",
+   "reason": "no date in the to-check list",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/UG/UG-LC01/election/UG-LC01-E20210114/"
+  },
+  {
+   "country": "Uganda",
+   "kind": "appointed seats",
+   "claimed_date": "NOT FOUND",
+   "reason": "no date in the to-check list",
+   "page_dates": "",
+   "url": "https://data.ipu.org/election-summary/HTML/2329_11.htm"
+  },
+  {
+   "country": "United Arab Emirates",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2011-02-08",
+   "reason": "date differs (page shows another date that year)",
+   "page_dates": "2011-09-01; 2011-09-24; 2011-10-06; 2011-11-16",
+   "url": "https://data.ipu.org/election-summary/HTML/2333_11.htm"
+  },
+  {
+   "country": "United Arab Emirates",
+   "kind": "appointed seats",
+   "claimed_date": "2011-11-15",
+   "reason": "date differs (page shows another date that year)",
+   "page_dates": "2011-09-01; 2011-09-24; 2011-10-06; 2011-11-16",
+   "url": "https://data.ipu.org/election-summary/HTML/2333_11.htm"
+  },
+  {
+   "country": "United Arab Emirates",
+   "kind": "appointed seats",
+   "claimed_date": "2019-11-11",
+   "reason": "date differs (page shows another date that year)",
+   "page_dates": "2019-10-05; 2019-10-23; 2019-11-12; 2019-11-14",
+   "url": "https://data.ipu.org/parliament/AE/AE-LC01/election/AE-LC01-E20191005/"
+  },
+  {
+   "country": "United Arab Emirates",
+   "kind": "quota or seat law",
+   "claimed_date": "NOT FOUND",
+   "reason": "no date in the to-check list",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/AE/AE-LC01/election/AE-LC01-E20191005/"
+  },
+  {
+   "country": "United Kingdom",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2017-05-03",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/GB/GB-LC01/election/GB-LC01-E20170608/"
+  },
+  {
+   "country": "United Kingdom",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2019-11-06",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/GB/GB-LC01/election/GB-LC01-E20191212/"
+  },
+  {
+   "country": "United Kingdom",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2024-05-30",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/GB/GB-LC01/election/GB-LC01-E20240704/"
+  },
+  {
+   "country": "Vietnam",
+   "kind": "dissolved or suspended",
+   "claimed_date": "2016-07-19",
+   "reason": "date shown, but no word naming the event beside it",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/VN/VN-LC01/election/VN-LC01-E20160522/"
+  },
+  {
+   "country": "Vietnam",
+   "kind": "other",
+   "claimed_date": "NOT FOUND",
+   "reason": "no date in the to-check list",
+   "page_dates": "",
+   "url": "https://data.ipu.org/parliament/VN/VN-LC01/election/VN-LC01-E20160522/"
+  }
+ ]
+}

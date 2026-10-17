@@ -1,0 +1,34 @@
+# V3-babfd1b36b23
+# url: https://data.ipu.org/parliament/EC/EC-LC01/election/EC-LC01-E20210207/
+# final url: https://data.ipu.org/parliament/EC/EC-LC01/election/EC-LC01-E20210207/
+# fetched (UTC): 2026-10-17T08:12:20Z
+# HTTP 200; 177561 bytes; SHA-256 aca9e10d1d57c1c5d049e1256c9dff195e1c84c36ec68fda18caee63e77598ae
+# title: Ecuador National Assembly February 2021 Election | Election results | Ecuador | IPU Parline: global data on national parliaments
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Ecuador National Assembly February 2021 Election | Election results | Ecuador | IPU Parline: global data on national parliaments
+D: View field in the data dictionary | 07 Feb 2021
+D: View field in the data dictionary | No party or coalition won a majority in 2021. The Union for Hope coalition (UNES, see note 1) became the largest force, taking 49 seats in the 137-member National Assembly. Pachakutik (an indigenist party that ran on a platform of banning industrial mining) sharply increased its share of seats from 
+D: No candidate was elected in the first round of the presidential elections, which were held in parallel with the parliame | The 2021 elections followed the COVID-19 pandemic, which severely affected the country. Ecuador recorded one of the highest death rates in the region. The country’s economy was hit hard by the pandemic, particularly its key oil industry. In response, President Moreno announced $4 billion of cuts to 
+D: Note 1: | The UNES coalition was formed by supporters of former President Rafael Correa, who led the AP coalition at the 2017 elections. In the same year, his deputy Lenín Moreno (AP) was elected as the country’s new president. In 2018, some AP members, who had distanced themselves from the new President, for
+D: Sources | National Assembly (17.05.2021)
+D: National Assembly (17.05.2021) | Consejo Nacional Electoral (18.08.2021)
+D: View field in the data dictionary | 14 May 2021
+D: View field in the data dictionary | 15 May 2021
+K: Select country and chamber | Parliaments
+K: Political systems: Presidential, Parliamentary, Presidential-Parliamentary, Monarchy, Communist, Transitional. | View field in the data dictionary
+K: The date when elections started and ended for directly or indirectly elected parliaments/chambers. The date of appointments for appointed parliaments/chambers. | View field in the data dictionary
+K: Date of dissolution of the outgoing legislature | Date at which the previous legislature (elected at the previous elections) was dissolved.
+K: Date at which the previous legislature (elected at the previous elections) was dissolved. | View field in the data dictionary
+K: Timing of election | Timing of election: Upon normal expiry; Early elections; Delayed elections
+K: Timing of election: Upon normal expiry; Early elections; Delayed elections | View field in the data dictionary
+K: Number of seats contested at the elections. Where the parliament/chamber is fully renewed, this number is usually identical to the statutory number of members. Where the parliament/chamber is partiall | View field in the data dictionary
+K: Scope of elections | Scope of elections: Full renewal; Partial renewal.
+K: Scope of elections: Full renewal; Partial renewal. | View field in the data dictionary
+K: Full renewal | Candidates
+K: The total number of male parliamentarians in this parliament/chamber following the election or renewal, regardless of their modes of designation. | View field in the data dictionary
+K: The total number of female parliamentarians in this parliament/chamber following the election or renewal, regardless of their modes of designation. | View field in the data dictionary
+K: The percentage is calculated by dividing the total number of women in this parliament/chamber by the current number of members. | View field in the data dictionary
+K: The number of members who are assuming their parliamentary mandate for the first time following the election or renewal, regardless of their mode of designation. | View field in the data dictionary
+K: The date when the newly elected parliament/chamber was convened for the first time. It may be different from the date when members were sworn in. | View field in the data dictionary
+K: The political party to which the Speaker belonged to at the moment of the election. In some parliaments, the Speaker suspends or relinquishes their party membership during their term in office and is  | View field in the data dictionary

@@ -1,0 +1,21 @@
+# V3-2532660482df
+# url: https://data.ipu.org/election-summary/HTML/2257_09.htm
+# final url: https://data.ipu.org/election-summary/HTML/2257_09.htm
+# fetched (UTC): 2026-10-17T08:08:57Z
+# HTTP 200; 18899 bytes; SHA-256 1df2927ec03cc9d0765dd0a460d762d3f1df1617e569ebef27156c8dae4ea652
+# title: IPU PARLINE database: PORTUGAL (Assembleia da Republica) ELECTIONS IN 2009
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 27 September 2009
+D: Elections were held for all the seats in the Assembly of the Republic on the normal expiry of the members' term of offic | The September 2009 elections were held against the backdrop of the global economic crisis
+D: the highest in 20 years. The State budget deficit is expected to exceed 6 per cent of gross domestic product (GDP) in 20 | In the previous elections held in February 2005 (see note)
+D: general elections are held between 14 September and 14 October in the year in which the term of Parliament ends. If ther | the new parliament completes the remaining term of the outgoing parliament in addition to its four-year term. The 2009 elections were thus held in September instead of February.
+D: Voter turnout | Round no 1 27 September 2009
+D: Note on the 'Distribution of seats according to sex': | 64 women were elected in the September 2009 elections. However
+D: 64 women were elected in the September 2009 elections. However | the number of women was reduced to 63 after the formation of the new Government in October 2009.
+D: Sources: | - Assembly of the Republic (12.10.2009
+D: - Assembly of the Republic (12.10.2009 | 11.11.2009)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Dates of election / renewal (from/to) | 27 September 2009
+K: Purpose of elections | Elections were held for all the seats in the Assembly of the Republic on the normal expiry of the members' term of office.

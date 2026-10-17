@@ -1,0 +1,27 @@
+{
+ "ready": true,
+ "title": "No.10 A New Beginning",
+ "artist": "Esther Abrami",
+ "source": "YouTube Studio Audio Library on the Race Through Time channel (Ambient / Inspirational, added Jun 2020), YouTube Audio Library licence: 'Attribution not required'; chosen by Luke 10 Oct 2026 from Cowork's shortlist of six (DEC-649); downloaded by Cowork with his OK",
+ "file": "no10_a_new_beginning_esther_abrami.mp3",
+ "private_path": "assets/rtt-104/music/no10_a_new_beginning_esther_abrami.mp3",
+ "private_ref": "main",
+ "sha256": "3a36c065f2161be686daf91fa8ce8b646a7bc9ceed0b4e86ca78bddfe9ce1bda",
+ "bytes": 5904755,
+ "duration_sec": 147.59,
+ "readme_path": "assets/rtt-104/music/README_a_new_beginning.txt",
+ "readme_bytes": 750,
+ "readme_sha256_prefix": "8c466b33",
+ "readme_sha256_suffix": "4d05",
+ "start_sec": "auto",
+ "fade_sec": 5.0,
+ "loop_start": null,
+ "loop_end": null,
+ "crossfade_sec": null,
+ "notes": [
+  "The audio file is NEVER committed here (Audio Library terms: not to be shared on its own; reference/rights_ledger.md). It lives only in the private repo, main, with README_a_new_beginning.txt; the MP3's SHA-256 and size are checked by .github/workflows/rtt104_film.yml before use; the README's size and the ends of its SHA-256 as Cowork reported them (8c466b33...4d05) are checked too, and its full SHA-256 is printed in the release notes.",
+  "No loop (DEC-651): the track (147.59 s) is longer than the film (75.7 s), so it is played once and cut to the film.",
+  "Start (DEC-651, under DEC-417): 'auto' = 0 s, unless the track opens with silence (below -50 dB for at least 0.2 s from 0 s, ffmpeg silencedetect on the runner), in which case it starts where that silence ends; the value used is printed in the release notes. A piano piece: no beat to align to.",
+  "Fade (DEC-651): out over the last 5 s of the film (inside the 6 s closing card); mixed to -16 LUFS integrated, true peak at most -1 dBTP by scripts/rtt_mix_music.sh (unchanged), which fails otherwise."
+ ]
+}

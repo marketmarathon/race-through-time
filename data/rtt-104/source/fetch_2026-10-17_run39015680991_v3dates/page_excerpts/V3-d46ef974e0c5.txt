@@ -1,0 +1,18 @@
+# V3-d46ef974e0c5
+# url: https://data.ipu.org/election-summary/HTML/2087_01.htm
+# final url: https://data.ipu.org/election-summary/HTML/2087_01.htm
+# fetched (UTC): 2026-10-17T08:07:35Z
+# HTTP 200; 8745 bytes; SHA-256 26f7a488fc17b6d142341a0c6fad9c07d9013c8f6fd4155787ac498773862e4f
+# title: DENMARK: parliamentary elections Folketinget, 2001
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 20 November 2001
+D: Purpose of elections: | Elections were held for all the seats in Parliament following the premature dissolution of this body. General elections had previously been held in March 1998.
+D: Background and outcome of elections: | At the end of October 2001, Prime Minister Poul Nyrup Rasmussen bowed to mounting political pressure, announcing that general elections would take place in less than three weeks, at the same time as local and municipal elections, on 20 November 2001. This announcement was welcomed by his political o
+D: The results showed that with a turnout of 87%, the Right Liberals (Venstre) won 56 of 179 seats (31.2% of the vote), the | Prime Minister Poul Nyrup Rasmussen resigned the day after the poll. On 27 November 2001, Queen Margrethe II appointed a new minority right-wing coalition government, headed by the Venstre leader Mr Anders Fogh Rasmussen.
+D: STATISTICS | Round no 1 (20 November 2001): Elections results
+K: Parliamentary Chamber: Folketinget | ELECTIONS HELD IN 2001
+K: Chamber: | Folketinget
+K: Dates of elections / renewal (from/to): | 20 November 2001
+K: Purpose of elections: | Elections were held for all the seats in Parliament following the premature dissolution of this body. General elections had previously been held in March 1998.
+K: Breakdown of seats by political group: excluding the four seats reserved for Greenland and the Faeroe Islands. | Distribution of seats according to sex:

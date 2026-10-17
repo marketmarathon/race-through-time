@@ -1,0 +1,23 @@
+# V3-1d59b31e7bc3
+# url: https://data.ipu.org/election-summary/HTML/2017_08.htm
+# final url: https://data.ipu.org/election-summary/HTML/2017_08.htm
+# fetched (UTC): 2026-10-17T08:06:43Z
+# HTTP 200; 32380 bytes; SHA-256 8edab3569ee9379cfb8b7bb290111f0cb2eef3e36f055c95e00ad794d9412ed8
+# title: IPU PARLINE database: AUSTRIA (Nationalrat), ELECTIONS IN 2008
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 28 September 2008
+D: Purpose of elections | Elections were held for all the seats in the National Council following premature dissolution of this body on 9 July 2008. Elections to the National Council had previously taken place on 1 October 2006.
+D: Elections were held for all the seats in the National Council following premature dissolution of this body on 9 July 200 | The collapse of the coalition government in July 2008 triggered early elections to the 183-member National Council in September, nearly 25 months before they were due.
+D: The collapse of the coalition government in July 2008 triggered early elections to the 183-member National Council in Se | Following the previous elections in October 2006, three months of negotiations resulted in a grand coalition between the Social Democratic Party (SPÖ, 68 seats) and the People's Party (ÖVP, 66 seats). SPÖ leader, Mr. Alfred Gusenbauer, was sworn in as Prime Minister in January 2007. However, the coa
+D: Following the previous elections in October 2006, three months of negotiations resulted in a grand coalition between the | The country of 8.2 million inhabitants had enjoyed high economic growth (3.4 per cent in 2007) and a low unemployment rate of 4 per cent. Inflation and high fuel prices reportedly disrupted the country's economy prior to the 2008 elections. In June, Prime Minister Gusenbauer announced that he would 
+D: As many as 15 parties fielded candidates in the 2008 elections. Transport Minister, Mr. Werner Faymann, led the SPÖ whic | Two far-right parties featured prominently during the election campaign. The Freedom Party (FPÖ, which took 21 seats in the 2006 elections) of Mr. Heinz-Christian Strache and the Alliance for the Future of Austria (BZÖ), formed in April 2005 by former FPÖ leader Mr. Jörg Haider, both campaigned to e
+D: Voter turnout | Round no 1 28 September 2008
+D: Comments | Fifty women were elected in September 2008. However, after the formation of the new government in December, the total number of women parliamentarians increased to 52 (28.42 per cent).
+D: Sources: | - National Council (28.10.2008, 23.02.2009, 24.03.2009)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Chamber name (generic / translated) | Nationalrat / National Council
+K: Related chamber (for bicameral parliaments) | Bundesrat / Federal Council
+K: Dates of election / renewal (from/to) | 28 September 2008
+K: Purpose of elections | Elections were held for all the seats in the National Council following premature dissolution of this body on 9 July 2008. Elections to the National Council had previously taken place on 1 October 200

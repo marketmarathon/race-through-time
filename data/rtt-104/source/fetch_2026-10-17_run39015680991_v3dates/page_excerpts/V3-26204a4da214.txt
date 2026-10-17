@@ -1,0 +1,15 @@
+# V3-26204a4da214
+# url: https://data.ipu.org/election-summary/HTML/2095_96.htm
+# final url: https://data.ipu.org/election-summary/HTML/2095_96.htm
+# fetched (UTC): 2026-10-17T08:07:47Z
+# HTTP 200; 6767 bytes; SHA-256 4c92c90a46ce8041d486b6fb46060a18c09aa956881a01fd144d0ea1b3ff783e
+# title: ECUADOR: parliamentary elections Congreso Nacional, 1996
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 19 May 1996
+D: Background and outcome of elections: | The 1996 congressional elections were held concurrently with polling for President of the Republic as well as provincial and municipal councillors. Congress was enlarged by five seats (77 to 82) since the previous (May 1994) legislative elections. The polling date was set on 20 January 1996.
+D: STATISTICS | Round no 1 (19 May 1996): Elections results
+K: Parliamentary Chamber: Congreso Nacional | ELECTIONS HELD IN 1996
+K: Chamber: | Congreso Nacional
+K: Dates of elections / renewal (from/to): | 19 May 1996
+K: Purpose of elections: | Elections were held for all the seats in Parliament on the normal expiry of the members' term of office.

@@ -1,0 +1,11 @@
+# IPU-OLD-KWT
+# url: https://www.ipu.org/parlement/KW
+# final url: https://www.ipu.org/parlement/KW
+# fetched (UTC): 2026-10-10T06:09:44Z
+# HTTP 200; 92025 bytes; SHA-256 350d4f0530fac029cb8dc4b4d0f2cd7fd4b035660fc411cf696300f6d6e02c7d
+# Short excerpts only (lines holding the searched words, with the line before and after).
+
+Unicameral | Last election | Apr 2024
+
+Contact us | Vacancies | IPU structure and governance
+

@@ -1,0 +1,22 @@
+# V3-4a6c8dc2b231
+# url: https://data.ipu.org/election-summary/HTML/2257_11.htm
+# final url: https://data.ipu.org/election-summary/HTML/2257_11.htm
+# fetched (UTC): 2026-10-17T08:08:58Z
+# HTTP 200; 28702 bytes; SHA-256 6ff62934a4775ceaa879e92568bc5d48373508a96de03da7426771c57d88bc7a
+# title: IPU PARLINE database: PORTUGAL (Assembleia da Republica), ELECTIONS IN 2011
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 5 June 2011
+D: Purpose of elections | Elections were held for all seats in the Assembly of the Republic following its premature dissolution of this body on 31 March 2011. General elections had previously been held in September 2009.
+D: Elections were held for all seats in the Assembly of the Republic following its premature dissolution of this body on 31 | On 31 March 2011, President Aníbal Cavaco Silva dissolved the Assembly of the Republic and called early elections for 5 June, 27 months earlier than they were constitutionally due (see note).
+D: On 31 March 2011, President Aníbal Cavaco Silva dissolved the Assembly of the Republic and called early elections for 5  | In the previous elections held in September 2009, Prime Minister Jose Socrates' Socialist Party (PS) - in power since 2005 - remained the largest party in the 230-member Assembly of the Republic with 97 seats, but failed to retain an absolute majority. The Social Democratic Party (PPD/PSD), which ha
+D: The country of 10 million inhabitants, which had been severely affected by the global economic crisis in 2008 and 2009,  | In March 2011, the Prime Minister submitted to the Assembly of the Republic a new austerity plan, the fourth in under a year. The austerity plan included spending cuts and tax increases. On 23 March, on the eve of an EU summit to finalize a euro-zone debt crisis plan, all four opposition parties rej
+D: In March 2011, the Prime Minister submitted to the Assembly of the Republic a new austerity plan, the fourth in under a  | On 31 March, the National Statistics Institute announced that the country's budget deficit had reached 8.6 per cent of its gross domestic product (GDP) in 2010, surpassing the 7.3 per-cent target agreed with the EU. President Silva subsequently set early elections for 5 June, citing the clear degrad
+D: On 31 March, the National Statistics Institute announced that the country's budget deficit had reached 8.6 per cent of i | On 6 April, caretaker Prime Minister Socrates officially asked for a bailout from the EU and the IMF. The two organizations subsequently granted Portugal a 78 billion-euro bailout, whose conditions required tax increases, a freeze on State pensions and salaries and cuts in unemployment benefits. The
+D: Note: | Each legislature consists of four legislative sessions. Each session commences on 15 September and lasts for one year. In cases of early dissolution of the Assembly of the Republic, the newly elected legislature completes the remaining period of the last session in progress of the outgoing legislatu
+D: Voter turnout | Round no 1 5 June 2011
+D: Sources: | Assembly of the Republic (21.06.2011, 22.06.2011, 12.12.2011, 01.01.2014)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Dates of election / renewal (from/to) | 5 June 2011
+K: Purpose of elections | Elections were held for all seats in the Assembly of the Republic following its premature dissolution of this body on 31 March 2011. General elections had previously been held in September 2009.

@@ -1,0 +1,17 @@
+# V3-630c26fa8daa
+# url: https://data.ipu.org/election-summary/HTML/2305_03.htm
+# final url: https://data.ipu.org/election-summary/HTML/2305_03.htm
+# fetched (UTC): 2026-10-17T08:09:31Z
+# HTTP 200; 11943 bytes; SHA-256 0628772279fcd90dce6d1a907c1cb9cbfaa3c4178f8ff1bbdff1bdfb1ba709f7
+# title: SWITZERLAND: parliamentary elections Nationalrat - Conseil national – Consiglio nazionale, 2003
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 19 October 2003
+D: Background and outcome of elections: | Some 4.7 million Swiss were summoned to the polls on 19 October 2003 to elect the new members of the National Council and 41 out of the 46 members of the Council of States.
+D: The Swiss People’s Party (SVP/UDC), led by Mr Christoph Blocher, became the largest party in the National Council. The S | The new Parliament held its inaugural session on 1 December 2003.
+D: The new Parliament held its inaugural session on 1 December 2003. | On 10 December 2003, the Parliament elected the members of the Federal Council (government) for a four-year term. The elections resulted in a re-distribution of the seven government portfolios which, since 1959, have been divided up on the basis of consensus between the country’s four main parties. 
+D: STATISTICS | Round no 1 (19 October 2003): Elections results
+K: Parliamentary Chamber: Nationalrat - Conseil national – Consiglio nazionale | ELECTIONS HELD IN 2003
+K: Chamber: | Dates of elections / renewal (from/to):
+K: Dates of elections / renewal (from/to): | 19 October 2003
+K: Purpose of elections: | Elections were held for all the seats in the National Council on the normal expiry of the members' term of office.

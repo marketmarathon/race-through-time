@@ -1,0 +1,43 @@
+# V3-c97f637b2e7b
+# url: https://data.ipu.org/parliament/ET/ET-LC01/election/ET-LC01-E20210621/
+# final url: https://data.ipu.org/parliament/ET/ET-LC01/election/ET-LC01-E20210621/
+# fetched (UTC): 2026-10-17T08:12:34Z
+# HTTP 200; 182573 bytes; SHA-256 1e4af18b3679b06872df36eca7ddb878a03a17ae04f4430956efa27217f531b7
+# title: Ethiopia House of Peoples' Representatives June 2021 Election | Election results | Ethiopia | IPU Parline: global data on national parliaments
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Ethiopia House of Peoples' Representatives June 2021 Election | Election results | Ethiopia | IPU Parline: global data on national parliaments
+D: View field in the data dictionary | 21 Jun 2021 to 30 Sep 2021
+D: View field in the data dictionary | 07 Jul 2021
+D: View field in the data dictionary | 01 Jun 2026
+D: Prime Minister Abiy Ahmed’s Prosperity Party (see note 1) won an overwhelming majority, taking 448 seats in the 547-memb | The 2021 elections were the first to be held after Mr. Abiy Ahmed assumed the premiership in 2018. Being 41 at the time, he became Africa’s youngest leader. As the country's first ethnic Oromo leader in recent years, Mr. Abiy Ahmed promised reforms and backed the election (by Parliament) of Ms. Sahl
+D: Note 1: | In April 2018, Mr. Abiy Ahmed succeeded Mr. Hailemariam Desalegn of the Ethiopian People's Revolutionary Democratic Front (EPRDF) who had resigned following anti government protests initially led by the country’s largest ethnic group, the Oromo. In November 2019, Mr. Abiy Ahmed dissolved the EPRDF, 
+D: Note 2: | In August 2020, citing the COVID-19 pandemic, the Prime Minister postponed by 10 months the parliamentary and regional elections initially scheduled for 29 August 2020. Opposition parties accused the government of using the pandemic as an excuse to illegally extend its time in office (which was due 
+D: In August 2020, citing the COVID-19 pandemic, the Prime Minister postponed by 10 months the parliamentary and regional e | The TPLF held regional elections in the Tigray region on 9 September 2020 and won in a landslide. On 7 October, the House of the Federation (upper chamber comprising members of state assemblies) stated that the federal government should sever all ties with the Tigray regional state assembly. On 4 No
+D: The TPLF held regional elections in the Tigray region on 9 September 2020 and won in a landslide. On 7 October, the Hous | Following the first postponement mentioned above, the 2021 elections were subsequently set for 5 June 2021. However, on 15 May, they were postponed again to 21 June due to security and logistical challenges. The June 2021 elections were held for 436 seats (for the 547-seat House) of which 425 were c
+D: Total | Sep. 2021
+D: 195 | Notes: Following the June 2021 elections, parliament initially reported 181 women out of 425 members. In January 2022, it updated these figures to 176 women out of 426 members.
+D: Notes: Following the June 2021 elections, parliament initially reported 181 women out of 425 members. In January 2022, i | In the delayed election held on 30 September 2021, 44 members, including 19 women, were elected. In total, therefore, 195 women were elected out of 470 members.
+D: Note on parties or coalitions winning seats | The statistics above refer to the total number of seats won by each political party after the elections held in June and September 2021, in which a total of 470 members (426* in June and 44 in September) were elected. As at 13 January 2022, the 77 remaining seats were yet to be filled, pending elect
+D: The statistics above refer to the total number of seats won by each political party after the elections held in June and | *In January 2022, Parliament updated the number of seats won by the Prosperity Party in June 2021 from 410 to 411, which increased the total number of members elected in June 2021 from 425 to 426.
+D: *In January 2022, Parliament updated the number of seats won by the Prosperity Party in June 2021 from 410 to 411, which | In September 2021, the Prosperity Party won 37 more seats, thus winning a total of 448 seats. Four members from the Ethiopian Citizens for Social Justice (EZEMA) and two members from the Gedeo People's Democratic Organization (GEDO) subsequently joined the Prosperity Party, giving it a total of 454 
+D: Sources | House of Peoples' Representatives (25.08.2021, 13.01.2022, 14.01.2022, 15.01.2022, 20.01.2022)
+D: View field in the data dictionary | 04 Oct 2021
+D: View field in the data dictionary | 04 Oct 2021
+K: Select country and chamber | Parliaments
+K: Political systems: Presidential, Parliamentary, Presidential-Parliamentary, Monarchy, Communist, Transitional. | View field in the data dictionary
+K: The date when elections started and ended for directly or indirectly elected parliaments/chambers. The date of appointments for appointed parliaments/chambers. | View field in the data dictionary
+K: Date of dissolution of the outgoing legislature | Date at which the previous legislature (elected at the previous elections) was dissolved.
+K: Date at which the previous legislature (elected at the previous elections) was dissolved. | View field in the data dictionary
+K: Timing of election | Timing of election: Upon normal expiry; Early elections; Delayed elections
+K: Timing of election: Upon normal expiry; Early elections; Delayed elections | View field in the data dictionary
+K: Number of seats contested at the elections. Where the parliament/chamber is fully renewed, this number is usually identical to the statutory number of members. Where the parliament/chamber is partiall | View field in the data dictionary
+K: Scope of elections | Scope of elections: Full renewal; Partial renewal.
+K: Scope of elections: Full renewal; Partial renewal. | View field in the data dictionary
+K: Full renewal | Candidates
+K: The total number of male parliamentarians in this parliament/chamber following the election or renewal, regardless of their modes of designation. | View field in the data dictionary
+K: The total number of female parliamentarians in this parliament/chamber following the election or renewal, regardless of their modes of designation. | View field in the data dictionary
+K: The percentage is calculated by dividing the total number of women in this parliament/chamber by the current number of members. | View field in the data dictionary
+K: The number of members who are assuming their parliamentary mandate for the first time following the election or renewal, regardless of their mode of designation. | View field in the data dictionary
+K: The date when the newly elected parliament/chamber was convened for the first time. It may be different from the date when members were sworn in. | View field in the data dictionary
+K: The political party to which the Speaker belonged to at the moment of the election. In some parliaments, the Speaker suspends or relinquishes their party membership during their term in office and is  | View field in the data dictionary

@@ -1,0 +1,11 @@
+# WB-INDICATOR-PAGE
+# url: https://data.worldbank.org/indicator/SG.GEN.PARL.ZS
+# final url: https://data.worldbank.org/indicator/SG.GEN.PARL.ZS
+# fetched (UTC): 2026-10-10T06:02:04Z
+# HTTP 200; 961438 bytes; SHA-256 f6b9d3c836c49b292da2260d0a3cec460665ef138225ee64025e756ec7b40d72
+# Short excerpts only (lines holding the searched words, with the line before and after).
+
+Development Goals | Terms of Use | For Developers
+
+Proportion of seats held by women in national parliaments (%) | Monthly ranking of women in national parliaments, Inter-Parliamentary Union ( IPU ), uri: data.ipu.org/women-ranking , note: For the year of 1998, the data is as of August 10, 1998., type: Excel, date accessed: 2026-03-29 | License : CC BY-4.0
+

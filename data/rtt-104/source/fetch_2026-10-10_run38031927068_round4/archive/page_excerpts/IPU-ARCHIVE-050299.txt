@@ -1,0 +1,11 @@
+# IPU-ARCHIVE-050299
+# url: http://archive.ipu.org/wmn-e/arc/classif050299.htm
+# final url: http://archive.ipu.org/wmn-e/arc/classif050299.htm
+# fetched (UTC): 2026-10-10T06:44:12Z
+# HTTP 200; 39095 bytes; SHA-256 7846504c197053652366bae426cbcfb8a04de29eef553cc2339c8f216cb72611
+# title: ['Women in Parliaments: World Classification']
+# headings: ['Situation as of 5 February 1999', '179 countries', 'descending order of the percentage of women in the lower or single House', 'New:', 'Rank', 'Country', 'Lower or single House', 'Upper House or Senate', 'Elections', 'Seats', 'Women', '% W']
+# Table rows naming the test countries only.
+
+" | Pakistan | 02 1997 | 217 | 5 | 2.3 | 03 1997 | 87 | 1 | 1.1
+" | Egypt | 11 1995 | 454 | 9 | 2.0 | --- | --- | --- | ---

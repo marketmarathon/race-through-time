@@ -1,0 +1,38 @@
+# V3-41904f3d8af8
+# url: https://data.ipu.org/parliament/NI/NI-LC01/election/NI-LC01-E20211107/
+# final url: https://data.ipu.org/parliament/NI/NI-LC01/election/NI-LC01-E20211107/
+# fetched (UTC): 2026-10-17T08:13:18Z
+# HTTP 200; 173589 bytes; SHA-256 afdc6e13a6a8fb4ea57b9104c951519d7747b9065ff66e77a738a7baa6f0b738
+# title: Nicaragua National Assembly November 2021 Election | Election results | Nicaragua | IPU Parline: global data on national parliaments
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Nicaragua National Assembly November 2021 Election | Election results | Nicaragua | IPU Parline: global data on national parliaments
+D: View field in the data dictionary | 07 Nov 2021
+D: View field in the data dictionary | 15 Dec 2021
+D: View field in the data dictionary | 30 Nov 2028
+D: View field in the data dictionary | President Daniel Ortega's Sandinista National Liberation Front (FSLN) took 75 of the 90 seats at stake in the 91-member National Assembly (see note 1). The Liberal Constitutionalist Party (PLC), which endorsed Mr. Walter Espinoza as its presidential candidate, took 9 seats, down from 13. In all, 46 
+D: President Daniel Ortega's Sandinista National Liberation Front (FSLN) took 75 of the 90 seats at stake in the 91-member  | Prior to the 2021 elections, several potential presidential candidates were arrested (see note 3). On 8 November, the European Union said the elections had “taken place without democratic guarantees and their results lack legitimacy”. On 12 November, the Organization of American States (OAS) adopted
+D: Note 3: | They include: Ms. Cristiana Chamorro (daughter of former President Violeta Chamorro) who was placed under house arrest in June 2021 for alleged money laundering; Mr. Felix Maradiaga, Mr. Arturo Cruz and Mr. Juan Sebastián Chamorro, who were prosecuted for alleged treason. All candidates denied the c
+D: Sources | National Assembly (15.12.2021);
+D: National Assembly (15.12.2021); | Proclamación de Electos "Elecciones Generales 2021", Consejo Supremo Electoral, Secretaria de Actuaciones, 25 noviembre del año 2021, La Gaceta - Diario Oficial No. 219, 26 noviembre de 2021, 11819;
+D: http://digesto.asamblea.gob.ni/consultas/util/pdf.php?type=rdd&rdd=1k339oQ67dA%3D; | Proclamación de Electos "Elecciones Generales 2021", Consejo Supremo Electoral, Secretaria de Actuaciones, 25 noviembre del año 2021, La Gaceta - Diario Oficial No. 219, 26 noviembre de 2021, 11819;
+D: View field in the data dictionary | 09 Jan 2022
+D: View field in the data dictionary | 09 Jan 2022
+K: Select country and chamber | Parliaments
+K: Political systems: Presidential, Parliamentary, Presidential-Parliamentary, Monarchy, Communist, Transitional. | View field in the data dictionary
+K: The date when elections started and ended for directly or indirectly elected parliaments/chambers. The date of appointments for appointed parliaments/chambers. | View field in the data dictionary
+K: Date of dissolution of the outgoing legislature | Date at which the previous legislature (elected at the previous elections) was dissolved.
+K: Date at which the previous legislature (elected at the previous elections) was dissolved. | View field in the data dictionary
+K: Timing of election | Timing of election: Upon normal expiry; Early elections; Delayed elections
+K: Timing of election: Upon normal expiry; Early elections; Delayed elections | View field in the data dictionary
+K: Number of seats contested at the elections. Where the parliament/chamber is fully renewed, this number is usually identical to the statutory number of members. Where the parliament/chamber is partiall | View field in the data dictionary
+K: Scope of elections | Scope of elections: Full renewal; Partial renewal.
+K: Scope of elections: Full renewal; Partial renewal. | View field in the data dictionary
+K: Full renewal | Voter turnout
+K: According to the Supreme Electoral Council (CSE), the 2021 elections saw the 50-per- cent gender quota (stipulated in Article 131 of the Constitution) “rigorously applied for the first time for the wh | Note 3:
+K: The total number of male parliamentarians in this parliament/chamber following the election or renewal, regardless of their modes of designation. | View field in the data dictionary
+K: The total number of female parliamentarians in this parliament/chamber following the election or renewal, regardless of their modes of designation. | View field in the data dictionary
+K: The percentage is calculated by dividing the total number of women in this parliament/chamber by the current number of members. | View field in the data dictionary
+K: The number of members who are assuming their parliamentary mandate for the first time following the election or renewal, regardless of their mode of designation. | View field in the data dictionary
+K: The date when the newly elected parliament/chamber was convened for the first time. It may be different from the date when members were sworn in. | View field in the data dictionary
+K: The political party to which the Speaker belonged to at the moment of the election. In some parliaments, the Speaker suspends or relinquishes their party membership during their term in office and is  | View field in the data dictionary

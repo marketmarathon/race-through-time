@@ -1,0 +1,23 @@
+# V3-9f8010c14d73
+# url: https://data.ipu.org/election-summary/HTML/2337_10.htm
+# final url: https://data.ipu.org/election-summary/HTML/2337_10.htm
+# fetched (UTC): 2026-10-17T08:09:56Z
+# HTTP 200; 22883 bytes; SHA-256 35d86566d18bf84215f5e8f7179207a0fe78efda592dc8b218a467a57b68ae5c
+# title: IPU PARLINE database: UNITED REPUBLIC OF TANZANIA (Bunge ), ELECTIONS IN 2010
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 31 October 2010
+D: Elections were held for all elective seats of Parliament on the normal expiry of the members' term of office. | The 2010 polls were the fourth to be held since the country introduced multi-party politics in 1992. Parliament was dissolved on 1 August 2010 by virtue of Presidential Order No. 272, which paved the way for general elections to take place on 31 October. They were held in parallel with presidential 
+D: The 2010 polls were the fourth to be held since the country introduced multi-party politics in 1992. Parliament was diss | In the previous elections held in December 2005, the ruling Revolutionary Party of Tanzania (CCM) swept 206 of the 232 directly elected seats. Four opposition parties won a total of 26 seats: 19 for the Civic United Front (CUF), five for the Party for Democracy and Development (Chadema) and one each
+D: In the previous elections held in December 2005, the ruling Revolutionary Party of Tanzania (CCM) swept 206 of the 232 d | Although President Kikwete was elected on an anti-corruption ticket, his administration came under criticism due to several corruption scandals. In February 2008, Prime Minister Edward Lowassa and two ministers resigned over allegations of awarding a contract to a ghost US electricity company. Other
+D: Note: | Albinos have been discriminated against in many African countries. In Tanzania, many have been killed by witch doctors who believe that charms made from their body parts bring good luck. In April 2008, President Kikwete had nominated Ms. Al Shaymaa Kwegyir, making her the first albino member of Parl
+D: Voter turnout | Round no 1 31 October 2010
+D: Note on the Distribution of seats according to sex: | As at 16 February 2011, there are 350 members of whom 126 are women.
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Dates of election / renewal (from/to) | 31 October 2010
+K: Purpose of elections | Elections were held for all elective seats of Parliament on the normal expiry of the members' term of office.
+K: Appointed/Zanzibar | Revolutionary Party of Tanzania (CCM)
+K: - 'Appointed/Zanzibar' refers to members appointed by the President and five members from Zanzibar. | - 'Others': refers to the Attorney General.
+K: Seven additional members can be appointed by the President. | Breakdown for 126 women:
+K: - One appointed member. | Copyright 1996-2011 Inter-Parliamentary Union

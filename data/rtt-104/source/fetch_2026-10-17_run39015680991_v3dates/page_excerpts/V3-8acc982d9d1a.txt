@@ -1,0 +1,21 @@
+# V3-8acc982d9d1a
+# url: https://data.ipu.org/election-summary/HTML/2233_14.htm
+# final url: https://data.ipu.org/election-summary/HTML/2233_14.htm
+# fetched (UTC): 2026-10-17T08:08:36Z
+# HTTP 200; 20697 bytes; SHA-256 b7d96e7d720ec48d190f96fd18dbdcaad1d9342ea395cd6d551404dfd3493afc
+# title: IPU PARLINE database: NEW ZEALAND (House of Representatives), ELECTIONS IN 2014
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 20 September 2014
+D: Note: | Under the Mixed Member Proportional system (MMP), seats are first allocated to candidates winning electoral seats. Another 50 seats are then allocated in keeping with parties' share of "party votes". In cases where parties win more electoral seats than their share of seats determined by the party vo
+D: Date of previous elections: 26 Novmber 2011 | Date of dissolution of the outgoing legislature: 14 August 2014
+D: Timing of election: Early elections | Expected date of next elections: Before 18 November 2017
+D: Names of parties in government: National Party | Date of the first session of the new parliament: 20 October 2014
+D: Voter turnout | Round no 1 20 September 2014
+D: Sources: | House of Representatives (01.01.2015, 01.01.2017)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name
+K: Dates of election / renewal (from/to) | 20 September 2014
+K: Purpose of elections | Prime Minister John Key's National Party retained power, taking 60 seats in the 121-member House of Representatives (see note). The Labour Party, led by Mr. David Cunliffe, followed with 32 seats, whi
+K: Timing of election: Early elections | Expected date of next elections: Before 18 November 2017
+K: Number of seats at stake: 121* (full renewal) | *Including one overhang seat.

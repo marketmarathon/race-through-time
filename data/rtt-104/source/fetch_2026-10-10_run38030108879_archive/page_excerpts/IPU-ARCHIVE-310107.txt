@@ -1,0 +1,22 @@
+# IPU-ARCHIVE-310107
+# url: http://archive.ipu.org/wmn-e/arc/classif310107.htm
+# final url: http://archive.ipu.org/wmn-e/arc/classif310107.htm
+# fetched (UTC): 2026-10-10T06:12:34Z
+# HTTP 200; 37073 bytes; SHA-256 52e685b857a80d72b43c1fa4b6e8a05c9575ba9e067c6853df0830b2b9f608f2
+# title: ['Women in Parliaments: World Classification']
+# headings: ['Situation as of 31 January 2007', '189 country', 'descending order of the percentage of women in the lower or single House', 'New:', 'Rank', 'Country', 'Lower or single House', 'Upper House or Senate', 'Elections', 'Seats*', 'Women', '% W']
+# Table rows naming the test countries only.
+
+Rank | Country | Lower or single House | Upper House or Senate | Elections | Seats* | Women | % W | Elections | Seats* | Women | % W | 1 | Rwanda | 09 2003 | 80 | 39 | 48.8 | 09 2003 | 26 | 9 | 34.6
+2 | Sweden | 09 2006 | 349 | 165 | 47.3 | --- | --- | --- | ---
+39 | Mexico | 07 2006 | 500 | 113 | 22.6 | 07 2006 | 128 | 22 | 17.2
+40 | United Arab Emirates | 12 2006 | 40 | 9 | 22.5 | --- | --- | --- | ---
+61 | Sudan | 08 2005 | 450 | 80 | 17.8 | 08 2005 | 50 | 2 | 4.0
+" | Nepal | 01 2007 | 329 | 57 | 17.3 | --- | --- | --- | ---
+72 | Bangladesh 2 | 10 2001 | 345 | 52 | 15.1 | --- | --- | --- | ---
+78 | Guinea-Bissau | 03 2004 | 100 | 14 | 14.0 | --- | --- | --- | ---
+" | Japan | 09 2005 | 480 | 45 | 9.4 | 07 2004 | 242 | 35 | 14.5
+127 | Haiti | 02 2006 | 98 | 4 | 4.1 | 02 2006 | 30 | 4 | 13.3
+135 | Kuwait 4 | 06 2006 | 65 | 1 | 1.5 | --- | --- | --- | ---
+" | Saudi Arabia | 04 2005 | 150 | 0 | 0.0 | --- | --- | --- | ---
+* Figures correspond to the number of seats currently filled in Parliament 1 - South Africa: The figures on the distribution of seats do not include the 36 special rotating delegates appointed on an ad hoc basis, and all percentages given are therefore calculated on the basis of the 54 permanent seats. 2 - Bangladesh: In 2004, the number of seats in parliament was raised from 300 to 345, with the 

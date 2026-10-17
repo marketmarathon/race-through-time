@@ -1,0 +1,11 @@
+# IPU-OLD-NPL
+# url: https://www.ipu.org/parlement/NP
+# final url: https://www.ipu.org/parlement/NP
+# fetched (UTC): 2026-10-10T06:10:00Z
+# HTTP 200; 92856 bytes; SHA-256 75228b6af82a08c2db8fde0d8a386d3a5a15c1e0f2bb963255015ef5a617d36d
+# Short excerpts only (lines holding the searched words, with the line before and after).
+
+Bicameral | Last election | Mar 2026
+
+Contact us | Vacancies | IPU structure and governance
+

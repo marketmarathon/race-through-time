@@ -1,0 +1,23 @@
+# V3-cf9b4ee96099
+# url: https://data.ipu.org/election-summary/HTML/2073_10.htm
+# final url: https://data.ipu.org/election-summary/HTML/2073_10.htm
+# fetched (UTC): 2026-10-17T08:07:23Z
+# HTTP 200; 17906 bytes; SHA-256 942a2ad36dbdc72012ed5fa413f4f6124ff7f26dfcca1452abf0dd17161e84da
+# title: IPU PARLINE database: COSTA RICA (Asamblea Legislativa) ELECTIONS IN 2010
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 7 February 2010
+D: The 2010 elections were the first to be held under the new Electoral Code | passed by the Legislative Assembly on 29 July 2009. It notably reduced the amount of State funding for elections. By the next general election (due in 2014)
+D: up from the current 40 per cent. | In the previous elections held in February 2006
+D: took 17 seats. The Liberty Movement (PML) and the Social Christian Unity Party (PUSC) won six and five seats respectivel | In a referendum held in October 2007
+D: voters narrowly approved the Central American Free Trade Agreement (CAFTA) with the United States. President Arias' PLN  | while the PAC had opposed it. In November 2008
+D: who was awarded the Nobel Peace Prize in 1987 | announced that he would retire from politics when his term ended in May 2010. In June 2009
+D: Voter turnout | Round no 1 7 February 2010
+D: Sources: | - Tribunal Supremo de Elecciones (13.03.2010)
+D: - Tribunal Supremo de Elecciones (13.03.2010) | - Legislative Assembly (22.04.2010
+D: - Legislative Assembly (22.04.2010 | 22.03.2011)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Dates of election / renewal (from/to) | 7 February 2010
+K: Purpose of elections | Elections were held for all seats in the Legislative Assembly on the normal expiry of the members' term of office.
+K: Costa Rica will introduce absentee voting and a 50 per cent quota for women in the Legislative Assembly | up from the current 40 per cent.

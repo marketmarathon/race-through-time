@@ -1,0 +1,36 @@
+# V3-509267e1c7de
+# url: https://data.ipu.org/parliament/RS/RS-LC01/election/RS-LC01-E20220403/
+# final url: https://data.ipu.org/parliament/RS/RS-LC01/election/RS-LC01-E20220403/
+# fetched (UTC): 2026-10-17T08:14:05Z
+# HTTP 200; 176218 bytes; SHA-256 32267df1333f37475fd10347de8b9bfcb7f8fae180af8017021aa821af4efabc
+# title: Serbia National Assembly April 2022 Election | Election results | Serbia | IPU Parline: global data on national parliaments
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Serbia National Assembly April 2022 Election | Election results | Serbia | IPU Parline: global data on national parliaments
+D: View field in the data dictionary | 03 Apr 2022
+D: Due to several repeated elections (see note 1), the final results for the parliamentary elections were announced on 5 Ju | During election campaigning, the major parties focused on measures to fight against the COVID-19 pandemic and organized crime. The government ran on its record, citing high GDP growth (7.4%) in 2021 – the highest in Europe. The opposition accused the government of corruption. The 2022 elections were
+D: Note 2: | Elections were repeated at 54 polling stations on 16 April 2022 and one polling station on 28 April, 27 May, and 23 and 30 June 2022. They concern a village on Serbia's border with Kosovo where voting was cancelled three times due to irregularities, and once because of disagreements and a bomb alert
+D: 97 | Notes: In all, 97 women were elected to the 250-member National Assembly in the 2022 elections. However, one woman resigned before the newly elected National Assembly convened on 1 August. There were thus 96 women out of 249 members as at 3 August 2022.
+D: Notes: In all, 97 women were elected to the 250-member National Assembly in the 2022 elections. However, one woman resig | The final results of the April 2022 elections were announced on 5 July and the newly elected National Assembly held its first session on 1 August. Serbia was excluded from the Monthly ranking of women in national parliaments ( https://data.ipu.org/women-ranking ) until July 2022. The number of women
+D: Note on the parties or coalitions winning seats: | The distribution of seats above refers to the final election results announced by the Republic Electoral Commission on 5 July 2022. Elections were repeated at 54 polling stations on 16 April 2022 and one polling station on 28 April, 27 May, and 23 and 30 June 2022. They concern a village on Serbia's
+D: Sources | National Assembly (06.07.2022, 03.08.2022)
+D: http://www.parlament.gov.rs/national-assembly/national-assembly-in-numbers/gender-structure.1745.html | Republic Electoral Commission (07.07.2022)
+D: View field in the data dictionary | 01 Aug 2022
+D: View field in the data dictionary | 02 Aug 2022
+K: Select country and chamber | Parliaments
+K: Political systems: Presidential, Parliamentary, Presidential-Parliamentary, Monarchy, Communist, Transitional. | View field in the data dictionary
+K: The date when elections started and ended for directly or indirectly elected parliaments/chambers. The date of appointments for appointed parliaments/chambers. | View field in the data dictionary
+K: Date of dissolution of the outgoing legislature | Date at which the previous legislature (elected at the previous elections) was dissolved.
+K: Date at which the previous legislature (elected at the previous elections) was dissolved. | View field in the data dictionary
+K: Timing of election | Timing of election: Upon normal expiry; Early elections; Delayed elections
+K: Timing of election: Upon normal expiry; Early elections; Delayed elections | View field in the data dictionary
+K: Number of seats contested at the elections. Where the parliament/chamber is fully renewed, this number is usually identical to the statutory number of members. Where the parliament/chamber is partiall | View field in the data dictionary
+K: Scope of elections | Scope of elections: Full renewal; Partial renewal.
+K: Scope of elections: Full renewal; Partial renewal. | View field in the data dictionary
+K: Full renewal | Candidates
+K: The total number of male parliamentarians in this parliament/chamber following the election or renewal, regardless of their modes of designation. | View field in the data dictionary
+K: The total number of female parliamentarians in this parliament/chamber following the election or renewal, regardless of their modes of designation. | View field in the data dictionary
+K: The percentage is calculated by dividing the total number of women in this parliament/chamber by the current number of members. | View field in the data dictionary
+K: The number of members who are assuming their parliamentary mandate for the first time following the election or renewal, regardless of their mode of designation. | View field in the data dictionary
+K: The date when the newly elected parliament/chamber was convened for the first time. It may be different from the date when members were sworn in. | View field in the data dictionary
+K: The political party to which the Speaker belonged to at the moment of the election. In some parliaments, the Speaker suspends or relinquishes their party membership during their term in office and is  | View field in the data dictionary

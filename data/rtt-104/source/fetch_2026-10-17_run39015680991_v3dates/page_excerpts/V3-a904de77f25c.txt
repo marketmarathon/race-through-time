@@ -1,0 +1,30 @@
+# V3-a904de77f25c
+# url: https://data.ipu.org/election-summary/HTML/2277_07.htm
+# final url: https://data.ipu.org/election-summary/HTML/2277_07.htm
+# fetched (UTC): 2026-10-17T08:09:04Z
+# HTTP 200; 27305 bytes; SHA-256 6322079c75a672b2ede8dece4ba0d0ac75946bcc1cea7e936d1d31c0b5a4ce53
+# title: IPU PARLINE database: SENEGAL (Assemblée nationale) ELECTIONS IN 2007
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 3 June 2007
+D: Purpose of elections | Elections were held for an enlarged 150-member National Assembly. They were originally due to be held in 2006 but were postponed twice. Elections to the National Assembly had previously taken place on 29 April 2001.
+D: Elections were held for an enlarged 150-member National Assembly. They were originally due to be held in 2006 but were p | On 7 March 2007
+D: The elections were originally due to be held in 2006 | but were postponed by President Abdoulaye Wade. He argued that the country should save money to support the victims of the floods which had hit the suburbs of Dakar in August 2005. In December 2005
+D: members' terms were extended until the date of the joint parliamentary and presidential elections | subsequently set for February 2007. Opposition parties criticized the postponement
+D: insisting that President Wade's Senegalese Democratic Party (PDS) was trying to gain more time to prepare for parliament | The parliamentary elections set for February 2007 were again postponed when the Constitutional Court upheld an appeal against a presidential decree by two opposition parties. The Party for Independence and Labour (PIT) and the Socialist Party (PS) argued that the decree disproportionately allocated 
+D: indirect elections were held for 35 seats of the 100-member Senate | which had been re-established by the National Assembly on 31 January 2007. Seven parties were in contention.
+D: Note | On 12 January 2007
+D: On 12 January 2007 | the Constitutional Court invalidated the presidential decree 2006-1350 of 8 December 2006. The decree had allocated two or more seats to several constituencies (such as Dagana
+D: Voter turnout | Round no 1 3 June 2007
+D: Source: | - National Assembly (03.07.2007
+D: - National Assembly (03.07.2007 | 01.01.2010)
+D: Note on distribution of seats according to sex: | Twenty-seven women were elected. After the formation of the new Government on 19 June 2007
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Chamber name (generic / translated) | Assemblée nationale / National Assembly
+K: Related chamber (for bicameral parliaments) | Sénat / Senate
+K: Dates of election / renewal (from/to) | 3 June 2007
+K: Purpose of elections | Elections were held for an enlarged 150-member National Assembly. They were originally due to be held in 2006 but were postponed twice. Elections to the National Assembly had previously taken place on
+K: President Wade appointed the remaining 65 senators (including 36 women) | bringing the number of his allies in the Senate to 99.
+K: Convergence for Renewal and Citizenship (CRC) | 30'658
+K: Convergence for Renewal and Citizenship (CRC) | 1

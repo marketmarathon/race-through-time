@@ -1,0 +1,15 @@
+# V3-92c1bf67a45a
+# url: https://data.ipu.org/election-summary/HTML/2291_99.htm
+# final url: https://data.ipu.org/election-summary/HTML/2291_99.htm
+# fetched (UTC): 2026-10-17T08:09:18Z
+# HTTP 200; 8885 bytes; SHA-256 3b2ede462208fd2be425a9d5fa925f017363ba52a379a059cb85f7a2259fc0eb
+# title: SOUTH AFRICA: parliamentary elections National Assembly - Volksraad, 1999
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 2 June 1999
+D: Background and outcome of elections: | On 3 March 1999, President of the Republic Nelson Mandela announced to the Parliament that South Africa's second all-race general elections would be held on 2 June. Under the terms of the Constitution, the President could only officially set the election date after 30 April but Mr. Mandela said he h
+D: STATISTICS | Round no 1 (2 June 1999): Elections results
+K: Parliamentary Chamber: National Assembly - Volksraad | ELECTIONS HELD IN 1999
+K: Chamber: | Dates of elections / renewal (from/to):
+K: Dates of elections / renewal (from/to): | 2 June 1999
+K: Purpose of elections: | Elections were held for all the seats of the National Assembly on the normal expiry of the members' term of office.

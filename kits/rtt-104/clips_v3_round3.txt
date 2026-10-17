@@ -1,0 +1,2 @@
+config_rtt104_v3_clip_palette_c_6_0s_2016_2020.json
+config_rtt104_v3_clip_palette_c_12_0s_2016_2020.json

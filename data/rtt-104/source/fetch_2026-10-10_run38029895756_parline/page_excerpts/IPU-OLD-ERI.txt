@@ -1,0 +1,11 @@
+# IPU-OLD-ERI
+# url: https://www.ipu.org/parlement/ER
+# final url: https://www.ipu.org/parlement/ER
+# fetched (UTC): 2026-10-10T06:09:16Z
+# HTTP 200; 87159 bytes; SHA-256 af2cbed7bf0c38e72db3242dd8ac676c43d6b2697af807dec82ea39993bb79bd
+# Short excerpts only (lines holding the searched words, with the line before and after).
+
+Unicameral | Last election | Jan 1994
+
+Contact us | Vacancies | IPU structure and governance
+

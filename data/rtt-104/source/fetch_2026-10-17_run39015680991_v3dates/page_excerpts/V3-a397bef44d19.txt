@@ -1,0 +1,18 @@
+# V3-a397bef44d19
+# url: https://data.ipu.org/election-summary/HTML/2355_07.htm
+# final url: https://data.ipu.org/election-summary/HTML/2355_07.htm
+# fetched (UTC): 2026-10-17T08:10:03Z
+# HTTP 200; 35402 bytes; SHA-256 105cf4228a377a65c49485cea83066f66431e8c41a655d2e68475e3680f98903
+# title: 
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to): | 21 January 2007
+D: Background and outcome of elections: | The first parliamentary elections since the dissolution of the State Union of Serbia and Montenegro took place on 21 January 2007. President Boris Tadic had called early elections on 10 November 2006, shortly after the new Constitution was approved by referendum on 28 October.
+D: The first parliamentary elections since the dissolution of the State Union of Serbia and Montenegro took place on 21 Jan | In the last elections, which took place on 28 December 2003, when the Republic of Serbia was still part of the State Union of Serbia and Montenegro, the Serbian Radical Party (SRS) became the largest party in Parliament by securing 82 of the 250 seats. The centre-right Democratic Party of Serbia (DS
+D: The main campaign issues were the economy, the fight against corruption, accession to the EU and the future status of Ko | The DS pledged to further liberalize the economy and promote cooperation with the international community, including the International Criminal Tribunal for the former Yugoslavia (ICTY). Serbia's accession talks with the EU had been suspended in May 2006 due to its failure to arrest and hand over to
+D: As in 2003, no party secured an absolute majority. The SRS remained the largest party in Parliament, winning 81 seats. T | The newly elected National Assembly held its first session on 14 February 2007.
+D: STATISTICS | Round no 1 (21 January 2007): Election results
+D: - http://www.srbija.sr.gov.yu/ | - National Assembly (16.02.2007, 14.02.2008)
+K: Chamber: | Narodna skupstina
+K: Dates of election / renewal (from/to): | 21 January 2007
+K: Purpose of elections: | Elections were held for all seats in the National Assembly.

@@ -1,0 +1,22 @@
+# V3-a49b5b5bea96
+# url: https://data.ipu.org/election-summary/HTML/2113_07.htm
+# final url: https://data.ipu.org/election-summary/HTML/2113_07.htm
+# fetched (UTC): 2026-10-17T08:07:59Z
+# HTTP 200; 39816 bytes; SHA-256 bc7eb8f7dca16c10cff7fc4aa6309a4efc76712d8d66050817f7b325f406a4eb
+# title: IPU PARLINE database: FRANCE (Assemblée nationale) ELECTIONS IN 2007
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: BACKGROUND | Dates of election / renewal (from/to) (from/to) 10 June 2007
+D: Dates of election / renewal (from/to) (from/to) 10 June 2007 | 17 June 2007
+D: Voter turnout | Round no 1 10 June 2007
+D: Notes | Round no 2 17 June 2007
+D: Sources: | - Ministry of the Interior (13.06.2007
+D: - Ministry of the Interior (13.06.2007 | 19.06.2007
+D: 19.06.2007 | 01.01.2008
+D: 01.01.2008 | 22.02.2008
+D: 22.02.2008 | 01.01.2010)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Chamber name (generic / translated) | Assemblée nationale / National Assembly
+K: Related chamber (for bicameral parliaments) | Sénat / Senate
+K: Purpose of elections | Elections were held for all the seats in the National Assembly on the normal expiry of the members' term of office.

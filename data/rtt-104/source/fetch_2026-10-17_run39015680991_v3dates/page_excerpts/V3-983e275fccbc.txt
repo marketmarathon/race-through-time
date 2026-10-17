@@ -1,0 +1,40 @@
+# V3-983e275fccbc
+# url: https://files.dre.pt/1s/2019/03/06300/0176701769.pdf
+# final url: https://files.dre.pt/1s/2019/03/06300/0176701769.pdf
+# fetched (UTC): 2026-10-17T08:15:22Z
+# HTTP 200; 182234 bytes; SHA-256 00b2de88e109df8e0c94517bf32202d101eb42fe83aea5970d9702bd4e04c667
+# title: 
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Diário da República, 1.ª série — N.º 63 — 29 de março de 2019                                                            1767
+D: da Embaixada Fernando Demée de Brito para o cargo | de Chefe de Missão no Escritório de Representação de              Assinado em 11 de março de 2019.
+D: Portugal em Ramallah.                                             Publique-se. |   Assinado em 13 de março de 2019.                                O Presidente da República, MARCELO REBELO DE SOUSA.
+D:   Assinado em 13 de março de 2019.                                O Presidente da República, MARCELO REBELO DE SOUSA. |   Publique-se.                                                    Referendado em 27 de março de 2019.
+D:                                                                 O Ministro dos Negócios Estrangeiros, Augusto Ernesto |   Referendado em 27 de março de 2019.                           Santos Silva.
+D:    É nomeado, sob proposta do Governo, o ministro | plenipotenciário de 1.ª classe, José Frederico Viola de           Assinado em 11 de março de 2019.
+D:                                                                   O Presidente da República, MARCELO REBELO DE SOUSA. |   Assinado em 1 de março de 2019.
+D:   Assinado em 1 de março de 2019. |                                                                   Referendado em 27 de março de 2019.
+D:   O Presidente da República, MARCELO REBELO DE SOUSA.           O Ministro dos Negócios Estrangeiros, Augusto Ernesto |   Referendado em 27 de março de 2019.                           Santos Silva.
+D:    O Presidente da República decreta, nos termos do ar-           Segunda alteração à lei da paridade nos órgãos do pode | tigo 135.º, alínea a), da Constituição, o seguinte:             político, aprovada pela Lei Orgânica n.º 3/2006, de 21 de agosto
+D:                                                                                         Artigo 1.º |   Assinado em 11 de março de 2019.
+D:                                                                    A presente lei procede à segunda alteração à Lei Or- |   O Presidente da República, MARCELO REBELO DE SOUSA.           gânica n.º 3/2006, de 21 de agosto, que aprovou a Lei da
+D:   O Presidente da República, MARCELO REBELO DE SOUSA.           gânica n.º 3/2006, de 21 de agosto, que aprovou a Lei da |   Referendado em 27 de março de 2019.                           Paridade: estabelece que as listas para a Assembleia da
+D:  | 1768                                                           Diário da República, 1.ª série — N.º 63 — 29 de março de 2019
+D:                            Artigo 2.º                                                      Artigo 4.º |        Alteração à Lei Orgânica n.º 3/2006, de 21 de agosto                            Norma revogatória
+D:   Os artigos 1.º, 2.º, 4.º e 8.º da Lei Orgânica n.º 3/2006,        São revogados o n.º 3 do artigo 2.º e os artigos 5.º | de 21 de agosto, na sua redação atual, passam a ter a se-        e 7.º da Lei Orgânica n.º 3/2006, de 21 de agosto, na sua
+D:  |      1 — As listas de candidaturas apresentadas para a              1 — A Lei Orgânica n.º 3/2006, de 21 de agosto, com
+D:                                                                  blicação. |                                                                     Aprovada em 8 de fevereiro de 2019.
+D:   cada um dos sexos, arredondada, sempre que necessário,         Ferro Rodrigues. |   para a unidade mais próxima.                                      Promulgada em 21 de março de 2019.
+D:   lista. |      3 — (Revogado.)                                                Referendada em 22 de março de 2019.
+D:      1 — A não correção da lista de candidatura no prazo |   previsto na respetiva lei eleitoral determina a rejeição          Republicação da Lei Orgânica n.º 3/2006, de 21 de agosto,
+D:  | Diário da República, 1.ª série — N.º 63 — 29 de março de 2019                                                                  1769
+D:    3 — (Revogado.)                                                                               Artigo 2.º |    4 — (Revogado.)                                                                Alteração à Lei n.º 23/2007, de 4 de julho
+D:  |                             Artigo 3.º                                    Os artigos 88.º e 89.º da Lei n.º 23/2007, de 4 de julho,
+D:                     Notificação do mandatário |                                                                        alterada pelas Leis n.os 29/2012, de 9 de agosto, 56/2015,
+D:                                                                        alterada pelas Leis n.os 29/2012, de 9 de agosto, |                                                                        de 23 de junho, 63/2015, de 30 de junho, 59/2017, de
+D:                                                                        de 23 de junho, 63/2015, de 30 de junho, 59/2017, |    No caso de uma lista não observar o disposto na presente            31 de julho, 102/2017, de 28 de agosto, e 26/2018, de
+D:                                              112172967 |                                                                          Aprovada em 22 de fevereiro de 2019.
+D:                          de 29 de março |                                                                          Promulgada em 18 de março de 2019.
+D:    rização de residência para o exercício de atividade profissional, |    procedendo à sétima alteração à Lei n.º 23/2007, de 4 de julho,       O Presidente da República, MARCELO REBELO DE SOUSA.
+D:    procedendo à sétima alteração à Lei n.º 23/2007, de 4 de julho,       O Presidente da República, MARCELO REBELO DE SO |    que aprova o regime jurídico de entrada, permanência, saída e         Referendada em 21 de março de 2019.
+D:    A presente lei procede à sétima alteração à Lei                                            Brandão, de Braga | n.º 23/2007, de 4 de julho, que aprova o regime jurídico

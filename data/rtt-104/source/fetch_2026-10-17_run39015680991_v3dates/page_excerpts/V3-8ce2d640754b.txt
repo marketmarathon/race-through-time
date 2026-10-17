@@ -1,0 +1,19 @@
+# V3-8ce2d640754b
+# url: https://data.ipu.org/election-summary/HTML/2211_03.htm
+# final url: https://data.ipu.org/election-summary/HTML/2211_03.htm
+# fetched (UTC): 2026-10-17T08:08:15Z
+# HTTP 200; 8197 bytes; SHA-256 3eaf7e5e9efa1eadad2d7336a820eb358015601c87d04ace422b640b5d44bcee
+# title: MEXICO: parliamentary elections C�mara de Diputados, 2003
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 6 July 2003
+D: Background and outcome of elections: | Elections for all 500 seats in the lower house, the Chamber of Deputies, together with those for governorships in six of the country's 31 states were held on 6 July 2003.
+D: Elections for all 500 seats in the lower house, the Chamber of Deputies, together with those for governorships in six of | Opinion polls showed that whilst President Fox's approval ratings remained high, many voters across the country were disillusioned by his failure to fulfil the promises to create millions of jobs that he had made when he was elected in July 2000. Voters were also reported to be disappointed by his g
+D: According to official figures from the Federal Electoral Institute (IFE), the PRI garnered 34.4 per cent of the vote, wh | On 29 August 2003, Mr. Juan de Dios Castro Lozano (PAN) was elected as the new Speaker of the Chamber of Deputies.
+D: STATISTICS | Round no 1 (6 July 2003): Elections results
+K: Parliamentary Chamber: C�mara de Diputados | ELECTIONS HELD IN 2003
+K: Chamber: | C�mara de Diputados
+K: Dates of elections / renewal (from/to): | 6 July 2003
+K: Purpose of elections: | Elections were held for all the seats in the Chamber of Deputies on the normal expiry of the members' term of office.
+K: Elections were held for all the seats in the Chamber of Deputies on the normal expiry of the members' term of office. | Background and outcome of elections:
+K: According to official figures from the Federal Electoral Institute (IFE), the PRI garnered 34.4 per cent of the vote, while President Vicente Fox's National Action Party (PAN) suffered a major set-bac | On 29 August 2003, Mr. Juan de Dios Castro Lozano (PAN) was elected as the new Speaker of the Chamber of Deputies.

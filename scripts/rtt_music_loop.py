@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Race Through Time - find beat-aligned loop points in a music track (RTT-003 round 6; the method of DEC-074).
 
-    python scripts/rtt_music_loop.py TRACK.mp3 FILM_SECONDS FINAL_HOLD_SEC [--from-beat N] [--to-beat N]
+    python scripts/rtt_music_loop.py TRACK.mp3 FILM_SECONDS FINAL_HOLD_SEC [--from-beat N] [--to-beat N] [--grid N] [--one-join]
 
 The track itself is never committed (it lives only in the private repo). Steps:
   1. beat tracking (librosa) and section boundaries (checkerboard novelty on beat-synchronous chroma + MFCC);
@@ -11,6 +11,9 @@ The track itself is never committed (it lives only in the private repo). Steps:
   3. each pair is scored on the 8-beat crossfade window (4 beats each side, as scripts/rtt_mix_music.sh centres it):
      spectral match = mean cosine similarity of the log-mel frames around A and around B, aligned beat by beat
      (1.0 = identical), and level difference (dB RMS) between the two windows.
+IQ-24g: --grid sets the phrase grid (default 16 beats; 32 for a track tracked at double time) and --one-join keeps only
+pairs that scripts/rtt_mix_music.sh joins ONCE (it repeats A..B each time it reaches B, so one join needs
+B - A >= film - B); without it a pair can loop several times (RTT-003's second join fell in the final fade).
 Prints the beat grid, the sections and the ten best pairs; nothing else.
 """
 import argparse
@@ -22,6 +25,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('track'); ap.add_argument('film_sec', type=float); ap.add_argument('hold_sec', type=float)
     ap.add_argument('--from-beat', type=int, default=0); ap.add_argument('--to-beat', type=int, default=10**6)
+    ap.add_argument('--grid', type=int, default=16); ap.add_argument('--one-join', action='store_true')
     a = ap.parse_args()
     y, sr = librosa.load(a.track, sr=22050, mono=True)
     hop = 512
@@ -47,12 +51,14 @@ def main():
         return np.hstack(segs), rms[beats[i - 4]:beats[i + 4]]
     lo, hi = max(a.from_beat, 8), min(a.to_beat, len(bt) - 6)
     rows = []
-    for ia in range(lo - lo % 16, hi, 16):
+    g = a.grid
+    for ia in range(lo - lo % g, hi, g):
         if ia < lo: continue
-        for ib in range(ia + 32, hi, 16):
+        for ib in range(ia + 2 * g, hi, g):
             A, B = bt[ia], bt[ib]
             after = a.film_sec - B
             if after <= 0 or A + after > bt[hi]: continue
+            if a.one_join and after > B - A: continue
             wa, ra = window(ia); wb, rb = window(ib)
             za = (wa - wa.mean(0)) / (wa.std(0) + 1e-9); zb = (wb - wb.mean(0)) / (wb.std(0) + 1e-9)
             sim = float(np.mean(np.sum(za * zb, 0) / za.shape[0]))

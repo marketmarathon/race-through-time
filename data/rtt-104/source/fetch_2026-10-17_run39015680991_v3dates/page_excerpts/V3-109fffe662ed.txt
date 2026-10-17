@@ -1,0 +1,15 @@
+# V3-109fffe662ed
+# url: https://data.ipu.org/election-summary/HTML/2065_13.htm
+# final url: https://data.ipu.org/election-summary/HTML/2065_13.htm
+# fetched (UTC): 2026-10-17T08:07:20Z
+# HTTP 200; 11769 bytes; SHA-256 94ff98bac03d627fdac281282e4dd432f13f57e49c3f3fa69bd418b54625c9f4
+# title: IPU PARLINE database: CHINA (Quanguo Renmin Daibiao Dahui), ELECTIONS IN 2013
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 5 March 2013
+D: Sources: | National People's Congress (01.01.2015, 01.03.2017)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Dates of election / renewal (from/to) | 5 March 2013
+K: Purpose of elections | Renewal of the entire membership of the National People's Congress on the normal expiry of the members' term of office.
+K: Renewal of the entire membership of the National People's Congress on the normal expiry of the members' term of office. | Not applicable (indirect elections)

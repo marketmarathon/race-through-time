@@ -1,0 +1,127 @@
+# IPU-PARLINE-BGD
+# url: https://data.ipu.org/parliament/BD/
+# final url: https://data.ipu.org/parliament/BD/BD-LC01/
+# fetched (UTC): 2026-10-10T06:02:24Z
+# HTTP 200; 370266 bytes; SHA-256 d3624c5d85a23a7377f74cd44c3455e38f8666f0857a824a35dd2f68837aca3d
+# Short excerpts only (lines holding the searched words, with the line before and after).
+
+Bangladesh | Parliament | IPU Parline: global data on national parliaments | Skip to main content
+
+Français | Select country and chamber | Afghanistan - House of the People
+
+Afghanistan - House of Elders | Albania - Parliament
+
+Andorra - General Council | Angola - National Assembly | Antigua and Barbuda - House of Representatives
+
+Antigua and Barbuda - Senate | Argentina - Chamber of Deputies | Argentina - Senate
+
+Armenia - National Assembly | Australia - House of Representatives
+
+Austria - Federal Council | Azerbaijan - National Assembly | Bahamas - House of Assembly
+
+Bahrain - Shura Council | Bangladesh - Parliament | Barbados - House of Assembly
+
+Barbados - Senate | Belarus - House of Representatives | Belarus - Council of the Republic
+
+Belgium - House of Representatives | Belgium - Senate
+
+Belize - House of Representatives | Belize - Senate
+
+Benin - National Assembly | Benin - Senate
+
+Bhutan - National Assembly | Bhutan - National Council
+
+Bolivia (Plurinational State of) - Chamber of Deputies | Bolivia (Plurinational State of) - Chamber of Senators
+
+Bosnia and Herzegovina - House of Representatives | Bosnia and Herzegovina - House of Peoples
+
+Botswana - National Assembly | Brazil - Chamber of Deputies
+
+Brunei Darussalam - Legislative Council | Bulgaria - National Assembly | Burkina Faso - People’s Legislative Assembly
+
+Burundi - National Assembly | Burundi - Senate
+
+Cabo Verde - National Assembly | Cambodia - National Assembly
+
+Cambodia - Senate | Cameroon - National Assembly | Cameroon - Senate
+
+Canada - House of Commons | Canada - Senate
+
+Central African Republic - National Assembly | Chad - National Assembly
+
+Chad - Senate | Chile - Chamber of Deputies | Chile - Senate
+
+China - National People's Congress | Colombia - House of Representatives
+
+Comoros - Assembly of the Union | Congo - National Assembly | Congo - Senate
+
+Costa Rica - Legislative Assembly | Côte d'Ivoire - National Assembly | Côte d'Ivoire - Senate
+
+Croatia - Croatian Parliament | Cuba - National Assembly of the People's Power
+
+Cyprus - House of Representatives | Czechia - Chamber of Deputies
+
+Democratic People's Republic of Korea - Supreme People's Assembly | Democratic Republic of the Congo - National Assembly | Democratic Republic of the Congo - Senate
+
+Denmark - The Danish Parliament | Djibouti - National Assembly
+
+Dominica - House of Assembly | Dominican Republic - Chamber of Deputies
+
+Dominican Republic - Senate | Ecuador - National Assembly | Egypt - House of Representatives
+
+El Salvador - Legislative Assembly | Equatorial Guinea - Chamber of Deputies | Equatorial Guinea - Senate
+
+Eritrea - National Assembly | Estonia - The Estonian Parliament
+
+Eswatini - House of Assembly | Eswatini - Senate
+
+Ethiopia - House of Peoples' Representatives | Ethiopia - House of the Federation
+
+Fiji - Parliament | Finland - Parliament
+
+France - National Assembly | France - Senate
+
+Gabon - National Assembly | Gabon - Senate
+
+Gambia (The) - National Assembly | Georgia - Parliament
+
+Germany - Federal Council | Ghana - Parliament | Greece - Hellenic Parliament
+
+Grenada - House of Representatives | Grenada - Senate
+
+Guatemala - Congress of the Republic | Guinea - National Assembly
+
+Guinea-Bissau - Transitional National Council | Guyana - National Assembly
+
+Haiti - Chamber of Deputies | Haiti - Senate
+
+Honduras - National Congress | Hungary - National Assembly
+
+Iceland - Parliament | India - House of the People
+
+India - Council of States | Indonesia - House of Representatives | Iran (Islamic Republic of) - Islamic Parliament of Iran
+
+Iraq - Council of Representatives of Iraq | Ireland - House of Representatives | Ireland - Senate
+
+Israel - Parliament | Italy - Chamber of Deputies
+
+Italy - Senate | Jamaica - House of Representatives | Jamaica - Senate
+
+Japan - House of Representatives | Japan - Senate
+
+Jordan - House of Representatives | Jordan - Senate
+
+Kazakhstan - Senate | Kenya - National Assembly | Kenya - Senate
+
+Kiribati - House of Assembly | Kuwait - National Assembly
+
+Kyrgyzstan - Supreme Council | Lao People's Democratic Republic - National Assembly | Latvia - Parliament
+
+Lebanon - National Assembly | Lesotho - National Assembly
+
+Lesotho - Senate | Liberia - House of Representatives | Liberia - The Liberian Senate
+
+Libya - House of Representatives | Liechtenstein - Parliament
+
+Lithuania - Parliament | Luxembourg - Chamber of Deputies
+

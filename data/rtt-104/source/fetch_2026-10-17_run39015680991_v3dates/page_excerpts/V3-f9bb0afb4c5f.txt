@@ -1,0 +1,20 @@
+# V3-f9bb0afb4c5f
+# url: https://data.ipu.org/election-summary/HTML/2349_07.htm
+# final url: https://data.ipu.org/election-summary/HTML/2349_07.htm
+# fetched (UTC): 2026-10-17T08:09:57Z
+# HTTP 200; 14623 bytes; SHA-256 b65b724f22e69f84ad305ab7d4c8c2cbb065a27db07163633be73c63e2148062
+# title: IPU PARLINE database: VIET NAM (Quoc-Hoi) ELECTIONS IN 2007
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 20 May 2007
+D: Elections were held for all the seats in the National Assembly on the normal expiry of the members' term of office. | The 20 May 2007 elections
+D: The 20 May 2007 elections | which were called by the National Assembly Standing Committee on 29 January 2007
+D: which were called by the National Assembly Standing Committee on 29 January 2007 | were the first to be held under the country's new leadership elected by the National Assembly in June 2006.
+D: As in previous elections | fighting corruption and improving the education system were the main issues in 2007. Many candidates also argued the need for greater integration within the global economy. Viet Nam joined the World Trade Organization only in January 2007.
+D: Voter turnout | Round no 1 20 May 2007
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Dates of election / renewal (from/to) | 20 May 2007
+K: Purpose of elections | Elections were held for all the seats in the National Assembly on the normal expiry of the members' term of office.
+K: 31 self-nominated candidates (not nominated by State or party agencies) were allowed to stand for election. | In 2007
+K: as well as another 42 non-party members. Only one self-nominated candidate was elected. Prime Minister Nguyen Tan Dung was returned to office with the highest proportion of votes nationwide | 99.07 per cent.

@@ -1,0 +1,20 @@
+# V3-0ba886a6ad1a
+# url: https://data.ipu.org/election-summary/HTML/2333_06.htm
+# final url: https://data.ipu.org/election-summary/HTML/2333_06.htm
+# fetched (UTC): 2026-10-17T08:09:45Z
+# HTTP 200; 11911 bytes; SHA-256 937747897322293589e7c50e5fa3ce8bb625243d2320389240c2856cdbc5fc70
+# title: IPU PARLINE database: UNITED ARAB EMIRATES (Majlis Watani Itihadi) ELECTIONS IN 2006
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: BACKGROUND | Dates of election / renewal (from/to) (from/to) 16 December 2006
+D: Dates of election / renewal (from/to) (from/to) 16 December 2006 | 20 December 2006
+D: First elections were held for one half of the seats (20) in Federal National Council. | In December 2005
+D: Sheikh Khalifa bin Zayed Al Nuhayyan | announced the first ever parliamentary elections to the Federal National Council. Elections for half of the seats subsequently took place over three rounds in December 2006. Previously
+D: The National Elections Committee certified the final results of the three rounds on 25 December. | The newly elected members were sworn in on 12 February 2007 alongside the 20 appointed members. Mr. Abdul Aziz Abdulla Al-Ghurair was elected as the new Speaker of the Council.
+D: Voter turnout | Round no 1 (from/to) 16 December 2006
+D: Round no 1 (from/to) 16 December 2006 | 20 December 2006
+D: Not applicable: there are no political parties. | One woman was elected while eight others were appointed by the rulers of the constituent states (05.02.2007).
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Purpose of elections | First elections were held for one half of the seats (20) in Federal National Council.
+K: all 40 members of the Council were appointed for two-year terms by the rulers of the UAE's constituent states (emirates). | Only a tiny fraction of the country's population was eligible to vote in 2006. Of the approximately 825

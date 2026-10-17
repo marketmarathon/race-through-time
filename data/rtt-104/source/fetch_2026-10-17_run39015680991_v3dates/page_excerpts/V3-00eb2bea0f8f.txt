@@ -1,0 +1,17 @@
+# V3-00eb2bea0f8f
+# url: https://data.ipu.org/election-summary/HTML/2029_03.htm
+# final url: https://data.ipu.org/election-summary/HTML/2029_03.htm
+# fetched (UTC): 2026-10-17T08:06:51Z
+# HTTP 200; 11192 bytes; SHA-256 cc7b074378c8c4f7f2d650ed67023fa1f1aa53c5aa0f7d050f4cf7ec19797684
+# title: BELGIUM: parliamentary elections (Chambre des Repr�sentants - Kamer van volks-vertegenwoordigers - Abgeordnetenkammer , 2003)
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 18 May 2003
+D: Background and outcome of elections: | In the May 2003 elections, Prime Minister Guy Verhofstadt's centre-left coalition of six parties - the Flemish and French-speaking Liberal Parties (VLD and MR), Socialist Parties (SP and PS) and Greens (Agalev and Ecolo) - was primarily opposed by the Christian Social Parties (CV&P, Flemish and PSC,
+D: The electoral campaign mainly focused on economic issues like tax cuts. With economic growth sluggish and unemployment h | The Flemish far-right Vlaams Blok, which wants Flemish independence, campaigned for zero tolerance on crime and ending immigration. It expected to improve its score in Antwerp, the country's second city, where immigrants clashed with police in November 2002.
+D: The Vlaams Blok won the largest vote in its 25-year history winning 3 extra seats taking its tally to 18 seats. In the F | On 9 July 2003, the Liberal Party and the Socialist Party agreed to renew their coalition in government with Mr. Guy Verhofstadt as Prime Minister.
+D: STATISTICS | Round no 1 (18 May 2003): Elections results
+K: Parliamentary Chamber: Chambre des Repr�sentants - Kamer van volks-vertegenwoordigers - Abgeordnetenkammer | ELECTIONS HELD IN 2003
+K: Chamber: | Dates of elections / renewal (from/to):
+K: Dates of elections / renewal (from/to): | 18 May 2003
+K: Purpose of elections: | Elections were held for all the seats in the House of Representatives on the normal expiry of the members' term of office.

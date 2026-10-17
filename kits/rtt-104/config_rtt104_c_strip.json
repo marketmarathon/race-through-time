@@ -1,0 +1,7 @@
+{
+ "extends": "config_rtt104_base.json",
+ "zero_group": {
+  "style": "strip"
+ },
+ "notes": "Round-1 option (not chosen, DEC-634..DEC-644): Option c-2: the 0% group as a strip under the bottom board: a rule, '0% no women in parliament', then flag and name chips."
+}

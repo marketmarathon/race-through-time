@@ -1,0 +1,11 @@
+# IPU-OLD-AFG
+# url: https://www.ipu.org/parlement/AF
+# final url: https://www.ipu.org/parlement/AF
+# fetched (UTC): 2026-10-10T06:09:01Z
+# HTTP 200; 93197 bytes; SHA-256 626f7b0b325e863fa20cdfd7c304361b8e43c0abc1847f97c2299ce09a64b674
+# Short excerpts only (lines holding the searched words, with the line before and after).
+
+Bicameral | Last election | Oct 2018
+
+Contact us | Vacancies | IPU structure and governance
+

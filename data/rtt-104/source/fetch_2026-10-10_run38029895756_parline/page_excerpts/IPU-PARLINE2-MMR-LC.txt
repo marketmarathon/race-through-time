@@ -1,0 +1,19 @@
+# IPU-PARLINE2-MMR-LC
+# url: https://data.ipu.org/parliament/MM/MM-LC01/
+# final url: https://data.ipu.org/parliament/MM/MM-LC01/
+# fetched (UTC): 2026-10-10T06:09:47Z
+# HTTP 200; 141166 bytes; SHA-256 851b1ef48568c7420cfd24ce561b4d876c763d2931ab12c7cb26fb2c1d87112c
+# Short excerpts only (lines holding the searched words, with the line before and after).
+
+Political system | Political systems: Presidential, Parliamentary, Presidential-Parliamentary, Monarchy, Communist, Transitional. | View field in the data dictionary
+
+Transitional system | Compare data of this field
+
+IPU membership | Current membership status | View field in the data dictionary
+
+Share | Chamber is suspended | The Parliament of Myanmar, the Pyidaungsu Hluttaw (Assembly of the Union), comprising the Pyithu Hluttaw (House of Representatives) and the Amyotha Hluttaw (House of Nationalities), had its most recent elections in November 2020.
+
+The military staged a coup on 1 February 2021, the day on which the newly elected parliament was due to be sworn in. Consequently, there is currently no functioning parliament in Myanmar. | Historical data for IPU membership
+
+2022-03 | Transitional system | 2005-01
+

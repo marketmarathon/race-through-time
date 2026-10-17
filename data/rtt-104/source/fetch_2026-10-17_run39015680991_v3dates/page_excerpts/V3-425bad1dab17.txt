@@ -1,0 +1,27 @@
+# V3-425bad1dab17
+# url: https://data.ipu.org/election-summary/HTML/2211_12.htm
+# final url: https://data.ipu.org/election-summary/HTML/2211_12.htm
+# fetched (UTC): 2026-10-17T08:08:18Z
+# HTTP 200; 19732 bytes; SHA-256 30c8239945fe72160eb66a254a83de057138688e9aa2e3560ee95964a8daef2a
+# title: IPU PARLINE database: MEXICO (Cámara de Diputados), ELECTIONS IN 2012
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 1 July 2012
+D: The Institutional Revolutionary Party (PRI), which had ruled the country between 1929 and 2000, regained power after 12  | Mr. Enrique Peña Nieto, who led a coalition of the PRI and the Green Party of Mexico, won the presidential elections, promising to revive the economy and reduce drug violence. He is due to succeed President Calderón in December 2012.
+D: Mr. Enrique Peña Nieto, who led a coalition of the PRI and the Green Party of Mexico, won the presidential elections, pr | Date of previous elections: 5 July 2009
+D: Timing of election: Upon normal expiry | Expected date of next elections: July 2015
+D: Alternation of power: N/A (presidential system) | Date of the first session of the new parliament: 1 September 2012
+D: Voter turnout | Round no 1 1 July 2012
+D: Sources: | Congress of the Union (06.09.2012, 01.01.2014, 01.01.2015)
+K: Cámara de Diputados (Chamber of Deputies) | General information
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Chamber name (generic / translated) | Cámara de Diputados / Chamber of Deputies
+K: Cámara de Diputados / Chamber of Deputies | Related chamber (for bicameral parliaments)
+K: Related chamber (for bicameral parliaments) | Cámara de Senadores / Senate
+K: Dates of election / renewal (from/to) | 1 July 2012
+K: Purpose of elections | The Institutional Revolutionary Party (PRI), which had ruled the country between 1929 and 2000, regained power after 12 years in opposition. It remained the largest party in both chambers but failed t
+K: The Institutional Revolutionary Party (PRI), which had ruled the country between 1929 and 2000, regained power after 12 years in opposition. It remained the largest party in both chambers but failed t | Mr. Enrique Peña Nieto, who led a coalition of the PRI and the Green Party of Mexico, won the presidential elections, promising to revive the economy and reduce drug violence. He is due to succeed Pre
+K: Date of dissolution of the outgoing legislature: N/A | Timing of election: Upon normal expiry
+K: Timing of election: Upon normal expiry | Expected date of next elections: July 2015
+K: Number of seats at stake: 500 (full renewal) | Number of candidates: N/A

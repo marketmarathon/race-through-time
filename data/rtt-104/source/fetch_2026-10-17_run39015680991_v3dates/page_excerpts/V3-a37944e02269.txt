@@ -1,0 +1,23 @@
+# V3-a37944e02269
+# url: https://data.ipu.org/election-summary/HTML/2333_11.htm
+# final url: https://data.ipu.org/election-summary/HTML/2333_11.htm
+# fetched (UTC): 2026-10-17T08:09:47Z
+# HTTP 200; 17021 bytes; SHA-256 6aeb46e2186b500731e4cfba710bc290df3034e0f0a870059603bad9ce012a14
+# title: IPU PARLINE database: UNITED ARAB EMIRATES (Majlis Watani Itihadi), ELECTIONS IN 2011
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 24 September 2011
+D: Elections were held for one half of the seats (20) in Federal National Council. | In September 2011, the country held parliamentary elections for the second time. Members were indirectly elected by an enlarged Electoral College. At stake were half of the 40 seats in the Federal National Council (FNC).
+D: In September 2011, the country held parliamentary elections for the second time. Members were indirectly elected by an e | In the previous elections held in December 2006, only a tiny fraction of the country's population was eligible to vote. Of the approximately 825,000 UAE nationals, only 6,689 persons (0.8 % of the population), including 1,189 women, were selected by the country's rulers to be members of the Electora
+D: In the previous elections held in December 2006, only a tiny fraction of the country's population was eligible to vote.  | Following the constitutional amendments of December 2008, the term of the legislature was extended from two to four years. The then members thus served until February 2011 (see note). In March 2010, several FNC members argued that an electoral law should be enacted before their term ended so as to b
+D: On 16 February, President Khalifa bin Zayed Al Nahyan issued a decree amending the method used to select representatives | The impact of the Arab Spring, which saw the long-serving Presidents of Tunisia and Egypt toppled in January and February 2011 respectively, was limited in the UAE. On 8 March, some 130 activists - including academics and journalists - started an online petition calling for direct elections for all 
+D: The impact of the Arab Spring, which saw the long-serving Presidents of Tunisia and Egypt toppled in January and Februar | On 16 March, the second parliamentary elections were officially called for 24 September. The Electoral College published on 11 July was significantly larger than previously expected. It comprised 129,274 members, nearly 20 times more than in 2006. The new Electoral College includes about 12 per cent
+D: Voting took place without any major incident. In all, 27.75 per cent of the 129,274 members of the Electoral College cas | As in the 2006 elections, only one woman was elected. 27 unsuccessful candidates disputed the election results for various reasons. Some insisted that the election results be invalidated due to the low turnout, while others claimed that several voters had used other people's identity cards. The Nati
+D: Voter turnout | Round no 1 24 September 2011
+D: Sources: | Federal National Council (06.10.2011, 16.11.2011)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Dates of election / renewal (from/to) | 24 September 2011
+K: Purpose of elections | Elections were held for one half of the seats (20) in Federal National Council.
+K: On 15 November, the newly elected members were sworn in alongside the 20 appointed members. Mr. Mohammad Ahmad Al Mur was elected as its new Speaker. | Note on the 2008 constitutional amendments:
+K: One woman was elected while six others were appointed by the rulers of the constituent states. | Sources:

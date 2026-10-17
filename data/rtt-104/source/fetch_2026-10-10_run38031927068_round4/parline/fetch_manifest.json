@@ -1,0 +1,111 @@
+{
+ "fetched_by": "GitHub runner, .github/workflows/rtt104_sources.yml (FETCH_SET=parline)",
+ "files": [],
+ "pages": [
+  {
+   "bytes": 337447,
+   "content_type": "text/html; charset=UTF-8",
+   "excerpt_file": "page_excerpts/IPU-PARLINE2-PAK.txt",
+   "excerpts": 25,
+   "fetched_utc": "2026-10-10T06:43:54Z",
+   "final_url": "https://data.ipu.org/parliament/PK/PK-LC01/",
+   "id": "IPU-PARLINE2-PAK",
+   "sha256": "15f5e214774cda26613f78685feba7644d154abec4afaf4bb4990365b0c87d53",
+   "status": 200,
+   "text_chars": 35655,
+   "url": "https://data.ipu.org/parliament/PK/"
+  },
+  {
+   "bytes": 337447,
+   "content_type": "text/html; charset=UTF-8",
+   "excerpt_file": "page_excerpts/IPU-PARLINE2-PAK-LC.txt",
+   "excerpts": 25,
+   "fetched_utc": "2026-10-10T06:43:55Z",
+   "final_url": "https://data.ipu.org/parliament/PK/PK-LC01/",
+   "id": "IPU-PARLINE2-PAK-LC",
+   "sha256": "b6c9f9d394de6361b44571b25ce13d270c27dec0161423851dd91e71b94f6b13",
+   "status": 200,
+   "text_chars": 35655,
+   "url": "https://data.ipu.org/parliament/PK/PK-LC01/"
+  },
+  {
+   "bytes": 176301,
+   "content_type": "text/html; charset=UTF-8",
+   "excerpt_file": "page_excerpts/IPU-PARLINE2-PAK-LC-ELECTIONS.txt",
+   "excerpts": 16,
+   "fetched_utc": "2026-10-10T06:43:58Z",
+   "final_url": "https://data.ipu.org/parliament/PK/PK-LC01/election/PK-LC01-E20240208/",
+   "id": "IPU-PARLINE2-PAK-LC-ELECTIONS",
+   "sha256": "1cab56cfd8682469bb97b58d653a30b501f59bb001197dd2b523091d1d9d92aa",
+   "status": 200,
+   "text_chars": 22163,
+   "url": "https://data.ipu.org/parliament/PK/PK-LC01/elections/"
+  },
+  {
+   "bytes": 97398,
+   "content_type": "text/html; charset=UTF-8",
+   "excerpt_file": "page_excerpts/IPU-OLD-PAK.txt",
+   "excerpts": 2,
+   "fetched_utc": "2026-10-10T06:44:00Z",
+   "final_url": "https://www.ipu.org/parlement/PK",
+   "id": "IPU-OLD-PAK",
+   "sha256": "938808c3f6bf46654fc2e34771b28d4e58b5433f2750037c69a8e03f5183a3b6",
+   "status": 200,
+   "text_chars": 9289,
+   "url": "https://www.ipu.org/parlement/PK"
+  },
+  {
+   "bytes": 318352,
+   "content_type": "text/html; charset=UTF-8",
+   "excerpt_file": "page_excerpts/IPU-PARLINE2-EGY.txt",
+   "excerpts": 25,
+   "fetched_utc": "2026-10-10T06:44:03Z",
+   "final_url": "https://data.ipu.org/parliament/EG/EG-LC01/",
+   "id": "IPU-PARLINE2-EGY",
+   "sha256": "1c62342af16fa6fbf833abae676db66e9310980f85770b79b7914675cab2dabe",
+   "status": 200,
+   "text_chars": 33633,
+   "url": "https://data.ipu.org/parliament/EG/"
+  },
+  {
+   "bytes": 318352,
+   "content_type": "text/html; charset=UTF-8",
+   "excerpt_file": "page_excerpts/IPU-PARLINE2-EGY-LC.txt",
+   "excerpts": 25,
+   "fetched_utc": "2026-10-10T06:44:04Z",
+   "final_url": "https://data.ipu.org/parliament/EG/EG-LC01/",
+   "id": "IPU-PARLINE2-EGY-LC",
+   "sha256": "0bc65f7efeb10c334c1c67b476cf282f669d7be82d88de0466b5b6d3c4a00d63",
+   "status": 200,
+   "text_chars": 33633,
+   "url": "https://data.ipu.org/parliament/EG/EG-LC01/"
+  },
+  {
+   "bytes": 164573,
+   "content_type": "text/html; charset=UTF-8",
+   "excerpt_file": "page_excerpts/IPU-PARLINE2-EGY-LC-ELECTIONS.txt",
+   "excerpts": 10,
+   "fetched_utc": "2026-10-10T06:44:08Z",
+   "final_url": "https://data.ipu.org/parliament/EG/EG-LC01/election/EG-LC01-E20251110/",
+   "id": "IPU-PARLINE2-EGY-LC-ELECTIONS",
+   "sha256": "b12540f639f916b810409983e73ee96756275e0ebc4c372f56d8adc6a1e48272",
+   "status": 200,
+   "text_chars": 14775,
+   "url": "https://data.ipu.org/parliament/EG/EG-LC01/elections/"
+  },
+  {
+   "bytes": 97521,
+   "content_type": "text/html; charset=UTF-8",
+   "excerpt_file": "page_excerpts/IPU-OLD-EGY.txt",
+   "excerpts": 2,
+   "fetched_utc": "2026-10-10T06:44:10Z",
+   "final_url": "https://www.ipu.org/parlement/EG",
+   "id": "IPU-OLD-EGY",
+   "sha256": "a081710e06da09107ab862c36f6a2c849bc5dbe88ccb52fb18d0359dd033d524",
+   "status": 200,
+   "text_chars": 9494,
+   "url": "https://www.ipu.org/parlement/EG"
+  }
+ ],
+ "run_url": "https://github.com/marketmarathon/race-through-time/actions/runs/38031927068"
+}

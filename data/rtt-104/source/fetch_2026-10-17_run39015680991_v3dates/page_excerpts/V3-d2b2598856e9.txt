@@ -1,0 +1,19 @@
+# V3-d2b2598856e9
+# url: https://data.ipu.org/election-summary/HTML/2113_02.htm
+# final url: https://data.ipu.org/election-summary/HTML/2113_02.htm
+# fetched (UTC): 2026-10-17T08:07:58Z
+# HTTP 200; 14146 bytes; SHA-256 e602ead7d27e65677b315de483ccdf8bb1cc66c4d87218f6894b72c2023e3ee9
+# title: FRANCE: parliamentary elections Assembl�e nationale, 2002
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 9 June 2002
+D: 9 June 2002 | 16 June 2002
+D: Background and outcome of elections: | The French went to the polls on 9 and 16 June 2002 to elect the 577 new members of the National Assembly.
+D: The French went to the polls on 9 and 16 June 2002 to elect the 577 new members of the National Assembly. | The electoral campaign took place in the wake of the presidential elections held in April 2002 which resulted in Mr. Le Pen, leader of the National Front, faceing outgoing President Jacques Chirac in the second round. Mr. Jospin, outgoing Prime Minister and also a candidate, resigned as head of the 
+D: In the second round, turnout was down by more than three points when compared with the first round figure of 35.58%. The | The composition of the new government was announced on 17 June 2002. Mr. Jean-Pierre Raffarin, appointed Prime Minister after Mr. Chirac's victory in the presidential elections, was reconfirmed. Mr. Jean-Louis Debr� (UMP) was elected as Speaker of the National Assembly on 25 June 2002.
+D: STATISTICS | Round no 1 (9 June 2002): Elections results
+D: 25 246 045 | Round no 2 (16 June 2002): Elections results
+K: Parliamentary Chamber: Assembl�e nationale | ELECTIONS HELD IN 2002
+K: Chamber: | Assembl�e nationale
+K: Dates of elections / renewal (from/to): | 9 June 2002
+K: Purpose of elections: | Elections were held for all the seats in the National Assembly on the normal expiry of the members' term of office.

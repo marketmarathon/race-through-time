@@ -1,0 +1,30 @@
+# V3-9b778ea17571
+# url: https://data.ipu.org/election-summary/HTML/2329_06.htm
+# final url: https://data.ipu.org/election-summary/HTML/2329_06.htm
+# fetched (UTC): 2026-10-17T08:09:42Z
+# HTTP 200; 27874 bytes; SHA-256 809e4d54d4536ad7c0bbc4aff4c5f8f752474d3a1a4ad80ac3b9e8e4277cde09
+# title: IPU PARLINE database: UGANDA (Parliament) ELECTIONS IN 2006
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: BACKGROUND | Dates of election / renewal (from/to) (from/to) 23 February 2006
+D: Dates of election / renewal (from/to) (from/to) 23 February 2006 | 28 August 2006
+D: Elections were held for all directly elected seats. | On 23 February 2006
+D: known as the Movement | by President Yoweri Museveni. The multi-party system was re-introduced by a referendum in July 2005
+D: the principal opposition to President Museveni's National Resistance Movement (NRM) came from the Forum for Democratic C | led by Dr. Kizza Besigye. In November 2005 Dr. Besigye was charged with treason
+D: terrorism and rape | although a February 2006 court decision to adjourn trial proceedings allowed him to participate in the elections. Other parties contesting the poll included the Democratic Party (DP)
+D: lost their seats. | On 25 February 2006
+D: Mr. Museveni was sworn in as President for a third term. | The newly-elected Parliament held its first session on 18 May 2006 and re-elected Mr. Edward Kiwanuka Ssekandi of the NRM as its Speaker.
+D: The newly-elected Parliament held its first session on 18 May 2006 and re-elected Mr. Edward Kiwanuka Ssekandi of the NR | Elections were held on 28 August 2006 for Women District Representatives in 10 of the 11 new districts
+D: Voter turnout | Round no 1 23 February 2006
+D: Notes | Round no 2 28 August 2006
+D: there are 13 ex-officio members and 10 members representing the Uganda People's Defence Forces. | The statistics above include the results of the by-election held on 30 June 2006 to replace an elected NRM candidate who had passed away before taking the oath for members of parliament. Another NRM candidate won the seat in the by-election
+D: Elections were not held in one district | meaning that one seat for Women District Representatives remained vacant as at 10 January 2007.
+D: Sources: | - Parliament (03.04.2006; 07.06.2006; 13.06.2006
+D: - Parliament (03.04.2006; 07.06.2006; 13.06.2006 | 28.06.2006
+D: 28.06.2006 | 10.01.2007
+D: 10.01.2007 | 01.01.2007
+D: 01.01.2007 | 01.01.2010)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name
+K: Purpose of elections | Elections were held for all directly elected seats.
+K: and 193 in 69 of the district seats reserved for women. The NRM nominated candidates in all constituencies | of whom 16 were unopposed. The FDC backed a total of 174 candidates. The DP and the UPC endorsed about 80 candidates each

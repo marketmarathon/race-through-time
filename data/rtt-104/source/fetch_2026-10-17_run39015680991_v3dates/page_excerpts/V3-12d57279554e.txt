@@ -1,0 +1,17 @@
+# V3-12d57279554e
+# url: https://data.ipu.org/election-summary/HTML/2223_99.htm
+# final url: https://data.ipu.org/election-summary/HTML/2223_99.htm
+# fetched (UTC): 2026-10-17T08:08:23Z
+# HTTP 200; 5864 bytes; SHA-256 ec0904a1eb4f0de19d8f7550b2ed64856d3e9bbcbecc08ed57d74c05941af054
+# title: MOZAMBIQUE: parliamentary elections Assembleia da Republica, 1999
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 3 December 1999
+D: 3 December 1999 | 5 December 1999
+D: Background and outcome of elections: | President Joaquim Chissano, in power since 1986, and his Mozambican Liberation Front (FRELIMO) emerged as the winners of the presidential and parliamentary elections respectively, which were held from 3 to 5 December 1999. These were the second multiparty elections since the end of the civil war.
+D: As soon as the final results were announced, RENAMO questioned their validity, alleging electoral fraud. However, intern | On 18 January 2000, re-elected President of the Republic Chissano announced the composition of the new Government, headed by the outgoing Prime Minister, Pascoal Mocumbi.
+D: STATISTICS | Round no 1 (3 December 1999): Elections results
+K: Parliamentary Chamber: Assembleia da Republica | ELECTIONS HELD IN 1999
+K: Chamber: | Assembleia da Republica
+K: Dates of elections / renewal (from/to): | 3 December 1999
+K: Purpose of elections: | Elections were held for all seats in Parliament on the normal expiry of the members' term of office.

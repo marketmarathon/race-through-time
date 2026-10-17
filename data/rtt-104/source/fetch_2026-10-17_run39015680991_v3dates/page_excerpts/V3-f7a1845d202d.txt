@@ -1,0 +1,24 @@
+# V3-f7a1845d202d
+# url: https://data.ipu.org/election-summary/HTML/2325_13.htm
+# final url: https://data.ipu.org/election-summary/HTML/2325_13.htm
+# fetched (UTC): 2026-10-17T08:09:38Z
+# HTTP 200; 18927 bytes; SHA-256 aa851b7e993ad65de89703095b5466fd8cb4a737704aa8e2604c73f0c8fd34df
+# title: IPU PARLINE database: TURKMENISTAN (Mejlis), ELECTIONS IN 2013
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 15 December 2013
+D: Purpose of elections | The Democratic Party of Turkmenistan (DPT) remained the largest force in the first multi-party elections since the country's independence from the Soviet Union in 1991. Two parties and five public organizations  all loyal to President Gurbanguly Berdimuhamedov  took part in the elections. The Part
+D: The Democratic Party of Turkmenistan (DPT) remained the largest force in the first multi-party elections since the count | Until the adoption of the Political Parties Act by the Assembly in January 2012, the DPT (formerly the Communist Party) had been the sole political party in the country. The President had headed the party, until August 2013 when President Berdimuhamedov resigned as DPT chairman for the duration of h
+D: Until the adoption of the Political Parties Act by the Assembly in January 2012, the DPT (formerly the Communist Party)  | Date of previous elections: 14 December 2008
+D: Timing of election: Upon normal expiry | Expected date of next elections: December 2018
+D: Alternation of power: No | Date of the first session of the new parliament: 7 January 2014
+D: Voter turnout | Round no 1 15 December 2013
+D: Sources: | Assembly (01.01.2015)
+D: http://www.turkmenistan.gov.tm/_eng | Permanent Mission of Turkmenistan to the United Nations Office and other International Organizations in Geneva (20.01.2014)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Dates of election / renewal (from/to) | 15 December 2013
+K: Purpose of elections | The Democratic Party of Turkmenistan (DPT) remained the largest force in the first multi-party elections since the country's independence from the Soviet Union in 1991. Two parties and five public org
+K: Date of dissolution of the outgoing legislature: N/A | Timing of election: Upon normal expiry
+K: Timing of election: Upon normal expiry | Expected date of next elections: December 2018
+K: Number of seats at stake: 125 (full renewal) | Number of candidates: 283

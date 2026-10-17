@@ -1,0 +1,27 @@
+# V3-15955b13339a
+# url: https://data.ipu.org/election-summary/HTML/2011_15.htm
+# final url: https://data.ipu.org/election-summary/HTML/2011_15.htm
+# fetched (UTC): 2026-10-17T08:06:28Z
+# HTTP 200; 27827 bytes; SHA-256 42f28ed54da3bb7d4cfa182a0bba383ea11c292819273376a6a73f99030e0394
+# title: IPU PARLINE database: ARGENTINA (Cámara de Diputados), ELECTIONS IN 2015
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 25 October 2015
+D: President Cristina Fernández de Kirchner's Victory Front (FV) and its allies remained the largest force in parliament af | In the presidential elections, no candidates secured the required percentage of votes to be elected in the first round (45 percent of valid votes, or over 40 percent of votes and a 10-point lead over their nearest rival). In the run-off elections, held on 22 November, the Mayor of Buenos Aires, Mr. 
+D: The "Let's Change" coalition comprised PRO (Republican Proposal, led by Mr. Mauricio Macri), the Radical Civic Union (UC | Date of previous elections: 27 October 2013
+D: Timing of election: Upon normal expiry | Expected date of next elections: October 2017
+D: Alternation of power: Yes | Date of the first session of the new parliament: 10 December 2015
+D: Voter turnout | Round no 1 25 October 2015
+D: Sources: | Chamber of Deputies (28.12.2015, 01.01.2017)
+K: Cámara de Diputados (Chamber of Deputies) | General information
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Chamber name (generic / translated) | Cámara de Diputados / Chamber of Deputies
+K: Cámara de Diputados / Chamber of Deputies | Related chamber (for bicameral parliaments)
+K: Related chamber (for bicameral parliaments) | Senado / Senate
+K: Dates of election / renewal (from/to) | 25 October 2015
+K: Purpose of elections | President Cristina Fernández de Kirchner's Victory Front (FV) and its allies remained the largest force in parliament after the partial renewal of both houses. It won 59 of the 130 seats contested in 
+K: President Cristina Fernández de Kirchner's Victory Front (FV) and its allies remained the largest force in parliament after the partial renewal of both houses. It won 59 of the 130 seats contested in  | In the presidential elections, no candidates secured the required percentage of votes to be elected in the first round (45 percent of valid votes, or over 40 percent of votes and a 10-point lead over 
+K: Date of dissolution of the outgoing legislature: N/A | Timing of election: Upon normal expiry
+K: Timing of election: Upon normal expiry | Expected date of next elections: October 2017
+K: Number of seats at stake: 130 (partial renewal) | Number of candidates: Not available.

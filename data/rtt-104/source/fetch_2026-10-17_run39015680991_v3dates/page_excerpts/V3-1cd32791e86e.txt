@@ -1,0 +1,128 @@
+# V3-1cd32791e86e
+# url: https://www.cena.sn/rapports/hcct/Rapport_MEPE_SENEGAL_2021_version_electronique.pdf
+# final url: https://www.cena.sn/rapports/hcct/Rapport_MEPE_SENEGAL_2021_version_electronique.pdf
+# fetched (UTC): 2026-10-17T08:15:32Z
+# HTTP 200; 4759738 bytes; SHA-256 ef7b1c391cd8f83ad0fe8205c9269a9f18187263e7dc889fa405e73f43df591a
+# title: 
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: de 2017                                                                                              31 | 4.2.2 Les élections législatives du 30 juillet 2017                                                  32
+D: 4.2.2 Les élections législatives du 30 juillet 2017                                                  32 | 4.2.3 L’élection présidentielle du 24 février 2019                                                   35
+D: 8.1 Le droit et la possibilité de se présenter aux élections du point de vue juridique et réglementaire 150 | 8.1 1 Les élections législatives du 30 juillet 2017                                                     150
+D:  | 8.1.2 Élection présidentielle du 24 février 2019                                                  150
+D: présidentielle de 2019152 | 8.2.1 Élections législatives du 30 juillet 2017                                                   152
+D: 8.2.1 Élections législatives du 30 juillet 2017                                                   152 | 8.2.2 L’élection présidentielle du 24 février 2019                                                156
+D: un trait constant de la vie politique, notamment en période électorale. Ainsi, à la suite de l’élection | présidentielle du 24 février 2019, le Président de la République a lancé une invitation aux acteurs
+D: La mission d’évaluation a étudié ces modifications qui ont été demandées par les comités électoraux | concernés en février 2018. Dans leur majorité, elles semblaient dûment motivées par les défis objectifs
+D: de la vie politique, notamment en période électorale. Ainsi, à la suite de l’élection présidentielle du 24 | février 2019, le Président de la République a lancé une invitation aux acteurs politiques à participer à
+D: un dialogue national qui devrait aborder plusieurs questions dont le volet politique. Dans ce cadre, par | arrêté n° 014845 du 31 mai 2019, le Ministre de l’Intérieur a procédé à l’installation du « Cadre chargé
+D: indépendantes désignées sur proposition des acteurs politiques et de la société civile. Par la suite, | le chef de l’État a pris le décret 2019-1106 du 3 juillet 2019 portant création et fixant les règles de
+D:  | La durée de la mission a été fixée à trois mois et la mission a été déployée le 1er avril 2021. Il est
+D: Dans l’exécution de la mission, une collaboration a été établie avec la mission de l’audit du fichier (MAFE | 2021). Cette mission a été déployée du début février au début mai 2021. L’objectifs a été d’assurer une
+D: mise en œuvre des recommandations. Plus précisément, sept réunions ont été organisées entre avril | et juin 2021 dont la première étant la réunion de cadrage et la dernière, l’atelier de restitution des
+D: Des enquêtes de terrain ont été organisées avec l’appui de quatre enquêteurs/facilitateurs recrutés | à cet effet. Les enquêtes de terrain se sont déroulées entre le 6 et le 20 mai 2021 avec l’objectif de
+D:     de données au niveau des communes (Cf. annexe 5 : Courrier n°1955/MEPC/ANSD/DG/DSDS/ |     DRSD du 25 mai 2021).
+D: et, conformément à la constitution, Abdou Diouf, le premier ministre, est nommé au poste de chef de | l’état. Le Président Diouf accède au pouvoir en janvier 1981 dans un contexte économique très difficile
+D:       1998 par le Haut Conseil de l’Audiovisuel (HCA), la création du Conseil Constitutionnel (loi n.92- |       23 du 30 mai 1992), l’adoption d’un nouveau Code électoral en 1992 et, l’installation en 1997 de
+D:       l’opposition Abdoulaye Wade (PDS). Durant la présidence Wade, le processus de réforme politique |       se poursuivra avec l’adoption d’une nouvelle Constitution (22 janvier 2001) et l’évolution du statut
+D:       Autonome (CENA), grâce à un consensus entre les partis de la majorité et de l’opposition. L’exposé |       des motifs de la loi n.2005-07 du 11 mai 2005 portant création de la CENA précise que la CENA
+D:       en charge du suivi de la couverture médiatique des élections avec la création par la loi n.2006- |       04 du 4 janvier 2006 du Conseil National de Régulation de l’Audiovisuel (CNRA) qui se substitue,
+D:       au HCA. Une autre nouveauté est l’introduction de la parité absolue Homme-Femme par la loi |       n.2010 -11 du 28 mai 2010 instituant la parité absolue Homme-Femme. La parité s’applique
+D: Mahtar M’Bow, ancien Directeur général de l’UNESCO a été mise en place par le Décret n.2013-730 | du 28 mai 2013. Le rapport de la CNRI, fruit de « consultations citoyennes » impliquant les divers
+D: du 28 mai 2013. Le rapport de la CNRI, fruit de « consultations citoyennes » impliquant les divers | acteurs sociaux et politiques sénégalais est remis en décembre 2013 au Président de la République.
+D: Une partie des recommandations du rapport inspirera la réforme politique et institutionnelle adoptée | par Référendum le 20 mars 2016 et traduite dans la loi constitutionnelle n.2016-10 du 5 avril 2016
+D: par Référendum le 20 mars 2016 et traduite dans la loi constitutionnelle n.2016-10 du 5 avril 2016 | portant révision de la Constitution du 22 janvier de 2016.
+D: 2012 la participation n’a pas dépassé le 55%. Le Référendum sur les modifications de la Constitution du | 20 mars 2016 a vu la participation de 38,19% des électeurs.
+D:  | La loi n.2016-27 du 19 août 2016 portant refonte partielle des listes électorales dispose que cette
+D: opération est « couplée avec l’instruction de la carte d’identité biométrique à puce CEDEAO » instituée | par la loi n.2016-09 du 14 mars 2016. Le Sénégal a ainsi été le premier État membre de la Communauté
+D: confiée la révision exceptionnelle prévue avant chaque élection. La refonte partielle combinée avec la | révision exceptionnelle du fichier électoral s’est tenue du 4 octobre 2016 au 23 avril 2017.
+D:  | 4.2.2 Les élections législatives du 30 juillet 2017
+D:  | Le CCPE s’est réuni du 12 décembre 2017 au 2 février 2018. Au terme des travaux, la synthèse des résultats
+D:  | Le rapport final du CCPE a été soumis au Ministre de l'Intérieur par ses membres en février 2018. De la
+D: Il est à noter qu’une commission ad hoc sur la question du parrainage, opérant entre le 22 mai et le 13 | juin 2018, a été chargée d’étudier les incidences, dans le Code électoral, de la révision constitutionnelle
+D: ; il s’agissait en particulier de la mise en place d’un Comité de suivi des recommandations de l’audit | du fichier électoral. Ce comité a été instauré par arrêté ministériel n°008208 du 17 avril 2018 et a été
+D: du fichier électoral. Ce comité a été instauré par arrêté ministériel n°008208 du 17 avril 2018 et a été | officiellement installé le 15 mai 2018.
+D: L’objectif principal est de veiller à la mise en place des recommandations formulées dans le rapport final | de la mission d’audit du fichier électoral. Dans son rapport final datant du 30 janvier 2019, le Comité de
+D:  | 4 Rapport de la Mission d’audit du fichier électoral 2018, 26 février 2018, p. 11
+D: 4 Rapport de la Mission d’audit du fichier électoral 2018, 26 février 2018, p. 11 | 5 Comité de suivi des recommandations Issues de l’audit du fichier électoral, Rapport de fin de travaux, 30 janvier 2019.
+D:  | 4.2.3 L’élection présidentielle du 24 février 2019
+D: Le pouvoir exécutif est exercé par le Président de la République, élu au suffrage universel direct pour | un mandat ramené, depuis le référendum du 20 mars 2016, de sept (07) à cinq (05) ans et renouvelable
+D: exceptionnelle des listes électorales est décidée par décret ». En application de ce texte, le décret | n° 2018-476 du 20 février 2018 a institué une révision exceptionnelle des listes électorales en vue
+D: n° 2018-476 du 20 février 2018 a institué une révision exceptionnelle des listes électorales en vue | de l’élection présidentielle du 24 février 2019. La période de révision exceptionnelle de la liste des
+D: de l’élection présidentielle du 24 février 2019. La période de révision exceptionnelle de la liste des | électeurs a été fixée du 1er mars au 30 avril 2018. Des commissions administratives instituées à cet
+D:  | A la suite de l’élection de février 2019, le Président de la République a lancé une invitation aux acteurs
+D: politiques à participer à un dialogue national qui devrait aborder plusieurs questions dont le volet | politique. Dans ce cadre par arrêté n° 014845 du 31 mai 2019, le Ministre de l’Intérieur a procédé à
+D:  | et de la société civile7. Par la suite, le chef de l’État a pris le décret 2019-1106 du 3 juillet 2019 portant
+D:  | Dans le rapport spécial au Président de la République datant du 26 août 2020, il est mentionné
+D: La commission politique du dialogue national a convenu de faire procéder à un audit du fichier électoral. | Cette mission a eu lieu entre début février et début mai 2021 et a conclu dans son rapport final que : « le
+D: 8 Rapport spécial à monsieur le Président de la République, relatif aux travaux de la commission politique du dialogue n | 26 août 2020, p. 8-11
+D:     la Convention sur l’élimination de toutes les formes de discrimination à l’égard des femmes, |     adoptée à New York le 18 décembre 1979 (date de ratification : 5 février 1985) ;
+D:  |     la Charte africaine des droits de l’homme et des peuples, signée à Nairobi le 21 juin 1981(date
+D:     la Charte africaine des droits de l’homme et des peuples, signée à Nairobi le 21 juin 1981(date |     de ratification: 13 août 1982);
+D:       le Sénégal, enfin, est associé à la Convention pour la protection des personnes à l'égard du |       traitement automatisé des données à caractère personnel : Strasbourg, 28.1.1981 (STE n°108)
+D:     Charte africaine de la démocratie, des élections et de la gouvernance qui a été signée |     depuis le 15 décembre 2008.
+D: femmes du 18 décembre 1978, la Convention relative aux Droits de l’Enfant du 20 novembre 1989et la | Charte Africaine des Droits de l’Homme et des Peuples du 27 juin 1981».
+D:  | 1 Document de base faisant parti des rapports présentés par les États parties Sénégal 15 février 2011, GE11-46637(F)031111 041111 HRI/
+D: 2 Mamadou Badji, « Protection et justiciabilité des droits économiques, sociaux et culturels : l’exemple du droit sénéga | ciale », Séminaire d’experts de haut niveau sur les droits économiques, sociaux et culturels, Nantes du 5 au 7 septembre 2005.
+D: la République et surtout sur le plan des élections : 1) le Conseil National de Régulation de l’Audiovisuel | (CNRA), crée par la loi n° 2006-04 du 04 janvier 2006, qui a pour mission d’assurer la cohésion du
+D: 3 La complétude en interne s’analyse aussi entre la loi électorale et une décision d’une autorité administrative. Tel l’ | qui abroge une disposition d’un décret dans l’affaire : la circulaire n° 11705/mint/sp/dge du 6 décembre 2016 du ministre de l’intérieur. Alors
+D: qui abroge une disposition d’un décret dans l’affaire : la circulaire n° 11705/mint/sp/dge du 6 décembre 2016 du ministr | que la décision était prise supprimer la confirmation dans la loi n° 2016-27 du 19 août 2016 portant refonte partielle des listes électorales et
+D: déchéance des droits politiques ne semble pas avoir de limite temporelle clairement définie par la loi. Le Comité est à  | la décision du Conseil Constitutionnel du 20 janvier 2019 invalidant la candidature des deux principaux opposants politiques sans qu’une
+D: ratifié la Charte africaine de la démocratie,     la gouvernance qui a été signé depuis le 15 | des élections et de la gouvernance.               décembre 2008.
+D:  | Les comités électoraux, créés par la modification du code électoral en janvier 2017, jouent un rôle
+D:  | 8 Voir : CENA Rapport sur l’élection Présidentielle du 24 Février 2019, p.26
+D:  | 9 Loi n° 2016-27 du 19 août 2016 portant refonte partielle des listes électorales.
+D: 10 Voir l’exposé de motifs du projet de loi portant refonte partielle des listes électorales. | 11 Voir les articles 2 et 3 de la Loi n° 2016-27 du 19 août 2016 portant refonte partielle des listes électorales, et aussi l’exposé de motifs : «
+D:  | du 09 janvier 2017 a remplacé le concept de confirmation volontaire d'inscription par une reconduction
+D:  | Cette notion a été substantiellement modifiée par le Décret n° 2016-1536 du 29 septembre 2016 qui,
+D: Cette notion a été substantiellement modifiée par le Décret n° 2016-1536 du 29 septembre 2016 qui, | seulement une semaine avant le démarrage officiel de la refonte partielle (4 octobre 2016), a étendu
+D: des extraits de naissance accompagnés des certificats de résidence n'est devenue une pratique courante | qu'après la clarification apportée par les deux décrets du 19 décembre 2016: Décret N° 2016-2033 et
+D:  | 13 Article 1 de la Loi n° 2017-08 du 09 janvier 2017 modifiant la loi n° 2016-27 du 19 août 2016 portant refonte partielle des listes électorales
+D: 14 Livre blanc de la Coalition de partis de l’opposition : Wattu Senegaal, 2017, p.24 et 28. | 15 Décret N° 2016-2033 du 19 décembre 2016 modifiant le décret N°2016-1536 du 29 septembre 2016 portant application de la loi N° 2016-
+D: 15 Décret N° 2016-2033 du 19 décembre 2016 modifiant le décret N°2016-1536 du 29 septembre 2016 portant application de l | 09 du 14 Mars 2016 instituant une carte d’identité biométrique CEDEAO ;
+D: 09 du 14 Mars 2016 instituant une carte d’identité biométrique CEDEAO ; | Décret N° 2016-2034 du 19 décembre 2016 modifiant le décret N° 2016-1535 du 29 septembre 2016 portant application de la loi 2016-207
+D: Décret N° 2016-2034 du 19 décembre 2016 modifiant le décret N° 2016-1535 du 29 septembre 2016 portant application de la  | du 19 Août 2016 relative à la refonte partielle des listes électorales
+D:  | *Le Décret n.2016-1535 du 29 septembre 2016 portant application de la loi 2016-27 du 19 août portant
+D: de cette transformation était d'ouvrir formellement l'inscription à ceux qui auraient 18 ans au plus | tard le jour du scrutin. La révision exceptionnelle a été conduite du 13 février au 23 avril 2017 sur le
+D: tard le jour du scrutin. La révision exceptionnelle a été conduite du 13 février au 23 avril 2017 sur le | territoire national et du 13 février au 16 avril 2017 à l'étranger.18 Les CA de révision exceptionnelle
+D: nome (DECENA). | 17 Décret n° 2017-171 du 27 janvier 2017 portant fixation de la date des prochaines élections législatives.
+K: 10.3 Nomination des membres des bureaux de vote211 | 10.4 Personnel en service et ordres de missions211
+K: bien que c’est une exigence courante dans la plupart des codes électoraux, en raison de son timing et de | son impact spécifique sur les candidats admissibles, a été considérée par divers interlocuteurs comme
+K: de revoir le statut de la CENA sur le plan de la nomination des membres, de leur mandat et de son | renouvellement et sur l’exercice de ses pouvoirs.
+K:      BV ; les délais de nomination des membres des BV ; le délai de remise de la liste des électeurs |      par BV ; l’impression et la sécurisation des bulletins de vote, avec la question spécifique sur
+K:       3. La nomination d’une personnalité, d’une autorité ou d’un organe consensuel devant conduire |       le processus électoral ;
+K: la proclamation provisoire des résultats avec le pouvoir de validation de la nomination des membres | des commissions administratives et des bureaux de vote. Représentée à tous les niveaux ( notamment
+K: damnés se voyant privés de l’exercice de leurs droits civils et politiques et la durée de la suspension décès droits. » Recommandations du | La perpétuité de la privation du droit de vote des personnes condamnées pour des crimes a été critiquée par le Comité des droits de
+K:     ne devrait être que suspendu pour faciliter leur réinsertion sociale ultérieure. | 
+K: damnés par le Comité des droits de l'homme        droit de vote ne devrait être que suspendu pour | de l'ONU.                                         faciliter leur réinsertion sociale ultérieure.
+K:     y compris la nomination des membres des commissions administratives et des BV. | 
+K: de plusieurs mois. Les procédures de nomination de ces représentants ne sont pas réglementées par le | code électoral, mais seulement par les arrêtés des préfets et sous-préfets. Dans la pratique, les partis
+K:    et sans créer de coûts financiers supplémentaires, les procédures de nomination des |    représentants des candidats ou des listes de candidats devraient offrir plus de flexibilité
+K: en appoint, à cet effet. Sur le territoire national, le siège de ce type de commission est fixé par le Préfet ou le Sous-préfet. Elle a compétence | sur l'ensemble des circonscriptions électorales du ressort de l'autorité administrative de tutelle. » Article 3 du Décret n°2018-476.
+K: recommande une suspension de leur droit de vote pour une période raisonnable (Cf. recommandation | N°5). Concernant les personnes atteintes d'incapacité mentale, la MEPE recommande leur maintien dans
+K: De toute évidence, les campagnes ad hoc ne constituent pas une solution systématique. Le système | actuel repose largement sur les déclarations volontaires de décès par les membres de la famille du défunt.
+K: de Dakar et de Thiès constituent un vivier électoral important avec près de 40% de citoyens enregistés. | En revanche, les plus bas poids électoraux sont enregistrés au niveau des régions de Kédougou (0,9%)
+K: économiques autour du tourisme constituent des facteurs incitatifs à l’immigration dans cette région. | 
+K:    régions de Dakar, Thiès et Diourbel constituent un vivier électoral important avec près de 48,0% |    de citoyens enrôlés au plan national.
+K:                                                    y compris la nomination des membres des com- |                                                    missions administratives et des BV.
+K: représentants de l'autorité administrative        procédures de nomination des représentants des | ainsi qu'aux contrôleurs de la CENA, ce qu'ils    candidats ou des listes de candidats devraient of-
+K: des codes électoraux, mais en raison de son timing et de son impact spécifique sur les candidats | admissibles, elle a été considérée par divers interlocuteurs comme politiquement motivée.
+K: nel relatif au nombre de mandats consécutifs qu’un Président élu peut faire ; d) La nomination d’une personnalité, d’une autorité ou d’un | organe consensuel devant conduire le processus électoral ; e) Le mode de scrutin aux élections locales.
+K: Front de résistance nationale (FRN), demandant la suspension de son applicabilité. Dans le recours, ils | se sont opposés à la légalité de l'arrêté puisque l'authentification de la signature pour le parrainage
+K: que les parrains de remplacement ajoutés garantissent l'atteinte du quota minimal de 53,457. Le délai | extrêmement court de 48 heures présuppose que les candidats gardent en stock des parrains de réserve.
+K: régulariser leurs doublons externes mais un seul a réussi à atteindre le quota.67 Par conséquent, 7 | candidats ont passé la condition du parrainage. Cependant, dans sa décision sur la liste provisoire
+K: 92 https://www.jeuneafrique.com/1030643/politique/presidentielle-en-guinee-la-suspension-du-parrainage-des-candidats-fait-debat/ | 93 En France, en 2012, le nombre d'élus autorisés à soutenir une candidature à l'élection présidentielle était de 47413, mais en raison du
+K: 10.3 Nomination des membres des bureaux de vote - p.211 | 
+K: 10.3 Nomination des membres des bureaux de vote | 
+K: Si l'exigence de leur nomination n'est qu'implicite en ce qui concerne les élections présidentielles, | législatives, départementales et municipales, elle est explicite pour l'élection des hauts conseillers qui
+K: L'esprit de l'article R.10 du code électoral semble suggérer une nouvelle nomination des membres des | CEDA pour chaque élection ou référendum, cependant, dans la pratique, leur mandat n'est pas limité.
+K: stituer à celles-ci, constituent des rôles assez contraignants, voire souvent difficiles à appliquer | 
+K:     Le statut de la CENA mérite révision sur le plan de la nomination des membres, de leur |     mandat et de son renouvellement et sur l’exercice de ses pouvoirs.
+K:    grande indépendance de fait. Cela peut se faire par une nomination de leurs membres |    par une variété d'institutions et d'acteurs différents, y compris par exemple les différentes
+K: mandat (6 ans renouvelables par tiers). Le    nomination de leurs membres par une variété | fait de rester trop longtemps en fonction a   d'institutions et d'acteurs différents, y compris par
+K: à celles-ci, constituent des rôles assez      jouir de ces prérogatives telles énoncées dans ces | contraignants, voire souvent difficiles à     dites dispositions susvisées.
+K:    La MEPE recommande à la DAF de procéder à la nomination d’une personne compétente |    et indépendante (sans lien direct avec le traitement des données) pour agir comme
+K: responsable de traitement de données à             la nomination d’une personne compétente et in- | caractère personnel. Cependant, la DAF n’a         dépendante (sans lien direct avec le traitement des
+K:           la nomination des membres des commissions (inscription, révision, distribution, etc.) |          les délais d’inscription/de modification/de radiations sur les listes électorales
+K: - apprécier les délais de nomination des membres des BV ; | - apprécier le délai de remise de la liste des électeurs par BV Art L48 ;
+K: - Décret N°2019 1110 portant nomination du Président du Comité de Pilotage | - Textes constitutionnels du Sénégal, 2016 : Loi constitutionnelle n° 2016-10 du 05 avril 2016 portant

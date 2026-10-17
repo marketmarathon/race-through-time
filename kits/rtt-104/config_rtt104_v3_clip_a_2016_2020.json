@@ -1,0 +1,10 @@
+{
+ "extends": "config_rtt104_v3_base.json",
+ "kit_version": "rtt104_v3_clip_a_2016_2020",
+ "window": {"from": 2016, "to": 2020},
+ "v3": {"tag": {"rule": "a"}},
+ "lead_in_sec": 1.0,
+ "final_hold_sec": 2.0,
+ "closing_card": {"enabled": false},
+ "notes": "RTT-104 V3 round 1 clip (IQ-24d): 2016 to 2020 (the moves into 2017, 2018, 2019 and 2020) at 3 s per year, tag rule (a); no music, no closing card."
+}

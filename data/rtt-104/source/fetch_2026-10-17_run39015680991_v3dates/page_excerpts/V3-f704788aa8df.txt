@@ -1,0 +1,34 @@
+# V3-f704788aa8df
+# url: https://data.ipu.org/parliament/PT/PT-LC01/election/PT-LC01-E20151004/
+# final url: https://data.ipu.org/parliament/PT/PT-LC01/election/PT-LC01-E20151004/
+# fetched (UTC): 2026-10-17T08:13:51Z
+# HTTP 200; 177896 bytes; SHA-256 884bf48c3a2b0e0f5a37bdb7b77a5a896cc45ad2a6ed82fae0612b8d548c3a0b
+# title: Portugal Assembly of the Republic October 2015 Election | Election results | Portugal | IPU Parline: global data on national parliaments
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Portugal Assembly of the Republic October 2015 Election | Election results | Portugal | IPU Parline: global data on national parliaments
+D: View field in the data dictionary | 04 Oct 2015
+D: View field in the data dictionary | 22 Oct 2015
+D: The centre-right coalition Forward Portugal, comprising the Social Democratic Party (PPD/PSD led by Prime Minister Pedro | The 2015 elections were the first since the country received a 78 billion-euro bailout from the European Union (EU) and the International Monetary Fund (IMF) in 2011. In May 2014, the strengthening economy enabled Portugal to leave the bailout program. During the election campaign, the major parties
+D: 72 | Notes: 72 women were elected in the October 2015 elections. The number of women was increased to 80 after the formation of the second Government on 27 November 2015
+D: Other notes on the elections | Timing of election: Upon normal expiry. In cases of early dissolution of the Assembly of the Republic, the newly elected legislature completes the remaining period of the last session in progress of the outgoing legislature in addition to its statutory four-year term. The term of the Assembly of the
+D: Sources | Assembly of the Republic (15.10.2015, 28.10.2015, 12.11.2015, 03.12.2015)
+D: View field in the data dictionary | 23 Oct 2015
+D: View field in the data dictionary | 23 Oct 2015
+K: Select country and chamber | Parliaments
+K: Political systems: Presidential, Parliamentary, Presidential-Parliamentary, Monarchy, Communist, Transitional. | View field in the data dictionary
+K: The date when elections started and ended for directly or indirectly elected parliaments/chambers. The date of appointments for appointed parliaments/chambers. | View field in the data dictionary
+K: Date of dissolution of the outgoing legislature | Date at which the previous legislature (elected at the previous elections) was dissolved.
+K: Date at which the previous legislature (elected at the previous elections) was dissolved. | View field in the data dictionary
+K: Timing of election | Timing of election: Upon normal expiry; Early elections; Delayed elections
+K: Timing of election: Upon normal expiry; Early elections; Delayed elections | View field in the data dictionary
+K: Number of seats contested at the elections. Where the parliament/chamber is fully renewed, this number is usually identical to the statutory number of members. Where the parliament/chamber is partiall | View field in the data dictionary
+K: Scope of elections | Scope of elections: Full renewal; Partial renewal.
+K: Scope of elections: Full renewal; Partial renewal. | View field in the data dictionary
+K: Full renewal | Candidates
+K: The total number of male parliamentarians in this parliament/chamber following the election or renewal, regardless of their modes of designation. | View field in the data dictionary
+K: The total number of female parliamentarians in this parliament/chamber following the election or renewal, regardless of their modes of designation. | View field in the data dictionary
+K: The percentage is calculated by dividing the total number of women in this parliament/chamber by the current number of members. | View field in the data dictionary
+K: The number of members who are assuming their parliamentary mandate for the first time following the election or renewal, regardless of their mode of designation. | View field in the data dictionary
+K: The date when the newly elected parliament/chamber was convened for the first time. It may be different from the date when members were sworn in. | View field in the data dictionary
+K: The political party to which the Speaker belonged to at the moment of the election. In some parliaments, the Speaker suspends or relinquishes their party membership during their term in office and is  | View field in the data dictionary

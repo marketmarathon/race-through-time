@@ -1,0 +1,26 @@
+# V3-43a2e968f92a
+# url: https://data.ipu.org/election-summary/HTML/2355_08.htm
+# final url: https://data.ipu.org/election-summary/HTML/2355_08.htm
+# fetched (UTC): 2026-10-17T08:10:04Z
+# HTTP 200; 23046 bytes; SHA-256 6ec779067779196ff1eb4e991a6fe78d5a2af200e0dccbacea3cef421e59048e
+# title: IPU PARLINE database: SERBIA (Narodna skupstina) ELECTIONS IN 2008
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 11 May 2008
+D: Purpose of elections | Elections were held for all the seats in the National Assembly following premature dissolution of this body on 13 March 2008. Elections had previously taken place on 21 January 2007.
+D: Elections were held for all the seats in the National Assembly following premature dissolution of this body on 13 March  | On 13 March 2008
+D: President Boris Tadic dissolved the National Assembly and called early elections for 11 May | only 16 months after the previous elections were held in January 2007.
+D: the New Serbia (NS) party and the G17 Plus party. The coalition controlled 130 seats in all. | The coalition government was deeply divided over how to deal with Kosovo's declaration of independence on 17 February 2008. Prime Minister Vojislav Kostunica (DSS) said that recognition of Kosovo by some European Union (EU) Member States - including Britain
+D: Prime Minister Kostunica led the DSS-NS coalition. He and SRS Vice-President Tomislav Nikolic announced their intention  | In April 2008
+D: and the Coalition of Presevo Valley Albanians - were all able to meet the new requirement. | Kosovo's status and Serbia's relations with the EU were the main issues in the 2008 elections. Foreign Minister Vuk Jeremic (DS) said the elections were a referendum on Serbia's accession to the EU. On 29 April
+D: Voter turnout | Round no 1 11 May 2008
+D: Comments | Source: National Assembly (10.06.2008
+D: Source: National Assembly (10.06.2008 | 18.01.2012)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Dates of election / renewal (from/to) | 11 May 2008
+K: Purpose of elections | Elections were held for all the seats in the National Assembly following premature dissolution of this body on 13 March 2008. Elections had previously taken place on 21 January 2007.
+K: President Boris Tadic dissolved the National Assembly and called early elections for 11 May | only 16 months after the previous elections were held in January 2007.
+K: France and Germany - was illegal. He urged the suspension of ties with the EU. President Tadic argued that Kosovo's independence should not be linked to EU accession. The Pro-Europe parties in the coa | On 4 March
+K: Prime Minister Kostunica dissolved the government | claiming that he could no longer trust his coalition partners. The collapse of the coalition government triggered snap elections.
+K: the Serbian Renewal Movement (SPO) | the League of Social Democrats of Vojvodina (LSV)

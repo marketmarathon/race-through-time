@@ -1,0 +1,26 @@
+# V3-4a89f0cdb955
+# url: https://data.ipu.org/election-summary/HTML/2293_15.htm
+# final url: https://data.ipu.org/election-summary/HTML/2293_15.htm
+# fetched (UTC): 2026-10-17T08:09:24Z
+# HTTP 200; 25504 bytes; SHA-256 f5f61f8bf3db455b0b688fde51b9098a24b9f43d266aefe92bfec5528134724a
+# title: IPU PARLINE database: SPAIN (Congreso de los Diputados), ELECTIONS IN 2015
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 20 December 2015
+D: During the election campaigning, the major parties focused on the economy, austerity measures, unemployment, and the ind | On 22 January 2016, outgoing Prime Minister Rajoy declined the invitation by King Felipe VI to try to form a government. On 2 February, the King tasked PSOE leader Sanchez with forming a government. Mr. Sanchez subsequently announced that he would form a minority government comprising PSOE and Ciuda
+D: On 22 January 2016, outgoing Prime Minister Rajoy declined the invitation by King Felipe VI to try to form a government. | Date of previous elections: 20 November 2011
+D: Date of previous elections: 20 November 2011 | Date of dissolution of the outgoing legislature: 12 December 2015
+D: Timing of election: Upon normal expiry* | *The term of members ends four years after their election or on the day on which the Congress is dissolved. The term of the outgoing members, elected on 20 November 2011, expired on 20 November 2015. Elections were required to take place between 30 and 60 days after the end of the previous term of o
+D: *The term of members ends four years after their election or on the day on which the Congress is dissolved. The term of  | Expected date of next elections: January - February 2020
+D: Number of parties winning seats: 13 | Date of the first session of the new parliament: 13 January 2016
+D: Voter turnout | Round no 1 20 December 2015
+D: Sources: | Congress of Deputies (13.01.2016)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Chamber name (generic / translated) | Congreso de los Diputados / Congress of Deputies
+K: Related chamber (for bicameral parliaments) | Senado / Senate
+K: Dates of election / renewal (from/to) | 20 December 2015
+K: Purpose of elections | Prime Minister Mariano Rajoy's Popular Party (PP) failed to retain the majority in the 350-member Congress of Deputies although it took the majority of the 208 directly elected seats in the 266-member
+K: Prime Minister Mariano Rajoy's Popular Party (PP) failed to retain the majority in the 350-member Congress of Deputies although it took the majority of the 208 directly elected seats in the 266-member | During the election campaigning, the major parties focused on the economy, austerity measures, unemployment, and the independence movement in the north-eastern region of Catalonia. COMÚ leader Xavier 
+K: Timing of election: Upon normal expiry* | *The term of members ends four years after their election or on the day on which the Congress is dissolved. The term of the outgoing members, elected on 20 November 2011, expired on 20 November 2015. 
+K: Number of seats at stake: 350 (full renewal) | Number of candidates: 4,353 (2,263 men, 2,090 women)

@@ -1,0 +1,39 @@
+# IPU-PARLINE2-HTI-LC-ELECTIONS
+# url: https://data.ipu.org/parliament/HT/HT-LC01/elections/
+# final url: https://data.ipu.org/parliament/HT/HT-LC01/election/HT-LC01-E20150809/
+# fetched (UTC): 2026-10-10T06:09:34Z
+# HTTP 200; 180063 bytes; SHA-256 f92deb8778d3654208426400dc4a3b6cfdd4e9187bda7a7208b27caaab832318
+# Short excerpts only (lines holding the searched words, with the line before and after).
+
+Political system | Political systems: Presidential, Parliamentary, Presidential-Parliamentary, Monarchy, Communist, Transitional. | View field in the data dictionary
+
+IPU membership | Current membership status | View field in the data dictionary
+
+Historical data on women | Parliamentary mandate | Law-making, oversight, budget
+
+09 Aug 2015 to 25 Oct 2015 | Date of dissolution of the outgoing legislature | Date at which the previous legislature (elected at the previous elections) was dissolved.
+
+Delayed elections | Expected date of next elections | The expected date at which the next elections should take place, based on law or practice.
+
+Scope of elections | Scope of elections: Full renewal; Partial renewal. | View field in the data dictionary
+
+Full renewal | Candidates
+
+The second round of parliamentary elections took place on 25 October in parallel with the first round of the presidential elections. On 24 November, the Provisional Electoral Council (CEP) announced that Mr. Jovenel Moise (PHTK) and Mr. Jude Celestin of the Alternative League for the Progress and the Emancipation of Haiti (LAPEH) would advance to the second round scheduled to be held on 27 December. The CEP's announcement triggered violent protests by supporters of the third-placed former senator Jean-Charles Moise of the Pitit Dessalines faction, who accused the government of rigging the elections in favour of the PHTK candidate. | Haiti has not had a functioning parliament since 12 January
+
+Note 2: | The statutory number of members of the Chamber of Deputies has increased from 99 to 119 in accordance with the electoral law, gazetted on 2 March 2015, which initially provided for 118 single-member constituencies. On 13 March, the President issued a decree, splitting the constituency of Cerca La Source in two separate ones: Cerca La Source and Thomassique. The number of constituencies (and consequently the number of members in the Chamber of Deputies) is therefore 119. | Note 3:
+
+Note 4: | One-third of the 30-member Senate is renewed every two years. The term of 10 senators elected in 2006 expired in May 2012. In accordance with Article 231 of the 2008 electoral law, which was applied to the 2009 elections to the Senate, 10 senators elected in 2009 were due to serve until January 2014 . In December 2013, the electoral law was amended to allow those senators to remain in office until January 2015. | In March 2014, President Michel Martelly, Cardinal Chibly Langlois, Speaker Jacques Stevenson Thimoléon and Senate President Simon Dieuseul Desras signed the El Rancho Accord in view of holding new elections. In April, the outgoing Chamber of Deputies passed the amendments
+
+In December 2014, the President, the presidency of both chambers of Parliament and the head of Judiciary signed a tri-party accord. It would have extended the mandate of the members of Chamber of Deputies to 24 April 2015 and that of senators elected in 2009 (whose term was to expire in 2015) to 9 September 2015, on the condition that the electoral law was amended by 12 January 2015. After the outgoing Parliament failed to pass the amendments to the electoral law, the term of all 99 members of the Chamber of Deputies and 10 more senators expired. | Percentage of seats won by largest party or coalition
+
+Notes: No women were elected in the 2015 elections. 92 of the 119 members were sworn in in January 2016. | Delayed elections to the remaining seats were held in parallel with the regular renewal of the Senate in 2016. | As at 22 March 2017, there were three women out of 118 members. There are no women candidates for the remaining seat. The final number of women will thus remain at three.
+
+Total number of men after the election | The total number of male parliamentarians in this parliament/chamber following the election or renewal, regardless of their modes of designation. | View field in the data dictionary
+
+Total number of women after the election | The total number of female parliamentarians in this parliament/chamber following the election or renewal, regardless of their modes of designation. | View field in the data dictionary
+
+First-term parliamentarians | The number of members who are assuming their parliamentary mandate for the first time following the election or renewal, regardless of their mode of designation. | View field in the data dictionary
+
+Political party | The political party to which the Speaker belonged to at the moment of the election. In some parliaments, the Speaker suspends or relinquishes their party membership during their term in office and is considered as an independent member. | View field in the data dictionary
+

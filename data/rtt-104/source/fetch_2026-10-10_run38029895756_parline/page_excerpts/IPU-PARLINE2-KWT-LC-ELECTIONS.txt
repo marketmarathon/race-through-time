@@ -1,0 +1,13 @@
+# IPU-PARLINE2-KWT-LC-ELECTIONS
+# url: https://data.ipu.org/parliament/KW/KW-LC01/elections/
+# final url: https://data.ipu.org/parliament/KW/KW-LC01/election/KW-LC01-E20240404/
+# fetched (UTC): 2026-10-10T06:09:42Z
+# HTTP 200; 137299 bytes; SHA-256 91c4539727084b8a22d8de6d96cb6f75e7fd40da9252ef0cd64ec280a0b06a2b
+# Short excerpts only (lines holding the searched words, with the line before and after).
+
+Political system | Political systems: Presidential, Parliamentary, Presidential-Parliamentary, Monarchy, Communist, Transitional. | View field in the data dictionary
+
+IPU membership | Current membership status | View field in the data dictionary
+
+Share | Chamber is suspended | The newly elected National Assembly, which was due to hold its first session on 14 May 2024, was dissolved by the Emir. There is currently no functioning Parliament in Kuwait.
+

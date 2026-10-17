@@ -1,0 +1,23 @@
+# V3-1f2bb0819531
+# url: https://data.ipu.org/election-summary/HTML/2027_12.htm
+# final url: https://data.ipu.org/election-summary/HTML/2027_12.htm
+# fetched (UTC): 2026-10-17T08:06:50Z
+# HTTP 200; 18068 bytes; SHA-256 9a11ca3a96baf828091f32f0c72877d8a24e948771a037a407608cd8c6904039
+# title: IPU PARLINE database: BELARUS (Palata Predstaviteley), ELECTIONS IN 2012
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 23 September 2012
+D: Several opposition parties chose to participate, while others boycotted the elections. OSCE observers stated that the el | Date of previous elections: 28 September 2008
+D: Timing of election: Upon normal expiry | Expected date of next elections: September 2016
+D: Names of parties in government: N/A | Date of the first session of the new parliament: 18 October 2012
+D: Voter turnout | Round no 1 23 September 2012
+D: Sources: | IPU Group (04.10.2012, 01.01.2015)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Chamber name (generic / translated) | Palata Predstaviteley / House of Representatives
+K: Related chamber (for bicameral parliaments) | Soviet Respubliki / Council of the Republic
+K: Dates of election / renewal (from/to) | 23 September 2012
+K: Purpose of elections | The number of candidates representing political parties increased to 264, up from 59 in the 2008 elections. However, only five were elected, from three parties supporting President Alexander Lukashenk
+K: Date of dissolution of the outgoing legislature: Not applicable. | Timing of election: Upon normal expiry
+K: Timing of election: Upon normal expiry | Expected date of next elections: September 2016
+K: Number of seats at stake: 110 (full renewal renewal) | Number of candidates: 293

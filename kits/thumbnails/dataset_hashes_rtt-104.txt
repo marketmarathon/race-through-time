@@ -1,0 +1,3 @@
+# Thumbnails only (IQ-25): player inputs the episode's own dataset_hashes.txt does not list (the RTT-104 film workflows expect
+# exactly one output line there). Rebuilt and checked by tests/rtt104/check_v3_changes.py (race_rtt104_v3.json).
+f352d2019decaa2da2e0c7a6556a95d3747c2923a5631dd664bd1d735cbc239e  output  kits/rtt-104/race_rtt104_v3.json

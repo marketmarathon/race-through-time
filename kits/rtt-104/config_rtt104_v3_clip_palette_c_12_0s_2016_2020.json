@@ -1,0 +1,11 @@
+{
+ "extends": "config_rtt104_v3_palette_c.json",
+ "kit_version": "rtt104_v3_clip_palette_c_12_0s_2016_2020",
+ "window": {"from": 2016, "to": 2020},
+ "sec_per_year": 12.0,
+ "v3": {"tag": {"rule": "a", "hold_sec": 8.0}},
+ "lead_in_sec": 1.0,
+ "final_hold_sec": 2.0,
+ "closing_card": {"enabled": false},
+ "notes": "RTT-104 V3 round 3 clip (IQ-24f): 2016 to 2020 at 12.0 s per year, palette C (recommended), rule (a); tags fully shown 8.0 s (two-thirds of a year; capped at a year minus 1 s so they never overlap the next change) plus 0.3 s fades; no music, no closing card."
+}

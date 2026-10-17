@@ -1,0 +1,17 @@
+# V3-6a0b360de615
+# url: https://data.ipu.org/election-summary/HTML/2045_01.htm
+# final url: https://data.ipu.org/election-summary/HTML/2045_01.htm
+# fetched (UTC): 2026-10-17T08:07:01Z
+# HTTP 200; 6863 bytes; SHA-256 17ab59639d2687eb3f299f63c813d8767d8e5a4119ae17ce1036ba10b052df4a
+# title: BULGARIA: parliamentary elections Narodno Sobranie, 2001
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 17 June 2001
+D: Background and outcome of elections: | President Petar Stoyanov announced the date of parliamentary elections in March 2001. This was the first time since the end of the communist era in 1990 that Parliament and Government had completed their full four-year term.
+D: The Central Election Committee (CEC) registered a total of 65 parties and 11 independent candidates for the 2001 parliam | The electoral campaign officially started on 17 May and ended on 15 June 2001, and was mostly calm. Nevertheless, it was characterised by negative campaigning as well as allegations of possible vote-rigging and election fraud.
+D: The NDSV obtained 120 of the 240 seats in Parliament, one short of an outright majority. The centre-right Union of Democ | On 24 July 2001, the former King, Simeon of Saxe Coburg-Gotha was sworn in as Prime Minister. A week before, his party had struck a coalition deal with the Movement for Rights and Freedoms (MDL), the party representing the ethnic Turkish minority.
+D: STATISTICS | Round no 1 (17 June 2001): Elections results
+K: Parliamentary Chamber: Narodno Sobranie | ELECTIONS HELD IN 2001
+K: Chamber: | Narodno Sobranie
+K: Dates of elections / renewal (from/to): | 17 June 2001
+K: Purpose of elections: | Elections were held for all the seats in the National Assembly on the normal expiry of the members' term of office.

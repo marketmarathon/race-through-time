@@ -1,0 +1,17 @@
+# V3-2cf87d52141e
+# url: https://data.ipu.org/election-summary/HTML/2017_02.htm
+# final url: https://data.ipu.org/election-summary/HTML/2017_02.htm
+# fetched (UTC): 2026-10-17T08:06:41Z
+# HTTP 200; 7348 bytes; SHA-256 128a86bf890f586ff3e92a53d6f8c45c060f307a24a5b9fa212ec019d56a2b86
+# title: AUSTRIA: parliamentary elections Nationalrat, 2002
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 24 November 2002
+D: Purpose of elections: | Elections were held for all the seats in the National Council following the premature dissolution of this body in September 2002. General elections had previously been held on 3 October 1999.
+D: Background and outcome of elections: | At the beginning of September 2002, the governing coalition formed by the Freedom Party and the People's Party broke up. Its collapse became final when Vice Chancellor Susanne Riess-Passer of the Freedom Party resigned from the party leadership. Elections were only due late in 2003 but on 22 Septemb
+D: Although the People's Party scored its biggest electoral success in two decades, it did not gain enough votes to form a  | The National Council held its first sitting on 20 December 2002 and elected Dr. Andreas Khol as its new Speaker.
+D: STATISTICS | Round no 1 (24 November 2002): Elections results
+K: Parliamentary Chamber: Nationalrat | ELECTIONS HELD IN 2002
+K: Chamber: | Nationalrat
+K: Dates of elections / renewal (from/to): | 24 November 2002
+K: Purpose of elections: | Elections were held for all the seats in the National Council following the premature dissolution of this body in September 2002. General elections had previously been held on 3 October 1999.

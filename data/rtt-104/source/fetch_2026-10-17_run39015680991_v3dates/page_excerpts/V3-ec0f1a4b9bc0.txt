@@ -1,0 +1,18 @@
+# V3-ec0f1a4b9bc0
+# url: https://data.ipu.org/election-summary/HTML/2337_00.htm
+# final url: https://data.ipu.org/election-summary/HTML/2337_00.htm
+# fetched (UTC): 2026-10-17T08:09:54Z
+# HTTP 200; 7649 bytes; SHA-256 f0be1daa35aaaa95cd7e882d6c17a20b61c0effbfa418cdae85881861cbe203c
+# title: UNITED REPUBLIC OF TANZANIA: parliamentary elections Bunge - National Assembly, 2000
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 29 October 2000
+D: Background and outcome of elections: | Tanzania held its second multy-party general elections since independence on 29 October 2000. At stake was the presidency of the Union of the islands of Zanzibar and Pemba and mainland Tanganyika as well as the presidency of Zanzibar alone. Voters also elected representatives to the Union and Zanzib
+D: Tanzania held its second multy-party general elections since independence on 29 October 2000. At stake was the presidenc | This was the first time that Tanzanians went to the polls without the overpowering presence of former President Julius Nyerere, who passed away in October 1999. The incumbent President, Benjamin Mkapa, personally endorsed by Mr Nyerere in 1995, stood outside his mentor's shadow this time around.
+D: Results issued by the National Electoral Commission showed that the ruling Chama Cha Mapinduzi had won about 90 percent  | On 9 November 2000, Mr Benjamin Mkapa was sworn in for his second term as President. A few days later, on 14 November 2000, Mr. Pius Msekwa was sworn in as Speaker of the National Assembly for a new term.
+D: STATISTICS | Round no 1 (29 October 2000): Elections results
+K: Parliamentary Chamber: Bunge - National Assembly | ELECTIONS HELD IN 2000
+K: Chamber: | Dates of elections / renewal (from/to):
+K: Dates of elections / renewal (from/to): | 29 October 2000
+K: Purpose of elections: | Elections were held for the 232 elective seats of Parliament on the normal expiry of the members' term of office.
+K: More than 10 million people were registered to vote. Four candidates were in the race for the presidency while thirteen parties had nominated candidates to contest the parliamentary elections. Chama C | More than 200 international observers from the OAU and the Commonwealth monitored the elections. On the mainland, there were few fears that the elections would not be free and fair, but in Zanzibar th

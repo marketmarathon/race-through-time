@@ -1,0 +1,14 @@
+# V3-90bdb377a11f
+# url: https://data.ipu.org/election-summary/HTML/2111_99.htm
+# final url: https://data.ipu.org/election-summary/HTML/2111_99.htm
+# fetched (UTC): 2026-10-17T08:07:57Z
+# HTTP 200; 8453 bytes; SHA-256 31ca7d3484a7a3475094c186ea1cde5111a5e8a17d84e0f10340b82439324e67
+# title: FINLAND: parliamentary elections Eduskunta - Riksdagen, 1999
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 21 March 1999
+D: STATISTICS | Round no 1 (21 March 1999): Elections results
+K: Parliamentary Chamber: Eduskunta - Riksdagen | ELECTIONS HELD IN 1999
+K: Chamber: | Dates of elections / renewal (from/to):
+K: Dates of elections / renewal (from/to): | 21 March 1999
+K: Purpose of elections: | Elections were held for all the seats in Parliament on the normal expiry of the members' term of office.

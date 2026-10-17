@@ -1,0 +1,21 @@
+# V3-480ac47a9ab0
+# url: https://data.ipu.org/election-summary/HTML/2095_13.htm
+# final url: https://data.ipu.org/election-summary/HTML/2095_13.htm
+# fetched (UTC): 2026-10-17T08:07:46Z
+# HTTP 200; 22272 bytes; SHA-256 ffaae2fe7b36de99652d0a5e96889450c9cefb73429470c84110195f6ba9c345
+# title: IPU PARLINE database: ECUADOR (Asamblea Nacional), ELECTION IN 2013
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 17 February 2013
+D: President Correa was re-elected, with over 57 per cent of votes, promising to continue his social and economic programs. | Date of previous elections: 26 April 2009
+D: Date of previous elections: 26 April 2009 | Date of dissolution of the outgoing legislature: 9 May 2013
+D: Timing of election: Early elections | Expected date of next elections: April 2017
+D: Names of parties in government: Movement for a Proud and Sovereign Fatherland (PAIS) | Date of the first session of the new parliament: 14 May 2013
+D: Voter turnout | Round no 1 17 February 2013
+D: Sources: | National Assembly (08.05.2013, 01.01.2014)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Dates of election / renewal (from/to) | 17 February 2013
+K: Purpose of elections | President Rafael Correa's Movement for a Proud and Sovereign Fatherland (PAIS) and its allies increased its majority at the elections, taking 100 seats in the enlarged 137-member National Assembly. Mr
+K: Timing of election: Early elections | Expected date of next elections: April 2017
+K: Number of seats at stake: 137 (full renewal) | Number of candidates: Not available

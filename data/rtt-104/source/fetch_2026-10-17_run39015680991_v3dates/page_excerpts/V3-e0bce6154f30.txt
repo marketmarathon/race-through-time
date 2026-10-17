@@ -1,0 +1,18 @@
+# V3-e0bce6154f30
+# url: https://data.ipu.org/election-summary/HTML/2257_05.htm
+# final url: https://data.ipu.org/election-summary/HTML/2257_05.htm
+# fetched (UTC): 2026-10-17T08:08:56Z
+# HTTP 200; 28535 bytes; SHA-256 f0fa741ae160fe5ff96e9ea00e4531fe2e846f42ed4bdfbcf12955942695883b
+# title: IPU PARLINE database: PORTUGAL (Assembleia da Republica), Elections in 2005
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 20 February 2005
+D: Purpose of elections | Elections were held for all seats in the Assembly following its premature dissolution in December 2004. General elections had previously been held in March 2002.
+D: Elections were held for all seats in the Assembly following its premature dissolution in December 2004. General election | Prime Minister José Manuel Durão Barroso resigned on 6 July 2004, in order to submit his candidature for the office of President of the European Commission. He was succeeded by Mr. Pedro Santana Lopes, leader of the ruling Social Democratic Party (PSD). Mr. Santana Lopes formed a new Government, whi
+D: Prime Minister José Manuel Durão Barroso resigned on 6 July 2004, in order to submit his candidature for the office of P | On 10 December 2004, however, President Jorge Sampaio dissolved parliament and called parliamentary elections for 20 February 2005. Among the reasons behind the dissolution, he cited successive incidents and statements, contradictions and lack of coordination that had contributed to discrediting the
+D: The elections resultedin a major victory for the socialists and a heavy defeat for the conservatives. For the first time | After three years in the opposition, Mr. Jose Socrates, a former environment minister, became the country's fourth prime minister in three years. In March 2005 members of parliament were sworn in to serve a four-year term.
+D: Voter turnout | Round no 1 20 February 2005
+D: - BBC News | - IPU Group of Portugal (16.05.2005; 30.11.2005, 01.01.2008)
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Dates of election / renewal (from/to) | 20 February 2005
+K: Purpose of elections | Elections were held for all seats in the Assembly following its premature dissolution in December 2004. General elections had previously been held in March 2002.

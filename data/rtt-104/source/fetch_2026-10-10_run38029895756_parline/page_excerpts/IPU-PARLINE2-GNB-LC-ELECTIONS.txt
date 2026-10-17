@@ -1,0 +1,43 @@
+# IPU-PARLINE2-GNB-LC-ELECTIONS
+# url: https://data.ipu.org/parliament/GW/GW-LC01/elections/
+# final url: https://data.ipu.org/parliament/GW/GW-LC01/election/GW-LC01-E20251212/
+# fetched (UTC): 2026-10-10T06:09:25Z
+# HTTP 200; 161198 bytes; SHA-256 a9e07a07c1b7e18b8ba0da9a62b93eaeecf201d1d9b04b8476225c4f55b05fb5
+# Short excerpts only (lines holding the searched words, with the line before and after).
+
+Guinea-Bissau Transitional National Council December 2025 Election | Election results | Guinea-Bissau | IPU Parline: global data on national parliaments | Skip to main content
+
+Guinea-Bissau | Transitional National Council | Political system
+
+Political systems: Presidential, Parliamentary, Presidential-Parliamentary, Monarchy, Communist, Transitional. | View field in the data dictionary
+
+Transitional system | Compare data of this field
+
+IPU membership | Current membership status | View field in the data dictionary
+
+Historical data on women | Parliamentary mandate | Law-making, oversight, budget
+
+12 Dec 2025 | Date of dissolution of the outgoing legislature | Date at which the previous legislature (elected at the previous elections) was dissolved.
+
+Not applicable | Expected date of next elections | The expected date at which the next elections should take place, based on law or practice.
+
+Scope of elections | Scope of elections: Full renewal; Partial renewal. | View field in the data dictionary
+
+Full renewal | Results
+
+On 23 November 2025, parliamentary and presidential elections were held. | On 26 November 2025, before the election results were announced, the military (calling themselves the High Military Command for the Restoration of National Security and Public Order, ACM) announced that they had seized control of the country and suspended the electoral process. | On 27 November 2025, General Horta Nta Na Man, a close ally of ousted President Embaló, was sworn in as interim president for one year.
+
+On 8 December 2025, the ACM published the transitional political charter, which provides for a Transitional National Council (CNT). | The CNT, which took office on 12 December 2025, is composed of the following 65 members and the Speaker, Major-General Tomás Djassi:
+
+- 10 people designated by the president of the transitional republic; | - 15 representatives of the high military command;
+
+- 9 representatives of the regions. | The transitional political charter stipulates a 12-month transitional period (Article 19.1) and bars the interim president and interim prime minister from running in the next elections (Article 23). | On 13 January 2026, the CNT approved a new constitution. Under that constitution, the President of the Republic retains the power to dissolve Parliament, which will be renamed from the People's National Assembly to the National Assembly.
+
+On 21 January 2026, the transitional president issued decree No. 02/2026, setting a general election for 6 December 2026. | Members elected, by sex
+
+Sources | https://ang.gw/comando-militar-divulga-carta-politica-de-transicao/ | https://ang.gw/conselho-nacional-de-transicao-aprova-nova-constituicao-que-reforca-poderes-do-presidente-da-republica/
+
+First-term parliamentarians | The number of members who are assuming their parliamentary mandate for the first time following the election or renewal, regardless of their mode of designation. | View field in the data dictionary
+
+2025-12 | Transitional system | 2005-01
+

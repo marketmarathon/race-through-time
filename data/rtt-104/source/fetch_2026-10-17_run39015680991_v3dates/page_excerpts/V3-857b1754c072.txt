@@ -1,0 +1,31 @@
+# V3-857b1754c072
+# url: https://data.ipu.org/parliament/MZ/MZ-LC01/election/MZ-LC01-E20191015/
+# final url: https://data.ipu.org/parliament/MZ/MZ-LC01/election/MZ-LC01-E20191015/
+# fetched (UTC): 2026-10-17T08:13:13Z
+# HTTP 200; 166756 bytes; SHA-256 43be763d339b81684155a4051886c4e0c1e7835d86590c20207d2d664f6fb337
+# title: Mozambique Assembly of the Republic October 2019 Election | Election results | Mozambique | IPU Parline: global data on national parliaments
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Mozambique Assembly of the Republic October 2019 Election | Election results | Mozambique | IPU Parline: global data on national parliaments
+D: View field in the data dictionary | 15 Oct 2019
+D: View field in the data dictionary | 09 Oct 2024
+D: View field in the data dictionary | President Filipe Nyusi’s Mozambican Liberation Front (FRELIMO) won a two-thirds majority, increasing its share of seats from 144 to 184 in the 250-member Assembly of the Republic. The Mozambican National Resistance (RENAMO), the main opposition party now led by Mr. Ossufo Momade (see note 1), reduce
+D: President Filipe Nyusi’s Mozambican Liberation Front (FRELIMO) won a two-thirds majority, increasing its share of seats  | The 2019 elections were the first to be held after a permanent ceasefire agreement was signed between FRELIMO and RENAMO in August 2019 (see note 2). During election campaigning, FRELIMO promised to further develop the country. President Nyusi pledged to hasten the implementation of the ceasefire ag
+D: Note 1: | Mr. Momade succeeded the long-serving RENAMO leader, Mr. Afonso Dhlakama, who passed away in May 2018.
+D: Sources | Assembly of the Republic (17.01.2020)
+D: View field in the data dictionary | 13 Jan 2020
+D: View field in the data dictionary | 13 Jan 2020
+K: Select country and chamber | Parliaments
+K: Political systems: Presidential, Parliamentary, Presidential-Parliamentary, Monarchy, Communist, Transitional. | View field in the data dictionary
+K: The date when elections started and ended for directly or indirectly elected parliaments/chambers. The date of appointments for appointed parliaments/chambers. | View field in the data dictionary
+K: Date of dissolution of the outgoing legislature | Date at which the previous legislature (elected at the previous elections) was dissolved.
+K: Date at which the previous legislature (elected at the previous elections) was dissolved. | View field in the data dictionary
+K: Timing of election | Timing of election: Upon normal expiry; Early elections; Delayed elections
+K: Timing of election: Upon normal expiry; Early elections; Delayed elections | View field in the data dictionary
+K: Number of seats contested at the elections. Where the parliament/chamber is fully renewed, this number is usually identical to the statutory number of members. Where the parliament/chamber is partiall | View field in the data dictionary
+K: Scope of elections | Scope of elections: Full renewal; Partial renewal.
+K: Scope of elections: Full renewal; Partial renewal. | View field in the data dictionary
+K: Full renewal | Candidates
+K: The number of members who are assuming their parliamentary mandate for the first time following the election or renewal, regardless of their mode of designation. | View field in the data dictionary
+K: The date when the newly elected parliament/chamber was convened for the first time. It may be different from the date when members were sworn in. | View field in the data dictionary
+K: The political party to which the Speaker belonged to at the moment of the election. In some parliaments, the Speaker suspends or relinquishes their party membership during their term in office and is  | View field in the data dictionary

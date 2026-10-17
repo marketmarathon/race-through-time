@@ -1,0 +1,23 @@
+# V3-1207b56aca61
+# url: https://data.ipu.org/election-summary/HTML/2349_11.htm
+# final url: https://data.ipu.org/election-summary/HTML/2349_11.htm
+# fetched (UTC): 2026-10-17T08:09:58Z
+# HTTP 200; 18938 bytes; SHA-256 a21087e062de3e63ddaa5f680fd97ca566033cb84901cbb32c0046e3d5f2332f
+# title: IPU PARLINE database: VIET NAM (Quoc-Hoi), ELECTIONS IN 2011
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 22 May 2011
+D: Elections were held for all the seats in the National Assembly on the normal expiry of the members' term of office. | On 6 January 2011, the National Assembly Standing Committee set the date for general elections on 22 May. It agreed to the establishment of an election council, to be chaired by Speaker Nguyen Phu Trong, also the Communist Party General Secretary. At stake in the 2011 elections were 500 seats in the
+D: The Communist Party - the only legal party in the country - traditionally fields most candidates in elections. However,  | In the previous elections held in May 2007, the Communist Party won 450 of the 493 seats at stake. Forty-two non-party members and one self-nominated candidate were also elected. Prime Minister Nguyen Tan Dung was returned to parliament with the highest proportion of votes nationwide - 99.07 per cen
+D: In the previous elections held in May 2007, the Communist Party won 450 of the 493 seats at stake. Forty-two non-party m | The National Assembly had reportedly been gaining power in recent years. In June 2010, It rejected a US$ 56 billion bullet train project, following which the Speaker asked the Government to submit a more detailed plan to the Parliament. Many parliamentarians had reportedly questioned the economic vi
+D: The National Assembly had reportedly been gaining power in recent years. In June 2010, It rejected a US$ 56 billion bull | In January 2011, the Communist Party held its 11th National Congress, which was attended by over 1,300 delegates representing some 3.6 million party members in the country of 87 million inhabitants. It adopted a resolution to transform Viet Nam into an industrialized country by 2020. Viet Nam has on
+D: Voter turnout | Round no 1 22 May 2011
+D: Sources: | National Assembly (01.01.2014)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Dates of election / renewal (from/to) | 22 May 2011
+K: Purpose of elections | Elections were held for all the seats in the National Assembly on the normal expiry of the members' term of office.
+K: The Communist Party - the only legal party in the country - traditionally fields most candidates in elections. However, up to 10 per cent of the National Assembly members can be non-party members, who | In the previous elections held in May 2007, the Communist Party won 450 of the 493 seats at stake. Forty-two non-party members and one self-nominated candidate were also elected. Prime Minister Nguyen
+K: In 2011, 827 candidates, including 260 women, were vying for parliamentary seats. They included 118 non-party members and 15 self-nominated candidates. | Election campaigning was marked by banners hung across roadways extolling the virtues of Communist Party. Mr. Truong Tan Sang, a member of the Politburo and Central Committee of the Party, pledged to 
+K: According to the official results, over 99.51 per cent of the 63 million registered voters turned out at the polls. The successful candidates included 454 Communist Party members, 42 non-party members | On 21 July, the newly-elected National Assembly held its first session. On 23 July, it elected Deputy Prime Minister Nguyen Sinh Hung as its new Speaker.
+K: Self-nominated candidates | 4

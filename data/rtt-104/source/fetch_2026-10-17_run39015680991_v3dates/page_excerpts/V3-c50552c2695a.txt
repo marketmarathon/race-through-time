@@ -1,0 +1,36 @@
+# V3-c50552c2695a
+# url: https://data.ipu.org/parliament/BG/BG-LC01/election/BG-LC01-E20240609/
+# final url: https://data.ipu.org/parliament/BG/BG-LC01/election/BG-LC01-E20240609/
+# fetched (UTC): 2026-10-17T08:11:14Z
+# HTTP 200; 177601 bytes; SHA-256 d700601fee7aaed6d9ff7792cb21d603a9d7b57ecb52e3e5bddb059e4cccb444
+# title: Bulgaria National Assembly June 2024 Election | Election results | Bulgaria | IPU Parline: global data on national parliaments
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Bulgaria National Assembly June 2024 Election | Election results | Bulgaria | IPU Parline: global data on national parliaments
+D: View field in the data dictionary | 09 Jun 2024
+D: View field in the data dictionary | 19 Jun 2024
+D: View field in the data dictionary | 27 Oct 2024
+D: On 19 June, the newly elected National Assembly held its first session. The following day, it elected Ms. Raya Nazaryan  | The early elections in 2024 were triggered by the collapse in March 2024 of a coalition government, comprising GERB–UDF and We Continue the Change – Democratic Bulgaria (under the premiership of Mr. Nikolai Denkov from We Continue the Change). Following an impasse in forming a new government, on 9 A
+D: Sources | National Assembly (19.06.2024)
+D: National Assembly (19.06.2024) | Central Election Commission of Bulgaria (16.07.2024)
+D: View field in the data dictionary | 19 Jun 2024
+D: Raya Nazaryan (Female) | Date of birth: 16 Sep 1985
+D: View field in the data dictionary | 20 Jun 2024
+K: Select country and chamber | Parliaments
+K: Political systems: Presidential, Parliamentary, Presidential-Parliamentary, Monarchy, Communist, Transitional. | View field in the data dictionary
+K: The date when elections started and ended for directly or indirectly elected parliaments/chambers. The date of appointments for appointed parliaments/chambers. | View field in the data dictionary
+K: Date of dissolution of the outgoing legislature | Date at which the previous legislature (elected at the previous elections) was dissolved.
+K: Date at which the previous legislature (elected at the previous elections) was dissolved. | View field in the data dictionary
+K: Notes: Following amendments to the Constitution in 2023, the outgoing parliament is not dissolved and continues to function until the newly elected National Assembly is sworn in. | Timing of election
+K: Timing of election | Timing of election: Upon normal expiry; Early elections; Delayed elections
+K: Timing of election: Upon normal expiry; Early elections; Delayed elections | View field in the data dictionary
+K: Number of seats contested at the elections. Where the parliament/chamber is fully renewed, this number is usually identical to the statutory number of members. Where the parliament/chamber is partiall | View field in the data dictionary
+K: Scope of elections | Scope of elections: Full renewal; Partial renewal.
+K: Scope of elections: Full renewal; Partial renewal. | View field in the data dictionary
+K: Full renewal | Candidates
+K: The total number of male parliamentarians in this parliament/chamber following the election or renewal, regardless of their modes of designation. | View field in the data dictionary
+K: The total number of female parliamentarians in this parliament/chamber following the election or renewal, regardless of their modes of designation. | View field in the data dictionary
+K: The percentage is calculated by dividing the total number of women in this parliament/chamber by the current number of members. | View field in the data dictionary
+K: The number of members who are assuming their parliamentary mandate for the first time following the election or renewal, regardless of their mode of designation. | View field in the data dictionary
+K: The date when the newly elected parliament/chamber was convened for the first time. It may be different from the date when members were sworn in. | View field in the data dictionary
+K: The political party to which the Speaker belonged to at the moment of the election. In some parliaments, the Speaker suspends or relinquishes their party membership during their term in office and is  | View field in the data dictionary

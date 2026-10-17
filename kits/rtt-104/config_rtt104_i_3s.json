@@ -1,0 +1,6 @@
+{
+ "extends": "config_rtt104_base.json",
+ "sec_per_year": 3.0,
+ "notes": "Round-1 option (not chosen, DEC-634..DEC-644): Option i: 3 s per year (the base is 2 s).",
+ "move_frac": 0.6
+}

@@ -1,0 +1,13 @@
+# V3-14dcb1d71a30
+# url: https://data.ipu.org/election-summary/HTML/2095_08.htm
+# final url: https://data.ipu.org/election-summary/HTML/2095_08.htm
+# fetched (UTC): 2026-10-17T08:07:44Z
+# HTTP 200; 11049 bytes; SHA-256 b6bc1921cef7fd9baaa2c0fa435efb3aa5420221b883b19117cff5c420eccfc0
+# title: IPU PARLINE database: ECUADOR (Comisión Legislativa y de Fiscalización), Elections in 2008
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 29 October 2008
+D: Selection of the 76 members to the Legislative and Oversight Commission. | A new Constitution entered into force in 2008. It provides that the National Congress shall be replaced by a 124-member National Assembly. Pending the election of the National Assembly in April 2009, a Legislative and Oversight Commission, comprising the members of the Constituent Assembly (which ha
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Dates of election / renewal (from/to) | 29 October 2008
+K: Purpose of elections | Selection of the 76 members to the Legislative and Oversight Commission.

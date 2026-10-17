@@ -1,0 +1,15 @@
+# V3-81facbf1c3de
+# url: https://data.ipu.org/election-summary/HTML/2293_04.htm
+# final url: https://data.ipu.org/election-summary/HTML/2293_04.htm
+# fetched (UTC): 2026-10-17T08:09:20Z
+# HTTP 200; 27613 bytes; SHA-256 6794f73981134600a597d31ddb5bf8318a50f4b22a619836963ad2b1786e53ab
+# title: 
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to): | 14 March 2004
+D: Background and outcome of elections: | On 19 January 2004, both chambers of Parliament were dissolved paving the way for general elections on 14 March 2004.
+D: In the Senate, the results were slightly different, as the Popular Party retained the largest number of seats (102) whil | On 2 April 2004, the Parliament held its first sitting and elected Mr. Manuel Marín González as Speaker of the Congress of Deputies and Mr. Francisco Javier Rojo García as President of the Senate.
+D: STATISTICS | Round no 1 (14 March 2004): Election results
+K: Chamber: | Congreso de los Diputados
+K: Dates of election / renewal (from/to): | 14 March 2004
+K: Purpose of elections: | Elections were held for all the seats of the Congress of Deputies on the normal expiry of the members' term of office.

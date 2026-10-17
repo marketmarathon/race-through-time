@@ -1,0 +1,24 @@
+# V3-0c7c6605a404
+# url: https://data.ipu.org/election-summary/HTML/2303_06.htm
+# final url: https://data.ipu.org/election-summary/HTML/2303_06.htm
+# fetched (UTC): 2026-10-17T08:09:28Z
+# HTTP 200; 19768 bytes; SHA-256 49d37f948d9868456091bc0fb428746ab8b062a4b5848bbc4069850eed0e4cea
+# title: IPU PARLINE database: SWEDEN (Riksdagen) ELECTIONS IN 2006
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 17 September 2006
+D: Elections were held for all the seats in Parliament on the normal expiry of the members' term of office. | Sweden voted on 17 September 2006 to elect a new parliament.
+D: Sweden voted on 17 September 2006 to elect a new parliament. | In the last elections held in September 2002
+D: 33; and the Centre Party (CP) | 22 seats. In August 2004
+D: the Alliance for Sweden called for Swedish membership of NATO. The Alliance pledged to reform Sweden's cradle-to-grave w | In September 2006
+D: thus giving the Alliance for Sweden a narrow majority in the new parliament with 178 seats. | Prime Minister Göran Persson accepted defeat and resigned on 17 September 2006. On the following day
+D: Mr. Björn von Sydow | asked Mr. Reinfeldt to form a new government. Mr. Reinfeldt subsequently formed a centre-right coalition government with the parties that made up the Alliance for Sweden. His government took office on 6 October 2006.
+D: asked Mr. Reinfeldt to form a new government. Mr. Reinfeldt subsequently formed a centre-right coalition government with | The newly-elected Parliament held its first session on 2 October 2006 and elected Mr. Per Westerberg of the Moderate Party as its new Speaker.
+D: Voter turnout | Round no 1 17 September 2006
+D: Sources: | - Parliament (28.09.2006
+D: - Parliament (28.09.2006 | 01.01.2008
+D: 01.01.2008 | 01.01.2010)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Dates of election / renewal (from/to) | 17 September 2006
+K: Purpose of elections | Elections were held for all the seats in Parliament on the normal expiry of the members' term of office.

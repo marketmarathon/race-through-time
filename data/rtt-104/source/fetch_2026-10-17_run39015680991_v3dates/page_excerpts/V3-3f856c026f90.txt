@@ -1,0 +1,18 @@
+# V3-3f856c026f90
+# url: https://data.ipu.org/election-summary/HTML/2355_96.htm
+# final url: https://data.ipu.org/election-summary/HTML/2355_96.htm
+# fetched (UTC): 2026-10-17T08:10:08Z
+# HTTP 200; 6830 bytes; SHA-256 e1f9817995dd3df332510ed61671bb0c1d50c17378ee3ca3975bda34ff952271
+# title: YUGOSLAVIA: parliamentary elections Vece Gradjana, 1996
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 3 November 1996
+D: For the 138 seats at stake, there were 812 candidates: 607 in Serbia and 205 in Montenegro. Most were fielded by the rul | The campaign took place against a backdrop of serious economic crisis (especially unemployment) caused in no small part by the four-year war in Bosnia and Herzegovina and the resulting international embargo, lifted following the December 1995 Dayton Agreement ending the war. With regard to this pact
+D: STATISTICS | Round no 1 (3 November 1996): Elections results
+K: Parliamentary Chamber: Vece Gradjana | ELECTIONS HELD IN 1996
+K: Chamber: | Vece Gradjana
+K: Dates of elections / renewal (from/to): | 3 November 1996
+K: Purpose of elections: | Elections were held for all the seats in the Chamber of Citizens on the normal expiry of the members' term of office.
+K: Elections were held for all the seats in the Chamber of Citizens on the normal expiry of the members' term of office. | Background and outcome of elections:
+K: The 1996 elections for the Chamber of Citizens of the Federal Republic of Yugoslavia (FRY) were held simultaneously with those for municipal governments throughout the country and the legislature of t | For the 138 seats at stake, there were 812 candidates: 607 in Serbia and 205 in Montenegro. Most were fielded by the ruling Socialist Party of Serbia (SPS) of President of the Republic Slobodan Milose
+K: "Together" Coalition: Serbian Renewal Movement (SPO), Democratic Party (DS), Serbian Democratic Party (DSS), Civic Alliance (GSS) | Distribution of seats according to sex:

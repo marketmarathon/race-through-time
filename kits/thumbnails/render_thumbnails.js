@@ -94,10 +94,12 @@ function check(C, date, st) {
     const d = data[b.id], lab0 = st.labels.find(l => l.kind === 'value' && l.id === b.id),
           stats = st.labels.find(l => l.kind === 'stats' && l.id === b.id);           // RTT-002: " · 306 starts · 29.7%"
     const lab = lab0 && stats ? { text: (lab0.text + ' ' + stats.text).replace(/\s+/g, ' ').trim() } : lab0;
-    const row = { id: b.id, rank: rows.length + 1, figure: b.units, label: lab ? lab.text : null, data: d ? d.value : null, width_px: +b.rect.w.toFixed(2) };
+    const row = { id: b.id, rank: rows.length + 1, figure: b.units != null ? b.units : null, label: lab ? lab.text : null, data: d ? d.value : null, width_px: +b.rect.w.toFixed(2) };
     if (!d || !Number.isFinite(d.value)) { errs.push(b.id + ': no data value at ' + date); rows.push(row); continue; }
     const want = d.value * (K.units_per_value || 1);
-    if (Math.abs(b.units - want) > 1e-6 * Math.max(1, Math.abs(want))) errs.push(`${b.id}: bar figure ${b.units} != data ${want}`);
+    /* IQ-25: a page that exposes no figure on its bars (RTT-104 V3) is checked by its label and, below, its length against the data */
+    if (b.units == null) { b.units = want; row.figure_from = 'data (the page exposes no figure; length checked against it)'; }
+    else if (Math.abs(b.units - want) > 1e-6 * Math.max(1, Math.abs(want))) errs.push(`${b.id}: bar figure ${b.units} != data ${want}`);
     if (!lab) errs.push(b.id + ': no value label drawn');
     else if (K.type === 'f1_wins') {
       const m = /^(\d+) wins? · (\d+) starts? · ([0-9.]+)%$/.exec(lab.text);
@@ -127,16 +129,19 @@ function check(C, date, st) {
 /* draw `cfg` frame by frame to the landing frame of period C.at; returns the open player and what it drew */
 async function drawTo(C, cfg, data) {
   const { br, pg } = await rtt.openPlayer({ cfg, data, raster: RASTER, chrome: CHROME });
-  const info = await pg.evaluate(() => ({ dates: TL.events.map(e => e.date), start: TL.startFrame, qe: TL.quarterEndFrame || null,
-                                          raceFrames: RACE_FRAMES }));
+  /* IQ-25: a page with its own yearly timeline and no shared-player TL (RTT-104 V3, kits/rtt-104/player_rtt104_v3.html):
+     its periods are PLAN.years and a year's figures land on PLAN.landing[year]; every other episode takes the TL branch */
+  const info = await pg.evaluate(() => typeof TL !== 'undefined'
+    ? ({ dates: TL.events.map(e => e.date), start: TL.startFrame, qe: TL.quarterEndFrame || null, raceFrames: RACE_FRAMES })
+    : ({ dates: PLAN.years.map(String), landing: PLAN.years.map(y => PLAN.landing[y]), raceFrames: RACE_FRAMES }));
   const k = info.dates.indexOf(C.at);
   if (k < 0) { await br.close(); throw new Error(C.kit + ': no period ' + C.at + ' in ' + C.film_config); }
   if (k === info.dates.length - 1) { await br.close(); throw new Error(C.kit + ': ' + C.at + ' is the final table (not allowed: it spoils the ending)'); }
-  const target = info.qe ? info.qe[k] : (info.start[k + 1] - 1);
+  const target = info.landing ? info.landing[k] : info.qe ? info.qe[k] : (info.start[k + 1] - 1);
   for (let f = 0; f <= target; f++) await rtt.drawFrame(pg, f, cfg);
   for (let i = 0; i < (C.settle != null ? C.settle : 45); i++) await rtt.drawFrame(pg, target, cfg);
-  const st = await pg.evaluate(() => ({ bars: window.__BARS, labels: window.__LABELS, logos: window.__LOGOS, pics: window.__PICS,
-                                         flags: window.__FLAGS, date: window.__DATEBLOCK || null }));
+  const st = await pg.evaluate(() => ({ bars: window.__BARS, labels: window.__LABELS, logos: window.__LOGOS || [], pics: window.__PICS || [],
+                                         flags: window.__FLAGS || [], date: window.__DATEBLOCK || null }));   // IQ-25: [] on a page without pictures
   return { br, pg, target, k, st, total: info.raceFrames };
 }
 /* what makes up the board: every bar (figure, place, length, colour) and every name, value and stats label and picture on it */

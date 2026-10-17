@@ -1,0 +1,26 @@
+# V3-ce56213c7863
+# url: https://data.ipu.org/election-summary/HTML/2045_09.htm
+# final url: https://data.ipu.org/election-summary/HTML/2045_09.htm
+# fetched (UTC): 2026-10-17T08:07:03Z
+# HTTP 200; 25016 bytes; SHA-256 fe39a70bf9fd0a22dbc6ba2023b26d9d3dca9e31066a5b26a4e6a1864a82a5d0
+# title: IPU PARLINE database: BULGARIA (Narodno sabranie) ELECTIONS IN 2009
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 5 July 2009
+D: Elections were held for all the seats in the National Assembly on the normal expiry of the members' term of office. | On 28 April 2009
+D: On 28 April 2009 | President Georgi Parvanov announced that parliamentary elections would be held on 5 July. The July 2009 elections were the first to be held since the country's accession to the European Union (EU) in January 2007. They were also taking place under the revised electoral law. Previously
+D: and the rest under the proportional representation system. The original revision of the electoral system included raisin | In the previous elections held in July 2005
+D: 53 seats) and the Movement for Rights and Freedoms (DPS | an ethnic Turkish party which took 34 seats). In October 2006
+D: Mr. Parvanov (BSP) was re-elected in the run-off presidential elections | ahead of Mr. Volen Siderov of the ATAKA Party. In October 2008
+D: Twenty parties and coalitions took part in the 2009 elections. The parties in the outgoing government were challenged by | the Citizens for European Development of Bulgaria Party (GERB). The GERB was not represented in the outgoing National Assembly but won the most votes in the June 2009 elections to the European Parliament. Other major contenders included the ATAKA Party
+D: Voter turnout | Round no 1 5 July 2009
+D: Proportional seats | Seats Feb. 2010
+D: Note on the distribution of seats: | On 16 February 2010
+D: the RZS' share was reduced to nine seats | one fewer than the ten seats required to form a parliamentary group. RZS members therefore sit as independents. "Seats Feb. 2010" refers to the final composition of the parliament after the court decision.
+D: Source: | - National Assembly (16.07.2009
+D: - National Assembly (16.07.2009 | 16.02.2010
+D: 16.02.2010 | 08.11.2012)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Dates of election / renewal (from/to) | 5 July 2009
+K: Purpose of elections | Elections were held for all the seats in the National Assembly on the normal expiry of the members' term of office.

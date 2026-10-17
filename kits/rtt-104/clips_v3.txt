@@ -1,0 +1,2 @@
+config_rtt104_v3_clip_a_2016_2020.json
+config_rtt104_v3_clip_b_2016_2020.json

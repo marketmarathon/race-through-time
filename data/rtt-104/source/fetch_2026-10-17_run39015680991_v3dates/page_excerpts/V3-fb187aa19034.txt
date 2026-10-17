@@ -1,0 +1,16 @@
+# V3-fb187aa19034
+# url: https://data.ipu.org/election-summary/HTML/2121_02.htm
+# final url: https://data.ipu.org/election-summary/HTML/2121_02.htm
+# fetched (UTC): 2026-10-17T08:08:03Z
+# HTTP 200; 8639 bytes; SHA-256 6a7878bee9be6297200b08e1f686343bbda5e8d4701ada141a0ac0e2574523a8
+# title: GERMANY: parliamentary elections Deutscher Bundestag, 2002
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 22 September 2002
+D: Background and outcome of elections: | Germany's some 61 million voters were registered to vote on 22 September 2002 for the election of a new Parliament, and consequently a new government, for the next four years.
+D: The final results gave the SPD 251 seats, 16 less than in the outgoing legislature. The CDU increased its representation | A few weeks after the elections, the two parties in the ruling Red-Green coalition (the SPD and the Green Party) reached an agreement on the new coalition and on 22 October 2002, Chancellor Gerhard Schr�der's new cabinet was sworn in.
+D: STATISTICS | Round no 1 (22 September 2002): Elections results
+K: Parliamentary Chamber: Deutscher Bundestag | ELECTIONS HELD IN 2002
+K: Chamber: | Deutscher Bundestag
+K: Dates of elections / renewal (from/to): | 22 September 2002
+K: Purpose of elections: | Elections were held for all seats in the Bundestag on the normal expiry of the members' term of office.

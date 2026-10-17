@@ -1,0 +1,11 @@
+# IPU-OLD-EGY
+# url: https://www.ipu.org/parlement/EG
+# final url: https://www.ipu.org/parlement/EG
+# fetched (UTC): 2026-10-10T06:44:10Z
+# HTTP 200; 97521 bytes; SHA-256 a081710e06da09107ab862c36f6a2c849bc5dbe88ccb52fb18d0359dd033d524
+# Short excerpts only (lines holding the searched words, with the line before and after).
+
+Bicameral | Last election | Nov 2025
+
+Contact us | Vacancies | IPU structure and governance
+

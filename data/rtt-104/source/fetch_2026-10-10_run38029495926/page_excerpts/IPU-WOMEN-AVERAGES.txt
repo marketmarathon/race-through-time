@@ -1,0 +1,27 @@
+# IPU-WOMEN-AVERAGES
+# url: https://data.ipu.org/women-averages
+# final url: https://data.ipu.org/women-averages/?date_year=2026&date_month=08
+# fetched (UTC): 2026-10-10T06:02:16Z
+# HTTP 200; 153064 bytes; SHA-256 c7cfd62decef4de4b291f3149aa5d5bc441230108b2789fea156c392874ed160
+# Short excerpts only (lines holding the searched words, with the line before and after).
+
+Global and regional averages of women in national parliaments | IPU Parline: global data on national parliaments | Skip to main content
+
+Monthly ranking | Global and regional averages | Women Speakers
+
+By country | Global and regional averages | Data tools
+
+Monthly ranking | Global and regional averages | Women Speakers
+
+Historical Data | Global and regional averages of women in national parliaments | Each month, IPU publishes global and regional averages of the percentage of women in national parliaments. See the monthly ranking for the data used to compile the averages.
+
+The data in this table has been compiled by the Inter-Parliamentary Union on the basis of information provided by national parliaments. | Figures correspond to the number of seats filled in Parliament at the given time. These averages may evolve over time based on updates received from Parliaments. | See the regional groupings of countries used to make the regional averages.
+
+The regions in the table below are listed by percentage of seats held by women in lower and single chambers. | Global and regional averages for 1997-2018 are available on the IPU archive site .
+
+2019 | Averages as of 1st August 2026 | View monthly ranking
+
+CSV | Global averages | Lower chamber and unicameral
+
+CSV | Regional averages | Region
+

@@ -1,0 +1,18 @@
+# V3-aad0c3640792
+# url: https://data.ipu.org/election-summary/HTML/2037_02.htm
+# final url: https://data.ipu.org/election-summary/HTML/2037_02.htm
+# fetched (UTC): 2026-10-17T08:06:56Z
+# HTTP 200; 8196 bytes; SHA-256 4f817819aff081cc949b3df7193a3f72cefb53f3a4bdc4e37e4dcf174be573e7
+# title: BOLIVIA: parliamentary elections C�mara de Diputados, 2002
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 30 June 2002
+D: Background and outcome of elections: | On 30 June 2002, Bolivians went to the polls to choose their next President and elect a new Congress.
+D: The conservative Nationalist Revolutionary Movement (MNR) won 36 seats in the Chamber of Deputies and 11 in the Senate,  | On 2 August 2002, Ms. Mirtha Quevedo (MNR) was elected Speaker of the Chamber of Deputies and Mr. Guido A�ez (MIR) President of the Senate. Two days after, on 4 August 2002 a combined session of both chambers of the Congress duly elected Mr Gonzalo Sanchez de Lozada (MNR) as new President.
+D: STATISTICS | Round no 1 (30 June 2002): Elections results
+K: Parliamentary Chamber: C�mara de Diputados | ELECTIONS HELD IN 2002
+K: Chamber: | C�mara de Diputados
+K: Dates of elections / renewal (from/to): | 30 June 2002
+K: Purpose of elections: | Elections were held for all the seats in the Chamber of Deputies on the normal expiry of the members' term of office.
+K: Elections were held for all the seats in the Chamber of Deputies on the normal expiry of the members' term of office. | Background and outcome of elections:
+K: The conservative Nationalist Revolutionary Movement (MNR) won 36 seats in the Chamber of Deputies and 11 in the Senate, while the opposition Movement for Socialism (MAS) garnered the second-highest am | On 2 August 2002, Ms. Mirtha Quevedo (MNR) was elected Speaker of the Chamber of Deputies and Mr. Guido A�ez (MIR) President of the Senate. Two days after, on 4 August 2002 a combined session of both 

@@ -1,0 +1,6 @@
+{
+ "extends": "config_rtt104_v3_base.json",
+ "kit_version": "rtt104_v3_round1_look_text",
+ "v3": {"tag": {"look": "text"}},
+ "notes": "RTT-104 V3 round 1 option (IQ-24d): the recommended set with one change, look_text."
+}

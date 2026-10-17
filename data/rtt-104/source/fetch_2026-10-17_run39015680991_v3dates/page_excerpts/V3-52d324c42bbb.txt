@@ -1,0 +1,20 @@
+# V3-52d324c42bbb
+# url: https://data.ipu.org/election-summary/HTML/2233_08.htm
+# final url: https://data.ipu.org/election-summary/HTML/2233_08.htm
+# fetched (UTC): 2026-10-17T08:08:33Z
+# HTTP 200; 24769 bytes; SHA-256 55475b8fe6c80cddfdfae3933b7be379bb18d537fbf89f9d18c866c661541d50
+# title: IPU PARLINE database: NEW ZEALAND (House of Representatives) ELECTIONS IN 2008
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 8 November 2008
+D: Prime Minister Helen Clark announced that the House of Representatives would be dissolved on 3 October and that election | In the previous elections held in September 2005
+D: allowing major banks to lower mortgage rates. On 1 October | the personal tax cuts for all workers announced in May 2008 took effect. The government said that the measures would help pull the economy out of recession.
+D: schools and a broadband network. It promised to promptly execute dam projects on the West Coast | opposed by the Labour government. He also promised to reduce the adverse effects on the economy of the September 2008 Climate Change (Emissions Trading and Renewable Preference) Bill that established the framework for the Emissions Trading Scheme for New Zealand. Emissions trading is a one of the pr
+D: Voter turnout | Round no 1 8 November 2008
+D: Chief Electoral Office | Ministry of Justice (30.11.2008)
+D: Ministry of Justice (30.11.2008) | House of Representatives (19.02.2009)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name
+K: Dates of election / renewal (from/to) | 8 November 2008
+K: Purpose of elections | Elections were held for all the seats in the House of Representatives on the normal expiry of the members' term of office.
+K: Prime Minister Helen Clark announced that the House of Representatives would be dissolved on 3 October and that elections would be held on 8 November. | In the previous elections held in September 2005

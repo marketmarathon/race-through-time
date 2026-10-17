@@ -1,0 +1,26 @@
+# V3-4bc3bd0f997e
+# url: https://data.ipu.org/election-summary/HTML/2305_11.htm
+# final url: https://data.ipu.org/election-summary/HTML/2305_11.htm
+# fetched (UTC): 2026-10-17T08:09:33Z
+# HTTP 200; 37207 bytes; SHA-256 7d2f8b8a8dced1d29be713e86b1bdb84e9508982f7a477fbc249bb070f1d80f0
+# title: IPU PARLINE database: SWITZERLAND (Nationalrat - Conseil national - Consiglio nazionale), ELECTIONS IN 2011
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 23 October 2011
+D: Elections were held for all the seats in the National Council on the normal expiry of the members' term of office. | At stake in the October 2011 elections were 200 seats in the National Council and 44 of the 46 seats in the Council of States (see note).
+D: At stake in the October 2011 elections were 200 seats in the National Council and 44 of the 46 seats in the Council of S | In the previous elections held in October 2007, the Swiss People's Party (SVP/UDC) took 60 seats in the National Council, followed by the Socialist Party (SP/PS), which took 40 seats. The Radical-Democratic Party (FDP/PRD) and the Christian-Democratic People's Party (CVP/PDC) won 31 seats each, with
+D: In the previous elections held in October 2007, the Swiss People's Party (SVP/UDC) took 60 seats in the National Council | In December, parliament elected the seven members of the Federal Council (government) for a four-year term. Since 1959, the Federal Council has comprised representatives of the four major parties: the SVP/UDC, the PS/SP, the FDP/PRD and the CVP/PDC. In a surprise move, the most influential and promi
+D: In December, parliament elected the seven members of the Federal Council (government) for a four-year term. Since 1959,  | Following the March 2011 earthquake in Japan and subsequent nuclear accident in Fukushima, the Swiss Government announced in May its intention to abolish all nuclear plants by 2035. On 9 June and 28 September respectively, the National Council and the Council of States approved the government's plan
+D: In 2011, 3,458 candidates were vying for seats in the National Council. | The SVP/UDC, led by Mr. Toni Brunner since March 2008, pledged to protect the independence of Switzerland by keeping the country out of the European Union and the North Atlantic Treaty Organization (NATO). It also promised to limit the number of immigrants entering the country and expel foreigners w
+D: Note: | The seats in the following two half-cantons were decided on prior to October 2011.
+D: The seats in the following two half-cantons were decided on prior to October 2011. | - Appenzell Inner Rhodes: A male candidate from the CVP/PDC was elected through "Landsgemeinde" (cantonal assembly of citizens) in May 2011.
+D: - Appenzell Inner Rhodes: A male candidate from the CVP/PDC was elected through "Landsgemeinde" (cantonal assembly of ci | - Nidwalden: A male candidate from the CVP/PDC was elected tacitly (without formal vote) in September 2011.
+D: Voter turnout | Round no 1 23 October 2011
+D: Sources: | IPU Group (14.12.2011, 27.11.2012, 06.12.2013, 01.01.2015)
+D: IPU Group (14.12.2011, 27.11.2012, 06.12.2013, 01.01.2015) | Swiss Federal Statistical Office (21.03.2012)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Chamber name (generic / translated) | Related chamber (for bicameral parliaments)
+K: Related chamber (for bicameral parliaments) | Ständerat - Conseil des Etats - Consiglio degli Stati / Council of States
+K: Dates of election / renewal (from/to) | 23 October 2011
+K: Purpose of elections | Elections were held for all the seats in the National Council on the normal expiry of the members' term of office.

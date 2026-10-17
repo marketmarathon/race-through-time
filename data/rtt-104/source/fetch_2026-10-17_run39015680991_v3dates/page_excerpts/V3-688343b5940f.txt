@@ -1,0 +1,35 @@
+# V3-688343b5940f
+# url: https://data.ipu.org/parliament/BG/BG-LC01/election/BG-LC01-E20210404/
+# final url: https://data.ipu.org/parliament/BG/BG-LC01/election/BG-LC01-E20210404/
+# fetched (UTC): 2026-10-17T08:11:05Z
+# HTTP 200; 176674 bytes; SHA-256 e21de3c86ee7875c673f5a28cdb5e3e2ec68524256763d8523c16a9b09e57879
+# title: Bulgaria National Assembly April 2021 Election | Election results | Bulgaria | IPU Parline: global data on national parliaments
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Bulgaria National Assembly April 2021 Election | Election results | Bulgaria | IPU Parline: global data on national parliaments
+D: View field in the data dictionary | 04 Apr 2021
+D: View field in the data dictionary | 26 Mar 2021
+D: View field in the data dictionary | Inconclusive elections in April 2021 triggered snap elections scheduled for 11 July. Prime Minister Boyko Borisov’s party (Citizens for European Development of Bulgaria Party (GERB) – Union of Democratic Forces (SDS)) remained the largest bloc, with 75 seats (down from 95 in 2017) in the 240-member 
+D: Meanwhile, on 15 April, the newly elected National Assembly elected Ms. Iva Miteva (PP-ITN) as its new Speaker, the thir | The 2021 elections were held amid a surge of coronavirus cases, while anti-government protests had started in July 2020 over alleged corruption scandals. On 18 March, the government imposed new restrictions to curb the spread of coronavirus, closing down schools, universities, malls, and cultural an
+D: Sources | National Assembly (16.04.2021, 19.04.2021)
+D: National Assembly (16.04.2021, 19.04.2021) | Central Election Commission of Bulgaria (20.08.2021)
+D: View field in the data dictionary | 15 Apr 2021
+D: View field in the data dictionary | 15 Apr 2021
+K: Select country and chamber | Parliaments
+K: Political systems: Presidential, Parliamentary, Presidential-Parliamentary, Monarchy, Communist, Transitional. | View field in the data dictionary
+K: The date when elections started and ended for directly or indirectly elected parliaments/chambers. The date of appointments for appointed parliaments/chambers. | View field in the data dictionary
+K: Date of dissolution of the outgoing legislature | Date at which the previous legislature (elected at the previous elections) was dissolved.
+K: Date at which the previous legislature (elected at the previous elections) was dissolved. | View field in the data dictionary
+K: Timing of election | Timing of election: Upon normal expiry; Early elections; Delayed elections
+K: Timing of election: Upon normal expiry; Early elections; Delayed elections | View field in the data dictionary
+K: Number of seats contested at the elections. Where the parliament/chamber is fully renewed, this number is usually identical to the statutory number of members. Where the parliament/chamber is partiall | View field in the data dictionary
+K: Scope of elections | Scope of elections: Full renewal; Partial renewal.
+K: Scope of elections: Full renewal; Partial renewal. | View field in the data dictionary
+K: Full renewal | Candidates
+K: Meanwhile, on 15 April, the newly elected National Assembly elected Ms. Iva Miteva (PP-ITN) as its new Speaker, the third woman to serve as Speaker in the country. However, the National Assembly was d | The 2021 elections were held amid a surge of coronavirus cases, while anti-government protests had started in July 2020 over alleged corruption scandals. On 18 March, the government imposed new restri
+K: The total number of male parliamentarians in this parliament/chamber following the election or renewal, regardless of their modes of designation. | View field in the data dictionary
+K: The total number of female parliamentarians in this parliament/chamber following the election or renewal, regardless of their modes of designation. | View field in the data dictionary
+K: The percentage is calculated by dividing the total number of women in this parliament/chamber by the current number of members. | View field in the data dictionary
+K: The number of members who are assuming their parliamentary mandate for the first time following the election or renewal, regardless of their mode of designation. | View field in the data dictionary
+K: The date when the newly elected parliament/chamber was convened for the first time. It may be different from the date when members were sworn in. | View field in the data dictionary
+K: The political party to which the Speaker belonged to at the moment of the election. In some parliaments, the Speaker suspends or relinquishes their party membership during their term in office and is  | View field in the data dictionary

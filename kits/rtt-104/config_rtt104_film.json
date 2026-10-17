@@ -1,0 +1,9 @@
+{
+ "extends": "config_rtt104_base.json",
+ "kit_version": "rtt104_film",
+ "out": "rtt104_film.mp4",
+ "music_file": "music_rtt104.json",
+ "notes": "RTT-104 FULL FILM (IQ-22b): exactly the approved base config, the whole race 1997-2025, the 5 s final table and the 6 s closing card. Rendered only by .github/workflows/rtt104_film.yml, and only once music_rtt104.json names Luke's music choice (it refuses otherwise).",
+ "crf": 4,
+ "preset": "slow"
+}

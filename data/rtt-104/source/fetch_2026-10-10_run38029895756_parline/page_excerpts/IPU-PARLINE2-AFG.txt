@@ -1,0 +1,17 @@
+# IPU-PARLINE2-AFG
+# url: https://data.ipu.org/parliament/AF/
+# final url: https://data.ipu.org/parliament/AF/AF-LC01/
+# fetched (UTC): 2026-10-10T06:08:54Z
+# HTTP 200; 140956 bytes; SHA-256 428f5e97c19d4637396a10a2ea73bc7615e5b296cbb9b763ed02073dcfefec09
+# Short excerpts only (lines holding the searched words, with the line before and after).
+
+Political system | Political systems: Presidential, Parliamentary, Presidential-Parliamentary, Monarchy, Communist, Transitional. | View field in the data dictionary
+
+Transitional system | Compare data of this field
+
+IPU membership | Current membership status | View field in the data dictionary
+
+Share | Chamber is suspended | The Parliament of Afghanistan, the Jirga (National Assembly), comprising the Wolesi Jirga (House of the People) and the Meshrano Jirga (House of Elders), was effectively dissolved following the Taliban takeover in August 2021
+
+2022-03 | Transitional system | 2005-01
+

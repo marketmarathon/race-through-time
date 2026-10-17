@@ -1,0 +1,20 @@
+{
+ "stills": [
+  {"name": "v3_board_1997", "config": "config_rtt104_v3_base.json", "at": 1997},
+  {"name": "v3_board_2014", "config": "config_rtt104_v3_base.json", "at": 2014},
+  {"name": "v3_board_2025", "config": "config_rtt104_v3_base.json", "at": 2025},
+  {"name": "v3_tag_look1_pill_2019", "config": "config_rtt104_v3_base.json", "at": 2019},
+  {"name": "v3_tag_look2_text_2019", "config": "config_rtt104_v3_look_text.json", "at": 2019},
+  {"name": "v3_scale_leader_1997", "config": "config_rtt104_v3_scale_leader.json", "at": 1997},
+  {"name": "v3_late_election_PROPOSAL_1999", "config": "config_rtt104_v3_base.json", "at": 1999},
+  {"name": "v3_rows15_2025", "config": "config_rtt104_v3_rows15.json", "at": 2025}
+ ],
+ "compose": [
+  {"name": "sheet_v3_tag_look", "title": "RTT-104 V3 · question 2, tag look · same frame (2019 lands)",
+   "items": [["v3_tag_look1_pill_2019", "Look 1: filled tag (recommended)"], ["v3_tag_look2_text_2019", "Look 2: amber words after a short rule"]]},
+  {"name": "sheet_v3_scale", "title": "RTT-104 V3 · question 4, scale · 1997",
+   "items": [["v3_board_1997", "Fixed 0–70% (recommended)"], ["v3_scale_leader_1997", "Following the leader (leader at 90% of the width)"]]},
+  {"name": "sheet_v3_rows", "title": "RTT-104 V3 · question 1, board size · 2025",
+   "items": [["v3_board_2025", "Top 20 (recommended)"], ["v3_rows15_2025", "Top 15"]]}
+ ]
+}

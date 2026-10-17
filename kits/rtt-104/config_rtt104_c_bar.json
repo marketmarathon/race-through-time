@@ -1,0 +1,7 @@
+{
+ "extends": "config_rtt104_base.json",
+ "zero_group": {
+  "style": "bar"
+ },
+ "notes": "Round-1 option c-1 (not chosen): the 0% group as a group bar 'No women in parliament: N countries' with '0% · names'."
+}

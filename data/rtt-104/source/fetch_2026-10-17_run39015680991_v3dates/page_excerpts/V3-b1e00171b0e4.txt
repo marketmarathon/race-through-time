@@ -1,0 +1,20 @@
+# V3-b1e00171b0e4
+# url: https://data.ipu.org/election-summary/HTML/2087_11.htm
+# final url: https://data.ipu.org/election-summary/HTML/2087_11.htm
+# fetched (UTC): 2026-10-17T08:07:39Z
+# HTTP 200; 32658 bytes; SHA-256 763647c80417e02050f3cdf13fc6c7e6a024f5e7b250b463244d7f7d551fa496
+# title: IPU PARLINE database: DENMARK (Folketinget), ELECTIONS IN 2011
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 15 September 2011
+D: Purpose of elections | Elections were held for all the seats in Parliament following the early dissolution of this body in August 2011. General elections had previously been held in November 2007.
+D: Elections were held for all the seats in Parliament following the early dissolution of this body in August 2011. General | On 26 August 2011, Prime Minister Lars Lokke Rasmussen called early parliamentary elections for 15 September, ahead of the official end of the parliament's current four-year term in November 2011. At stake were 179 seats in parliament, 175 of which are elected in Denmark, and two each in Greenland a
+D: On 26 August 2011, Prime Minister Lars Lokke Rasmussen called early parliamentary elections for 15 September, ahead of t | In the previous elections held in November 2007, the Liberal Party (Venstre) of the then Prime Minister Anders Fogh Rasmussen - who had been leading the centre-right coalition since 2001 - took 46 seats. Its coalition partners - the Danish People's Party and the Conservative People's Party - took 25
+D: In the previous elections held in November 2007, the Liberal Party (Venstre) of the then Prime Minister Anders Fogh Rasm | In April 2009, Anders Fogh Rasmussen was elected Secretary General of the North Atlantic Treaty Organization (NATO). The then Finance Minister, Mr. Lars Lokke Rasmussen, took over both as Prime Minister and head of the Liberal Party.
+D: In April 2009, Anders Fogh Rasmussen was elected Secretary General of the North Atlantic Treaty Organization (NATO). The | As a consequence of the global economic crisis that had started in 2008, Denmark experienced its worst economic downturn since World War II. On 24 August 2011, the government presented a US$ 2 billion economic stimulus package and the draft budget for 2012. The package aimed to help Danish banks avo
+D: Voter turnout | Round no 1 15 September 2011
+D: Sources: | The Danish Parliament (04.10.2011, 01.01.2015)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Dates of election / renewal (from/to) | 15 September 2011
+K: Purpose of elections | Elections were held for all the seats in Parliament following the early dissolution of this body in August 2011. General elections had previously been held in November 2007.

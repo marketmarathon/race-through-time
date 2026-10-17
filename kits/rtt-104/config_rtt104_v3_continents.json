@@ -1,0 +1,7 @@
+{
+ "extends": "config_rtt104_v3_base.json",
+ "kit_version": "rtt104_v3_round2_continents",
+ "v3": {"colour": "continent",
+        "continent_colours": {"Africa": "#E9622E", "Americas": "#9AE0FC", "Asia": "#FB79C8", "Europe": "#29A987", "Oceania": "#937AF7"}},
+ "notes": "RTT-104 V3 round 2 (IQ-24e), NOT a film and not approved: Luke's round-1 answers (20 rows, the filled amber tag, rule (a), fixed 0-70%, late-year jumps untagged; DEC-680..DEC-684) with the bars coloured by UN M49 continent (DEC-685, proposal shown for approval under DEC-069) and a legend above the world panel. Colours: all five plus the amber tag pass the colour-blind and normal-vision separation checks on every pair, and navy text on each bar is at least 5.5:1 (DEC-688)."
+}

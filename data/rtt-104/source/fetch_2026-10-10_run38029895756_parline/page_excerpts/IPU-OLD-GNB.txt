@@ -1,0 +1,13 @@
+# IPU-OLD-GNB
+# url: https://www.ipu.org/parlement/GW
+# final url: https://www.ipu.org/parlement/GW
+# fetched (UTC): 2026-10-10T06:09:27Z
+# HTTP 200; 92481 bytes; SHA-256 2a7c1bd435859890a0b5b8cfac634a3f246f0cce188872bf53535d9bbd78581d
+# Short excerpts only (lines holding the searched words, with the line before and after).
+
+Data points : | Conselho Nacional de Transição (Transitional National Council) | The IPU data corresponds to the lower chamber if the parliament is bicameral. For information about upper chambers, refer to Parline
+
+Unicameral | Last election | Dec 2025
+
+Contact us | Vacancies | IPU structure and governance
+

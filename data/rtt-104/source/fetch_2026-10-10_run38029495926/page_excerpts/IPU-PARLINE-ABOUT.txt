@@ -1,0 +1,25 @@
+# IPU-PARLINE-ABOUT
+# url: https://data.ipu.org/about
+# final url: https://data.ipu.org/about/
+# fetched (UTC): 2026-10-10T06:02:08Z
+# HTTP 200; 143665 bytes; SHA-256 04e88917b7edf1d741c9f8268722fdac4db8898f2642c69f0174b84261ace905
+# Short excerpts only (lines holding the searched words, with the line before and after).
+
+Contact us | Terms of use | IPU.org
+
+Contact us | Terms of use | About Parline
+
+Comparative: Creating possibilities for new perspectives | Open: Offering tools that allow users to access, obtain and reuse data freely | Parline is the official source of data for UN SDG indicators 5.5.1(a) on women in national parliaments and 16.7.1(a) on leadership positions held by women and youth.
+
+Compare : Maps and charts to visualize data for 85 comparative fields | Data explorer : Build your own datasets by selecting any of the 600+ fields in Parline | Parline API : Programmatic access to Parline data
+
+The IPU data catalogue provides access to other IPU datasets that are not included as fields in the Parline database | Who uses Parline?
+
+Journalists – use Parline data to support stories that they are preparing on, for example, salaries of parliamentarians, size of parliamentary staff, etc., or to provide statistical snapshots of given information, derived from aggregated data and maps and charts generated in the Compare data on parliaments section. | The IPU always wants to learn more about how, what and where Parline data is used. This supports our efforts to improve the database to meet the needs of users, and to better understand the impact of Parline. Feel free to contact [email protected] to share feedback on data points and/or past, ongoing or current research that utilizes Parline data. In the future, there may be an 
+
+IPU has a rich set of data on the number and percentage of women in parliament from 1945 to the current day. Since 1997, IPU has published a monthly ranking of the percentage of women in parliament . Since 2018, these rankings are now updated in Parline every month. Data on the age of parliamentarians was also incorporated into Parline at that time. | The technical architecture has also evolved over time, with the introduction of new features to view, export and reuse data from Parline. Historical time series were introduced to the database in the 2010s, and time series data is available for certain fields since 2013. Since the redevelopment of the technical platform for Parline in 2024, his
+
+Privacy | Terms of use | Connect
+
+Subscribe to our newsletter | © Copyright IPU 2026, Terms of use & Privacy statement
+

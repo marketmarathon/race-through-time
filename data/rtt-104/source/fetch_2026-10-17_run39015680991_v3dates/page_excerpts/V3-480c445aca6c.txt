@@ -1,0 +1,19 @@
+# V3-480c445aca6c
+# url: https://data.ipu.org/election-summary/HTML/2045_05.htm
+# final url: https://data.ipu.org/election-summary/HTML/2045_05.htm
+# fetched (UTC): 2026-10-17T08:07:02Z
+# HTTP 200; 31135 bytes; SHA-256 ed9e5ea3a46bb28f2121ce36d3363f14cdb3f4734251dc4f24add1ca3e942c0a
+# title: IPU PARLINE database: BULGARIA (Narodno Sabranie), Elections in 2005
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 25 June 2005
+D: Elections were held for all the seats in the National Assembly on the normal expiry of the members' term of office. | On 14 April 2005 the President of the Republic, Mr. Georgi Parvanov, announced the date for parliamentary elections on 25 June 2005. It would be the second time since 1999 that parliament and government had completed their full four-year term.
+D: Final results showed that seven political forces had reached the 4% threshold entitling them to seats. The Socialist-led | The new parliament held its first session on 11 July 2005 and elected Mr. Georgi Pirinski as its speaker.
+D: The new parliament held its first session on 11 July 2005 and elected Mr. Georgi Pirinski as its speaker. | On 15 August 2005, the Parliament approved a new government formed by the Coalition for Bulgaria, the National Movement Simeon II (NMSS) and the Movement for Rights and Freedoms. This government is led by the Socialist Party leader, Mr. Sergey Stanishev, as prime minister.
+D: Voter turnout | Round no 1 25 June 2005
+D: - Website of the National Assembly (http://www.parliament.bg/) | - IPU Group of Bulgaria (04.07.2005)
+D: - IPU Group of Bulgaria (04.07.2005) | - National Assembly (01.01.2008)
+D: - National Assembly (01.01.2008) | - Central Electoral Commission - Bulletin for the results of the parliamentary elections held on 25 June 2005
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Dates of election / renewal (from/to) | 25 June 2005
+K: Purpose of elections | Elections were held for all the seats in the National Assembly on the normal expiry of the members' term of office.

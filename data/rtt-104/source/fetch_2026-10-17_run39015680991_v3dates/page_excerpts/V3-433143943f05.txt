@@ -1,0 +1,21 @@
+# V3-433143943f05
+# url: https://data.ipu.org/election-summary/HTML/2251_01.htm
+# final url: https://data.ipu.org/election-summary/HTML/2251_01.htm
+# fetched (UTC): 2026-10-17T08:08:51Z
+# HTTP 200; 10269 bytes; SHA-256 b64fefb4c1c68286b361a2030499ab46461094a1bafb81edff4e64c3e4709f75
+# title: PERU: parliamentary elections Congreso de la Rep�blica, 2001
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 8 April 2001
+D: Purpose of elections: | Elections were held for all seats in the House of Assembly following the premature dissolution of this body. General elections had previously been held in April 2000.
+D: Background and outcome of elections: | On 16 September 2000, the then President Alberto Fujimori announced early elections in which he would not take part. This announcement followed the release of a videotape implicating Vladimiro Montesinos, the former head of the National Intelligence Service, in a corruption scandal.
+D: On 16 September 2000, the then President Alberto Fujimori announced early elections in which he would not take part. Thi | President Fujimori, the longest-serving president in Latin America, took advantage of the Asia Pacific Economic Cooperation (APEC) Forum summit in Brunei to flee to Japan and announce his resignation as President of Peru on 17 November 2000. Mr Fujimori's departure had been prompted by statements to
+D: President Fujimori, the longest-serving president in Latin America, took advantage of the Asia Pacific Economic Cooperat | Following President Fujimori's resignation, presidential and legislative elections were called for April 2001
+D: Following President Fujimori's resignation, presidential and legislative elections were called for April 2001 | In December 2000, the Congress had voted to change the system for election of deputies to Parliament to one based on geographical constituencies. Previously members were elected by a system of proportional representation system in a nationwide constituency. This shift was intended to reflect more cl
+D: The electoral campaign was marred by sabotage and violent clashes occasionally erupted among supporters of rival candida | Anti-Fujimori pro-democracy leader, Alejandro Toledo, had been the presidential favourite. But he was not able to maintain a lead and assure a first round victory in the presidential race on 8 April 2001.
+D: In the legislative elections, results showed that no party had obtained a congressional majority. Mr Toledo's centrist P | On 3 June 2001, Mr Alejandro Toledo won the second round of the presidential election with 53 per cent of the votes.
+D: STATISTICS | Round no 1 (8 April 2001): Elections results
+K: Parliamentary Chamber: Congreso de la Rep�blica | ELECTIONS HELD IN 2001
+K: Chamber: | Congreso de la Rep�blica
+K: Dates of elections / renewal (from/to): | 8 April 2001
+K: Purpose of elections: | Elections were held for all seats in the House of Assembly following the premature dissolution of this body. General elections had previously been held in April 2000.

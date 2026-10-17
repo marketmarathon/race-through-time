@@ -1,0 +1,57 @@
+# IPU-PARLINE2-HTI-LC
+# url: https://data.ipu.org/parliament/HT/HT-LC01/
+# final url: https://data.ipu.org/parliament/HT/HT-LC01/
+# fetched (UTC): 2026-10-10T06:09:30Z
+# HTTP 200; 278750 bytes; SHA-256 a62ea992760e129d0a3720fbb9a74c8775293c7ed432ecc24ca92d6c3903519b
+# Short excerpts only (lines holding the searched words, with the line before and after).
+
+Political system | Political systems: Presidential, Parliamentary, Presidential-Parliamentary, Monarchy, Communist, Transitional. | View field in the data dictionary
+
+IPU membership | Current membership status | View field in the data dictionary
+
+Elections | Parliamentary mandate | Law-making, oversight, budget
+
+See historical data for this field | Structure & status of parliament | This field is to indicate lower/upper in the back end.
+
+4 | Notes: The mandate of all members of the Haitian Chamber of Deputies expired in January 2020 in the absence of elections. | Compare data of this field
+
+No information available | The post of Speaker is currently vacant | Yes
+
+Term | Start (and end) of the term of the Speaker | View field in the data dictionary
+
+Term | Start (and end) of the term of the Secretary general | View field in the data dictionary
+
+Average age of all members | Average age of members, for which data is available, at the time of the last election or renewal. | View field in the data dictionary
+
+Percentage of members, by age | Age at the last election or renewal | Overall
+
+A political party, group or coalition of parties will receive an additional 25% of public funding for the next parliamentary elections, provided that: at least 50% of its candidates are women; at least 2% of candidates have disabilities; and half of its candidates are elected. | Sources: Electoral decree adopted by the Council of Ministers on 1 December 2025, art. 163 and 188 | Electoral quota for women
+
+Notes: Any political party, group or coalition is required to ensure that at least 30% of their candidates are women. Failure to comply with this obligation results in ineligibility for public funding. | Any party presenting a list of more than 50% female candidates receives an additional subsidy, as set out in a decree issued by the Council of Ministers. | A political party, group or coalition of parties will receive an additional 25% of public funding for the next parliamentary elections, provided that: at least 50% of its candidates are women; at least 2% of candidates have disabilities; and half of its candidates are elected.
+
+Female candidates in parliamentary and presidential elections also receive a 50% reduction in registration fees. The same applies to candidates with disabilities. | Sources: Articles 138, 163 and 188 of the Electoral decree adopted by the Council of Ministers on 1 December 2025. | Compare data of this field
+
+4 | The mandate of all members of the Haitian Chamber of Deputies expired in January 2020 in the absence of elections. | 2013-01
+
+No information available | The post of Speaker is currently vacant | Yes
+
+Term | Start (and end) of the term of the Speaker | View field in the data dictionary
+
+Term | Start (and end) of the term of the Speaker | View field in the data dictionary
+
+Term | Start (and end) of the term of the Speaker | View field in the data dictionary
+
+No information available | The post of Speaker is currently vacant | Yes
+
+Term | Start (and end) of the term of the Speaker | View field in the data dictionary
+
+Term | Start (and end) of the term of the Speaker | View field in the data dictionary
+
+Term | Start (and end) of the term of the Speaker | View field in the data dictionary
+
+Percentage of members, by age | Age at the last election or renewal | Overall
+
+Percentage of members, by age | Age at the last election or renewal | Overall
+
+Percentage of members, by age | Age at the last election or renewal | Overall
+

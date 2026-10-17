@@ -1,0 +1,24 @@
+# V3-03cff4813222
+# url: https://data.ipu.org/election-summary/HTML/2335_10.htm
+# final url: https://data.ipu.org/election-summary/HTML/2335_10.htm
+# fetched (UTC): 2026-10-17T08:09:50Z
+# HTTP 200; 32361 bytes; SHA-256 65a780493dd0b99a9e3615daff6307bdd5e56bbd0330aa8fb91f08320f7b388a
+# title: IPU PARLINE database: UNITED KINGDOM (House of Commons), ELECTIONS IN 2010
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 6 May 2010
+D: Elections were held for all the seats in the House of Commons on the normal expiry of the members' term of office. | On 6 April 2010, Prime Minister Gordon Brown announced that elections would be held on 6 May. The elections followed a revision of the constituency boundaries (see note 1), which increased the statutory number of members of the House of Commons from 646 to 650.
+D: On 6 April 2010, Prime Minister Gordon Brown announced that elections would be held on 6 May. The elections followed a r | In the previous elections held in May 2005, the Labour Party, led by the then Prime Minister Tony Blair, won 355 of the 646 seats at stake, with 35.19 per cent of the votes. The Conservative Party (commonly referred to as the Tories) came in a distant second with 198 seats, although it won 32.35 per
+D: In the previous elections held in May 2005, the Labour Party, led by the then Prime Minister Tony Blair, won 355 of the  | In December 2005, Mr. David Cameron was elected as the new leader of the Conservative Party. In June 2007, Mr. Blair - who had served as Prime Minister since Labour had taken power from the Conservatives in 1997 - resigned and was succeeded by the then Chancellor of the Exchequer (Finance Minister),
+D: In December 2005, Mr. David Cameron was elected as the new leader of the Conservative Party. In June 2007, Mr. Blair - w | In February 2010, the House of Commons approved government plans to hold a nationwide referendum on changing the electoral system from "first-past-the-post" to "alternative votes" (see note 2). The Labour Party, which had pledged electoral reform in its 1997 election manifesto, argued that the new v
+D: In February 2010, the House of Commons approved government plans to hold a nationwide referendum on changing the elector | In the 2010 elections, three parties - Labour, the Conservatives and the Liberal Democrats remained major contenders. In all, 4,150 candidates were vying for seats. Owing to the death of one candidate, the election in one constituency in North Yorkshire was postponed to 27 May.
+D: Pre-election opinion polls predicted that no party would secure a majority, and indicated the likelihood of a "hung parl | On 6 May, 65.1 per cent of the 45 million registered voters turned out at the polls. Due to the high turnout (up from 61.79 in the 2005 polls), voters waiting in line in several polling stations could not cast their ballots before the official deadline of 10 p.m.
+D: Note 3: | Mr. Bercow had sat as a member of the Conservative Party before being elected as Speaker in June 2009. In the House of Commons, the Speaker ceases to be involved in party politics upon election.
+D: Voter turnout | Round no 1 6 May 2010
+D: Sources: | House of Commons (12.05.2010, 28.05.2010, 25.03.2011, 04.01.2012, 05.12.2012, 01.01.2014, 01.01.2015)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name
+K: Chamber name | House of Commons
+K: Related chamber (for bicameral parliaments) | House of Lords
+K: Dates of election / renewal (from/to) | 6 May 2010
+K: Purpose of elections | Elections were held for all the seats in the House of Commons on the normal expiry of the members' term of office.

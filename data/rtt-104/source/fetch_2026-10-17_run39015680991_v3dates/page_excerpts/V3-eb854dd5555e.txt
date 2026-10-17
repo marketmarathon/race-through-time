@@ -1,0 +1,15 @@
+# V3-eb854dd5555e
+# url: https://data.ipu.org/election-summary/HTML/2305_99.htm
+# final url: https://data.ipu.org/election-summary/HTML/2305_99.htm
+# fetched (UTC): 2026-10-17T08:09:35Z
+# HTTP 200; 9468 bytes; SHA-256 61ce36366a3fb99e87a49f5494a8a9d0084387dd3889f5758e7ed7ecc6f841d3
+# title: SWITZERLAND: parliamentary elections Nationalrat - Conseil national - Consiglio nazionale , 1999
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 24 October 1999
+D: Campaign debate chiefly concerned taxes, employment, health and family policies, social security and, vis-�-vis the outs | Pre-election surveys predicted a strong advance by the last-mentioned group, led by Mr. Ueli Maurer and whose best-known politician was Mr. Christoph Blocher. As opposed to his rivals, he ran on an anti-immigration, anti-EU platform and also called for tax cuts. His three challengers countered by po
+D: STATISTICS | Round no 1 (24 October 1999): Elections results
+K: Parliamentary Chamber: Nationalrat - Conseil national - Consiglio nazionale | ELECTIONS HELD IN 1999
+K: Chamber: | Dates of elections / renewal (from/to):
+K: Dates of elections / renewal (from/to): | 24 October 1999
+K: Purpose of elections: | Elections were held for all the seats in the National Council on the normal expiry of the members' term of office.

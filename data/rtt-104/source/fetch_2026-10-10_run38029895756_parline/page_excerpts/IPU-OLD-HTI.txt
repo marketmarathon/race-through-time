@@ -1,0 +1,11 @@
+# IPU-OLD-HTI
+# url: https://www.ipu.org/parlement/HT
+# final url: https://www.ipu.org/parlement/HT
+# fetched (UTC): 2026-10-10T06:09:36Z
+# HTTP 200; 83827 bytes; SHA-256 4ca72a1f7c7b4b36a65d7d05a87047d371b236b2a1e80905eab41ad703c704dc
+# Short excerpts only (lines holding the searched words, with the line before and after).
+
+Bicameral | Last election | Aug 2015
+
+Contact us | Vacancies | IPU structure and governance
+

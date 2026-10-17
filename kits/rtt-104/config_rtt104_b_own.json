@@ -1,0 +1,6 @@
+{
+ "extends": "config_rtt104_base.json",
+ "scale": "own",
+ "world_panel": false,
+ "notes": "Round-1 option (not chosen, DEC-634..DEC-644): Option b-B: each board its own fixed scale (0-70% and 0-15%), labelled; the world panel is off because the bottom board's bars now fill its half."
+}

@@ -1,0 +1,28 @@
+# V3-5fd7904e457d
+# url: https://data.ipu.org/parliament/MX/MX-LC01/election/MX-LC01-E20150607/
+# final url: https://data.ipu.org/parliament/MX/MX-LC01/election/MX-LC01-E20150607/
+# fetched (UTC): 2026-10-17T08:13:02Z
+# HTTP 200; 161521 bytes; SHA-256 0061ffe24a914b052e620d38cd95fd22685f859ec3c096a6e515cdbb8c251f28
+# title: Mexico Chamber of Deputies June 2015 Election | Election results | Mexico | IPU Parline: global data on national parliaments
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Mexico Chamber of Deputies June 2015 Election | Election results | Mexico | IPU Parline: global data on national parliaments
+D: View field in the data dictionary | 07 Jun 2015
+D: These elections were the first to be held after the 2014 constitutional amendments came into force. The amendments allow | During the election campaign, the major parties focused discussions on anti-corruption measures, security issues and social and economic development. One of the country's main teaching unions held protests against the 2013 education reform, which provides for teachers to be evaluated. Although the P
+D: View field in the data dictionary | 01 Sep 2015
+K: Select country and chamber | Parliaments
+K: Chamber of Deputies | Senate
+K: Chamber of Deputies | Political system
+K: Political systems: Presidential, Parliamentary, Presidential-Parliamentary, Monarchy, Communist, Transitional. | View field in the data dictionary
+K: The date when elections started and ended for directly or indirectly elected parliaments/chambers. The date of appointments for appointed parliaments/chambers. | View field in the data dictionary
+K: Date of dissolution of the outgoing legislature | Date at which the previous legislature (elected at the previous elections) was dissolved.
+K: Date at which the previous legislature (elected at the previous elections) was dissolved. | View field in the data dictionary
+K: Timing of election | Timing of election: Upon normal expiry; Early elections; Delayed elections
+K: Timing of election: Upon normal expiry; Early elections; Delayed elections | View field in the data dictionary
+K: Number of seats contested at the elections. Where the parliament/chamber is fully renewed, this number is usually identical to the statutory number of members. Where the parliament/chamber is partiall | View field in the data dictionary
+K: Scope of elections | Scope of elections: Full renewal; Partial renewal.
+K: Scope of elections: Full renewal; Partial renewal. | View field in the data dictionary
+K: President Enrique Peña Nieto's Institutional Revolutionary Party (PRI) secured a majority, in coalition with the Green Party of Mexico (PVEM) and the New Alliance. The coalition won 260 seats in the 5 | These elections were the first to be held after the 2014 constitutional amendments came into force. The amendments allow parliamentarians to seek election for consecutive terms totalling 12 years: up 
+K: These elections were the first to be held after the 2014 constitutional amendments came into force. The amendments allow parliamentarians to seek election for consecutive terms totalling 12 years: up  | During the election campaign, the major parties focused discussions on anti-corruption measures, security issues and social and economic development. One of the country's main teaching unions held pro
+K: The number of members who are assuming their parliamentary mandate for the first time following the election or renewal, regardless of their mode of designation. | View field in the data dictionary
+K: The date when the newly elected parliament/chamber was convened for the first time. It may be different from the date when members were sworn in. | View field in the data dictionary

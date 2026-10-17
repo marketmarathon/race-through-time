@@ -1,0 +1,36 @@
+# V3-b6ede2140bc4
+# url: https://data.ipu.org/parliament/PE/PE-LC01/election/PE-LC01-E20200126/
+# final url: https://data.ipu.org/parliament/PE/PE-LC01/election/PE-LC01-E20200126/
+# fetched (UTC): 2026-10-17T08:13:47Z
+# HTTP 200; 180834 bytes; SHA-256 e17c9feb2b69ada9255870b54bce7cb8e8379ed53879d8d08dbae8dde9b35325
+# title: Peru Congress of the Republic January 2020 Election | Election results | Peru | IPU Parline: global data on national parliaments
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Peru Congress of the Republic January 2020 Election | Election results | Peru | IPU Parline: global data on national parliaments
+D: View field in the data dictionary | 26 Jan 2020
+D: View field in the data dictionary | 30 Sep 2019
+D: View field in the data dictionary | The snap elections in 2020 returned a fragmented parliament, with nine parties (up from six) entering the 130-member Congress of the Republic. Only two of them – Popular Action and the Alliance for Progress – won more than 20 seats. The largest party in the previous legislature, the Popular Force (s
+D: The snap elections in 2020 returned a fragmented parliament, with nine parties (up from six) entering the 130-member Con | The snap elections followed the stand-off between the President and Congress. In March 2018, Mr. Martín Vizcarra succeeded President Pedro Pablo Kuczynski, who had resigned amid corruption allegations. The new President announced anti-corruption measures, but the Congress controlled by the Popular F
+D: Note 1: | The party leader, Ms. Keiko Fujimori (daughter of former President Alberto Fujimori) is accused of receiving illicit party funding for her unsuccessful 2011 presidential election campaign. Although she was released from preventive custody in November 2019, she was placed in custody again shortly aft
+D: Sources | Congress of the Republic (02.03.2020)
+D: View field in the data dictionary | 16 Mar 2020
+D: View field in the data dictionary | 16 Mar 2020
+K: Select country and chamber | Parliaments
+K: Chamber of Deputies | Senate
+K: Chamber of Deputies | Political system
+K: Political systems: Presidential, Parliamentary, Presidential-Parliamentary, Monarchy, Communist, Transitional. | View field in the data dictionary
+K: The date when elections started and ended for directly or indirectly elected parliaments/chambers. The date of appointments for appointed parliaments/chambers. | View field in the data dictionary
+K: Date of dissolution of the outgoing legislature | Date at which the previous legislature (elected at the previous elections) was dissolved.
+K: Date at which the previous legislature (elected at the previous elections) was dissolved. | View field in the data dictionary
+K: Timing of election | Timing of election: Upon normal expiry; Early elections; Delayed elections
+K: Timing of election: Upon normal expiry; Early elections; Delayed elections | View field in the data dictionary
+K: Number of seats contested at the elections. Where the parliament/chamber is fully renewed, this number is usually identical to the statutory number of members. Where the parliament/chamber is partiall | View field in the data dictionary
+K: Scope of elections | Scope of elections: Full renewal; Partial renewal.
+K: Scope of elections: Full renewal; Partial renewal. | View field in the data dictionary
+K: Full renewal | Candidates
+K: The total number of male parliamentarians in this parliament/chamber following the election or renewal, regardless of their modes of designation. | View field in the data dictionary
+K: The total number of female parliamentarians in this parliament/chamber following the election or renewal, regardless of their modes of designation. | View field in the data dictionary
+K: The percentage is calculated by dividing the total number of women in this parliament/chamber by the current number of members. | View field in the data dictionary
+K: The number of members who are assuming their parliamentary mandate for the first time following the election or renewal, regardless of their mode of designation. | View field in the data dictionary
+K: The date when the newly elected parliament/chamber was convened for the first time. It may be different from the date when members were sworn in. | View field in the data dictionary
+K: The political party to which the Speaker belonged to at the moment of the election. In some parliaments, the Speaker suspends or relinquishes their party membership during their term in office and is  | View field in the data dictionary

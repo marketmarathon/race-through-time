@@ -1,0 +1,57 @@
+# IPU-PARLINE2-PAK-LC
+# url: https://data.ipu.org/parliament/PK/PK-LC01/
+# final url: https://data.ipu.org/parliament/PK/PK-LC01/
+# fetched (UTC): 2026-10-10T06:43:55Z
+# HTTP 200; 337447 bytes; SHA-256 b6c9f9d394de6361b44571b25ce13d270c27dec0161423851dd91e71b94f6b13
+# Short excerpts only (lines holding the searched words, with the line before and after).
+
+Political system | Political systems: Presidential, Parliamentary, Presidential-Parliamentary, Monarchy, Communist, Transitional. | View field in the data dictionary
+
+IPU membership | Current membership status | View field in the data dictionary
+
+Elections | Parliamentary mandate | Law-making, oversight, budget
+
+See historical data for this field | Structure & status of parliament | This field is to indicate lower/upper in the back end.
+
+Term | Start (and end) of the term of the Speaker | View field in the data dictionary
+
+Term | Start (and end) of the term of the Secretary general | View field in the data dictionary
+
+Average age of all members | Average age of members, for which data is available, at the time of the last election or renewal. | View field in the data dictionary
+
+Youngest member (years) | Age is calculated at the time the member was elected/appointed to a new legislature. Data is not updated during the legislature unless the member is no longer a member. | View field in the data dictionary
+
+Oldest member (years) | Age is calculated at the time the member was elected/appointed to a new legislature. Data is not updated during the legislature unless the member is no longer a member. | View field in the data dictionary
+
+Percentage of members, by age | Age at the last election or renewal | Overall
+
+Term | Start (and end) of the term of the Speaker | View field in the data dictionary
+
+Term | Start (and end) of the term of the Speaker | View field in the data dictionary
+
+Term | Start (and end) of the term of the Speaker | View field in the data dictionary
+
+Term | Start (and end) of the term of the Speaker | View field in the data dictionary
+
+Term | Start (and end) of the term of the Speaker | View field in the data dictionary
+
+Term | Start (and end) of the term of the Speaker | View field in the data dictionary
+
+Term | Start (and end) of the term of the Speaker | View field in the data dictionary
+
+Term | Start (and end) of the term of the Speaker | View field in the data dictionary
+
+Acting Secretary General | If the position of Secretary General becomes vacant, the Deputy Secretary General or another | person becomes the Acting Secretary General until a new Secretary General is officially elected
+
+Term | Start (and end) of the term of the Secretary general | View field in the data dictionary
+
+Term | Start (and end) of the term of the Secretary general | View field in the data dictionary
+
+Acting Secretary General | If the position of Secretary General becomes vacant, the Deputy Secretary General or another | person becomes the Acting Secretary General until a new Secretary General is officially elected
+
+Term | Start (and end) of the term of the Secretary general | View field in the data dictionary
+
+Term | Start (and end) of the term of the Secretary general | View field in the data dictionary
+
+Youngest member (years) | Age is calculated at the time the member was elected/appointed to a new legislature. Data is not updated during the legislature unless the member is no longer a member. | View field in the data dictionary
+

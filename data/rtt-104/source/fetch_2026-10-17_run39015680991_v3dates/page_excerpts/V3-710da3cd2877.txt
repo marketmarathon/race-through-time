@@ -1,0 +1,22 @@
+# V3-710da3cd2877
+# url: https://data.ipu.org/election-summary/HTML/2355_14.htm
+# final url: https://data.ipu.org/election-summary/HTML/2355_14.htm
+# fetched (UTC): 2026-10-17T08:10:07Z
+# HTTP 200; 20271 bytes; SHA-256 5a2577e458b9b1666311a3f7c2492f7a295245cabc70e57fec1bd118dd46a73e
+# title: IPU PARLINE database: SERBIA (Narodna skupstina), ELECTIONS IN 2014
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 16 March 2014
+D: The coalition called "Future We Believe In - Aleksandar Vucic" led by the Serbian Progressive Party (SNS), won 158 of th | President Tomislav Nikolic had called early parliamentary elections upon SNS' request. The latter argued that it needed a stronger mandate to accelerate reforms. During the election campaign, outgoing Deputy Prime Minister Vucic (SNS), promised to implement economic reforms, fight corruption and con
+D: President Tomislav Nikolic had called early parliamentary elections upon SNS' request. The latter argued that it needed  | Date of previous elections: 6 May 2012
+D: Date of previous elections: 6 May 2012 | Date of dissolution of the outgoing legislature: 29 January 2014
+D: Timing of election: Early elections | Expected date of next elections: March 2018
+D: Voter turnout | Round no 1 16 March 2014
+D: Sources: | National Assembly (20.05.2014)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Dates of election / renewal (from/to) | 16 March 2014
+K: Purpose of elections | The coalition called "Future We Believe In - Aleksandar Vucic" led by the Serbian Progressive Party (SNS), won 158 of the 250 seats at stake, thereby becoming the first electoral coalition in Serbia t
+K: Timing of election: Early elections | Expected date of next elections: March 2018
+K: Number of seats at stake: 250 (full renewal) | Number of candidates: Not available.
+K: - The "Future We Believe In - Aleksandar Vucic" coalition comprised the Serbian Progressive Party (SNS), New Serbia (NS), the Serbian Renewal Movement (SPO) and the Socialist Movement (PS). | - Ivica Dacic - SPS, PUPS, US comprised the Socialist Party of Serbia (SPS), the Party of United Pensioners of Serbia (PUPS) and United Serbia (JS).

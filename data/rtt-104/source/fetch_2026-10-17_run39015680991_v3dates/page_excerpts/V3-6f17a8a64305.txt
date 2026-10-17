@@ -1,0 +1,18 @@
+# V3-6f17a8a64305
+# url: https://data.ipu.org/election-summary/HTML/2107_00.htm
+# final url: https://data.ipu.org/election-summary/HTML/2107_00.htm
+# fetched (UTC): 2026-10-17T08:07:50Z
+# HTTP 200; 8094 bytes; SHA-256 49fe191a709799d23fc2c8431db37b2e71d0fe68eb107349063ca4043e9c02af
+# title: ETHIOPIA: parliamentary elections Yehizib Twekayoch Mekir Bete, 2000
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 14 May 2000
+D: Background and outcome of elections: | On 1 October 1999, the National Election Board invited all political parties in Ethiopia to register for the 2000 national and regional elections, the second since the promulgation of the new Constitution in December 1994 which provided for multi-party democracy.
+D: On 1 October 1999, the National Election Board invited all political parties in Ethiopia to register for the 2000 nation | Voting took place on 14 May 2000. At stake were all the seats in the lower House, the Council of People's Representatives of the Federal Assembly and the 3,022 seats in the State Councils.
+D: Results announced in mid-June by the National Electoral Board showed that the ruling coalition, the EPRDF, led by Prime  | Elections in the region of Somali, which had been hard hit by drought and severe food shortage, were held on 31 August 2000. The Alliance of Somali Democratic Forces (ASDF), the Western Somali Democratic Party (WSDP), and the Somali Peoples Democratic Party (SPDP), as well as 156 private candidates 
+D: Elections in the region of Somali, which had been hard hit by drought and severe food shortage, were held on 31 August 2 | The newly elected House of People's Representatives was inaugurated on 9 October 2000, and it re-elected Ato Dawit Yohannes as the Speaker.
+D: STATISTICS | Round no 1 (14 May 2000): Elections results
+K: Parliamentary Chamber: Yehizib Twekayoch Mekir Bete | ELECTIONS HELD IN 2000
+K: Chamber: | Yehizib Twekayoch Mekir Bete
+K: Dates of elections / renewal (from/to): | 14 May 2000
+K: Purpose of elections: | Elections were held for all the seats in the House of People's Representatives on the normal expiry of the members' term of office.
