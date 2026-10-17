@@ -31,7 +31,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Fetch sources and commit the data files, manifest and excerpts to this branch
         env:
-          FETCH_SET: v3dates  # IQ-24c: the URLs of the V3 to-check list (round4 = IQ-22 Parline and archive; archive = round 3; parline = round 2; empty = round 1)
+          FETCH_SET: m49  # IQ-24e: UN M49 regions and UN terms (v3dates = IQ-24c, the V3 to-check list; round4 = IQ-22 Parline and archive; archive = round 3; parline = round 2; empty = round 1)
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           set -euo pipefail

@@ -16,6 +16,8 @@ round-1 WDI file (ROUND1 below), with a narrow filter that skips the site's coun
 IQ-20 round 3 (FETCH_SET=archive): IPU's archived monthly rankings (archive.ipu.org, static HTML, 1997-2018), to test
 which date a WDI year's figure describes. Only the table rows naming the test countries are kept.
 
+IQ-24e (FETCH_SET=m49): the UN M49 table (unstats.un.org), only the rows of the RTT-104 entrants, and short excerpts of
+the UN terms-of-use pages (copying, licence, attribution), for the V3 continent colours.
 IQ-24c (FETCH_SET=v3dates): every URL in data/rtt-104/source/v3_fetch_urls.txt (URLs only). Kept per page: the title,
 the lines that hold a date (a year 1990-2026 with a month name or a numeric date) and the lines naming an election
 scope, purpose or kind of event, each cut to 300 characters. The dates are checked in the container by
@@ -24,6 +26,7 @@ scripts/rtt104_v3_verify.py, in code.
 Usage: rtt104_fetch_sources.py <out_dir>      Standard library only (plus pdftotext for the one PDF).
 """
 import datetime
+import csv
 import hashlib
 import html
 import json
@@ -283,8 +286,73 @@ def v3dates_round(out):
     json.dump(manifest, open(os.path.join(out, "fetch_manifest.json"), "w"), indent=1, sort_keys=True)
 
 
+M49_URL = "https://unstats.un.org/unsd/methodology/m49/overview/"
+M49_TERMS = ["https://unstats.un.org/UNSDWebsite/terms-of-use", "https://www.un.org/en/about-us/terms-of-use",
+             "https://data.un.org/Host.aspx?Content=UNdataUse"]
+TERMS_WORDS = r"copy|copied|reproduc|permission|licen|free of charge|attribut|commercial|cite|citation|redistribut"
+
+
+def m49_round(out):
+    """IQ-24e: the UN M49 table (region of every RTT-104 entrant, English table only) and the UN terms of use.
+    Kept: for each entrant its M49 row (codes and names, no other content), the page's SHA-256, and short excerpts
+    of the terms pages (lines about copying, licence and attribution)."""
+    os.makedirs(out, exist_ok=True)
+    manifest = {"fetched_by": "GitHub runner, .github/workflows/rtt104_sources.yml (FETCH_SET=m49)",
+                "run_url": os.environ.get("RUN_URL", ""), "pages": []}
+    want = {e["id"]: e["label"] for e in json.load(open("kits/rtt-104/race_rtt104.json", encoding="utf-8"))["entrants"]}
+    status, ctype, body, final = fetch(M49_URL)
+    rec = {"url": M49_URL, "fetched_utc": now(), "status": status}
+    if body is None:
+        rec["error"] = ctype
+    else:
+        t = body.decode("utf-8", "replace")
+        rec.update({"bytes": len(body), "sha256": hashlib.sha256(body).hexdigest(), "final_url": final})
+        m = re.search(r'(?is)<table[^>]*id="downloadTableEN".*?</table>', t)
+        rows = []
+        for tr in re.findall(r"(?is)<tr[^>]*>(.*?)</tr>", m.group(0) if m else ""):
+            cells = [html.unescape(re.sub(r"<[^>]+>", "", c)).strip() for c in re.findall(r"(?is)<t[dh][^>]*>(.*?)</t[dh]>", tr)]
+            rows.append(cells)
+        head, body_rows = (rows[0], rows[1:]) if rows else ([], [])
+        rec["table_header"] = head
+        rec["table_rows"] = len(body_rows)
+        idx = {h: i for i, h in enumerate(head)}
+        iso = idx.get("ISO-alpha3 Code")
+        kept = [r for r in body_rows if iso is not None and len(r) > iso and r[iso] in want]
+        with open(os.path.join(out, "m49_entrants.csv"), "w", encoding="utf-8", newline="") as f:
+            w = csv.writer(f)
+            w.writerow(["iso3", "label", "m49_code", "region_code", "region_name", "sub_region_name",
+                        "intermediate_region_name", "country_or_area"])
+            for r in sorted(kept, key=lambda r: r[iso]):
+                g = lambda h: r[idx[h]] if h in idx and idx[h] < len(r) else ""
+                w.writerow([r[iso], want[r[iso]], g("M49 Code"), g("Region Code"), g("Region Name"),
+                            g("Sub-region Name"), g("Intermediate Region Name"), g("Country or Area")])
+        rec["entrants_found"] = len(kept)
+        rec["entrants_missing"] = sorted(set(want) - {r[iso] for r in kept})
+        print(f"M49: {status} {len(body)} bytes, {len(body_rows)} rows, {len(kept)} of {len(want)} entrants")
+    manifest["pages"].append(rec)
+    with open(os.path.join(out, "terms_excerpts.txt"), "w", encoding="utf-8") as f:
+        for url in M49_TERMS:
+            status, ctype, body, final = fetch(url, tries=2)
+            r = {"url": url, "fetched_utc": now(), "status": status}
+            if body is None:
+                r["error"] = ctype
+            else:
+                text = to_text(body, ctype, url)
+                ex = excerpts(text, TERMS_WORDS, limit=25)
+                r.update({"bytes": len(body), "sha256": hashlib.sha256(body).hexdigest(), "final_url": final, "excerpts": len(ex)})
+                f.write(f"# {url}\n# final url: {final}\n# HTTP {status}; SHA-256 {r['sha256']}\n")
+                for e in ex:
+                    f.write("- " + e + "\n")
+                f.write("\n")
+            print(f"terms {url}: {status} {r.get('excerpts', r.get('error'))}")
+            manifest["pages"].append(r)
+    json.dump(manifest, open(os.path.join(out, "fetch_manifest.json"), "w"), indent=1, sort_keys=True)
+
+
 def main():
     out = sys.argv[1]
+    if os.environ.get("FETCH_SET") == "m49":  # IQ-24e: UN M49 regions for the continent colours, and the UN terms
+        return m49_round(out)
     if os.environ.get("FETCH_SET") == "v3dates":  # IQ-24c: the URLs of the V3 to-check list
         return v3dates_round(out)
     if os.environ.get("FETCH_SET") == "round4":  # IQ-22: Parline pages and archived rankings for named countries
