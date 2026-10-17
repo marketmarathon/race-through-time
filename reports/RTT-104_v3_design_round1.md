@@ -38,7 +38,7 @@ The one documented case: WDI's 1998 figure is "as of August 10, 1998". **Austral
 ## Round 2 (IQ-24e, 17 Oct 2026): Luke's answers, continent colours and pace
 Brief `prompts/CODE_SESSION_IQ-24e.md`. **Luke chose (DEC-680..DEC-684):** 20 rows, the filled amber tag, rule (a), fixed 0–70%, late-year jumps untagged. **New (DEC-685, DEC-686):** bars coloured by continent, and slower. Both shown before any film (DEC-069).
 
-**Watch:** the private pre-release in DEC-690: `sheet_v3r2_continents` (2019 with continent colours beside round 1's teal), the continent still and its phone copy, and two clips of 2016–2020 with rule (a): 4.5 s per year (21 s) and 6 s per year (27 s).
+**Watch:** https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-104-v3-round2-2ddf65a-run2 (DEC-690): `sheet_v3r2_continents` (2019 with continent colours beside round 1's teal), the continent still and its phone copy, and two clips of 2016–2020 with rule (a): 4.5 s per year (21 s) and 6 s per year (27 s).
 
 **Continents (DEC-687):** UN M49 regions, fetched on a runner. The 44 countries ever in a top 20: Europe 16, Africa 9, Americas 9, Asia 8, Oceania 2. None is disputed (Türkiye never reaches the top 20). Listed for Luke anyway: the UAE counts as Asia (Western Asia), Turkmenistan as Asia, Mexico and Central America as Americas. Legend "Continent (UN M49)" above the world panel.
 
@@ -46,7 +46,7 @@ Brief `prompts/CODE_SESSION_IQ-24e.md`. **Luke chose (DEC-680..DEC-684):** 20 ro
 
 **Pace (DEC-689):** tags stay two-thirds of each year (3.0 s at 4.5 s, 4.0 s at 6 s). Full film estimate: **4.5 s → about 2:18; 6 s → about 3:00** (V2 1:44; round 1's 3 s → 1:36).
 
-**Checks (all PASS):** values = data, every tag a VERIFIED rule-(a) row, phone 6.1 pt, legend 5.1 pt, no overlaps (`tests/rtt104/STILLS_CHECK_V3_round2.md`); whole race with colours scanned; V2 byte-identical to c379631; WCAG flash on both clips (DEC-690).
+**Checks (all PASS):** values = data, every tag a VERIFIED rule-(a) row, phone 6.1 pt, legend 5.1 pt, no overlaps (`tests/rtt104/STILLS_CHECK_V3_round2.md`); whole race with colours scanned; V2 byte-identical to c379631; WCAG flash PASS on both clips (23,291 and 15,384 px of 57,600).
 
 ### Questions for Luke (round 2)
 1. **Continent colours as shown: yes, or change any?** *(Recommendation: yes. Default: as shown.)*

@@ -1372,7 +1372,7 @@
           "continents": "data/rtt-104/source/fetch_2026-10-17_run39022010671_m49/m49_entrants.csv (UN M49 Region Name)",
           "colours": "Africa #E9622E, Americas #9AE0FC, Asia #FB79C8, Europe #29A987, Oceania #937AF7 (DEC-688)",
           "running_time_estimate": "3 s 1:36.5; 4.5 s 2:18.5; 6 s 3:00.5 (V2 1:43.7)",
-          "release": "see DEC-690"
+          "release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-104-v3-round2-2ddf65a-run2 (run 39022457022; 4.5 s clip b8a52c47...c9b4, 6 s clip 3c06a437...e274; WCAG PASS both)"
         }
       }
     }
