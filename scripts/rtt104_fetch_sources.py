@@ -287,7 +287,7 @@ def v3dates_round(out):
 
 
 M49_URL = "https://unstats.un.org/unsd/methodology/m49/overview/"
-M49_TERMS = ["https://unstats.un.org/UNSDWebsite/terms-of-use", "https://www.un.org/en/about-us/terms-of-use",
+M49_TERMS = ["https://www.un.org/en/about-us/terms-of-use", "https://www.un.org/en/about-us/copyright",
              "https://data.un.org/Host.aspx?Content=UNdataUse"]
 TERMS_WORDS = r"copy|copied|reproduc|permission|licen|free of charge|attribut|commercial|cite|citation|redistribut"
 
@@ -307,9 +307,12 @@ def m49_round(out):
     else:
         t = body.decode("utf-8", "replace")
         rec.update({"bytes": len(body), "sha256": hashlib.sha256(body).hexdigest(), "final_url": final})
-        m = re.search(r'(?is)<table[^>]*id="downloadTableEN".*?</table>', t)
+        tables = re.findall(r"(?is)<table\b.*?</table>", t)
+        rec["tables"] = [re.search(r"(?is)<table\b[^>]*>", x).group(0)[:120] for x in tables][:20]
+        m = next((x for x in tables if re.search(r"(?i)downloadTableEN", x[:300])), None) or \
+            next((x for x in tables if "ISO-alpha3" in x and "Region Name" in x), "")
         rows = []
-        for tr in re.findall(r"(?is)<tr[^>]*>(.*?)</tr>", m.group(0) if m else ""):
+        for tr in re.findall(r"(?is)<tr[^>]*>(.*?)</tr>", m):
             cells = [html.unescape(re.sub(r"<[^>]+>", "", c)).strip() for c in re.findall(r"(?is)<t[dh][^>]*>(.*?)</t[dh]>", tr)]
             rows.append(cells)
         head, body_rows = (rows[0], rows[1:]) if rows else ([], [])
@@ -327,6 +330,11 @@ def m49_round(out):
                 w.writerow([r[iso], want[r[iso]], g("M49 Code"), g("Region Code"), g("Region Name"),
                             g("Sub-region Name"), g("Intermediate Region Name"), g("Country or Area")])
         rec["entrants_found"] = len(kept)
+        page_terms = excerpts(to_text(body, ctype, M49_URL), TERMS_WORDS + r"|terms of use|copyright", limit=12)
+        with open(os.path.join(out, "m49_page_terms_excerpts.txt"), "w", encoding="utf-8") as f:
+            f.write(f"# {M49_URL}\n# lines about use, copyright or terms on the M49 page itself\n")
+            for e in page_terms:
+                f.write("- " + e + "\n")
         rec["entrants_missing"] = sorted(set(want) - {r[iso] for r in kept})
         print(f"M49: {status} {len(body)} bytes, {len(body_rows)} rows, {len(kept)} of {len(want)} entrants")
     manifest["pages"].append(rec)
