@@ -26,16 +26,12 @@ concurrency:
 jobs:
   fetch:
     runs-on: ubuntu-24.04
-    timeout-minutes: 30
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
       - name: Fetch sources and commit the data files, manifest and excerpts to this branch
         env:
-          FETCH_SET: round4  # IQ-22 round 4: Parline pages and archived rankings for Pakistan and Egypt (archive = round 3; parline = round 2; empty = round 1)
-          PARLINE_ISO3: PAK EGY
-          ARCHIVE_COUNTRIES: Pakistan|Egypt
-          ARCHIVE_NOTES: "1"
-          ARCHIVE_DATES: 050299 250100 101299 151099 151199 010113 010213 010214 010212 311212 011112 010812 010712
+          FETCH_SET: v3dates  # IQ-24c: the URLs of the V3 to-check list (round4 = IQ-22 Parline and archive; archive = round 3; parline = round 2; empty = round 1)
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           set -euo pipefail

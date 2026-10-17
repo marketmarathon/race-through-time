@@ -16,6 +16,11 @@ round-1 WDI file (ROUND1 below), with a narrow filter that skips the site's coun
 IQ-20 round 3 (FETCH_SET=archive): IPU's archived monthly rankings (archive.ipu.org, static HTML, 1997-2018), to test
 which date a WDI year's figure describes. Only the table rows naming the test countries are kept.
 
+IQ-24c (FETCH_SET=v3dates): every URL in data/rtt-104/source/v3_fetch_urls.txt (URLs only). Kept per page: the title,
+the lines that hold a date (a year 1990-2026 with a month name or a numeric date) and the lines naming an election
+scope, purpose or kind of event, each cut to 300 characters. The dates are checked in the container by
+scripts/rtt104_v3_verify.py, in code.
+
 Usage: rtt104_fetch_sources.py <out_dir>      Standard library only (plus pdftotext for the one PDF).
 """
 import datetime
@@ -224,8 +229,64 @@ def archive_round(out):
     json.dump(manifest, open(os.path.join(out, "fetch_manifest.json"), "w"), indent=1, sort_keys=True)
 
 
+MONTHS = (r"jan(?:uary|vier|eiro|uar)?|feb(?:ruary|rero|ruar)?|f[ée]vrier|fevereiro|mar(?:ch|zo|s|ço|co)?|m[äa]rz|"
+          r"apr(?:il)?|abril|avril|may|mayo|mai|maio|june?|junio|juin|junho|juni|july?|julio|juillet|julho|juli|"
+          r"aug(?:ust)?|agosto|ao[uû]t|sep(?:t(?:ember)?)?|septiembre|setembro|septembre|oct(?:ober)?|octubre|outubro|"
+          r"octobre|oktober|nov(?:ember)?|noviembre|novembro|novembre|dec(?:ember)?|diciembre|dezembro|d[ée]cembre|dezember")
+V3_DATE = re.compile(r"(?i)(?:\b(?:19[89]\d|20[0-2]\d)\b.*\b(?:" + MONTHS + r")\b|\b(?:" + MONTHS +
+                     r")\b.*\b(?:19[89]\d|20[0-2]\d)\b|\b\d{1,2}[./-]\d{1,2}[./-](?:19|20)\d\d\b|\b(?:19|20)\d\d-\d\d-\d\d\b)")
+V3_KIND = re.compile(r"(?i)renewal|scope of|purpose of|dissol|suspen|quota|reserved|appoint|nominat|by-election|"
+                     r"constituent|transitional|chamber|type of election|timing")
+
+
+def v3dates_round(out):
+    exc = os.path.join(out, "page_excerpts")
+    os.makedirs(exc, exist_ok=True)
+    manifest = {"fetched_by": "GitHub runner, .github/workflows/rtt104_sources.yml (FETCH_SET=v3dates)",
+                "run_url": os.environ.get("RUN_URL", ""), "pages": []}
+    urls = [u.strip() for u in open("data/rtt-104/source/v3_fetch_urls.txt", encoding="utf-8")
+            if u.strip() and not u.startswith("#")]
+    for url in urls:
+        sid = "V3-" + hashlib.sha1(url.encode()).hexdigest()[:12]
+        status, ctype, body, final = fetch(url, tries=2)
+        rec = {"id": sid, "url": url, "fetched_utc": now(), "status": status}
+        if body is None:
+            rec["error"] = ctype
+            print(f"{sid}: FAILED {ctype}")
+            manifest["pages"].append(rec)
+            time.sleep(1)
+            continue
+        text = to_text(body, ctype, url)
+        title = re.findall(r"(?is)<title>(.*?)</title>", body[:20000].decode("utf-8", "replace"))
+        lines = [ln for ln in text.splitlines() if not MENU.match(ln)]
+        # each kept line with the line before (the label in Parline's tables) and, for kinds, the line after (the value)
+        dated = [(lines[i - 1][:120] + " | " if i else "") + ln[:300] for i, ln in enumerate(lines) if V3_DATE.search(ln)][:80]
+        kinds = [ln[:200] + (" | " + lines[i + 1][:200] if i + 1 < len(lines) else "")
+                 for i, ln in enumerate(lines) if V3_KIND.search(ln) and not V3_DATE.search(ln)][:40]
+        rec.update({"bytes": len(body), "sha256": hashlib.sha256(body).hexdigest(), "content_type": ctype,
+                    "final_url": final, "excerpt_file": f"page_excerpts/{sid}.txt", "dated_lines": len(dated)})
+        with open(os.path.join(exc, f"{sid}.txt"), "w", encoding="utf-8") as f:
+            f.write(f"# {sid}\n# url: {url}\n# final url: {final}\n# fetched (UTC): {rec['fetched_utc']}\n"
+                    f"# HTTP {status}; {len(body)} bytes; SHA-256 {rec['sha256']}\n"
+                    f"# title: {re.sub(chr(92) + 's+', ' ', html.unescape(title[0])).strip()[:200] if title else ''}\n"
+                    "# Short excerpts only: lines holding a date, then lines naming the kind of election or event.\n\n")
+            for ln in dated:
+                f.write("D: " + ln + "\n")
+            for ln in kinds:
+                f.write("K: " + ln + "\n")
+        print(f"{sid}: {status} {len(body)} bytes dated {len(dated)}")
+        manifest["pages"].append(rec)
+        time.sleep(1)
+    ok = sum(1 for p in manifest["pages"] if p.get("status"))
+    manifest["summary"] = f"{ok} of {len(urls)} pages opened"
+    print(manifest["summary"])
+    json.dump(manifest, open(os.path.join(out, "fetch_manifest.json"), "w"), indent=1, sort_keys=True)
+
+
 def main():
     out = sys.argv[1]
+    if os.environ.get("FETCH_SET") == "v3dates":  # IQ-24c: the URLs of the V3 to-check list
+        return v3dates_round(out)
     if os.environ.get("FETCH_SET") == "round4":  # IQ-22: Parline pages and archived rankings for named countries
         sub = os.path.join(out, "parline")
         parline_round(sub)
