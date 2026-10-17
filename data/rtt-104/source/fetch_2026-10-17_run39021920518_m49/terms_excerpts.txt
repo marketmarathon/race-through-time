@@ -1,0 +1,10 @@
+# https://unstats.un.org/UNSDWebsite/terms-of-use
+# final url: https://unstats.un.org/UNSDWebsite/terms-of-use
+# HTTP 200; SHA-256 3f3139348aa0bd2ec82f07c2f884fd2b9c1eb56b42aa2f97ffc723508f3393af
+
+# https://data.un.org/Host.aspx?Content=UNdataUse
+# final url: https://data.un.org/Host.aspx?Content=UNdataUse
+# HTTP 200; SHA-256 d1703cf4053a4cde187721e1f64ca3696af59f80ae9261c1f721daac4c5bc175
+- Terms of Use | All data and metadata provided on UN data ’s website are available free of charge and may be copied freely, duplicated and further distributed provided that UN data is cited as the reference. | Disclaimers
+- Site usage | Copyright © 2026 - Conditions of Use | United Nations Statistics Division
+
