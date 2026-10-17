@@ -41,6 +41,38 @@
     120,
     120
    ]
+  },
+  {
+   "name": "D_luke_2line",
+   "background": "white",
+   "words": [
+    "CAN ANYONE",
+    "CATCH CHATGPT?"
+   ],
+   "word_sizes": [
+    66,
+    48
+   ],
+   "layout": {
+    "words_top": 157
+   }
+  },
+  {
+   "name": "D_luke_3line",
+   "background": "white",
+   "words": [
+    "CAN ANYONE",
+    "CATCH",
+    "CHATGPT?"
+   ],
+   "word_sizes": [
+    66,
+    125,
+    82
+   ],
+   "layout": {
+    "words_top": 9
+   }
   }
  ],
  "overrides": {
