@@ -1,0 +1,10 @@
+{
+ "stills": [
+  {"name": "v3r2_continents_2019", "config": "config_rtt104_v3_continents.json", "at": 2019},
+  {"name": "v3r2_round1_teal_2019", "config": "config_rtt104_v3_base.json", "at": 2019}
+ ],
+ "compose": [
+  {"name": "sheet_v3r2_continents", "title": "RTT-104 V3 round 2 · continent colours · 2019 lands (tags as approved)",
+   "items": [["v3r2_continents_2019", "Continent colours (UN M49), with legend"], ["v3r2_round1_teal_2019", "Round 1, for comparison: all teal"]]}
+ ]
+}

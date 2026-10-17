@@ -6,12 +6,14 @@ Usage: python3 scripts/rtt104_v3_tags.py [data_dir] [race_in] [race_out]
 Writes a copy of V2's player input (which is NOT changed) with two additions:
   top20  per year, the race's ranks 1-20 in the order of the V2 input's own full ranking (frames[].ranks.top), each with
          series.csv's shown_value_1dp as its text; stops if ranks 1-10 differ from boards.csv's top board;
+  continents  each entrant's UN M49 region (IQ-24e), from data/rtt-104/source/fetch_*_m49/m49_entrants.csv;
   tags   one per change row of data/rtt-104/v3_change_events.csv that is visible, big under rule (b) (big = y; rule (a)
          is big_points = y), explained (cause election or other), VERIFIED, with a source URL and a fetched excerpt.
          Unexplained changes get no tag. The tag text uses the true event date, month and year only.
 Nothing here computes a figure: values and texts are copied from the data files.
 """
 import csv
+import glob
 import json
 import os
 import sys
@@ -70,6 +72,16 @@ def main():
                      "late": int(first[:4]) < int(r["to_year"]), "source_url": r["source_url"]})
     race["top20"] = top20
     race["tags"] = tags
+    # IQ-24e: each entrant's UN M49 region (Africa, Americas, Asia, Europe, Oceania), from the runner's fetch of the
+    # M49 table (FETCH_SET=m49); stops if any entrant has none
+    m49 = sorted(glob.glob(os.path.join(data, "source", "fetch_*_m49", "m49_entrants.csv")))
+    if len(m49) != 1:
+        raise SystemExit(f"expected one M49 fetch, found {m49}")
+    reg = {r["iso3"]: r["region_name"] for r in csv.DictReader(open(m49[0], encoding="utf-8"))}
+    missing = [e["id"] for e in race["entrants"] if reg.get(e["id"]) not in ("Africa", "Americas", "Asia", "Europe", "Oceania")]
+    if missing:
+        raise SystemExit(f"no M49 region for {missing}")
+    race["continents"] = {e["id"]: reg[e["id"]] for e in race["entrants"]}
     race["source"] = race["source"] + "; top20 and tags added by scripts/rtt104_v3_tags.py (IQ-24d)"
     with open(rout, "w", encoding="utf-8") as f:
         json.dump(race, f, ensure_ascii=False, sort_keys=True, indent=1)

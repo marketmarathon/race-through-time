@@ -1,0 +1,11 @@
+{
+ "extends": "config_rtt104_v3_continents.json",
+ "kit_version": "rtt104_v3_clip_continents_6_0s_2016_2020",
+ "window": {"from": 2016, "to": 2020},
+ "sec_per_year": 6.0,
+ "v3": {"tag": {"rule": "a", "hold_sec": 4.0}},
+ "lead_in_sec": 1.0,
+ "final_hold_sec": 2.0,
+ "closing_card": {"enabled": false},
+ "notes": "RTT-104 V3 round 2 clip (IQ-24e): 2016 to 2020 at 6.0 s per year, rule (a), continent colours; tags fully shown for 4.0 s (two-thirds of a year, as round 1), plus 0.3 s fades; no music, no closing card."
+}

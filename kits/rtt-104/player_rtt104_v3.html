@@ -17,6 +17,7 @@
  *   tag.look "pill" | "text"                        - question 2
  *   tag.rule "a" (5 points or more) | "b" (also 3+ places) | "none"   - question 3
  *   scale "fixed" (0-70%) | "leader" (the leader's bar at 90% of the width)   - question 4
+ *   colour "single" (V2's teal) | "continent" (UN M49 region, continent_colours, with a legend)   - IQ-24e
  * Data: kits/rtt-104/race_rtt104_v3.json (scripts/rtt104_v3_tags.py): top20 per year (series.csv texts) and tags from
  * VERIFIED rows of data/rtt-104/v3_change_events.csv. Nothing here computes a figure.
  */
@@ -35,7 +36,7 @@ const NAVY='#0b1424', AMBER='#FFD27A';
 window.setup=function(o){
   o=Object.assign({}, o, {cfg:Object.assign({}, o.cfg, {motion:'smooth', leave:{enabled:false, style:'grey'}})});
   V2.setup(o);                                         // V2's setup calls geometry() below and builds PLAN
-  const v3=Object.assign({rows:20, scale:'fixed', fixed_max:70, leader_frac:0.9}, CFG.v3||{});
+  const v3=Object.assign({rows:20, scale:'fixed', fixed_max:70, leader_frac:0.9, colour:'single'}, CFG.v3||{});
   v3.tag=Object.assign({rule:'a', look:'pill', fade_sec:0.3, hold_sec:2.0}, (CFG.v3||{}).tag||{});
   CFG.v3=v3; N=v3.rows; G=geometry();
   TAGS={}; for(const t of D.tags||[]) if(v3.tag.rule==='b' || (v3.tag.rule==='a' && t.rule_a)) TAGS[t.id+'|'+t.to_year]=t;
@@ -48,7 +49,9 @@ geometry=function(){
   const P={x:64, w:1792, y0, row, barH, flagW, flagH, axisY:182, nameSize:n>15?30:34, valSize:n>15?30:34,
            bx:64+flagW+12};
   P.bw=1724-P.bx;                                      // 70% ends at x = 1724, leaving room for the value and a tag
-  return {lr:true, P, panel:{x:1452, y:742, w:404, h:252}};   // lr: V2's chrome then draws no split line
+  const g={lr:true, P, panel:{x:1452, y:742, w:404, h:252}};   // lr: V2's chrome then draws no split line
+  if(v3.colour==='continent') g.legend={x:1452, y:628, w:404, h:96};   // IQ-24e: above the world panel, in the empty right column
+  return g;
 };
 
 /* smooth motion over 20 rows: V2's curves (monotone PCHIP, DEC-655) with the rank capped at N+3 = below the board */
@@ -118,7 +121,7 @@ function drawBoard3(S){
     if(it.slot>N+0.98) continue;
     const e=ENT[it.id], y=P.y0+(it.slot-1)*P.row, len=Math.max(2,P.bw*it.v/max);
     drawFlag(it.id, P.x, y+(P.barH-P.flagH)/2, P.flagW, P.flagH, 1);
-    ctx.fillStyle=CFG.colours.top; rr(P.bx, y, len, P.barH, 5); ctx.fill();
+    ctx.fillStyle=barColour(it.id); rr(P.bx, y, len, P.barH, 5); ctx.fill();
     const base=y+P.barH/2+P.nameSize*0.36;
     ctx.font='700 '+P.nameSize+'px '+FONT; const nw=ctx.measureText(e.label).width;
     ctx.font='700 '+P.valSize+'px '+FONT;
@@ -145,7 +148,7 @@ function drawTag(L){
   const P=G.P, look=CFG.v3.tag.look, s=L.tg.text, fs=30;
   ctx.font='700 '+fs+'px '+FONT; const tw=ctx.measureText(s).width, padX=look==='pill'?14:0, lead=look==='pill'?0:16;
   const W=tw+2*padX+lead, h=36, top=L.y+(P.barH-h)/2;
-  const p=G.panel, inPanelRows = CFG.world_panel && top+h>p.y-6 && top<p.y+p.h;
+  const p=G.panel, ztop=G.legend?G.legend.y:p.y, inPanelRows = CFG.world_panel && top+h>ztop-6 && top<p.y+p.h;   // the legend and the panel
   const limit = inPanelRows ? p.x-14 : P.x+P.w;
   let x=L.vEnd+16, onBar=false;
   if(x+W>limit && L.inside){ x=P.bx+L.len-12-L.vw-18-W; onBar=true; }
@@ -158,12 +161,26 @@ function drawTag(L){
   ctx.globalAlpha=1;
 }
 
+/* IQ-24e: bars coloured by continent (UN M49 region, D.continents) when v3.colour is "continent"; otherwise V2's teal.
+   The legend: "Continent (UN M49)" and five swatches, in the empty right column above the world panel. */
+const CONTINENTS=['Africa','Americas','Asia','Europe','Oceania'];
+function barColour(id){ return CFG.v3.colour==='continent' ? CFG.v3.continent_colours[D.continents[id]] : CFG.colours.top; }
+function drawLegend(){
+  const L=G.legend; if(!L) return;
+  ctx.fillStyle=T.cap; ctx.font='500 25px '+FONT; text('legend_head',null,'Continent (UN M49)',L.x,L.y+22,'left');
+  const cols=[0,148,312];
+  CONTINENTS.forEach((c,i)=>{ const x=L.x+cols[i%3], y=L.y+(i<3?58:94);
+    ctx.fillStyle=CFG.v3.continent_colours[c]; rr(x,y-21,24,24,5); ctx.fill();
+    ctx.fillStyle=T.ink; ctx.font='500 25px '+FONT; text('legend',c,c,x+32,y,'left'); });
+  window.__LABELS.push({kind:'legend_box', text:'', x:L.x, y:L.y, w:L.w, h:L.h, size:null, alpha:1});
+}
+
 drawAt=function(t){
   baseTransform(); window.__LABELS=[]; window.__BARS=[];
   const fr=Math.min(Math.round(t*FPS), RACE_FRAMES-1);
   const S=itemsAt(fr); window.__STATE={frame:fr, year:S.yearLabel, step:S.step.kind};
   ctx.fillStyle=T.ground; ctx.fillRect(0,0,1920,1080); ctx.textBaseline='alphabetic';
-  drawChrome(); drawYear(S); drawBoard3(S); drawWorld(S);
+  drawChrome(); drawYear(S); drawBoard3(S); drawWorld(S); drawLegend();
   if(PLAN.card && fr>=PLAN.card.from){
     const u=clamp((fr-PLAN.card.from)/(CFG.closing_card.fade_sec*FPS),0,1);
     window.__LABELS=[]; window.__BARS=[]; drawCard(ease(u)); window.__STATE.step='card';

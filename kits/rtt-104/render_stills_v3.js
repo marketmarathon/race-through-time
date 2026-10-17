@@ -21,6 +21,7 @@ const fs = require('fs');
 const path = require('path');
 const R = require('./render_rtt104.js');
 const ROOT = path.resolve(__dirname, '..', '..');
+const ROUND = process.env.V3_ROUND ? '_' + process.env.V3_ROUND : '';   // IQ-24e: V3_ROUND=round2 reads stills_v3_round2.json, clips_v3_round2.txt
 const PHONE_PT = 390, DPR = 3, pt = px => px * PHONE_PT / 1920, BIG = 5.9, FLOOR = 5.0;
 const MON = 'Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec'.split(' ');
 
@@ -59,12 +60,13 @@ function checkTags(st, cfg, landingYear) {
   return fails;
 }
 function checkLayout(st) {
-  const fails = [], p = st.panel, inP = (x, y, w, h) => x < p.x + p.w && x + w > p.x && y < p.y + p.h && y + h > p.y;
+  const fails = [], p = st.legend ? { x: st.panel.x, y: st.legend.y, w: st.panel.w, h: st.panel.y + st.panel.h - st.legend.y } : st.panel;   // IQ-24e: legend + panel
+  const inP = (x, y, w, h) => x < p.x + p.w && x + w > p.x && y < p.y + p.h && y + h > p.y;
   for (const b of st.bars) { if (inP(b.rect.x, b.rect.y, b.rect.w, b.rect.h)) fails.push(`bar ${b.id} inside the world panel`);
     if (b.rect.x + b.rect.w > 1856) fails.push(`bar ${b.id} past the edge`); }
   for (const l of st.labels) if (['name', 'value', 'tag'].includes(l.kind) && l.alpha > 0.05) {
     const box = l.box || { x: l.x, y: l.y - l.size * 0.8, w: l.w, h: l.size };
-    if (inP(box.x, box.y, box.w, box.h)) fails.push(`${l.kind} ${l.id} "${l.text}" inside the world panel`);
+    if (inP(box.x, box.y, box.w, box.h)) fails.push(`${l.kind} ${l.id} "${l.text}" inside the world panel or legend`);
     if (box.x + box.w > 1857) fails.push(`${l.kind} ${l.id} "${l.text}" past the edge`);
   }
   return fails;
@@ -76,15 +78,15 @@ function checkPhone(st) {
     if (pt(min[k]) < need - 1e-9) fails.push(`${k} ${min[k]}px = ${pt(min[k]).toFixed(1)} pt < ${need}`); }
   return { fails, min };
 }
-const grab = pg => pg.evaluate(() => ({ labels: window.__LABELS, bars: window.__BARS, panel: G.panel, state: window.__STATE }));
+const grab = pg => pg.evaluate(() => ({ labels: window.__LABELS, bars: window.__BARS, panel: G.panel, legend: G.legend || null, state: window.__STATE }));
 
 async function main() {
   const out = process.argv[2], checkOnly = process.argv.includes('--check-only');
   if (!out) throw new Error('usage: render_stills_v3.js <out_dir> [--check-only]');
   if (!checkOnly && path.resolve(out).startsWith(ROOT + path.sep)) throw new Error('stills are private: write them outside the repository');
   fs.mkdirSync(out, { recursive: true });
-  const spec = JSON.parse(fs.readFileSync(path.join(__dirname, 'stills_v3.json'), 'utf8'));
-  const report = ['# RTT-104 V3 design round — still and clip checks (IQ-24d)', '',
+  const spec = JSON.parse(fs.readFileSync(path.join(__dirname, `stills_v3${ROUND}.json`), 'utf8'));
+  const report = [`# RTT-104 V3 design round${ROUND ? ' ' + ROUND.slice(1) : ''} — still and clip checks (IQ-24d${ROUND ? ', IQ-24e' : ''})`, '',
     'Written by `kits/rtt-104/render_stills_v3.js`. VALUES: bars = ranks 1–N of `data/rtt-104/v3_change_events.csv` with their one-decimal figures. TAGS: every tag drawn is a VERIFIED row of `v3_change_events.csv` with a source URL and a fetched excerpt, big under the rule shown, with the row\'s month and year, fitting its bar; on a landing still every such row is drawn. PHONE: names, values and tags at least 5.9 pt at 390 pt wide, other text at least 5.0 pt. OVERLAP: nothing inside the world panel or past the board edge.', '',
     '| Still | Config | Frame | Values | Tags | Phone (smallest name / value / tag / other) | Overlap | Result |', '|---|---|---|---|---|---|---|---|'];
   const files = {}; let ok = true;
@@ -108,7 +110,7 @@ async function main() {
   }
   /* every frame of every V3 clip: tags and layout; landing frames also values */
   report.push('', '| Clip | Frames | Tags shown (country-year) | Landing values | Tag and layout checks, every frame |', '|---|---|---|---|---|');
-  for (const c of fs.readFileSync(path.join(__dirname, 'clips_v3.txt'), 'utf8').split(/\s+/).filter(Boolean)) {
+  for (const c of fs.readFileSync(path.join(__dirname, `clips_v3${ROUND}.txt`), 'utf8').split(/\s+/).filter(Boolean)) {
     const cfg = R.config(c), { br, pg } = await R.open(cfg);
     const total = await pg.evaluate(() => RACE_FRAMES), lands = await pg.evaluate(() => PLAN.landing);
     const atLand = Object.fromEntries(Object.entries(lands).map(([y, f]) => [f, +y])), first = Math.min(...Object.keys(lands).map(Number));
@@ -126,7 +128,7 @@ async function main() {
     console.log(`${fails.size ? 'FAIL' : 'PASS'} ${c}: ${total} frames, ${seen.size} tags${fails.size ? ': ' + [...fails].join('; ') : ''}`);
   }
   report.push('', `Overall: ${ok ? 'PASS' : 'FAIL'}.`, '');
-  fs.writeFileSync(path.join(ROOT, 'tests', 'rtt104', 'STILLS_CHECK_V3.md'), report.join('\n'));
+  fs.writeFileSync(path.join(ROOT, 'tests', 'rtt104', `STILLS_CHECK_V3${ROUND}.md`), report.join('\n'));
   if (checkOnly) process.exit(ok ? 0 : 1);
 
   /* phone copies and sheets (as render_stills.js) */

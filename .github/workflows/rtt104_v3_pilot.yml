@@ -13,7 +13,7 @@
 #     sizes, overlaps; kits/rtt-104/render_stills_v3.js, which also checks every frame of both clips);
 #   - saves everything ONLY as one pre-release in the private repo, with every file's SHA-256 in its notes;
 #   - uploads NO workflow artifact, uses NO cache, and deletes the logo, frames and videos at the end.
-# Trigger: a push that changes THIS FILE on the RTT-104 branch, or by hand. Round: IQ-24d round 1.
+# Trigger: a push that changes THIS FILE on the RTT-104 branch, or by hand. Round: V3_ROUND below (IQ-24e: round2).
 name: rtt104-v3-pilot
 
 on:
@@ -30,6 +30,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
+  V3_ROUND: round2      # IQ-24e: continent colours and two slower clips (empty = IQ-24d round 1: stills_v3.json, clips_v3.txt)
   PRIVATE_REPO: marketmarathon/race-through-time-private
   PRIVATE_REF: main
 
@@ -72,7 +73,7 @@ jobs:
             test -n "$c" || continue
             f=$(RTT_CONFIG="$c" FRAME_COUNT_ONLY=1 node kits/rtt-104/render_rtt104.js | awk '/^FRAMES/ {print $2}')
             test -n "$f"; echo "$c $f" | tee -a "$RUNNER_TEMP/plan.txt"
-          done < kits/rtt-104/clips_v3.txt
+          done < "kits/rtt-104/clips_v3${V3_ROUND:+_$V3_ROUND}.txt"
 
       - name: Fetch Luke's logo from the private repo and check its hash
         env:
@@ -120,15 +121,15 @@ jobs:
           GH_TOKEN: ${{ secrets.RTT_PRIVATE_TOKEN }}
         run: |
           O="$RUNNER_TEMP/rtt_out"; SHORT=${GITHUB_SHA::7}
-          TAG="rtt-104-v3-round1-${SHORT}-run${GITHUB_RUN_NUMBER}"
+          TAG="rtt-104-v3-${V3_ROUND:-round1}-${SHORT}-run${GITHUB_RUN_NUMBER}"
           {
-            echo "RTT-104 Women in Parliament V3, design round 1 (IQ-24d): the top-20 board with election tags, options side by side for Luke to choose from, rendered by GitHub Actions. No music. Not a film. The approved V2 film is unchanged."
+            echo "RTT-104 Women in Parliament V3, design ${V3_ROUND:-round1} (IQ-24d/IQ-24e): the top-20 board with election tags as Luke chose them; round 2 adds continent colours (UN M49) and two slower paces. Rendered by GitHub Actions. No music. Not a film. The approved V2 film is unchanged."
             echo
             echo "- Source: ${GITHUB_REPOSITORY} @ ${GITHUB_SHA} (${GITHUB_REF_NAME}), run ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
             while read -r c FRAMES; do echo "- kits/rtt-104/${c}: ${FRAMES} frames at 30 fps = $(awk -v f="$FRAMES" 'BEGIN {printf "%.1f", f / 30}') s, 1920 x 1080, x264, no audio"; done < "$RUNNER_TEMP/plan.txt"
             sed 's/^/- /' "$RUNNER_TEMP/flash.txt"
-            echo "- Stills: kits/rtt-104/stills_v3.json, 1920 x 1080 PNG plus the same frame at phone size (390 points wide at 3 device pixels per point); sheet_v3_*.png = options side by side. Checked: values = data/rtt-104/v3_change_events.csv, every tag = a VERIFIED row with a fetched excerpt, phone sizes, overlaps; every frame of both clips too (kits/rtt-104/render_stills_v3.js). The file named PROPOSAL shows a proposal, not an approved rule"
-            echo "- Clips: rtt104_v3_clip_a = tag rule (a), changes of 5 points or more; rtt104_v3_clip_b = tag rule (b), also moves of 3 or more places. Same years (2016 to 2020), 3 s per year"
+            echo "- Stills: kits/rtt-104/stills_v3${V3_ROUND:+_$V3_ROUND}.json, 1920 x 1080 PNG plus the same frame at phone size (390 points wide at 3 device pixels per point); sheet_v3_*.png = options side by side. Checked: values = data/rtt-104/v3_change_events.csv, every tag = a VERIFIED row with a fetched excerpt, phone sizes, overlaps; every frame of both clips too (kits/rtt-104/render_stills_v3.js). The file named PROPOSAL shows a proposal, not an approved rule"
+            if [ "$V3_ROUND" = round2 ]; then echo "- Clips: the same years (2016 to 2020), tag rule (a), continent colours: rtt104_v3_clip_continents_4_5s = 4.5 s per year (tags 3.0 s); rtt104_v3_clip_continents_6_0s = 6 s per year (tags 4.0 s)"; else echo "- Clips: rtt104_v3_clip_a = tag rule (a); rtt104_v3_clip_b = tag rule (b). Same years (2016 to 2020), 3 s per year"; fi
             echo "- Luke's logo: race-through-time-private ${PRIVATE_REF}, SHA-256 checked against kits/rtt-104/assets_sha256.txt; flags: flag-icons 7.5.0 (MIT)"
             echo "- File SHA-256:"
             (cd "$O" && sha256sum *.mp4 *.png | sed 's/^/  - /')
@@ -137,7 +138,7 @@ jobs:
           } > "$O/notes.md"
           cat "$O/notes.md"
           gh release create "$TAG" --repo "$PRIVATE_REPO" --target main --prerelease \
-            --title "RTT-104 V3 design round 1 ${SHORT} (stills and clips)" --notes-file "$O/notes.md" "$O"/*.mp4 "$O"/*.png
+            --title "RTT-104 V3 design ${V3_ROUND:-round1} ${SHORT} (stills and clips)" --notes-file "$O/notes.md" "$O"/*.mp4 "$O"/*.png
           echo "Release: https://github.com/${PRIVATE_REPO}/releases/tag/${TAG}" | tee -a "$GITHUB_STEP_SUMMARY"
 
       - name: Delete the logo, frames and videos from the runner
