@@ -1,0 +1,30 @@
+{
+ "ready": true,
+ "title": "No.10 A New Beginning",
+ "artist": "Esther Abrami",
+ "source": "YouTube Studio Audio Library on the Race Through Time channel (Ambient / Inspirational, added Jun 2020), YouTube Audio Library licence: 'Attribution not required'; chosen by Luke 10 Oct 2026 from Cowork's shortlist of six (DEC-649); downloaded by Cowork with his OK",
+ "file": "no10_a_new_beginning_esther_abrami.mp3",
+ "private_path": "assets/rtt-104/music/no10_a_new_beginning_esther_abrami.mp3",
+ "private_ref": "main",
+ "sha256": "3a36c065f2161be686daf91fa8ce8b646a7bc9ceed0b4e86ca78bddfe9ce1bda",
+ "bytes": 5904755,
+ "duration_sec": 147.59,
+ "readme_path": "assets/rtt-104/music/README_a_new_beginning.txt",
+ "readme_bytes": 750,
+ "readme_sha256_prefix": "8c466b33",
+ "readme_sha256_suffix": "4d05",
+ "start_sec": "auto",
+ "fade_sec": 5.0,
+ "loop_start": 44.071,
+ "loop_end": 113.267,
+ "crossfade_sec": 2.485,
+ "notes": [
+  "V3's own music file (IQ-24g); V2's music_rtt104.json is NOT changed. Same track, same private file, same checks (SHA-256, size, README) as V2.",
+  "The audio file is NEVER committed here (Audio Library terms: not to be shared on its own; reference/rights_ledger.md). It lives only in the private repo and appears only mixed into the film; no audio-only file is ever released.",
+  "Start: 'auto' as V2 (DEC-651): the opening silence ends at 0.705193 s (ffmpeg silencedetect); the workflow stops if it finds any other value, because the loop points below are measured from that start.",
+  "Loop (Luke, DEC-699; as RTT-003): the track from the start lasts 146.855 s, the film 174.5 s, so the track loops once. Points found by scripts/rtt_music_loop.py --grid 32 --one-join on the track from its start (librosa 1.0.0 in the Claude Code container, file deleted afterwards): beat tracking at about 199 BPM (double time for this piano piece; median beat 0.302 s), so the phrase grid is 32 detected beats. loop_start = beat 128 (44.071 s, a detected section boundary), loop_end = beat 352 (113.267 s): 224 beats, one join only (scripts/rtt_mix_music.sh repeats A..B each time it reaches B; B - A = 69.2 s >= 174.5 - 113.267 = 61.2 s, and still one join if a 6 s closing card is added). Spectral match 0.940; level 1 s before / after the join -19.4 / -18.8 dB. Rejected: 24.660/113.267 (match 0.949 but the music after the join is 3.3 dB quieter over 4 s) and 44.071/83.801 (three joins).",
+  "Crossfade 2.485 s (8 detected beats at the join), equal-power, centred on the two points (scripts/rtt_mix_music.sh, unchanged). Checked by scripts/rtt_loop_check.py on a test mix: no click (largest 5 ms high-frequency burst at the join 0.0137, below the rest of the music's 99.9th percentile 0.0205) and no jump (largest loudness step 3.1 dB per 100 ms, below the rest's 99th percentile 5.7 dB); the workflow repeats this check on the master.",
+  "Fade: out over the 5 s final table; mixed to -16 LUFS integrated, true peak at most -1 dBTP (scripts/rtt_mix_music.sh fails otherwise)."
+ ],
+ "start_sec_expected": 0.705193
+}

@@ -1,0 +1,21 @@
+{
+ "extends": "config_rtt104_v3_palette_c.json",
+ "kit_version": "rtt104_film_v3",
+ "out": "rtt104_film_v3.mp4",
+ "music_file": "music_rtt104_v3.json",
+ "sec_per_year": 6.0,
+ "v3": {
+  "tag": {
+   "rule": "a",
+   "hold_sec": 4.0
+  }
+ },
+ "lead_in_sec": 1.5,
+ "final_hold_sec": 5.0,
+ "closing_card": {
+  "enabled": false
+ },
+ "crf": 4,
+ "preset": "slow",
+ "notes": "RTT-104 FULL FILM V3 (IQ-24g): Luke's approved V3 design (DEC-680..DEC-684, DEC-693; palette C DEC-697; 6 s per year DEC-698): one board of the top 20, fixed 0-70%, bars by UN M49 continent with the 'Continent (UN M49)' key, filled amber tags for VERIFIED changes of 5 points or more held 4 s, late-year jumps untagged, smooth motion (DEC-654/655), world-average panel, title, measure and credit as round 3; 1.5 s lead-in, 28 years at 6 s, the 5 s final table (DEC-569); no closing card (DEC-701, a question for Luke). Master settings as V2 (x264 slow CRF 4 at 3840 x 2160). Rendered only by .github/workflows/rtt104_v3_film.yml; V2's configs and workflow are not touched."
+}
