@@ -39,7 +39,8 @@ KIND_WORDS = {
     "quota or seat law": r"quota|reserved|parity|parit|paridad|women|seats|law|act|amend",
     "appointed seats": r"appoint|nominat|designat",
     "newly formed": r"constituent|transitional|new|first|establish|formed|inaugurat|install",
-    "other": r"law|reform|amend|seat|quota|appoint|dissol|suspen|vacan|replac|constitution|transition|resign",
+    "other": r"law|reform|amend|seat|quota|appoint|dissol|suspen|vacan|replac|substitut|constitution|transition|resign|"
+             r"government|number of women",
 }
 NON_PRIMARY = ("wikipedia.org",)
 
@@ -163,8 +164,17 @@ def main(tocheck, fetch_dir, data_dir="data/rtt-104"):
     by_c = {}
     for x in res:
         if re.match(r"\d{4}", x["claimed_date"]):
-            end = dt.date.fromisoformat(re.findall(r"\d{4}-\d\d-\d\d", x["claimed_date"])[-1])
-            by_c.setdefault(x["country"], []).append((end, x))
+            # a multi-day or multi-round event is placed by its first day (Belarus 2004: rounds to March 2005 but the
+            # WDI 2004 figure already shows the October 2004 result); a range that runs past the window is flagged
+            ds = re.findall(r"\d{4}-\d\d-\d\d", x["claimed_date"])
+            x["_end"] = dt.date.fromisoformat(ds[-1])
+            by_c.setdefault(x["country"], []).append((dt.date.fromisoformat(ds[0]), x))
+    def routine(country, d, x):
+        """A dissolution followed within 183 days by a VERIFIED general election of the same chamber is the normal step
+        before that election, not a cause of its own (Claude working choice, DEC-669)."""
+        return x["event_type"] == "dissolved or suspended" and any(
+            y["status"] == "VERIFIED" and y["event_type"] in ELECTION_KINDS and 0 <= (e - d).days <= 183
+            for e, y in by_c.get(country, []))
     changes = list(csv.DictReader(open(os.path.join(data_dir, "v3_change_events.csv"), encoding="utf-8")))
     causes = []
     for c in changes:
@@ -176,12 +186,14 @@ def main(tocheck, fetch_dir, data_dir="data/rtt-104"):
         near = [(d, x) for d, x in by_c.get(c["country"], []) if not a <= d <= b
                 and (abs((d - a).days) <= 61 or abs((d - b).days) <= 61)]
         el = [(d, x) for d, x in inside if x["status"] == "VERIFIED" and x["event_type"] in ELECTION_KINDS]
-        ot = [(d, x) for d, x in inside if x["status"] == "VERIFIED" and x["event_type"] not in ELECTION_KINDS]
+        ot = [(d, x) for d, x in inside if x["status"] == "VERIFIED" and x["event_type"] not in ELECTION_KINDS
+              and not routine(c["country"], d, x)]
         pick = el or ot
         notes = []
         border = [f"{d} {x['event_type']} within 2 months of the window edge" for d, x in (el + ot)
                   if (d - a).days <= 61 or (b - d).days <= 61]
         border += [f"{d} {x['event_type']} just outside the window ({x['status']})" for d, x in near]
+        border += [f"{x['claimed_date']} {x['event_type']} runs past the window's end" for d, x in (el + ot) if x["_end"] > b]
         unv = [f"{d} {x['event_type']} in the window but {x['status']}: {x['reason']}" for d, x in inside
                if x["status"] != "VERIFIED"]
         notes += unv

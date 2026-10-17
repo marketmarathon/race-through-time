@@ -12,3 +12,4 @@
   - Every file's URL, UTC time, HTTP status, bytes and SHA-256: each folder's `fetch_manifest.json`. Web pages are never kept whole.
 - Hand-written inputs: `source/short_names.csv` (DEC-616), `source/closing_card_reasons.csv` (DEC-613, DEC-622), `source/reference_date_findings.md` (DEC-621), `source/report_questions.md`.
 - The fetch workflow runs on a push that changes it or its script on this branch; `FETCH_SET` picks the round (empty = round 1).
+- **V3 Part 1 (IQ-24b, IQ-24c):** `v3_change_events.csv` (every change of the 44 countries ever in a top 20, with its cause; `scripts/rtt104_v3_changes.py`), `v3_verified_events.csv` (the to-check list's rows our runner's pages confirm; `scripts/rtt104_v3_verify.py`), `source/v3_causes.csv`, `source/v3_verify_results.json`, `source/v3_fetch_urls.txt`, `source/fetch_2026-10-17_run39015680991_v3dates/`. The ChatGPT to-check list itself is never committed (DEC-006, DEC-667). Report `reports/RTT-104_v3_part1.md`.
