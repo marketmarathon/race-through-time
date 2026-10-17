@@ -1,0 +1,16 @@
+# V3-a722bd9eed90
+# url: https://data.ipu.org/election-summary/HTML/2335_97.htm
+# final url: https://data.ipu.org/election-summary/HTML/2335_97.htm
+# fetched (UTC): 2026-10-17T08:09:52Z
+# HTTP 200; 11019 bytes; SHA-256 9ccbd7e07b6bf225ee422045458cc76bc8f0d4c4c269d318141dd96510f98619
+# title: UNITED KINGDOM: parliamentary elections House of Commons, 1997
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 1 May 1997
+D: Background and outcome of elections: | On 17 March 1997, Prime Minister John Major (Conservative Party) announced that general elections would take place on 1 May. Parliament was dissolved by the Queen on 8 April.
+D: On 17 March 1997, Prime Minister John Major (Conservative Party) announced that general elections would take place on 1  | Prior to the month-long campaign, Mr. Major said that his party had overseen a "revolution in choice, opportunity, and living standards" and deserved the chance to continue in power. He moreover focused on the country's economic recovery under his administration since 1992, especially the plunging u
+D: STATISTICS | Round no 1 (1 May 1997): Elections results
+K: Parliamentary Chamber: House of Commons | ELECTIONS HELD IN 1997
+K: Chamber: | House of Commons
+K: Dates of elections / renewal (from/to): | 1 May 1997
+K: Purpose of elections: | Elections were held for all the seats in the House of Commons on the normal expiry of the members' term of office.

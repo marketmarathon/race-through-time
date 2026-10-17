@@ -1,0 +1,17 @@
+# V3-f2c3600a0c4f
+# url: https://data.ipu.org/election-summary/HTML/2293_00.htm
+# final url: https://data.ipu.org/election-summary/HTML/2293_00.htm
+# fetched (UTC): 2026-10-17T08:09:19Z
+# HTTP 200; 7418 bytes; SHA-256 f935b1faf6600460912039d31abbc74bd158304913b2006dd95eeb4230c4df63
+# title: SPAIN: parliamentary elections Congreso de los Diputados, 2000
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 12 March 2000
+D: Background and outcome of elections: | On 17 January 2000, the Prime Minister, Mr. Jos� Mar�a Aznar, dissolved the two Chambers of the Cortes and announced that legislative elections would be held on 12 March.
+D: On 17 January 2000, the Prime Minister, Mr. Jos� Mar�a Aznar, dissolved the two Chambers of the Cortes and announced tha | The electoral campaign, which began on 26 February, was marked by acts of violence committed by the separatist organisation Euzkadi Ta Azkatasuna (ETA) which, less than one week before the election, set off a car bomb wounding seven, including two members of the Armed Forces. It was the third bombin
+D: The leader of the Spanish Socialist Workers' Party (PSOE), Mr. Joaquin Almunia, resigned on the day of the elections, fo | On 5 April 2000, the House of Deputies held its first sitting and elected Mrs Fernanda Rudi as its new Speaker.
+D: STATISTICS | Round no 1 (12 March 2000): Elections results
+K: Parliamentary Chamber: Congreso de los Diputados | ELECTIONS HELD IN 2000
+K: Chamber: | Congreso de los Diputados
+K: Dates of elections / renewal (from/to): | 12 March 2000
+K: Purpose of elections: | Elections were held for all the seats of the Congress on the normal expiry of the members' term of office.

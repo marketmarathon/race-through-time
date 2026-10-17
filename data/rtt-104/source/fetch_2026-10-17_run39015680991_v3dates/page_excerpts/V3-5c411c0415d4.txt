@@ -1,0 +1,70 @@
+# V3-5c411c0415d4
+# url: https://data.ipu.org/parliament/RW/RW-LC01/
+# final url: https://data.ipu.org/parliament/RW/RW-LC01/
+# fetched (UTC): 2026-10-17T08:14:08Z
+# HTTP 200; 325211 bytes; SHA-256 0f2b8711c62c43c173d404ca7daafa390540647bf81dc38a7f00cc4f92ccca39
+# title: Rwanda | Chamber of Deputies | IPU Parline: global data on national parliaments
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: View field in the data dictionary | 14 Aug 2024
+D: Additional information | Elected on 14 Aug. 2024
+D: View field in the data dictionary | 16 Jul 2025
+D: View field in the data dictionary | Appointed on 16 July 2025.
+D: Notes: ‘Twenty four (24) female Deputies shall be elected by specific organs in accordance with national administrative  | Sources: Constitution, Title IV, Chapter II, art. 76; Article 109 of Organic Law 03/2010/OL of 18 June 2010 governing presidential and legislative elections
+D: View field in the data dictionary | Organic Law determining the the functioning of the Chamber of Deputies, updated 12 July 2024
+D: View field in the data dictionary | 14 Aug 2024
+D: Additional information | Elected on 14 Aug. 2024
+D: View field in the data dictionary | 05 Oct 2013 to 13 Aug 2024
+D: Additional information | Elected on 5 Oct. 2013, re-elected on 18 Sep. 2018.
+D: View field in the data dictionary | 14 Aug 2024
+D: Additional information | Elected on 14 Aug. 2024
+D: View field in the data dictionary | 05 Oct 2013 to 13 Aug 2024
+D: Additional information | Elected on 5 Oct. 2013, re-elected on 18 Sep. 2018.
+D: View field in the data dictionary | 16 Jul 2025
+D: View field in the data dictionary | Appointed on 16 July 2025.
+D: View field in the data dictionary | 13 Sep 2016 to 16 Jul 2025
+D: View field in the data dictionary | Appointed on 13 Sep. 2016.
+D: View field in the data dictionary | 16 Jul 2025
+D: View field in the data dictionary | Appointed on 16 July 2025.
+D: View field in the data dictionary | 13 Sep 2016 to 16 Jul 2025
+D: View field in the data dictionary | Appointed on 13 Sep. 2016.
+K: Rwanda | Chamber of Deputies | IPU Parline: global data on national parliaments | Skip to main content
+K: Select country and chamber | Parliaments
+K: Chamber of Deputies | Senate
+K: Chamber of Deputies | Political system
+K: Political systems: Presidential, Parliamentary, Presidential-Parliamentary, Monarchy, Communist, Transitional. | View field in the data dictionary
+K: Basic information such as the official name of parliament and details of its structure and leadership. Also includes the current breakdown of MPs by sex and age, and provisions for quotas and reserved | Parliament name
+K: Chamber name | Chambre des Députés (Chamber of Deputies)
+K: Chambre des Députés (Chamber of Deputies) | See historical data for this field
+K: Lower chamber | Parliamentary term (years)
+K: Speaker of the Chamber of Deputies | Speaker
+K: As defined in the constitution or other fundamental laws. Combines the number of parliamentarians in both chambers in bicameral parliaments. | View field in the data dictionary
+K: Average age of members, for which data is available, at the time of the last election or renewal. | View field in the data dictionary
+K: Age is calculated at the time the member was elected/appointed to a new legislature. Data is not updated during the legislature unless the member is no longer a member. | View field in the data dictionary
+K: Age is calculated at the time the member was elected/appointed to a new legislature. Data is not updated during the legislature unless the member is no longer a member. | View field in the data dictionary
+K: Age at the last election or renewal | Overall
+K: Reserved seats and quotas | There are reserved seats in parliament for certain groups
+K: There are reserved seats in parliament for certain groups | Reserved seats are a means to ensure the parliamentary representation of certain groups in society.
+K: Reserved seats are a means to ensure the parliamentary representation of certain groups in society. | View field in the data dictionary
+K: Reserved seats for youth in parliament | View field in the data dictionary
+K: Electoral quota for women | Quotas to promote gender-balanced representation in parliament
+K: Quotas to promote gender-balanced representation in parliament | View field in the data dictionary
+K: Notes: ‘Twenty four (24) female Deputies shall be elected by specific organs in accordance with national administrative entities. A Presidential Order shall determine a national administrative entity  | Sources: Constitution, Title IV, Chapter II, art. 76; Article 109 of Organic Law 03/2010/OL of 18 June 2010 governing presidential and legislative elections
+K: Youth quota | Quotas to promote the representation of youth in parliament.
+K: Quotas to promote the representation of youth in parliament. | View field in the data dictionary
+K: Notes: Two seats are reserved for members aged 35 years or under, elected to the Chamber of Deputies by the National Youth Council. | Sources: Constitution, Article 76, 2003
+K: https://www.parliament.gov.rw/chamber-of-deputies-2/member-profile/deputies-profiles | Rules of procedure/Standing Orders
+K: Historical data for Chamber name | XLS
+K: Historical data for Chamber name | Updated at
+K: Chamber name | 1965-12
+K: Chambre des Députés (Chamber of Deputies) | -
+K: Chamber of Deputies | Official title
+K: Speaker of the Chamber of Deputies | Speaker
+K: Speaker of the Chamber of Deputies | Speaker
+K: Speaker of the Chamber of Deputies | Speaker
+K: Speaker of the Chamber of Deputies | Speaker
+K: Age is calculated at the time the member was elected/appointed to a new legislature. Data is not updated during the legislature unless the member is no longer a member. | View field in the data dictionary
+K: Age is calculated at the time the member was elected/appointed to a new legislature. Data is not updated during the legislature unless the member is no longer a member. | View field in the data dictionary
+K: Age is calculated at the time the member was elected/appointed to a new legislature. Data is not updated during the legislature unless the member is no longer a member. | View field in the data dictionary
+K: Age is calculated at the time the member was elected/appointed to a new legislature. Data is not updated during the legislature unless the member is no longer a member. | View field in the data dictionary
+K: Age is calculated at the time the member was elected/appointed to a new legislature. Data is not updated during the legislature unless the member is no longer a member. | View field in the data dictionary

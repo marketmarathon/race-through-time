@@ -1,0 +1,14 @@
+# V3-d8b94d635ab6
+# url: https://data.ipu.org/election-summary/HTML/2079_98.htm
+# final url: https://data.ipu.org/election-summary/HTML/2079_98.htm
+# fetched (UTC): 2026-10-17T08:07:30Z
+# HTTP 200; 5661 bytes; SHA-256 772861f69dab6b8fbbeb702ac7f81db144c578f2f78eaf2863701696c50c887a
+# title: CUBA: parliamentary elections Asamblea nacional del Poder popular, 1998
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 11 January 1998
+D: STATISTICS | Round no 1 (11 January 1998): Elections results
+K: Parliamentary Chamber: Asamblea nacional del Poder popular | ELECTIONS HELD IN 1998
+K: Chamber: | Asamblea nacional del Poder popular
+K: Dates of elections / renewal (from/to): | 11 January 1998
+K: Purpose of elections: | Elections were held for all seats in Parliament on the normal expiry of the members' term of office.

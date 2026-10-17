@@ -1,0 +1,16 @@
+# V3-86f39565a861
+# url: https://data.ipu.org/election-summary/HTML/2233_96.htm
+# final url: https://data.ipu.org/election-summary/HTML/2233_96.htm
+# fetched (UTC): 2026-10-17T08:08:37Z
+# HTTP 200; 7658 bytes; SHA-256 8a3d5ba5d14cb46b823321a73d28958e0afa293dbda39894ad89800c822e11c4
+# title: NEW ZEALAND: parliamentary elections House of Representatives, 1996
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 12 October 1996
+D: Background and outcome of elections: | On 21 May 1996, Prime Minister Jim Bolger (National Party) announced the October election date. The poll would be the first held under the new electoral system of mixed-member proportional representation designed to more fairly reflect overall support for each political party and to facilitate more 
+D: During the campaign, Mr. Bolger - in power since 1990 - pointed to his Government's "record of stability" and its positi | On polling day, voters turned out in record numbers. Both National and Labour fell in vote percentage, while the nationalist New Zealand First - whose platform included proposed curbs on immigration and foreign investment - recorded large gains as did the left-of-centre Alliance, which advocated hig
+D: STATISTICS | Round no 1 (12 October 1996): Elections results
+K: Parliamentary Chamber: House of Representatives | ELECTIONS HELD IN 1996
+K: Chamber: | House of Representatives
+K: Dates of elections / renewal (from/to): | 12 October 1996
+K: Purpose of elections: | Elections were held for all the seats in Parliament on the normal expiry of the members' term of office.

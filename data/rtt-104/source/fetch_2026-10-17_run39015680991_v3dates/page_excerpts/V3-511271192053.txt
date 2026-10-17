@@ -1,0 +1,26 @@
+# V3-511271192053
+# url: https://data.ipu.org/election-summary/HTML/2017_06.htm
+# final url: https://data.ipu.org/election-summary/HTML/2017_06.htm
+# fetched (UTC): 2026-10-17T08:06:42Z
+# HTTP 200; 20191 bytes; SHA-256 ec08b8052f09b320e57c2e7aa810dbcb77137e72a59ccd9812ffc48eb17cf743
+# title: IPU PARLINE database: AUSTRIA (Nationalrat), Elections in 2006
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 1 October 2006
+D: Timing and scope of renewal | Elections were held for all the seats in the National Council following premature dissolution of this body on 14 July 2006. Elections to the National Council had previously taken place on 24 November 2002.
+D: Elections were held for all the seats in the National Council following premature dissolution of this body on 14 July 20 | On 12 July 2006
+D: eight weeks ahead of schedule. The National Council was subsequently dissolved on 14 July. | In the last elections held in November 2002
+D: while the Greens obtained 16. The international community expressed concern when the ÖVP formed a coalition government w | after talks with the SPÖ and Greens had collapsed. In the presidential elections held in April 2004
+D: and pledged to deal with youth unemployment. The FPÖ called for the expulsion of foreigners from Austria. The Alliance f | formed in April 2005 by former FPÖ leader
+D: while the BZÖ won eight. | On 11 October 2006
+D: to form a new government. | The newly elected National Council was convened on 30 October 2006. Ms. Barbara Prammer of the SPÖ was elected as its new Speaker
+D: After three months of negotiations | a grand coalition between the SPÖ and the ÖVP was finalized when the two parties reached an agreement on budget issues. Mr. Gusenbauer was sworn in as Prime Minister on 11 January 2007.
+D: Voter turnout | Round no 1 1 October 2006
+D: - http://wahl06.bmi.gv.at/ | - Parliament (30.10.2006)
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Chamber name (generic / translated) | Nationalrat / National Council
+K: Related chamber (for bicameral parliaments) | Bundesrat / Federal Council
+K: Dates of election / renewal (from/to) | 1 October 2006
+K: Timing and scope of renewal | Elections were held for all the seats in the National Council following premature dissolution of this body on 14 July 2006. Elections to the National Council had previously taken place on 24 November 
+K: the major political parties reached an agreement to dissolve the National Council and hold parliamentary elections on 1 October | eight weeks ahead of schedule. The National Council was subsequently dissolved on 14 July.
+K: eight weeks ahead of schedule. The National Council was subsequently dissolved on 14 July. | In the last elections held in November 2002

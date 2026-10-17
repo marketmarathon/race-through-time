@@ -1,0 +1,34 @@
+# V3-ae598af4738e
+# url: https://data.ipu.org/parliament/GB/GB-LC01/election/GB-LC01-E20170608/
+# final url: https://data.ipu.org/parliament/GB/GB-LC01/election/GB-LC01-E20170608/
+# fetched (UTC): 2026-10-17T08:12:47Z
+# HTTP 200; 173760 bytes; SHA-256 0b9af9e91abcbe71032e845081ad7936f03270a00d3cfff4943c1e3ee055a852
+# title: United Kingdom House of Commons June 2017 Election | Election results | United Kingdom | IPU Parline: global data on national parliaments
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: United Kingdom House of Commons June 2017 Election | Election results | United Kingdom | IPU Parline: global data on national parliaments
+D: View field in the data dictionary | 08 Jun 2017
+D: View field in the data dictionary | 03 May 2017
+D: View field in the data dictionary | The first elections after the Brexit referendum (see note) resulted in a hung parliament. Prime Minister Theresa May of the Conservative Party had called early elections, calling on voters' support for "a strong and stable government to get the best Brexit deal". The Conservative Party won the elect
+D: Note: | A referendum on Brexit (merging of the words "Britain" and "exit") to decide whether the United Kingdom should leave or remain in the European Union was held in June 2016. Leave camps narrowly won the referendum. The then Prime Minister David Cameron (Conservative Party) resigned after the referendu
+D: Other notes on the elections | Expected date of next elections: 5 May 2022. In accordance with Article 1 (3) of the Fixed-term Parliaments Act 2011 , the next general elections will be held on "the first Thursday in May in the fifth calendar year".
+D: Sources | British IPU Group (09.06.2017)
+D: Houses of Parliament | BRIEFING PAPER Number CBP 7979, 11 July 2017, General Election 2017: results and analysis Second Edition
+D: View field in the data dictionary | 13 Jun 2017
+D: View field in the data dictionary | 13 Jun 2017
+K: Select country and chamber | Parliaments
+K: Political systems: Presidential, Parliamentary, Presidential-Parliamentary, Monarchy, Communist, Transitional. | View field in the data dictionary
+K: The date when elections started and ended for directly or indirectly elected parliaments/chambers. The date of appointments for appointed parliaments/chambers. | View field in the data dictionary
+K: Date of dissolution of the outgoing legislature | Date at which the previous legislature (elected at the previous elections) was dissolved.
+K: Date at which the previous legislature (elected at the previous elections) was dissolved. | View field in the data dictionary
+K: Timing of election | Timing of election: Upon normal expiry; Early elections; Delayed elections
+K: Timing of election: Upon normal expiry; Early elections; Delayed elections | View field in the data dictionary
+K: Number of seats contested at the elections. Where the parliament/chamber is fully renewed, this number is usually identical to the statutory number of members. Where the parliament/chamber is partiall | View field in the data dictionary
+K: Scope of elections | Scope of elections: Full renewal; Partial renewal.
+K: Scope of elections: Full renewal; Partial renewal. | View field in the data dictionary
+K: Full renewal | Candidates
+K: The total number of male parliamentarians in this parliament/chamber following the election or renewal, regardless of their modes of designation. | View field in the data dictionary
+K: The total number of female parliamentarians in this parliament/chamber following the election or renewal, regardless of their modes of designation. | View field in the data dictionary
+K: The percentage is calculated by dividing the total number of women in this parliament/chamber by the current number of members. | View field in the data dictionary
+K: The number of members who are assuming their parliamentary mandate for the first time following the election or renewal, regardless of their mode of designation. | View field in the data dictionary
+K: The date when the newly elected parliament/chamber was convened for the first time. It may be different from the date when members were sworn in. | View field in the data dictionary

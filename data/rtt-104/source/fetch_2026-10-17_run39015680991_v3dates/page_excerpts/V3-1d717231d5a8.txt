@@ -1,0 +1,19 @@
+# V3-1d717231d5a8
+# url: https://data.ipu.org/election-summary/HTML/2235_11.htm
+# final url: https://data.ipu.org/election-summary/HTML/2235_11.htm
+# fetched (UTC): 2026-10-17T08:08:42Z
+# HTTP 200; 23184 bytes; SHA-256 a427bf6f38003d27d09545ed33ca7270a12cd6ecd805029ee31e92a13a64d8ab
+# title: IPU PARLINE database: NICARAGUA (Asamblea Nacional), ELECTIONS IN 2011
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 6 November 2011
+D: At stake in the 2011 elections were 90 directly-elected seats in the National Assembly (see note). Parliamentary electio | In the previous elections held in November 2006, the Sandinista National Liberation Front (FSLN), led by Mr. Daniel Ortega, took 38 of the 90 directly-elected seats in the National Assembly. The ruling Liberal and Constitutional Party (PLC) and its splinter party - the Nicaraguan Liberal Alliance (A
+D: It is estimated that about 40 per cent of the country's 5.8 million inhabitants live on less than US$ 2 a day. President | The country's Constitution prohibits consecutive presidential terms. In October 2009, the President filed a suit before the Constitutional Chamber of the Nicaraguan Supreme Court, arguing the presidential term limit violated his constitutional rights. Later the same month, the Supreme Court ruled in
+D: In the presidential elections, Mr. Ortega was re-elected with 62 per cent of the votes. PLI leader Gadea and PLC leader  | The newly elected National Assembly held its first session on 9 January 2012 and re-elected Mr. Santos René Núñez Téllez (FSLN) as its Speaker.
+D: Voter turnout | Round no 1 6 November 2011
+D: Sources: | National Assembly (13.12.2011, 10.01.2012, 16.01.2012, 14.03.2014, 01.01.2015, 12.06.2015)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Dates of election / renewal (from/to) | 6 November 2011
+K: Purpose of elections | Elections were held for all the seats in the National Assembly on the normal expiry of the members' term of office.
+K: In addition to the 90 elected members, one seat is reserved for the runner-up in the presidential election and a second seat goes to the immediate past President of the country or his/her deputy. Mr.  | STATISTICS

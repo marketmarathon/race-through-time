@@ -1,0 +1,20 @@
+# V3-16e3b3585d43
+# url: https://data.ipu.org/election-summary/HTML/2111_11.htm
+# final url: https://data.ipu.org/election-summary/HTML/2111_11.htm
+# fetched (UTC): 2026-10-17T08:07:56Z
+# HTTP 200; 33143 bytes; SHA-256 7f2f9f9284e49889ec37b0980ca9567368ba07c9ec3a1a2eaff908e1b34a8375
+# title: IPU PARLINE database: FINLAND (Eduskunta - Riksdagen), ELECTIONS IN 2011
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 17 April 2011
+D: Elections were held for all the seats in Parliament on the normal expiry of the members' term of office. | Following amendments to the Electoral Act, which came into force in 2010, the 2011 elections were held in April instead of March (see note).
+D: Following amendments to the Electoral Act, which came into force in 2010, the 2011 elections were held in April instead  | In the previous elections held in March 2007, Prime Minister Matti Vanhanen's Centre Party (KESK) took 51 of the 200 seats at stake. In April, he formed a new coalition government comprising his KESK, the National Coalition Party (KOK, 50 seats), the Green League (15 seats) and the Swedish People's 
+D: As a result of the global economic crisis, the country's gross domestic product (GDP) shrunk by 8.1 per cent in 2009 but | In June 2010, Mr. Vanhanen stepped down as KESK leader and Prime Minister following funding scandals in his party. Ms. Mari Kiviniemi took over both posts, becoming the first woman Prime Minister of Finland. She led the same four-party coalition government until the 2011 elections.
+D: In June 2010, Mr. Vanhanen stepped down as KESK leader and Prime Minister following funding scandals in his party. Ms. M | On 16 February 2011, the outgoing legislature voted to approve several constitutional amendments, with 144 votes in favour and 29 against. In order to take effect, however, they needed to be approved by the new legislature, to be elected in April. One of the amendments specifically states that Finla
+D: Voter turnout | Round no 1 17 April 2011
+D: Sources: | Statistics Finland (17.05.2011, 01.07.2011, 05.07.2011)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Dates of election / renewal (from/to) | 17 April 2011
+K: Purpose of elections | Elections were held for all the seats in Parliament on the normal expiry of the members' term of office.
+K: Parliament was dissolved on 15 March in view of elections in which 2,315 candidates, including 903 women, were running. | Major election issues at the beginning of the campaign included taxation and compulsory teaching of Swedish. Swedish speakers live mainly in the south and west of the country and account for 5.5 per c

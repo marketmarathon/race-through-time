@@ -1,0 +1,23 @@
+# V3-3baeaef09b26
+# url: https://data.ipu.org/election-summary/HTML/2007_12.htm
+# final url: https://data.ipu.org/election-summary/HTML/2007_12.htm
+# fetched (UTC): 2026-10-17T08:06:20Z
+# HTTP 200; 24329 bytes; SHA-256 03fa74d641dffa313a41c26e3b7514a00bb40dca7093dfcd64bec843de2d7511
+# title: IPU PARLINE database: ANGOLA (Assembleia nacional), ELECTIONS IN 2012
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 31 August 2012
+D: The 2010 Constitution discontinued direct presidential elections. Article 109 stipulates "the individual heading the nat | Date of previous elections: 5-6 September 2008
+D: Timing of election: Upon normal expiry | Expected date of next elections: August - September 2016
+D: Names of parties in government: Popular Movement for the Liberation of Angola (MPLA) | Date of the first session of the new parliament: 27 September 2012
+D: Voter turnout | Round no 1 31 August 2012
+D: Sources: | National Assembly (08.10.2012, 01.01.2014, 01.01.2017)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Dates of election / renewal (from/to) | 31 August 2012
+K: Purpose of elections | The Popular Movement for the Liberation of Angola led by President José Eduardo dos Santos won the elections, taking 175 of the 220 seats in the National Assembly. It promised to continue the reconstr
+K: Date of dissolution of the outgoing legislature: N/A | Timing of election: Upon normal expiry
+K: Timing of election: Upon normal expiry | Expected date of next elections: August - September 2016
+K: Number of seats at stake: 220 (full renewal) | Number of candidates: Not available
+K: Social Renewal Party (PRS) | 98'233
+K: Social Renewal Party (PRS) | 3

@@ -1,0 +1,24 @@
+# V3-48974e758b33
+# url: https://data.ipu.org/election-summary/HTML/2055_08.htm
+# final url: https://data.ipu.org/election-summary/HTML/2055_08.htm
+# fetched (UTC): 2026-10-17T08:07:14Z
+# HTTP 200; 19415 bytes; SHA-256 6cccc4805734a4f88b762cd26f8056e3120485c06314544da93eff6cbbd17da9
+# title: IPU PARLINE database: CANADA (House of Commons ) ELECTIONS IN 2008
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 14 October 2008
+D: Purpose of elections | Elections were held for all members of the House of Commons following the premature dissolution of this body on 7 September 2008. General elections had been held previously on 23 January 2006.
+D: Elections were held for all members of the House of Commons following the premature dissolution of this body on 7 Septem | On 7 September 2008
+D: On 7 September 2008 | Prime Minister Stephen Harper asked Governor General Michaëlle Jean to dissolve Parliament and call new elections to the House of Commons for 14 October. This would be the third elections in four years. According to an amendment to the Elections Act in November 2006
+D: Prime Minister Stephen Harper asked Governor General Michaëlle Jean to dissolve Parliament and call new elections to the | elections were not due until 19 October 2009. However
+D: arguing that the parliament was "dysfunctional". | In the previous elections held in January 2006
+D: led by Ms. Elizabeth May | insisted that troops should start leaving no later than February 2009. The Conservative Party promised to withdraw most of the 2
+D: Voter turnout | Round no 1 14 October 2008
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name
+K: Chamber name | House of Commons
+K: Related chamber (for bicameral parliaments) | Senate
+K: Dates of election / renewal (from/to) | 14 October 2008
+K: Purpose of elections | Elections were held for all members of the House of Commons following the premature dissolution of this body on 7 September 2008. General elections had been held previously on 23 January 2006.
+K: the amendment did not divest the Governor General of the power to dissolve parliament before the end of its term. Prime Minister Harper used this legal loophole to call for early elections in a bid to | arguing that the parliament was "dysfunctional".
+K: Although no specific issues dominated the political agenda at the time of the dissolution | the global financial crisis pushed the economy to the forefront of the election campaign. Major parties presented various tax-reduction plans to boost the economy

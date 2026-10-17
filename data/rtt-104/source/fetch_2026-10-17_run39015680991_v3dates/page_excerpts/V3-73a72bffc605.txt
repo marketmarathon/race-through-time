@@ -1,0 +1,17 @@
+# V3-73a72bffc605
+# url: https://data.ipu.org/election-summary/HTML/2073_02.htm
+# final url: https://data.ipu.org/election-summary/HTML/2073_02.htm
+# fetched (UTC): 2026-10-17T08:07:21Z
+# HTTP 200; 8106 bytes; SHA-256 a58a3c741bfff1b4f52513c9bde67db3ec09c5add2162802298efdf791504ecd
+# title: COSTA RICA: parliamentary elections Asamblea Legislativa, 2002
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 3 February 2002
+D: Background and outcome of elections: | More than 2.3 million Costa Ricans were registered to go to the polls on 2 February 2002 to elect the President, two Vice-Presidents, 57 legislators and 81 heads of local government.
+D: International observers from the Organization of American States (OAS) gave the balloting a very positive assessment, de | Results of the first round of the presidential elections gave Mr Abel Pacheco, a 67-year-old psychiatrist, television commentator and novelist from the ruling Social Christian Unity Party a lead with 38.5 percent of the vote. Mr Rolando Araya, a 54-year-old chemical engineer from the National Libera
+D: In the elections to the 57-seat Legislative Assembly, the ruling PUSC secured 19 seats, a net loss of eight seats, where | On 1 May 2002, the Legislative Assembly held its first sitting and elected Mr Rolando Lacl� (PUSC) as its Speaker.
+D: STATISTICS | Round no 1 (3 February 2002): Elections results
+K: Parliamentary Chamber: Asamblea Legislativa | ELECTIONS HELD IN 2002
+K: Chamber: | Asamblea Legislativa
+K: Dates of elections / renewal (from/to): | 3 February 2002
+K: Purpose of elections: | Elections were held for all seats in Parliament on the normal expiry of the members' term of office.

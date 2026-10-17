@@ -1,0 +1,28 @@
+# V3-11535ce77427
+# url: https://data.ipu.org/election-summary/HTML/2231_10.htm
+# final url: https://data.ipu.org/election-summary/HTML/2231_10.htm
+# fetched (UTC): 2026-10-17T08:08:28Z
+# HTTP 200; 27431 bytes; SHA-256 4a009be4a5b4286c7f5ee851726c422646b3fdacaab3c09245ff6f4c139cd7ff
+# title: IPU PARLINE database: NETHERLANDS (Tweede Kamer der Staten-Generaal) ELECTIONS IN 2010
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 9 June 2010
+D: Purpose of elections | Elections were held for all seats in the House of Representatives following the publication of the Royal Decree of 18 March 2010 calling for early elections. Elections to the House of Representatives had previously taken place on 22 November 2006.
+D: Elections were held for all seats in the House of Representatives following the publication of the Royal Decree of 18 Ma | The June 2010 elections followed the collapse of Prime Minister Jan Peter Balkenende's fourth coalition government in February 2010.
+D: The June 2010 elections followed the collapse of Prime Minister Jan Peter Balkenende's fourth coalition government in Fe | In the previous elections (November 2006)
+D: After lengthy negotiations | Mr. Balkenende formed his fourth coalition government in February 2007. It comprised the CDA
+D: Disagreement over continuing the Dutch military involvement in Afghanistan was the immediate cause of the collapse of th | the House of Representatives voted in October 2009 to withdraw all 2
+D: the House of Representatives voted in October 2009 to withdraw all 2 | 000 Dutch soldiers by August 2010.
+D: NATO requested the Dutch government to extend the deployment beyond 2010 owing to insecurity in Afghanistan. Prime Minis | but the PvdA of Deputy Prime Minister Wouter Bos was vehemently opposed. In February 2010
+D: the PvdA announced it was withdrawing from the coalition government | triggering its collapse. Queen Beatrix subsequently asked the outgoing government to dissolve the House of Representatives with a view to holding early elections on 9 June. They were the fourth to be held since 2002.
+D: while the PVV pledged to abolish it altogether. Only the CDA promised to maintain the cooperation budget at its current  | The pre-election debate also focused on immigration. The VVD promised a reduction in benefits for immigrants while the PVV pledged to restrict immigration. In March 2010
+D: Voter turnout | Round no 1 9 June 2010
+D: http://www.kiesraad.nl | IPU Group of the Netherlands (17.06.2010
+D: IPU Group of the Netherlands (17.06.2010 | 30.03.2011
+D: 30.03.2011 | 12.12.2011)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Chamber name (generic / translated) | Tweede Kamer der Staten-Generaal / House of Representatives
+K: Related chamber (for bicameral parliaments) | Eerste Kamer der Staten-Generaal / Senate
+K: Dates of election / renewal (from/to) | 9 June 2010
+K: Purpose of elections | Elections were held for all seats in the House of Representatives following the publication of the Royal Decree of 18 March 2010 calling for early elections. Elections to the House of Representatives 

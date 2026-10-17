@@ -1,0 +1,17 @@
+# V3-451825f5162c
+# url: https://data.ipu.org/election-summary/HTML/2257_99.htm
+# final url: https://data.ipu.org/election-summary/HTML/2257_99.htm
+# fetched (UTC): 2026-10-17T08:09:00Z
+# HTTP 200; 7326 bytes; SHA-256 83cb646dea94f40fd83f26246fd2a7f652ad6963d3e97b7bf1522f96f19e688f
+# title: PORTUGAL: parliamentary elections Assembleia da Republica, 1999
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 10 October 1999
+D: Background and outcome of elections: | In the wake of the previous (October 1995) general elections, the Socialist Party (PS) had formed a minority government headed by Prime Minister Antonio Guterres. The PS held 112 of the 230 Assembly seats, i.e. only four short of an absolute majority.
+D: STATISTICS | Round no 1 (10 October 1999): Elections results
+K: Parliamentary Chamber: Assembleia da Republica | ELECTIONS HELD IN 1999
+K: Chamber: | Assembleia da Republica
+K: Dates of elections / renewal (from/to): | 10 October 1999
+K: Purpose of elections: | Elections were held for all the seats in the Assembly of the Republic on the normal expiry of the members' term of office.
+K: For the 1999 poll, the governing party was once again mainly confronted by the Social Democratic Party (PSD) of Former Foreign Minister Jos� Manuel Durao Barroso, the Communist Party (PCP) led by Mr.  | On polling day, the PS raised its Assembly total by one seat while the PSD lost five and a new far-left group, the Left Bloc, gained parliamentary representation with two. Analysts attributed this str
+K: On polling day, the PS raised its Assembly total by one seat while the PSD lost five and a new far-left group, the Left Bloc, gained parliamentary representation with two. Analysts attributed this str | STATISTICS

@@ -1,0 +1,26 @@
+# V3-2f4734c90e1a
+# url: https://data.ipu.org/election-summary/HTML/2293_08.htm
+# final url: https://data.ipu.org/election-summary/HTML/2293_08.htm
+# fetched (UTC): 2026-10-17T08:09:22Z
+# HTTP 200; 23954 bytes; SHA-256 f989e2dbfecb80eec38531df1f8cd6a76826f022f8471c160c0693f3ab1a5af8
+# title: IPU PARLINE database: SPAIN (Congreso de los Diputados) ELECTIONS IN 2008
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 9 March 2008
+D: Purpose of elections | Elections were held for all the seats in the Congress of Deputies following premature dissolution of this body on 14 January 2008. Elections to the Congress of Deputies had previously taken place on 14 March 2004.
+D: Elections were held for all the seats in the Congress of Deputies following premature dissolution of this body on 14 Jan | On 20 December 2007
+D: On 20 December 2007 | Prime Minister José Luis Rodríguez Zapatero announced that parliamentary elections would be held on 9 March. The bicameral parliament was subsequently dissolved on 14 January 2008. At stake were all 350 seats in the Congress of Deputies and the 208 directly elected seats in the 264-member Senate.
+D: Prime Minister José Luis Rodríguez Zapatero announced that parliamentary elections would be held on 9 March. The bicamer | The previous elections had been held on 14 March 2004
+D: while the PSOE took 96. Other seats went to small parties. | Mr. Zapatero was sworn in as Prime Minister in April 2004. He ordered the withdrawal of Spanish troops from Iraq
+D: an amnesty for illegal immigrants in the country | as well as a historical memory law passed by the Parliament in October 2007. This stipulates that trials held under the Francisco Franco regime
+D: Voter turnout | Round no 1 9 March 2008
+D: Sources: | - Congress of Deputies (01.01.2010)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Chamber name (generic / translated) | Congreso de los Diputados / Congress of Deputies
+K: Related chamber (for bicameral parliaments) | Senado / Senate
+K: Dates of election / renewal (from/to) | 9 March 2008
+K: Purpose of elections | Elections were held for all the seats in the Congress of Deputies following premature dissolution of this body on 14 January 2008. Elections to the Congress of Deputies had previously taken place on 1
+K: Voters cast separate ballots for each chamber. Turnout was recorded at 75.32 per cent for the Congress of Deputies | and 76.03 per cent for the Senate among nearly 39 million registered voters.
+K: both chambers held their first sitting. Mr. José Bono Martínez (PSOE) was elected Speaker of the Congress of Deputies. Mr. Francisco Javier Rojo García (PSOE) was re-elected as Senate President. | On 11 April
+K: he appointed a 17-member cabinet | including nine women.

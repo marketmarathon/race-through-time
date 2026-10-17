@@ -1,0 +1,21 @@
+# V3-8ebc2c2599ad
+# url: https://data.ipu.org/election-summary/HTML/2079_08.htm
+# final url: https://data.ipu.org/election-summary/HTML/2079_08.htm
+# fetched (UTC): 2026-10-17T08:07:28Z
+# HTTP 200; 14256 bytes; SHA-256 d5f5cc14d99fd605caa734c59faa0214290be05aada4742e51db1bfa36cb4f19
+# title: IPU PARLINE database: CUBA (Asamblea nacional del Poder popular) ELECTIONS IN 2008
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 20 January 2008
+D: Elections were held for all seats in the National Assembly of the People's Power on the normal expiry of the members' te | The main issue in the January 2008 elections was whether President Fidel Castro would seek re election as Head of State. Mr. Castro
+D: Raúl | following surgery in July 2006. The National Assembly of the People's Power
+D: Voter turnout | Round no 1 20 January 2008
+D: Comments | National Assembly of the People's Power (05.02.2009
+D: National Assembly of the People's Power (05.02.2009 | 28.06.2011
+D: 28.06.2011 | 12.12.2011)
+D: Embassy of Cuba | UK (30.01.2008)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Dates of election / renewal (from/to) | 20 January 2008
+K: Purpose of elections | Elections were held for all seats in the National Assembly of the People's Power on the normal expiry of the members' term of office.
+K: a minimum of two candidates per constituency were nominated by municipal assemblies. Voters were asked to vote for either the full list or each candidate individually in their constituency. In order t | candidates need to secure at least half of the valid votes.

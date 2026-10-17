@@ -1,0 +1,33 @@
+# V3-913a818d1962
+# url: https://data.ipu.org/election-summary/HTML/2107_05.htm
+# final url: https://data.ipu.org/election-summary/HTML/2107_05.htm
+# fetched (UTC): 2026-10-17T08:07:51Z
+# HTTP 200; 35892 bytes; SHA-256 21df31d39f6528bb4f73ef0a73345aa89cd3e2160f65baaec34358da8ed5a7ad
+# title: IPU PARLINE database: ETHIOPIA (Yehizb Tewokayoch Mekir Bete) ELECTIONS IN 2005
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 15 May 2005
+D: Elections were held for all seats in the House of Peoples' Representatives on the normal expiry of the members' term of  | On 15 May 2005 elections were held for 524 of the 547 the seats in the lower house of Ethiopia
+D: on the normal expiration of the members' term of office. For logistical reasons | elections for 23 national constituencies in the regional state of Somali were held separately on 21 August 2005.
+D: a newly elected UEDF parliamentarian became the 37th victim | reportedly shot by the police. The case was still under investigation as at March 2006.
+D: reportedly shot by the police. The case was still under investigation as at March 2006. | On 9 August 2005
+D: 1. The remaining seat went to an independent candidate. | The NEBE also ordered elections to be re-contested in 31 constituencies under investigation. The re-runs were held on 21 August 2005
+D: where the UEDF parliamentarian-elect died before the announcement of the final results on 5 September. | The new parliament was convened on 10 October 2005. The first session of the House of Peoples' Representatives was boycotted by more than 100 opposition parliamentarians
+D: the House of the Federation | for which indirect elections had been held between 3 and 6 October 2005
+D: Voter turnout | Round no 1 15 May 2005
+D: Registered Voter figures exclude the Somali Region. | Round no 2 21 August 2005
+D: - National Electoral Board of Ethiopia (NEBE); http://www.electionsethiopia.org/Index.html | - Press Officer of the NEBE (03.02.2006)
+D: - Press Officer of the NEBE (03.02.2006) | - House of Peoples' Representatives (23.03.2006)
+D: - House of Peoples' Representatives (23.03.2006) | Official results for 526 of 547 seats. Twenty members elected under the banner of the Coalition for Unity and Democracy (CUD) had not taken up seats as at 23 March 2006. There is another vacant seat for a UEDF parliamentarian-elect who died before the announcement of the final results on 5 September
+D: Official results for 526 of 547 seats. Twenty members elected under the banner of the Coalition for Unity and Democracy  | As at 31 March 2006
+D: bringing the total number of CUD seats to 92. There were 529 members in all of whom 116 were women (House of Peoples' Re | 23.03.2006)
+D: and the Ethiopian Democratic League were members of the Coalition for Unity and Democracy (CUD) | created in 2004. The CUD was an electoral coalition recognized by the National Electoral Bureau of Ethiopia (NEBE) for purposes of the 15 May 2005 election
+D: By-elections will be held for Arsi Negele constituency in Oromiya state | where a UEDF candidate-elect died before the announcement of the final results on 5 September 2005. As at 23 March 2006
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name
+K: Chamber name (generic / translated) | Yehizb Tewokayoch Mekir Bete / House of Peoples' Representatives
+K: Related chamber (for bicameral parliaments) | Yefedereshein Mekir Bete / House of the Federation
+K: Dates of election / renewal (from/to) | 15 May 2005
+K: Purpose of elections | Elections were held for all seats in the House of Peoples' Representatives on the normal expiry of the members' term of office.
+K: a by-election will be held in Arsi Negele constituency in Oromiya state | where the UEDF parliamentarian-elect died before the announcement of the final results on 5 September.
+K: By-elections will be held for Arsi Negele constituency in Oromiya state | where a UEDF candidate-elect died before the announcement of the final results on 5 September 2005. As at 23 March 2006

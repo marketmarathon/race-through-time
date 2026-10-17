@@ -1,0 +1,18 @@
+# V3-41f67b242804
+# url: https://data.ipu.org/election-summary/HTML/2277_98.htm
+# final url: https://data.ipu.org/election-summary/HTML/2277_98.htm
+# fetched (UTC): 2026-10-17T08:09:15Z
+# HTTP 200; 7048 bytes; SHA-256 022869379f4eee18e70cfa259c1facaab0867cb7fa6cd2ed7c22ff924f02b861
+# title: SENEGAL: parliamentary elections Assembl�e nationale, 1998
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 24 May 1998
+D: Background and outcome of elections: | The 1998 parliamentary elections were primarily a three-way contest between the ruling Socialist Party (PS) of President of the Republic Abdou Diouf, the Senegalese Democratic Party (PDS) and the Renewal Movement (MR). The last group, founded in March 1998 by PS dissidents led by Mr. Djibo Ka, a for
+D: STATISTICS | Round no 1 (24 May 1998): Elections results
+K: Parliamentary Chamber: Assembl�e nationale | ELECTIONS HELD IN 1998
+K: Chamber: | Assembl�e nationale
+K: Dates of elections / renewal (from/to): | 24 May 1998
+K: Purpose of elections: | Elections were held for all the seats in the National Assembly on the normal expiry of the members' term of office.
+K: On election day, the low voter turnout was partly attributed by analysts to a disillusioned electorate offered little clear-cut choices in policy by the contending parties. As incoming results indicat | On 4 July, Prime Minister Mamadou Lamine Loum (PS) formed the new Government by reshuffling the previous Council of Ministers.
+K: Union for Democratic Renewal (URD) | 13.22
+K: Union for Democratic Renewal (URD) | 11

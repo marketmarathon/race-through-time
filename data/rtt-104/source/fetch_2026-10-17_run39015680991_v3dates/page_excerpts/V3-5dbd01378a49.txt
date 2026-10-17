@@ -1,0 +1,38 @@
+# V3-5dbd01378a49
+# url: https://data.ipu.org/election-summary/HTML/2011_09.htm
+# final url: https://data.ipu.org/election-summary/HTML/2011_09.htm
+# fetched (UTC): 2026-10-17T08:06:25Z
+# HTTP 200; 29918 bytes; SHA-256 f2f17c0f86c80efb8b8fe9641ff8bfdb8c4fe5c97bf36708b90810d612d202a8
+# title: IPU PARLINE database: ARGENTINA (Cámara de Diputados) ELECTIONS IN 2009
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 28 June 2009
+D: Purpose of elections | Early elections were held to renew one-half of the seats (127) in the Chamber of Deputies. Elections to the Chamber of Deputies had previously taken place on 28 October 2007.
+D: Early elections were held to renew one-half of the seats (127) in the Chamber of Deputies. Elections to the Chamber of D | On 13 March 2009
+D: At stake in the 2009 parliamentary elections were 127 of the 257 seats in the Chamber of Deputies and one third of the 7 | In the previous elections held in October 2007
+D: President Fernández de Kirchner initially enjoyed high popularity. However | her popularity reportedly dwindled after she introduced a tax on soya bean exports in March 2008. It triggered four months of road blockades and protests by farmers. The global economic crisis and plummeting soya bean and wheat prices hit Argentina's exports. It slowed down annual economic growth to
+D: her popularity reportedly dwindled after she introduced a tax on soya bean exports in March 2008. It triggered four mont | down from 8.8 per cent the previous year. In October 2008
+D: Voter turnout | Round no 1 28 June 2009
+D: Sources: | - National Congress (02.09.2009
+D: - National Congress (02.09.2009 | 29.09.2009
+D: 29.09.2009 | 18.11.2009
+D: 18.11.2009 | 21.12.2009
+D: 21.12.2009 | 02.03.2010)
+K: Cámara de Diputados (Chamber of Deputies) | General information
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Chamber name (generic / translated) | Cámara de Diputados / Chamber of Deputies
+K: Cámara de Diputados / Chamber of Deputies | Related chamber (for bicameral parliaments)
+K: Related chamber (for bicameral parliaments) | Senado / Senate
+K: Dates of election / renewal (from/to) | 28 June 2009
+K: Purpose of elections | Early elections were held to renew one-half of the seats (127) in the Chamber of Deputies. Elections to the Chamber of Deputies had previously taken place on 28 October 2007.
+K: At stake in the 2009 parliamentary elections were 127 of the 257 seats in the Chamber of Deputies and one third of the 72 seats in the Senate. | In the previous elections held in October 2007
+K: the Victory Front (FV) of the then President Néstor Kirchner won 62 seats in the Chamber of Deputies and five in the Senate. After the elections | the FV controlled 116 and 11 seats respectively. Following the elections
+K: the Civic Coalition Confederation held 18 seats in the Chamber of Deputies and two in the Senate | while the Radical Civic Union (UCR) had 24 and seven seats respectively. The remaining seats went to small parties. President Kirchner's wife
+K: Former president Néstor Kirchner was running for a seat in the Chamber of Deputies on an FV ticket. He urged voters to support his party | saying that the 2009 poll was "a choice between a return to the past and the consolidation of a national project"
+K: 74.36 per cent of the country's 28 million registered voters turned out for the elections to the Chamber of Deputies while 72.39 per cent of the 8.5 million registered voters cast their ballot for the | Following the elections
+K: the FV controlled 87 seats in the Chamber of Deputies and 35 seats in the Senate. Mr. Néstor Kirchner conceded defeat and resigned as FV leader. The 'Pro coalition' won 11 seats in the Chamber of Depu | On 3 December
+K: the newly elected members took up their seats in Congress. The Chamber of Deputies re-elected Mr. Eduardo Alfredo Fellner (FV) as its Speaker | while the Vice-President of the country
+K: Concordia Front for Renewal | 3
+K: Salta Renewal | 1
+K: The "Distribution of seats" above shows the final composition of the Chamber of Deputies. | Sources:

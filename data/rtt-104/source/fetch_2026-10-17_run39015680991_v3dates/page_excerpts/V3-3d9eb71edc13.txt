@@ -1,0 +1,18 @@
+# V3-3d9eb71edc13
+# url: https://data.ipu.org/election-summary/HTML/2239_05.htm
+# final url: https://data.ipu.org/election-summary/HTML/2239_05.htm
+# fetched (UTC): 2026-10-17T08:08:45Z
+# HTTP 200; 29969 bytes; SHA-256 bfbdffe9026d81db8f94e33bb2698b4bf6a1d4e618cf955aa2150870ce08c4e0
+# title: IPU PARLINE database: NORWAY (Stortinget), Elections in 2005
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 12 September 2005
+D: Elections were held for all the seats in Parliament on the normal expiry of the members' term of office. | Norwegians went to the polls on 12 September 2005 to elect an enlarged parliament of 169 members, up from 165. Since the 2001 elections, when the Labour Party had suffered its worst result in 90 years, the country had been led by a center-right minority coalition under Prime Minister Kjell Magne Bon
+D: The Conservative Party, the biggest party in the outgoing government, suffered its worst results in its history, retaini | Parliament was convened on 1 October 2005 and on 10 October 2005 elected former prime minister Thorbjørn Jagland as the new speaker.
+D: Parliament was convened on 1 October 2005 and on 10 October 2005 elected former prime minister Thorbjørn Jagland as the  | On 14 October, the King accepted the resignation of Prime Minister Kjell Magne Bondevik and on 17 October 2005 appointed Mr. Jens Stoltenberg as the new premier. Mr. Stoltenberg's second government, composed of the Red-Green alliance, became the first majority government in Norway since the mid 1980
+D: Voter turnout | Round no 1 12 September 2005
+D: Sources: | - IPU Group (24.10.2005; 28.01.2008)
+D: Note on "Distribution of seats according to profession" | Statistics include 167 of the 169 representatives as well as 11 members who replaced members who joined the Cabinet on 19 October 2005.
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Dates of election / renewal (from/to) | 12 September 2005
+K: Purpose of elections | Elections were held for all the seats in Parliament on the normal expiry of the members' term of office.

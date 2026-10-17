@@ -1,0 +1,16 @@
+# V3-c0d4a8aebd1f
+# url: https://data.ipu.org/election-summary/HTML/2085_98.htm
+# final url: https://data.ipu.org/election-summary/HTML/2085_98.htm
+# fetched (UTC): 2026-10-17T08:07:34Z
+# HTTP 200; 6246 bytes; SHA-256 ceea8bdeacdad5713b97808413324a5a0f10fd19d8e26b6d01dd78e94a4e0df4
+# title: DEMOCRATIC PEOPLE'S REPUBLIC OF KOREA: parliamentary elections Choe Go In Min Hoe Ui , 1998
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 26 July 1998
+D: Purpose of elections: | Elections were held for all the seats in Parliament for the first time since April 1990. Polling was three years overdue.
+D: Background and outcome of elections: | General elections for the Supreme People’s Assembly had previously been held in April 1990. In July 1994, President of the Republic and � Great Leader � Kim Il Sung died and a period of national mourning was decreed. This ultimately lasted three years and, as a result, legislative polling - due in 1
+D: STATISTICS | Round no 1 (26 July 1998): Elections results
+K: Parliamentary Chamber: Choe Go In Min Hoe Ui | ELECTIONS HELD IN 1998
+K: Chamber: | Choe Go In Min Hoe Ui
+K: Dates of elections / renewal (from/to): | 26 July 1998
+K: Purpose of elections: | Elections were held for all the seats in Parliament for the first time since April 1990. Polling was three years overdue.

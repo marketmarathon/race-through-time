@@ -1,0 +1,18 @@
+# V3-196c15315946
+# url: https://data.ipu.org/election-summary/HTML/2239_09.htm
+# final url: https://data.ipu.org/election-summary/HTML/2239_09.htm
+# fetched (UTC): 2026-10-17T08:08:47Z
+# HTTP 200; 22994 bytes; SHA-256 8babcef830ea7da5b8d6519000808863d2483bcdf690c40968d57dc83200642e
+# title: IPU PARLINE database: NORWAY (Stortinget), ELECTIONS IN 2009
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 14 September 2009
+D: Elections were held for all the seats in Parliament on the normal expiry of the members' term of office. | The September 2009 elections were the first to be held after constitutional amendments in February 2007 effectively transformed the Parliament (Stortinget) into a purely unicameral parliament as of 1 October 2009. Until now, the Stortinget, although unicameral, used to split into two bodies (the Ode
+D: The September 2009 elections were the first to be held after constitutional amendments in February 2007 effectively tran | In the previous elections held in September 2005, the three parties in the minority government - the then Prime Minister Kjell Magne Bondevik's Christian People's Party, the Conservative Party, and the Liberal Party - lost to the opposition coalition, the Red-Green alliance. The latter comprised for
+D: Voter turnout | Round no 1 14 September 2009
+D: Sources: | - Parliament (06.10.2009, 02.03.2010)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Dates of election / renewal (from/to) | 14 September 2009
+K: Purpose of elections | Elections were held for all the seats in Parliament on the normal expiry of the members' term of office.
+K: On 17 October, the King reappointed Mr. Stoltenberg as Prime Minister. His third government, comprising the Labour Party, the Socialist Left Party and the Centre Party, was sworn in on 20 October. | STATISTICS

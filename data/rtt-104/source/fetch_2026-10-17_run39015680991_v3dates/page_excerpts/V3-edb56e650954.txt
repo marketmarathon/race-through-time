@@ -1,0 +1,18 @@
+# V3-edb56e650954
+# url: https://data.ipu.org/election-summary/HTML/2055_00.htm
+# final url: https://data.ipu.org/election-summary/HTML/2055_00.htm
+# fetched (UTC): 2026-10-17T08:07:10Z
+# HTTP 200; 7867 bytes; SHA-256 a98e1e9d5ba608a6cf4f359119a1be2f2e2a12f8a17ad4cb2b440de6133093d1
+# title: CANADA: parliamentary elections House of Commons - Chambre des Communes, 2000
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 27 November 2000
+D: Purpose of elections: | Elections were held for all members of the House of Commons following the premature dissolution of this body. Previous general elections had been held in November 1997.
+D: Background and outcome of elections: | On 22 October 2000, Prime Minister Jean Chr�tien called a general election for 27 November 2000, with more than a year and a half of his five-year term left to run. Mr Chr�tien and his ruling Liberal Party called the elections in an attempt to win a third straight term in the third vote in the past 
+D: The Canadian Alliance polled slightly more than 25 per cent of the votes that gave the party 66 seats in the House of Co | On 29 January 2001, the 37th Parliament held its first session and elected Peter Milliken as Speaker of the House of Commons.
+D: STATISTICS | Round no 1 (27 November 2000): Elections results
+K: Parliamentary Chamber: House of Commons - Chambre des Communes | ELECTIONS HELD IN 2000
+K: Chamber: | Dates of elections / renewal (from/to):
+K: Dates of elections / renewal (from/to): | 27 November 2000
+K: Purpose of elections: | Elections were held for all members of the House of Commons following the premature dissolution of this body. Previous general elections had been held in November 1997.
+K: The Canadian Alliance polled slightly more than 25 per cent of the votes that gave the party 66 seats in the House of Commons. The other two parties represented in the newly elected Chamber are the Ne | On 29 January 2001, the 37th Parliament held its first session and elected Peter Milliken as Speaker of the House of Commons.

@@ -1,0 +1,23 @@
+# V3-72f359e8b3f1
+# url: https://data.ipu.org/election-summary/HTML/2017_13.htm
+# final url: https://data.ipu.org/election-summary/HTML/2017_13.htm
+# fetched (UTC): 2026-10-17T08:06:44Z
+# HTTP 200; 19829 bytes; SHA-256 8061ea7d1e77b51f1b64bde2943d55998834f353436c96bcb0e2b1e892eb0412
+# title: IPU PARLINE database: AUSTRIA (Nationalrat), ELECTIONS IN 2013
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 29 September 2013
+D: On 9 October, President Heinz Fischer asked Mr. Faymann (SPÖ) to form a new government. | Date of previous elections: 28 September 2008
+D: Date of previous elections: 28 September 2008 | Date of dissolution of the outgoing legislature: 29 October 2013
+D: Timing of election: Upon normal expiry | Expected date of next elections: September 2018
+D: Number of parties winning seats: 6 | Date of the first session of the new parliament: 29 October 2013
+D: Voter turnout | Round no 1 29 September 2013
+D: Sources: | National Council (30.10.2013, 04.03.2014, 01.01.2015)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Chamber name (generic / translated) | Nationalrat / National Council
+K: Related chamber (for bicameral parliaments) | Bundesrat / Federal Council
+K: Dates of election / renewal (from/to) | 29 September 2013
+K: Purpose of elections | Chancellor Werner Faymann's Social Democratic Party (SPÖ) remained the largest force in the National Council, taking 52 of the 183 seats. Its coalition partner since 2006, Mr. Michael Spindelegger's P
+K: Timing of election: Upon normal expiry | Expected date of next elections: September 2018
+K: Number of seats at stake: 183 (full renewal) | Number of candidates: 2,563

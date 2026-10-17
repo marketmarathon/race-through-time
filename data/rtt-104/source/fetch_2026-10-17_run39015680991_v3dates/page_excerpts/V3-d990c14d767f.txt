@@ -1,0 +1,21 @@
+# V3-d990c14d767f
+# url: https://data.ipu.org/election-summary/HTML/2175_11.htm
+# final url: https://data.ipu.org/election-summary/HTML/2175_11.htm
+# fetched (UTC): 2026-10-17T08:08:11Z
+# HTTP 200; 17335 bytes; SHA-256 5c3df428bc8599d3e0e7a23bf0d8cc4bb728c17c06ef069237f7199a49c3d704
+# title: IPU PARLINE database: LAO PEOPLE'S DEMOCRATIC REPUBLIC (Sapha Heng Xat), ELECTIONS IN 2011
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 30 April 2011
+D: Elections were held for all seats in the National Assembly on the normal expiry of the members' term of office. | At stake in the April 2011 elections were 132 seats in the National Assembly, up from 115.
+D: At stake in the April 2011 elections were 132 seats in the National Assembly, up from 115. | In the previous elections held in April 2006, the Lao People's Revolutionary Party (LPRP) - the only political party since the Lao People's Democratic Republic was established in 1975 - took 113 of the 115 seats at stake, with the remaining two going to independents. In June, the National Assembly e
+D: In the previous elections held in April 2006, the Lao People's Revolutionary Party (LPRP) - the only political party sin | In December 2010, Mr. Bouasone resigned and was replaced by Speaker of the National Assembly, Mr. Thonsing Thammavong. The then Deputy Speaker, Ms. Pany Yathotou, succeeded the latter, becoming the first female Speaker in Laos since 1975.
+D: In December 2010, Mr. Bouasone resigned and was replaced by Speaker of the National Assembly, Mr. Thonsing Thammavong. T | In recent years, the government has been gradually liberalizing the economy in an attempt to help the country graduate from the category of least developed countries (LDCs) by 2020. In January 2011, Laos opened a stock market, Lao Securities Exchange (LSX), in the capital, Vientiane. The LSX is init
+D: In recent years, the government has been gradually liberalizing the economy in an attempt to help the country graduate f | On 20 March 2011, the national congress of the LPRP re-elected Mr. Choummaly, 75, as its leader for a second five-year term. The congress also adopted a series of policies to be implemented by 2015, which aim at political stability and sound economic development. The LPRP Government wants to reduce 
+D: Voter turnout | Round no 1 30 April 2011
+D: Comments | Source: National Assembly (11.06.2011, 15.06.2011)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Dates of election / renewal (from/to) | 30 April 2011
+K: Purpose of elections | Elections were held for all seats in the National Assembly on the normal expiry of the members' term of office.
+K: In all, 190 candidates were nominated for the 2011 elections: 47 central government staff and 143 local officials. Four of the candidates work for State-owned enterprises, while five are entrepreneurs | President Choummaly said that to better develop the nation, citizens need "good and suitable representatives" who are willing to discuss their problems.

@@ -1,0 +1,18 @@
+# V3-03478383a57e
+# url: https://data.ipu.org/election-summary/HTML/2235_01.htm
+# final url: https://data.ipu.org/election-summary/HTML/2235_01.htm
+# fetched (UTC): 2026-10-17T08:08:39Z
+# HTTP 200; 7546 bytes; SHA-256 f3bf96fe47467e0e80c3dc57f91611889a4e0834512d97d7fd347c68b2f3b43a
+# title: NICARAGUA: parliamentary elections Asamblea Nacional, 2001
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 4 November 2001
+D: Background and outcome of elections: | Nicaraguans went to the polls on 4 November 2001 to elect a new President of the Republic and the 90 directly elected members of the National Assembly.
+D: When the results were known, Mr Daniel Ortega conceded defeat in the presidential elections to the Liberal and constitut | On 23 November 2001, three of the seven magistrates on the Supreme Electoral Council (CSE), all Sandinistas, refused to recognise the validity of the legislative election results, as the FSLN claimed to have been under-represented. On 5 December 2001, Roberto Rivas, the president of the Council thre
+D: On 23 November 2001, three of the seven magistrates on the Supreme Electoral Council (CSE), all Sandinistas, refused to  | On 12 December 2001, Daniel Ortega announced that his FSLN Members of Parliament would after all take their seats in Congress on 9 January 2002. This decision finally resolved the impasse over the composition of the new Parliament. The constitutional wing of the Supreme Court had ruled against a com
+D: On 12 December 2001, Daniel Ortega announced that his FSLN Members of Parliament would after all take their seats in Con | On 4 December 2001 Mr Enrique Bola�os was officially proclaimed President-elect and subsequently took office on 10 January 2002.
+D: STATISTICS | Round no 1 (4 November 2001): Elections results
+K: Parliamentary Chamber: Asamblea Nacional | ELECTIONS HELD IN 2001
+K: Chamber: | Asamblea Nacional
+K: Dates of elections / renewal (from/to): | 4 November 2001
+K: Purpose of elections: | Elections were held for all the seats in Parliament on the normal expiry of the members' term of office.

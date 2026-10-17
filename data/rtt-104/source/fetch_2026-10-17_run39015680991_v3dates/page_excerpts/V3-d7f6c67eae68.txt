@@ -1,0 +1,31 @@
+# V3-d7f6c67eae68
+# url: https://data.ipu.org/election-summary/HTML/2011_13.htm
+# final url: https://data.ipu.org/election-summary/HTML/2011_13.htm
+# fetched (UTC): 2026-10-17T08:06:27Z
+# HTTP 200; 41198 bytes; SHA-256 db56322e08512c3beabe23a639a19c9be6d2e80b7316b513731545f23f6ad94e
+# title: IPU PARLINE database: ARGENTINA (Cámara de Diputados), ELECTIONS IN 2013
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 27 October 2013
+D: The FV won 39 of the 127 seats at stake, and now holds a total of 115 seats in the 257-member Chamber of Deputies. It to | The voting age was lowered from 18 to 16 by the electoral law (Ley 26.774) promulgated on 1 November 2012. However, voting remains compulsory only for those between 18 and 70 years of age.
+D: The voting age was lowered from 18 to 16 by the electoral law (Ley 26.774) promulgated on 1 November 2012. However, voti | Date of previous elections: 23 October 2011
+D: Timing of election: Upon normal expiry | Expected date of next elections: October 2015
+D: Alternation of power: No | Date of the first session of the new parliament: 10 December 2013
+D: Voter turnout | Round no 1 27 October 2013
+D: Comments | Source: Chamber of Deputies (01.01.2015)
+K: Cámara de Diputados (Chamber of Deputies) | General information
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Chamber name (generic / translated) | Cámara de Diputados / Chamber of Deputies
+K: Cámara de Diputados / Chamber of Deputies | Related chamber (for bicameral parliaments)
+K: Related chamber (for bicameral parliaments) | Senado / Senate
+K: Dates of election / renewal (from/to) | 27 October 2013
+K: Purpose of elections | President Cristina Fernández de Kirchner's Victory Front (FV) and its allies remained the largest force in both chambers of the Congress but did not obtain the two-thirds Congressional majority it nee
+K: President Cristina Fernández de Kirchner's Victory Front (FV) and its allies remained the largest force in both chambers of the Congress but did not obtain the two-thirds Congressional majority it nee | The FV won 39 of the 127 seats at stake, and now holds a total of 115 seats in the 257-member Chamber of Deputies. It took 11 of the 24 seats at stake in the Senate, for a total of 33 of the 72 seats.
+K: The FV won 39 of the 127 seats at stake, and now holds a total of 115 seats in the 257-member Chamber of Deputies. It took 11 of the 24 seats at stake in the Senate, for a total of 33 of the 72 seats. | The voting age was lowered from 18 to 16 by the electoral law (Ley 26.774) promulgated on 1 November 2012. However, voting remains compulsory only for those between 18 and 70 years of age.
+K: Date of dissolution of the outgoing legislature: N/A | Timing of election: Upon normal expiry
+K: Timing of election: Upon normal expiry | Expected date of next elections: October 2015
+K: Number of seats at stake: 127 (partial renewal) | Number of candidates: Not available.
+K: Renewal Front | 16
+K: Concordia Front for Renewal | 5
+K: Provisional composition of the Chamber of Deputies. | Copyright 1996-2013 Inter-Parliamentary Union

@@ -1,0 +1,19 @@
+# V3-358ba5b3c50e
+# url: https://data.ipu.org/election-summary/HTML/2251_00.htm
+# final url: https://data.ipu.org/election-summary/HTML/2251_00.htm
+# fetched (UTC): 2026-10-17T08:08:50Z
+# HTTP 200; 8787 bytes; SHA-256 6c29a81e49705b51b444a8c1de288d9f8809675caf9418784ab4b25b3ccae9e6
+# title: PERU: parliamentary elections Congreso de la Rep�blica, 2000
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 9 April 2000
+D: Background and outcome of elections: | The 9 April 2000 parliamentary elections, which were held simultaneously with the presidential poll, were a highly charged process during which rival candidates accused President Alberto Fujimori of fraud.
+D: In the days after the vote, as the count dragged on, tens of thousands of supporters of Mr Fujimori's main rival, Mr Ale | In the Congress, Mr Fujimori's Peru 2000 alliance lost its absolute majority. According to the results it had won 52 seats, as against 29 for candidates of Mr Toledo's Peru Possible. The Moralising Independent Front (FIM) and the "Somos Per�" Movement won 9 seats each while a number of small parties
+D: In the Congress, Mr Fujimori's Peru 2000 alliance lost its absolute majority. According to the results it had won 52 sea | In the second round, held on 28 May 2000, Mr. Fujimori had a comfortable victory for a third five-year term in office as opposition candidate Alejandro Toledo had pulled out of the contest, arguing that the election would be rigged in favour of the President.
+D: International observers declared that they fell short of what was required to ensure a fully democratic process, pointin | On 28 July 2000, Alberto Fujimori was sworn in for a third term in office under tight security after a series of major anti-government protests were held in Lima.
+D: On 28 July 2000, Alberto Fujimori was sworn in for a third term in office under tight security after a series of major a | After a scandal over a videotape allegedly showing his intelligence chief, Mr. Montesinos, bribing an opposition congressman to support the government, President Fujimori announced on 16 November 2000 that he would call new elections and that he would not be a candidate. Four days later, after inter
+D: STATISTICS | Round no 1 (9 April 2000): Elections results
+K: Parliamentary Chamber: Congreso de la Rep�blica | ELECTIONS HELD IN 2000
+K: Chamber: | Congreso de la Rep�blica
+K: Dates of elections / renewal (from/to): | 9 April 2000
+K: Purpose of elections: | Elections were held for all the seats in Parliament on the normal expiry of the members' term of office.

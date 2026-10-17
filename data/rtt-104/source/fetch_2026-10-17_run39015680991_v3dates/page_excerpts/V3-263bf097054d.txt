@@ -1,0 +1,30 @@
+# V3-263bf097054d
+# url: https://data.ipu.org/parliament/BO/BO-LC01/election/BO-LC01-E20191020/
+# final url: https://data.ipu.org/parliament/BO/BO-LC01/election/BO-LC01-E20191020/
+# fetched (UTC): 2026-10-17T08:11:29Z
+# HTTP 200; 163921 bytes; SHA-256 10a374f4e306f56f753034bc63dd8b9d617b29eb97e493a8f0a36ef084e3625f
+# title: Bolivia (Plurinational State of) Chamber of Deputies October 2019 Election | Election results | Bolivia (Plurinational State of) | IPU Parline: global data on national parliaments
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Bolivia (Plurinational State of) Chamber of Deputies October 2019 Election | Election results | Bolivia (Plurinational State of) | IPU Parline: global data on national parliaments
+D: View field in the data dictionary | 20 Oct 2019
+D: On 11 November, the second Vice President of the Senate , Jeanine Áñez, announced that she would assume the offices of P | On 24 November 2019, interim President Áñez promulgated the Law on the Exceptional and Transitional Regime for the Conduct of General Elections, invalidating the general elections held on 20 October 2019. Fresh general elections – for both the Plurinational Legislative Assembly and the Presidency – 
+D: Note: | On 21 February 2016, a referendum aiming at lifting the two-term limits for the President and the Vice President (introduced under the 2009 Constitution) was rejected. However, in December 2018, the Supreme Electoral Tribunal (TSE) ruled that Mr. Morales had the right to run again in 2019, upholding
+D: Other notes on the elections | On 24 November 2019, Interim President Jeanine Áñez promulgated the Law on the Exceptional and Transitional Regime for the Conduct of General Elections, invalidating the general elections held on 20 October 2019. Fresh general elections - for both the Plurinational Legislative Assembly and the Presi
+K: Select country and chamber | Parliaments
+K: Chamber of Deputies | Chamber of Senators
+K: Chamber of Senators | Chamber of Deputies
+K: Chamber of Deputies | Political system
+K: Political systems: Presidential, Parliamentary, Presidential-Parliamentary, Monarchy, Communist, Transitional. | View field in the data dictionary
+K: The date when elections started and ended for directly or indirectly elected parliaments/chambers. The date of appointments for appointed parliaments/chambers. | View field in the data dictionary
+K: Date of dissolution of the outgoing legislature | Date at which the previous legislature (elected at the previous elections) was dissolved.
+K: Date at which the previous legislature (elected at the previous elections) was dissolved. | View field in the data dictionary
+K: Timing of election | Timing of election: Upon normal expiry; Early elections; Delayed elections
+K: Timing of election: Upon normal expiry; Early elections; Delayed elections | View field in the data dictionary
+K: Number of seats contested at the elections. Where the parliament/chamber is fully renewed, this number is usually identical to the statutory number of members. Where the parliament/chamber is partiall | View field in the data dictionary
+K: Scope of elections | Scope of elections: Full renewal; Partial renewal.
+K: Scope of elections: Full renewal; Partial renewal. | View field in the data dictionary
+K: Full renewal | Voter turnout
+K: On 10 November, the President resigned and left the country. His MAS-IPSP allies, who would have succeeded him in an acting capacity, also resigned. They included Vice President Álvaro García Linera,  | On 11 November, the second Vice President of the Senate , Jeanine Áñez, announced that she would assume the offices of President of the Senate and interim President of the Republic as of 12 November. 
+K: On 11 November, the second Vice President of the Senate , Jeanine Áñez, announced that she would assume the offices of President of the Senate and interim President of the Republic as of 12 November.  | On 24 November 2019, interim President Áñez promulgated the Law on the Exceptional and Transitional Regime for the Conduct of General Elections, invalidating the general elections held on 20 October 2
+K: The number of members who are assuming their parliamentary mandate for the first time following the election or renewal, regardless of their mode of designation. | View field in the data dictionary

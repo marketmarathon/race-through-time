@@ -1,0 +1,17 @@
+# V3-b133de49d6e7
+# url: https://data.ipu.org/election-summary/HTML/2045_97.htm
+# final url: https://data.ipu.org/election-summary/HTML/2045_97.htm
+# fetched (UTC): 2026-10-17T08:07:07Z
+# HTTP 200; 8183 bytes; SHA-256 56ba748f03d146da177d812dc33a136ec8e1843773d5c069265b01c73250dc69
+# title: BULGARIA: parliamentary elections Narodno Sobranie, 1997
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 19 April 1997
+D: Purpose of elections: | Elections were held for all the seats in Parliament following the premature dissolution of this body on 19 February 1997. Previous general elections had been held in December 1994.
+D: Background and outcome of elections: | The date of the premature 1997 general elections was set on 12 February, following a month-long wave of strikes and daily demonstrations against the socialist Government which had been in power since January 1995 and whose Prime Minister Zhan Videnov had resigned in December 1996. Polling was not no
+D: The date of the premature 1997 general elections was set on 12 February, following a month-long wave of strikes and dail | On 19 February, President of the Republic Petar Stoyanov (elected in November 1996) dissolved the National Assembly. A right-wing caretaker Government headed by the popular mayor of Sofia, Stefan Sofyanski, was installed and for its part strove to tackle the country's major economic problems (foreig
+D: STATISTICS | Round no 1 (19 April 1997): Elections results
+K: Parliamentary Chamber: Narodno Sobranie | ELECTIONS HELD IN 1997
+K: Chamber: | Narodno Sobranie
+K: Dates of elections / renewal (from/to): | 19 April 1997
+K: Purpose of elections: | Elections were held for all the seats in Parliament following the premature dissolution of this body on 19 February 1997. Previous general elections had been held in December 1994.

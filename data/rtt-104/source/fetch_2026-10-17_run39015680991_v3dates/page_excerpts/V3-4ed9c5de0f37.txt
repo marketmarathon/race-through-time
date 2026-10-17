@@ -1,0 +1,14 @@
+# V3-4ed9c5de0f37
+# url: https://data.ipu.org/election-summary/HTML/2065_03.htm
+# final url: https://data.ipu.org/election-summary/HTML/2065_03.htm
+# fetched (UTC): 2026-10-17T08:07:17Z
+# HTTP 200; 8961 bytes; SHA-256 27239a061c7390b08bcbec780e231a69fcd3fd446c86f48bed62994604c80cac
+# title: 
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to): | 26 February 2003
+D: 26 February 2003 | 26 February 2003
+D: The Tenth National People's Congress (NPC) deputies were elected from 35 electoral units across China, including all the | The First Session of the 10th NPC took place on 5 March 2003. Mr. Hu Jintao was elected Chinese President at this NPC session.
+K: Chamber: | Quanguo Renmin Daibiao Dahui
+K: Dates of election / renewal (from/to): | 26 February 2003
+K: Purpose of elections: | Elections were held for all the seats in Parliament on the normal expiry of the members' term of office.

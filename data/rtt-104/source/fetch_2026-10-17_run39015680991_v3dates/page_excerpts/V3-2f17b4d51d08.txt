@@ -1,0 +1,37 @@
+# V3-2f17b4d51d08
+# url: https://data.ipu.org/parliament/NL/NL-LC01/election/NL-LC01-E20210317/
+# final url: https://data.ipu.org/parliament/NL/NL-LC01/election/NL-LC01-E20210317/
+# fetched (UTC): 2026-10-17T08:13:23Z
+# HTTP 200; 179094 bytes; SHA-256 24e5e2f6bbefe73ca75748f972bee12eb519572346ef760a39a6b80ce491bb82
+# title: Netherlands House of Representatives March 2021 Election | Election results | Netherlands | IPU Parline: global data on national parliaments
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Netherlands House of Representatives March 2021 Election | Election results | Netherlands | IPU Parline: global data on national parliaments
+D: View field in the data dictionary | 17 Mar 2021
+D: View field in the data dictionary | 25 Mar 2021
+D: Notes: - Candidates are not required to specify their sex on the list of candidates. Out of the 1,579 candidates who sto | - Candidates may run in more than one constituency in the Netherlands. Most candidates thus appeared several times on the list of candidates, which included a total of 20,909 entries for the 2021 elections.
+D: View field in the data dictionary | The 2021 elections returned an even more fragmented House of Representatives than the previous legislature: 17 parties, up from 13 in the previous legislature, entered the 150-member House of Representatives. Only four parties took more than 15 seats. Caretaker Prime Minister Mark Rutte’s People's P
+D: The 2021 elections returned an even more fragmented House of Representatives than the previous legislature: 17 parties,  | Lengthy coalition talks followed the elections. On 13 December 2021 the VVD, the D66, the CDA and the Christian Union announced that they would form a coalition government, thereby giving a fourth term to Prime Minister Rutte. On 10 January 2022, the new government was sworn in, 299 days after the M
+D: Lengthy coalition talks followed the elections. On 13 December 2021 the VVD, the D66, the CDA and the Christian Union an | The 2021 elections followed violent street protests against lockdown measures during the COVID-19 pandemic. The outgoing Cabinet, led by the long-serving Prime Minister Rutte, resigned on 15 January 2021 over the child benefit scandal but he remained as caretaker Prime Minister. During election camp
+D: Note: | Early voting was held on 15 and 16 March 2021 for voters considered vulnerable to COVID-19. Voters aged 70 or older were given the option to vote by post. Each voter was allowed to cast a vote by proxy for up to three persons instead of two.
+D: Sources | House of Representatives (01.04.2021)
+D: https://www.government.nl/ | https://wetten.overheid.nl/BWBR0044754/2021-03-01
+D: View field in the data dictionary | 31 Mar 2021
+D: View field in the data dictionary | 07 Apr 2021
+K: Select country and chamber | Parliaments
+K: Political systems: Presidential, Parliamentary, Presidential-Parliamentary, Monarchy, Communist, Transitional. | View field in the data dictionary
+K: The date when elections started and ended for directly or indirectly elected parliaments/chambers. The date of appointments for appointed parliaments/chambers. | View field in the data dictionary
+K: Date of dissolution of the outgoing legislature | Date at which the previous legislature (elected at the previous elections) was dissolved.
+K: Date at which the previous legislature (elected at the previous elections) was dissolved. | View field in the data dictionary
+K: Timing of election | Timing of election: Upon normal expiry; Early elections; Delayed elections
+K: Timing of election: Upon normal expiry; Early elections; Delayed elections | View field in the data dictionary
+K: Number of seats contested at the elections. Where the parliament/chamber is fully renewed, this number is usually identical to the statutory number of members. Where the parliament/chamber is partiall | View field in the data dictionary
+K: Scope of elections | Scope of elections: Full renewal; Partial renewal.
+K: Scope of elections: Full renewal; Partial renewal. | View field in the data dictionary
+K: Full renewal | Candidates
+K: The total number of male parliamentarians in this parliament/chamber following the election or renewal, regardless of their modes of designation. | View field in the data dictionary
+K: The total number of female parliamentarians in this parliament/chamber following the election or renewal, regardless of their modes of designation. | View field in the data dictionary
+K: The percentage is calculated by dividing the total number of women in this parliament/chamber by the current number of members. | View field in the data dictionary
+K: The number of members who are assuming their parliamentary mandate for the first time following the election or renewal, regardless of their mode of designation. | View field in the data dictionary
+K: The date when the newly elected parliament/chamber was convened for the first time. It may be different from the date when members were sworn in. | View field in the data dictionary
+K: The political party to which the Speaker belonged to at the moment of the election. In some parliaments, the Speaker suspends or relinquishes their party membership during their term in office and is  | View field in the data dictionary

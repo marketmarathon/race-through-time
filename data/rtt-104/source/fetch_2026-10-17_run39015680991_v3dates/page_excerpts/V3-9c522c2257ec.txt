@@ -1,0 +1,35 @@
+# V3-9c522c2257ec
+# url: https://data.ipu.org/parliament/NZ/NZ-LC01/election/NZ-LC01-E20231014/
+# final url: https://data.ipu.org/parliament/NZ/NZ-LC01/election/NZ-LC01-E20231014/
+# fetched (UTC): 2026-10-17T08:13:43Z
+# HTTP 200; 179917 bytes; SHA-256 4a8bafe90580ba9cc6f230ce8d73f873f61d85f347d04cac68a7223eb05dd3fc
+# title: New Zealand House of Representatives October 2023 Election | Election results | New Zealand | IPU Parline: global data on national parliaments
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: New Zealand House of Representatives October 2023 Election | Election results | New Zealand | IPU Parline: global data on national parliaments
+D: View field in the data dictionary | 14 Oct 2023
+D: View field in the data dictionary | 07 Nov 2026
+D: On 24 November, Mr. Luxon announced a coalition government comprising his National Party, ACT New Zealand and New Zealan | The 2023 elections were the first to be held with Prime Minister Hipkins in office. He came to power in January 2023 after Ms. Jacinda Ardern resigned as Prime Minister and announced that she would not stand for re election. The key electoral issues included public debt, rising housing costs, relati
+D: Note: | New Zealand uses the Mixed Member Proportional system. In cases where parties win more electoral seats than their share of seats as determined by the party vote, they may keep the extras, known as "overhang seats". Two overhang seats were allotted to the Maori Party in 2023, bringing the total numbe
+D: - Meanwhile, a male candidate elected under the Labour Party ticket announced he would not take up his seat and was repl | - As at 12 December 2023, there were thus 56 women out of the full 123 members.
+D: Sources | House of Representatives (20.11.2023, 28.11.2023, 12.12.2023)
+D: House of Representatives (20.11.2023, 28.11.2023, 12.12.2023) | Electoral Commission (05.12.2023)
+D: View field in the data dictionary | 05 Dec 2023
+D: View field in the data dictionary | 05 Dec 2023
+K: Select country and chamber | Parliaments
+K: Political systems: Presidential, Parliamentary, Presidential-Parliamentary, Monarchy, Communist, Transitional. | View field in the data dictionary
+K: The date when elections started and ended for directly or indirectly elected parliaments/chambers. The date of appointments for appointed parliaments/chambers. | View field in the data dictionary
+K: Date of dissolution of the outgoing legislature | Date at which the previous legislature (elected at the previous elections) was dissolved.
+K: Date at which the previous legislature (elected at the previous elections) was dissolved. | View field in the data dictionary
+K: Timing of election | Timing of election: Upon normal expiry; Early elections; Delayed elections
+K: Timing of election: Upon normal expiry; Early elections; Delayed elections | View field in the data dictionary
+K: Number of seats contested at the elections. Where the parliament/chamber is fully renewed, this number is usually identical to the statutory number of members. Where the parliament/chamber is partiall | View field in the data dictionary
+K: Scope of elections | Scope of elections: Full renewal; Partial renewal.
+K: Scope of elections: Full renewal; Partial renewal. | View field in the data dictionary
+K: Full renewal | Candidates
+K: The total number of male parliamentarians in this parliament/chamber following the election or renewal, regardless of their modes of designation. | View field in the data dictionary
+K: The total number of female parliamentarians in this parliament/chamber following the election or renewal, regardless of their modes of designation. | View field in the data dictionary
+K: The percentage is calculated by dividing the total number of women in this parliament/chamber by the current number of members. | View field in the data dictionary
+K: The number of members who are assuming their parliamentary mandate for the first time following the election or renewal, regardless of their mode of designation. | View field in the data dictionary
+K: The date when the newly elected parliament/chamber was convened for the first time. It may be different from the date when members were sworn in. | View field in the data dictionary
+K: The political party to which the Speaker belonged to at the moment of the election. In some parliaments, the Speaker suspends or relinquishes their party membership during their term in office and is  | View field in the data dictionary

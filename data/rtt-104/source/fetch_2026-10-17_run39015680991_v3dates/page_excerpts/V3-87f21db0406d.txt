@@ -1,0 +1,16 @@
+# V3-87f21db0406d
+# url: https://data.ipu.org/election-summary/HTML/2055_97.htm
+# final url: https://data.ipu.org/election-summary/HTML/2055_97.htm
+# fetched (UTC): 2026-10-17T08:07:16Z
+# HTTP 200; 9968 bytes; SHA-256 87f32722440ae79d8633bedbef8daffbb4be4bde8b023a5f28684e0071964502
+# title: CANADA: parliamentary elections House of Commons - Chambre des Communes, 1997
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 2 June 1997
+D: Purpose of elections: | Elections were held for all members of the House of Commons following the premature dissolution of this body on 27 April 1997. Previous general elections had been held in October 1993.
+D: STATISTICS | Round no 1 (2 June 1997): Elections results
+K: Parliamentary Chamber: House of Commons - Chambre des Communes | ELECTIONS HELD IN 1997
+K: Chamber: | Dates of elections / renewal (from/to):
+K: Dates of elections / renewal (from/to): | 2 June 1997
+K: Purpose of elections: | Elections were held for all members of the House of Commons following the premature dissolution of this body on 27 April 1997. Previous general elections had been held in October 1993.
+K: In the wake of the premature dissolution of the House of Commons, Prime Minister Jean Chr�tien (Liberal Party) announced the date on the general elections on 27 April. In doing so, he asked his fellow | During the five-week campaign, the right-wing Reform Party, led by Mr. Preston Manning, advocated government decentralisation and took a hard line on the issue of the separation of Quebec province as 

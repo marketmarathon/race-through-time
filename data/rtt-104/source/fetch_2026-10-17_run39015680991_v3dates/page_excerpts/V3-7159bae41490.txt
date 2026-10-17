@@ -1,0 +1,22 @@
+# V3-7159bae41490
+# url: https://data.ipu.org/election-summary/HTML/2277_01.htm
+# final url: https://data.ipu.org/election-summary/HTML/2277_01.htm
+# fetched (UTC): 2026-10-17T08:09:03Z
+# HTTP 200; 10142 bytes; SHA-256 dd65018f616e53845eb115b363327a82cca6af83f9f116a6f75a59342d34dd52
+# title: SENEGAL: parliamentary elections Assembl�e nationale, 2001
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 29 April 2001
+D: Purpose of elections: | Elections were held for all the seats in the National Assembly following the premature dissolution of this body on 15 February 2001. General elections had previously been held in May 1998.
+D: Background and outcome of elections: | After President Wade dissolved the National Assembly elected in 1998 and dominated by the Socialist Party (PS) of former President Abdou Diouf, early elections were held on 29 April 2001.
+D: After President Wade dissolved the National Assembly elected in 1998 and dominated by the Socialist Party (PS) of former | Twenty-five political parties fielded candidates in elections which were supposed to reflect a reconfiguring of the political landscape, one year after the election of Mr. Abdoulaye Wade as a new President, on 19 March 2000.
+D: Turnout came to some 68% of the approximately 2.8 million registered voters. | Mrs. Madior Boye, who was appointed Prime Minister in the outgoing government on 3 March 2001, was reappointed to this post on 10 May 2001.
+D: Mrs. Madior Boye, who was appointed Prime Minister in the outgoing government on 3 March 2001, was reappointed to this p | On 18 May 2001, Mr. Youssou Diagne, a member of the PDS party of President Abdoulaye Wade, was elected Speaker of the National Assembly at that body's first special session.
+D: STATISTICS | Round no 1 (29 April 2001): Elections results
+K: Parliamentary Chamber: Assembl�e nationale | ELECTIONS HELD IN 2001
+K: Chamber: | Assembl�e nationale
+K: Dates of elections / renewal (from/to): | 29 April 2001
+K: Purpose of elections: | Elections were held for all the seats in the National Assembly following the premature dissolution of this body on 15 February 2001. General elections had previously been held in May 1998.
+K: The Union for Democratic Renewal (URD) and And-J�f won 3 and 2 seats, respectively. Five small parties divided up the remaining seats with one seat each. | International observers from French-speaking countries and the Organization of African Unity (OAU) deemed that these elections had been free and fair.
+K: Union for Democratic Renewal (URD) | 68 956
+K: Union for Democratic Renewal (URD) | 3

@@ -1,0 +1,23 @@
+# V3-b5f16db7783d
+# url: https://data.ipu.org/election-summary/HTML/2121_13.htm
+# final url: https://data.ipu.org/election-summary/HTML/2121_13.htm
+# fetched (UTC): 2026-10-17T08:08:06Z
+# HTTP 200; 19455 bytes; SHA-256 1f496b395b51507865e4faa933a144ac63dececec16d527394153dcababf1278
+# title: IPU PARLINE database: GERMANY (Deutscher Bundestag), ELECTIONS IN 2013
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 22 September 2013
+D: The CDU-CSU began discussions with both the SPD and the Greens about the formation of a possible coalition government. | Date of previous elections: 27 September 2009
+D: Date of previous elections: 27 September 2009 | Date of dissolution of the outgoing legislature: 22 October 2013
+D: Timing of election: Upon normal expiry | Expected date of next elections: September 2017
+D: Names of parties in government: Christian Democratic Union (CDU), Christian Social Union of Bavaria (CSU) and Social Dem | Date of the first session of the new parliament: 22 October 2013
+D: Voter turnout | Round no 1 22 September 2013
+D: Sources: | German Bundestag (26.09.2013, 28.10.2013, 01.01.2017)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name
+K: Chamber name (generic / translated) | Deutscher Bundestag / German Bundestag
+K: Related chamber (for bicameral parliaments) | Bundesrat / Federal Council
+K: Dates of election / renewal (from/to) | 22 September 2013
+K: Purpose of elections | Chancellor Angela Merkel's Christian Democratic Union (CDU) and its sister party in Bavaria, the Christian Social Union of Bavaria (CSU), won a total of 311 seats in the 631-member Bundestag, their be
+K: Timing of election: Upon normal expiry | Expected date of next elections: September 2017
+K: Number of seats at stake: 631 (full renewal)* | *Including 29 compensatory seats (Ausgleichsmandate) and four overhang seats (Überhangmandate).

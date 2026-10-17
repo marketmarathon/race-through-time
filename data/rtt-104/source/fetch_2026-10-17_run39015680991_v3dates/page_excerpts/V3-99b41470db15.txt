@@ -1,0 +1,18 @@
+# V3-99b41470db15
+# url: https://data.ipu.org/election-summary/HTML/2257_02.htm
+# final url: https://data.ipu.org/election-summary/HTML/2257_02.htm
+# fetched (UTC): 2026-10-17T08:08:55Z
+# HTTP 200; 7499 bytes; SHA-256 9ed6a1a972f7872a732d4b3d63e18cd231227aa2ae278b047bca3dd650c1b82c
+# title: PORTUGAL: parliamentary elections Assembleia da Republica, 2002
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 17 March 2002
+D: Purpose of elections: | Elections were held for all seats in the Assembly following the premature dissolution of this body in December 2001. General elections had previously been held in October 1999.
+D: Background and outcome of elections: | On 5 March 2002, the official campaign for the general election on 17 March 2002 opened, with economic issues at the fore. The election, the second in the country in two and a half years, followed the sudden resignation of the Socialist Prime Minister, Mr Antonio Guterres, after his party's heavy de
+D: On 5 March 2002, the official campaign for the general election on 17 March 2002 opened, with economic issues at the for | Portugal is still the poorest country in the European Union. In 2001 the economy only grew a scant 1.7%, down from 3.4% in both of the previous two years, and the State's high deficit prompted the European Commission in February 2002 to threaten Lisbon with an unprecedented formal warning.
+D: The PSD and the Popular Party agreed to form a coalition government. PSD leader Jose Manuel Dur�o Barroso and Popular Pa | On 6 May 2002, Mr Jos� Manuel Dur�o Barroso was sworn in as Prime Minister.
+D: STATISTICS | Round no 1 (17 March 2002): Elections results
+K: Parliamentary Chamber: Assembleia da Republica | ELECTIONS HELD IN 2002
+K: Chamber: | Assembleia da Republica
+K: Dates of elections / renewal (from/to): | 17 March 2002
+K: Purpose of elections: | Elections were held for all seats in the Assembly following the premature dissolution of this body in December 2001. General elections had previously been held in October 1999.

@@ -1,0 +1,16 @@
+# V3-62b5be71c21c
+# url: https://data.ipu.org/election-summary/HTML/2329_96.htm
+# final url: https://data.ipu.org/election-summary/HTML/2329_96.htm
+# fetched (UTC): 2026-10-17T08:09:44Z
+# HTTP 200; 4817 bytes; SHA-256 c0df7bef82a380035544e166ea6f583b33e4e674a84237097de9e9f448c842a2
+# title: UGANDA: parliamentary elections National Parliament, 1996
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 27 June 1996
+D: Purpose of elections: | Elections were held for all the seats of the new Parliament provided for in the October 1995 Constitution. General elections (for the National Resistance Council) had previously been held in February 1989.
+D: Background and outcome of elections: | Its term was extended while a Constituent Assembly, chosen in March 1994, finalised the draft of a new Constitution. This new basic law was promulgated in October 1995 and provided, inter alia, for a new unicameral National Assembly of 276 members. Elections to this body were postponed several times
+D: Its term was extended while a Constituent Assembly, chosen in March 1994, finalised the draft of a new Constitution. Thi | In accordance with the decision taken in June 1995, legislative polling was held on a non-party basis, President Museveni himself being of the opinion that a multiparty system aggravated tribal divisions. Opposition forces were generally weak and lacked clear platforms to counter the President's slo
+K: Parliamentary Chamber: National Parliament | ELECTIONS HELD IN 1996
+K: Chamber: | National Parliament
+K: Dates of elections / renewal (from/to): | 27 June 1996
+K: Purpose of elections: | Elections were held for all the seats of the new Parliament provided for in the October 1995 Constitution. General elections (for the National Resistance Council) had previously been held in February 

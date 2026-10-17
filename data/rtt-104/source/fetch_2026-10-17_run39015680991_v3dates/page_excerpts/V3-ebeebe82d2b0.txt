@@ -1,0 +1,16 @@
+# V3-ebeebe82d2b0
+# url: https://data.ipu.org/election-summary/HTML/2329_01.htm
+# final url: https://data.ipu.org/election-summary/HTML/2329_01.htm
+# fetched (UTC): 2026-10-17T08:09:41Z
+# HTTP 200; 5740 bytes; SHA-256 5a2ff58752687ce925c59d08c8a8de4a67a74dd54ab8a76cd98bb0e030ae8ee3
+# title: UGANDA: parliamentary elections Parliament, 2001
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 26 June 2001
+D: Background and outcome of elections: | On 26 June 2001, parliamentary elections were held to select the MPs who would form the country's seventh parliament since gaining independence in 1962. At stake were 214 out of 295 seats (the other seats are reserved for special interest groups such as the army, youth and women and are filled by se
+D: The polls came three months after President Yoweri Museveni had won a final term in office with almost 70 percent of vot | The new members of Parliament were sworn in on 3 and 4 July 2001 and the outgoing Deputy Speaker, Mr. Edward Ssekandi, was elected Speaker.
+D: STATISTICS | Round no 1 (26 June 2001): Elections results
+K: Parliamentary Chamber: Parliament | ELECTIONS HELD IN 2001
+K: Chamber: | Parliament
+K: Dates of elections / renewal (from/to): | 26 June 2001
+K: Purpose of elections: | Elections were held for all the seats in Parliament on the normal expiry of the members' term of office.

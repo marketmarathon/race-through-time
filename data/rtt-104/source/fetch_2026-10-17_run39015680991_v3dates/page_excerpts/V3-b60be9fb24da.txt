@@ -1,0 +1,17 @@
+# V3-b60be9fb24da
+# url: https://data.ipu.org/election-summary/HTML/2029_99.htm
+# final url: https://data.ipu.org/election-summary/HTML/2029_99.htm
+# fetched (UTC): 2026-10-17T08:06:55Z
+# HTTP 200; 9655 bytes; SHA-256 27f21e484a6dd1f0cadad9584ff84e557f17743239a093b7fa87dba24e7fed4e
+# title: BELGIUM: parliamentary elections Chambre des Repr�sentants - Kamer van volksvertegenwoordigers - Abgeordnetenkammer, 1999
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 13 June 1999
+D: On polling day, voter outrage and confusion over the Government's mishandling of the above-mentioned food issue proved d | As is customary after elections for the complete renewal of both Houses of Parliament, the Prime Minister, Mr. Dehaene, tendered his resignation to the King on 14 June 1999.
+D: As is customary after elections for the complete renewal of both Houses of Parliament, the Prime Minister, Mr. Dehaene,  | Following consultations conducted by a liberal French-speaker, Mr. Louis Michel, a tri-partite government was formed by a liberal Fleming, Mr. Guy Verhofstadt. It is composed of the liberal, socialist and ecologist parties. The Verhofstadt government won a vote of confidence in the House of Represen
+D: STATISTICS | Round no 1 (13 June 1999): Elections results
+K: Parliamentary Chamber: Chambre des Repr�sentants - Kamer van volksvertegenwoordigers - Abgeordnetenkammer | ELECTIONS HELD IN 1999
+K: Chamber: | Dates of elections / renewal (from/to):
+K: Dates of elections / renewal (from/to): | 13 June 1999
+K: Purpose of elections: | Elections were held for all the seats in the House of Representatives following the dissolution of Parliament in the wake of adoption of a declaration to revise the Constitution.
+K: Elections were held for all the seats in the House of Representatives following the dissolution of Parliament in the wake of adoption of a declaration to revise the Constitution. | Background and outcome of elections:

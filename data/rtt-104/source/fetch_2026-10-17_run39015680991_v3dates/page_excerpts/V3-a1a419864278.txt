@@ -1,0 +1,17 @@
+# V3-a1a419864278
+# url: https://data.ipu.org/election-summary/HTML/2325_04.htm
+# final url: https://data.ipu.org/election-summary/HTML/2325_04.htm
+# fetched (UTC): 2026-10-17T08:09:36Z
+# HTTP 200; 22262 bytes; SHA-256 8e7addd4d9df911bc961293948680e2f610c2551d4c78bbd39e7bbcaa47b0156
+# title: IPU PARLINE database: TURKMENISTAN (Mejlis), Elections in 2004
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: BACKGROUND | Dates of election / renewal (from/to) (from/to) 19 December 2004
+D: Dates of election / renewal (from/to) (from/to) 19 December 2004 | 9 January 2005
+D: Elections were held for all the seats in Parliament on the normal expiry of the members' term of office. | On 19 December 2004 a total of 131 candidates ran for election to the Assembly (Majlis) in this former Soviet republic of 4.9 million people, covered largely by desert but rich in natural gas.
+D: According to Turkmen election officials, 1,915,000 people, or 76.88 percent of eligible voters, cast their ballot, large | In the first round, parliamentarians were elected in 43 electoral districts. The Turkmen law on elections stipulates that a run-off must be organized if no one gains over 50% in a voting district where three or more candidates are registered. Runoff ballots were therefore held on 9 January 2005 for 
+D: Voter turnout | Round no 1 19 December 2004
+D: Notes | Round no 2 9 January 2005
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Purpose of elections | Elections were held for all the seats in Parliament on the normal expiry of the members' term of office.
+K: Many human rights activists claim that all candidates were "hand-picked" and personally approved by the President-for-life Saparmurat Niyazov, considered to be the most powerful figure in Turkmenistan | All the incumbent members of the Assembly belonged to Mr. Niyazov's Democratic Party of Turkmenistan (DPT). The DPT remains the country's only legal party as formal political parties are banned. Under

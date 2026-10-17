@@ -1,0 +1,15 @@
+# V3-43b2cba2e806
+# url: https://data.ipu.org/election-summary/HTML/2095_98.htm
+# final url: https://data.ipu.org/election-summary/HTML/2095_98.htm
+# fetched (UTC): 2026-10-17T08:07:48Z
+# HTTP 200; 8169 bytes; SHA-256 a07619157bb3bc92f9cbebb3a3742936b44ac713d55236b1e78c05fb47f578f0
+# title: ECUADOR: parliamentary elections Congreso Nacional, 1998
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 31 May 1998
+D: Background and outcome of elections: | Following the previous (May 1996) general elections, President of the Republic Abdala Bucaram Ortiz was removed from office by Congress nine months later on grounds of mental incapacity. Mr. Fabian Alarcon Rivera thereupon took his place as caretaker Head of State until the May 1998 poll, which was 
+D: STATISTICS | Round no 1 (31 May 1998): Elections results
+K: Parliamentary Chamber: Congreso Nacional | ELECTIONS HELD IN 1998
+K: Chamber: | Congreso Nacional
+K: Dates of elections / renewal (from/to): | 31 May 1998
+K: Purpose of elections: | Elections were held for all the seats in Parliament on the normal expiry of the members' term of office.

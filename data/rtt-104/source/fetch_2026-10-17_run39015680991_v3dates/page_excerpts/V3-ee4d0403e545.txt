@@ -1,0 +1,16 @@
+# V3-ee4d0403e545
+# url: https://data.ipu.org/election-summary/HTML/2233_99.htm
+# final url: https://data.ipu.org/election-summary/HTML/2233_99.htm
+# fetched (UTC): 2026-10-17T08:08:38Z
+# HTTP 200; 6296 bytes; SHA-256 982ba35de7a9a026ac3eb3351e4a4b0c71c783cbe1e43c1ae3139d31b186f09c
+# title: NEW ZEALAND: parliamentary elections House of Representatives, 1999
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 27 November 1999
+D: Background and outcome of elections: | Following the previous general elections of October 1996, Mrs. Jenny Shipley (National Party - NP) had replaced Mr. Jim Bolger as Prime Minister and head of the minority government in December 1997.
+D: In the battle for the 120 seats in the House of Representatives, the NP was mainly challenged, as before, by the Labour  | On polling day, Labour scored a clear victory over its chief rival but fell short of an absolute House majority even with Alliance's total. The two emerged with 59 seats but won the support of the Greens (7 seats) led by Ms. Jeanette Fitzsimons, who vowed to support the centre-left coalition on conf
+D: STATISTICS | Round no 1 (27 November 1999): Elections results
+K: Parliamentary Chamber: House of Representatives | ELECTIONS HELD IN 1999
+K: Chamber: | House of Representatives
+K: Dates of elections / renewal (from/to): | 27 November 1999
+K: Purpose of elections: | Elections were held for all the seats in Parliament on the normal expiry of the members' term of office.

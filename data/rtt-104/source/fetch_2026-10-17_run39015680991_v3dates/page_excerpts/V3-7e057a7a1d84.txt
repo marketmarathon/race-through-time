@@ -1,0 +1,20 @@
+# V3-7e057a7a1d84
+# url: https://data.ipu.org/election-summary/HTML/2251_06.htm
+# final url: https://data.ipu.org/election-summary/HTML/2251_06.htm
+# fetched (UTC): 2026-10-17T08:08:52Z
+# HTTP 200; 19964 bytes; SHA-256 02cdd4857d7edc90684be16dd134741de48dc5c5c7460c30648c8cb37f7c3726
+# title: IPU PARLINE database: PERU (Congreso de la República) ELECTIONS IN 2006
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 9 April 2006
+D: Elections were held for all the seats of the Congress of the Republic on the normal expiry of the members' term of offic | On 9 April 2006
+D: parliamentary elections were held in parallel with presidential elections. | In the last elections in April 2001
+D: Mr. Rafael Balaunde Aubry | withdrew his candidature in January 2006.
+D: in exile in Japan since 2000 | was detained by the Chilean authorities in November 2005 while trying to return to Peru. His presidential candidacy was rejected by the Peruvian National Electoral Commission in January 2006. The pro-Fujimori Cambio 90 - Nueva Mayoría
+D: Voter turnout | Round no 1 9 April 2006
+D: Sources: | - IPU Group (14.06.2006)
+D: - http://www.elecciones2006.onpe.gob.pe/ | - http://www.congreso.gob.pe/ (12.03.2009)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Dates of election / renewal (from/to) | 9 April 2006
+K: Purpose of elections | Elections were held for all the seats of the Congress of the Republic on the normal expiry of the members' term of office.

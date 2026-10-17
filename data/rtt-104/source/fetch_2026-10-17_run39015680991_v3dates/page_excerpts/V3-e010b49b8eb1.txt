@@ -1,0 +1,23 @@
+# V3-e010b49b8eb1
+# url: https://data.ipu.org/election-summary/HTML/2107_10.htm
+# final url: https://data.ipu.org/election-summary/HTML/2107_10.htm
+# fetched (UTC): 2026-10-17T08:07:52Z
+# HTTP 200; 25719 bytes; SHA-256 d97977e09356eec1b84ba949aadfd7167c321bc14e508b88a77adc392e104dfb
+# title: IPU PARLINE database: ETHIOPIA (Yehizb Tewokayoch Mekir Bete), ELECTIONS IN 2010
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 23 May 2010
+D: Elections were held for all seats in the House of Peoples' Representatives on the normal expiry of the members' term of  | The May 2010 elections were the fourth to be held since the end of the military regime of Mr. Mengistu Haile Mariam in 1991. The first three were all won by the ruling coalition, the Ethiopian People's Revolutionary Democratic Front (EPRDF).
+D: The May 2010 elections were the fourth to be held since the end of the military regime of Mr. Mengistu Haile Mariam in 1 | In the previous elections (May 2005), the EPRDF, led by Prime Minister Meles Zenawi, won 327 of the 547 seats in the House of Peoples' Representatives. Its ally, the Somali People's Democratic Party (SPDP), took 24 seats. The opposition won a total of 173 seats, as follows: the Coalition for Unity a
+D: The EPRDF comprises several ethnic-based parties. They include Mr. Meles's Tigray People's Liberation Front (TPLF), whic | Following the 2005 elections, the opposition parties accused the EPRDF government of election fraud and organised street protests. More than 200 people, including seven police officers, died. Over 70 opposition members and journalists - including CUD leader Hailu Shawul and another prominent CUD mem
+D: Following the 2005 elections, the opposition parties accused the EPRDF government of election fraud and organised street | In July 2007, President Girma Woldegiorgis pardoned all 38 CUD members. In January 2008, Mr. Shawul went into self-imposed exile in the United States. There was a resulting internal split in the CUD. In June 2008, Ms. Mideksa helped found Unity for Democracy and Justice (UDJ) and was subsequently el
+D: In July 2007, President Girma Woldegiorgis pardoned all 38 CUD members. In January 2008, Mr. Shawul went into self-impos | In the meantime, in October 2009, Prime Minister Meles was renewed as leader of the EPRDF for another five years. In November 2009, 26 people were convicted on charges of planning a coup against the Government, which claimed that Mr. Shawul had masterminded the operation.
+D: The EPRDF campaigned on its record in office. It pledged to maintain its agricultural policy and health and education se | The biggest opposition force in 2010 was a UDJ-led eight-party alliance, the Ethiopian Federal Democratic Forum (FORUM), known as "Medrek" (meaning "forum" in Amharic). The FORUM was headed by a senior UDJ leader, Mr. Merera Gudina, and backed by former president Negaso Gidada. The FORUM called for 
+D: Voter turnout | Round no 1 23 May 2010
+D: Sources: | - House of Peoples' Representatives (08.07.2010)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name
+K: Chamber name (generic / translated) | Yehizb Tewokayoch Mekir Bete / House of Peoples' Representatives
+K: Related chamber (for bicameral parliaments) | Yefedereshein Mekir Bete / House of the Federation
+K: Dates of election / renewal (from/to) | 23 May 2010
+K: Purpose of elections | Elections were held for all seats in the House of Peoples' Representatives on the normal expiry of the members' term of office.

@@ -1,0 +1,22 @@
+# V3-c663a13105f6
+# url: https://data.ipu.org/election-summary/HTML/2073_14.htm
+# final url: https://data.ipu.org/election-summary/HTML/2073_14.htm
+# fetched (UTC): 2026-10-17T08:07:24Z
+# HTTP 200; 21351 bytes; SHA-256 2750c0f58fa1e362ffe52b4ad80e5c0b2abcad8971e0a6ad1e80bacc0c434bb5
+# title: IPU PARLINE database: COSTA RICA (Asamblea Legislativa), ELECTIONS IN 2014
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 2 February 2014
+D: The centrist PLN pledged to reduce poverty in the country. Its presidential candidate, Mr. Johnny Araya, the former Mayo | None of the 13 presidential candidates secured 40 per cent of the votes to be elected in the first round. Run-off elections  the first since 2002 - are due to be held on 6 April between Mr. Solís (PAC) and Mr. Araya (PLN).
+D: None of the 13 presidential candidates secured 40 per cent of the votes to be elected in the first round. Run-off electi | Date of previous elections: 7 February 2010
+D: Timing of election: Upon normal expiry | Expected date of next elections: February 2018
+D: Names of parties in government: Citizens' Action Party (PAC) | Date of the first session of the new parliament: 1 May 2014
+D: Voter turnout | Round no 1 2 February 2014
+D: Sources: | Legislative Assembly (05.03.2014, 07.05.2014, 01.01.2017)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Dates of election / renewal (from/to) | 2 February 2014
+K: Purpose of elections | The National Liberation Party (PLN), in power since 2006, remained the largest force in the 57-member Legislative Assembly, taking 18 seats, down from 24 previously. The Citizens' Action Party (PAC) t
+K: Date of dissolution of the outgoing legislature: N/A | Timing of election: Upon normal expiry
+K: Timing of election: Upon normal expiry | Expected date of next elections: February 2018
+K: Number of seats at stake: 57 (full renewal) | Percentage of women candidates: Not available.

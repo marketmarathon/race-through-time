@@ -1,0 +1,16 @@
+# V3-4c9d8b5e8d5d
+# url: https://data.ipu.org/election-summary/HTML/2015_01.htm
+# final url: https://data.ipu.org/election-summary/HTML/2015_01.htm
+# fetched (UTC): 2026-10-17T08:06:32Z
+# HTTP 200; 6273 bytes; SHA-256 89c3015bfab1c35c00a5de4c832ba39a19f3893dbd4da10a2ae79727ea49e013
+# title: AUSTRALIA: parliamentary elections House of Representatives, 2001
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 10 November 2001
+D: Background and outcome of elections: | The Governor-General prorogued the Parliament and dissolved the House of Representatives on 8 October 2001 in the run-up to the general elections, to be held on 10 November 2001. At stake were 150 seats in the House of Representatives and 40 in the Senate. The number of seats in the House of Represe
+D: In the elections, the ruling coalition of the Liberal and National parties won a majority of the seats in the House of R | Prime Minister John Howard announced his new cabinet on 23 November 2001, and was sworn in three days later for his third term in office.
+D: STATISTICS | Round no 1 (10 November 2001): Elections results
+K: Parliamentary Chamber: House of Representatives | ELECTIONS HELD IN 2001
+K: Chamber: | House of Representatives
+K: Dates of elections / renewal (from/to): | 10 November 2001
+K: Purpose of elections: | Elections were held for all the seats in the House of Representatives on the normal expiry of the members' term of office.

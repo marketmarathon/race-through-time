@@ -1,0 +1,15 @@
+# V3-f55e39e0bc37
+# url: https://data.ipu.org/election-summary/HTML/2037_97.htm
+# final url: https://data.ipu.org/election-summary/HTML/2037_97.htm
+# fetched (UTC): 2026-10-17T08:07:00Z
+# HTTP 200; 6544 bytes; SHA-256 63dd3e531fbda12013685086de68c83a96e59caa235079018acff11fa00a99ef
+# title: BOLIVIA: parliamentary elections C�mara de Diputados, 1997
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 1 June 1997
+D: STATISTICS | Round no 1 (1 June 1997): Elections results
+K: Parliamentary Chamber: C�mara de Diputados | ELECTIONS HELD IN 1997
+K: Chamber: | C�mara de Diputados
+K: Dates of elections / renewal (from/to): | 1 June 1997
+K: Purpose of elections: | Elections were held for all the seats in Parliament on the normal expiry of the members' term of office.
+K: On polling day, Mr. Banzer and Mr. Duran obtained the most presidential votes but as both fell short of an absolute majority they faced a runoff in Congress on 4 August; this contest was ultimately wo | STATISTICS

@@ -1,0 +1,25 @@
+# V3-a6f734de6bd0
+# url: https://data.ipu.org/election-summary/HTML/2265_08.htm
+# final url: https://data.ipu.org/election-summary/HTML/2265_08.htm
+# fetched (UTC): 2026-10-17T08:09:02Z
+# HTTP 200; 24279 bytes; SHA-256 66fd0f7bc63702f536d7dc879a2c711130405effaecf917a0756279ab8f26c94
+# title: IPU PARLINE database: RWANDA (Chambre des Députés), ELECTIONS IN 2008
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: BACKGROUND | Dates of election / renewal (from/to) (from/to) 15 September 2008
+D: Dates of election / renewal (from/to) (from/to) 15 September 2008 | 18 September 2008
+D: Elections were held for all seats in the Chamber of Deputies on the normal expiry of the members' term of office. | On 14 August 2008, President Paul Kagame dissolved the Chamber of Deputies, paving the way for elections from 15 to 18 September. They were the second to be held after the 1994 genocide, in which over 800,000 people were killed, the equivalent of one seventh of the country's population.
+D: Elections are held over four days in Rwanda. On the first day, Rwandans directly elect 53 representatives among politica | In the previous elections held in September and October 2003, President Kagame's Rwandan Patriotic Front (FPR) and its allies (see note 1) won a total of 40 of the 53 directly elected seats. The Social Democratic Party (PSD) and the Liberal Party (PL) took seven and six seats respectively. Although 
+D: Voter turnout | Round no 1 (from/to) 15 September 2008
+D: Round no 1 (from/to) 15 September 2008 | 18 September 2008
+K: Chambre des Députés (Chamber of Deputies) | General information
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Chamber name (generic / translated) | Chambre des Députés / Chamber of Deputies
+K: Chambre des Députés / Chamber of Deputies | Related chamber (for bicameral parliaments)
+K: Related chamber (for bicameral parliaments) | Sénat / Senate
+K: Purpose of elections | Elections were held for all seats in the Chamber of Deputies on the normal expiry of the members' term of office.
+K: Elections were held for all seats in the Chamber of Deputies on the normal expiry of the members' term of office. | On 14 August 2008, President Paul Kagame dissolved the Chamber of Deputies, paving the way for elections from 15 to 18 September. They were the second to be held after the 1994 genocide, in which over
+K: The FPR list comprised 80 candidates (including 14 from its coalition partners), of whom 35 were women. The PSD backed 32 women among its 64 candidates. In all, 356 candidates, including 196 women, we | The FPR, locally referred to as "Inkotanyi" (the invincible), was expected to win a clear majority in the new legislature. President Kagame argued that multiparty democracy was key to the country's de
+K: In all, women won 20 of the 53 directly elected seats. Moreover, in addition to the 24 women elected by virtue of the reserved seats, a woman won one of the seats reserved for the youth. Rwanda thus b | The newly elected chamber held its first session on 6 October. Ms. Rose Mukantabana, an independent member elected to a reserved seat for women in Kigali, won the Speakership, becoming the first woman
+K: The newly elected chamber held its first session on 6 October. Ms. Rose Mukantabana, an independent member elected to a reserved seat for women in Kigali, won the Speakership, becoming the first woman | Note 1:

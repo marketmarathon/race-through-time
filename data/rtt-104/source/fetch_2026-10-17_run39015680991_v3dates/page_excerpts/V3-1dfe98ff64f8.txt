@@ -1,0 +1,18 @@
+# V3-1dfe98ff64f8
+# url: https://data.ipu.org/election-summary/HTML/2211_00.htm
+# final url: https://data.ipu.org/election-summary/HTML/2211_00.htm
+# fetched (UTC): 2026-10-17T08:08:13Z
+# HTTP 200; 7628 bytes; SHA-256 5bb1ddc4bd1b8888b589b56eb3e375469f65d01d52386d04606419ca5a57ee0e
+# title: MEXICO: parliamentary elections C�mara de Diputados, 2000
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 2 July 2000
+D: Background and outcome of elections: | Mexican voters went to the polls on 2 July 2000 to choose President Ernest Zedillo's successor and elect 128 members of the Senate and 500 members of the Chamber of Deputies. Before the poll day, all analysts considered that these elections presented the biggest challenge, in Mexico's history, to th
+D: The results of the Presidential race saw the victory of the opposition candidate Mr Vicente Fox over his PRI rival, Mr.  | After he was officially designated President-elect, on 3 August 2000, Mr Fox called for national reconciliation, urging the parties he had defeated to join his government. He took office in December 2000.
+D: STATISTICS | Round no 1 (2 July 2000): Elections results
+K: Parliamentary Chamber: C�mara de Diputados | ELECTIONS HELD IN 2000
+K: Chamber: | C�mara de Diputados
+K: Dates of elections / renewal (from/to): | 2 July 2000
+K: Purpose of elections: | Elections were held for all the seats in the Chamber of Deputies on the normal expiry of the members' term of office.
+K: Elections were held for all the seats in the Chamber of Deputies on the normal expiry of the members' term of office. | Background and outcome of elections:
+K: The results for the Chamber of Deputies confirmed that Vicente Fox Quesada's centre-right National Action Party (PAN) candidates had won 208 seats, up from 117 in the outgoing chamber. The ruling PRI  | As for the Senate, the PRI won 60 seats, down from the 75 it had had in the outgoing one while the PAN won 46 seats, 15 more than in the previous term. The PRD won 15 seats, the same as it had won in 

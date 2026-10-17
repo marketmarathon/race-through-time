@@ -1,0 +1,23 @@
+# V3-65c86c7e9700
+# url: https://data.ipu.org/election-summary/HTML/2121_09.htm
+# final url: https://data.ipu.org/election-summary/HTML/2121_09.htm
+# fetched (UTC): 2026-10-17T08:08:05Z
+# HTTP 200; 29860 bytes; SHA-256 c0fa4c53681338aa091ccd055305814059506f63877e0568727296940e0c969d
+# title: IPU PARLINE database: GERMANY (Deutscher Bundestag), ELECTIONS IN 2009
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 27 September 2009
+D: Elections were held for all seats in the German Bundestag on the normal expiry of the members' term of office. | The 2009 parliamentary elections were held against the backdrop of the global economic crisis, which severely affected the country's automobile industry. In September 2008, the government announced a rescue package involving 4.5 billion euros in loans and credit guarantees.
+D: The 2009 parliamentary elections were held against the backdrop of the global economic crisis, which severely affected t | In the previous elections to the German Bundestag, which were held in September 2005, Ms. Angela Merkel's Christian Democratic Union (CDU) took 180 seats. The CDU's sister party, the Christian Social Union (CSU, standing only in Bavaria) won 46 seats. The CDU/CSU coalition thus took 226 seats in all
+D: The CDU and the SPD disagreed on many issues. In the 2009 elections, Chancellor Merkel's CDU sought to win more seats so | In July 2009, the CSU, led by Mr. Horst Seehofer, opposed the country's ratification of the Lisbon Treaty, aimed at improving the decision-making process of the European Union (EU). It argued that the German Parliament had to approve EU decisions for them to be binding on Germany. After Parliament's
+D: In terms of nuclear energy policy, the SPD vowed to stick to plans to decommission all German nuclear power stations by  | In June 2007, the Party of Democratic Socialism (the successor to the communist party that had ruled East Germany) and the WASG (a group of trade unionists and former SPD members based in western Germany) had formed the Left Party under the leadership of Mr. Oskar Lafontaine, a former SPD leader. SP
+D: Note on overhang seats (Überhangmandate): | In the German electoral system, each voter has two votes: a first vote for an individual candidate in one of the constituencies, and a second vote for the party list drawn up for each of the Länder by each political party. In each Land, every party is entitled to the number of seats that corresponds
+D: Under the current electoral system, many overhang seats are created if the winning party in the second vote has a relati | In July 2008, the Constitutional Court ruled that the "paradoxical effect (negative vote weight)" in connection with the overhang seats was unconstitutional and ordered the German Bundestag to revise the electoral law by 2011. The paradox arises when the difference between the share of the first and
+D: Voter turnout | Round no 1 27 September 2009
+D: Sources: | - Federal Diet (29.09.2009, 15.02.2010, 14.12.2012)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name
+K: Chamber name (generic / translated) | Deutscher Bundestag / German Bundestag
+K: Related chamber (for bicameral parliaments) | Bundesrat / Federal Council
+K: Dates of election / renewal (from/to) | 27 September 2009
+K: Purpose of elections | Elections were held for all seats in the German Bundestag on the normal expiry of the members' term of office.

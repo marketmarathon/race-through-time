@@ -1,0 +1,26 @@
+# V3-fa99048ea27e
+# url: https://data.ipu.org/election-summary/HTML/2337_05.htm
+# final url: https://data.ipu.org/election-summary/HTML/2337_05.htm
+# fetched (UTC): 2026-10-17T08:09:55Z
+# HTTP 200; 18846 bytes; SHA-256 68f24658b32bd1bc7425371073998719602945bb69c8c509da66b35c3fa9a858
+# title: IPU PARLINE database: UNITED REPUBLIC OF TANZANIA (Bunge ) ELECTIONS IN 2005
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 14 December 2005
+D: Elections were held for the 232 elective seats of Parliament. The elections | originally scheduled for 30 October 2005
+D: running mate of the CHADEMA party. | Parliamentary elections were held on 18 December 2005 in parallel with presidential elections. Following a constitutional amendment
+D: two. Seven seats were vacant. | The elections had originally been scheduled for 30 October 2005 but were postponed due to the death of an opposition vice-presidential candidate. The National Electoral Commission announced on 27 October that only presidential elections would be postponed
+D: both the ruling and the opposition parties promised to increase employment and fight corruption. | Approximately 12.9 million of Tanzania's 38 million inhabitants were registered to vote. On 18 December 2005
+D: was elected with more than 80 per cent of the votes. | The new parliament held its first session on 28 December 2005 and elected Mr. Samuel Sitta as its new speaker.
+D: Mr. Freeman Mbowe | died on 27 October 2005 of an undetermined illness. Under Tanzanian electoral law
+D: Voter turnout | Round no 1 14 December 2005
+D: - http://www.nec.go.tz/ | - National Assembly (01.01.2010)
+D: - National Assembly (01.01.2010) | As at 20 January 2006
+D: Four additional members can be appointed by the President | of two must be women (06.02.2006).
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Dates of election / renewal (from/to) | 14 December 2005
+K: Purpose of elections | Elections were held for the 232 elective seats of Parliament. The elections
+K: additional time has to be allowed for nomination and campaigning in the event of the death of a Union presidential candidate. The decision to postpone the Union elections was based on the provisions o | which empower the National Electoral Commission to set new dates for elections under such circumstances.
+K: Four additional members can be appointed by the President | of two must be women (06.02.2006).
+K: - Three appointed members. | Copyright 1996-2010 Inter-Parliamentary Union

@@ -1,0 +1,22 @@
+# V3-d7b635597893
+# url: https://data.ipu.org/election-summary/HTML/2355_00.htm
+# final url: https://data.ipu.org/election-summary/HTML/2355_00.htm
+# fetched (UTC): 2026-10-17T08:10:01Z
+# HTTP 200; 9065 bytes; SHA-256 3ffd20576ce586b439ed1da1f9cda572454b5e3bbef481222ca094f99c622d1e
+# title: YUGOSLAVIA: parliamentary elections Vece Gradjana, YEAR)
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 24 September 2000
+D: Background and outcome of elections: | President Slobodan Milosevic announced in Belgrade on 27 July 2000 that federal parliamentary and presidential elections would be held on 24 September 2000. Serbian municipal and local elections would also take place that same day.
+D: President Slobodan Milosevic announced in Belgrade on 27 July 2000 that federal parliamentary and presidential elections | The Montenegrin authorities repeatedly announced that they would boycott any federal elections held under the new electoral legislation, approved on 6 July 2000. The new law states that the President will be elected directly - instead of by the Parliament - for up to two terms of four years each and
+D: The Montenegrin authorities repeatedly announced that they would boycott any federal elections held under the new electo | During the campaign, President Milosevic repeatedly accused the outside world of trying to undermine the country and wanting to destroy its government. On 18 September 2000, a trial opened in Belgrade of Western leaders who were accused of war crimes. Among the accused were US President Bill Clinton
+D: In the federal Parliament, the opposition DOS won 58 seats in the Chanber of Citizens and 10 in the Chanber of Republics | The Yugoslav Electoral Commission officially ordered a second round of voting for 8 October 2000. The opposition threatened to organise a general strike unless the Electoral Commission proved that a run-off was necessary. Over the first weekend of October, the strike went into effect and the police 
+D: The Yugoslav Electoral Commission officially ordered a second round of voting for 8 October 2000. The opposition threate | On 6 October 2000, Mr Milosevic surrendered power in a televised address in which he congratulated Mr Kostunica. The following day Mr Kostunica was formally inaugurated as President, and on 4 November 2000, a new Cabinet was sworn in.
+D: STATISTICS | Round no 1 (24 September 2000): Elections results
+K: Parliamentary Chamber: Vece Gradjana | ELECTIONS HELD IN 2000
+K: Chamber: | Vece Gradjana
+K: Dates of elections / renewal (from/to): | 24 September 2000
+K: Purpose of elections: | Elections were held for all the seats in the Chamber of Citizens on the normal expiry of the members' term of office.
+K: Elections were held for all the seats in the Chamber of Citizens on the normal expiry of the members' term of office. | Background and outcome of elections:
+K: The opposition was divided on whether or not to participate in the federal and local vote. The United States called on the opposition to unite against President Milosevic and stressed the importance o | The European Union announced a few days before the elections that a vote to oust President Milosevic would bring an end to the economic sanctions. The EU had imposed a wide range of sanctions, includi
+K: Two days before the elections, the Prime Minister, Mr Momir Bulatovic, announced that President Milosevic would remain in power until the middle of 2001 (when his mandate would expire) and would also  | Opposition activists predicted that the ballot might be rigged as one completed ballot paper, with President Milosevic's name circled, had circulated. The voting ended amid reports from monitors of nu

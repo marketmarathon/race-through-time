@@ -1,0 +1,18 @@
+# V3-1d9a33c01fef
+# url: https://data.ipu.org/election-summary/HTML/2355_03.htm
+# final url: https://data.ipu.org/election-summary/HTML/2355_03.htm
+# fetched (UTC): 2026-10-17T08:10:02Z
+# HTTP 200; 11045 bytes; SHA-256 654ba4cf6bf360bca41dd4ead3e3ee1869189d1fe25355f15ef173a346f296ad
+# title: 
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to): | 25 February 2003
+D: 25 February 2003 | 25 February 2003
+D: Background and outcome of elections: | The parliaments of Serbia and Montenegro voted on 25 February 2003 to elect the members of the union's new 126-seat joint legislature. The 91 Serbian and 35 Montenegrin deputies will stand for more than a dozen political parties and groupings currently represented in the parliaments of the two repub
+D: The parliaments of Serbia and Montenegro voted on 25 February 2003 to elect the members of the union's new 126-seat join | The deputies will be appointed to a two-year term. The new Parliament was inaugurated on 3 March 2003 and the lawmakers elected as its Speaker Mr. Dragoljub Micunovic, the outgoing Speaker of the Chamber of Citizens of the Assembly of the former Federation.
+D: Comments: | Under the agreement signed on 7 April 2005, the mandate of the Parliament, expired on 3 March 2005, has been extended until new elections are held separately by the two Republics of Serbia and Montenegro.
+K: Archive of past elections results for this chamber | Chamber:
+K: Chamber: | Skupstina
+K: Dates of election / renewal (from/to): | 25 February 2003
+K: Purpose of elections: | For the first time since Yugoslavia ceased to exist and the new State, Serbia and Montenegro, was created, indirect elections were held in the two assemblies of the two member states.
+K: Archive of past elections results for this chamber | Choose one of the thematic modules below for further information grouped by category. Alternatively, you can access the full text of the PARLINE data about this parliament (downloading will take longe

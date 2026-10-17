@@ -1,0 +1,20 @@
+# V3-73609012039e
+# url: https://data.ipu.org/election-summary/HTML/2291_04.htm
+# final url: https://data.ipu.org/election-summary/HTML/2291_04.htm
+# fetched (UTC): 2026-10-17T08:09:16Z
+# HTTP 200; 34552 bytes; SHA-256 d87692ac4c39013b5d345c509acecbc7f6412e920c55d7757becf4c515137075
+# title: IPU PARLINE database: SOUTH AFRICA (National Assembly), Elections in 2004
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 14 April 2004
+D: Elections were held for all the seats of the National Assembly on the normal expiry of the members' term of office. | Some 35 political parties contested the national and provincial elections that were held on 14 April 2004. These were the country's third democratic general elections.
+D: Officials results confirmed that the outgoing African National Congress secured nearly 70 per cent of the votes, its lar | On 23 April 2004, the new National Assembly convened in its first sitting. Mr. Mbeki was elected unopposed for a second term. The Speaker of the National Assembly was also elected unopposed. Ms. Baleka Kgosietsile-Mbete, the former Deputy Speaker, took over from Frene Ginwala, who stepped down after
+D: On 23 April 2004, the new National Assembly convened in its first sitting. Mr. Mbeki was elected unopposed for a second  | Mr. Mbeki was sworn in on 27 April 2004, the day South Africa celebrated a decade of multiracial democracy.
+D: Mr. Mbeki was sworn in on 27 April 2004, the day South Africa celebrated a decade of multiracial democracy. | On 4 May 2004, Ms. Joyce Kgoali was unanimously elected to chair the National Council of Provinces. She passed away on 21 November 2004 and Mr. Mninawa Johannes Mahlangu succeeded her on 17 January 2005.
+D: Voter turnout | Round no 1 14 April 2004
+D: - Independent Electoral Commission | - National Assembly (01.01.2008)
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name
+K: Chamber name | National Assembly
+K: Related chamber (for bicameral parliaments) | National Council of Provinces
+K: Dates of election / renewal (from/to) | 14 April 2004
+K: Purpose of elections | Elections were held for all the seats of the National Assembly on the normal expiry of the members' term of office.

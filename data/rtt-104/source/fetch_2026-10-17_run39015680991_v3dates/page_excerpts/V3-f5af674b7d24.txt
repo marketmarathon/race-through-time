@@ -1,0 +1,29 @@
+# V3-f5af674b7d24
+# url: https://data.ipu.org/election-summary/HTML/2037_09.htm
+# final url: https://data.ipu.org/election-summary/HTML/2037_09.htm
+# fetched (UTC): 2026-10-17T08:06:58Z
+# HTTP 200; 22709 bytes; SHA-256 62c7b7a826021e321a9a2ac8b2a52d8ff242717279d1568accc42eef15bceb4d
+# title: IPU PARLINE database: BOLIVIA (Cámara de Diputados), ELECTIONS IN 2009
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 6 December 2009
+D: Purpose of elections | Early elections were held for all the seats in the Chamber of Deputies following the adoption of a new Constitution in January 2009. The previous elections had been held in December 2005.
+D: Early elections were held for all the seats in the Chamber of Deputies following the adoption of a new Constitution in J | The 2009 elections were the first to be held under the new Constitution adopted in January 2009. The previous National Congress was replaced by the Plurinational Legislative Assembly, comprising a 130-member Chamber of Deputies and a 36-member Senate (up from 27). A referendum was held at the same t
+D: The 2009 elections were the first to be held under the new Constitution adopted in January 2009. The previous National C | In the previous elections, which were held in December 2005, the Movement for Socialism (MAS) led by Mr. Evo Morales took 72 of the 130 seats in the Chamber of Deputies and 13 of the 27 seats in the Senate. The Social and Democratic Power (PODEMOS) party took 43 seats in the Chamber and 12 in the Se
+D: In the previous elections, which were held in December 2005, the Movement for Socialism (MAS) led by Mr. Evo Morales too | In July 2006, the MAS won the elections to the Constituent Assembly that was established to re-write the Constitution within a year. However, the drafting process was delayed by protests. Opposition parties successfully blocked an article allowing the president to be indefinitely re-elected, arguing
+D: In July 2006, the MAS won the elections to the Constituent Assembly that was established to re-write the Constitution wi | On 25 January 2009, Bolivians voted in a referendum on the new Constitution, which they approved by 61 per cent of the votes. The Constitution grants greater autonomy to Bolivia's nine departments and to indigenous communities, while reinforcing State control over key economic sectors. It was oppose
+D: On 25 January 2009, Bolivians voted in a referendum on the new Constitution, which they approved by 61 per cent of the v | The new Constitution required early presidential and parliamentary elections to be held on 6 December 2009. Mr. Morales was allowed to run since the presidential term served under the previous Constitution did not count.
+D: Despite the global economic crisis, higher prices for natural gas and minerals helped the country sustain its economic g | PP leader Reyes pledged a one time payment of US$ 1,000 to one million families and said he would maintain the subsidies introduced by Mr. Morales' administration. He also promised to reduce unemployment and to attract more foreign companies to Bolivia by giving investors more legal security. The fo
+D: In the presidential elections, Mr. Morales was re-elected with over 60 per cent of the votes. | On 20 January 2010, the newly elected National Congress was convened. The Chamber of Deputies elected Mr. Héctor Arce (MAS) as its new Speaker while the Senate elected Ms. Ana María Romero (MAS) as its new President.
+D: Voter turnout | Round no 1 6 December 2009
+D: Comments | Source: IDEA Internacional, Bolivia (08.02.2010, 24.02.2010)
+K: Cámara de Diputados (Chamber of Deputies) | General information
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Chamber name (generic / translated) | Cámara de Diputados / Chamber of Deputies
+K: Cámara de Diputados / Chamber of Deputies | Related chamber (for bicameral parliaments)
+K: Related chamber (for bicameral parliaments) | Cámara de Senadores / Chamber of Senators
+K: Cámara de Senadores / Chamber of Senators | BACKGROUND
+K: Dates of election / renewal (from/to) | 6 December 2009
+K: Purpose of elections | Early elections were held for all the seats in the Chamber of Deputies following the adoption of a new Constitution in January 2009. The previous elections had been held in December 2005.
+K: The MAS secured a majority in both chambers. It won 88 seats in the Chamber of Deputies and 26 seats in the Senate. The PP followed with 37 and 10 seats respectively. The UNF took three seats in the C | In the presidential elections, Mr. Morales was re-elected with over 60 per cent of the votes.

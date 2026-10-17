@@ -1,0 +1,20 @@
+# V3-dba33114011e
+# url: https://data.ipu.org/election-summary/HTML/2231_03.htm
+# final url: https://data.ipu.org/election-summary/HTML/2231_03.htm
+# fetched (UTC): 2026-10-17T08:08:25Z
+# HTTP 200; 8866 bytes; SHA-256 1689b7a3c3a9d832407fdb5c9d590b222e714cb0a1e5c6cc60e800194e35be45
+# title: NETHERLANDS: parliamentary elections Tweede Kamer der Staten-Generaal, 2003
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 22 January 2003
+D: Purpose of elections: | General elections were held for all the seats in the House of Representatives following premature dissolution of this body after the resignation of the Prime Minister in October 2002. Elections had previously taken place in May 2002.
+D: Background and outcome of elections: | On 22 January 2003, the Dutch voted for a new Parliament in early elections triggered by the collapse of the centre-right coalition that had governed for just 87 days, the shortest-lived Dutch government since World War Two. The last government fell on 16 October 2002, when Prime Minister Jan Peter 
+D: On 22 January 2003, the Dutch voted for a new Parliament in early elections triggered by the collapse of the centre-righ | Eighteen parties contested the elections. The country's biggest party, the Christian Democrats (CDA), had led the outgoing coalition formed with the party of murdered populist Pim Fortuyn (LPF) and the People's Party for Freedom and Democracy (VVD). The main issues for the CDA during the electoral c
+D: Eighteen parties contested the elections. The country's biggest party, the Christian Democrats (CDA), had led the outgoi | Turnout in the elections was 80.3 per cent, slightly higher than in the May 2002 poll.
+D: Turnout in the elections was 80.3 per cent, slightly higher than in the May 2002 poll. | The elections results showed that the CDA had taken 44 seats in the 150 seat Parliament, winning a narrow victory over the Labour Party, which had won 42 seats. The liberal VVD was third, with 28 seats, followed by the Socialist Party, which obtained nine. The LPF lost all but eight of the 26 seats 
+D: The elections results showed that the CDA had taken 44 seats in the 150 seat Parliament, winning a narrow victory over t | On 4 February 2003, during the first sitting of the newly elected House of Representatives, Mr. Frans Weisglas was re-elected as Speaker.
+D: STATISTICS | Round no 1 (22 January 2003): Elections results
+K: Parliamentary Chamber: Tweede Kamer der Staten-Generaal | ELECTIONS HELD IN 2003
+K: Chamber: | Tweede Kamer der Staten-Generaal
+K: Dates of elections / renewal (from/to): | 22 January 2003
+K: Purpose of elections: | General elections were held for all the seats in the House of Representatives following premature dissolution of this body after the resignation of the Prime Minister in October 2002. Elections had pr

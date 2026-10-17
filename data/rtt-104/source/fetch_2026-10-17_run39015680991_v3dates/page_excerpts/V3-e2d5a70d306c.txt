@@ -1,0 +1,20 @@
+# V3-e2d5a70d306c
+# url: https://data.ipu.org/election-summary/HTML/2027_04.htm
+# final url: https://data.ipu.org/election-summary/HTML/2027_04.htm
+# fetched (UTC): 2026-10-17T08:06:48Z
+# HTTP 200; 19550 bytes; SHA-256 dc9bc459cd9f4ae503d096a46087ed9ffb73c5465e843e3792c96e94ae6fd20a
+# title: IPU PARLINE database: BELARUS (Palata Predstaviteley), Elections in 2004
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 17 October 2004
+D: Elections were held for all the seats in the House of Representatives on the normal expiry of the members' term of offic | On 17 October 2004
+D: a second round of voting was held in Novopolotsk constituency. After this | the Central Electoral and Referenda Commission confirmed the elections of 109 members. In Grodnensk Central constituency neither of the two candidates in the race obtained the necessary number of ballots at the second round. A third round of voting was thus held on 20 March 2005 to decide the winner
+D: Voter turnout | Round no 1 17 October 2004
+D: Source: Natsionalnoye Sobranie Respubliki Belarus | Sekretariat Palaty Predstavitelei (04.03.2005
+D: Sekretariat Palaty Predstavitelei (04.03.2005 | 07.04.2005)
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Chamber name (generic / translated) | Palata Predstaviteley / House of Representatives
+K: Related chamber (for bicameral parliaments) | Soviet Respubliki / Council of the Republic
+K: Dates of election / renewal (from/to) | 17 October 2004
+K: Timing and scope of renewal | Elections were held for all the seats in the House of Representatives on the normal expiry of the members' term of office.
+K: 151 were nominated by political parties | including: Communist Party of Belarus (6); Liberal Democratic Party (38); Social Democratic National Agreement Party (2); Republican Party (1); the Popular Coalition Five Plus (104 candidates from a c

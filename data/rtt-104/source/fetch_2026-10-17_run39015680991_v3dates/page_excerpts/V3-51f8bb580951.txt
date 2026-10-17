@@ -1,0 +1,36 @@
+# V3-51f8bb580951
+# url: https://data.ipu.org/parliament/AU/AU-LC01/election/AU-LC01-E20220521/
+# final url: https://data.ipu.org/parliament/AU/AU-LC01/election/AU-LC01-E20220521/
+# fetched (UTC): 2026-10-17T08:10:52Z
+# HTTP 200; 180142 bytes; SHA-256 299b05f10ecad6af4e8e7e3f497e2794a163acf7cc4fa345f45909242e51d0f8
+# title: Australia House of Representatives May 2022 Election | Election results | Australia | IPU Parline: global data on national parliaments
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Australia House of Representatives May 2022 Election | Election results | Australia | IPU Parline: global data on national parliaments
+D: View field in the data dictionary | 21 May 2022
+D: View field in the data dictionary | 11 Apr 2022
+D: View field in the data dictionary | 03 May 2025
+D: The Australian Labor Party (ALP), now led by Mr. Anthony Albanese, won an outright majority in the 151-member House of R | A record 58 women (38.41%) were elected to the House of Representatives, up from 46 (30.67%) in 2019. In 2022, 60 per cent of the 40 candidates elected to the Senate were women. That increased the overall percentage of women in the Senate from 48.68 per cent to 56.58 per cent, the world’s highest pe
+D: Note: | The Election Commission decision in July 2020 proposed, amongst others, to decrease the number of seats allotted to the Northern Territory from two to one, which would have reduced the statutory number of the House of Representatives from 151 to 150. However, that decision was repealed by amendments
+D: Sources | Parliament of Australia (28.06.2022, 04.07.2022)
+D: Parliament of Australia (28.06.2022, 04.07.2022) | Australian Electoral Commission (04.07.2022)
+D: View field in the data dictionary | 26 Jul 2022
+D: View field in the data dictionary | 26 Jul 2022
+K: Select country and chamber | Parliaments
+K: Political systems: Presidential, Parliamentary, Presidential-Parliamentary, Monarchy, Communist, Transitional. | View field in the data dictionary
+K: The date when elections started and ended for directly or indirectly elected parliaments/chambers. The date of appointments for appointed parliaments/chambers. | View field in the data dictionary
+K: Date of dissolution of the outgoing legislature | Date at which the previous legislature (elected at the previous elections) was dissolved.
+K: Date at which the previous legislature (elected at the previous elections) was dissolved. | View field in the data dictionary
+K: Timing of election | Timing of election: Upon normal expiry; Early elections; Delayed elections
+K: Timing of election: Upon normal expiry; Early elections; Delayed elections | View field in the data dictionary
+K: Number of seats contested at the elections. Where the parliament/chamber is fully renewed, this number is usually identical to the statutory number of members. Where the parliament/chamber is partiall | View field in the data dictionary
+K: Scope of elections | Scope of elections: Full renewal; Partial renewal.
+K: Scope of elections: Full renewal; Partial renewal. | View field in the data dictionary
+K: Full renewal | Candidates
+K: https://tallyroom.aec.gov.au/Downloads/HouseNominationsByGenderDownload-27966.csv | https://tallyroom.aec.gov.au/HouseDefault-27966.htm
+K: The total number of male parliamentarians in this parliament/chamber following the election or renewal, regardless of their modes of designation. | View field in the data dictionary
+K: The total number of female parliamentarians in this parliament/chamber following the election or renewal, regardless of their modes of designation. | View field in the data dictionary
+K: The percentage is calculated by dividing the total number of women in this parliament/chamber by the current number of members. | View field in the data dictionary
+K: The number of members who are assuming their parliamentary mandate for the first time following the election or renewal, regardless of their mode of designation. | View field in the data dictionary
+K: The date when the newly elected parliament/chamber was convened for the first time. It may be different from the date when members were sworn in. | View field in the data dictionary
+K: The political party to which the Speaker belonged to at the moment of the election. In some parliaments, the Speaker suspends or relinquishes their party membership during their term in office and is  | View field in the data dictionary

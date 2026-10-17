@@ -1,0 +1,16 @@
+# V3-00d2b49625e1
+# url: https://data.ipu.org/election-summary/HTML/2087_05.htm
+# final url: https://data.ipu.org/election-summary/HTML/2087_05.htm
+# fetched (UTC): 2026-10-17T08:07:37Z
+# HTTP 200; 26880 bytes; SHA-256 99bfa84ba0377fca40497fad4e1352a1434c9acf729eaf7e578ab81e62b81925
+# title: 
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to): | 8 February 2005
+D: 8 February 2005 | 8 February 2005
+D: Purpose of elections: | Elections were held for all the seats in Parliament following the early dissolution of this body. General elections had previously been held in November 2001.
+D: Background and outcome of elections: | On 18 January 2005 Danish Prime Minister Fogh Rasmussen called general elections for 8 February 2005, nine months before the end of his four-year term. In this Nordic country of 5 million inhabitants, the prime minister may call an election at any time during his term of office.
+D: STATISTICS | Round no 1 (8 February 2005): Election results
+K: Chamber: | Folketinget
+K: Dates of election / renewal (from/to): | 8 February 2005
+K: Purpose of elections: | Elections were held for all the seats in Parliament following the early dissolution of this body. General elections had previously been held in November 2001.

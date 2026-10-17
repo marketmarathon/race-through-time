@@ -1,0 +1,20 @@
+# V3-aeeb7d53c21c
+# url: https://data.ipu.org/election-summary/HTML/2011_05.htm
+# final url: https://data.ipu.org/election-summary/HTML/2011_05.htm
+# fetched (UTC): 2026-10-17T08:06:22Z
+# HTTP 200; 25707 bytes; SHA-256 940af4289547309df6b29710263eab8327e3cc9cecaeec35cd1d4032f670da67
+# title: 
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to): | 23 October 2005
+D: Background and outcome of elections: | On 23 October 2005, parliamentary elections were held to renew half of the seats in the Chamber of Deputies and a third of the seats in the Senate (see Note).
+D: Before the 2005 elections, the PJ split into two factions, one led by former President Eduardo Duhalde and the other by  | The 2005 parliamentary elections were largely seen as a test for President Kirchner, who had come to power in May 2003 when the country was still recovering from the 2001-2002 economic crisis, which had triggered a currency devaluation and a record debt. President Kirchner, now halfway into his four
+D: Turnout was 70.94 per cent for the Chamber of Deputies, and 72.26 per cent for the Senate. According to the final result | Members of the Chamber of Deputies were convened on 10 December 2005 and elected Mr. Alberto Edgardo Balestrini as the new speaker.
+D: STATISTICS | Round no 1 (23 October 2005): Election results
+D: After the 2005 elections, there were 91 women in all out of 257 members, or 35.41%. | The number of women has been reduced to 90. (Departamento de Estudios Culturales, Congreso de la nación, 14.02.2006).
+K: Chamber: | Cámara de Diputados
+K: Dates of election / renewal (from/to): | 23 October 2005
+K: Purpose of elections: | Elections were held to renew one-half of the seats (127) in the Chamber of Deputies on the normal expiry of the members' term of office.
+K: Elections were held to renew one-half of the seats (127) in the Chamber of Deputies on the normal expiry of the members' term of office. | Background and outcome of elections:
+K: Since 1945, the country has been characterized by a loose bipartisan system, represented by the Peronist Justicialist Party (PJ) and by the Radical Civic Union (UCR). In the previous elections held in | Before the 2005 elections, the PJ split into two factions, one led by former President Eduardo Duhalde and the other by incumbent President Néstor Kirchner, who formed the Victory Front (FV). Analysts
+K: Turnout was 70.94 per cent for the Chamber of Deputies, and 72.26 per cent for the Senate. According to the final results, President Kirchner's FV and its allies won 17 of the 24 seats at stake in the | Members of the Chamber of Deputies were convened on 10 December 2005 and elected Mr. Alberto Edgardo Balestrini as the new speaker.

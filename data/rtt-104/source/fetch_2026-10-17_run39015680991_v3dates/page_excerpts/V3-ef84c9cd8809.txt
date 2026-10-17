@@ -1,0 +1,20 @@
+# V3-ef84c9cd8809
+# url: https://data.ipu.org/election-summary/HTML/2233_11.htm
+# final url: https://data.ipu.org/election-summary/HTML/2233_11.htm
+# fetched (UTC): 2026-10-17T08:08:35Z
+# HTTP 200; 31095 bytes; SHA-256 bafd2f4e1f05430ed58546ada17c7f7ea86c829f78c61ddf83d7f8acbd00bfe0
+# title: IPU PARLINE database: NEW ZEALAND (House of Representatives), ELECTIONS IN 2011
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 26 November 2011
+D: Elections were held for all the seats in the House of Representatives on the normal expiry of the members' term of offic | On 2 February 2011, Prime Minister John Key announced that the general election and a referendum on the electoral system would be held on 26 November.
+D: On 2 February 2011, Prime Minister John Key announced that the general election and a referendum on the electoral system | In the previous elections held in November 2008, the National Party, led by Mr. Key, took 58 of the 122 seats at stake (see note), 15 more than the Labour Party of then Prime Minister Helen Clark. The Green Party took nine seats, while ACT New Zealand and the Maori Party took five seats each. Two ot
+D: In the previous elections held in November 2008, the National Party, led by Mr. Key, took 58 of the 122 seats at stake ( | The global economic crisis which started in 2008 severely affected the country's economy. June 2009 marked the longest recession in the country's history after its economy shrunk for the fifth consecutive quarter. The unemployment rate hit a nine-year high of 6.5 per cent. By 2011, the country's bud
+D: The global economic crisis which started in 2008 severely affected the country's economy. June 2009 marked the longest r | In January 2011, Prime Minister Key announced a plan to sell 49 per-cent stakes in four State-owned energy companies and Air New Zealand. The plan, criticized by the Labour Party, would become a major election issue in 2011. In February, a powerful earthquake hit Christchurch, New Zealand's second-l
+D: Note: | Under the MMP, seats are first allocated to candidates winning electoral seats. Parties will then get a share of seats in Parliament in keeping with their share of "party votes". In cases where parties win more electoral seats than their share of seats determined by the party vote, they may keep the
+D: Voter turnout | Round no 1 26 November 2011
+D: Sources: | House of Representatives (17.12.2011, 22.12.2011, 01.01.2014)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name
+K: Dates of election / renewal (from/to) | 26 November 2011
+K: Purpose of elections | Elections were held for all the seats in the House of Representatives on the normal expiry of the members' term of office.

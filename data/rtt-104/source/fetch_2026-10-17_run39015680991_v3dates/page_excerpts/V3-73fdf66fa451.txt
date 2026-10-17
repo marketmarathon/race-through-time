@@ -1,0 +1,34 @@
+# V3-73fdf66fa451
+# url: https://data.ipu.org/election-summary/HTML/2049_05.htm
+# final url: https://data.ipu.org/election-summary/HTML/2049_05.htm
+# fetched (UTC): 2026-10-17T08:07:08Z
+# HTTP 200; 20958 bytes; SHA-256 79cee95de330f917bbdd652470d4a42e6e187404fec60482880117759a4fe62d
+# title: IPU PARLINE database: BURUNDI (Inama NshingmateKa) ELECTIONS IN 2005
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 4 July 2005
+D: can be co-opted to respect 60:40 Hutu-Tutsi split and 30 per-cent-quota for women. | Last election was held in June 1993.
+D: Last election was held in June 1993. | Since the military coup of September 1987
+D: parliamentary elections had been held only once in Burundi | in June 1993. The Front for Democracy in Burundi (Frodebu)
+D: secured 68 of 110 seats in the parliament in those elections which had recorded a voter turnout of 91 per cent. At the c | The assassination of President Ndadaye on 21 October 1993 triggered years of ethnic violence
+D: 000 people were killed. | A peace deal was brokered in Arusha on 28 August 2000 by former South African president
+D: A peace deal was brokered in Arusha on 28 August 2000 by former South African president | Nelson Mandela. The Arusha agreement provided for a bicameral transitional parliament which consisted of a National Assembly and a Senate. A new constitution was approved by referendum in February 2005. Under this constitution
+D: After numerous delays | elections for the National Assembly were held on 4 July 2005. In order to respect ethnic and gender balance
+D: were well-placed | having secured about 55 per cent of seats in the local elections held in June 2005. Other major parties included Frodebu
+D: President Ndayizeye said he would hand over power once the National Assembly and the Senate elected a new president. The | Indirect elections for 34 seats in the Senate were held in local councils on 29 July 2005. The CNDD-FDD won 30
+D: bringing the total number to 49. | On 16 August 2005
+D: the Senate elected Mr. Gervais Rufyikiri of the CNDD-FDD as its Speaker. | On 19 August 2005
+D: the only candidate | as the country's new president. He was sworn in on 26 August 2005
+D: Voter turnout | Round no 1 4 July 2005
+D: Sources: | - National Assembly (01.01.2010)
+D: - National Assembly (01.01.2010) | - Permanent Mission of Republic of Burundi to UN and other international organizations in Geneva (22.07.2005)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Dates of election / renewal (from/to) | 4 July 2005
+K: Purpose of elections | Elections were held for all the seats of the new 100-seat-National Assembly. Between 18 to 21 members
+K: can be co-opted to respect 60:40 Hutu-Tutsi split and 30 per-cent-quota for women. | Last election was held in June 1993.
+K: 60 per cent of the seats in the National Assembly are reserved for members of the Hutu ethnic group and 40 per cent for Tutsis | which respectively make up 85 and 14 per cent of the population of 7 million people. A further three seats are reserved for the Twa ethnic group. Senate seats are shared equally between Hutus and Tuts
+K: which respectively make up 85 and 14 per cent of the population of 7 million people. A further three seats are reserved for the Twa ethnic group. Senate seats are shared equally between Hutus and Tuts | After numerous delays
+K: of whom 24 were women. In order to ensure the 60-40 ethnic split and 30 per cent quota for women | a further 18 members
+K: the 30 per cent quota for women | and three seats reserved for Twas
+K: and three seats reserved for Twas | 11 members were co-opted. In addition to the 45 members

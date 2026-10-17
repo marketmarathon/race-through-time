@@ -1,0 +1,22 @@
+# V3-f21262316f3c
+# url: https://data.ipu.org/election-summary/HTML/2265_03.htm
+# final url: https://data.ipu.org/election-summary/HTML/2265_03.htm
+# fetched (UTC): 2026-10-17T08:09:01Z
+# HTTP 200; 8572 bytes; SHA-256 10e2210c13014d2b54ebb9d603b886640878fdff1f25df448138bc5b8dfe96f1
+# title: RWANDA: parliamentary elections Chambre des D�put�s, 2003
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 29 September 2003
+D: 29 September 2003 | 2 October 2003
+D: Background and outcome of elections: | From 29 September to 2 October 2003, Rwandans went to the polls to elect the members of the two new houses of Parliament, the Chamber of Deputies and the Senate. The legislative elections marked an end of the transitional system in force in Rwanda since the 1994 crisis. This crisis had resulted in a
+D: From 29 September to 2 October 2003, Rwandans went to the polls to elect the members of the two new houses of Parliament | On 26 May 2003, the Rwandan people had adopted a new Constitution by referendum. Subsequently, on 25 August 2003, the first pluralistic presidential election since independence was held by direct and secret universal ballot. Voting ended in an overwhelming victory for incumbent President Paul Kagame
+D: On 26 May 2003, the Rwandan people had adopted a new Constitution by referendum. Subsequently, on 25 August 2003, the fi | The electoral campaign, which began on 5 September 2003 for the some 230 candidates vying for the 53 seats in the Chamber of Deputies to be filled by direct universal suffrage, did not have much of an impact on voters. The main opposition parties and candidates had been banned or disqualified before
+D: According to the official CEN results, the Rwandan Patriotic Font (FPR) of President Kagame secured an absolute majority | On 10 October 2003, the new Presidents of the Chamber of Deputies and the Senate were elected at the inaugural session of Parliament. Mr. Vincent Biruta, President of the outgoing Transitional National Assembly, was elected President of the Senate, while Mr. Alfred Mukezamfura became the President o
+D: STATISTICS | Round no 1 (29 September 2003): Elections results
+K: Parliamentary Chamber: Chambre des D�put�s | ELECTIONS HELD IN 2003
+K: Chamber: | Chambre des D�put�s
+K: Dates of elections / renewal (from/to): | 29 September 2003
+K: Purpose of elections: | For the first time since the new Constititution was adopted, elections were held for all the members of the newly-elected Chamber of Deputies.
+K: For the first time since the new Constititution was adopted, elections were held for all the members of the newly-elected Chamber of Deputies. | Background and outcome of elections:
+K: Legislative elections lasted three days. On the first day mini-committees elected two representatives for youth and one representative for the handicapped. On the second day, 53 deputies were elected  | Turnout amounted to 96.48 per cent of the 3.95 registered voters, according to data provided by the National Electoral Commission (CEN). However, this figure was challenged by observers, who stated th
+K: According to the official CEN results, the Rwandan Patriotic Font (FPR) of President Kagame secured an absolute majority in the Chamber of Deputies with 58 seats out of 80. The list compiled by the FP | On 10 October 2003, the new Presidents of the Chamber of Deputies and the Senate were elected at the inaugural session of Parliament. Mr. Vincent Biruta, President of the outgoing Transitional Nationa

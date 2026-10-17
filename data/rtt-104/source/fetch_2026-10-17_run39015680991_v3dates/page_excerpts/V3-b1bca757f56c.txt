@@ -1,0 +1,15 @@
+# V3-b1bca757f56c
+# url: https://data.ipu.org/election-summary/HTML/2015_96.htm
+# final url: https://data.ipu.org/election-summary/HTML/2015_96.htm
+# fetched (UTC): 2026-10-17T08:06:38Z
+# HTTP 200; 7096 bytes; SHA-256 3ab3fba6b40f175462ecb922acfa46628234c602cca73c1ffb20b3ddc2bf5883
+# title: AUSTRALIA: parliamentary elections House of Representatives, 1996
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 2 March 1996
+D: Background and outcome of elections: | On 26 January 1996, Prime Minister Paul Keating (Australian Labour Party - ALP) called the general elections for 2 March; the House of Representatives was dissolved three days later. At the close of nominations on 9 February, 1163 candidates (908 for the House, 255 for the Senate) were put forward.
+D: STATISTICS | Round no 1 (2 March 1996): Elections results
+K: Parliamentary Chamber: House of Representatives | ELECTIONS HELD IN 1996
+K: Chamber: | House of Representatives
+K: Dates of elections / renewal (from/to): | 2 March 1996
+K: Purpose of elections: | Elections were held for all the seats in the House of Representatives on the normal expiry of the members' term of office.

@@ -1,0 +1,23 @@
+# V3-047e07dcfc85
+# url: https://data.ipu.org/election-summary/HTML/2121_05.htm
+# final url: https://data.ipu.org/election-summary/HTML/2121_05.htm
+# fetched (UTC): 2026-10-17T08:08:04Z
+# HTTP 200; 29283 bytes; SHA-256 fa332fd157a5fa7091c5f6994348dc706aea28527960d219c8d781f0af645887
+# title: IPU PARLINE database: GERMANY (Deutscher Bundestag), Elections in 2005
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 18 September 2005
+D: Purpose of elections | Elections were held for the all seats in Bundestag following its premature dissolution on 21 July 2005. General elections had previously taken place on 22 September 2002.
+D: Elections were held for the all seats in Bundestag following its premature dissolution on 21 July 2005. General election | Following his Social Democratic Party's heavy defeat in local elections in May 2005, Chancellor Gerhard Schröder orchestrated a negative vote of confidence in parliament on 1 July to pave the way for new parliamentary elections. He insisted he needed a fresh mandate in order to continue his reforms 
+D: The outgoing government, the Red-Green coalition, was composed of Chancellor Schröder's Social Democratic Party (SPD) an | In July 2005, the new Left Party was formed by the Electoral Alternative for Work and Social Justice (WASG), a group of left-wing defectors from the SPD, and the former communist Party of Democratic Socialism (PDS), consisting predominantly of parliamentarians from eastern Germany, whose strength ha
+D: When the Bundestag was dissolved, the CDU had a 20 point lead over the SPD in opinion polls, but the gap had narrowed to | On 18 September 2005, elections were held in 298 of 299 districts. Of the 61.6 million registered voters 77.7 per cent turned out at the polls.
+D: Voting in the 160th district in Dresden was held separately on 2 October due to the death of a candidate. More than 72 p | The newly elected Bundestag was convened on 18 October 2005 and elected Mr. Norbert Lammert of the CDU as its speaker.
+D: Voter turnout | Round no 1 18 September 2005
+D: The "Distribution of seats according to sex" includes 16 overhang seats (Überhangmandate): 195 women of 614 members, or  | Ms. Dagmar Schmidt (SPD) passed away on 9 November 2005.
+D: Her seat went to Mr. Christoph Pries (SPD) on 16 November, reducing the total number of women to 194. | As at 17 November 2008, there were 197 women out of 612 members (including 14 overhang seats). Source: Federal Diet, 17.11.2008.
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name
+K: Chamber name (generic / translated) | Deutscher Bundestag / Federal Diet
+K: Related chamber (for bicameral parliaments) | Bundesrat / Federal Council
+K: Dates of election / renewal (from/to) | 18 September 2005
+K: Purpose of elections | Elections were held for the all seats in Bundestag following its premature dissolution on 21 July 2005. General elections had previously taken place on 22 September 2002.
+K: When the Bundestag was dissolved, the CDU had a 20 point lead over the SPD in opinion polls, but the gap had narrowed to 6 points in final surveys before polling day. Two major turning points seem to  | On 18 September 2005, elections were held in 298 of 299 districts. Of the 61.6 million registered voters 77.7 per cent turned out at the polls.

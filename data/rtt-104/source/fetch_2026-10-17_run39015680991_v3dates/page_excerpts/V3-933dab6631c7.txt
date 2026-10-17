@@ -1,0 +1,25 @@
+# V3-933dab6631c7
+# url: https://data.ipu.org/election-summary/HTML/2113_12.htm
+# final url: https://data.ipu.org/election-summary/HTML/2113_12.htm
+# fetched (UTC): 2026-10-17T08:08:00Z
+# HTTP 200; 50731 bytes; SHA-256 a07e1ecf5301b18df831656bc394f9665dc949aada9f65e9b5c129ae3d2a2dd0
+# title: IPU PARLINE database: FRANCE (Assemblée nationale), ELECTIONS IN 2012
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: BACKGROUND | Dates of election / renewal (from/to) (from/to) 10 June 2012
+D: Dates of election / renewal (from/to) (from/to) 10 June 2012 | 17 June 2012
+D: Purpose of elections | The Socialist Party (PS) and its close allies won an absolute majority, taking 314 of the 577 seats. In May, Mr. Francois Hollande (PS) had become President, defeating the incumbent, Mr. Nicolas Sarkozy of the Union for a Popular Movement (UMP). The UMP took 194 seats in the National Assembly. The f
+D: Following a reduction in the age of eligibility from 23 to 18 years old, a 22 year-old woman from the FN became the youn | Date of previous elections: 10 & 17 June 2007
+D: Timing of election: Upon normal expiry | Expected date of next elections: June 2017
+D: Names of parties in government: Socialist Party, Europe-Ecology-The Greens and Left Radical | Date of the first session of the new parliament: 26 June 2012
+D: Voter turnout | Round no 1 10 June 2012
+D: Notes | Round no 2 17 June 2012
+D: Sources: | Parliament (01.01.2014, 01.01.2017)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Chamber name (generic / translated) | Assemblée nationale / National Assembly
+K: Related chamber (for bicameral parliaments) | Sénat / Senate
+K: Purpose of elections | The Socialist Party (PS) and its close allies won an absolute majority, taking 314 of the 577 seats. In May, Mr. Francois Hollande (PS) had become President, defeating the incumbent, Mr. Nicolas Sarko
+K: Date of dissolution of the outgoing legislature: N/A | Timing of election: Upon normal expiry
+K: Timing of election: Upon normal expiry | Expected date of next elections: June 2017
+K: Number of seats at stake: 577 (full renewal) | Number of candidates: 6,591 (3,950 men, 2,641 women)

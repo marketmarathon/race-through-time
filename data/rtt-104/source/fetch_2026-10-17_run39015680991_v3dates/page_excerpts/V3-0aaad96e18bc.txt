@@ -1,0 +1,25 @@
+# V3-0aaad96e18bc
+# url: https://data.ipu.org/election-summary/HTML/2015_13.htm
+# final url: https://data.ipu.org/election-summary/HTML/2015_13.htm
+# fetched (UTC): 2026-10-17T08:06:37Z
+# HTTP 200; 19626 bytes; SHA-256 486f4182f16f85e31b32c228fd9fc607baf632cbaef8b86a2a3ad99421da1fc5
+# title: IPU PARLINE database: AUSTRALIA (House of Representatives), ELECTIONS IN 2013
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 7 September 2013
+D: Purpose of elections | The Liberal/National Coalition led by Mr. Tony Abbott was victorious in the 2013 elections, winning 90 out of 150 seats in the House of Representatives and 17 of the 40 seats renewed in the Senate. Prime Minister Kevin Rudd's Australian Labor Party (ALP) took 55 seats in the House and 12 in the Sena
+D: The Liberal/National Coalition led by Mr. Tony Abbott was victorious in the 2013 elections, winning 90 out of 150 seats  | During the election campaign, the Liberal/National Coalition pledged to abolish the mining and carbon taxes introduced by the ALP government in 2012, arguing that the high tax rates on carbon dioxide made the country's industry uncompetitive. Mr. Rudd, who had ousted the then Prime Minister Julia Gi
+D: During the election campaign, the Liberal/National Coalition pledged to abolish the mining and carbon taxes introduced b | Date of previous elections: 21 August 2010
+D: Date of previous elections: 21 August 2010 | Date of dissolution of the outgoing legislature: 5 August 2013
+D: Timing of election: Upon normal expiry | Expected date of next elections: September 2016
+D: Names of parties in government: Liberal, Liberal National Party, The Nationals and Country Liberals (NT) | Date of the first session of the new parliament: 12 November 2013
+D: Voter turnout | Round no 1 7 September 2013
+D: Sources: | Parliament (18.10.2013, 01.11.2013)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name
+K: Chamber name | House of Representatives
+K: Related chamber (for bicameral parliaments) | Senate
+K: Dates of election / renewal (from/to) | 7 September 2013
+K: Purpose of elections | The Liberal/National Coalition led by Mr. Tony Abbott was victorious in the 2013 elections, winning 90 out of 150 seats in the House of Representatives and 17 of the 40 seats renewed in the Senate. Pr
+K: Timing of election: Upon normal expiry | Expected date of next elections: September 2016
+K: Number of seats at stake: 150 (full renewal) | Number of candidates: 1,188 (861 men, 327 women)

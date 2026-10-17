@@ -1,0 +1,86 @@
+# V3-4ce31e10bbf2
+# url: https://es.wikipedia.org/wiki/Elecciones_legislativas_de_Argentina_de_2003
+# final url: https://es.wikipedia.org/wiki/Elecciones_legislativas_de_Argentina_de_2003
+# fetched (UTC): 2026-10-17T08:15:21Z
+# HTTP 200; 1891561 bytes; SHA-256 f2c3321efcee6f16f948d213d56aa32f88c3dfe7978b3a986c8d0d3637e41a87
+# title: Elecciones legislativas de Argentina de 2003 - Wikipedia, la enciclopedia libre
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: De Wikipedia, la enciclopedia libre | 130 de 257 [[Cámara de Diputados de la Nación Argentina|Diputados Nacionales]]<br>24 de 72 [[Senado de la Nación Argentina|Senadores Nacionales]]</small>"},"período":{"wt":"'''Diputados''':{{fecha|10|12|2003}} a {{fecha|10|12|2007}}<br>'''Senadores''': {{fecha|10|12|2003}} a {{fecha|10|12|2009}}"},"
+D: Fecha | 27 de abril al 23 de noviembre de 2003
+D: Período | Diputados :10 de diciembre de 2003 a 10 de diciembre de 2007
+D: Diputados :10 de diciembre de 2003 a 10 de diciembre de 2007 | Senadores : 10 de diciembre de 2003 a 10 de diciembre de 2009
+D: #FF7500</span>; color:var(--color-base,#202122);"}]]}'> 1 color #FF7500 PN 1 color #FF0000 Proyecto Corrientes</span>"}] | Las elecciones legislativas de Argentina de 2003 tuvieron lugar entre los meses de abril y noviembre de 2003 para renovar la mitad de la Cámara de Diputados y un tercio del Senado .
+D: Provincia de Buenos Aires Buenos Aires | 14 de septiembre de 2003
+D: Ciudad de Buenos Aires Ciudad de Buenos Aires | 24 de agosto de 2003
+D: Provincia de Catamarca Catamarca | 26 de octubre de 2003
+D: Provincia del Chaco Chaco | 14 de septiembre de 2003
+D: Provincia del Chubut Chubut | 9 de noviembre de 2003
+D: Provincia de Córdoba (Argentina) Córdoba | 5 de octubre de 2003
+D: Provincia de Corrientes Corrientes | 23 de noviembre de 2003
+D: Provincia de Entre Ríos Entre Ríos | 23 de noviembre de 2003
+D: Provincia de Formosa Formosa | 19 de octubre de 2003
+D: Provincia de Jujuy Jujuy | 14 de septiembre de 2003
+D: Provincia de La Pampa La Pampa | 26 de octubre de 2003
+D: Provincia de La Rioja (Argentina) La Rioja | 27 de abril de 2003
+D: Provincia de Mendoza Mendoza | 26 de octubre de 2003
+D: Provincia de Misiones Misiones | 28 de septiembre de 2003
+D: Provincia del Neuquén Neuquén | 28 de septiembre de 2003
+D: Provincia de Río Negro Río Negro | 31 de agosto de 2003
+D: Provincia de Salta Salta | 16 de noviembre de 2003
+D: Provincia de San Juan (Argentina) San Juan | 5 de octubre de 2003
+D: Provincia de San Luis San Luis | 23 de noviembre de 2003
+D: Provincia de Santa Cruz Santa Cruz | 14 de septiembre de 2003
+D: Provincia de Santa Fe Santa Fe | 7 de septiembre de 2003
+D: Provincia de Santiago del Estero Santiago del Estero | 27 de abril de 2003
+D: Provincia de Tierra del Fuego, Antártida e Islas del Atlántico Sur Tierra del Fuego | 23 de noviembre de 2003
+D: Provincia de Tucumán Tucumán | 26 de octubre de 2003
+D: 100 % | ↑ Renunció el 9 de diciembre de 2005, la reemplaza Adriana Elsa Coirini el 14 de diciembre de 2005.
+D: ↑ Renunció el 9 de diciembre de 2005, la reemplaza Adriana Elsa Coirini el 14 de diciembre de 2005. | ↑ Nunca asumió, lo reemplaza Gustavo Enrique Ferri el 10 de diciembre de 2003.
+D: ↑ Nunca asumió, lo reemplaza Gustavo Enrique Ferri el 10 de diciembre de 2003. | ↑ Renunció el 11 de agosto de 2004, lo reemplaza Aníbal Jesús Stella el 11 de agosto de 2004.
+D: ↑ Renunció el 11 de agosto de 2004, lo reemplaza Aníbal Jesús Stella el 11 de agosto de 2004. | ↑ Nunca asumió, lo reemplaza Jorge Alberto Landau el 16 de marzo de 2005.
+D: ↑ Nunca asumió, lo reemplaza Jorge Alberto Landau el 16 de marzo de 2005. | ↑ Nunca asumió, lo reemplaza Lilia Estrella Marina Cassese el 2 de marzo de 2004.
+D: ↑ Nunca asumió, lo reemplaza Lilia Estrella Marina Cassese el 2 de marzo de 2004. | ↑ Falleció el 9 de junio de 2007, lo reemplaza Aníbal Ernesto Leguizamón el 27 de junio de 2007.
+D: ↑ Falleció el 9 de junio de 2007, lo reemplaza Aníbal Ernesto Leguizamón el 27 de junio de 2007. | ↑ Renunció el 6 de septiembre de 2006, la reemplaza Elsa Quiroz el 7 de septiembre de 2006.
+D: ↑ Renunció el 6 de septiembre de 2006, la reemplaza Elsa Quiroz el 7 de septiembre de 2006. | ↑ Renunció el 4 de mayo de 2007, lo reemplaza Rafael Martínez Raymonda el 6 de junio de 2007.
+D: ↑ Renunció el 4 de mayo de 2007, lo reemplaza Rafael Martínez Raymonda el 6 de junio de 2007. | ↑ Renunció el 29 de marzo de 2006, lo reemplaza Amelia de los Milagros López el 5 de abril de 2006.
+D: ↑ Renunció el 29 de marzo de 2006, lo reemplaza Amelia de los Milagros López el 5 de abril de 2006. | ↑ Falleció el 19 de diciembre de 2004, lo reemplaza Ana María Carmen Monayar el 16 de marzo de 2005.
+D: ↑ Falleció el 19 de diciembre de 2004, lo reemplaza Ana María Carmen Monayar el 16 de marzo de 2005. | ↑ Renunció el 28 de noviembre de 2007, lo reemplaza Pedro Ramón Ademar Vera el 4 de diciembre de 2007.
+D: ↑ Renunció el 28 de noviembre de 2007, lo reemplaza Pedro Ramón Ademar Vera el 4 de diciembre de 2007. | ↑ Renunció el 9 de diciembre de 2005, lo reemplaza Eduardo Víctor Cavadini el 14 de diciembre de 2005.
+D: ↑ Renunció el 9 de diciembre de 2005, lo reemplaza Eduardo Víctor Cavadini el 14 de diciembre de 2005. | ↑ Renunció el 6 de noviembre de 2007, lo reemplaza Guillermo Martinelli el 7 de noviembre de 2007.
+D: ↑ Renunció el 6 de noviembre de 2007, lo reemplaza Guillermo Martinelli el 7 de noviembre de 2007. | ↑ Renunció el 9 de diciembre de 2005, lo reemplaza Héctor Omar Torino el 14 de diciembre de 2005.
+D: ↑ Renunció el 9 de diciembre de 2005, lo reemplaza Héctor Omar Torino el 14 de diciembre de 2005. | ↑ Renunció el 15 de agosto de 2007, la reemplaza Ivana María Bianchi el 15 de agosto de 2007.
+D: ↑ Renunció el 15 de agosto de 2007, la reemplaza Ivana María Bianchi el 15 de agosto de 2007. | ↑ Renunció el 29 de marzo de 2006, lo reemplaza Dante Omar Canevarolo el 29 de marzo de 2003.
+D: ↑ Renunció el 29 de marzo de 2006, lo reemplaza Dante Omar Canevarolo el 29 de marzo de 2003. | ↑ Renunció el 14 de noviembre de 2007, no fue reemplazado.
+D: ↑ Renunció el 14 de noviembre de 2007, no fue reemplazado. | ↑ Renunció el 2 de noviembre de 2006, lo reemplaza Carlos Alfredo Anauate el 6 de junio de 2007.
+D: ↑ Renunció el 2 de noviembre de 2006, lo reemplaza Carlos Alfredo Anauate el 6 de junio de 2007. | ↑ Renunció el 6 de noviembre de 2007, lo reemplaza Nancy Evangelina Bulacio el 7 de noviembre de 2007.
+D: 100 % | ↑ El Senado no le deja asumir, lo reemplaza Isabel Viudes el 15 de marzo de 2006.
+D: ↑ El Senado no le deja asumir, lo reemplaza Isabel Viudes el 15 de marzo de 2006. | ↑ Renunció el 9 de diciembre de 2007, lo reemplaza Mónica Troadello el 10 de diciembre de 2007.
+D: ↑ Renunció el 9 de diciembre de 2007, lo reemplaza Mónica Troadello el 10 de diciembre de 2007. | ↑ Renunció el 7 de noviembre de 2007, lo reemplaza Carlos Salazar el 7 de noviembre de 2007.
+D: [ editar ] | «Recorriendo las Elecciones de 1983 a 2013 - Diputados Nacionales» . Dirección Nacional Electoral . Archivado desde el original el 26 de junio de 2022.
+D: «Recorriendo las Elecciones de 1983 a 2013 - Diputados Nacionales» . Dirección Nacional Electoral . Archivado desde el o | «Recorriendo las Elecciones de 1983 a 2013 - Senadores Nacionales» . Dirección Nacional Electoral . Archivado desde el original el 26 de junio de 2022.
+D: «Recorriendo las Elecciones de 1983 a 2013 - Senadores Nacionales» . Dirección Nacional Electoral . Archivado desde el o | «Escrutinio Definitivo Buenos Aires» (PDF) . Ministerio del Interior . Archivado desde el original el 2 de septiembre de 2011.
+D: «Escrutinio Definitivo Buenos Aires» (PDF) . Ministerio del Interior . Archivado desde el original el 2 de septiembre de | «Escrutinio Definitivo Capital Federal» (PDF) . Ministerio del Interior . Archivado desde el original el 2 de septiembre de 2011.
+D: «Escrutinio Definitivo Capital Federal» (PDF) . Ministerio del Interior . Archivado desde el original el 2 de septiembre | «Escrutinio Definitivo Catamarca» (PDF) . Ministerio del Interior . Archivado desde el original el 2 de septiembre de 2011.
+D: «Escrutinio Definitivo Catamarca» (PDF) . Ministerio del Interior . Archivado desde el original el 2 de septiembre de 20 | «Escrutinio Definitivo Chaco» (PDF) . Ministerio del Interior . Archivado desde el original el 2 de septiembre de 2011.
+D: «Escrutinio Definitivo Chaco» (PDF) . Ministerio del Interior . Archivado desde el original el 2 de septiembre de 2011. | «Escrutinio Definitivo Chubut» (PDF) . Ministerio del Interior . Archivado desde el original el 2 de septiembre de 2011.
+D: «Escrutinio Definitivo Chubut» (PDF) . Ministerio del Interior . Archivado desde el original el 2 de septiembre de 2011. | «Escrutinio Definitivo Córdoba» (PDF) . Ministerio del Interior . Archivado desde el original el 2 de septiembre de 2011.
+D: «Escrutinio Definitivo Córdoba» (PDF) . Ministerio del Interior . Archivado desde el original el 2 de septiembre de 2011 | «Escrutinio Definitivo Corrientes» (PDF) . Ministerio del Interior . Archivado desde el original el 2 de septiembre de 2011.
+D: «Escrutinio Definitivo Corrientes» (PDF) . Ministerio del Interior . Archivado desde el original el 2 de septiembre de 2 | «Escrutinio Definitivo Entre Ríos» (PDF) . Ministerio del Interior . Archivado desde el original el 2 de septiembre de 2011.
+D: «Escrutinio Definitivo Entre Ríos» (PDF) . Ministerio del Interior . Archivado desde el original el 2 de septiembre de 2 | «Escrutinio Definitivo Formosa» (PDF) . Ministerio del Interior . Archivado desde el original el 2 de septiembre de 2011.
+D: «Escrutinio Definitivo Formosa» (PDF) . Ministerio del Interior . Archivado desde el original el 2 de septiembre de 2011 | «Escrutinio Definitivo Jujuy» (PDF) . Ministerio del Interior . Archivado desde el original el 2 de septiembre de 2011.
+D: «Escrutinio Definitivo Jujuy» (PDF) . Ministerio del Interior . Archivado desde el original el 2 de septiembre de 2011. | «Escrutinio Definitivo La Pampa» (PDF) . Ministerio del Interior . Archivado desde el original el 2 de septiembre de 2011.
+D: «Escrutinio Definitivo La Pampa» (PDF) . Ministerio del Interior . Archivado desde el original el 2 de septiembre de 201 | «Escrutinio Definitivo La Rioja» (PDF) . Ministerio del Interior . Archivado desde el original el 2 de septiembre de 2011.
+D: «Escrutinio Definitivo La Rioja» (PDF) . Ministerio del Interior . Archivado desde el original el 2 de septiembre de 201 | «Escrutinio Definitivo Mendoza» (PDF) . Ministerio del Interior . Archivado desde el original el 2 de septiembre de 2011.
+D: «Escrutinio Definitivo Mendoza» (PDF) . Ministerio del Interior . Archivado desde el original el 2 de septiembre de 2011 | «Escrutinio Definitivo Misiones» (PDF) . Ministerio del Interior . Archivado desde el original el 2 de septiembre de 2011.
+D: «Escrutinio Definitivo Misiones» (PDF) . Ministerio del Interior . Archivado desde el original el 2 de septiembre de 201 | «Escrutinio Definitivo Neuquén» (PDF) . Ministerio del Interior . Archivado desde el original el 2 de septiembre de 2011.
+D: «Escrutinio Definitivo Neuquén» (PDF) . Ministerio del Interior . Archivado desde el original el 2 de septiembre de 2011 | «Escrutinio Definitivo Río Negro» (PDF) . Ministerio del Interior . Archivado desde el original el 2 de septiembre de 2011.
+D: «Escrutinio Definitivo Río Negro» (PDF) . Ministerio del Interior . Archivado desde el original el 2 de septiembre de 20 | «Escrutinio Definitivo Salta» (PDF) . Ministerio del Interior . Archivado desde el original el 2 de septiembre de 2011.
+D: «Escrutinio Definitivo Salta» (PDF) . Ministerio del Interior . Archivado desde el original el 2 de septiembre de 2011. | «Escrutinio Definitivo San Juan» (PDF) . Ministerio del Interior . Archivado desde el original el 2 de septiembre de 2011.
+D: «Escrutinio Definitivo San Juan» (PDF) . Ministerio del Interior . Archivado desde el original el 2 de septiembre de 201 | «Escrutinio Definitivo San Luis» (PDF) . Ministerio del Interior . Archivado desde el original el 2 de septiembre de 2011.
+D: «Escrutinio Definitivo San Luis» (PDF) . Ministerio del Interior . Archivado desde el original el 2 de septiembre de 201 | «Escrutinio Definitivo Santa Cruz» (PDF) . Ministerio del Interior . Archivado desde el original el 2 de septiembre de 2011.
+D: «Escrutinio Definitivo Santa Cruz» (PDF) . Ministerio del Interior . Archivado desde el original el 2 de septiembre de 2 | «Escrutinio Definitivo Santa Fe» (PDF) . Ministerio del Interior . Archivado desde el original el 2 de septiembre de 2011.
+D: «Escrutinio Definitivo Santa Fe» (PDF) . Ministerio del Interior . Archivado desde el original el 2 de septiembre de 201 | «Escrutinio Definitivo Santiago del Estero» (PDF) . Ministerio del Interior . Archivado desde el original el 2 de septiembre de 2011.
+D: «Escrutinio Definitivo Santiago del Estero» (PDF) . Ministerio del Interior . Archivado desde el original el 2 de septie | «Escrutinio Definitivo Tierra del Fuego» (PDF) . Ministerio del Interior . Archivado desde el original el 2 de septiembre de 2011.
+D: «Escrutinio Definitivo Tierra del Fuego» (PDF) . Ministerio del Interior . Archivado desde el original el 2 de septiembr | «Escrutinio Definitivo Tucumán» (PDF) . Ministerio del Interior . Archivado desde el original el 2 de septiembre de 2011.
+D: Kirchnerismo | Esta página se editó por última vez el 29 sep 2026 a las 04:12.

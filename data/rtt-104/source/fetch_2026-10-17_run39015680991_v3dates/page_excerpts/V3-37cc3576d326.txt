@@ -1,0 +1,17 @@
+# V3-37cc3576d326
+# url: https://data.ipu.org/election-summary/HTML/2233_02.htm
+# final url: https://data.ipu.org/election-summary/HTML/2233_02.htm
+# fetched (UTC): 2026-10-17T08:08:31Z
+# HTTP 200; 11667 bytes; SHA-256 0b823cf8a84f68581858444ca4ca950de201d994ce9c3695585d8f165eaa3aa4
+# title: NEW ZEALAND: parliamentary elections House of Representatives, 2002
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 27 July 2002
+D: Background and outcome of elections: | The Prime Minister, Ms. Helen Clark, called an early election, at a time when support for the Labour Party in opinion polls exceeded 50 per cent and the Alliance, the junior coalition Government party, was disintegrating. Parliament was dissolved on 18 June 2002.
+D: The election campaign was less in the mould of the traditional contest between the two main parties, Labour and National | The Labour Party sought to campaign on the theme of a strong, stable government and its record in fulfilling its pledges. However, issues arose that affected support fro the party. Published allegations (subsequently refuted) of a cover-up of an accidental release of genetically-engineered corn, tog
+D: The main opposition party, the centre-right National Party, obtained 27 seats, 12 fewer than in the 1999 election and th | The Labour Party entered into a coalition Government agreement with Jim Anderton's Progressive Coalition Party on 8 August 2002. An agreement was also concluded that day by the minority coalition Government with United Future that the latter would provide confidence and supply for the term of this P
+D: STATISTICS | Round no 1 (27 July 2002): Elections results
+K: Parliamentary Chamber: House of Representatives | ELECTIONS HELD IN 2002
+K: Chamber: | House of Representatives
+K: Dates of elections / renewal (from/to): | 27 July 2002
+K: Purpose of elections: | Elections were held for all the seats in the House of Representatives on the normal expiry of the members' term of office.

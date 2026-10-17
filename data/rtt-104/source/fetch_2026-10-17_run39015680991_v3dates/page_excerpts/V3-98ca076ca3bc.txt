@@ -1,0 +1,30 @@
+# V3-98ca076ca3bc
+# url: https://data.ipu.org/election-summary/HTML/2011_11.htm
+# final url: https://data.ipu.org/election-summary/HTML/2011_11.htm
+# fetched (UTC): 2026-10-17T08:06:26Z
+# HTTP 200; 26274 bytes; SHA-256 ea595dd2598483e4de165ef2d5e1e57019a446cb31844271bdb73ed1407bebb0
+# title: IPU PARLINE database: ARGENTINA (Cámara de Diputados) ELECTIONS IN 2011
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 23 October 2011
+D: At stake in the 2011 elections were 130 of the 257 seats in the Chamber of Deputies and 24 of the 72 seats in the Senate | The previous elections held in June 2009 were the first to be held under President Cristina Fernández de Kirchner
+D: the country's economy remained strong (8 per-cent growth expected in 2011) and the unemployment rate was at a 20-year lo | In October 2010
+D: Voter turnout | Round no 1 23 October 2011
+D: Sources: | Chamber of Deputies (15.12.2011)
+K: Cámara de Diputados (Chamber of Deputies) | General information
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Chamber name (generic / translated) | Cámara de Diputados / Chamber of Deputies
+K: Cámara de Diputados / Chamber of Deputies | Related chamber (for bicameral parliaments)
+K: Related chamber (for bicameral parliaments) | Senado / Senate
+K: Dates of election / renewal (from/to) | 23 October 2011
+K: Purpose of elections | Elections were held to renew one-half of the seats (130) in the Chamber of Deputies on the normal expiry of the members' term of office.
+K: Elections were held to renew one-half of the seats (130) in the Chamber of Deputies on the normal expiry of the members' term of office. | At stake in the 2011 elections were 130 of the 257 seats in the Chamber of Deputies and 24 of the 72 seats in the Senate. Parliamentary elections were held in parallel with presidential polls.
+K: At stake in the 2011 elections were 130 of the 257 seats in the Chamber of Deputies and 24 of the 72 seats in the Senate. Parliamentary elections were held in parallel with presidential polls. | The previous elections held in June 2009 were the first to be held under President Cristina Fernández de Kirchner
+K: lost control of both chambers. It held 87 of the 257 seats in the Chamber of Deputies and 35 of the 72 seats in the Senate. The Radical Civic Union (UCR) and Federal Peronists | led by former President Eduardo Duhalde
+K: held 43 and 29 seats respectively in the Chamber of Deputies. Other seats in both chambers went to small parties. | President Fernández de Kirchner pursued her husband's economic policy
+K: The FV and its allies won 85 seats in the Chamber of Deputies | followed by the UCR and the FAP
+K: which took 15 and 14 seats respectively. The FV and its allies regained control of both chambers | holding 134 seats in the Chamber of Deputies and 41 in the Senate. The UCR took 41 Chamber seats and 17 Senate seats while the FAP won 28 seats in the Chamber and four in the Senate.
+K: holding 134 seats in the Chamber of Deputies and 41 in the Senate. The UCR took 41 Chamber seats and 17 Senate seats while the FAP won 28 seats in the Chamber and four in the Senate. | In the presidential elections
+K: the newly elected members took up their seats in Congress. The Chamber of Deputies elected Mr. Julián Andrés Domínguez (FV) as its new Speaker while the new Vice-President of the country | Mr. Amado Boudou
+K: Salta Renewal | 1

@@ -1,0 +1,16 @@
+# V3-c9c9c8bdc29c
+# url: https://data.ipu.org/election-summary/HTML/2303_02.htm
+# final url: https://data.ipu.org/election-summary/HTML/2303_02.htm
+# fetched (UTC): 2026-10-17T08:09:26Z
+# HTTP 200; 7664 bytes; SHA-256 dff6a5eb9494ecd0bb5979ecb2dd1d37b4bec427c24305f2752a0c930baa1a84
+# title: SWEDEN: parliamentary elections Riksdagen, 2002
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 15 September 2002
+D: Background and outcome of elections: | The electoral campaign for the 15 September 2002 elections was dominated by immigration and the future of the large public sector, as voters had to decide whether they wanted to go on paying among the world's highest taxes to finance their welfare state or preferred a rightist recipe of tax cuts, pr
+D: After the election, the Social Democrat Party leader, Mr G�ran Persson, began a third term as Prime Minister in a minori | On 30 September 2002, King Carl XVI Gustaf formally opened the new session of Parliament and Mr Bj�rn von Sydow was elected Speaker.
+D: STATISTICS | Round no 1 (15 September 2002): Elections results
+K: Parliamentary Chamber: Riksdagen | ELECTIONS HELD IN 2002
+K: Chamber: | Riksdagen
+K: Dates of elections / renewal (from/to): | 15 September 2002
+K: Purpose of elections: | Elections were held for all the seats in Parliament on the normal expiry of the members' term of office

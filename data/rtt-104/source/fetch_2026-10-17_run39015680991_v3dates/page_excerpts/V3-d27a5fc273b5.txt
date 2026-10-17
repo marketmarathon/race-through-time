@@ -1,0 +1,15 @@
+# V3-d27a5fc273b5
+# url: https://data.ipu.org/election-summary/HTML/2175_97.htm
+# final url: https://data.ipu.org/election-summary/HTML/2175_97.htm
+# fetched (UTC): 2026-10-17T08:08:12Z
+# HTTP 200; 5377 bytes; SHA-256 f945fc95c53b1695bd2ce53b808aef38c2f781ccc0dd22a1ebc6a0c124f40fba
+# title: LAO PEOPLE'S DEMOCRATIC REPUBLIC: parliamentary elections Sapha Heng Xat, 1997
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 21 December 1997
+D: During a quiet campaign, the authorities acknowledged that the crucial task of the fourth National Assembly (i.e., since | In February 1998, a new President of the Republic to replace Mr. Nouhak Phoumsavanh was to be chosen by the National Assembly. At the same time, a new Prime Minister would also be selected; this post is currently held by Gen. Khamtay Siphandone, who is expected to take over the presidency.
+D: STATISTICS | Round no 1 (21 December 1997): Elections results
+K: Parliamentary Chamber: Sapha Heng Xat | ELECTIONS HELD IN 1997
+K: Chamber: | Sapha Heng Xat
+K: Dates of elections / renewal (from/to): | 21 December 1997
+K: Purpose of elections: | Elections were held for all seats in Parliament on the normal expiry of the member's term of office.

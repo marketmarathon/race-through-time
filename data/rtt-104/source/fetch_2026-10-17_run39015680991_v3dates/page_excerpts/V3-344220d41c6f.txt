@@ -1,0 +1,15 @@
+# V3-344220d41c6f
+# url: https://data.ipu.org/parliament/AF/AF-LC01/election/AF-LC01-E20181020/
+# final url: https://data.ipu.org/parliament/AF/AF-LC01/election/AF-LC01-E20181020/
+# fetched (UTC): 2026-10-17T08:10:22Z
+# HTTP 200; 141301 bytes; SHA-256 566036ea4bf94159c8a7a860b3bc2e5cc48bf34bccf4ad5d0e27803fb7ae14c4
+# title: Afghanistan House of the People October 2018 Election | Election results | Afghanistan | IPU Parline: global data on national parliaments
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Afghanistan House of the People October 2018 Election | Election results | Afghanistan | IPU Parline: global data on national parliaments
+D: Chamber is suspended | The Parliament of Afghanistan, the Jirga (National Assembly), comprising the Wolesi Jirga (House of the People) and the Meshrano Jirga (House of Elders), was effectively dissolved following the Taliban takeover in August 2021
+K: Select country and chamber | Parliaments
+K: Political systems: Presidential, Parliamentary, Presidential-Parliamentary, Monarchy, Communist, Transitional. | View field in the data dictionary
+K: Transitional system | Compare data of this field
+K: Chamber is suspended | The Parliament of Afghanistan, the Jirga (National Assembly), comprising the Wolesi Jirga (House of the People) and the Meshrano Jirga (House of Elders), was effectively dissolved following the Taliba
+K: Transitional system | 2005-01

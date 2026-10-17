@@ -1,0 +1,20 @@
+# V3-8fc917b5f812
+# url: https://data.ipu.org/election-summary/HTML/2073_06.htm
+# final url: https://data.ipu.org/election-summary/HTML/2073_06.htm
+# fetched (UTC): 2026-10-17T08:07:22Z
+# HTTP 200; 19513 bytes; SHA-256 098906bdf44d5c236cccf1c90fdb1d981305e73fe7b1da8dd7d3c5c040f37135
+# title: IPU PARLINE database: COSTA RICA (Asamblea Legislativa) ELECTIONS IN 2006
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 5 February 2006
+D: Elections were held for all seats in the Legislative Assembly on the normal expiry of the members' term of office. | Parliamentary elections were held in parallel with presidential elections on 5 February 2006.
+D: the lowest turnout in Costa Rican history. Final results of the parliamentary elections gave 25 seats to the PLN and 17  | followed by the PML with six seats; while the ruling PUSC saw its number of seats reduced to five. The newly-elected Legislative Assembly held its first session on 1 May 2006 and elected Mr. Francisco Antonio Pacheco Fernández of the PLN as its new Speaker.
+D: when polling closed | Mr. Arias and Mr. Solís were neck and neck and a recount was ordered. On 7 March 2006
+D: confirming Mr. Arias' victory with 40.80 per cent of the votes | 1.1 per cent more than for Mr. Solís. He was sworn in for a second term on 8 May 2006.
+D: Voter turnout | Round no 1 5 February 2006
+D: Sources: | Tribunal Supremo de Elecciones (16.03.2006)
+D: http://www.tse.go.cr/elecciones_f2006/iprincipal2.htm | Legislative Assembly (01.01.2008)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Dates of election / renewal (from/to) | 5 February 2006
+K: Purpose of elections | Elections were held for all seats in the Legislative Assembly on the normal expiry of the members' term of office.

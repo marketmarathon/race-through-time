@@ -1,0 +1,23 @@
+# V3-134b2f5cbf7a
+# url: https://data.ipu.org/election-summary/HTML/2235_06.htm
+# final url: https://data.ipu.org/election-summary/HTML/2235_06.htm
+# fetched (UTC): 2026-10-17T08:08:41Z
+# HTTP 200; 17659 bytes; SHA-256 a4b8e635d73bc042926777552bddb85b2b0aa510df420f2d688c867192679739
+# title: IPU PARLINE database: NICARAGUA (Asamblea Nacional) ELECTIONS IN 2006
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 5 November 2006
+D: Parliamentary elections were held at the same time as presidential elections | on 5 November 2006.
+D: who had been President from 1985 to 1990. Mr. Enrique also defeated Mr. Ortega in the 2001 presidential elections. | The bi-partisan system was challenged when former finance minister Eduardo Montealegre Rivas split from the PLC and formed the Nicaraguan Liberal Alliance (ALN) with other PLC members. The new party opposed to former President Arnoldo Alemán's continued control of the PLC even after his conviction f
+D: was led by Mr. Edmundo Jarquín | following the death of former leader Herty Lewites in July 2006. The new MRS leader promised to build 10
+D: while the PLC won 25. The ALN finished third with 22 seats | and five seats went to the MRS (see note). On 22 November 2006
+D: ahead of Mr. Montealegre. | The new National Assembly held its first session on 10 January 2007 and elected Mr. René Núñez Téllez of the FSLN as its new Speaker for a two-year term. Mr. Ortega was sworn in as President of the country on the same day.
+D: Voter turnout | Round no 1 5 November 2006
+D: Comments | Source: National Assembly (07.12.2006
+D: Source: National Assembly (07.12.2006 | 13.03.2007
+D: 13.03.2007 | 01.01.2010)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Dates of election / renewal (from/to) | 5 November 2006
+K: Purpose of elections | Elections were held for all the seats in the National Assembly on the normal expiry of the members' term of office.
+K: one seat is reserved for the runner-up in the presidential election | and a second seat goes to the immediate past President of the country. The ALN candidate

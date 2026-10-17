@@ -1,0 +1,26 @@
+# V3-781571d40eee
+# url: https://data.ipu.org/election-summary/HTML/2029_10.htm
+# final url: https://data.ipu.org/election-summary/HTML/2029_10.htm
+# fetched (UTC): 2026-10-17T08:06:54Z
+# HTTP 200; 37476 bytes; SHA-256 6f0d25c0529ddd436a208b27f0432f5a808a0c2a7b34527de42e30d566c3d64d
+# title: IPU PARLINE database: BELGIUM (Chambre des Représentants), ELECTIONS IN 2010
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 13 June 2010
+D: Purpose of elections | Elections were held for all the seats in the House of Representatives following the early dissolution of this body on 6 May 2010. Elections to the House of Representatives had previously taken place on 10 June 2007.
+D: Elections were held for all the seats in the House of Representatives following the early dissolution of this body on 6  | Elections were held on 13 June 2010 after the coalition government collapsed in April following a prolonged political crisis that had ensued in the aftermath of the previous elections held on 10 June 2007. They took place 12 months before the term of the legislature ended. On 6 May, the House of Rep
+D: Belgium is a country of 10.8 million inhabitants divided into three communities: the French, the Flemish and the German- | In the 10 June 2007 elections, the Christian Democratic and Flemish-New Flemish Alliance (comprising the CD&V, led by Mr. Yves Leterme, and the N-VA, led by Mr. Bart De Wever), became the largest group in both chambers after campaigning notably for institutional reform and greater autonomy for the c
+D: In the 10 June 2007 elections, the Christian Democratic and Flemish-New Flemish Alliance (comprising the CD&V, led by Mr | Following 196 days during which several attempts to form a government failed, an emergency interim government comprising five parties (the Open Vld, the MR, the CD&V, the PS and the cdH) was finally formed on 21 December 2007 under the leadership of Mr. Guy Verhofstadt. Its main task was to pass the
+D: Following 196 days during which several attempts to form a government failed, an emergency interim government comprising | The 2008 global economic crisis that severely affected the world banking system also hit the Belgian financial group Fortis. Mr. Leterme's government tried to resolve the crisis by selling Fortis to the French bank BNP Paribas. Several shareholders opposed the move and took the case to the court. On
+D: The 2008 global economic crisis that severely affected the world banking system also hit the Belgian financial group For | In November 2009, Mr. Van Rompuy was elected the first permanent President of the European Council and subsequently resigned as Prime Minister. Mr. Leterme once again became Prime Minister on 25 November 2009. However, his second government was forced to resign after the Open Vld, led by Mr. Alexand
+D: On 6 July, the members of the House of Representatives were sworn in alongside the 40 directly elected senators. On 20 J | Negotiations for the formation of a new government have remained at a standstill ever since. On 16 May 2011, King Albert II mandated Mr. Di Rupo (PS) to form a government and instructed him to do everything that was necessary to that end. Meanwhile, Mr. Leterme's outgoing government remains in offic
+D: Note 1: | The Spirit party, which had been in alliance with the Flemish Socialist Party in the 2007 elections, merged with the Flemish Greens (Groen!) in December 2009 and ceased to exist.
+D: Voter turnout | Round no 1 13 June 2010
+D: Sources: | House of Representatives (08.04.2011, 22.12.2011, 01.01.2014)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Chamber name (generic / translated) | Chambre des Représentants / House of Representatives
+K: Related chamber (for bicameral parliaments) | BACKGROUND
+K: Dates of election / renewal (from/to) | 13 June 2010
+K: Purpose of elections | Elections were held for all the seats in the House of Representatives following the early dissolution of this body on 6 May 2010. Elections to the House of Representatives had previously taken place o
+K: Ten senators each are designated by the Parliament of the French Community (Communauté française) and the Flemish Parliament (Vlaams Parlement) while the Parliament of the German-speaking Community no | Note 5:

@@ -1,0 +1,21 @@
+# V3-1ecbbe1ba421
+# url: https://data.ipu.org/election-summary/HTML/2027_00.htm
+# final url: https://data.ipu.org/election-summary/HTML/2027_00.htm
+# fetched (UTC): 2026-10-17T08:06:46Z
+# HTTP 200; 9022 bytes; SHA-256 0f28dbccd22fd48d418b71453fd4bd69979429e0e8f6e18fd8b8e3457fd07cf9
+# title: BELARUS: parliamentary elections Palata Predstaviteley, 2000
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 15 October 2000
+D: 15 October 2000 | 29 October 2000
+D: Background and outcome of elections: | On 14 July 2000, President Lukashenko set 15 October 2000 as the date for the parliamentary elections. For the first time, the elections were held under the new Electoral Code adopted on 31 January 2000.
+D: On 14 July 2000, President Lukashenko set 15 October 2000 as the date for the parliamentary elections. For the first tim | The opposition called for a boycott of the vote, alleging a lack of access to state-controlled mass media and insufficient powers for the Parliament. In early September 2000, the Justice Ministry threatened to hand down prison sentences of up to two years to anyone urging a boycott of the poll and s
+D: Opposition leaders claimed there had been widespread vote tampering, while independent observers reported numerous viola | Parties loyal to President Lukashenko won most of the 41 seats where outright victory was achieved. Run-off votes were held on 29 October 2000 in 56 districts. In the remaining 13 districts where turnout fell short of the 50 per cent quorum, a new vote was held again. Several opposition groups boyco
+D: Parties loyal to President Lukashenko won most of the 41 seats where outright victory was achieved. Run-off votes were h | On 21 November 2000, the Chamber of Representatives elected Agriculture Minister Mr Vadzim Papou as its Speaker
+D: STATISTICS | Round no 1 (15 October 2000): Elections results
+D: 4 430 878 (61.08 %) | Round no 1 (29 October 2000): Elections results
+K: Parliamentary Chamber: Palata Predstaviteley | ELECTIONS HELD IN 2000
+K: Chamber: | Palata Predstaviteley
+K: Dates of elections / renewal (from/to): | 15 October 2000
+K: Purpose of elections: | Elections were held for all the seats in the House of Representatives on the normal expiry of the members' term of office.
+K: Opposition leaders claimed there had been widespread vote tampering, while independent observers reported numerous violations, including falsified and destroyed ballots. The Organisation for Security  | Parties loyal to President Lukashenko won most of the 41 seats where outright victory was achieved. Run-off votes were held on 29 October 2000 in 56 districts. In the remaining 13 districts where turn

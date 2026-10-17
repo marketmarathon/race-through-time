@@ -1,0 +1,18 @@
+# V3-120b64cbbd3d
+# url: https://data.ipu.org/election-summary/HTML/2386_99.htm
+# final url: https://data.ipu.org/election-summary/HTML/2386_99.htm
+# fetched (UTC): 2026-10-17T08:10:13Z
+# HTTP 200; 6704 bytes; SHA-256 a592559517b14499404490871d1ecbbc482649570656eafc1125b5baf8834845
+# title: NEPAL: parliamentary elections Pratinidhi Sabha, 1999
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 3 May 1999
+D: 3 May 1999 | 17 May 1999
+D: Purpose of elections: | Election were held for all the seats in the House of Representatives following the premature dissolution of this body on 15 January 1999. General elections had previously been held in November 1994.
+D: Background and outcome of elections: | On 15 January 1999, the House of Representatives was prematurely dissolved by King Birendra and general elections were announced for May. The previous month, Prime Minister Girija Prasad Koirala (Nepali Congress Party - NCP) had formed a coalition government with the United Marxist-Leninist / Commun
+D: In contrast to the campaign period, polling day was calm and characterized as "generally orderly and peaceful" by observ | On 31 May, Mr. Krishna Prasad Bhattarai was sworn in as Prime Minister; he had already held this post in 1990-1991. An expanded Cabinet was announced on 30 June.
+D: STATISTICS | Round no 1 (3 May 1999): Elections results
+K: Parliamentary Chamber: Pratinidhi Sabha | ELECTIONS HELD IN 1999
+K: Chamber: | Pratinidhi Sabha
+K: Dates of elections / renewal (from/to): | 3 May 1999
+K: Purpose of elections: | Election were held for all the seats in the House of Representatives following the premature dissolution of this body on 15 January 1999. General elections had previously been held in November 1994.

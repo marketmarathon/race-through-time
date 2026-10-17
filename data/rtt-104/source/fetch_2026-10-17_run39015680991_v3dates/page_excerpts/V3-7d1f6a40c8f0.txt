@@ -1,0 +1,26 @@
+# V3-7d1f6a40c8f0
+# url: https://data.ipu.org/election-summary/HTML/2386_13.htm
+# final url: https://data.ipu.org/election-summary/HTML/2386_13.htm
+# fetched (UTC): 2026-10-17T08:10:12Z
+# HTTP 200; 37388 bytes; SHA-256 cad4c26591cb8ed53a4bc79321a3931121b4e890650e8e6d5565b9870a62d078
+# title: IPU PARLINE database: NEPAL (Byabasthapika-Sansad), ELECTIONS IN 2013
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 19 November 2013
+D: The Nepali Congress (NC), led by Mr. Sushil Koirala, came in first winning 196 of the 575 directly elected seats at stak | The 2013 polls elected the second Constituent Assembly. The first Constituent Assembly was elected in April 2008 to draft a new Constitution within two years, as part of the transformation of Nepal from a kingdom to a republic. Despite repeated extensions of its term, no agreement was reached in the
+D: Note on the statutory number of the Constituent Assembly: | In March 2013, the major political forces signed an 11-point agreement, which would have elected a reduced 491-member Constituent Assembly. On 17 June 2013, the Government announced the holding of elections to a new Constituent Assembly on 19 November. On 17 September, however, the Government submit
+D: In March 2013, the major political forces signed an 11-point agreement, which would have elected a reduced 491-member Co | Date of previous elections: 10 April 2008
+D: Date of previous elections: 10 April 2008 | Date of dissolution of the outgoing legislature: 27 May 2012
+D: Timing of election: Delayed elections | Expected date of next elections: November 2017
+D: Names of parties in government: Nepali Congress (NC), Communist Party of Nepal (UML) | Date of the first session of the new parliament: 22 January 2014
+D: Voter turnout | Round no 1 19 November 2013
+D: Sources: | Constituent Assembly (26.12.2013, 14.01.2014, 18.10.2014, 17.04.2015, 21.04.2015, 14.03.2016)
+D: - Of the 575 members elected in 2013, 172 were women. | - As at October 2014, 22 of the 26 members, including four women, had been appointed.
+D: - As at October 2014, 22 of the 26 members, including four women, had been appointed. | - As at 19 October 2014, 176 of the 597 members were women, with four vacancies.
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Dates of election / renewal (from/to) | 19 November 2013
+K: Purpose of elections | The Nepali Congress (NC), led by Mr. Sushil Koirala, came in first winning 196 of the 575 directly elected seats at stake. The Communist Party of Nepal-United Marxist Leninist (CPN-UML) of Mr. Jhala N
+K: Note on the statutory number of the Constituent Assembly: | In March 2013, the major political forces signed an 11-point agreement, which would have elected a reduced 491-member Constituent Assembly. On 17 June 2013, the Government announced the holding of ele
+K: Timing of election: Delayed elections | Expected date of next elections: November 2017
+K: Number of seats at stake: 575 (full renewal) | Number of candidates: 16,927 (6,147 candidates under the majority system and 10,709 under the proportional representation system)

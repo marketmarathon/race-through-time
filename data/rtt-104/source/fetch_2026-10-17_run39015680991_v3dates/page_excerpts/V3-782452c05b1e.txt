@@ -1,0 +1,26 @@
+# V3-782452c05b1e
+# url: https://data.ipu.org/election-summary/HTML/2211_06.htm
+# final url: https://data.ipu.org/election-summary/HTML/2211_06.htm
+# fetched (UTC): 2026-10-17T08:08:16Z
+# HTTP 200; 21927 bytes; SHA-256 13311e950079bcde3b693b91bbafcaebecf19d91a6af8b25917654892461c3f5
+# title: IPU PARLINE database: MEXICO (Cámara de Diputados), Elections in 2006
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 2 July 2006
+D: Elections were held for all the seats in the Chamber of Deputies on the normal expiry of the members' term of office. | Mexicans went to the polls on 2 July 2006 to elect all members of the Chamber of Deputies and the Senate as well as a new President.
+D: Mexicans went to the polls on 2 July 2006 to elect all members of the Chamber of Deputies and the Senate as well as a ne | In the July 2000 elections, the Institutional Revolutionary Party (PRI) lost the presidency for the first time since 1929, and also suffered losses in both chambers of parliament. Mr. Vicente Fox of the National Action Party (PAN) became President. However, in the 2003 elections to the Chamber of De
+D: The newly-elected Congress held its first session on 29 August. Mr. Jorge Zermeño Infante of the PAN was elected as Spea | On 6 September, the Federal Electoral Tribunal confirmed the victory of Mr. Calderon. He was sworn in as President of Mexico on 1 December 2006.
+D: Voter turnout | Round no 1 2 July 2006
+D: - http://www.ife.org.mx/ | - Inter-Parliamentary Group of Mexico (03.11.2006, 01.01.2008)
+D: Note: | In June 2005, the Congress passed legislation allowing Mexican nationals living abroad to vote by mail only for presidential elections. In the 2006 elections, of the 4 million eligible voters living abroad, only about 41,000, or 1 per cent, requested postal ballots. A total of 32,632 valid ballots w
+K: Cámara de Diputados (Chamber of Deputies) | General information
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Chamber name (generic / translated) | Cámara de Diputados / Chamber of Deputies
+K: Cámara de Diputados / Chamber of Deputies | Related chamber (for bicameral parliaments)
+K: Related chamber (for bicameral parliaments) | Cámara de Senadores / Senate
+K: Dates of election / renewal (from/to) | 2 July 2006
+K: Purpose of elections | Elections were held for all the seats in the Chamber of Deputies on the normal expiry of the members' term of office.
+K: Elections were held for all the seats in the Chamber of Deputies on the normal expiry of the members' term of office. | Mexicans went to the polls on 2 July 2006 to elect all members of the Chamber of Deputies and the Senate as well as a new President.
+K: The final results for parliamentary elections gave a resounding victory to the ruling PAN in both chambers, winning 206 seats in the Chamber of Deputies, up from 158; and 52 seats in the Senate. The A | In the presidential election, a narrow margin separated the leading candidates. After a partial recount, Mr. Calderon was declared elected on 6 July with 35.88 per cent of the valid votes, just 0.6 pe
+K: The newly-elected Congress held its first session on 29 August. Mr. Jorge Zermeño Infante of the PAN was elected as Speaker of the Chamber of Deputies, and Mr. Manlio Fabio Beltrones Rivera of the PRI | On 6 September, the Federal Electoral Tribunal confirmed the victory of Mr. Calderon. He was sworn in as President of Mexico on 1 December 2006.
+K: Note on the "Distribution of Seats" for the Chamber of Deputies | - "Majority" refers to 300 seats filled by the majority system;

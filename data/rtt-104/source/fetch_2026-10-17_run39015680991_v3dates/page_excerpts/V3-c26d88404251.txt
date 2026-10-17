@@ -1,0 +1,21 @@
+# V3-c26d88404251
+# url: https://data.ipu.org/election-summary/HTML/2175_06.htm
+# final url: https://data.ipu.org/election-summary/HTML/2175_06.htm
+# fetched (UTC): 2026-10-17T08:08:10Z
+# HTTP 200; 13812 bytes; SHA-256 c4e18bd452d5ab9808b1149f9697faccb6a4f9fefeb1d4e953605f57ddf30181
+# title: IPU PARLINE database: LAO PEOPLE'S DEMOCRATIC REPUBLIC (Sapha Heng Xat) ELECTIONS IN 2006
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 30 April 2006
+D: Purpose of elections | Elections were held for all seats in the National Assembly one year before the normal expiry of the member's term of office. General elections had previously taken place on 24 February 2002.
+D: Elections were held for all seats in the National Assembly one year before the normal expiry of the member's term of off | Parliamentary elections were held on 30 April 2006
+D: Parliamentary elections were held on 30 April 2006 | almost a full year ahead of the scheduled expiry of the members' term. The elections followed the Congress of the ruling communist Lao People's Revolutionary Party (LPRP) in February/March 2006. During the Congress
+D: Mr. Choummaly Sayasone | who was subsequently elected as the party's leader on 21 March 2006.
+D: who was subsequently elected as the party's leader on 21 March 2006. | In the last elections held in February 2002
+D: The LPRP swept 113 of the 115 seats at stake. The number of women elected increased from 25 to 29. | The newly-elected National Assembly held its first session on 8 June 2006 and elected Mr. Thongsing Thammavong as its new Speaker. It also appointed the LPRP leader Mr. Choummaly Sayasone as the new President of the Republic and former deputy prime minister Mr. Bouasone Bouphavanh as the new Prime M
+D: Voter turnout | Round no 1 30 April 2006
+D: Comments | Source: IPU Group (13.06.2006)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Dates of election / renewal (from/to) | 30 April 2006
+K: Purpose of elections | Elections were held for all seats in the National Assembly one year before the normal expiry of the member's term of office. General elections had previously taken place on 24 February 2002.

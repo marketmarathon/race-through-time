@@ -1,0 +1,14 @@
+# V3-28a3fc65cfee
+# url: https://data.ipu.org/election-summary/HTML/2073_98.htm
+# final url: https://data.ipu.org/election-summary/HTML/2073_98.htm
+# fetched (UTC): 2026-10-17T08:07:26Z
+# HTTP 200; 7664 bytes; SHA-256 4f5f2ee47415e8bdeff92b652fb8f7657e254838c53b68dd79c72cdc2309b41c
+# title: COSTA RICA: parliamentary elections Asamblea Legislativa, 1998
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 1 February 1998
+D: STATISTICS | Round no 1 (1 February 1998): Elections results
+K: Parliamentary Chamber: Asamblea Legislativa | ELECTIONS HELD IN 1998
+K: Chamber: | Asamblea Legislativa
+K: Dates of elections / renewal (from/to): | 1 February 1998
+K: Purpose of elections: | Elections were held for all the seats in Parliament on the normal expiry of the members' term of office.

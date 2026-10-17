@@ -1,0 +1,17 @@
+# V3-d5faf8a53c50
+# url: https://data.ipu.org/election-summary/HTML/2239_01.htm
+# final url: https://data.ipu.org/election-summary/HTML/2239_01.htm
+# fetched (UTC): 2026-10-17T08:08:44Z
+# HTTP 200; 8344 bytes; SHA-256 d05584659520bb8a69f74b73e40dcd60482813cc899d7dca90b685993c41a0d6
+# title: NORWAY: parliamentary elections Stortinget, 2001
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 10 September 2001
+D: Background and outcome of elections: | Voters went to the polls on 10 September 2001 in a general election. At stake were the 165 seats in Parliament.
+D: After results were made official, it was clear that no single party had secured enough votes to form a majority governme | On 17 October 2001, the Labour Prime Minister, Mr. Jens Stoltenber, tendered his government's resignation, paving the way for Mr. Kjell Magne Bondevika, the leader of the Christian People's Party to head a right-wing coalition, composed of the Conservatives, the Christian People's Party and the Libe
+D: On 17 October 2001, the Labour Prime Minister, Mr. Jens Stoltenber, tendered his government's resignation, paving the wa | At the first sitting of the new Parliament, held on 10 October 2001, Mr J�rgen Kosmo (Labour), was elected Speaker.
+D: STATISTICS | Round no 1 (10 September 2001): Elections results
+K: Parliamentary Chamber: Stortinget | ELECTIONS HELD IN 2001
+K: Chamber: | Stortinget
+K: Dates of elections / renewal (from/to): | 10 September 2001
+K: Purpose of elections: | Elections were held for all the seats in Parliament on the normal expiry of the members' term of office.

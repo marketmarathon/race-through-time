@@ -1,0 +1,15 @@
+# V3-82dba94983a2
+# url: https://data.ipu.org/election-summary/HTML/2239_97.htm
+# final url: https://data.ipu.org/election-summary/HTML/2239_97.htm
+# fetched (UTC): 2026-10-17T08:08:49Z
+# HTTP 200; 7167 bytes; SHA-256 c013df5e824b0213abaecfa0bdd058f5dc9205143e09cc5099dae0eee59397fa
+# title: NORWAY: parliamentary elections Stortinget, 1997
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 15 September 1997
+D: Background and outcome of elections: | General elections had previously been held in September 1993. In October 1996, Prime Minister Gro Harlem Brundtland (Labour Party) resigned and was succeeded by Mr. Thorbjoern Jagland, who carried on heading a minority Government.
+D: STATISTICS | Round no 1 (15 September 1997): Elections results
+K: Parliamentary Chamber: Stortinget | ELECTIONS HELD IN 1997
+K: Chamber: | Stortinget
+K: Dates of elections / renewal (from/to): | 15 September 1997
+K: Purpose of elections: | Elections were held for all the seats in Parliament on the normal expiry of the members' term of office.

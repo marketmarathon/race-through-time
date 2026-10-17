@@ -1,0 +1,26 @@
+# V3-78aeae1a6b69
+# url: https://data.ipu.org/election-summary/HTML/2015_10.htm
+# final url: https://data.ipu.org/election-summary/HTML/2015_10.htm
+# fetched (UTC): 2026-10-17T08:06:36Z
+# HTTP 200; 24604 bytes; SHA-256 a453fd3b71ddb909a7331ececa887d03c55af13b77e0b8811024a832f867729a
+# title: IPU PARLINE database: AUSTRALIA (House of Representatives), ELECTIONS IN 2010
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 21 August 2010
+D: Purpose of elections | Elections were held for all the seats in the House of Representatives following an early dissolution of this body on 19 July 2010. Elections to the House of Representatives had previously taken place in November 2007.
+D: Elections were held for all the seats in the House of Representatives following an early dissolution of this body on 19  | At stake in the August 2010 elections were all 150 seats in the House of Representatives and 40 of the 70 seats in the Senate (see note). Elections were constitutionally due by November 2010. They were the first to be held under Prime Minister Julia Gillard, who had succeeded Mr. Kevin Rudd two mont
+D: At stake in the August 2010 elections were all 150 seats in the House of Representatives and 40 of the 70 seats in the S | In the previous elections held in November 2007, the Australian Labor Party (ALP) of Mr. Rudd - who had promised to ratify the Kyoto Protocol and cut carbon emissions by 60 per cent by 2050 - took 83 of the 150 seats in the House of Representatives and 18 of the 40 Senate seats up for renewal. The L
+D: In the previous elections held in November 2007, the Australian Labor Party (ALP) of Mr. Rudd - who had promised to rati | Mr. Rudd initially enjoyed high popularity. However, his popularity dwindled in April 2010 after he shelved plans for a carbon emissions trading scheme. In May 2010, he proposed a 40-per-cent tax on mining profits from July 2012. He argued that the tax would bring in AU$ 12 billion in the first two 
+D: Mr. Rudd initially enjoyed high popularity. However, his popularity dwindled in April 2010 after he shelved plans for a  | Mr. Rudd's leadership was challenged within the ALP, and Ms. Gillard became party leader and acceded to the post of Prime Minister on 24 June 2010. She became the first woman Prime Minister of Australia. On 17 July, after only one month in office, she announced that the country would hold elections 
+D: Mr. Rudd's leadership was challenged within the ALP, and Ms. Gillard became party leader and acceded to the post of Prim | The 2010 elections were the first federal elections to be held under the new leaders of the ALP and the Liberal Party, Ms. Gillard and Mr. Abbott. The latter led the Liberal-National coalition comprising the Liberal Party, the Liberal National Party of Queensland (LNP, officially established in July
+D: Regarding the mining tax, the ALP promised to introduce a 30-per-cent tax on coal and iron ore miners from 2012 to raise | The ALP pledged to reduce corporate tax from the current 30 per cent to 29 per cent from 2012 or 2013 for small firms and from 2013 or 2014 for big firms. The Liberal-National coalition proposed a 28.5 per cent tax for all firms starting from July 2013.
+D: As voting is compulsory, turnout is traditionally high in Australia. In all, 93 per cent of the 14 million registered vo | The 2010 elections resulted in the first "hung parliament" since 1940, whereby no party secured a majority in the House of Representatives. The Liberal-National coalition took 73 seats, one more than the ALP. Four independent members were elected while the Greens took one seat. In the Senate race, t
+D: On 28 September, the newly elected House of Representatives held its first session and re-elected Mr. Harry Jenkins (ALP | On 4 July 2011, the newly elected Senators joined the remaining members whose terms were not up for the 2010 renewal. They re-elected Mr. John Hogg (ALP) as Senate President.
+D: Note: | Elections were held for 36 state senators (six each for the country's six states) and four territory senators (two each from the Australian Capital Territory and the Northern Territory), who will serve a six-year term from 1 July 2011. Their term commences on election day and expires the day before 
+D: Voter turnout | Round no 1 21 August 2010
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name
+K: Chamber name | House of Representatives
+K: Related chamber (for bicameral parliaments) | Senate
+K: Dates of election / renewal (from/to) | 21 August 2010
+K: Purpose of elections | Elections were held for all the seats in the House of Representatives following an early dissolution of this body on 19 July 2010. Elections to the House of Representatives had previously taken place 

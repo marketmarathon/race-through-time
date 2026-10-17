@@ -1,0 +1,25 @@
+# V3-ada56aa0b598
+# url: https://data.ipu.org/election-summary/HTML/2335_15.htm
+# final url: https://data.ipu.org/election-summary/HTML/2335_15.htm
+# fetched (UTC): 2026-10-17T08:09:51Z
+# HTTP 200; 24462 bytes; SHA-256 6a4d329a59662f0eaf829640defbb76e0968c1a42b30450e11f4d2ed1937f019
+# title: IPU PARLINE database: UNITED KINGDOM (House of Commons), ELECTIONS IN 2015
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 7 May 2015
+D: Prime Minister David Cameron's Conservative Party won an outright majority in the 650-member House of Commons, despite p | The 2015 elections were the first to be held after the referendum on Scottish independence in September 2014, where 55% of voters voted to remain part of the United Kingdom. During the election campaign, major electoral issues included the minimum wage, healthcare, education and immigration, as well
+D: The 2015 elections were the first to be held after the referendum on Scottish independence in September 2014, where 55%  | Date of previous elections: 6 May 2010
+D: Date of previous elections: 6 May 2010 | Date of dissolution of the outgoing legislature: 30 March 2015
+D: Timing of election: Upon normal expiry | Expected date of next elections: May 2020
+D: Names of parties in government: Conservative Party | Date of the first session of the new parliament: 18 May 2015
+D: Voter turnout | Round no 1 7 May 2015
+D: Sources: | British IPU Group (12.05.2015, 01.01.2017)
+D: British IPU Group (12.05.2015, 01.01.2017) | BRIEFING PAPER Number CBP7186, 18 May 2015, House of Commons Library
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name
+K: Chamber name | House of Commons
+K: Related chamber (for bicameral parliaments) | House of Lords
+K: Dates of election / renewal (from/to) | 7 May 2015
+K: Purpose of elections | Prime Minister David Cameron's Conservative Party won an outright majority in the 650-member House of Commons, despite pre-election polls predicting another hung parliament. Its advantage over the Lab
+K: Timing of election: Upon normal expiry | Expected date of next elections: May 2020
+K: Number of seats at stake: 650 (full renewal) | Number of candidates: 3 971 (2,938 men, 1,033 women)

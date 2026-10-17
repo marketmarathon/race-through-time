@@ -1,0 +1,12 @@
+# V3-4b5d291bdc1d
+# url: https://www.bundeswahlleiterin.de/en/bundestagswahlen/2021/ergebnisse.html
+# final url: https://www.bundeswahlleiterin.de/en/bundestagswahlen/2021/ergebnisse.html
+# fetched (UTC): 2026-10-17T08:15:28Z
+# HTTP 200; 37130 bytes; SHA-256 fa0cd3721425e4593bc36fcc1982ad4969c507611397cb626ec9f5f6f62f41b4
+# title: Results - The Federal Returning Officer
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Results | Repeat election in parts of Berlin on 11 February 2024
+D: Variant 1 (this page): Comparative value = result at the 2017 Bundestag election. | Variant 2 : Comparative value = result of the main election of the 2021 Bundestag election on 26 September 2021.
+D: Variant 2 : Comparative value = result of the main election of the 2021 Bundestag election on 26 September 2021. | Results of the main election on 26 September 2021
+D: Results of the main election on 26 September 2021 | The archived, no longer valid results of the main election to the 20 th German Bundestag on 26 September 2021 are still available on the archive page .

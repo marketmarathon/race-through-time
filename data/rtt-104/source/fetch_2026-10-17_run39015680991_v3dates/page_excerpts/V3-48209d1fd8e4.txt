@@ -1,0 +1,19 @@
+# V3-48209d1fd8e4
+# url: https://data.ipu.org/election-summary/HTML/2095_02.htm
+# final url: https://data.ipu.org/election-summary/HTML/2095_02.htm
+# fetched (UTC): 2026-10-17T08:07:41Z
+# HTTP 200; 6937 bytes; SHA-256 cd5108507280382cca2a9d5a3772568e62e60403da46110433fc1f83a6a35a11
+# title: ECUADOR: parliamentary elections Congreso Nacional, 2002
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 20 October 2002
+D: Background and outcome of elections: | Legislative elections were held on 20 October 2002, together with presidential elections and elections for the members of the Andean Parliament.
+D: The traditional parties all did poorly in the legislative elections and lost ground in Congress. The Social Christian Pa | The first round of the presidential elections produced no clear winner. Mr. Alvaro Noboa, a businessman and banana magnate from the Institutional Renewal National Action Party (PRIAN), and Mr. Lucio Guti�rrez, a retired army officer, from the socialist Party of Patriotic Society, who had played a ro
+D: The first round of the presidential elections produced no clear winner. Mr. Alvaro Noboa, a businessman and banana magna | The second round of the presidential elections was held on 24 November 2002. Mr. Gutierrez won 54.3 per cent of the runoff vote, as against 45.7 per cent for Mr. Alvaro Noboa. He was sworn in on 15 January 2003.
+D: The second round of the presidential elections was held on 24 November 2002. Mr. Gutierrez won 54.3 per cent of the runo | On 5 January 2003, the new Congress held its first sitting. A few days later, it elected Mr. Guillermo Land�zuri as its new Speaker.
+D: STATISTICS | Round no 1 (20 October 2002): Elections results
+K: Parliamentary Chamber: Congreso Nacional | ELECTIONS HELD IN 2002
+K: Chamber: | Congreso Nacional
+K: Dates of elections / renewal (from/to): | 20 October 2002
+K: Purpose of elections: | Elections were held for all the seats in Parliament on the normal expiry of the members' term of office.
+K: Institutional Renewal Party of National Action (PRIAN) | 10

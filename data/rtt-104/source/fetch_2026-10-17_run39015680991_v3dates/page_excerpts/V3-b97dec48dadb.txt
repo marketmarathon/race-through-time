@@ -1,0 +1,25 @@
+# V3-b97dec48dadb
+# url: https://data.ipu.org/election-summary/HTML/2011_07.htm
+# final url: https://data.ipu.org/election-summary/HTML/2011_07.htm
+# fetched (UTC): 2026-10-17T08:06:24Z
+# HTTP 200; 41815 bytes; SHA-256 b005cc4ca606888ff4acad438efe4c5f28e83138f1d64f941ce9072c73db1ea2
+# title: IPU PARLINE database: ARGENTINA (Cámara de Diputados), Elections in 2007
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 28 October 2007
+D: Elections were held to renew one-half of the seats (130) in the Chamber of Deputies on the normal expiry of the members' | On 28 October 2007, elections were held for 130 of the 257 seats in the Chamber of Deputies and 24 of the 72 seats in the Senate, in parallel with presidential elections.
+D: On 28 October 2007, elections were held for 130 of the 257 seats in the Chamber of Deputies and 24 of the 72 seats in th | Between 1945 and 2005, the country's politics had been dominated by the Peronist Justicialist Party (PJ) and by the Radical Civic Union (UCR). However, the PJ had split before the previous elections in October 2005, when President Néstor Kirchner formed a breakaway party called the Victory Front (FV
+D: Voter turnout | Round no 1 28 October 2007
+D: Note on the "Distribution of seats": | The Ministry of the Interior did not publish the election results for the Chamber of Deputies. The "Distribution of seats" above shows the final composition of the Chamber of Deputies. The "Total" column indicates the number of members who took their seats following the 2007 elections and was compli
+K: Cámara de Diputados (Chamber of Deputies) | General information
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Chamber name (generic / translated) | Cámara de Diputados / Chamber of Deputies
+K: Cámara de Diputados / Chamber of Deputies | Related chamber (for bicameral parliaments)
+K: Related chamber (for bicameral parliaments) | Senado / Senate
+K: Dates of election / renewal (from/to) | 28 October 2007
+K: Purpose of elections | Elections were held to renew one-half of the seats (130) in the Chamber of Deputies on the normal expiry of the members' term of office.
+K: Elections were held to renew one-half of the seats (130) in the Chamber of Deputies on the normal expiry of the members' term of office. | On 28 October 2007, elections were held for 130 of the 257 seats in the Chamber of Deputies and 24 of the 72 seats in the Senate, in parallel with presidential elections.
+K: Her main rivals were former congresswoman Ms. Elisa Carrió, and former economy minister Mr. Roberto Lavagna. Ms. Carrió formed the Civic Coalition Confederation, which comprised her Alternative Republ | The centre-right electoral alliance the Republican Proposal endorsed Mr. Ricardo López Murphy as its presidential candidate. After the collapse of coalition talks between Ms. Carrió and Mr. Murphy, bo
+K: The FV and its allies obtained an increased majority in both chambers: 161 seats in the Chamber of Deputies, and 48 seats in the Senate. The Civic Coalition Confederation came in second with 25 seats  | In the presidential elections, Ms. Fernández de Kirchner was elected with over 45 percent of the vote, ahead of Ms. Carrió, who took 23 percent. Mrs. Fernández de Kirchner succeeded her husband on 10 
+K: On the same day, the newly-elected Congress held its first session. Mr. Eduardo Alfred Fellner (FV) was elected as the new Speaker of the Chamber of Deputies. The Vice-President of the country, Mr. Ju | STATISTICS
+K: Salta Renewal | 1

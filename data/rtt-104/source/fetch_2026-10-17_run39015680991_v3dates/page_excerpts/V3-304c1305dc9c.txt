@@ -1,0 +1,23 @@
+# V3-304c1305dc9c
+# url: https://data.ipu.org/election-summary/HTML/2045_13.htm
+# final url: https://data.ipu.org/election-summary/HTML/2045_13.htm
+# fetched (UTC): 2026-10-17T08:07:04Z
+# HTTP 200; 17998 bytes; SHA-256 2f7c6cc68ddfe802dd5557b1147b4da4b69043683db3d68e8628c91ac5b7422b
+# title: IPU PARLINE database: BULGARIA (Narodno sabranie), ELECTIONS IN 2013
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 12 May 2013
+D: No party won an outright majority in the 240-member National Assembly. The Citizens for European Development of Bulgaria | Nationwide protests against austerity, high electricity prices and corruption had forced Prime Minister Boyko Borissov (GERB) to resign in February 2013. After unsuccessful attempts to form a new coalition government, President Rosen Plevneliev called early elections for May. During the election cam
+D: After the GERB failed to put together a coalition, the CB and the DPS formed a new coalition government in late May unde | Date of previous elections: 5 July 2009
+D: Date of previous elections: 5 July 2009 | Date of dissolution of the outgoing legislature: 14 March 2013
+D: Timing of election: Early elections | Expected date of next elections: May 2017
+D: Names of parties in government: Coalition for Bulgaria and the Movement for Rights and Freedoms | Date of the first session of the new parliament: 21 May 2013
+D: Voter turnout | Round no 1 12 May 2013
+D: Sources: | National Assembly (21.05.2013, 31.05.2013)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Dates of election / renewal (from/to) | 12 May 2013
+K: Purpose of elections | No party won an outright majority in the 240-member National Assembly. The Citizens for European Development of Bulgaria Party (GERB) remained the largest force, winning 97 seats. The Coalition for Bu
+K: After the GERB failed to put together a coalition, the CB and the DPS formed a new coalition government in late May under the premiership of Mr. Plamen Oresharski, nominated by the Socialist Party. | Date of previous elections: 5 July 2009
+K: Timing of election: Early elections | Expected date of next elections: May 2017
+K: Number of seats at stake: 240 (full renewal) | Number of candidates: 8,148

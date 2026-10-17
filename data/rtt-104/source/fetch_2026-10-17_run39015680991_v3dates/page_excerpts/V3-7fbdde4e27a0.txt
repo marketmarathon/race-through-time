@@ -1,0 +1,25 @@
+# V3-7fbdde4e27a0
+# url: https://data.ipu.org/election-summary/HTML/2055_11.htm
+# final url: https://data.ipu.org/election-summary/HTML/2055_11.htm
+# fetched (UTC): 2026-10-17T08:07:15Z
+# HTTP 200; 28898 bytes; SHA-256 2421cc73adb9b487678b5b6a2e5e8c0383855eaafede73e1cd89b2b1e5c03f18
+# title: IPU PARLINE database: CANADA (House of Commons ), ELECTIONS IN 2011
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 2 May 2011
+D: Purpose of elections | Elections were held for all members of the House of Commons following the premature dissolution of this body on 26 March 2011. General elections had been held previously in October 2008.
+D: Elections were held for all members of the House of Commons following the premature dissolution of this body on 26 March | On 25 March 2011, Prime Minister Stephen Harper's Government lost a no-confidence vote in the House of Commons. The following day, he asked Governor General David Johnston to dissolve the House in view of early elections, set for 2 May. They were constitutionally due by October 2012.
+D: On 25 March 2011, Prime Minister Stephen Harper's Government lost a no-confidence vote in the House of Commons. The foll | Prime Minister Harper came to power following the 2006 federal elections, ending a 12-year period of government led by the Liberal Party. In the subsequent elections held in October 2008, his Conservative Party increased its share from 124 to 143 seats, but still failed to win a majority in the 308-
+D: Prime Minister Harper came to power following the 2006 federal elections, ending a 12-year period of government led by t | In December 2008, the Liberal Party and the NDP submitted a no-confidence vote against the Prime Minister, criticizing his handling of the economic crisis. At the request of Prime Minister, Parliament was suspended by the Governor General until 26 January, so the no-confidence vote did not take plac
+D: In December 2008, the Liberal Party and the NDP submitted a no-confidence vote against the Prime Minister, criticizing h | In November 2010, the House Finance Committee asked the government to provide corporate-tax revenue projections and estimates for crime bills. The government replied that both items were "cabinet confidences" and declined to provide further information. Liberal Party leader Michael Ignatieff stated 
+D: BQ Leader Gilles Duceppe argued that giving a majority to the Conservative Party would be tantamount to "new assaults ag | The Green Party was hoping to regain the one seat that it had held until 2008. It is led by Ms. Elizabeth May, the sole woman to head a federal party.
+D: On 2 May, 61.41 per cent of the 14 million registered voters turned out at the polls. | The Prime Minister's Conservative Party took 167 of the 308 seats at stake, securing a parliamentary majority. The NDP nearly tripled its share to 102. Inversely, the Liberal Party and the Bloc Québécois saw their share reduced sharply, taking 37 and four seats respectively. Green Party leader May t
+D: The Prime Minister's Conservative Party took 167 of the 308 seats at stake, securing a parliamentary majority. The NDP n | On 2 June, the newly elected House of Commons held its first session and elected Mr. Andrew Scheer (Conservative Party) as its new Speaker. Mr. Scheer, 32 years old, became the youngest Speaker ever in Canada. He succeeds Mr. Peter Milliken (Liberal), who had been the longest-serving Speaker in Cana
+D: Voter turnout | Round no 1 2 May 2011
+D: Sources: | Parliament of Canada (01.01.2012, 27.03.2012, 01.01.2014, 01.06.2015)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name
+K: Chamber name | House of Commons
+K: Related chamber (for bicameral parliaments) | Senate
+K: Dates of election / renewal (from/to) | 2 May 2011
+K: Purpose of elections | Elections were held for all members of the House of Commons following the premature dissolution of this body on 26 March 2011. General elections had been held previously in October 2008.

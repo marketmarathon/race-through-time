@@ -1,0 +1,74 @@
+# V3-1cc1e5f00ccd
+# url: https://data.ipu.org/parliament/AR/AR-LC01/
+# final url: https://data.ipu.org/parliament/AR/AR-LC01/
+# fetched (UTC): 2026-10-17T08:10:28Z
+# HTTP 200; 357335 bytes; SHA-256 ac853da511772035396e3c81540a592c35b4b670230dde3431faf043d281a4ce
+# title: Argentina | Chamber of Deputies | IPU Parline: global data on national parliaments
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: View field in the data dictionary | 10 Dec 2023
+D: Additional information | Elected on 10 Dec. 2023, re-elected on 4 Dec. 2024 and on 3 Dec. 2025.
+D: View field in the data dictionary | 14 Aug 2024
+D: View field in the data dictionary | Elected on 14 Aug. 2024, re-elected on 4 Dec. 2024.
+D: The Organic Act on Political Parties (Ley 23.298) further stipulates that, in cases where the principle of gender parity | Sources: Article 60 bis of the National Electoral Code (Código Electoral Nacional) and article 50 (h) of the Organic Act on Political Parties (Ley 23.298) as amended by the Gender Parity in Political Representation Act (Ley 27.412). The latter Act was adopted by the Chamber of Deputies on 22 Novembe
+D: View field in the data dictionary | Rules of Procedure, edition of December 2023 (English)
+D: View field in the data dictionary | 10 Dec 2023
+D: Additional information | Elected on 10 Dec. 2023, re-elected on 4 Dec. 2024 and on 3 Dec. 2025.
+D: View field in the data dictionary | 02 Aug 2022 to 09 Dec 2023
+D: Additional information | Elected on 2 Aug. 2022.
+D: View field in the data dictionary | 10 Dec 2019 to 09 Dec 2022
+D: View field in the data dictionary | 10 Dec 2015 to 09 Dec 2019
+D: Additional information | Re-elected on 30 Nov. 2016, 6 Dec. 2017, 5 Dec. 2018.
+D: View field in the data dictionary | 10 Dec 2023
+D: Additional information | Elected on 10 Dec. 2023, re-elected on 4 Dec. 2024 and on 3 Dec. 2025.
+D: View field in the data dictionary | 02 Aug 2022 to 09 Dec 2023
+D: Additional information | Elected on 2 Aug. 2022.
+D: View field in the data dictionary | 10 Dec 2019 to 09 Dec 2022
+D: View field in the data dictionary | 10 Dec 2015 to 09 Dec 2019
+D: Additional information | Re-elected on 30 Nov. 2016, 6 Dec. 2017, 5 Dec. 2018.
+D: View field in the data dictionary | 14 Aug 2024
+D: View field in the data dictionary | Elected on 14 Aug. 2024, re-elected on 4 Dec. 2024.
+D: View field in the data dictionary | 10 Dec 2023 to 13 Aug 2024
+D: View field in the data dictionary | 14 Aug 2024
+D: View field in the data dictionary | Elected on 14 Aug. 2024, re-elected on 4 Dec. 2024.
+D: View field in the data dictionary | 10 Dec 2023 to 13 Aug 2024
+K: Argentina | Chamber of Deputies | IPU Parline: global data on national parliaments | Skip to main content
+K: Select country and chamber | Parliaments
+K: Chamber of Deputies | Senate
+K: Chamber of Deputies | Political system
+K: Political systems: Presidential, Parliamentary, Presidential-Parliamentary, Monarchy, Communist, Transitional. | View field in the data dictionary
+K: Basic information such as the official name of parliament and details of its structure and leadership. Also includes the current breakdown of MPs by sex and age, and provisions for quotas and reserved | Parliament name
+K: Chamber name | Cámara de Diputados (Chamber of Deputies)
+K: Cámara de Diputados (Chamber of Deputies) | See historical data for this field
+K: Lower chamber | Parliamentary term (years)
+K: Frequency of renewal (years) | For parliaments/chambers are that are partially renewed (by half, by one third) on a regular basis.
+K: For parliaments/chambers are that are partially renewed (by half, by one third) on a regular basis. | View field in the data dictionary
+K: President of the Chamber of Deputies | Speaker
+K: As defined in the constitution or other fundamental laws. Combines the number of parliamentarians in both chambers in bicameral parliaments. | View field in the data dictionary
+K: Average age of members, for which data is available, at the time of the last election or renewal. | View field in the data dictionary
+K: Age is calculated at the time the member was elected/appointed to a new legislature. Data is not updated during the legislature unless the member is no longer a member. | View field in the data dictionary
+K: Age is calculated at the time the member was elected/appointed to a new legislature. Data is not updated during the legislature unless the member is no longer a member. | View field in the data dictionary
+K: Age at the last election or renewal | Overall
+K: Reserved seats and quotas | There are reserved seats in parliament for certain groups
+K: There are reserved seats in parliament for certain groups | Reserved seats are a means to ensure the parliamentary representation of certain groups in society.
+K: Reserved seats are a means to ensure the parliamentary representation of certain groups in society. | View field in the data dictionary
+K: Electoral quota for women | Quotas to promote gender-balanced representation in parliament
+K: Quotas to promote gender-balanced representation in parliament | View field in the data dictionary
+K: Notes: The Gender Parity in Political Representation Act (Ley 27.412) stipulates what is known as a zebra system for the lists of candidates to the Chamber of Deputies, the Senate and the Mercosur Par | The Organic Act on Political Parties (Ley 23.298) further stipulates that, in cases where the principle of gender parity is breached, political parties may lose their political and legal personality.
+K: Youth quota | Quotas to promote the representation of youth in parliament.
+K: Quotas to promote the representation of youth in parliament. | View field in the data dictionary
+K: Historical data for Chamber name | XLS
+K: Historical data for Chamber name | Updated at
+K: Chamber name | 1933-02
+K: Cámara de Diputados (Chamber of Deputies) | -
+K: Chamber of Deputies | Historical data for Parliamentary term (years)
+K: President of the Chamber of Deputies | Speaker
+K: President of the Chamber of Deputies | Speaker
+K: President of the Chamber of Deputies | Speaker
+K: President of the Chamber of Deputies | Speaker
+K: President of the Chamber of Deputies | Speaker
+K: President of the Chamber of Deputies | Speaker
+K: President of the Chamber of Deputies | Speaker
+K: President of the Chamber of Deputies | Speaker
+K: Age is calculated at the time the member was elected/appointed to a new legislature. Data is not updated during the legislature unless the member is no longer a member. | View field in the data dictionary
+K: Age is calculated at the time the member was elected/appointed to a new legislature. Data is not updated during the legislature unless the member is no longer a member. | View field in the data dictionary

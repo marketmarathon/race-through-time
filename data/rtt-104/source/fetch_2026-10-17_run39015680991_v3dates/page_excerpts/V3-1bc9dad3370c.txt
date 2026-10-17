@@ -1,0 +1,17 @@
+# V3-1bc9dad3370c
+# url: https://data.ipu.org/election-summary/HTML/2011_97.htm
+# final url: https://data.ipu.org/election-summary/HTML/2011_97.htm
+# fetched (UTC): 2026-10-17T08:06:30Z
+# HTTP 200; 8150 bytes; SHA-256 63ecc41e059aef6297205896f04d7de50536645f5d2aedbca524937d1e0cd52f
+# title: ARGENTINA: parliamentary elections C�mara de Diputados, 1997
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 26 October 1997
+D: Background and outcome of elections: | The main contestants in the 1997 partial mid-term elections for one-half (this time, 127) of the Chamber of Deputies seats were the ruling Justicialist Party (PJ) of President of the Republic Carlos Menem and the newly founded (in August 1997) Alliance coalition consisting of the centrist Radical Ci
+D: STATISTICS | Round no 1 (26 October 1997): Elections results
+K: Parliamentary Chamber: C�mara de Diputados | ELECTIONS HELD IN 1997
+K: Chamber: | C�mara de Diputados
+K: Dates of elections / renewal (from/to): | 26 October 1997
+K: Purpose of elections: | Elections were held to renew one-half (127) of the seats in the Chamber of Deputies on the normal expiry of the members’ term of office.
+K: Elections were held to renew one-half (127) of the seats in the Chamber of Deputies on the normal expiry of the members’ term of office. | Background and outcome of elections:
+K: Polling day, like the campaign, was generally peaceful. According to final results, the Alliance picked up some 20 additional seats and the PJ lost 13 and, thus, its absolute majority in the Chamber ( | STATISTICS

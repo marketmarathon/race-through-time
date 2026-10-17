@@ -1,0 +1,24 @@
+# V3-781e3ebb69fb
+# url: https://data.ipu.org/election-summary/HTML/2049_10.htm
+# final url: https://data.ipu.org/election-summary/HTML/2049_10.htm
+# fetched (UTC): 2026-10-17T08:07:09Z
+# HTTP 200; 28210 bytes; SHA-256 a1a9aa1e5978425cff776bd99646fa1a148221762a63758435817d479e102cdb
+# title: IPU PARLINE database: BURUNDI (Inama Nshingamateka), ELECTIONS IN 2010
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 23 July 2010
+D: Elections were held for all elective seats in the National Assembly on the normal expiry of the members' term of office. | The 2010 elections were the second to be held since the official end to the ethnic strife triggered by the assassination of the country's first Hutu President Melchior Ndadaye in October 1993. The conflict had resulted in the death of an estimated 300,000 people. Under the 2005 Constitution, 60 per 
+D: The 2010 elections were the second to be held since the official end to the ethnic strife triggered by the assassination | In the previous elections to the National Assembly, held in July 2005, the National Council for the Defence of Democracy - Front for the Defence of Democracy (CNDD-FDD, the former Hutu rebel group which had fought against the Tutsi-led army) took 59 of the 100 directly elected seats in the National 
+D: In the previous elections to the National Assembly, held in July 2005, the National Council for the Defence of Democracy | Indirect elections for 34 seats in the Senate were also held in July 2005. The CNDD-FDD won 30, and the Frodebu obtained three and the last seat went to the National Council for the Defence of Democracy (CNDD, a former rebel group). In order to respect the required 50-50 ethnic distribution, the 30 
+D: Mr. Pierre Nkurunziza of the CNDD-FDD was elected as the country's new President. The country subsequently experienced a | In February 2007, the CNDD-FDD expelled its former leader Mr. Hussein Radjabu. He was subsequently accused by the Attorney General of recruiting rebels to destabilize the State. His lawyer argued that the government feared his popularity ahead of the 2010 polls. Some 20 parliamentarians loyal to Mr.
+D: Shortly after the Constitutional Court decision, former Speaker of the National Assembly, Mr. Jean Minani, defected from | In September 2009, the parliament adopted a new electoral law. It stipulates that any senators and deputies elected as party candidates who voluntarily leave their political party will lose their parliamentary mandate. Parliamentarians who are dismissed from a party after exhausting all judicial rec
+D: In September 2009, the parliament adopted a new electoral law. It stipulates that any senators and deputies elected as p | The political stalemate continued in 2010. In May 2010, the CNDD-FDD won the local council elections. Most opposition parties claimed election fraud and sought a re-run of the vote. This request was rejected by the election commission. All six opposition presidential candidates subsequently announce
+D: The political stalemate continued in 2010. In May 2010, the CNDD-FDD won the local council elections. Most opposition pa | In July, five parties were vying for seats in the National Assembly. Most opposition parties which had boycotted the 2010 presidential elections announced that they would not participate in the parliamentary polls. The major contenders were the ruling CNDD-FDD and its ally, Frodebu-Nyakuri, as well 
+D: Voter turnout | Round no 1 23 July 2010
+D: Source: | National Assembly (16.12.2011)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Chamber name (generic / translated) | Inama Nshingamateka / National Assembly
+K: Related chamber (for bicameral parliaments) | Inama Nkenguzamateka / Senate
+K: Dates of election / renewal (from/to) | 23 July 2010
+K: Purpose of elections | Elections were held for all elective seats in the National Assembly on the normal expiry of the members' term of office.

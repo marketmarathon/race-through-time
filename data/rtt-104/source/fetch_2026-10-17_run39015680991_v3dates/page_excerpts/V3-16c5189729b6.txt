@@ -1,0 +1,23 @@
+# V3-16c5189729b6
+# url: https://data.ipu.org/election-summary/HTML/2277_12.htm
+# final url: https://data.ipu.org/election-summary/HTML/2277_12.htm
+# fetched (UTC): 2026-10-17T08:09:13Z
+# HTTP 200; 23567 bytes; SHA-256 e7da0bd724fbc21e9e962814bfded219a8b4057cfefe12a25bebb41673c7aa8e
+# title: IPU PARLINE database: SENEGAL (Assemblée nationale), ELECTIONS IN 2012
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 1 July 2012
+D: The Benno Bokk Yakaar coalition supporting the country's new President, Mr. Macky Sall, won a resounding victory, taking | The 2012 elections were the first to be held after the adoption of a gender parity law in May 2010 under which half of each party's candidates must be women. A record 64 women (42.67%) were elected, up from 27 (18%) in 2007.
+D: The 2012 elections were the first to be held after the adoption of a gender parity law in May 2010 under which half of e | Date of previous elections: 3 July 2007
+D: Timing of election: Upon normal expiry | Expected date of next elections: July 2017
+D: Names of parties in government: Benno Bok Yakaar coalition | Date of the first session of the new parliament: 30 July 2012
+D: Voter turnout | Round no 1 1 July 2012
+D: Comments | Source: National Assembly (16 July 2012)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Dates of election / renewal (from/to) | 1 July 2012
+K: Purpose of elections | The Benno Bokk Yakaar coalition supporting the country's new President, Mr. Macky Sall, won a resounding victory, taking 119 of the 150 seats at stake. It pledged to address women's rights and youth u
+K: Date of dissolution of the outgoing legislature: N/A | Timing of election: Upon normal expiry
+K: Timing of election: Upon normal expiry | Expected date of next elections: July 2017
+K: Number of seats at stake: 150 (full renewal) | Number of candidates: About 7,000
+K: Union for Democratic Renewal (URD) | 1

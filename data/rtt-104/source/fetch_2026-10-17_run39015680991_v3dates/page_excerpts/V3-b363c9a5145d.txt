@@ -1,0 +1,15 @@
+# V3-b363c9a5145d
+# url: https://data.ipu.org/election-summary/HTML/2121_98.htm
+# final url: https://data.ipu.org/election-summary/HTML/2121_98.htm
+# fetched (UTC): 2026-10-17T08:08:07Z
+# HTTP 200; 8473 bytes; SHA-256 76bcb5be50d5f2cf160d50816c5f62ef75b6a790bd15d77a93328b5a776c7128
+# title: GERMANY: parliamentary elections Deutscher Bundestag, 1998
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 27 September 1998
+D: STATISTICS | Round no 1 (27 September 1998): Elections results
+K: Parliamentary Chamber: Deutscher Bundestag | ELECTIONS HELD IN 1998
+K: Chamber: | Deutscher Bundestag
+K: Dates of elections / renewal (from/to): | 27 September 1998
+K: Purpose of elections: | Elections were held for all seats in the Bundestag on the normal expiry of the members' term of office.
+K: During the seven-month campaign, the personalities of these two leaders appeared as siginficant to the electorate as debate on policy issues. Mr. Schroeder, presenting himself as the candidate of rene | Polling day saw a high turnout as the SPD turned the tables on the ruling coalition, picking up an additional 46 seats to emerge with a margin of 53. In winning, the Social Democrats, led by Mr. Oskar

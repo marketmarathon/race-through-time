@@ -1,0 +1,31 @@
+# V3-db439efda114
+# url: https://data.ipu.org/election-summary/HTML/2029_07.htm
+# final url: https://data.ipu.org/election-summary/HTML/2029_07.htm
+# fetched (UTC): 2026-10-17T08:06:52Z
+# HTTP 200; 28078 bytes; SHA-256 cd78aebbe893bc12d5b0a97cd79f9c2770931cff2fc7bab310abb411d062fbcc
+# title: IPU PARLINE database: BELGIUM (Chambre des Représentants) ELECTIONS IN 2007
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 10 June 2007
+D: Elections were held for all the seats in the House of Representatives on the normal expiry of the members' term of offic | On 17 January 2007
+D: On 17 January 2007 | Prime Minister Guy Verhofstadt called parliamentary elections for 10 June 2007. The House of Representatives and the Senate were officially dissolved on 2 May.
+D: the Liberal Party-Flemish (VLD) | is currently called the Open VLD. Following the previous elections held in May 2003
+D: Other main Flemish parties were the List Dedecker | formed by Senator Jean-Marie Dedecker in January 2007
+D: formed by Senator Jean-Marie Dedecker in January 2007 | which promised to defend the interests of the Flemish community; and the Vlaams Belang. The latter was founded in November 2004 by former leaders of the Vlaams Block
+D: which promised to defend the interests of the Flemish community; and the Vlaams Belang. The latter was founded in Novemb | a far-right party advocating Flemish independence. It won 18 seats in the 2003 elections but was convicted of "repeated incitement to discrimination" by the High Court and disbanded in November 2004.
+D: PS and CDH) led by Mr. Verhofstadt was finally formed. It won a vote of confidence on 23 December | ending the 196 day period without a government. It was tasked with passing the 2008 budget before 23 March 2008.
+D: Voter turnout | Round no 1 10 June 2007
+D: - http://elections2007.belgium.be/ | - House of Representatives (03.07.2007
+D: - House of Representatives (03.07.2007 | 01.01.2008
+D: 01.01.2008 | 01.01.2010)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Chamber name (generic / translated) | Chambre des Représentants / House of Representatives
+K: Related chamber (for bicameral parliaments) | BACKGROUND
+K: Dates of election / renewal (from/to) | 10 June 2007
+K: Purpose of elections | Elections were held for all the seats in the House of Representatives on the normal expiry of the members' term of office.
+K: no party secured a majority in either chamber of parliament. The CD&V-N-VA won 30 seats in the House of Representatives and nine of the 40 directly elected seats in the Senate to become the largest pa | which made it the largest French-speaking party for the first time. The other parties in Prime Minister Verhofstadt's coalition government suffered major setbacks. The Open VLD won 18 seats (down from
+K: the King appointed the leader of the MR | Mr. Didier Reynders
+K: King Albert II appointed Mr. Yves Leterme (CD&V) as the Formateur | tasked with forming a new government. However
+K: the King re-appointed him as Formateur. On 7 November | the country marked its 149th day without a government
+K: while the Parliament of the German-speaking Community nominates one member | bringing the total number of designated senators to 21.

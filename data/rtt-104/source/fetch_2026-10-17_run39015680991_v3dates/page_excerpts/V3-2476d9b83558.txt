@@ -1,0 +1,23 @@
+# V3-2476d9b83558
+# url: https://data.ipu.org/election-summary/HTML/2386_07.htm
+# final url: https://data.ipu.org/election-summary/HTML/2386_07.htm
+# fetched (UTC): 2026-10-17T08:10:09Z
+# HTTP 200; 29886 bytes; SHA-256 af9e7761ebd6b44747e120ef838f4b5485f261ae25ae47bf0c729cde471b7787
+# title: 
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to): | 15 January 2007
+D: STATISTICS | Round no 1 (15 January 2007): Election results
+D: Comments: | Source: Legislative Parliament (18.01.2007)
+D: Note on the composition of the Legislative Parliament: | At the time of the dissolution of the National Assembly on 15 January 2007, there were 18 sitting members, including three members appointed by the King. The 15 non-appointed members have been integrated in the Legislative Parliament together with the 194 sitting members in the reinstated House of R
+D: At the time of the dissolution of the National Assembly on 15 January 2007, there were 18 sitting members, including thr | One of the seven seats attributed to the National Democratic Party (RPP: Rashtriya Prajatantra Party) remained vacant as of 10 May 2007.
+D: - 16 members nominated by the Interim Council of Ministers. | The elections to the Constituent Assembly are due to take place by mid-June 2007.
+K: Chamber: | Byabasthapika-Sansad
+K: Dates of election / renewal (from/to): | 15 January 2007
+K: Purpose of elections: | N/A (Transitional period)
+K: N/A (Transitional period) | Background and outcome of elections:
+K: N/A (Transitional period) | STATISTICS
+K: Information on the Constituent Assembly | The Legislative Parliament is expected to be replaced by a Constituent Assembly, comprising:
+K: The Legislative Parliament is expected to be replaced by a Constituent Assembly, comprising: | - 205 members directly elected from single-member constituencies;
+K: - 204 members nominated by political parties based on the number of votes they receive in the election; | - 16 members nominated by the Interim Council of Ministers.
+K: - 16 members nominated by the Interim Council of Ministers. | The elections to the Constituent Assembly are due to take place by mid-June 2007.

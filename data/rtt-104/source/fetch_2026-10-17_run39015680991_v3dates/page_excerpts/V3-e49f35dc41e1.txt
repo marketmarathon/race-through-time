@@ -1,0 +1,24 @@
+# V3-e49f35dc41e1
+# url: https://data.ipu.org/election-summary/HTML/2335_05.htm
+# final url: https://data.ipu.org/election-summary/HTML/2335_05.htm
+# fetched (UTC): 2026-10-17T08:09:49Z
+# HTTP 200; 27619 bytes; SHA-256 b1b85a1d046e91fcb0b3d6317e2fed4f069f2799f992f7212de05c90dbf666be
+# title: IPU PARLINE database: UNITED KINGDOM (House of Commons) ELECTIONS IN 2005
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 5 May 2005
+D: Purpose of elections | Elections were held for all the seats in the House of Commons after the premature dissolution of this body in April 2005. General elections had previously been held in June 2001.
+D: Elections were held for all the seats in the House of Commons after the premature dissolution of this body in April 2005 | On 4 April 2005
+D: On 4 April 2005 | Prime Minister Tony Blair called early general elections for 5 May 2005 after asking the Queen to dissolve Parliament. In these elections
+D: a mere 2.9 percentage points lower than Labour. The Liberal Democrats won 62 seats | 11 more than in 2000. In the by-election held of 23 June
+D: Voter turnout | Round no 1 5 May 2005
+D: - BBC | - British IPU Group (26.07.2005
+D: - British IPU Group (26.07.2005 | 01.01.2008)
+D: - Speaker is not included in the statistics on the distribution of seats according to political groups. | - The statistics include one seat won by a conservative candidate at the by-election held on 23 June 2005.
+D: - The statistics include one seat won by a conservative candidate at the by-election held on 23 June 2005. | - Ms. Patsy Calton of Liberal Democrats died from cancer on 29 May 2005. Mr. Mark Hunter of the same party replaced her at the by-election held on 14 July 2005.
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name
+K: Chamber name | House of Commons
+K: Related chamber (for bicameral parliaments) | House of Lords
+K: Dates of election / renewal (from/to) | 5 May 2005
+K: Purpose of elections | Elections were held for all the seats in the House of Commons after the premature dissolution of this body in April 2005. General elections had previously been held in June 2001.

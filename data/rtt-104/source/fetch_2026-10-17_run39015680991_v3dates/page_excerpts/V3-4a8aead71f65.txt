@@ -1,0 +1,21 @@
+# V3-4a8aead71f65
+# url: https://data.ipu.org/election-summary/HTML/2113_97.htm
+# final url: https://data.ipu.org/election-summary/HTML/2113_97.htm
+# fetched (UTC): 2026-10-17T08:08:02Z
+# HTTP 200; 13059 bytes; SHA-256 cc7e6f484429bd2733b4221ce75121d2dc731280b310064373a16888e7bd593d
+# title: FRANCE: parliamentary elections Assembl�e nationale, 1997
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 25 May 1997
+D: 25 May 1997 | 1 June 1997
+D: Purpose of elections: | Elections were held for all the seats in the National Assembly following the premature dissolution of this body on 22 April 1997. Previous general elections had been held in March 1993.
+D: Background and outcome of elections: | Mr. Jacques Chirac, President of the French Republic since 1995, decided on 21 April 1997 to dissolve the National Assembly prematurely, one year in advance of the normal date, despite the fact that the right-wing parties held a comfortable majority of some four-fifths of the seats. This decision gr
+D: Taking heed of these results, President Chirac called on Mr. Jospin to form the government, which was appointed on 4 Jun | When it was convened on 12 June, the National Assembly elected as its President Mr. Laurent Fabius (PS), former Prime Minister under President Fran�ois Mitterand and who had already presided over the Assembly from 1988 to 1992.
+D: STATISTICS | Round no 1 (25 May 1997): Elections results
+D: 25,334,486 | Round no 2 (1 June 1997): Elections results
+D: Comments: | In light of the above results, the numerical strength of the various National Assembly groups, including attached and associated members, became the following (2 June 1997) :
+K: Parliamentary Chamber: Assembl�e nationale | ELECTIONS HELD IN 1997
+K: Chamber: | Assembl�e nationale
+K: Dates of elections / renewal (from/to): | 25 May 1997
+K: Purpose of elections: | Elections were held for all the seats in the National Assembly following the premature dissolution of this body on 22 April 1997. Previous general elections had been held in March 1993.
+K: Taking heed of these results, President Chirac called on Mr. Jospin to form the government, which was appointed on 4 June and included Communist and Green Ministers. France has thus entered a third pe | When it was convened on 12 June, the National Assembly elected as its President Mr. Laurent Fabius (PS), former Prime Minister under President Fran�ois Mitterand and who had already presided over the 

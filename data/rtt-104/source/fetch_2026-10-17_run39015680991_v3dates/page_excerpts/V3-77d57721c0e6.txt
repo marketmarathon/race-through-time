@@ -1,0 +1,20 @@
+# V3-77d57721c0e6
+# url: https://data.ipu.org/election-summary/HTML/2251_11.htm
+# final url: https://data.ipu.org/election-summary/HTML/2251_11.htm
+# fetched (UTC): 2026-10-17T08:08:54Z
+# HTTP 200; 23243 bytes; SHA-256 b09eba5aef528a055fc1dcb5ca2177651a0c6a42be560809158efe48fdc0da98
+# title: IPU PARLINE database: PERU (Congreso de la República), ELECTIONS IN 2011
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 10 April 2011
+D: The 2011 parliamentary elections were held in parallel with the presidential polls and the elections for the country's r | In the previous elections held in April 2006, the then ruling Perú Posible Party suffered a major defeat, winning only two of the 120 seats at stake, a sharp drop from the 45 they had previously held. The biggest winner was the Union for Peru (UPP), which took 45 seats, up from six previously. The A
+D: In the presidential race, former president Alan García (APRA) defeated Mr. Ollanta Humala (UPP) in run-off elections. Af | Mr. García's second term saw five prime ministers. The first, Mr. Jorge Del Castillo (APLA), resigned in October 2008 over corruption scandals. The President subsequently appointed Mr. Yehude Simón (a non-APLA member) who resigned in July 2009 following a strike by Amazonian indigenous peoples again
+D: Mr. García's second term saw five prime ministers. The first, Mr. Jorge Del Castillo (APLA), resigned in October 2008 ov | In the meantime, in April 2009, Mr. Alberto Fujimori was sentenced to a 25-year prison term for corruption and authorizing death squad killings in the 1990s. In March 2010, his supporters formed a new party, Force 2011, in view of the 2011 presidential elections.
+D: The final results gave 47 seats to the Peru Wins alliance and 38 to Force 2011 Alliance. Perú Posible Party came in thir | None of the presidential candidates secured an absolute majority. In the run-off presidential elections held on 5 June, Mr. Humala (Peru Wins alliance) won over Ms. Fujimori (Force 2011 Alliance).
+D: Voter turnout | Round no 1 10 April 2011
+D: Sources: | Congress of the Republic (01.01.2015)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Dates of election / renewal (from/to) | 10 April 2011
+K: Purpose of elections | Elections were held for all the seats of the Congress of the Republic on the normal expiry of the members' term of office.
+K: In 2011, Mr. Humala's Peruvian Nationalist Party formed the Peru Wins alliance with several other leftist parties. Force 2011 formed the Force 2011 Alliance with the National Renewal Party, and backed | Mr. Humala's Peru Wins alliance pledged to review the Constitution on the basis of a "new economic model". It promised to work for a greater State role in the economy, including the water and sanitati

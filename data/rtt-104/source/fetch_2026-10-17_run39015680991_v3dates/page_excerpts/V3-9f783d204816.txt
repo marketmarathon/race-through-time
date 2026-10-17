@@ -1,0 +1,18 @@
+# V3-9f783d204816
+# url: https://data.ipu.org/election-summary/HTML/2111_03.htm
+# final url: https://data.ipu.org/election-summary/HTML/2111_03.htm
+# fetched (UTC): 2026-10-17T08:07:53Z
+# HTTP 200; 8902 bytes; SHA-256 987999c4dae362f6337a333df31d0af64065894874fb1233e28a8525f4b51284
+# title: FINLAND: parliamentary elections Eduskunta – Riksdagen, 2003
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 16 March 2003
+D: Background and outcome of elections: | Finns went to the polls on 16 March 2003 after an electoral campaign focused on unemployment, tax cuts, the country's possible entry into NATO, as well as the criticism of the government's stance on Iraq by the opposition Centre Party. The leader of this party, Ms. Anneli Jaatteenmaki, accused the f
+D: At 69.70 per cent, voter turnout was slightly higher than in the 1999 elections (68 per cent). | The Prime Minister's Social Democrats narrowly lost the elections to the Centre Party, as the latter gained just two more seats than Mr. Lipponen's but not an absolute majority. The Centre Party enjoyed the greatest gain in voter support, obtaining 24.7 per cent of the vote, i.e. 55 of 200 seats, wh
+D: The Prime Minister's Social Democrats narrowly lost the elections to the Centre Party, as the latter gained just two mor | Following government coalition talks between the Centre Party, the Social Democratic Party and the Swedish People's Party a new Centre Party-led Cabinet was sworn in on 15 April 2003, with Ms. Anneli J��tteenm�ki as the new Prime Minister, making her the first woman Prime Minister in the country's h
+D: Following government coalition talks between the Centre Party, the Social Democratic Party and the Swedish People's Part | In June 2003, Ms. J��tteenm�ki resigned after allegations that she had illegally obtained secret documents on the Iraq war while she was opposition leader. Mr. Matti Vanhanen took over as Prime Minister.
+D: STATISTICS | Round no 1 (16 March 2003): Elections results
+K: Parliamentary Chamber: Eduskunta – Riksdagen | ELECTIONS HELD IN 2003
+K: Chamber: | Eduskunta – Riksdagen
+K: Dates of elections / renewal (from/to): | 16 March 2003
+K: Purpose of elections: | Elections were held for all the seats in Parliament on the normal expiry of the members' term of office.

@@ -1,0 +1,17 @@
+# V3-a341a078df8d
+# url: https://data.ipu.org/election-summary/HTML/2231_98.htm
+# final url: https://data.ipu.org/election-summary/HTML/2231_98.htm
+# fetched (UTC): 2026-10-17T08:08:30Z
+# HTTP 200; 7139 bytes; SHA-256 0de42b16721f973b9e99047514447a17b7c55707daf1190d7f86b6f1707f832a
+# title: NETHERLANDS: parliamentary elections Tweede Kamer der Staten-Generaal, 1998
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of elections / renewal (from/to): | 6 May 1998
+D: Background and outcome of elections: | Since the previous (May 1994) general elections, the popularity of the governing coalition headed by Prime Minister Wim Kok (Labour Party - PvdA) had progressively grown. This was largely due to its impressive economic performance (reduction of unemployment and the budget deficit, steady growth) and
+D: Since the previous (May 1994) general elections, the popularity of the governing coalition headed by Prime Minister Wim  | Against this backdrop, the campaign itself was generally regarded as lacklustre, devoid of hotly debated issues. On polling day, the personal popularity of Mr. Kok was borne out by the fact that the center-left PvdA scored a clear victory, picking up eight additional seats. The VVD, gaining seven ad
+D: STATISTICS | Round no 1 (6 May 1998): Elections results
+K: Parliamentary Chamber: Tweede Kamer der Staten-Generaal | ELECTIONS HELD IN 1998
+K: Chamber: | Tweede Kamer der Staten-Generaal
+K: Dates of elections / renewal (from/to): | 6 May 1998
+K: Purpose of elections: | Elections were held for all the seats in the Second Chamber of the States-General on the normal expiry of the members' term of office.
+K: Elections were held for all the seats in the Second Chamber of the States-General on the normal expiry of the members' term of office. | Background and outcome of elections:

@@ -1,0 +1,28 @@
+# V3-4cba1fcd916b
+# url: https://data.ipu.org/election-summary/HTML/2231_06.htm
+# final url: https://data.ipu.org/election-summary/HTML/2231_06.htm
+# fetched (UTC): 2026-10-17T08:08:26Z
+# HTTP 200; 23209 bytes; SHA-256 c1b7f02b961e97e67bc000346497aa03d8fa889668a869ad21be630a3b99540d
+# title: IPU PARLINE database: NETHERLANDS (Tweede Kamer der Staten-Generaal) ELECTIONS IN 2006
+# Short excerpts only: lines holding a date, then lines naming the kind of election or event.
+
+D: Dates of election / renewal (from/to) | 22 November 2006
+D: Purpose of elections | Elections were held for all seats in the House of Representatives on 22 November 2006 following the publication of a Royal Decree of 4 September 2006 that called for early elections. Elections to the House of Representatives had previously taken place on 22 January 2003.
+D: Elections were held for all seats in the House of Representatives on 22 November 2006 following the publication of a Roy | On 5 July 2006
+D: On 5 July 2006 | the government announced that parliamentary elections would be held on 22 November 2006.
+D: six seats). The Labour Party (PvdA) became the second largest party with 42 seats | while the Socialist Party (SP) took nine seats. In September 2004
+D: in disagreement with the VVD's position over Turkey's accession to the European Union. | The coalition collapsed in late June 2006
+D: thus becoming the fourth largest party. The Green Left won seven seats while the centre-left Christian Union took six. | The newly-elected House of Representatives held its first session on 30 November 2006. On 6 December 2006
+D: Mr. Balkenende continued to act as caretaker Prime Minister. | On 7 February 2007
+D: Voter turnout | Round no 1 22 November 2006
+D: Sources: | - IPU Group of the Netherlands (28.11.2006
+D: - IPU Group of the Netherlands (28.11.2006 | 01.01.2008
+D: 01.01.2008 | 01.01.2010)
+D: 01.01.2010) | - House of Representatives (30.11.2006
+D: - House of Representatives (30.11.2006 | 20.11.2008)
+K: Compare data for parliamentary chambers in the Last elections module | A historical Archive of past election results for this chamber can be found on a separate page
+K: A historical Archive of past election results for this chamber can be found on a separate page | Parliament name (generic / translated)
+K: Chamber name (generic / translated) | Tweede Kamer der Staten-Generaal / House of Representatives
+K: Related chamber (for bicameral parliaments) | Eerste Kamer der Staten-Generaal / Senate
+K: Dates of election / renewal (from/to) | 22 November 2006
+K: Purpose of elections | Elections were held for all seats in the House of Representatives on 22 November 2006 following the publication of a Royal Decree of 4 September 2006 that called for early elections. Elections to the 
