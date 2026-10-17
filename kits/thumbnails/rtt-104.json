@@ -4,7 +4,7 @@
  "film_config": "config_rtt104_v3_film.json",
  "private_ref": "main",
  "assets_list": "kits/rtt-104/assets_sha256.txt",
- "at": "2019",
+ "at": "1997",
  "crop": {
   "x": 40,
   "y": 16,
@@ -22,12 +22,14 @@
   }
  },
  "words": [
-  "NOT WHO",
-  "YOU THINK!"
+  "NOT",
+  "WHO YOU",
+  "THINK!"
  ],
  "word_sizes": [
-  120,
-  120
+  200,
+  200,
+  200
  ],
  "years": "1997–2025",
  "options": [
@@ -35,14 +37,16 @@
    "name": "C_luke",
    "background": "white",
    "words": [
-    "NOT WHO",
-    "YOU THINK!"
+    "NOT",
+    "WHO YOU",
+    "THINK!"
    ],
    "word_sizes": [
-    120,
-    120
+    200,
+    200,
+    200
    ]
   }
  ],
- "notes": "IQ-25: the approved V3 film (DEC-704, master 54e96cd5...ebffe5), 2019 landing frame (the UAE reaches 50.0% with its 'Election · Oct 2019' tag); the whole board, year, tags, continent key and world panel are inside the crop, so no side panel is switched off; checked against data/rtt-104/series.csv (shown_value; labels at one decimal). No picture row: the flags come from the flag-icons package, not the episode's private-file list, so using them would need a renderer, test and workflow change (IQ-25 brief: leave it out). House default: white background, short words (DEC-809). IQ-25b (Luke, DEC-711): options A and B replaced by Luke's own words 'NOT WHO / YOU THINK!' (option C_luke); the config keeps only the live option."
+ "notes": "IQ-25: the approved V3 film (DEC-704, master 54e96cd5...ebffe5), 2019 landing frame (the UAE reaches 50.0% with its 'Election · Oct 2019' tag); the whole board, year, tags, continent key and world panel are inside the crop, so no side panel is switched off; checked against data/rtt-104/series.csv (shown_value; labels at one decimal). No picture row: the flags come from the flag-icons package, not the episode's private-file list, so using them would need a renderer, test and workflow change (IQ-25 brief: leave it out). House default: white background, short words (DEC-809). IQ-25b (Luke, DEC-711): options A and B replaced by Luke's own words 'NOT WHO / YOU THINK!' (option C_luke); the config keeps only the live option. IQ-25c (Luke, DEC-713): the board shows 1997 (first period, no spoiler), not 2019; split 'NOT / WHO YOU / THINK!' chosen over 'NOT WHO / YOU THINK!' because its words read bigger at 320 x 180 (DEC-714); sizes 200 px asked, each line shrunk only to fit the column."
 }
