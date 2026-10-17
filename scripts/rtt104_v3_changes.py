@@ -4,12 +4,14 @@
 Same figures and the same rules as data/rtt-104/boards.csv (DEC-604/DEC-611 4 m threshold, DEC-612 latest-year
 population, DEC-617 single-gap carry), ranked with the same sort as build_rtt104_dataset.build_boards (value
 descending, then short name). Ranks are full ranks among every country on the race that year; 'visible' means rank
-<= 20 in either year; 'big' means visible AND (|change| >= 5.0 points OR the rank moves by 3 or more).
+<= 20 in either year; 'big' (rule b) means visible AND (|change| >= 5.0 points OR the rank moves by 3 or more);
+'big_points' (rule a, IQ-24c working default) means visible AND |change| >= 5.0 points.
 
   python3 scripts/rtt104_v3_changes.py data/rtt-104 [causes.csv]
 
 Without causes.csv every big change is 'not yet researched'. With it (data/rtt-104/source/v3_causes.csv, written by
-hand from the Parline excerpts), the matched cause, date, type, URL, excerpt and status are copied in.
+scripts/rtt104_v3_verify.py from our runner's excerpts, IQ-24c), every visible change gets its matched cause, date,
+type, window, borderline flags, URL, excerpt and status.
 Writes data/rtt-104/v3_change_events.csv and prints the counts used by the cost check.
 """
 import csv
@@ -22,7 +24,7 @@ import build_rtt104_dataset as b  # noqa: E402
 
 TOP_N, BIG_POINTS, BIG_RANKS = 20, Decimal("5.0"), 3
 FIELDS = ["iso3", "country", "from_year", "to_year", "old_value", "new_value", "old_value_1dp", "new_value_1dp",
-          "change_points", "old_rank", "new_rank", "visible", "big", "cause", "election_date", "election_type",
+          "change_points", "old_rank", "new_rank", "visible", "big", "big_points", "cause", "election_date", "election_type",
           "window", "borderline", "source_url", "excerpt", "status", "note"]
 
 
@@ -70,12 +72,17 @@ def main(data_dir, causes_path=None):
                 d = z[1] - a[1]
                 r["change_points"] = str(d.quantize(Decimal("0.01")))
                 r["big"] = "y" if r["visible"] == "y" and (abs(d) >= BIG_POINTS or abs(z[0] - a[0]) >= BIG_RANKS) else "n"
+                r["big_points"] = "y" if r["visible"] == "y" and abs(d) >= BIG_POINTS else "n"
             else:
-                r["change_points"], r["big"] = "", "n"
+                r["change_points"], r["big"], r["big_points"] = "", "n", "n"
                 gone = y1 if not z else y0
                 notes.append(f"no figure in {gone} ({disp[c][gone][1]}): {'leaves' if not z else 'joins'} the race")
             k = causes.get((c, str(y1)))
-            if r["big"] == "y":
+            if r["visible"] == "y" and causes:  # IQ-24c: every visible change is matched (DEC-666 onwards)
+                for f in ("cause", "election_date", "election_type", "window", "borderline", "source_url", "excerpt", "status"):
+                    r[f] = k[f] if k else ""
+                notes.append(k.get("note", "") if k else "")
+            elif r["big"] == "y":
                 if k:
                     for f in ("cause", "election_date", "election_type", "window", "borderline", "source_url", "excerpt", "status"):
                         r[f] = k[f]
