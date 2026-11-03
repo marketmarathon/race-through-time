@@ -4,7 +4,7 @@ Clip: 1 Jan 2023 - 31 Dec 2025 (the Switch passes the DS on 31 Dec 2025, 155,370
 
 | | A (compact) | B (whole numbers) |
 |---|---|---|
-| Frames checked / landing frames | 808 / 12 | 808 / 12 |
+| Frames checked / landing frames | 898 / 12 | 898 / 12 |
 | Smallest name, value (px on the 1920 frame; pt on a 390 pt phone) | 33, 33 px; 6.70, 6.70 pt | 33, 33 px; 6.70, 6.70 pt |
 | Labels overlapping the maker key | 0 | 0 |
 | Labels overlapping each other on a landing frame (rows still gliding into place; B may not add any) | 1 frame 257: "54.8m" / "54.0m" | 1 frame 257: "54.8m" / "54.0m" |
