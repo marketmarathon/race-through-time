@@ -1,0 +1,19 @@
+{
+ "extends": "config_rtt003_film.json",
+ "kit_version": "rtt003_numfmt_A",
+ "out": "rtt003_numfmt_A_2023_2025.mp4",
+ "window": {
+  "from": "2023-01-01",
+  "to": "2025-12-31"
+ },
+ "range": "2023 – 2025",
+ "subtitle_sec": 0,
+ "pacing": {
+  "final_board_sec": 9.0
+ },
+ "notes": [
+  "IQ-27 number-format test, A = the approved compact labels ('155.4m'). Calm 2023-2025 stretch, then the Switch passes the DS on 31 Dec 2025 (155.37m vs 154.02m), held 9 s so the figures can be read (30 s). A test clip for Luke, not a film (1920 x 1080 viewing quality, CRF 16, no music); rendered only by .github/workflows/rtt003_numfmt.yml."
+ ],
+ "crf": 16,
+ "preset": "medium"
+}

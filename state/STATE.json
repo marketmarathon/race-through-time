@@ -1,7 +1,7 @@
 {
   "schema": "rtt-state/0.1",
-  "updated": "2026-10-10",
-  "updated_by": "Claude (Claude Code cloud session): IQ-23 - thumbnails LIVE (DEC-809 Luke chose A + short words; DEC-810 Cowork set them in Studio, hashes matched); A with short words now the house default | Claude (Claude Code cloud session): IQ-23 - thumbnails round 1 (new layout, owner DEC-800 to DEC-802; Claude DEC-803 to DEC-808): reusable renderer kits/thumbnails, workflow thumbnails.yml, private pre-release; YouTube titles recorded (DEC-802 addendum) | Claude (Claude Code cloud session): IQ-19h - pull request #23 brought up to date with main (7705838: #18 and #22 merged by Luke); state files merged keeping both sides; no DEC, no render | Claude (Claude Code cloud session): IQ-18g - RTT-103 film APPROVED by Luke (DEC-383, master 39b4a826...e699, 200,456,403 bytes); chapter times kits/rtt-103/youtube_times.md; pull request #22 open, not merged | Claude (Claude Code cloud session): IQ-19g - RTT-102 film approved by Luke (DEC-573, master 8aa8ecbe...6bad); record-keeping only, no render; pull request #23 open, not merged | Claude (Claude Code cloud session): IQ-19f - RTT-102 music \"Glitcher\" (DEC-568), 5 s ending house default (DEC-569), full film rendered to private pre-release rtt-102-film-8f49737-run1, awaiting Luke's approval of master 8aa8ecbe...6bad (DEC-570..DEC-572); pull request #23 open, not merged | Claude (Claude Code cloud session): IQ-19e - RTT-102 look approved by Luke (DEC-566), 5 s ending (DEC-567), film 77.8 s; pull request #23 open, not merged | Claude (Claude Code cloud session): IQ-19d - RTT-102 round 2 revised: eased through every month (DEC-562), taller panel line (DEC-563), private pre-release rtt-102-round2b-69f397d-run3 (DEC-565); pull request #23 open, not merged | Claude (Claude Code cloud session): IQ-19b/IQ-19c - RTT-102 round 2: Luke's answers and picks (DEC-543..DEC-554), Cowork's fixes and the panel (DEC-555..DEC-560), private pre-release rtt-102-round2-1a8e17e-run2 (DEC-561); pull request #23 open, not merged | Claude (Claude Code cloud session): IQ-19 - RTT-102 design round 1: options a-j rendered to private pre-release rtt-102-round1-b73a5e8-run1 (DEC-542), owner DEC-531/DEC-532, Claude DEC-533..DEC-542; branch claude/relaxed-clarke-9e0sqq, pull request open, not merged | Claude (Claude Code cloud session): IQ-16f - RTT-103 The AI Spending Race stage 6: Luke's answers (DEC-331..DEC-338), DEC block rule (DEC-339), Cowork checks recorded (DEC-340), look-ahead finalised (DEC-341); branch claude/gracious-meitner-aedj37 (public and private), pull request #20 open, not merged | Claude (Claude Code cloud session): IQ-17b - RTT-102 Luke's answers (DEC-515..DEC-522) and Cowork's checks V43-V101 applied, rule step 4 and proposed step 5 (DEC-523..DEC-527); branch claude/nice-wozniak-f62eio, public pull request #21 open, not merged (DEC-057) | IQ-17c - RTT-102: Luke answered the last three questions as recommended (DEC-528..DEC-530); no data value changed | Claude (Claude Code cloud session): IQ-18c/IQ-18d - RTT-103 design round 3: the race carries on through the 2026 plans and the 2027-2030 estimates in its own style (DEC-371, DEC-373, DEC-374); music recorded and hash-checked (DEC-372); review set rendered to a private pre-release; pull request #22 open, not merged",
+  "updated": "2026-11-03",
+  "updated_by": "Claude (Claude Code cloud session): IQ-27 - channel format changes: owner DEC-900..DEC-903 (fast lane, 8-12 min length, one thumbnail template, Shorts); thumbnail template v2 for all six videos, RTT-003 number-format test, Shorts pilot rendered to private pre-releases; RTT-101 length estimate | Claude (Claude Code cloud session): IQ-23 - thumbnails LIVE (DEC-809 Luke chose A + short words; DEC-810 Cowork set them in Studio, hashes matched); A with short words now the house default | Claude (Claude Code cloud session): IQ-23 - thumbnails round 1 (new layout, owner DEC-800 to DEC-802; Claude DEC-803 to DEC-808): reusable renderer kits/thumbnails, workflow thumbnails.yml, private pre-release; YouTube titles recorded (DEC-802 addendum) | Claude (Claude Code cloud session): IQ-19h - pull request #23 brought up to date with main (7705838: #18 and #22 merged by Luke); state files merged keeping both sides; no DEC, no render | Claude (Claude Code cloud session): IQ-18g - RTT-103 film APPROVED by Luke (DEC-383, master 39b4a826...e699, 200,456,403 bytes); chapter times kits/rtt-103/youtube_times.md; pull request #22 open, not merged | Claude (Claude Code cloud session): IQ-19g - RTT-102 film approved by Luke (DEC-573, master 8aa8ecbe...6bad); record-keeping only, no render; pull request #23 open, not merged | Claude (Claude Code cloud session): IQ-19f - RTT-102 music \"Glitcher\" (DEC-568), 5 s ending house default (DEC-569), full film rendered to private pre-release rtt-102-film-8f49737-run1, awaiting Luke's approval of master 8aa8ecbe...6bad (DEC-570..DEC-572); pull request #23 open, not merged | Claude (Claude Code cloud session): IQ-19e - RTT-102 look approved by Luke (DEC-566), 5 s ending (DEC-567), film 77.8 s; pull request #23 open, not merged | Claude (Claude Code cloud session): IQ-19d - RTT-102 round 2 revised: eased through every month (DEC-562), taller panel line (DEC-563), private pre-release rtt-102-round2b-69f397d-run3 (DEC-565); pull request #23 open, not merged | Claude (Claude Code cloud session): IQ-19b/IQ-19c - RTT-102 round 2: Luke's answers and picks (DEC-543..DEC-554), Cowork's fixes and the panel (DEC-555..DEC-560), private pre-release rtt-102-round2-1a8e17e-run2 (DEC-561); pull request #23 open, not merged | Claude (Claude Code cloud session): IQ-19 - RTT-102 design round 1: options a-j rendered to private pre-release rtt-102-round1-b73a5e8-run1 (DEC-542), owner DEC-531/DEC-532, Claude DEC-533..DEC-542; branch claude/relaxed-clarke-9e0sqq, pull request open, not merged | Claude (Claude Code cloud session): IQ-16f - RTT-103 The AI Spending Race stage 6: Luke's answers (DEC-331..DEC-338), DEC block rule (DEC-339), Cowork checks recorded (DEC-340), look-ahead finalised (DEC-341); branch claude/gracious-meitner-aedj37 (public and private), pull request #20 open, not merged | Claude (Claude Code cloud session): IQ-17b - RTT-102 Luke's answers (DEC-515..DEC-522) and Cowork's checks V43-V101 applied, rule step 4 and proposed step 5 (DEC-523..DEC-527); branch claude/nice-wozniak-f62eio, public pull request #21 open, not merged (DEC-057) | IQ-17c - RTT-102: Luke answered the last three questions as recommended (DEC-528..DEC-530); no data value changed | Claude (Claude Code cloud session): IQ-18c/IQ-18d - RTT-103 design round 3: the race carries on through the 2026 plans and the 2027-2030 estimates in its own style (DEC-371, DEC-373, DEC-374); music recorded and hash-checked (DEC-372); review set rendered to a private pre-release; pull request #22 open, not merged",
   "phase": "P0 DONE; P1 D-01..D-03 RESOLVED; RTT-002 DATA_AUDIT PASSED (DEC-015); starts data audit PASSED (DEC-058/DEC-059, merged PR #8); IQ-04 MERGED (PR #2); IQ-05 rounds 1-5 MERGED (PR #3-#7); round-5 pilot RENDERED and APPROVED by Luke (DEC-062, visual direction = milestone 3); pull request #9 MERGED (c378ea7); RTT-002 FINAL FILM APPROVED (DEC-078), pull request #10 MERGED (main ef01814), UPLOADED by Luke in YouTube Studio and SCHEDULED PUBLIC 30 Sep 2026 (DEC-079 early release, DEC-080): video 2fY7Bzq8Uu0 on channel UC8R47xbyBB5Z93MdMkoUOWg; IQ-09 RTT-003 DATA BUILD DONE 1 Oct 2026; Luke's answers applied 2 Oct 2026 (DEC-093..DEC-102); pull request #12 MERGED 2 Oct 2026 (main 4288f6d); IQ-10 RTT-003 DESIGN PILOT ROUND 5 (FINAL PILOT ROUND) RENDERED 3 Oct 2026 (private pre-release; not the full film), awaiting Luke's review; IQ-11 (3 Oct 2026): CLAUDE.md and reference/house_style.md added on the IQ-10 branch (DEC-145); next episode RTT-001 Browser Wars (DEC-144); IQ-10 round 6 (3 Oct 2026): RTT-003 design APPROVED (DEC-146), FULL FILM with music rendered to a private pre-release, then APPROVED by Luke (DEC-150); IQ-12 (3 Oct 2026): RTT-001 Browser Wars DATA BUILD done (data/rtt-001, 11/11 checks PASS), pull request open, awaiting Luke's answers to 12 questions; IQ-12b (4 Oct 2026): Luke answered all 12 RTT-001 questions (DEC-164..DEC-166), smoothing direction for the pilot (DEC-167), order check (DEC-168); RTT-003 record (3-4 Oct 2026, pull request #14): full film APPROVED (DEC-150), pull request #13 MERGED (main 618c6a7) and private pull request #1 MERGED (private main 4d47eb2), UPLOADED by Luke in YouTube Studio and PUBLISHED PUBLIC 3 Oct 2026 (DEC-151): video JZzvA_ZDii0; IQ-13/IQ-13b/IQ-13c (4 Oct 2026): RTT-001 DESIGN PILOT 1 rendered to a private pre-release (smoothing options A/B/C, flagged stretches, notes, marker, colours, browser logos per owner direction DEC-180, features, pacing, titles), then the logo round with every browser's logo (DEC-182/DEC-183, private pre-release rtt-001-pilot1-f3d9e2f-run3), awaiting Luke's answers; pull request #15 merged by Luke (b5a09d3); pull request #16 merged 4 Oct 2026 22:37 UTC (main 3bb2857); IQ-16 to IQ-16f (7-8 Oct 2026): RTT-103 data build stages 1-6, pull request #20 MERGED by Luke 8 Oct 2026 (main 9742721, DEC-345); IQ-18 (8 Oct 2026): RTT-103 DESIGN ROUND 1 rendered to a private pre-release (options for 19 questions), awaiting Luke's answers; IQ-18b (8 Oct 2026): Luke answered all 19 round-1 questions ('all as recommended', DEC-353..DEC-364) plus Cowork's fixes (DEC-365); RTT-103 ROUND 2 built and rendered as stills and one clip; next: Luke picks the music, then the full film",
   "canonical_queue": "state/ folder on main in marketmarathon/race-through-time (this file)",
   "repo_baseline": {
@@ -1781,5 +1781,79 @@
     "research": "ChatGPT deep research received and used as leads only; every used figure verified at source (DEC-161)",
     "data_build": "IQ-12, 3 Oct 2026: data/rtt-001, reports/RTT-001_data_report.md",
     "answers": "4 Oct 2026: all 12 data questions answered (DEC-164..DEC-166); smoothing direction DEC-167"
+  },
+  "iq27_channel_format": {
+    "status": "RENDERED, awaiting Luke: (1) thumbnail template A or B, (2) number format A or B, (3) Shorts pattern approved",
+    "brief": "prompts/CODE_SESSION_IQ-27.md",
+    "pull_request": "https://github.com/marketmarathon/race-through-time/pull/28",
+    "branch": "claude/cool-dijkstra-ci7ung",
+    "owner_decisions": {
+      "DEC-900": "fast lane of quick mass-appeal episodes (one trusted commercially usable source; evidence rules unchanged)",
+      "DEC-901": "length 8-12 min where the data supports it, never padded; replaces house style 1 \"no fixed length\"; amends project principle 12 (principles are not in this repo: Cowork to amend)",
+      "DEC-902": "one fixed thumbnail template for every video (refines DEC-800/801)",
+      "DEC-903": "2-3 vertical Shorts per film, each pointing to the full video"
+    },
+    "thumbnail_template_v2": {
+      "decs": [
+        "DEC-904",
+        "DEC-905"
+      ],
+      "release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-thumbs-v2-2db440d-run2",
+      "renderer": "kits/thumbnails/template_v2.js",
+      "configs": "kits/thumbnails/v2/rtt-###.json",
+      "workflow": ".github/workflows/thumbnails_v2.yml",
+      "videos": [
+        "RTT-001",
+        "RTT-002",
+        "RTT-003",
+        "RTT-102",
+        "RTT-103",
+        "RTT-104"
+      ],
+      "variants": {
+        "A": "6 bars",
+        "B": "5 bars, larger hero"
+      },
+      "finding": "no bar name reads at 168 x 94 in either variant (names 2.5-4.6 px); words, years and hero do",
+      "live_thumbnails_changed": false
+    },
+    "number_format_test": {
+      "decs": [
+        "DEC-906",
+        "DEC-907"
+      ],
+      "release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt003-numfmt-4b35b59-run1",
+      "clip": "RTT-003 2023-01-01 to 2025-12-31, 30 s",
+      "player_key": "values.full_digits (off by default)",
+      "whole_numbers_for": "Nintendo hardware and the original PlayStation, maker-figure quarters only",
+      "check": "tests/player/NUMFMT_RTT003.md PASS; 6.7 pt in A and B"
+    },
+    "shorts_pilot": {
+      "decs": [
+        "DEC-908"
+      ],
+      "release": "https://github.com/marketmarathon/race-through-time-private/releases/tag/rtt-shorts-pilot-34045f9-run2",
+      "renderer": "kits/shorts/render_short.js",
+      "spec": "kits/shorts/shorts.json",
+      "workflow": ".github/workflows/shorts_pilot.yml",
+      "shorts": {
+        "rtt-002_short_1": "Hamilton to 92 wins, 2016 - Portuguese GP 2020, 32.1 s",
+        "rtt-002_short_2": "Schumacher passes Prost's 51, 1996 - Belgian GP 2001, 33.5 s",
+        "rtt-003_short_1": "PS2 takes the crown, 2004-2007, 36.8 s",
+        "rtt-003_short_2": "Switch chase to second, 2021-2025, 38.4 s"
+      },
+      "upload": "Luke by hand; related video set in Studio; music never shared off YouTube"
+    },
+    "rtt101_length": {
+      "dec": "DEC-909",
+      "now": "2:59.5 (pace C)",
+      "at_1_25s_per_month": "8:07",
+      "at_1_5s_per_month": "9:28",
+      "board": "12 bars (15 breaks the 5.9 pt floor)",
+      "rendered": false
+    },
+    "rtt104_inputs_copied_from_pr24": "DEC-910",
+    "player_changes": "board.name_cap / board.value_cap, values.full_digits; all off by default; approved RTT-001, 002, 003, 102, 103 configs pixel-identical (compare_frames.js)",
+    "next_free_dec": "DEC-913"
   }
 }

@@ -1,0 +1,44 @@
+{
+ "extends": "config_rtt003_film.json",
+ "kit_version": "rtt003_short_1",
+ "out": "rtt003_short_1.mp4",
+ "window": {
+  "from": "2004-01-01",
+  "to": "2007-12-31"
+ },
+ "range": "2004 – 2007",
+ "rows": 8,
+ "barend": 620,
+ "title": "",
+ "subtitle": "",
+ "subtitle_sec": 0,
+ "footer": "",
+ "overlays": [],
+ "maker_key": {
+  "enabled": false
+ },
+ "pictures": {
+  "height_frac": 0.85
+ },
+ "time_label": {
+  "mode": "line",
+  "x": 64,
+  "y": 92,
+  "align": "left",
+  "size": 48
+ },
+ "pacing": {
+  "lead_in_sec": 0.5,
+  "final_board_sec": 4.0
+ },
+ "notes": [
+  "IQ-27 Shorts pilot (a proposal, DEC-069): the approved RTT-003 film config re-laid out for a vertical Short (kits/shorts/render_short.js draws the left 972 x 1080 of the frame into a 1080 x 1200 board): 8 rows, bars ending at x 610, the console picture at 0.85 of the row and no maker-logo tile (the bar colour still marks the maker), no title/footer/logo/maker key/callout line in the player (they do not fit a phone-width board; the crown and the 2 s crown pause still mark the change of leader; the Short's own bands carry the subject, badge and credit), record label 24 px. Window 2004-2007: the PlayStation 2 takes the crown from the Game Boy (30 Jun 2007). Figures, pacing (1.5 s per quarter, the 2 s crown pause), colours, crown and record line are the film's."
+ ],
+ "bar_logos": {
+  "enabled": false
+ },
+ "callout": {
+  "enabled": false
+ },
+ "record_label_size": 24
+}

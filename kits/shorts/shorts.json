@@ -1,0 +1,93 @@
+{
+ "notes": "IQ-27 Shorts pilot (owner decision 3 Nov 2026: 2-3 vertical Shorts cut from each film, each pointing to the full video). A proposal for Luke (DEC-069): rendered by .github/workflows/shorts_pilot.yml into a private pre-release only; Luke uploads and sets the related video to the full film in Studio by hand. Hooks, windows and music starts are Claude's working choices.",
+ "shorts": [
+  {
+   "id": "rtt-002_short_1",
+   "episode": "RTT-002 F1 wins",
+   "kit": "rtt-002",
+   "config": "config_rtt002_short_1.json",
+   "hook": [
+    "WHO HAS THE MOST",
+    "F1 WINS?"
+   ],
+   "words": [
+    "F1",
+    "WINS"
+   ],
+   "years": "1950–2026",
+   "measure": "World Championship Grand Prix wins by driver",
+   "credit": "Race Through Time · Data derived from Wikipedia (CC BY-SA 4.0)",
+   "music": {
+    "title": "Ego Chall (Blue Deer Studio), the RTT-002 film's track",
+    "file": "Ego Chall - Blue Deer Studio.mp3",
+    "start": 31.208
+   }
+  },
+  {
+   "id": "rtt-002_short_2",
+   "episode": "RTT-002 F1 wins",
+   "kit": "rtt-002",
+   "config": "config_rtt002_short_2.json",
+   "hook": [
+    "WHO BROKE",
+    "PROST'S RECORD?"
+   ],
+   "words": [
+    "F1",
+    "WINS"
+   ],
+   "years": "1950–2026",
+   "measure": "World Championship Grand Prix wins by driver",
+   "credit": "Race Through Time · Data derived from Wikipedia (CC BY-SA 4.0)",
+   "music": {
+    "title": "Ego Chall (Blue Deer Studio), the RTT-002 film's track",
+    "file": "Ego Chall - Blue Deer Studio.mp3",
+    "start": 31.208
+   }
+  },
+  {
+   "id": "rtt-003_short_1",
+   "episode": "RTT-003 Best-Selling Consoles",
+   "kit": "rtt-003",
+   "config": "config_rtt003_short_1.json",
+   "hook": [
+    "WHICH CONSOLE",
+    "SOLD THE MOST?"
+   ],
+   "words": [
+    "CONSOLE",
+    "WARS"
+   ],
+   "years": "1985–2026",
+   "measure": "Units shipped worldwide since launch, by console family",
+   "credit": "Race Through Time · Makers' shipment figures; estimates marked · Xbox Series X photo: Ian Hughes, CC BY 2.0, background removed",
+   "music": {
+    "title": "Powerup! (Jeremy Blake), the RTT-003 film's track",
+    "file": "music/powerup_jeremy_blake.mp3",
+    "start": 186.3
+   }
+  },
+  {
+   "id": "rtt-003_short_2",
+   "episode": "RTT-003 Best-Selling Consoles",
+   "kit": "rtt-003",
+   "config": "config_rtt003_short_2.json",
+   "hook": [
+    "CAN ANYTHING",
+    "CATCH THE PS2?"
+   ],
+   "words": [
+    "CONSOLE",
+    "WARS"
+   ],
+   "years": "1985–2026",
+   "measure": "Units shipped worldwide since launch, by console family",
+   "credit": "Race Through Time · Makers' shipment figures; estimates marked · Xbox Series X photo: Ian Hughes, CC BY 2.0, background removed",
+   "music": {
+    "title": "Powerup! (Jeremy Blake), the RTT-003 film's track",
+    "file": "music/powerup_jeremy_blake.mp3",
+    "start": 186.3
+   }
+  }
+ ]
+}

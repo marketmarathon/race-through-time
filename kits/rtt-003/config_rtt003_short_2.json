@@ -1,0 +1,8 @@
+{
+ "extends": "config_rtt003_short_1.json",
+ "kit_version": "rtt003_short_2",
+ "out": "rtt003_short_2.mp4",
+ "window": {"from": "2021-01-01", "to": "2025-12-31"},
+ "range": "2021 – 2025",
+ "notes": ["IQ-27 Shorts pilot: as config_rtt003_short_1.json, window 2021-2025: the Switch passes the Wii, PlayStation, Game Boy and PS4 and, on 31 Dec 2025, the DS for second place (155.37m vs 154.02m), still behind the PS2's 160.0m+."]
+}

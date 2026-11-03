@@ -387,6 +387,10 @@ function setup(o){
   CROWN = CFG.crown && CFG.crown.enabled ? Object.assign({colour:'#F5C542'}, CFG.crown) : null;
   CALLOUT = CFG.callout && CFG.callout.enabled ? Object.assign({sec:3.0, y:116, size:30, fade_in:0.25, fade_out:0.4}, CFG.callout) : null;
   NOTES = Array.isArray(CFG.bar_notes) && CFG.bar_notes.length ? CFG.bar_notes : null;
+  /* IQ-27 number-format test (a proposal, not approved): values.full_digits lists, per bar, the periods whose figure the
+     source publishes to that precision; those show the whole number ("155,370,000"), every digit rolling as the bar
+     moves; every other period keeps the compact label. Unset = the approved compact labels everywhere. */
+  FULLD=null; { const FD=(CFG.values||{}).full_digits; if(SERIES && FD && FD.enabled){ FULLD={}; for(const [id,ds] of Object.entries(FD.points||{})) FULLD[id]=new Set(ds); } }
   MAKERS = SERIES ? (CFG.maker_order||[]) : []; MAKERNAME = {};
   if(SERIES) for(const m of TL.makers) MAKERNAME[m.key] = (CFG.maker_names && CFG.maker_names[m.key]) || m.label;
   if(SERIES && (STATS||EVL||HL||WINLINE||FLAGS)) throw new Error('a console series has no wins: switch off stats_label, event_label, highlight, winner_line and flags');
@@ -469,6 +473,8 @@ function visitsSig2(u){
 function visitsAxis(v){ return v>=1e9 ? String(+(v/1e9).toFixed(2))+'bn' : String(+(v/1e6).toFixed(1))+'m'; }
 function visitsStyle(st){ return VISF.look==='analyst' ? 'analyst_estimate' : VISF.older==='none' ? 'official' : st; }
 function tagOf(id,mode,date){ return TAGS ? TAGS.find(t=>t.id===id && (t.mode||'after')===mode && (!t.from || date>=t.from) && (!t.to || date<=t.to)) : null; }
+let FULLD=null;
+function fullS(u,plus,id){ const n=NOTES && NOTES.find(x=>x.id===id); return Math.round(u).toLocaleString('en-GB')+(plus?'+':'')+(n?n.mark:''); }   // IQ-27
 function fmtS(u,plus,id,st,pub){
   if(VISITS) return visitsText(u,pub);
   if(MONEY) return money(u);
@@ -509,7 +515,7 @@ function rr(x,y,w,h,r){r=Math.min(r,h/2,w/2);ctx.beginPath();ctx.moveTo(x+r,y);
 /* ---- geometry shared by the name sizing and the frame ---- */
 function geom(){
   const ROWH=(BOTTOM-TOP-14)/NROWS, BARH=ROWH-(NAMEMODE==='above'?40:BOARD.bar_gap);
-  const NAMEF=Math.round(Math.min(38,BARH*BOARD.name_frac)), VALF=Math.round(Math.min(36,BARH*BOARD.value_frac));
+  const NAMEF=Math.round(Math.min(BOARD.name_cap||38,BARH*BOARD.name_frac)), VALF=Math.round(Math.min(BOARD.value_cap||36,BARH*BOARD.value_frac));   // IQ-27: board.name_cap / value_cap (thumbnail template v2 only; unset = 38 / 36 as before)
   /* IQ-05c: the flag column (4:3, as flag-icons draws them) sits between the left margin and the
      bars; the bars start after it. */
   const FH = FLAGCOL ? Math.round(BARH*FLAGCOL.height_frac) : 0, FW = Math.round(FH*4/3);
@@ -575,7 +581,7 @@ function nameSize(){
     ctx.font='500 '+g.VALF+'px '+FONT; estW=g.VALF*0.35+tabWidth('· analyst estimate',pitch()); ctx.font=(STATS?'700 ':'600 ')+g.VALF+'px '+FONT; }
   if(VISITS && VISF.look==='analyst'){ ctx.font='500 '+g.VALF+'px '+FONT; estW=g.VALF*0.35+tabWidth(VISF.est_label,pitch()); ctx.font='600 '+g.VALF+'px '+FONT; for(const id of ids) everA[id]=true; }
   const valOf=id=>VISITS ? tabWidth(visitsText(seen[id],false),p)+(everA[id]?estW:0)+(CROWN?g.VALF*1.6:0) : MONEY ? tabWidth(money(seen[id])+'*',p)+(CROWN?g.VALF*1.6:0) : SHARE ? Math.max(tabWidth(pct(seen[id],'official'),p), VAL.approx ? tabWidth(pct(seen[id],'estimated'),p) : 0)+(CROWN?g.VALF*1.6:0)
-               : SERIES ? tabWidth(fmtS(seen[id],true,id)+(FFOOT&&FFOOT.id===id?FFOOT.mark:''),p)+(everA[id]?estW:0)+(CROWN?g.VALF*1.6:0)
+               : SERIES ? tabWidth((FULLD&&FULLD[id] ? fullS(seen[id],true,id) : fmtS(seen[id],true,id))+(FFOOT&&FFOOT.id===id?FFOOT.mark:''),p)+(everA[id]?estW:0)+(CROWN?g.VALF*1.6:0)
                          : tabWidth(fmt(seen[id]),p)+(seenS[id]||0);   // IQ-05e: plus the stats label
   const nx=g.x0+18, limit=1920-64;
   let f=base;
@@ -1240,7 +1246,7 @@ function drawAt(t){
     ctx.font=(STATS?'700 ':'600 ')+VALF+'px '+FONT;          // IQ-05e: the win count in bold
     const HELD = MONEY && r.held>=0.5, MT = MONEY ? tagOf(c.id,'mark',ev.date) : null;    // IQ-18: a held bar shows no number
     const FV = FWD && k>=0 && SF && SF.lo && (ev.fwd || TL.events[k-1].fwd) ? fwdValue(c.id, r.lo, r.len, k, SF.g) : null;   // IQ-18c
-    const txt=HELD ? '' : FV!=null ? FV : SERIES ? fmtS(r.n,r.pl,c.id,r.st,r.pub)+(MT?MT.mark:'')+(FINAL_ON&&FFOOT&&FFOOT.id===c.id?FFOOT.mark:'') : fmt(r.n), tw=tabWidth(txt,pitch());
+    const txt=HELD ? '' : FV!=null ? FV : SERIES ? (FULLD && k>=0 && FULLD[c.id] && FULLD[c.id].has(TL.events[k].date) ? fullS(r.n,r.pl,c.id) : fmtS(r.n,r.pl,c.id,r.st,r.pub))+(MT?MT.mark:'')+(FINAL_ON&&FFOOT&&FFOOT.id===c.id?FFOOT.mark:'') : fmt(r.n), tw=tabWidth(txt,pitch());
     let after;                                   // where anything after the value may start
     if(HELD){ after=x0+w+18+nameOut; }                // IQ-18: a held bar has no number at all
     else if(!VALOUT && !nameOut && w>tw+40+ctx.measureText(nm).width+24){ ctx.fillStyle='#F4F6FA'; tabText(txt,x0+w-18,mid+VALF*0.35,'right','value',c.id); after=x0+w+18; }

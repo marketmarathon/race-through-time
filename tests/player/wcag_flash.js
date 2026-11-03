@@ -17,12 +17,12 @@
  * Prints JSON. Definitions taken from WCAG 2.2 as known to Claude; w3.org was not reachable from the container.
  */
 const fs = require('fs');
-const KIT = '/home/user/race-through-time/kits/rtt-002';
+const KIT = require('path').resolve(__dirname, '..', '..', 'kits', 'rtt-002');   // IQ-27: relative, so it also runs on a GitHub runner (was this container's absolute path)
 const rtt = require(KIT + '/rtt.js');
 (async () => {
   const cfg = rtt.loadConfig(process.argv[2] || 'config_rtt002_film.json');
   const data = JSON.parse(fs.readFileSync(KIT + '/race_rtt002.json'));
-  const { br, pg } = await rtt.openPlayer({ cfg, data, raster: 1, chrome: '/opt/pw-browsers/chromium' });
+  const { br, pg } = await rtt.openPlayer({ cfg, data, raster: 1, chrome: process.env.PW_CHROME || '/opt/pw-browsers/chromium' });
   await pg.evaluate(() => {
     const lin = new Float64Array(256);
     for (let i = 0; i < 256; i++) { const c = i / 255; lin[i] = c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4); }
@@ -72,7 +72,9 @@ const rtt = require(KIT + '/rtt.js');
       return { lit: lit.map(b => b.id + ':' + b.hl.toFixed(2) + ':' + b.colour), maxdL, nG, nR, nChanged, winG: bg, winR: brd, at: bgAt };
     };
   });
-  const tl = rtt.frameTotals(cfg, data).tl, WW = 640, WH = 360, area = WW * WH;
+  /* IQ-27: WCAG_WINDOW="WxH" (drawing units) measures a different 10-degree field, e.g. 324x576 for a vertical Short (a third of
+     its 1080 x 1920 screen each way, at the Short's 1.111 px per unit); default 640 x 360 as before */
+  const [WW, WH] = (process.env.WCAG_WINDOW || '640x360').split('x').map(Number), tl = rtt.frameTotals(cfg, data).tl, area = WW * WH;
   let worst = { winG: -1 }, worstR = { winR: -1 }, worstL = { maxdL: -1 }, measured = 0;
   const colours = {};
   for (let f = 0; f < tl.raceFrames; f++) {
@@ -85,7 +87,7 @@ const rtt = require(KIT + '/rtt.js');
     if (m.maxdL > worstL.maxdL) worstL = m;
   }
   await br.close();
-  const pct = n => (100 * n / area).toFixed(2) + '% of a 640x360 (10-degree) window';
+  const pct = n => (100 * n / area).toFixed(2) + '% of a ' + WW + 'x' + WH + ' (10-degree) window';
   const out = { config: cfg.kit_version, frames_with_highlight: measured, window_px: [WW, WH],
     general: { worst_window_px: worst.winG, worst_window: pct(worst.winG), frame: worst.f, lit: worst.lit, whole_frame_px: worst.nG },
     red: { worst_window_px: worstR.winR, worst_window: pct(worstR.winR), frame: worstR.f, lit: worstR.lit },

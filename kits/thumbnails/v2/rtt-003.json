@@ -1,0 +1,49 @@
+{
+ "base": "rtt-003.json",
+ "words": [
+  "CONSOLE",
+  "WARS"
+ ],
+ "years": "1985–2026",
+ "hero": {
+  "file": "icons/playstation_2.png"
+ },
+ "yt_title": "Best-Selling Video Game Consoles of All Time (1985–2026)",
+ "overrides": {
+  "maker_key": {
+   "enabled": false
+  },
+  "barend": 1000,
+  "board": {
+   "name_cap": 64,
+   "value_cap": 58
+  },
+  "board_top": 40,
+  "title": "",
+  "subtitle": "",
+  "time_label": {
+   "mode": "none"
+  },
+  "pictures": {
+   "height_frac": 0.62
+  },
+  "bar_logos": {
+   "height_frac": 0.7
+  },
+  "footer": ""
+ },
+ "variants": {
+  "A": {
+   "bars": 6,
+   "overrides": {
+    "rows": 6
+   }
+  },
+  "B": {
+   "bars": 5,
+   "overrides": {
+    "rows": 5
+   }
+  }
+ }
+}

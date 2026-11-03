@@ -1,0 +1,13 @@
+{
+ "extends": "config_rtt104_base.json",
+ "kit_version": "rtt104_v3_round1",
+ "format_version": "RTT-104 V3 top-20 page (kits/rtt-104/player_rtt104_v3.html, which runs the approved V2 page's script unchanged) through the shared driver's openPlayer (kits/rtt-002/rtt.js)",
+ "renderer_file": "../rtt-104/player_rtt104_v3.html",
+ "race_file": "../rtt-104/race_rtt104_v3.json",
+ "title": "Women in Parliament: The Top 20 (1997–2025)",
+ "footer": "Race Through Time · Data: IPU via World Bank WDI (CC BY 4.0) · Election dates: IPU Parline",
+ "motion": "smooth",
+ "sec_per_year": 3.0,
+ "v3": {"rows": 20, "scale": "fixed", "fixed_max": 70, "leader_frac": 0.9, "tag": {"rule": "a", "look": "pill", "fade_sec": 0.3, "hold_sec": 2.0}},
+ "notes": "RTT-104 V3 design round 1 (IQ-24d), NOT a film and not approved: Claude's recommended set (20 rows, fixed 0-70% scale, the filled 'pill' tag, tag rule (a) as the working default of DEC-668). Unchanged from the approved film: Archivo, flag-icons flags, the year only, the world-average panel, smooth motion at 3 s per year (DEC-654/655), the closing card. Each option config extends this file and changes one key."
+}

@@ -1,0 +1,6 @@
+{
+ "extends": "config_rtt104_v3_continents.json",
+ "kit_version": "rtt104_v3_round3_palette_c",
+ "v3": {"continent_colours": {"Africa": "#93BC2D", "Americas": "#E1465E", "Asia": "#F295FB", "Europe": "#3789FD", "Oceania": "#AC61CB"}},
+ "notes": "RTT-104 V3 round 3 (IQ-24f) palette C: most vivid (Europe blue, Americas crimson, Africa lime green, Asia pink orchid, Oceania purple). Familiar associations only, not official colours. Checked (DEC-694)."
+}

@@ -1,0 +1,98 @@
+# Race Through Time - RTT-003 number-format test (IQ-27; Luke asked to SEE it, not decide it yet): one 30-second clip
+# (1 Jan 2023 - 31 Dec 2025: a calm stretch, then the Switch passes the DS at 155,370,000) rendered twice:
+#   A = the approved compact labels ("155.4m"), kits/rtt-003/config_rtt003_numfmt_A.json;
+#   B = whole numbers, every digit rolling, where the maker publishes the figure to 0.01 million or finer
+#       (scripts/rtt003_full_digits.py), kits/rtt-003/config_rtt003_numfmt_B.json;
+# plus A and B side by side (3840 x 1080) and the 31 Dec 2025 landing frame of both as a still.
+# Its OWN workflow: rtt003_pilot.yml, rtt003_film.yml and every other workflow are untouched, so nothing here starts a
+# film render. PUBLIC repository (DEC-006, DEC-061): private files fetched with RTT_PRIVATE_TOKEN into $RUNNER_TEMP and
+# SHA-256 checked (scripts/rtt_fetch_private.sh); the player input checked against kits/rtt-003/dataset_hashes.txt;
+# tests/player/numfmt_check_rtt003.js run on the real pictures first (every landing frame = series.csv, phone sizes,
+# no label over the maker key); saved ONLY as a private pre-release with every SHA-256; NO artifact, NO cache.
+# No music (a format test). Nothing goes to YouTube. Triggers: a push that changes THIS FILE on the IQ-27 branch.
+name: rtt003-numfmt
+
+on:
+  push:
+    branches: [claude/cool-dijkstra-ci7ung]
+    paths: [.github/workflows/rtt003_numfmt.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rtt003-numfmt
+  cancel-in-progress: false
+
+env:
+  PRIVATE_REPO: marketmarathon/race-through-time-private
+
+jobs:
+  render:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install ffmpeg, the kit and Chromium
+        working-directory: kits/rtt-002
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg > /dev/null
+          ffmpeg -hide_banner -encoders 2>/dev/null | grep -q libx264
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 npm ci
+          npx playwright install --with-deps chromium
+      - name: Check the player input
+        run: |
+          want=$(awk '$2 == "output" && $3 ~ /race_rtt003.json$/ {print $1}' kits/rtt-003/dataset_hashes.txt)
+          got=$(sha256sum kits/rtt-003/race_rtt003.json | cut -d' ' -f1)
+          echo "race_rtt003.json $got (dataset_hashes.txt: $want)"; test -n "$want" && test "$got" = "$want"
+          python3 scripts/rtt003_full_digits.py > /dev/null && git diff --exit-code kits/rtt-003/config_rtt003_numfmt_B.json
+      - name: Fetch the private files and check their hashes
+        env:
+          GH_TOKEN: ${{ secrets.RTT_PRIVATE_TOKEN }}
+        run: |
+          scripts/rtt_fetch_private.sh "$RUNNER_TEMP/rtt_assets" rtt-003
+          echo "RTT_LOCAL_ASSETS=$RUNNER_TEMP/rtt_assets/rtt-003" >> "$GITHUB_ENV"
+      - name: Check A and B on every frame (landing figures, phone sizes, overlaps)
+        run: |
+          export PW_CHROME=$(cd kits/rtt-002 && node -e "console.log(require('playwright').chromium.executablePath())")
+          RTT003_REAL_ASSETS="$RTT_LOCAL_ASSETS" node tests/player/numfmt_check_rtt003.js
+      - name: Render A and B, side by side, and the landing stills
+        run: |
+          set -o pipefail
+          export PW_CHROME=$(cd kits/rtt-002 && node -e "console.log(require('playwright').chromium.executablePath())")
+          O="$RUNNER_TEMP/rtt_out"; mkdir -p "$O"
+          for v in A B; do
+            (cd kits/rtt-002 && SEG_OUT="$O/rtt003_numfmt_${v}_2023_2025.mp4" RASTER_W=1920 RTT_CONFIG="../rtt-003/config_rtt003_numfmt_${v}.json" node rtt.js | tee -a "$RUNNER_TEMP/render.log")
+          done
+          if grep -q 'not found' "$RUNNER_TEMP/render.log"; then echo "::error::a picture or logo was not loaded"; exit 1; fi
+          ffmpeg -nostdin -hide_banner -loglevel error -y -i "$O/rtt003_numfmt_A_2023_2025.mp4" -i "$O/rtt003_numfmt_B_2023_2025.mp4" \
+            -filter_complex "[0:v][1:v]hstack=inputs=2[v]" -map "[v]" -c:v libx264 -crf 16 -preset medium -pix_fmt yuv420p -movflags +faststart "$O/rtt003_numfmt_A_left_B_right_3840x1080.mp4"
+          land=$(cd kits/rtt-002 && node -e "const r=require('./rtt.js'),fs=require('fs');const c=r.loadConfig('../rtt-003/config_rtt003_numfmt_B.json');const t=r.frameTotals(c,JSON.parse(fs.readFileSync(require('path').resolve(r.KIT,c.race_file))));console.log(((t.total-c.pacing.final_board_sec*c.fps+10)/c.fps).toFixed(3))")
+          ffmpeg -nostdin -hide_banner -loglevel error -y -ss "$land" -i "$O/rtt003_numfmt_A_left_B_right_3840x1080.mp4" -frames:v 1 "$O/rtt003_numfmt_A_left_B_right_2025-12-31.png"
+          for f in "$O"/*.mp4; do echo "$(basename "$f"): $(ffprobe -v error -select_streams v:0 -count_packets -show_entries stream=width,height,nb_read_packets -of csv=p=0 "$f")"; done
+      - name: Save as one pre-release in the private repo
+        env:
+          GH_TOKEN: ${{ secrets.RTT_PRIVATE_TOKEN }}
+        run: |
+          O="$RUNNER_TEMP/rtt_out"; SHORT=${GITHUB_SHA::7}; TAG="rtt003-numfmt-${SHORT}-run${GITHUB_RUN_NUMBER}"
+          {
+            echo "RTT-003 number-format test (IQ-27): the same 30-second clip twice. A (left) = the approved compact labels (\"155.4m\"); B (right) = whole numbers with every digit rolling (\"155,370,000\") where the maker publishes the figure to 0.01 million or finer (Nintendo's hardware and the original PlayStation); Sony's later consoles, Xbox, every estimate and every in-between (interpolated) quarter keep the compact label. Every landing frame equals data/rtt-003/series.csv exactly. A proposal for Luke: not approved, nothing changed in any film. No music. Rendered by GitHub Actions. Not uploaded anywhere."
+            echo
+            echo "- Source: ${GITHUB_REPOSITORY} @ ${GITHUB_SHA} (${GITHUB_REF_NAME}), run ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+            echo "- Checks: tests/player/numfmt_check_rtt003.js on the real pictures (see the run log)"
+            echo "- File SHA-256:"
+            (cd "$O" && sha256sum *.mp4 *.png | sed 's/^/  - /')
+          } > "$O/notes.md"
+          cat "$O/notes.md"
+          gh release create "$TAG" --repo "$PRIVATE_REPO" --target main --prerelease --title "RTT-003 number-format test ${SHORT} (A compact / B whole numbers)" --notes-file "$O/notes.md" "$O"/*.mp4 "$O"/*.png
+          echo "Release: https://github.com/${PRIVATE_REPO}/releases/tag/${TAG}" | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: Delete the private files and videos from the runner
+        if: always()
+        run: rm -rf "$RUNNER_TEMP/rtt_assets" "$RUNNER_TEMP/rtt_out" "$RUNNER_TEMP/render.log"

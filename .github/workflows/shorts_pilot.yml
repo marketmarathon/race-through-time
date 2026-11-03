@@ -1,0 +1,109 @@
+# Race Through Time - Shorts pilot (IQ-27; owner decision 3 Nov 2026: 2-3 vertical Shorts cut from each film, each
+# pointing to the full video). Two Shorts each from the approved RTT-002 (F1) and RTT-003 (consoles) films, 1080 x 1920,
+# 30-50 s, built from each film's own data and player re-laid out for vertical (kits/shorts/render_short.js,
+# kits/shorts/shorts.json), with the film's own Audio Library track mixed as the films are. A PROPOSAL for Luke (DEC-069).
+#
+# Its OWN workflow: render_pilot.yml, the film and clip workflows of every episode are untouched, so nothing here starts
+# a film or clip render. PUBLIC repository (DEC-006, DEC-061): the private files and the two music tracks are fetched
+# with RTT_PRIVATE_TOKEN into $RUNNER_TEMP (never into the checkout, never printed) and SHA-256 checked
+# (scripts/rtt_fetch_private.sh: kits/thumbnails/assets_sha256_rtt002.txt, kits/rtt-003/assets_sha256.txt,
+# kits/rtt-00#/music_rtt00#.json); each player input against its dataset hashes; the WCAG flash checks run on the four
+# Short configs first (tests/player/wcag_flash.js for RTT-002's highlight, wcag_flash_rtt003.js on the whole picture);
+# saved ONLY as one private pre-release with every SHA-256; NO artifact, NO cache; everything deleted at the end.
+# Nothing goes to YouTube: Luke uploads by hand and sets the related video in Studio. Triggers: a push that changes
+# THIS FILE on the IQ-27 branch.
+# Run 2 (IQ-27): run 1 stopped at the flash check because tests/player/wcag_flash.js held the Claude container's absolute
+# paths (now relative to the repo); the hook band now shrinks to fit its height and the years stay on one line.
+name: shorts-pilot
+
+on:
+  push:
+    branches: [claude/cool-dijkstra-ci7ung]
+    paths: [.github/workflows/shorts_pilot.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: shorts-pilot
+  cancel-in-progress: false
+
+env:
+  PRIVATE_REPO: marketmarathon/race-through-time-private
+
+jobs:
+  render:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install ffmpeg, the kit and Chromium
+        working-directory: kits/rtt-002
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg > /dev/null
+          ffmpeg -hide_banner -encoders 2>/dev/null | grep -q libx264
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 npm ci
+          npx playwright install --with-deps chromium
+      - name: Check the player inputs
+        run: |
+          for e in rtt-002 rtt-003; do
+            race=$(cd kits/rtt-002 && node -e "const r=require('./rtt.js');const t=require('../thumbnails/$e.json');console.log(require('path').relative('../..', require('path').resolve(r.loadConfig('../'+t.kit+'/'+t.film_config).race_file)))")
+            want=$(awk -v f="$race" '$2 == "output" && $3 == f {print $1}' "kits/$e/dataset_hashes.txt"); got=$(sha256sum "$race" | cut -d' ' -f1)
+            echo "$e: $race $got (dataset_hashes.txt: $want)"; test -n "$want" && test "$got" = "$want"
+          done
+      - name: Fetch the private files and music and check their hashes
+        env:
+          GH_TOKEN: ${{ secrets.RTT_PRIVATE_TOKEN }}
+        run: |
+          scripts/rtt_fetch_private.sh "$RUNNER_TEMP/rtt_assets" rtt-002 rtt-003 --music
+          echo "RTT_ASSETS_ROOT=$RUNNER_TEMP/rtt_assets" >> "$GITHUB_ENV"
+      - name: WCAG flash checks on the four Short configs
+        run: |
+          set -o pipefail
+          export PW_CHROME=$(cd kits/rtt-002 && node -e "console.log(require('playwright').chromium.executablePath())")
+          for c in config_rtt002_short_1.json config_rtt002_short_2.json; do
+            (cd kits/rtt-002 && RTT_LOCAL_ASSETS="$RTT_ASSETS_ROOT/rtt-002" node ../../tests/player/wcag_flash.js "$c") | tee -a "$RUNNER_TEMP/wcag.log"
+          done
+          for c in config_rtt003_short_1.json config_rtt003_short_2.json; do
+            RTT_LOCAL_ASSETS="$RTT_ASSETS_ROOT/rtt-003" node tests/player/wcag_flash_rtt003.js "../rtt-003/$c" | tee -a "$RUNNER_TEMP/wcag.log"
+          done
+      - name: Render the four Shorts and check them
+        run: |
+          set -o pipefail
+          export PW_CHROME=$(cd kits/rtt-002 && node -e "console.log(require('playwright').chromium.executablePath())")
+          O="$RUNNER_TEMP/rtt_out"
+          node kits/shorts/render_short.js "$O" | tee "$RUNNER_TEMP/shorts.log"
+          if grep -q 'not found' "$RUNNER_TEMP/shorts.log"; then echo "::error::a picture or logo was not loaded"; exit 1; fi
+          for f in "$O"/*.mp4; do
+            v=$(ffprobe -v error -select_streams v:0 -count_packets -show_entries stream=width,height,nb_read_packets,r_frame_rate -of csv=p=0 "$f")
+            a=$(ffprobe -v error -select_streams a -show_entries stream=index -of csv=p=0 "$f" | wc -l)
+            echo "$(basename "$f"): $v, audio tracks $a"; case "$v" in 1080,1920,30/1,*) ;; *) echo "::error::$f is not 1080 x 1920 at 30 fps"; exit 1;; esac; test "$a" = 1
+          done
+      - name: Save the Shorts as one pre-release in the private repo
+        env:
+          GH_TOKEN: ${{ secrets.RTT_PRIVATE_TOKEN }}
+        run: |
+          O="$RUNNER_TEMP/rtt_out"; SHORT=${GITHUB_SHA::7}; TAG="rtt-shorts-pilot-${SHORT}-run${GITHUB_RUN_NUMBER}"
+          {
+            echo "Race Through Time Shorts pilot (IQ-27): two vertical Shorts each from the approved RTT-002 (F1 wins) and RTT-003 (best-selling consoles) films, 1080 x 1920, 30-50 s, built from each film's own data and player re-laid out for vertical (8 bars), a hook line for the first 2 s, the subject band after it, and 'Full race on the channel' over the last 3 s; the film's own YouTube Audio Library track mixed as the films are (-16 LUFS, true peak at most -1 dBTP). A proposal for Luke: not approved, not uploaded. Luke uploads by hand and sets the related video to the full film in Studio. The music may not be shared off YouTube: do not pass these files on."
+            echo
+            echo "- Source: ${GITHUB_REPOSITORY} @ ${GITHUB_SHA} (${GITHUB_REF_NAME}), run ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+            echo "- Each Short (from its _check.json):"
+            for j in "$O"/*_check.json; do node -e "const c=require('$j');console.log('  - '+c.id+': '+c.seconds+' s, window '+c.window.from+' to '+c.window.to+'; last period '+c.last_period+', '+c.bars_checked+' bars = the data file; names '+c.phone_pt.names+' pt, values '+c.phone_pt.values+' pt on a 390 pt phone; music '+c.music.title+' from '+c.music.from_sec+' s; '+c.music.mix+(c.errors.length?'; CHECK FAILED':''))"; done
+            echo "- WCAG flash checks: see the run log (tests/player/wcag_flash.js, wcag_flash_rtt003.js)"
+            echo "- File SHA-256:"
+            (cd "$O" && sha256sum *.mp4 *.png *_check.json | sed 's/^/  - /')
+          } > "$O/notes.md"
+          cat "$O/notes.md"
+          gh release create "$TAG" --repo "$PRIVATE_REPO" --target main --prerelease --title "RTT Shorts pilot ${SHORT} (2 x F1, 2 x consoles)" --notes-file "$O/notes.md" "$O"/*.mp4 "$O"/*.png "$O"/*_check.json
+          echo "Release: https://github.com/${PRIVATE_REPO}/releases/tag/${TAG}" | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: Delete the private files, music and videos from the runner
+        if: always()
+        run: rm -rf "$RUNNER_TEMP/rtt_assets" "$RUNNER_TEMP/rtt_out" "$RUNNER_TEMP/shorts.log" "$RUNNER_TEMP/wcag.log"

@@ -1,0 +1,4 @@
+# RTT-104 private assets read by .github/workflows/rtt104_pilot.yml - SHA-256 checked before any render (DEC-060, DEC-061).
+# Luke's logo only (the same file as RTT-001/002/003); it lives only in marketmarathon/race-through-time-private and is never committed here.
+# Flags are not private: they come from the npm package flag-icons 7.5.0 (MIT) at install time (kits/rtt-002/package.json).
+e3db46119b52648c84eae5f6acd682bd7be855819818856e695592b20572eeca  assets/rtt-002/rtt_logo.png
