@@ -13,6 +13,8 @@
 #   - saves everything ONLY as one pre-release in the private repo, with every file's SHA-256 in its notes;
 #   - uploads NO workflow artifact, uses NO cache, and deletes the private files and images at the end.
 # Nothing goes to YouTube. Triggers: a push that changes THIS FILE on the IQ-27 branch, or by hand (once merged).
+# Run 2 (IQ-27): the card's extra height is split above and below the rows (run 1 pinned wide boards, e.g. F1, to the
+# bottom of the card); supersedes rtt-thumbs-v2-4b35b59-run1.
 name: thumbnails-v2
 
 on:

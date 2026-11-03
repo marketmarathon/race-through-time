@@ -72,7 +72,9 @@ const rtt = require(KIT + '/rtt.js');
       return { lit: lit.map(b => b.id + ':' + b.hl.toFixed(2) + ':' + b.colour), maxdL, nG, nR, nChanged, winG: bg, winR: brd, at: bgAt };
     };
   });
-  const tl = rtt.frameTotals(cfg, data).tl, WW = 640, WH = 360, area = WW * WH;
+  /* IQ-27: WCAG_WINDOW="WxH" (drawing units) measures a different 10-degree field, e.g. 324x576 for a vertical Short (a third of
+     its 1080 x 1920 screen each way, at the Short's 1.111 px per unit); default 640 x 360 as before */
+  const [WW, WH] = (process.env.WCAG_WINDOW || '640x360').split('x').map(Number), tl = rtt.frameTotals(cfg, data).tl, area = WW * WH;
   let worst = { winG: -1 }, worstR = { winR: -1 }, worstL = { maxdL: -1 }, measured = 0;
   const colours = {};
   for (let f = 0; f < tl.raceFrames; f++) {
@@ -85,7 +87,7 @@ const rtt = require(KIT + '/rtt.js');
     if (m.maxdL > worstL.maxdL) worstL = m;
   }
   await br.close();
-  const pct = n => (100 * n / area).toFixed(2) + '% of a 640x360 (10-degree) window';
+  const pct = n => (100 * n / area).toFixed(2) + '% of a ' + WW + 'x' + WH + ' (10-degree) window';
   const out = { config: cfg.kit_version, frames_with_highlight: measured, window_px: [WW, WH],
     general: { worst_window_px: worst.winG, worst_window: pct(worst.winG), frame: worst.f, lit: worst.lit, whole_frame_px: worst.nG },
     red: { worst_window_px: worstR.winR, worst_window: pct(worstR.winR), frame: worstR.f, lit: worstR.lit },

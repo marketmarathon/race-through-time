@@ -37,7 +37,9 @@ const rtt = require(path.join(KIT, 'rtt.js'));
   const DUMP = process.env.FLASH_DUMP != null ? +process.env.FLASH_DUMP : null;   // diagnostic: stop at this frame and save it
   const frames = DUMP != null ? DUMP + 1 : await pg.evaluate(() => RACE_FRAMES);
   if (DUMP != null) await pg.evaluate(f => { window.__DUMP = f; }, DUMP);
-  await pg.evaluate(() => {
+  /* IQ-27: WCAG_WINDOW="WxH" measures a different 10-degree field (e.g. 324x576 for a vertical Short); default 640 x 360 as before */
+  const [WW, WH] = (process.env.WCAG_WINDOW || '640x360').split('x').map(Number);
+  await pg.evaluate(([WW, WH]) => {
     const W = 1920, H = 1080, N = W * H, K = 8;       // keep the last 8 transition frames per pixel
     const lin = new Float64Array(256);
     for (let i = 0; i < 256; i++) { const c = i / 255; lin[i] = c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4); }
@@ -48,8 +50,8 @@ const rtt = require(path.join(KIT, 'rtt.js'));
       const I = new Int32Array((W + 1) * (H + 1));
       for (let y = 0; y < H; y++) { let rs = 0; for (let x = 0; x < W; x++) { rs += mask[y * W + x]; I[(y + 1) * (W + 1) + x + 1] = I[y * (W + 1) + x + 1] + rs; } }
       let best = 0, bx = 0, by = 0;
-      for (let y = 0; y + 360 <= H; y += 8) for (let x = 0; x + 640 <= W; x += 8) {
-        const v = I[(y + 360) * (W + 1) + x + 640] - I[y * (W + 1) + x + 640] - I[(y + 360) * (W + 1) + x] + I[y * (W + 1) + x];
+      for (let y = 0; y + WH <= H; y += 8) for (let x = 0; x + WW <= W; x += 8) {
+        const v = I[(y + WH) * (W + 1) + x + WW] - I[y * (W + 1) + x + WW] - I[(y + WH) * (W + 1) + x] + I[y * (W + 1) + x];
         if (v > best) { best = v; bx = x; by = y; } }
       return { best, x: bx, y: by };
     };
@@ -90,8 +92,8 @@ const rtt = require(path.join(KIT, 'rtt.js'));
       }
       return out;
     };
-  });
-  const LIMIT = 57600;
+  }, [WW, WH]);
+  const LIMIT = Math.round(WW * WH / 4);          // 25% of the 10-degree field (57,600 px for 640 x 360)
   const res = { config: cfg.kit_version, frames, limit_px_10deg: LIMIT, worst: { now: { best: 0 }, fastG: { best: 0 }, fastR: { best: 0 } },
                 framesWithFastG: 0, framesWithFastR: 0, maxFastGTotal: 0, maxFastRTotal: 0, pass: true };
   for (let f = 0; f < frames; f++) {

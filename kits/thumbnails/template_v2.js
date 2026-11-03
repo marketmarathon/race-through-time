@@ -69,7 +69,7 @@ function boardBox(st, n, pad) {
 /* widen or heighten the box to the card's aspect, inside the 1920 x 1080 frame (the film's own ground fills it) */
 function toAspect(b, aspect, nextRowY) {
   let x = Math.max(0, b.x0), y = Math.max(0, b.y0), w = Math.min(1920, b.x1) - x, h = Math.min(1080, b.y1) - y;
-  if (w / h > aspect) { const nh = w / aspect; y = Math.max(0, y); h = nh; if (y + h > 1080) y = 1080 - h; }   // extra room goes mostly below the last row (above the first sit the axis numbers)
+  if (w / h > aspect) { const nh = Math.min(1080, w / aspect); y = Math.min(Math.max(0, y - (nh - h) / 2), 1080 - nh); h = nh; if (h * aspect > w) { const nw = h * aspect; x = Math.max(0, Math.min(x, 1920 - nw)); w = nw; } }   // the extra room split above and below the rows
   else { const nw = h * aspect; x = Math.max(0, x - (nw - w) * 0.15); w = nw; if (x + w > 1920) { x = 1920 - w; } }
   return { x: +x.toFixed(1), y: +y.toFixed(1), w: +w.toFixed(1), h: +h.toFixed(1) };
 }
