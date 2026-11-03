@@ -12,6 +12,8 @@
 # saved ONLY as one private pre-release with every SHA-256; NO artifact, NO cache; everything deleted at the end.
 # Nothing goes to YouTube: Luke uploads by hand and sets the related video in Studio. Triggers: a push that changes
 # THIS FILE on the IQ-27 branch.
+# Run 2 (IQ-27): run 1 stopped at the flash check because tests/player/wcag_flash.js held the Claude container's absolute
+# paths (now relative to the repo); the hook band now shrinks to fit its height and the years stay on one line.
 name: shorts-pilot
 
 on:

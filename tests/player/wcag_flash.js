@@ -17,12 +17,12 @@
  * Prints JSON. Definitions taken from WCAG 2.2 as known to Claude; w3.org was not reachable from the container.
  */
 const fs = require('fs');
-const KIT = '/home/user/race-through-time/kits/rtt-002';
+const KIT = require('path').resolve(__dirname, '..', '..', 'kits', 'rtt-002');   // IQ-27: relative, so it also runs on a GitHub runner (was this container's absolute path)
 const rtt = require(KIT + '/rtt.js');
 (async () => {
   const cfg = rtt.loadConfig(process.argv[2] || 'config_rtt002_film.json');
   const data = JSON.parse(fs.readFileSync(KIT + '/race_rtt002.json'));
-  const { br, pg } = await rtt.openPlayer({ cfg, data, raster: 1, chrome: '/opt/pw-browsers/chromium' });
+  const { br, pg } = await rtt.openPlayer({ cfg, data, raster: 1, chrome: process.env.PW_CHROME || '/opt/pw-browsers/chromium' });
   await pg.evaluate(() => {
     const lin = new Float64Array(256);
     for (let i = 0; i < 256; i++) { const c = i / 255; lin[i] = c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4); }
