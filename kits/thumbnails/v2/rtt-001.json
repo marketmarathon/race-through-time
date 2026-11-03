@@ -1,0 +1,12 @@
+{
+ "base": "rtt-001.json",
+ "words": ["BROWSER", "WARS"],
+ "years": "1994–2026",
+ "hero": {"file": "logos/chrome.svg"},
+ "yt_title": "Browser Wars: Rise and Fall of the Most Popular Web Browsers (1994–2026)",
+ "overrides": {"barend": 1000, "board_top": 40, "title": "", "subtitle": "", "footer": "", "source_line": {"enabled": false}, "date_block": {"enabled": false}, "time_label": {"mode": "none"}, "board": {"name_cap": 64, "value_cap": 58, "fit": {"enabled": false}}},
+ "variants": {
+  "A": {"bars": 6, "overrides": {"rows": 6}},
+  "B": {"bars": 5, "overrides": {"rows": 5}}
+ }
+}

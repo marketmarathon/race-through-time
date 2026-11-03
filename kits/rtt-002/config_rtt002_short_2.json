@@ -1,0 +1,7 @@
+{
+ "extends": "config_rtt002_short_1.json",
+ "kit_version": "rtt002_short_2",
+ "out": "rtt002_short_2.mp4",
+ "window": {"from": "1996-01-01", "to": "2001-09-02"},
+ "notes": ["IQ-27 Shorts pilot: as config_rtt002_short_1.json, window 1996 - Belgian GP 2001: Schumacher equals (Hungarian GP, 19 Aug 2001) and passes (2 Sep 2001) Prost's record 51 wins."]
+}

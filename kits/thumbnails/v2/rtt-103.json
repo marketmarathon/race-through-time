@@ -1,0 +1,12 @@
+{
+ "base": "rtt-103.json",
+ "words": ["AI SPENDING", "RACE"],
+ "years": "2010–2030",
+ "hero": {"file": "logos/amazon.svg"},
+ "yt_title": "The AI Spending Race: Big Tech's Capital Spending (2010–2030)",
+ "overrides": {"story": {"enabled": false}, "combined": {"enabled": false}, "barend": 1000, "board_top": 40, "title": "", "subtitle": "", "footer": "", "source_line": {"enabled": false}, "date_block": {"enabled": false}, "time_label": {"mode": "none"}, "board": {"name_cap": 64, "value_cap": 58, "fit": {"enabled": false}}},
+ "variants": {
+  "A": {"bars": 6, "overrides": {"rows": 6}},
+  "B": {"bars": 5, "overrides": {"rows": 5}}
+ }
+}

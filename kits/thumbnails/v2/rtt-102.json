@@ -1,0 +1,12 @@
+{
+ "base": "rtt-102.json",
+ "words": ["CHATGPT", "VS RIVALS"],
+ "years": "2022–2026",
+ "hero": {"file": "logos/chatgpt.svg"},
+ "yt_title": "ChatGPT vs Its Rivals (2022–2026)",
+ "overrides": {"combined": {"enabled": false}, "barend": 1000, "board_top": 40, "title": "", "subtitle": "", "footer": "", "source_line": {"enabled": false}, "date_block": {"enabled": false}, "time_label": {"mode": "none"}, "board": {"name_cap": 64, "value_cap": 58, "fit": {"enabled": false}}},
+ "variants": {
+  "A": {"bars": 6, "overrides": {"rows": 6}},
+  "B": {"bars": 5, "overrides": {"rows": 5}}
+ }
+}

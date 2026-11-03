@@ -1,0 +1,12 @@
+{
+ "base": "rtt-002.json",
+ "words": ["F1", "WINS"],
+ "years": "1950–2026",
+ "hero": {"file": "rtt_car.png"},
+ "yt_title": "Most F1 Grand Prix Wins of All Time (1950–2026)",
+ "overrides": {"overlays": [], "barend": 1000, "board_top": 40, "title": "", "subtitle": "", "footer": "", "time_label": {"mode": "none"}, "board": {"name_cap": 64, "value_cap": 58}},
+ "variants": {
+  "A": {"bars": 6, "overrides": {"rows": 6}},
+  "B": {"bars": 5, "overrides": {"rows": 5}}
+ }
+}

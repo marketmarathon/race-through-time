@@ -1,0 +1,17 @@
+{
+ "extends": "config_rtt002_film.json",
+ "kit_version": "rtt002_short_1",
+ "out": "rtt002_short_1.mp4",
+ "window": {"from": "2016-01-01", "to": "2020-10-25"},
+ "rows": 8,
+ "barend": 780,
+ "title": "",
+ "subtitle": "",
+ "subtitle_sec": 0,
+ "footer": "",
+ "overlays": [],
+ "stats_label": {"enabled": false},
+ "time_label": {"mode": "line", "x": 64, "y": 92, "align": "left", "size": 48},
+ "pacing": {"lead_in_sec": 0.5, "final_board_sec": 4.0},
+ "notes": ["IQ-27 Shorts pilot (a proposal, DEC-069): the approved RTT-002 film config re-laid out for a vertical Short (kits/shorts/render_short.js draws the left 972 x 1080 of the frame into a 1080 x 1200 board): 8 rows, bars ending at x 770, no title/footer/logo/car in the player (the Short's own bands carry the subject, badge and credit), value 'N wins' without the starts and rate (they do not fit a phone-width board). Window 2016 - Portuguese GP 2020: Hamilton equals (Eifel GP, 11 Oct 2020) and passes (25 Oct 2020) Schumacher's 91 wins. Figures, pacing (0.333 s per race, the record pauses) and colours are the film's."]
+}

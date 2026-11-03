@@ -1,0 +1,12 @@
+{
+ "base": "rtt-104.json",
+ "words": ["WOMEN IN", "PARLIAMENT"],
+ "years": "1997–2025",
+ "hero": {"flag": "se"},
+ "yt_title": "Women in Parliament: The Top 20 (1997–2025)",
+ "overrides": {"title": "", "measure": "", "footer": ""},
+ "variants": {
+  "A": {"bars": 6, "overrides": {"v3": {"rows": 6}}},
+  "B": {"bars": 5, "overrides": {"v3": {"rows": 5}}}
+ }
+}

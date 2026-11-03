@@ -52,5 +52,34 @@ for (const f of fs.readdirSync(DIR).filter(f => /^rtt-\d{3}\.json$/.test(f))) {
   ok(!off.length, f + ': every picture (' + pics.length + ') is a listed private file' + (off.length ? '; not listed: ' + off.join(', ') : ''));
   ok(fs.existsSync(path.join(ROOT, 'kits', c.kit, c.film_config)), f + ': film config kits/' + c.kit + '/' + c.film_config + ' exists');
 }
+/* 4. template v2 (IQ-27): the configs, the crop helpers and the top-N check */
+{
+  const V2 = require(path.join(ROOT, 'kits', 'thumbnails', 'template_v2.js'));
+  const vdir = path.join(DIR, 'v2');
+  const vimgs = fs.readdirSync(vdir).filter(f => /\.(png|jpe?g|gif|webp|svg)$/i.test(f));
+  ok(vimgs.length === 0, 'no image file in kits/thumbnails/v2');
+  const v2 = fs.readdirSync(vdir).filter(f => /^rtt-\d{3}\.json$/.test(f));
+  ok(v2.length === 6, 'template v2 has a config for all six public videos (' + v2.join(', ') + ')');
+  for (const f of v2) {
+    const V = JSON.parse(fs.readFileSync(path.join(vdir, f), 'utf8')), c = JSON.parse(fs.readFileSync(path.join(DIR, V.base), 'utf8'));
+    ok(V.words.length >= 1 && V.words.length <= 2 && V.words.join(' ').split(/\s+/).length >= 2 && V.words.join(' ').split(/\s+/).length <= 4, 'v2/' + f + ': 2-4 words (' + V.words.join(' ') + ')');
+    ok(!/[?!]/.test(V.words.join(' ')), 'v2/' + f + ': no question or exclamation mark (no taglines)');
+    ok(/^\d{4}–\d{4}$/.test(V.years), 'v2/' + f + ': years as "YYYY–YYYY"');
+    ok(V.variants.A.bars <= 6 && V.variants.B.bars === 5, 'v2/' + f + ': A at most 6 bars, B 5 bars');
+    if (V.hero.file) {
+      const listed = new Set(fs.readFileSync(path.join(ROOT, c.assets_list), 'utf8').split('\n').filter(l => l && !l.startsWith('#'))
+        .map(l => l.trim().split(/\s+/)[1].replace(/^assets\/rtt-\d{3}\//, '')));
+      ok(listed.has(V.hero.file), 'v2/' + f + ': hero ' + V.hero.file + ' is a listed private file');
+    } else ok(/^[a-z]{2}$/.test(V.hero.flag) && fs.existsSync(path.join(ROOT, 'kits', 'rtt-002', 'node_modules', 'flag-icons', 'flags', '4x3', V.hero.flag + '.svg')),
+              'v2/' + f + ': hero flag ' + V.hero.flag + ' from flag-icons (MIT, rights ledger)');
+    const allowed = ['rows', 'barend', 'board_top', 'title', 'subtitle', 'footer', 'measure', 'time_label', 'date_block', 'source_line', 'board', 'pictures', 'bar_logos',
+                     'maker_key', 'overlays', 'combined', 'story', 'v3'];
+    const keys = [...Object.keys(V.overrides || {}), ...Object.values(V.variants).flatMap(x => Object.keys(x.overrides || {}))];
+    const bad = keys.filter(k => !allowed.includes(k));
+    ok(!bad.length, 'v2/' + f + ': overrides change layout only (' + (bad.length ? 'not allowed: ' + bad.join(', ') : 'rows, margins, text caps, side panels') + ')');
+  }
+  const crop = V2.toAspect({ x0: 50, y0: 40, x1: 1250, y1: 1000 }, 704 / 600);
+  ok(crop.x >= 0 && crop.y >= 0 && crop.x + crop.w <= 1920.01 && crop.y + crop.h <= 1080.01 && Math.abs(crop.w / crop.h - 704 / 600) < 1e-3, 'toAspect keeps the card aspect inside the frame');
+}
 console.log(fails ? fails + ' FAILED' : 'all thumbnail tests PASS');
 process.exit(fails ? 1 : 0);
